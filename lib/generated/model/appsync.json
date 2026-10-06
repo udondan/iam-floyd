@@ -1,0 +1,1208 @@
+{
+  "schemaVersion": 1,
+  "filename": "appsync",
+  "className": "Appsync",
+  "name": "appsync",
+  "servicePrefix": "appsync",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appsync.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateApi",
+      "AssociateMergedGraphqlApi",
+      "AssociateSourceGraphqlApi",
+      "CreateApi",
+      "CreateApiCache",
+      "CreateApiKey",
+      "CreateChannelNamespace",
+      "CreateDataSource",
+      "CreateDomainName",
+      "CreateFunction",
+      "CreateGraphqlApi",
+      "CreateResolver",
+      "CreateType",
+      "DeleteApi",
+      "DeleteApiCache",
+      "DeleteApiKey",
+      "DeleteChannelNamespace",
+      "DeleteDataSource",
+      "DeleteDomainName",
+      "DeleteFunction",
+      "DeleteGraphqlApi",
+      "DeleteResolver",
+      "DeleteType",
+      "DisassociateApi",
+      "DisassociateMergedGraphqlApi",
+      "DisassociateSourceGraphqlApi",
+      "EventConnect",
+      "EventPublish",
+      "EventSubscribe",
+      "FlushApiCache",
+      "PutGraphqlApiEnvironmentVariables",
+      "SetWebACL",
+      "StartDataSourceIntrospection",
+      "StartSchemaCreation",
+      "StartSchemaMerge",
+      "TagResource",
+      "UntagResource",
+      "UpdateApi",
+      "UpdateApiCache",
+      "UpdateApiKey",
+      "UpdateChannelNamespace",
+      "UpdateDataSource",
+      "UpdateDomainName",
+      "UpdateFunction",
+      "UpdateGraphqlApi",
+      "UpdateResolver",
+      "UpdateSourceApiAssociation",
+      "UpdateType",
+      "AssociateWebACL",
+      "DeleteResourcePolicy",
+      "DisassociateWebACL",
+      "GraphQL",
+      "PutResourcePolicy",
+      "SourceGraphQL"
+    ],
+    "Read": [
+      "EvaluateCode",
+      "EvaluateMappingTemplate",
+      "GetApi",
+      "GetApiAssociation",
+      "GetApiCache",
+      "GetChannelNamespace",
+      "GetDataSource",
+      "GetDataSourceIntrospection",
+      "GetDomainName",
+      "GetFunction",
+      "GetGraphqlApi",
+      "GetGraphqlApiEnvironmentVariables",
+      "GetIntrospectionSchema",
+      "GetResolver",
+      "GetSchemaCreationStatus",
+      "GetSourceApiAssociation",
+      "GetType",
+      "ListTagsForResource",
+      "GetResourcePolicy",
+      "GetWebACLForResource"
+    ],
+    "List": [
+      "ListApiKeys",
+      "ListApis",
+      "ListChannelNamespaces",
+      "ListDataSources",
+      "ListDomainNames",
+      "ListFunctions",
+      "ListGraphqlApis",
+      "ListResolvers",
+      "ListResolversByFunction",
+      "ListSourceApiAssociations",
+      "ListTypes",
+      "ListTypesByAssociation",
+      "ListResourcesForWebACL"
+    ],
+    "Permissions management": [
+      "SetWebACL"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateApi",
+      "methodName": "toAssociateApi",
+      "description": "Grants permission to attach a GraphQL API to a custom domain name in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateApi.html"
+    },
+    {
+      "name": "AssociateMergedGraphqlApi",
+      "methodName": "toAssociateMergedGraphqlApi",
+      "description": "Grants permission to associate a merged API to a source API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateMergedGraphqlApi.html"
+    },
+    {
+      "name": "AssociateSourceGraphqlApi",
+      "methodName": "toAssociateSourceGraphqlApi",
+      "description": "Grants permission to associate a source API to a merged API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateSourceGraphqlApi.html"
+    },
+    {
+      "name": "CreateApi",
+      "methodName": "toCreateApi",
+      "description": "Grants permission to create an API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApi.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateApiCache",
+      "methodName": "toCreateApiCache",
+      "description": "Grants permission to create an API cache in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiCache.html"
+    },
+    {
+      "name": "CreateApiKey",
+      "methodName": "toCreateApiKey",
+      "description": "Grants permission to create a unique key that you can distribute to clients who are executing your API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiKey.html"
+    },
+    {
+      "name": "CreateChannelNamespace",
+      "methodName": "toCreateChannelNamespace",
+      "description": "Grants permission to create a channel namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateChannelNamespace.html"
+    },
+    {
+      "name": "CreateDataSource",
+      "methodName": "toCreateDataSource",
+      "description": "Grants permission to create a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDataSource.html"
+    },
+    {
+      "name": "CreateDomainName",
+      "methodName": "toCreateDomainName",
+      "description": "Grants permission to create a custom domain name in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDomainName.html"
+    },
+    {
+      "name": "CreateFunction",
+      "methodName": "toCreateFunction",
+      "description": "Grants permission to create a new function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateFunction.html"
+    },
+    {
+      "name": "CreateGraphqlApi",
+      "methodName": "toCreateGraphqlApi",
+      "description": "Grants permission to create a GraphQL API, which is the top level AppSync resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html",
+      "conditionMethods": [
+        "ifVisibility",
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateResolver",
+      "methodName": "toCreateResolver",
+      "description": "Grants permission to create a resolver. A resolver converts incoming requests into a format that a data source can understand, and converts the data source's responses into GraphQL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html"
+    },
+    {
+      "name": "CreateType",
+      "methodName": "toCreateType",
+      "description": "Grants permission to create a type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateType.html"
+    },
+    {
+      "name": "DeleteApi",
+      "methodName": "toDeleteApi",
+      "description": "Grants permission to delete a API. This will also clean up every AppSync resource below that API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApi.html"
+    },
+    {
+      "name": "DeleteApiCache",
+      "methodName": "toDeleteApiCache",
+      "description": "Grants permission to delete an API cache in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApiCache.html"
+    },
+    {
+      "name": "DeleteApiKey",
+      "methodName": "toDeleteApiKey",
+      "description": "Grants permission to delete an API key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApiKey.html"
+    },
+    {
+      "name": "DeleteChannelNamespace",
+      "methodName": "toDeleteChannelNamespace",
+      "description": "Grants permission to delete a channel namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteChannelNamespace.html"
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Grants permission to delete a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDataSource.html"
+    },
+    {
+      "name": "DeleteDomainName",
+      "methodName": "toDeleteDomainName",
+      "description": "Grants permission to delete a custom domain name in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDomainName.html"
+    },
+    {
+      "name": "DeleteFunction",
+      "methodName": "toDeleteFunction",
+      "description": "Grants permission to delete a function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteFunction.html"
+    },
+    {
+      "name": "DeleteGraphqlApi",
+      "methodName": "toDeleteGraphqlApi",
+      "description": "Grants permission to delete a GraphQL Api. This will also clean up every AppSync resource below that API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteGraphqlApi.html"
+    },
+    {
+      "name": "DeleteResolver",
+      "methodName": "toDeleteResolver",
+      "description": "Grants permission to delete a resolver",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteResolver.html"
+    },
+    {
+      "name": "DeleteType",
+      "methodName": "toDeleteType",
+      "description": "Grants permission to delete a type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteType.html"
+    },
+    {
+      "name": "DisassociateApi",
+      "methodName": "toDisassociateApi",
+      "description": "Grants permission to detach a GraphQL API to a custom domain name in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateApi.html"
+    },
+    {
+      "name": "DisassociateMergedGraphqlApi",
+      "methodName": "toDisassociateMergedGraphqlApi",
+      "description": "Grants permission to remove an associated source API from a merged API identified by the source API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateMergedGraphqlApi.html"
+    },
+    {
+      "name": "DisassociateSourceGraphqlApi",
+      "methodName": "toDisassociateSourceGraphqlApi",
+      "description": "Grants permission to remove an associated source API from a merged API identified by the merged API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateSourceGraphqlApi.html"
+    },
+    {
+      "name": "EvaluateCode",
+      "methodName": "toEvaluateCode",
+      "description": "Grants permission to evaluate code with a runtime and context",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_EvaluateCode.html"
+    },
+    {
+      "name": "EvaluateMappingTemplate",
+      "methodName": "toEvaluateMappingTemplate",
+      "description": "Grants permission to evaluate template mapping",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_EvaluateMappingTemplate.html"
+    },
+    {
+      "name": "EventConnect",
+      "methodName": "toEventConnect",
+      "description": "Grants permission to connect to an Event API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/using-your-event-api.html"
+    },
+    {
+      "name": "EventPublish",
+      "methodName": "toEventPublish",
+      "description": "Grants permission to publish events to a channel namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/using-your-event-api.html"
+    },
+    {
+      "name": "EventSubscribe",
+      "methodName": "toEventSubscribe",
+      "description": "Grants permission to subscribe to a channel namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/using-your-event-api.html"
+    },
+    {
+      "name": "FlushApiCache",
+      "methodName": "toFlushApiCache",
+      "description": "Grants permission to flush an API cache in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_FlushApiCache.html"
+    },
+    {
+      "name": "GetApi",
+      "methodName": "toGetApi",
+      "description": "Grants permission to retrieve an API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetApi.html"
+    },
+    {
+      "name": "GetApiAssociation",
+      "methodName": "toGetApiAssociation",
+      "description": "Grants permission to read custom domain name - GraphQL API association details in AppSync",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetApiAssociation.html"
+    },
+    {
+      "name": "GetApiCache",
+      "methodName": "toGetApiCache",
+      "description": "Grants permission to read information about an API cache in AppSync",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetApiCache.html"
+    },
+    {
+      "name": "GetChannelNamespace",
+      "methodName": "toGetChannelNamespace",
+      "description": "Grants permission to retrieve a channel namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetChannelNamespace.html"
+    },
+    {
+      "name": "GetDataSource",
+      "methodName": "toGetDataSource",
+      "description": "Grants permission to retrieve a data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDataSource.html"
+    },
+    {
+      "name": "GetDataSourceIntrospection",
+      "methodName": "toGetDataSourceIntrospection",
+      "description": "Grants permission to retrieve a data source introspection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDataSourceIntrospection.html"
+    },
+    {
+      "name": "GetDomainName",
+      "methodName": "toGetDomainName",
+      "description": "Grants permission to read information about a custom domain name in AppSync",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDomainName.html"
+    },
+    {
+      "name": "GetFunction",
+      "methodName": "toGetFunction",
+      "description": "Grants permission to retrieve a function",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetFunction.html"
+    },
+    {
+      "name": "GetGraphqlApi",
+      "methodName": "toGetGraphqlApi",
+      "description": "Grants permission to retrieve a GraphQL API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApi.html"
+    },
+    {
+      "name": "GetGraphqlApiEnvironmentVariables",
+      "methodName": "toGetGraphqlApiEnvironmentVariables",
+      "description": "Grants permission to retrieve the environment variables for a GraphQL API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApiEnvironmentVariables.html"
+    },
+    {
+      "name": "GetIntrospectionSchema",
+      "methodName": "toGetIntrospectionSchema",
+      "description": "Grants permission to retrieve the introspection schema for a GraphQL API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetIntrospectionSchema.html"
+    },
+    {
+      "name": "GetResolver",
+      "methodName": "toGetResolver",
+      "description": "Grants permission to retrieve a resolver",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetResolver.html"
+    },
+    {
+      "name": "GetSchemaCreationStatus",
+      "methodName": "toGetSchemaCreationStatus",
+      "description": "Grants permission to retrieve the current status of a schema creation operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetSchemaCreationStatus.html"
+    },
+    {
+      "name": "GetSourceApiAssociation",
+      "methodName": "toGetSourceApiAssociation",
+      "description": "Grants permission to read information about a merged API associated source API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetSourceApiAssociation.html"
+    },
+    {
+      "name": "GetType",
+      "methodName": "toGetType",
+      "description": "Grants permission to retrieve a type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetType.html"
+    },
+    {
+      "name": "ListApiKeys",
+      "methodName": "toListApiKeys",
+      "description": "Grants permission to list the API keys for a given API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListApiKeys.html"
+    },
+    {
+      "name": "ListApis",
+      "methodName": "toListApis",
+      "description": "Grants permission to list APIs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListApis.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ListChannelNamespaces",
+      "methodName": "toListChannelNamespaces",
+      "description": "Grants permission to list channel namespace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListChannelNamespaces.html"
+    },
+    {
+      "name": "ListDataSources",
+      "methodName": "toListDataSources",
+      "description": "Grants permission to list the data sources for a given API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDataSources.html"
+    },
+    {
+      "name": "ListDomainNames",
+      "methodName": "toListDomainNames",
+      "description": "Grants permission to enumerate custom domain names in AppSync",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDomainNames.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ListFunctions",
+      "methodName": "toListFunctions",
+      "description": "Grants permission to list the functions for a given API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListFunctions.html"
+    },
+    {
+      "name": "ListGraphqlApis",
+      "methodName": "toListGraphqlApis",
+      "description": "Grants permission to list GraphQL APIs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListGraphqlApis.html"
+    },
+    {
+      "name": "ListResolvers",
+      "methodName": "toListResolvers",
+      "description": "Grants permission to list the resolvers for a given API and type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolvers.html"
+    },
+    {
+      "name": "ListResolversByFunction",
+      "methodName": "toListResolversByFunction",
+      "description": "Grants permission to list the resolvers that are associated with a specific function",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolversByFunction.html"
+    },
+    {
+      "name": "ListSourceApiAssociations",
+      "methodName": "toListSourceApiAssociations",
+      "description": "Grants permission to list source APIs associated to a given merged API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListSourceApiAssociations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTypes",
+      "methodName": "toListTypes",
+      "description": "Grants permission to list the types for a given API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTypes.html"
+    },
+    {
+      "name": "ListTypesByAssociation",
+      "methodName": "toListTypesByAssociation",
+      "description": "Grants permission to list the types for a given merged API and source API association",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTypesByAssociation.html"
+    },
+    {
+      "name": "PutGraphqlApiEnvironmentVariables",
+      "methodName": "toPutGraphqlApiEnvironmentVariables",
+      "description": "Grants permission to update the environment variables for a GraphQL API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_PutGraphqlApiEnvironmentVariables.html"
+    },
+    {
+      "name": "SetWebACL",
+      "methodName": "toSetWebACL",
+      "description": "Grants permission to set a web ACL",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+    },
+    {
+      "name": "StartDataSourceIntrospection",
+      "methodName": "toStartDataSourceIntrospection",
+      "description": "Grants permission to introspect a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartDataSourceIntrospection.html"
+    },
+    {
+      "name": "StartSchemaCreation",
+      "methodName": "toStartSchemaCreation",
+      "description": "Grants permission to add a new schema to your GraphQL API. This operation is asynchronous - GetSchemaCreationStatus can show when it has completed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartSchemaCreation.html"
+    },
+    {
+      "name": "StartSchemaMerge",
+      "methodName": "toStartSchemaMerge",
+      "description": "Grants permission to initiate a schema merge for a given merged API and associated source API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartSchemaMerge.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApi",
+      "methodName": "toUpdateApi",
+      "description": "Grants permission to update an API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApi.html"
+    },
+    {
+      "name": "UpdateApiCache",
+      "methodName": "toUpdateApiCache",
+      "description": "Grants permission to update an API cache in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApiCache.html"
+    },
+    {
+      "name": "UpdateApiKey",
+      "methodName": "toUpdateApiKey",
+      "description": "Grants permission to update an API key for a given API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApiKey.html"
+    },
+    {
+      "name": "UpdateChannelNamespace",
+      "methodName": "toUpdateChannelNamespace",
+      "description": "Grants permission to update a channel namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateChannelNamespace.html"
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Grants permission to update a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDataSource.html"
+    },
+    {
+      "name": "UpdateDomainName",
+      "methodName": "toUpdateDomainName",
+      "description": "Grants permission to update a custom domain name in AppSync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDomainName.html"
+    },
+    {
+      "name": "UpdateFunction",
+      "methodName": "toUpdateFunction",
+      "description": "Grants permission to update an existing function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateFunction.html"
+    },
+    {
+      "name": "UpdateGraphqlApi",
+      "methodName": "toUpdateGraphqlApi",
+      "description": "Grants permission to update a GraphQL API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html"
+    },
+    {
+      "name": "UpdateResolver",
+      "methodName": "toUpdateResolver",
+      "description": "Grants permission to update a resolver",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateResolver.html"
+    },
+    {
+      "name": "UpdateSourceApiAssociation",
+      "methodName": "toUpdateSourceApiAssociation",
+      "description": "Grants permission to update a merged API source API association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateSourceApiAssociation.html"
+    },
+    {
+      "name": "UpdateType",
+      "methodName": "toUpdateType",
+      "description": "Grants permission to update a type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateType.html"
+    },
+    {
+      "name": "AssociateWebACL",
+      "methodName": "toAssociateWebACL",
+      "description": "Grants permission to associate a web ACL and a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to remove a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html"
+    },
+    {
+      "name": "DisassociateWebACL",
+      "methodName": "toDisassociateWebACL",
+      "description": "Grants permission to disassociate a web ACL and a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to read a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html"
+    },
+    {
+      "name": "GetWebACLForResource",
+      "methodName": "toGetWebACLForResource",
+      "description": "Grants permission to get associated web ACLs for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+    },
+    {
+      "name": "GraphQL",
+      "methodName": "toGraphQL",
+      "description": "Grants permission to send a GraphQL query to a GraphQL API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#aws-iam-authorization"
+    },
+    {
+      "name": "ListResourcesForWebACL",
+      "methodName": "toListResourcesForWebACL",
+      "description": "Grants permission to get associated resources for a web ACL",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to set a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html"
+    },
+    {
+      "name": "SourceGraphQL",
+      "methodName": "toSourceGraphQL",
+      "description": "Grants permission to send a GraphQL query to a source API of a merged API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "api",
+      "methodName": "onApi",
+      "url": "https://docs.aws.amazon.com/appsync/latest/eventapi/event-api-welcome.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${ApiId}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appsync",
+        "interface": "IApiRef",
+        "property": "apiRef",
+        "arn": "apiArn"
+      }
+    },
+    {
+      "name": "channelNamespace",
+      "methodName": "onChannelNamespace",
+      "url": "https://docs.aws.amazon.com/appsync/latest/eventapi/channel-namespaces.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${ApiId}/channelNamespace/${ChannelNamespaceName}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelNamespaceName",
+          "name": "channelNamespaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "datasource",
+      "methodName": "onDatasource",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}",
+      "placeholders": [
+        {
+          "placeholder": "GraphQLAPIId",
+          "name": "graphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasourceName",
+          "name": "datasourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/custom-domain-name.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:domainnames/${DomainName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "field",
+      "methodName": "onField",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}",
+      "placeholders": [
+        {
+          "placeholder": "GraphQLAPIId",
+          "name": "graphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TypeName",
+          "name": "typeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FieldName",
+          "name": "fieldName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "function",
+      "methodName": "onFunction",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}",
+      "placeholders": [
+        {
+          "placeholder": "GraphQLAPIId",
+          "name": "graphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FunctionId",
+          "name": "functionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "graphqlapi",
+      "methodName": "onGraphqlapi",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
+      "placeholders": [
+        {
+          "placeholder": "GraphQLAPIId",
+          "name": "graphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appsync",
+        "interface": "IGraphQLApiRef",
+        "property": "graphQlApiRef",
+        "arn": "graphQlApiArn"
+      }
+    },
+    {
+      "name": "mergedApiAssociation",
+      "methodName": "onMergedApiAssociation",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${SourceGraphQLAPIId}/mergedApiAssociations/${Associationid}",
+      "placeholders": [
+        {
+          "placeholder": "SourceGraphQLAPIId",
+          "name": "sourceGraphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Associationid",
+          "name": "associationid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "sourceApiAssociation",
+      "methodName": "onSourceApiAssociation",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${MergedGraphQLAPIId}/sourceApiAssociations/${Associationid}",
+      "placeholders": [
+        {
+          "placeholder": "MergedGraphQLAPIId",
+          "name": "mergedGraphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Associationid",
+          "name": "associationid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "type",
+      "methodName": "onType",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}",
+      "placeholders": [
+        {
+          "placeholder": "GraphQLAPIId",
+          "name": "graphQLAPIId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TypeName",
+          "name": "typeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "appsync:Visibility",
+      "methodName": "ifVisibility",
+      "description": "Filters access by the visibility of an API",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateGraphqlApi"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Visibility",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApi",
+        "toCreateChannelNamespace",
+        "toCreateDomainName",
+        "toCreateGraphqlApi",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateApi",
+        "toAssociateMergedGraphqlApi",
+        "toAssociateSourceGraphqlApi",
+        "toCreateApi",
+        "toCreateChannelNamespace",
+        "toCreateDomainName",
+        "toDeleteApi",
+        "toDeleteChannelNamespace",
+        "toDeleteDomainName",
+        "toDeleteGraphqlApi",
+        "toDisassociateApi",
+        "toEventConnect",
+        "toEventPublish",
+        "toEventSubscribe",
+        "toGetApi",
+        "toGetApiAssociation",
+        "toGetChannelNamespace",
+        "toGetDomainName",
+        "toGetGraphqlApi",
+        "toListApis",
+        "toListChannelNamespaces",
+        "toListDomainNames",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApi",
+        "toUpdateChannelNamespace",
+        "toUpdateDomainName",
+        "toUpdateGraphqlApi",
+        "toAssociateWebACL",
+        "toDisassociateWebACL",
+        "toGetWebACLForResource",
+        "toGraphQL",
+        "toSourceGraphQL"
+      ],
+      "relatedResourceTypes": [
+        "api",
+        "channelNamespace",
+        "domain",
+        "graphqlapi"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApi",
+        "toCreateChannelNamespace",
+        "toCreateDomainName",
+        "toCreateGraphqlApi",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,1090 @@
+{
+  "schemaVersion": 1,
+  "filename": "route53resolver",
+  "className": "Route53resolver",
+  "name": "route53resolver",
+  "servicePrefix": "route53resolver",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53resolver.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateFirewallRuleGroup",
+      "AssociateResolverEndpointIpAddress",
+      "AssociateResolverQueryLogConfig",
+      "AssociateResolverRule",
+      "CreateFirewallDomainList",
+      "CreateFirewallRule",
+      "CreateFirewallRuleGroup",
+      "CreateOutpostResolver",
+      "CreateResolverEndpoint",
+      "CreateResolverQueryLogConfig",
+      "CreateResolverRule",
+      "DeleteFirewallDomainList",
+      "DeleteFirewallRule",
+      "DeleteFirewallRuleGroup",
+      "DeleteOutpostResolver",
+      "DeleteResolverEndpoint",
+      "DeleteResolverQueryLogConfig",
+      "DeleteResolverRule",
+      "DisassociateFirewallRuleGroup",
+      "DisassociateResolverEndpointIpAddress",
+      "DisassociateResolverQueryLogConfig",
+      "DisassociateResolverRule",
+      "ImportFirewallDomains",
+      "PutFirewallRuleGroupPolicy",
+      "PutResolverQueryLogConfigPolicy",
+      "PutResolverRulePolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateFirewallConfig",
+      "UpdateFirewallDomains",
+      "UpdateFirewallRule",
+      "UpdateFirewallRuleGroupAssociation",
+      "UpdateOutpostResolver",
+      "UpdateResolverConfig",
+      "UpdateResolverDnssecConfig",
+      "UpdateResolverEndpoint",
+      "UpdateResolverRule"
+    ],
+    "Read": [
+      "GetFirewallConfig",
+      "GetFirewallDomainList",
+      "GetFirewallRuleGroup",
+      "GetFirewallRuleGroupAssociation",
+      "GetFirewallRuleGroupPolicy",
+      "GetOutpostResolver",
+      "GetResolverConfig",
+      "GetResolverDnssecConfig",
+      "GetResolverEndpoint",
+      "GetResolverQueryLogConfig",
+      "GetResolverQueryLogConfigAssociation",
+      "GetResolverQueryLogConfigPolicy",
+      "GetResolverRule",
+      "GetResolverRuleAssociation",
+      "GetResolverRulePolicy",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListFirewallConfigs",
+      "ListFirewallDomainLists",
+      "ListFirewallDomains",
+      "ListFirewallRuleGroupAssociations",
+      "ListFirewallRuleGroups",
+      "ListFirewallRuleTypes",
+      "ListFirewallRules",
+      "ListOutpostResolvers",
+      "ListResolverConfigs",
+      "ListResolverDnssecConfigs",
+      "ListResolverEndpointIpAddresses",
+      "ListResolverEndpoints",
+      "ListResolverQueryLogConfigAssociations",
+      "ListResolverQueryLogConfigs",
+      "ListResolverRuleAssociations",
+      "ListResolverRules"
+    ],
+    "Permissions management": [
+      "PutFirewallRuleGroupPolicy",
+      "PutResolverQueryLogConfigPolicy",
+      "PutResolverRulePolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateFirewallRuleGroup",
+      "methodName": "toAssociateFirewallRuleGroup",
+      "description": "Grants permission to associate an Amazon VPC with a specified firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateFirewallRuleGroup.html"
+    },
+    {
+      "name": "AssociateResolverEndpointIpAddress",
+      "methodName": "toAssociateResolverEndpointIpAddress",
+      "description": "Grants permission to associate a specified IP address with a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html"
+    },
+    {
+      "name": "AssociateResolverQueryLogConfig",
+      "methodName": "toAssociateResolverQueryLogConfig",
+      "description": "Grants permission to associate an Amazon VPC with a specified query logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html"
+    },
+    {
+      "name": "AssociateResolverRule",
+      "methodName": "toAssociateResolverRule",
+      "description": "Grants permission to associate a specified Resolver rule with a specified VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html"
+    },
+    {
+      "name": "CreateFirewallDomainList",
+      "methodName": "toCreateFirewallDomainList",
+      "description": "Grants permission to create a Firewall domain list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallDomainList.html"
+    },
+    {
+      "name": "CreateFirewallRule",
+      "methodName": "toCreateFirewallRule",
+      "description": "Grants permission to create a Firewall rule within a Firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallRule.html"
+    },
+    {
+      "name": "CreateFirewallRuleGroup",
+      "methodName": "toCreateFirewallRuleGroup",
+      "description": "Grants permission to create a Firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallRuleGroup.html"
+    },
+    {
+      "name": "CreateOutpostResolver",
+      "methodName": "toCreateOutpostResolver",
+      "description": "Grants permission to create a Route 53 Resolver on Outposts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateOutpostResolver.html"
+    },
+    {
+      "name": "CreateResolverEndpoint",
+      "methodName": "toCreateResolverEndpoint",
+      "description": "Grants permission to create a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html"
+    },
+    {
+      "name": "CreateResolverQueryLogConfig",
+      "methodName": "toCreateResolverQueryLogConfig",
+      "description": "Grants permission to create a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html"
+    },
+    {
+      "name": "CreateResolverRule",
+      "methodName": "toCreateResolverRule",
+      "description": "Grants permission to define how to route queries originating from your VPC out of the VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html"
+    },
+    {
+      "name": "DeleteFirewallDomainList",
+      "methodName": "toDeleteFirewallDomainList",
+      "description": "Grants permission to delete a Firewall domain list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteFirewallDomainList.html"
+    },
+    {
+      "name": "DeleteFirewallRule",
+      "methodName": "toDeleteFirewallRule",
+      "description": "Grants permission to delete a Firewall rule within a Firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteFirewallRule.html"
+    },
+    {
+      "name": "DeleteFirewallRuleGroup",
+      "methodName": "toDeleteFirewallRuleGroup",
+      "description": "Grants permission to delete a Firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteFirewallRuleGroup.html"
+    },
+    {
+      "name": "DeleteOutpostResolver",
+      "methodName": "toDeleteOutpostResolver",
+      "description": "Grants permission to delete a Route 53 Resolver on Outposts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteOutpostResolver.html"
+    },
+    {
+      "name": "DeleteResolverEndpoint",
+      "methodName": "toDeleteResolverEndpoint",
+      "description": "Grants permission to delete a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html"
+    },
+    {
+      "name": "DeleteResolverQueryLogConfig",
+      "methodName": "toDeleteResolverQueryLogConfig",
+      "description": "Grants permission to delete a Resolver query logging configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverQueryLogConfig.html"
+    },
+    {
+      "name": "DeleteResolverRule",
+      "methodName": "toDeleteResolverRule",
+      "description": "Grants permission to delete a Resolver rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html"
+    },
+    {
+      "name": "DisassociateFirewallRuleGroup",
+      "methodName": "toDisassociateFirewallRuleGroup",
+      "description": "Grants permission to remove the association between a specified Firewall rule group and a specified VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateFirewallRuleGroup.html"
+    },
+    {
+      "name": "DisassociateResolverEndpointIpAddress",
+      "methodName": "toDisassociateResolverEndpointIpAddress",
+      "description": "Grants permission to remove a specified IP address from a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html"
+    },
+    {
+      "name": "DisassociateResolverQueryLogConfig",
+      "methodName": "toDisassociateResolverQueryLogConfig",
+      "description": "Grants permission to remove the association between a specified Resolver query logging configuration and a specified VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html"
+    },
+    {
+      "name": "DisassociateResolverRule",
+      "methodName": "toDisassociateResolverRule",
+      "description": "Grants permission to remove the association between a specified Resolver rule and a specified VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html"
+    },
+    {
+      "name": "GetFirewallConfig",
+      "methodName": "toGetFirewallConfig",
+      "description": "Grants permission to get information about a specified Firewall config",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallConfig.html"
+    },
+    {
+      "name": "GetFirewallDomainList",
+      "methodName": "toGetFirewallDomainList",
+      "description": "Grants permission to get information about a specified Firewall domain list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallDomainList.html"
+    },
+    {
+      "name": "GetFirewallRuleGroup",
+      "methodName": "toGetFirewallRuleGroup",
+      "description": "Grants permission to get information about a specified Firewall rule group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallRuleGroup.html"
+    },
+    {
+      "name": "GetFirewallRuleGroupAssociation",
+      "methodName": "toGetFirewallRuleGroupAssociation",
+      "description": "Grants permission to get information about an association between a specified Firewall rule group and a VPC",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallRuleGroupAssociation.html"
+    },
+    {
+      "name": "GetFirewallRuleGroupPolicy",
+      "methodName": "toGetFirewallRuleGroupPolicy",
+      "description": "Grants permission to get information about a specified Firewall rule group policy, which specifies the Firewall rule group operations and resources that you want to allow another AWS account to use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallRuleGroupPolicy.html"
+    },
+    {
+      "name": "GetOutpostResolver",
+      "methodName": "toGetOutpostResolver",
+      "description": "Grants permission to get information about a specified Route 53 Resolver on Outposts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetOutpostResolver.html"
+    },
+    {
+      "name": "GetResolverConfig",
+      "methodName": "toGetResolverConfig",
+      "description": "Grants permission to get the Resolver Config status within the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverConfig.html"
+    },
+    {
+      "name": "GetResolverDnssecConfig",
+      "methodName": "toGetResolverDnssecConfig",
+      "description": "Grants permission to get the DNSSEC validation support status for DNS queries within the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverDnssecConfig.html"
+    },
+    {
+      "name": "GetResolverEndpoint",
+      "methodName": "toGetResolverEndpoint",
+      "description": "Grants permission to get information about a specified Resolver endpoint, such as whether it's an inbound or an outbound endpoint, and the IP addresses in your VPC that DNS queries are forwarded to on the way into or out of your VPC",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+    },
+    {
+      "name": "GetResolverQueryLogConfig",
+      "methodName": "toGetResolverQueryLogConfig",
+      "description": "Grants permission to get information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfig.html"
+    },
+    {
+      "name": "GetResolverQueryLogConfigAssociation",
+      "methodName": "toGetResolverQueryLogConfigAssociation",
+      "description": "Grants permission to get information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfigAssociation.html"
+    },
+    {
+      "name": "GetResolverQueryLogConfigPolicy",
+      "methodName": "toGetResolverQueryLogConfigPolicy",
+      "description": "Grants permission to get information about a specified Resolver query logging policy, which specifies the Resolver query logging operations and resources that you want to allow another AWS account to use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfigPolicy.html"
+    },
+    {
+      "name": "GetResolverRule",
+      "methodName": "toGetResolverRule",
+      "description": "Grants permission to get information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html"
+    },
+    {
+      "name": "GetResolverRuleAssociation",
+      "methodName": "toGetResolverRuleAssociation",
+      "description": "Grants permission to get information about an association between a specified Resolver rule and a VPC",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+    },
+    {
+      "name": "GetResolverRulePolicy",
+      "methodName": "toGetResolverRulePolicy",
+      "description": "Grants permission to get information about a Resolver rule policy, which specifies the Resolver operations and resources that you want to allow another AWS account to use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRulePolicy.html"
+    },
+    {
+      "name": "ImportFirewallDomains",
+      "methodName": "toImportFirewallDomains",
+      "description": "Grants permission to add, remove or replace Firewall domains in a Firewall domain list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ImportFirewallDomains.html"
+    },
+    {
+      "name": "ListFirewallConfigs",
+      "methodName": "toListFirewallConfigs",
+      "description": "Grants permission to list all the Firewall config that current AWS account is able to check",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallConfigs.html"
+    },
+    {
+      "name": "ListFirewallDomainLists",
+      "methodName": "toListFirewallDomainLists",
+      "description": "Grants permission to list all the Firewall domain list that current AWS account is able to use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallDomainLists.html"
+    },
+    {
+      "name": "ListFirewallDomains",
+      "methodName": "toListFirewallDomains",
+      "description": "Grants permission to list all the Firewall domain under a specified Firewall domain list",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallDomains.html"
+    },
+    {
+      "name": "ListFirewallRuleGroupAssociations",
+      "methodName": "toListFirewallRuleGroupAssociations",
+      "description": "Grants permission to list information about associations between Amazon VPCs and Firewall rule group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleGroupAssociations.html"
+    },
+    {
+      "name": "ListFirewallRuleGroups",
+      "methodName": "toListFirewallRuleGroups",
+      "description": "Grants permission to list all the Firewall rule group that current AWS account is able to use",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleGroups.html"
+    },
+    {
+      "name": "ListFirewallRuleTypes",
+      "methodName": "toListFirewallRuleTypes",
+      "description": "Grants permission to list the types of Firewall rules that are available for use, including firewall advanced content category",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleTypes.html"
+    },
+    {
+      "name": "ListFirewallRules",
+      "methodName": "toListFirewallRules",
+      "description": "Grants permission to list all the Firewall rule under a specified Firewall rule group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRules.html"
+    },
+    {
+      "name": "ListOutpostResolvers",
+      "methodName": "toListOutpostResolvers",
+      "description": "Grants permission to list all instances of Route 53 Resolver on Outposts that were created using the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListOutpostResolvers.html"
+    },
+    {
+      "name": "ListResolverConfigs",
+      "methodName": "toListResolverConfigs",
+      "description": "Grants permission to list Resolver Config statuses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverConfigs.html"
+    },
+    {
+      "name": "ListResolverDnssecConfigs",
+      "methodName": "toListResolverDnssecConfigs",
+      "description": "Grants permission to list the DNSSEC validation support status for DNS queries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html"
+    },
+    {
+      "name": "ListResolverEndpointIpAddresses",
+      "methodName": "toListResolverEndpointIpAddresses",
+      "description": "Grants permission to list the IP addresses that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound) for a specified Resolver endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpointIpAddresses.html"
+    },
+    {
+      "name": "ListResolverEndpoints",
+      "methodName": "toListResolverEndpoints",
+      "description": "Grants permission to list all the Resolver endpoints that were created using the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html"
+    },
+    {
+      "name": "ListResolverQueryLogConfigAssociations",
+      "methodName": "toListResolverQueryLogConfigAssociations",
+      "description": "Grants permission to list information about associations between Amazon VPCs and query logging configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html"
+    },
+    {
+      "name": "ListResolverQueryLogConfigs",
+      "methodName": "toListResolverQueryLogConfigs",
+      "description": "Grants permission to list information about the specified query logging configurations, which define where you want Resolver to save DNS query logs and specify the VPCs that you want to log queries for",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html"
+    },
+    {
+      "name": "ListResolverRuleAssociations",
+      "methodName": "toListResolverRuleAssociations",
+      "description": "Grants permission to list the associations that were created between Resolver rules and VPCs using the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+    },
+    {
+      "name": "ListResolverRules",
+      "methodName": "toListResolverRules",
+      "description": "Grants permission to list the Resolver rules that were created using the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags that you associated with the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListTagsForResource.html"
+    },
+    {
+      "name": "PutFirewallRuleGroupPolicy",
+      "methodName": "toPutFirewallRuleGroupPolicy",
+      "description": "Grants permission to specify an AWS account that you want to share a Firewall rule group with, the Firewall rule group that you want to share, and the operations that you want the account to be able to perform on the configuration",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutFirewallRuleGroupPolicy.html"
+    },
+    {
+      "name": "PutResolverQueryLogConfigPolicy",
+      "methodName": "toPutResolverQueryLogConfigPolicy",
+      "description": "Grants permission to specify an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverQueryLogConfigPolicy.html"
+    },
+    {
+      "name": "PutResolverRulePolicy",
+      "methodName": "toPutResolverRulePolicy",
+      "description": "Grants permission to specify an AWS account that you want to share rules with, the Resolver rules that you want to share, and the operations that you want the account to be able to perform on those rules",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html"
+    },
+    {
+      "name": "UpdateFirewallConfig",
+      "methodName": "toUpdateFirewallConfig",
+      "description": "Grants permission to update selected settings for an Firewall config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallConfig.html"
+    },
+    {
+      "name": "UpdateFirewallDomains",
+      "methodName": "toUpdateFirewallDomains",
+      "description": "Grants permission to add, remove or replace Firewall domains in a Firewall domain list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallDomains.html"
+    },
+    {
+      "name": "UpdateFirewallRule",
+      "methodName": "toUpdateFirewallRule",
+      "description": "Grants permission to update selected settings for an Firewall rule in a Firewall rule group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallRule.html"
+    },
+    {
+      "name": "UpdateFirewallRuleGroupAssociation",
+      "methodName": "toUpdateFirewallRuleGroupAssociation",
+      "description": "Grants permission to update selected settings for an Firewall rule group association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallRuleGroupAssociation.html"
+    },
+    {
+      "name": "UpdateOutpostResolver",
+      "methodName": "toUpdateOutpostResolver",
+      "description": "Grants permission to update seletected settings for a specified Route 53 Resolver on Outposts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateOutpostResolver.html"
+    },
+    {
+      "name": "UpdateResolverConfig",
+      "methodName": "toUpdateResolverConfig",
+      "description": "Grants permission to update the Resolver Config status within the specified resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverConfig.html"
+    },
+    {
+      "name": "UpdateResolverDnssecConfig",
+      "methodName": "toUpdateResolverDnssecConfig",
+      "description": "Grants permission to update the DNSSEC validation support status for DNS queries within the specified resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverDnssecConfig.html"
+    },
+    {
+      "name": "UpdateResolverEndpoint",
+      "methodName": "toUpdateResolverEndpoint",
+      "description": "Grants permission to update selected settings for an inbound or an outbound Resolver endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html"
+    },
+    {
+      "name": "UpdateResolverRule",
+      "methodName": "toUpdateResolverRule",
+      "description": "Grants permission to update settings for a specified Resolver rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "autodefined-rule",
+      "methodName": "onAutodefinedRule",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:autodefined-rule/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "firewall-config",
+      "methodName": "onFirewallConfig",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-config/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "firewall-domain-list",
+      "methodName": "onFirewallDomainList",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-domain-list/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallDomainListRef",
+        "property": "firewallDomainListRef",
+        "arn": "firewallDomainListArn"
+      }
+    },
+    {
+      "name": "firewall-rule-group",
+      "methodName": "onFirewallRuleGroup",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallRuleGroupRef",
+        "property": "firewallRuleGroupRef",
+        "arn": "firewallRuleGroupArn"
+      }
+    },
+    {
+      "name": "firewall-rule-group-association",
+      "methodName": "onFirewallRuleGroupAssociation",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group-association/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallRuleGroupAssociationRef",
+        "property": "firewallRuleGroupAssociationRef",
+        "arn": "firewallRuleGroupAssociationArn"
+      }
+    },
+    {
+      "name": "outpost-resolver",
+      "methodName": "onOutpostResolver",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:outpost-resolver/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IOutpostResolverRef",
+        "property": "outpostResolverRef",
+        "arn": "outpostResolverArn"
+      }
+    },
+    {
+      "name": "resolver-config",
+      "methodName": "onResolverConfig",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-config/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "resolver-dnssec-config",
+      "methodName": "onResolverDnssecConfig",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-dnssec-config/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "resolver-endpoint",
+      "methodName": "onResolverEndpoint",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IResolverEndpointRef",
+        "property": "resolverEndpointRef",
+        "arn": "resolverEndpointArn"
+      }
+    },
+    {
+      "name": "resolver-query-log-config",
+      "methodName": "onResolverQueryLogConfig",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-query-log-config/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "resolver-rule",
+      "methodName": "onResolverRule",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IResolverRuleRef",
+        "property": "resolverRuleRef",
+        "arn": "resolverRuleArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAssociateFirewallRuleGroup",
+        "toCreateFirewallDomainList",
+        "toCreateFirewallRuleGroup",
+        "toCreateOutpostResolver",
+        "toCreateResolverEndpoint",
+        "toCreateResolverQueryLogConfig",
+        "toCreateResolverRule",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateFirewallRuleGroup",
+        "toAssociateResolverEndpointIpAddress",
+        "toAssociateResolverQueryLogConfig",
+        "toAssociateResolverRule",
+        "toCreateFirewallDomainList",
+        "toCreateFirewallRule",
+        "toCreateFirewallRuleGroup",
+        "toCreateOutpostResolver",
+        "toCreateResolverEndpoint",
+        "toCreateResolverQueryLogConfig",
+        "toCreateResolverRule",
+        "toDeleteFirewallDomainList",
+        "toDeleteFirewallRule",
+        "toDeleteFirewallRuleGroup",
+        "toDeleteOutpostResolver",
+        "toDeleteResolverEndpoint",
+        "toDeleteResolverQueryLogConfig",
+        "toDeleteResolverRule",
+        "toDisassociateFirewallRuleGroup",
+        "toDisassociateResolverEndpointIpAddress",
+        "toDisassociateResolverQueryLogConfig",
+        "toDisassociateResolverRule",
+        "toGetFirewallConfig",
+        "toGetFirewallDomainList",
+        "toGetFirewallRuleGroup",
+        "toGetFirewallRuleGroupAssociation",
+        "toGetFirewallRuleGroupPolicy",
+        "toGetOutpostResolver",
+        "toGetResolverDnssecConfig",
+        "toGetResolverEndpoint",
+        "toGetResolverQueryLogConfig",
+        "toGetResolverQueryLogConfigPolicy",
+        "toGetResolverRule",
+        "toGetResolverRuleAssociation",
+        "toGetResolverRulePolicy",
+        "toImportFirewallDomains",
+        "toListFirewallDomains",
+        "toListFirewallRules",
+        "toListResolverDnssecConfigs",
+        "toListResolverEndpointIpAddresses",
+        "toListTagsForResource",
+        "toPutFirewallRuleGroupPolicy",
+        "toPutResolverQueryLogConfigPolicy",
+        "toPutResolverRulePolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateFirewallConfig",
+        "toUpdateFirewallDomains",
+        "toUpdateFirewallRule",
+        "toUpdateFirewallRuleGroupAssociation",
+        "toUpdateOutpostResolver",
+        "toUpdateResolverDnssecConfig",
+        "toUpdateResolverEndpoint",
+        "toUpdateResolverRule"
+      ],
+      "relatedResourceTypes": [
+        "autodefined-rule",
+        "firewall-config",
+        "firewall-domain-list",
+        "firewall-rule-group",
+        "firewall-rule-group-association",
+        "outpost-resolver",
+        "resolver-dnssec-config",
+        "resolver-endpoint",
+        "resolver-query-log-config",
+        "resolver-rule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAssociateFirewallRuleGroup",
+        "toCreateFirewallDomainList",
+        "toCreateFirewallRuleGroup",
+        "toCreateOutpostResolver",
+        "toCreateResolverEndpoint",
+        "toCreateResolverQueryLogConfig",
+        "toCreateResolverRule",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

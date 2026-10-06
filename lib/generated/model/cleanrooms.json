@@ -1,0 +1,1437 @@
+{
+  "schemaVersion": 1,
+  "filename": "cleanrooms",
+  "className": "Cleanrooms",
+  "name": "cleanrooms",
+  "servicePrefix": "cleanrooms",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cleanrooms.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetCollaborationAnalysisTemplate",
+      "BatchGetSchema",
+      "BatchGetSchemaAnalysisRule",
+      "GetAnalysisLogExport",
+      "GetAnalysisTemplate",
+      "GetCollaboration",
+      "GetCollaborationAnalysisTemplate",
+      "GetCollaborationChangeRequest",
+      "GetCollaborationConfiguredAudienceModelAssociation",
+      "GetCollaborationIdNamespaceAssociation",
+      "GetCollaborationPrivacyBudgetTemplate",
+      "GetConfiguredAudienceModelAssociation",
+      "GetConfiguredTable",
+      "GetConfiguredTableAnalysisRule",
+      "GetConfiguredTableAssociation",
+      "GetConfiguredTableAssociationAnalysisRule",
+      "GetIdMappingTable",
+      "GetIdNamespaceAssociation",
+      "GetIntermediateTable",
+      "GetIntermediateTableAnalysisRule",
+      "GetMembership",
+      "GetPrivacyBudgetTemplate",
+      "GetProtectedJob",
+      "GetProtectedQuery",
+      "GetSchema",
+      "GetSchemaAnalysisRule",
+      "PreviewPrivacyImpact",
+      "PassCollaboration",
+      "PassMembership"
+    ],
+    "Write": [
+      "CreateAnalysisTemplate",
+      "CreateCollaboration",
+      "CreateCollaborationChangeRequest",
+      "CreateConfiguredAudienceModelAssociation",
+      "CreateConfiguredTable",
+      "CreateConfiguredTableAnalysisRule",
+      "CreateConfiguredTableAssociation",
+      "CreateConfiguredTableAssociationAnalysisRule",
+      "CreateIdMappingTable",
+      "CreateIdNamespaceAssociation",
+      "CreateIntermediateTable",
+      "CreateIntermediateTableAnalysisRule",
+      "CreateMembership",
+      "CreatePrivacyBudgetTemplate",
+      "DeleteAnalysisTemplate",
+      "DeleteCollaboration",
+      "DeleteConfiguredAudienceModelAssociation",
+      "DeleteConfiguredTable",
+      "DeleteConfiguredTableAnalysisRule",
+      "DeleteConfiguredTableAssociation",
+      "DeleteConfiguredTableAssociationAnalysisRule",
+      "DeleteIdMappingTable",
+      "DeleteIdNamespaceAssociation",
+      "DeleteIntermediateTable",
+      "DeleteIntermediateTableAnalysisRule",
+      "DeleteMember",
+      "DeleteMembership",
+      "DeletePrivacyBudgetTemplate",
+      "DisallowIntermediateTable",
+      "PopulateIdMappingTable",
+      "PopulateIntermediateTable",
+      "StartAnalysisLogExport",
+      "StartProtectedJob",
+      "StartProtectedQuery",
+      "TagResource",
+      "UntagResource",
+      "UpdateAnalysisTemplate",
+      "UpdateCollaboration",
+      "UpdateCollaborationChangeRequest",
+      "UpdateConfiguredAudienceModelAssociation",
+      "UpdateConfiguredTable",
+      "UpdateConfiguredTableAnalysisRule",
+      "UpdateConfiguredTableAssociation",
+      "UpdateConfiguredTableAssociationAnalysisRule",
+      "UpdateIdMappingTable",
+      "UpdateIdNamespaceAssociation",
+      "UpdateIntermediateTable",
+      "UpdateIntermediateTableAnalysisRule",
+      "UpdateMembership",
+      "UpdatePrivacyBudgetTemplate",
+      "UpdateProtectedJob",
+      "UpdateProtectedQuery",
+      "UpdateConfiguredTableAllowedColumns",
+      "UpdateConfiguredTableReference"
+    ],
+    "List": [
+      "ListAnalysisLogExports",
+      "ListAnalysisTemplates",
+      "ListCollaborationAnalysisTemplates",
+      "ListCollaborationChangeRequests",
+      "ListCollaborationConfiguredAudienceModelAssociations",
+      "ListCollaborationIdNamespaceAssociations",
+      "ListCollaborationPrivacyBudgetTemplates",
+      "ListCollaborationPrivacyBudgets",
+      "ListCollaborations",
+      "ListConfiguredAudienceModelAssociations",
+      "ListConfiguredTableAssociations",
+      "ListConfiguredTables",
+      "ListIdMappingTables",
+      "ListIdNamespaceAssociations",
+      "ListIntermediateTableVersions",
+      "ListIntermediateTables",
+      "ListMembers",
+      "ListMemberships",
+      "ListPrivacyBudgetTemplates",
+      "ListPrivacyBudgets",
+      "ListProtectedJobs",
+      "ListProtectedQueries",
+      "ListSchemas",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetCollaborationAnalysisTemplate",
+      "methodName": "toBatchGetCollaborationAnalysisTemplate",
+      "description": "Grants permission to view details of analysisTemplates associated to the collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetCollaborationAnalysisTemplate.html"
+    },
+    {
+      "name": "BatchGetSchema",
+      "methodName": "toBatchGetSchema",
+      "description": "Grants permission to view details for schemas",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetSchema.html"
+    },
+    {
+      "name": "BatchGetSchemaAnalysisRule",
+      "methodName": "toBatchGetSchemaAnalysisRule",
+      "description": "Grants permission to view analysis rules associated with schemas",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetSchemaAnalysisRule.html"
+    },
+    {
+      "name": "CreateAnalysisTemplate",
+      "methodName": "toCreateAnalysisTemplate",
+      "description": "Grants permission to create a new analysis template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateAnalysisTemplate.html"
+    },
+    {
+      "name": "CreateCollaboration",
+      "methodName": "toCreateCollaboration",
+      "description": "Grants permission to create a new collaboration, a shared data collaboration environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaboration.html"
+    },
+    {
+      "name": "CreateCollaborationChangeRequest",
+      "methodName": "toCreateCollaborationChangeRequest",
+      "description": "Grants permission to create a change request in a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaborationChangeRequest.html"
+    },
+    {
+      "name": "CreateConfiguredAudienceModelAssociation",
+      "methodName": "toCreateConfiguredAudienceModelAssociation",
+      "description": "Grants permission to link a Cleanrooms ML configured audience model with a collaboration by creating a new association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredAudienceModelAssociation.html"
+    },
+    {
+      "name": "CreateConfiguredTable",
+      "methodName": "toCreateConfiguredTable",
+      "description": "Grants permission to create a new configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTable.html"
+    },
+    {
+      "name": "CreateConfiguredTableAnalysisRule",
+      "methodName": "toCreateConfiguredTableAnalysisRule",
+      "description": "Grants permission to create a analysis rule for a configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTableAnalysisRule.html"
+    },
+    {
+      "name": "CreateConfiguredTableAssociation",
+      "methodName": "toCreateConfiguredTableAssociation",
+      "description": "Grants permission to link a configured table with a collaboration by creating a new association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTableAssociation.html"
+    },
+    {
+      "name": "CreateConfiguredTableAssociationAnalysisRule",
+      "methodName": "toCreateConfiguredTableAssociationAnalysisRule",
+      "description": "Grants permission to create an analysis rule for a configured table association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTableAssociationAnalysisRule.html"
+    },
+    {
+      "name": "CreateIdMappingTable",
+      "methodName": "toCreateIdMappingTable",
+      "description": "Grants permission to link an id mapping workflow with a collaboration by creating a new id mapping table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIdMappingTable.html"
+    },
+    {
+      "name": "CreateIdNamespaceAssociation",
+      "methodName": "toCreateIdNamespaceAssociation",
+      "description": "Grants permission to link an AWS Entity Resolution Id Namespace with a collaboration by creating a new association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIdNamespaceAssociation.html"
+    },
+    {
+      "name": "CreateIntermediateTable",
+      "methodName": "toCreateIntermediateTable",
+      "description": "Grants permission to create a new intermediate table in a membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIntermediateTable.html"
+    },
+    {
+      "name": "CreateIntermediateTableAnalysisRule",
+      "methodName": "toCreateIntermediateTableAnalysisRule",
+      "description": "Grants permission to create an analysis rule for an intermediate table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIntermediateTableAnalysisRule.html"
+    },
+    {
+      "name": "CreateMembership",
+      "methodName": "toCreateMembership",
+      "description": "Grants permission to join collaborations by creating a membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateMembership.html"
+    },
+    {
+      "name": "CreatePrivacyBudgetTemplate",
+      "methodName": "toCreatePrivacyBudgetTemplate",
+      "description": "Grants permission to create a new privacy budget template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreatePrivacyBudgetTemplate.html"
+    },
+    {
+      "name": "DeleteAnalysisTemplate",
+      "methodName": "toDeleteAnalysisTemplate",
+      "description": "Grants permission to delete an existing analysis template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteAnalysisTemplate.html"
+    },
+    {
+      "name": "DeleteCollaboration",
+      "methodName": "toDeleteCollaboration",
+      "description": "Grants permission to delete an existing collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteCollaboration.html"
+    },
+    {
+      "name": "DeleteConfiguredAudienceModelAssociation",
+      "methodName": "toDeleteConfiguredAudienceModelAssociation",
+      "description": "Grants permission to delete an existing configured audience model association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredAudienceModelAssociation.html"
+    },
+    {
+      "name": "DeleteConfiguredTable",
+      "methodName": "toDeleteConfiguredTable",
+      "description": "Grants permission to delete a configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredTable.html"
+    },
+    {
+      "name": "DeleteConfiguredTableAnalysisRule",
+      "methodName": "toDeleteConfiguredTableAnalysisRule",
+      "description": "Grants permission to delete an existing analysis rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredTableAnalysisRule.html"
+    },
+    {
+      "name": "DeleteConfiguredTableAssociation",
+      "methodName": "toDeleteConfiguredTableAssociation",
+      "description": "Grants permission to remove a configured table association from a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredTableAssociation.html"
+    },
+    {
+      "name": "DeleteConfiguredTableAssociationAnalysisRule",
+      "methodName": "toDeleteConfiguredTableAssociationAnalysisRule",
+      "description": "Grants permission to delete an existing configured table association analysis rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredTableAssociationAnalysisRule.html"
+    },
+    {
+      "name": "DeleteIdMappingTable",
+      "methodName": "toDeleteIdMappingTable",
+      "description": "Grants permission to remove an id mapping table from a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIdMappingTable.html"
+    },
+    {
+      "name": "DeleteIdNamespaceAssociation",
+      "methodName": "toDeleteIdNamespaceAssociation",
+      "description": "Grants permission to remove an Id Namespace Association from a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIdNamespaceAssociation.html"
+    },
+    {
+      "name": "DeleteIntermediateTable",
+      "methodName": "toDeleteIntermediateTable",
+      "description": "Grants permission to remove an intermediate table from a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIntermediateTable.html"
+    },
+    {
+      "name": "DeleteIntermediateTableAnalysisRule",
+      "methodName": "toDeleteIntermediateTableAnalysisRule",
+      "description": "Grants permission to delete an existing analysis rule for an intermediate table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIntermediateTableAnalysisRule.html"
+    },
+    {
+      "name": "DeleteMember",
+      "methodName": "toDeleteMember",
+      "description": "Grants permission to delete members from a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteMember.html"
+    },
+    {
+      "name": "DeleteMembership",
+      "methodName": "toDeleteMembership",
+      "description": "Grants permission to leave collaborations by deleting a membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteMembership.html"
+    },
+    {
+      "name": "DeletePrivacyBudgetTemplate",
+      "methodName": "toDeletePrivacyBudgetTemplate",
+      "description": "Grants permission to delete an existing privacy budget template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeletePrivacyBudgetTemplate.html"
+    },
+    {
+      "name": "DisallowIntermediateTable",
+      "methodName": "toDisallowIntermediateTable",
+      "description": "Grants permission to invalidate an intermediate table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DisallowIntermediateTable.html"
+    },
+    {
+      "name": "GetAnalysisLogExport",
+      "methodName": "toGetAnalysisLogExport",
+      "description": "Grants permission to get an analysis log export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetAnalysisLogExport.html"
+    },
+    {
+      "name": "GetAnalysisTemplate",
+      "methodName": "toGetAnalysisTemplate",
+      "description": "Grants permission to view details for an analysis template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetAnalysisTemplate.html"
+    },
+    {
+      "name": "GetCollaboration",
+      "methodName": "toGetCollaboration",
+      "description": "Grants permission to view details for a collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaboration.html"
+    },
+    {
+      "name": "GetCollaborationAnalysisTemplate",
+      "methodName": "toGetCollaborationAnalysisTemplate",
+      "description": "Grants permission to view details for an analysis template within a collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationAnalysisTemplate.html"
+    },
+    {
+      "name": "GetCollaborationChangeRequest",
+      "methodName": "toGetCollaborationChangeRequest",
+      "description": "Grants permission to get a change request in a collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationChangeRequest.html"
+    },
+    {
+      "name": "GetCollaborationConfiguredAudienceModelAssociation",
+      "methodName": "toGetCollaborationConfiguredAudienceModelAssociation",
+      "description": "Grants permission to view details for a configured audience model association within a collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationConfiguredAudienceModelAssociation.html"
+    },
+    {
+      "name": "GetCollaborationIdNamespaceAssociation",
+      "methodName": "toGetCollaborationIdNamespaceAssociation",
+      "description": "Grants permission to get id namespace association within a collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationIdNamespaceAssociation.html"
+    },
+    {
+      "name": "GetCollaborationPrivacyBudgetTemplate",
+      "methodName": "toGetCollaborationPrivacyBudgetTemplate",
+      "description": "Grants permission to view details for a privacy budget template within a collaboration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationPrivacyBudgetTemplate.html"
+    },
+    {
+      "name": "GetConfiguredAudienceModelAssociation",
+      "methodName": "toGetConfiguredAudienceModelAssociation",
+      "description": "Grants permission to view details for a configured audience model association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredAudienceModelAssociation.html"
+    },
+    {
+      "name": "GetConfiguredTable",
+      "methodName": "toGetConfiguredTable",
+      "description": "Grants permission to view details for a configured table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredTable.html"
+    },
+    {
+      "name": "GetConfiguredTableAnalysisRule",
+      "methodName": "toGetConfiguredTableAnalysisRule",
+      "description": "Grants permission to view analysis rules for a configured table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredTableAnalysisRule.html"
+    },
+    {
+      "name": "GetConfiguredTableAssociation",
+      "methodName": "toGetConfiguredTableAssociation",
+      "description": "Grants permission to view details for a configured table association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredTableAssociation.html"
+    },
+    {
+      "name": "GetConfiguredTableAssociationAnalysisRule",
+      "methodName": "toGetConfiguredTableAssociationAnalysisRule",
+      "description": "Grants permission to view analysis rules for a configured table association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredTableAssociationAnalysisRule.html"
+    },
+    {
+      "name": "GetIdMappingTable",
+      "methodName": "toGetIdMappingTable",
+      "description": "Grants permission to view details of an id mapping table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIdMappingTable.html"
+    },
+    {
+      "name": "GetIdNamespaceAssociation",
+      "methodName": "toGetIdNamespaceAssociation",
+      "description": "Grants permission to view details of an id namespace association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIdNamespaceAssociation.html"
+    },
+    {
+      "name": "GetIntermediateTable",
+      "methodName": "toGetIntermediateTable",
+      "description": "Grants permission to view details of an intermediate table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIntermediateTable.html"
+    },
+    {
+      "name": "GetIntermediateTableAnalysisRule",
+      "methodName": "toGetIntermediateTableAnalysisRule",
+      "description": "Grants permission to view analysis rules for an intermediate table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIntermediateTableAnalysisRule.html"
+    },
+    {
+      "name": "GetMembership",
+      "methodName": "toGetMembership",
+      "description": "Grants permission to view details about a membership",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetMembership.html"
+    },
+    {
+      "name": "GetPrivacyBudgetTemplate",
+      "methodName": "toGetPrivacyBudgetTemplate",
+      "description": "Grants permission to view details for a privacy budget template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetPrivacyBudgetTemplate.html"
+    },
+    {
+      "name": "GetProtectedJob",
+      "methodName": "toGetProtectedJob",
+      "description": "Grants permission to view a protected job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetProtectedJob.html"
+    },
+    {
+      "name": "GetProtectedQuery",
+      "methodName": "toGetProtectedQuery",
+      "description": "Grants permission to view a protected query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetProtectedQuery.html"
+    },
+    {
+      "name": "GetSchema",
+      "methodName": "toGetSchema",
+      "description": "Grants permission to view details for a schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetSchema.html"
+    },
+    {
+      "name": "GetSchemaAnalysisRule",
+      "methodName": "toGetSchemaAnalysisRule",
+      "description": "Grants permission to view analysis rules associated with a schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetSchemaAnalysisRule.html"
+    },
+    {
+      "name": "ListAnalysisLogExports",
+      "methodName": "toListAnalysisLogExports",
+      "description": "Grants permission to list analysis log exports",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListAnalysisLogExports.html"
+    },
+    {
+      "name": "ListAnalysisTemplates",
+      "methodName": "toListAnalysisTemplates",
+      "description": "Grants permission to list available analysis templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListAnalysisTemplates.html"
+    },
+    {
+      "name": "ListCollaborationAnalysisTemplates",
+      "methodName": "toListCollaborationAnalysisTemplates",
+      "description": "Grants permission to list available analysis templates within a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationAnalysisTemplates.html"
+    },
+    {
+      "name": "ListCollaborationChangeRequests",
+      "methodName": "toListCollaborationChangeRequests",
+      "description": "Grants permission to list change requests in a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationChangeRequests.html"
+    },
+    {
+      "name": "ListCollaborationConfiguredAudienceModelAssociations",
+      "methodName": "toListCollaborationConfiguredAudienceModelAssociations",
+      "description": "Grants permission to list available configured audience model association within a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationConfiguredAudienceModelAssociations.html"
+    },
+    {
+      "name": "ListCollaborationIdNamespaceAssociations",
+      "methodName": "toListCollaborationIdNamespaceAssociations",
+      "description": "Grants permission to list id namespace within a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationIdNamespaceAssociations.html"
+    },
+    {
+      "name": "ListCollaborationPrivacyBudgetTemplates",
+      "methodName": "toListCollaborationPrivacyBudgetTemplates",
+      "description": "Grants permission to list available privacy budget templates within a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationPrivacyBudgetTemplates.html"
+    },
+    {
+      "name": "ListCollaborationPrivacyBudgets",
+      "methodName": "toListCollaborationPrivacyBudgets",
+      "description": "Grants permission to list privacy budgets within a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationPrivacyBudgets.html"
+    },
+    {
+      "name": "ListCollaborations",
+      "methodName": "toListCollaborations",
+      "description": "Grants permission to list available collaborations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborations.html"
+    },
+    {
+      "name": "ListConfiguredAudienceModelAssociations",
+      "methodName": "toListConfiguredAudienceModelAssociations",
+      "description": "Grants permission to list available configured audience model associations for a membership",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListConfiguredAudienceModelAssociations.html"
+    },
+    {
+      "name": "ListConfiguredTableAssociations",
+      "methodName": "toListConfiguredTableAssociations",
+      "description": "Grants permission to list available configured table associations for a membership",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListConfiguredTableAssociations.html"
+    },
+    {
+      "name": "ListConfiguredTables",
+      "methodName": "toListConfiguredTables",
+      "description": "Grants permission to list available configured tables",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListConfiguredTables.html"
+    },
+    {
+      "name": "ListIdMappingTables",
+      "methodName": "toListIdMappingTables",
+      "description": "Grants permission to list available id mapping tables for a membership",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIdMappingTables.html"
+    },
+    {
+      "name": "ListIdNamespaceAssociations",
+      "methodName": "toListIdNamespaceAssociations",
+      "description": "Grants permission to list entity resolution data associations for a membership",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIdNamespaceAssociations.html"
+    },
+    {
+      "name": "ListIntermediateTableVersions",
+      "methodName": "toListIntermediateTableVersions",
+      "description": "Grants permission to list versions of an intermediate table",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIntermediateTableVersions.html"
+    },
+    {
+      "name": "ListIntermediateTables",
+      "methodName": "toListIntermediateTables",
+      "description": "Grants permission to list intermediate tables for a membership",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIntermediateTables.html"
+    },
+    {
+      "name": "ListMembers",
+      "methodName": "toListMembers",
+      "description": "Grants permission to list the members of a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListMembers.html"
+    },
+    {
+      "name": "ListMemberships",
+      "methodName": "toListMemberships",
+      "description": "Grants permission to list available memberships",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListMemberships.html"
+    },
+    {
+      "name": "ListPrivacyBudgetTemplates",
+      "methodName": "toListPrivacyBudgetTemplates",
+      "description": "Grants permission to list available privacy budget templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListPrivacyBudgetTemplates.html"
+    },
+    {
+      "name": "ListPrivacyBudgets",
+      "methodName": "toListPrivacyBudgets",
+      "description": "Grants permission to list available privacy budgets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListPrivacyBudgets.html"
+    },
+    {
+      "name": "ListProtectedJobs",
+      "methodName": "toListProtectedJobs",
+      "description": "Grants permission to list protected jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListProtectedJobs.html"
+    },
+    {
+      "name": "ListProtectedQueries",
+      "methodName": "toListProtectedQueries",
+      "description": "Grants permission to list protected queries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListProtectedQueries.html"
+    },
+    {
+      "name": "ListSchemas",
+      "methodName": "toListSchemas",
+      "description": "Grants permission to view available schemas for a collaboration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListSchemas.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PopulateIdMappingTable",
+      "methodName": "toPopulateIdMappingTable",
+      "description": "Grants permission to start an Id Mapping Job in AWS Entity Resolution to generate id mapping results in cleanrooms collaboration.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PopulateIdMappingTable.html"
+    },
+    {
+      "name": "PopulateIntermediateTable",
+      "methodName": "toPopulateIntermediateTable",
+      "description": "Grants permission to populate an intermediate table by executing its stored analysis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PopulateIntermediateTable.html"
+    },
+    {
+      "name": "PreviewPrivacyImpact",
+      "methodName": "toPreviewPrivacyImpact",
+      "description": "Grants permission to preview privacy budget template settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PreviewPrivacyImpact.html"
+    },
+    {
+      "name": "StartAnalysisLogExport",
+      "methodName": "toStartAnalysisLogExport",
+      "description": "Grants permission to start an analysis log export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartAnalysisLogExport.html"
+    },
+    {
+      "name": "StartProtectedJob",
+      "methodName": "toStartProtectedJob",
+      "description": "Grants permission to start protected jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartProtectedJob.html"
+    },
+    {
+      "name": "StartProtectedQuery",
+      "methodName": "toStartProtectedQuery",
+      "description": "Grants permission to start protected queries",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartProtectedQuery.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAnalysisTemplate",
+      "methodName": "toUpdateAnalysisTemplate",
+      "description": "Grants permission to update details of the analysis template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateAnalysisTemplate.html"
+    },
+    {
+      "name": "UpdateCollaboration",
+      "methodName": "toUpdateCollaboration",
+      "description": "Grants permission to update details of the collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateCollaboration.html"
+    },
+    {
+      "name": "UpdateCollaborationChangeRequest",
+      "methodName": "toUpdateCollaborationChangeRequest",
+      "description": "Grants permission to update a change request in a collaboration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateCollaborationChangeRequest.html"
+    },
+    {
+      "name": "UpdateConfiguredAudienceModelAssociation",
+      "methodName": "toUpdateConfiguredAudienceModelAssociation",
+      "description": "Grants permission to update a configured audience model association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredAudienceModelAssociation.html"
+    },
+    {
+      "name": "UpdateConfiguredTable",
+      "methodName": "toUpdateConfiguredTable",
+      "description": "Grants permission to update an existing configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html"
+    },
+    {
+      "name": "UpdateConfiguredTableAnalysisRule",
+      "methodName": "toUpdateConfiguredTableAnalysisRule",
+      "description": "Grants permission to update analysis rules for a configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTableAnalysisRule.html"
+    },
+    {
+      "name": "UpdateConfiguredTableAssociation",
+      "methodName": "toUpdateConfiguredTableAssociation",
+      "description": "Grants permission to update a configured table association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTableAssociation.html"
+    },
+    {
+      "name": "UpdateConfiguredTableAssociationAnalysisRule",
+      "methodName": "toUpdateConfiguredTableAssociationAnalysisRule",
+      "description": "Grants permission to update analysis rules for a configured table association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTableAssociationAnalysisRule.html"
+    },
+    {
+      "name": "UpdateIdMappingTable",
+      "methodName": "toUpdateIdMappingTable",
+      "description": "Grants permission to update an id mapping table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIdMappingTable.html"
+    },
+    {
+      "name": "UpdateIdNamespaceAssociation",
+      "methodName": "toUpdateIdNamespaceAssociation",
+      "description": "Grants permission to update a entity resolution input association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIdNamespaceAssociation.html"
+    },
+    {
+      "name": "UpdateIntermediateTable",
+      "methodName": "toUpdateIntermediateTable",
+      "description": "Grants permission to update an intermediate table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIntermediateTable.html"
+    },
+    {
+      "name": "UpdateIntermediateTableAnalysisRule",
+      "methodName": "toUpdateIntermediateTableAnalysisRule",
+      "description": "Grants permission to update an analysis rule for an intermediate table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIntermediateTableAnalysisRule.html"
+    },
+    {
+      "name": "UpdateMembership",
+      "methodName": "toUpdateMembership",
+      "description": "Grants permission to update details of a membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateMembership.html"
+    },
+    {
+      "name": "UpdatePrivacyBudgetTemplate",
+      "methodName": "toUpdatePrivacyBudgetTemplate",
+      "description": "Grants permission to update details of the privacy budget template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdatePrivacyBudgetTemplate.html"
+    },
+    {
+      "name": "UpdateProtectedJob",
+      "methodName": "toUpdateProtectedJob",
+      "description": "Grants permission to update protected jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateProtectedJob.html"
+    },
+    {
+      "name": "UpdateProtectedQuery",
+      "methodName": "toUpdateProtectedQuery",
+      "description": "Grants permission to update protected queries",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateProtectedQuery.html"
+    },
+    {
+      "name": "PassCollaboration",
+      "methodName": "toPassCollaboration",
+      "description": "Grants permission to access a collaboration in the context of Clean Rooms ML custom models",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access"
+    },
+    {
+      "name": "PassMembership",
+      "methodName": "toPassMembership",
+      "description": "Grants permission to access a membership in the context of Clean Rooms ML custom models",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access"
+    },
+    {
+      "name": "UpdateConfiguredTableAllowedColumns",
+      "methodName": "toUpdateConfiguredTableAllowedColumns",
+      "description": "Grants permission to update the allowed columns of an existing configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html"
+    },
+    {
+      "name": "UpdateConfiguredTableReference",
+      "methodName": "toUpdateConfiguredTableReference",
+      "description": "Grants permission to update the table reference of an existing configured table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "analysistemplate",
+      "methodName": "onAnalysistemplate",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/analysistemplate/${AnalysisTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AnalysisTemplateId",
+          "name": "analysisTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "collaboration",
+      "methodName": "onCollaboration",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:collaboration/${CollaborationId}",
+      "placeholders": [
+        {
+          "placeholder": "CollaborationId",
+          "name": "collaborationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_cleanrooms",
+        "interface": "ICollaborationRef",
+        "property": "collaborationRef",
+        "arn": "collaborationArn"
+      }
+    },
+    {
+      "name": "configuredaudiencemodelassociation",
+      "methodName": "onConfiguredaudiencemodelassociation",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/configuredaudiencemodelassociation/${ConfiguredAudienceModelAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConfiguredAudienceModelAssociationId",
+          "name": "configuredAudienceModelAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "configuredtable",
+      "methodName": "onConfiguredtable",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:configuredtable/${ConfiguredTableId}",
+      "placeholders": [
+        {
+          "placeholder": "ConfiguredTableId",
+          "name": "configuredTableId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_cleanrooms",
+        "interface": "IConfiguredTableRef",
+        "property": "configuredTableRef",
+        "arn": "configuredTableArn"
+      }
+    },
+    {
+      "name": "configuredtableassociation",
+      "methodName": "onConfiguredtableassociation",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/configuredtableassociation/${ConfiguredTableAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConfiguredTableAssociationId",
+          "name": "configuredTableAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "idmappingtable",
+      "methodName": "onIdmappingtable",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/idmappingtable/${IdMappingTableId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdMappingTableId",
+          "name": "idMappingTableId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "idnamespaceassociation",
+      "methodName": "onIdnamespaceassociation",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/idnamespaceassociation/${IdNamespaceAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdNamespaceAssociationId",
+          "name": "idNamespaceAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "intermediatetable",
+      "methodName": "onIntermediatetable",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/intermediatetable/${IntermediateTableId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntermediateTableId",
+          "name": "intermediateTableId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "membership",
+      "methodName": "onMembership",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_cleanrooms",
+        "interface": "IMembershipRef",
+        "property": "membershipRef",
+        "arn": "membershipArn"
+      }
+    },
+    {
+      "name": "privacybudgettemplate",
+      "methodName": "onPrivacybudgettemplate",
+      "url": "https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html",
+      "arn": "arn:${Partition}:cleanrooms:${Region}:${Account}:membership/${MembershipId}/privacybudgettemplate/${PrivacyBudgetTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PrivacyBudgetTemplateId",
+          "name": "privacyBudgetTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAnalysisTemplate",
+        "toCreateCollaboration",
+        "toCreateCollaborationChangeRequest",
+        "toCreateConfiguredAudienceModelAssociation",
+        "toCreateConfiguredTable",
+        "toCreateConfiguredTableAssociation",
+        "toCreateConfiguredTableAssociationAnalysisRule",
+        "toCreateIdMappingTable",
+        "toCreateIdNamespaceAssociation",
+        "toCreateIntermediateTable",
+        "toCreateMembership",
+        "toCreatePrivacyBudgetTemplate",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetCollaborationAnalysisTemplate",
+        "toBatchGetSchema",
+        "toBatchGetSchemaAnalysisRule",
+        "toCreateAnalysisTemplate",
+        "toCreateCollaboration",
+        "toCreateCollaborationChangeRequest",
+        "toCreateConfiguredAudienceModelAssociation",
+        "toCreateConfiguredTable",
+        "toCreateConfiguredTableAnalysisRule",
+        "toCreateConfiguredTableAssociation",
+        "toCreateConfiguredTableAssociationAnalysisRule",
+        "toCreateIdMappingTable",
+        "toCreateIdNamespaceAssociation",
+        "toCreateIntermediateTable",
+        "toCreateIntermediateTableAnalysisRule",
+        "toCreateMembership",
+        "toCreatePrivacyBudgetTemplate",
+        "toDeleteAnalysisTemplate",
+        "toDeleteCollaboration",
+        "toDeleteConfiguredAudienceModelAssociation",
+        "toDeleteConfiguredTable",
+        "toDeleteConfiguredTableAnalysisRule",
+        "toDeleteConfiguredTableAssociation",
+        "toDeleteConfiguredTableAssociationAnalysisRule",
+        "toDeleteIdMappingTable",
+        "toDeleteIdNamespaceAssociation",
+        "toDeleteIntermediateTable",
+        "toDeleteIntermediateTableAnalysisRule",
+        "toDeleteMember",
+        "toDeleteMembership",
+        "toDeletePrivacyBudgetTemplate",
+        "toDisallowIntermediateTable",
+        "toGetAnalysisLogExport",
+        "toGetAnalysisTemplate",
+        "toGetCollaboration",
+        "toGetCollaborationAnalysisTemplate",
+        "toGetCollaborationChangeRequest",
+        "toGetCollaborationConfiguredAudienceModelAssociation",
+        "toGetCollaborationIdNamespaceAssociation",
+        "toGetCollaborationPrivacyBudgetTemplate",
+        "toGetConfiguredAudienceModelAssociation",
+        "toGetConfiguredTable",
+        "toGetConfiguredTableAnalysisRule",
+        "toGetConfiguredTableAssociation",
+        "toGetConfiguredTableAssociationAnalysisRule",
+        "toGetIdMappingTable",
+        "toGetIdNamespaceAssociation",
+        "toGetIntermediateTable",
+        "toGetIntermediateTableAnalysisRule",
+        "toGetMembership",
+        "toGetPrivacyBudgetTemplate",
+        "toGetProtectedJob",
+        "toGetProtectedQuery",
+        "toGetSchema",
+        "toGetSchemaAnalysisRule",
+        "toListAnalysisLogExports",
+        "toListAnalysisTemplates",
+        "toListCollaborationAnalysisTemplates",
+        "toListCollaborationChangeRequests",
+        "toListCollaborationConfiguredAudienceModelAssociations",
+        "toListCollaborationIdNamespaceAssociations",
+        "toListCollaborationPrivacyBudgetTemplates",
+        "toListCollaborationPrivacyBudgets",
+        "toListConfiguredAudienceModelAssociations",
+        "toListConfiguredTableAssociations",
+        "toListIdMappingTables",
+        "toListIdNamespaceAssociations",
+        "toListIntermediateTableVersions",
+        "toListIntermediateTables",
+        "toListMembers",
+        "toListPrivacyBudgetTemplates",
+        "toListPrivacyBudgets",
+        "toListProtectedJobs",
+        "toListProtectedQueries",
+        "toListSchemas",
+        "toListTagsForResource",
+        "toPopulateIdMappingTable",
+        "toPopulateIntermediateTable",
+        "toPreviewPrivacyImpact",
+        "toStartAnalysisLogExport",
+        "toStartProtectedJob",
+        "toStartProtectedQuery",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAnalysisTemplate",
+        "toUpdateCollaboration",
+        "toUpdateCollaborationChangeRequest",
+        "toUpdateConfiguredAudienceModelAssociation",
+        "toUpdateConfiguredTable",
+        "toUpdateConfiguredTableAnalysisRule",
+        "toUpdateConfiguredTableAssociation",
+        "toUpdateConfiguredTableAssociationAnalysisRule",
+        "toUpdateIdMappingTable",
+        "toUpdateIdNamespaceAssociation",
+        "toUpdateIntermediateTable",
+        "toUpdateIntermediateTableAnalysisRule",
+        "toUpdateMembership",
+        "toUpdatePrivacyBudgetTemplate",
+        "toUpdateProtectedJob",
+        "toUpdateProtectedQuery",
+        "toPassCollaboration",
+        "toPassMembership",
+        "toUpdateConfiguredTableAllowedColumns",
+        "toUpdateConfiguredTableReference"
+      ],
+      "relatedResourceTypes": [
+        "analysistemplate",
+        "collaboration",
+        "configuredaudiencemodelassociation",
+        "configuredtable",
+        "configuredtableassociation",
+        "idmappingtable",
+        "idnamespaceassociation",
+        "intermediatetable",
+        "membership",
+        "privacybudgettemplate"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAnalysisTemplate",
+        "toCreateCollaboration",
+        "toCreateCollaborationChangeRequest",
+        "toCreateConfiguredAudienceModelAssociation",
+        "toCreateConfiguredTable",
+        "toCreateConfiguredTableAssociation",
+        "toCreateConfiguredTableAssociationAnalysisRule",
+        "toCreateIdMappingTable",
+        "toCreateIdNamespaceAssociation",
+        "toCreateIntermediateTable",
+        "toCreateMembership",
+        "toCreatePrivacyBudgetTemplate",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

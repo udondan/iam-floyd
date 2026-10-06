@@ -1,0 +1,482 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchOmniSpaceAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:UpdateSpace",
+        "cloudwatch:GetSpace",
+        "cloudwatch:ListSpaces",
+        "cloudwatch:GetDomain",
+        "cloudwatch:CreateAccessGrant",
+        "cloudwatch:GetAccessGrant",
+        "cloudwatch:ListAccessGrants",
+        "cloudwatch:DeleteAccessGrant",
+        "cloudwatch:SearchPrincipals",
+        "cloudwatch:StartTelemetryQuerySession",
+        "cloudwatch:StopTelemetryQuerySession",
+        "cloudwatch:ListTelemetryQuerySessions",
+        "cloudwatch:StopTelemetryQuery",
+        "cloudwatch:GetTelemetryQueryResults",
+        "cloudwatch:GetRecords",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:ListMetrics",
+        "cloudwatch:GetContextGraph",
+        "cloudwatch:CreateAlert",
+        "cloudwatch:GetAlert",
+        "cloudwatch:UpdateAlert",
+        "cloudwatch:DeleteAlert",
+        "cloudwatch:ListAlerts",
+        "cloudwatch:CreateOmniDashboard",
+        "cloudwatch:GetOmniDashboard",
+        "cloudwatch:UpdateOmniDashboard",
+        "cloudwatch:DeleteOmniDashboard",
+        "cloudwatch:ListOmniDashboards",
+        "cloudwatch:CreateAccessProfile",
+        "cloudwatch:GetAccessProfile",
+        "cloudwatch:UpdateAccessProfile",
+        "cloudwatch:DeleteAccessProfile",
+        "cloudwatch:ListAccessProfiles",
+        "cloudwatch:AssumeAccessProfile",
+        "cloudwatch:CreateView",
+        "cloudwatch:GetView",
+        "cloudwatch:UpdateView",
+        "cloudwatch:DeleteView",
+        "cloudwatch:ListViews",
+        "cloudwatch:GetPreferences",
+        "cloudwatch:UpdatePreferences",
+        "cloudwatch:CreateOmniThread",
+        "cloudwatch:GetOmniThread",
+        "cloudwatch:UpdateOmniThread",
+        "cloudwatch:ListOmniThreads",
+        "cloudwatch:DeleteOmniThread",
+        "cloudwatch:StartOmniThreadSession",
+        "cloudwatch:SubmitFeedback",
+        "cloudwatch:CreateIntegration",
+        "cloudwatch:UpdateIntegration",
+        "cloudwatch:GetIntegration",
+        "cloudwatch:DeleteIntegration",
+        "cloudwatch:ListIntegrations",
+        "cloudwatch:InvokeIntegration",
+        "cloudwatch:GetIntelligenceConfiguration",
+        "cloudwatch:PutIntelligenceConfiguration",
+        "cloudwatch:TagResource",
+        "cloudwatch:UntagResource",
+        "cloudwatch:ListTagsForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:HasAccessGrant": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DenyClassicCloudWatchResourceTagging",
+      "Effect": "Deny",
+      "Action": [
+        "cloudwatch:TagResource",
+        "cloudwatch:UntagResource",
+        "cloudwatch:ListTagsForResource"
+      ],
+      "NotResource": [
+        "arn:aws:cloudwatch:*:*:space/*",
+        "arn:aws:cloudwatch:*:*:domain/*",
+        "arn:aws:cloudwatch:*:*:organization-domain/*",
+        "arn:aws:cloudwatch:*:*:access-grant/*",
+        "arn:aws:cloudwatch:*:*:organization-access-grant/*",
+        "arn:aws:cloudwatch:*:*:access-profile/*",
+        "arn:aws:cloudwatch:*:*:omni-dashboard/*",
+        "arn:aws:cloudwatch:*:*:alert/*",
+        "arn:aws:cloudwatch:*:*:view/*",
+        "arn:aws:cloudwatch:*:*:integration/*",
+        "arn:aws:cloudwatch:*:*:dataset/*"
+      ]
+    },
+    {
+      "Sid": "AllowPassRoleForCloudWatchOmni",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:PassedToService": [
+            "cloudwatch.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListRolesAndUsers",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListUsers",
+        "iam:ListRoles",
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "APIKeyConfigurationUsers",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListUserTags",
+        "iam:ListServiceSpecificCredentials"
+      ],
+      "Resource": "arn:aws:iam::*:user/omni/OmniIngestionUser-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KmsListKeysForOmni",
+      "Effect": "Allow",
+      "Action": "kms:ListKeys",
+      "Resource": "*"
+    },
+    {
+      "Sid": "KmsDescribeKeyForOmni",
+      "Effect": "Allow",
+      "Action": "kms:DescribeKey",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KmsCryptoOpsForOmniSpaces",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudwatch.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/cw-omni": "true"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:aws:cloudwatch:arn": "arn:aws:cloudwatch:*:${aws:PrincipalAccount}:space/*"
+        }
+      }
+    },
+    {
+      "Sid": "KmsCryptoOpsForDatasets",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudwatch.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:aws:cloudwatch:arn": "arn:aws:cloudwatch:*:${aws:PrincipalAccount}:dataset/*"
+        }
+      }
+    },
+    {
+      "Sid": "KmsCryptoOpsForOmniIntelligence",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudwatch.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/cw-omni": "true"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:aws:cloudwatch:account": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KmsCryptoOpsForOmniIntelligenceBranchKey",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudwatch.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/cw-omni": "true"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:aws-crypto-ec:aws:cloudwatch:account": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ConfigServiceLinkedRecorderManagement",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "config:ConfigurationRecorderServicePrincipal": [
+            "cloudwatch.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DescribeConfigurationRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowConfigServiceLinkedRoleCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AgentCoreEvaluator",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:CreateEvaluator",
+        "bedrock-agentcore:GetEvaluator",
+        "bedrock-agentcore:UpdateEvaluator",
+        "bedrock-agentcore:DeleteEvaluator",
+        "bedrock-agentcore:ListEvaluators",
+        "bedrock-agentcore:Evaluate",
+        "bedrock-agentcore:TagResource",
+        "bedrock-agentcore:UntagResource",
+        "bedrock-agentcore:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:evaluator/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AgentCoreOnlineEvaluationConfig",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:CreateOnlineEvaluationConfig",
+        "bedrock-agentcore:GetOnlineEvaluationConfig",
+        "bedrock-agentcore:ListOnlineEvaluationConfigs",
+        "bedrock-agentcore:UpdateOnlineEvaluationConfig",
+        "bedrock-agentcore:DeleteOnlineEvaluationConfig",
+        "bedrock-agentcore:TagResource",
+        "bedrock-agentcore:UntagResource",
+        "bedrock-agentcore:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:online-evaluation-config/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AgentCoreEvaluationDatasets",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GetDataset",
+        "bedrock-agentcore:ListDatasets",
+        "bedrock-agentcore:ListDatasetVersions",
+        "bedrock-agentcore:ListDatasetExamples",
+        "bedrock-agentcore:CreateDataset",
+        "bedrock-agentcore:UpdateDataset",
+        "bedrock-agentcore:CreateDatasetVersion",
+        "bedrock-agentcore:AddDatasetExamples",
+        "bedrock-agentcore:UpdateDatasetExamples",
+        "bedrock-agentcore:DeleteDatasetExamples",
+        "bedrock-agentcore:DeleteDataset",
+        "bedrock-agentcore:TagResource",
+        "bedrock-agentcore:UntagResource",
+        "bedrock-agentcore:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:dataset/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "BedrockFoundationModelDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:ListFoundationModels",
+        "bedrock:ListInferenceProfiles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AgentCorePassRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:PassedToService": [
+            "bedrock-agentcore.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AnnotationAndEvalLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/cloudwatch/*",
+        "arn:aws:logs:*:*:log-group:/aws/bedrock-agentcore/evaluations/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "OnlineEvalLogGroupDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KmsCryptoOpsForCMKEvaluators",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:aws:bedrock-agentcore:evaluatorArn": "arn:aws:bedrock-agentcore:*:${aws:PrincipalAccount}:evaluator/*"
+        }
+      }
+    },
+    {
+      "Sid": "CodeEvaluatorLambdaInvoke",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction",
+        "lambda:GetFunction"
+      ],
+      "Resource": "arn:aws:lambda:*:*:function:cloudwatchCodeEvaluator*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ModelProviderKeyDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ModelProviderKeyCreation",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:cw-omni-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/cw-omni": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ModelProviderKeyManagement",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:cw-omni-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/cw-omni": "true"
+        }
+      }
+    }
+  ]
+}

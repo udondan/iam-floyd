@@ -1,0 +1,82 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "cloudformation:*",
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:CalledVia": "cloudformation.amazonaws.com"
+                }
+            },
+            "Action": "*",
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::cdktoolkit-stagingbucket-*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "account:AcceptPrimaryEmailUpdate",
+                "account:CloseAccount",
+                "account:DeleteAlternateContact",
+                "account:DisableRegion",
+                "account:EnableRegion",
+                "account:PutAccountName",
+                "account:PutAlternateContact",
+                "account:PutContactInformation",
+                "account:SendPhoneNumberVerification",
+                "account:StartPrimaryEmailUpdate",
+                "account:VerifyPhoneNumber"
+            ],
+            "Resource": "*",
+            "Effect": "Deny"
+        },
+        {
+            "Action": [
+                "organizations:AcceptHandshake",
+                "organizations:AttachPolicy",
+                "organizations:CancelHandshake",
+                "organizations:CloseAccount",
+                "organizations:CreateAccount",
+                "organizations:CreateGovCloudAccount",
+                "organizations:CreateOrganization",
+                "organizations:CreateOrganizationalUnit",
+                "organizations:CreatePolicy",
+                "organizations:DeclineHandshake",
+                "organizations:DeleteOrganization",
+                "organizations:DeleteOrganizationalUnit",
+                "organizations:DeletePolicy",
+                "organizations:DeleteResourcePolicy",
+                "organizations:DeregisterDelegatedAdministrator",
+                "organizations:DetachPolicy",
+                "organizations:DisableAWSServiceAccess",
+                "organizations:DisablePolicyType",
+                "organizations:EnableAWSServiceAccess",
+                "organizations:EnableAllFeatures",
+                "organizations:EnablePolicyType",
+                "organizations:InviteAccountToOrganization",
+                "organizations:InviteOrganizationToTransferResponsibility",
+                "organizations:LeaveOrganization",
+                "organizations:MoveAccount",
+                "organizations:PutResourcePolicy",
+                "organizations:RegisterDelegatedAdministrator",
+                "organizations:RemoveAccountFromOrganization",
+                "organizations:TagResource",
+                "organizations:TerminateResponsibilityTransfer",
+                "organizations:UntagResource",
+                "organizations:UpdateOrganizationalUnit",
+                "organizations:UpdatePolicy",
+                "organizations:UpdateResponsibilityTransfer"
+            ],
+            "Resource": "*",
+            "Effect": "Deny"
+        }
+    ]
+}

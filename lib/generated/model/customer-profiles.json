@@ -1,0 +1,1593 @@
+{
+  "schemaVersion": 1,
+  "filename": "customer-profiles",
+  "className": "Profile",
+  "name": "profile",
+  "servicePrefix": "profile",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_customer-profiles.html",
+  "accessLevelList": {
+    "Write": [
+      "AddProfileKey",
+      "AssociateStreamForSegments",
+      "CreateCalculatedAttributeDefinition",
+      "CreateDomain",
+      "CreateDomainLayout",
+      "CreateEventStream",
+      "CreateEventTrigger",
+      "CreateIntegrationWorkflow",
+      "CreateProfile",
+      "CreateRecommender",
+      "CreateRecommenderFilter",
+      "CreateRecommenderSchema",
+      "CreateSegmentDefinition",
+      "CreateSegmentEstimate",
+      "CreateSegmentSnapshot",
+      "CreateUploadJob",
+      "DeleteCalculatedAttributeDefinition",
+      "DeleteDomain",
+      "DeleteDomainLayout",
+      "DeleteDomainObjectType",
+      "DeleteEventStream",
+      "DeleteEventTrigger",
+      "DeleteIntegration",
+      "DeleteProfile",
+      "DeleteProfileKey",
+      "DeleteProfileObject",
+      "DeleteProfileObjectType",
+      "DeleteRecommender",
+      "DeleteRecommenderFilter",
+      "DeleteRecommenderSchema",
+      "DeleteSegmentDefinition",
+      "DeleteSegmentSubscription",
+      "DeleteWorkflow",
+      "DisassociateStreamForSegments",
+      "MergeProfiles",
+      "PutDomainObjectType",
+      "PutIntegration",
+      "PutProfileObject",
+      "PutProfileObjectType",
+      "PutSegmentSubscription",
+      "StartRecommender",
+      "StartUploadJob",
+      "StopRecommender",
+      "StopUploadJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateCalculatedAttributeDefinition",
+      "UpdateDomain",
+      "UpdateDomainLayout",
+      "UpdateEventTrigger",
+      "UpdateProfile",
+      "UpdateRecommender",
+      "CreateSnapshot"
+    ],
+    "Read": [
+      "BatchGetCalculatedAttributeForProfile",
+      "BatchGetProfile",
+      "DetectProfileObjectType",
+      "GetAutoMergingPreview",
+      "GetCalculatedAttributeDefinition",
+      "GetCalculatedAttributeForProfile",
+      "GetDomain",
+      "GetDomainLayout",
+      "GetDomainObjectType",
+      "GetEventStream",
+      "GetEventTrigger",
+      "GetIdentityResolutionJob",
+      "GetIntegration",
+      "GetObjectTypeAttributeStatistics",
+      "GetProfileHistoryRecord",
+      "GetProfileInsights",
+      "GetProfileObjectType",
+      "GetProfileObjectTypeTemplate",
+      "GetProfileRecommendations",
+      "GetRecommender",
+      "GetRecommenderFilter",
+      "GetRecommenderSchema",
+      "GetSegmentDefinition",
+      "GetSegmentEstimate",
+      "GetSegmentMembership",
+      "GetSegmentSnapshot",
+      "GetSegmentSubscription",
+      "GetStreamForSegments",
+      "GetUploadJob",
+      "GetUploadJobPath",
+      "GetWorkflow",
+      "GetWorkflowSteps",
+      "ListSegmentSubscriptionEvents",
+      "ListTagsForResource",
+      "SearchProfiles",
+      "GetSnapshot"
+    ],
+    "List": [
+      "GetMatches",
+      "GetSimilarProfiles",
+      "ListAccountIntegrations",
+      "ListCalculatedAttributeDefinitions",
+      "ListCalculatedAttributesForProfile",
+      "ListDomainLayouts",
+      "ListDomainObjectTypes",
+      "ListDomainObjects",
+      "ListDomains",
+      "ListEventStreams",
+      "ListEventTriggers",
+      "ListIdentityResolutionJobs",
+      "ListIntegrations",
+      "ListObjectTypeAttributeValues",
+      "ListObjectTypeAttributes",
+      "ListProfileAttributeValues",
+      "ListProfileHistoryRecords",
+      "ListProfileObjectTypeTemplates",
+      "ListProfileObjectTypes",
+      "ListProfileObjects",
+      "ListRecommenderFilters",
+      "ListRecommenderRecipes",
+      "ListRecommenderSchemas",
+      "ListRecommenders",
+      "ListRuleBasedMatches",
+      "ListSegmentDefinitions",
+      "ListUploadJobs",
+      "ListWorkflows"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddProfileKey",
+      "methodName": "toAddProfileKey",
+      "description": "Grants permission to add a profile key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_AddProfileKey.html"
+    },
+    {
+      "name": "AssociateStreamForSegments",
+      "methodName": "toAssociateStreamForSegments",
+      "description": "Grants permission to associate an Amazon Kinesis data stream to receive segment membership events for a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_AssociateStreamForSegments.html"
+    },
+    {
+      "name": "BatchGetCalculatedAttributeForProfile",
+      "methodName": "toBatchGetCalculatedAttributeForProfile",
+      "description": "Grants permission to retrieve a calculated attribute for the specific profiles in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_BatchGetCalculatedAttributeForProfile.html"
+    },
+    {
+      "name": "BatchGetProfile",
+      "methodName": "toBatchGetProfile",
+      "description": "Grants permission to get profiles in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_BatchGetProfile.html"
+    },
+    {
+      "name": "CreateCalculatedAttributeDefinition",
+      "methodName": "toCreateCalculatedAttributeDefinition",
+      "description": "Grants permission to create a calculated attribute definition in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateCalculatedAttributeDefinition.html"
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to create a Domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html"
+    },
+    {
+      "name": "CreateDomainLayout",
+      "methodName": "toCreateDomainLayout",
+      "description": "Grants permission to create a layout in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomainLayout.html"
+    },
+    {
+      "name": "CreateEventStream",
+      "methodName": "toCreateEventStream",
+      "description": "Grants permission to put an event stream in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateEventStream.html"
+    },
+    {
+      "name": "CreateEventTrigger",
+      "methodName": "toCreateEventTrigger",
+      "description": "Grants permission to create an event trigger in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateEventTrigger.html"
+    },
+    {
+      "name": "CreateIntegrationWorkflow",
+      "methodName": "toCreateIntegrationWorkflow",
+      "description": "Grants permission to create an integration workflow in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateIntegrationWorkflow.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to create a profile in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateProfile.html"
+    },
+    {
+      "name": "CreateRecommender",
+      "methodName": "toCreateRecommender",
+      "description": "Grants permission to create a Recommender in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommender.html"
+    },
+    {
+      "name": "CreateRecommenderFilter",
+      "methodName": "toCreateRecommenderFilter",
+      "description": "Grants permission to create a recommender filter in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommenderFilter.html"
+    },
+    {
+      "name": "CreateRecommenderSchema",
+      "methodName": "toCreateRecommenderSchema",
+      "description": "Grants permission to create a recommender schema in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommenderSchema.html"
+    },
+    {
+      "name": "CreateSegmentDefinition",
+      "methodName": "toCreateSegmentDefinition",
+      "description": "Grants permission to create a segment definition in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentDefinition.html"
+    },
+    {
+      "name": "CreateSegmentEstimate",
+      "methodName": "toCreateSegmentEstimate",
+      "description": "Grants permission to create a segment estimate in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentEstimate.html"
+    },
+    {
+      "name": "CreateSegmentSnapshot",
+      "methodName": "toCreateSegmentSnapshot",
+      "description": "Grants permission to create a segment snapshot in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentSnapshot.html"
+    },
+    {
+      "name": "CreateUploadJob",
+      "methodName": "toCreateUploadJob",
+      "description": "Grants permission to create an upload job in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateUploadJob.html"
+    },
+    {
+      "name": "DeleteCalculatedAttributeDefinition",
+      "methodName": "toDeleteCalculatedAttributeDefinition",
+      "description": "Grants permission to delete a calculated attribute definition in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteCalculatedAttributeDefinition.html"
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a Domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomain.html"
+    },
+    {
+      "name": "DeleteDomainLayout",
+      "methodName": "toDeleteDomainLayout",
+      "description": "Grants permission to delete a layout in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomainLayout.html"
+    },
+    {
+      "name": "DeleteDomainObjectType",
+      "methodName": "toDeleteDomainObjectType",
+      "description": "Grants permission to delete a specific domain object type in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomainObjectType.html"
+    },
+    {
+      "name": "DeleteEventStream",
+      "methodName": "toDeleteEventStream",
+      "description": "Grants permission to delete an event stream in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteEventStream.html"
+    },
+    {
+      "name": "DeleteEventTrigger",
+      "methodName": "toDeleteEventTrigger",
+      "description": "Grants permission to delete an event trigger in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteEventTrigger.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete a integration in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteIntegration.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to delete a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfile.html"
+    },
+    {
+      "name": "DeleteProfileKey",
+      "methodName": "toDeleteProfileKey",
+      "description": "Grants permission to delete a profile key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfileKey.html"
+    },
+    {
+      "name": "DeleteProfileObject",
+      "methodName": "toDeleteProfileObject",
+      "description": "Grants permission to delete a profile object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfileObject.html"
+    },
+    {
+      "name": "DeleteProfileObjectType",
+      "methodName": "toDeleteProfileObjectType",
+      "description": "Grants permission to delete a specific profile object type in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfileObjectType.html"
+    },
+    {
+      "name": "DeleteRecommender",
+      "methodName": "toDeleteRecommender",
+      "description": "Grants permission to delete a recommender in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommender.html"
+    },
+    {
+      "name": "DeleteRecommenderFilter",
+      "methodName": "toDeleteRecommenderFilter",
+      "description": "Grants permission to delete a recommender filter in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommenderFilter.html"
+    },
+    {
+      "name": "DeleteRecommenderSchema",
+      "methodName": "toDeleteRecommenderSchema",
+      "description": "Grants permission to delete a recommender schema in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommenderSchema.html"
+    },
+    {
+      "name": "DeleteSegmentDefinition",
+      "methodName": "toDeleteSegmentDefinition",
+      "description": "Grants permission to delete a segment definition in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteSegmentDefinition.html"
+    },
+    {
+      "name": "DeleteSegmentSubscription",
+      "methodName": "toDeleteSegmentSubscription",
+      "description": "Grants permission to delete a segment subscription for membership events",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteSegmentSubscription.html"
+    },
+    {
+      "name": "DeleteWorkflow",
+      "methodName": "toDeleteWorkflow",
+      "description": "Grants permission to delete a workflow in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteWorkflow.html"
+    },
+    {
+      "name": "DetectProfileObjectType",
+      "methodName": "toDetectProfileObjectType",
+      "description": "Grants permission to auto detect object type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DetectProfileObjectType.html"
+    },
+    {
+      "name": "DisassociateStreamForSegments",
+      "methodName": "toDisassociateStreamForSegments",
+      "description": "Grants permission to disassociate the Amazon Kinesis data stream configured for segment membership events in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DisassociateStreamForSegments.html"
+    },
+    {
+      "name": "GetAutoMergingPreview",
+      "methodName": "toGetAutoMergingPreview",
+      "description": "Grants permission to get a preview of auto merging in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetAutoMergingPreview.html"
+    },
+    {
+      "name": "GetCalculatedAttributeDefinition",
+      "methodName": "toGetCalculatedAttributeDefinition",
+      "description": "Grants permission to get a calculated attribute definition in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeDefinition.html"
+    },
+    {
+      "name": "GetCalculatedAttributeForProfile",
+      "methodName": "toGetCalculatedAttributeForProfile",
+      "description": "Grants permission to retrieve a calculated attribute for a specific profile in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html"
+    },
+    {
+      "name": "GetDomain",
+      "methodName": "toGetDomain",
+      "description": "Grants permission to get a specific domain in an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomain.html"
+    },
+    {
+      "name": "GetDomainLayout",
+      "methodName": "toGetDomainLayout",
+      "description": "Grants permission to get a layout in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomainLayout.html"
+    },
+    {
+      "name": "GetDomainObjectType",
+      "methodName": "toGetDomainObjectType",
+      "description": "Grants permission to get a specific domain object type in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomainObjectType.html"
+    },
+    {
+      "name": "GetEventStream",
+      "methodName": "toGetEventStream",
+      "description": "Grants permission to get a specific event stream in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetEventStream.html"
+    },
+    {
+      "name": "GetEventTrigger",
+      "methodName": "toGetEventTrigger",
+      "description": "Grants permission to get an event trigger in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetEventTrigger.html"
+    },
+    {
+      "name": "GetIdentityResolutionJob",
+      "methodName": "toGetIdentityResolutionJob",
+      "description": "Grants permission to get an identity resolution job in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetIdentityResolutionJob.html"
+    },
+    {
+      "name": "GetIntegration",
+      "methodName": "toGetIntegration",
+      "description": "Grants permission to get a specific integrations in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetIntegration.html"
+    },
+    {
+      "name": "GetMatches",
+      "methodName": "toGetMatches",
+      "description": "Grants permission to get profile matches in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html"
+    },
+    {
+      "name": "GetObjectTypeAttributeStatistics",
+      "methodName": "toGetObjectTypeAttributeStatistics",
+      "description": "Grants permission to get statistics of a specific attribute for object type in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetObjectTypeAttributeStatistics.html"
+    },
+    {
+      "name": "GetProfileHistoryRecord",
+      "methodName": "toGetProfileHistoryRecord",
+      "description": "Grants permission to get a profile history record for a profile in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileHistoryRecord.html"
+    },
+    {
+      "name": "GetProfileInsights",
+      "methodName": "toGetProfileInsights",
+      "description": "Grants permission to list insights for a profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileInsights.html"
+    },
+    {
+      "name": "GetProfileObjectType",
+      "methodName": "toGetProfileObjectType",
+      "description": "Grants permission to get a specific profile object type in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileObjectType.html"
+    },
+    {
+      "name": "GetProfileObjectTypeTemplate",
+      "methodName": "toGetProfileObjectTypeTemplate",
+      "description": "Grants permission to get a specific object type template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileObjectTypeTemplate.html"
+    },
+    {
+      "name": "GetProfileRecommendations",
+      "methodName": "toGetProfileRecommendations",
+      "description": "Grants permission to list recommendations for a profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileRecommendations.html"
+    },
+    {
+      "name": "GetRecommender",
+      "methodName": "toGetRecommender",
+      "description": "Grants permission to get Recommender details in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommender.html"
+    },
+    {
+      "name": "GetRecommenderFilter",
+      "methodName": "toGetRecommenderFilter",
+      "description": "Grants permission to get recommender filter details in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommenderFilter.html"
+    },
+    {
+      "name": "GetRecommenderSchema",
+      "methodName": "toGetRecommenderSchema",
+      "description": "Grants permission to get recommender schema details in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommenderSchema.html"
+    },
+    {
+      "name": "GetSegmentDefinition",
+      "methodName": "toGetSegmentDefinition",
+      "description": "Grants permission to get a segment definition in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentDefinition.html"
+    },
+    {
+      "name": "GetSegmentEstimate",
+      "methodName": "toGetSegmentEstimate",
+      "description": "Grants permission to get a segment estimate in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentEstimate.html"
+    },
+    {
+      "name": "GetSegmentMembership",
+      "methodName": "toGetSegmentMembership",
+      "description": "Grants permission to determine if the given profiles are part of a segment in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentMembership.html"
+    },
+    {
+      "name": "GetSegmentSnapshot",
+      "methodName": "toGetSegmentSnapshot",
+      "description": "Grants permission to get a segment snapshot in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentSnapshot.html"
+    },
+    {
+      "name": "GetSegmentSubscription",
+      "methodName": "toGetSegmentSubscription",
+      "description": "Grants permission to get the configuration, schedule, and status of a segment subscription for membership events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentSubscription.html"
+    },
+    {
+      "name": "GetSimilarProfiles",
+      "methodName": "toGetSimilarProfiles",
+      "description": "Grants permission to get all the similar profiles in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSimilarProfiles.html"
+    },
+    {
+      "name": "GetStreamForSegments",
+      "methodName": "toGetStreamForSegments",
+      "description": "Grants permission to get information about the segment membership event stream configured for a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetStreamForSegments.html"
+    },
+    {
+      "name": "GetUploadJob",
+      "methodName": "toGetUploadJob",
+      "description": "Grants permission to get details of an upload job in the domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetUploadJob.html"
+    },
+    {
+      "name": "GetUploadJobPath",
+      "methodName": "toGetUploadJobPath",
+      "description": "Grants permission to get a pre-signed URL to upload file for an upload job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetUploadJobPath.html"
+    },
+    {
+      "name": "GetWorkflow",
+      "methodName": "toGetWorkflow",
+      "description": "Grants permission to get workflow details in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetWorkflow.html"
+    },
+    {
+      "name": "GetWorkflowSteps",
+      "methodName": "toGetWorkflowSteps",
+      "description": "Grants permission to get workflow step details in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetWorkflowSteps.html"
+    },
+    {
+      "name": "ListAccountIntegrations",
+      "methodName": "toListAccountIntegrations",
+      "description": "Grants permission to list all the integrations in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListAccountIntegrations.html"
+    },
+    {
+      "name": "ListCalculatedAttributeDefinitions",
+      "methodName": "toListCalculatedAttributeDefinitions",
+      "description": "Grants permission to list all the calculated attribute definitions in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListCalculatedAttributeDefinitions.html"
+    },
+    {
+      "name": "ListCalculatedAttributesForProfile",
+      "methodName": "toListCalculatedAttributesForProfile",
+      "description": "Grants permission to list all calculated attributes for a specific profile in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListCalculatedAttributesForProfile.html"
+    },
+    {
+      "name": "ListDomainLayouts",
+      "methodName": "toListDomainLayouts",
+      "description": "Grants permission to list all the layouts in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainLayouts.html"
+    },
+    {
+      "name": "ListDomainObjectTypes",
+      "methodName": "toListDomainObjectTypes",
+      "description": "Grants permission to list all the domain object types in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainObjectTypes.html"
+    },
+    {
+      "name": "ListDomainObjects",
+      "methodName": "toListDomainObjects",
+      "description": "Grants permission to list domain objects in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainObjects.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list all the domains in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomains.html"
+    },
+    {
+      "name": "ListEventStreams",
+      "methodName": "toListEventStreams",
+      "description": "Grants permission to list all the event streams in a specific domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListEventStreams.html"
+    },
+    {
+      "name": "ListEventTriggers",
+      "methodName": "toListEventTriggers",
+      "description": "Grants permission to list all the event triggers in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListEventTriggers.html"
+    },
+    {
+      "name": "ListIdentityResolutionJobs",
+      "methodName": "toListIdentityResolutionJobs",
+      "description": "Grants permission to list identity resolution jobs in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListIdentityResolutionJobs.html"
+    },
+    {
+      "name": "ListIntegrations",
+      "methodName": "toListIntegrations",
+      "description": "Grants permission to list all the integrations in a specific domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListIntegrations.html"
+    },
+    {
+      "name": "ListObjectTypeAttributeValues",
+      "methodName": "toListObjectTypeAttributeValues",
+      "description": "Grants permission to list values of a specific attribute for object type in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListObjectTypeAttributeValues.html"
+    },
+    {
+      "name": "ListObjectTypeAttributes",
+      "methodName": "toListObjectTypeAttributes",
+      "description": "Grants permission to list all the attributes of a specific object type in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListObjectTypeAttributes.html"
+    },
+    {
+      "name": "ListProfileAttributeValues",
+      "methodName": "toListProfileAttributeValues",
+      "description": "Grants permission to list all the values of a profile attribute in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileAttributeValues.html"
+    },
+    {
+      "name": "ListProfileHistoryRecords",
+      "methodName": "toListProfileHistoryRecords",
+      "description": "Grants permission to list all the profile history records for a profile in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileHistoryRecords.html"
+    },
+    {
+      "name": "ListProfileObjectTypeTemplates",
+      "methodName": "toListProfileObjectTypeTemplates",
+      "description": "Grants permission to list all the profile object type templates in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjectTypeTemplates.html"
+    },
+    {
+      "name": "ListProfileObjectTypes",
+      "methodName": "toListProfileObjectTypes",
+      "description": "Grants permission to list all the profile object types in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjectTypes.html"
+    },
+    {
+      "name": "ListProfileObjects",
+      "methodName": "toListProfileObjects",
+      "description": "Grants permission to list all the profile objects for a profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjects.html"
+    },
+    {
+      "name": "ListRecommenderFilters",
+      "methodName": "toListRecommenderFilters",
+      "description": "Grants permission to list all recommender filters in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderFilters.html"
+    },
+    {
+      "name": "ListRecommenderRecipes",
+      "methodName": "toListRecommenderRecipes",
+      "description": "Grants permission to list all the Recommenders Recipes in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderRecipes.html"
+    },
+    {
+      "name": "ListRecommenderSchemas",
+      "methodName": "toListRecommenderSchemas",
+      "description": "Grants permission to list all recommender schemas in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderSchemas.html"
+    },
+    {
+      "name": "ListRecommenders",
+      "methodName": "toListRecommenders",
+      "description": "Grants permission to list all the Recommenders in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenders.html"
+    },
+    {
+      "name": "ListRuleBasedMatches",
+      "methodName": "toListRuleBasedMatches",
+      "description": "Grants permission to list all the rule-based matching result in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRuleBasedMatches.html"
+    },
+    {
+      "name": "ListSegmentDefinitions",
+      "methodName": "toListSegmentDefinitions",
+      "description": "Grants permission to list all the segment definitions in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListSegmentDefinitions.html"
+    },
+    {
+      "name": "ListSegmentSubscriptionEvents",
+      "methodName": "toListSegmentSubscriptionEvents",
+      "description": "Grants permission to list the most recent segment membership events for a segment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListSegmentSubscriptionEvents.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUploadJobs",
+      "methodName": "toListUploadJobs",
+      "description": "Grants permission to list all upload jobs in the domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListUploadJobs.html"
+    },
+    {
+      "name": "ListWorkflows",
+      "methodName": "toListWorkflows",
+      "description": "Grants permission to list all the workflows in a specific domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListWorkflows.html"
+    },
+    {
+      "name": "MergeProfiles",
+      "methodName": "toMergeProfiles",
+      "description": "Grants permission to merge profiles in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MergeProfiles.html"
+    },
+    {
+      "name": "PutDomainObjectType",
+      "methodName": "toPutDomainObjectType",
+      "description": "Grants permission to put a specific domain object type in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutDomainObjectType.html"
+    },
+    {
+      "name": "PutIntegration",
+      "methodName": "toPutIntegration",
+      "description": "Grants permission to put a integration in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutIntegration.html"
+    },
+    {
+      "name": "PutProfileObject",
+      "methodName": "toPutProfileObject",
+      "description": "Grants permission to put an object for a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutProfileObject.html"
+    },
+    {
+      "name": "PutProfileObjectType",
+      "methodName": "toPutProfileObjectType",
+      "description": "Grants permission to put a specific profile object type in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutProfileObjectType.html"
+    },
+    {
+      "name": "PutSegmentSubscription",
+      "methodName": "toPutSegmentSubscription",
+      "description": "Grants permission to create or update a segment subscription for membership events",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutSegmentSubscription.html"
+    },
+    {
+      "name": "SearchProfiles",
+      "methodName": "toSearchProfiles",
+      "description": "Grants permission to search for profiles in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+    },
+    {
+      "name": "StartRecommender",
+      "methodName": "toStartRecommender",
+      "description": "Grants permission to start a recommender in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StartRecommender.html"
+    },
+    {
+      "name": "StartUploadJob",
+      "methodName": "toStartUploadJob",
+      "description": "Grants permission to start an upload job in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StartUploadJob.html"
+    },
+    {
+      "name": "StopRecommender",
+      "methodName": "toStopRecommender",
+      "description": "Grants permission to stop a recommender in a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StopRecommender.html"
+    },
+    {
+      "name": "StopUploadJob",
+      "methodName": "toStopUploadJob",
+      "description": "Grants permission to stop an upload job in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StopUploadJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to adds tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCalculatedAttributeDefinition",
+      "methodName": "toUpdateCalculatedAttributeDefinition",
+      "description": "Grants permission to update a calculated attribute definition in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateCalculatedAttributeDefinition.html"
+    },
+    {
+      "name": "UpdateDomain",
+      "methodName": "toUpdateDomain",
+      "description": "Grants permission to update a Domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html"
+    },
+    {
+      "name": "UpdateDomainLayout",
+      "methodName": "toUpdateDomainLayout",
+      "description": "Grants permission to update a layout in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomainLayout.html"
+    },
+    {
+      "name": "UpdateEventTrigger",
+      "methodName": "toUpdateEventTrigger",
+      "description": "Grants permission to update an event trigger in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateEventTrigger.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to update a profile in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateProfile.html"
+    },
+    {
+      "name": "UpdateRecommender",
+      "methodName": "toUpdateRecommender",
+      "description": "Grants permission to update a Recommender in the domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateRecommender.html"
+    },
+    {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permission to create a snapshot in the domain",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetSnapshot",
+      "methodName": "toGetSnapshot",
+      "description": "Grants permission to get a snapshot in the domain",
+      "accessLevel": "Read",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "calculated-attributes",
+      "methodName": "onCalculatedAttributes",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/calculated-attributes/${CalculatedAttributeName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CalculatedAttributeName",
+          "name": "calculatedAttributeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "domain-object-types",
+      "methodName": "onDomainObjectTypes",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/domain-object-types/${ObjectTypeName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ObjectTypeName",
+          "name": "objectTypeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "domains",
+      "methodName": "onDomains",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "event-streams",
+      "methodName": "onEventStreams",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/event-streams/${EventStreamName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EventStreamName",
+          "name": "eventStreamName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "event-triggers",
+      "methodName": "onEventTriggers",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/event-triggers/${EventTriggerName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EventTriggerName",
+          "name": "eventTriggerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "integrations",
+      "methodName": "onIntegrations",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/integrations/${Uri}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uri",
+          "name": "uri",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "layouts",
+      "methodName": "onLayouts",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/layouts/${LayoutDefinitionName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LayoutDefinitionName",
+          "name": "layoutDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "object-types",
+      "methodName": "onObjectTypes",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/object-types/${ObjectTypeName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ObjectTypeName",
+          "name": "objectTypeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "recommender-filters",
+      "methodName": "onRecommenderFilters",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/recommender-filters/${RecommenderFilterName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RecommenderFilterName",
+          "name": "recommenderFilterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "recommender-schemas",
+      "methodName": "onRecommenderSchemas",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/recommender-schemas/${RecommenderSchemaName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RecommenderSchemaName",
+          "name": "recommenderSchemaName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "recommenders",
+      "methodName": "onRecommenders",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/recommenders/${RecommenderTypeName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RecommenderTypeName",
+          "name": "recommenderTypeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "segment-definitions",
+      "methodName": "onSegmentDefinitions",
+      "url": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/",
+      "arn": "arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/segment-definitions/${SegmentDefinitionName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SegmentDefinitionName",
+          "name": "segmentDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a key that is present in the request the user makes to the customer profile service",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateCalculatedAttributeDefinition",
+        "toCreateDomain",
+        "toCreateDomainLayout",
+        "toCreateEventStream",
+        "toCreateEventTrigger",
+        "toCreateIntegrationWorkflow",
+        "toCreateRecommender",
+        "toCreateRecommenderFilter",
+        "toCreateRecommenderSchema",
+        "toCreateSegmentDefinition",
+        "toPutDomainObjectType",
+        "toPutIntegration",
+        "toPutProfileObjectType",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toAddProfileKey",
+        "toAssociateStreamForSegments",
+        "toBatchGetCalculatedAttributeForProfile",
+        "toBatchGetProfile",
+        "toCreateCalculatedAttributeDefinition",
+        "toCreateDomain",
+        "toCreateDomainLayout",
+        "toCreateEventStream",
+        "toCreateEventTrigger",
+        "toCreateIntegrationWorkflow",
+        "toCreateProfile",
+        "toCreateRecommender",
+        "toCreateRecommenderFilter",
+        "toCreateRecommenderSchema",
+        "toCreateSegmentDefinition",
+        "toCreateSegmentEstimate",
+        "toCreateSegmentSnapshot",
+        "toCreateUploadJob",
+        "toDeleteCalculatedAttributeDefinition",
+        "toDeleteDomain",
+        "toDeleteDomainLayout",
+        "toDeleteDomainObjectType",
+        "toDeleteEventStream",
+        "toDeleteEventTrigger",
+        "toDeleteIntegration",
+        "toDeleteProfile",
+        "toDeleteProfileKey",
+        "toDeleteProfileObject",
+        "toDeleteProfileObjectType",
+        "toDeleteRecommender",
+        "toDeleteRecommenderFilter",
+        "toDeleteRecommenderSchema",
+        "toDeleteSegmentDefinition",
+        "toDeleteSegmentSubscription",
+        "toDeleteWorkflow",
+        "toDetectProfileObjectType",
+        "toDisassociateStreamForSegments",
+        "toGetAutoMergingPreview",
+        "toGetCalculatedAttributeDefinition",
+        "toGetCalculatedAttributeForProfile",
+        "toGetDomain",
+        "toGetDomainLayout",
+        "toGetDomainObjectType",
+        "toGetEventStream",
+        "toGetEventTrigger",
+        "toGetIdentityResolutionJob",
+        "toGetIntegration",
+        "toGetMatches",
+        "toGetObjectTypeAttributeStatistics",
+        "toGetProfileHistoryRecord",
+        "toGetProfileInsights",
+        "toGetProfileObjectType",
+        "toGetProfileRecommendations",
+        "toGetRecommender",
+        "toGetRecommenderFilter",
+        "toGetRecommenderSchema",
+        "toGetSegmentDefinition",
+        "toGetSegmentEstimate",
+        "toGetSegmentMembership",
+        "toGetSegmentSnapshot",
+        "toGetSegmentSubscription",
+        "toGetSimilarProfiles",
+        "toGetStreamForSegments",
+        "toGetUploadJob",
+        "toGetUploadJobPath",
+        "toGetWorkflow",
+        "toGetWorkflowSteps",
+        "toListCalculatedAttributeDefinitions",
+        "toListCalculatedAttributesForProfile",
+        "toListDomainLayouts",
+        "toListDomainObjectTypes",
+        "toListDomainObjects",
+        "toListEventStreams",
+        "toListEventTriggers",
+        "toListIdentityResolutionJobs",
+        "toListIntegrations",
+        "toListObjectTypeAttributeValues",
+        "toListObjectTypeAttributes",
+        "toListProfileAttributeValues",
+        "toListProfileHistoryRecords",
+        "toListProfileObjectTypes",
+        "toListProfileObjects",
+        "toListRecommenderFilters",
+        "toListRecommenderSchemas",
+        "toListRecommenders",
+        "toListRuleBasedMatches",
+        "toListSegmentDefinitions",
+        "toListSegmentSubscriptionEvents",
+        "toListTagsForResource",
+        "toListUploadJobs",
+        "toListWorkflows",
+        "toMergeProfiles",
+        "toPutDomainObjectType",
+        "toPutIntegration",
+        "toPutProfileObject",
+        "toPutProfileObjectType",
+        "toPutSegmentSubscription",
+        "toSearchProfiles",
+        "toStartRecommender",
+        "toStartUploadJob",
+        "toStopRecommender",
+        "toStopUploadJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCalculatedAttributeDefinition",
+        "toUpdateDomain",
+        "toUpdateDomainLayout",
+        "toUpdateEventTrigger",
+        "toUpdateProfile",
+        "toUpdateRecommender",
+        "toCreateSnapshot",
+        "toGetSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "calculated-attributes",
+        "domain-object-types",
+        "domains",
+        "event-streams",
+        "event-triggers",
+        "integrations",
+        "layouts",
+        "object-types",
+        "recommender-filters",
+        "recommender-schemas",
+        "recommenders",
+        "segment-definitions"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the list of all the tag key names present in the request the user makes to the customer profile service",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateCalculatedAttributeDefinition",
+        "toCreateDomain",
+        "toCreateDomainLayout",
+        "toCreateEventStream",
+        "toCreateEventTrigger",
+        "toCreateIntegrationWorkflow",
+        "toCreateRecommender",
+        "toCreateRecommenderFilter",
+        "toCreateRecommenderSchema",
+        "toCreateSegmentDefinition",
+        "toPutDomainObjectType",
+        "toPutIntegration",
+        "toPutProfileObjectType",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

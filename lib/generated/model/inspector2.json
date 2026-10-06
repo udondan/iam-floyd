@@ -1,0 +1,975 @@
+{
+  "schemaVersion": 1,
+  "filename": "inspector2",
+  "className": "Inspector2",
+  "name": "inspector2",
+  "servicePrefix": "inspector2",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateMember",
+      "BatchAssociateCodeSecurityScanConfiguration",
+      "BatchDisassociateCodeSecurityScanConfiguration",
+      "BatchUpdateMemberEc2DeepInspectionStatus",
+      "CancelFindingsReport",
+      "CancelSbomExport",
+      "CreateCisScanConfiguration",
+      "CreateCodeSecurityIntegration",
+      "CreateCodeSecurityScanConfiguration",
+      "CreateConnector",
+      "CreateFilter",
+      "CreateFindingsReport",
+      "CreateSbomExport",
+      "DeleteCisScanConfiguration",
+      "DeleteCodeSecurityIntegration",
+      "DeleteCodeSecurityScanConfiguration",
+      "DeleteConnector",
+      "DeleteFilter",
+      "Disable",
+      "DisableDelegatedAdminAccount",
+      "DisassociateMember",
+      "Enable",
+      "EnableDelegatedAdminAccount",
+      "ResetEncryptionKey",
+      "SendCisSessionHealth",
+      "SendCisSessionTelemetry",
+      "StartCisSession",
+      "StartCodeSecurityScan",
+      "StopCisSession",
+      "TagResource",
+      "UntagResource",
+      "UpdateCisScanConfiguration",
+      "UpdateCodeSecurityIntegration",
+      "UpdateCodeSecurityScanConfiguration",
+      "UpdateConfiguration",
+      "UpdateConnector",
+      "UpdateConnectorScanConfiguration",
+      "UpdateEc2DeepInspectionConfiguration",
+      "UpdateEncryptionKey",
+      "UpdateFilter",
+      "UpdateOrgEc2DeepInspectionConfiguration",
+      "UpdateOrganizationConfiguration"
+    ],
+    "Read": [
+      "BatchGetAccountStatus",
+      "BatchGetCodeSnippet",
+      "BatchGetFindingDetails",
+      "BatchGetFreeTrialInfo",
+      "BatchGetMemberEc2DeepInspectionStatus",
+      "DescribeOrganizationConfiguration",
+      "GetCisScanReport",
+      "GetClustersForImage",
+      "GetCodeSecurityIntegration",
+      "GetCodeSecurityScan",
+      "GetCodeSecurityScanConfiguration",
+      "GetConfiguration",
+      "GetDelegatedAdminAccount",
+      "GetEc2DeepInspectionConfiguration",
+      "GetEncryptionKey",
+      "GetFindingsReportStatus",
+      "GetMember",
+      "GetSbomExport",
+      "ListTagsForResource",
+      "SearchVulnerabilities"
+    ],
+    "List": [
+      "GetCisScanResultDetails",
+      "ListAccountPermissions",
+      "ListCisScanConfigurations",
+      "ListCisScanResultsAggregatedByChecks",
+      "ListCisScanResultsAggregatedByTargetResource",
+      "ListCisScans",
+      "ListCodeSecurityIntegrations",
+      "ListCodeSecurityScanConfigurationAssociations",
+      "ListCodeSecurityScanConfigurations",
+      "ListConnectorScanConfigurations",
+      "ListConnectors",
+      "ListCoverage",
+      "ListCoverageStatistics",
+      "ListDelegatedAdminAccounts",
+      "ListFilters",
+      "ListFindingAggregations",
+      "ListFindings",
+      "ListMembers",
+      "ListUsageTotals"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateMember",
+      "methodName": "toAssociateMember",
+      "description": "Grants permission to associate an account with an Amazon Inspector administrator account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_AssociateMember.html"
+    },
+    {
+      "name": "BatchAssociateCodeSecurityScanConfiguration",
+      "methodName": "toBatchAssociateCodeSecurityScanConfiguration",
+      "description": "Grants permission to associate multiple code repositories with an Amazon Inspector code security scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchAssociateCodeSecurityScanConfiguration.html"
+    },
+    {
+      "name": "BatchDisassociateCodeSecurityScanConfiguration",
+      "methodName": "toBatchDisassociateCodeSecurityScanConfiguration",
+      "description": "Grants permission to disassociate multiple code repositories from an Amazon Inspector code security scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchDisassociateCodeSecurityScanConfiguration.html"
+    },
+    {
+      "name": "BatchGetAccountStatus",
+      "methodName": "toBatchGetAccountStatus",
+      "description": "Grants permission to retrieve information about Amazon Inspector accounts for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetAccountStatus.html"
+    },
+    {
+      "name": "BatchGetCodeSnippet",
+      "methodName": "toBatchGetCodeSnippet",
+      "description": "Grants permission to retrieve code snippet information about one or more code vulnerability findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetCodeSnippet.html"
+    },
+    {
+      "name": "BatchGetFindingDetails",
+      "methodName": "toBatchGetFindingDetails",
+      "description": "Grants permission to let a customer get enhanced vulnerability intelligence details for findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetFindingDetails.html"
+    },
+    {
+      "name": "BatchGetFreeTrialInfo",
+      "methodName": "toBatchGetFreeTrialInfo",
+      "description": "Grants permission to retrieve free trial period eligibility about Amazon Inspector accounts for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetFreeTrialInfo.html"
+    },
+    {
+      "name": "BatchGetMemberEc2DeepInspectionStatus",
+      "methodName": "toBatchGetMemberEc2DeepInspectionStatus",
+      "description": "Grants permission to delegated administrator to retrieve ec2 deep inspection status of member accounts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetMemberEc2DeepInspectionStatus.html"
+    },
+    {
+      "name": "BatchUpdateMemberEc2DeepInspectionStatus",
+      "methodName": "toBatchUpdateMemberEc2DeepInspectionStatus",
+      "description": "Grants permission to update ec2 deep inspection status by delegated administrator for its associated member accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html"
+    },
+    {
+      "name": "CancelFindingsReport",
+      "methodName": "toCancelFindingsReport",
+      "description": "Grants permission to cancel the generation of a findings report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CancelFindingsReport.html"
+    },
+    {
+      "name": "CancelSbomExport",
+      "methodName": "toCancelSbomExport",
+      "description": "Grants permission to cancel the generation of an SBOM report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CancelSbomExport.html"
+    },
+    {
+      "name": "CreateCisScanConfiguration",
+      "methodName": "toCreateCisScanConfiguration",
+      "description": "Grants permission to create and define the settings for a CIS scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCisScanConfiguration.html"
+    },
+    {
+      "name": "CreateCodeSecurityIntegration",
+      "methodName": "toCreateCodeSecurityIntegration",
+      "description": "Grants permission to create a code security integration with a source code repository provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityIntegration.html"
+    },
+    {
+      "name": "CreateCodeSecurityScanConfiguration",
+      "methodName": "toCreateCodeSecurityScanConfiguration",
+      "description": "Grants permission to create a scan configuration for code security scanning",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityScanConfiguration.html"
+    },
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create a connector to scan resources from a third-party cloud provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateConnector.html"
+    },
+    {
+      "name": "CreateFilter",
+      "methodName": "toCreateFilter",
+      "description": "Grants permission to create and define the settings for a findings filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateFilter.html"
+    },
+    {
+      "name": "CreateFindingsReport",
+      "methodName": "toCreateFindingsReport",
+      "description": "Grants permission to request the generation of a findings report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateFindingsReport.html"
+    },
+    {
+      "name": "CreateSbomExport",
+      "methodName": "toCreateSbomExport",
+      "description": "Grants permission to request the generation of an SBOM report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateSbomExport.html"
+    },
+    {
+      "name": "DeleteCisScanConfiguration",
+      "methodName": "toDeleteCisScanConfiguration",
+      "description": "Grants permission to delete a CIS scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCisScanConfiguration.html"
+    },
+    {
+      "name": "DeleteCodeSecurityIntegration",
+      "methodName": "toDeleteCodeSecurityIntegration",
+      "description": "Grants permission to delete a code security integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityIntegration.html"
+    },
+    {
+      "name": "DeleteCodeSecurityScanConfiguration",
+      "methodName": "toDeleteCodeSecurityScanConfiguration",
+      "description": "Grants permission to delete a code security scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityScanConfiguration.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete a connector configured for scanning resources from a third-party cloud provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteConnector.html"
+    },
+    {
+      "name": "DeleteFilter",
+      "methodName": "toDeleteFilter",
+      "description": "Grants permission to delete a findings filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteFilter.html"
+    },
+    {
+      "name": "DescribeOrganizationConfiguration",
+      "methodName": "toDescribeOrganizationConfiguration",
+      "description": "Grants permission to retrieve information about the Amazon Inspector configuration settings for an AWS organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DescribeOrganizationConfiguration.html"
+    },
+    {
+      "name": "Disable",
+      "methodName": "toDisable",
+      "description": "Grants permission to disable an Amazon Inspector account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_Disable.html"
+    },
+    {
+      "name": "DisableDelegatedAdminAccount",
+      "methodName": "toDisableDelegatedAdminAccount",
+      "description": "Grants permission to disable an account as the delegated Amazon Inspector administrator account for an AWS organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DisableDelegatedAdminAccount.html"
+    },
+    {
+      "name": "DisassociateMember",
+      "methodName": "toDisassociateMember",
+      "description": "Grants permission to an Amazon Inspector administrator account to disassociate from an Inspector member account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DisassociateMember.html"
+    },
+    {
+      "name": "Enable",
+      "methodName": "toEnable",
+      "description": "Grants permission to enable and specify the configuration settings for a new Amazon Inspector account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_Enable.html"
+    },
+    {
+      "name": "EnableDelegatedAdminAccount",
+      "methodName": "toEnableDelegatedAdminAccount",
+      "description": "Grants permission to enable an account as the delegated Amazon Inspector administrator account for an AWS organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_EnableDelegatedAdminAccount.html"
+    },
+    {
+      "name": "GetCisScanReport",
+      "methodName": "toGetCisScanReport",
+      "description": "Grants permission to retrieve a report containing information about completed CIS scans",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCisScanReport.html"
+    },
+    {
+      "name": "GetCisScanResultDetails",
+      "methodName": "toGetCisScanResultDetails",
+      "description": "Grants permission to retrieve information about all details pertaining to one CIS scan and one targeted resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCisScanResultDetails.html"
+    },
+    {
+      "name": "GetClustersForImage",
+      "methodName": "toGetClustersForImage",
+      "description": "Grants permission to get cluster information for a given a continuously scanned amazon Ecr image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetClustersForImage.html"
+    },
+    {
+      "name": "GetCodeSecurityIntegration",
+      "methodName": "toGetCodeSecurityIntegration",
+      "description": "Grants permission to retrieve information about a code security integration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityIntegration.html"
+    },
+    {
+      "name": "GetCodeSecurityScan",
+      "methodName": "toGetCodeSecurityScan",
+      "description": "Grants permission to retrieve information about a specific code security scan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScan.html"
+    },
+    {
+      "name": "GetCodeSecurityScanConfiguration",
+      "methodName": "toGetCodeSecurityScanConfiguration",
+      "description": "Grants permission to retrieve information about a code security scan configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScanConfiguration.html"
+    },
+    {
+      "name": "GetConfiguration",
+      "methodName": "toGetConfiguration",
+      "description": "Grants permission to retrieve information about the Amazon Inspector configuration settings for an AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetConfiguration.html"
+    },
+    {
+      "name": "GetDelegatedAdminAccount",
+      "methodName": "toGetDelegatedAdminAccount",
+      "description": "Grants permission to retrieve information about the Amazon Inspector administrator account for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetDelegatedAdminAccount.html"
+    },
+    {
+      "name": "GetEc2DeepInspectionConfiguration",
+      "methodName": "toGetEc2DeepInspectionConfiguration",
+      "description": "Grants permission to retrieve ec2 deep inspection configuration for standalone accounts, delegated administrator and member account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetEc2DeepInspectionConfiguration.html"
+    },
+    {
+      "name": "GetEncryptionKey",
+      "methodName": "toGetEncryptionKey",
+      "description": "Grants permission to retrieve information about the KMS key used to encrypt code snippets with",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetEncryptionKey.html"
+    },
+    {
+      "name": "GetFindingsReportStatus",
+      "methodName": "toGetFindingsReportStatus",
+      "description": "Grants permission to retrieve status for a requested findings report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetFindingsReportStatus.html"
+    },
+    {
+      "name": "GetMember",
+      "methodName": "toGetMember",
+      "description": "Grants permission to retrieve information about an account that's associated with an Amazon Inspector administrator account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html"
+    },
+    {
+      "name": "GetSbomExport",
+      "methodName": "toGetSbomExport",
+      "description": "Grants permission to retrieve a requested SBOM report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetSbomExport.html"
+    },
+    {
+      "name": "ListAccountPermissions",
+      "methodName": "toListAccountPermissions",
+      "description": "Grants permission to retrieve feature configuration permissions associated with an Amazon Inspector account within an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListAccountPermissions.html"
+    },
+    {
+      "name": "ListCisScanConfigurations",
+      "methodName": "toListCisScanConfigurations",
+      "description": "Grants permission to retrieve information about all CIS scan configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCisScanConfigurations.html"
+    },
+    {
+      "name": "ListCisScanResultsAggregatedByChecks",
+      "methodName": "toListCisScanResultsAggregatedByChecks",
+      "description": "Grants permission to retrieve information about all checks pertaining to one CIS scan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCisScanResultsAggregatedByChecks.html"
+    },
+    {
+      "name": "ListCisScanResultsAggregatedByTargetResource",
+      "methodName": "toListCisScanResultsAggregatedByTargetResource",
+      "description": "Grants permission to retrieve information about all resources pertaining to one CIS scan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCisScanResultsAggregatedByTargetResource.html"
+    },
+    {
+      "name": "ListCisScans",
+      "methodName": "toListCisScans",
+      "description": "Grants permission to retrieve information about completed CIS scans",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCisScans.html"
+    },
+    {
+      "name": "ListCodeSecurityIntegrations",
+      "methodName": "toListCodeSecurityIntegrations",
+      "description": "Grants permission to list all code security integrations in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityIntegrations.html"
+    },
+    {
+      "name": "ListCodeSecurityScanConfigurationAssociations",
+      "methodName": "toListCodeSecurityScanConfigurationAssociations",
+      "description": "Grants permission to list the associations between code repositories and Amazon Inspector code security scan configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurationAssociations.html"
+    },
+    {
+      "name": "ListCodeSecurityScanConfigurations",
+      "methodName": "toListCodeSecurityScanConfigurations",
+      "description": "Grants permission to list all code security scan configurations in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurations.html"
+    },
+    {
+      "name": "ListConnectorScanConfigurations",
+      "methodName": "toListConnectorScanConfigurations",
+      "description": "Grants permission to list scan configurations for connectors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListConnectorScanConfigurations.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list connectors configured for scanning resources from third-party cloud providers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListConnectors.html"
+    },
+    {
+      "name": "ListCoverage",
+      "methodName": "toListCoverage",
+      "description": "Grants permission to retrieve the types of statistics Amazon Inspector can generate for resources Inspector monitors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCoverage.html"
+    },
+    {
+      "name": "ListCoverageStatistics",
+      "methodName": "toListCoverageStatistics",
+      "description": "Grants permission to retrieve statistical data and other information about the resources Amazon Inspector monitors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCoverageStatistics.html"
+    },
+    {
+      "name": "ListDelegatedAdminAccounts",
+      "methodName": "toListDelegatedAdminAccounts",
+      "description": "Grants permission to retrieve information about the delegated Amazon Inspector administrator account for an AWS organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListDelegatedAdminAccounts.html"
+    },
+    {
+      "name": "ListFilters",
+      "methodName": "toListFilters",
+      "description": "Grants permission to retrieve information about all findings filters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListFilters.html"
+    },
+    {
+      "name": "ListFindingAggregations",
+      "methodName": "toListFindingAggregations",
+      "description": "Grants permission to retrieve statistical data and other information about Amazon Inspector findings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListFindingAggregations.html"
+    },
+    {
+      "name": "ListFindings",
+      "methodName": "toListFindings",
+      "description": "Grants permission to retrieve a subset of information about one or more findings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListFindings.html"
+    },
+    {
+      "name": "ListMembers",
+      "methodName": "toListMembers",
+      "description": "Grants permission to retrieve information about the Amazon Inspector member accounts that are associated with an Inspector administrator account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve the tags for an Amazon Inspector resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUsageTotals",
+      "methodName": "toListUsageTotals",
+      "description": "Grants permission to retrieve aggregated usage data for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListUsageTotals.html"
+    },
+    {
+      "name": "ResetEncryptionKey",
+      "methodName": "toResetEncryptionKey",
+      "description": "Grants permission to let a customer reset to use an Amazon-owned KMS key to encrypt code snippets with",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ResetEncryptionKey.html"
+    },
+    {
+      "name": "SearchVulnerabilities",
+      "methodName": "toSearchVulnerabilities",
+      "description": "Grants permission to list Amazon Inspector coverage details for a specific vulnerability",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SearchVulnerabilities.html"
+    },
+    {
+      "name": "SendCisSessionHealth",
+      "methodName": "toSendCisSessionHealth",
+      "description": "Grants permission to send CIS health for a CIS scan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendCisSessionHealth.html"
+    },
+    {
+      "name": "SendCisSessionTelemetry",
+      "methodName": "toSendCisSessionTelemetry",
+      "description": "Grants permission to send CIS telemetry for a CIS scan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendCisSessionTelemetry.html"
+    },
+    {
+      "name": "StartCisSession",
+      "methodName": "toStartCisSession",
+      "description": "Grants permission to start a CIS scan session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCisSession.html"
+    },
+    {
+      "name": "StartCodeSecurityScan",
+      "methodName": "toStartCodeSecurityScan",
+      "description": "Grants permission to initiate a code security scan on a specified repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCodeSecurityScan.html"
+    },
+    {
+      "name": "StopCisSession",
+      "methodName": "toStopCisSession",
+      "description": "Grants permission to stop a CIS scan session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StopCisSession.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update the tags for an Amazon Inspector resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an Amazon Inspector resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCisScanConfiguration",
+      "methodName": "toUpdateCisScanConfiguration",
+      "description": "Grants permission to update the settings for a CIS scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCisScanConfiguration.html"
+    },
+    {
+      "name": "UpdateCodeSecurityIntegration",
+      "methodName": "toUpdateCodeSecurityIntegration",
+      "description": "Grants permission to update an existing code security integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityIntegration.html"
+    },
+    {
+      "name": "UpdateCodeSecurityScanConfiguration",
+      "methodName": "toUpdateCodeSecurityScanConfiguration",
+      "description": "Grants permission to update an existing code security scan configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityScanConfiguration.html"
+    },
+    {
+      "name": "UpdateConfiguration",
+      "methodName": "toUpdateConfiguration",
+      "description": "Grants permission to update information about the Amazon Inspector configuration settings for an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConfiguration.html"
+    },
+    {
+      "name": "UpdateConnector",
+      "methodName": "toUpdateConnector",
+      "description": "Grants permission to update a connector configured for scanning resources from a third-party cloud provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnector.html"
+    },
+    {
+      "name": "UpdateConnectorScanConfiguration",
+      "methodName": "toUpdateConnectorScanConfiguration",
+      "description": "Grants permission to update scan configuration settings for resources associated with a connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnectorScanConfiguration.html"
+    },
+    {
+      "name": "UpdateEc2DeepInspectionConfiguration",
+      "methodName": "toUpdateEc2DeepInspectionConfiguration",
+      "description": "Grants permission to update ec2 deep inspection configuration by delegated administrator, member and standalone account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateEc2DeepInspectionConfiguration.html"
+    },
+    {
+      "name": "UpdateEncryptionKey",
+      "methodName": "toUpdateEncryptionKey",
+      "description": "Grants permission to let a customer use a KMS key to encrypt code snippets with",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateEncryptionKey.html"
+    },
+    {
+      "name": "UpdateFilter",
+      "methodName": "toUpdateFilter",
+      "description": "Grants permission to update the settings for a findings filter",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateFilter.html"
+    },
+    {
+      "name": "UpdateOrgEc2DeepInspectionConfiguration",
+      "methodName": "toUpdateOrgEc2DeepInspectionConfiguration",
+      "description": "Grants permission to update ec2 deep inspection configuration by delegated administrator for its associated member accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateOrgEc2DeepInspectionConfiguration.html"
+    },
+    {
+      "name": "UpdateOrganizationConfiguration",
+      "methodName": "toUpdateOrganizationConfiguration",
+      "description": "Grants permission to update Amazon Inspector configuration settings for an AWS organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateOrganizationConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "CIS Scan Configuration",
+      "methodName": "onCISScanConfiguration",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "arn": "arn:${Partition}:inspector2:${Region}:${Account}:owner/${OwnerId}/cis-configuration/${CISScanConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "OwnerId",
+          "name": "ownerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CISScanConfigurationId",
+          "name": "cISScanConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Code Security Integration",
+      "methodName": "onCodeSecurityIntegration",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "arn": "arn:${Partition}:inspector2:${Region}:${Account}:codesecurity-integration/${CodeSecurityIntegrationId}",
+      "placeholders": [
+        {
+          "placeholder": "CodeSecurityIntegrationId",
+          "name": "codeSecurityIntegrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_inspectorv2",
+        "interface": "ICodeSecurityIntegrationRef",
+        "property": "codeSecurityIntegrationRef",
+        "arn": "codeSecurityIntegrationArn"
+      }
+    },
+    {
+      "name": "Code Security Scan Configuration",
+      "methodName": "onCodeSecurityScanConfiguration",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "arn": "arn:${Partition}:inspector2:${Region}:${Account}:owner/${OwnerId}/codesecurity-configuration/${CodeSecurityScanConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "OwnerId",
+          "name": "ownerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CodeSecurityScanConfigurationId",
+          "name": "codeSecurityScanConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "arn": "arn:${Partition}:inspector2:${Region}:${Account}:connector/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_inspectorv2",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
+    },
+    {
+      "name": "Filter",
+      "methodName": "onFilter",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "arn": "arn:${Partition}:inspector2:${Region}:${Account}:owner/${OwnerId}/filter/${FilterId}",
+      "placeholders": [
+        {
+          "placeholder": "OwnerId",
+          "name": "ownerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FilterId",
+          "name": "filterId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Finding",
+      "methodName": "onFinding",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "arn": "arn:${Partition}:inspector2:${Region}:${Account}:finding/${FindingId}",
+      "placeholders": [
+        {
+          "placeholder": "FindingId",
+          "name": "findingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCisScanConfiguration",
+        "toCreateCodeSecurityIntegration",
+        "toCreateCodeSecurityScanConfiguration",
+        "toCreateConnector",
+        "toCreateFilter",
+        "toTagResource",
+        "toUpdateConnector",
+        "toUpdateFilter"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCisScanConfiguration",
+        "toCreateCodeSecurityIntegration",
+        "toCreateCodeSecurityScanConfiguration",
+        "toCreateConnector",
+        "toCreateFilter",
+        "toDeleteCisScanConfiguration",
+        "toDeleteCodeSecurityIntegration",
+        "toDeleteCodeSecurityScanConfiguration",
+        "toDeleteConnector",
+        "toDeleteFilter",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCisScanConfiguration",
+        "toUpdateCodeSecurityIntegration",
+        "toUpdateCodeSecurityScanConfiguration",
+        "toUpdateConnector",
+        "toUpdateFilter"
+      ],
+      "relatedResourceTypes": [
+        "CIS Scan Configuration",
+        "Code Security Integration",
+        "Code Security Scan Configuration",
+        "Connector",
+        "Filter"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCisScanConfiguration",
+        "toCreateCodeSecurityIntegration",
+        "toCreateCodeSecurityScanConfiguration",
+        "toCreateConnector",
+        "toCreateFilter",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConnector",
+        "toUpdateFilter"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

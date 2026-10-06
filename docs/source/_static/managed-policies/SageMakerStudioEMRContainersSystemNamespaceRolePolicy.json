@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AssumeProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone_usr_role_*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "TagSessionProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone_usr_role_*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "LakeFormationAuthorizedCaller"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/LakeFormationAuthorizedCaller": "EMR on EKS Engine",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SetContextProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "sts:SetContext"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone_usr_role_*"
+      ],
+      "Condition": {
+        "ForAllValues:ArnEquals": {
+          "sts:RequestContextProviders": [
+            "arn:aws:iam::aws:contextProvider/IdentityCenter"
+          ]
+        },
+        "Null": {
+          "sts:RequestContextProviders": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    }
+  ]
+}

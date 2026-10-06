@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "filename": "license-manager-linux-subscriptions",
+  "className": "LicenseManagerLinuxSubscriptions",
+  "name": "license-manager-linux-subscriptions",
+  "servicePrefix": "license-manager-linux-subscriptions",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_license-manager-linux-subscriptions.html",
+  "accessLevelList": {
+    "Write": [
+      "DeregisterSubscriptionProvider",
+      "RegisterSubscriptionProvider",
+      "TagResource",
+      "UntagResource",
+      "UpdateServiceSettings"
+    ],
+    "Read": [
+      "GetRegisteredSubscriptionProvider",
+      "GetServiceSettings",
+      "ListLinuxSubscriptionInstances",
+      "ListLinuxSubscriptions",
+      "ListRegisteredSubscriptionProviders",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeregisterSubscriptionProvider",
+      "methodName": "toDeregisterSubscriptionProvider",
+      "description": "Grants permission to permanently delete a subscription provider in AWS License Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_DeregisterSubscriptionProvider.html"
+    },
+    {
+      "name": "GetRegisteredSubscriptionProvider",
+      "methodName": "toGetRegisteredSubscriptionProvider",
+      "description": "Grants permission to get a subscription provider in AWS License Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_GetRegisteredSubscriptionProvider.html"
+    },
+    {
+      "name": "GetServiceSettings",
+      "methodName": "toGetServiceSettings",
+      "description": "Grants permission to get the service settings for Linux subscriptions in AWS License Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_GetServiceSettings.html"
+    },
+    {
+      "name": "ListLinuxSubscriptionInstances",
+      "methodName": "toListLinuxSubscriptionInstances",
+      "description": "Grants permission to list all instances with Linux subscriptions in AWS License Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_ListLinuxSubscriptionInstances.html"
+    },
+    {
+      "name": "ListLinuxSubscriptions",
+      "methodName": "toListLinuxSubscriptions",
+      "description": "Grants permission to list all Linux subscriptions in AWS License Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_ListLinuxSubscriptions.html"
+    },
+    {
+      "name": "ListRegisteredSubscriptionProviders",
+      "methodName": "toListRegisteredSubscriptionProviders",
+      "description": "Grants permission to list subscription providers in AWS License Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_ListRegisteredSubscriptionProviders.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a selected resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterSubscriptionProvider",
+      "methodName": "toRegisterSubscriptionProvider",
+      "description": "Grants permission to create a new subscription provider in AWS License Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_RegisterSubscriptionProvider.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a selected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a selected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateServiceSettings",
+      "methodName": "toUpdateServiceSettings",
+      "description": "Grants permission to update the service settings for Linux subscriptions in AWS License Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-linux-subscriptions/latest/APIReference/API_UpdateServiceSettings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "subscription-provider",
+      "methodName": "onSubscriptionProvider",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/subscription-providers.html",
+      "arn": "arn:${Partition}:license-manager-linux-subscriptions:${Region}:${Account}:subscription-provider/${SubscriptionProviderId}",
+      "placeholders": [
+        {
+          "placeholder": "SubscriptionProviderId",
+          "name": "subscriptionProviderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toRegisterSubscriptionProvider",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toDeregisterSubscriptionProvider",
+        "toGetRegisteredSubscriptionProvider",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "subscription-provider"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toRegisterSubscriptionProvider",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

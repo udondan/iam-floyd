@@ -1,0 +1,46 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:ListAnalysisReports",
+        "network-firewall:ListFirewallPolicies",
+        "network-firewall:ListFirewalls",
+        "network-firewall:ListFlowOperations",
+        "network-firewall:ListProxies",
+        "network-firewall:ListProxyConfigurations",
+        "network-firewall:ListProxyRuleGroups",
+        "network-firewall:ListRuleGroups",
+        "network-firewall:ListTagsForResource",
+        "network-firewall:ListTLSInspectionConfigurations",
+        "network-firewall:ListVpcEndpointAssociations",
+        "network-firewall:DescribeFirewall",
+        "network-firewall:DescribeFirewallMetadata",
+        "network-firewall:DescribeFirewallPolicy",
+        "network-firewall:DescribeFlowOperation",
+        "network-firewall:DescribeLoggingConfiguration",
+        "network-firewall:DescribeProxy",
+        "network-firewall:DescribeProxyConfiguration",
+        "network-firewall:DescribeProxyRule",
+        "network-firewall:DescribeProxyRuleGroup",
+        "network-firewall:DescribeResourcePolicy",
+        "network-firewall:DescribeRuleGroup",
+        "network-firewall:DescribeRuleGroupMetadata",
+        "network-firewall:DescribeTLSInspectionConfiguration",
+        "network-firewall:DescribeVpcEndpointAssociation",
+        "network-firewall:GetAnalysisReportResults",
+        "network-firewall:ListFlowOperationResults"
+      ],
+      "Resource": "arn:aws:network-firewall:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    }
+  ]
+}

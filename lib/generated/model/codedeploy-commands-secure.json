@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "filename": "codedeploy-commands-secure",
+  "className": "CodedeployCommandsSecure",
+  "name": "codedeploy-commands-secure",
+  "servicePrefix": "codedeploy-commands-secure",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codedeploy-commands-secure.html",
+  "accessLevelList": {
+    "Read": [
+      "GetDeploymentSpecification",
+      "PollHostCommand"
+    ],
+    "Write": [
+      "PutHostCommandAcknowledgement",
+      "PutHostCommandComplete"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetDeploymentSpecification",
+      "methodName": "toGetDeploymentSpecification",
+      "description": "Grants permission to get deployment specification",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints.html#vpc-codedeploy-agent-configuration"
+    },
+    {
+      "name": "PollHostCommand",
+      "methodName": "toPollHostCommand",
+      "description": "Grants permission to request host agent commands",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints.html#vpc-codedeploy-agent-configuration"
+    },
+    {
+      "name": "PutHostCommandAcknowledgement",
+      "methodName": "toPutHostCommandAcknowledgement",
+      "description": "Grants permission to mark host agent commands acknowledged",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints.html#vpc-codedeploy-agent-configuration"
+    },
+    {
+      "name": "PutHostCommandComplete",
+      "methodName": "toPutHostCommandComplete",
+      "description": "Grants permission to mark host agent commands completed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints.html#vpc-codedeploy-agent-configuration"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

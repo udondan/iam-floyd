@@ -1,0 +1,1354 @@
+{
+  "schemaVersion": 1,
+  "filename": "cloudformation",
+  "className": "Cloudformation",
+  "name": "cloudformation",
+  "servicePrefix": "cloudformation",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudformation.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateOrganizationsAccess",
+      "ActivateType",
+      "CancelUpdateStack",
+      "ContinueUpdateRollback",
+      "CreateChangeSet",
+      "CreateGeneratedTemplate",
+      "CreateStack",
+      "CreateStackInstances",
+      "CreateStackRefactor",
+      "CreateStackSet",
+      "DeactivateOrganizationsAccess",
+      "DeactivateType",
+      "DeleteChangeSet",
+      "DeleteGeneratedTemplate",
+      "DeleteStack",
+      "DeleteStackInstances",
+      "DeleteStackSet",
+      "DeregisterType",
+      "ExecuteChangeSet",
+      "ExecuteStackRefactor",
+      "ImportStacksToStackSet",
+      "PublishType",
+      "RecordHandlerProgress",
+      "RegisterPublisher",
+      "RegisterType",
+      "RollbackStack",
+      "SetStackPolicy",
+      "SetTypeConfiguration",
+      "SetTypeDefaultVersion",
+      "SignalResource",
+      "StartResourceScan",
+      "StopStackSetOperation",
+      "TagResource",
+      "TestType",
+      "UntagResource",
+      "UpdateGeneratedTemplate",
+      "UpdateStack",
+      "UpdateStackInstances",
+      "UpdateStackSet",
+      "UpdateTerminationProtection",
+      "CreateUploadBucket"
+    ],
+    "Read": [
+      "BatchDescribeTypeConfigurations",
+      "DescribeAccountLimits",
+      "DescribeChangeSet",
+      "DescribeChangeSetHooks",
+      "DescribeEvents",
+      "DescribeGeneratedTemplate",
+      "DescribeOrganizationsAccess",
+      "DescribePublisher",
+      "DescribeResourceScan",
+      "DescribeStackDriftDetectionStatus",
+      "DescribeStackEvents",
+      "DescribeStackInstance",
+      "DescribeStackRefactor",
+      "DescribeStackResource",
+      "DescribeStackResourceDrifts",
+      "DescribeStackResources",
+      "DescribeStackSet",
+      "DescribeStackSetOperation",
+      "DescribeType",
+      "DescribeTypeRegistration",
+      "DetectStackDrift",
+      "DetectStackResourceDrift",
+      "DetectStackSetDrift",
+      "EstimateTemplateCost",
+      "GetGeneratedTemplate",
+      "GetHookResult",
+      "GetStackPolicy",
+      "GetTemplate",
+      "GetTemplateSummary",
+      "ValidateTemplate"
+    ],
+    "List": [
+      "DescribeStacks",
+      "ListAllHookResults",
+      "ListChangeSets",
+      "ListExports",
+      "ListGeneratedTemplates",
+      "ListHookResults",
+      "ListImports",
+      "ListResourceScanRelatedResources",
+      "ListResourceScanResources",
+      "ListResourceScans",
+      "ListStackInstanceResourceDrifts",
+      "ListStackInstances",
+      "ListStackRefactorActions",
+      "ListStackRefactors",
+      "ListStackResources",
+      "ListStackSetAutoDeploymentTargets",
+      "ListStackSetOperationResults",
+      "ListStackSetOperations",
+      "ListStackSets",
+      "ListStacks",
+      "ListTypeRegistrations",
+      "ListTypeVersions",
+      "ListTypes"
+    ],
+    "Permissions management": [
+      "SetStackPolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateOrganizationsAccess",
+      "methodName": "toActivateOrganizationsAccess",
+      "description": "Grants permission to activate trusted access between StackSets and Organizations. With trusted access between StackSets and Organizations activated, the management account has permissions to create and manage StackSets for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateOrganizationsAccess.html"
+    },
+    {
+      "name": "ActivateType",
+      "methodName": "toActivateType",
+      "description": "Grants permission to activate a public third-party extension, making it available for use in stack templates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+    },
+    {
+      "name": "BatchDescribeTypeConfigurations",
+      "methodName": "toBatchDescribeTypeConfigurations",
+      "description": "Grants permission to return configuration data for the specified CloudFormation extensions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_BatchDescribeTypeConfigurations.html"
+    },
+    {
+      "name": "CancelUpdateStack",
+      "methodName": "toCancelUpdateStack",
+      "description": "Grants permission to cancel an update on the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html"
+    },
+    {
+      "name": "ContinueUpdateRollback",
+      "methodName": "toContinueUpdateRollback",
+      "description": "Grants permission to continue rolling back a stack that is in the UPDATE_ROLLBACK_FAILED state to the UPDATE_ROLLBACK_COMPLETE state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html"
+    },
+    {
+      "name": "CreateChangeSet",
+      "methodName": "toCreateChangeSet",
+      "description": "Grants permission to create a list of changes for a stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+    },
+    {
+      "name": "CreateGeneratedTemplate",
+      "methodName": "toCreateGeneratedTemplate",
+      "description": "Grants permission to create a template from existing resources that are not already managed with CloudFormation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateGeneratedTemplate.html"
+    },
+    {
+      "name": "CreateStack",
+      "methodName": "toCreateStack",
+      "description": "Grants permission to create a stack as specified in the template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html"
+    },
+    {
+      "name": "CreateStackInstances",
+      "methodName": "toCreateStackInstances",
+      "description": "Grants permission to create stack instances for the specified accounts, within the specified regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html"
+    },
+    {
+      "name": "CreateStackRefactor",
+      "methodName": "toCreateStackRefactor",
+      "description": "Grants permission to create a stack refactor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackRefactor.html"
+    },
+    {
+      "name": "CreateStackSet",
+      "methodName": "toCreateStackSet",
+      "description": "Grants permission to create a stackset as specified in the template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifRoleArn",
+        "ifTemplateUrl"
+      ]
+    },
+    {
+      "name": "DeactivateOrganizationsAccess",
+      "methodName": "toDeactivateOrganizationsAccess",
+      "description": "Grants permission to deactivate trusted access between StackSets and Organizations. If trusted access is deactivated, the management account does not have permissions to create and manage service-managed StackSets for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeactivateOrganizationsAccess.html"
+    },
+    {
+      "name": "DeactivateType",
+      "methodName": "toDeactivateType",
+      "description": "Grants permission to deactivate a public extension that was previously activated in this account and region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeactivateType.html"
+    },
+    {
+      "name": "DeleteChangeSet",
+      "methodName": "toDeleteChangeSet",
+      "description": "Grants permission to delete the specified change set. Deleting change sets ensures that no one executes the wrong change set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html"
+    },
+    {
+      "name": "DeleteGeneratedTemplate",
+      "methodName": "toDeleteGeneratedTemplate",
+      "description": "Grants permission to delete a generated template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteGeneratedTemplate.html"
+    },
+    {
+      "name": "DeleteStack",
+      "methodName": "toDeleteStack",
+      "description": "Grants permission to delete a specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html"
+    },
+    {
+      "name": "DeleteStackInstances",
+      "methodName": "toDeleteStackInstances",
+      "description": "Grants permission to delete stack instances for the specified accounts, in the specified regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html"
+    },
+    {
+      "name": "DeleteStackSet",
+      "methodName": "toDeleteStackSet",
+      "description": "Grants permission to delete a specified stackset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackSet.html"
+    },
+    {
+      "name": "DeregisterType",
+      "methodName": "toDeregisterType",
+      "description": "Grants permission to deregister an existing CloudFormation type or type version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html"
+    },
+    {
+      "name": "DescribeAccountLimits",
+      "methodName": "toDescribeAccountLimits",
+      "description": "Grants permission to retrieve your account's AWS CloudFormation limits",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeAccountLimits.html"
+    },
+    {
+      "name": "DescribeChangeSet",
+      "methodName": "toDescribeChangeSet",
+      "description": "Grants permission to return the description for the specified change set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html"
+    },
+    {
+      "name": "DescribeChangeSetHooks",
+      "methodName": "toDescribeChangeSetHooks",
+      "description": "Grants permission to return the Hook invocation information for the specified change set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSetHooks.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to return all related events for a specified operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeGeneratedTemplate",
+      "methodName": "toDescribeGeneratedTemplate",
+      "description": "Grants permission to describe a generated template. The output includes details about the progress of the creation of a generated template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeGeneratedTemplate.html"
+    },
+    {
+      "name": "DescribeOrganizationsAccess",
+      "methodName": "toDescribeOrganizationsAccess",
+      "description": "Grants permission to return information about the account's OrganizationAccess status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeOrganizationsAccess.html"
+    },
+    {
+      "name": "DescribePublisher",
+      "methodName": "toDescribePublisher",
+      "description": "Grants permission to return information about a CloudFormation extension publisher",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribePublisher.html"
+    },
+    {
+      "name": "DescribeResourceScan",
+      "methodName": "toDescribeResourceScan",
+      "description": "Grants permission to describe details of a resource scan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeResourceScan.html"
+    },
+    {
+      "name": "DescribeStackDriftDetectionStatus",
+      "methodName": "toDescribeStackDriftDetectionStatus",
+      "description": "Grants permission to return information about a stack drift detection operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackDriftDetectionStatus.html"
+    },
+    {
+      "name": "DescribeStackEvents",
+      "methodName": "toDescribeStackEvents",
+      "description": "Grants permission to return all stack related events for a specified stack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html"
+    },
+    {
+      "name": "DescribeStackInstance",
+      "methodName": "toDescribeStackInstance",
+      "description": "Grants permission to return the stack instance that's associated with the specified stack set, AWS account, and region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackInstance.html"
+    },
+    {
+      "name": "DescribeStackRefactor",
+      "methodName": "toDescribeStackRefactor",
+      "description": "Grants permission to return the description for the specified stack refactor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackRefactor.html"
+    },
+    {
+      "name": "DescribeStackResource",
+      "methodName": "toDescribeStackResource",
+      "description": "Grants permission to return a description of the specified resource in the specified stack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html"
+    },
+    {
+      "name": "DescribeStackResourceDrifts",
+      "methodName": "toDescribeStackResourceDrifts",
+      "description": "Grants permission to return drift information for the resources that have been checked for drift in the specified stack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResourceDrifts.html"
+    },
+    {
+      "name": "DescribeStackResources",
+      "methodName": "toDescribeStackResources",
+      "description": "Grants permission to return AWS resource descriptions for running and deleted stacks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html"
+    },
+    {
+      "name": "DescribeStackSet",
+      "methodName": "toDescribeStackSet",
+      "description": "Grants permission to return the description of the specified stack set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSet.html"
+    },
+    {
+      "name": "DescribeStackSetOperation",
+      "methodName": "toDescribeStackSetOperation",
+      "description": "Grants permission to return the description of the specified stack set operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSetOperation.html"
+    },
+    {
+      "name": "DescribeStacks",
+      "methodName": "toDescribeStacks",
+      "description": "Grants permission to return the description for the specified stack, and to all stacks when used in combination with the ListStacks action",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html"
+    },
+    {
+      "name": "DescribeType",
+      "methodName": "toDescribeType",
+      "description": "Grants permission to return information about the CloudFormation type requested",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+    },
+    {
+      "name": "DescribeTypeRegistration",
+      "methodName": "toDescribeTypeRegistration",
+      "description": "Grants permission to return information about the registration process for a CloudFormation type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeTypeRegistration.html"
+    },
+    {
+      "name": "DetectStackDrift",
+      "methodName": "toDetectStackDrift",
+      "description": "Grants permission to detects whether a stack's actual configuration differs, or has drifted, from it's expected configuration, as defined in the stack template and any values specified as template parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DetectStackDrift.html"
+    },
+    {
+      "name": "DetectStackResourceDrift",
+      "methodName": "toDetectStackResourceDrift",
+      "description": "Grants permission to return information about whether a resource's actual configuration differs, or has drifted, from it's expected configuration, as defined in the stack template and any values specified as template parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DetectStackResourceDrift.html"
+    },
+    {
+      "name": "DetectStackSetDrift",
+      "methodName": "toDetectStackSetDrift",
+      "description": "Grants permission to enable users to detect drift on a stack set and the stack instances that belong to that stack set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DetectStackSetDrift.html"
+    },
+    {
+      "name": "EstimateTemplateCost",
+      "methodName": "toEstimateTemplateCost",
+      "description": "Grants permission to return the estimated monthly cost of a template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html",
+      "conditionMethods": [
+        "ifTemplateUrl"
+      ]
+    },
+    {
+      "name": "ExecuteChangeSet",
+      "methodName": "toExecuteChangeSet",
+      "description": "Grants permission to update a stack using the input information that was provided when the specified change set was created",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+    },
+    {
+      "name": "ExecuteStackRefactor",
+      "methodName": "toExecuteStackRefactor",
+      "description": "Grants permission to execute a stack refactor using the input information that was provided when the specified stack refactor was created",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteStackRefactor.html"
+    },
+    {
+      "name": "GetGeneratedTemplate",
+      "methodName": "toGetGeneratedTemplate",
+      "description": "Grants permission to retrieve a generated template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetGeneratedTemplate.html"
+    },
+    {
+      "name": "GetHookResult",
+      "methodName": "toGetHookResult",
+      "description": "Grants permission to return detailed information about a specific hook invocation result",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetHookResult.html",
+      "conditionMethods": [
+        "ifTypeArn"
+      ]
+    },
+    {
+      "name": "GetStackPolicy",
+      "methodName": "toGetStackPolicy",
+      "description": "Grants permission to return the stack policy for a specified stack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html"
+    },
+    {
+      "name": "GetTemplate",
+      "methodName": "toGetTemplate",
+      "description": "Grants permission to return the template body for a specified stack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html"
+    },
+    {
+      "name": "GetTemplateSummary",
+      "methodName": "toGetTemplateSummary",
+      "description": "Grants permission to return information about a new or existing template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html"
+    },
+    {
+      "name": "ImportStacksToStackSet",
+      "methodName": "toImportStacksToStackSet",
+      "description": "Grants permission to enable users to import existing stacks to a new or existing stackset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ImportStacksToStackSet.html"
+    },
+    {
+      "name": "ListAllHookResults",
+      "methodName": "toListAllHookResults",
+      "description": "Grants permission to return Hook invocations result information for a specified Hook, a combination of Hook and status, or all Hooks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html",
+      "conditionMethods": [
+        "ifTypeArn"
+      ]
+    },
+    {
+      "name": "ListChangeSets",
+      "methodName": "toListChangeSets",
+      "description": "Grants permission to return the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the CREATE_IN_PROGRESS or CREATE_PENDING state",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html"
+    },
+    {
+      "name": "ListExports",
+      "methodName": "toListExports",
+      "description": "Grants permission to list all exported output values in the account and region in which you call this action",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html"
+    },
+    {
+      "name": "ListGeneratedTemplates",
+      "methodName": "toListGeneratedTemplates",
+      "description": "Grants permission to list your generated templates in this Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListGeneratedTemplates.html"
+    },
+    {
+      "name": "ListHookResults",
+      "methodName": "toListHookResults",
+      "description": "Grants permission to return Hook invocations result information for the specified target",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html"
+    },
+    {
+      "name": "ListImports",
+      "methodName": "toListImports",
+      "description": "Grants permission to list all stacks that are importing an exported output value",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html"
+    },
+    {
+      "name": "ListResourceScanRelatedResources",
+      "methodName": "toListResourceScanRelatedResources",
+      "description": "Grants permission to list the related resources for a list of resources from a resource scan. The response indicates whether each returned resource is already managed by CloudFormation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListResourceScanRelatedResources.html"
+    },
+    {
+      "name": "ListResourceScanResources",
+      "methodName": "toListResourceScanResources",
+      "description": "Grants permission to list the resources from a resource scan. The results can be filtered by resource identifier, resource type prefix, tag key, and tag value",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListResourceScanResources.html"
+    },
+    {
+      "name": "ListResourceScans",
+      "methodName": "toListResourceScans",
+      "description": "Grants permission to list the resource scans from newest to oldest. By default it will return up to 10 resource scans",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListResourceScans.html"
+    },
+    {
+      "name": "ListStackInstanceResourceDrifts",
+      "methodName": "toListStackInstanceResourceDrifts",
+      "description": "Grants permission to return drift information for the resources that have been checked for drift in the specified stack instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackInstanceResourceDrifts.html"
+    },
+    {
+      "name": "ListStackInstances",
+      "methodName": "toListStackInstances",
+      "description": "Grants permission to return summary information about stack instances that are associated with the specified stack set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets.html"
+    },
+    {
+      "name": "ListStackRefactorActions",
+      "methodName": "toListStackRefactorActions",
+      "description": "Grants permission to return the list of actions of the specified stack refactor",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackRefactorActions.html"
+    },
+    {
+      "name": "ListStackRefactors",
+      "methodName": "toListStackRefactors",
+      "description": "Grants permission to return the ID and status of each active stack refactor",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackRefactors.html"
+    },
+    {
+      "name": "ListStackResources",
+      "methodName": "toListStackResources",
+      "description": "Grants permission to return descriptions of all resources of the specified stack",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html"
+    },
+    {
+      "name": "ListStackSetAutoDeploymentTargets",
+      "methodName": "toListStackSetAutoDeploymentTargets",
+      "description": "Grants permission to return summary information about StackSet Auto Deployment Targets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
+    },
+    {
+      "name": "ListStackSetOperationResults",
+      "methodName": "toListStackSetOperationResults",
+      "description": "Grants permission to return summary information about the results of a stack set operation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperationResults.html"
+    },
+    {
+      "name": "ListStackSetOperations",
+      "methodName": "toListStackSetOperations",
+      "description": "Grants permission to return summary information about operations performed on a stack set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperations.html"
+    },
+    {
+      "name": "ListStackSets",
+      "methodName": "toListStackSets",
+      "description": "Grants permission to return summary information about stack sets that are associated with the user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets.html"
+    },
+    {
+      "name": "ListStacks",
+      "methodName": "toListStacks",
+      "description": "Grants permission to return the summary information for stacks whose status matches the specified StackStatusFilter. In combination with the DescribeStacks action, grants permission to list descriptions for stacks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html"
+    },
+    {
+      "name": "ListTypeRegistrations",
+      "methodName": "toListTypeRegistrations",
+      "description": "Grants permission to list CloudFormation type registration attempts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypeRegistrations.html"
+    },
+    {
+      "name": "ListTypeVersions",
+      "methodName": "toListTypeVersions",
+      "description": "Grants permission to list versions of a particular CloudFormation type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypeVersions.html"
+    },
+    {
+      "name": "ListTypes",
+      "methodName": "toListTypes",
+      "description": "Grants permission to list available CloudFormation types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypes.html"
+    },
+    {
+      "name": "PublishType",
+      "methodName": "toPublishType",
+      "description": "Grants permission to publish the specified extension to the CloudFormation registry as a public extension in this region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_PublishType.html"
+    },
+    {
+      "name": "RecordHandlerProgress",
+      "methodName": "toRecordHandlerProgress",
+      "description": "Grants permission to record the handler progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RecordHandlerProgress.html"
+    },
+    {
+      "name": "RegisterPublisher",
+      "methodName": "toRegisterPublisher",
+      "description": "Grants permission to register account as a publisher of public extensions in the CloudFormation registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html"
+    },
+    {
+      "name": "RegisterType",
+      "methodName": "toRegisterType",
+      "description": "Grants permission to register a new CloudFormation type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+    },
+    {
+      "name": "RollbackStack",
+      "methodName": "toRollbackStack",
+      "description": "Grants permission to rollback the stack to the last stable state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RollbackStack.html"
+    },
+    {
+      "name": "SetStackPolicy",
+      "methodName": "toSetStackPolicy",
+      "description": "Grants permission to set a stack policy for a specified stack",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html"
+    },
+    {
+      "name": "SetTypeConfiguration",
+      "methodName": "toSetTypeConfiguration",
+      "description": "Grants permission to set the configuration data for a registered CloudFormation extension, in the given account and region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
+    },
+    {
+      "name": "SetTypeDefaultVersion",
+      "methodName": "toSetTypeDefaultVersion",
+      "description": "Grants permission to set which version of a CloudFormation type applies to CloudFormation operations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeDefaultVersion.html"
+    },
+    {
+      "name": "SignalResource",
+      "methodName": "toSignalResource",
+      "description": "Grants permission to send a signal to the specified resource with a success or failure status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SignalResource.html"
+    },
+    {
+      "name": "StartResourceScan",
+      "methodName": "toStartResourceScan",
+      "description": "Grants permission to start a scan of the resources in this account in this Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StartResourceScan.html"
+    },
+    {
+      "name": "StopStackSetOperation",
+      "methodName": "toStopStackSetOperation",
+      "description": "Grants permission to stop an in-progress operation on a stack set and its associated stack instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StopStackSetOperation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag cloudformation resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TestType",
+      "methodName": "toTestType",
+      "description": "Grants permission to test a registered extension to make sure it meets all necessary requirements for being published in the CloudFormation registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TestType.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag cloudformation resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateGeneratedTemplate",
+      "methodName": "toUpdateGeneratedTemplate",
+      "description": "Grants permission to update a generated template. This can be used to change the name, add and remove resources, refresh resources, and change the DeletionPolicy and UpdateReplacePolicy settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateGeneratedTemplate.html"
+    },
+    {
+      "name": "UpdateStack",
+      "methodName": "toUpdateStack",
+      "description": "Grants permission to update a stack as specified in the template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html"
+    },
+    {
+      "name": "UpdateStackInstances",
+      "methodName": "toUpdateStackInstances",
+      "description": "Grants permission to update the parameter values for stack instances for the specified accounts, within the specified regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackInstances.html"
+    },
+    {
+      "name": "UpdateStackSet",
+      "methodName": "toUpdateStackSet",
+      "description": "Grants permission to update a stackset as specified in the template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+    },
+    {
+      "name": "UpdateTerminationProtection",
+      "methodName": "toUpdateTerminationProtection",
+      "description": "Grants permission to update termination protection for the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateTerminationProtection.html"
+    },
+    {
+      "name": "ValidateTemplate",
+      "methodName": "toValidateTemplate",
+      "description": "Grants permission to validate a specified template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html",
+      "conditionMethods": [
+        "ifTemplateUrl"
+      ]
+    },
+    {
+      "name": "CreateUploadBucket",
+      "methodName": "toCreateUploadBucket",
+      "description": "Grants permission to upload templates to Amazon S3 buckets. Used only by the AWS CloudFormation console and is not documented in the API reference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "changeset",
+      "methodName": "onChangeset",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "ChangeSetName",
+          "name": "changeSetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "generatedtemplate",
+      "methodName": "onGeneratedtemplate",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:generatedTemplate/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "resourcescan",
+      "methodName": "onResourcescan",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:resourceScan/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "stack",
+      "methodName": "onStack",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "StackName",
+          "name": "stackName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stackset",
+      "methodName": "onStackset",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}",
+      "placeholders": [
+        {
+          "placeholder": "StackSetName",
+          "name": "stackSetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stackset-target",
+      "methodName": "onStacksetTarget",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stackset-target/${StackSetTarget}",
+      "placeholders": [
+        {
+          "placeholder": "StackSetTarget",
+          "name": "stackSetTarget",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "type",
+      "methodName": "onType",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:type/resource/${Type}",
+      "placeholders": [
+        {
+          "placeholder": "Type",
+          "name": "type",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "typeHook",
+      "methodName": "onTypeHook",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:type/hook/${Type}",
+      "placeholders": [
+        {
+          "placeholder": "Type",
+          "name": "type",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toCreateStackSet",
+        "toTagResource",
+        "toUpdateStack",
+        "toUpdateStackSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCancelUpdateStack",
+        "toContinueUpdateRollback",
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toCreateStackInstances",
+        "toCreateStackRefactor",
+        "toDeleteChangeSet",
+        "toDeleteStack",
+        "toDeleteStackInstances",
+        "toDeleteStackSet",
+        "toDescribeChangeSet",
+        "toDescribeChangeSetHooks",
+        "toDescribeEvents",
+        "toDescribeStackEvents",
+        "toDescribeStackInstance",
+        "toDescribeStackRefactor",
+        "toDescribeStackResource",
+        "toDescribeStackResourceDrifts",
+        "toDescribeStackResources",
+        "toDescribeStackSet",
+        "toDescribeStackSetOperation",
+        "toDescribeStacks",
+        "toDetectStackDrift",
+        "toDetectStackResourceDrift",
+        "toDetectStackSetDrift",
+        "toExecuteChangeSet",
+        "toExecuteStackRefactor",
+        "toGetStackPolicy",
+        "toGetTemplate",
+        "toGetTemplateSummary",
+        "toImportStacksToStackSet",
+        "toListChangeSets",
+        "toListHookResults",
+        "toListStackInstanceResourceDrifts",
+        "toListStackInstances",
+        "toListStackRefactorActions",
+        "toListStackRefactors",
+        "toListStackResources",
+        "toListStackSetAutoDeploymentTargets",
+        "toListStackSetOperationResults",
+        "toListStackSetOperations",
+        "toRecordHandlerProgress",
+        "toRollbackStack",
+        "toSetStackPolicy",
+        "toSignalResource",
+        "toStopStackSetOperation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateStack",
+        "toUpdateStackInstances",
+        "toUpdateStackSet",
+        "toUpdateTerminationProtection"
+      ],
+      "relatedResourceTypes": [
+        "changeset",
+        "stack",
+        "stackset"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toCreateStackInstances",
+        "toCreateStackSet",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateStack",
+        "toUpdateStackSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:ChangeSetName",
+      "methodName": "ifChangeSetName",
+      "description": "Filters access by an AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toDeleteChangeSet",
+        "toDescribeChangeSet",
+        "toDescribeChangeSetHooks",
+        "toExecuteChangeSet",
+        "toListHookResults"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ChangeSetName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:CreateAction",
+      "methodName": "ifCreateAction",
+      "description": "Filters access by the name of a resource-mutating API action. Use to control which APIs IAM users can use to add or remove tags on a stack or stack set",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:ImportResourceTypes",
+      "methodName": "ifImportResourceTypes",
+      "description": "Filters access by the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they want to import a resource into a stack",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ImportResourceTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:ResourceTypes",
+      "methodName": "ifResourceTypes",
+      "description": "Filters access by the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they create or update a stack",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toUpdateStack"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:RoleArn",
+      "methodName": "ifRoleArn",
+      "description": "Filters access by the ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toContinueUpdateRollback",
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toCreateStackSet",
+        "toDeleteStack",
+        "toRollbackStack",
+        "toUpdateStack",
+        "toUpdateStackSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RoleArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "cloudformation:StackPolicyUrl",
+      "methodName": "ifStackPolicyUrl",
+      "description": "Filters access by an Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toSetStackPolicy",
+        "toUpdateStack"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "StackPolicyUrl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:TargetRegion",
+      "methodName": "ifTargetRegion",
+      "description": "Filters access by stack set target region. Use to control which regions IAM users can use when they create or update stack sets",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateStackInstances",
+        "toDeleteStackInstances",
+        "toUpdateStackInstances",
+        "toUpdateStackSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:TemplateUrl",
+      "methodName": "ifTemplateUrl",
+      "description": "Filters access by an Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toCreateStackSet",
+        "toEstimateTemplateCost",
+        "toGetTemplateSummary",
+        "toUpdateStack",
+        "toUpdateStackSet",
+        "toValidateTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TemplateUrl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudformation:TypeArn",
+      "methodName": "ifTypeArn",
+      "description": "Filters access by the ARN of a CloudFormation extension",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toGetHookResult",
+        "toListAllHookResults"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TypeArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:DescribeImageReferences",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeLaunchTemplates",
+        "ec2:DescribeLaunchTemplateVersions",
+        "ssm:DescribeParameters",
+        "ssm:GetParameters",
+        "imagebuilder:ListImageRecipes",
+        "imagebuilder:ListContainerRecipes",
+        "imagebuilder:GetContainerRecipe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "ec2-images.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

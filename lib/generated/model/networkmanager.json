@@ -1,0 +1,1403 @@
+{
+  "schemaVersion": 1,
+  "filename": "networkmanager",
+  "className": "Networkmanager",
+  "name": "networkmanager",
+  "servicePrefix": "networkmanager",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptAttachment",
+      "AssociateConnectPeer",
+      "AssociateCustomerGateway",
+      "AssociateLink",
+      "AssociateTransitGatewayConnectPeer",
+      "CreateConnectAttachment",
+      "CreateConnectPeer",
+      "CreateConnection",
+      "CreateCoreNetwork",
+      "CreateCoreNetworkPrefixListAssociation",
+      "CreateDevice",
+      "CreateDirectConnectGatewayAttachment",
+      "CreateGlobalNetwork",
+      "CreateLink",
+      "CreateSite",
+      "CreateSiteToSiteVpnAttachment",
+      "CreateTransitGatewayPeering",
+      "CreateTransitGatewayRouteTableAttachment",
+      "CreateVpcAttachment",
+      "DeleteAttachment",
+      "DeleteConnectPeer",
+      "DeleteConnection",
+      "DeleteCoreNetwork",
+      "DeleteCoreNetworkPolicyVersion",
+      "DeleteCoreNetworkPrefixListAssociation",
+      "DeleteDevice",
+      "DeleteGlobalNetwork",
+      "DeleteLink",
+      "DeletePeering",
+      "DeleteResourcePolicy",
+      "DeleteSite",
+      "DeregisterTransitGateway",
+      "DisassociateConnectPeer",
+      "DisassociateCustomerGateway",
+      "DisassociateLink",
+      "DisassociateTransitGatewayConnectPeer",
+      "ExecuteCoreNetworkChangeSet",
+      "PutAttachmentRoutingPolicyLabel",
+      "PutCoreNetworkPolicy",
+      "PutResourcePolicy",
+      "RegisterTransitGateway",
+      "RejectAttachment",
+      "RemoveAttachmentRoutingPolicyLabel",
+      "RestoreCoreNetworkPolicyVersion",
+      "StartOrganizationServiceAccessUpdate",
+      "StartRouteAnalysis",
+      "TagResource",
+      "UntagResource",
+      "UpdateConnection",
+      "UpdateCoreNetwork",
+      "UpdateDevice",
+      "UpdateDirectConnectGatewayAttachment",
+      "UpdateGlobalNetwork",
+      "UpdateLink",
+      "UpdateNetworkResourceMetadata",
+      "UpdateSite",
+      "UpdateVpcAttachment"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy",
+      "StartOrganizationServiceAccessUpdate"
+    ],
+    "List": [
+      "DescribeGlobalNetworks",
+      "GetConnections",
+      "GetCustomerGatewayAssociations",
+      "GetDevices",
+      "GetLinkAssociations",
+      "GetLinks",
+      "GetSites",
+      "GetTransitGatewayConnectPeerAssociations",
+      "GetTransitGatewayRegistrations",
+      "ListAttachmentRoutingPolicyAssociations",
+      "ListAttachments",
+      "ListConnectPeers",
+      "ListCoreNetworkPolicyVersions",
+      "ListCoreNetworkPrefixListAssociations",
+      "ListCoreNetworkRoutingInformation",
+      "ListCoreNetworks",
+      "ListOrganizationServiceAccessStatus",
+      "ListPeerings"
+    ],
+    "Read": [
+      "GetConnectAttachment",
+      "GetConnectPeer",
+      "GetConnectPeerAssociations",
+      "GetCoreNetwork",
+      "GetCoreNetworkChangeEvents",
+      "GetCoreNetworkChangeSet",
+      "GetCoreNetworkPolicy",
+      "GetDirectConnectGatewayAttachment",
+      "GetNetworkResourceCounts",
+      "GetNetworkResourceRelationships",
+      "GetNetworkResources",
+      "GetNetworkRoutes",
+      "GetNetworkTelemetry",
+      "GetResourcePolicy",
+      "GetRouteAnalysis",
+      "GetSiteToSiteVpnAttachment",
+      "GetTransitGatewayPeering",
+      "GetTransitGatewayRouteTableAttachment",
+      "GetVpcAttachment",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptAttachment",
+      "methodName": "toAcceptAttachment",
+      "description": "Grants permission to accept creation of an attachment between a source and destination in a core network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AcceptAttachment.html"
+    },
+    {
+      "name": "AssociateConnectPeer",
+      "methodName": "toAssociateConnectPeer",
+      "description": "Grants permission to associate a Connect Peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateConnectPeer.html"
+    },
+    {
+      "name": "AssociateCustomerGateway",
+      "methodName": "toAssociateCustomerGateway",
+      "description": "Grants permission to associate a customer gateway to a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html"
+    },
+    {
+      "name": "AssociateLink",
+      "methodName": "toAssociateLink",
+      "description": "Grants permission to associate a link to a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateLink.html"
+    },
+    {
+      "name": "AssociateTransitGatewayConnectPeer",
+      "methodName": "toAssociateTransitGatewayConnectPeer",
+      "description": "Grants permission to associate a transit gateway connect peer to a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateTransitGatewayConnectPeer.html"
+    },
+    {
+      "name": "CreateConnectAttachment",
+      "methodName": "toCreateConnectAttachment",
+      "description": "Grants permission to create a Connect attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectAttachment.html"
+    },
+    {
+      "name": "CreateConnectPeer",
+      "methodName": "toCreateConnectPeer",
+      "description": "Grants permission to create a Connect Peer connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectPeer.html"
+    },
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create a new connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnection.html"
+    },
+    {
+      "name": "CreateCoreNetwork",
+      "methodName": "toCreateCoreNetwork",
+      "description": "Grants permission to create a new core network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetwork.html"
+    },
+    {
+      "name": "CreateCoreNetworkPrefixListAssociation",
+      "methodName": "toCreateCoreNetworkPrefixListAssociation",
+      "description": "Grants permission to create a prefix list core network association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetworkPrefixListAssociation.html"
+    },
+    {
+      "name": "CreateDevice",
+      "methodName": "toCreateDevice",
+      "description": "Grants permission to create a new device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html"
+    },
+    {
+      "name": "CreateDirectConnectGatewayAttachment",
+      "methodName": "toCreateDirectConnectGatewayAttachment",
+      "description": "Grants permission to create a Direct Connect gateway attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDirectConnectGatewayAttachment.html"
+    },
+    {
+      "name": "CreateGlobalNetwork",
+      "methodName": "toCreateGlobalNetwork",
+      "description": "Grants permission to create a new global network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLink",
+      "methodName": "toCreateLink",
+      "description": "Grants permission to create a new link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html"
+    },
+    {
+      "name": "CreateSite",
+      "methodName": "toCreateSite",
+      "description": "Grants permission to create a new site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html"
+    },
+    {
+      "name": "CreateSiteToSiteVpnAttachment",
+      "methodName": "toCreateSiteToSiteVpnAttachment",
+      "description": "Grants permission to create a site-to-site VPN attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSiteToSiteVpnAttachment.html"
+    },
+    {
+      "name": "CreateTransitGatewayPeering",
+      "methodName": "toCreateTransitGatewayPeering",
+      "description": "Grants permission to create a Transit Gateway peering",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayPeering.html"
+    },
+    {
+      "name": "CreateTransitGatewayRouteTableAttachment",
+      "methodName": "toCreateTransitGatewayRouteTableAttachment",
+      "description": "Grants permission to create a TGW RTB attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayRouteTableAttachment.html"
+    },
+    {
+      "name": "CreateVpcAttachment",
+      "methodName": "toCreateVpcAttachment",
+      "description": "Grants permission to create a VPC attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateVpcAttachment.html"
+    },
+    {
+      "name": "DeleteAttachment",
+      "methodName": "toDeleteAttachment",
+      "description": "Grants permission to delete an attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteAttachment.html"
+    },
+    {
+      "name": "DeleteConnectPeer",
+      "methodName": "toDeleteConnectPeer",
+      "description": "Grants permission to delete a Connect Peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnectPeer.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnection.html"
+    },
+    {
+      "name": "DeleteCoreNetwork",
+      "methodName": "toDeleteCoreNetwork",
+      "description": "Grants permission to delete a core network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetwork.html"
+    },
+    {
+      "name": "DeleteCoreNetworkPolicyVersion",
+      "methodName": "toDeleteCoreNetworkPolicyVersion",
+      "description": "Grants permission to delete the core network policy version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPolicyVersion.html"
+    },
+    {
+      "name": "DeleteCoreNetworkPrefixListAssociation",
+      "methodName": "toDeleteCoreNetworkPrefixListAssociation",
+      "description": "Grants permission to delete a prefix list core network association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPrefixListAssociation.html"
+    },
+    {
+      "name": "DeleteDevice",
+      "methodName": "toDeleteDevice",
+      "description": "Grants permission to delete a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteDevice.html"
+    },
+    {
+      "name": "DeleteGlobalNetwork",
+      "methodName": "toDeleteGlobalNetwork",
+      "description": "Grants permission to delete a global network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteGlobalNetwork.html"
+    },
+    {
+      "name": "DeleteLink",
+      "methodName": "toDeleteLink",
+      "description": "Grants permission to delete a link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteLink.html"
+    },
+    {
+      "name": "DeletePeering",
+      "methodName": "toDeletePeering",
+      "description": "Grants permission to delete a peering",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeletePeering.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteSite",
+      "methodName": "toDeleteSite",
+      "description": "Grants permission to delete a site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteSite.html"
+    },
+    {
+      "name": "DeregisterTransitGateway",
+      "methodName": "toDeregisterTransitGateway",
+      "description": "Grants permission to deregister a transit gateway from a global network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html"
+    },
+    {
+      "name": "DescribeGlobalNetworks",
+      "methodName": "toDescribeGlobalNetworks",
+      "description": "Grants permission to describe global networks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DescribeGlobalNetworks.html"
+    },
+    {
+      "name": "DisassociateConnectPeer",
+      "methodName": "toDisassociateConnectPeer",
+      "description": "Grants permission to disassociate a Connect Peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateConnectPeer.html"
+    },
+    {
+      "name": "DisassociateCustomerGateway",
+      "methodName": "toDisassociateCustomerGateway",
+      "description": "Grants permission to disassociate a customer gateway from a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html"
+    },
+    {
+      "name": "DisassociateLink",
+      "methodName": "toDisassociateLink",
+      "description": "Grants permission to disassociate a link from a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateLink.html"
+    },
+    {
+      "name": "DisassociateTransitGatewayConnectPeer",
+      "methodName": "toDisassociateTransitGatewayConnectPeer",
+      "description": "Grants permission to disassociate a transit gateway connect peer from a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateTransitGatewayConnectPeer.html"
+    },
+    {
+      "name": "ExecuteCoreNetworkChangeSet",
+      "methodName": "toExecuteCoreNetworkChangeSet",
+      "description": "Grants permission to apply changes to the core network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ExecuteCoreNetworkChangeSet.html"
+    },
+    {
+      "name": "GetConnectAttachment",
+      "methodName": "toGetConnectAttachment",
+      "description": "Grants permission to retrieve a Connect attachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnectAttachment.html"
+    },
+    {
+      "name": "GetConnectPeer",
+      "methodName": "toGetConnectPeer",
+      "description": "Grants permission to retrieve a Connect Peer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnectPeer.html"
+    },
+    {
+      "name": "GetConnectPeerAssociations",
+      "methodName": "toGetConnectPeerAssociations",
+      "description": "Grants permission to describe Connect Peer associations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnectPeerAssociations.html"
+    },
+    {
+      "name": "GetConnections",
+      "methodName": "toGetConnections",
+      "description": "Grants permission to describe connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnections.html"
+    },
+    {
+      "name": "GetCoreNetwork",
+      "methodName": "toGetCoreNetwork",
+      "description": "Grants permission to retrieve a core network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetwork.html"
+    },
+    {
+      "name": "GetCoreNetworkChangeEvents",
+      "methodName": "toGetCoreNetworkChangeEvents",
+      "description": "Grants permission to retrieve a list of core network change events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetworkChangeEvents.html"
+    },
+    {
+      "name": "GetCoreNetworkChangeSet",
+      "methodName": "toGetCoreNetworkChangeSet",
+      "description": "Grants permission to retrieve a list of core network change sets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetworkChangeSet.html"
+    },
+    {
+      "name": "GetCoreNetworkPolicy",
+      "methodName": "toGetCoreNetworkPolicy",
+      "description": "Grants permission to retrieve core network policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCoreNetworkPolicy.html"
+    },
+    {
+      "name": "GetCustomerGatewayAssociations",
+      "methodName": "toGetCustomerGatewayAssociations",
+      "description": "Grants permission to describe customer gateway associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCustomerGatewayAssociations.html"
+    },
+    {
+      "name": "GetDevices",
+      "methodName": "toGetDevices",
+      "description": "Grants permission to describe devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDevices.html"
+    },
+    {
+      "name": "GetDirectConnectGatewayAttachment",
+      "methodName": "toGetDirectConnectGatewayAttachment",
+      "description": "Grants permission to retrieve a Direct Connect gateway attachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDirectConnectGatewayAttachment.html"
+    },
+    {
+      "name": "GetLinkAssociations",
+      "methodName": "toGetLinkAssociations",
+      "description": "Grants permission to describe link associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinkAssociations.html"
+    },
+    {
+      "name": "GetLinks",
+      "methodName": "toGetLinks",
+      "description": "Grants permission to describe links",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinks.html"
+    },
+    {
+      "name": "GetNetworkResourceCounts",
+      "methodName": "toGetNetworkResourceCounts",
+      "description": "Grants permission to return the number of resources for a global network grouped by type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkResourceCounts.html"
+    },
+    {
+      "name": "GetNetworkResourceRelationships",
+      "methodName": "toGetNetworkResourceRelationships",
+      "description": "Grants permission to retrieve related resources for a resource within the global network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkResourceRelationships.html"
+    },
+    {
+      "name": "GetNetworkResources",
+      "methodName": "toGetNetworkResources",
+      "description": "Grants permission to retrieve a global network resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkResources.html"
+    },
+    {
+      "name": "GetNetworkRoutes",
+      "methodName": "toGetNetworkRoutes",
+      "description": "Grants permission to retrieve routes for a route table within the global network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkRoutes.html"
+    },
+    {
+      "name": "GetNetworkTelemetry",
+      "methodName": "toGetNetworkTelemetry",
+      "description": "Grants permission to retrieve network telemetry objects for the global network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkTelemetry.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetRouteAnalysis",
+      "methodName": "toGetRouteAnalysis",
+      "description": "Grants permission to retrieve a route analysis configuration and result",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetRouteAnalysis.html"
+    },
+    {
+      "name": "GetSiteToSiteVpnAttachment",
+      "methodName": "toGetSiteToSiteVpnAttachment",
+      "description": "Grants permission to retrieve a site-to-site VPN attachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSiteToSiteVpnAttachment.html"
+    },
+    {
+      "name": "GetSites",
+      "methodName": "toGetSites",
+      "description": "Grants permission to describe global networks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSites.html"
+    },
+    {
+      "name": "GetTransitGatewayConnectPeerAssociations",
+      "methodName": "toGetTransitGatewayConnectPeerAssociations",
+      "description": "Grants permission to describe transit gateway connect peer associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayConnectPeerAssociations.html"
+    },
+    {
+      "name": "GetTransitGatewayPeering",
+      "methodName": "toGetTransitGatewayPeering",
+      "description": "Grants permission to retrieve a Transit Gateway peering",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayPeering.html"
+    },
+    {
+      "name": "GetTransitGatewayRegistrations",
+      "methodName": "toGetTransitGatewayRegistrations",
+      "description": "Grants permission to describe transit gateway registrations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRegistrations.html"
+    },
+    {
+      "name": "GetTransitGatewayRouteTableAttachment",
+      "methodName": "toGetTransitGatewayRouteTableAttachment",
+      "description": "Grants permission to retrieve a TGW RTB attachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRouteTableAttachment.html"
+    },
+    {
+      "name": "GetVpcAttachment",
+      "methodName": "toGetVpcAttachment",
+      "description": "Grants permission to retrieve a VPC attachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetVpcAttachment.html"
+    },
+    {
+      "name": "ListAttachmentRoutingPolicyAssociations",
+      "methodName": "toListAttachmentRoutingPolicyAssociations",
+      "description": "Grants permission to list all routing policies associated to core network attachments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachmentRoutingPolicyAssociations.html"
+    },
+    {
+      "name": "ListAttachments",
+      "methodName": "toListAttachments",
+      "description": "Grants permission to describe attachments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html"
+    },
+    {
+      "name": "ListConnectPeers",
+      "methodName": "toListConnectPeers",
+      "description": "Grants permission to describe Connect Peers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListConnectPeers.html"
+    },
+    {
+      "name": "ListCoreNetworkPolicyVersions",
+      "methodName": "toListCoreNetworkPolicyVersions",
+      "description": "Grants permission to list core network policy versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPolicyVersions.html"
+    },
+    {
+      "name": "ListCoreNetworkPrefixListAssociations",
+      "methodName": "toListCoreNetworkPrefixListAssociations",
+      "description": "Grants permission to list core network prefix list associaitons",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPrefixListAssociations.html"
+    },
+    {
+      "name": "ListCoreNetworkRoutingInformation",
+      "methodName": "toListCoreNetworkRoutingInformation",
+      "description": "Grants permission to list core network routing information",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkRoutingInformation.html"
+    },
+    {
+      "name": "ListCoreNetworks",
+      "methodName": "toListCoreNetworks",
+      "description": "Grants permission to list core networks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworks.html"
+    },
+    {
+      "name": "ListOrganizationServiceAccessStatus",
+      "methodName": "toListOrganizationServiceAccessStatus",
+      "description": "Grants permission to list organization service access status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListOrganizationServiceAccessStatus.html"
+    },
+    {
+      "name": "ListPeerings",
+      "methodName": "toListPeerings",
+      "description": "Grants permission to describe peerings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListPeerings.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Network Manager resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutAttachmentRoutingPolicyLabel",
+      "methodName": "toPutAttachmentRoutingPolicyLabel",
+      "description": "Grants permission to put an attachment routing policy label",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutAttachmentRoutingPolicyLabel.html"
+    },
+    {
+      "name": "PutCoreNetworkPolicy",
+      "methodName": "toPutCoreNetworkPolicy",
+      "description": "Grants permission to create a core network policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutCoreNetworkPolicy.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create or update a resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RegisterTransitGateway",
+      "methodName": "toRegisterTransitGateway",
+      "description": "Grants permission to register a transit gateway to a global network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html"
+    },
+    {
+      "name": "RejectAttachment",
+      "methodName": "toRejectAttachment",
+      "description": "Grants permission to reject attachment request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RejectAttachment.html"
+    },
+    {
+      "name": "RemoveAttachmentRoutingPolicyLabel",
+      "methodName": "toRemoveAttachmentRoutingPolicyLabel",
+      "description": "Grants permission to remove an attachment routing policy label",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RemoveAttachmentRoutingPolicyLabel.html"
+    },
+    {
+      "name": "RestoreCoreNetworkPolicyVersion",
+      "methodName": "toRestoreCoreNetworkPolicyVersion",
+      "description": "Grants permission to restore the core network policy to a previous version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RestoreCoreNetworkPolicyVersion.html"
+    },
+    {
+      "name": "StartOrganizationServiceAccessUpdate",
+      "methodName": "toStartOrganizationServiceAccessUpdate",
+      "description": "Grants permission to start organization service access update",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartOrganizationServiceAccessUpdate.html"
+    },
+    {
+      "name": "StartRouteAnalysis",
+      "methodName": "toStartRouteAnalysis",
+      "description": "Grants permission to start a route analysis and stores analysis configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartRouteAnalysis.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Network Manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a Network Manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConnection",
+      "methodName": "toUpdateConnection",
+      "description": "Grants permission to update a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateConnection.html"
+    },
+    {
+      "name": "UpdateCoreNetwork",
+      "methodName": "toUpdateCoreNetwork",
+      "description": "Grants permission to update a core network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateCoreNetwork.html"
+    },
+    {
+      "name": "UpdateDevice",
+      "methodName": "toUpdateDevice",
+      "description": "Grants permission to update a device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDevice.html"
+    },
+    {
+      "name": "UpdateDirectConnectGatewayAttachment",
+      "methodName": "toUpdateDirectConnectGatewayAttachment",
+      "description": "Grants permission to update a Direct Connect gateway attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDirectConnectGatewayAttachment.html"
+    },
+    {
+      "name": "UpdateGlobalNetwork",
+      "methodName": "toUpdateGlobalNetwork",
+      "description": "Grants permission to update a global network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateGlobalNetwork.html"
+    },
+    {
+      "name": "UpdateLink",
+      "methodName": "toUpdateLink",
+      "description": "Grants permission to update a link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateLink.html"
+    },
+    {
+      "name": "UpdateNetworkResourceMetadata",
+      "methodName": "toUpdateNetworkResourceMetadata",
+      "description": "Grants permission to add or update metadata key/value pairs on network resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateNetworkResourceMetadata.html"
+    },
+    {
+      "name": "UpdateSite",
+      "methodName": "toUpdateSite",
+      "description": "Grants permission to update a site",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateSite.html"
+    },
+    {
+      "name": "UpdateVpcAttachment",
+      "methodName": "toUpdateVpcAttachment",
+      "description": "Grants permission to update a VPC attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateVpcAttachment.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "attachment",
+      "methodName": "onAttachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:attachment/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connect-peer",
+      "methodName": "onConnectPeer",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:connect-peer/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connection",
+      "methodName": "onConnection",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:connection/${GlobalNetworkId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalNetworkId",
+          "name": "globalNetworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "core-network",
+      "methodName": "onCoreNetwork",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:core-network/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_networkmanager",
+        "interface": "ICoreNetworkRef",
+        "property": "coreNetworkRef",
+        "arn": "coreNetworkArn"
+      }
+    },
+    {
+      "name": "device",
+      "methodName": "onDevice",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalNetworkId",
+          "name": "globalNetworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "global-network",
+      "methodName": "onGlobalNetwork",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_networkmanager",
+        "interface": "IGlobalNetworkRef",
+        "property": "globalNetworkRef",
+        "arn": "globalNetworkArn"
+      }
+    },
+    {
+      "name": "link",
+      "methodName": "onLink",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalNetworkId",
+          "name": "globalNetworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "peering",
+      "methodName": "onPeering",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:peering/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "site",
+      "methodName": "onSite",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalNetworkId",
+          "name": "globalNetworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConnectAttachment",
+        "toCreateConnectPeer",
+        "toCreateConnection",
+        "toCreateCoreNetwork",
+        "toCreateDevice",
+        "toCreateDirectConnectGatewayAttachment",
+        "toCreateGlobalNetwork",
+        "toCreateLink",
+        "toCreateSite",
+        "toCreateSiteToSiteVpnAttachment",
+        "toCreateTransitGatewayPeering",
+        "toCreateTransitGatewayRouteTableAttachment",
+        "toCreateVpcAttachment",
+        "toTagResource",
+        "toUpdateDirectConnectGatewayAttachment",
+        "toUpdateVpcAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptAttachment",
+        "toAssociateConnectPeer",
+        "toAssociateCustomerGateway",
+        "toAssociateLink",
+        "toAssociateTransitGatewayConnectPeer",
+        "toCreateConnectAttachment",
+        "toCreateConnectPeer",
+        "toCreateConnection",
+        "toCreateCoreNetwork",
+        "toCreateCoreNetworkPrefixListAssociation",
+        "toCreateDevice",
+        "toCreateDirectConnectGatewayAttachment",
+        "toCreateLink",
+        "toCreateSite",
+        "toCreateSiteToSiteVpnAttachment",
+        "toCreateTransitGatewayPeering",
+        "toCreateTransitGatewayRouteTableAttachment",
+        "toCreateVpcAttachment",
+        "toDeleteAttachment",
+        "toDeleteConnectPeer",
+        "toDeleteConnection",
+        "toDeleteCoreNetwork",
+        "toDeleteCoreNetworkPolicyVersion",
+        "toDeleteCoreNetworkPrefixListAssociation",
+        "toDeleteDevice",
+        "toDeleteGlobalNetwork",
+        "toDeleteLink",
+        "toDeletePeering",
+        "toDeleteResourcePolicy",
+        "toDeleteSite",
+        "toDeregisterTransitGateway",
+        "toDescribeGlobalNetworks",
+        "toDisassociateConnectPeer",
+        "toDisassociateCustomerGateway",
+        "toDisassociateLink",
+        "toDisassociateTransitGatewayConnectPeer",
+        "toExecuteCoreNetworkChangeSet",
+        "toGetConnectAttachment",
+        "toGetConnectPeer",
+        "toGetConnectPeerAssociations",
+        "toGetConnections",
+        "toGetCoreNetwork",
+        "toGetCoreNetworkChangeEvents",
+        "toGetCoreNetworkChangeSet",
+        "toGetCoreNetworkPolicy",
+        "toGetCustomerGatewayAssociations",
+        "toGetDevices",
+        "toGetDirectConnectGatewayAttachment",
+        "toGetLinkAssociations",
+        "toGetLinks",
+        "toGetNetworkResourceCounts",
+        "toGetNetworkResourceRelationships",
+        "toGetNetworkResources",
+        "toGetNetworkRoutes",
+        "toGetNetworkTelemetry",
+        "toGetResourcePolicy",
+        "toGetRouteAnalysis",
+        "toGetSiteToSiteVpnAttachment",
+        "toGetSites",
+        "toGetTransitGatewayConnectPeerAssociations",
+        "toGetTransitGatewayPeering",
+        "toGetTransitGatewayRegistrations",
+        "toGetTransitGatewayRouteTableAttachment",
+        "toGetVpcAttachment",
+        "toListAttachmentRoutingPolicyAssociations",
+        "toListAttachments",
+        "toListConnectPeers",
+        "toListCoreNetworkPolicyVersions",
+        "toListCoreNetworkPrefixListAssociations",
+        "toListCoreNetworkRoutingInformation",
+        "toListTagsForResource",
+        "toPutAttachmentRoutingPolicyLabel",
+        "toPutCoreNetworkPolicy",
+        "toPutResourcePolicy",
+        "toRegisterTransitGateway",
+        "toRejectAttachment",
+        "toRemoveAttachmentRoutingPolicyLabel",
+        "toRestoreCoreNetworkPolicyVersion",
+        "toStartRouteAnalysis",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConnection",
+        "toUpdateCoreNetwork",
+        "toUpdateDevice",
+        "toUpdateDirectConnectGatewayAttachment",
+        "toUpdateGlobalNetwork",
+        "toUpdateLink",
+        "toUpdateNetworkResourceMetadata",
+        "toUpdateSite",
+        "toUpdateVpcAttachment"
+      ],
+      "relatedResourceTypes": [
+        "attachment",
+        "connect-peer",
+        "connection",
+        "core-network",
+        "device",
+        "global-network",
+        "link",
+        "peering",
+        "site"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConnectAttachment",
+        "toCreateConnectPeer",
+        "toCreateConnection",
+        "toCreateCoreNetwork",
+        "toCreateDevice",
+        "toCreateDirectConnectGatewayAttachment",
+        "toCreateGlobalNetwork",
+        "toCreateLink",
+        "toCreateSite",
+        "toCreateSiteToSiteVpnAttachment",
+        "toCreateTransitGatewayPeering",
+        "toCreateTransitGatewayRouteTableAttachment",
+        "toCreateVpcAttachment",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDirectConnectGatewayAttachment",
+        "toUpdateVpcAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "networkmanager:cgwArn",
+      "methodName": "ifCgwArn",
+      "description": "Filters access by which customer gateways can be associated or disassociated",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toAssociateCustomerGateway",
+        "toDisassociateCustomerGateway"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cgwArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:directConnectGatewayArn",
+      "methodName": "ifDirectConnectGatewayArn",
+      "description": "Filters access by which Direct Connect gateway can be used to a create/update attachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateDirectConnectGatewayAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "directConnectGatewayArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:edgeLocations",
+      "methodName": "ifEdgeLocations",
+      "description": "Filters access by which edge locations can be added or removed from a Direct Connect gateway attachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateDirectConnectGatewayAttachment",
+        "toUpdateDirectConnectGatewayAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "edgeLocations",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "networkmanager:subnetArns",
+      "methodName": "ifSubnetArns",
+      "description": "Filters access by which VPC subnets can be added or removed from a VPC attachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateVpcAttachment",
+        "toUpdateVpcAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "subnetArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:tgwArn",
+      "methodName": "ifTgwArn",
+      "description": "Filters access by which transit gateways can be registered, deregistered, or peered",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateTransitGatewayPeering",
+        "toDeregisterTransitGateway",
+        "toRegisterTransitGateway"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tgwArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:tgwConnectPeerArn",
+      "methodName": "ifTgwConnectPeerArn",
+      "description": "Filters access by which transit gateway connect peers can be associated or disassociated",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toAssociateTransitGatewayConnectPeer",
+        "toDisassociateTransitGatewayConnectPeer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tgwConnectPeerArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:tgwRtbArn",
+      "methodName": "ifTgwRtbArn",
+      "description": "Filters access by which Transit Gateway Route Table can be used to create an attachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateTransitGatewayRouteTableAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tgwRtbArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:vpcArn",
+      "methodName": "ifVpcArn",
+      "description": "Filters access by which VPC can be used to a create/update attachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateVpcAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "vpcArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "networkmanager:vpnConnectionArn",
+      "methodName": "ifVpnConnectionArn",
+      "description": "Filters access by which Site-to-Site VPN can be used to a create/update attachment",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toCreateSiteToSiteVpnAttachment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "vpnConnectionArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

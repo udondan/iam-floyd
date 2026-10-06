@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 1,
+  "filename": "observabilityadmin",
+  "className": "Observabilityadmin",
+  "name": "observabilityadmin",
+  "servicePrefix": "observabilityadmin",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_observabilityadmin.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCentralizationRuleForOrganization",
+      "CreateDatasetIntegration",
+      "CreateS3TableIntegration",
+      "CreateTelemetryPipeline",
+      "CreateTelemetryRule",
+      "CreateTelemetryRuleForOrganization",
+      "DeleteCentralizationRuleForOrganization",
+      "DeleteDatasetIntegration",
+      "DeleteS3TableIntegration",
+      "DeleteTelemetryPipeline",
+      "DeleteTelemetryRule",
+      "DeleteTelemetryRuleForOrganization",
+      "StartTelemetryEnrichment",
+      "StartTelemetryEvaluation",
+      "StartTelemetryEvaluationForOrganization",
+      "StopTelemetryEnrichment",
+      "StopTelemetryEvaluation",
+      "StopTelemetryEvaluationForOrganization",
+      "TagResource",
+      "UntagResource",
+      "UpdateCentralizationRuleForOrganization",
+      "UpdateDatasetIntegration",
+      "UpdateTelemetryPipeline",
+      "UpdateTelemetryRule",
+      "UpdateTelemetryRuleForOrganization"
+    ],
+    "Read": [
+      "GetCentralizationRuleForOrganization",
+      "GetDatasetIntegration",
+      "GetS3TableIntegration",
+      "GetTelemetryEnrichmentStatus",
+      "GetTelemetryEvaluationStatus",
+      "GetTelemetryEvaluationStatusForOrganization",
+      "GetTelemetryPipeline",
+      "GetTelemetryRule",
+      "GetTelemetryRuleForOrganization",
+      "ListResourceTelemetry",
+      "ListResourceTelemetryForOrganization",
+      "TestTelemetryPipeline",
+      "ValidateTelemetryPipelineConfiguration"
+    ],
+    "List": [
+      "ListCentralizationRulesForOrganization",
+      "ListDatasetIntegrations",
+      "ListS3TableIntegrations",
+      "ListTagsForResource",
+      "ListTelemetryPipelines",
+      "ListTelemetryRules",
+      "ListTelemetryRulesForOrganization"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCentralizationRuleForOrganization",
+      "methodName": "toCreateCentralizationRuleForOrganization",
+      "description": "Grants permission to create a new organization centralization rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateCentralizationRuleForOrganization.html"
+    },
+    {
+      "name": "CreateDatasetIntegration",
+      "methodName": "toCreateDatasetIntegration",
+      "description": "Grants permission to create a dataset integration for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateDatasetIntegration.html"
+    },
+    {
+      "name": "CreateS3TableIntegration",
+      "methodName": "toCreateS3TableIntegration",
+      "description": "Grants permission to create a new s3 table integration with the specified configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateS3TableIntegration.html"
+    },
+    {
+      "name": "CreateTelemetryPipeline",
+      "methodName": "toCreateTelemetryPipeline",
+      "description": "Grants permission to create a new telemetry pipeline with the specified name and configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryPipeline.html"
+    },
+    {
+      "name": "CreateTelemetryRule",
+      "methodName": "toCreateTelemetryRule",
+      "description": "Grants permission to create a new telemetry rule with the specified name for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRule.html"
+    },
+    {
+      "name": "CreateTelemetryRuleForOrganization",
+      "methodName": "toCreateTelemetryRuleForOrganization",
+      "description": "Grants permission to create a new organization telemetry rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRuleForOrganization.html"
+    },
+    {
+      "name": "DeleteCentralizationRuleForOrganization",
+      "methodName": "toDeleteCentralizationRuleForOrganization",
+      "description": "Grants permission to delete an organization centralization rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteCentralizationRuleForOrganization.html"
+    },
+    {
+      "name": "DeleteDatasetIntegration",
+      "methodName": "toDeleteDatasetIntegration",
+      "description": "Grants permission to delete the specified dataset integration for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteDatasetIntegration.html"
+    },
+    {
+      "name": "DeleteS3TableIntegration",
+      "methodName": "toDeleteS3TableIntegration",
+      "description": "Grants permission to delete the s3 table integration with the specified arn",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteS3TableIntegration.html"
+    },
+    {
+      "name": "DeleteTelemetryPipeline",
+      "methodName": "toDeleteTelemetryPipeline",
+      "description": "Grants permission to delete the telemetry pipeline with the specified arn",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryPipeline.html"
+    },
+    {
+      "name": "DeleteTelemetryRule",
+      "methodName": "toDeleteTelemetryRule",
+      "description": "Grants permission to delete a telemetry rule with the specified name for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryRule.html"
+    },
+    {
+      "name": "DeleteTelemetryRuleForOrganization",
+      "methodName": "toDeleteTelemetryRuleForOrganization",
+      "description": "Grants permission to delete an organization telemetry rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryRuleForOrganization.html"
+    },
+    {
+      "name": "GetCentralizationRuleForOrganization",
+      "methodName": "toGetCentralizationRuleForOrganization",
+      "description": "Grants permission to retrieve the specified organization centralization rule for the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetCentralizationRuleForOrganization.html"
+    },
+    {
+      "name": "GetDatasetIntegration",
+      "methodName": "toGetDatasetIntegration",
+      "description": "Grants permission to retrieve the specified dataset integration for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetDatasetIntegration.html"
+    },
+    {
+      "name": "GetS3TableIntegration",
+      "methodName": "toGetS3TableIntegration",
+      "description": "Grants permission to retrieve the specified s3 table integration for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetS3TableIntegration.html"
+    },
+    {
+      "name": "GetTelemetryEnrichmentStatus",
+      "methodName": "toGetTelemetryEnrichmentStatus",
+      "description": "Grants permission to retrieve the status of the Resource tags for telemetry feature for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEnrichmentStatus.html"
+    },
+    {
+      "name": "GetTelemetryEvaluationStatus",
+      "methodName": "toGetTelemetryEvaluationStatus",
+      "description": "Grants permission to retrieve the Telemetry Config feature status for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEvaluationStatus.html"
+    },
+    {
+      "name": "GetTelemetryEvaluationStatusForOrganization",
+      "methodName": "toGetTelemetryEvaluationStatusForOrganization",
+      "description": "Grants permission to retrieve the Telemetry Config feature status for the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEvaluationStatusForOrganization.html"
+    },
+    {
+      "name": "GetTelemetryPipeline",
+      "methodName": "toGetTelemetryPipeline",
+      "description": "Grants permission to Get the telemetry pipeline with the specified name or arn",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryPipeline.html"
+    },
+    {
+      "name": "GetTelemetryRule",
+      "methodName": "toGetTelemetryRule",
+      "description": "Grants permission to retrieve the specified telemetry rule for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRule.html"
+    },
+    {
+      "name": "GetTelemetryRuleForOrganization",
+      "methodName": "toGetTelemetryRuleForOrganization",
+      "description": "Grants permission to retrieve the specified organization telemetry rule for the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRuleForOrganization.html"
+    },
+    {
+      "name": "ListCentralizationRulesForOrganization",
+      "methodName": "toListCentralizationRulesForOrganization",
+      "description": "Grants permission to list the centralization rules for the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListCentralizationRulesForOrganization.html"
+    },
+    {
+      "name": "ListDatasetIntegrations",
+      "methodName": "toListDatasetIntegrations",
+      "description": "Grants permission to list dataset integrations for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListDatasetIntegrations.html"
+    },
+    {
+      "name": "ListResourceTelemetry",
+      "methodName": "toListResourceTelemetry",
+      "description": "Grants permission to retrieve telemetry configurations for resources associated with the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetry.html",
+      "conditionMethods": [
+        "ifTargetRegions"
+      ]
+    },
+    {
+      "name": "ListResourceTelemetryForOrganization",
+      "methodName": "toListResourceTelemetryForOrganization",
+      "description": "Grants permission to retrieve telemetry configurations for resources associated with accounts in the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetryForOrganization.html",
+      "conditionMethods": [
+        "ifTargetRegions"
+      ]
+    },
+    {
+      "name": "ListS3TableIntegrations",
+      "methodName": "toListS3TableIntegrations",
+      "description": "Grants permission to list s3 table integrations for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListS3TableIntegrations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTelemetryPipelines",
+      "methodName": "toListTelemetryPipelines",
+      "description": "Grants permission to List telemetry pipelines for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryPipelines.html"
+    },
+    {
+      "name": "ListTelemetryRules",
+      "methodName": "toListTelemetryRules",
+      "description": "Grants permission to list the telemetry rules for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryRules.html"
+    },
+    {
+      "name": "ListTelemetryRulesForOrganization",
+      "methodName": "toListTelemetryRulesForOrganization",
+      "description": "Grants permission to list the telemetry rules for the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryRulesForOrganization.html"
+    },
+    {
+      "name": "StartTelemetryEnrichment",
+      "methodName": "toStartTelemetryEnrichment",
+      "description": "Grants permission to enable the Resource tags for telemetry feature for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEnrichment.html"
+    },
+    {
+      "name": "StartTelemetryEvaluation",
+      "methodName": "toStartTelemetryEvaluation",
+      "description": "Grants permission to start the Telemetry Config feature for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluation.html",
+      "conditionMethods": [
+        "ifTargetRegions"
+      ]
+    },
+    {
+      "name": "StartTelemetryEvaluationForOrganization",
+      "methodName": "toStartTelemetryEvaluationForOrganization",
+      "description": "Grants permission to start the Telemetry Config feature for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluationForOrganization.html",
+      "conditionMethods": [
+        "ifTargetRegions"
+      ]
+    },
+    {
+      "name": "StopTelemetryEnrichment",
+      "methodName": "toStopTelemetryEnrichment",
+      "description": "Grants permission to disable the Resource tags for telemetry feature for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEnrichment.html"
+    },
+    {
+      "name": "StopTelemetryEvaluation",
+      "methodName": "toStopTelemetryEvaluation",
+      "description": "Grants permission to stop the Telemetry Config feature for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEvaluation.html"
+    },
+    {
+      "name": "StopTelemetryEvaluationForOrganization",
+      "methodName": "toStopTelemetryEvaluationForOrganization",
+      "description": "Grants permission to stop the Telemetry Config feature for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEvaluationForOrganization.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update the specified tags for the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TagResource.html"
+    },
+    {
+      "name": "TestTelemetryPipeline",
+      "methodName": "toTestTelemetryPipeline",
+      "description": "Grants permission to Test a telemetry pipeline configuration with sample data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TestTelemetryPipeline.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCentralizationRuleForOrganization",
+      "methodName": "toUpdateCentralizationRuleForOrganization",
+      "description": "Grants permission to update the specified centralization rule for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateCentralizationRuleForOrganization.html"
+    },
+    {
+      "name": "UpdateDatasetIntegration",
+      "methodName": "toUpdateDatasetIntegration",
+      "description": "Grants permission to update the specified dataset integration for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateDatasetIntegration.html"
+    },
+    {
+      "name": "UpdateTelemetryPipeline",
+      "methodName": "toUpdateTelemetryPipeline",
+      "description": "Grants permission to Update the telemetry pipeline with the specified arn",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryPipeline.html"
+    },
+    {
+      "name": "UpdateTelemetryRule",
+      "methodName": "toUpdateTelemetryRule",
+      "description": "Grants permission to update the specified telemetry rule for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryRule.html"
+    },
+    {
+      "name": "UpdateTelemetryRuleForOrganization",
+      "methodName": "toUpdateTelemetryRuleForOrganization",
+      "description": "Grants permission to update the specified telemetry rule for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryRuleForOrganization.html"
+    },
+    {
+      "name": "ValidateTelemetryPipelineConfiguration",
+      "methodName": "toValidateTelemetryPipelineConfiguration",
+      "description": "Grants permission to Validate a telemetry pipeline configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ValidateTelemetryPipelineConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "dataset-integration",
+      "methodName": "onDatasetIntegration",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DatasetIntegration.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:dataset-integration/${DatasetIntegrationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "DatasetIntegrationIdentifier",
+          "name": "datasetIntegrationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "organization-centralization-rule",
+      "methodName": "onOrganizationCentralizationRule",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CentralizationRule.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:organization-centralization-rule/${CentralizationRuleName}",
+      "placeholders": [
+        {
+          "placeholder": "CentralizationRuleName",
+          "name": "centralizationRuleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IOrganizationCentralizationRuleRef",
+        "property": "organizationCentralizationRuleRef",
+        "arn": "ruleArn"
+      }
+    },
+    {
+      "name": "organization-telemetry-rule",
+      "methodName": "onOrganizationTelemetryRule",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TelemetryRule.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:organization-telemetry-rule/${TelemetryRuleName}",
+      "placeholders": [
+        {
+          "placeholder": "TelemetryRuleName",
+          "name": "telemetryRuleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IOrganizationTelemetryRuleRef",
+        "property": "organizationTelemetryRuleRef",
+        "arn": "ruleArn"
+      }
+    },
+    {
+      "name": "s3tableintegration",
+      "methodName": "onS3tableintegration",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_S3TableIntegration.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:s3tableintegration/${S3TableIntegrationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "S3TableIntegrationIdentifier",
+          "name": "s3TableIntegrationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IS3TableIntegrationRef",
+        "property": "s3TableIntegrationRef",
+        "arn": "s3TableIntegrationArn"
+      }
+    },
+    {
+      "name": "telemetry-pipeline",
+      "methodName": "onTelemetryPipeline",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TelemetryPipeline.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:telemetry-pipeline/${TelemetryPipelineIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "TelemetryPipelineIdentifier",
+          "name": "telemetryPipelineIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "telemetry-rule",
+      "methodName": "onTelemetryRule",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TelemetryRule.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:telemetry-rule/${TelemetryRuleName}",
+      "placeholders": [
+        {
+          "placeholder": "TelemetryRuleName",
+          "name": "telemetryRuleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "ITelemetryRuleRef",
+        "property": "telemetryRuleRef",
+        "arn": "ruleArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toCreateDatasetIntegration",
+        "toCreateS3TableIntegration",
+        "toCreateTelemetryPipeline",
+        "toCreateTelemetryRule",
+        "toCreateTelemetryRuleForOrganization",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toCreateDatasetIntegration",
+        "toCreateS3TableIntegration",
+        "toCreateTelemetryPipeline",
+        "toCreateTelemetryRule",
+        "toCreateTelemetryRuleForOrganization",
+        "toDeleteCentralizationRuleForOrganization",
+        "toDeleteDatasetIntegration",
+        "toDeleteS3TableIntegration",
+        "toDeleteTelemetryPipeline",
+        "toDeleteTelemetryRule",
+        "toDeleteTelemetryRuleForOrganization",
+        "toGetCentralizationRuleForOrganization",
+        "toGetDatasetIntegration",
+        "toGetS3TableIntegration",
+        "toGetTelemetryPipeline",
+        "toGetTelemetryRule",
+        "toGetTelemetryRuleForOrganization",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCentralizationRuleForOrganization",
+        "toUpdateDatasetIntegration",
+        "toUpdateTelemetryPipeline",
+        "toUpdateTelemetryRule",
+        "toUpdateTelemetryRuleForOrganization"
+      ],
+      "relatedResourceTypes": [
+        "dataset-integration",
+        "organization-centralization-rule",
+        "organization-telemetry-rule",
+        "s3tableintegration",
+        "telemetry-pipeline",
+        "telemetry-rule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toCreateDatasetIntegration",
+        "toCreateS3TableIntegration",
+        "toCreateTelemetryPipeline",
+        "toCreateTelemetryRule",
+        "toCreateTelemetryRuleForOrganization",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationBackupRegion",
+      "methodName": "ifCentralizationBackupRegion",
+      "description": "Filters access by the backup region that is passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationbackupregion",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationBackupRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationDestinationAccount",
+      "methodName": "ifCentralizationDestinationAccount",
+      "description": "Filters access by the destination account that is passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationdestinationaccount",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationDestinationAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationDestinationRegion",
+      "methodName": "ifCentralizationDestinationRegion",
+      "description": "Filters access by the destination region that is passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationdestinationregion",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationDestinationRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationRuleName",
+      "methodName": "ifCentralizationRuleName",
+      "description": "Filters access by the name of the centralization rule that is passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationrulename",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toDeleteCentralizationRuleForOrganization",
+        "toGetCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationRuleName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationSourceId",
+      "methodName": "ifCentralizationSourceId",
+      "description": "Filters access by the source account, organizational unit, or organization IDs that is passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationsourceid",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationSourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationSourceRegions",
+      "methodName": "ifCentralizationSourceRegions",
+      "description": "Filters access by the source regions that are passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationsourceregions",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationSourceRegions",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:SourceType",
+      "methodName": "ifSourceType",
+      "description": "Filters access by the source type that is passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-sourcetype",
+      "relatedActionMethods": [
+        "toCreateTelemetryPipeline"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:TargetRegions",
+      "methodName": "ifTargetRegions",
+      "description": "Filters access by the regions that are targetted by the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-targetregions",
+      "relatedActionMethods": [
+        "toCreateTelemetryRule",
+        "toCreateTelemetryRuleForOrganization",
+        "toListResourceTelemetry",
+        "toListResourceTelemetryForOrganization",
+        "toStartTelemetryEvaluation",
+        "toStartTelemetryEvaluationForOrganization",
+        "toUpdateTelemetryRule",
+        "toUpdateTelemetryRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetRegions",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

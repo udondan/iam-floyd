@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPutRuleOnSpecificSourcesAndDetailTypes",
+      "Effect": "Allow",
+      "Action": "events:PutRule",
+      "Resource": [
+        "arn:aws:events:*:*:rule/VPCFlowLogsEC2TagsManagedRule",
+        "arn:aws:events:*:*:rule/VPCFlowLogsASGTagsManagedRule"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "events:source": [
+            "aws.tag",
+            "aws.autoscaling"
+          ],
+          "events:detail-type": [
+            "AWS API Call via CloudTrail",
+            "Tag Change on Resource"
+          ]
+        },
+        "Null": {
+          "events:source": "false",
+          "events:detail-type": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowOtherOperationsOnRulesManagedByVPCFlowLogs",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:rule/VPCFlowLogsEC2TagsManagedRule",
+        "arn:aws:events:*:*:rule/VPCFlowLogsASGTagsManagedRule"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowDescribeTagsOnAllEC2Resources",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources",
+        "autoscaling:DescribeTags"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

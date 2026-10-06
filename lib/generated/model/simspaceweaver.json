@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "filename": "simspaceweaver",
+  "className": "Simspaceweaver",
+  "name": "simspaceweaver",
+  "servicePrefix": "simspaceweaver",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_simspaceweaver.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSnapshot",
+      "DeleteApp",
+      "DeleteSimulation",
+      "StartApp",
+      "StartClock",
+      "StartSimulation",
+      "StopApp",
+      "StopClock",
+      "StopSimulation",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "DescribeApp",
+      "DescribeSimulation",
+      "ListApps",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListSimulations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permission to create a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_CreateSnapshot.html"
+    },
+    {
+      "name": "DeleteApp",
+      "methodName": "toDeleteApp",
+      "description": "Grants permission to delete an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_DeleteApp.html"
+    },
+    {
+      "name": "DeleteSimulation",
+      "methodName": "toDeleteSimulation",
+      "description": "Grants permission to delete a simulation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_DeleteSimulation.html"
+    },
+    {
+      "name": "DescribeApp",
+      "methodName": "toDescribeApp",
+      "description": "Grants permission to describe an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_DescribeApp.html"
+    },
+    {
+      "name": "DescribeSimulation",
+      "methodName": "toDescribeSimulation",
+      "description": "Grants permission to describe a simulation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_DescribeSimulation.html"
+    },
+    {
+      "name": "ListApps",
+      "methodName": "toListApps",
+      "description": "Grants permission to list apps",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_ListApps.html"
+    },
+    {
+      "name": "ListSimulations",
+      "methodName": "toListSimulations",
+      "description": "Grants permission to list simulations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_ListSimulations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartApp",
+      "methodName": "toStartApp",
+      "description": "Grants permission to start an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_StartApp.html"
+    },
+    {
+      "name": "StartClock",
+      "methodName": "toStartClock",
+      "description": "Grants permission to start a simulation clock",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_StartClock.html"
+    },
+    {
+      "name": "StartSimulation",
+      "methodName": "toStartSimulation",
+      "description": "Grants permission to start a simulation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_StartSimulation.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StopApp",
+      "methodName": "toStopApp",
+      "description": "Grants permission to stop an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_StopApp.html"
+    },
+    {
+      "name": "StopClock",
+      "methodName": "toStopClock",
+      "description": "Grants permission to stop a simulation clock",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_StopClock.html"
+    },
+    {
+      "name": "StopSimulation",
+      "methodName": "toStopSimulation",
+      "description": "Grants permission to stop a simulation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_StopSimulation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Simulation",
+      "methodName": "onSimulation",
+      "url": "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_configuring-simulation.html",
+      "arn": "arn:${Partition}:simspaceweaver:${Region}:${Account}:simulation/${SimulationName}",
+      "placeholders": [
+        {
+          "placeholder": "SimulationName",
+          "name": "simulationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_simspaceweaver",
+        "interface": "ISimulationRef",
+        "property": "simulationRef",
+        "id": "simulationName"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toStartSimulation",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateSnapshot",
+        "toDeleteApp",
+        "toDeleteSimulation",
+        "toDescribeApp",
+        "toDescribeSimulation",
+        "toListApps",
+        "toStartApp",
+        "toStartClock",
+        "toStopApp",
+        "toStopClock",
+        "toStopSimulation",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "Simulation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toStartSimulation",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

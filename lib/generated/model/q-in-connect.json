@@ -1,0 +1,1465 @@
+{
+  "schemaVersion": 1,
+  "filename": "q-in-connect",
+  "className": "Wisdom",
+  "name": "wisdom",
+  "servicePrefix": "wisdom",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_q-in-connect.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateMessageTemplate",
+      "CreateAIAgent",
+      "CreateAIAgentVersion",
+      "CreateAIGuardrail",
+      "CreateAIGuardrailVersion",
+      "CreateAIPrompt",
+      "CreateAIPromptVersion",
+      "CreateAssistant",
+      "CreateAssistantAssociation",
+      "CreateContent",
+      "CreateContentAssociation",
+      "CreateKnowledgeBase",
+      "CreateMessageTemplate",
+      "CreateMessageTemplateAttachment",
+      "CreateMessageTemplateVersion",
+      "CreateQuickResponse",
+      "CreateSession",
+      "DeactivateMessageTemplate",
+      "DeleteAIAgent",
+      "DeleteAIAgentVersion",
+      "DeleteAIGuardrail",
+      "DeleteAIGuardrailVersion",
+      "DeleteAIPrompt",
+      "DeleteAIPromptVersion",
+      "DeleteAssistant",
+      "DeleteAssistantAssociation",
+      "DeleteContent",
+      "DeleteContentAssociation",
+      "DeleteImportJob",
+      "DeleteKnowledgeBase",
+      "DeleteMessageTemplate",
+      "DeleteMessageTemplateAttachment",
+      "DeleteQuickResponse",
+      "NotifyRecommendationsReceived",
+      "PutFeedback",
+      "RemoveAssistantAIAgent",
+      "RemoveKnowledgeBaseTemplateUri",
+      "SendMessage",
+      "StartContentUpload",
+      "StartImportJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateAIAgent",
+      "UpdateAIGuardrail",
+      "UpdateAIPrompt",
+      "UpdateAssistantAIAgent",
+      "UpdateContent",
+      "UpdateKnowledgeBaseTemplateUri",
+      "UpdateMessageTemplate",
+      "UpdateMessageTemplateMetadata",
+      "UpdateQuickResponse",
+      "UpdateSession",
+      "UpdateSessionData",
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Read": [
+      "GetAIAgent",
+      "GetAIGuardrail",
+      "GetAIPrompt",
+      "GetAssistant",
+      "GetAssistantAssociation",
+      "GetContent",
+      "GetContentAssociation",
+      "GetContentSummary",
+      "GetImportJob",
+      "GetKnowledgeBase",
+      "GetMessageTemplate",
+      "GetNextMessage",
+      "GetQuickResponse",
+      "GetRecommendations",
+      "GetSession",
+      "ListTagsForResource",
+      "QueryAssistant",
+      "RenderMessageTemplate",
+      "Retrieve",
+      "SearchContent",
+      "SearchMessageTemplates",
+      "SearchQuickResponses",
+      "SearchSessions"
+    ],
+    "List": [
+      "ListAIAgentVersions",
+      "ListAIAgents",
+      "ListAIGuardrailVersions",
+      "ListAIGuardrails",
+      "ListAIPromptVersions",
+      "ListAIPrompts",
+      "ListAssistantAssociations",
+      "ListAssistants",
+      "ListContentAssociations",
+      "ListContents",
+      "ListImportJobs",
+      "ListKnowledgeBases",
+      "ListMessageTemplateVersions",
+      "ListMessageTemplates",
+      "ListMessages",
+      "ListModels",
+      "ListQuickResponses",
+      "ListSpans"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateMessageTemplate",
+      "methodName": "toActivateMessageTemplate",
+      "description": "Grants permission to activate a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ActivateMessageTemplate.html"
+    },
+    {
+      "name": "CreateAIAgent",
+      "methodName": "toCreateAIAgent",
+      "description": "Grants permission to create an ai agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIAgent.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAIAgentVersion",
+      "methodName": "toCreateAIAgentVersion",
+      "description": "Grants permission to create an ai agent version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIAgentVersion.html"
+    },
+    {
+      "name": "CreateAIGuardrail",
+      "methodName": "toCreateAIGuardrail",
+      "description": "Grants permission to create an ai guardrail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIGuardrail.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAIGuardrailVersion",
+      "methodName": "toCreateAIGuardrailVersion",
+      "description": "Grants permission to create an ai guardrail version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIGuardrailVersion.html"
+    },
+    {
+      "name": "CreateAIPrompt",
+      "methodName": "toCreateAIPrompt",
+      "description": "Grants permission to create an ai prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIPrompt.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAIPromptVersion",
+      "methodName": "toCreateAIPromptVersion",
+      "description": "Grants permission to create an ai prompt version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIPromptVersion.html"
+    },
+    {
+      "name": "CreateAssistant",
+      "methodName": "toCreateAssistant",
+      "description": "Grants permission to create an assistant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAssistant.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAssistantAssociation",
+      "methodName": "toCreateAssistantAssociation",
+      "description": "Grants permission to create an association between an assistant and another resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAssistantAssociation.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateContent",
+      "methodName": "toCreateContent",
+      "description": "Grants permission to create content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html"
+    },
+    {
+      "name": "CreateContentAssociation",
+      "methodName": "toCreateContentAssociation",
+      "description": "Grants permission to create a content association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContentAssociation.html"
+    },
+    {
+      "name": "CreateKnowledgeBase",
+      "methodName": "toCreateKnowledgeBase",
+      "description": "Grants permission to create a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateKnowledgeBase.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMessageTemplate",
+      "methodName": "toCreateMessageTemplate",
+      "description": "Grants permission to create a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateMessageTemplate.html"
+    },
+    {
+      "name": "CreateMessageTemplateAttachment",
+      "methodName": "toCreateMessageTemplateAttachment",
+      "description": "Grants permission to create an attachment to a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateMessageTemplateAttachment.html"
+    },
+    {
+      "name": "CreateMessageTemplateVersion",
+      "methodName": "toCreateMessageTemplateVersion",
+      "description": "Grants permission to create a version of a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateMessageTemplateVersion.html"
+    },
+    {
+      "name": "CreateQuickResponse",
+      "methodName": "toCreateQuickResponse",
+      "description": "Grants permission to create quick response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateQuickResponse.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permission to create a session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateSession.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeactivateMessageTemplate",
+      "methodName": "toDeactivateMessageTemplate",
+      "description": "Grants permission to deactivate a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeactivateMessageTemplate.html"
+    },
+    {
+      "name": "DeleteAIAgent",
+      "methodName": "toDeleteAIAgent",
+      "description": "Grants permission to delete an ai agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIAgent.html"
+    },
+    {
+      "name": "DeleteAIAgentVersion",
+      "methodName": "toDeleteAIAgentVersion",
+      "description": "Grants permission to delete an ai agent version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIAgentVersion.html"
+    },
+    {
+      "name": "DeleteAIGuardrail",
+      "methodName": "toDeleteAIGuardrail",
+      "description": "Grants permission to delete an ai guardrail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIGuardrail.html"
+    },
+    {
+      "name": "DeleteAIGuardrailVersion",
+      "methodName": "toDeleteAIGuardrailVersion",
+      "description": "Grants permission to delete an ai guardrail version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIGuardrailVersion.html"
+    },
+    {
+      "name": "DeleteAIPrompt",
+      "methodName": "toDeleteAIPrompt",
+      "description": "Grants permission to delete an ai prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIPrompt.html"
+    },
+    {
+      "name": "DeleteAIPromptVersion",
+      "methodName": "toDeleteAIPromptVersion",
+      "description": "Grants permission to delete an ai prompt version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAIPromptVersion.html"
+    },
+    {
+      "name": "DeleteAssistant",
+      "methodName": "toDeleteAssistant",
+      "description": "Grants permission to delete an assistant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAssistant.html"
+    },
+    {
+      "name": "DeleteAssistantAssociation",
+      "methodName": "toDeleteAssistantAssociation",
+      "description": "Grants permission to delete an assistant association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteAssistantAssociation.html"
+    },
+    {
+      "name": "DeleteContent",
+      "methodName": "toDeleteContent",
+      "description": "Grants permission to delete content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteContent.html"
+    },
+    {
+      "name": "DeleteContentAssociation",
+      "methodName": "toDeleteContentAssociation",
+      "description": "Grants permission to delete a content association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteContentAssociation.html"
+    },
+    {
+      "name": "DeleteImportJob",
+      "methodName": "toDeleteImportJob",
+      "description": "Grants permission to delete a import job of a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteImportJob.html"
+    },
+    {
+      "name": "DeleteKnowledgeBase",
+      "methodName": "toDeleteKnowledgeBase",
+      "description": "Grants permission to delete a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html"
+    },
+    {
+      "name": "DeleteMessageTemplate",
+      "methodName": "toDeleteMessageTemplate",
+      "description": "Grants permission to delete a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteMessageTemplate.html"
+    },
+    {
+      "name": "DeleteMessageTemplateAttachment",
+      "methodName": "toDeleteMessageTemplateAttachment",
+      "description": "Grants permission to delete an attachment from a message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteMessageTemplateAttachment.html"
+    },
+    {
+      "name": "DeleteQuickResponse",
+      "methodName": "toDeleteQuickResponse",
+      "description": "Grants permission to delete quick response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteQuickResponse.html"
+    },
+    {
+      "name": "GetAIAgent",
+      "methodName": "toGetAIAgent",
+      "description": "Grants permission to retrieve information about an ai agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAIAgent.html"
+    },
+    {
+      "name": "GetAIGuardrail",
+      "methodName": "toGetAIGuardrail",
+      "description": "Grants permission to retrieve information about an ai guardrail",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAIGuardrail.html"
+    },
+    {
+      "name": "GetAIPrompt",
+      "methodName": "toGetAIPrompt",
+      "description": "Grants permission to retrieve information about an ai prompt",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAIPrompt.html"
+    },
+    {
+      "name": "GetAssistant",
+      "methodName": "toGetAssistant",
+      "description": "Grants permission to retrieve information about an assistant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAssistant.html"
+    },
+    {
+      "name": "GetAssistantAssociation",
+      "methodName": "toGetAssistantAssociation",
+      "description": "Grants permission to retrieve information about an assistant association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetAssistantAssociation.html"
+    },
+    {
+      "name": "GetContent",
+      "methodName": "toGetContent",
+      "description": "Grants permission to retrieve content, including a pre-signed URL to download the content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html"
+    },
+    {
+      "name": "GetContentAssociation",
+      "methodName": "toGetContentAssociation",
+      "description": "Grants permission to retrieve information about a content association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContentAssociation.html"
+    },
+    {
+      "name": "GetContentSummary",
+      "methodName": "toGetContentSummary",
+      "description": "Grants permission to retrieve summary information about the content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContentSummary.html"
+    },
+    {
+      "name": "GetImportJob",
+      "methodName": "toGetImportJob",
+      "description": "Grants permission to retrieve information about the import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetImportJob.html"
+    },
+    {
+      "name": "GetKnowledgeBase",
+      "methodName": "toGetKnowledgeBase",
+      "description": "Grants permission to retrieve information about the knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetKnowledgeBase.html"
+    },
+    {
+      "name": "GetMessageTemplate",
+      "methodName": "toGetMessageTemplate",
+      "description": "Grants permission to retrieve a message template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetMessageTemplate.html"
+    },
+    {
+      "name": "GetNextMessage",
+      "methodName": "toGetNextMessage",
+      "description": "Grants permission to retrieve for next message in a session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetNextMessage.html"
+    },
+    {
+      "name": "GetQuickResponse",
+      "methodName": "toGetQuickResponse",
+      "description": "Grants permission to retrieve content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetQuickResponse.html"
+    },
+    {
+      "name": "GetRecommendations",
+      "methodName": "toGetRecommendations",
+      "description": "Grants permission to retrieve recommendations for the specified session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to retrieve information for a specified session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetSession.html"
+    },
+    {
+      "name": "ListAIAgentVersions",
+      "methodName": "toListAIAgentVersions",
+      "description": "Grants permission to list information about ai agent versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIAgentVersions.html"
+    },
+    {
+      "name": "ListAIAgents",
+      "methodName": "toListAIAgents",
+      "description": "Grants permission to list information about ai agents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIAgents.html"
+    },
+    {
+      "name": "ListAIGuardrailVersions",
+      "methodName": "toListAIGuardrailVersions",
+      "description": "Grants permission to list information about ai guardrail versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIGuardrailVersions.html"
+    },
+    {
+      "name": "ListAIGuardrails",
+      "methodName": "toListAIGuardrails",
+      "description": "Grants permission to list information about ai guardrails",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIGuardrails.html"
+    },
+    {
+      "name": "ListAIPromptVersions",
+      "methodName": "toListAIPromptVersions",
+      "description": "Grants permission to list information about ai prompt versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIPromptVersions.html"
+    },
+    {
+      "name": "ListAIPrompts",
+      "methodName": "toListAIPrompts",
+      "description": "Grants permission to list information about ai prompts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIPrompts.html"
+    },
+    {
+      "name": "ListAssistantAssociations",
+      "methodName": "toListAssistantAssociations",
+      "description": "Grants permission to list information about assistant associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAssistantAssociations.html"
+    },
+    {
+      "name": "ListAssistants",
+      "methodName": "toListAssistants",
+      "description": "Grants permission to list information about assistants",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAssistants.html"
+    },
+    {
+      "name": "ListContentAssociations",
+      "methodName": "toListContentAssociations",
+      "description": "Grants permission to list information about content associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListContentAssociations.html"
+    },
+    {
+      "name": "ListContents",
+      "methodName": "toListContents",
+      "description": "Grants permission to list the content with a knowledge base",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListContents.html"
+    },
+    {
+      "name": "ListImportJobs",
+      "methodName": "toListImportJobs",
+      "description": "Grants permission to list information about knowledge bases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListImportJobs.html"
+    },
+    {
+      "name": "ListKnowledgeBases",
+      "methodName": "toListKnowledgeBases",
+      "description": "Grants permission to list information about knowledge bases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListKnowledgeBases.html"
+    },
+    {
+      "name": "ListMessageTemplateVersions",
+      "methodName": "toListMessageTemplateVersions",
+      "description": "Grants permission to list message template versions for the specified message template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListMessageTemplateVersions.html"
+    },
+    {
+      "name": "ListMessageTemplates",
+      "methodName": "toListMessageTemplates",
+      "description": "Grants permission to list the message templates for a knowledge base",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListMessageTemplates.html"
+    },
+    {
+      "name": "ListMessages",
+      "methodName": "toListMessages",
+      "description": "Grants permission to list messages in a session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListMessages.html"
+    },
+    {
+      "name": "ListModels",
+      "methodName": "toListModels",
+      "description": "Grants permission to list models available for an assistant",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListModels.html"
+    },
+    {
+      "name": "ListQuickResponses",
+      "methodName": "toListQuickResponses",
+      "description": "Grants permission to list the quick response with a knowledge base",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListQuickResponses.html"
+    },
+    {
+      "name": "ListSpans",
+      "methodName": "toListSpans",
+      "description": "Grants permission to list AI agent traces for a session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListSpans.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "NotifyRecommendationsReceived",
+      "methodName": "toNotifyRecommendationsReceived",
+      "description": "Grants permission to remove the specified recommendations from the specified assistant's queue of newly available recommendations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html"
+    },
+    {
+      "name": "PutFeedback",
+      "methodName": "toPutFeedback",
+      "description": "Grants permission to submit feedback",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_PutFeedback.html"
+    },
+    {
+      "name": "QueryAssistant",
+      "methodName": "toQueryAssistant",
+      "description": "Grants permission to perform a manual search against the specified assistant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html"
+    },
+    {
+      "name": "RemoveAssistantAIAgent",
+      "methodName": "toRemoveAssistantAIAgent",
+      "description": "Grants permission to remove an ai agent from an assistant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RemoveAssistantAIAgent.html"
+    },
+    {
+      "name": "RemoveKnowledgeBaseTemplateUri",
+      "methodName": "toRemoveKnowledgeBaseTemplateUri",
+      "description": "Grants permission to remove a URI template from a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RemoveKnowledgeBaseTemplateUri.html"
+    },
+    {
+      "name": "RenderMessageTemplate",
+      "methodName": "toRenderMessageTemplate",
+      "description": "Grants permission to render a message template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RenderMessageTemplate.html"
+    },
+    {
+      "name": "Retrieve",
+      "methodName": "toRetrieve",
+      "description": "Grants permission to retrieve knowledge content from specified assistant associations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_Retrieve.html"
+    },
+    {
+      "name": "SearchContent",
+      "methodName": "toSearchContent",
+      "description": "Grants permission to search for content referencing a specified knowledge base. Can be used to get a specific content resource by its name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html"
+    },
+    {
+      "name": "SearchMessageTemplates",
+      "methodName": "toSearchMessageTemplates",
+      "description": "Grants permission to search for message templates referencing a specified knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchMessageTemplates.html"
+    },
+    {
+      "name": "SearchQuickResponses",
+      "methodName": "toSearchQuickResponses",
+      "description": "Grants permission to search for quick response referencing a specified knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchQuickResponses.html"
+    },
+    {
+      "name": "SearchSessions",
+      "methodName": "toSearchSessions",
+      "description": "Grants permission to search for sessions referencing a specified assistant. Can be used to et a specific session resource by its name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchSessions.html"
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to send a message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SendMessage.html"
+    },
+    {
+      "name": "StartContentUpload",
+      "methodName": "toStartContentUpload",
+      "description": "Grants permission to get a URL to upload content to a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html"
+    },
+    {
+      "name": "StartImportJob",
+      "methodName": "toStartImportJob",
+      "description": "Grants permission to create multiple quick responses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartImportJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add the specified tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAIAgent",
+      "methodName": "toUpdateAIAgent",
+      "description": "Grants permission to update information about an ai agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAIAgent.html"
+    },
+    {
+      "name": "UpdateAIGuardrail",
+      "methodName": "toUpdateAIGuardrail",
+      "description": "Grants permission to update information about an ai guardrail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAIGuardrail.html"
+    },
+    {
+      "name": "UpdateAIPrompt",
+      "methodName": "toUpdateAIPrompt",
+      "description": "Grants permission to update information about an ai prompt",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAIPrompt.html"
+    },
+    {
+      "name": "UpdateAssistantAIAgent",
+      "methodName": "toUpdateAssistantAIAgent",
+      "description": "Grants permission to update assistant information about an ai agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateAssistantAIAgent.html"
+    },
+    {
+      "name": "UpdateContent",
+      "methodName": "toUpdateContent",
+      "description": "Grants permission to update information about the content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html"
+    },
+    {
+      "name": "UpdateKnowledgeBaseTemplateUri",
+      "methodName": "toUpdateKnowledgeBaseTemplateUri",
+      "description": "Grants permission to update the template URI of a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateKnowledgeBaseTemplateUri.html"
+    },
+    {
+      "name": "UpdateMessageTemplate",
+      "methodName": "toUpdateMessageTemplate",
+      "description": "Grants permission to update content of the message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateMessageTemplate.html"
+    },
+    {
+      "name": "UpdateMessageTemplateMetadata",
+      "methodName": "toUpdateMessageTemplateMetadata",
+      "description": "Grants permission to update metadata of the message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateMessageTemplateMetadata.html"
+    },
+    {
+      "name": "UpdateQuickResponse",
+      "methodName": "toUpdateQuickResponse",
+      "description": "Grants permission to update information or content of the quick response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateQuickResponse.html"
+    },
+    {
+      "name": "UpdateSession",
+      "methodName": "toUpdateSession",
+      "description": "Grants permission to update a session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateSession.html"
+    },
+    {
+      "name": "UpdateSessionData",
+      "methodName": "toUpdateSessionData",
+      "description": "Grants permission to update data stored in a session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateSessionData.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for an assistant",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "AIAgent",
+      "methodName": "onAIAgent",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_AIAgentData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:ai-agent/${AssistantId}/${AIAgentId}",
+      "placeholders": [
+        {
+          "placeholder": "AssistantId",
+          "name": "assistantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AIAgentId",
+          "name": "aIAgentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "AIGuardrail",
+      "methodName": "onAIGuardrail",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_AIGuardrailData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:ai-guardrail/${AssistantId}/${AIGuardrailId}",
+      "placeholders": [
+        {
+          "placeholder": "AssistantId",
+          "name": "assistantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AIGuardrailId",
+          "name": "aIGuardrailId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "AIPrompt",
+      "methodName": "onAIPrompt",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_AIPromptData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:ai-prompt/${AssistantId}/${AIPromptId}",
+      "placeholders": [
+        {
+          "placeholder": "AssistantId",
+          "name": "assistantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AIPromptId",
+          "name": "aIPromptId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Assistant",
+      "methodName": "onAssistant",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_AssistantData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:assistant/${AssistantId}",
+      "placeholders": [
+        {
+          "placeholder": "AssistantId",
+          "name": "assistantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_wisdom",
+        "interface": "IAssistantRef",
+        "property": "assistantRef",
+        "arn": "assistantArn"
+      }
+    },
+    {
+      "name": "AssistantAssociation",
+      "methodName": "onAssistantAssociation",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_AssistantAssociationData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:association/${AssistantId}/${AssistantAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "AssistantId",
+          "name": "assistantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AssistantAssociationId",
+          "name": "assistantAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Content",
+      "methodName": "onContent",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ContentData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:content/${KnowledgeBaseId}/${ContentId}",
+      "placeholders": [
+        {
+          "placeholder": "KnowledgeBaseId",
+          "name": "knowledgeBaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ContentId",
+          "name": "contentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ContentAssociation",
+      "methodName": "onContentAssociation",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ContentAssociationData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:content-association/${KnowledgeBaseId}/${ContentId}/${ContentAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "KnowledgeBaseId",
+          "name": "knowledgeBaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ContentId",
+          "name": "contentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ContentAssociationId",
+          "name": "contentAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "KnowledgeBase",
+      "methodName": "onKnowledgeBase",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_KnowledgeBaseData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:knowledge-base/${KnowledgeBaseId}",
+      "placeholders": [
+        {
+          "placeholder": "KnowledgeBaseId",
+          "name": "knowledgeBaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_wisdom",
+        "interface": "IKnowledgeBaseRef",
+        "property": "knowledgeBaseRef",
+        "arn": "knowledgeBaseArn"
+      }
+    },
+    {
+      "name": "MessageTemplate",
+      "methodName": "onMessageTemplate",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_MessageTemplateData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:message-template/${KnowledgeBaseId}/${MessageTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "KnowledgeBaseId",
+          "name": "knowledgeBaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MessageTemplateId",
+          "name": "messageTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifMessageTemplateRoutingProfileArn"
+      ]
+    },
+    {
+      "name": "QuickResponse",
+      "methodName": "onQuickResponse",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QuickResponseData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:quick-response/${KnowledgeBaseId}/${QuickResponseId}",
+      "placeholders": [
+        {
+          "placeholder": "KnowledgeBaseId",
+          "name": "knowledgeBaseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QuickResponseId",
+          "name": "quickResponseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SessionData.html",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:session/${AssistantId}/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "AssistantId",
+          "name": "assistantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAIAgent",
+        "toCreateAIAgentVersion",
+        "toCreateAIGuardrail",
+        "toCreateAIGuardrailVersion",
+        "toCreateAIPrompt",
+        "toCreateAIPromptVersion",
+        "toCreateAssistant",
+        "toCreateAssistantAssociation",
+        "toCreateContent",
+        "toCreateContentAssociation",
+        "toCreateKnowledgeBase",
+        "toCreateMessageTemplate",
+        "toCreateQuickResponse",
+        "toCreateSession",
+        "toStartImportJob",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toActivateMessageTemplate",
+        "toCreateAIAgentVersion",
+        "toCreateAIGuardrailVersion",
+        "toCreateAIPromptVersion",
+        "toCreateContent",
+        "toCreateContentAssociation",
+        "toCreateMessageTemplate",
+        "toCreateMessageTemplateAttachment",
+        "toCreateMessageTemplateVersion",
+        "toDeactivateMessageTemplate",
+        "toDeleteAIAgent",
+        "toDeleteAIAgentVersion",
+        "toDeleteAIGuardrail",
+        "toDeleteAIGuardrailVersion",
+        "toDeleteAIPrompt",
+        "toDeleteAIPromptVersion",
+        "toDeleteAssistant",
+        "toDeleteAssistantAssociation",
+        "toDeleteContent",
+        "toDeleteContentAssociation",
+        "toDeleteImportJob",
+        "toDeleteKnowledgeBase",
+        "toDeleteMessageTemplate",
+        "toDeleteMessageTemplateAttachment",
+        "toDeleteQuickResponse",
+        "toGetAIAgent",
+        "toGetAIGuardrail",
+        "toGetAIPrompt",
+        "toGetAssistant",
+        "toGetAssistantAssociation",
+        "toGetContent",
+        "toGetContentAssociation",
+        "toGetContentSummary",
+        "toGetImportJob",
+        "toGetKnowledgeBase",
+        "toGetMessageTemplate",
+        "toGetNextMessage",
+        "toGetQuickResponse",
+        "toGetRecommendations",
+        "toGetSession",
+        "toListAIAgentVersions",
+        "toListAIGuardrailVersions",
+        "toListAIPromptVersions",
+        "toListContentAssociations",
+        "toListContents",
+        "toListImportJobs",
+        "toListMessageTemplateVersions",
+        "toListMessageTemplates",
+        "toListMessages",
+        "toListModels",
+        "toListQuickResponses",
+        "toListSpans",
+        "toNotifyRecommendationsReceived",
+        "toPutFeedback",
+        "toQueryAssistant",
+        "toRemoveAssistantAIAgent",
+        "toRemoveKnowledgeBaseTemplateUri",
+        "toRenderMessageTemplate",
+        "toRetrieve",
+        "toSearchContent",
+        "toSearchMessageTemplates",
+        "toSearchQuickResponses",
+        "toSendMessage",
+        "toStartContentUpload",
+        "toStartImportJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAIAgent",
+        "toUpdateAIGuardrail",
+        "toUpdateAIPrompt",
+        "toUpdateAssistantAIAgent",
+        "toUpdateContent",
+        "toUpdateKnowledgeBaseTemplateUri",
+        "toUpdateMessageTemplate",
+        "toUpdateMessageTemplateMetadata",
+        "toUpdateQuickResponse",
+        "toUpdateSession",
+        "toUpdateSessionData",
+        "toAllowVendedLogDeliveryForResource"
+      ],
+      "relatedResourceTypes": [
+        "AIAgent",
+        "AIGuardrail",
+        "AIPrompt",
+        "Assistant",
+        "AssistantAssociation",
+        "Content",
+        "ContentAssociation",
+        "KnowledgeBase",
+        "MessageTemplate",
+        "QuickResponse",
+        "Session"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAIAgent",
+        "toCreateAIAgentVersion",
+        "toCreateAIGuardrail",
+        "toCreateAIGuardrailVersion",
+        "toCreateAIPrompt",
+        "toCreateAIPromptVersion",
+        "toCreateAssistant",
+        "toCreateAssistantAssociation",
+        "toCreateContent",
+        "toCreateContentAssociation",
+        "toCreateKnowledgeBase",
+        "toCreateMessageTemplate",
+        "toCreateQuickResponse",
+        "toCreateSession",
+        "toStartImportJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "wisdom:MessageTemplate/RoutingProfileArn",
+      "methodName": "ifMessageTemplateRoutingProfileArn",
+      "description": "Filters access by the connect routing profile arns associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnectwisdom.html#amazonconnectwisdom-policy-keys",
+      "relatedActionMethods": [
+        "toActivateMessageTemplate",
+        "toCreateMessageTemplateAttachment",
+        "toCreateMessageTemplateVersion",
+        "toDeactivateMessageTemplate",
+        "toDeleteMessageTemplate",
+        "toDeleteMessageTemplateAttachment",
+        "toGetMessageTemplate",
+        "toListMessageTemplateVersions",
+        "toRenderMessageTemplate",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMessageTemplate",
+        "toUpdateMessageTemplateMetadata"
+      ],
+      "relatedResourceTypes": [
+        "MessageTemplate"
+      ],
+      "keyLiteral": "MessageTemplate/RoutingProfileArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "wisdom:SearchFilter/Qualifier",
+      "methodName": "ifSearchFilterQualifier",
+      "description": "Filters access by the qualifiers that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnectwisdom.html#amazonconnectwisdom-policy-keys",
+      "relatedActionMethods": [
+        "toSearchMessageTemplates"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SearchFilter/Qualifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "wisdom:SearchFilter/RoutingProfileArn",
+      "methodName": "ifSearchFilterRoutingProfileArn",
+      "description": "Filters access by the connect routing profile arn that is passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnectwisdom.html#amazonconnectwisdom-policy-keys",
+      "relatedActionMethods": [
+        "toSearchMessageTemplates",
+        "toSearchQuickResponses"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SearchFilter/RoutingProfileArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

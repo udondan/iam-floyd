@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IncidentAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStackResources",
+        "codedeploy:BatchGetDeployments",
+        "codedeploy:ListDeployments",
+        "codedeploy:ListDeploymentTargets",
+        "autoscaling:DescribeAutoScalingInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

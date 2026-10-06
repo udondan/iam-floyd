@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "filename": "pca-connector-scep",
+  "className": "PcaConnectorScep",
+  "name": "pca-connector-scep",
+  "servicePrefix": "pca-connector-scep",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pca-connector-scep.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateChallenge",
+      "CreateConnector",
+      "DeleteChallenge",
+      "DeleteConnector",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetChallengeMetadata",
+      "GetChallengePassword",
+      "GetConnector",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListChallengeMetadata",
+      "ListConnectors"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateChallenge",
+      "methodName": "toCreateChallenge",
+      "description": "Grants permission to create a Challenge for a Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html"
+    },
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create a SCEP Connector in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteChallenge",
+      "methodName": "toDeleteChallenge",
+      "description": "Grants permission to delete a Challenge for a Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_DeleteChallenge.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete a SCEP Connector in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_DeleteConnector.html"
+    },
+    {
+      "name": "GetChallengeMetadata",
+      "methodName": "toGetChallengeMetadata",
+      "description": "Grants permission to get a Challenge for a Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html"
+    },
+    {
+      "name": "GetChallengePassword",
+      "methodName": "toGetChallengePassword",
+      "description": "Grants permission to get a Challenge password for a Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetChallengePassword.html"
+    },
+    {
+      "name": "GetConnector",
+      "methodName": "toGetConnector",
+      "description": "Grants permission to get a SCEP Connector in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetConnector.html"
+    },
+    {
+      "name": "ListChallengeMetadata",
+      "methodName": "toListChallengeMetadata",
+      "description": "Grants permission to list Challenges for a Connector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListChallengeMetadata.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list the SCEP Connectors in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListConnectors.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a pca-connector-scep resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a pca-connector-scep resource in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a pca-connector-scep resource in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Challenge",
+      "methodName": "onChallenge",
+      "url": "",
+      "arn": "arn:${Partition}:pca-connector-scep:${Region}:${Account}:connector/${ConnectorId}/challenge/${ChallengeId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChallengeId",
+          "name": "challengeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Connector",
+      "methodName": "onConnector",
+      "url": "",
+      "arn": "arn:${Partition}:pca-connector-scep:${Region}:${Account}:connector/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_pcaconnectorscep",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/privateca/latest/userguide/connector-for-scep.htmlreference_policies_iam-condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateChallenge",
+        "toCreateConnector",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/privateca/latest/userguide/connector-for-scep.htmlreference_policies_iam-condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateChallenge",
+        "toDeleteChallenge",
+        "toDeleteConnector",
+        "toGetChallengeMetadata",
+        "toGetChallengePassword",
+        "toGetConnector",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "Challenge",
+        "Connector"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/privateca/latest/userguide/connector-for-scep.htmlreference_policies_iam-condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateChallenge",
+        "toCreateConnector",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

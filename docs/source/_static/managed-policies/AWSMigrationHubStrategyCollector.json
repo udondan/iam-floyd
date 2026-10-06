@@ -1,0 +1,94 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MHSRAllowS3Resources",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:GetBucketAcl",
+        "s3:CreateBucket",
+        "s3:PutEncryptionConfiguration",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketVersioning",
+        "s3:PutLifecycleConfiguration",
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::migrationhub-strategy-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "MHSRAllowS3ListBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "MHSRAllowMetricsAndLogs",
+      "Effect": "Allow",
+      "Action": [
+        "application-transformation:PutMetricData",
+        "application-transformation:PutLogData",
+        "application-transformation:StartPortingCompatibilityAssessment",
+        "application-transformation:GetPortingCompatibilityAssessment",
+        "application-transformation:StartPortingRecommendationAssessment",
+        "application-transformation:GetPortingRecommendationAssessment"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MHSRAllowExecuteAPI",
+      "Effect": "Allow",
+      "Action": [
+        "execute-api:Invoke",
+        "execute-api:ManageConnections"
+      ],
+      "Resource": [
+        "arn:aws:execute-api:*:*:*/prod/*/put-log-data",
+        "arn:aws:execute-api:*:*:*/prod/*/put-metric-data"
+      ]
+    },
+    {
+      "Sid": "MHSRAllowCollectorAPI",
+      "Effect": "Allow",
+      "Action": [
+        "migrationhub-strategy:RegisterCollector",
+        "migrationhub-strategy:GetAntiPattern",
+        "migrationhub-strategy:GetMessage",
+        "migrationhub-strategy:SendMessage",
+        "migrationhub-strategy:ListAntiPatterns",
+        "migrationhub-strategy:ListJarArtifacts",
+        "migrationhub-strategy:UpdateCollectorConfiguration",
+        "migrationhub-strategy:PutLogData",
+        "migrationhub-strategy:PutMetricData"
+      ],
+      "Resource": "arn:aws:migrationhub-strategy:*:*:*"
+    },
+    {
+      "Sid": "MHSRAllowSecretsManager",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:migrationhub-strategy-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

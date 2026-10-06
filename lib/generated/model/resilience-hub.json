@@ -1,0 +1,1514 @@
+{
+  "schemaVersion": 1,
+  "filename": "resilience-hub",
+  "className": "Resiliencehub",
+  "name": "resiliencehub",
+  "servicePrefix": "resiliencehub",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resilience-hub.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptResourceGroupingRecommendations",
+      "AddDraftAppVersionResourceMappings",
+      "BatchUpdateRecommendationStatus",
+      "CreateApp",
+      "CreateAppVersionAppComponent",
+      "CreateAppVersionResource",
+      "CreateAssertion",
+      "CreateInputSource",
+      "CreatePolicy",
+      "CreateRecommendationTemplate",
+      "CreateReport",
+      "CreateResiliencyPolicy",
+      "CreateService",
+      "CreateServiceFunction",
+      "CreateServiceFunctionResources",
+      "CreateSystem",
+      "CreateTest",
+      "CreateUserJourney",
+      "DeleteApp",
+      "DeleteAppAssessment",
+      "DeleteAppInputSource",
+      "DeleteAppVersionAppComponent",
+      "DeleteAppVersionResource",
+      "DeleteAssertion",
+      "DeleteInputSource",
+      "DeletePolicy",
+      "DeleteRecommendationTemplate",
+      "DeleteResiliencyPolicy",
+      "DeleteService",
+      "DeleteServiceFunction",
+      "DeleteServiceFunctionResources",
+      "DeleteSystem",
+      "DeleteTest",
+      "DeleteTestSources",
+      "DeleteUserJourney",
+      "ImportApp",
+      "ImportPolicy",
+      "ImportResourcesToDraftAppVersion",
+      "PublishAppVersion",
+      "PutDraftAppVersionTemplate",
+      "PutTestSources",
+      "RejectResourceGroupingRecommendations",
+      "RemoveDraftAppVersionResourceMappings",
+      "ResolveAppVersionResources",
+      "StartAppAssessment",
+      "StartFailureModeAssessment",
+      "StartMetricsExport",
+      "StartResourceGroupingRecommendationTask",
+      "StartTestRun",
+      "StopTestRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateApp",
+      "UpdateAppVersion",
+      "UpdateAppVersionAppComponent",
+      "UpdateAppVersionResource",
+      "UpdateAssertion",
+      "UpdateDependency",
+      "UpdateFailureModeFinding",
+      "UpdatePolicy",
+      "UpdateResiliencyPolicy",
+      "UpdateService",
+      "UpdateServiceFunction",
+      "UpdateSystem",
+      "UpdateTest",
+      "UpdateUserJourney"
+    ],
+    "Read": [
+      "DescribeApp",
+      "DescribeAppAssessment",
+      "DescribeAppVersion",
+      "DescribeAppVersionAppComponent",
+      "DescribeAppVersionResource",
+      "DescribeAppVersionResourcesResolutionStatus",
+      "DescribeAppVersionTemplate",
+      "DescribeDraftAppVersionResourcesImportStatus",
+      "DescribeMetricsExport",
+      "DescribeResiliencyPolicy",
+      "DescribeResourceGroupingRecommendationTask",
+      "GetFailureModeFinding",
+      "GetPolicy",
+      "GetService",
+      "GetSystem",
+      "GetTest",
+      "GetTestRun",
+      "GetTestTemplate",
+      "GetUserJourney",
+      "ListAssertions",
+      "ListDependencies",
+      "ListFailureModeAssessments",
+      "ListFailureModeFindings",
+      "ListInputSources",
+      "ListPolicies",
+      "ListReports",
+      "ListResolvedTestRunTargetResources",
+      "ListResources",
+      "ListServiceEvents",
+      "ListServiceFunctions",
+      "ListServiceTopologyEdges",
+      "ListServices",
+      "ListSystemEvents",
+      "ListSystems",
+      "ListTagsForResource",
+      "ListTestRunDependencies",
+      "ListTestRunEvents",
+      "ListTestRunSourceEvents",
+      "ListTestRunSources",
+      "ListTestRuns",
+      "ListTestSources",
+      "ListTestTemplates",
+      "ListTests",
+      "ListUserJourneys"
+    ],
+    "List": [
+      "ListAlarmRecommendations",
+      "ListAppAssessmentComplianceDrifts",
+      "ListAppAssessmentResourceDrifts",
+      "ListAppAssessments",
+      "ListAppComponentCompliances",
+      "ListAppComponentRecommendations",
+      "ListAppInputSources",
+      "ListAppVersionAppComponents",
+      "ListAppVersionResourceMappings",
+      "ListAppVersionResources",
+      "ListAppVersions",
+      "ListApps",
+      "ListMetrics",
+      "ListRecommendationTemplates",
+      "ListResiliencyPolicies",
+      "ListResourceGroupingRecommendations",
+      "ListSopRecommendations",
+      "ListSuggestedResiliencyPolicies",
+      "ListTestRecommendations",
+      "ListUnsupportedAppVersionResources"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptResourceGroupingRecommendations",
+      "methodName": "toAcceptResourceGroupingRecommendations",
+      "description": "Grants permission to accept resource grouping recommendations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_AcceptResourceGroupingRecommendations.html"
+    },
+    {
+      "name": "AddDraftAppVersionResourceMappings",
+      "methodName": "toAddDraftAppVersionResourceMappings",
+      "description": "Grants permission to add draft application version resource mappings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_AddDraftAppVersionResourceMappings.html"
+    },
+    {
+      "name": "BatchUpdateRecommendationStatus",
+      "methodName": "toBatchUpdateRecommendationStatus",
+      "description": "Grants permission to include or exclude one or more operational recommendations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_BatchUpdateRecommendationStatus.html"
+    },
+    {
+      "name": "CreateApp",
+      "methodName": "toCreateApp",
+      "description": "Grants permission to create application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateApp.html"
+    },
+    {
+      "name": "CreateAppVersionAppComponent",
+      "methodName": "toCreateAppVersionAppComponent",
+      "description": "Grants permission to create application app component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAppVersionAppComponent.html"
+    },
+    {
+      "name": "CreateAppVersionResource",
+      "methodName": "toCreateAppVersionResource",
+      "description": "Grants permission to create application resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAppVersionResource.html"
+    },
+    {
+      "name": "CreateAssertion",
+      "methodName": "toCreateAssertion",
+      "description": "Grants permission to create an assertion for a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateAssertion.html"
+    },
+    {
+      "name": "CreateInputSource",
+      "methodName": "toCreateInputSource",
+      "description": "Grants permission to create an input source for a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateInputSource.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create a resilience policy that defines availability and disaster recovery requirements",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreatePolicy.html"
+    },
+    {
+      "name": "CreateRecommendationTemplate",
+      "methodName": "toCreateRecommendationTemplate",
+      "description": "Grants permission to create recommendation template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateRecommendationTemplate.html"
+    },
+    {
+      "name": "CreateReport",
+      "methodName": "toCreateReport",
+      "description": "Grants permission to create a report for a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateReport.html"
+    },
+    {
+      "name": "CreateResiliencyPolicy",
+      "methodName": "toCreateResiliencyPolicy",
+      "description": "Grants permission to create resiliency policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateResiliencyPolicy.html"
+    },
+    {
+      "name": "CreateService",
+      "methodName": "toCreateService",
+      "description": "Grants permission to create a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateService.html"
+    },
+    {
+      "name": "CreateServiceFunction",
+      "methodName": "toCreateServiceFunction",
+      "description": "Grants permission to create a service function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateServiceFunction.html"
+    },
+    {
+      "name": "CreateServiceFunctionResources",
+      "methodName": "toCreateServiceFunctionResources",
+      "description": "Grants permission to create service function resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateServiceFunctionResources.html"
+    },
+    {
+      "name": "CreateSystem",
+      "methodName": "toCreateSystem",
+      "description": "Grants permission to create a system that represents a logical grouping of services",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateSystem.html"
+    },
+    {
+      "name": "CreateTest",
+      "methodName": "toCreateTest",
+      "description": "Grants permission to create a test instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateTest.html"
+    },
+    {
+      "name": "CreateUserJourney",
+      "methodName": "toCreateUserJourney",
+      "description": "Grants permission to create a user journey within a system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_CreateUserJourney.html"
+    },
+    {
+      "name": "DeleteApp",
+      "methodName": "toDeleteApp",
+      "description": "Grants permission to batch delete application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteApp.html"
+    },
+    {
+      "name": "DeleteAppAssessment",
+      "methodName": "toDeleteAppAssessment",
+      "description": "Grants permission to batch delete application assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppAssessment.html"
+    },
+    {
+      "name": "DeleteAppInputSource",
+      "methodName": "toDeleteAppInputSource",
+      "description": "Grants permission to remove application input source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppInputSource.html"
+    },
+    {
+      "name": "DeleteAppVersionAppComponent",
+      "methodName": "toDeleteAppVersionAppComponent",
+      "description": "Grants permission to delete application app component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppVersionAppComponent.html"
+    },
+    {
+      "name": "DeleteAppVersionResource",
+      "methodName": "toDeleteAppVersionResource",
+      "description": "Grants permission to delete application resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAppVersionResource.html"
+    },
+    {
+      "name": "DeleteAssertion",
+      "methodName": "toDeleteAssertion",
+      "description": "Grants permission to delete an assertion",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteAssertion.html"
+    },
+    {
+      "name": "DeleteInputSource",
+      "methodName": "toDeleteInputSource",
+      "description": "Grants permission to delete an input source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteInputSource.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete a resilience policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeleteRecommendationTemplate",
+      "methodName": "toDeleteRecommendationTemplate",
+      "description": "Grants permission to batch delete recommendation template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteRecommendationTemplate.html"
+    },
+    {
+      "name": "DeleteResiliencyPolicy",
+      "methodName": "toDeleteResiliencyPolicy",
+      "description": "Grants permission to batch delete resiliency policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteResiliencyPolicy.html"
+    },
+    {
+      "name": "DeleteService",
+      "methodName": "toDeleteService",
+      "description": "Grants permission to delete a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteService.html"
+    },
+    {
+      "name": "DeleteServiceFunction",
+      "methodName": "toDeleteServiceFunction",
+      "description": "Grants permission to delete a service function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteServiceFunction.html"
+    },
+    {
+      "name": "DeleteServiceFunctionResources",
+      "methodName": "toDeleteServiceFunctionResources",
+      "description": "Grants permission to delete service function resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteServiceFunctionResources.html"
+    },
+    {
+      "name": "DeleteSystem",
+      "methodName": "toDeleteSystem",
+      "description": "Grants permission to delete a system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteSystem.html"
+    },
+    {
+      "name": "DeleteTest",
+      "methodName": "toDeleteTest",
+      "description": "Grants permission to delete a test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteTest.html"
+    },
+    {
+      "name": "DeleteTestSources",
+      "methodName": "toDeleteTestSources",
+      "description": "Grants permission to delete test sources from a test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteTestSources.html"
+    },
+    {
+      "name": "DeleteUserJourney",
+      "methodName": "toDeleteUserJourney",
+      "description": "Grants permission to delete a user journey",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_DeleteUserJourney.html"
+    },
+    {
+      "name": "DescribeApp",
+      "methodName": "toDescribeApp",
+      "description": "Grants permission to describe application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeApp.html"
+    },
+    {
+      "name": "DescribeAppAssessment",
+      "methodName": "toDescribeAppAssessment",
+      "description": "Grants permission to describe application assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppAssessment.html"
+    },
+    {
+      "name": "DescribeAppVersion",
+      "methodName": "toDescribeAppVersion",
+      "description": "Grants permission to describe application version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersion.html"
+    },
+    {
+      "name": "DescribeAppVersionAppComponent",
+      "methodName": "toDescribeAppVersionAppComponent",
+      "description": "Grants permission to describe application version app component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersionAppComponent.html"
+    },
+    {
+      "name": "DescribeAppVersionResource",
+      "methodName": "toDescribeAppVersionResource",
+      "description": "Grants permission to describe application version resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersionResource.html"
+    },
+    {
+      "name": "DescribeAppVersionResourcesResolutionStatus",
+      "methodName": "toDescribeAppVersionResourcesResolutionStatus",
+      "description": "Grants permission to describe application resolution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersionResourcesResolutionStatus.html"
+    },
+    {
+      "name": "DescribeAppVersionTemplate",
+      "methodName": "toDescribeAppVersionTemplate",
+      "description": "Grants permission to describe application version template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeAppVersionTemplate.html"
+    },
+    {
+      "name": "DescribeDraftAppVersionResourcesImportStatus",
+      "methodName": "toDescribeDraftAppVersionResourcesImportStatus",
+      "description": "Grants permission to describe draft application version resources import status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeDraftAppVersionResourcesImportStatus.html"
+    },
+    {
+      "name": "DescribeMetricsExport",
+      "methodName": "toDescribeMetricsExport",
+      "description": "Grants permission to describe metrics export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeMetricsExport.html"
+    },
+    {
+      "name": "DescribeResiliencyPolicy",
+      "methodName": "toDescribeResiliencyPolicy",
+      "description": "Grants permission to describe resiliency policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeResiliencyPolicy.html"
+    },
+    {
+      "name": "DescribeResourceGroupingRecommendationTask",
+      "methodName": "toDescribeResourceGroupingRecommendationTask",
+      "description": "Grants permission to describe the latest status of the grouping recommendation process",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeResourceGroupingRecommendationTask.html"
+    },
+    {
+      "name": "GetFailureModeFinding",
+      "methodName": "toGetFailureModeFinding",
+      "description": "Grants permission to retrieve a failure mode finding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetFailureModeFinding.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to retrieve a resilience policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetService",
+      "methodName": "toGetService",
+      "description": "Grants permission to retrieve a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetService.html"
+    },
+    {
+      "name": "GetSystem",
+      "methodName": "toGetSystem",
+      "description": "Grants permission to retrieve a system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetSystem.html"
+    },
+    {
+      "name": "GetTest",
+      "methodName": "toGetTest",
+      "description": "Grants permission to retrieve a test",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTest.html"
+    },
+    {
+      "name": "GetTestRun",
+      "methodName": "toGetTestRun",
+      "description": "Grants permission to retrieve a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTestRun.html"
+    },
+    {
+      "name": "GetTestTemplate",
+      "methodName": "toGetTestTemplate",
+      "description": "Grants permission to retrieve a test template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTestTemplate.html"
+    },
+    {
+      "name": "GetUserJourney",
+      "methodName": "toGetUserJourney",
+      "description": "Grants permission to retrieve a user journey",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetUserJourney.html"
+    },
+    {
+      "name": "ImportApp",
+      "methodName": "toImportApp",
+      "description": "Grants permission to import a V1 app into the V2 resource model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ImportApp.html"
+    },
+    {
+      "name": "ImportPolicy",
+      "methodName": "toImportPolicy",
+      "description": "Grants permission to import a V1 policy into V2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ImportPolicy.html"
+    },
+    {
+      "name": "ImportResourcesToDraftAppVersion",
+      "methodName": "toImportResourcesToDraftAppVersion",
+      "description": "Grants permission to import resources to draft application version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportResourcesToDraftAppVersion.html"
+    },
+    {
+      "name": "ListAlarmRecommendations",
+      "methodName": "toListAlarmRecommendations",
+      "description": "Grants permission to list alarm recommendation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAlarmRecommendations.html"
+    },
+    {
+      "name": "ListAppAssessmentComplianceDrifts",
+      "methodName": "toListAppAssessmentComplianceDrifts",
+      "description": "Grants permission to list compliance drifts that were detected while running an assessment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppAssessmentComplianceDrifts.html"
+    },
+    {
+      "name": "ListAppAssessmentResourceDrifts",
+      "methodName": "toListAppAssessmentResourceDrifts",
+      "description": "Grants permission to list resource drifts that were detected while running an assessment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppAssessmentResourceDrifts.html"
+    },
+    {
+      "name": "ListAppAssessments",
+      "methodName": "toListAppAssessments",
+      "description": "Grants permission to list application assessment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppAssessments.html"
+    },
+    {
+      "name": "ListAppComponentCompliances",
+      "methodName": "toListAppComponentCompliances",
+      "description": "Grants permission to list app component compliances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppComponentCompliances.html"
+    },
+    {
+      "name": "ListAppComponentRecommendations",
+      "methodName": "toListAppComponentRecommendations",
+      "description": "Grants permission to list app component recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppComponentRecommendations.html"
+    },
+    {
+      "name": "ListAppInputSources",
+      "methodName": "toListAppInputSources",
+      "description": "Grants permission to list application input sources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppInputSources.html"
+    },
+    {
+      "name": "ListAppVersionAppComponents",
+      "methodName": "toListAppVersionAppComponents",
+      "description": "Grants permission to list application version app components",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppVersionAppComponents.html"
+    },
+    {
+      "name": "ListAppVersionResourceMappings",
+      "methodName": "toListAppVersionResourceMappings",
+      "description": "Grants permission to application version resource mappings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppVersionResourceMappings.html"
+    },
+    {
+      "name": "ListAppVersionResources",
+      "methodName": "toListAppVersionResources",
+      "description": "Grants permission to list application resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppVersionResources.html"
+    },
+    {
+      "name": "ListAppVersions",
+      "methodName": "toListAppVersions",
+      "description": "Grants permission to list application version",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppVersions.html"
+    },
+    {
+      "name": "ListApps",
+      "methodName": "toListApps",
+      "description": "Grants permission to list applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListApps.html"
+    },
+    {
+      "name": "ListAssertions",
+      "methodName": "toListAssertions",
+      "description": "Grants permission to list assertions for a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListAssertions.html"
+    },
+    {
+      "name": "ListDependencies",
+      "methodName": "toListDependencies",
+      "description": "Grants permission to list dependencies discovered for services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListDependencies.html"
+    },
+    {
+      "name": "ListFailureModeAssessments",
+      "methodName": "toListFailureModeAssessments",
+      "description": "Grants permission to list failure mode assessments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListFailureModeAssessments.html"
+    },
+    {
+      "name": "ListFailureModeFindings",
+      "methodName": "toListFailureModeFindings",
+      "description": "Grants permission to list failure mode findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListFailureModeFindings.html"
+    },
+    {
+      "name": "ListInputSources",
+      "methodName": "toListInputSources",
+      "description": "Grants permission to list input sources for a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListInputSources.html"
+    },
+    {
+      "name": "ListMetrics",
+      "methodName": "toListMetrics",
+      "description": "Grants permission to list metrics",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListMetrics.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to list resilience policies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListRecommendationTemplates",
+      "methodName": "toListRecommendationTemplates",
+      "description": "Grants permission to list recommendation templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListRecommendationTemplates.html"
+    },
+    {
+      "name": "ListReports",
+      "methodName": "toListReports",
+      "description": "Grants permission to list reports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListReports.html"
+    },
+    {
+      "name": "ListResiliencyPolicies",
+      "methodName": "toListResiliencyPolicies",
+      "description": "Grants permission to list resiliency policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResiliencyPolicies.html"
+    },
+    {
+      "name": "ListResolvedTestRunTargetResources",
+      "methodName": "toListResolvedTestRunTargetResources",
+      "description": "Grants permission to list resolved target resources for a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListResolvedTestRunTargetResources.html"
+    },
+    {
+      "name": "ListResourceGroupingRecommendations",
+      "methodName": "toListResourceGroupingRecommendations",
+      "description": "Grants permission to list resource grouping recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResourceGroupingRecommendations.html"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to list resources for a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListResources.html"
+    },
+    {
+      "name": "ListServiceEvents",
+      "methodName": "toListServiceEvents",
+      "description": "Grants permission to list events for a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServiceEvents.html"
+    },
+    {
+      "name": "ListServiceFunctions",
+      "methodName": "toListServiceFunctions",
+      "description": "Grants permission to list service functions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServiceFunctions.html"
+    },
+    {
+      "name": "ListServiceTopologyEdges",
+      "methodName": "toListServiceTopologyEdges",
+      "description": "Grants permission to list service topology edges",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServiceTopologyEdges.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListServices.html"
+    },
+    {
+      "name": "ListSopRecommendations",
+      "methodName": "toListSopRecommendations",
+      "description": "Grants permission to list SOP recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSopRecommendations.html"
+    },
+    {
+      "name": "ListSuggestedResiliencyPolicies",
+      "methodName": "toListSuggestedResiliencyPolicies",
+      "description": "Grants permission to list suggested resiliency policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSuggestedResiliencyPolicies.html"
+    },
+    {
+      "name": "ListSystemEvents",
+      "methodName": "toListSystemEvents",
+      "description": "Grants permission to list events for a system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListSystemEvents.html"
+    },
+    {
+      "name": "ListSystems",
+      "methodName": "toListSystems",
+      "description": "Grants permission to list systems",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListSystems.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTestRecommendations",
+      "methodName": "toListTestRecommendations",
+      "description": "Grants permission to list test recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListTestRecommendations.html"
+    },
+    {
+      "name": "ListTestRunDependencies",
+      "methodName": "toListTestRunDependencies",
+      "description": "Grants permission to list snapshotted dependencies for a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunDependencies.html"
+    },
+    {
+      "name": "ListTestRunEvents",
+      "methodName": "toListTestRunEvents",
+      "description": "Grants permission to list events for a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunEvents.html"
+    },
+    {
+      "name": "ListTestRunSourceEvents",
+      "methodName": "toListTestRunSourceEvents",
+      "description": "Grants permission to list source events for a test run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunSourceEvents.html"
+    },
+    {
+      "name": "ListTestRunSources",
+      "methodName": "toListTestRunSources",
+      "description": "Grants permission to list test run source snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRunSources.html"
+    },
+    {
+      "name": "ListTestRuns",
+      "methodName": "toListTestRuns",
+      "description": "Grants permission to list test runs for a target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestRuns.html"
+    },
+    {
+      "name": "ListTestSources",
+      "methodName": "toListTestSources",
+      "description": "Grants permission to list test sources on a test",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestSources.html"
+    },
+    {
+      "name": "ListTestTemplates",
+      "methodName": "toListTestTemplates",
+      "description": "Grants permission to list available test templates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTestTemplates.html"
+    },
+    {
+      "name": "ListTests",
+      "methodName": "toListTests",
+      "description": "Grants permission to list tests for a target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListTests.html"
+    },
+    {
+      "name": "ListUnsupportedAppVersionResources",
+      "methodName": "toListUnsupportedAppVersionResources",
+      "description": "Grants permission to list unsupported application version resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListUnsupportedAppVersionResources.html"
+    },
+    {
+      "name": "ListUserJourneys",
+      "methodName": "toListUserJourneys",
+      "description": "Grants permission to list user journeys for a system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListUserJourneys.html"
+    },
+    {
+      "name": "PublishAppVersion",
+      "methodName": "toPublishAppVersion",
+      "description": "Grants permission to publish application version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_PublishAppVersion.html"
+    },
+    {
+      "name": "PutDraftAppVersionTemplate",
+      "methodName": "toPutDraftAppVersionTemplate",
+      "description": "Grants permission to put draft application version template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_PutDraftAppVersionTemplate.html"
+    },
+    {
+      "name": "PutTestSources",
+      "methodName": "toPutTestSources",
+      "description": "Grants permission to put test sources on a test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_PutTestSources.html"
+    },
+    {
+      "name": "RejectResourceGroupingRecommendations",
+      "methodName": "toRejectResourceGroupingRecommendations",
+      "description": "Grants permission to reject resource grouping recommendations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_RejectResourceGroupingRecommendations.html"
+    },
+    {
+      "name": "RemoveDraftAppVersionResourceMappings",
+      "methodName": "toRemoveDraftAppVersionResourceMappings",
+      "description": "Grants permission to remove draft application version mappings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_RemoveDraftAppVersionResourceMappings.html"
+    },
+    {
+      "name": "ResolveAppVersionResources",
+      "methodName": "toResolveAppVersionResources",
+      "description": "Grants permission to resolve application version resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ResolveAppVersionResources.html"
+    },
+    {
+      "name": "StartAppAssessment",
+      "methodName": "toStartAppAssessment",
+      "description": "Grants permission to create application assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartAppAssessment.html"
+    },
+    {
+      "name": "StartFailureModeAssessment",
+      "methodName": "toStartFailureModeAssessment",
+      "description": "Grants permission to start a failure mode assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StartFailureModeAssessment.html"
+    },
+    {
+      "name": "StartMetricsExport",
+      "methodName": "toStartMetricsExport",
+      "description": "Grants permission to start the metrics export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartMetricsExport.html"
+    },
+    {
+      "name": "StartResourceGroupingRecommendationTask",
+      "methodName": "toStartResourceGroupingRecommendationTask",
+      "description": "Grants permission to start the grouping recommendation generation process",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartResourceGroupingRecommendationTask.html"
+    },
+    {
+      "name": "StartTestRun",
+      "methodName": "toStartTestRun",
+      "description": "Grants permission to start a test run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StartTestRun.html"
+    },
+    {
+      "name": "StopTestRun",
+      "methodName": "toStopTestRun",
+      "description": "Grants permission to stop a test run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StopTestRun.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to assign a resource tag",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApp",
+      "methodName": "toUpdateApp",
+      "description": "Grants permission to update application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateApp.html"
+    },
+    {
+      "name": "UpdateAppVersion",
+      "methodName": "toUpdateAppVersion",
+      "description": "Grants permission to update application version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersion.html"
+    },
+    {
+      "name": "UpdateAppVersionAppComponent",
+      "methodName": "toUpdateAppVersionAppComponent",
+      "description": "Grants permission to update application app component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionAppComponent.html"
+    },
+    {
+      "name": "UpdateAppVersionResource",
+      "methodName": "toUpdateAppVersionResource",
+      "description": "Grants permission to update application resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAppVersionResource.html"
+    },
+    {
+      "name": "UpdateAssertion",
+      "methodName": "toUpdateAssertion",
+      "description": "Grants permission to update an assertion",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateAssertion.html"
+    },
+    {
+      "name": "UpdateDependency",
+      "methodName": "toUpdateDependency",
+      "description": "Grants permission to update a dependency classification",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateDependency.html"
+    },
+    {
+      "name": "UpdateFailureModeFinding",
+      "methodName": "toUpdateFailureModeFinding",
+      "description": "Grants permission to update a failure mode finding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateFailureModeFinding.html"
+    },
+    {
+      "name": "UpdatePolicy",
+      "methodName": "toUpdatePolicy",
+      "description": "Grants permission to update a resilience policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdatePolicy.html"
+    },
+    {
+      "name": "UpdateResiliencyPolicy",
+      "methodName": "toUpdateResiliencyPolicy",
+      "description": "Grants permission to update resiliency policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateResiliencyPolicy.html"
+    },
+    {
+      "name": "UpdateService",
+      "methodName": "toUpdateService",
+      "description": "Grants permission to update a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateService.html"
+    },
+    {
+      "name": "UpdateServiceFunction",
+      "methodName": "toUpdateServiceFunction",
+      "description": "Grants permission to update a service function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateServiceFunction.html"
+    },
+    {
+      "name": "UpdateSystem",
+      "methodName": "toUpdateSystem",
+      "description": "Grants permission to update a system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateSystem.html"
+    },
+    {
+      "name": "UpdateTest",
+      "methodName": "toUpdateTest",
+      "description": "Grants permission to update a test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateTest.html"
+    },
+    {
+      "name": "UpdateUserJourney",
+      "methodName": "toUpdateUserJourney",
+      "description": "Grants permission to update a user journey",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_UpdateUserJourney.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "app-assessment",
+      "methodName": "onAppAssessment",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_AppAssessment.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:app-assessment/${AppAssessmentId}",
+      "placeholders": [
+        {
+          "placeholder": "AppAssessmentId",
+          "name": "appAssessmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_App.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:app/${AppId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_Policy.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:policy/${PolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyId",
+          "name": "policyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "recommendation-template",
+      "methodName": "onRecommendationTemplate",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_RecommendationTemplate.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:recommendation-template/${RecommendationTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "RecommendationTemplateId",
+          "name": "recommendationTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "resiliency-policy",
+      "methodName": "onResiliencyPolicy",
+      "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ResiliencyPolicy.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:resiliency-policy/${ResiliencyPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "ResiliencyPolicyId",
+          "name": "resiliencyPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_resiliencehub",
+        "interface": "IResiliencyPolicyRef",
+        "property": "resiliencyPolicyRef",
+        "arn": "policyArn"
+      }
+    },
+    {
+      "name": "service",
+      "methodName": "onService",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_Service.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:service/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "system",
+      "methodName": "onSystem",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_System.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:system/${SystemId}",
+      "placeholders": [
+        {
+          "placeholder": "SystemId",
+          "name": "systemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "test-template",
+      "methodName": "onTestTemplate",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetTestTemplate.html",
+      "arn": "arn:${Partition}:resiliencehub:${Region}:${Account}:test-template/${TestTemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "TestTemplateId",
+          "name": "testTemplateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApp",
+        "toCreatePolicy",
+        "toCreateRecommendationTemplate",
+        "toCreateResiliencyPolicy",
+        "toCreateService",
+        "toCreateSystem",
+        "toImportApp",
+        "toImportPolicy",
+        "toStartAppAssessment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptResourceGroupingRecommendations",
+        "toAddDraftAppVersionResourceMappings",
+        "toBatchUpdateRecommendationStatus",
+        "toCreateApp",
+        "toCreateAppVersionAppComponent",
+        "toCreateAppVersionResource",
+        "toCreateAssertion",
+        "toCreateInputSource",
+        "toCreatePolicy",
+        "toCreateRecommendationTemplate",
+        "toCreateReport",
+        "toCreateResiliencyPolicy",
+        "toCreateService",
+        "toCreateServiceFunction",
+        "toCreateServiceFunctionResources",
+        "toCreateSystem",
+        "toCreateTest",
+        "toCreateUserJourney",
+        "toDeleteApp",
+        "toDeleteAppAssessment",
+        "toDeleteAppInputSource",
+        "toDeleteAppVersionAppComponent",
+        "toDeleteAppVersionResource",
+        "toDeleteAssertion",
+        "toDeleteInputSource",
+        "toDeletePolicy",
+        "toDeleteRecommendationTemplate",
+        "toDeleteResiliencyPolicy",
+        "toDeleteService",
+        "toDeleteServiceFunction",
+        "toDeleteServiceFunctionResources",
+        "toDeleteSystem",
+        "toDeleteTest",
+        "toDeleteTestSources",
+        "toDeleteUserJourney",
+        "toDescribeApp",
+        "toDescribeAppAssessment",
+        "toDescribeAppVersion",
+        "toDescribeAppVersionAppComponent",
+        "toDescribeAppVersionResource",
+        "toDescribeAppVersionResourcesResolutionStatus",
+        "toDescribeAppVersionTemplate",
+        "toDescribeDraftAppVersionResourcesImportStatus",
+        "toDescribeResiliencyPolicy",
+        "toDescribeResourceGroupingRecommendationTask",
+        "toGetFailureModeFinding",
+        "toGetPolicy",
+        "toGetService",
+        "toGetSystem",
+        "toGetTest",
+        "toGetTestRun",
+        "toGetUserJourney",
+        "toImportApp",
+        "toImportPolicy",
+        "toImportResourcesToDraftAppVersion",
+        "toListAlarmRecommendations",
+        "toListAppAssessmentComplianceDrifts",
+        "toListAppAssessmentResourceDrifts",
+        "toListAppComponentCompliances",
+        "toListAppComponentRecommendations",
+        "toListAppInputSources",
+        "toListAppVersionAppComponents",
+        "toListAppVersionResourceMappings",
+        "toListAppVersionResources",
+        "toListAppVersions",
+        "toListAssertions",
+        "toListFailureModeAssessments",
+        "toListFailureModeFindings",
+        "toListInputSources",
+        "toListRecommendationTemplates",
+        "toListReports",
+        "toListResolvedTestRunTargetResources",
+        "toListResourceGroupingRecommendations",
+        "toListResources",
+        "toListServiceEvents",
+        "toListServiceFunctions",
+        "toListServiceTopologyEdges",
+        "toListSopRecommendations",
+        "toListSystemEvents",
+        "toListTagsForResource",
+        "toListTestRecommendations",
+        "toListTestRunDependencies",
+        "toListTestRunEvents",
+        "toListTestRunSourceEvents",
+        "toListTestRunSources",
+        "toListTestRuns",
+        "toListTestSources",
+        "toListTests",
+        "toListUnsupportedAppVersionResources",
+        "toListUserJourneys",
+        "toPublishAppVersion",
+        "toPutDraftAppVersionTemplate",
+        "toPutTestSources",
+        "toRejectResourceGroupingRecommendations",
+        "toRemoveDraftAppVersionResourceMappings",
+        "toResolveAppVersionResources",
+        "toStartAppAssessment",
+        "toStartFailureModeAssessment",
+        "toStartResourceGroupingRecommendationTask",
+        "toStartTestRun",
+        "toStopTestRun",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApp",
+        "toUpdateAppVersion",
+        "toUpdateAppVersionAppComponent",
+        "toUpdateAppVersionResource",
+        "toUpdateAssertion",
+        "toUpdateDependency",
+        "toUpdateFailureModeFinding",
+        "toUpdatePolicy",
+        "toUpdateResiliencyPolicy",
+        "toUpdateService",
+        "toUpdateServiceFunction",
+        "toUpdateSystem",
+        "toUpdateTest",
+        "toUpdateUserJourney"
+      ],
+      "relatedResourceTypes": [
+        "app-assessment",
+        "application",
+        "policy",
+        "recommendation-template",
+        "resiliency-policy",
+        "service",
+        "system"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApp",
+        "toCreatePolicy",
+        "toCreateRecommendationTemplate",
+        "toCreateResiliencyPolicy",
+        "toCreateService",
+        "toCreateSystem",
+        "toImportApp",
+        "toImportPolicy",
+        "toStartAppAssessment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

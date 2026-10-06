@@ -1,0 +1,88 @@
+---
+name: Release Please
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: read
+
+# The changelog job pushes to the branch of the release PR, which the next run rebuilds
+concurrency: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          token: ${{ secrets.OVERRIDE_TOKEN }}
+
+  # release-please rebuilds the branch of its release PR from main on every run, so the changes of
+  # the AWS managed policies and of the services, actions, resource types and condition keys since
+  # the last release are added to the new entry of CHANGELOG.md after each run.
+  changelog:
+    needs: release-please
+    if: needs.release-please.outputs.release_created != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find release PR
+        id: pr
+        run: |
+          set -euo pipefail
+          BRANCH=$(gh pr list --repo "${{ github.repository }}" --state open --label "autorelease: pending" --json headRefName --jq '.[0].headRefName // ""')
+          echo "BRANCH=${BRANCH}" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Checkout code
+        if: steps.pr.outputs.BRANCH != ''
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.pr.outputs.BRANCH }}
+
+      # release-please leaves the branch alone when the PR has not changed
+      - name: Add IAM changes to the changelog
+        if: steps.pr.outputs.BRANCH != ''
+        run: |
+          set -euo pipefail
+          MESSAGE="chore: add the IAM changes to the changelog"
+          if [[ "$(git log -1 --format=%s)" == "${MESSAGE}" ]]; then
+            echo "The changelog already has the IAM changes"
+            exit 0
+          fi
+          bin/changelog-add-iam-changes "$(git describe --tags --abbrev=0)"
+          if git diff --quiet; then
+            exit 0
+          fi
+          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
+          git config --local user.name "udondan"
+          git commit -m "${MESSAGE}" CHANGELOG.md
+          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" "HEAD:${BRANCH}"
+        env:
+          BRANCH: ${{ steps.pr.outputs.BRANCH }}
+
+  # Draft releases don't trigger workflows, so the publish workflow is started here. It publishes
+  # the packages, adds the assets and publishes the release.
+  publish:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Start publish workflow
+        run: gh workflow run test-and-publish.yml --repo "${{ github.repository }}" --ref main -f tag="${TAG}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.release-please.outputs.tag_name }}

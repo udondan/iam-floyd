@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:CreateExascaleDbStorageVault",
+        "odb:GetExascaleDbStorageVault",
+        "odb:UpdateExascaleDbStorageVault",
+        "odb:DeleteExascaleDbStorageVault",
+        "odb:ListExascaleDbStorageVaults",
+        "odb:ListExadbVmClusters",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:ListDbSystemShapes",
+        "odb:ListFlexComponents",
+        "odb:PutResourcePolicy",
+        "odb:GetResourcePolicy",
+        "odb:DeleteResourcePolicy",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSLRActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "odb.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowTaggingActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:TagResource",
+        "odb:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:exascale-db-storage-vault/*"
+      ]
+    }
+  ]
+}

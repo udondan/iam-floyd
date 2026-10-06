@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "sagemaker-data-science-assistant",
+  "className": "SagemakerDataScienceAssistant",
+  "name": "sagemaker-data-science-assistant",
+  "servicePrefix": "sagemaker-data-science-assistant",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker-data-science-assistant.html",
+  "accessLevelList": {
+    "Write": [
+      "SendConversation"
+    ]
+  },
+  "actions": [
+    {
+      "name": "SendConversation",
+      "methodName": "toSendConversation",
+      "description": "Grants permission to start a conversation with SageMaker data science assistant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker-dsa/APIReference/"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

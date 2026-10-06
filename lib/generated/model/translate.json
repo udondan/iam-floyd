@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "filename": "translate",
+  "className": "Translate",
+  "name": "translate",
+  "servicePrefix": "translate",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_translate.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateParallelData",
+      "DeleteParallelData",
+      "DeleteTerminology",
+      "ImportTerminology",
+      "StartTextTranslationJob",
+      "StopTextTranslationJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateParallelData"
+    ],
+    "Read": [
+      "DescribeTextTranslationJob",
+      "GetParallelData",
+      "GetTerminology",
+      "ListTagsForResource",
+      "TranslateDocument",
+      "TranslateText"
+    ],
+    "List": [
+      "ListLanguages",
+      "ListParallelData",
+      "ListTerminologies",
+      "ListTextTranslationJobs"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateParallelData",
+      "methodName": "toCreateParallelData",
+      "description": "Grants permission to create a Parallel Data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_CreateParallelData.html"
+    },
+    {
+      "name": "DeleteParallelData",
+      "methodName": "toDeleteParallelData",
+      "description": "Grants permission to delete a Parallel Data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_DeleteParallelData.html"
+    },
+    {
+      "name": "DeleteTerminology",
+      "methodName": "toDeleteTerminology",
+      "description": "Grants permission to delete a terminology",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_DeleteTerminology.html"
+    },
+    {
+      "name": "DescribeTextTranslationJob",
+      "methodName": "toDescribeTextTranslationJob",
+      "description": "Grants permission to get the properties associated with an asynchronous batch translation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_DescribeTextTranslationJob.html"
+    },
+    {
+      "name": "GetParallelData",
+      "methodName": "toGetParallelData",
+      "description": "Grants permission to get a Parallel Data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_GetParallelData.html"
+    },
+    {
+      "name": "GetTerminology",
+      "methodName": "toGetTerminology",
+      "description": "Grants permission to retrieve a terminology",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_GetTerminology.html"
+    },
+    {
+      "name": "ImportTerminology",
+      "methodName": "toImportTerminology",
+      "description": "Grants permission to create or update a terminology, depending on whether or not one already exists for the given terminology name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_ImportTerminology.html"
+    },
+    {
+      "name": "ListLanguages",
+      "methodName": "toListLanguages",
+      "description": "Grants permission to list supported languages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_ListLanguages.html"
+    },
+    {
+      "name": "ListParallelData",
+      "methodName": "toListParallelData",
+      "description": "Grants permission to list Parallel Data associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_ListParallelData.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTerminologies",
+      "methodName": "toListTerminologies",
+      "description": "Grants permission to list terminologies associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_ListTerminologies.html"
+    },
+    {
+      "name": "ListTextTranslationJobs",
+      "methodName": "toListTextTranslationJobs",
+      "description": "Grants permission to list batch translation jobs that you have submitted",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_ListTextTranslationJobs.html"
+    },
+    {
+      "name": "StartTextTranslationJob",
+      "methodName": "toStartTextTranslationJob",
+      "description": "Grants permission to start an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of text across multiple documents at once",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_StartTextTranslationJob.html"
+    },
+    {
+      "name": "StopTextTranslationJob",
+      "methodName": "toStopTextTranslationJob",
+      "description": "Grants permission to stop an asynchronous batch translation job that is in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_StopTextTranslationJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource with given key value pairs",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TranslateDocument",
+      "methodName": "toTranslateDocument",
+      "description": "Grants permission to translate a document from a source language to a target language",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_TranslateDocument.html"
+    },
+    {
+      "name": "TranslateText",
+      "methodName": "toTranslateText",
+      "description": "Grants permission to translate text from a source language to a target language",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_TranslateText.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource with given key",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateParallelData",
+      "methodName": "toUpdateParallelData",
+      "description": "Grants permission to update an existing Parallel Data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/translate/latest/APIReference/API_UpdateParallelData.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "parallel-data",
+      "methodName": "onParallelData",
+      "url": "https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html",
+      "arn": "arn:${Partition}:translate:${Region}:${Account}:parallel-data/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_translate",
+        "interface": "IParallelDataRef",
+        "property": "parallelDataRef",
+        "arn": "parallelDataArn"
+      }
+    },
+    {
+      "name": "terminology",
+      "methodName": "onTerminology",
+      "url": "https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html",
+      "arn": "arn:${Partition}:translate:${Region}:${Account}:terminology/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by requiring tag values present in a resource creation request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateParallelData",
+        "toImportTerminology",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by requiring tag value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateParallelData",
+        "toDeleteParallelData",
+        "toDeleteTerminology",
+        "toGetParallelData",
+        "toGetTerminology",
+        "toImportTerminology",
+        "toListTagsForResource",
+        "toStartTextTranslationJob",
+        "toTagResource",
+        "toTranslateDocument",
+        "toTranslateText",
+        "toUntagResource",
+        "toUpdateParallelData"
+      ],
+      "relatedResourceTypes": [
+        "parallel-data",
+        "terminology"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by requiring the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateParallelData",
+        "toImportTerminology",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

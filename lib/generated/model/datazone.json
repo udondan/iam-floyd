@@ -1,0 +1,2163 @@
+{
+  "schemaVersion": 1,
+  "filename": "datazone",
+  "className": "Datazone",
+  "name": "datazone",
+  "servicePrefix": "datazone",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datazone.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptPredictions",
+      "AcceptSubscriptionRequest",
+      "AddEntityOwner",
+      "AddPolicyGrant",
+      "AssociateEnvironmentRole",
+      "AssociateGovernedTerms",
+      "BatchPutAttributesMetadata",
+      "CancelMessage",
+      "CancelMetadataGenerationRun",
+      "CancelSubscription",
+      "CreateAccountPool",
+      "CreateAsset",
+      "CreateAssetFilter",
+      "CreateAssetRevision",
+      "CreateAssetType",
+      "CreateCell",
+      "CreateCellRun",
+      "CreateConnection",
+      "CreateDataProduct",
+      "CreateDataProductRevision",
+      "CreateDataSource",
+      "CreateDesignation",
+      "CreateDomain",
+      "CreateDomainUnit",
+      "CreateEnvironment",
+      "CreateEnvironmentAction",
+      "CreateEnvironmentBlueprint",
+      "CreateEnvironmentProfile",
+      "CreateFormType",
+      "CreateGlossary",
+      "CreateGlossaryTerm",
+      "CreateGroupProfile",
+      "CreateListingChangeSet",
+      "CreateNotebook",
+      "CreateProject",
+      "CreateProjectMembership",
+      "CreateProjectProfile",
+      "CreateRule",
+      "CreateSubscriptionGrant",
+      "CreateSubscriptionRequest",
+      "CreateSubscriptionTarget",
+      "CreateUserProfile",
+      "DeleteAccountPool",
+      "DeleteAsset",
+      "DeleteAssetFilter",
+      "DeleteAssetType",
+      "DeleteCell",
+      "DeleteCellRun",
+      "DeleteConnection",
+      "DeleteDataExportConfiguration",
+      "DeleteDataProduct",
+      "DeleteDataSource",
+      "DeleteDesignation",
+      "DeleteDomain",
+      "DeleteDomainUnit",
+      "DeleteEnvironment",
+      "DeleteEnvironmentAction",
+      "DeleteEnvironmentBlueprint",
+      "DeleteEnvironmentBlueprintConfiguration",
+      "DeleteEnvironmentProfile",
+      "DeleteFormType",
+      "DeleteGlossary",
+      "DeleteGlossaryTerm",
+      "DeleteLineageEvent",
+      "DeleteListing",
+      "DeleteNotebook",
+      "DeleteProject",
+      "DeleteProjectMembership",
+      "DeleteProjectProfile",
+      "DeleteRule",
+      "DeleteSubscriptionGrant",
+      "DeleteSubscriptionRequest",
+      "DeleteSubscriptionTarget",
+      "DeleteTimeSeriesDataPoints",
+      "DisassociateEnvironmentRole",
+      "DisassociateGovernedTerms",
+      "GenerateCode",
+      "GetIamPortalLoginUrl",
+      "PostLineageEvent",
+      "PostTimeSeriesDataPoints",
+      "PutCellRunResult",
+      "PutDataExportConfiguration",
+      "PutEnvironmentBlueprintConfiguration",
+      "RejectPredictions",
+      "RejectSubscriptionRequest",
+      "RemoveEntityOwner",
+      "RemovePolicyGrant",
+      "RevokeSubscription",
+      "SendMessage",
+      "StartCompute",
+      "StartConversation",
+      "StartDataSourceRun",
+      "StartMetadataGenerationRun",
+      "StartNotebookCompute",
+      "StartNotebookExport",
+      "StartNotebookImport",
+      "StartNotebookRun",
+      "StartNotebookSync",
+      "StopCompute",
+      "StopMetadataGenerationRun",
+      "StopNotebookCompute",
+      "StopNotebookRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccountPool",
+      "UpdateAssetFilter",
+      "UpdateCell",
+      "UpdateCellRun",
+      "UpdateConnection",
+      "UpdateDataSource",
+      "UpdateDesignation",
+      "UpdateDomain",
+      "UpdateDomainUnit",
+      "UpdateEnvironment",
+      "UpdateEnvironmentAction",
+      "UpdateEnvironmentBlueprint",
+      "UpdateEnvironmentProfile",
+      "UpdateGlossary",
+      "UpdateGlossaryTerm",
+      "UpdateGroupProfile",
+      "UpdateNotebook",
+      "UpdateProject",
+      "UpdateProjectProfile",
+      "UpdateRule",
+      "UpdateSubscriptionGrantStatus",
+      "UpdateSubscriptionRequest",
+      "UpdateSubscriptionTarget",
+      "UpdateUserProfile",
+      "BatchDeleteLinkedTypes",
+      "BatchPutLinkedTypes",
+      "BatchUpdateNotifications",
+      "DeleteDomainSharingPolicy",
+      "ProvisionDomain",
+      "PutDomainSharingPolicy",
+      "RefreshToken",
+      "SsoLogin",
+      "SsoLogout",
+      "StartAccountBootstrapAction",
+      "UpdateDataSourceRunActivities",
+      "UpdateEnvironmentConfiguration",
+      "UpdateEnvironmentDeploymentStatus",
+      "ValidatePassRole"
+    ],
+    "Permissions management": [
+      "AddPolicyGrant",
+      "GetIamPortalLoginUrl",
+      "RemovePolicyGrant",
+      "RevokeSubscription",
+      "DeleteDomainSharingPolicy",
+      "PutDomainSharingPolicy"
+    ],
+    "Read": [
+      "BatchGetAttributesMetadata",
+      "BatchGetCell",
+      "BatchGetCellRun",
+      "GetAccountPool",
+      "GetAsset",
+      "GetAssetFilter",
+      "GetAssetType",
+      "GetCell",
+      "GetCellRun",
+      "GetCellRunResult",
+      "GetCompute",
+      "GetConnection",
+      "GetConversation",
+      "GetCurrentEffectivePolicy",
+      "GetDataExportConfiguration",
+      "GetDataProduct",
+      "GetDataSource",
+      "GetDataSourceRun",
+      "GetDesignation",
+      "GetDomain",
+      "GetDomainUnit",
+      "GetEnvironment",
+      "GetEnvironmentAction",
+      "GetEnvironmentBlueprint",
+      "GetEnvironmentBlueprintConfiguration",
+      "GetEnvironmentCredentials",
+      "GetEnvironmentProfile",
+      "GetFormType",
+      "GetGlossary",
+      "GetGlossaryTerm",
+      "GetGroupProfile",
+      "GetJobRun",
+      "GetLineageEvent",
+      "GetLineageNode",
+      "GetListing",
+      "GetMetadataGenerationRun",
+      "GetNotebook",
+      "GetNotebookCompute",
+      "GetNotebookExport",
+      "GetNotebookRun",
+      "GetProject",
+      "GetProjectProfile",
+      "GetRule",
+      "GetSubscription",
+      "GetSubscriptionGrant",
+      "GetSubscriptionRequestDetails",
+      "GetSubscriptionTarget",
+      "GetTimeSeriesDataPoint",
+      "GetUpdateEligibility",
+      "GetUserProfile",
+      "ListTagsForResource",
+      "ValidatePolicy",
+      "GetDomainExecutionRoleCredentials",
+      "GetDomainSharingPolicy",
+      "GetEnvironmentActionLink",
+      "GetSubscriptionEligibility"
+    ],
+    "List": [
+      "ListAccountEnvironments",
+      "ListAccountPools",
+      "ListAccountsInAccountPool",
+      "ListAssetFilters",
+      "ListAssetRevisions",
+      "ListCellRuns",
+      "ListConnections",
+      "ListConversations",
+      "ListDataProductRevisions",
+      "ListDataSourceRunActivities",
+      "ListDataSourceRuns",
+      "ListDataSources",
+      "ListDesignations",
+      "ListDomainUnitsForParent",
+      "ListDomains",
+      "ListEntityOwners",
+      "ListEnvironmentActions",
+      "ListEnvironmentBlueprintConfigurations",
+      "ListEnvironmentBlueprints",
+      "ListEnvironmentProfiles",
+      "ListEnvironments",
+      "ListGroupsForUser",
+      "ListJobRuns",
+      "ListLineageEvents",
+      "ListLineageNodeHistory",
+      "ListMetadataGenerationRuns",
+      "ListNotebookRuns",
+      "ListNotebooks",
+      "ListNotifications",
+      "ListPolicyGrants",
+      "ListProjectMemberships",
+      "ListProjectProfiles",
+      "ListProjects",
+      "ListRules",
+      "ListSubscriptionGrants",
+      "ListSubscriptionRequests",
+      "ListSubscriptionTargets",
+      "ListSubscriptions",
+      "ListTimeSeriesDataPoints",
+      "QueryGraph",
+      "Search",
+      "SearchGroupProfiles",
+      "SearchListings",
+      "SearchTypes",
+      "SearchUserProfiles",
+      "ListEnvironmentBlueprintConfigurationSummaries",
+      "ListLinkedTypes",
+      "ListWarehouseMetadata",
+      "SearchRules"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptPredictions",
+      "methodName": "toAcceptPredictions",
+      "description": "Grants permission to accept prediction",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "AcceptSubscriptionRequest",
+      "methodName": "toAcceptSubscriptionRequest",
+      "description": "Grants permission to approve a subscription request for a Data Asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "AddEntityOwner",
+      "methodName": "toAddEntityOwner",
+      "description": "Grants permission to add an owner to an entity like domain unit",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "AddPolicyGrant",
+      "methodName": "toAddPolicyGrant",
+      "description": "Grants permission to add a policy grant",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "AssociateEnvironmentRole",
+      "methodName": "toAssociateEnvironmentRole",
+      "description": "Grants permission to associate a role in a default service blueprint environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "AssociateGovernedTerms",
+      "methodName": "toAssociateGovernedTerms",
+      "description": "Grants permission to associate governed terms to an asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "BatchGetAttributesMetadata",
+      "methodName": "toBatchGetAttributesMetadata",
+      "description": "Grants permission to retrieve attributes metadata",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "BatchGetCell",
+      "methodName": "toBatchGetCell",
+      "description": "Grants permission to batch get cells",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "BatchGetCellRun",
+      "methodName": "toBatchGetCellRun",
+      "description": "Grants permission to batch get cell runs",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "BatchPutAttributesMetadata",
+      "methodName": "toBatchPutAttributesMetadata",
+      "description": "Grants permission to create and update attributes metadata",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CancelMessage",
+      "methodName": "toCancelMessage",
+      "description": "Grants permission to cancel an in-progress agent response",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CancelMetadataGenerationRun",
+      "methodName": "toCancelMetadataGenerationRun",
+      "description": "Grants permission to cancel metadata generation run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CancelSubscription",
+      "methodName": "toCancelSubscription",
+      "description": "Grants permission to revoke or unsubscribe an approved subscription to Data Asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateAccountPool",
+      "methodName": "toCreateAccountPool",
+      "description": "Grants permission to create an account pool",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateAsset",
+      "methodName": "toCreateAsset",
+      "description": "Grants permission to create asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateAssetFilter",
+      "methodName": "toCreateAssetFilter",
+      "description": "Grants permission to create asset filter",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateAssetRevision",
+      "methodName": "toCreateAssetRevision",
+      "description": "Grants permission to create new revision of an asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateAssetType",
+      "methodName": "toCreateAssetType",
+      "description": "Grants permission to create an asset type",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateCell",
+      "methodName": "toCreateCell",
+      "description": "Grants permission to create cells",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateCellRun",
+      "methodName": "toCreateCellRun",
+      "description": "Grants permission to create cell runs",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create connections",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDataProduct",
+      "methodName": "toCreateDataProduct",
+      "description": "Grants permission to create data product",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDataProductRevision",
+      "methodName": "toCreateDataProductRevision",
+      "description": "Grants permission to create data product revision",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDataSource",
+      "methodName": "toCreateDataSource",
+      "description": "Grants permission to create a new DataSource",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDesignation",
+      "methodName": "toCreateDesignation",
+      "description": "Grants permission to create a designation",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to provision a domain which is a top level entity that contains other Amazon DataZone resources",
+      "accessLevel": "Write",
+      "url": "",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDomainUnit",
+      "methodName": "toCreateDomainUnit",
+      "description": "Grants permission to create a domain unit",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create a collection of configurated resources used to publish and subscribe to data",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateEnvironmentAction",
+      "methodName": "toCreateEnvironmentAction",
+      "description": "Grants permission to create an environment action in a default service blueprint environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateEnvironmentBlueprint",
+      "methodName": "toCreateEnvironmentBlueprint",
+      "description": "Grants permission to create a custom Environment Blueprint that allow user to add Environments to their Project",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateEnvironmentProfile",
+      "methodName": "toCreateEnvironmentProfile",
+      "description": "Grants permission to create a template from a Blueprint that can be used to create a Environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateFormType",
+      "methodName": "toCreateFormType",
+      "description": "Grants permission to create a form type or a new revision of it",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateGlossary",
+      "methodName": "toCreateGlossary",
+      "description": "Grants permission to create a business glossary",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateGlossaryTerm",
+      "methodName": "toCreateGlossaryTerm",
+      "description": "Grants permission to create a glossary term",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateGroupProfile",
+      "methodName": "toCreateGroupProfile",
+      "description": "Grants permission to create a DataZone group profile for an IAM Identity Center group",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateListingChangeSet",
+      "methodName": "toCreateListingChangeSet",
+      "description": "Grants permission to create listing change set",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateNotebook",
+      "methodName": "toCreateNotebook",
+      "description": "Grants permission to create notebooks",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a Project to enable your team to publish and subscribe to data",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateProjectMembership",
+      "methodName": "toCreateProjectMembership",
+      "description": "Grants permission to add a user to a Project",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateProjectProfile",
+      "methodName": "toCreateProjectProfile",
+      "description": "Grants permission to create a project profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateRule",
+      "methodName": "toCreateRule",
+      "description": "Grants permission to create rule",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateSubscriptionGrant",
+      "methodName": "toCreateSubscriptionGrant",
+      "description": "Grants permission to create a grant for an approved subscription on a subscription target",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateSubscriptionRequest",
+      "methodName": "toCreateSubscriptionRequest",
+      "description": "Grants permission to create a subscription request for a Data Asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateSubscriptionTarget",
+      "methodName": "toCreateSubscriptionTarget",
+      "description": "Grants permission to create a subscription target for a Environment in the project",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateUserProfile",
+      "methodName": "toCreateUserProfile",
+      "description": "Grants permission to create a user profile for an existing user in the customers IAM Identity Center",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteAccountPool",
+      "methodName": "toDeleteAccountPool",
+      "description": "Grants permission to delete an account pool",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteAsset",
+      "methodName": "toDeleteAsset",
+      "description": "Grants permission to delete an asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteAssetFilter",
+      "methodName": "toDeleteAssetFilter",
+      "description": "Grants permission to delete asset filter",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteAssetType",
+      "methodName": "toDeleteAssetType",
+      "description": "Grants permission to delete an asset type",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteCell",
+      "methodName": "toDeleteCell",
+      "description": "Grants permission to delete cells",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteCellRun",
+      "methodName": "toDeleteCellRun",
+      "description": "Grants permission to delete cell runs",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete connections",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDataExportConfiguration",
+      "methodName": "toDeleteDataExportConfiguration",
+      "description": "Grants permission to delete DataZone catalog data export configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDataProduct",
+      "methodName": "toDeleteDataProduct",
+      "description": "Grants permission to delete data product",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Grants permission to update existing DataSource",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDesignation",
+      "methodName": "toDeleteDesignation",
+      "description": "Grants permission to delete a designation",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a provisioned domain",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDomainUnit",
+      "methodName": "toDeleteDomainUnit",
+      "description": "Grants permission to delete an existing domain unit",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to Delete Environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteEnvironmentAction",
+      "methodName": "toDeleteEnvironmentAction",
+      "description": "Grants permission to delete an environment action in a default service blueprint environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteEnvironmentBlueprint",
+      "methodName": "toDeleteEnvironmentBlueprint",
+      "description": "Grants permission to delete Environment Blueprint",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteEnvironmentBlueprintConfiguration",
+      "methodName": "toDeleteEnvironmentBlueprintConfiguration",
+      "description": "Grants permission to delete environment blueprint configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteEnvironmentProfile",
+      "methodName": "toDeleteEnvironmentProfile",
+      "description": "Grants permission to delete Environment Profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteFormType",
+      "methodName": "toDeleteFormType",
+      "description": "Grants permission to delete a form type",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteGlossary",
+      "methodName": "toDeleteGlossary",
+      "description": "Grants permission to delete a business glossary",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteGlossaryTerm",
+      "methodName": "toDeleteGlossaryTerm",
+      "description": "Grants permission to delete a glossary term",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteLineageEvent",
+      "methodName": "toDeleteLineageEvent",
+      "description": "Grants permission to delete lineage events",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteListing",
+      "methodName": "toDeleteListing",
+      "description": "Grants permission to delete listing",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteNotebook",
+      "methodName": "toDeleteNotebook",
+      "description": "Grants permission to delete notebooks",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a Project that enables your team to publish and subscribe to data",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteProjectMembership",
+      "methodName": "toDeleteProjectMembership",
+      "description": "Grants permission to remove a user from a project",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteProjectProfile",
+      "methodName": "toDeleteProjectProfile",
+      "description": "Grants permission to delete a project profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteRule",
+      "methodName": "toDeleteRule",
+      "description": "Grants permission to delete rule",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteSubscriptionGrant",
+      "methodName": "toDeleteSubscriptionGrant",
+      "description": "Grants permission to delete a subscription grant from a subscription target",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteSubscriptionRequest",
+      "methodName": "toDeleteSubscriptionRequest",
+      "description": "Grants permission to delete a pending subscription request for a Data Asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteSubscriptionTarget",
+      "methodName": "toDeleteSubscriptionTarget",
+      "description": "Grants permission to delete a subscription target from a Environment in the project",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteTimeSeriesDataPoints",
+      "methodName": "toDeleteTimeSeriesDataPoints",
+      "description": "Grants permission to delete existing TimeSeriesDataPoints",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DisassociateEnvironmentRole",
+      "methodName": "toDisassociateEnvironmentRole",
+      "description": "Grants permission to disassociate a role in a default service blueprint environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DisassociateGovernedTerms",
+      "methodName": "toDisassociateGovernedTerms",
+      "description": "Grants permission to disassociate governed terms to an asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GenerateCode",
+      "methodName": "toGenerateCode",
+      "description": "Grants permission to generate code",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetAccountPool",
+      "methodName": "toGetAccountPool",
+      "description": "Grants permission to get account pool details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetAsset",
+      "methodName": "toGetAsset",
+      "description": "Grants permission to retrieve an asset",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetAssetFilter",
+      "methodName": "toGetAssetFilter",
+      "description": "Grants permission to get asset filter",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetAssetType",
+      "methodName": "toGetAssetType",
+      "description": "Grants permission to get an asset type",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetCell",
+      "methodName": "toGetCell",
+      "description": "Grants permission to get cells",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetCellRun",
+      "methodName": "toGetCellRun",
+      "description": "Grants permission to get cell runs",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetCellRunResult",
+      "methodName": "toGetCellRunResult",
+      "description": "Grants permission to get cell run result",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetCompute",
+      "methodName": "toGetCompute",
+      "description": "Grants permission to get compute",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to get connections",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetConversation",
+      "methodName": "toGetConversation",
+      "description": "Grants permission to get conversations",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetCurrentEffectivePolicy",
+      "methodName": "toGetCurrentEffectivePolicy",
+      "description": "Grants permission to Get Current Effective Policy",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDataExportConfiguration",
+      "methodName": "toGetDataExportConfiguration",
+      "description": "Grants permission to retrieve DataZone catalog data export configuration",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDataProduct",
+      "methodName": "toGetDataProduct",
+      "description": "Grants permission to get data product",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDataSource",
+      "methodName": "toGetDataSource",
+      "description": "Grants permission to Get a existing DataSource in Amazon DataZone using its identifier",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDataSourceRun",
+      "methodName": "toGetDataSourceRun",
+      "description": "Grants permission to get DataSource run job in Amazon DataZone using it's identifier",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDesignation",
+      "methodName": "toGetDesignation",
+      "description": "Grants permission to retrieve information about a designation",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDomain",
+      "methodName": "toGetDomain",
+      "description": "Grants permission to retrieve information about a domain",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDomainUnit",
+      "methodName": "toGetDomainUnit",
+      "description": "Grants permission to get an existing domain unit",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to get Environment details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironmentAction",
+      "methodName": "toGetEnvironmentAction",
+      "description": "Grants permission to get an environment action in a default service blueprint environment",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironmentBlueprint",
+      "methodName": "toGetEnvironmentBlueprint",
+      "description": "Grants permission to get Environment Blueprint details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironmentBlueprintConfiguration",
+      "methodName": "toGetEnvironmentBlueprintConfiguration",
+      "description": "Grants permission to get environment blueprint configuration",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironmentCredentials",
+      "methodName": "toGetEnvironmentCredentials",
+      "description": "Grants permission to get short term credentials that assume the Environment user role",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironmentProfile",
+      "methodName": "toGetEnvironmentProfile",
+      "description": "Grants permission to get Environment Profile details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetFormType",
+      "methodName": "toGetFormType",
+      "description": "Grants permission to get a form type",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetGlossary",
+      "methodName": "toGetGlossary",
+      "description": "Grants permission to get a business glossary",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetGlossaryTerm",
+      "methodName": "toGetGlossaryTerm",
+      "description": "Grants permission to get a glossary term",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetGroupProfile",
+      "methodName": "toGetGroupProfile",
+      "description": "Grants permission to retrieve an existing DataZone group profile",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetIamPortalLoginUrl",
+      "methodName": "toGetIamPortalLoginUrl",
+      "description": "Grants permission to an IAM principal to log into the DataZone Portal",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "GetJobRun",
+      "methodName": "toGetJobRun",
+      "description": "Grants permission to get job runs",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetLineageEvent",
+      "methodName": "toGetLineageEvent",
+      "description": "Grants permission to get lineage events",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetLineageNode",
+      "methodName": "toGetLineageNode",
+      "description": "Grants permission to get the lineage node",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetListing",
+      "methodName": "toGetListing",
+      "description": "Grants permission to get listing",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetMetadataGenerationRun",
+      "methodName": "toGetMetadataGenerationRun",
+      "description": "Grants permission to get metadata generation run",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetNotebook",
+      "methodName": "toGetNotebook",
+      "description": "Grants permission to get notebooks",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetNotebookCompute",
+      "methodName": "toGetNotebookCompute",
+      "description": "Grants permission to get notebook compute",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetNotebookExport",
+      "methodName": "toGetNotebookExport",
+      "description": "Grants permission to get notebook exports",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetNotebookRun",
+      "methodName": "toGetNotebookRun",
+      "description": "Grants permission to get a notebook run",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetProject",
+      "methodName": "toGetProject",
+      "description": "Grants permission to get Project details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetProjectProfile",
+      "methodName": "toGetProjectProfile",
+      "description": "Grants permission to get project profile details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetRule",
+      "methodName": "toGetRule",
+      "description": "Grants permission to get rule",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetSubscription",
+      "methodName": "toGetSubscription",
+      "description": "Grants permission to retrieve a subscription",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetSubscriptionGrant",
+      "methodName": "toGetSubscriptionGrant",
+      "description": "Grants permission to retireve a subscription grant",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetSubscriptionRequestDetails",
+      "methodName": "toGetSubscriptionRequestDetails",
+      "description": "Grants permission to reject a subscription request for a Data Asset",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetSubscriptionTarget",
+      "methodName": "toGetSubscriptionTarget",
+      "description": "Grants permission to retireve details of subscription target",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetTimeSeriesDataPoint",
+      "methodName": "toGetTimeSeriesDataPoint",
+      "description": "Grants permission to get an existing TimeSeriesDataPoints in Amazon DataZone using its identifier",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetUpdateEligibility",
+      "methodName": "toGetUpdateEligibility",
+      "description": "Grants permission to get update eligibility status for project constructs",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetUserProfile",
+      "methodName": "toGetUserProfile",
+      "description": "Grants permission to retrieve a user profile for an existing user in the DataZone Domain",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListAccountEnvironments",
+      "methodName": "toListAccountEnvironments",
+      "description": "Grants permission to list Environments across all domains in an AWS Account",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListAccountPools",
+      "methodName": "toListAccountPools",
+      "description": "Grants permission to list account pools",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListAccountsInAccountPool",
+      "methodName": "toListAccountsInAccountPool",
+      "description": "Grants permission to list accounts in an account pool",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListAssetFilters",
+      "methodName": "toListAssetFilters",
+      "description": "Grants permission to list asset filters",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListAssetRevisions",
+      "methodName": "toListAssetRevisions",
+      "description": "Grants permission to list revisions of an asset",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListCellRuns",
+      "methodName": "toListCellRuns",
+      "description": "Grants permission to list cell runs",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list connections",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListConversations",
+      "methodName": "toListConversations",
+      "description": "Grants permission to list conversations",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDataProductRevisions",
+      "methodName": "toListDataProductRevisions",
+      "description": "Grants permission to list data product revisions",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDataSourceRunActivities",
+      "methodName": "toListDataSourceRunActivities",
+      "description": "Grants permission to list DataSource runs job's activities on Asset",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDataSourceRuns",
+      "methodName": "toListDataSourceRuns",
+      "description": "Grants permission to list DataSource runs job",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDataSources",
+      "methodName": "toListDataSources",
+      "description": "Grants permission to list existing DataSources",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDesignations",
+      "methodName": "toListDesignations",
+      "description": "Grants permission to list designations",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDomainUnitsForParent",
+      "methodName": "toListDomainUnitsForParent",
+      "description": "Grants permission to list child domain units for a given parent domain unit",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to retrieve all domains",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListEntityOwners",
+      "methodName": "toListEntityOwners",
+      "description": "Grants permission to list owners of an entity like domain unit",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListEnvironmentActions",
+      "methodName": "toListEnvironmentActions",
+      "description": "Grants permission to list environment actions in a default service blueprint environment",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListEnvironmentBlueprintConfigurations",
+      "methodName": "toListEnvironmentBlueprintConfigurations",
+      "description": "Grants permission to list environment blueprint configurations",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListEnvironmentBlueprints",
+      "methodName": "toListEnvironmentBlueprints",
+      "description": "Grants permission to list Domain for Environment Blueprints",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListEnvironmentProfiles",
+      "methodName": "toListEnvironmentProfiles",
+      "description": "Grants permission to list Domain for Environment Profiles",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to show Environments in the Domain",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListGroupsForUser",
+      "methodName": "toListGroupsForUser",
+      "description": "Grants permission to list all the DataZone group profiles that the DataZone user profile is a member of",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListJobRuns",
+      "methodName": "toListJobRuns",
+      "description": "Grants permission to list job runs",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListLineageEvents",
+      "methodName": "toListLineageEvents",
+      "description": "Grants permission to list lineage events",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListLineageNodeHistory",
+      "methodName": "toListLineageNodeHistory",
+      "description": "Grants permission to list historical versions of lineage node",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListMetadataGenerationRuns",
+      "methodName": "toListMetadataGenerationRuns",
+      "description": "Grants permission to list metadata generation runs",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListNotebookRuns",
+      "methodName": "toListNotebookRuns",
+      "description": "Grants permission to list notebook runs",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListNotebooks",
+      "methodName": "toListNotebooks",
+      "description": "Grants permission to list notebooks",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListNotifications",
+      "methodName": "toListNotifications",
+      "description": "Grants permission to list notifications and events for a datazone user",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListPolicyGrants",
+      "methodName": "toListPolicyGrants",
+      "description": "Grants permission to list policy grants",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListProjectMemberships",
+      "methodName": "toListProjectMemberships",
+      "description": "Grants permission to list Project Members",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListProjectProfiles",
+      "methodName": "toListProjectProfiles",
+      "description": "Grants permission to list project profiles",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list Projects",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to list rules",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListSubscriptionGrants",
+      "methodName": "toListSubscriptionGrants",
+      "description": "Grants permission to List subscription grants for a subscribed principal",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListSubscriptionRequests",
+      "methodName": "toListSubscriptionRequests",
+      "description": "Grants permission to list subscription requests",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListSubscriptionTargets",
+      "methodName": "toListSubscriptionTargets",
+      "description": "Grants permission to list subscription targets",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to list subscriptions",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve all tags associated with a resource",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListTimeSeriesDataPoints",
+      "methodName": "toListTimeSeriesDataPoints",
+      "description": "Grants permission to list existing TimeSeriesDataPoints",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "PostLineageEvent",
+      "methodName": "toPostLineageEvent",
+      "description": "Grants permission to post lineage events",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PostTimeSeriesDataPoints",
+      "methodName": "toPostTimeSeriesDataPoints",
+      "description": "Grants permission to post a new TimeSeriesDataPoints",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PutCellRunResult",
+      "methodName": "toPutCellRunResult",
+      "description": "Grants permission to put cell run results",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PutDataExportConfiguration",
+      "methodName": "toPutDataExportConfiguration",
+      "description": "Grants permission to create and update DataZone catalog data export configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PutEnvironmentBlueprintConfiguration",
+      "methodName": "toPutEnvironmentBlueprintConfiguration",
+      "description": "Grants permission to put environment blueprint configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "QueryGraph",
+      "methodName": "toQueryGraph",
+      "description": "Grants permission to query graph",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "RejectPredictions",
+      "methodName": "toRejectPredictions",
+      "description": "Grants permission to reject prediction",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RejectSubscriptionRequest",
+      "methodName": "toRejectSubscriptionRequest",
+      "description": "Grants permission to reject a subscription request for a Data Asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RemoveEntityOwner",
+      "methodName": "toRemoveEntityOwner",
+      "description": "Grants permission to remove an existing owner of an entity like domain unit",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RemovePolicyGrant",
+      "methodName": "toRemovePolicyGrant",
+      "description": "Grants permission to remove a policy grant",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "RevokeSubscription",
+      "methodName": "toRevokeSubscription",
+      "description": "Grants permission to revoke a subscription",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "Search",
+      "methodName": "toSearch",
+      "description": "Grants permission to search datazone entities",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "SearchGroupProfiles",
+      "methodName": "toSearchGroupProfiles",
+      "description": "Grants permission to search DataZone group profiles and IAM Identity Center groups",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "SearchListings",
+      "methodName": "toSearchListings",
+      "description": "Grants permission to search listings",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "SearchTypes",
+      "methodName": "toSearchTypes",
+      "description": "Grants permission to search types such asset types and form types in a domain",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "SearchUserProfiles",
+      "methodName": "toSearchUserProfiles",
+      "description": "Grants permission to search DataZone user profiles, IAM Identity Center users, and DataZone IAM principal profiles",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to send messages",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartCompute",
+      "methodName": "toStartCompute",
+      "description": "Grants permission to start compute",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartConversation",
+      "methodName": "toStartConversation",
+      "description": "Grants permission to start conversations",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartDataSourceRun",
+      "methodName": "toStartDataSourceRun",
+      "description": "Grants permission to start a DataSource run job",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartMetadataGenerationRun",
+      "methodName": "toStartMetadataGenerationRun",
+      "description": "Grants permission to start metadata generation run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartNotebookCompute",
+      "methodName": "toStartNotebookCompute",
+      "description": "Grants permission to start notebook compute",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartNotebookExport",
+      "methodName": "toStartNotebookExport",
+      "description": "Grants permission to export notebooks",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartNotebookImport",
+      "methodName": "toStartNotebookImport",
+      "description": "Grants permission to import notebooks",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartNotebookRun",
+      "methodName": "toStartNotebookRun",
+      "description": "Grants permission to start a notebook run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartNotebookSync",
+      "methodName": "toStartNotebookSync",
+      "description": "Grants permission to start notebook sync",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StopCompute",
+      "methodName": "toStopCompute",
+      "description": "Grants permission to stop compute",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StopMetadataGenerationRun",
+      "methodName": "toStopMetadataGenerationRun",
+      "description": "Grants permission to stop metadata generation run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StopNotebookCompute",
+      "methodName": "toStopNotebookCompute",
+      "description": "Grants permission to stop notebook compute",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StopNotebookRun",
+      "methodName": "toStopNotebookRun",
+      "description": "Grants permission to stop a notebook run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": ""
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with a resource",
+      "accessLevel": "Tagging, Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateAccountPool",
+      "methodName": "toUpdateAccountPool",
+      "description": "Grants permission to update an account pool",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateAssetFilter",
+      "methodName": "toUpdateAssetFilter",
+      "description": "Grants permission to update asset filter",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateCell",
+      "methodName": "toUpdateCell",
+      "description": "Grants permission to update cells",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateCellRun",
+      "methodName": "toUpdateCellRun",
+      "description": "Grants permission to update cell runs",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateConnection",
+      "methodName": "toUpdateConnection",
+      "description": "Grants permission to update connections",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Grants permission to update existing DataSource",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateDesignation",
+      "methodName": "toUpdateDesignation",
+      "description": "Grants permission to update a designation",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateDomain",
+      "methodName": "toUpdateDomain",
+      "description": "Grants permission to update information for a domain",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateDomainUnit",
+      "methodName": "toUpdateDomainUnit",
+      "description": "Grants permission to update an existing domain unit",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update Environment settings",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateEnvironmentAction",
+      "methodName": "toUpdateEnvironmentAction",
+      "description": "Grants permission to update an environment action in a default service blueprint environment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateEnvironmentBlueprint",
+      "methodName": "toUpdateEnvironmentBlueprint",
+      "description": "Grants permission to update Environment Blueprint settings",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateEnvironmentProfile",
+      "methodName": "toUpdateEnvironmentProfile",
+      "description": "Grants permission to update EnvironmentProfile configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateGlossary",
+      "methodName": "toUpdateGlossary",
+      "description": "Grants permission to update a business glossary",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateGlossaryTerm",
+      "methodName": "toUpdateGlossaryTerm",
+      "description": "Grants permission to update a glossary term",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateGroupProfile",
+      "methodName": "toUpdateGroupProfile",
+      "description": "Grants permission to update a DataZone group profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateNotebook",
+      "methodName": "toUpdateNotebook",
+      "description": "Grants permission to update notebooks",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to update a Project that enables your team to publish and subscribe to data",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateProjectProfile",
+      "methodName": "toUpdateProjectProfile",
+      "description": "Grants permission to update a project profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateRule",
+      "methodName": "toUpdateRule",
+      "description": "Grants permission to update rule",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateSubscriptionGrantStatus",
+      "methodName": "toUpdateSubscriptionGrantStatus",
+      "description": "Grants permission to update a subscription grant status for custom grants",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateSubscriptionRequest",
+      "methodName": "toUpdateSubscriptionRequest",
+      "description": "Grants permission to update business reason for subscription request for a Data Asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateSubscriptionTarget",
+      "methodName": "toUpdateSubscriptionTarget",
+      "description": "Grants permission to update a subscription target",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateUserProfile",
+      "methodName": "toUpdateUserProfile",
+      "description": "Grants permission to update a DataZone user profile",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "ValidatePolicy",
+      "methodName": "toValidatePolicy",
+      "description": "Valite the Cedar Policy's correctness",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "BatchDeleteLinkedTypes",
+      "methodName": "toBatchDeleteLinkedTypes",
+      "description": "Grants permission to remove linked type items from an Amazon DataZone Domain",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "BatchPutLinkedTypes",
+      "methodName": "toBatchPutLinkedTypes",
+      "description": "Grants permission to put linked type items to an Amazon DataZone Domain",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "BatchUpdateNotifications",
+      "methodName": "toBatchUpdateNotifications",
+      "description": "Grants permission to update mutable fields of the calling user's own notifications",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDomainSharingPolicy",
+      "methodName": "toDeleteDomainSharingPolicy",
+      "description": "Grants permission to delete a resource policy for a DataZone Domain",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "GetDomainExecutionRoleCredentials",
+      "methodName": "toGetDomainExecutionRoleCredentials",
+      "description": "Grants permission to use features that require access to domain execution role credentials",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDomainSharingPolicy",
+      "methodName": "toGetDomainSharingPolicy",
+      "description": "Grants permission to retrieve a resource policy for a DataZone Domain",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetEnvironmentActionLink",
+      "methodName": "toGetEnvironmentActionLink",
+      "description": "Grants permission to get environment action link",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetSubscriptionEligibility",
+      "methodName": "toGetSubscriptionEligibility",
+      "description": "Grants permission to get subscription eligibilty",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListEnvironmentBlueprintConfigurationSummaries",
+      "methodName": "toListEnvironmentBlueprintConfigurationSummaries",
+      "description": "Grants permission to list environment blueprint configuration summaries",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListLinkedTypes",
+      "methodName": "toListLinkedTypes",
+      "description": "Grants permission to list linked type items linked to an Amazon DataZone Domain",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListWarehouseMetadata",
+      "methodName": "toListWarehouseMetadata",
+      "description": "Grants permission to list available Manager Secrets",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ProvisionDomain",
+      "methodName": "toProvisionDomain",
+      "description": "Grants permission to provision domain with default project setup",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PutDomainSharingPolicy",
+      "methodName": "toPutDomainSharingPolicy",
+      "description": "Grants permission to add a resource policy for a DataZone Domain",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
+      "name": "RefreshToken",
+      "methodName": "toRefreshToken",
+      "description": "Grants permission to refresh token",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SearchRules",
+      "methodName": "toSearchRules",
+      "description": "Grants permission to search rules",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "SsoLogin",
+      "methodName": "toSsoLogin",
+      "description": "Grants permission to login using SSO",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SsoLogout",
+      "methodName": "toSsoLogout",
+      "description": "Grants permission to logout as SSO user",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartAccountBootstrapAction",
+      "methodName": "toStartAccountBootstrapAction",
+      "description": "Grants permission to start account bootstrap action for a domain",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateDataSourceRunActivities",
+      "methodName": "toUpdateDataSourceRunActivities",
+      "description": "Grants permission to update data source run activities",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateEnvironmentConfiguration",
+      "methodName": "toUpdateEnvironmentConfiguration",
+      "description": "Grants permission to update environment configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateEnvironmentDeploymentStatus",
+      "methodName": "toUpdateEnvironmentDeploymentStatus",
+      "description": "Grants permission to update status of the Environment deployment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "ValidatePassRole",
+      "methodName": "toValidatePassRole",
+      "description": "Grants permission to validate pass role",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/datazone/latest/userguide/create-domain.html",
+      "arn": "arn:${Partition}:datazone:${Region}:${Account}:domain/${DomainId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_datazone",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteDomain",
+        "toGetDomain",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDomain",
+        "toBatchDeleteLinkedTypes",
+        "toBatchPutLinkedTypes",
+        "toListLinkedTypes",
+        "toStartAccountBootstrapAction"
+      ],
+      "relatedResourceTypes": [
+        "domain"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "datazone:domainId",
+      "methodName": "ifDomainId",
+      "description": "Filters access by the domain ID passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#amazondatazone-policy-keys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "domainId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "datazone:projectId",
+      "methodName": "ifProjectId",
+      "description": "Filters access by the project ID passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#amazondatazone-policy-keys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "projectId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "datazone:userId",
+      "methodName": "ifUserId",
+      "description": "Filters access by the user ID passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#amazondatazone-policy-keys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "userId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

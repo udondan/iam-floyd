@@ -1,0 +1,48 @@
+---
+name: Toot IAM changes
+
+on:
+  # release:
+  #   types: [published]
+  workflow_dispatch:
+    inputs:
+      changelog:
+        description: version to toot about
+        required: true
+
+jobs:
+  toot:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # OIDC token for assuming the AWS role
+      contents: read # checkout
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Get release notes
+        run: gh release view "v${VERSION#v}" --repo "${{ github.repository }}" --json body --jq .body > "${RUNNER_TEMP}/notes.md"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ github.event.release.tag_name || github.event.inputs.changelog }}
+
+      - name: Toot
+        run: make toot
+        env:
+          RELEASE_NOTES: ${{ runner.temp }}/notes.md
+          AWS_SQS_URL: ${{ secrets.AWS_SQS_URL_MASTODON }}

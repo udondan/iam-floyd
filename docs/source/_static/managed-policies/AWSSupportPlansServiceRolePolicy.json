@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "supportplans:AcceptSupportAgreement",
+        "supportplans:CancelSupportAgreement",
+        "supportplans:CreateSupportAgreement",
+        "supportplans:GetSupportAgreement",
+        "supportplans:ListSupportAgreements",
+        "supportplans:ListSupportAgreementRevisions",
+        "supportplans:RejectSupportAgreement",
+        "supportplans:StartSupportPlanUpdate",
+        "supportplans:UpdateSupportAgreement",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

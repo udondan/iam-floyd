@@ -1,0 +1,23 @@
+{
+  "name": "tooter",
+  "version": "0.1.0",
+  "bin": {
+    "tooter": "bin/app.js"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.164"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "3.1146.0",
+    "@aws-sdk/client-sqs": "3.1146.0",
+    "@types/node": "24.19.0",
+    "aws-cdk-lib": "2.272.0",
+    "constructs": "10.6.0",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PassAWSPartnerCentralRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/PartnerCentralRoleFor*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "partnercentral-account-management.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PartnerUserRoleAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "Partnercentral-account-management:AssociatePartnerUser",
+        "Partnercentral-account-management:DisassociatePartnerUser"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "VerificationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:StartVerification",
+        "partnercentral:GetVerification"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PassAWSPartnerCentralSnapshotJobRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "resource-snapshot-job.partnercentral-selling.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "LegacyPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessLegacyPartnerCentral"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PartnerCentralMarketingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessMarketingCentral"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ChannelBillingTransferRoleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/PartnerCentralChannelBillingTransferManagement",
+        "arn:aws:iam::*:role/PartnerCentralChannelBillingTransferReadOnly"
+      ]
+    },
+    {
+      "Sid": "PartnerCentralEphemeralWriteS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+    },
+    {
+      "Sid": "SupportAccess",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:DescribeCommunications"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListEntitiesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeEntityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Solution/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/OfferSet/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Offer/*"
+      ]
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:DescribeAgreement"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonQPartnerAssistantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PartnerCentralAgentsSessionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:UseSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        },
+        "Bool": {
+          "aws:IsMcpServiceAction": "true"
+        }
+      }
+    }
+  ]
+}

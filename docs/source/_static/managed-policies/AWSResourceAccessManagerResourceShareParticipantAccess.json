@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ram:AcceptResourceShareInvitation",
+        "ram:GetResourcePolicies",
+        "ram:GetResourceShareInvitations",
+        "ram:GetResourceShares",
+        "ram:ListPendingInvitationResources",
+        "ram:ListPrincipals",
+        "ram:ListResources",
+        "ram:RejectResourceShareInvitation"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

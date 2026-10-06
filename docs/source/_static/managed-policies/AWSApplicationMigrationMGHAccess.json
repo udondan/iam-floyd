@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgh:AssociateCreatedArtifact",
+        "mgh:CreateProgressUpdateStream",
+        "mgh:DisassociateCreatedArtifact",
+        "mgh:GetHomeRegion",
+        "mgh:ImportMigrationTask",
+        "mgh:NotifyMigrationTaskState",
+        "mgh:PutResourceAttributes"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

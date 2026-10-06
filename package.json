@@ -1,0 +1,70 @@
+{
+  "scripts": {
+    "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
+    "generate": "npx ts-node bin/generate.ts",
+    "preemit": "find lib/generator bin -name \"*.js\" -type f -exec rm -vf {} \\;",
+    "emit": "npx ts-node bin/emit.ts",
+    "cdk-refs": "npx ts-node bin/cdk-refs.ts",
+    "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
+    "index-service-principals": "npx ts-node bin/index-service-principals.ts",
+    "build": "npx tsc --build --force --verbose tsconfig.main.json tsconfig.types.json"
+  },
+  "name": "iam-floyd",
+  "description": "AWS IAM policy statement generator with fluent interface",
+  "version": "0.851.0",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Daniel Schroeder",
+    "url": "https://www.udondan.com/"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/udondan"
+    }
+  ],
+  "homepage": "https://github.com/udondan/iam-floyd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udondan/iam-floyd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/udondan/iam-floyd/issues"
+  },
+  "keywords": [
+    "aws",
+    "iam",
+    "policy",
+    "iam-floyd"
+  ],
+  "stability": "experimental",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "devDependencies": {
+    "@aws-sdk/client-iam": "3.1146.0",
+    "@aws-sdk/client-s3": "3.1146.0",
+    "@aws-sdk/client-sqs": "3.1146.0",
+    "@eslint/js": "10.0.1",
+    "@jsii/spec": "1.141.0",
+    "@swc/core": "1.16.13",
+    "@swc/helpers": "0.5.23",
+    "@types/node": "24.19.0",
+    "aws-cdk-lib": "2.272.0",
+    "cheerio": "1.2.0",
+    "colors": "1.4.0",
+    "eslint": "10.11.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.6",
+    "glob": "13.0.6",
+    "globals": "17.13.0",
+    "jsii-docgen": "10.12.6",
+    "jsii-pacmak": "1.141.0",
+    "markdownlint-cli2": "0.23.3",
+    "prettier": "3.9.9",
+    "regenerator-runtime": "0.14.1",
+    "ts-morph": "28.0.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.0"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowFSxDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeFileSystems"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSageMakerDeleteApp",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DeleteApp"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:app/*"
+    },
+    {
+      "Sid": "AllowEFSAccessPointCreation",
+      "Effect": "Allow",
+      "Action": "elasticfilesystem:CreateAccessPoint",
+      "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*",
+          "aws:RequestTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEFSAccessPointDeletion",
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:DeleteAccessPoint"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:*:*:access-point/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEFSCreation",
+      "Effect": "Allow",
+      "Action": "elasticfilesystem:CreateFileSystem",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEFSMountWithDeletion",
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:CreateMountTarget",
+        "elasticfilesystem:DeleteFileSystem",
+        "elasticfilesystem:DeleteMountTarget"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEFSDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:DescribeAccessPoints",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeMountTargets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEFSTagging",
+      "Effect": "Allow",
+      "Action": "elasticfilesystem:TagResource",
+      "Resource": [
+        "arn:aws:elasticfilesystem:*:*:access-point/*",
+        "arn:aws:elasticfilesystem:*:*:file-system/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEC2Tagging",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "AllowEC2Operations",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2AuthZ",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:DeleteSecurityGroup",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/ManagedByAmazonSageMakerResource": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowIdcOperations",
+      "Effect": "Allow",
+      "Action": [
+        "sso:CreateManagedApplicationInstance",
+        "sso:DeleteManagedApplicationInstance",
+        "sso:GetManagedApplicationInstance"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityCenter",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:sso:instance-arn": "arn:*:sso:::instance/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityStore",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "arn:*:identitystore::*:identitystore/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSagemakerProfileCreation",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateUserProfile",
+        "sagemaker:DescribeUserProfile"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSagemakerSpaceOperationsForCanvasManagedSpaces",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateSpace",
+        "sagemaker:DescribeSpace",
+        "sagemaker:DeleteSpace",
+        "sagemaker:ListTags"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:space/*/CanvasManagedSpace-*"
+    },
+    {
+      "Sid": "AllowSagemakerAddTagsForAppManagedSpaces",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AddTags"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:space/*/CanvasManagedSpace-*",
+      "Condition": {
+        "StringEquals": {
+          "sagemaker:TaggingAction": "CreateSpace"
+        }
+      }
+    }
+  ]
+}

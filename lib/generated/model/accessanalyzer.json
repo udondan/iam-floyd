@@ -1,0 +1,482 @@
+{
+  "schemaVersion": 1,
+  "filename": "accessanalyzer",
+  "className": "AccessAnalyzer",
+  "name": "access-analyzer",
+  "servicePrefix": "access-analyzer",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_accessanalyzer.html",
+  "accessLevelList": {
+    "Write": [
+      "ApplyArchiveRule",
+      "CancelPolicyGeneration",
+      "CreateAccessPreview",
+      "CreateAnalyzer",
+      "CreateArchiveRule",
+      "CreateServiceLinkedAnalyzer",
+      "DeleteAnalyzer",
+      "DeleteArchiveRule",
+      "DeleteServiceLinkedAnalyzer",
+      "GenerateFindingRecommendation",
+      "StartPolicyGeneration",
+      "StartResourceScan",
+      "TagResource",
+      "UntagResource",
+      "UpdateAnalyzer",
+      "UpdateArchiveRule",
+      "UpdateFindings"
+    ],
+    "Read": [
+      "CheckAccessNotGranted",
+      "CheckNoNewAccess",
+      "CheckNoPublicAccess",
+      "GetAccessPreview",
+      "GetAnalyzedResource",
+      "GetAnalyzer",
+      "GetArchiveRule",
+      "GetFinding",
+      "GetFindingRecommendation",
+      "GetFindingsStatistics",
+      "GetGeneratedPolicy",
+      "ListAccessPreviewFindings",
+      "ListAnalyzedResources",
+      "ListFindings",
+      "ListPolicyGenerations",
+      "ListTagsForResource",
+      "ValidatePolicy"
+    ],
+    "List": [
+      "ListAccessPreviews",
+      "ListAnalyzers",
+      "ListArchiveRules"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ApplyArchiveRule",
+      "methodName": "toApplyArchiveRule",
+      "description": "Grants permission to apply an archive rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ApplyArchiveRule.html"
+    },
+    {
+      "name": "CancelPolicyGeneration",
+      "methodName": "toCancelPolicyGeneration",
+      "description": "Grants permission to cancel a policy generation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CancelPolicyGeneration.html"
+    },
+    {
+      "name": "CheckAccessNotGranted",
+      "methodName": "toCheckAccessNotGranted",
+      "description": "Grants permission to check that specified access is not allowed by a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckAccessNotGranted.html"
+    },
+    {
+      "name": "CheckNoNewAccess",
+      "methodName": "toCheckNoNewAccess",
+      "description": "Grants permission to check that no new access is allowed when compared to an existing policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckNoNewAccess.html"
+    },
+    {
+      "name": "CheckNoPublicAccess",
+      "methodName": "toCheckNoPublicAccess",
+      "description": "Grants permission to check that public access is not allowed by a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckNoPublicAccess.html"
+    },
+    {
+      "name": "CreateAccessPreview",
+      "methodName": "toCreateAccessPreview",
+      "description": "Grants permission to create an access preview for the specified analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAccessPreview.html"
+    },
+    {
+      "name": "CreateAnalyzer",
+      "methodName": "toCreateAnalyzer",
+      "description": "Grants permission to create an analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html"
+    },
+    {
+      "name": "CreateArchiveRule",
+      "methodName": "toCreateArchiveRule",
+      "description": "Grants permission to create an archive rule for the specified analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateArchiveRule.html"
+    },
+    {
+      "name": "CreateServiceLinkedAnalyzer",
+      "methodName": "toCreateServiceLinkedAnalyzer",
+      "description": "Grants permission to create a service-linked analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateServiceLinkedAnalyzer.html"
+    },
+    {
+      "name": "DeleteAnalyzer",
+      "methodName": "toDeleteAnalyzer",
+      "description": "Grants permission to delete the specified analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html"
+    },
+    {
+      "name": "DeleteArchiveRule",
+      "methodName": "toDeleteArchiveRule",
+      "description": "Grants permission to delete archive rules for the specified analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteArchiveRule.html"
+    },
+    {
+      "name": "DeleteServiceLinkedAnalyzer",
+      "methodName": "toDeleteServiceLinkedAnalyzer",
+      "description": "Grants permission to delete the specified service-linked analyzer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteServiceLinkedAnalyzer.html"
+    },
+    {
+      "name": "GenerateFindingRecommendation",
+      "methodName": "toGenerateFindingRecommendation",
+      "description": "Grants permission to generate recommendation steps to resolve a finding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GenerateFindingRecommendation.html"
+    },
+    {
+      "name": "GetAccessPreview",
+      "methodName": "toGetAccessPreview",
+      "description": "Grants permission to retrieve information about an access preview",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAccessPreview.html"
+    },
+    {
+      "name": "GetAnalyzedResource",
+      "methodName": "toGetAnalyzedResource",
+      "description": "Grants permission to retrieve information about an analyzed resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzedResource.html"
+    },
+    {
+      "name": "GetAnalyzer",
+      "methodName": "toGetAnalyzer",
+      "description": "Grants permission to retrieve information about analyzers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html"
+    },
+    {
+      "name": "GetArchiveRule",
+      "methodName": "toGetArchiveRule",
+      "description": "Grants permission to retrieve information about archive rules for the specified analyzer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetArchiveRule.html"
+    },
+    {
+      "name": "GetFinding",
+      "methodName": "toGetFinding",
+      "description": "Grants permission to retrieve findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFindingV2.html"
+    },
+    {
+      "name": "GetFindingRecommendation",
+      "methodName": "toGetFindingRecommendation",
+      "description": "Grants permission to retrieve recommendation steps to resolve a finding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFindingRecommendation.html"
+    },
+    {
+      "name": "GetFindingsStatistics",
+      "methodName": "toGetFindingsStatistics",
+      "description": "Grants permission to retrieve statistics for findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#access-analyzer-permissions"
+    },
+    {
+      "name": "GetGeneratedPolicy",
+      "methodName": "toGetGeneratedPolicy",
+      "description": "Grants permission to retrieve a policy that was generated using StartPolicyGeneration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetGeneratedPolicy.html"
+    },
+    {
+      "name": "ListAccessPreviewFindings",
+      "methodName": "toListAccessPreviewFindings",
+      "description": "Grants permission to retrieve a list of findings from an access preview",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAccessPreviewFindings.html"
+    },
+    {
+      "name": "ListAccessPreviews",
+      "methodName": "toListAccessPreviews",
+      "description": "Grants permission to retrieve a list of access previews",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAccessPreviews.html"
+    },
+    {
+      "name": "ListAnalyzedResources",
+      "methodName": "toListAnalyzedResources",
+      "description": "Grants permission to retrieve a list of resources that have been analyzed",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzedResources.html"
+    },
+    {
+      "name": "ListAnalyzers",
+      "methodName": "toListAnalyzers",
+      "description": "Grants permission to retrieves a list of analyzers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html"
+    },
+    {
+      "name": "ListArchiveRules",
+      "methodName": "toListArchiveRules",
+      "description": "Grants permission to retrieve a list of archive rules from an analyzer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListArchiveRules.html"
+    },
+    {
+      "name": "ListFindings",
+      "methodName": "toListFindings",
+      "description": "Grants permission to retrieve a list of findings from an analyzer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindingsV2.html"
+    },
+    {
+      "name": "ListPolicyGenerations",
+      "methodName": "toListPolicyGenerations",
+      "description": "Grants permission to list all the recently started policy generations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListPolicyGenerations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve a list of tags applied to a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartPolicyGeneration",
+      "methodName": "toStartPolicyGeneration",
+      "description": "Grants permission to start a policy generation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartPolicyGeneration.html"
+    },
+    {
+      "name": "StartResourceScan",
+      "methodName": "toStartResourceScan",
+      "description": "Grants permission to start a scan of the policies applied to a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartResourceScan.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAnalyzer",
+      "methodName": "toUpdateAnalyzer",
+      "description": "Grants permission to modify an analyzer's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateAnalyzer.html"
+    },
+    {
+      "name": "UpdateArchiveRule",
+      "methodName": "toUpdateArchiveRule",
+      "description": "Grants permission to modify an archive rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateArchiveRule.html"
+    },
+    {
+      "name": "UpdateFindings",
+      "methodName": "toUpdateFindings",
+      "description": "Grants permission to modify findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html"
+    },
+    {
+      "name": "ValidatePolicy",
+      "methodName": "toValidatePolicy",
+      "description": "Grants permission to validate a policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ValidatePolicy.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Analyzer",
+      "methodName": "onAnalyzer",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}",
+      "placeholders": [
+        {
+          "placeholder": "AnalyzerName",
+          "name": "analyzerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_accessanalyzer",
+        "interface": "IAnalyzerRef",
+        "property": "analyzerRef",
+        "arn": "analyzerArn"
+      }
+    },
+    {
+      "name": "ArchiveRule",
+      "methodName": "onArchiveRule",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}/archive-rule/${RuleName}",
+      "placeholders": [
+        {
+          "placeholder": "AnalyzerName",
+          "name": "analyzerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RuleName",
+          "name": "ruleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAnalyzer",
+        "toCreateServiceLinkedAnalyzer",
+        "toDeleteAnalyzer",
+        "toDeleteServiceLinkedAnalyzer",
+        "toGetAnalyzer",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toApplyArchiveRule",
+        "toCreateAccessPreview",
+        "toCreateAnalyzer",
+        "toCreateServiceLinkedAnalyzer",
+        "toDeleteAnalyzer",
+        "toDeleteServiceLinkedAnalyzer",
+        "toGenerateFindingRecommendation",
+        "toGetAccessPreview",
+        "toGetAnalyzedResource",
+        "toGetAnalyzer",
+        "toGetFinding",
+        "toGetFindingRecommendation",
+        "toGetFindingsStatistics",
+        "toListAccessPreviewFindings",
+        "toListAccessPreviews",
+        "toListAnalyzedResources",
+        "toListArchiveRules",
+        "toListFindings",
+        "toListTagsForResource",
+        "toStartResourceScan",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAnalyzer",
+        "toUpdateFindings"
+      ],
+      "relatedResourceTypes": [
+        "Analyzer"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAnalyzer",
+        "toCreateServiceLinkedAnalyzer",
+        "toDeleteAnalyzer",
+        "toDeleteServiceLinkedAnalyzer",
+        "toGetAnalyzer",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

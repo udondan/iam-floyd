@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CostOptimizationHubReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cost-optimization-hub:ListEnrollmentStatuses",
+        "cost-optimization-hub:GetPreferences",
+        "cost-optimization-hub:GetRecommendation",
+        "cost-optimization-hub:ListRecommendations",
+        "cost-optimization-hub:ListRecommendationSummaries",
+        "cost-optimization-hub:ListEfficiencyMetrics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

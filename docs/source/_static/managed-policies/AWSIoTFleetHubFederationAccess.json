@@ -1,0 +1,71 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iot:DescribeIndex",
+        "iot:DescribeThingGroup",
+        "iot:GetBucketsAggregation",
+        "iot:GetCardinality",
+        "iot:GetIndexingConfiguration",
+        "iot:GetPercentiles",
+        "iot:GetStatistics",
+        "iot:SearchIndex",
+        "iot:CreateFleetMetric",
+        "iot:ListFleetMetrics",
+        "iot:DeleteFleetMetric",
+        "iot:DescribeFleetMetric",
+        "iot:UpdateFleetMetric",
+        "iot:DescribeCustomMetric",
+        "iot:ListCustomMetrics",
+        "iot:ListDimensions",
+        "iot:ListMetricValues",
+        "iot:ListThingGroups",
+        "iot:ListThingsInThingGroup",
+        "iot:ListJobTemplates",
+        "iot:DescribeJobTemplate",
+        "iot:ListJobs",
+        "iot:CreateJob",
+        "iot:CancelJob",
+        "iot:DescribeJob",
+        "iot:ListJobExecutionsForJob",
+        "iot:ListJobExecutionsForThing",
+        "iot:DescribeJobExecution",
+        "iot:ListSecurityProfiles",
+        "iot:DescribeSecurityProfile",
+        "iot:ListActiveViolations",
+        "iot:GetThingShadow",
+        "iot:ListNamedShadowsForThing",
+        "iot:CancelJobExecution",
+        "iot:DescribeEndpoint",
+        "iotfleethub:DescribeApplication",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:ListMetrics",
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sns:CreateTopic",
+        "sns:DeleteTopic",
+        "sns:ListSubscriptionsByTopic",
+        "sns:Subscribe",
+        "sns:Unsubscribe"
+      ],
+      "Resource": "arn:aws:sns:*:*:iotfleethub*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms",
+        "cloudwatch:DescribeAlarmHistory"
+      ],
+      "Resource": "arn:aws:cloudwatch:*:*:iotfleethub*"
+    }
+  ]
+}

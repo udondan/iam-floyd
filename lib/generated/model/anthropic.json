@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 1,
+  "filename": "anthropic",
+  "className": "Anthropic",
+  "name": "anthropic",
+  "servicePrefix": "aws-external-anthropic",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-external-anthropic.html",
+  "accessLevelList": {
+    "Write": [
+      "ArchiveAgent",
+      "ArchiveEnvironment",
+      "ArchiveMemoryStore",
+      "ArchiveSession",
+      "ArchiveVault",
+      "ArchiveWorkspace",
+      "AssumeConsole",
+      "CancelBatchInference",
+      "CountTokens",
+      "CreateAgent",
+      "CreateBatchInference",
+      "CreateEnvironment",
+      "CreateFile",
+      "CreateInference",
+      "CreateMemoryStore",
+      "CreateSession",
+      "CreateSkill",
+      "CreateUserProfile",
+      "CreateUserProfileEnrollmentUrl",
+      "CreateVault",
+      "CreateWebhook",
+      "CreateWorkspace",
+      "DeleteBatchInference",
+      "DeleteEnvironment",
+      "DeleteFile",
+      "DeleteMemoryStore",
+      "DeleteSession",
+      "DeleteSkill",
+      "DeleteVault",
+      "DeleteWebhook",
+      "DisableKey",
+      "ProcessEnvironmentWork",
+      "RegisterKey",
+      "RotateWebhookSecret",
+      "TagResource",
+      "UntagResource",
+      "UpdateAgent",
+      "UpdateEnvironment",
+      "UpdateKey",
+      "UpdateMemoryStore",
+      "UpdateSession",
+      "UpdateSkill",
+      "UpdateUserProfile",
+      "UpdateVault",
+      "UpdateWebhook",
+      "UpdateWorkspace"
+    ],
+    "Read": [
+      "GetAccountStatus",
+      "GetAgent",
+      "GetBatchInference",
+      "GetEnvironment",
+      "GetFile",
+      "GetKey",
+      "GetMemoryStore",
+      "GetModel",
+      "GetSession",
+      "GetSkill",
+      "GetUserProfile",
+      "GetVault",
+      "GetWebhook",
+      "GetWorkspace",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAgents",
+      "ListBatchInferences",
+      "ListEnvironments",
+      "ListFiles",
+      "ListKeys",
+      "ListMemoryStores",
+      "ListModels",
+      "ListSessions",
+      "ListSkills",
+      "ListUserProfiles",
+      "ListVaults",
+      "ListWebhooks",
+      "ListWorkspaces",
+      "CallWithBearerToken"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ArchiveAgent",
+      "methodName": "toArchiveAgent",
+      "description": "Grants permission to archive a managed agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ArchiveEnvironment",
+      "methodName": "toArchiveEnvironment",
+      "description": "Grants permission to archive a managed agent environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ArchiveMemoryStore",
+      "methodName": "toArchiveMemoryStore",
+      "description": "Grants permission to archive a memory store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ArchiveSession",
+      "methodName": "toArchiveSession",
+      "description": "Grants permission to archive a managed agent session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ArchiveVault",
+      "methodName": "toArchiveVault",
+      "description": "Grants permission to archive a credential vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ArchiveWorkspace",
+      "methodName": "toArchiveWorkspace",
+      "description": "Grants permission to archive a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "AssumeConsole",
+      "methodName": "toAssumeConsole",
+      "description": "Grants permission to assume console access on Claude Platform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions",
+      "conditionMethods": [
+        "ifCapability"
+      ]
+    },
+    {
+      "name": "CancelBatchInference",
+      "methodName": "toCancelBatchInference",
+      "description": "Grants permission to cancel an in-progress batch inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CountTokens",
+      "methodName": "toCountTokens",
+      "description": "Grants permission to count tokens for a message request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateAgent",
+      "methodName": "toCreateAgent",
+      "description": "Grants permission to create a managed agent in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateBatchInference",
+      "methodName": "toCreateBatchInference",
+      "description": "Grants permission to create a batch inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create a managed agent environment in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateFile",
+      "methodName": "toCreateFile",
+      "description": "Grants permission to upload a file to a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateInference",
+      "methodName": "toCreateInference",
+      "description": "Grants permission to create a chat completion inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateMemoryStore",
+      "methodName": "toCreateMemoryStore",
+      "description": "Grants permission to create a managed agent memory store in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permission to create a managed agent session in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateSkill",
+      "methodName": "toCreateSkill",
+      "description": "Grants permission to create a skill in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateUserProfile",
+      "methodName": "toCreateUserProfile",
+      "description": "Grants permission to create a user profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateUserProfileEnrollmentUrl",
+      "methodName": "toCreateUserProfileEnrollmentUrl",
+      "description": "Grants permission to create an enrollment URL for a user profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateVault",
+      "methodName": "toCreateVault",
+      "description": "Grants permission to create a managed agent credential vault in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateWebhook",
+      "methodName": "toCreateWebhook",
+      "description": "Grants permission to create a webhook in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateWorkspace",
+      "methodName": "toCreateWorkspace",
+      "description": "Grants permission to create a workspace in an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions",
+      "conditionMethods": [
+        "ifKeyArn",
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteBatchInference",
+      "methodName": "toDeleteBatchInference",
+      "description": "Grants permission to delete a batch inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete a managed agent environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteFile",
+      "methodName": "toDeleteFile",
+      "description": "Grants permission to delete a file from a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteMemoryStore",
+      "methodName": "toDeleteMemoryStore",
+      "description": "Grants permission to delete a memory store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteSession",
+      "methodName": "toDeleteSession",
+      "description": "Grants permission to delete a managed agent session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteSkill",
+      "methodName": "toDeleteSkill",
+      "description": "Grants permission to delete a skill from a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteVault",
+      "methodName": "toDeleteVault",
+      "description": "Grants permission to delete a credential vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DeleteWebhook",
+      "methodName": "toDeleteWebhook",
+      "description": "Grants permission to delete a webhook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "DisableKey",
+      "methodName": "toDisableKey",
+      "description": "Grants permission to disable an external encryption key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions",
+      "conditionMethods": [
+        "ifKeyArn"
+      ]
+    },
+    {
+      "name": "GetAccountStatus",
+      "methodName": "toGetAccountStatus",
+      "description": "Grants permission to retrieve the status of account setup and AWS Marketplace registration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetAgent",
+      "methodName": "toGetAgent",
+      "description": "Grants permission to retrieve details or versions of a managed agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetBatchInference",
+      "methodName": "toGetBatchInference",
+      "description": "Grants permission to retrieve details of a batch inference request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to retrieve details of a managed agent environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetFile",
+      "methodName": "toGetFile",
+      "description": "Grants permission to retrieve a file or its content from a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetKey",
+      "methodName": "toGetKey",
+      "description": "Grants permission to get an external encryption key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions",
+      "conditionMethods": [
+        "ifKeyArn"
+      ]
+    },
+    {
+      "name": "GetMemoryStore",
+      "methodName": "toGetMemoryStore",
+      "description": "Grants permission to retrieve details of a memory store, its memories, or its memory versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetModel",
+      "methodName": "toGetModel",
+      "description": "Grants permission to retrieve information about a specific model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to retrieve details, events, or resources of a managed agent session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetSkill",
+      "methodName": "toGetSkill",
+      "description": "Grants permission to retrieve details of a skill or its versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetUserProfile",
+      "methodName": "toGetUserProfile",
+      "description": "Grants permission to retrieve details of a user profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetVault",
+      "methodName": "toGetVault",
+      "description": "Grants permission to retrieve details of a credential vault or its credentials",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetWebhook",
+      "methodName": "toGetWebhook",
+      "description": "Grants permission to retrieve details of a webhook",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "GetWorkspace",
+      "methodName": "toGetWorkspace",
+      "description": "Grants permission to retrieve details of a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListAgents",
+      "methodName": "toListAgents",
+      "description": "Grants permission to list managed agents in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListBatchInferences",
+      "methodName": "toListBatchInferences",
+      "description": "Grants permission to list batch inference requests in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list managed agent environments in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListFiles",
+      "methodName": "toListFiles",
+      "description": "Grants permission to list files in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListKeys",
+      "methodName": "toListKeys",
+      "description": "Grants permission to list external encryption keys",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListMemoryStores",
+      "methodName": "toListMemoryStores",
+      "description": "Grants permission to list managed agent memory stores in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListModels",
+      "methodName": "toListModels",
+      "description": "Grants permission to list available models in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list managed agent sessions in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListSkills",
+      "methodName": "toListSkills",
+      "description": "Grants permission to list skills in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListUserProfiles",
+      "methodName": "toListUserProfiles",
+      "description": "Grants permission to list user profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListVaults",
+      "methodName": "toListVaults",
+      "description": "Grants permission to list managed agent credential vaults in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListWebhooks",
+      "methodName": "toListWebhooks",
+      "description": "Grants permission to list webhooks in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ListWorkspaces",
+      "methodName": "toListWorkspaces",
+      "description": "Grants permission to list workspaces in an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ProcessEnvironmentWork",
+      "methodName": "toProcessEnvironmentWork",
+      "description": "Grants permission to process work items in a self-hosted managed agent environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "RegisterKey",
+      "methodName": "toRegisterKey",
+      "description": "Grants permission to register an external encryption key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "RotateWebhookSecret",
+      "methodName": "toRotateWebhookSecret",
+      "description": "Grants permission to rotate the signing secret of a webhook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateAgent",
+      "methodName": "toUpdateAgent",
+      "description": "Grants permission to update a managed agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update a managed agent environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateKey",
+      "methodName": "toUpdateKey",
+      "description": "Grants permission to update an external encryption key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions",
+      "conditionMethods": [
+        "ifKeyArn"
+      ]
+    },
+    {
+      "name": "UpdateMemoryStore",
+      "methodName": "toUpdateMemoryStore",
+      "description": "Grants permission to update a memory store, mutate its memories, or redact a memory version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateSession",
+      "methodName": "toUpdateSession",
+      "description": "Grants permission to update a managed agent session, append session events, or manage its resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateSkill",
+      "methodName": "toUpdateSkill",
+      "description": "Grants permission to create or delete a skill version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateUserProfile",
+      "methodName": "toUpdateUserProfile",
+      "description": "Grants permission to update a user profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateVault",
+      "methodName": "toUpdateVault",
+      "description": "Grants permission to update a credential vault or manage its stored credentials",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateWebhook",
+      "methodName": "toUpdateWebhook",
+      "description": "Grants permission to update a webhook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateWorkspace",
+      "methodName": "toUpdateWorkspace",
+      "description": "Grants permission to update a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CallWithBearerToken",
+      "methodName": "toCallWithBearerToken",
+      "description": "Grants permission to make API calls using bearer token authentication",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html",
+      "conditionMethods": [
+        "ifBearerTokenType"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "workspace",
+      "methodName": "onWorkspace",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/workspaces.html#workspaces",
+      "arn": "arn:${Partition}:aws-external-anthropic:${Region}:${Account}:workspace/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_awsexternalanthropic",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws-external-anthropic:BearerTokenType",
+      "methodName": "ifBearerTokenType",
+      "description": "Filters access by the Short-term or Long-term bearer tokens",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html",
+      "relatedActionMethods": [
+        "toCallWithBearerToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "BearerTokenType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws-external-anthropic:CalledViaConsole",
+      "methodName": "ifCalledViaConsole",
+      "description": "Filters access by the use of the Claude Platform console",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CalledViaConsole",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "aws-external-anthropic:Capability",
+      "methodName": "ifCapability",
+      "description": "Filters access by the Claude Platform role used for the console session",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html",
+      "relatedActionMethods": [
+        "toAssumeConsole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Capability",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws-external-anthropic:KeyArn",
+      "methodName": "ifKeyArn",
+      "description": "Filters access by the KMS key ARN associated with the external key",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html",
+      "relatedActionMethods": [
+        "toCreateWorkspace",
+        "toDisableKey",
+        "toGetKey",
+        "toUpdateKey",
+        "toUpdateWorkspace"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KeyArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateWorkspace",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toArchiveAgent",
+        "toArchiveEnvironment",
+        "toArchiveMemoryStore",
+        "toArchiveSession",
+        "toArchiveVault",
+        "toArchiveWorkspace",
+        "toCancelBatchInference",
+        "toCountTokens",
+        "toCreateAgent",
+        "toCreateBatchInference",
+        "toCreateEnvironment",
+        "toCreateFile",
+        "toCreateInference",
+        "toCreateMemoryStore",
+        "toCreateSession",
+        "toCreateSkill",
+        "toCreateVault",
+        "toCreateWebhook",
+        "toDeleteBatchInference",
+        "toDeleteEnvironment",
+        "toDeleteFile",
+        "toDeleteMemoryStore",
+        "toDeleteSession",
+        "toDeleteSkill",
+        "toDeleteVault",
+        "toDeleteWebhook",
+        "toGetAgent",
+        "toGetBatchInference",
+        "toGetEnvironment",
+        "toGetFile",
+        "toGetMemoryStore",
+        "toGetModel",
+        "toGetSession",
+        "toGetSkill",
+        "toGetVault",
+        "toGetWebhook",
+        "toGetWorkspace",
+        "toListAgents",
+        "toListBatchInferences",
+        "toListEnvironments",
+        "toListFiles",
+        "toListMemoryStores",
+        "toListModels",
+        "toListSessions",
+        "toListSkills",
+        "toListTagsForResource",
+        "toListVaults",
+        "toListWebhooks",
+        "toProcessEnvironmentWork",
+        "toRotateWebhookSecret",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAgent",
+        "toUpdateEnvironment",
+        "toUpdateMemoryStore",
+        "toUpdateSession",
+        "toUpdateSkill",
+        "toUpdateVault",
+        "toUpdateWebhook",
+        "toUpdateWorkspace"
+      ],
+      "relatedResourceTypes": [
+        "workspace"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateWorkspace",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

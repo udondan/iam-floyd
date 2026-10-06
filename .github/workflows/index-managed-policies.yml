@@ -1,0 +1,79 @@
+---
+name: Index managed policies
+
+on:
+  schedule:
+    # Weekly on Sunday, the release PR is merged on Monday (automerge-schedule.yml).
+    # Why 0:57 not and 1:00? Because most hourly jobs probably run at the hour.
+    # Keeping concurrent jobs low reduces hardware requirements, being nice to
+    # GitHub and the environment.
+    - cron: 57 0 * * 0
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # OIDC token for assuming the AWS role
+      contents: read # checkout
+
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Index managed policies
+        run: make install index-managed-policies
+
+      # needs iam:CreateRole and iam:DeleteRole on the role iam-floyd-service-principal-check
+      - name: Index service principals
+        run: make index-service-principals
+
+      - name: Check for changes
+        id: changes
+        run: |
+          set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
+          git diff
+          git diff --quiet || CHANGED=$?
+          echo "CHANGED=${CHANGED:-0}" >> "$GITHUB_OUTPUT"
+
+      - name: Configure git
+        run: |
+          set -xeuo pipefail
+          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
+          git config --local user.name "udondan"
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Add all changes
+        run: |
+          set -xeuo pipefail
+          rm -rf package-lock.json node_modules &&
+          git add -- *
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.OVERRIDE_TOKEN }}
+          commit-message: "feat: update AWS managed policies and service principals"
+          title: "feat: update AWS managed policies and service principals"
+          body: Updates AWS managed policies and service principals
+          branch: update-aws-managed-policies
+          delete-branch: true
+          committer: udondan <${{ secrets.RELEASE_MAIL }}>
+          author: udondan <${{ secrets.RELEASE_MAIL }}>
+          labels: automerge
+        if: steps.changes.outputs.CHANGED == '1'

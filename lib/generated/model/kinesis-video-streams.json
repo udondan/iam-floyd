@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "filename": "kinesis-video-streams",
+  "className": "Kinesisvideo",
+  "name": "kinesisvideo",
+  "servicePrefix": "kinesisvideo",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesis-video-streams.html",
+  "accessLevelList": {
+    "Write": [
+      "ConnectAsMaster",
+      "ConnectAsViewer",
+      "CreateSignalingChannel",
+      "CreateStream",
+      "DeleteEdgeConfiguration",
+      "DeleteSignalingChannel",
+      "DeleteStream",
+      "JoinStorageSession",
+      "JoinStorageSessionAsViewer",
+      "PutMedia",
+      "SendAlexaOfferToMaster",
+      "StartEdgeConfigurationUpdate",
+      "TagResource",
+      "TagStream",
+      "UntagResource",
+      "UntagStream",
+      "UpdateDataRetention",
+      "UpdateImageGenerationConfiguration",
+      "UpdateMediaStorageConfiguration",
+      "UpdateNotificationConfiguration",
+      "UpdateSignalingChannel",
+      "UpdateStream",
+      "UpdateStreamStorageConfiguration"
+    ],
+    "Read": [
+      "DescribeEdgeConfiguration",
+      "DescribeImageGenerationConfiguration",
+      "DescribeMediaStorageConfiguration",
+      "DescribeNotificationConfiguration",
+      "DescribeStreamStorageConfiguration",
+      "GetClip",
+      "GetDASHStreamingSessionURL",
+      "GetDataEndpoint",
+      "GetHLSStreamingSessionURL",
+      "GetIceServerConfig",
+      "GetImages",
+      "GetMedia",
+      "GetMediaForFragmentList",
+      "GetSignalingChannelEndpoint",
+      "ListTagsForResource",
+      "ListTagsForStream"
+    ],
+    "List": [
+      "DescribeMappedResourceConfiguration",
+      "DescribeSignalingChannel",
+      "DescribeStream",
+      "ListEdgeAgentConfigurations",
+      "ListFragments",
+      "ListSignalingChannels",
+      "ListStreams"
+    ],
+    "Tagging": [
+      "TagResource",
+      "TagStream",
+      "UntagResource",
+      "UntagStream"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ConnectAsMaster",
+      "methodName": "toConnectAsMaster",
+      "description": "Grants permission to connect as a master to the signaling channel specified by the endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsMaster.html"
+    },
+    {
+      "name": "ConnectAsViewer",
+      "methodName": "toConnectAsViewer",
+      "description": "Grants permission to connect as a viewer to the signaling channel specified by the endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsViewer.html"
+    },
+    {
+      "name": "CreateSignalingChannel",
+      "methodName": "toCreateSignalingChannel",
+      "description": "Grants permission to create a signaling channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateSignalingChannel.html"
+    },
+    {
+      "name": "CreateStream",
+      "methodName": "toCreateStream",
+      "description": "Grants permission to create a Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html"
+    },
+    {
+      "name": "DeleteEdgeConfiguration",
+      "methodName": "toDeleteEdgeConfiguration",
+      "description": "Grants permission to delete the edge configuration of your Kinesis Video Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteEdgeConfiguration.html"
+    },
+    {
+      "name": "DeleteSignalingChannel",
+      "methodName": "toDeleteSignalingChannel",
+      "description": "Grants permission to delete an existing signaling channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteSignalingChannel.html"
+    },
+    {
+      "name": "DeleteStream",
+      "methodName": "toDeleteStream",
+      "description": "Grants permission to delete an existing Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteStream.html"
+    },
+    {
+      "name": "DescribeEdgeConfiguration",
+      "methodName": "toDescribeEdgeConfiguration",
+      "description": "Grants permission to describe the edge configuration of your Kinesis Video Stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeEdgeConfiguration.html"
+    },
+    {
+      "name": "DescribeImageGenerationConfiguration",
+      "methodName": "toDescribeImageGenerationConfiguration",
+      "description": "Grants permission to describe the image generation configuration of your Kinesis video stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeImageGenerationConfiguration.html"
+    },
+    {
+      "name": "DescribeMappedResourceConfiguration",
+      "methodName": "toDescribeMappedResourceConfiguration",
+      "description": "Grants permission to describe the resource mapped to the Kinesis video stream",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeMappedResourceConfiguration.html"
+    },
+    {
+      "name": "DescribeMediaStorageConfiguration",
+      "methodName": "toDescribeMediaStorageConfiguration",
+      "description": "Grants permission to describe the media storage configuration of a signaling channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeMediaStorageConfiguration.html"
+    },
+    {
+      "name": "DescribeNotificationConfiguration",
+      "methodName": "toDescribeNotificationConfiguration",
+      "description": "Grants permission to describe the notification configuration of your Kinesis video stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeNotificationConfiguration.html"
+    },
+    {
+      "name": "DescribeSignalingChannel",
+      "methodName": "toDescribeSignalingChannel",
+      "description": "Grants permission to describe the specified signaling channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeSignalingChannel.html"
+    },
+    {
+      "name": "DescribeStream",
+      "methodName": "toDescribeStream",
+      "description": "Grants permission to describe the specified Kinesis video stream",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html"
+    },
+    {
+      "name": "DescribeStreamStorageConfiguration",
+      "methodName": "toDescribeStreamStorageConfiguration",
+      "description": "Grants permission to describe the stream storage configuration of your Kinesis Video Stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStreamStorageConfiguration.html"
+    },
+    {
+      "name": "GetClip",
+      "methodName": "toGetClip",
+      "description": "Grants permission to get a media clip from a video stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetClip.html"
+    },
+    {
+      "name": "GetDASHStreamingSessionURL",
+      "methodName": "toGetDASHStreamingSessionURL",
+      "description": "Grants permission to create a URL for MPEG-DASH video streaming",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetDASHStreamingSessionURL.html"
+    },
+    {
+      "name": "GetDataEndpoint",
+      "methodName": "toGetDataEndpoint",
+      "description": "Grants permission to get an endpoint for a specified stream for either reading or writing media data to Kinesis Video Streams",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html"
+    },
+    {
+      "name": "GetHLSStreamingSessionURL",
+      "methodName": "toGetHLSStreamingSessionURL",
+      "description": "Grants permission to create a URL for HLS video streaming",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetHLSStreamingSessionURL.html"
+    },
+    {
+      "name": "GetIceServerConfig",
+      "methodName": "toGetIceServerConfig",
+      "description": "Grants permission to get the ICE server configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_signaling_GetIceServerConfig.html"
+    },
+    {
+      "name": "GetImages",
+      "methodName": "toGetImages",
+      "description": "Grants permission to get generated images from your Kinesis video stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetImages.html"
+    },
+    {
+      "name": "GetMedia",
+      "methodName": "toGetMedia",
+      "description": "Grants permission to return media content of a Kinesis video stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_GetMedia.html"
+    },
+    {
+      "name": "GetMediaForFragmentList",
+      "methodName": "toGetMediaForFragmentList",
+      "description": "Grants permission to read and return media data only from persisted storage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetMediaForFragmentList.html"
+    },
+    {
+      "name": "GetSignalingChannelEndpoint",
+      "methodName": "toGetSignalingChannelEndpoint",
+      "description": "Grants permission to get endpoints for a specified combination of protocol and role for a signaling channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetSignalingChannelEndpoint.html"
+    },
+    {
+      "name": "JoinStorageSession",
+      "methodName": "toJoinStorageSession",
+      "description": "Grants permission to join a storage session for a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_webrtc_JoinStorageSession.html"
+    },
+    {
+      "name": "JoinStorageSessionAsViewer",
+      "methodName": "toJoinStorageSessionAsViewer",
+      "description": "Grants permission to join a storage session for a channel as viewer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_webrtc_JoinStorageSessionAsViewer.html"
+    },
+    {
+      "name": "ListEdgeAgentConfigurations",
+      "methodName": "toListEdgeAgentConfigurations",
+      "description": "Grants permission to list an edge agent configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListEdgeAgentConfigurations.html"
+    },
+    {
+      "name": "ListFragments",
+      "methodName": "toListFragments",
+      "description": "Grants permission to list the fragments from archival storage based on the pagination token or selector type with range specified",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_ListFragments.html"
+    },
+    {
+      "name": "ListSignalingChannels",
+      "methodName": "toListSignalingChannels",
+      "description": "Grants permission to list your signaling channels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListSignalingChannels.html"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to list your Kinesis video streams",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListStreams.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to fetch the tags associated with your resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTagsForStream",
+      "methodName": "toListTagsForStream",
+      "description": "Grants permission to fetch the tags associated with Kinesis video stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForStream.html"
+    },
+    {
+      "name": "PutMedia",
+      "methodName": "toPutMedia",
+      "description": "Grants permission to send media data to a Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html"
+    },
+    {
+      "name": "SendAlexaOfferToMaster",
+      "methodName": "toSendAlexaOfferToMaster",
+      "description": "Grants permission to send the Alexa SDP offer to the master",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_signaling_SendAlexaOfferToMaster.html"
+    },
+    {
+      "name": "StartEdgeConfigurationUpdate",
+      "methodName": "toStartEdgeConfigurationUpdate",
+      "description": "Grants permission to start edge configuration update of your Kinesis Video Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_StartEdgeConfigurationUpdate.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to attach set of tags to your resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagResource.html"
+    },
+    {
+      "name": "TagStream",
+      "methodName": "toTagStream",
+      "description": "Grants permission to attach set of tags to your Kinesis video streams",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from your resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagResource.html"
+    },
+    {
+      "name": "UntagStream",
+      "methodName": "toUntagStream",
+      "description": "Grants permission to remove one or more tags from your Kinesis video streams",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html"
+    },
+    {
+      "name": "UpdateDataRetention",
+      "methodName": "toUpdateDataRetention",
+      "description": "Grants permission to update the data retention period of your Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateDataRetention.html"
+    },
+    {
+      "name": "UpdateImageGenerationConfiguration",
+      "methodName": "toUpdateImageGenerationConfiguration",
+      "description": "Grants permission to update the image generation configuration of your Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateImageGenerationConfiguration.html"
+    },
+    {
+      "name": "UpdateMediaStorageConfiguration",
+      "methodName": "toUpdateMediaStorageConfiguration",
+      "description": "Grants permission to create or update an mapping between a signaling channel and stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateMediaStorageConfiguration.html"
+    },
+    {
+      "name": "UpdateNotificationConfiguration",
+      "methodName": "toUpdateNotificationConfiguration",
+      "description": "Grants permission to update the notification configuration of your Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateNotificationConfiguration.html"
+    },
+    {
+      "name": "UpdateSignalingChannel",
+      "methodName": "toUpdateSignalingChannel",
+      "description": "Grants permission to update an existing signaling channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateSignalingChannel.html"
+    },
+    {
+      "name": "UpdateStream",
+      "methodName": "toUpdateStream",
+      "description": "Grants permission to update an existing Kinesis video stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html"
+    },
+    {
+      "name": "UpdateStreamStorageConfiguration",
+      "methodName": "toUpdateStreamStorageConfiguration",
+      "description": "Grants permission to update the stream storage configuration of your Kinesis Video Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStreamStorageConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/kvswebrtc-how-it-works.html",
+      "arn": "arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CreationTime",
+          "name": "creationTime",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html",
+      "arn": "arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}",
+      "placeholders": [
+        {
+          "placeholder": "StreamName",
+          "name": "streamName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CreationTime",
+          "name": "creationTime",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters requests based on the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSignalingChannel",
+        "toCreateStream",
+        "toTagResource",
+        "toTagStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag-value assoicated with the stream",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toConnectAsMaster",
+        "toConnectAsViewer",
+        "toCreateSignalingChannel",
+        "toCreateStream",
+        "toDeleteEdgeConfiguration",
+        "toDeleteSignalingChannel",
+        "toDeleteStream",
+        "toDescribeEdgeConfiguration",
+        "toDescribeImageGenerationConfiguration",
+        "toDescribeMappedResourceConfiguration",
+        "toDescribeMediaStorageConfiguration",
+        "toDescribeNotificationConfiguration",
+        "toDescribeSignalingChannel",
+        "toDescribeStream",
+        "toDescribeStreamStorageConfiguration",
+        "toGetClip",
+        "toGetDASHStreamingSessionURL",
+        "toGetDataEndpoint",
+        "toGetHLSStreamingSessionURL",
+        "toGetIceServerConfig",
+        "toGetImages",
+        "toGetMedia",
+        "toGetMediaForFragmentList",
+        "toGetSignalingChannelEndpoint",
+        "toJoinStorageSession",
+        "toJoinStorageSessionAsViewer",
+        "toListFragments",
+        "toListTagsForResource",
+        "toListTagsForStream",
+        "toPutMedia",
+        "toSendAlexaOfferToMaster",
+        "toStartEdgeConfigurationUpdate",
+        "toTagResource",
+        "toTagStream",
+        "toUntagResource",
+        "toUntagStream",
+        "toUpdateDataRetention",
+        "toUpdateImageGenerationConfiguration",
+        "toUpdateMediaStorageConfiguration",
+        "toUpdateNotificationConfiguration",
+        "toUpdateSignalingChannel",
+        "toUpdateStream",
+        "toUpdateStreamStorageConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "channel",
+        "stream"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters requests based on the presence of mandatory tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSignalingChannel",
+        "toCreateStream",
+        "toTagResource",
+        "toTagStream",
+        "toUntagResource",
+        "toUntagStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

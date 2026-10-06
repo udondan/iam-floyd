@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 1,
+  "filename": "codeartifact",
+  "className": "Codeartifact",
+  "name": "codeartifact",
+  "servicePrefix": "codeartifact",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeartifact.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateExternalConnection",
+      "AssociateWithDownstreamRepository",
+      "CopyPackageVersions",
+      "CreateDomain",
+      "CreatePackageGroup",
+      "CreateRepository",
+      "DeleteDomain",
+      "DeleteDomainPermissionsPolicy",
+      "DeletePackage",
+      "DeletePackageGroup",
+      "DeletePackageVersions",
+      "DeleteRepository",
+      "DeleteRepositoryPermissionsPolicy",
+      "DisassociateExternalConnection",
+      "DisposePackageVersions",
+      "PublishPackageVersion",
+      "PutDomainPermissionsPolicy",
+      "PutPackageMetadata",
+      "PutPackageOriginConfiguration",
+      "PutRepositoryPermissionsPolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdatePackageGroup",
+      "UpdatePackageGroupOriginConfiguration",
+      "UpdatePackageVersionsStatus",
+      "UpdateRepository"
+    ],
+    "Permissions management": [
+      "DeleteDomainPermissionsPolicy",
+      "DeleteRepositoryPermissionsPolicy"
+    ],
+    "Read": [
+      "DescribeDomain",
+      "DescribePackage",
+      "DescribePackageGroup",
+      "DescribePackageVersion",
+      "DescribeRepository",
+      "GetAssociatedPackageGroup",
+      "GetAuthorizationToken",
+      "GetDomainPermissionsPolicy",
+      "GetPackageVersionAsset",
+      "GetPackageVersionReadme",
+      "GetRepositoryEndpoint",
+      "GetRepositoryPermissionsPolicy",
+      "ReadFromRepository"
+    ],
+    "List": [
+      "ListAllowedRepositoriesForGroup",
+      "ListAssociatedPackages",
+      "ListDomains",
+      "ListPackageGroups",
+      "ListPackageVersionAssets",
+      "ListPackageVersionDependencies",
+      "ListPackageVersions",
+      "ListPackages",
+      "ListRepositories",
+      "ListRepositoriesInDomain",
+      "ListSubPackageGroups",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateExternalConnection",
+      "methodName": "toAssociateExternalConnection",
+      "description": "Grants permission to add an external connection to a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssociateExternalConnection.html"
+    },
+    {
+      "name": "AssociateWithDownstreamRepository",
+      "methodName": "toAssociateWithDownstreamRepository",
+      "description": "Grants permission to associate an existing repository as an upstream repository to another repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html"
+    },
+    {
+      "name": "CopyPackageVersions",
+      "methodName": "toCopyPackageVersions",
+      "description": "Grants permission to copy package versions from one repository to another repository in the same domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CopyPackageVersions.html"
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to create a new domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateDomain.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePackageGroup",
+      "methodName": "toCreatePackageGroup",
+      "description": "Grants permission to create a package group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreatePackageGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRepository",
+      "methodName": "toCreateRepository",
+      "description": "Grants permission to create a new repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomain.html"
+    },
+    {
+      "name": "DeleteDomainPermissionsPolicy",
+      "methodName": "toDeleteDomainPermissionsPolicy",
+      "description": "Grants permission to delete the resource policy set on a domain",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomainPermissionsPolicy.html"
+    },
+    {
+      "name": "DeletePackage",
+      "methodName": "toDeletePackage",
+      "description": "Grants permission to delete a package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackage.html"
+    },
+    {
+      "name": "DeletePackageGroup",
+      "methodName": "toDeletePackageGroup",
+      "description": "Grants permission to delete a package group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageGroup.html"
+    },
+    {
+      "name": "DeletePackageVersions",
+      "methodName": "toDeletePackageVersions",
+      "description": "Grants permission to delete package versions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html"
+    },
+    {
+      "name": "DeleteRepository",
+      "methodName": "toDeleteRepository",
+      "description": "Grants permission to delete a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepository.html"
+    },
+    {
+      "name": "DeleteRepositoryPermissionsPolicy",
+      "methodName": "toDeleteRepositoryPermissionsPolicy",
+      "description": "Grants permission to delete the resource policy set on a repository",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepositoryPermissionsPolicy.html"
+    },
+    {
+      "name": "DescribeDomain",
+      "methodName": "toDescribeDomain",
+      "description": "Grants permission to return information about a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribeDomain.html"
+    },
+    {
+      "name": "DescribePackage",
+      "methodName": "toDescribePackage",
+      "description": "Grants permission to retrieve information about a package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackage.html"
+    },
+    {
+      "name": "DescribePackageGroup",
+      "methodName": "toDescribePackageGroup",
+      "description": "Grants permission to return detailed information about a package group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageGroup.html"
+    },
+    {
+      "name": "DescribePackageVersion",
+      "methodName": "toDescribePackageVersion",
+      "description": "Grants permission to return information about a package version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html"
+    },
+    {
+      "name": "DescribeRepository",
+      "methodName": "toDescribeRepository",
+      "description": "Grants permission to return detailed information about a repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribeRepository.html"
+    },
+    {
+      "name": "DisassociateExternalConnection",
+      "methodName": "toDisassociateExternalConnection",
+      "description": "Grants permission to disassociate an external connection from a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisassociateExternalConnection.html"
+    },
+    {
+      "name": "DisposePackageVersions",
+      "methodName": "toDisposePackageVersions",
+      "description": "Grants permission to set the status of package versions to Disposed and delete their assets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html"
+    },
+    {
+      "name": "GetAssociatedPackageGroup",
+      "methodName": "toGetAssociatedPackageGroup",
+      "description": "Grants permission to return a package's associated package group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetAssociatedPackageGroup.html"
+    },
+    {
+      "name": "GetAuthorizationToken",
+      "methodName": "toGetAuthorizationToken",
+      "description": "Grants permission to generate a temporary authentication token for accessing repositories in a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetAuthorizationToken.html"
+    },
+    {
+      "name": "GetDomainPermissionsPolicy",
+      "methodName": "toGetDomainPermissionsPolicy",
+      "description": "Grants permission to return a domain's resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetDomainPermissionsPolicy.html"
+    },
+    {
+      "name": "GetPackageVersionAsset",
+      "methodName": "toGetPackageVersionAsset",
+      "description": "Grants permission to return an asset (or file) that is part of a package version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetPackageVersionAsset.html"
+    },
+    {
+      "name": "GetPackageVersionReadme",
+      "methodName": "toGetPackageVersionReadme",
+      "description": "Grants permission to return a package version's readme file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetPackageVersionReadme.html"
+    },
+    {
+      "name": "GetRepositoryEndpoint",
+      "methodName": "toGetRepositoryEndpoint",
+      "description": "Grants permission to return an endpoint for a repository",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetRepositoryEndpoint.html"
+    },
+    {
+      "name": "GetRepositoryPermissionsPolicy",
+      "methodName": "toGetRepositoryPermissionsPolicy",
+      "description": "Grants permission to return a repository's resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetRepositoryPermissionsPolicy.html"
+    },
+    {
+      "name": "ListAllowedRepositoriesForGroup",
+      "methodName": "toListAllowedRepositoriesForGroup",
+      "description": "Grants permission to list the allowed repositories for a package group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositoriesInDomain.html"
+    },
+    {
+      "name": "ListAssociatedPackages",
+      "methodName": "toListAssociatedPackages",
+      "description": "Grants permission to list the packages associated to a package group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListAssociatedPackages.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list the domains in the current user's AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html"
+    },
+    {
+      "name": "ListPackageGroups",
+      "methodName": "toListPackageGroups",
+      "description": "Grants permission to list the package groups in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageGroups.html"
+    },
+    {
+      "name": "ListPackageVersionAssets",
+      "methodName": "toListPackageVersionAssets",
+      "description": "Grants permission to list a package version's assets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersionAssets.html"
+    },
+    {
+      "name": "ListPackageVersionDependencies",
+      "methodName": "toListPackageVersionDependencies",
+      "description": "Grants permission to list the direct dependencies of a package version",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersionDependencies.html"
+    },
+    {
+      "name": "ListPackageVersions",
+      "methodName": "toListPackageVersions",
+      "description": "Grants permission to list a package's versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html"
+    },
+    {
+      "name": "ListPackages",
+      "methodName": "toListPackages",
+      "description": "Grants permission to list the packages in a repository",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html"
+    },
+    {
+      "name": "ListRepositories",
+      "methodName": "toListRepositories",
+      "description": "Grants permission to list the repositories administered by the calling account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html"
+    },
+    {
+      "name": "ListRepositoriesInDomain",
+      "methodName": "toListRepositoriesInDomain",
+      "description": "Grants permission to list the repositories in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositoriesInDomain.html"
+    },
+    {
+      "name": "ListSubPackageGroups",
+      "methodName": "toListSubPackageGroups",
+      "description": "Grants permission to list the sub package groups for a parent package group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListSubPackageGroups.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a CodeArtifact resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PublishPackageVersion",
+      "methodName": "toPublishPackageVersion",
+      "description": "Grants permission to publish assets and metadata to a repository endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html"
+    },
+    {
+      "name": "PutDomainPermissionsPolicy",
+      "methodName": "toPutDomainPermissionsPolicy",
+      "description": "Grants permission to attach a resource policy to a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutDomainPermissionsPolicy.html"
+    },
+    {
+      "name": "PutPackageMetadata",
+      "methodName": "toPutPackageMetadata",
+      "description": "Grants permission to add, modify or remove package metadata using a repository endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html"
+    },
+    {
+      "name": "PutPackageOriginConfiguration",
+      "methodName": "toPutPackageOriginConfiguration",
+      "description": "Grants permission to set origin configuration for a package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutPackageOriginConfiguration.html"
+    },
+    {
+      "name": "PutRepositoryPermissionsPolicy",
+      "methodName": "toPutRepositoryPermissionsPolicy",
+      "description": "Grants permission to attach a resource policy to a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutRepositoryPermissionsPolicy.html"
+    },
+    {
+      "name": "ReadFromRepository",
+      "methodName": "toReadFromRepository",
+      "description": "Grants permission to return package assets and metadata from a repository endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a CodeArtifact resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a CodeArtifact resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdatePackageGroup",
+      "methodName": "toUpdatePackageGroup",
+      "description": "Grants permission to modify the properties of a package group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroup.html"
+    },
+    {
+      "name": "UpdatePackageGroupOriginConfiguration",
+      "methodName": "toUpdatePackageGroupOriginConfiguration",
+      "description": "Grants permission to modify the package origin configuration of a package group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html"
+    },
+    {
+      "name": "UpdatePackageVersionsStatus",
+      "methodName": "toUpdatePackageVersionsStatus",
+      "description": "Grants permission to modify the status of one or more versions of a package",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html"
+    },
+    {
+      "name": "UpdateRepository",
+      "methodName": "toUpdateRepository",
+      "description": "Grants permission to modify the properties of a repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/domains.html",
+      "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_codeartifact",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
+    },
+    {
+      "name": "package",
+      "methodName": "onPackage",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/packages.html",
+      "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:package/${DomainName}/${RepositoryName}/${PackageFormat}/${PackageNamespace}/${PackageName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RepositoryName",
+          "name": "repositoryName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PackageFormat",
+          "name": "packageFormat",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PackageNamespace",
+          "name": "packageNamespace",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PackageName",
+          "name": "packageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "package-group",
+      "methodName": "onPackageGroup",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/package-groups.html",
+      "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:package-group/${DomainName}${EncodedPackageGroupPattern}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EncodedPackageGroupPattern",
+          "name": "encodedPackageGroupPattern",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "repository",
+      "methodName": "onRepository",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/repos.html",
+      "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RepositoryName",
+          "name": "repositoryName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toCreatePackageGroup",
+        "toCreateRepository",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateExternalConnection",
+        "toAssociateWithDownstreamRepository",
+        "toCopyPackageVersions",
+        "toDeleteDomain",
+        "toDeleteDomainPermissionsPolicy",
+        "toDeletePackageGroup",
+        "toDeleteRepository",
+        "toDeleteRepositoryPermissionsPolicy",
+        "toDescribeDomain",
+        "toDescribePackageGroup",
+        "toDescribeRepository",
+        "toDisassociateExternalConnection",
+        "toGetAssociatedPackageGroup",
+        "toGetAuthorizationToken",
+        "toGetDomainPermissionsPolicy",
+        "toGetRepositoryEndpoint",
+        "toGetRepositoryPermissionsPolicy",
+        "toListAllowedRepositoriesForGroup",
+        "toListAssociatedPackages",
+        "toListPackageGroups",
+        "toListPackages",
+        "toListRepositoriesInDomain",
+        "toListSubPackageGroups",
+        "toListTagsForResource",
+        "toPutDomainPermissionsPolicy",
+        "toPutRepositoryPermissionsPolicy",
+        "toReadFromRepository",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePackageGroup",
+        "toUpdatePackageGroupOriginConfiguration",
+        "toUpdateRepository"
+      ],
+      "relatedResourceTypes": [
+        "domain",
+        "package-group",
+        "repository"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toCreatePackageGroup",
+        "toCreateRepository",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "filename": "supportplans",
+  "className": "Supportplans",
+  "name": "supportplans",
+  "servicePrefix": "supportplans",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_supportplans.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptSupportAgreement",
+      "CancelSupportAgreement",
+      "CreateSupportAgreement",
+      "CreateSupportPlanSchedule",
+      "RejectSupportAgreement",
+      "StartSupportPlanUpdate",
+      "UpdateSupportAgreement"
+    ],
+    "Read": [
+      "GetSupportAgreement",
+      "GetSupportPlan",
+      "GetSupportPlanUpdateStatus"
+    ],
+    "List": [
+      "ListSupportAgreementRevisions",
+      "ListSupportAgreements",
+      "ListSupportPlanModifiers"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptSupportAgreement",
+      "methodName": "toAcceptSupportAgreement",
+      "description": "Grants permission to accept a support agreement for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "CancelSupportAgreement",
+      "methodName": "toCancelSupportAgreement",
+      "description": "Grants permission to cancel a support agreement for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "CreateSupportAgreement",
+      "methodName": "toCreateSupportAgreement",
+      "description": "Grants permission to create a support agreement for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "CreateSupportPlanSchedule",
+      "methodName": "toCreateSupportPlanSchedule",
+      "description": "Grants permission to create support plan schedules for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "GetSupportAgreement",
+      "methodName": "toGetSupportAgreement",
+      "description": "Grants permission to view details about a support agreement for this AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "GetSupportPlan",
+      "methodName": "toGetSupportPlan",
+      "description": "Grants permission to view details about the current support plan for this AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "GetSupportPlanUpdateStatus",
+      "methodName": "toGetSupportPlanUpdateStatus",
+      "description": "Grants permission to view details about the status for a request to update a support plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "ListSupportAgreementRevisions",
+      "methodName": "toListSupportAgreementRevisions",
+      "description": "Grants permission to list support agreement revisions for this AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "ListSupportAgreements",
+      "methodName": "toListSupportAgreements",
+      "description": "Grants permission to list support agreements for this AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "ListSupportPlanModifiers",
+      "methodName": "toListSupportPlanModifiers",
+      "description": "Grants permission to view a list of all support plan modifiers for this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "RejectSupportAgreement",
+      "methodName": "toRejectSupportAgreement",
+      "description": "Grants permission to reject a support agreement for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "StartSupportPlanUpdate",
+      "methodName": "toStartSupportPlanUpdate",
+      "description": "Grants permission to update the support plan for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    },
+    {
+      "name": "UpdateSupportAgreement",
+      "methodName": "toUpdateSupportAgreement",
+      "description": "Grants permission to update a support agreement for this AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

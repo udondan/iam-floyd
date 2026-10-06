@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "JoinFleetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:CreateWorker",
+        "deadline:AssumeFleetRoleForWorker"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagWorkerPermission",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:TagResource"
+      ],
+      "Resource": "arn:aws:deadline:*:*:farm/*/fleet/*/worker/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}",
+          "deadline:CalledAction": "CreateWorker"
+        }
+      }
+    },
+    {
+      "Sid": "ListFleetTagsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:deadline:*:*:farm/*/fleet/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}",
+          "deadline:CalledAction": "CreateWorker"
+        }
+      }
+    }
+  ]
+}

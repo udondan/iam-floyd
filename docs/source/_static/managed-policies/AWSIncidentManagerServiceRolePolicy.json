@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UpdateIncidentRecordPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm-incidents:ListIncidentRecords",
+        "ssm-incidents:CreateTimelineEvent"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RelatedOpsItemPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateOpsItem",
+        "ssm:AssociateOpsItemRelatedItem"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IncidentEngagementPermissions",
+      "Effect": "Allow",
+      "Action": "ssm-contacts:StartEngagement",
+      "Resource": "*"
+    },
+    {
+      "Sid": "PutMetricDataPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/IncidentManager",
+            "AWS/Usage"
+          ]
+        }
+      }
+    }
+  ]
+}

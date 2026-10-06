@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Allow",
+      "Action": [
+        "aiops:PutFact",
+        "aiops:UpdateReport",
+        "aiops:GetReport",
+        "aiops:GenerateReport",
+        "aiops:CreateReport",
+        "aiops:GetFact",
+        "aiops:ListFacts",
+        "aiops:GetFactVersions",
+        "aiops:GetInvestigation",
+        "aiops:ListInvestigationEvents",
+        "aiops:GetInvestigationEvent"
+      ],
+      "Resource": [
+        "arn:aws:aiops:*:*:investigation-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": [
+            "${aws:ResourceAccount}"
+          ]
+        }
+      }
+    }
+  ]
+}

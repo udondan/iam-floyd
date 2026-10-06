@@ -1,0 +1,1680 @@
+{
+  "schemaVersion": 1,
+  "filename": "securityhub",
+  "className": "Securityhub",
+  "name": "securityhub",
+  "servicePrefix": "securityhub",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityhub.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptAdministratorInvitation",
+      "AcceptInvitation",
+      "BatchDeleteAutomationRules",
+      "BatchDisableStandards",
+      "BatchEnableStandards",
+      "BatchImportFindings",
+      "BatchUpdateAutomationRules",
+      "BatchUpdateFindings",
+      "BatchUpdateStandardsControlAssociations",
+      "ConnectorRegistrationsV2",
+      "CreateActionTarget",
+      "CreateAggregatorV2",
+      "CreateAutomationRule",
+      "CreateAutomationRuleV2",
+      "CreateConfigurationPolicy",
+      "CreateConnector",
+      "CreateConnectorV2",
+      "CreateFindingAggregator",
+      "CreateInsight",
+      "CreateMembers",
+      "CreateTicketV2",
+      "DeclineInvitations",
+      "DeleteActionTarget",
+      "DeleteAggregatorV2",
+      "DeleteAutomationRuleV2",
+      "DeleteConfigurationPolicy",
+      "DeleteConnector",
+      "DeleteConnectorV2",
+      "DeleteFindingAggregator",
+      "DeleteInsight",
+      "DeleteInvitations",
+      "DeleteMembers",
+      "DisableImportFindingsForProduct",
+      "DisableOrganizationAdminAccount",
+      "DisableSecurityHub",
+      "DisableSecurityHubFeatureV2",
+      "DisableSecurityHubV2",
+      "DisassociateFromAdministratorAccount",
+      "DisassociateFromMasterAccount",
+      "DisassociateMembers",
+      "EnableImportFindingsForProduct",
+      "EnableOrganizationAdminAccount",
+      "EnableSecurityHub",
+      "EnableSecurityHubFeatureV2",
+      "EnableSecurityHubV2",
+      "GenerateRecommendedPolicyV2",
+      "InviteMembers",
+      "StartConfigurationPolicyAssociation",
+      "StartConfigurationPolicyDisassociation",
+      "TagResource",
+      "UntagResource",
+      "UpdateActionTarget",
+      "UpdateAggregatorV2",
+      "UpdateAutomationRuleV2",
+      "UpdateConfigurationPolicy",
+      "UpdateConnector",
+      "UpdateConnectorV2",
+      "UpdateFindingAggregator",
+      "UpdateFindings",
+      "UpdateInsight",
+      "UpdateOrganizationConfiguration",
+      "UpdateSecurityControl",
+      "UpdateSecurityHubConfiguration",
+      "UpdateStandardsControl",
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Read": [
+      "BatchGetAutomationRules",
+      "BatchGetConfigurationPolicyAssociations",
+      "BatchGetSecurityControls",
+      "BatchGetStandardsControlAssociations",
+      "DescribeActionTargets",
+      "DescribeHub",
+      "DescribeOrganizationConfiguration",
+      "DescribeProducts",
+      "DescribeProductsV2",
+      "DescribeSecurityHubV2",
+      "DescribeStandards",
+      "DescribeStandardsControls",
+      "GetAdministratorAccount",
+      "GetAggregatorV2",
+      "GetAutomationRuleV2",
+      "GetConfigurationPolicy",
+      "GetConfigurationPolicyAssociation",
+      "GetConnector",
+      "GetConnectorV2",
+      "GetFindingAggregator",
+      "GetFindingHistory",
+      "GetFindings",
+      "GetFindingsTrendsV2",
+      "GetInsightResults",
+      "GetInvitationsCount",
+      "GetMasterAccount",
+      "GetMembers",
+      "GetRecommendedPolicyV2",
+      "GetRemediationsV2",
+      "GetResourcesStatisticsV2",
+      "GetResourcesTrendsV2",
+      "GetResourcesV2",
+      "GetSecurityControlDefinition",
+      "ListTagsForResource",
+      "BatchGetControlEvaluations",
+      "BatchGetEnabledRegionsV2",
+      "GetAdhocInsightResults",
+      "GetControlFindingSummary",
+      "GetCoverageStatisticsV2",
+      "GetFreeTrialEndDate",
+      "GetFreeTrialUsage",
+      "GetInsightFindingTrend",
+      "GetUsage",
+      "GetUsageV2",
+      "ListControlEvaluationSummaries",
+      "SendFindingEvents",
+      "SendInsightEvents"
+    ],
+    "List": [
+      "GetEnabledStandards",
+      "GetInsights",
+      "ListAggregatorsV2",
+      "ListAutomationRules",
+      "ListAutomationRulesV2",
+      "ListConfigurationPolicies",
+      "ListConfigurationPolicyAssociations",
+      "ListConnectors",
+      "ListConnectorsV2",
+      "ListEnabledProductsForImport",
+      "ListExposuresByRemediationV2",
+      "ListFindingAggregators",
+      "ListFreeTrialStatusesV2",
+      "ListInvitations",
+      "ListMembers",
+      "ListOrganizationAdminAccounts",
+      "ListSecurityControlDefinitions",
+      "ListStandardsControlAssociations",
+      "ListAccountUsageV2"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptAdministratorInvitation",
+      "methodName": "toAcceptAdministratorInvitation",
+      "description": "Grants permission to accept Security Hub invitations to become a member account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptAdministratorInvitation.html"
+    },
+    {
+      "name": "AcceptInvitation",
+      "methodName": "toAcceptInvitation",
+      "description": "Grants permission to accept Security Hub invitations to become a member account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html"
+    },
+    {
+      "name": "BatchDeleteAutomationRules",
+      "methodName": "toBatchDeleteAutomationRules",
+      "description": "Grants permission to delete one or more automation rules in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "BatchDisableStandards",
+      "methodName": "toBatchDisableStandards",
+      "description": "Grants permission to disable standards in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchDisableStandards.html"
+    },
+    {
+      "name": "BatchEnableStandards",
+      "methodName": "toBatchEnableStandards",
+      "description": "Grants permission to enable standards in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchEnableStandards.html"
+    },
+    {
+      "name": "BatchGetAutomationRules",
+      "methodName": "toBatchGetAutomationRules",
+      "description": "Grants permission to retrieve a list of details for automation rules from Security Hub based on rule Amazon Resource Names (ARNs)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "BatchGetConfigurationPolicyAssociations",
+      "methodName": "toBatchGetConfigurationPolicyAssociations",
+      "description": "Grants permission to retrieve information about configuration policies associated with a specific list of member accounts and organizational units of the calling account's organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetConfigurationPolicyAssociations.html"
+    },
+    {
+      "name": "BatchGetSecurityControls",
+      "methodName": "toBatchGetSecurityControls",
+      "description": "Grants permission to get details about specific security controls identified by ID or ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetSecurityControls.html"
+    },
+    {
+      "name": "BatchGetStandardsControlAssociations",
+      "methodName": "toBatchGetStandardsControlAssociations",
+      "description": "Grants permission to get the enablement status of a batch of security controls in standards",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetStandardsControlAssociations.html"
+    },
+    {
+      "name": "BatchImportFindings",
+      "methodName": "toBatchImportFindings",
+      "description": "Grants permission to import findings into Security Hub from an integrated product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"
+    },
+    {
+      "name": "BatchUpdateAutomationRules",
+      "methodName": "toBatchUpdateAutomationRules",
+      "description": "Grants permission to update one or more automation rules from Security Hub based on rule Amazon Resource Names (ARNs) and input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "BatchUpdateFindings",
+      "methodName": "toBatchUpdateFindings",
+      "description": "Grants permission to update customer-controlled fields for a selected set of Security Hub findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindingsV2.html"
+    },
+    {
+      "name": "BatchUpdateStandardsControlAssociations",
+      "methodName": "toBatchUpdateStandardsControlAssociations",
+      "description": "Grants permission to update the enablement status of a batch of security controls in standards",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"
+    },
+    {
+      "name": "ConnectorRegistrationsV2",
+      "methodName": "toConnectorRegistrationsV2",
+      "description": "Grants permission to complete the OAuth 2.0 authorization code flow based on input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ConnectorRegistrationsV2.html"
+    },
+    {
+      "name": "CreateActionTarget",
+      "methodName": "toCreateActionTarget",
+      "description": "Grants permission to create custom actions in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html"
+    },
+    {
+      "name": "CreateAggregatorV2",
+      "methodName": "toCreateAggregatorV2",
+      "description": "Grants permission to create an aggregatorV2, which configures data aggregation across Regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateAggregatorV2.html"
+    },
+    {
+      "name": "CreateAutomationRule",
+      "methodName": "toCreateAutomationRule",
+      "description": "Grants permission to create an automation rule based on input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAutomationRuleV2",
+      "methodName": "toCreateAutomationRuleV2",
+      "description": "Grants permission to create an automation rule V2 based on input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConfigurationPolicy",
+      "methodName": "toCreateConfigurationPolicy",
+      "description": "Grants permission to create a configuration policy to manage organization member settings in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConfigurationPolicy.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create a connector based on input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConnectorV2",
+      "methodName": "toCreateConnectorV2",
+      "description": "Grants permission to create a connector V2 based on input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConnectorV2.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFindingAggregator",
+      "methodName": "toCreateFindingAggregator",
+      "description": "Grants permission to create a finding aggregator, which contains the cross-Region finding aggregation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateFindingAggregator.html"
+    },
+    {
+      "name": "CreateInsight",
+      "methodName": "toCreateInsight",
+      "description": "Grants permission to create insights in Security Hub. Insights are collections of related findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateInsight.html"
+    },
+    {
+      "name": "CreateMembers",
+      "methodName": "toCreateMembers",
+      "description": "Grants permission to create member accounts in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateMembers.html"
+    },
+    {
+      "name": "CreateTicketV2",
+      "methodName": "toCreateTicketV2",
+      "description": "Grants permission to create ticket for a selected OCSF finding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateTicketV2.html"
+    },
+    {
+      "name": "DeclineInvitations",
+      "methodName": "toDeclineInvitations",
+      "description": "Grants permission to decline Security Hub invitations to become a member account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeclineInvitations.html"
+    },
+    {
+      "name": "DeleteActionTarget",
+      "methodName": "toDeleteActionTarget",
+      "description": "Grants permission to delete custom actions in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteActionTarget.html"
+    },
+    {
+      "name": "DeleteAggregatorV2",
+      "methodName": "toDeleteAggregatorV2",
+      "description": "Grants permission to delete an aggregatorV2, which configures data aggregation across Regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteAggregatorV2.html"
+    },
+    {
+      "name": "DeleteAutomationRuleV2",
+      "methodName": "toDeleteAutomationRuleV2",
+      "description": "Grants permission to delete an automation rule V2 in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "DeleteConfigurationPolicy",
+      "methodName": "toDeleteConfigurationPolicy",
+      "description": "Grants permission to delete an existing configuration policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConfigurationPolicy.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete a connector in Security Hub CSPM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConnector.html"
+    },
+    {
+      "name": "DeleteConnectorV2",
+      "methodName": "toDeleteConnectorV2",
+      "description": "Grants permission to delete a connector V2 in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConnectorV2.html"
+    },
+    {
+      "name": "DeleteFindingAggregator",
+      "methodName": "toDeleteFindingAggregator",
+      "description": "Grants permission to delete a finding aggregator, which disables finding aggregation across Regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteFindingAggregator.html"
+    },
+    {
+      "name": "DeleteInsight",
+      "methodName": "toDeleteInsight",
+      "description": "Grants permission to delete insights from Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInsight.html"
+    },
+    {
+      "name": "DeleteInvitations",
+      "methodName": "toDeleteInvitations",
+      "description": "Grants permission to delete Security Hub invitations to become a member account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInvitations.html"
+    },
+    {
+      "name": "DeleteMembers",
+      "methodName": "toDeleteMembers",
+      "description": "Grants permission to delete Security Hub member accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteMembers.html"
+    },
+    {
+      "name": "DescribeActionTargets",
+      "methodName": "toDescribeActionTargets",
+      "description": "Grants permission to retrieve a list of custom actions using the API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html"
+    },
+    {
+      "name": "DescribeHub",
+      "methodName": "toDescribeHub",
+      "description": "Grants permission to retrieve information about the hub resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html"
+    },
+    {
+      "name": "DescribeOrganizationConfiguration",
+      "methodName": "toDescribeOrganizationConfiguration",
+      "description": "Grants permission to describe the organization configuration for Security Hub",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeOrganizationConfiguration.html"
+    },
+    {
+      "name": "DescribeProducts",
+      "methodName": "toDescribeProducts",
+      "description": "Grants permission to retrieve information about the available Security Hub product integrations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html"
+    },
+    {
+      "name": "DescribeProductsV2",
+      "methodName": "toDescribeProductsV2",
+      "description": "Grants permission to retrieve information about the available Security Hub V2 product integrations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProductsV2.html"
+    },
+    {
+      "name": "DescribeSecurityHubV2",
+      "methodName": "toDescribeSecurityHubV2",
+      "description": "Grants permission to retrieve information about the hub V2 resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeSecurityHubV2.html"
+    },
+    {
+      "name": "DescribeStandards",
+      "methodName": "toDescribeStandards",
+      "description": "Grants permission to retrieve information about Security Hub standards",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html"
+    },
+    {
+      "name": "DescribeStandardsControls",
+      "methodName": "toDescribeStandardsControls",
+      "description": "Grants permission to retrieve information about Security Hub standards controls",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html"
+    },
+    {
+      "name": "DisableImportFindingsForProduct",
+      "methodName": "toDisableImportFindingsForProduct",
+      "description": "Grants permission to disable the findings importing for a Security Hub integrated product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html"
+    },
+    {
+      "name": "DisableOrganizationAdminAccount",
+      "methodName": "toDisableOrganizationAdminAccount",
+      "description": "Grants permission to remove the Security Hub administrator account for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableOrganizationAdminAccount.html"
+    },
+    {
+      "name": "DisableSecurityHub",
+      "methodName": "toDisableSecurityHub",
+      "description": "Grants permission to disable Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html"
+    },
+    {
+      "name": "DisableSecurityHubFeatureV2",
+      "methodName": "toDisableSecurityHubFeatureV2",
+      "description": "Grants permission to disable a Security Hub V2 feature",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHubFeatureV2.html"
+    },
+    {
+      "name": "DisableSecurityHubV2",
+      "methodName": "toDisableSecurityHubV2",
+      "description": "Grants permission to disable Security Hub V2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHubV2.html"
+    },
+    {
+      "name": "DisassociateFromAdministratorAccount",
+      "methodName": "toDisassociateFromAdministratorAccount",
+      "description": "Grants permission to a Security Hub member account to disassociate from the associated administrator account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromAdministratorAccount.html"
+    },
+    {
+      "name": "DisassociateFromMasterAccount",
+      "methodName": "toDisassociateFromMasterAccount",
+      "description": "Grants permission to a Security Hub member account to disassociate from the associated master account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html"
+    },
+    {
+      "name": "DisassociateMembers",
+      "methodName": "toDisassociateMembers",
+      "description": "Grants permission to disassociate Security Hub member accounts from the associated administrator account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateMembers.html"
+    },
+    {
+      "name": "EnableImportFindingsForProduct",
+      "methodName": "toEnableImportFindingsForProduct",
+      "description": "Grants permission to enable the findings importing for a Security Hub integrated product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableImportFindingsForProduct.html"
+    },
+    {
+      "name": "EnableOrganizationAdminAccount",
+      "methodName": "toEnableOrganizationAdminAccount",
+      "description": "Grants permission to designate a Security Hub administrator account for your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableOrganizationAdminAccount.html"
+    },
+    {
+      "name": "EnableSecurityHub",
+      "methodName": "toEnableSecurityHub",
+      "description": "Grants permission to enable Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html"
+    },
+    {
+      "name": "EnableSecurityHubFeatureV2",
+      "methodName": "toEnableSecurityHubFeatureV2",
+      "description": "Grants permission to enable a Security Hub V2 feature",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHubFeatureV2.html"
+    },
+    {
+      "name": "EnableSecurityHubV2",
+      "methodName": "toEnableSecurityHubV2",
+      "description": "Grants permission to enable Security Hub V2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHubV2.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "GenerateRecommendedPolicyV2",
+      "methodName": "toGenerateRecommendedPolicyV2",
+      "description": "Grants permission to generate policy recommendations for an OCSF finding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GenerateRecommendedPolicyV2.html"
+    },
+    {
+      "name": "GetAdministratorAccount",
+      "methodName": "toGetAdministratorAccount",
+      "description": "Grants permission to retrieve details about the Security Hub administrator account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetAdministratorAccount.html"
+    },
+    {
+      "name": "GetAggregatorV2",
+      "methodName": "toGetAggregatorV2",
+      "description": "Grants permission to retrieve details for an aggregatorV2, which configures data aggregation across Regions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetAggregatorV2.html"
+    },
+    {
+      "name": "GetAutomationRuleV2",
+      "methodName": "toGetAutomationRuleV2",
+      "description": "Grants permission to retrieve details for an automation rule V2 from Security Hub based on rule Amazon Resource Name (ARN)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "GetConfigurationPolicy",
+      "methodName": "toGetConfigurationPolicy",
+      "description": "Grants permission to get a complete overview of one configuration policy created by the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConfigurationPolicy.html"
+    },
+    {
+      "name": "GetConfigurationPolicyAssociation",
+      "methodName": "toGetConfigurationPolicyAssociation",
+      "description": "Grants permission to retrieve information about a configuration policy associated with a member account or organizational unit of the calling account's organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConfigurationPolicyAssociation.html"
+    },
+    {
+      "name": "GetConnector",
+      "methodName": "toGetConnector",
+      "description": "Grants permission to retrieve details for a connector from Security Hub CSPM based on connector id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConnector.html"
+    },
+    {
+      "name": "GetConnectorV2",
+      "methodName": "toGetConnectorV2",
+      "description": "Grants permission to retrieve details for a connector V2 from Security Hub based on connector id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConnectorV2.html"
+    },
+    {
+      "name": "GetEnabledStandards",
+      "methodName": "toGetEnabledStandards",
+      "description": "Grants permission to retrieve a list of the standards that are enabled in Security Hub",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html"
+    },
+    {
+      "name": "GetFindingAggregator",
+      "methodName": "toGetFindingAggregator",
+      "description": "Grants permission to retrieve details for a finding aggregator, which configures finding aggregation across Regions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingAggregator.html"
+    },
+    {
+      "name": "GetFindingHistory",
+      "methodName": "toGetFindingHistory",
+      "description": "Grants permission to retrieve a list of finding history from Security Hub",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingHistory.html"
+    },
+    {
+      "name": "GetFindings",
+      "methodName": "toGetFindings",
+      "description": "Grants permission to retrieve a list of findings from Security Hub",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsV2.html"
+    },
+    {
+      "name": "GetFindingsTrendsV2",
+      "methodName": "toGetFindingsTrendsV2",
+      "description": "Grants permission to retrieve findings trends",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsTrendsV2.html"
+    },
+    {
+      "name": "GetInsightResults",
+      "methodName": "toGetInsightResults",
+      "description": "Grants permission to retrieve insight results from Security Hub",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightResults.html"
+    },
+    {
+      "name": "GetInsights",
+      "methodName": "toGetInsights",
+      "description": "Grants permission to retrieve Security Hub insights",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsights.html"
+    },
+    {
+      "name": "GetInvitationsCount",
+      "methodName": "toGetInvitationsCount",
+      "description": "Grants permission to retrieve the count of Security Hub membership invitations sent to the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInvitationsCount.html"
+    },
+    {
+      "name": "GetMasterAccount",
+      "methodName": "toGetMasterAccount",
+      "description": "Grants permission to retrieve details about the Security Hub master account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMasterAccount.html"
+    },
+    {
+      "name": "GetMembers",
+      "methodName": "toGetMembers",
+      "description": "Grants permission to retrieve the details of Security Hub member accounts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMembers.html"
+    },
+    {
+      "name": "GetRecommendedPolicyV2",
+      "methodName": "toGetRecommendedPolicyV2",
+      "description": "Grants permission to retrieve policy recommendations for an OCSF finding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetRecommendedPolicyV2.html"
+    },
+    {
+      "name": "GetRemediationsV2",
+      "methodName": "toGetRemediationsV2",
+      "description": "Grants permission to retrieve a list of remediation targets and their metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetRemediationsV2.html"
+    },
+    {
+      "name": "GetResourcesStatisticsV2",
+      "methodName": "toGetResourcesStatisticsV2",
+      "description": "Grants permission to retrieve aggregate statistics about resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetResourcesStatisticsV2.html"
+    },
+    {
+      "name": "GetResourcesTrendsV2",
+      "methodName": "toGetResourcesTrendsV2",
+      "description": "Grants permission to retrieve resources trends",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetResourcesTrendsV2.html"
+    },
+    {
+      "name": "GetResourcesV2",
+      "methodName": "toGetResourcesV2",
+      "description": "Grants permission to retrieve a list of resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetResourcesV2.html"
+    },
+    {
+      "name": "GetSecurityControlDefinition",
+      "methodName": "toGetSecurityControlDefinition",
+      "description": "Grants permission to get the definition details of a specific security control identified by ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSecurityControlDefinition.html"
+    },
+    {
+      "name": "InviteMembers",
+      "methodName": "toInviteMembers",
+      "description": "Grants permission to invite other AWS accounts to become Security Hub member accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_InviteMembers.html"
+    },
+    {
+      "name": "ListAggregatorsV2",
+      "methodName": "toListAggregatorsV2",
+      "description": "Grants permission to retrieve a list of aggregatorsV2, which configures data aggregation across Regions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListAggregatorsV2.html"
+    },
+    {
+      "name": "ListAutomationRules",
+      "methodName": "toListAutomationRules",
+      "description": "Grants permission to retrieve a list of automation rules and their metadata for the calling account from Security Hub",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "ListAutomationRulesV2",
+      "methodName": "toListAutomationRulesV2",
+      "description": "Grants permission to retrieve a list of automation rules V2 and their metadata for the calling account from Security Hub",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "ListConfigurationPolicies",
+      "methodName": "toListConfigurationPolicies",
+      "description": "Grants permission to list the summaries of all configuration policies created by the calling account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConfigurationPolicies.html"
+    },
+    {
+      "name": "ListConfigurationPolicyAssociations",
+      "methodName": "toListConfigurationPolicyAssociations",
+      "description": "Grants permission to retrieve information about all configuration policies associationed with all member accounts and organizational units of the calling account's organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConfigurationPolicyAssociations.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to retrieve a list of connectors and their metadata for the calling account from Security Hub CSPM",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConnectors.html"
+    },
+    {
+      "name": "ListConnectorsV2",
+      "methodName": "toListConnectorsV2",
+      "description": "Grants permission to retrieve a list of connectors V2 and their metadata for the calling account from Security Hub",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConnectorsV2.html"
+    },
+    {
+      "name": "ListEnabledProductsForImport",
+      "methodName": "toListEnabledProductsForImport",
+      "description": "Grants permission to retrieve the Security Hub integrated products that are currently enabled",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html"
+    },
+    {
+      "name": "ListExposuresByRemediationV2",
+      "methodName": "toListExposuresByRemediationV2",
+      "description": "Grants permission to retrieve a list of exposure findings associated with a remediation target",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListExposuresByRemediationV2.html"
+    },
+    {
+      "name": "ListFindingAggregators",
+      "methodName": "toListFindingAggregators",
+      "description": "Grants permission to retrieve a list of finding aggregators, which contain the cross-Region finding aggregation configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListFindingAggregators.html"
+    },
+    {
+      "name": "ListFreeTrialStatusesV2",
+      "methodName": "toListFreeTrialStatusesV2",
+      "description": "Grants permission to retrieve a list of Security Hub free trial statuses for an account or accounts in an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListFreeTrialStatusesV2.html"
+    },
+    {
+      "name": "ListInvitations",
+      "methodName": "toListInvitations",
+      "description": "Grants permission to retrieve the Security Hub invitations sent to the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListInvitations.html"
+    },
+    {
+      "name": "ListMembers",
+      "methodName": "toListMembers",
+      "description": "Grants permission to retrieve details about Security Hub member accounts associated with the administrator account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListMembers.html"
+    },
+    {
+      "name": "ListOrganizationAdminAccounts",
+      "methodName": "toListOrganizationAdminAccounts",
+      "description": "Grants permission to list the Security Hub administrator accounts for your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListOrganizationAdminAccounts.html"
+    },
+    {
+      "name": "ListSecurityControlDefinitions",
+      "methodName": "toListSecurityControlDefinitions",
+      "description": "Grants permission to retrieve a list of security control definitions, which contain details for security controls in the current region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListSecurityControlDefinitions.html"
+    },
+    {
+      "name": "ListStandardsControlAssociations",
+      "methodName": "toListStandardsControlAssociations",
+      "description": "Grants permission to list the enablement status of a security control in standards",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListStandardsControlAssociations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list of tags associated with a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartConfigurationPolicyAssociation",
+      "methodName": "toStartConfigurationPolicyAssociation",
+      "description": "Grants permission to associate a configuration policy with a member account or organizational unit in the calling account's organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyAssociation.html"
+    },
+    {
+      "name": "StartConfigurationPolicyDisassociation",
+      "methodName": "toStartConfigurationPolicyDisassociation",
+      "description": "Grants permission to remove a configuration policy association from a member account or organizational unit in the calling account's organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyDisassociation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a Security Hub resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a Security Hub resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateActionTarget",
+      "methodName": "toUpdateActionTarget",
+      "description": "Grants permission to update custom actions in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html"
+    },
+    {
+      "name": "UpdateAggregatorV2",
+      "methodName": "toUpdateAggregatorV2",
+      "description": "Grants permission to update an aggregatorV2, which configures data aggregation across Regions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateAggregatorV2.html"
+    },
+    {
+      "name": "UpdateAutomationRuleV2",
+      "methodName": "toUpdateAutomationRuleV2",
+      "description": "Grants permission to update an automation rule V2 in Security Hub based on rule Amazon Resource Name (ARN) and input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules"
+    },
+    {
+      "name": "UpdateConfigurationPolicy",
+      "methodName": "toUpdateConfigurationPolicy",
+      "description": "Grants permission to update an existing configuration policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConfigurationPolicy.html"
+    },
+    {
+      "name": "UpdateConnector",
+      "methodName": "toUpdateConnector",
+      "description": "Grants permission to update a connector in Security Hub CSPM based on connector id and input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConnector.html"
+    },
+    {
+      "name": "UpdateConnectorV2",
+      "methodName": "toUpdateConnectorV2",
+      "description": "Grants permission to update a connector V2 in Security Hub based on connector id and input parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConnectorV2.html"
+    },
+    {
+      "name": "UpdateFindingAggregator",
+      "methodName": "toUpdateFindingAggregator",
+      "description": "Grants permission to update a finding aggregator, which contains the cross-Region finding aggregation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindingAggregator.html"
+    },
+    {
+      "name": "UpdateFindings",
+      "methodName": "toUpdateFindings",
+      "description": "Grants permission to update Security Hub findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html"
+    },
+    {
+      "name": "UpdateInsight",
+      "methodName": "toUpdateInsight",
+      "description": "Grants permission to update insights in Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html"
+    },
+    {
+      "name": "UpdateOrganizationConfiguration",
+      "methodName": "toUpdateOrganizationConfiguration",
+      "description": "Grants permission to update the organization configuration for Security Hub",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateOrganizationConfiguration.html"
+    },
+    {
+      "name": "UpdateSecurityControl",
+      "methodName": "toUpdateSecurityControl",
+      "description": "Grants permission to update properties of a specific security control identified by ID or ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityControl.html"
+    },
+    {
+      "name": "UpdateSecurityHubConfiguration",
+      "methodName": "toUpdateSecurityHubConfiguration",
+      "description": "Grants permission to update Security Hub configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityHubConfiguration.html"
+    },
+    {
+      "name": "UpdateStandardsControl",
+      "methodName": "toUpdateStandardsControl",
+      "description": "Grants permission to update Security Hub standards controls",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to log delivery for resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AllowVendedLogDeliveryForResource.html"
+    },
+    {
+      "name": "BatchGetControlEvaluations",
+      "methodName": "toBatchGetControlEvaluations",
+      "description": "Grants permission to get the enablement and compliance status of controls, the findings count for controls, and the overall security score for controls on the Security Hub console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/iam-permissions-controls-standards.html"
+    },
+    {
+      "name": "BatchGetEnabledRegionsV2",
+      "methodName": "toBatchGetEnabledRegionsV2",
+      "description": "Grants permission to retrieve Security Hub enabled regions for accounts in an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchGetEnabledRegionsV2.html"
+    },
+    {
+      "name": "GetAdhocInsightResults",
+      "methodName": "toGetAdhocInsightResults",
+      "description": "Grants permission to retrieve aggregated statistical data about the findings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingStatisticsV2.html"
+    },
+    {
+      "name": "GetControlFindingSummary",
+      "methodName": "toGetControlFindingSummary",
+      "description": "Grants permission to retrieve a security score and counts of finding and control statuses for a security standard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetControlFindingSummary.html"
+    },
+    {
+      "name": "GetCoverageStatisticsV2",
+      "methodName": "toGetCoverageStatisticsV2",
+      "description": "Grants permission to retrieve Security Hub coverage statistics in an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetCoverageStatisticsV2.html"
+    },
+    {
+      "name": "GetFreeTrialEndDate",
+      "methodName": "toGetFreeTrialEndDate",
+      "description": "Grants permission to retrieve the end date for an account's free trial of Security Hub",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialEndDate.html"
+    },
+    {
+      "name": "GetFreeTrialUsage",
+      "methodName": "toGetFreeTrialUsage",
+      "description": "Grants permission to retrieve information about Security Hub usage during the free trial period",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialUsage.html"
+    },
+    {
+      "name": "GetInsightFindingTrend",
+      "methodName": "toGetInsightFindingTrend",
+      "description": "Grants permission to retrieve an insight finding trend from Security Hub in order to generate a graph",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightFindingTrend.html"
+    },
+    {
+      "name": "GetUsage",
+      "methodName": "toGetUsage",
+      "description": "Grants permission to retrieve information about Security Hub usage by accounts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsage.html"
+    },
+    {
+      "name": "GetUsageV2",
+      "methodName": "toGetUsageV2",
+      "description": "Grants permission to retrieve information about Security Hub usage for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsageV2.html"
+    },
+    {
+      "name": "ListAccountUsageV2",
+      "methodName": "toListAccountUsageV2",
+      "description": "Grants permission to retrieve a list of Security Hub usage for accounts in an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListAccountUsageV2.html"
+    },
+    {
+      "name": "ListControlEvaluationSummaries",
+      "methodName": "toListControlEvaluationSummaries",
+      "description": "Grants permission to retrieve a list of controls for a standard, including the control IDs, statuses and finding counts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListControlEvaluationSummaries.html"
+    },
+    {
+      "name": "SendFindingEvents",
+      "methodName": "toSendFindingEvents",
+      "description": "Grants permission to use a custom action to send Security Hub findings to Amazon EventBridge",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendFindingEvents.html"
+    },
+    {
+      "name": "SendInsightEvents",
+      "methodName": "toSendInsightEvents",
+      "description": "Grants permission to use a custom action to send Security Hub insights to Amazon EventBridge",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendInsightEvents.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "aggregatorv2",
+      "methodName": "onAggregatorv2",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:aggregatorv2/${AggregatorV2Id}",
+      "placeholders": [
+        {
+          "placeholder": "AggregatorV2Id",
+          "name": "aggregatorV2Id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IAggregatorV2Ref",
+        "property": "aggregatorV2Ref",
+        "arn": "aggregatorV2Arn"
+      }
+    },
+    {
+      "name": "automation-rule",
+      "methodName": "onAutomationRule",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:automation-rule/${AutomationRuleId}",
+      "placeholders": [
+        {
+          "placeholder": "AutomationRuleId",
+          "name": "automationRuleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IAutomationRuleRef",
+        "property": "automationRuleRef",
+        "arn": "ruleArn"
+      }
+    },
+    {
+      "name": "automation-rulev2",
+      "methodName": "onAutomationRulev2",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:automation-rulev2/${AutomationRuleV2Id}",
+      "placeholders": [
+        {
+          "placeholder": "AutomationRuleV2Id",
+          "name": "automationRuleV2Id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IAutomationRuleV2Ref",
+        "property": "automationRuleV2Ref",
+        "arn": "ruleArn"
+      }
+    },
+    {
+      "name": "configuration-policy",
+      "methodName": "onConfigurationPolicy",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:configuration-policy/${ConfigurationPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationPolicyId",
+          "name": "configurationPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IConfigurationPolicyRef",
+        "property": "configurationPolicyRef",
+        "arn": "configurationPolicyArn"
+      }
+    },
+    {
+      "name": "connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:connector/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
+    },
+    {
+      "name": "connectorv2",
+      "methodName": "onConnectorv2",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:connectorv2/${ConnectorV2Id}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorV2Id",
+          "name": "connectorV2Id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IConnectorV2Ref",
+        "property": "connectorV2Ref",
+        "arn": "connectorArn"
+      }
+    },
+    {
+      "name": "finding-aggregator",
+      "methodName": "onFindingAggregator",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:finding-aggregator/${FindingAggregatorId}",
+      "placeholders": [
+        {
+          "placeholder": "FindingAggregatorId",
+          "name": "findingAggregatorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IFindingAggregatorRef",
+        "property": "findingAggregatorRef",
+        "arn": "findingAggregatorArn"
+      }
+    },
+    {
+      "name": "hub",
+      "methodName": "onHub",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:hub/default",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "hubv2",
+      "methodName": "onHubv2",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:hubv2/${HubV2Id}",
+      "placeholders": [
+        {
+          "placeholder": "HubV2Id",
+          "name": "hubV2Id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IHubV2Ref",
+        "property": "hubV2Ref",
+        "arn": "hubV2Arn"
+      }
+    },
+    {
+      "name": "product",
+      "methodName": "onProduct",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}",
+      "placeholders": [
+        {
+          "placeholder": "Company",
+          "name": "company",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAutomationRule",
+        "toCreateAutomationRuleV2",
+        "toCreateConfigurationPolicy",
+        "toCreateConnector",
+        "toCreateConnectorV2",
+        "toEnableSecurityHub",
+        "toEnableSecurityHubV2"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptAdministratorInvitation",
+        "toAcceptInvitation",
+        "toBatchDeleteAutomationRules",
+        "toBatchDisableStandards",
+        "toBatchEnableStandards",
+        "toBatchGetAutomationRules",
+        "toBatchUpdateAutomationRules",
+        "toBatchUpdateFindings",
+        "toCreateActionTarget",
+        "toCreateInsight",
+        "toCreateMembers",
+        "toCreateTicketV2",
+        "toDeclineInvitations",
+        "toDeleteActionTarget",
+        "toDeleteAggregatorV2",
+        "toDeleteAutomationRuleV2",
+        "toDeleteConfigurationPolicy",
+        "toDeleteConnector",
+        "toDeleteConnectorV2",
+        "toDeleteInsight",
+        "toDeleteInvitations",
+        "toDeleteMembers",
+        "toDescribeActionTargets",
+        "toDescribeHub",
+        "toDescribeOrganizationConfiguration",
+        "toDescribeProducts",
+        "toDescribeProductsV2",
+        "toDescribeStandards",
+        "toDescribeStandardsControls",
+        "toDisableImportFindingsForProduct",
+        "toDisableOrganizationAdminAccount",
+        "toDisableSecurityHub",
+        "toDisableSecurityHubFeatureV2",
+        "toDisassociateFromAdministratorAccount",
+        "toDisassociateFromMasterAccount",
+        "toDisassociateMembers",
+        "toEnableImportFindingsForProduct",
+        "toEnableOrganizationAdminAccount",
+        "toEnableSecurityHub",
+        "toEnableSecurityHubFeatureV2",
+        "toGenerateRecommendedPolicyV2",
+        "toGetAdministratorAccount",
+        "toGetAggregatorV2",
+        "toGetAutomationRuleV2",
+        "toGetConfigurationPolicy",
+        "toGetConnector",
+        "toGetConnectorV2",
+        "toGetEnabledStandards",
+        "toGetFindingHistory",
+        "toGetFindings",
+        "toGetFindingsTrendsV2",
+        "toGetInsightResults",
+        "toGetInsights",
+        "toGetInvitationsCount",
+        "toGetMasterAccount",
+        "toGetMembers",
+        "toGetRecommendedPolicyV2",
+        "toGetRemediationsV2",
+        "toGetResourcesStatisticsV2",
+        "toGetResourcesTrendsV2",
+        "toGetResourcesV2",
+        "toInviteMembers",
+        "toListEnabledProductsForImport",
+        "toListExposuresByRemediationV2",
+        "toListFreeTrialStatusesV2",
+        "toListInvitations",
+        "toListMembers",
+        "toListOrganizationAdminAccounts",
+        "toListTagsForResource",
+        "toStartConfigurationPolicyAssociation",
+        "toStartConfigurationPolicyDisassociation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateActionTarget",
+        "toUpdateAggregatorV2",
+        "toUpdateAutomationRuleV2",
+        "toUpdateConfigurationPolicy",
+        "toUpdateConnector",
+        "toUpdateConnectorV2",
+        "toUpdateFindings",
+        "toUpdateInsight",
+        "toUpdateOrganizationConfiguration",
+        "toUpdateSecurityHubConfiguration",
+        "toUpdateStandardsControl",
+        "toAllowVendedLogDeliveryForResource",
+        "toBatchGetControlEvaluations",
+        "toBatchGetEnabledRegionsV2",
+        "toGetAdhocInsightResults",
+        "toGetControlFindingSummary",
+        "toGetCoverageStatisticsV2",
+        "toGetFreeTrialEndDate",
+        "toGetFreeTrialUsage",
+        "toGetInsightFindingTrend",
+        "toGetUsage",
+        "toGetUsageV2",
+        "toListAccountUsageV2",
+        "toListControlEvaluationSummaries",
+        "toSendFindingEvents",
+        "toSendInsightEvents"
+      ],
+      "relatedResourceTypes": [
+        "aggregatorv2",
+        "automation-rule",
+        "automation-rulev2",
+        "configuration-policy",
+        "connector",
+        "connectorv2",
+        "hub",
+        "hubv2"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAutomationRule",
+        "toCreateAutomationRuleV2",
+        "toCreateConfigurationPolicy",
+        "toCreateConnector",
+        "toCreateConnectorV2",
+        "toEnableSecurityHub",
+        "toEnableSecurityHubV2"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "securityhub:ASFFSyntaxPath/${ASFFSyntaxPath}",
+      "methodName": "ifASFFSyntaxPath",
+      "description": "Filters access by the specified fields and values in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-asffsyntaxpath",
+      "relatedActionMethods": [
+        "toBatchUpdateFindings"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ASFFSyntaxPath/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "aSFFSyntaxPath",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "securityhub:OCSFSyntaxPath/${OCSFSyntaxPath}",
+      "methodName": "ifOCSFSyntaxPath",
+      "description": "Filters access by the specified fields and values in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-ocsfsyntaxpath",
+      "relatedActionMethods": [
+        "toBatchUpdateFindings"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OCSFSyntaxPath/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "oCSFSyntaxPath",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "securityhub:TargetAccount",
+      "methodName": "ifTargetAccount",
+      "description": "Filters access by the AwsAccountId field that is specified in the request",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#conditions",
+      "relatedActionMethods": [
+        "toBatchImportFindings"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TargetAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

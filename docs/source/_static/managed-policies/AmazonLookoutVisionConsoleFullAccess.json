@@ -1,0 +1,91 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LookoutVisionFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "lookoutvision:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleS3BucketSearchAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleS3BucketFirstUseSetupAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutBucketVersioning",
+        "s3:PutLifecycleConfiguration",
+        "s3:PutEncryptionConfiguration",
+        "s3:PutBucketPublicAccessBlock"
+      ],
+      "Resource": "arn:aws:s3:::lookoutvision-*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleS3BucketAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:GetBucketVersioning"
+      ],
+      "Resource": "arn:aws:s3:::lookoutvision-*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleS3ObjectAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+      ],
+      "Resource": "arn:aws:s3:::lookoutvision-*/*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleDatasetLabelingToolsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "groundtruthlabeling:RunGenerateManifestByCrawlingJob",
+        "groundtruthlabeling:AssociatePatchToManifestJob",
+        "groundtruthlabeling:DescribeConsoleJob"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleDashboardAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleTagSelectorAccess",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetTagKeys",
+        "tag:GetTagValues"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleKmsKeySelectorAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

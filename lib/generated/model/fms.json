@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "filename": "fms",
+  "className": "Fms",
+  "name": "fms",
+  "servicePrefix": "fms",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_fms.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateAdminAccount",
+      "AssociateThirdPartyFirewall",
+      "BatchAssociateResource",
+      "BatchDisassociateResource",
+      "DeleteAppsList",
+      "DeleteNotificationChannel",
+      "DeletePolicy",
+      "DeleteProtocolsList",
+      "DeleteResourceSet",
+      "DisassociateAdminAccount",
+      "DisassociateThirdPartyFirewall",
+      "PutAdminAccount",
+      "PutAppsList",
+      "PutNotificationChannel",
+      "PutPolicy",
+      "PutProtocolsList",
+      "PutResourceSet",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetAdminAccount",
+      "GetAdminScope",
+      "GetAppsList",
+      "GetComplianceDetail",
+      "GetNotificationChannel",
+      "GetPolicy",
+      "GetProtectionStatus",
+      "GetProtocolsList",
+      "GetResourceSet",
+      "GetThirdPartyFirewallAssociationStatus",
+      "GetViolationDetails",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAdminAccountsForOrganization",
+      "ListAdminsManagingAccount",
+      "ListAppsLists",
+      "ListComplianceStatus",
+      "ListDiscoveredResources",
+      "ListMemberAccounts",
+      "ListPolicies",
+      "ListProtocolsLists",
+      "ListResourceSetResources",
+      "ListResourceSets",
+      "ListThirdPartyFirewallFirewallPolicies"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateAdminAccount",
+      "methodName": "toAssociateAdminAccount",
+      "description": "Grants permission to set the AWS Firewall Manager administrator account and enables the service in all organization accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html"
+    },
+    {
+      "name": "AssociateThirdPartyFirewall",
+      "methodName": "toAssociateThirdPartyFirewall",
+      "description": "Grants permission to set the Firewall Manager administrator as a tenant administrator of a third-party firewall service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateThirdPartyFirewall.html"
+    },
+    {
+      "name": "BatchAssociateResource",
+      "methodName": "toBatchAssociateResource",
+      "description": "Grants permission to associate resources to an AWS Firewall Manager resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_BatchAssociateResource.html"
+    },
+    {
+      "name": "BatchDisassociateResource",
+      "methodName": "toBatchDisassociateResource",
+      "description": "Grants permission to disassociate resources from an AWS Firewall Manager resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_BatchDisassociateResource.html"
+    },
+    {
+      "name": "DeleteAppsList",
+      "methodName": "toDeleteAppsList",
+      "description": "Grants permission to permanently deletes an AWS Firewall Manager applications list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteAppsList.html"
+    },
+    {
+      "name": "DeleteNotificationChannel",
+      "methodName": "toDeleteNotificationChannel",
+      "description": "Grants permission to delete an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to notify the FM administrator about major FM events and errors across the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to permanently delete an AWS Firewall Manager policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeleteProtocolsList",
+      "methodName": "toDeleteProtocolsList",
+      "description": "Grants permission to permanently deletes an AWS Firewall Manager protocols list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteProtocolsList.html"
+    },
+    {
+      "name": "DeleteResourceSet",
+      "methodName": "toDeleteResourceSet",
+      "description": "Grants permission to permanently delete an AWS Firewall Manager resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteResourceSet.html"
+    },
+    {
+      "name": "DisassociateAdminAccount",
+      "methodName": "toDisassociateAdminAccount",
+      "description": "Grants permission to disassociate the account that has been set as the AWS Firewall Manager administrator account and and disables the service in all organization accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html"
+    },
+    {
+      "name": "DisassociateThirdPartyFirewall",
+      "methodName": "toDisassociateThirdPartyFirewall",
+      "description": "Grants permission to disassociate a Firewall Manager administrator from a third-party firewall tenant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateThirdPartyFirewall.html"
+    },
+    {
+      "name": "GetAdminAccount",
+      "methodName": "toGetAdminAccount",
+      "description": "Grants permission to return the AWS Organizations account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html"
+    },
+    {
+      "name": "GetAdminScope",
+      "methodName": "toGetAdminScope",
+      "description": "Grants permission to return information about the specified account's administrative scope",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminScope.html"
+    },
+    {
+      "name": "GetAppsList",
+      "methodName": "toGetAppsList",
+      "description": "Grants permission to return information about the specified AWS Firewall Manager applications list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAppsList.html"
+    },
+    {
+      "name": "GetComplianceDetail",
+      "methodName": "toGetComplianceDetail",
+      "description": "Grants permission to retrieve detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html"
+    },
+    {
+      "name": "GetNotificationChannel",
+      "methodName": "toGetNotificationChannel",
+      "description": "Grants permission to retrieve information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to retrieve information about the specified AWS Firewall Manager policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetProtectionStatus",
+      "methodName": "toGetProtectionStatus",
+      "description": "Grants permission to retrieve policy-level attack summary information in the event of a potential DDoS attack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html"
+    },
+    {
+      "name": "GetProtocolsList",
+      "methodName": "toGetProtocolsList",
+      "description": "Grants permission to return information about the specified AWS Firewall Manager protocols list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtocolsList.html"
+    },
+    {
+      "name": "GetResourceSet",
+      "methodName": "toGetResourceSet",
+      "description": "Grants permission to retrieve information about the specified AWS Firewall Manager resource set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetResourceSet.html"
+    },
+    {
+      "name": "GetThirdPartyFirewallAssociationStatus",
+      "methodName": "toGetThirdPartyFirewallAssociationStatus",
+      "description": "Grants permission to retrieve the onboarding status of a Firewall Manager administrator account to third-party firewall vendor tenant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetThirdPartyFirewallAssociationStatus.html"
+    },
+    {
+      "name": "GetViolationDetails",
+      "methodName": "toGetViolationDetails",
+      "description": "Grants permission to retrieve violations for a resource based on the specified AWS Firewall Manager policy and AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetViolationDetails.html"
+    },
+    {
+      "name": "ListAdminAccountsForOrganization",
+      "methodName": "toListAdminAccountsForOrganization",
+      "description": "Grants permission to return a AdminAccounts object that lists the Firewall Manager administrators within the organization that are onboarded to Firewall Manager by AssociateAdminAccount",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAdminAccountsForOrganization.html"
+    },
+    {
+      "name": "ListAdminsManagingAccount",
+      "methodName": "toListAdminsManagingAccount",
+      "description": "Grants permission to list the accounts that are managing the specified AWS Organizations member account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAdminsManagingAccount.html"
+    },
+    {
+      "name": "ListAppsLists",
+      "methodName": "toListAppsLists",
+      "description": "Grants permission to return an array of AppsListDataSummary objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAppsLists.html"
+    },
+    {
+      "name": "ListComplianceStatus",
+      "methodName": "toListComplianceStatus",
+      "description": "Grants permission to retrieve an array of PolicyComplianceStatus objects in the response. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html"
+    },
+    {
+      "name": "ListDiscoveredResources",
+      "methodName": "toListDiscoveredResources",
+      "description": "Grants permission to retrieve an array of resources in the organization's accounts that are available to be associated with a resource set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListDiscoveredResources.html"
+    },
+    {
+      "name": "ListMemberAccounts",
+      "methodName": "toListMemberAccounts",
+      "description": "Grants permission to retrieve an array of member account ids if the caller is FMS admin account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to retrieve an array of PolicySummary objects in the response",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListProtocolsLists",
+      "methodName": "toListProtocolsLists",
+      "description": "Grants permission to return an array of ProtocolsListDataSummary objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListProtocolsLists.html"
+    },
+    {
+      "name": "ListResourceSetResources",
+      "methodName": "toListResourceSetResources",
+      "description": "Grants permission to retrieve an array of resources that are currently associated to a resource set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListResourceSetResources.html"
+    },
+    {
+      "name": "ListResourceSets",
+      "methodName": "toListResourceSets",
+      "description": "Grants permission to retrieve an array of ResourceSetSummary objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListResourceSets.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list Tags for a given resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListThirdPartyFirewallFirewallPolicies",
+      "methodName": "toListThirdPartyFirewallFirewallPolicies",
+      "description": "Grants permission to retrieve a list of all of the third-party firewall policies that are associated with the third-party firewall administrator's account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListThirdPartyFirewallFirewallPolicies.html"
+    },
+    {
+      "name": "PutAdminAccount",
+      "methodName": "toPutAdminAccount",
+      "description": "Grants permission to create or update an Firewall Manager administrator account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAdminAccount.html"
+    },
+    {
+      "name": "PutAppsList",
+      "methodName": "toPutAppsList",
+      "description": "Grants permission to create an AWS Firewall Manager applications list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAppsList.html"
+    },
+    {
+      "name": "PutNotificationChannel",
+      "methodName": "toPutNotificationChannel",
+      "description": "Grants permission to designate the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager (FM) could use to notify the FM administrator about major FM events and errors across the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html"
+    },
+    {
+      "name": "PutPolicy",
+      "methodName": "toPutPolicy",
+      "description": "Grants permission to create an AWS Firewall Manager policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html"
+    },
+    {
+      "name": "PutProtocolsList",
+      "methodName": "toPutProtocolsList",
+      "description": "Grants permission to creates an AWS Firewall Manager protocols list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutProtocolsList.html"
+    },
+    {
+      "name": "PutResourceSet",
+      "methodName": "toPutResourceSet",
+      "description": "Grants permission to create an AWS Firewall Manager resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutResourceSet.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a Tag to a given resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a Tag from a given resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "applications-list",
+      "methodName": "onApplicationsList",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AppsListData.html",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:applications-list/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_fms",
+        "interface": "IApplicationsListRef",
+        "property": "applicationsListRef",
+        "arn": "applicationsListArn"
+      }
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:policy/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_fms",
+        "interface": "IPolicyRef",
+        "property": "policyRef",
+        "arn": "policyArn"
+      }
+    },
+    {
+      "name": "protocols-list",
+      "methodName": "onProtocolsList",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ProtocolsListData.html",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:protocols-list/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_fms",
+        "interface": "IProtocolsListRef",
+        "property": "protocolsListRef",
+        "arn": "protocolsListArn"
+      }
+    },
+    {
+      "name": "resource-set",
+      "methodName": "onResourceSet",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ResourceSet.html",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:resource-set/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toPutAppsList",
+        "toPutPolicy",
+        "toPutProtocolsList",
+        "toPutResourceSet",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchAssociateResource",
+        "toBatchDisassociateResource",
+        "toDeleteAppsList",
+        "toDeletePolicy",
+        "toDeleteProtocolsList",
+        "toDeleteResourceSet",
+        "toGetAppsList",
+        "toGetComplianceDetail",
+        "toGetPolicy",
+        "toGetProtectionStatus",
+        "toGetProtocolsList",
+        "toGetResourceSet",
+        "toGetViolationDetails",
+        "toListComplianceStatus",
+        "toListResourceSetResources",
+        "toListTagsForResource",
+        "toPutAppsList",
+        "toPutPolicy",
+        "toPutProtocolsList",
+        "toPutResourceSet",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "applications-list",
+        "policy",
+        "protocols-list",
+        "resource-set"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toPutAppsList",
+        "toPutPolicy",
+        "toPutProtocolsList",
+        "toPutResourceSet",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

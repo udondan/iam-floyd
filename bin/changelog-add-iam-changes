@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Appends the output of bin/mkchangelog to the newest entry of CHANGELOG.md, which release-please
+# writes in its release PR. The entry is separated from the commit notes by a horizontal line.
+#
+# Usage: bin/changelog-add-iam-changes <ref of the previous release>
+
+set -euo pipefail
+
+REF="${1:?Usage: bin/changelog-add-iam-changes <ref of the previous release>}"
+CHANGELOG="CHANGELOG.md"
+
+TMP=$(mktemp -d)
+trap 'rm -rf "${TMP}"' EXIT
+
+bin/mkchangelog "${REF}" > "${TMP}/changes"
+if [[ ! -s "${TMP}/changes" ]]; then
+  echo "No IAM changes since ${REF}"
+  exit 0
+fi
+
+awk -v changes="${TMP}/changes" '
+  # Prints the buffered newest entry without its trailing empty lines, followed by the changes
+  function insert(last,  line) {
+    while (n > 0 && buf[n - 1] == "") n--
+    for (i = 0; i < n; i++) print buf[i]
+    print ""
+    print "---"
+    print ""
+    while ((getline line < changes) > 0) print line
+    if (!last) print ""
+    done = 1
+  }
+  /^##+ \[/ && ++headers == 2 { insert(0) }
+  { if (done) print; else buf[n++] = $0 }
+  END { if (!done) insert(1) }
+' "${CHANGELOG}" > "${TMP}/CHANGELOG.md"
+
+cat "${TMP}/CHANGELOG.md" > "${CHANGELOG}"
+echo "Added the IAM changes since ${REF} to ${CHANGELOG}"

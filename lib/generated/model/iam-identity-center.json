@@ -1,0 +1,1515 @@
+{
+  "schemaVersion": 1,
+  "filename": "iam-identity-center",
+  "className": "Sso",
+  "name": "sso",
+  "servicePrefix": "sso",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iam-identity-center.html",
+  "accessLevelList": {
+    "Write": [
+      "AddRegion",
+      "AssociateDirectory",
+      "AssociateProfile",
+      "AttachCustomerManagedPolicyReferenceToPermissionSet",
+      "AttachManagedPolicyToPermissionSet",
+      "CreateAccountAssignment",
+      "CreateApplication",
+      "CreateApplicationAssignment",
+      "CreateApplicationInstance",
+      "CreateApplicationInstanceCertificate",
+      "CreateInstance",
+      "CreateInstanceAccessControlAttributeConfiguration",
+      "CreateManagedApplicationInstance",
+      "CreatePermissionSet",
+      "CreateProfile",
+      "CreateTrust",
+      "CreateTrustedTokenIssuer",
+      "DeleteAccountAssignment",
+      "DeleteApplication",
+      "DeleteApplicationAccessScope",
+      "DeleteApplicationAssignment",
+      "DeleteApplicationAuthenticationMethod",
+      "DeleteApplicationGrant",
+      "DeleteApplicationInstance",
+      "DeleteApplicationInstanceCertificate",
+      "DeleteInlinePolicyFromPermissionSet",
+      "DeleteInstance",
+      "DeleteInstanceAccessControlAttributeConfiguration",
+      "DeleteManagedApplicationInstance",
+      "DeletePermissionSet",
+      "DeletePermissionsBoundaryFromPermissionSet",
+      "DeleteProfile",
+      "DeleteTrustedTokenIssuer",
+      "DetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "DetachManagedPolicyFromPermissionSet",
+      "DisassociateDirectory",
+      "DisassociateProfile",
+      "ImportApplicationInstanceServiceProviderMetadata",
+      "ProvisionPermissionSet",
+      "PutApplicationAccessScope",
+      "PutApplicationAssignmentConfiguration",
+      "PutApplicationAuthenticationMethod",
+      "PutApplicationGrant",
+      "PutApplicationSessionConfiguration",
+      "PutInlinePolicyToPermissionSet",
+      "PutMfaDeviceManagementForDirectory",
+      "PutPermissionsBoundaryToPermissionSet",
+      "PutPermissionsPolicy",
+      "RemoveRegion",
+      "StartSSO",
+      "TagResource",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateApplicationInstanceActiveCertificate",
+      "UpdateApplicationInstanceDisplayData",
+      "UpdateApplicationInstanceResponseConfiguration",
+      "UpdateApplicationInstanceResponseSchemaConfiguration",
+      "UpdateApplicationInstanceSecurityConfiguration",
+      "UpdateApplicationInstanceServiceProviderConfiguration",
+      "UpdateApplicationInstanceStatus",
+      "UpdateInstance",
+      "UpdateInstanceAccessControlAttributeConfiguration",
+      "UpdateManagedApplicationInstanceStatus",
+      "UpdatePermissionSet",
+      "UpdateProfile",
+      "UpdateSSOConfiguration",
+      "UpdateTrust",
+      "UpdateTrustedTokenIssuer"
+    ],
+    "Permissions management": [
+      "AttachCustomerManagedPolicyReferenceToPermissionSet",
+      "AttachManagedPolicyToPermissionSet",
+      "DeletePermissionsBoundaryFromPermissionSet",
+      "DetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "DetachManagedPolicyFromPermissionSet",
+      "PutPermissionsBoundaryToPermissionSet",
+      "PutPermissionsPolicy",
+      "UpdatePermissionSet"
+    ],
+    "Read": [
+      "DescribeAccountAssignmentCreationStatus",
+      "DescribeAccountAssignmentDeletionStatus",
+      "DescribeApplication",
+      "DescribeApplicationAssignment",
+      "DescribeApplicationProvider",
+      "DescribeInstance",
+      "DescribeInstanceAccessControlAttributeConfiguration",
+      "DescribePermissionSet",
+      "DescribePermissionSetProvisioningStatus",
+      "DescribeRegion",
+      "DescribeRegisteredRegions",
+      "DescribeTrustedTokenIssuer",
+      "GetApplicationAccessScope",
+      "GetApplicationAssignmentConfiguration",
+      "GetApplicationAuthenticationMethod",
+      "GetApplicationGrant",
+      "GetApplicationInstance",
+      "GetApplicationSessionConfiguration",
+      "GetApplicationTemplate",
+      "GetInlinePolicyForPermissionSet",
+      "GetManagedApplicationInstance",
+      "GetMfaDeviceManagementForDirectory",
+      "GetPermissionSet",
+      "GetPermissionsBoundaryForPermissionSet",
+      "GetProfile",
+      "GetSSOStatus",
+      "GetSharedSsoConfiguration",
+      "GetSsoConfiguration",
+      "GetTrust",
+      "ListApplicationInstanceCertificates",
+      "ListDirectoryAssociations",
+      "ListProfileAssociations",
+      "ListTagsForResource",
+      "SearchGroups",
+      "SearchUsers"
+    ],
+    "List": [
+      "ListAccountAssignmentCreationStatus",
+      "ListAccountAssignmentDeletionStatus",
+      "ListAccountAssignments",
+      "ListAccountAssignmentsForPrincipal",
+      "ListAccountsForProvisionedPermissionSet",
+      "ListApplicationAccessScopes",
+      "ListApplicationAssignments",
+      "ListApplicationAssignmentsForPrincipal",
+      "ListApplicationAuthenticationMethods",
+      "ListApplicationGrants",
+      "ListApplicationInstances",
+      "ListApplicationProviders",
+      "ListApplicationTemplates",
+      "ListApplications",
+      "ListCustomerManagedPolicyReferencesInPermissionSet",
+      "ListInstances",
+      "ListManagedPoliciesInPermissionSet",
+      "ListPermissionSetProvisioningStatus",
+      "ListPermissionSets",
+      "ListPermissionSetsProvisionedToAccount",
+      "ListProfiles",
+      "ListRegions",
+      "ListTrustedTokenIssuers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddRegion",
+      "methodName": "toAddRegion",
+      "description": "Grants permission to add a region to an IAM Identity Center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html"
+    },
+    {
+      "name": "AssociateDirectory",
+      "methodName": "toAssociateDirectory",
+      "description": "Grants permission to connect a directory to be used by AWS IAM Identity Center",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "AssociateProfile",
+      "methodName": "toAssociateProfile",
+      "description": "Grants permission to create an association between a directory user or group and a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "AttachCustomerManagedPolicyReferenceToPermissionSet",
+      "methodName": "toAttachCustomerManagedPolicyReferenceToPermissionSet",
+      "description": "Grants permission to attach a customer managed policy reference to a permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachCustomerManagedPolicyReferenceToPermissionSet.html"
+    },
+    {
+      "name": "AttachManagedPolicyToPermissionSet",
+      "methodName": "toAttachManagedPolicyToPermissionSet",
+      "description": "Grants permission to attach an AWS managed policy to a permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachManagedPolicyToPermissionSet.html"
+    },
+    {
+      "name": "CreateAccountAssignment",
+      "methodName": "toCreateAccountAssignment",
+      "description": "Grants permission to assign access to a Principal for a specified AWS account using a specified permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateAccountAssignment.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplication.html"
+    },
+    {
+      "name": "CreateApplicationAssignment",
+      "methodName": "toCreateApplicationAssignment",
+      "description": "Grants permission to create an application assignment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+    },
+    {
+      "name": "CreateApplicationInstance",
+      "methodName": "toCreateApplicationInstance",
+      "description": "Grants permission to add an application instance to AWS IAM Identity Center",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateApplicationInstanceCertificate",
+      "methodName": "toCreateApplicationInstanceCertificate",
+      "description": "Grants permission to add a new certificate for an application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateInstance",
+      "methodName": "toCreateInstance",
+      "description": "Grants permission to create an identity center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstance.html"
+    },
+    {
+      "name": "CreateInstanceAccessControlAttributeConfiguration",
+      "methodName": "toCreateInstanceAccessControlAttributeConfiguration",
+      "description": "Grants permission to enable the instance for ABAC and specify the attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstanceAccessControlAttributeConfiguration.html"
+    },
+    {
+      "name": "CreateManagedApplicationInstance",
+      "methodName": "toCreateManagedApplicationInstance",
+      "description": "Grants permission to add a managed application instance to AWS IAM Identity Center",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreatePermissionSet",
+      "methodName": "toCreatePermissionSet",
+      "description": "Grants permission to create a permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreatePermissionSet.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to create a profile for an application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateTrust",
+      "methodName": "toCreateTrust",
+      "description": "Grants permission to create a federation trust in a target account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateTrustedTokenIssuer",
+      "methodName": "toCreateTrustedTokenIssuer",
+      "description": "Grants permission to create a trusted token issuer for an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateTrustedTokenIssuer.html"
+    },
+    {
+      "name": "DeleteAccountAssignment",
+      "methodName": "toDeleteAccountAssignment",
+      "description": "Grants permission to delete a Principal's access from a specified AWS account using a specified permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteAccountAssignment.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteApplicationAccessScope",
+      "methodName": "toDeleteApplicationAccessScope",
+      "description": "Grants permission to delete an access scope to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAccessScope.html"
+    },
+    {
+      "name": "DeleteApplicationAssignment",
+      "methodName": "toDeleteApplicationAssignment",
+      "description": "Grants permission to delete an application assignment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAssignment.html"
+    },
+    {
+      "name": "DeleteApplicationAuthenticationMethod",
+      "methodName": "toDeleteApplicationAuthenticationMethod",
+      "description": "Grants permission to delete an authentication method to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAuthenticationMethod.html"
+    },
+    {
+      "name": "DeleteApplicationGrant",
+      "methodName": "toDeleteApplicationGrant",
+      "description": "Grants permission to delete a grant from an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationGrant.html"
+    },
+    {
+      "name": "DeleteApplicationInstance",
+      "methodName": "toDeleteApplicationInstance",
+      "description": "Grants permission to delete the application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteApplicationInstanceCertificate",
+      "methodName": "toDeleteApplicationInstanceCertificate",
+      "description": "Grants permission to delete an inactive or expired certificate from the application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteInlinePolicyFromPermissionSet",
+      "methodName": "toDeleteInlinePolicyFromPermissionSet",
+      "description": "Grants permission to delete the inline policy from a specified permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInlinePolicyFromPermissionSet.html"
+    },
+    {
+      "name": "DeleteInstance",
+      "methodName": "toDeleteInstance",
+      "description": "Grants permission to delete an identity center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInstance.html"
+    },
+    {
+      "name": "DeleteInstanceAccessControlAttributeConfiguration",
+      "methodName": "toDeleteInstanceAccessControlAttributeConfiguration",
+      "description": "Grants permission to disable ABAC and remove the attributes list for the instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInstanceAccessControlAttributeConfiguration.html"
+    },
+    {
+      "name": "DeleteManagedApplicationInstance",
+      "methodName": "toDeleteManagedApplicationInstance",
+      "description": "Grants permission to delete the managed application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeletePermissionSet",
+      "methodName": "toDeletePermissionSet",
+      "description": "Grants permission to delete a permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeletePermissionSet.html"
+    },
+    {
+      "name": "DeletePermissionsBoundaryFromPermissionSet",
+      "methodName": "toDeletePermissionsBoundaryFromPermissionSet",
+      "description": "Grants permission to remove permissions boundary from a permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeletePermissionsBoundaryFromPermissionSet.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to delete the profile for an application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteTrustedTokenIssuer",
+      "methodName": "toDeleteTrustedTokenIssuer",
+      "description": "Grants permission to delete a trusted token issuer for an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteTrustedTokenIssuer.html"
+    },
+    {
+      "name": "DescribeAccountAssignmentCreationStatus",
+      "methodName": "toDescribeAccountAssignmentCreationStatus",
+      "description": "Grants permission to describe the status of the assignment creation request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeAccountAssignmentCreationStatus.html"
+    },
+    {
+      "name": "DescribeAccountAssignmentDeletionStatus",
+      "methodName": "toDescribeAccountAssignmentDeletionStatus",
+      "description": "Grants permission to describe the status of an assignment deletion request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeAccountAssignmentDeletionStatus.html"
+    },
+    {
+      "name": "DescribeApplication",
+      "methodName": "toDescribeApplication",
+      "description": "Grants permission to obtain information about an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplication.html"
+    },
+    {
+      "name": "DescribeApplicationAssignment",
+      "methodName": "toDescribeApplicationAssignment",
+      "description": "Grants permission to retrieve an application assignment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplicationAssignment.html"
+    },
+    {
+      "name": "DescribeApplicationProvider",
+      "methodName": "toDescribeApplicationProvider",
+      "description": "Grants permission to describe an application provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplicationProvider.html"
+    },
+    {
+      "name": "DescribeInstance",
+      "methodName": "toDescribeInstance",
+      "description": "Grants permission to obtain information about an identity center instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeInstance.html"
+    },
+    {
+      "name": "DescribeInstanceAccessControlAttributeConfiguration",
+      "methodName": "toDescribeInstanceAccessControlAttributeConfiguration",
+      "description": "Grants permission to get the list of attributes used by the instance for ABAC",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeInstanceAccessControlAttributeConfiguration.html"
+    },
+    {
+      "name": "DescribePermissionSet",
+      "methodName": "toDescribePermissionSet",
+      "description": "Grants permission to describe a permission set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribePermissionSet.html"
+    },
+    {
+      "name": "DescribePermissionSetProvisioningStatus",
+      "methodName": "toDescribePermissionSetProvisioningStatus",
+      "description": "Grants permission to describe the status for the given Permission Set Provisioning request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribePermissionSetProvisioningStatus.html"
+    },
+    {
+      "name": "DescribeRegion",
+      "methodName": "toDescribeRegion",
+      "description": "Grants permission to retrieve configuration details for a specific IAM Identity Center instance region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html"
+    },
+    {
+      "name": "DescribeRegisteredRegions",
+      "methodName": "toDescribeRegisteredRegions",
+      "description": "Grants permission to obtain the regions where your organization has enabled AWS IAM Identity Center",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DescribeTrustedTokenIssuer",
+      "methodName": "toDescribeTrustedTokenIssuer",
+      "description": "Grants permission to describe a trusted token issuer for an instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeTrustedTokenIssuer.html"
+    },
+    {
+      "name": "DetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "methodName": "toDetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "description": "Grants permission to detach a customer managed policy reference from a permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DetachCustomerManagedPolicyReferenceFromPermissionSet.html"
+    },
+    {
+      "name": "DetachManagedPolicyFromPermissionSet",
+      "methodName": "toDetachManagedPolicyFromPermissionSet",
+      "description": "Grants permission to detach the attached AWS managed policy from the specified permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DetachManagedPolicyFromPermissionSet.html"
+    },
+    {
+      "name": "DisassociateDirectory",
+      "methodName": "toDisassociateDirectory",
+      "description": "Grants permission to disassociate a directory to be used by AWS IAM Identity Center",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DisassociateProfile",
+      "methodName": "toDisassociateProfile",
+      "description": "Grants permission to disassociate a directory user or group from a profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetApplicationAccessScope",
+      "methodName": "toGetApplicationAccessScope",
+      "description": "Grants permission to get an access scope to an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAccessScope.html"
+    },
+    {
+      "name": "GetApplicationAssignmentConfiguration",
+      "methodName": "toGetApplicationAssignmentConfiguration",
+      "description": "Grants permission to read assignment configurations for an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAssignmentConfiguration.html"
+    },
+    {
+      "name": "GetApplicationAuthenticationMethod",
+      "methodName": "toGetApplicationAuthenticationMethod",
+      "description": "Grants permission to get an authentication method to an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAuthenticationMethod.html"
+    },
+    {
+      "name": "GetApplicationGrant",
+      "methodName": "toGetApplicationGrant",
+      "description": "Grants permission to obtain details about a grant belonging to an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationGrant.html"
+    },
+    {
+      "name": "GetApplicationInstance",
+      "methodName": "toGetApplicationInstance",
+      "description": "Grants permission to retrieve details for an application instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetApplicationSessionConfiguration",
+      "methodName": "toGetApplicationSessionConfiguration",
+      "description": "Grants permission to get session configuration for an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationSessionConfiguration.html"
+    },
+    {
+      "name": "GetApplicationTemplate",
+      "methodName": "toGetApplicationTemplate",
+      "description": "Grants permission to retrieve application template details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetInlinePolicyForPermissionSet",
+      "methodName": "toGetInlinePolicyForPermissionSet",
+      "description": "Grants permission to obtain the inline policy assigned to the permission set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetInlinePolicyForPermissionSet.html"
+    },
+    {
+      "name": "GetManagedApplicationInstance",
+      "methodName": "toGetManagedApplicationInstance",
+      "description": "Grants permission to retrieve details for an application instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetMfaDeviceManagementForDirectory",
+      "methodName": "toGetMfaDeviceManagementForDirectory",
+      "description": "Grants permission to retrieve Mfa Device Management settings for the directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetPermissionSet",
+      "methodName": "toGetPermissionSet",
+      "description": "Grants permission to retrieve details of a permission set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetPermissionsBoundaryForPermissionSet",
+      "methodName": "toGetPermissionsBoundaryForPermissionSet",
+      "description": "Grants permission to get permissions boundary for a permission set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetPermissionsBoundaryForPermissionSet.html"
+    },
+    {
+      "name": "GetProfile",
+      "methodName": "toGetProfile",
+      "description": "Grants permission to retrieve a profile for an application instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetSSOStatus",
+      "methodName": "toGetSSOStatus",
+      "description": "Grants permission to check if AWS IAM Identity Center is enabled",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetSharedSsoConfiguration",
+      "methodName": "toGetSharedSsoConfiguration",
+      "description": "Grants permission to retrieve shared configuration for the current SSO instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetSsoConfiguration",
+      "methodName": "toGetSsoConfiguration",
+      "description": "Grants permission to retrieve configuration for the current SSO instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetTrust",
+      "methodName": "toGetTrust",
+      "description": "Grants permission to retrieve the federation trust in a target account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ImportApplicationInstanceServiceProviderMetadata",
+      "methodName": "toImportApplicationInstanceServiceProviderMetadata",
+      "description": "Grants permission to update the application instance by uploading an application SAML metadata file provided by the service provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListAccountAssignmentCreationStatus",
+      "methodName": "toListAccountAssignmentCreationStatus",
+      "description": "Grants permission to list the status of the AWS account assignment creation requests for a specified SSO instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentCreationStatus.html"
+    },
+    {
+      "name": "ListAccountAssignmentDeletionStatus",
+      "methodName": "toListAccountAssignmentDeletionStatus",
+      "description": "Grants permission to list the status of the AWS account assignment deletion requests for a specified SSO instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentDeletionStatus.html"
+    },
+    {
+      "name": "ListAccountAssignments",
+      "methodName": "toListAccountAssignments",
+      "description": "Grants permission to list the assignee of the specified AWS account with the specified permission set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignments.html"
+    },
+    {
+      "name": "ListAccountAssignmentsForPrincipal",
+      "methodName": "toListAccountAssignmentsForPrincipal",
+      "description": "Grants permission to list accounts assigned to user or group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentsForPrincipal.html"
+    },
+    {
+      "name": "ListAccountsForProvisionedPermissionSet",
+      "methodName": "toListAccountsForProvisionedPermissionSet",
+      "description": "Grants permission to list all the AWS accounts where the specified permission set is provisioned",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountsForProvisionedPermissionSet.html"
+    },
+    {
+      "name": "ListApplicationAccessScopes",
+      "methodName": "toListApplicationAccessScopes",
+      "description": "Grants permission to list access scopes to an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAccessScopes.html"
+    },
+    {
+      "name": "ListApplicationAssignments",
+      "methodName": "toListApplicationAssignments",
+      "description": "Grants permission to list application assignments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAssignments.html"
+    },
+    {
+      "name": "ListApplicationAssignmentsForPrincipal",
+      "methodName": "toListApplicationAssignmentsForPrincipal",
+      "description": "Grants permission to list applications assigned to user or group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAssignmentsForPrincipal.html"
+    },
+    {
+      "name": "ListApplicationAuthenticationMethods",
+      "methodName": "toListApplicationAuthenticationMethods",
+      "description": "Grants permission to list authentication methods to an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAuthenticationMethods.html"
+    },
+    {
+      "name": "ListApplicationGrants",
+      "methodName": "toListApplicationGrants",
+      "description": "Grants permission to list grants from an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationGrants.html"
+    },
+    {
+      "name": "ListApplicationInstanceCertificates",
+      "methodName": "toListApplicationInstanceCertificates",
+      "description": "Grants permission to retrieve all of the certificates for a given application instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListApplicationInstances",
+      "methodName": "toListApplicationInstances",
+      "description": "Grants permission to retrieve all application instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListApplicationProviders",
+      "methodName": "toListApplicationProviders",
+      "description": "Grants permission to list application providers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationProviders.html"
+    },
+    {
+      "name": "ListApplicationTemplates",
+      "methodName": "toListApplicationTemplates",
+      "description": "Grants permission to retrieve all supported application templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to retrieve all applications associated with the instance of IAM Identity Center",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListCustomerManagedPolicyReferencesInPermissionSet",
+      "methodName": "toListCustomerManagedPolicyReferencesInPermissionSet",
+      "description": "Grants permission to list the customer managed policy references that are attached to a permission set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListCustomerManagedPolicyReferencesInPermissionSet.html"
+    },
+    {
+      "name": "ListDirectoryAssociations",
+      "methodName": "toListDirectoryAssociations",
+      "description": "Grants permission to retrieve details about the directory connected to AWS IAM Identity Center",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListInstances",
+      "methodName": "toListInstances",
+      "description": "Grants permission to list the SSO Instances that the caller has access to",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html"
+    },
+    {
+      "name": "ListManagedPoliciesInPermissionSet",
+      "methodName": "toListManagedPoliciesInPermissionSet",
+      "description": "Grants permission to list the AWS managed policies that are attached to a specified permission set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListManagedPoliciesInPermissionSet.html"
+    },
+    {
+      "name": "ListPermissionSetProvisioningStatus",
+      "methodName": "toListPermissionSetProvisioningStatus",
+      "description": "Grants permission to list the status of the Permission Set Provisioning requests for a specified SSO instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSetProvisioningStatus.html"
+    },
+    {
+      "name": "ListPermissionSets",
+      "methodName": "toListPermissionSets",
+      "description": "Grants permission to retrieve all permission sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSets.html"
+    },
+    {
+      "name": "ListPermissionSetsProvisionedToAccount",
+      "methodName": "toListPermissionSetsProvisionedToAccount",
+      "description": "Grants permission to list all the permission sets that are provisioned to a specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSetsProvisionedToAccount.html"
+    },
+    {
+      "name": "ListProfileAssociations",
+      "methodName": "toListProfileAssociations",
+      "description": "Grants permission to retrieve the directory user or group associated with the profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to retrieve all profiles for an application instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListRegions",
+      "methodName": "toListRegions",
+      "description": "Grants permission to list all regions configured for an IAM Identity Center instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags that are attached to a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTrustedTokenIssuers",
+      "methodName": "toListTrustedTokenIssuers",
+      "description": "Grants permission to list trusted token issuers for an instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListTrustedTokenIssuers.html"
+    },
+    {
+      "name": "ProvisionPermissionSet",
+      "methodName": "toProvisionPermissionSet",
+      "description": "Grants permission to provision a specified permission set to the specified target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html"
+    },
+    {
+      "name": "PutApplicationAccessScope",
+      "methodName": "toPutApplicationAccessScope",
+      "description": "Grants permission to create/update an access scope to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAccessScope.html"
+    },
+    {
+      "name": "PutApplicationAssignmentConfiguration",
+      "methodName": "toPutApplicationAssignmentConfiguration",
+      "description": "Grants permission to add assignment configurations to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAssignmentConfiguration.html"
+    },
+    {
+      "name": "PutApplicationAuthenticationMethod",
+      "methodName": "toPutApplicationAuthenticationMethod",
+      "description": "Grants permission to create/update an authentication method to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAuthenticationMethod.html"
+    },
+    {
+      "name": "PutApplicationGrant",
+      "methodName": "toPutApplicationGrant",
+      "description": "Grants permission to create/update a grant to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationGrant.html"
+    },
+    {
+      "name": "PutApplicationSessionConfiguration",
+      "methodName": "toPutApplicationSessionConfiguration",
+      "description": "Grants permission to put session configuration for an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationSessionConfiguration.html"
+    },
+    {
+      "name": "PutInlinePolicyToPermissionSet",
+      "methodName": "toPutInlinePolicyToPermissionSet",
+      "description": "Grants permission to attach an IAM inline policy to a permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutInlinePolicyToPermissionSet.html"
+    },
+    {
+      "name": "PutMfaDeviceManagementForDirectory",
+      "methodName": "toPutMfaDeviceManagementForDirectory",
+      "description": "Grants permission to put Mfa Device Management settings for the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "PutPermissionsBoundaryToPermissionSet",
+      "methodName": "toPutPermissionsBoundaryToPermissionSet",
+      "description": "Grants permission to add permissions boundary to a permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutPermissionsBoundaryToPermissionSet.html"
+    },
+    {
+      "name": "PutPermissionsPolicy",
+      "methodName": "toPutPermissionsPolicy",
+      "description": "Grants permission to add a policy to a permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "RemoveRegion",
+      "methodName": "toRemoveRegion",
+      "description": "Grants permission to remove a region from an IAM Identity Center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html"
+    },
+    {
+      "name": "SearchGroups",
+      "methodName": "toSearchGroups",
+      "description": "Grants permission to search for groups within the associated directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "SearchUsers",
+      "methodName": "toSearchUsers",
+      "description": "Grants permission to search for users within the associated directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "StartSSO",
+      "methodName": "toStartSSO",
+      "description": "Grants permission to initialize AWS IAM Identity Center",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate a set of tags with a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate a set of tags from a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateApplicationInstanceActiveCertificate",
+      "methodName": "toUpdateApplicationInstanceActiveCertificate",
+      "description": "Grants permission to set a certificate as the active one for this application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateApplicationInstanceDisplayData",
+      "methodName": "toUpdateApplicationInstanceDisplayData",
+      "description": "Grants permission to update display data of an application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateApplicationInstanceResponseConfiguration",
+      "methodName": "toUpdateApplicationInstanceResponseConfiguration",
+      "description": "Grants permission to update federation response configuration for the application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateApplicationInstanceResponseSchemaConfiguration",
+      "methodName": "toUpdateApplicationInstanceResponseSchemaConfiguration",
+      "description": "Grants permission to update federation response schema configuration for the application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateApplicationInstanceSecurityConfiguration",
+      "methodName": "toUpdateApplicationInstanceSecurityConfiguration",
+      "description": "Grants permission to update security details for the application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateApplicationInstanceServiceProviderConfiguration",
+      "methodName": "toUpdateApplicationInstanceServiceProviderConfiguration",
+      "description": "Grants permission to update service provider related configuration for the application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateApplicationInstanceStatus",
+      "methodName": "toUpdateApplicationInstanceStatus",
+      "description": "Grants permission to update the status of an application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateInstance",
+      "methodName": "toUpdateInstance",
+      "description": "Grants permission to update an identity center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateInstance.html"
+    },
+    {
+      "name": "UpdateInstanceAccessControlAttributeConfiguration",
+      "methodName": "toUpdateInstanceAccessControlAttributeConfiguration",
+      "description": "Grants permission to update the attributes to use with the instance for ABAC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateInstanceAccessControlAttributeConfiguration.html"
+    },
+    {
+      "name": "UpdateManagedApplicationInstanceStatus",
+      "methodName": "toUpdateManagedApplicationInstanceStatus",
+      "description": "Grants permission to update the status of a managed application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdatePermissionSet",
+      "methodName": "toUpdatePermissionSet",
+      "description": "Grants permission to update the permission set",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdatePermissionSet.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to update the profile for an application instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateSSOConfiguration",
+      "methodName": "toUpdateSSOConfiguration",
+      "description": "Grants permission to update the configuration for the current SSO instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateTrust",
+      "methodName": "toUpdateTrust",
+      "description": "Grants permission to update the federation trust in a target account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateTrustedTokenIssuer",
+      "methodName": "toUpdateTrustedTokenIssuer",
+      "description": "Grants permission to update a trusted token issuer for an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateTrustedTokenIssuer.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Account",
+      "methodName": "onAccount",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html",
+      "arn": "arn:${Partition}:sso:::account/${AccountId}",
+      "placeholders": [
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_Application.html",
+      "arn": "arn:${Partition}:sso::${AccountId}:application/${InstanceId}/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifApplicationAccount",
+        "ifPrimaryRegion"
+      ]
+    },
+    {
+      "name": "ApplicationProvider",
+      "methodName": "onApplicationProvider",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ApplicationProvider.html",
+      "arn": "arn:${Partition}:sso::aws:applicationProvider/${ApplicationProviderId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationProviderId",
+          "name": "applicationProviderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Instance",
+      "methodName": "onInstance",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html",
+      "arn": "arn:${Partition}:sso:::instance/${InstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifPrimaryRegion"
+      ],
+      "cdkRef": {
+        "module": "aws_sso",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "arn": "instanceArn"
+      }
+    },
+    {
+      "name": "PermissionSet",
+      "methodName": "onPermissionSet",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html",
+      "arn": "arn:${Partition}:sso:::permissionSet/${InstanceId}/${PermissionSetId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PermissionSetId",
+          "name": "permissionSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifPrimaryRegion"
+      ]
+    },
+    {
+      "name": "TrustedTokenIssuer",
+      "methodName": "onTrustedTokenIssuer",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_TrustedTokenIssuerMetadata.html",
+      "arn": "arn:${Partition}:sso::${AccountId}:trustedTokenIssuer/${InstanceId}/${TrustedTokenIssuerId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TrustedTokenIssuerId",
+          "name": "trustedTokenIssuerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifPrimaryRegion"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/tagging.html",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateInstance",
+        "toCreatePermissionSet",
+        "toCreateTrustedTokenIssuer",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/tagging.html",
+      "relatedActionMethods": [
+        "toAddRegion",
+        "toAttachCustomerManagedPolicyReferenceToPermissionSet",
+        "toAttachManagedPolicyToPermissionSet",
+        "toCreateAccountAssignment",
+        "toCreateApplication",
+        "toCreateApplicationAssignment",
+        "toCreateInstance",
+        "toCreateInstanceAccessControlAttributeConfiguration",
+        "toCreatePermissionSet",
+        "toCreateTrustedTokenIssuer",
+        "toDeleteAccountAssignment",
+        "toDeleteApplication",
+        "toDeleteApplicationAccessScope",
+        "toDeleteApplicationAssignment",
+        "toDeleteApplicationAuthenticationMethod",
+        "toDeleteApplicationGrant",
+        "toDeleteInlinePolicyFromPermissionSet",
+        "toDeleteInstance",
+        "toDeleteInstanceAccessControlAttributeConfiguration",
+        "toDeletePermissionSet",
+        "toDeletePermissionsBoundaryFromPermissionSet",
+        "toDeleteTrustedTokenIssuer",
+        "toDescribeAccountAssignmentCreationStatus",
+        "toDescribeAccountAssignmentDeletionStatus",
+        "toDescribeApplication",
+        "toDescribeApplicationAssignment",
+        "toDescribeInstance",
+        "toDescribeInstanceAccessControlAttributeConfiguration",
+        "toDescribePermissionSet",
+        "toDescribePermissionSetProvisioningStatus",
+        "toDescribeRegion",
+        "toDescribeTrustedTokenIssuer",
+        "toDetachCustomerManagedPolicyReferenceFromPermissionSet",
+        "toDetachManagedPolicyFromPermissionSet",
+        "toGetApplicationAccessScope",
+        "toGetApplicationAssignmentConfiguration",
+        "toGetApplicationAuthenticationMethod",
+        "toGetApplicationGrant",
+        "toGetApplicationSessionConfiguration",
+        "toGetInlinePolicyForPermissionSet",
+        "toGetPermissionsBoundaryForPermissionSet",
+        "toListAccountAssignmentCreationStatus",
+        "toListAccountAssignmentDeletionStatus",
+        "toListAccountAssignments",
+        "toListAccountAssignmentsForPrincipal",
+        "toListAccountsForProvisionedPermissionSet",
+        "toListApplicationAccessScopes",
+        "toListApplicationAssignments",
+        "toListApplicationAssignmentsForPrincipal",
+        "toListApplicationAuthenticationMethods",
+        "toListApplicationGrants",
+        "toListCustomerManagedPolicyReferencesInPermissionSet",
+        "toListManagedPoliciesInPermissionSet",
+        "toListPermissionSetProvisioningStatus",
+        "toListPermissionSets",
+        "toListPermissionSetsProvisionedToAccount",
+        "toListRegions",
+        "toListTagsForResource",
+        "toListTrustedTokenIssuers",
+        "toProvisionPermissionSet",
+        "toPutApplicationAccessScope",
+        "toPutApplicationAssignmentConfiguration",
+        "toPutApplicationAuthenticationMethod",
+        "toPutApplicationGrant",
+        "toPutApplicationSessionConfiguration",
+        "toPutInlinePolicyToPermissionSet",
+        "toPutPermissionsBoundaryToPermissionSet",
+        "toRemoveRegion",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateInstance",
+        "toUpdateInstanceAccessControlAttributeConfiguration",
+        "toUpdatePermissionSet",
+        "toUpdateTrustedTokenIssuer"
+      ],
+      "relatedResourceTypes": [
+        "Application",
+        "Instance",
+        "PermissionSet",
+        "TrustedTokenIssuer"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/tagging.html",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateInstance",
+        "toCreatePermissionSet",
+        "toCreateTrustedTokenIssuer",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitycenter:ApplicationArn",
+      "methodName": "ifIdentitycenterApplicationArn",
+      "description": "Filters access by the ARN of the IAM Identity Center application",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/API_Application.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "identitycenter:ApplicationArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "identitycenter:InstanceArn",
+      "methodName": "ifIdentitycenterInstanceArn",
+      "description": "Filters access by the ARN of the IAM Identity Center instance",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/API_InstanceMetadata.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "identitycenter:InstanceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "sso:ApplicationAccount",
+      "methodName": "ifApplicationAccount",
+      "description": "Filters access by the account which creates the application. This condition key is not supported for customer managed SAML applications",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/API_Application.html",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateApplicationAssignment",
+        "toDeleteApplication",
+        "toDeleteApplicationAccessScope",
+        "toDeleteApplicationAssignment",
+        "toDeleteApplicationAuthenticationMethod",
+        "toDeleteApplicationGrant",
+        "toDescribeApplication",
+        "toDescribeApplicationAssignment",
+        "toGetApplicationAccessScope",
+        "toGetApplicationAssignmentConfiguration",
+        "toGetApplicationAuthenticationMethod",
+        "toGetApplicationGrant",
+        "toGetApplicationSessionConfiguration",
+        "toListApplicationAccessScopes",
+        "toListApplicationAssignments",
+        "toListApplicationAssignmentsForPrincipal",
+        "toListApplicationAuthenticationMethods",
+        "toListApplicationGrants",
+        "toListTagsForResource",
+        "toPutApplicationAccessScope",
+        "toPutApplicationAssignmentConfiguration",
+        "toPutApplicationAuthenticationMethod",
+        "toPutApplicationGrant",
+        "toPutApplicationSessionConfiguration",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication"
+      ],
+      "relatedResourceTypes": [
+        "Application"
+      ],
+      "keyLiteral": "ApplicationAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sso:PrimaryRegion",
+      "methodName": "ifPrimaryRegion",
+      "description": "Filters access by the primary region of the IAM Identity Center instance",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/API_InstanceMetadata.html",
+      "relatedActionMethods": [
+        "toAddRegion",
+        "toAttachCustomerManagedPolicyReferenceToPermissionSet",
+        "toAttachManagedPolicyToPermissionSet",
+        "toCreateAccountAssignment",
+        "toCreateApplication",
+        "toCreateApplicationAssignment",
+        "toCreateInstance",
+        "toCreateInstanceAccessControlAttributeConfiguration",
+        "toCreatePermissionSet",
+        "toCreateTrustedTokenIssuer",
+        "toDeleteAccountAssignment",
+        "toDeleteApplication",
+        "toDeleteApplicationAccessScope",
+        "toDeleteApplicationAssignment",
+        "toDeleteApplicationAuthenticationMethod",
+        "toDeleteApplicationGrant",
+        "toDeleteInlinePolicyFromPermissionSet",
+        "toDeleteInstance",
+        "toDeleteInstanceAccessControlAttributeConfiguration",
+        "toDeletePermissionSet",
+        "toDeletePermissionsBoundaryFromPermissionSet",
+        "toDeleteTrustedTokenIssuer",
+        "toDescribeAccountAssignmentCreationStatus",
+        "toDescribeAccountAssignmentDeletionStatus",
+        "toDescribeApplication",
+        "toDescribeApplicationAssignment",
+        "toDescribeInstance",
+        "toDescribeInstanceAccessControlAttributeConfiguration",
+        "toDescribePermissionSet",
+        "toDescribePermissionSetProvisioningStatus",
+        "toDescribeRegion",
+        "toDescribeTrustedTokenIssuer",
+        "toDetachCustomerManagedPolicyReferenceFromPermissionSet",
+        "toDetachManagedPolicyFromPermissionSet",
+        "toGetApplicationAccessScope",
+        "toGetApplicationAssignmentConfiguration",
+        "toGetApplicationAuthenticationMethod",
+        "toGetApplicationGrant",
+        "toGetApplicationSessionConfiguration",
+        "toGetInlinePolicyForPermissionSet",
+        "toGetPermissionsBoundaryForPermissionSet",
+        "toListAccountAssignmentCreationStatus",
+        "toListAccountAssignmentDeletionStatus",
+        "toListAccountAssignments",
+        "toListAccountAssignmentsForPrincipal",
+        "toListAccountsForProvisionedPermissionSet",
+        "toListApplicationAccessScopes",
+        "toListApplicationAssignments",
+        "toListApplicationAssignmentsForPrincipal",
+        "toListApplicationAuthenticationMethods",
+        "toListApplicationGrants",
+        "toListCustomerManagedPolicyReferencesInPermissionSet",
+        "toListManagedPoliciesInPermissionSet",
+        "toListPermissionSetProvisioningStatus",
+        "toListPermissionSets",
+        "toListPermissionSetsProvisionedToAccount",
+        "toListRegions",
+        "toListTagsForResource",
+        "toListTrustedTokenIssuers",
+        "toProvisionPermissionSet",
+        "toPutApplicationAccessScope",
+        "toPutApplicationAssignmentConfiguration",
+        "toPutApplicationAuthenticationMethod",
+        "toPutApplicationGrant",
+        "toPutApplicationSessionConfiguration",
+        "toPutInlinePolicyToPermissionSet",
+        "toPutPermissionsBoundaryToPermissionSet",
+        "toRemoveRegion",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateInstance",
+        "toUpdateInstanceAccessControlAttributeConfiguration",
+        "toUpdatePermissionSet",
+        "toUpdateTrustedTokenIssuer"
+      ],
+      "relatedResourceTypes": [
+        "Application",
+        "Instance",
+        "PermissionSet",
+        "TrustedTokenIssuer"
+      ],
+      "keyLiteral": "PrimaryRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

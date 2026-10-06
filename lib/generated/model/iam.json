@@ -1,0 +1,2686 @@
+{
+  "schemaVersion": 1,
+  "filename": "iam",
+  "className": "Iam",
+  "name": "iam",
+  "servicePrefix": "iam",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iam.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptDelegationRequest",
+      "AddClientIDToOpenIDConnectProvider",
+      "AddRoleToInstanceProfile",
+      "AddUserToGroup",
+      "AssociateDelegationRequest",
+      "AttachGroupPolicy",
+      "AttachRolePolicy",
+      "AttachUserPolicy",
+      "ChangePassword",
+      "CreateAccessKey",
+      "CreateAccountAlias",
+      "CreateDelegationRequest",
+      "CreateGroup",
+      "CreateInstanceProfile",
+      "CreateLoginProfile",
+      "CreateOpenIDConnectProvider",
+      "CreatePolicy",
+      "CreatePolicyVersion",
+      "CreateRole",
+      "CreateSAMLProvider",
+      "CreateServiceLinkedRole",
+      "CreateServiceSpecificCredential",
+      "CreateUser",
+      "CreateVirtualMFADevice",
+      "DeactivateMFADevice",
+      "DeleteAccessKey",
+      "DeleteAccountAlias",
+      "DeleteAccountPasswordPolicy",
+      "DeleteCloudFrontPublicKey",
+      "DeleteGroup",
+      "DeleteGroupPolicy",
+      "DeleteInstanceProfile",
+      "DeleteLoginProfile",
+      "DeleteOpenIDConnectProvider",
+      "DeletePolicy",
+      "DeletePolicyVersion",
+      "DeleteRole",
+      "DeleteRolePermissionsBoundary",
+      "DeleteRolePolicy",
+      "DeleteSAMLProvider",
+      "DeleteSSHPublicKey",
+      "DeleteServerCertificate",
+      "DeleteServiceLinkedRole",
+      "DeleteServiceSpecificCredential",
+      "DeleteSigningCertificate",
+      "DeleteUser",
+      "DeleteUserPermissionsBoundary",
+      "DeleteUserPolicy",
+      "DeleteVirtualMFADevice",
+      "DetachGroupPolicy",
+      "DetachRolePolicy",
+      "DetachUserPolicy",
+      "DisableOrganizationsRootCredentialsManagement",
+      "DisableOrganizationsRootSessions",
+      "DisableOutboundWebIdentityFederation",
+      "EnableMFADevice",
+      "EnableOrganizationsRootCredentialsManagement",
+      "EnableOrganizationsRootSessions",
+      "EnableOutboundWebIdentityFederation",
+      "PutAccountProperties",
+      "PutGroupPolicy",
+      "PutRolePermissionsBoundary",
+      "PutRolePolicy",
+      "PutUserPermissionsBoundary",
+      "PutUserPolicy",
+      "RejectDelegationRequest",
+      "RemoveClientIDFromOpenIDConnectProvider",
+      "RemoveRoleFromInstanceProfile",
+      "RemoveUserFromGroup",
+      "ResetServiceSpecificCredential",
+      "ResyncMFADevice",
+      "SendDelegationToken",
+      "SetDefaultPolicyVersion",
+      "SetSTSRegionalEndpointStatus",
+      "SetSecurityTokenServicePreferences",
+      "TagInstanceProfile",
+      "TagMFADevice",
+      "TagOpenIDConnectProvider",
+      "TagPolicy",
+      "TagRole",
+      "TagSAMLProvider",
+      "TagServerCertificate",
+      "TagUser",
+      "UntagInstanceProfile",
+      "UntagMFADevice",
+      "UntagOpenIDConnectProvider",
+      "UntagPolicy",
+      "UntagRole",
+      "UntagSAMLProvider",
+      "UntagServerCertificate",
+      "UntagUser",
+      "UpdateAccessKey",
+      "UpdateAccountEmailAddress",
+      "UpdateAccountName",
+      "UpdateAccountPasswordPolicy",
+      "UpdateAssumeRolePolicy",
+      "UpdateCloudFrontPublicKey",
+      "UpdateGroup",
+      "UpdateLoginProfile",
+      "UpdateOpenIDConnectProviderThumbprint",
+      "UpdateRole",
+      "UpdateRoleDescription",
+      "UpdateSAMLProvider",
+      "UpdateSSHPublicKey",
+      "UpdateServerCertificate",
+      "UpdateServiceSpecificCredential",
+      "UpdateSigningCertificate",
+      "UpdateUser",
+      "UploadCloudFrontPublicKey",
+      "UploadSSHPublicKey",
+      "UploadServerCertificate",
+      "UploadSigningCertificate",
+      "PassRole"
+    ],
+    "Permissions management": [
+      "AttachGroupPolicy",
+      "AttachRolePolicy",
+      "AttachUserPolicy",
+      "CreatePolicy",
+      "CreatePolicyVersion",
+      "DeleteAccountPasswordPolicy",
+      "DeleteGroupPolicy",
+      "DeletePolicy",
+      "DeletePolicyVersion",
+      "DeleteRolePermissionsBoundary",
+      "DeleteRolePolicy",
+      "DeleteUserPermissionsBoundary",
+      "DeleteUserPolicy",
+      "DetachGroupPolicy",
+      "DetachRolePolicy",
+      "DetachUserPolicy",
+      "PutGroupPolicy",
+      "PutRolePermissionsBoundary",
+      "PutRolePolicy",
+      "PutUserPermissionsBoundary",
+      "PutUserPolicy",
+      "SetDefaultPolicyVersion",
+      "UpdateAssumeRolePolicy"
+    ],
+    "Read": [
+      "GenerateCredentialReport",
+      "GenerateOrganizationsAccessReport",
+      "GenerateServiceLastAccessedDetails",
+      "GetAccessKeyLastUsed",
+      "GetAccountAuthorizationDetails",
+      "GetAccountEmailAddress",
+      "GetAccountName",
+      "GetAccountPasswordPolicy",
+      "GetAccountProperties",
+      "GetCloudFrontPublicKey",
+      "GetContextKeysForCustomPolicy",
+      "GetContextKeysForPrincipalPolicy",
+      "GetCredentialReport",
+      "GetDelegationRequest",
+      "GetGroup",
+      "GetGroupPolicy",
+      "GetHumanReadableSummary",
+      "GetInstanceProfile",
+      "GetMFADevice",
+      "GetOpenIDConnectProvider",
+      "GetOrganizationsAccessReport",
+      "GetOutboundWebIdentityFederationInfo",
+      "GetPolicy",
+      "GetPolicyVersion",
+      "GetRole",
+      "GetRolePolicy",
+      "GetRoleTemplateVersion",
+      "GetSAMLProvider",
+      "GetSSHPublicKey",
+      "GetServerCertificate",
+      "GetServiceLastAccessedDetails",
+      "GetServiceLastAccessedDetailsWithEntities",
+      "GetServiceLinkedRoleDeletionStatus",
+      "GetUser",
+      "GetUserPolicy",
+      "SimulateCustomPolicy",
+      "SimulatePrincipalPolicy"
+    ],
+    "List": [
+      "GetAccountSummary",
+      "GetLoginProfile",
+      "ListAccessKeys",
+      "ListAccountAliases",
+      "ListAttachedGroupPolicies",
+      "ListAttachedRolePolicies",
+      "ListAttachedUserPolicies",
+      "ListCloudFrontPublicKeys",
+      "ListDelegationRequests",
+      "ListEntitiesForPolicy",
+      "ListGroupPolicies",
+      "ListGroups",
+      "ListGroupsForUser",
+      "ListInstanceProfileTags",
+      "ListInstanceProfiles",
+      "ListInstanceProfilesForRole",
+      "ListMFADeviceTags",
+      "ListMFADevices",
+      "ListOpenIDConnectProviderTags",
+      "ListOpenIDConnectProviders",
+      "ListOrganizationsFeatures",
+      "ListPolicies",
+      "ListPoliciesGrantingServiceAccess",
+      "ListPolicyTags",
+      "ListPolicyVersions",
+      "ListRolePolicies",
+      "ListRoleTags",
+      "ListRoles",
+      "ListSAMLProviderTags",
+      "ListSAMLProviders",
+      "ListSSHPublicKeys",
+      "ListSTSRegionalEndpointsStatus",
+      "ListServerCertificateTags",
+      "ListServerCertificates",
+      "ListServiceSpecificCredentials",
+      "ListSigningCertificates",
+      "ListUserPolicies",
+      "ListUserTags",
+      "ListUsers",
+      "ListVirtualMFADevices"
+    ],
+    "Tagging": [
+      "TagInstanceProfile",
+      "TagMFADevice",
+      "TagOpenIDConnectProvider",
+      "TagPolicy",
+      "TagRole",
+      "TagSAMLProvider",
+      "TagServerCertificate",
+      "TagUser",
+      "UntagInstanceProfile",
+      "UntagMFADevice",
+      "UntagOpenIDConnectProvider",
+      "UntagPolicy",
+      "UntagRole",
+      "UntagSAMLProvider",
+      "UntagServerCertificate",
+      "UntagUser"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptDelegationRequest",
+      "methodName": "toAcceptDelegationRequest",
+      "description": "Accepts a delegation request resource, granting the requested temporary access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcceptDelegationRequest.html"
+    },
+    {
+      "name": "AddClientIDToOpenIDConnectProvider",
+      "methodName": "toAddClientIDToOpenIDConnectProvider",
+      "description": "Grants permission to add a new client ID (audience) to the list of registered IDs for the specified IAM OpenID Connect (OIDC) provider resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html"
+    },
+    {
+      "name": "AddRoleToInstanceProfile",
+      "methodName": "toAddRoleToInstanceProfile",
+      "description": "Grants permission to add an IAM role to the specified instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html"
+    },
+    {
+      "name": "AddUserToGroup",
+      "methodName": "toAddUserToGroup",
+      "description": "Grants permission to add an IAM user to the specified IAM group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html"
+    },
+    {
+      "name": "AssociateDelegationRequest",
+      "methodName": "toAssociateDelegationRequest",
+      "description": "Associates a delegation request resource with the calling identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssociateDelegationRequest.html"
+    },
+    {
+      "name": "AttachGroupPolicy",
+      "methodName": "toAttachGroupPolicy",
+      "description": "Grants permission to attach a managed policy to the specified IAM group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html"
+    },
+    {
+      "name": "AttachRolePolicy",
+      "methodName": "toAttachRolePolicy",
+      "description": "Grants permission to attach a managed policy to the specified IAM role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html"
+    },
+    {
+      "name": "AttachUserPolicy",
+      "methodName": "toAttachUserPolicy",
+      "description": "Grants permission to attach a managed policy to the specified IAM user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html"
+    },
+    {
+      "name": "ChangePassword",
+      "methodName": "toChangePassword",
+      "description": "Grants permission to an IAM user to change their own password",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html"
+    },
+    {
+      "name": "CreateAccessKey",
+      "methodName": "toCreateAccessKey",
+      "description": "Grants permission to create access key and secret access key for the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html"
+    },
+    {
+      "name": "CreateAccountAlias",
+      "methodName": "toCreateAccountAlias",
+      "description": "Grants permission to create an alias for your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html"
+    },
+    {
+      "name": "CreateDelegationRequest",
+      "methodName": "toCreateDelegationRequest",
+      "description": "Creates an IAM delegation request resource for temporary access delegation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateDelegationRequest.html"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a new group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateInstanceProfile",
+      "methodName": "toCreateInstanceProfile",
+      "description": "Grants permission to create a new instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html"
+    },
+    {
+      "name": "CreateLoginProfile",
+      "methodName": "toCreateLoginProfile",
+      "description": "Grants permission to create a password for the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html"
+    },
+    {
+      "name": "CreateOpenIDConnectProvider",
+      "methodName": "toCreateOpenIDConnectProvider",
+      "description": "Grants permission to create an IAM resource that describes an identity provider (IdP) that supports OpenID Connect (OIDC)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html"
+    },
+    {
+      "name": "CreatePolicy",
+      "methodName": "toCreatePolicy",
+      "description": "Grants permission to create a new managed policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html"
+    },
+    {
+      "name": "CreatePolicyVersion",
+      "methodName": "toCreatePolicyVersion",
+      "description": "Grants permission to create a new version of the specified managed policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html"
+    },
+    {
+      "name": "CreateRole",
+      "methodName": "toCreateRole",
+      "description": "Grants permission to create a new role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html"
+    },
+    {
+      "name": "CreateSAMLProvider",
+      "methodName": "toCreateSAMLProvider",
+      "description": "Grants permission to create an IAM resource that describes an identity provider (IdP) that supports SAML 2.0",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html"
+    },
+    {
+      "name": "CreateServiceLinkedRole",
+      "methodName": "toCreateServiceLinkedRole",
+      "description": "Grants permission to create an IAM role that allows an AWS service to perform actions on your behalf",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceLinkedRole.html"
+    },
+    {
+      "name": "CreateServiceSpecificCredential",
+      "methodName": "toCreateServiceSpecificCredential",
+      "description": "Grants permission to create a new service-specific credential for an IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceSpecificCredential.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a new IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html"
+    },
+    {
+      "name": "CreateVirtualMFADevice",
+      "methodName": "toCreateVirtualMFADevice",
+      "description": "Grants permission to create a new virtual MFA device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateVirtualMFADevice.html"
+    },
+    {
+      "name": "DeactivateMFADevice",
+      "methodName": "toDeactivateMFADevice",
+      "description": "Grants permission to deactivate the specified MFA device and remove its association with the IAM user for which it was originally enabled",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html"
+    },
+    {
+      "name": "DeleteAccessKey",
+      "methodName": "toDeleteAccessKey",
+      "description": "Grants permission to delete the access key pair that is associated with the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html"
+    },
+    {
+      "name": "DeleteAccountAlias",
+      "methodName": "toDeleteAccountAlias",
+      "description": "Grants permission to delete the specified AWS account alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html"
+    },
+    {
+      "name": "DeleteAccountPasswordPolicy",
+      "methodName": "toDeleteAccountPasswordPolicy",
+      "description": "Grants permission to delete the password policy for the AWS account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html"
+    },
+    {
+      "name": "DeleteCloudFrontPublicKey",
+      "methodName": "toDeleteCloudFrontPublicKey",
+      "description": "Grants permission to delete an existing CloudFront public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete the specified IAM group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteGroupPolicy",
+      "methodName": "toDeleteGroupPolicy",
+      "description": "Grants permission to delete the specified inline policy from its group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html"
+    },
+    {
+      "name": "DeleteInstanceProfile",
+      "methodName": "toDeleteInstanceProfile",
+      "description": "Grants permission to delete the specified instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteInstanceProfile.html"
+    },
+    {
+      "name": "DeleteLoginProfile",
+      "methodName": "toDeleteLoginProfile",
+      "description": "Grants permission to delete the password for the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html"
+    },
+    {
+      "name": "DeleteOpenIDConnectProvider",
+      "methodName": "toDeleteOpenIDConnectProvider",
+      "description": "Grants permission to delete an OpenID Connect identity provider (IdP) resource object in IAM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html"
+    },
+    {
+      "name": "DeletePolicy",
+      "methodName": "toDeletePolicy",
+      "description": "Grants permission to delete the specified managed policy and remove it from any IAM entities (users, groups, or roles) to which it is attached",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html"
+    },
+    {
+      "name": "DeletePolicyVersion",
+      "methodName": "toDeletePolicyVersion",
+      "description": "Grants permission to delete a version from the specified managed policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html"
+    },
+    {
+      "name": "DeleteRole",
+      "methodName": "toDeleteRole",
+      "description": "Grants permission to delete the specified role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRole.html"
+    },
+    {
+      "name": "DeleteRolePermissionsBoundary",
+      "methodName": "toDeleteRolePermissionsBoundary",
+      "description": "Grants permission to remove the permissions boundary from a role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePermissionsBoundary.html"
+    },
+    {
+      "name": "DeleteRolePolicy",
+      "methodName": "toDeleteRolePolicy",
+      "description": "Grants permission to delete the specified inline policy from the specified role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html"
+    },
+    {
+      "name": "DeleteSAMLProvider",
+      "methodName": "toDeleteSAMLProvider",
+      "description": "Grants permission to delete a SAML provider resource in IAM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html"
+    },
+    {
+      "name": "DeleteSSHPublicKey",
+      "methodName": "toDeleteSSHPublicKey",
+      "description": "Grants permission to delete the specified SSH public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html"
+    },
+    {
+      "name": "DeleteServerCertificate",
+      "methodName": "toDeleteServerCertificate",
+      "description": "Grants permission to delete the specified server certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServerCertificate.html"
+    },
+    {
+      "name": "DeleteServiceLinkedRole",
+      "methodName": "toDeleteServiceLinkedRole",
+      "description": "Grants permission to delete an IAM role that is linked to a specific AWS service, if the service is no longer using it",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html"
+    },
+    {
+      "name": "DeleteServiceSpecificCredential",
+      "methodName": "toDeleteServiceSpecificCredential",
+      "description": "Grants permission to delete the specified service-specific credential for an IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceSpecificCredential.html"
+    },
+    {
+      "name": "DeleteSigningCertificate",
+      "methodName": "toDeleteSigningCertificate",
+      "description": "Grants permission to delete a signing certificate that is associated with the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSigningCertificate.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DeleteUserPermissionsBoundary",
+      "methodName": "toDeleteUserPermissionsBoundary",
+      "description": "Grants permission to remove the permissions boundary from the specified IAM user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPermissionsBoundary.html"
+    },
+    {
+      "name": "DeleteUserPolicy",
+      "methodName": "toDeleteUserPolicy",
+      "description": "Grants permission to delete the specified inline policy from an IAM user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html"
+    },
+    {
+      "name": "DeleteVirtualMFADevice",
+      "methodName": "toDeleteVirtualMFADevice",
+      "description": "Grants permission to delete a virtual MFA device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html"
+    },
+    {
+      "name": "DetachGroupPolicy",
+      "methodName": "toDetachGroupPolicy",
+      "description": "Grants permission to detach a managed policy from the specified IAM group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html"
+    },
+    {
+      "name": "DetachRolePolicy",
+      "methodName": "toDetachRolePolicy",
+      "description": "Grants permission to detach a managed policy from the specified role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html"
+    },
+    {
+      "name": "DetachUserPolicy",
+      "methodName": "toDetachUserPolicy",
+      "description": "Grants permission to detach a managed policy from the specified IAM user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html"
+    },
+    {
+      "name": "DisableOrganizationsRootCredentialsManagement",
+      "methodName": "toDisableOrganizationsRootCredentialsManagement",
+      "description": "Grants permission to disable the management of member account root user credentials for an organization managed under the current account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DisableOrganizationsRootCredentialsManagement.html"
+    },
+    {
+      "name": "DisableOrganizationsRootSessions",
+      "methodName": "toDisableOrganizationsRootSessions",
+      "description": "Grants permission to disable privileged root actions in member accounts for an organization managed under the current account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_DisableOrganizationsRootSessions.html"
+    },
+    {
+      "name": "DisableOutboundWebIdentityFederation",
+      "methodName": "toDisableOutboundWebIdentityFederation",
+      "description": "Disables the outbound identity federation feature for the callers account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html"
+    },
+    {
+      "name": "EnableMFADevice",
+      "methodName": "toEnableMFADevice",
+      "description": "Grants permission to enable an MFA device and associate it with the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"
+    },
+    {
+      "name": "EnableOrganizationsRootCredentialsManagement",
+      "methodName": "toEnableOrganizationsRootCredentialsManagement",
+      "description": "Grants permission to enable the management of member account root user credentials for an organization managed under the current account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOrganizationsRootCredentialsManagement.html"
+    },
+    {
+      "name": "EnableOrganizationsRootSessions",
+      "methodName": "toEnableOrganizationsRootSessions",
+      "description": "Grants permission to enable privileged root actions in member accounts for an organization managed under the current account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOrganizationsRootSessions.html"
+    },
+    {
+      "name": "EnableOutboundWebIdentityFederation",
+      "methodName": "toEnableOutboundWebIdentityFederation",
+      "description": "Enables the outbound identity federation feature for the callers account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOutboundWebIdentityFederation.html"
+    },
+    {
+      "name": "GenerateCredentialReport",
+      "methodName": "toGenerateCredentialReport",
+      "description": "Grants permission to generate a credential report for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html"
+    },
+    {
+      "name": "GenerateOrganizationsAccessReport",
+      "methodName": "toGenerateOrganizationsAccessReport",
+      "description": "Grants permission to generate an access report for an AWS Organizations entity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html"
+    },
+    {
+      "name": "GenerateServiceLastAccessedDetails",
+      "methodName": "toGenerateServiceLastAccessedDetails",
+      "description": "Grants permission to generate a service last accessed data report for an IAM resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateServiceLastAccessedDetails.html"
+    },
+    {
+      "name": "GetAccessKeyLastUsed",
+      "methodName": "toGetAccessKeyLastUsed",
+      "description": "Grants permission to retrieve information about when the specified access key was last used",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html"
+    },
+    {
+      "name": "GetAccountAuthorizationDetails",
+      "methodName": "toGetAccountAuthorizationDetails",
+      "description": "Grants permission to retrieve information about all IAM users, groups, roles, and policies in your AWS account, including their relationships to one another",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html"
+    },
+    {
+      "name": "GetAccountEmailAddress",
+      "methodName": "toGetAccountEmailAddress",
+      "description": "Grants permission to retrieve the email address that is associated with the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html"
+    },
+    {
+      "name": "GetAccountName",
+      "methodName": "toGetAccountName",
+      "description": "Grants permission to retrieve the account name that is associated with the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html"
+    },
+    {
+      "name": "GetAccountPasswordPolicy",
+      "methodName": "toGetAccountPasswordPolicy",
+      "description": "Grants permission to retrieve the password policy for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html"
+    },
+    {
+      "name": "GetAccountProperties",
+      "methodName": "toGetAccountProperties",
+      "description": "Grants permission to retrieve account-level properties for IAM features",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html",
+      "conditionMethods": [
+        "ifAccountPropertyNamespaces"
+      ]
+    },
+    {
+      "name": "GetAccountSummary",
+      "methodName": "toGetAccountSummary",
+      "description": "Grants permission to retrieve information about IAM entity usage and IAM quotas in the AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html"
+    },
+    {
+      "name": "GetCloudFrontPublicKey",
+      "methodName": "toGetCloudFrontPublicKey",
+      "description": "Grants permission to retrieve information about the specified CloudFront public key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html"
+    },
+    {
+      "name": "GetContextKeysForCustomPolicy",
+      "methodName": "toGetContextKeysForCustomPolicy",
+      "description": "Grants permission to retrieve a list of all of the context keys that are referenced in the specified policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html"
+    },
+    {
+      "name": "GetContextKeysForPrincipalPolicy",
+      "methodName": "toGetContextKeysForPrincipalPolicy",
+      "description": "Grants permission to retrieve a list of all context keys that are referenced in all IAM policies that are attached to the specified IAM identity (user, group, or role)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html"
+    },
+    {
+      "name": "GetCredentialReport",
+      "methodName": "toGetCredentialReport",
+      "description": "Grants permission to retrieve a credential report for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCredentialReport.html"
+    },
+    {
+      "name": "GetDelegationRequest",
+      "methodName": "toGetDelegationRequest",
+      "description": "Retrieves information about a specific delegation request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html"
+    },
+    {
+      "name": "GetGroup",
+      "methodName": "toGetGroup",
+      "description": "Grants permission to retrieve a list of IAM users in the specified IAM group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html"
+    },
+    {
+      "name": "GetGroupPolicy",
+      "methodName": "toGetGroupPolicy",
+      "description": "Grants permission to retrieve an inline policy document that is embedded in the specified IAM group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html"
+    },
+    {
+      "name": "GetHumanReadableSummary",
+      "methodName": "toGetHumanReadableSummary",
+      "description": "Retrieves a human readable summary for a given entity. At this time, only delegation request are supported",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetHumanReadableSummary.html"
+    },
+    {
+      "name": "GetInstanceProfile",
+      "methodName": "toGetInstanceProfile",
+      "description": "Grants permission to retrieve information about the specified instance profile, including the instance profile's path, GUID, ARN, and role",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html"
+    },
+    {
+      "name": "GetLoginProfile",
+      "methodName": "toGetLoginProfile",
+      "description": "Grants permission to retrieve the user name and password creation date for the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html"
+    },
+    {
+      "name": "GetMFADevice",
+      "methodName": "toGetMFADevice",
+      "description": "Grants permission to retrieve information about an MFA device for the specified user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetMFADevice.html"
+    },
+    {
+      "name": "GetOpenIDConnectProvider",
+      "methodName": "toGetOpenIDConnectProvider",
+      "description": "Grants permission to retrieve information about the specified OpenID Connect (OIDC) provider resource in IAM",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html"
+    },
+    {
+      "name": "GetOrganizationsAccessReport",
+      "methodName": "toGetOrganizationsAccessReport",
+      "description": "Grants permission to retrieve an AWS Organizations access report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html"
+    },
+    {
+      "name": "GetOutboundWebIdentityFederationInfo",
+      "methodName": "toGetOutboundWebIdentityFederationInfo",
+      "description": "Retrieves the configuration information for the outbound identity federation feature for the callers account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOutboundWebIdentityFederationInfo.html"
+    },
+    {
+      "name": "GetPolicy",
+      "methodName": "toGetPolicy",
+      "description": "Grants permission to retrieve information about the specified managed policy, including the policy's default version and the total number of identities to which the policy is attached",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html"
+    },
+    {
+      "name": "GetPolicyVersion",
+      "methodName": "toGetPolicyVersion",
+      "description": "Grants permission to retrieve information about a version of the specified managed policy, including the policy document",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html"
+    },
+    {
+      "name": "GetRole",
+      "methodName": "toGetRole",
+      "description": "Grants permission to retrieve information about the specified role, including the role's path, GUID, ARN, and the role's trust policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html"
+    },
+    {
+      "name": "GetRolePolicy",
+      "methodName": "toGetRolePolicy",
+      "description": "Grants permission to retrieve an inline policy document that is embedded with the specified IAM role",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html"
+    },
+    {
+      "name": "GetRoleTemplateVersion",
+      "methodName": "toGetRoleTemplateVersion",
+      "description": "Grants permission to retrieve information about a specific version of a role template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRoleTemplateVersion.html"
+    },
+    {
+      "name": "GetSAMLProvider",
+      "methodName": "toGetSAMLProvider",
+      "description": "Grants permission to retrieve the SAML provider metadocument that was uploaded when the IAM SAML provider resource was created or updated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html"
+    },
+    {
+      "name": "GetSSHPublicKey",
+      "methodName": "toGetSSHPublicKey",
+      "description": "Grants permission to retrieve the specified SSH public key, including metadata about the key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html"
+    },
+    {
+      "name": "GetServerCertificate",
+      "methodName": "toGetServerCertificate",
+      "description": "Grants permission to retrieve information about the specified server certificate stored in IAM",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html"
+    },
+    {
+      "name": "GetServiceLastAccessedDetails",
+      "methodName": "toGetServiceLastAccessedDetails",
+      "description": "Grants permission to retrieve information about the service last accessed data report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html"
+    },
+    {
+      "name": "GetServiceLastAccessedDetailsWithEntities",
+      "methodName": "toGetServiceLastAccessedDetailsWithEntities",
+      "description": "Grants permission to retrieve information about the entities from the service last accessed data report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html"
+    },
+    {
+      "name": "GetServiceLinkedRoleDeletionStatus",
+      "methodName": "toGetServiceLinkedRoleDeletionStatus",
+      "description": "Grants permission to retrieve an IAM service-linked role deletion status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html"
+    },
+    {
+      "name": "GetUser",
+      "methodName": "toGetUser",
+      "description": "Grants permission to retrieve information about the specified IAM user, including the user's creation date, path, unique ID, and ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html"
+    },
+    {
+      "name": "GetUserPolicy",
+      "methodName": "toGetUserPolicy",
+      "description": "Grants permission to retrieve an inline policy document that is embedded in the specified IAM user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html"
+    },
+    {
+      "name": "ListAccessKeys",
+      "methodName": "toListAccessKeys",
+      "description": "Grants permission to list information about the access key IDs that are associated with the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html"
+    },
+    {
+      "name": "ListAccountAliases",
+      "methodName": "toListAccountAliases",
+      "description": "Grants permission to list the account alias that is associated with the AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html"
+    },
+    {
+      "name": "ListAttachedGroupPolicies",
+      "methodName": "toListAttachedGroupPolicies",
+      "description": "Grants permission to list all managed policies that are attached to the specified IAM group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html"
+    },
+    {
+      "name": "ListAttachedRolePolicies",
+      "methodName": "toListAttachedRolePolicies",
+      "description": "Grants permission to list all managed policies that are attached to the specified IAM role",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html"
+    },
+    {
+      "name": "ListAttachedUserPolicies",
+      "methodName": "toListAttachedUserPolicies",
+      "description": "Grants permission to list all managed policies that are attached to the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html"
+    },
+    {
+      "name": "ListCloudFrontPublicKeys",
+      "methodName": "toListCloudFrontPublicKeys",
+      "description": "Grants permission to list all current CloudFront public keys for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html"
+    },
+    {
+      "name": "ListDelegationRequests",
+      "methodName": "toListDelegationRequests",
+      "description": "Lists delegation requests based on the specified criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListDelegationRequests.html",
+      "conditionMethods": [
+        "ifDelegationRequestOwner"
+      ]
+    },
+    {
+      "name": "ListEntitiesForPolicy",
+      "methodName": "toListEntitiesForPolicy",
+      "description": "Grants permission to list all IAM identities to which the specified managed policy is attached",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html"
+    },
+    {
+      "name": "ListGroupPolicies",
+      "methodName": "toListGroupPolicies",
+      "description": "Grants permission to list the names of the inline policies that are embedded in the specified IAM group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list the IAM groups that have the specified path prefix",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListGroupsForUser",
+      "methodName": "toListGroupsForUser",
+      "description": "Grants permission to list the IAM groups that the specified IAM user belongs to",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html"
+    },
+    {
+      "name": "ListInstanceProfileTags",
+      "methodName": "toListInstanceProfileTags",
+      "description": "Grants permission to list the tags that are attached to the specified instance profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfileTags.html"
+    },
+    {
+      "name": "ListInstanceProfiles",
+      "methodName": "toListInstanceProfiles",
+      "description": "Grants permission to list the instance profiles that have the specified path prefix",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html"
+    },
+    {
+      "name": "ListInstanceProfilesForRole",
+      "methodName": "toListInstanceProfilesForRole",
+      "description": "Grants permission to list the instance profiles that have the specified associated IAM role",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html"
+    },
+    {
+      "name": "ListMFADeviceTags",
+      "methodName": "toListMFADeviceTags",
+      "description": "Grants permission to list the tags that are attached to the specified virtual mfa device",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADeviceTags.html"
+    },
+    {
+      "name": "ListMFADevices",
+      "methodName": "toListMFADevices",
+      "description": "Grants permission to list the MFA devices for an IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADevices.html"
+    },
+    {
+      "name": "ListOpenIDConnectProviderTags",
+      "methodName": "toListOpenIDConnectProviderTags",
+      "description": "Grants permission to list the tags that are attached to the specified OpenID Connect provider",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviderTags.html"
+    },
+    {
+      "name": "ListOpenIDConnectProviders",
+      "methodName": "toListOpenIDConnectProviders",
+      "description": "Grants permission to list information about the IAM OpenID Connect (OIDC) provider resource objects that are defined in the AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html"
+    },
+    {
+      "name": "ListOrganizationsFeatures",
+      "methodName": "toListOrganizationsFeatures",
+      "description": "Grants permission to list the centralized root access features enabled for your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOrganizationsFeatures.html"
+    },
+    {
+      "name": "ListPolicies",
+      "methodName": "toListPolicies",
+      "description": "Grants permission to list all managed policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListPoliciesGrantingServiceAccess",
+      "methodName": "toListPoliciesGrantingServiceAccess",
+      "description": "Grants permission to list information about the policies that grant an entity access to a specific service",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccess.html"
+    },
+    {
+      "name": "ListPolicyTags",
+      "methodName": "toListPolicyTags",
+      "description": "Grants permission to list the tags that are attached to the specified managed policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyTags.html"
+    },
+    {
+      "name": "ListPolicyVersions",
+      "methodName": "toListPolicyVersions",
+      "description": "Grants permission to list information about the versions of the specified managed policy, including the version that is currently set as the policy's default version",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html"
+    },
+    {
+      "name": "ListRolePolicies",
+      "methodName": "toListRolePolicies",
+      "description": "Grants permission to list the names of the inline policies that are embedded in the specified IAM role",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html"
+    },
+    {
+      "name": "ListRoleTags",
+      "methodName": "toListRoleTags",
+      "description": "Grants permission to list the tags that are attached to the specified IAM role",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoleTags.html"
+    },
+    {
+      "name": "ListRoles",
+      "methodName": "toListRoles",
+      "description": "Grants permission to list the IAM roles that have the specified path prefix",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html"
+    },
+    {
+      "name": "ListSAMLProviderTags",
+      "methodName": "toListSAMLProviderTags",
+      "description": "Grants permission to list the tags that are attached to the specified SAML provider",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html"
+    },
+    {
+      "name": "ListSAMLProviders",
+      "methodName": "toListSAMLProviders",
+      "description": "Grants permission to list the SAML provider resources in IAM",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html"
+    },
+    {
+      "name": "ListSSHPublicKeys",
+      "methodName": "toListSSHPublicKeys",
+      "description": "Grants permission to list information about the SSH public keys that are associated with the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSSHPublicKeys.html"
+    },
+    {
+      "name": "ListSTSRegionalEndpointsStatus",
+      "methodName": "toListSTSRegionalEndpointsStatus",
+      "description": "Grants permission to list the status of all active STS regional endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+    },
+    {
+      "name": "ListServerCertificateTags",
+      "methodName": "toListServerCertificateTags",
+      "description": "Grants permission to list the tags that are attached to the specified server certificate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificateTags.html"
+    },
+    {
+      "name": "ListServerCertificates",
+      "methodName": "toListServerCertificates",
+      "description": "Grants permission to list the server certificates that have the specified path prefix",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html"
+    },
+    {
+      "name": "ListServiceSpecificCredentials",
+      "methodName": "toListServiceSpecificCredentials",
+      "description": "Grants permission to list the service-specific credentials that are associated with the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html"
+    },
+    {
+      "name": "ListSigningCertificates",
+      "methodName": "toListSigningCertificates",
+      "description": "Grants permission to list information about the signing certificates that are associated with the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSigningCertificates.html"
+    },
+    {
+      "name": "ListUserPolicies",
+      "methodName": "toListUserPolicies",
+      "description": "Grants permission to list the names of the inline policies that are embedded in the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html"
+    },
+    {
+      "name": "ListUserTags",
+      "methodName": "toListUserTags",
+      "description": "Grants permission to list the tags that are attached to the specified IAM user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserTags.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list the IAM users that have the specified path prefix",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html"
+    },
+    {
+      "name": "ListVirtualMFADevices",
+      "methodName": "toListVirtualMFADevices",
+      "description": "Grants permission to list virtual MFA devices by assignment status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListVirtualMFADevices.html"
+    },
+    {
+      "name": "PutAccountProperties",
+      "methodName": "toPutAccountProperties",
+      "description": "Grants permission to set account-level properties for IAM features",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html",
+      "conditionMethods": [
+        "ifAccountPropertyNamespaces"
+      ]
+    },
+    {
+      "name": "PutGroupPolicy",
+      "methodName": "toPutGroupPolicy",
+      "description": "Grants permission to create or update an inline policy document that is embedded in the specified IAM group",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html"
+    },
+    {
+      "name": "PutRolePermissionsBoundary",
+      "methodName": "toPutRolePermissionsBoundary",
+      "description": "Grants permission to set a managed policy as a permissions boundary for a role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html"
+    },
+    {
+      "name": "PutRolePolicy",
+      "methodName": "toPutRolePolicy",
+      "description": "Grants permission to create or update an inline policy document that is embedded in the specified IAM role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html"
+    },
+    {
+      "name": "PutUserPermissionsBoundary",
+      "methodName": "toPutUserPermissionsBoundary",
+      "description": "Grants permission to set a managed policy as a permissions boundary for an IAM user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPermissionsBoundary.html"
+    },
+    {
+      "name": "PutUserPolicy",
+      "methodName": "toPutUserPolicy",
+      "description": "Grants permission to create or update an inline policy document that is embedded in the specified IAM user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html"
+    },
+    {
+      "name": "RejectDelegationRequest",
+      "methodName": "toRejectDelegationRequest",
+      "description": "Rejects a delegation request, denying the requested temporary access",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_RejectDelegationRequest.html"
+    },
+    {
+      "name": "RemoveClientIDFromOpenIDConnectProvider",
+      "methodName": "toRemoveClientIDFromOpenIDConnectProvider",
+      "description": "Grants permission to remove the client ID (audience) from the list of client IDs in the specified IAM OpenID Connect (OIDC) provider resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html"
+    },
+    {
+      "name": "RemoveRoleFromInstanceProfile",
+      "methodName": "toRemoveRoleFromInstanceProfile",
+      "description": "Grants permission to remove an IAM role from the specified EC2 instance profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveRoleFromInstanceProfile.html"
+    },
+    {
+      "name": "RemoveUserFromGroup",
+      "methodName": "toRemoveUserFromGroup",
+      "description": "Grants permission to remove an IAM user from the specified group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html"
+    },
+    {
+      "name": "ResetServiceSpecificCredential",
+      "methodName": "toResetServiceSpecificCredential",
+      "description": "Grants permission to reset the password for an existing service-specific credential for an IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html"
+    },
+    {
+      "name": "ResyncMFADevice",
+      "methodName": "toResyncMFADevice",
+      "description": "Grants permission to synchronize the specified MFA device with its IAM entity (user or role)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html"
+    },
+    {
+      "name": "SendDelegationToken",
+      "methodName": "toSendDelegationToken",
+      "description": "Sends the exchange token for an accepted delegation request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html"
+    },
+    {
+      "name": "SetDefaultPolicyVersion",
+      "methodName": "toSetDefaultPolicyVersion",
+      "description": "Grants permission to set the version of the specified policy as the policy's default version",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html"
+    },
+    {
+      "name": "SetSTSRegionalEndpointStatus",
+      "methodName": "toSetSTSRegionalEndpointStatus",
+      "description": "Grants permission to activate or deactivate an STS regional endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+    },
+    {
+      "name": "SetSecurityTokenServicePreferences",
+      "methodName": "toSetSecurityTokenServicePreferences",
+      "description": "Grants permission to set the STS global endpoint token version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetSecurityTokenServicePreferences.html"
+    },
+    {
+      "name": "SimulateCustomPolicy",
+      "methodName": "toSimulateCustomPolicy",
+      "description": "Grants permission to simulate whether an identity-based policy or resource-based policy provides permissions for specific API operations and resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html"
+    },
+    {
+      "name": "SimulatePrincipalPolicy",
+      "methodName": "toSimulatePrincipalPolicy",
+      "description": "Grants permission to simulate whether an identity-based policy that is attached to a specified IAM entity (user or role) provides permissions for specific API operations and resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html"
+    },
+    {
+      "name": "TagInstanceProfile",
+      "methodName": "toTagInstanceProfile",
+      "description": "Grants permission to add tags to an instance profile",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html"
+    },
+    {
+      "name": "TagMFADevice",
+      "methodName": "toTagMFADevice",
+      "description": "Grants permission to add tags to a virtual mfa device",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagMFADevice.html"
+    },
+    {
+      "name": "TagOpenIDConnectProvider",
+      "methodName": "toTagOpenIDConnectProvider",
+      "description": "Grants permission to add tags to an OpenID Connect provider",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagOpenIDConnectProvider.html"
+    },
+    {
+      "name": "TagPolicy",
+      "methodName": "toTagPolicy",
+      "description": "Grants permission to add tags to a managed policy",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagPolicy.html"
+    },
+    {
+      "name": "TagRole",
+      "methodName": "toTagRole",
+      "description": "Grants permission to add tags to an IAM role",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html"
+    },
+    {
+      "name": "TagSAMLProvider",
+      "methodName": "toTagSAMLProvider",
+      "description": "Grants permission to add tags to a SAML Provider",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html"
+    },
+    {
+      "name": "TagServerCertificate",
+      "methodName": "toTagServerCertificate",
+      "description": "Grants permission to add tags to a server certificate",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagServerCertificate.html"
+    },
+    {
+      "name": "TagUser",
+      "methodName": "toTagUser",
+      "description": "Grants permission to add tags to an IAM user",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagUser.html"
+    },
+    {
+      "name": "UntagInstanceProfile",
+      "methodName": "toUntagInstanceProfile",
+      "description": "Grants permission to remove the specified tags from the instance profile",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagInstanceProfile.html"
+    },
+    {
+      "name": "UntagMFADevice",
+      "methodName": "toUntagMFADevice",
+      "description": "Grants permission to remove the specified tags from the virtual mfa device",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagMFADevice.html"
+    },
+    {
+      "name": "UntagOpenIDConnectProvider",
+      "methodName": "toUntagOpenIDConnectProvider",
+      "description": "Grants permission to remove the specified tags from the OpenID Connect provider",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagOpenIDConnectProvider.html"
+    },
+    {
+      "name": "UntagPolicy",
+      "methodName": "toUntagPolicy",
+      "description": "Grants permission to remove the specified tags from the managed policy",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagPolicy.html"
+    },
+    {
+      "name": "UntagRole",
+      "methodName": "toUntagRole",
+      "description": "Grants permission to remove the specified tags from the role",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagRole.html"
+    },
+    {
+      "name": "UntagSAMLProvider",
+      "methodName": "toUntagSAMLProvider",
+      "description": "Grants permission to remove the specified tags from the SAML Provider",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html"
+    },
+    {
+      "name": "UntagServerCertificate",
+      "methodName": "toUntagServerCertificate",
+      "description": "Grants permission to remove the specified tags from the server certificate",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagServerCertificate.html"
+    },
+    {
+      "name": "UntagUser",
+      "methodName": "toUntagUser",
+      "description": "Grants permission to remove the specified tags from the user",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagUser.html"
+    },
+    {
+      "name": "UpdateAccessKey",
+      "methodName": "toUpdateAccessKey",
+      "description": "Grants permission to update the status of the specified access key as Active or Inactive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html"
+    },
+    {
+      "name": "UpdateAccountEmailAddress",
+      "methodName": "toUpdateAccountEmailAddress",
+      "description": "Grants permission to update the email address that is associated with the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html"
+    },
+    {
+      "name": "UpdateAccountName",
+      "methodName": "toUpdateAccountName",
+      "description": "Grants permission to update the account name that is associated with the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user.html"
+    },
+    {
+      "name": "UpdateAccountPasswordPolicy",
+      "methodName": "toUpdateAccountPasswordPolicy",
+      "description": "Grants permission to update the password policy settings for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html"
+    },
+    {
+      "name": "UpdateAssumeRolePolicy",
+      "methodName": "toUpdateAssumeRolePolicy",
+      "description": "Grants permission to update the policy that grants an IAM entity permission to assume a role",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html"
+    },
+    {
+      "name": "UpdateCloudFrontPublicKey",
+      "methodName": "toUpdateCloudFrontPublicKey",
+      "description": "Grants permission to update an existing CloudFront public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update the name or path of the specified IAM group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateLoginProfile",
+      "methodName": "toUpdateLoginProfile",
+      "description": "Grants permission to change the password for the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html"
+    },
+    {
+      "name": "UpdateOpenIDConnectProviderThumbprint",
+      "methodName": "toUpdateOpenIDConnectProviderThumbprint",
+      "description": "Grants permission to update the entire list of server certificate thumbprints that are associated with an OpenID Connect (OIDC) provider resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html"
+    },
+    {
+      "name": "UpdateRole",
+      "methodName": "toUpdateRole",
+      "description": "Grants permission to update the description or maximum session duration setting of a role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html"
+    },
+    {
+      "name": "UpdateRoleDescription",
+      "methodName": "toUpdateRoleDescription",
+      "description": "Grants permission to update only the description of a role",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html"
+    },
+    {
+      "name": "UpdateSAMLProvider",
+      "methodName": "toUpdateSAMLProvider",
+      "description": "Grants permission to update the metadata document for an existing SAML provider resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html"
+    },
+    {
+      "name": "UpdateSSHPublicKey",
+      "methodName": "toUpdateSSHPublicKey",
+      "description": "Grants permission to update the status of an IAM user's SSH public key to active or inactive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSSHPublicKey.html"
+    },
+    {
+      "name": "UpdateServerCertificate",
+      "methodName": "toUpdateServerCertificate",
+      "description": "Grants permission to update the name or the path of the specified server certificate stored in IAM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServerCertificate.html"
+    },
+    {
+      "name": "UpdateServiceSpecificCredential",
+      "methodName": "toUpdateServiceSpecificCredential",
+      "description": "Grants permission to update the status of a service-specific credential to active or inactive for an IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServiceSpecificCredential.html"
+    },
+    {
+      "name": "UpdateSigningCertificate",
+      "methodName": "toUpdateSigningCertificate",
+      "description": "Grants permission to update the status of the specified user signing certificate to active or disabled",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSigningCertificate.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update the name or the path of the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html"
+    },
+    {
+      "name": "UploadCloudFrontPublicKey",
+      "methodName": "toUploadCloudFrontPublicKey",
+      "description": "Grants permission to upload a CloudFront public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html"
+    },
+    {
+      "name": "UploadSSHPublicKey",
+      "methodName": "toUploadSSHPublicKey",
+      "description": "Grants permission to upload an SSH public key and associate it with the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html"
+    },
+    {
+      "name": "UploadServerCertificate",
+      "methodName": "toUploadServerCertificate",
+      "description": "Grants permission to upload a server certificate entity for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html"
+    },
+    {
+      "name": "UploadSigningCertificate",
+      "methodName": "toUploadSigningCertificate",
+      "description": "Grants permission to upload an X.509 signing certificate and associate it with the specified IAM user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSigningCertificate.html"
+    },
+    {
+      "name": "PassRole",
+      "methodName": "toPassRole",
+      "description": "Grants permission to pass a role to a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "access-report",
+      "methodName": "onAccessReport",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data-orgs.html",
+      "arn": "arn:${Partition}:iam::${Account}:access-report/${EntityPath}",
+      "placeholders": [
+        {
+          "placeholder": "EntityPath",
+          "name": "entityPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "assumed-role",
+      "methodName": "onAssumedRole",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html",
+      "arn": "arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}",
+      "placeholders": [
+        {
+          "placeholder": "RoleName",
+          "name": "roleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RoleSessionName",
+          "name": "roleSessionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "delegation-request",
+      "methodName": "onDelegationRequest",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html",
+      "arn": "arn:${Partition}:iam::${Account}:delegation-request/${DelegationRequestId}",
+      "placeholders": [
+        {
+          "placeholder": "DelegationRequestId",
+          "name": "delegationRequestId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifDelegationRequestOwner"
+      ]
+    },
+    {
+      "name": "federated-user",
+      "methodName": "onFederatedUser",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html",
+      "arn": "arn:${Partition}:iam::${Account}:federated-user/${UserName}",
+      "placeholders": [
+        {
+          "placeholder": "UserName",
+          "name": "userName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "group",
+      "methodName": "onGroup",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html",
+      "arn": "arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "GroupNameWithPath",
+          "name": "groupNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "IGroupRef",
+        "property": "groupRef",
+        "arn": "groupArn"
+      }
+    },
+    {
+      "name": "instance-profile",
+      "methodName": "onInstanceProfile",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html",
+      "arn": "arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceProfileNameWithPath",
+          "name": "instanceProfileNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "IInstanceProfileRef",
+        "property": "instanceProfileRef",
+        "arn": "instanceProfileArn"
+      }
+    },
+    {
+      "name": "mfa",
+      "methodName": "onMfa",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
+      "arn": "arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "MfaTokenIdWithPath",
+          "name": "mfaTokenIdWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "oidc-provider",
+      "methodName": "onOidcProvider",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html",
+      "arn": "arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}",
+      "placeholders": [
+        {
+          "placeholder": "OidcProviderName",
+          "name": "oidcProviderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "IOIDCProviderRef",
+        "property": "oidcProviderRef",
+        "arn": "oidcProviderArn"
+      }
+    },
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html",
+      "arn": "arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "PolicyNameWithPath",
+          "name": "policyNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "role",
+      "methodName": "onRole",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "RoleNameWithPath",
+          "name": "roleNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "IRoleRef",
+        "property": "roleRef",
+        "arn": "roleArn"
+      }
+    },
+    {
+      "name": "role-template",
+      "methodName": "onRoleTemplate",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_role-template.html",
+      "arn": "arn:${Partition}:iam::aws:role-template/${AWSServicePrincipal}/${RoleTemplateName}:${RoleTemplateMajorVersion}",
+      "placeholders": [
+        {
+          "placeholder": "AWSServicePrincipal",
+          "name": "aWSServicePrincipal",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RoleTemplateName",
+          "name": "roleTemplateName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RoleTemplateMajorVersion",
+          "name": "roleTemplateMajorVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "saml-provider",
+      "methodName": "onSamlProvider",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html",
+      "arn": "arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}",
+      "placeholders": [
+        {
+          "placeholder": "SamlProviderName",
+          "name": "samlProviderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "ISAMLProviderRef",
+        "property": "samlProviderRef",
+        "arn": "samlProviderArn"
+      }
+    },
+    {
+      "name": "server-certificate",
+      "methodName": "onServerCertificate",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html",
+      "arn": "arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "CertificateNameWithPath",
+          "name": "certificateNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "IServerCertificateRef",
+        "property": "serverCertificateRef",
+        "arn": "serverCertificateArn"
+      }
+    },
+    {
+      "name": "sms-mfa",
+      "methodName": "onSmsMfa",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
+      "arn": "arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "MfaTokenIdWithPath",
+          "name": "mfaTokenIdWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "user",
+      "methodName": "onUser",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "UserNameWithPath",
+          "name": "userNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iam",
+        "interface": "IUserRef",
+        "property": "userRef",
+        "arn": "userArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateInstanceProfile",
+        "toCreateOpenIDConnectProvider",
+        "toCreatePolicy",
+        "toCreateRole",
+        "toCreateSAMLProvider",
+        "toCreateUser",
+        "toCreateVirtualMFADevice",
+        "toTagInstanceProfile",
+        "toTagMFADevice",
+        "toTagOpenIDConnectProvider",
+        "toTagPolicy",
+        "toTagRole",
+        "toTagSAMLProvider",
+        "toTagServerCertificate",
+        "toTagUser",
+        "toUploadServerCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddClientIDToOpenIDConnectProvider",
+        "toAddRoleToInstanceProfile",
+        "toAttachRolePolicy",
+        "toAttachUserPolicy",
+        "toChangePassword",
+        "toCreateAccessKey",
+        "toCreateInstanceProfile",
+        "toCreateLoginProfile",
+        "toCreateOpenIDConnectProvider",
+        "toCreatePolicy",
+        "toCreatePolicyVersion",
+        "toCreateRole",
+        "toCreateSAMLProvider",
+        "toCreateServiceLinkedRole",
+        "toCreateServiceSpecificCredential",
+        "toCreateUser",
+        "toCreateVirtualMFADevice",
+        "toDeactivateMFADevice",
+        "toDeleteAccessKey",
+        "toDeleteInstanceProfile",
+        "toDeleteLoginProfile",
+        "toDeleteOpenIDConnectProvider",
+        "toDeletePolicy",
+        "toDeletePolicyVersion",
+        "toDeleteRole",
+        "toDeleteRolePermissionsBoundary",
+        "toDeleteRolePolicy",
+        "toDeleteSAMLProvider",
+        "toDeleteSSHPublicKey",
+        "toDeleteServerCertificate",
+        "toDeleteServiceLinkedRole",
+        "toDeleteServiceSpecificCredential",
+        "toDeleteSigningCertificate",
+        "toDeleteUser",
+        "toDeleteUserPermissionsBoundary",
+        "toDeleteUserPolicy",
+        "toDeleteVirtualMFADevice",
+        "toDetachRolePolicy",
+        "toDetachUserPolicy",
+        "toEnableMFADevice",
+        "toGenerateServiceLastAccessedDetails",
+        "toGetAccessKeyLastUsed",
+        "toGetContextKeysForPrincipalPolicy",
+        "toGetInstanceProfile",
+        "toGetLoginProfile",
+        "toGetMFADevice",
+        "toGetOpenIDConnectProvider",
+        "toGetPolicy",
+        "toGetPolicyVersion",
+        "toGetRole",
+        "toGetRolePolicy",
+        "toGetSAMLProvider",
+        "toGetSSHPublicKey",
+        "toGetServerCertificate",
+        "toGetServiceLinkedRoleDeletionStatus",
+        "toGetUser",
+        "toGetUserPolicy",
+        "toListAccessKeys",
+        "toListAttachedRolePolicies",
+        "toListAttachedUserPolicies",
+        "toListEntitiesForPolicy",
+        "toListGroupsForUser",
+        "toListInstanceProfileTags",
+        "toListInstanceProfilesForRole",
+        "toListMFADeviceTags",
+        "toListMFADevices",
+        "toListOpenIDConnectProviderTags",
+        "toListPoliciesGrantingServiceAccess",
+        "toListPolicyTags",
+        "toListPolicyVersions",
+        "toListRolePolicies",
+        "toListRoleTags",
+        "toListSAMLProviderTags",
+        "toListSSHPublicKeys",
+        "toListServerCertificateTags",
+        "toListServiceSpecificCredentials",
+        "toListSigningCertificates",
+        "toListUserPolicies",
+        "toListUserTags",
+        "toPutRolePermissionsBoundary",
+        "toPutRolePolicy",
+        "toPutUserPermissionsBoundary",
+        "toPutUserPolicy",
+        "toRemoveClientIDFromOpenIDConnectProvider",
+        "toRemoveRoleFromInstanceProfile",
+        "toResetServiceSpecificCredential",
+        "toResyncMFADevice",
+        "toSetDefaultPolicyVersion",
+        "toSimulatePrincipalPolicy",
+        "toTagInstanceProfile",
+        "toTagMFADevice",
+        "toTagOpenIDConnectProvider",
+        "toTagPolicy",
+        "toTagRole",
+        "toTagSAMLProvider",
+        "toTagServerCertificate",
+        "toTagUser",
+        "toUntagInstanceProfile",
+        "toUntagMFADevice",
+        "toUntagOpenIDConnectProvider",
+        "toUntagPolicy",
+        "toUntagRole",
+        "toUntagSAMLProvider",
+        "toUntagServerCertificate",
+        "toUntagUser",
+        "toUpdateAccessKey",
+        "toUpdateAssumeRolePolicy",
+        "toUpdateLoginProfile",
+        "toUpdateOpenIDConnectProviderThumbprint",
+        "toUpdateRole",
+        "toUpdateRoleDescription",
+        "toUpdateSAMLProvider",
+        "toUpdateSSHPublicKey",
+        "toUpdateServerCertificate",
+        "toUpdateServiceSpecificCredential",
+        "toUpdateSigningCertificate",
+        "toUpdateUser",
+        "toUploadSSHPublicKey",
+        "toUploadServerCertificate",
+        "toUploadSigningCertificate",
+        "toPassRole"
+      ],
+      "relatedResourceTypes": [
+        "instance-profile",
+        "mfa",
+        "oidc-provider",
+        "policy",
+        "role",
+        "saml-provider",
+        "server-certificate",
+        "user"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateInstanceProfile",
+        "toCreateOpenIDConnectProvider",
+        "toCreatePolicy",
+        "toCreateRole",
+        "toCreateSAMLProvider",
+        "toCreateUser",
+        "toCreateVirtualMFADevice",
+        "toTagInstanceProfile",
+        "toTagMFADevice",
+        "toTagOpenIDConnectProvider",
+        "toTagPolicy",
+        "toTagRole",
+        "toTagSAMLProvider",
+        "toTagServerCertificate",
+        "toTagUser",
+        "toUntagInstanceProfile",
+        "toUntagMFADevice",
+        "toUntagOpenIDConnectProvider",
+        "toUntagPolicy",
+        "toUntagRole",
+        "toUntagSAMLProvider",
+        "toUntagServerCertificate",
+        "toUntagUser",
+        "toUploadServerCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:AWSServiceName",
+      "methodName": "ifAWSServiceName",
+      "description": "Filters access by the AWS service to which this role is attached",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName",
+      "relatedActionMethods": [
+        "toCreateServiceLinkedRole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AWSServiceName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:AccountPropertyNamespaces",
+      "methodName": "ifAccountPropertyNamespaces",
+      "description": "Filters access by the account property namespaces being read or modified",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AccountPropertyNamespaces",
+      "relatedActionMethods": [
+        "toGetAccountProperties",
+        "toPutAccountProperties"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccountPropertyNamespaces",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:AssociatedResourceArn",
+      "methodName": "ifAssociatedResourceArn",
+      "description": "Filters access by the resource that the role will be used on behalf of",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AssociatedResourceArn",
+      "relatedActionMethods": [
+        "toPassRole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AssociatedResourceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:DelegationDuration",
+      "methodName": "ifDelegationDuration",
+      "description": "Filters access based on the requested delegation duration",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_DelegationDuration",
+      "relatedActionMethods": [
+        "toCreateDelegationRequest"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DelegationDuration",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "iam:DelegationRequestOwner",
+      "methodName": "ifDelegationRequestOwner",
+      "description": "Filters access based on the delegation request owner",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_DelegationRequestOwner",
+      "relatedActionMethods": [
+        "toAcceptDelegationRequest",
+        "toAssociateDelegationRequest",
+        "toCreateDelegationRequest",
+        "toGetDelegationRequest",
+        "toGetHumanReadableSummary",
+        "toListDelegationRequests",
+        "toRejectDelegationRequest",
+        "toSendDelegationToken"
+      ],
+      "relatedResourceTypes": [
+        "delegation-request"
+      ],
+      "keyLiteral": "DelegationRequestOwner",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:FIDO-FIPS-140-2-certification",
+      "methodName": "ifFIDOFIPS1402Certification",
+      "description": "Filters access by the MFA device FIPS-140-2 validation certification level at the time of registration of a FIDO security key",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_FIDO-FIPS-140-2-certification",
+      "relatedActionMethods": [
+        "toEnableMFADevice"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FIDO-FIPS-140-2-certification",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:FIDO-FIPS-140-3-certification",
+      "methodName": "ifFIDOFIPS1403Certification",
+      "description": "Filters access by the MFA device FIPS-140-3 validation certification level at the time of registration of a FIDO security key",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_FIDO-FIPS-140-3-certification",
+      "relatedActionMethods": [
+        "toEnableMFADevice"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FIDO-FIPS-140-3-certification",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:FIDO-certification",
+      "methodName": "ifFIDOCertification",
+      "description": "Filters access by the MFA device FIDO certification level at the time of registration of a FIDO security key",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_FIDO-certification",
+      "relatedActionMethods": [
+        "toEnableMFADevice"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FIDO-certification",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:NotificationChannel",
+      "methodName": "ifNotificationChannel",
+      "description": "Filters access based on the requested notification channel",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_NotificationChannel",
+      "relatedActionMethods": [
+        "toCreateDelegationRequest"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "NotificationChannel",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:OrganizationsPolicyId",
+      "methodName": "ifOrganizationsPolicyId",
+      "description": "Filters access by the ID of an AWS Organizations policy",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId",
+      "relatedActionMethods": [
+        "toGenerateOrganizationsAccessReport"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "OrganizationsPolicyId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:PassedToService",
+      "methodName": "ifPassedToService",
+      "description": "Filters access by the AWS service to which this role is passed",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService",
+      "relatedActionMethods": [
+        "toPassRole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PassedToService",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:PermissionsBoundary",
+      "methodName": "ifPermissionsBoundary",
+      "description": "Filters access if the specified policy is set as the permissions boundary on the IAM entity (user or role)",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary",
+      "relatedActionMethods": [
+        "toAttachRolePolicy",
+        "toAttachUserPolicy",
+        "toCreateRole",
+        "toCreateUser",
+        "toDeleteRole",
+        "toDeleteRolePermissionsBoundary",
+        "toDeleteRolePolicy",
+        "toDeleteUserPermissionsBoundary",
+        "toDeleteUserPolicy",
+        "toDetachRolePolicy",
+        "toDetachUserPolicy",
+        "toGetRole",
+        "toPutRolePermissionsBoundary",
+        "toPutRolePolicy",
+        "toPutUserPermissionsBoundary",
+        "toPutUserPolicy",
+        "toUpdateAssumeRolePolicy",
+        "toUpdateRole",
+        "toUpdateRoleDescription"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PermissionsBoundary",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:PolicyARN",
+      "methodName": "ifPolicyARN",
+      "description": "Filters access by the ARN of an IAM policy",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PolicyARN",
+      "relatedActionMethods": [
+        "toAttachGroupPolicy",
+        "toAttachRolePolicy",
+        "toAttachUserPolicy",
+        "toDetachGroupPolicy",
+        "toDetachRolePolicy",
+        "toDetachUserPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PolicyARN",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:RegisterSecurityKey",
+      "methodName": "ifRegisterSecurityKey",
+      "description": "Filters access by the current state of MFA device enablement",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RegisterSecurityKey",
+      "relatedActionMethods": [
+        "toEnableMFADevice"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RegisterSecurityKey",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTag",
+      "description": "Filters access by the tags attached to an IAM entity (user or role)",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag",
+      "relatedActionMethods": [
+        "toAttachRolePolicy",
+        "toAttachUserPolicy",
+        "toChangePassword",
+        "toCreateAccessKey",
+        "toCreateLoginProfile",
+        "toCreateRole",
+        "toCreateServiceLinkedRole",
+        "toCreateServiceSpecificCredential",
+        "toCreateUser",
+        "toDeactivateMFADevice",
+        "toDeleteAccessKey",
+        "toDeleteLoginProfile",
+        "toDeleteRole",
+        "toDeleteRolePermissionsBoundary",
+        "toDeleteRolePolicy",
+        "toDeleteSSHPublicKey",
+        "toDeleteServiceLinkedRole",
+        "toDeleteServiceSpecificCredential",
+        "toDeleteSigningCertificate",
+        "toDeleteUser",
+        "toDeleteUserPermissionsBoundary",
+        "toDeleteUserPolicy",
+        "toDetachRolePolicy",
+        "toDetachUserPolicy",
+        "toEnableMFADevice",
+        "toGenerateServiceLastAccessedDetails",
+        "toGetAccessKeyLastUsed",
+        "toGetContextKeysForPrincipalPolicy",
+        "toGetLoginProfile",
+        "toGetMFADevice",
+        "toGetRole",
+        "toGetRolePolicy",
+        "toGetSSHPublicKey",
+        "toGetServiceLinkedRoleDeletionStatus",
+        "toGetUser",
+        "toGetUserPolicy",
+        "toListAccessKeys",
+        "toListAttachedRolePolicies",
+        "toListAttachedUserPolicies",
+        "toListGroupsForUser",
+        "toListInstanceProfilesForRole",
+        "toListMFADevices",
+        "toListPoliciesGrantingServiceAccess",
+        "toListRolePolicies",
+        "toListRoleTags",
+        "toListSSHPublicKeys",
+        "toListServiceSpecificCredentials",
+        "toListSigningCertificates",
+        "toListUserPolicies",
+        "toListUserTags",
+        "toPutRolePermissionsBoundary",
+        "toPutRolePolicy",
+        "toPutUserPermissionsBoundary",
+        "toPutUserPolicy",
+        "toResetServiceSpecificCredential",
+        "toResyncMFADevice",
+        "toSimulatePrincipalPolicy",
+        "toTagRole",
+        "toTagUser",
+        "toUntagRole",
+        "toUntagUser",
+        "toUpdateAccessKey",
+        "toUpdateAssumeRolePolicy",
+        "toUpdateLoginProfile",
+        "toUpdateRole",
+        "toUpdateRoleDescription",
+        "toUpdateSSHPublicKey",
+        "toUpdateServiceSpecificCredential",
+        "toUpdateSigningCertificate",
+        "toUpdateUser",
+        "toUploadSSHPublicKey",
+        "toUploadSigningCertificate",
+        "toPassRole"
+      ],
+      "relatedResourceTypes": [
+        "role",
+        "user"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:RoleTemplateARN",
+      "methodName": "ifRoleTemplateARN",
+      "description": "Filters access by the role template ARN used in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RoleTemplateARN",
+      "relatedActionMethods": [
+        "toAttachRolePolicy",
+        "toCreateRole",
+        "toGetRole",
+        "toPutRolePermissionsBoundary",
+        "toPutRolePolicy",
+        "toTagRole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RoleTemplateARN",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:ServiceSpecificCredentialAgeDays",
+      "methodName": "ifServiceSpecificCredentialAgeDays",
+      "description": "Filters access by the duration until the credential's expiration",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ServiceSpecificCredentialAgeDays",
+      "relatedActionMethods": [
+        "toCreateServiceSpecificCredential"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceSpecificCredentialAgeDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "iam:ServiceSpecificCredentialServiceName",
+      "methodName": "ifServiceSpecificCredentialServiceName",
+      "description": "Filters access by the service associated with the credential",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ServiceSpecificCredentialServiceName",
+      "relatedActionMethods": [
+        "toCreateServiceSpecificCredential",
+        "toDeleteServiceSpecificCredential",
+        "toResetServiceSpecificCredential",
+        "toUpdateServiceSpecificCredential"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceSpecificCredentialServiceName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:TemplateArn",
+      "methodName": "ifTemplateArn",
+      "description": "Filters access based on the requested template ARN",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TemplateArn",
+      "relatedActionMethods": [
+        "toCreateDelegationRequest"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TemplateArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

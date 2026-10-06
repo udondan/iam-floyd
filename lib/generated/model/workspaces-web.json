@@ -1,0 +1,1168 @@
+{
+  "schemaVersion": 1,
+  "filename": "workspaces-web",
+  "className": "WorkspacesWeb",
+  "name": "workspaces-web",
+  "servicePrefix": "workspaces-web",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workspaces-web.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateBrowserSettings",
+      "AssociateDataProtectionSettings",
+      "AssociateIpAccessSettings",
+      "AssociateNetworkSettings",
+      "AssociateSessionLogger",
+      "AssociateTrustStore",
+      "AssociateUserAccessLoggingSettings",
+      "AssociateUserSettings",
+      "CreateBrowserSettings",
+      "CreateDataProtectionSettings",
+      "CreateIdentityProvider",
+      "CreateIpAccessSettings",
+      "CreateNetworkSettings",
+      "CreatePortal",
+      "CreateSessionLogger",
+      "CreateTrustStore",
+      "CreateUserAccessLoggingSettings",
+      "CreateUserSettings",
+      "DeleteBrowserSettings",
+      "DeleteDataProtectionSettings",
+      "DeleteIdentityProvider",
+      "DeleteIpAccessSettings",
+      "DeleteNetworkSettings",
+      "DeletePortal",
+      "DeleteSessionLogger",
+      "DeleteTrustStore",
+      "DeleteUserAccessLoggingSettings",
+      "DeleteUserSettings",
+      "DisassociateBrowserSettings",
+      "DisassociateDataProtectionSettings",
+      "DisassociateIpAccessSettings",
+      "DisassociateNetworkSettings",
+      "DisassociateSessionLogger",
+      "DisassociateTrustStore",
+      "DisassociateUserAccessLoggingSettings",
+      "DisassociateUserSettings",
+      "ExpireSession",
+      "TagResource",
+      "UntagResource",
+      "UpdateBrowserSettings",
+      "UpdateDataProtectionSettings",
+      "UpdateIdentityProvider",
+      "UpdateIpAccessSettings",
+      "UpdateNetworkSettings",
+      "UpdatePortal",
+      "UpdateSessionLogger",
+      "UpdateTrustStore",
+      "UpdateUserAccessLoggingSettings",
+      "UpdateUserSettings"
+    ],
+    "Read": [
+      "GetBrowserSettings",
+      "GetDataProtectionSettings",
+      "GetIdentityProvider",
+      "GetIpAccessSettings",
+      "GetNetworkSettings",
+      "GetPortal",
+      "GetPortalServiceProviderMetadata",
+      "GetSession",
+      "GetSessionLogger",
+      "GetTrustStore",
+      "GetTrustStoreCertificate",
+      "GetUserAccessLoggingSettings",
+      "GetUserSettings",
+      "ListBrowserSettings",
+      "ListDataProtectionSettings",
+      "ListIdentityProviders",
+      "ListIpAccessSettings",
+      "ListNetworkSettings",
+      "ListPortals",
+      "ListSessionLoggers",
+      "ListSessions",
+      "ListTagsForResource",
+      "ListTrustStoreCertificates",
+      "ListTrustStores",
+      "ListUserAccessLoggingSettings",
+      "ListUserSettings"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateBrowserSettings",
+      "methodName": "toAssociateBrowserSettings",
+      "description": "Grants permission to associate browser settings to web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateBrowserSettings.html"
+    },
+    {
+      "name": "AssociateDataProtectionSettings",
+      "methodName": "toAssociateDataProtectionSettings",
+      "description": "Grants permission to associate data protection settings with web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateDataProtectionSettings.html"
+    },
+    {
+      "name": "AssociateIpAccessSettings",
+      "methodName": "toAssociateIpAccessSettings",
+      "description": "Grants permission to associate ip access settings with web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateIpAccessSettings.html"
+    },
+    {
+      "name": "AssociateNetworkSettings",
+      "methodName": "toAssociateNetworkSettings",
+      "description": "Grants permission to associate network settings to web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateNetworkSettings.html"
+    },
+    {
+      "name": "AssociateSessionLogger",
+      "methodName": "toAssociateSessionLogger",
+      "description": "Grants permission to associate session logger with web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateSessionLogger.html"
+    },
+    {
+      "name": "AssociateTrustStore",
+      "methodName": "toAssociateTrustStore",
+      "description": "Grants permission to associate trust stores with web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateTrustStore.html"
+    },
+    {
+      "name": "AssociateUserAccessLoggingSettings",
+      "methodName": "toAssociateUserAccessLoggingSettings",
+      "description": "Grants permission to associate user access logging settings with web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateUserAccessLoggingSettings.html"
+    },
+    {
+      "name": "AssociateUserSettings",
+      "methodName": "toAssociateUserSettings",
+      "description": "Grants permission to associate user settings with web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateUserSettings.html"
+    },
+    {
+      "name": "CreateBrowserSettings",
+      "methodName": "toCreateBrowserSettings",
+      "description": "Grants permission to create browser settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateBrowserSettings.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDataProtectionSettings",
+      "methodName": "toCreateDataProtectionSettings",
+      "description": "Grants permission to create data protection settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateDataProtectionSettings.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateIdentityProvider",
+      "methodName": "toCreateIdentityProvider",
+      "description": "Grants permission to create identity providers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIdentityProvider.html"
+    },
+    {
+      "name": "CreateIpAccessSettings",
+      "methodName": "toCreateIpAccessSettings",
+      "description": "Grants permission to create ip access settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIpAccessSettings.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateNetworkSettings",
+      "methodName": "toCreateNetworkSettings",
+      "description": "Grants permission to create network settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateNetworkSettings.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePortal",
+      "methodName": "toCreatePortal",
+      "description": "Grants permission to create web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreatePortal.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSessionLogger",
+      "methodName": "toCreateSessionLogger",
+      "description": "Grants permission to create session logger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateSessionLogger.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTrustStore",
+      "methodName": "toCreateTrustStore",
+      "description": "Grants permission to create trust stores",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateTrustStore.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateUserAccessLoggingSettings",
+      "methodName": "toCreateUserAccessLoggingSettings",
+      "description": "Grants permission to create user access logging settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserAccessLoggingSettings.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateUserSettings",
+      "methodName": "toCreateUserSettings",
+      "description": "Grants permission to create user settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserSettings.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteBrowserSettings",
+      "methodName": "toDeleteBrowserSettings",
+      "description": "Grants permission to delete browser settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteBrowserSettings.html"
+    },
+    {
+      "name": "DeleteDataProtectionSettings",
+      "methodName": "toDeleteDataProtectionSettings",
+      "description": "Grants permission to delete data protection settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteDataProtectionSettings.html"
+    },
+    {
+      "name": "DeleteIdentityProvider",
+      "methodName": "toDeleteIdentityProvider",
+      "description": "Grants permission to delete identity providers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteIdentityProvider.html"
+    },
+    {
+      "name": "DeleteIpAccessSettings",
+      "methodName": "toDeleteIpAccessSettings",
+      "description": "Grants permission to delete ip access settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteIpAccessSettings.html"
+    },
+    {
+      "name": "DeleteNetworkSettings",
+      "methodName": "toDeleteNetworkSettings",
+      "description": "Grants permission to delete network settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteNetworkSettings.html"
+    },
+    {
+      "name": "DeletePortal",
+      "methodName": "toDeletePortal",
+      "description": "Grants permission to delete web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeletePortal.html"
+    },
+    {
+      "name": "DeleteSessionLogger",
+      "methodName": "toDeleteSessionLogger",
+      "description": "Grants permission to delete session logger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteSessionLogger.html"
+    },
+    {
+      "name": "DeleteTrustStore",
+      "methodName": "toDeleteTrustStore",
+      "description": "Grants permission to delete trust stores",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteTrustStore.html"
+    },
+    {
+      "name": "DeleteUserAccessLoggingSettings",
+      "methodName": "toDeleteUserAccessLoggingSettings",
+      "description": "Grants permission to delete user access logging settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteUserAccessLoggingSettings.html"
+    },
+    {
+      "name": "DeleteUserSettings",
+      "methodName": "toDeleteUserSettings",
+      "description": "Grants permission to delete user settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteUserSettings.html"
+    },
+    {
+      "name": "DisassociateBrowserSettings",
+      "methodName": "toDisassociateBrowserSettings",
+      "description": "Grants permission to disassociate browser settings from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateBrowserSettings.html"
+    },
+    {
+      "name": "DisassociateDataProtectionSettings",
+      "methodName": "toDisassociateDataProtectionSettings",
+      "description": "Grants permission to disassociate data protection logging from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateDataProtectionSettings.html"
+    },
+    {
+      "name": "DisassociateIpAccessSettings",
+      "methodName": "toDisassociateIpAccessSettings",
+      "description": "Grants permission to disassociate ip access logging from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateIpAccessSettings.html"
+    },
+    {
+      "name": "DisassociateNetworkSettings",
+      "methodName": "toDisassociateNetworkSettings",
+      "description": "Grants permission to disassociate network settings from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateNetworkSettings.html"
+    },
+    {
+      "name": "DisassociateSessionLogger",
+      "methodName": "toDisassociateSessionLogger",
+      "description": "Grants permission to disassociate session logger from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateSessionLogger.html"
+    },
+    {
+      "name": "DisassociateTrustStore",
+      "methodName": "toDisassociateTrustStore",
+      "description": "Grants permission to disassociate trust stores from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateTrustStore.html"
+    },
+    {
+      "name": "DisassociateUserAccessLoggingSettings",
+      "methodName": "toDisassociateUserAccessLoggingSettings",
+      "description": "Grants permission to disassociate user access logging settings from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateUserAccessLoggingSettings.html"
+    },
+    {
+      "name": "DisassociateUserSettings",
+      "methodName": "toDisassociateUserSettings",
+      "description": "Grants permission to disassociate user settings from web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateUserSettings.html"
+    },
+    {
+      "name": "ExpireSession",
+      "methodName": "toExpireSession",
+      "description": "Grants permission to expire a session from a specific portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ExpireSession.html"
+    },
+    {
+      "name": "GetBrowserSettings",
+      "methodName": "toGetBrowserSettings",
+      "description": "Grants permission to get details on browser settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetBrowserSettings.html"
+    },
+    {
+      "name": "GetDataProtectionSettings",
+      "methodName": "toGetDataProtectionSettings",
+      "description": "Grants permission to get details on data protection settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetDataProtectionSettings.html"
+    },
+    {
+      "name": "GetIdentityProvider",
+      "methodName": "toGetIdentityProvider",
+      "description": "Grants permission to get details on identity providers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetIdentityProvider.html"
+    },
+    {
+      "name": "GetIpAccessSettings",
+      "methodName": "toGetIpAccessSettings",
+      "description": "Grants permission to get details on ip access settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetIpAccessSettings.html"
+    },
+    {
+      "name": "GetNetworkSettings",
+      "methodName": "toGetNetworkSettings",
+      "description": "Grants permission to get details on network settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetNetworkSettings.html"
+    },
+    {
+      "name": "GetPortal",
+      "methodName": "toGetPortal",
+      "description": "Grants permission to get details on web portals",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetPortal.html"
+    },
+    {
+      "name": "GetPortalServiceProviderMetadata",
+      "methodName": "toGetPortalServiceProviderMetadata",
+      "description": "Grants permission to get service provider metadata information for web portals",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetPortalServiceProviderMetadata.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to get information about a particular session for a portal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetSession.html"
+    },
+    {
+      "name": "GetSessionLogger",
+      "methodName": "toGetSessionLogger",
+      "description": "Grants permission to get details on session logger",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetSessionLogger.html"
+    },
+    {
+      "name": "GetTrustStore",
+      "methodName": "toGetTrustStore",
+      "description": "Grants permission to get details on trust stores",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetTrustStore.html"
+    },
+    {
+      "name": "GetTrustStoreCertificate",
+      "methodName": "toGetTrustStoreCertificate",
+      "description": "Grants permission to get certificates from trust stores",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetTrustStoreCertificate.html"
+    },
+    {
+      "name": "GetUserAccessLoggingSettings",
+      "methodName": "toGetUserAccessLoggingSettings",
+      "description": "Grants permission to get details on user access logging settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetUserAccessLoggingSettings.html"
+    },
+    {
+      "name": "GetUserSettings",
+      "methodName": "toGetUserSettings",
+      "description": "Grants permission to get details on user settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetUserSettings.html"
+    },
+    {
+      "name": "ListBrowserSettings",
+      "methodName": "toListBrowserSettings",
+      "description": "Grants permission to list browser settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListBrowserSettings.html"
+    },
+    {
+      "name": "ListDataProtectionSettings",
+      "methodName": "toListDataProtectionSettings",
+      "description": "Grants permission to list data protection settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListDataProtectionSettings.html"
+    },
+    {
+      "name": "ListIdentityProviders",
+      "methodName": "toListIdentityProviders",
+      "description": "Grants permission to list identity providers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListIdentityProviders.html"
+    },
+    {
+      "name": "ListIpAccessSettings",
+      "methodName": "toListIpAccessSettings",
+      "description": "Grants permission to list ip access settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListIpAccessSettings.html"
+    },
+    {
+      "name": "ListNetworkSettings",
+      "methodName": "toListNetworkSettings",
+      "description": "Grants permission to list network settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListNetworkSettings.html"
+    },
+    {
+      "name": "ListPortals",
+      "methodName": "toListPortals",
+      "description": "Grants permission to list web portals",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListPortals.html"
+    },
+    {
+      "name": "ListSessionLoggers",
+      "methodName": "toListSessionLoggers",
+      "description": "Grants permission to list session loggers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListSessionLoggers.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list sessions for a Portal using optional filters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTrustStoreCertificates",
+      "methodName": "toListTrustStoreCertificates",
+      "description": "Grants permission to list certificates in a trust store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListTrustStoreCertificates.html"
+    },
+    {
+      "name": "ListTrustStores",
+      "methodName": "toListTrustStores",
+      "description": "Grants permission to list trust stores",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListTrustStores.html"
+    },
+    {
+      "name": "ListUserAccessLoggingSettings",
+      "methodName": "toListUserAccessLoggingSettings",
+      "description": "Grants permission to list user access logging settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListUserAccessLoggingSettings.html"
+    },
+    {
+      "name": "ListUserSettings",
+      "methodName": "toListUserSettings",
+      "description": "Grants permission to list user settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListUserSettings.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBrowserSettings",
+      "methodName": "toUpdateBrowserSettings",
+      "description": "Grants permission to update browser settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateBrowserSettings.html"
+    },
+    {
+      "name": "UpdateDataProtectionSettings",
+      "methodName": "toUpdateDataProtectionSettings",
+      "description": "Grants permission to update data protection settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateDataProtectionSettings.html"
+    },
+    {
+      "name": "UpdateIdentityProvider",
+      "methodName": "toUpdateIdentityProvider",
+      "description": "Grants permission to update identity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateIdentityProvider.html"
+    },
+    {
+      "name": "UpdateIpAccessSettings",
+      "methodName": "toUpdateIpAccessSettings",
+      "description": "Grants permission to update ip access settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateIpAccessSettings.html"
+    },
+    {
+      "name": "UpdateNetworkSettings",
+      "methodName": "toUpdateNetworkSettings",
+      "description": "Grants permission to update network settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateNetworkSettings.html"
+    },
+    {
+      "name": "UpdatePortal",
+      "methodName": "toUpdatePortal",
+      "description": "Grants permission to update web portals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdatePortal.html"
+    },
+    {
+      "name": "UpdateSessionLogger",
+      "methodName": "toUpdateSessionLogger",
+      "description": "Grants permission to update session logger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateSessionLogger.html"
+    },
+    {
+      "name": "UpdateTrustStore",
+      "methodName": "toUpdateTrustStore",
+      "description": "Grants permission to update trust stores",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateTrustStore.html"
+    },
+    {
+      "name": "UpdateUserAccessLoggingSettings",
+      "methodName": "toUpdateUserAccessLoggingSettings",
+      "description": "Grants permission to update user access logging settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateUserAccessLoggingSettings.html"
+    },
+    {
+      "name": "UpdateUserSettings",
+      "methodName": "toUpdateUserSettings",
+      "description": "Grants permission to update user settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateUserSettings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "browserSettings",
+      "methodName": "onBrowserSettings",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateBrowserSettings.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:browserSettings/${BrowserSettingsId}",
+      "placeholders": [
+        {
+          "placeholder": "BrowserSettingsId",
+          "name": "browserSettingsId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IBrowserSettingsRef",
+        "property": "browserSettingsRef",
+        "arn": "browserSettingsArn"
+      }
+    },
+    {
+      "name": "dataProtectionSettings",
+      "methodName": "onDataProtectionSettings",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateDataProtectionSettings.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:dataProtectionSettings/${DataProtectionSettingsId}",
+      "placeholders": [
+        {
+          "placeholder": "DataProtectionSettingsId",
+          "name": "dataProtectionSettingsId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IDataProtectionSettingsRef",
+        "property": "dataProtectionSettingsRef",
+        "arn": "dataProtectionSettingsArn"
+      }
+    },
+    {
+      "name": "identityProvider",
+      "methodName": "onIdentityProvider",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIdentityProvider.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:identityProvider/${PortalId}/${IdentityProviderId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalId",
+          "name": "portalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdentityProviderId",
+          "name": "identityProviderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ipAccessSettings",
+      "methodName": "onIpAccessSettings",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIpAccessSettings.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:ipAccessSettings/${IpAccessSettingsId}",
+      "placeholders": [
+        {
+          "placeholder": "IpAccessSettingsId",
+          "name": "ipAccessSettingsId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IIpAccessSettingsRef",
+        "property": "ipAccessSettingsRef",
+        "arn": "ipAccessSettingsArn"
+      }
+    },
+    {
+      "name": "networkSettings",
+      "methodName": "onNetworkSettings",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateNetworkSettings.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:networkSettings/${NetworkSettingsId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkSettingsId",
+          "name": "networkSettingsId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "INetworkSettingsRef",
+        "property": "networkSettingsRef",
+        "arn": "networkSettingsArn"
+      }
+    },
+    {
+      "name": "portal",
+      "methodName": "onPortal",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreatePortal.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:portal/${PortalId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalId",
+          "name": "portalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IPortalRef",
+        "property": "portalRef",
+        "arn": "portalArn"
+      }
+    },
+    {
+      "name": "sessionLogger",
+      "methodName": "onSessionLogger",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateSessionLogger.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:sessionLogger/${SessionLoggerId}",
+      "placeholders": [
+        {
+          "placeholder": "SessionLoggerId",
+          "name": "sessionLoggerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "ISessionLoggerRef",
+        "property": "sessionLoggerRef",
+        "arn": "sessionLoggerArn"
+      }
+    },
+    {
+      "name": "trustStore",
+      "methodName": "onTrustStore",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateTrustStore.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:trustStore/${TrustStoreId}",
+      "placeholders": [
+        {
+          "placeholder": "TrustStoreId",
+          "name": "trustStoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "ITrustStoreRef",
+        "property": "trustStoreRef",
+        "arn": "trustStoreArn"
+      }
+    },
+    {
+      "name": "userAccessLoggingSettings",
+      "methodName": "onUserAccessLoggingSettings",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserAccessLoggingSettings.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:userAccessLoggingSettings/${UserAccessLoggingSettingsId}",
+      "placeholders": [
+        {
+          "placeholder": "UserAccessLoggingSettingsId",
+          "name": "userAccessLoggingSettingsId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IUserAccessLoggingSettingsRef",
+        "property": "userAccessLoggingSettingsRef",
+        "arn": "userAccessLoggingSettingsArn"
+      }
+    },
+    {
+      "name": "userSettings",
+      "methodName": "onUserSettings",
+      "url": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserSettings.html",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:userSettings/${UserSettingsId}",
+      "placeholders": [
+        {
+          "placeholder": "UserSettingsId",
+          "name": "userSettingsId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IUserSettingsRef",
+        "property": "userSettingsRef",
+        "arn": "userSettingsArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBrowserSettings",
+        "toCreateDataProtectionSettings",
+        "toCreateIdentityProvider",
+        "toCreateIpAccessSettings",
+        "toCreateNetworkSettings",
+        "toCreatePortal",
+        "toCreateSessionLogger",
+        "toCreateTrustStore",
+        "toCreateUserAccessLoggingSettings",
+        "toCreateUserSettings",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateBrowserSettings",
+        "toAssociateDataProtectionSettings",
+        "toAssociateIpAccessSettings",
+        "toAssociateNetworkSettings",
+        "toAssociateSessionLogger",
+        "toAssociateTrustStore",
+        "toAssociateUserAccessLoggingSettings",
+        "toAssociateUserSettings",
+        "toCreateIdentityProvider",
+        "toDeleteBrowserSettings",
+        "toDeleteDataProtectionSettings",
+        "toDeleteIdentityProvider",
+        "toDeleteIpAccessSettings",
+        "toDeleteNetworkSettings",
+        "toDeletePortal",
+        "toDeleteSessionLogger",
+        "toDeleteTrustStore",
+        "toDeleteUserAccessLoggingSettings",
+        "toDeleteUserSettings",
+        "toDisassociateBrowserSettings",
+        "toDisassociateDataProtectionSettings",
+        "toDisassociateIpAccessSettings",
+        "toDisassociateNetworkSettings",
+        "toDisassociateSessionLogger",
+        "toDisassociateTrustStore",
+        "toDisassociateUserAccessLoggingSettings",
+        "toDisassociateUserSettings",
+        "toExpireSession",
+        "toGetBrowserSettings",
+        "toGetDataProtectionSettings",
+        "toGetIdentityProvider",
+        "toGetIpAccessSettings",
+        "toGetNetworkSettings",
+        "toGetPortal",
+        "toGetPortalServiceProviderMetadata",
+        "toGetSession",
+        "toGetSessionLogger",
+        "toGetTrustStore",
+        "toGetTrustStoreCertificate",
+        "toGetUserAccessLoggingSettings",
+        "toGetUserSettings",
+        "toListIdentityProviders",
+        "toListSessions",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBrowserSettings",
+        "toUpdateDataProtectionSettings",
+        "toUpdateIdentityProvider",
+        "toUpdateIpAccessSettings",
+        "toUpdateNetworkSettings",
+        "toUpdatePortal",
+        "toUpdateSessionLogger",
+        "toUpdateTrustStore",
+        "toUpdateUserAccessLoggingSettings",
+        "toUpdateUserSettings"
+      ],
+      "relatedResourceTypes": [
+        "browserSettings",
+        "dataProtectionSettings",
+        "identityProvider",
+        "ipAccessSettings",
+        "networkSettings",
+        "portal",
+        "sessionLogger",
+        "trustStore",
+        "userAccessLoggingSettings",
+        "userSettings"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBrowserSettings",
+        "toCreateDataProtectionSettings",
+        "toCreateIdentityProvider",
+        "toCreateIpAccessSettings",
+        "toCreateNetworkSettings",
+        "toCreatePortal",
+        "toCreateSessionLogger",
+        "toCreateTrustStore",
+        "toCreateUserAccessLoggingSettings",
+        "toCreateUserSettings",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

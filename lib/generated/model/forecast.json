@@ -1,0 +1,1211 @@
+{
+  "schemaVersion": 1,
+  "filename": "forecast",
+  "className": "Forecast",
+  "name": "forecast",
+  "servicePrefix": "forecast",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_forecast.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAutoPredictor",
+      "CreateDataset",
+      "CreateDatasetGroup",
+      "CreateDatasetImportJob",
+      "CreateExplainability",
+      "CreateExplainabilityExport",
+      "CreateForecast",
+      "CreateForecastExportJob",
+      "CreateMonitor",
+      "CreatePredictor",
+      "CreatePredictorBacktestExportJob",
+      "CreateWhatIfAnalysis",
+      "CreateWhatIfForecast",
+      "CreateWhatIfForecastExport",
+      "DeleteDataset",
+      "DeleteDatasetGroup",
+      "DeleteDatasetImportJob",
+      "DeleteExplainability",
+      "DeleteExplainabilityExport",
+      "DeleteForecast",
+      "DeleteForecastExportJob",
+      "DeleteMonitor",
+      "DeletePredictor",
+      "DeletePredictorBacktestExportJob",
+      "DeleteResourceTree",
+      "DeleteWhatIfAnalysis",
+      "DeleteWhatIfForecast",
+      "DeleteWhatIfForecastExport",
+      "ResumeResource",
+      "StopResource",
+      "TagResource",
+      "UntagResource",
+      "UpdateDatasetGroup",
+      "CreateForecastEndpoint",
+      "DeleteForecastEndpoint"
+    ],
+    "Read": [
+      "DescribeAutoPredictor",
+      "DescribeDataset",
+      "DescribeDatasetGroup",
+      "DescribeDatasetImportJob",
+      "DescribeExplainability",
+      "DescribeExplainabilityExport",
+      "DescribeForecast",
+      "DescribeForecastExportJob",
+      "DescribeMonitor",
+      "DescribePredictor",
+      "DescribePredictorBacktestExportJob",
+      "DescribeWhatIfAnalysis",
+      "DescribeWhatIfForecast",
+      "DescribeWhatIfForecastExport",
+      "GetAccuracyMetrics",
+      "ListDatasetGroups",
+      "ListDatasetImportJobs",
+      "ListDatasets",
+      "ListExplainabilities",
+      "ListExplainabilityExports",
+      "ListForecastExportJobs",
+      "ListForecasts",
+      "ListMonitorEvaluations",
+      "ListMonitors",
+      "ListPredictorBacktestExportJobs",
+      "ListPredictors",
+      "ListTagsForResource",
+      "ListWhatIfAnalyses",
+      "ListWhatIfForecastExports",
+      "ListWhatIfForecasts",
+      "QueryForecast",
+      "QueryWhatIfForecast",
+      "DescribeForecastEndpoint",
+      "GetRecentForecastContext",
+      "InvokeForecastEndpoint"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAutoPredictor",
+      "methodName": "toCreateAutoPredictor",
+      "description": "Grants permission to create an auto predictor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateAutoPredictor.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html"
+    },
+    {
+      "name": "CreateDatasetGroup",
+      "methodName": "toCreateDatasetGroup",
+      "description": "Grants permission to create a dataset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html"
+    },
+    {
+      "name": "CreateDatasetImportJob",
+      "methodName": "toCreateDatasetImportJob",
+      "description": "Grants permission to create a dataset import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html"
+    },
+    {
+      "name": "CreateExplainability",
+      "methodName": "toCreateExplainability",
+      "description": "Grants permission to create an explainability",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html"
+    },
+    {
+      "name": "CreateExplainabilityExport",
+      "methodName": "toCreateExplainabilityExport",
+      "description": "Grants permission to create an explainability export using an explainability resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html"
+    },
+    {
+      "name": "CreateForecast",
+      "methodName": "toCreateForecast",
+      "description": "Grants permission to create a forecast",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html"
+    },
+    {
+      "name": "CreateForecastExportJob",
+      "methodName": "toCreateForecastExportJob",
+      "description": "Grants permission to create a forecast export job using a forecast resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html"
+    },
+    {
+      "name": "CreateMonitor",
+      "methodName": "toCreateMonitor",
+      "description": "Grants permission to create an monitor using a Predictor resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateMonitor.html"
+    },
+    {
+      "name": "CreatePredictor",
+      "methodName": "toCreatePredictor",
+      "description": "Grants permission to create a predictor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html"
+    },
+    {
+      "name": "CreatePredictorBacktestExportJob",
+      "methodName": "toCreatePredictorBacktestExportJob",
+      "description": "Grants permission to create a predictor backtest export job using a predictor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html"
+    },
+    {
+      "name": "CreateWhatIfAnalysis",
+      "methodName": "toCreateWhatIfAnalysis",
+      "description": "Grants permission to create a what-if analysis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfAnalysis.html"
+    },
+    {
+      "name": "CreateWhatIfForecast",
+      "methodName": "toCreateWhatIfForecast",
+      "description": "Grants permission to create a what-if forecast",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecast.html"
+    },
+    {
+      "name": "CreateWhatIfForecastExport",
+      "methodName": "toCreateWhatIfForecastExport",
+      "description": "Grants permission to create a what-if forecast export using what-if forecast resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteDataset.html"
+    },
+    {
+      "name": "DeleteDatasetGroup",
+      "methodName": "toDeleteDatasetGroup",
+      "description": "Grants permission to delete a dataset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteDatasetGroup.html"
+    },
+    {
+      "name": "DeleteDatasetImportJob",
+      "methodName": "toDeleteDatasetImportJob",
+      "description": "Grants permission to delete a dataset import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteDatasetImportJob.html"
+    },
+    {
+      "name": "DeleteExplainability",
+      "methodName": "toDeleteExplainability",
+      "description": "Grants permission to delete an explainability",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteExplainability.html"
+    },
+    {
+      "name": "DeleteExplainabilityExport",
+      "methodName": "toDeleteExplainabilityExport",
+      "description": "Grants permission to delete an explainability export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteExplainabilityExport.html"
+    },
+    {
+      "name": "DeleteForecast",
+      "methodName": "toDeleteForecast",
+      "description": "Grants permission to delete a forecast",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteForecast.html"
+    },
+    {
+      "name": "DeleteForecastExportJob",
+      "methodName": "toDeleteForecastExportJob",
+      "description": "Grants permission to delete a forecast export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteForecastExportJob.html"
+    },
+    {
+      "name": "DeleteMonitor",
+      "methodName": "toDeleteMonitor",
+      "description": "Grants permission to delete a monitor resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteMonitor.html"
+    },
+    {
+      "name": "DeletePredictor",
+      "methodName": "toDeletePredictor",
+      "description": "Grants permission to delete a predictor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeletePredictor.html"
+    },
+    {
+      "name": "DeletePredictorBacktestExportJob",
+      "methodName": "toDeletePredictorBacktestExportJob",
+      "description": "Grants permission to delete a predictor backtest export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeletePredictorBacktestExportJob.html"
+    },
+    {
+      "name": "DeleteResourceTree",
+      "methodName": "toDeleteResourceTree",
+      "description": "Grants permission to delete a resource and its child resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteResourceTree.html"
+    },
+    {
+      "name": "DeleteWhatIfAnalysis",
+      "methodName": "toDeleteWhatIfAnalysis",
+      "description": "Grants permission to delete a what-if analysis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteWhatIfAnalysis.html"
+    },
+    {
+      "name": "DeleteWhatIfForecast",
+      "methodName": "toDeleteWhatIfForecast",
+      "description": "Grants permission to delete a what-if forecast",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteWhatIfForecast.html"
+    },
+    {
+      "name": "DeleteWhatIfForecastExport",
+      "methodName": "toDeleteWhatIfForecastExport",
+      "description": "Grants permission to delete a what-if forecast export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteWhatIfForecastExport.html"
+    },
+    {
+      "name": "DescribeAutoPredictor",
+      "methodName": "toDescribeAutoPredictor",
+      "description": "Grants permission to describe an auto predictor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeAutoPredictor.html"
+    },
+    {
+      "name": "DescribeDataset",
+      "methodName": "toDescribeDataset",
+      "description": "Grants permission to describe a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html"
+    },
+    {
+      "name": "DescribeDatasetGroup",
+      "methodName": "toDescribeDatasetGroup",
+      "description": "Grants permission to describe a dataset group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html"
+    },
+    {
+      "name": "DescribeDatasetImportJob",
+      "methodName": "toDescribeDatasetImportJob",
+      "description": "Grants permission to describe a dataset import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html"
+    },
+    {
+      "name": "DescribeExplainability",
+      "methodName": "toDescribeExplainability",
+      "description": "Grants permission to describe an explainability",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeExplainability.html"
+    },
+    {
+      "name": "DescribeExplainabilityExport",
+      "methodName": "toDescribeExplainabilityExport",
+      "description": "Grants permission to describe an explainability export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeExplainabilityExport.html"
+    },
+    {
+      "name": "DescribeForecast",
+      "methodName": "toDescribeForecast",
+      "description": "Grants permission to describe a forecast",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeForecast.html"
+    },
+    {
+      "name": "DescribeForecastExportJob",
+      "methodName": "toDescribeForecastExportJob",
+      "description": "Grants permission to describe a forecast export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeForecastExportJob.html"
+    },
+    {
+      "name": "DescribeMonitor",
+      "methodName": "toDescribeMonitor",
+      "description": "Grants permission to describe an monitor resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeMonitor.html"
+    },
+    {
+      "name": "DescribePredictor",
+      "methodName": "toDescribePredictor",
+      "description": "Grants permission to describe a predictor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribePredictor.html"
+    },
+    {
+      "name": "DescribePredictorBacktestExportJob",
+      "methodName": "toDescribePredictorBacktestExportJob",
+      "description": "Grants permission to describe a predictor backtest export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribePredictorBacktestExportJob.html"
+    },
+    {
+      "name": "DescribeWhatIfAnalysis",
+      "methodName": "toDescribeWhatIfAnalysis",
+      "description": "Grants permission to describe a what-if analysis",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeWhatIfAnalysis.html"
+    },
+    {
+      "name": "DescribeWhatIfForecast",
+      "methodName": "toDescribeWhatIfForecast",
+      "description": "Grants permission to describe a what-if forecast",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeWhatIfForecast.html"
+    },
+    {
+      "name": "DescribeWhatIfForecastExport",
+      "methodName": "toDescribeWhatIfForecastExport",
+      "description": "Grants permission to describe a what-if forecast export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeWhatIfForecastExport.html"
+    },
+    {
+      "name": "GetAccuracyMetrics",
+      "methodName": "toGetAccuracyMetrics",
+      "description": "Grants permission to get the Accuracy Metrics for a predictor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_GetAccuracyMetrics.html"
+    },
+    {
+      "name": "ListDatasetGroups",
+      "methodName": "toListDatasetGroups",
+      "description": "Grants permission to list all the dataset groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html"
+    },
+    {
+      "name": "ListDatasetImportJobs",
+      "methodName": "toListDatasetImportJobs",
+      "description": "Grants permission to list all the dataset import jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list all the datasets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html"
+    },
+    {
+      "name": "ListExplainabilities",
+      "methodName": "toListExplainabilities",
+      "description": "Grants permission to list all the explainabilities",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListExplainabilities.html"
+    },
+    {
+      "name": "ListExplainabilityExports",
+      "methodName": "toListExplainabilityExports",
+      "description": "Grants permission to list all the explainability exports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListExplainabilityExports.html"
+    },
+    {
+      "name": "ListForecastExportJobs",
+      "methodName": "toListForecastExportJobs",
+      "description": "Grants permission to list all the forecast export jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListForecastExportJobs.html"
+    },
+    {
+      "name": "ListForecasts",
+      "methodName": "toListForecasts",
+      "description": "Grants permission to list all the forecasts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListForecasts.html"
+    },
+    {
+      "name": "ListMonitorEvaluations",
+      "methodName": "toListMonitorEvaluations",
+      "description": "Grants permission to list all the monitor evaluation result for a monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListMonitorEvaluations.html"
+    },
+    {
+      "name": "ListMonitors",
+      "methodName": "toListMonitors",
+      "description": "Grants permission to list all the monitor resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListMonitors.html"
+    },
+    {
+      "name": "ListPredictorBacktestExportJobs",
+      "methodName": "toListPredictorBacktestExportJobs",
+      "description": "Grants permission to list all the predictor backtest export jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListPredictorBacktestExportJobs.html"
+    },
+    {
+      "name": "ListPredictors",
+      "methodName": "toListPredictors",
+      "description": "Grants permission to list all the predictors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListPredictors.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an Amazon Forecast resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWhatIfAnalyses",
+      "methodName": "toListWhatIfAnalyses",
+      "description": "Grants permission to list all the what-if analyses",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListWhatIfAnalyses.html"
+    },
+    {
+      "name": "ListWhatIfForecastExports",
+      "methodName": "toListWhatIfForecastExports",
+      "description": "Grants permission to list all the what-if forecast exports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListWhatIfForecastExports.html"
+    },
+    {
+      "name": "ListWhatIfForecasts",
+      "methodName": "toListWhatIfForecasts",
+      "description": "Grants permission to list all the what-if forecasts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ListWhatIfForecasts.html"
+    },
+    {
+      "name": "QueryForecast",
+      "methodName": "toQueryForecast",
+      "description": "Grants permission to retrieve a forecast for a single item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_forecastquery_QueryForecast.html"
+    },
+    {
+      "name": "QueryWhatIfForecast",
+      "methodName": "toQueryWhatIfForecast",
+      "description": "Grants permission to retrieve a what-if forecast for a single item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_forecastquery_QueryWhatIfForecast.html"
+    },
+    {
+      "name": "ResumeResource",
+      "methodName": "toResumeResource",
+      "description": "Grants permission to resume Amazon Forecast resource jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_ResumeResource.html"
+    },
+    {
+      "name": "StopResource",
+      "methodName": "toStopResource",
+      "description": "Grants permission to stop Amazon Forecast resource jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_StopResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate the specified tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to delete the specified tags for a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDatasetGroup",
+      "methodName": "toUpdateDatasetGroup",
+      "description": "Grants permission to update a dataset group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html"
+    },
+    {
+      "name": "CreateForecastEndpoint",
+      "methodName": "toCreateForecastEndpoint",
+      "description": "Grants permission to create an endpoint using a Predictor resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+    },
+    {
+      "name": "DeleteForecastEndpoint",
+      "methodName": "toDeleteForecastEndpoint",
+      "description": "Grants permission to delete an endpoint resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+    },
+    {
+      "name": "DescribeForecastEndpoint",
+      "methodName": "toDescribeForecastEndpoint",
+      "description": "Grants permission to describe an endpoint resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+    },
+    {
+      "name": "GetRecentForecastContext",
+      "methodName": "toGetRecentForecastContext",
+      "description": "Grants permission to get the forecast context of a timeseries for an endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+    },
+    {
+      "name": "InvokeForecastEndpoint",
+      "methodName": "toInvokeForecastEndpoint",
+      "description": "Grants permission to invoke the endpoint to get forecast for a timeseries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "algorithm",
+      "methodName": "onAlgorithm",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-choosing-recipes.html",
+      "arn": "arn:${Partition}:forecast:::algorithm/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_forecast",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "arn": "datasetArn"
+      }
+    },
+    {
+      "name": "datasetGroup",
+      "methodName": "onDatasetGroup",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_forecast",
+        "interface": "IDatasetGroupRef",
+        "property": "datasetGroupRef",
+        "arn": "datasetGroupArn"
+      }
+    },
+    {
+      "name": "datasetImportJob",
+      "methodName": "onDatasetImportJob",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "endpoint",
+      "methodName": "onEndpoint",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast-endpoint/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "explainability",
+      "methodName": "onExplainability",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:explainability/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "explainabilityExport",
+      "methodName": "onExplainabilityExport",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:explainability-export/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "forecast",
+      "methodName": "onForecast",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "forecastExport",
+      "methodName": "onForecastExport",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "monitor",
+      "methodName": "onMonitor",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateMonitor.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:monitor/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "predictor",
+      "methodName": "onPredictor",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "predictorBacktestExportJob",
+      "methodName": "onPredictorBacktestExportJob",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:predictor-backtest-export-job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "whatIfAnalysis",
+      "methodName": "onWhatIfAnalysis",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfAnalysis.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:what-if-analysis/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "whatIfForecast",
+      "methodName": "onWhatIfForecast",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecast.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:what-if-forecast/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "whatIfForecastExport",
+      "methodName": "onWhatIfForecastExport",
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:what-if-forecast-export/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAutoPredictor",
+        "toCreateDataset",
+        "toCreateDatasetGroup",
+        "toCreateDatasetImportJob",
+        "toCreateExplainability",
+        "toCreateExplainabilityExport",
+        "toCreateForecast",
+        "toCreateForecastExportJob",
+        "toCreateMonitor",
+        "toCreatePredictor",
+        "toCreatePredictorBacktestExportJob",
+        "toCreateWhatIfAnalysis",
+        "toCreateWhatIfForecast",
+        "toCreateWhatIfForecastExport",
+        "toResumeResource",
+        "toStopResource",
+        "toTagResource",
+        "toCreateForecastEndpoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toCreateDatasetGroup",
+        "toCreateDatasetImportJob",
+        "toCreateExplainability",
+        "toCreateExplainabilityExport",
+        "toCreateForecast",
+        "toCreateForecastExportJob",
+        "toCreateMonitor",
+        "toCreatePredictor",
+        "toCreatePredictorBacktestExportJob",
+        "toCreateWhatIfAnalysis",
+        "toCreateWhatIfForecast",
+        "toCreateWhatIfForecastExport",
+        "toDeleteDataset",
+        "toDeleteDatasetGroup",
+        "toDeleteDatasetImportJob",
+        "toDeleteExplainability",
+        "toDeleteExplainabilityExport",
+        "toDeleteForecast",
+        "toDeleteForecastExportJob",
+        "toDeleteMonitor",
+        "toDeletePredictor",
+        "toDeletePredictorBacktestExportJob",
+        "toDeleteResourceTree",
+        "toDeleteWhatIfAnalysis",
+        "toDeleteWhatIfForecast",
+        "toDeleteWhatIfForecastExport",
+        "toDescribeAutoPredictor",
+        "toDescribeDataset",
+        "toDescribeDatasetGroup",
+        "toDescribeDatasetImportJob",
+        "toDescribeExplainability",
+        "toDescribeExplainabilityExport",
+        "toDescribeForecast",
+        "toDescribeForecastExportJob",
+        "toDescribeMonitor",
+        "toDescribePredictor",
+        "toDescribePredictorBacktestExportJob",
+        "toDescribeWhatIfAnalysis",
+        "toDescribeWhatIfForecast",
+        "toDescribeWhatIfForecastExport",
+        "toGetAccuracyMetrics",
+        "toListMonitorEvaluations",
+        "toListTagsForResource",
+        "toQueryForecast",
+        "toQueryWhatIfForecast",
+        "toResumeResource",
+        "toStopResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDatasetGroup",
+        "toCreateForecastEndpoint",
+        "toDeleteForecastEndpoint",
+        "toDescribeForecastEndpoint",
+        "toGetRecentForecastContext",
+        "toInvokeForecastEndpoint"
+      ],
+      "relatedResourceTypes": [
+        "dataset",
+        "datasetGroup",
+        "datasetImportJob",
+        "endpoint",
+        "explainability",
+        "explainabilityExport",
+        "forecast",
+        "forecastExport",
+        "monitor",
+        "predictor",
+        "predictorBacktestExportJob",
+        "whatIfAnalysis",
+        "whatIfForecast",
+        "whatIfForecastExport"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAutoPredictor",
+        "toCreateDataset",
+        "toCreateDatasetGroup",
+        "toCreateDatasetImportJob",
+        "toCreateExplainability",
+        "toCreateExplainabilityExport",
+        "toCreateForecast",
+        "toCreateForecastExportJob",
+        "toCreateMonitor",
+        "toCreatePredictor",
+        "toCreatePredictorBacktestExportJob",
+        "toCreateWhatIfAnalysis",
+        "toCreateWhatIfForecast",
+        "toCreateWhatIfForecastExport",
+        "toResumeResource",
+        "toStopResource",
+        "toTagResource",
+        "toUntagResource",
+        "toCreateForecastEndpoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

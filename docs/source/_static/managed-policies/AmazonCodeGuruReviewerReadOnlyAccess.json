@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonCodeGuruReviewerReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru:Get*",
+        "codeguru-reviewer:List*",
+        "codeguru-reviewer:Describe*",
+        "codeguru-reviewer:Get*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

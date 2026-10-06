@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRoute53ResolverReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "route53resolver:Get*",
+        "route53resolver:List*",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

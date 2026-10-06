@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "filename": "dbqms",
+  "className": "Dbqms",
+  "name": "dbqms",
+  "servicePrefix": "dbqms",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dbqms.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateFavoriteQuery",
+      "CreateQueryHistory",
+      "CreateTab",
+      "DeleteFavoriteQueries",
+      "DeleteQueryHistory",
+      "DeleteTab",
+      "UpdateFavoriteQuery",
+      "UpdateQueryHistory",
+      "UpdateTab"
+    ],
+    "List": [
+      "DescribeFavoriteQueries",
+      "DescribeQueryHistory",
+      "DescribeTabs"
+    ],
+    "Read": [
+      "GetQueryString"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateFavoriteQuery",
+      "methodName": "toCreateFavoriteQuery",
+      "description": "Grants permission to create a new favorite query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateFavoriteQuery"
+    },
+    {
+      "name": "CreateQueryHistory",
+      "methodName": "toCreateQueryHistory",
+      "description": "Grants permission to add a query to the history",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateQueryHistory"
+    },
+    {
+      "name": "CreateTab",
+      "methodName": "toCreateTab",
+      "description": "Grants permission to create a new query tab",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateTab"
+    },
+    {
+      "name": "DeleteFavoriteQueries",
+      "methodName": "toDeleteFavoriteQueries",
+      "description": "Grants permission to delete saved queries",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DeleteFavoriteQueries"
+    },
+    {
+      "name": "DeleteQueryHistory",
+      "methodName": "toDeleteQueryHistory",
+      "description": "Grants permission to delete a historical query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DeleteQueryHistory"
+    },
+    {
+      "name": "DeleteTab",
+      "methodName": "toDeleteTab",
+      "description": "Grants permission to delete query tab",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DeleteTab"
+    },
+    {
+      "name": "DescribeFavoriteQueries",
+      "methodName": "toDescribeFavoriteQueries",
+      "description": "Grants permission to list saved queries and associated metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DescribeFavoriteQueries"
+    },
+    {
+      "name": "DescribeQueryHistory",
+      "methodName": "toDescribeQueryHistory",
+      "description": "Grants permission to list history of queries that were run",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DescribeQueryHistory"
+    },
+    {
+      "name": "DescribeTabs",
+      "methodName": "toDescribeTabs",
+      "description": "Grants permission to list query tabs and associated metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DescribeTabs"
+    },
+    {
+      "name": "GetQueryString",
+      "methodName": "toGetQueryString",
+      "description": "Grants permission to retrieve favorite or history query string by id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#GetQueryString"
+    },
+    {
+      "name": "UpdateFavoriteQuery",
+      "methodName": "toUpdateFavoriteQuery",
+      "description": "Grants permission to update saved query and description",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#UpdateFavoriteQuery"
+    },
+    {
+      "name": "UpdateQueryHistory",
+      "methodName": "toUpdateQueryHistory",
+      "description": "Grants permission to update the query history",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#UpdateQueryHistory"
+    },
+    {
+      "name": "UpdateTab",
+      "methodName": "toUpdateTab",
+      "description": "Grants permission to update query tab",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#UpdateTab"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "filename": "pca-connector-ad",
+  "className": "PcaConnectorAd",
+  "name": "pca-connector-ad",
+  "servicePrefix": "pca-connector-ad",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pca-connector-ad.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateConnector",
+      "CreateDirectoryRegistration",
+      "CreateServicePrincipalName",
+      "CreateTemplate",
+      "CreateTemplateGroupAccessControlEntry",
+      "DeleteConnector",
+      "DeleteDirectoryRegistration",
+      "DeleteServicePrincipalName",
+      "DeleteTemplate",
+      "DeleteTemplateGroupAccessControlEntry",
+      "TagResource",
+      "UntagResource",
+      "UpdateTemplate",
+      "UpdateTemplateGroupAccessControlEntry"
+    ],
+    "Read": [
+      "GetConnector",
+      "GetDirectoryRegistration",
+      "GetServicePrincipalName",
+      "GetTemplate",
+      "GetTemplateGroupAccessControlEntry",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConnectors",
+      "ListDirectoryRegistrations",
+      "ListServicePrincipalNames",
+      "ListTemplateGroupAccessControlEntries",
+      "ListTemplates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create a Connector in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDirectoryRegistration",
+      "methodName": "toCreateDirectoryRegistration",
+      "description": "Grants permission to create a DirectoryRegistration in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateServicePrincipalName",
+      "methodName": "toCreateServicePrincipalName",
+      "description": "Grants permission to create a ServicePrincipalName for a DirectoryRegistration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateServicePrincipalName.html"
+    },
+    {
+      "name": "CreateTemplate",
+      "methodName": "toCreateTemplate",
+      "description": "Grants permission to create a Template for a Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html"
+    },
+    {
+      "name": "CreateTemplateGroupAccessControlEntry",
+      "methodName": "toCreateTemplateGroupAccessControlEntry",
+      "description": "Grants permission to create a TemplateGroupAccessControlEntry for a Template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplateGroupAccessControlEntry.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete a Connector in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteConnector.html"
+    },
+    {
+      "name": "DeleteDirectoryRegistration",
+      "methodName": "toDeleteDirectoryRegistration",
+      "description": "Grants permission to delete a DirectoryRegistration in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteDirectoryRegistration.html"
+    },
+    {
+      "name": "DeleteServicePrincipalName",
+      "methodName": "toDeleteServicePrincipalName",
+      "description": "Grants permission to delete a ServicePrincipalName for a DirectoryRegistration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteServicePrincipalName.html"
+    },
+    {
+      "name": "DeleteTemplate",
+      "methodName": "toDeleteTemplate",
+      "description": "Grants permission to delete a Template for a Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteTemplate.html"
+    },
+    {
+      "name": "DeleteTemplateGroupAccessControlEntry",
+      "methodName": "toDeleteTemplateGroupAccessControlEntry",
+      "description": "Grants permission to delete a TemplateGroupAccessControlEntry for a Template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteTemplateGroupAccessControlEntry.html"
+    },
+    {
+      "name": "GetConnector",
+      "methodName": "toGetConnector",
+      "description": "Grants permission to get a Connector in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_GetConnector.html"
+    },
+    {
+      "name": "GetDirectoryRegistration",
+      "methodName": "toGetDirectoryRegistration",
+      "description": "Grants permission to get a DirectoryRegistration in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_GetDirectoryRegistration.html"
+    },
+    {
+      "name": "GetServicePrincipalName",
+      "methodName": "toGetServicePrincipalName",
+      "description": "Grants permission to get a ServicePrincipalName for a DirectoryRegistration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_GetServicePrincipalName.html"
+    },
+    {
+      "name": "GetTemplate",
+      "methodName": "toGetTemplate",
+      "description": "Grants permission to get a Template for a Connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_GetTemplate.html"
+    },
+    {
+      "name": "GetTemplateGroupAccessControlEntry",
+      "methodName": "toGetTemplateGroupAccessControlEntry",
+      "description": "Grants permission to get a TemplateGroupAccessControlEntry for a Template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_GetTemplateGroupAccessControlEntry.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list the Connectors in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListConnectors.html"
+    },
+    {
+      "name": "ListDirectoryRegistrations",
+      "methodName": "toListDirectoryRegistrations",
+      "description": "Grants permission to list the DirectoryRegistrations in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListDirectoryRegistrations.html"
+    },
+    {
+      "name": "ListServicePrincipalNames",
+      "methodName": "toListServicePrincipalNames",
+      "description": "Grants permission to list the ServicePrincipalNames for a DirectoryRegistration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListServicePrincipalNames.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a pca-connector-ad resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTemplateGroupAccessControlEntries",
+      "methodName": "toListTemplateGroupAccessControlEntries",
+      "description": "Grants permission to list the TemplateGroupAccessControlEntries for a Template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListTemplateGroupAccessControlEntries.html"
+    },
+    {
+      "name": "ListTemplates",
+      "methodName": "toListTemplates",
+      "description": "Grants permission to list the Templates for a Connector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListTemplates.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a pca-connector-ad resource in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a pca-connector-ad resource in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateTemplate",
+      "methodName": "toUpdateTemplate",
+      "description": "Grants permission to update a Template for a Connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_UpdateTemplate.html"
+    },
+    {
+      "name": "UpdateTemplateGroupAccessControlEntry",
+      "methodName": "toUpdateTemplateGroupAccessControlEntry",
+      "description": "Grants permission to update a TemplateGroupAccessControlEntry for a Template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_UpdateTemplateGroupAccessControlEntry.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Connector",
+      "methodName": "onConnector",
+      "url": "",
+      "arn": "arn:${Partition}:pca-connector-ad:${Region}:${Account}:connector/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_pcaconnectorad",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
+    },
+    {
+      "name": "DirectoryRegistration",
+      "methodName": "onDirectoryRegistration",
+      "url": "",
+      "arn": "arn:${Partition}:pca-connector-ad:${Region}:${Account}:directory-registration/${DirectoryId}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_pcaconnectorad",
+        "interface": "IDirectoryRegistrationRef",
+        "property": "directoryRegistrationRef",
+        "arn": "directoryRegistrationArn"
+      }
+    },
+    {
+      "name": "Template",
+      "methodName": "onTemplate",
+      "url": "",
+      "arn": "arn:${Partition}:pca-connector-ad:${Region}:${Account}:connector/${ConnectorId}/template/${TemplateId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TemplateId",
+          "name": "templateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatecaconnectorforactivedirectory.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConnector",
+        "toCreateDirectoryRegistration",
+        "toCreateTemplate",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatecaconnectorforactivedirectory.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateConnector",
+        "toCreateDirectoryRegistration",
+        "toCreateServicePrincipalName",
+        "toCreateTemplate",
+        "toCreateTemplateGroupAccessControlEntry",
+        "toDeleteConnector",
+        "toDeleteDirectoryRegistration",
+        "toDeleteServicePrincipalName",
+        "toDeleteTemplate",
+        "toDeleteTemplateGroupAccessControlEntry",
+        "toGetConnector",
+        "toGetDirectoryRegistration",
+        "toGetServicePrincipalName",
+        "toGetTemplate",
+        "toGetTemplateGroupAccessControlEntry",
+        "toListServicePrincipalNames",
+        "toListTemplateGroupAccessControlEntries",
+        "toListTemplates",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTemplate",
+        "toUpdateTemplateGroupAccessControlEntry"
+      ],
+      "relatedResourceTypes": [
+        "Connector",
+        "DirectoryRegistration",
+        "Template"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatecaconnectorforactivedirectory.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConnector",
+        "toCreateDirectoryRegistration",
+        "toCreateTemplate",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

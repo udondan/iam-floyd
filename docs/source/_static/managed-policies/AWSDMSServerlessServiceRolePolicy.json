@@ -1,0 +1,114 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "id0",
+      "Effect": "Allow",
+      "Action": [
+        "dms:CreateReplicationInstance",
+        "dms:CreateReplicationTask"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "dms:req-tag/ResourceCreatedBy": "DMSServerless"
+        }
+      }
+    },
+    {
+      "Sid": "id1",
+      "Effect": "Allow",
+      "Action": [
+        "dms:DescribeReplicationInstances",
+        "dms:DescribeReplicationTasks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "id2",
+      "Effect": "Allow",
+      "Action": [
+        "dms:StartReplicationTask",
+        "dms:StopReplicationTask",
+        "dms:ModifyReplicationTask",
+        "dms:DeleteReplicationTask",
+        "dms:ModifyReplicationInstance",
+        "dms:DeleteReplicationInstance"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:rep:*",
+        "arn:aws:dms:*:*:task:*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/ResourceCreatedBy": "DMSServerless"
+        }
+      }
+    },
+    {
+      "Sid": "id3",
+      "Effect": "Allow",
+      "Action": [
+        "dms:TestConnection",
+        "dms:DeleteConnection"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:rep:*",
+        "arn:aws:dms:*:*:endpoint:*"
+      ]
+    },
+    {
+      "Sid": "id4",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:PutObjectTagging"
+      ],
+      "Resource": [
+        "arn:aws:s3:::dms-serverless-premigration-results-*",
+        "arn:aws:s3:::dms-premigration-results-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "id5",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketPolicy",
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:CreateBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::dms-serverless-premigration-results-*",
+        "arn:aws:s3:::dms-premigration-results-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "id6",
+      "Effect": "Allow",
+      "Action": [
+        "dms:StartReplicationTaskAssessmentRun"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:task:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "filename": "route53-recovery-readiness",
+  "className": "Route53RecoveryReadiness",
+  "name": "route53-recovery-readiness",
+  "servicePrefix": "route53-recovery-readiness",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53-recovery-readiness.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCell",
+      "CreateCrossAccountAuthorization",
+      "CreateReadinessCheck",
+      "CreateRecoveryGroup",
+      "CreateResourceSet",
+      "DeleteCell",
+      "DeleteCrossAccountAuthorization",
+      "DeleteReadinessCheck",
+      "DeleteRecoveryGroup",
+      "DeleteResourceSet",
+      "TagResource",
+      "UntagResource",
+      "UpdateCell",
+      "UpdateReadinessCheck",
+      "UpdateRecoveryGroup",
+      "UpdateResourceSet"
+    ],
+    "Read": [
+      "GetArchitectureRecommendations",
+      "GetCell",
+      "GetCellReadinessSummary",
+      "GetReadinessCheck",
+      "GetReadinessCheckResourceStatus",
+      "GetReadinessCheckStatus",
+      "GetRecoveryGroup",
+      "GetRecoveryGroupReadinessSummary",
+      "GetResourceSet",
+      "ListCells",
+      "ListCrossAccountAuthorizations",
+      "ListReadinessChecks",
+      "ListRecoveryGroups",
+      "ListResourceSets",
+      "ListRules",
+      "ListTagsForResources"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCell",
+      "methodName": "toCreateCell",
+      "description": "Grants permission to create a new cell",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/cells.html"
+    },
+    {
+      "name": "CreateCrossAccountAuthorization",
+      "methodName": "toCreateCrossAccountAuthorization",
+      "description": "Grants permission to create a cross account authorization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/crossaccountauthorizations.html"
+    },
+    {
+      "name": "CreateReadinessCheck",
+      "methodName": "toCreateReadinessCheck",
+      "description": "Grants permission to create a readiness check",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks.html"
+    },
+    {
+      "name": "CreateRecoveryGroup",
+      "methodName": "toCreateRecoveryGroup",
+      "description": "Grants permission to create a recovery group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroups.html"
+    },
+    {
+      "name": "CreateResourceSet",
+      "methodName": "toCreateResourceSet",
+      "description": "Grants permission to create a resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/resourcesets.html"
+    },
+    {
+      "name": "DeleteCell",
+      "methodName": "toDeleteCell",
+      "description": "Grants permission to delete a cell",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/cells-cellname.html"
+    },
+    {
+      "name": "DeleteCrossAccountAuthorization",
+      "methodName": "toDeleteCrossAccountAuthorization",
+      "description": "Grants permission to delete a cross account authorization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/crossaccountauthorizations-crossaccountauthorization.html"
+    },
+    {
+      "name": "DeleteReadinessCheck",
+      "methodName": "toDeleteReadinessCheck",
+      "description": "Grants permission to delete a readiness check",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks-readinesscheckname.html"
+    },
+    {
+      "name": "DeleteRecoveryGroup",
+      "methodName": "toDeleteRecoveryGroup",
+      "description": "Grants permission to delete a recovery group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroups-recoverygroupname.html"
+    },
+    {
+      "name": "DeleteResourceSet",
+      "methodName": "toDeleteResourceSet",
+      "description": "Grants permission to delete a resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/resourcesets-resourcesetname.html"
+    },
+    {
+      "name": "GetArchitectureRecommendations",
+      "methodName": "toGetArchitectureRecommendations",
+      "description": "Grants permission to get architecture recommendations for a recovery group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroups-recoverygroupname-architecturerecommendations.html"
+    },
+    {
+      "name": "GetCell",
+      "methodName": "toGetCell",
+      "description": "Grants permission to get information about a cell",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/cells-cellname.html"
+    },
+    {
+      "name": "GetCellReadinessSummary",
+      "methodName": "toGetCellReadinessSummary",
+      "description": "Grants permission to get a readiness summary for a cell",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/cellreadiness-cellname.html"
+    },
+    {
+      "name": "GetReadinessCheck",
+      "methodName": "toGetReadinessCheck",
+      "description": "Grants permission to get information about a readiness check",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks-readinesscheckname.html"
+    },
+    {
+      "name": "GetReadinessCheckResourceStatus",
+      "methodName": "toGetReadinessCheckResourceStatus",
+      "description": "Grants permission to get the readiness status for an individual resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks-readinesscheckname-resource-resourceidentifier-status.html"
+    },
+    {
+      "name": "GetReadinessCheckStatus",
+      "methodName": "toGetReadinessCheckStatus",
+      "description": "Grants permission to get the status of a readiness check (for a resource set)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks-readinesscheckname-status.html"
+    },
+    {
+      "name": "GetRecoveryGroup",
+      "methodName": "toGetRecoveryGroup",
+      "description": "Grants permission to get information about a recovery group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroups-recoverygroupname.html"
+    },
+    {
+      "name": "GetRecoveryGroupReadinessSummary",
+      "methodName": "toGetRecoveryGroupReadinessSummary",
+      "description": "Grants permission to get a readiness summary for a recovery group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroupreadiness-recoverygroupname.html"
+    },
+    {
+      "name": "GetResourceSet",
+      "methodName": "toGetResourceSet",
+      "description": "Grants permission to get information about a resource set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/resourcesets-resourcesetname.html"
+    },
+    {
+      "name": "ListCells",
+      "methodName": "toListCells",
+      "description": "Grants permission to list cells",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/cells.html"
+    },
+    {
+      "name": "ListCrossAccountAuthorizations",
+      "methodName": "toListCrossAccountAuthorizations",
+      "description": "Grants permission to list cross account authorizations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/crossaccountauthorizations.html"
+    },
+    {
+      "name": "ListReadinessChecks",
+      "methodName": "toListReadinessChecks",
+      "description": "Grants permission to list readiness checks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks.html"
+    },
+    {
+      "name": "ListRecoveryGroups",
+      "methodName": "toListRecoveryGroups",
+      "description": "Grants permission to list recovery groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroups.html"
+    },
+    {
+      "name": "ListResourceSets",
+      "methodName": "toListResourceSets",
+      "description": "Grants permission to list resource sets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/resourcesets.html"
+    },
+    {
+      "name": "ListRules",
+      "methodName": "toListRules",
+      "description": "Grants permission to list readiness rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/rules.html"
+    },
+    {
+      "name": "ListTagsForResources",
+      "methodName": "toListTagsForResources",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/tags-resource-arn.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/tags-resource-arn.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/tags-resource-arn.html"
+    },
+    {
+      "name": "UpdateCell",
+      "methodName": "toUpdateCell",
+      "description": "Grants permission to update a cell",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/cells-cellname.html"
+    },
+    {
+      "name": "UpdateReadinessCheck",
+      "methodName": "toUpdateReadinessCheck",
+      "description": "Grants permission to update a readiness check",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/readinesschecks-readinesscheckname.html"
+    },
+    {
+      "name": "UpdateRecoveryGroup",
+      "methodName": "toUpdateRecoveryGroup",
+      "description": "Grants permission to update a recovery group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroups-recoverygroupname.html"
+    },
+    {
+      "name": "UpdateResourceSet",
+      "methodName": "toUpdateResourceSet",
+      "description": "Grants permission to update a resource set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/recovery-readiness/latest/api/resourcesets-resourcesetname.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cell",
+      "methodName": "onCell",
+      "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.recovery-groups.html",
+      "arn": "arn:${Partition}:route53-recovery-readiness::${Account}:cell/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "ICellRef",
+        "property": "cellRef",
+        "arn": "cellArn"
+      }
+    },
+    {
+      "name": "readinesscheck",
+      "methodName": "onReadinesscheck",
+      "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.readiness-checks.html",
+      "arn": "arn:${Partition}:route53-recovery-readiness::${Account}:readiness-check/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "IReadinessCheckRef",
+        "property": "readinessCheckRef",
+        "arn": "readinessCheckArn"
+      }
+    },
+    {
+      "name": "recoverygroup",
+      "methodName": "onRecoverygroup",
+      "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.recovery-groups.html",
+      "arn": "arn:${Partition}:route53-recovery-readiness::${Account}:recovery-group/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "IRecoveryGroupRef",
+        "property": "recoveryGroupRef",
+        "arn": "recoveryGroupArn"
+      }
+    },
+    {
+      "name": "resourceset",
+      "methodName": "onResourceset",
+      "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/recovery-readiness.readiness-checks.html",
+      "arn": "arn:${Partition}:route53-recovery-readiness::${Account}:resource-set/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoveryreadiness",
+        "interface": "IResourceSetRef",
+        "property": "resourceSetRef",
+        "arn": "resourceSetArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCell",
+        "toCreateReadinessCheck",
+        "toCreateRecoveryGroup",
+        "toCreateResourceSet",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCell",
+        "toCreateReadinessCheck",
+        "toCreateRecoveryGroup",
+        "toCreateResourceSet",
+        "toDeleteCell",
+        "toDeleteReadinessCheck",
+        "toDeleteRecoveryGroup",
+        "toDeleteResourceSet",
+        "toGetArchitectureRecommendations",
+        "toGetCell",
+        "toGetCellReadinessSummary",
+        "toGetReadinessCheck",
+        "toGetReadinessCheckResourceStatus",
+        "toGetReadinessCheckStatus",
+        "toGetRecoveryGroup",
+        "toGetRecoveryGroupReadinessSummary",
+        "toGetResourceSet",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCell",
+        "toUpdateReadinessCheck",
+        "toUpdateRecoveryGroup",
+        "toUpdateResourceSet"
+      ],
+      "relatedResourceTypes": [
+        "cell",
+        "readinesscheck",
+        "recoverygroup",
+        "resourceset"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCell",
+        "toCreateReadinessCheck",
+        "toCreateRecoveryGroup",
+        "toCreateResourceSet",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCell",
+        "toUpdateReadinessCheck",
+        "toUpdateRecoveryGroup",
+        "toUpdateResourceSet"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

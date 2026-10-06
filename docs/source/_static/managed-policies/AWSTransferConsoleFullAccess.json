@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "transfer.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:ListCertificates",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeVpcEndpoints",
+        "health:DescribeEventAggregates",
+        "iam:GetPolicyVersion",
+        "iam:ListPolicies",
+        "iam:ListRoles",
+        "route53:ListHostedZones",
+        "s3:ListAllMyBuckets",
+        "transfer:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

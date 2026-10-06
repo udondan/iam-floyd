@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-cloud-control-api",
+  "className": "AwsCloudControlApi",
+  "name": "aws-cloud-control-api",
+  "servicePrefix": "cloudformation",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudcontrol.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelResourceRequest",
+      "CreateResource",
+      "DeleteResource",
+      "UpdateResource"
+    ],
+    "Read": [
+      "GetResource",
+      "GetResourceRequestStatus",
+      "ListResourceRequests",
+      "ListResources"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelResourceRequest",
+      "methodName": "toCancelResourceRequest",
+      "description": "Grants permission to cancel resource requests in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_CancelResourceRequest.html"
+    },
+    {
+      "name": "CreateResource",
+      "methodName": "toCreateResource",
+      "description": "Grants permission to create resources in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_CreateResource.html"
+    },
+    {
+      "name": "DeleteResource",
+      "methodName": "toDeleteResource",
+      "description": "Grants permission to delete resources in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_DeleteResource.html"
+    },
+    {
+      "name": "GetResource",
+      "methodName": "toGetResource",
+      "description": "Grants permission to get resources in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResource.html"
+    },
+    {
+      "name": "GetResourceRequestStatus",
+      "methodName": "toGetResourceRequestStatus",
+      "description": "Grants permission to get resource requests in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html"
+    },
+    {
+      "name": "ListResourceRequests",
+      "methodName": "toListResourceRequests",
+      "description": "Grants permission to list resource requests in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ListResourceRequests.html"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to list resources in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ListResources.html"
+    },
+    {
+      "name": "UpdateResource",
+      "methodName": "toUpdateResource",
+      "description": "Grants permission to update resources in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_UpdateResource.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "filename": "interconnect",
+  "className": "Interconnect",
+  "name": "interconnect",
+  "servicePrefix": "interconnect",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interconnect.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptConnectionProposal",
+      "CreateConnection",
+      "DeleteConnection",
+      "TagResource",
+      "UntagResource",
+      "UpdateConnection"
+    ],
+    "Read": [
+      "DescribeConnectionProposal",
+      "GetConnection",
+      "GetEnvironment",
+      "ListAttachPoints",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConnections",
+      "ListEnvironments"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptConnectionProposal",
+      "methodName": "toAcceptConnectionProposal",
+      "description": "Grants permission to accept a connection proposal generated elsewhere",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_AcceptConnectionProposal.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_CreateConnection.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete an existing connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_DeleteConnection.html"
+    },
+    {
+      "name": "DescribeConnectionProposal",
+      "methodName": "toDescribeConnectionProposal",
+      "description": "Grants permission to describe a connection proposal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_DescribeConnectionProposal.html"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to describe a connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_GetConnection.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to describe an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_GetEnvironment.html"
+    },
+    {
+      "name": "ListAttachPoints",
+      "methodName": "toListAttachPoints",
+      "description": "Grants permission to list available attach points",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListAttachPoints.html"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListConnections.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list available environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags on a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to apply tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConnection",
+      "methodName": "toUpdateConnection",
+      "description": "Grants permission to update an existing connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_UpdateConnection.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "connection",
+      "methodName": "onConnection",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_Connection.html",
+      "arn": "arn:${Partition}:interconnect:${Region}:${Account}:connection/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_interconnect",
+        "interface": "IConnectionRef",
+        "property": "connectionRef",
+        "arn": "connectionArn"
+      }
+    },
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/api/API_Environment.html",
+      "arn": "arn:${Partition}:interconnect:${Region}:${Account}:environment/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAcceptConnectionProposal",
+        "toCreateConnection",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toDeleteConnection",
+        "toGetConnection",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConnection"
+      ],
+      "relatedResourceTypes": [
+        "connection"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAcceptConnectionProposal",
+        "toCreateConnection",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "interconnect:RemoteAccount",
+      "methodName": "ifRemoteAccount",
+      "description": "Filters access by the remote partner account identifier supplied when creating a connection",
+      "url": "https://docs.aws.amazon.com/interconnect/latest/userguide/security-iam-service-with-iam.html#interconnect_RemoteAccount",
+      "relatedActionMethods": [
+        "toCreateConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RemoteAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

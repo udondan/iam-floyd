@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonTimestreamReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "timestream:CancelQuery",
+        "timestream:DescribeDatabase",
+        "timestream:DescribeEndpoints",
+        "timestream:DescribeTable",
+        "timestream:ListDatabases",
+        "timestream:ListMeasures",
+        "timestream:ListTables",
+        "timestream:ListTagsForResource",
+        "timestream:Select",
+        "timestream:SelectValues",
+        "timestream:DescribeScheduledQuery",
+        "timestream:ListScheduledQueries",
+        "timestream:DescribeBatchLoadTask",
+        "timestream:ListBatchLoadTasks",
+        "timestream:DescribeAccountSettings"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

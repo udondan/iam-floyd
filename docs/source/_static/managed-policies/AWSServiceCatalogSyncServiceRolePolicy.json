@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ArtifactSyncToServiceCatalog",
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:ListProvisioningArtifacts",
+        "servicecatalog:DescribeProductAsAdmin",
+        "servicecatalog:DeleteProvisioningArtifact",
+        "servicecatalog:ListServiceActionsForProvisioningArtifact",
+        "servicecatalog:DescribeProvisioningArtifact",
+        "servicecatalog:CreateProvisioningArtifact",
+        "servicecatalog:UpdateProvisioningArtifact"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AccessArtifactRepositories",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:UseConnection",
+        "codeconnections:UseConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ]
+    },
+    {
+      "Sid": "ValidateTemplate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:ValidateTemplate"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoleTags",
+        "iam:ListUserTags",
+        "tag:GetResources",
+        "ec2:DescribeTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetBucketTagging",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "s3:authType": "REST-HEADER",
+          "s3:signatureversion": "AWS4-HMAC-SHA256"
+        },
+        "NumericGreaterThanEquals": {
+          "s3:TlsVersion": "1.2"
+        }
+      }
+    }
+  ]
+}

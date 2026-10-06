@@ -1,0 +1,864 @@
+---
+name: Test / Publish
+
+permissions:
+  contents: read
+
+# Pull requests run the tests. release-please.yml starts this workflow with the tag of the draft
+# release that release-please created: the packages are built from the tag, published, and the
+# release is published last. The workflow is started, not called, because trusted publishing on
+# npm, PyPI and NuGet is configured for this workflow file, and PyPI doesn't support reusable
+# workflows.
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag of the draft release to publish, e.g. v1.2.3
+        type: string
+        required: true
+
+jobs:
+  # Only one run at a time may deploy to the AWS test account.
+  wait-for-turn:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      actions: read
+      contents: write # lock refs under refs/wait-for-turn/
+      pull-requests: read # labels for label-weights
+    # A new commit on the branch cancels the waiting of the outdated run, so the
+    # new run doesn't queue behind it. Once a run has the turn, this job is
+    # done: test jobs that already run are never cancelled.
+    concurrency:
+      group: test-wait-${{ github.head_ref || github.ref }}
+      cancel-in-progress: true
+    steps:
+      # Queue order: manual PRs and releases first, then Renovate updates.
+      # Fails right away if the branch is behind main. Branch protection
+      # requires PRs to be up to date, so testing an outdated branch is wasted
+      # time: it has to be updated and tested again.
+      - name: Wait for turn
+        uses: udondan/wait-for-turn@4a9f5171a1dbc3eb182410c772dae951e8ac26e3 # v1.3.0
+        with:
+          require-up-to-date: true
+          label-weights: |
+            renovate=-5
+
+  lint:
+    name: Lint
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: lint/go.mod
+          cache-dependency-path: lint/go.sum
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Set up Java
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Lint
+        run: make install lint
+        env:
+          GH_TOKEN: ${{ github.token }} # zizmor checks the actions online
+
+  # Also runs for a release: the packages that publish-iam-floyd-python, publish-iam-floyd-java and
+  # publish-iam-floyd-dotnet publish are built and tested here. Each package is built once, with the newest version, and
+  # tested with the oldest and the newest supported version.
+  test-transpile:
+    name: Test native iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+            version: "3.9"
+            newest: false
+          - language: python
+            name: Python
+            version: "3.14"
+            newest: true
+          - language: java
+            name: Java
+            version: "11"
+            newest: false
+          - language: java
+            name: Java
+            version: "25"
+            newest: true
+          - language: dotnet
+            name: .NET
+            version: "8"
+            newest: false
+          - language: dotnet
+            name: .NET
+            version: "10"
+            newest: true
+          - language: go
+            name: Go
+            version: "1.21"
+            newest: false
+          - language: go
+            name: Go
+            version: stable
+            newest: true
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Set up Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.version }}
+
+      - name: Set up uv
+        if: matrix.language == 'python'
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      - name: Set up Java to build
+        if: matrix.language == 'java'
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: 25
+
+      # The SDK of the newest version builds, and the test runs with the framework of the matrix
+      - name: Set up .NET
+        if: matrix.language == 'dotnet'
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: |
+            ${{ matrix.version }}.x
+            10.x
+
+      - name: Set up Go
+        if: matrix.language == 'go'
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: ${{ matrix.version }}
+          cache: false
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      # hatchling needs a newer Python than the package
+      - name: Build
+        run: make install package-native LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+          UV_PYTHON: "3.14"
+
+      - name: Set up Java to test
+        if: matrix.language == 'java'
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.version }}
+
+      - name: Test
+        run: |
+          export PYTHON_WHEEL JAVA_JAR DOTNET_PACKAGES DOTNET_FRAMEWORK GO_MODULE
+          PYTHON_WHEEL="$(find dist/iam-floyd -name '*.whl')"
+          JAVA_JAR="$(find dist/iam-floyd -name 'iam-floyd-*[0-9].jar')"
+          DOTNET_PACKAGES=dist/iam-floyd/dotnet
+          DOTNET_FRAMEWORK="net${VERSION}.0"
+          GO_MODULE="$(find dist/iam-floyd -name '*.zip')"
+          make test-transpile LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+          VERSION: ${{ matrix.version }}
+
+      # Signs, but does not upload without the Maven Central credentials
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java' && matrix.newest && github.event_name != 'workflow_dispatch'
+        run: bin/publish-maven dist/iam-floyd/java
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Store packages
+        if: github.event_name == 'workflow_dispatch' && matrix.newest
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: packages-iam-floyd-${{ matrix.language }}
+          path: dist/iam-floyd/${{ matrix.language }}
+          if-no-files-found: error
+          retention-days: 1
+
+  test-iam-floyd:
+    name: Test iam-floyd
+    needs: wait-for-turn
+    # A skipped job counts as passed for required checks. Run the job even if
+    # wait-for-turn failed and fail it in the first step.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for AWS
+    steps:
+      - name: Check turn
+        if: needs.wait-for-turn.result != 'success'
+        run: exit 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Configure AWS credentials
+        id: aws-credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Test npm package
+        run: make install test-typescript
+
+      # A cancelled run can leave a test policy behind, the next run deletes it
+      - name: Clean up test resources
+        if: ${{ always() && steps.aws-credentials.outcome == 'success' }}
+        run: make clean-test-resources
+
+      - name: Dry run npm publish
+        run: make build publish
+
+  test-cdk-iam-floyd:
+    name: Test cdk-iam-floyd
+    needs: wait-for-turn
+    # A skipped job counts as passed for required checks. Run the job even if
+    # wait-for-turn failed and fail it in the first step.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for AWS
+    steps:
+      - name: Check turn
+        if: needs.wait-for-turn.result != 'success'
+        run: exit 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      - name: Lint CDK variant
+        run: make lint-cdk
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Test npm package
+        run: |
+          make package
+          make test-typescript-cdk
+          make cdk-test
+
+      # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
+      # peer dependency, which has all reference interfaces the on*() methods accept. The exact
+      # version is the one of lib/generated/cdk-refs.json.
+      - name: Test with the minimum version of aws-cdk-lib
+        run: | # zizmor: ignore[adhoc-packages]
+          npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
+          node -p "require('aws-cdk-lib/package.json').version"
+          make build test-typescript-cdk
+
+  # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak. One job per
+  # language for speed; TypeScript is the baseline the others are compared to. When publishing,
+  # the packages are only built, the PR tested them, and the publish jobs publish them.
+  test-cdk-iam-floyd-jsii:
+    name: ${{ github.event_name == 'workflow_dispatch' && 'Build' || 'Test' }} cdk-iam-floyd in ${{ matrix.language }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ${{ fromJSON(github.event_name == 'workflow_dispatch' && '["python", "java", "dotnet", "go"]' || '["typescript", "python", "java", "dotnet", "go"]') }}
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Set up Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: 3.14
+
+      - name: Set up Java
+        if: matrix.language == 'java'
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up .NET
+        if: matrix.language == 'dotnet'
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Set up Go
+        if: matrix.language == 'go'
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+
+      - name: Build packages
+        run: |
+          make install
+          make cdk
+          make package-jsii LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+
+      - name: Test packages
+        if: github.event_name != 'workflow_dispatch'
+        run: make test-jsii LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+
+      # The npm package is published by publish-cdk-iam-floyd, with the jsii assembly
+      - name: Dry run npm publish
+        if: matrix.language == 'typescript' && github.event_name != 'workflow_dispatch'
+        run: make publish
+
+      # Signs, but does not upload without the Maven Central credentials
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java' && github.event_name != 'workflow_dispatch'
+        run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Store packages
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: packages-${{ matrix.language }}
+          path: dist/${{ matrix.language == 'go' && 'go-module' || matrix.language }}
+          if-no-files-found: error
+          retention-days: 1
+
+  # Assets can only be added to a draft release, published releases are immutable
+  release:
+    name: Check release
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get_version.outputs.VERSION }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Get the version
+        id: get_version
+        run: |
+          set -euo pipefail
+          VERSION="$(jq -r .version package.json)"
+          if [[ "v${VERSION}" != "${TAG}" ]]; then
+            echo "::error::The version ${VERSION} in package.json does not match the tag ${TAG}"
+            exit 1
+          fi
+          echo "VERSION=${VERSION}" >> "$GITHUB_OUTPUT"
+        env:
+          TAG: ${{ inputs.tag }}
+
+      - name: Check that the release is a draft
+        run: |
+          if [[ "$(gh release view "${TAG}" --repo "${GITHUB_REPOSITORY}" --json isDraft --jq .isDraft)" != "true" ]]; then
+            echo "::error::Release ${TAG} is not a draft"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }} # draft releases need write access
+          TAG: ${{ inputs.tag }}
+
+  publish-iam-floyd:
+    name: Publish iam-floyd
+    needs:
+      - release
+      - test-transpile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for npm
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+
+      # npm authenticates with OIDC, there is no token
+      - name: Publish to npm
+        run: make install build publish
+        env:
+          NPM_PUBLISH: "true"
+
+  publish-iam-floyd-python:
+    name: Publish iam-floyd to PyPI
+    needs:
+      - release
+      - test-transpile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for PyPI
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-iam-floyd-python
+          path: dist/iam-floyd/python
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        with:
+          packages-dir: dist/iam-floyd/python
+
+  publish-iam-floyd-java:
+    name: Publish iam-floyd to Maven Central
+    needs:
+      - release
+      - test-transpile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-iam-floyd-java
+          path: dist/iam-floyd/java
+
+      - name: Publish to Maven Central
+        run: bin/publish-maven dist/iam-floyd/java
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
+  publish-iam-floyd-dotnet:
+    name: Publish iam-floyd to NuGet
+    needs:
+      - release
+      - test-transpile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for NuGet
+    steps:
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-iam-floyd-dotnet
+          path: dist/iam-floyd/dotnet
+
+      - name: Log in to NuGet
+        id: nuget
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: udondan
+
+      - name: Publish to NuGet
+        run: |
+          dotnet nuget push dist/iam-floyd/dotnet/*.nupkg \
+            --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.nuget.outputs.NUGET_API_KEY }}
+
+  publish-iam-floyd-go:
+    name: Publish iam-floyd for Go
+    needs:
+      - release
+      - test-transpile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # release assets
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-iam-floyd-go
+          path: dist/iam-floyd/go
+
+      - name: Add module zip to release
+        run: gh release upload "v${VERSION}" dist/iam-floyd/go/*.zip --clobber --repo "${GITHUB_REPOSITORY}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.release.outputs.version }}
+
+  publish-cdk-iam-floyd:
+    name: Publish cdk-iam-floyd
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for npm
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      # npm authenticates with OIDC, there is no token
+      - name: Publish to npm
+        run: make package-jsii publish LANGUAGES=typescript
+        env:
+          NPM_PUBLISH: "true"
+
+  publish-cdk-iam-floyd-python:
+    name: Publish cdk-iam-floyd to PyPI
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for PyPI
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-python
+          path: dist/python
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        with:
+          packages-dir: dist/python
+
+  publish-cdk-iam-floyd-dotnet:
+    name: Publish cdk-iam-floyd to NuGet
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for NuGet
+    steps:
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-dotnet
+          path: dist/dotnet
+
+      - name: Log in to NuGet
+        id: nuget
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: udondan
+
+      # The symbols package (.snupkg) next to it is pushed with it
+      - name: Publish to NuGet
+        run: |
+          dotnet nuget push dist/dotnet/*.nupkg \
+            --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.nuget.outputs.NUGET_API_KEY }}
+
+  publish-cdk-iam-floyd-java:
+    name: Publish cdk-iam-floyd to Maven Central
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-java
+          path: dist/java
+
+      - name: Publish to Maven Central
+        run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
+  publish-cdk-iam-floyd-go:
+    name: Publish cdk-iam-floyd for Go
+    needs:
+      - release
+      - test-cdk-iam-floyd-jsii
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # release assets
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages-go
+          path: dist/go-module
+
+      - name: Add module zip to release
+        run: gh release upload "v${VERSION}" dist/go-module/*.zip --clobber --repo "${GITHUB_REPOSITORY}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.release.outputs.version }}
+
+  # The Go modules of iam-floyd and cdk-iam-floyd are served by GitHub Pages as a static Go module
+  # proxy. The module zips of every version are release assets; the proxy serves the newest of them.
+  # It needs all publish jobs, so they are grouped by package in the graph of the workflow.
+  publish-go-proxy:
+    name: Publish Go module proxy
+    needs:
+      - release
+      - publish-iam-floyd
+      - publish-iam-floyd-python
+      - publish-iam-floyd-java
+      - publish-iam-floyd-dotnet
+      - publish-iam-floyd-go
+      - publish-cdk-iam-floyd
+      - publish-cdk-iam-floyd-python
+      - publish-cdk-iam-floyd-dotnet
+      - publish-cdk-iam-floyd-java
+      - publish-cdk-iam-floyd-go
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      # Pages sites are limited to 1 GB and the module zips of a release have about 11 MB. The
+      # release of this version and the newest 29 published releases make 30; releases before the
+      # Go modules have no zips.
+      - name: Fetch module zips of the newest releases
+        run: |
+          set -euo pipefail
+          mkdir zips
+          gh release download "v${VERSION}" --pattern '*iam-floyd-go-module-*.zip' --dir zips
+          for tag in $(gh release list --exclude-drafts --limit 30 --json tagName --jq '.[].tagName' | grep -v -x -F "v${VERSION}" | head -n 29); do
+            if gh release view "${tag}" --json assets --jq '.assets[].name' | grep -q -- '-go-module-'; then
+              gh release download "${tag}" --pattern '*iam-floyd-go-module-*.zip' --dir zips
+            fi
+          done
+          ls -l zips
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }} # the release of this version is a draft, which needs write access
+          VERSION: ${{ needs.release.outputs.version }}
+
+      - name: Build Go module proxy
+        run: bin/go-proxy site site zips/*.zip
+
+      # A re-run uploads to the same run, where deploy-pages fails if two artifacts have its name
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          name: github-pages-${{ github.run_attempt }}
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
+
+  # The release stays a draft until everything is published and all assets are attached, after
+  # publish-go-proxy, which needs all publish jobs
+  publish-release:
+    name: Publish release
+    needs:
+      - release
+      - publish-go-proxy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      # release-please takes the notes from the body of the release PR, which has no IAM changes.
+      # The entry of this version in CHANGELOG.md has them, see release-please.yml
+      - name: Get release notes
+        run: |
+          set -euo pipefail
+          awk -v version="${VERSION}" '
+            /^##+ \[/ { if (found) exit; if (index($0, "[" version "]")) found = 1 }
+            found
+          ' CHANGELOG.md > notes.md
+          if [[ ! -s notes.md ]]; then
+            echo "::error::CHANGELOG.md has no entry for ${VERSION}"
+            exit 1
+          fi
+          cat notes.md
+        env:
+          VERSION: ${{ needs.release.outputs.version }}
+
+      - name: Publish release
+        run: |
+          gh release edit "v${VERSION}" --repo "${GITHUB_REPOSITORY}" --notes-file notes.md
+          gh release edit "v${VERSION}" --repo "${GITHUB_REPOSITORY}" --draft=false --latest
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          VERSION: ${{ needs.release.outputs.version }}
+
+  # Fetching the modules through proxy.golang.org caches them there and adds them to the index of
+  # the Go modules, from which pkg.go.dev adds the documentation
+  seed-go-proxy:
+    name: Seed Go module cache
+    needs:
+      - release
+      - publish-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Fetch the modules
+        run: |
+          go mod init seed
+          go get "udondan.github.io/iam-floyd/go/iamfloyd@v${VERSION}" "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
+        env:
+          GOPROXY: https://proxy.golang.org
+          VERSION: ${{ needs.release.outputs.version }}
+
+  # The only test check the ruleset requires.
+  required:
+    # A skipped job counts as passed for required checks, so this job must not
+    # be skipped when a test failed.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - test-transpile
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+      - test-cdk-iam-floyd-jsii
+    steps:
+      - name: Check tests
+        if: needs.lint.result != 'success' || needs.test-transpile.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success'
+        run: exit 1
+
+      - name: Report success
+        run: echo 'Success'

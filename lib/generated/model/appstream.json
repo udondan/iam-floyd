@@ -1,0 +1,1152 @@
+{
+  "schemaVersion": 1,
+  "filename": "appstream",
+  "className": "Appstream",
+  "name": "appstream",
+  "servicePrefix": "appstream",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateAppBlockBuilderAppBlock",
+      "AssociateApplicationFleet",
+      "AssociateApplicationToEntitlement",
+      "AssociateFleet",
+      "AssociateSoftwareToImageBuilder",
+      "BatchAssociateUserStack",
+      "BatchDisassociateUserStack",
+      "CopyImage",
+      "CreateAppBlock",
+      "CreateAppBlockBuilder",
+      "CreateAppBlockBuilderStreamingURL",
+      "CreateApplication",
+      "CreateDirectoryConfig",
+      "CreateEntitlement",
+      "CreateExportImageTask",
+      "CreateFleet",
+      "CreateImageBuilder",
+      "CreateImageBuilderStreamingURL",
+      "CreateImportedImage",
+      "CreateStack",
+      "CreateStreamingURL",
+      "CreateThemeForStack",
+      "CreateUpdatedImage",
+      "CreateUsageReportSubscription",
+      "CreateUser",
+      "DeleteAppBlock",
+      "DeleteAppBlockBuilder",
+      "DeleteApplication",
+      "DeleteDirectoryConfig",
+      "DeleteEntitlement",
+      "DeleteFleet",
+      "DeleteImage",
+      "DeleteImageBuilder",
+      "DeleteImagePermissions",
+      "DeleteStack",
+      "DeleteThemeForStack",
+      "DeleteUsageReportSubscription",
+      "DeleteUser",
+      "DisableUser",
+      "DisassociateAppBlockBuilderAppBlock",
+      "DisassociateApplicationFleet",
+      "DisassociateApplicationFromEntitlement",
+      "DisassociateFleet",
+      "DisassociateSoftwareFromImageBuilder",
+      "EnableUser",
+      "ExpireSession",
+      "StartAppBlockBuilder",
+      "StartFleet",
+      "StartImageBuilder",
+      "StartSoftwareDeploymentToImageBuilder",
+      "StopAppBlockBuilder",
+      "StopFleet",
+      "StopImageBuilder",
+      "Stream",
+      "TagResource",
+      "UntagResource",
+      "UpdateAppBlockBuilder",
+      "UpdateApplication",
+      "UpdateDirectoryConfig",
+      "UpdateEntitlement",
+      "UpdateFleet",
+      "UpdateImagePermissions",
+      "UpdateStack",
+      "UpdateThemeForStack"
+    ],
+    "List": [
+      "DescribeAppBlockBuilderAppBlockAssociations",
+      "DescribeAppBlockBuilders",
+      "DescribeAppBlocks",
+      "DescribeAppLicenseUsage",
+      "DescribeApplicationFleetAssociations",
+      "DescribeApplications",
+      "DescribeDirectoryConfigs",
+      "DescribeEntitlements",
+      "DescribeFleets",
+      "DescribeImageBuilders",
+      "DescribeImages",
+      "DescribeSessions",
+      "DescribeSoftwareAssociations",
+      "DescribeStacks",
+      "DescribeUsageReportSubscriptions",
+      "DescribeUserStackAssociations",
+      "DescribeUsers",
+      "ListEntitledApplications",
+      "ListExportImageTasks"
+    ],
+    "Read": [
+      "DescribeImagePermissions",
+      "DescribeThemeForStack",
+      "GetExportImageTask",
+      "ListAssociatedFleets",
+      "ListAssociatedStacks",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateAppBlockBuilderAppBlock",
+      "methodName": "toAssociateAppBlockBuilderAppBlock",
+      "description": "Grants permission to associate the specified app block builder with the app block",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateAppBlockBuilderAppBlock.html"
+    },
+    {
+      "name": "AssociateApplicationFleet",
+      "methodName": "toAssociateApplicationFleet",
+      "description": "Grants permission to associate the specified application with the fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateApplicationFleet.html"
+    },
+    {
+      "name": "AssociateApplicationToEntitlement",
+      "methodName": "toAssociateApplicationToEntitlement",
+      "description": "Grants permission to associate the specified application to the specified entitlement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateApplicationToEntitlement.html"
+    },
+    {
+      "name": "AssociateFleet",
+      "methodName": "toAssociateFleet",
+      "description": "Grants permission to associate the specified fleet with the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateFleet.html"
+    },
+    {
+      "name": "AssociateSoftwareToImageBuilder",
+      "methodName": "toAssociateSoftwareToImageBuilder",
+      "description": "Grants permission to associate license included application(s) with an existing image builder instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateSoftwareToImageBuilder.html"
+    },
+    {
+      "name": "BatchAssociateUserStack",
+      "methodName": "toBatchAssociateUserStack",
+      "description": "Grants permission to associate the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchAssociateUserStack.html"
+    },
+    {
+      "name": "BatchDisassociateUserStack",
+      "methodName": "toBatchDisassociateUserStack",
+      "description": "Grants permission to disassociate the specified users from the specified stacks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchDisassociateUserStack.html"
+    },
+    {
+      "name": "CopyImage",
+      "methodName": "toCopyImage",
+      "description": "Grants permission to copy the specified image within the same Region or to a new Region within the same AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CopyImage.html"
+    },
+    {
+      "name": "CreateAppBlock",
+      "methodName": "toCreateAppBlock",
+      "description": "Grants permission to create an app block. App blocks store details about the virtual hard disk that contains the files for the application in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. App blocks are only supported for Elastic fleets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateAppBlock.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAppBlockBuilder",
+      "methodName": "toCreateAppBlockBuilder",
+      "description": "Grants permission to create an app block builder. An app block builder is a virtual machine that is used to create an app block",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateAppBlockBuilder.html"
+    },
+    {
+      "name": "CreateAppBlockBuilderStreamingURL",
+      "methodName": "toCreateAppBlockBuilderStreamingURL",
+      "description": "Grants permission to create a URL to start an app block builder streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateAppBlockBuilderStreamingURL.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application within customer account. Applications store the details about how to launch applications on streaming instances. This is only supported for Elastic fleets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateApplication.html"
+    },
+    {
+      "name": "CreateDirectoryConfig",
+      "methodName": "toCreateDirectoryConfig",
+      "description": "Grants permission to create a Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateDirectoryConfig.html"
+    },
+    {
+      "name": "CreateEntitlement",
+      "methodName": "toCreateEntitlement",
+      "description": "Grants permission to create an entitlement to control access to applications based on user attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateEntitlement.html"
+    },
+    {
+      "name": "CreateExportImageTask",
+      "methodName": "toCreateExportImageTask",
+      "description": "Grants permission to create an export task for an AppStream 2.0 image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateExportImageTask.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "CreateFleet",
+      "methodName": "toCreateFleet",
+      "description": "Grants permission to create a fleet. A fleet is a group of streaming instances from which applications are launched and streamed to users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html"
+    },
+    {
+      "name": "CreateImageBuilder",
+      "methodName": "toCreateImageBuilder",
+      "description": "Grants permission to create an image builder. An image builder is a virtual machine that is used to create an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html"
+    },
+    {
+      "name": "CreateImageBuilderStreamingURL",
+      "methodName": "toCreateImageBuilderStreamingURL",
+      "description": "Grants permission to create a URL to start an image builder streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilderStreamingURL.html"
+    },
+    {
+      "name": "CreateImportedImage",
+      "methodName": "toCreateImportedImage",
+      "description": "Grants permission to create an AppStream 2.0 image from an imported AMI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImportedImage.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateStack",
+      "methodName": "toCreateStack",
+      "description": "Grants permission to create a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html"
+    },
+    {
+      "name": "CreateStreamingURL",
+      "methodName": "toCreateStreamingURL",
+      "description": "Grants permission to create a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html"
+    },
+    {
+      "name": "CreateThemeForStack",
+      "methodName": "toCreateThemeForStack",
+      "description": "Grants permission to create a custom branding theme, which might includes a custom logo, website links, and other branding to display to your users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateThemeForStack.html"
+    },
+    {
+      "name": "CreateUpdatedImage",
+      "methodName": "toCreateUpdatedImage",
+      "description": "Grants permission to update an existing image within customer account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUpdatedImage.html"
+    },
+    {
+      "name": "CreateUsageReportSubscription",
+      "methodName": "toCreateUsageReportSubscription",
+      "description": "Grants permission to create a usage report subscription. Usage reports are generated daily",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUsageReportSubscription.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a new user in the user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUser.html"
+    },
+    {
+      "name": "DeleteAppBlock",
+      "methodName": "toDeleteAppBlock",
+      "description": "Grants permission to delete the specified app block",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteAppBlock.html"
+    },
+    {
+      "name": "DeleteAppBlockBuilder",
+      "methodName": "toDeleteAppBlockBuilder",
+      "description": "Grants permission to delete the specified app block builder and release capacity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteAppBlockBuilder.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete the specified application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteDirectoryConfig",
+      "methodName": "toDeleteDirectoryConfig",
+      "description": "Grants permission to delete the specified Directory Config object from AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteDirectoryConfig.html"
+    },
+    {
+      "name": "DeleteEntitlement",
+      "methodName": "toDeleteEntitlement",
+      "description": "Grants permission to delete the specified entitlement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteEntitlement.html"
+    },
+    {
+      "name": "DeleteFleet",
+      "methodName": "toDeleteFleet",
+      "description": "Grants permission to delete the specified fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteFleet.html"
+    },
+    {
+      "name": "DeleteImage",
+      "methodName": "toDeleteImage",
+      "description": "Grants permission to delete the specified image. An image cannot be deleted when it is in use",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImage.html"
+    },
+    {
+      "name": "DeleteImageBuilder",
+      "methodName": "toDeleteImageBuilder",
+      "description": "Grants permission to delete the specified image builder and release capacity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImageBuilder.html"
+    },
+    {
+      "name": "DeleteImagePermissions",
+      "methodName": "toDeleteImagePermissions",
+      "description": "Grants permission to delete permissions for the specified private image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImagePermissions.html"
+    },
+    {
+      "name": "DeleteStack",
+      "methodName": "toDeleteStack",
+      "description": "Grants permission to delete the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteStack.html"
+    },
+    {
+      "name": "DeleteThemeForStack",
+      "methodName": "toDeleteThemeForStack",
+      "description": "Grants permission to delete a custom branding theme, which might includes a custom logo, website links, and other branding to display to your users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteThemeForStack.html"
+    },
+    {
+      "name": "DeleteUsageReportSubscription",
+      "methodName": "toDeleteUsageReportSubscription",
+      "description": "Grants permission to disable usage report generation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUsageReportSubscription.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user from the user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DescribeAppBlockBuilderAppBlockAssociations",
+      "methodName": "toDescribeAppBlockBuilderAppBlockAssociations",
+      "description": "Grants permission to retrieve the associations that are associated with the specified app block builder or app block",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilderAppBlockAssociations.html"
+    },
+    {
+      "name": "DescribeAppBlockBuilders",
+      "methodName": "toDescribeAppBlockBuilders",
+      "description": "Grants permission to retrieve a list that describes one or more specified app block builders, if the app block builder names are provided. Otherwise, all app block builders in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilders.html"
+    },
+    {
+      "name": "DescribeAppBlocks",
+      "methodName": "toDescribeAppBlocks",
+      "description": "Grants permission to retrieve a list that describes one or more specified app blocks, if the app block arns are provided. Otherwise, all app blocks in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlocks.html"
+    },
+    {
+      "name": "DescribeAppLicenseUsage",
+      "methodName": "toDescribeAppLicenseUsage",
+      "description": "Grants permission to retrieve license included application usage information",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppLicenseUsage.html"
+    },
+    {
+      "name": "DescribeApplicationFleetAssociations",
+      "methodName": "toDescribeApplicationFleetAssociations",
+      "description": "Grants permission to retrieve the associations that are associated with the specified application or fleet",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplicationFleetAssociations.html"
+    },
+    {
+      "name": "DescribeApplications",
+      "methodName": "toDescribeApplications",
+      "description": "Grants permission to retrieve a list that describes one or more specified applications, if the application arns are provided. Otherwise, all applications in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplications.html"
+    },
+    {
+      "name": "DescribeDirectoryConfigs",
+      "methodName": "toDescribeDirectoryConfigs",
+      "description": "Grants permission to retrieve a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeDirectoryConfigs.html"
+    },
+    {
+      "name": "DescribeEntitlements",
+      "methodName": "toDescribeEntitlements",
+      "description": "Grants permission to retrieve one or all entitlements for the specified stack",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeEntitlements.html"
+    },
+    {
+      "name": "DescribeFleets",
+      "methodName": "toDescribeFleets",
+      "description": "Grants permission to retrieve a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html"
+    },
+    {
+      "name": "DescribeImageBuilders",
+      "methodName": "toDescribeImageBuilders",
+      "description": "Grants permission to retrieve a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImageBuilders.html"
+    },
+    {
+      "name": "DescribeImagePermissions",
+      "methodName": "toDescribeImagePermissions",
+      "description": "Grants permission to retrieve a list that describes the permissions for shared AWS account IDs on a private image that you own",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImagePermissions.html"
+    },
+    {
+      "name": "DescribeImages",
+      "methodName": "toDescribeImages",
+      "description": "Grants permission to retrieve a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImages.html"
+    },
+    {
+      "name": "DescribeSessions",
+      "methodName": "toDescribeSessions",
+      "description": "Grants permission to retrieve a list that describes the streaming sessions for the specified stack and fleet. If a user ID is provided for the stack and fleet, only the streaming sessions for that user are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSessions.html"
+    },
+    {
+      "name": "DescribeSoftwareAssociations",
+      "methodName": "toDescribeSoftwareAssociations",
+      "description": "Grants permission to retrieve license included application associations for a specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSoftwareAssociations.html"
+    },
+    {
+      "name": "DescribeStacks",
+      "methodName": "toDescribeStacks",
+      "description": "Grants permission to retrieve a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeStacks.html"
+    },
+    {
+      "name": "DescribeThemeForStack",
+      "methodName": "toDescribeThemeForStack",
+      "description": "Grants permission to get the custom branding theme information, which might includes a custom logo, website links, and other branding to display to your users",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeThemeForStack.html"
+    },
+    {
+      "name": "DescribeUsageReportSubscriptions",
+      "methodName": "toDescribeUsageReportSubscriptions",
+      "description": "Grants permission to retrieve a list that describes one or more usage report subscriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsageReportSubscriptions.html"
+    },
+    {
+      "name": "DescribeUserStackAssociations",
+      "methodName": "toDescribeUserStackAssociations",
+      "description": "Grants permission to retrieve a list that describes the UserStackAssociation objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUserStackAssociations.html"
+    },
+    {
+      "name": "DescribeUsers",
+      "methodName": "toDescribeUsers",
+      "description": "Grants permission to retrieve a list that describes users in the user pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsers.html"
+    },
+    {
+      "name": "DisableUser",
+      "methodName": "toDisableUser",
+      "description": "Grants permission to disable the specified user in the user pool. This action does not delete the user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisableUser.html"
+    },
+    {
+      "name": "DisassociateAppBlockBuilderAppBlock",
+      "methodName": "toDisassociateAppBlockBuilderAppBlock",
+      "description": "Grants permission to disassociate the specified app block builder with the app block",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateAppBlockBuilderAppBlock.html"
+    },
+    {
+      "name": "DisassociateApplicationFleet",
+      "methodName": "toDisassociateApplicationFleet",
+      "description": "Grants permission to disassociate the specified application from the specified fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateApplicationFleet.html"
+    },
+    {
+      "name": "DisassociateApplicationFromEntitlement",
+      "methodName": "toDisassociateApplicationFromEntitlement",
+      "description": "Grants permission to disassociate the specified application from the specified entitlement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateApplicationFromEntitlement.html"
+    },
+    {
+      "name": "DisassociateFleet",
+      "methodName": "toDisassociateFleet",
+      "description": "Grants permission to disassociate the specified fleet from the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateFleet.html"
+    },
+    {
+      "name": "DisassociateSoftwareFromImageBuilder",
+      "methodName": "toDisassociateSoftwareFromImageBuilder",
+      "description": "Grants permission to remove license included application(s) association(s) from an image builder instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateSoftwareFromImageBuilder.html"
+    },
+    {
+      "name": "EnableUser",
+      "methodName": "toEnableUser",
+      "description": "Grants permission to enable a user in the user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_EnableUser.html"
+    },
+    {
+      "name": "ExpireSession",
+      "methodName": "toExpireSession",
+      "description": "Grants permission to immediately stop the specified streaming session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ExpireSession.html"
+    },
+    {
+      "name": "GetExportImageTask",
+      "methodName": "toGetExportImageTask",
+      "description": "Grants permission to retrieve details of a specific export image task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_GetExportImageTask.html"
+    },
+    {
+      "name": "ListAssociatedFleets",
+      "methodName": "toListAssociatedFleets",
+      "description": "Grants permission to retrieve the name of the fleet that is associated with the specified stack",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListAssociatedFleets.html"
+    },
+    {
+      "name": "ListAssociatedStacks",
+      "methodName": "toListAssociatedStacks",
+      "description": "Grants permission to retrieve the name of the stack with which the specified fleet is associated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListAssociatedStacks.html"
+    },
+    {
+      "name": "ListEntitledApplications",
+      "methodName": "toListEntitledApplications",
+      "description": "Grants permission to retrieve the applications that are associated with the specified entitlement",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListEntitledApplications.html"
+    },
+    {
+      "name": "ListExportImageTasks",
+      "methodName": "toListExportImageTasks",
+      "description": "Grants permission to list export image tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListExportImageTasks.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve a list of all tags for the specified AppStream 2.0 resource. The following resources can be tagged: Image builders, images, fleets, and stacks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartAppBlockBuilder",
+      "methodName": "toStartAppBlockBuilder",
+      "description": "Grants permission to start the specified app block builder",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartAppBlockBuilder.html"
+    },
+    {
+      "name": "StartFleet",
+      "methodName": "toStartFleet",
+      "description": "Grants permission to start the specified fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartFleet.html"
+    },
+    {
+      "name": "StartImageBuilder",
+      "methodName": "toStartImageBuilder",
+      "description": "Grants permission to start the specified image builder",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartImageBuilder.html"
+    },
+    {
+      "name": "StartSoftwareDeploymentToImageBuilder",
+      "methodName": "toStartSoftwareDeploymentToImageBuilder",
+      "description": "Grants permission to initiate license included applications deployment to an image builder instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartSoftwareDeploymentToImageBuilder.html"
+    },
+    {
+      "name": "StopAppBlockBuilder",
+      "methodName": "toStopAppBlockBuilder",
+      "description": "Grants permission to stop the specified app block builder",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopAppBlockBuilder.html"
+    },
+    {
+      "name": "StopFleet",
+      "methodName": "toStopFleet",
+      "description": "Grants permission to stop the specified fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopFleet.html"
+    },
+    {
+      "name": "StopImageBuilder",
+      "methodName": "toStopImageBuilder",
+      "description": "Grants permission to stop the specified image builder",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopImageBuilder.html"
+    },
+    {
+      "name": "Stream",
+      "methodName": "toStream",
+      "description": "Grants permission to federated users to sign in by using their existing credentials and stream applications from the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite one or more tags for the specified AppStream 2.0 resource. The following resources can be tagged: Image builders, images, fleets, stacks, app blocks and applications",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to disassociate one or more tags from the specified AppStream 2.0 resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAppBlockBuilder",
+      "methodName": "toUpdateAppBlockBuilder",
+      "description": "Grants permission to update a specific app block builder. An app block builder is a virtual machine that is used to create an app block",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateAppBlockBuilder.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update the specified fields for the specified application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateDirectoryConfig",
+      "methodName": "toUpdateDirectoryConfig",
+      "description": "Grants permission to update the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateDirectoryConfig.html"
+    },
+    {
+      "name": "UpdateEntitlement",
+      "methodName": "toUpdateEntitlement",
+      "description": "Grants permission to update the specified fields for the specified entitlement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateEntitlement.html"
+    },
+    {
+      "name": "UpdateFleet",
+      "methodName": "toUpdateFleet",
+      "description": "Grants permission to update the specified fleet. All attributes except the fleet name can be updated when the fleet is in the STOPPED state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html"
+    },
+    {
+      "name": "UpdateImagePermissions",
+      "methodName": "toUpdateImagePermissions",
+      "description": "Grants permission to add or update permissions for the specified private image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateImagePermissions.html"
+    },
+    {
+      "name": "UpdateStack",
+      "methodName": "toUpdateStack",
+      "description": "Grants permission to update the specified fields for the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateStack.html"
+    },
+    {
+      "name": "UpdateThemeForStack",
+      "methodName": "toUpdateThemeForStack",
+      "description": "Grants permission to update the custom branding theme information, which might includes a custom logo, website links, and other branding to display to your users",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateThemeForStack.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "app-block",
+      "methodName": "onAppBlock",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:app-block/${AppBlockName}",
+      "placeholders": [
+        {
+          "placeholder": "AppBlockName",
+          "name": "appBlockName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IAppBlockRef",
+        "property": "appBlockRef",
+        "arn": "appBlockArn"
+      }
+    },
+    {
+      "name": "app-block-builder",
+      "methodName": "onAppBlockBuilder",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:app-block-builder/${AppBlockBuilderName}",
+      "placeholders": [
+        {
+          "placeholder": "AppBlockBuilderName",
+          "name": "appBlockBuilderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IAppBlockBuilderRef",
+        "property": "appBlockBuilderRef",
+        "arn": "appBlockBuilderArn"
+      }
+    },
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:application/${ApplicationName}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationName",
+          "name": "applicationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
+    },
+    {
+      "name": "fleet",
+      "methodName": "onFleet",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:fleet/${FleetName}",
+      "placeholders": [
+        {
+          "placeholder": "FleetName",
+          "name": "fleetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "image",
+      "methodName": "onImage",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:image/${ImageName}",
+      "placeholders": [
+        {
+          "placeholder": "ImageName",
+          "name": "imageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "image-builder",
+      "methodName": "onImageBuilder",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:image-builder/${ImageBuilderName}",
+      "placeholders": [
+        {
+          "placeholder": "ImageBuilderName",
+          "name": "imageBuilderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IImageBuilderRef",
+        "property": "imageBuilderRef",
+        "id": "imageBuilderName"
+      }
+    },
+    {
+      "name": "stack",
+      "methodName": "onStack",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:stack/${StackName}",
+      "placeholders": [
+        {
+          "placeholder": "StackName",
+          "name": "stackName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IStackRef",
+        "property": "stackRef",
+        "id": "stackName"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "appstream:userId",
+      "methodName": "ifUserId",
+      "description": "Filters access by the ID of the AppStream 2.0 user",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role",
+      "relatedActionMethods": [
+        "toStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "userId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAppBlock",
+        "toCreateAppBlockBuilder",
+        "toCreateApplication",
+        "toCreateFleet",
+        "toCreateImageBuilder",
+        "toCreateImportedImage",
+        "toCreateStack",
+        "toCreateUpdatedImage",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateAppBlockBuilderAppBlock",
+        "toAssociateApplicationFleet",
+        "toAssociateApplicationToEntitlement",
+        "toAssociateFleet",
+        "toAssociateSoftwareToImageBuilder",
+        "toBatchAssociateUserStack",
+        "toBatchDisassociateUserStack",
+        "toCopyImage",
+        "toCreateAppBlock",
+        "toCreateAppBlockBuilder",
+        "toCreateAppBlockBuilderStreamingURL",
+        "toCreateApplication",
+        "toCreateEntitlement",
+        "toCreateExportImageTask",
+        "toCreateFleet",
+        "toCreateImageBuilder",
+        "toCreateImageBuilderStreamingURL",
+        "toCreateStack",
+        "toCreateStreamingURL",
+        "toCreateThemeForStack",
+        "toCreateUpdatedImage",
+        "toDeleteAppBlock",
+        "toDeleteAppBlockBuilder",
+        "toDeleteApplication",
+        "toDeleteEntitlement",
+        "toDeleteFleet",
+        "toDeleteImage",
+        "toDeleteImageBuilder",
+        "toDeleteImagePermissions",
+        "toDeleteStack",
+        "toDeleteThemeForStack",
+        "toDescribeEntitlements",
+        "toDescribeImagePermissions",
+        "toDescribeSessions",
+        "toDescribeSoftwareAssociations",
+        "toDescribeThemeForStack",
+        "toDisassociateAppBlockBuilderAppBlock",
+        "toDisassociateApplicationFleet",
+        "toDisassociateApplicationFromEntitlement",
+        "toDisassociateFleet",
+        "toDisassociateSoftwareFromImageBuilder",
+        "toListAssociatedFleets",
+        "toListAssociatedStacks",
+        "toListEntitledApplications",
+        "toStartAppBlockBuilder",
+        "toStartFleet",
+        "toStartImageBuilder",
+        "toStartSoftwareDeploymentToImageBuilder",
+        "toStopAppBlockBuilder",
+        "toStopFleet",
+        "toStopImageBuilder",
+        "toStream",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAppBlockBuilder",
+        "toUpdateApplication",
+        "toUpdateEntitlement",
+        "toUpdateFleet",
+        "toUpdateImagePermissions",
+        "toUpdateStack",
+        "toUpdateThemeForStack"
+      ],
+      "relatedResourceTypes": [
+        "app-block",
+        "app-block-builder",
+        "application",
+        "fleet",
+        "image",
+        "image-builder",
+        "stack"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAppBlock",
+        "toCreateAppBlockBuilder",
+        "toCreateApplication",
+        "toCreateFleet",
+        "toCreateImageBuilder",
+        "toCreateImportedImage",
+        "toCreateStack",
+        "toCreateUpdatedImage",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

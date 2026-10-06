@@ -1,0 +1,139 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DDBAndDAXFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:*",
+        "dax:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMSIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LambdaIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:ListEventSourceMappings",
+        "lambda:ListFunctions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DaxSNSIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApplicationAutoscalingIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DeleteScalingPolicy",
+        "application-autoscaling:DeregisterScalableTarget",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:RegisterScalableTarget"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "application-autoscaling:service-namespace": "dynamodb"
+        }
+      }
+    },
+    {
+      "Sid": "ApplicationAutoscalingDescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingActivities",
+        "application-autoscaling:DescribeScalingPolicies"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "TagManagement",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudwatchMonitoring",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListKinesisResources",
+      "Effect": "Allow",
+      "Action": [
+        "kinesis:ListStreams",
+        "kinesis:DescribeStream",
+        "kinesis:DescribeStreamSummary"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListEC2ResourcesForDaxClusterCreation",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudwatchInsightsRules",
+      "Effect": "Allow",
+      "Action": "cloudwatch:GetInsightRuleReport",
+      "Resource": "arn:aws:cloudwatch:*:*:insight-rule/DynamoDBContributorInsights*"
+    },
+    {
+      "Sid": "ServiceRoleCreation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "replication.dynamodb.amazonaws.com",
+            "dax.amazonaws.com",
+            "dynamodb.application-autoscaling.amazonaws.com",
+            "contributorinsights.dynamodb.amazonaws.com",
+            "kinesisreplication.dynamodb.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "IamIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

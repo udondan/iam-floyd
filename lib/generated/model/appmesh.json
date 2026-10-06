@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 1,
+  "filename": "appmesh",
+  "className": "Appmesh",
+  "name": "appmesh",
+  "servicePrefix": "appmesh",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appmesh.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateGatewayRoute",
+      "CreateMesh",
+      "CreateRoute",
+      "CreateVirtualGateway",
+      "CreateVirtualNode",
+      "CreateVirtualRouter",
+      "CreateVirtualService",
+      "DeleteGatewayRoute",
+      "DeleteMesh",
+      "DeleteRoute",
+      "DeleteVirtualGateway",
+      "DeleteVirtualNode",
+      "DeleteVirtualRouter",
+      "DeleteVirtualService",
+      "TagResource",
+      "UntagResource",
+      "UpdateGatewayRoute",
+      "UpdateMesh",
+      "UpdateRoute",
+      "UpdateVirtualGateway",
+      "UpdateVirtualNode",
+      "UpdateVirtualRouter",
+      "UpdateVirtualService",
+      "DeleteMeshPolicy",
+      "PutMeshPolicy"
+    ],
+    "Read": [
+      "DescribeGatewayRoute",
+      "DescribeMesh",
+      "DescribeRoute",
+      "DescribeVirtualGateway",
+      "DescribeVirtualNode",
+      "DescribeVirtualRouter",
+      "DescribeVirtualService",
+      "StreamAggregatedResources",
+      "GetMeshPolicy"
+    ],
+    "List": [
+      "ListGatewayRoutes",
+      "ListMeshes",
+      "ListRoutes",
+      "ListTagsForResource",
+      "ListVirtualGateways",
+      "ListVirtualNodes",
+      "ListVirtualRouters",
+      "ListVirtualServices"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateGatewayRoute",
+      "methodName": "toCreateGatewayRoute",
+      "description": "Grants permission to create a gateway route that is associated with a virtual gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateGatewayRoute.html"
+    },
+    {
+      "name": "CreateMesh",
+      "methodName": "toCreateMesh",
+      "description": "Grants permission to create a service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html"
+    },
+    {
+      "name": "CreateRoute",
+      "methodName": "toCreateRoute",
+      "description": "Grants permission to create a route that is associated with a virtual router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html"
+    },
+    {
+      "name": "CreateVirtualGateway",
+      "methodName": "toCreateVirtualGateway",
+      "description": "Grants permission to create a virtual gateway within a service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualGateway.html"
+    },
+    {
+      "name": "CreateVirtualNode",
+      "methodName": "toCreateVirtualNode",
+      "description": "Grants permission to create a virtual node within a service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html"
+    },
+    {
+      "name": "CreateVirtualRouter",
+      "methodName": "toCreateVirtualRouter",
+      "description": "Grants permission to create a virtual router within a service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html"
+    },
+    {
+      "name": "CreateVirtualService",
+      "methodName": "toCreateVirtualService",
+      "description": "Grants permission to create a virtual service within a service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualService.html"
+    },
+    {
+      "name": "DeleteGatewayRoute",
+      "methodName": "toDeleteGatewayRoute",
+      "description": "Grants permission to delete an existing gateway route",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteGatewayRoute.html"
+    },
+    {
+      "name": "DeleteMesh",
+      "methodName": "toDeleteMesh",
+      "description": "Grants permission to delete an existing service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteMesh.html"
+    },
+    {
+      "name": "DeleteRoute",
+      "methodName": "toDeleteRoute",
+      "description": "Grants permission to delete an existing route",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteRoute.html"
+    },
+    {
+      "name": "DeleteVirtualGateway",
+      "methodName": "toDeleteVirtualGateway",
+      "description": "Grants permission to delete an existing virtual gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualGateway.html"
+    },
+    {
+      "name": "DeleteVirtualNode",
+      "methodName": "toDeleteVirtualNode",
+      "description": "Grants permission to delete an existing virtual node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualNode.html"
+    },
+    {
+      "name": "DeleteVirtualRouter",
+      "methodName": "toDeleteVirtualRouter",
+      "description": "Grants permission to delete an existing virtual router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualRouter.html"
+    },
+    {
+      "name": "DeleteVirtualService",
+      "methodName": "toDeleteVirtualService",
+      "description": "Grants permission to delete an existing virtual service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualService.html"
+    },
+    {
+      "name": "DescribeGatewayRoute",
+      "methodName": "toDescribeGatewayRoute",
+      "description": "Grants permission to describe an existing gateway route",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeGatewayRoute.html"
+    },
+    {
+      "name": "DescribeMesh",
+      "methodName": "toDescribeMesh",
+      "description": "Grants permission to describe an existing service mesh",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeMesh.html"
+    },
+    {
+      "name": "DescribeRoute",
+      "methodName": "toDescribeRoute",
+      "description": "Grants permission to describe an existing route",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeRoute.html"
+    },
+    {
+      "name": "DescribeVirtualGateway",
+      "methodName": "toDescribeVirtualGateway",
+      "description": "Grants permission to describe an existing virtual gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualGateway.html"
+    },
+    {
+      "name": "DescribeVirtualNode",
+      "methodName": "toDescribeVirtualNode",
+      "description": "Grants permission to describe an existing virtual node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualNode.html"
+    },
+    {
+      "name": "DescribeVirtualRouter",
+      "methodName": "toDescribeVirtualRouter",
+      "description": "Grants permission to describe an existing virtual router",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualRouter.html"
+    },
+    {
+      "name": "DescribeVirtualService",
+      "methodName": "toDescribeVirtualService",
+      "description": "Grants permission to describe an existing virtual service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualService.html"
+    },
+    {
+      "name": "ListGatewayRoutes",
+      "methodName": "toListGatewayRoutes",
+      "description": "Grants permission to list existing gateway routes in a service mesh",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListGatewayRoutes.html"
+    },
+    {
+      "name": "ListMeshes",
+      "methodName": "toListMeshes",
+      "description": "Grants permission to list existing service meshes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListMeshes.html"
+    },
+    {
+      "name": "ListRoutes",
+      "methodName": "toListRoutes",
+      "description": "Grants permission to list existing routes in a service mesh",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListRoutes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an App Mesh resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVirtualGateways",
+      "methodName": "toListVirtualGateways",
+      "description": "Grants permission to list existing virtual gateways in a service mesh",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualGateways.html"
+    },
+    {
+      "name": "ListVirtualNodes",
+      "methodName": "toListVirtualNodes",
+      "description": "Grants permission to list existing virtual nodes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualNodes.html"
+    },
+    {
+      "name": "ListVirtualRouters",
+      "methodName": "toListVirtualRouters",
+      "description": "Grants permission to list existing virtual routers in a service mesh",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualRouters.html"
+    },
+    {
+      "name": "ListVirtualServices",
+      "methodName": "toListVirtualServices",
+      "description": "Grants permission to list existing virtual services in a service mesh",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualServices.html"
+    },
+    {
+      "name": "StreamAggregatedResources",
+      "methodName": "toStreamAggregatedResources",
+      "description": "Grants permission to receive streamed resources for an App Mesh endpoint (VirtualNode/VirtualGateway)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource with a specified resourceArn",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to delete a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateGatewayRoute",
+      "methodName": "toUpdateGatewayRoute",
+      "description": "Grants permission to update an existing gateway route for a specified service mesh and virtual gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateGatewayRoute.html"
+    },
+    {
+      "name": "UpdateMesh",
+      "methodName": "toUpdateMesh",
+      "description": "Grants permission to update an existing service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateMesh.html"
+    },
+    {
+      "name": "UpdateRoute",
+      "methodName": "toUpdateRoute",
+      "description": "Grants permission to update an existing route for a specified service mesh and virtual router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateRoute.html"
+    },
+    {
+      "name": "UpdateVirtualGateway",
+      "methodName": "toUpdateVirtualGateway",
+      "description": "Grants permission to update an existing virtual gateway in a specified service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualGateway.html"
+    },
+    {
+      "name": "UpdateVirtualNode",
+      "methodName": "toUpdateVirtualNode",
+      "description": "Grants permission to update an existing virtual node in a specified service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualNode.html"
+    },
+    {
+      "name": "UpdateVirtualRouter",
+      "methodName": "toUpdateVirtualRouter",
+      "description": "Grants permission to update an existing virtual router in a specified service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualRouter.html"
+    },
+    {
+      "name": "UpdateVirtualService",
+      "methodName": "toUpdateVirtualService",
+      "description": "Grants permission to update an existing virtual service in a specified service mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualService.html"
+    },
+    {
+      "name": "DeleteMeshPolicy",
+      "methodName": "toDeleteMeshPolicy",
+      "description": "Grants permission to delete the RAM access control policy for a mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html"
+    },
+    {
+      "name": "GetMeshPolicy",
+      "methodName": "toGetMeshPolicy",
+      "description": "Grants permission to read the RAM access control policy for a mesh",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html"
+    },
+    {
+      "name": "PutMeshPolicy",
+      "methodName": "toPutMeshPolicy",
+      "description": "Grants permission to define the RAM access control policy for a mesh",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "gatewayRoute",
+      "methodName": "onGatewayRoute",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}/gatewayRoute/${GatewayRouteName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VirtualGatewayName",
+          "name": "virtualGatewayName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "GatewayRouteName",
+          "name": "gatewayRouteName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "mesh",
+      "methodName": "onMesh",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appmesh",
+        "interface": "IMeshRef",
+        "property": "meshRef",
+        "arn": "meshArn"
+      }
+    },
+    {
+      "name": "route",
+      "methodName": "onRoute",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VirtualRouterName",
+          "name": "virtualRouterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteName",
+          "name": "routeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "virtualGateway",
+      "methodName": "onVirtualGateway",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VirtualGatewayName",
+          "name": "virtualGatewayName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "virtualNode",
+      "methodName": "onVirtualNode",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VirtualNodeName",
+          "name": "virtualNodeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "virtualRouter",
+      "methodName": "onVirtualRouter",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VirtualRouterName",
+          "name": "virtualRouterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "virtualService",
+      "methodName": "onVirtualService",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}",
+      "placeholders": [
+        {
+          "placeholder": "MeshName",
+          "name": "meshName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VirtualServiceName",
+          "name": "virtualServiceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateGatewayRoute",
+        "toCreateMesh",
+        "toCreateRoute",
+        "toCreateVirtualGateway",
+        "toCreateVirtualNode",
+        "toCreateVirtualRouter",
+        "toCreateVirtualService",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateGatewayRoute",
+        "toCreateMesh",
+        "toCreateRoute",
+        "toCreateVirtualGateway",
+        "toCreateVirtualNode",
+        "toCreateVirtualRouter",
+        "toCreateVirtualService",
+        "toDeleteGatewayRoute",
+        "toDeleteMesh",
+        "toDeleteRoute",
+        "toDeleteVirtualGateway",
+        "toDeleteVirtualNode",
+        "toDeleteVirtualRouter",
+        "toDeleteVirtualService",
+        "toDescribeGatewayRoute",
+        "toDescribeMesh",
+        "toDescribeRoute",
+        "toDescribeVirtualGateway",
+        "toDescribeVirtualNode",
+        "toDescribeVirtualRouter",
+        "toDescribeVirtualService",
+        "toListGatewayRoutes",
+        "toListRoutes",
+        "toListTagsForResource",
+        "toListVirtualGateways",
+        "toListVirtualNodes",
+        "toListVirtualRouters",
+        "toListVirtualServices",
+        "toStreamAggregatedResources",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateGatewayRoute",
+        "toUpdateMesh",
+        "toUpdateRoute",
+        "toUpdateVirtualGateway",
+        "toUpdateVirtualNode",
+        "toUpdateVirtualRouter",
+        "toUpdateVirtualService",
+        "toDeleteMeshPolicy",
+        "toGetMeshPolicy",
+        "toPutMeshPolicy"
+      ],
+      "relatedResourceTypes": [
+        "gatewayRoute",
+        "mesh",
+        "route",
+        "virtualGateway",
+        "virtualNode",
+        "virtualRouter",
+        "virtualService"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateGatewayRoute",
+        "toCreateMesh",
+        "toCreateRoute",
+        "toCreateVirtualGateway",
+        "toCreateVirtualNode",
+        "toCreateVirtualRouter",
+        "toCreateVirtualService",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

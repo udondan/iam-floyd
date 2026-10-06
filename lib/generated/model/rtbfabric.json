@@ -1,0 +1,864 @@
+{
+  "schemaVersion": 1,
+  "filename": "rtbfabric",
+  "className": "Rtbfabric",
+  "name": "rtbfabric",
+  "servicePrefix": "rtbfabric",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_rtbfabric.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptLink",
+      "AssociateCertificate",
+      "CreateInboundExternalLink",
+      "CreateLink",
+      "CreateLinkRoutingRule",
+      "CreateOutboundExternalLink",
+      "CreateRequesterGateway",
+      "CreateResponderGateway",
+      "DeleteInboundExternalLink",
+      "DeleteLink",
+      "DeleteLinkRoutingRule",
+      "DeleteOutboundExternalLink",
+      "DeleteRequesterGateway",
+      "DeleteResponderGateway",
+      "DisassociateCertificate",
+      "RejectLink",
+      "TagResource",
+      "UntagResource",
+      "UpdateLink",
+      "UpdateLinkModuleFlow",
+      "UpdateLinkRoutingRule",
+      "UpdateRequesterGateway",
+      "UpdateResponderGateway"
+    ],
+    "Read": [
+      "GetCertificateAssociation",
+      "GetInboundExternalLink",
+      "GetLink",
+      "GetLinkRoutingRule",
+      "GetOutboundExternalLink",
+      "GetRequesterGateway",
+      "GetResponderGateway",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCertificateAssociations",
+      "ListLinkRoutingRules",
+      "ListLinks",
+      "ListRequesterGateways",
+      "ListResponderGateways"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptLink",
+      "methodName": "toAcceptLink",
+      "description": "Grants permission to accept a link invitation from another Gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AcceptLink.html"
+    },
+    {
+      "name": "AssociateCertificate",
+      "methodName": "toAssociateCertificate",
+      "description": "Grants permission to associate an ACM certificate with a responder gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AssociateCertificate.html"
+    },
+    {
+      "name": "CreateInboundExternalLink",
+      "methodName": "toCreateInboundExternalLink",
+      "description": "Grants permission to create an inbound external link for a responder gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateInboundExternalLink.html"
+    },
+    {
+      "name": "CreateLink",
+      "methodName": "toCreateLink",
+      "description": "Grants permission to create a new link between RTB applications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLink.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLinkRoutingRule",
+      "methodName": "toCreateLinkRoutingRule",
+      "description": "Grants permission to create a routing rule for a link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLinkRoutingRule.html"
+    },
+    {
+      "name": "CreateOutboundExternalLink",
+      "methodName": "toCreateOutboundExternalLink",
+      "description": "Grants permission to create an outbound external link for a requester gateway to connect to external public responder endpoints",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateOutboundExternalLink.html"
+    },
+    {
+      "name": "CreateRequesterGateway",
+      "methodName": "toCreateRequesterGateway",
+      "description": "Grants permission to create a requester gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateRequesterGateway.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateResponderGateway",
+      "methodName": "toCreateResponderGateway",
+      "description": "Grants permission to create a responder gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateResponderGateway.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteInboundExternalLink",
+      "methodName": "toDeleteInboundExternalLink",
+      "description": "Grants permission to delete an inbound external link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteInboundExternalLink.html"
+    },
+    {
+      "name": "DeleteLink",
+      "methodName": "toDeleteLink",
+      "description": "Grants permission to delete a link between RTB applications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLink.html"
+    },
+    {
+      "name": "DeleteLinkRoutingRule",
+      "methodName": "toDeleteLinkRoutingRule",
+      "description": "Grants permission to delete a routing rule from a link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLinkRoutingRule.html"
+    },
+    {
+      "name": "DeleteOutboundExternalLink",
+      "methodName": "toDeleteOutboundExternalLink",
+      "description": "Grants permission to delete an outbound external link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteOutboundExternalLink.html"
+    },
+    {
+      "name": "DeleteRequesterGateway",
+      "methodName": "toDeleteRequesterGateway",
+      "description": "Grants permission to delete a requester gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteRequesterGateway.html"
+    },
+    {
+      "name": "DeleteResponderGateway",
+      "methodName": "toDeleteResponderGateway",
+      "description": "Grants permission to delete a responder gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteResponderGateway.html"
+    },
+    {
+      "name": "DisassociateCertificate",
+      "methodName": "toDisassociateCertificate",
+      "description": "Grants permission to remove a certificate association from a responder gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DisassociateCertificate.html"
+    },
+    {
+      "name": "GetCertificateAssociation",
+      "methodName": "toGetCertificateAssociation",
+      "description": "Grants permission to retrieve details of a certificate association with a responder gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetCertificateAssociation.html"
+    },
+    {
+      "name": "GetInboundExternalLink",
+      "methodName": "toGetInboundExternalLink",
+      "description": "Grants permission to retrieve information about an inbound external link",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetInboundExternalLink.html"
+    },
+    {
+      "name": "GetLink",
+      "methodName": "toGetLink",
+      "description": "Grants permission to retrieve information about a link between RTB applications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLink.html"
+    },
+    {
+      "name": "GetLinkRoutingRule",
+      "methodName": "toGetLinkRoutingRule",
+      "description": "Grants permission to retrieve information about a routing rule for a link",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLinkRoutingRule.html"
+    },
+    {
+      "name": "GetOutboundExternalLink",
+      "methodName": "toGetOutboundExternalLink",
+      "description": "Grants permission to retrieve information about an outbound external link",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetOutboundExternalLink.html"
+    },
+    {
+      "name": "GetRequesterGateway",
+      "methodName": "toGetRequesterGateway",
+      "description": "Grants permission to retrieve information about a requester gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetRequesterGateway.html"
+    },
+    {
+      "name": "GetResponderGateway",
+      "methodName": "toGetResponderGateway",
+      "description": "Grants permission to retrieve information about a responder gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetResponderGateway.html"
+    },
+    {
+      "name": "ListCertificateAssociations",
+      "methodName": "toListCertificateAssociations",
+      "description": "Grants permission to list certificate associations for a responder gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListCertificateAssociations.html"
+    },
+    {
+      "name": "ListLinkRoutingRules",
+      "methodName": "toListLinkRoutingRules",
+      "description": "Grants permission to list routing rules for a link",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListLinkRoutingRules.html"
+    },
+    {
+      "name": "ListLinks",
+      "methodName": "toListLinks",
+      "description": "Grants permission to list links associated with an RTB application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListLinks.html"
+    },
+    {
+      "name": "ListRequesterGateways",
+      "methodName": "toListRequesterGateways",
+      "description": "Grants permission to list requester gateways with optional filtering and pagination",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListRequesterGateways.html"
+    },
+    {
+      "name": "ListResponderGateways",
+      "methodName": "toListResponderGateways",
+      "description": "Grants permission to list responder gateways with optional filtering and pagination",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListResponderGateways.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RejectLink",
+      "methodName": "toRejectLink",
+      "description": "Grants permission to reject a link request between RTB applications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_RejectLink.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to assign one or more tags (key-value pairs) to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag or tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLink",
+      "methodName": "toUpdateLink",
+      "description": "Grants permission to update configuration settings for an existing link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLink.html"
+    },
+    {
+      "name": "UpdateLinkModuleFlow",
+      "methodName": "toUpdateLinkModuleFlow",
+      "description": "Grants permission to update a link module flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkModuleFlow.html"
+    },
+    {
+      "name": "UpdateLinkRoutingRule",
+      "methodName": "toUpdateLinkRoutingRule",
+      "description": "Grants permission to update a routing rule for a link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkRoutingRule.html"
+    },
+    {
+      "name": "UpdateRequesterGateway",
+      "methodName": "toUpdateRequesterGateway",
+      "description": "Grants permission to update a requester gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateRequesterGateway.html"
+    },
+    {
+      "name": "UpdateResponderGateway",
+      "methodName": "toUpdateResponderGateway",
+      "description": "Grants permission to update a responder gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateResponderGateway.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "InboundExternalLink",
+      "methodName": "onInboundExternalLink",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/links.html",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LinkId",
+          "name": "linkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifInboundExternalLinkLinkId",
+        "ifResponderGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "Link",
+      "methodName": "onLink",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/links.html",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LinkId",
+          "name": "linkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifLinkLinkId",
+        "ifRequesterGatewayGatewayId",
+        "ifResponderGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "LinkRoutingRule",
+      "methodName": "onLinkRoutingRule",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/links.html",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}/routing-rule/${RuleId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LinkId",
+          "name": "linkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RuleId",
+          "name": "ruleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifLinkLinkId",
+        "ifLinkRoutingRuleRuleId"
+      ]
+    },
+    {
+      "name": "OutboundExternalLink",
+      "methodName": "onOutboundExternalLink",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/links.html",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LinkId",
+          "name": "linkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifOutboundExternalLinkLinkId",
+        "ifRequesterGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "RequesterGateway",
+      "methodName": "onRequesterGateway",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-requester-rtb-applications.html",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifRequesterGatewayGatewayId"
+      ],
+      "cdkRef": {
+        "module": "aws_rtbfabric",
+        "interface": "IRequesterGatewayRef",
+        "property": "requesterGatewayRef",
+        "arn": "requesterGatewayArn"
+      }
+    },
+    {
+      "name": "ResponderGateway",
+      "methodName": "onResponderGateway",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-rtb-applications.html",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResponderGatewayGatewayId"
+      ],
+      "cdkRef": {
+        "module": "aws_rtbfabric",
+        "interface": "IResponderGatewayRef",
+        "property": "responderGatewayRef",
+        "arn": "responderGatewayArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateInboundExternalLink",
+        "toCreateLink",
+        "toCreateLinkRoutingRule",
+        "toCreateOutboundExternalLink",
+        "toCreateRequesterGateway",
+        "toCreateResponderGateway",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptLink",
+        "toAssociateCertificate",
+        "toCreateInboundExternalLink",
+        "toCreateLinkRoutingRule",
+        "toCreateOutboundExternalLink",
+        "toDeleteInboundExternalLink",
+        "toDeleteLink",
+        "toDeleteLinkRoutingRule",
+        "toDeleteOutboundExternalLink",
+        "toDeleteRequesterGateway",
+        "toDeleteResponderGateway",
+        "toDisassociateCertificate",
+        "toGetCertificateAssociation",
+        "toGetInboundExternalLink",
+        "toGetLink",
+        "toGetLinkRoutingRule",
+        "toGetOutboundExternalLink",
+        "toGetRequesterGateway",
+        "toGetResponderGateway",
+        "toListCertificateAssociations",
+        "toListLinkRoutingRules",
+        "toListTagsForResource",
+        "toRejectLink",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLink",
+        "toUpdateLinkModuleFlow",
+        "toUpdateLinkRoutingRule",
+        "toUpdateRequesterGateway",
+        "toUpdateResponderGateway"
+      ],
+      "relatedResourceTypes": [
+        "InboundExternalLink",
+        "Link",
+        "LinkRoutingRule",
+        "OutboundExternalLink",
+        "RequesterGateway",
+        "ResponderGateway"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateInboundExternalLink",
+        "toCreateLink",
+        "toCreateLinkRoutingRule",
+        "toCreateOutboundExternalLink",
+        "toCreateRequesterGateway",
+        "toCreateResponderGateway",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:InboundExternalLinkGatewayId",
+      "methodName": "ifInboundExternalLinkGatewayId",
+      "description": "Filters access by gateway identifier supporting rtb-gw-* formats",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InboundExternalLinkGatewayId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:InboundExternalLinkLinkId",
+      "methodName": "ifInboundExternalLinkLinkId",
+      "description": "Filters access by InboundExternalLink resource linkId identifier",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDeleteInboundExternalLink",
+        "toGetInboundExternalLink",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "InboundExternalLink"
+      ],
+      "keyLiteral": "InboundExternalLinkLinkId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:LinkLinkId",
+      "methodName": "ifLinkLinkId",
+      "description": "Filters access by Link resource linkId identifier",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toAcceptLink",
+        "toCreateLinkRoutingRule",
+        "toDeleteLink",
+        "toDeleteLinkRoutingRule",
+        "toGetLink",
+        "toGetLinkRoutingRule",
+        "toListLinkRoutingRules",
+        "toListTagsForResource",
+        "toRejectLink",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLink",
+        "toUpdateLinkModuleFlow",
+        "toUpdateLinkRoutingRule"
+      ],
+      "relatedResourceTypes": [
+        "Link",
+        "LinkRoutingRule"
+      ],
+      "keyLiteral": "LinkLinkId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:LinkRoutingRuleRuleId",
+      "methodName": "ifLinkRoutingRuleRuleId",
+      "description": "Filters access by routing rule identifier supporting rule-* formats",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDeleteLinkRoutingRule",
+        "toGetLinkRoutingRule",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLinkRoutingRule"
+      ],
+      "relatedResourceTypes": [
+        "LinkRoutingRule"
+      ],
+      "keyLiteral": "LinkRoutingRuleRuleId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:OutboundExternalLinkLinkId",
+      "methodName": "ifOutboundExternalLinkLinkId",
+      "description": "Filters access by OutboundExternalLink resource linkId identifier",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDeleteOutboundExternalLink",
+        "toGetOutboundExternalLink",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "OutboundExternalLink"
+      ],
+      "keyLiteral": "OutboundExternalLinkLinkId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:RequesterGatewayGatewayId",
+      "methodName": "ifRequesterGatewayGatewayId",
+      "description": "Filters access by gateway identifier supporting rtb-gw-* formats",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toAcceptLink",
+        "toCreateLinkRoutingRule",
+        "toCreateOutboundExternalLink",
+        "toDeleteLink",
+        "toDeleteLinkRoutingRule",
+        "toDeleteOutboundExternalLink",
+        "toDeleteRequesterGateway",
+        "toGetLink",
+        "toGetLinkRoutingRule",
+        "toGetOutboundExternalLink",
+        "toGetRequesterGateway",
+        "toListLinkRoutingRules",
+        "toListTagsForResource",
+        "toRejectLink",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLink",
+        "toUpdateLinkModuleFlow",
+        "toUpdateLinkRoutingRule",
+        "toUpdateRequesterGateway"
+      ],
+      "relatedResourceTypes": [
+        "Link",
+        "OutboundExternalLink",
+        "RequesterGateway"
+      ],
+      "keyLiteral": "RequesterGatewayGatewayId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "rtbfabric:ResponderGatewayGatewayId",
+      "methodName": "ifResponderGatewayGatewayId",
+      "description": "Filters access by gateway identifier supporting rtb-gw-* formats",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toAcceptLink",
+        "toAssociateCertificate",
+        "toCreateInboundExternalLink",
+        "toCreateLinkRoutingRule",
+        "toDeleteInboundExternalLink",
+        "toDeleteLink",
+        "toDeleteLinkRoutingRule",
+        "toDeleteResponderGateway",
+        "toDisassociateCertificate",
+        "toGetCertificateAssociation",
+        "toGetInboundExternalLink",
+        "toGetLink",
+        "toGetLinkRoutingRule",
+        "toGetResponderGateway",
+        "toListCertificateAssociations",
+        "toListLinkRoutingRules",
+        "toListTagsForResource",
+        "toRejectLink",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLink",
+        "toUpdateLinkModuleFlow",
+        "toUpdateLinkRoutingRule",
+        "toUpdateResponderGateway"
+      ],
+      "relatedResourceTypes": [
+        "InboundExternalLink",
+        "Link",
+        "ResponderGateway"
+      ],
+      "keyLiteral": "ResponderGatewayGatewayId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

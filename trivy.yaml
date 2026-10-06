@@ -1,0 +1,16 @@
+# Configuration of `trivy fs .`, used by .github/workflows/trivy.yml. The format and the severities
+# are set by the steps of the workflow.
+scan:
+  scanners:
+    - vuln
+    - secret
+    - misconfig
+  skip-dirs:
+    - .cache # the database of trivy-action
+    - .claude
+    - dist
+    - node_modules
+    - tooter/node_modules
+pkg:
+  # iam-floyd has no dependencies at runtime, the dev dependencies build and publish the packages
+  include-dev-deps: true

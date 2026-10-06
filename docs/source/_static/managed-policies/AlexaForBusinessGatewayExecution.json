@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:Send*",
+        "a4b:Get*"
+      ],
+      "Resource": "arn:aws:a4b:*:*:gateway/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:DeleteMessage"
+      ],
+      "Resource": [
+        "arn:aws:sqs:*:*:dd-*",
+        "arn:aws:sqs:*:*:sd-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:List*",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLogGroups",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

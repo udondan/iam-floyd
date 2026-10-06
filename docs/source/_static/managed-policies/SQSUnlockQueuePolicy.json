@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyAllOtherActionsOnAnyResource",
+      "Effect": "Deny",
+      "NotAction": [
+        "sqs:SetQueueAttributes",
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueues",
+        "sqs:GetQueueUrl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyGettingQueueAttributesOnNonOwnQueue",
+      "Effect": "Deny",
+      "Action": [
+        "sqs:GetQueueAttributes"
+      ],
+      "Resource": "arn:aws:sqs:*:*:*",
+      "Condition": {
+        "StringNotEqualsIfExists": {
+          "aws:ResourceAccount": [
+            "${aws:PrincipalAccount}"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DenyActionsForNonRootUser",
+      "Effect": "Deny",
+      "Action": [
+        "sqs:SetQueueAttributes",
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueues",
+        "sqs:GetQueueUrl"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotLike": {
+          "aws:PrincipalArn": "arn:aws:iam::*:root"
+        }
+      }
+    }
+  ]
+}

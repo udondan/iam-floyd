@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "QBusinessToQuickSightPredictQAResultsInvocation",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:PredictQAResults"
+      ],
+      "Resource": [
+        "arn:aws:quicksight:*:*:topic/*",
+        "arn:aws:quicksight:*:*:dashboard/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "filename": "application-autoscaling",
+  "className": "ApplicationAutoscaling",
+  "name": "application-autoscaling",
+  "servicePrefix": "application-autoscaling",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-autoscaling.html",
+  "accessLevelList": {
+    "Write": [
+      "DeleteScalingPolicy",
+      "DeleteScheduledAction",
+      "DeregisterScalableTarget",
+      "PutScalingPolicy",
+      "PutScheduledAction",
+      "RegisterScalableTarget",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "DescribeScalableTargets",
+      "DescribeScalingActivities",
+      "DescribeScalingPolicies",
+      "DescribeScheduledActions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "GetPredictiveScalingForecast"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeleteScalingPolicy",
+      "methodName": "toDeleteScalingPolicy",
+      "description": "Grants permission to delete a scaling policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html"
+    },
+    {
+      "name": "DeleteScheduledAction",
+      "methodName": "toDeleteScheduledAction",
+      "description": "Grants permission to delete a scheduled action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScheduledAction.html"
+    },
+    {
+      "name": "DeregisterScalableTarget",
+      "methodName": "toDeregisterScalableTarget",
+      "description": "Grants permission to deregister a scalable target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeregisterScalableTarget.html"
+    },
+    {
+      "name": "DescribeScalableTargets",
+      "methodName": "toDescribeScalableTargets",
+      "description": "Grants permission to describe one or more scalable targets in the specified namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html"
+    },
+    {
+      "name": "DescribeScalingActivities",
+      "methodName": "toDescribeScalingActivities",
+      "description": "Grants permission to describe a set of scaling activities or all scaling activities in the specified namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+    },
+    {
+      "name": "DescribeScalingPolicies",
+      "methodName": "toDescribeScalingPolicies",
+      "description": "Grants permission to describe a set of scaling policies or all scaling policies in the specified namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingPolicies.html"
+    },
+    {
+      "name": "DescribeScheduledActions",
+      "methodName": "toDescribeScheduledActions",
+      "description": "Grants permission to describe a set of scheduled actions or all scheduled actions in the specified namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScheduledActions.html"
+    },
+    {
+      "name": "GetPredictiveScalingForecast",
+      "methodName": "toGetPredictiveScalingForecast",
+      "description": "Grants permission to retrieve the forecast data for a predictive scaling policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_GetPredictiveScalingForecast.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a scalable target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutScalingPolicy",
+      "methodName": "toPutScalingPolicy",
+      "description": "Grants permission to create and update a scaling policy for a scalable target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html"
+    },
+    {
+      "name": "PutScheduledAction",
+      "methodName": "toPutScheduledAction",
+      "description": "Grants permission to create and update a scheduled action for a scalable target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html"
+    },
+    {
+      "name": "RegisterScalableTarget",
+      "methodName": "toRegisterScalableTarget",
+      "description": "Grants permission to register AWS or custom resources as scalable targets with Application Auto Scaling and to update configuration parameters used to manage a scalable target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a scalable target",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a scalable target",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ScalableTarget",
+      "methodName": "onScalableTarget",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
+      "arn": "arn:${Partition}:application-autoscaling:${Region}:${Account}:scalable-target/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "application-autoscaling:scalable-dimension",
+      "methodName": "ifScalableDimension",
+      "description": "Filters access by the scalable dimension that is passed in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteScalingPolicy",
+        "toDeleteScheduledAction",
+        "toDeregisterScalableTarget",
+        "toPutScalingPolicy",
+        "toPutScheduledAction",
+        "toRegisterScalableTarget"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "scalable-dimension",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "application-autoscaling:service-namespace",
+      "methodName": "ifServiceNamespace",
+      "description": "Filters access by the service namespace that is passed in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteScalingPolicy",
+        "toDeleteScheduledAction",
+        "toDeregisterScalableTarget",
+        "toPutScalingPolicy",
+        "toPutScheduledAction",
+        "toRegisterScalableTarget"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "service-namespace",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toRegisterScalableTarget",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteScalingPolicy",
+        "toDeleteScheduledAction",
+        "toDeregisterScalableTarget",
+        "toListTagsForResource",
+        "toPutScalingPolicy",
+        "toPutScheduledAction",
+        "toRegisterScalableTarget",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "ScalableTarget"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toRegisterScalableTarget",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

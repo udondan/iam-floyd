@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "filename": "braket",
+  "className": "Braket",
+  "name": "braket",
+  "servicePrefix": "braket",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_braket.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelJob",
+      "CancelQuantumTask",
+      "CreateJob",
+      "CreateQuantumTask",
+      "CreateSpendingLimit",
+      "DeleteSpendingLimit",
+      "TagResource",
+      "UntagResource",
+      "UpdateSpendingLimit",
+      "AcceptUserAgreement"
+    ],
+    "Read": [
+      "GetDevice",
+      "GetJob",
+      "GetQuantumTask",
+      "ListTagsForResource",
+      "SearchSpendingLimits",
+      "GetServiceLinkedRoleStatus",
+      "GetUserAgreementStatus"
+    ],
+    "List": [
+      "SearchDevices",
+      "SearchJobs",
+      "SearchQuantumTasks"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelJob.html"
+    },
+    {
+      "name": "CancelQuantumTask",
+      "methodName": "toCancelQuantumTask",
+      "description": "Grants permission to cancel a quantum task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelQuantumTask.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Grants permission to create a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateJob.html"
+    },
+    {
+      "name": "CreateQuantumTask",
+      "methodName": "toCreateQuantumTask",
+      "description": "Grants permission to create a quantum task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html"
+    },
+    {
+      "name": "CreateSpendingLimit",
+      "methodName": "toCreateSpendingLimit",
+      "description": "Grants permission to create a spending limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateSpendingLimit.html"
+    },
+    {
+      "name": "DeleteSpendingLimit",
+      "methodName": "toDeleteSpendingLimit",
+      "description": "Grants permission to delete a spending limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_DeleteSpendingLimit.html"
+    },
+    {
+      "name": "GetDevice",
+      "methodName": "toGetDevice",
+      "description": "Grants permission to retrieve information about the devices available in Amazon Braket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_GetDevice.html"
+    },
+    {
+      "name": "GetJob",
+      "methodName": "toGetJob",
+      "description": "Grants permission to retrieve jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_GetJob.html"
+    },
+    {
+      "name": "GetQuantumTask",
+      "methodName": "toGetQuantumTask",
+      "description": "Grants permission to retrieve quantum tasks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_GetQuantumTask.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to listing the tags that have been applied to the quantum task resource or the job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "SearchDevices",
+      "methodName": "toSearchDevices",
+      "description": "Grants permission to search for devices available in Amazon Braket",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html"
+    },
+    {
+      "name": "SearchJobs",
+      "methodName": "toSearchJobs",
+      "description": "Grants permission to search for jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchJobs.html"
+    },
+    {
+      "name": "SearchQuantumTasks",
+      "methodName": "toSearchQuantumTasks",
+      "description": "Grants permission to search for quantum tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html"
+    },
+    {
+      "name": "SearchSpendingLimits",
+      "methodName": "toSearchSpendingLimits",
+      "description": "Grants permission to search for spending limit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchSpendingLimits.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a quantum task or a hybrid job",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a quantum task resource or a job. A tag consists of a key-value pair",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateSpendingLimit",
+      "methodName": "toUpdateSpendingLimit",
+      "description": "Grants permission to update a spending limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_UpdateSpendingLimit.html"
+    },
+    {
+      "name": "AcceptUserAgreement",
+      "methodName": "toAcceptUserAgreement",
+      "description": "Grants permission to accept the Amazon Braket user agreement",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetServiceLinkedRoleStatus",
+      "methodName": "toGetServiceLinkedRoleStatus",
+      "description": "Grants permission to check if the Amazon Braket service linked role has been created",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetUserAgreementStatus",
+      "methodName": "toGetUserAgreementStatus",
+      "description": "Grants permission to check if the account has accepted the Amazon Braket user agreement",
+      "accessLevel": "Read",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "device",
+      "methodName": "onDevice",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/restrict-access.html",
+      "arn": "arn:${Partition}:braket:*:*:device/${DeviceType}/${Provider}/${DeviceId}",
+      "placeholders": [
+        {
+          "placeholder": "DeviceType",
+          "name": "deviceType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Provider",
+          "name": "provider",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeviceId",
+          "name": "deviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html#resources",
+      "arn": "arn:${Partition}:braket:${Region}:${Account}:job/${RandomId}",
+      "placeholders": [
+        {
+          "placeholder": "RandomId",
+          "name": "randomId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "quantum-task",
+      "methodName": "onQuantumTask",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html#resources",
+      "arn": "arn:${Partition}:braket:${Region}:${Account}:quantum-task/${RandomId}",
+      "placeholders": [
+        {
+          "placeholder": "RandomId",
+          "name": "randomId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "spending-limit",
+      "methodName": "onSpendingLimit",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html#resources",
+      "arn": "arn:${Partition}:braket:${Region}:${Account}:spending-limit/${RandomId}",
+      "placeholders": [
+        {
+          "placeholder": "RandomId",
+          "name": "randomId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_braket",
+        "interface": "ISpendingLimitRef",
+        "property": "spendingLimitRef",
+        "arn": "spendingLimitArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateJob",
+        "toCreateQuantumTask",
+        "toCreateSpendingLimit",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelJob",
+        "toCancelQuantumTask",
+        "toCreateJob",
+        "toCreateQuantumTask",
+        "toCreateSpendingLimit",
+        "toDeleteSpendingLimit",
+        "toGetJob",
+        "toGetQuantumTask",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateSpendingLimit"
+      ],
+      "relatedResourceTypes": [
+        "job",
+        "quantum-task",
+        "spending-limit"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateJob",
+        "toCreateQuantumTask",
+        "toCreateSpendingLimit",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "filename": "mediapackage",
+  "className": "Mediapackage",
+  "name": "mediapackage",
+  "servicePrefix": "mediapackage",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediapackage.html",
+  "accessLevelList": {
+    "Write": [
+      "ConfigureLogs",
+      "CreateChannel",
+      "CreateHarvestJob",
+      "CreateOriginEndpoint",
+      "DeleteChannel",
+      "DeleteOriginEndpoint",
+      "RotateChannelCredentials",
+      "RotateIngestEndpointCredentials",
+      "TagResource",
+      "UntagResource",
+      "UpdateChannel",
+      "UpdateOriginEndpoint"
+    ],
+    "Read": [
+      "DescribeChannel",
+      "DescribeHarvestJob",
+      "DescribeOriginEndpoint",
+      "ListChannels",
+      "ListHarvestJobs",
+      "ListOriginEndpoints",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ConfigureLogs",
+      "methodName": "toConfigureLogs",
+      "description": "Grants permission to configure access logs for a Channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-configure_logs.html#channels-id-configure_logsput"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a channel in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateHarvestJob",
+      "methodName": "toCreateHarvestJob",
+      "description": "Grants permission to create a harvest job in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs.html#harvest_jobspost",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateOriginEndpoint",
+      "methodName": "toCreateOriginEndpoint",
+      "description": "Grants permission to create an endpoint in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete a channel in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete"
+    },
+    {
+      "name": "DeleteOriginEndpoint",
+      "methodName": "toDeleteOriginEndpoint",
+      "description": "Grants permission to delete an endpoint in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete"
+    },
+    {
+      "name": "DescribeChannel",
+      "methodName": "toDescribeChannel",
+      "description": "Grants permission to view the details of a channel in AWS Elemental MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget"
+    },
+    {
+      "name": "DescribeHarvestJob",
+      "methodName": "toDescribeHarvestJob",
+      "description": "Grants permission to view the details of a harvest job in AWS Elemental MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs-id.html#harvest_jobs-idget"
+    },
+    {
+      "name": "DescribeOriginEndpoint",
+      "methodName": "toDescribeOriginEndpoint",
+      "description": "Grants permission to view the details of an endpoint in AWS Elemental MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to view a list of channels in AWS Elemental MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget"
+    },
+    {
+      "name": "ListHarvestJobs",
+      "methodName": "toListHarvestJobs",
+      "description": "Grants permission to view a list of harvest jobs in AWS Elemental MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs.html#harvest_jobsget"
+    },
+    {
+      "name": "ListOriginEndpoints",
+      "methodName": "toListOriginEndpoints",
+      "description": "Grants permission to view a list of endpoints in AWS Elemental MediaPackage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags assigned to a Channel or OriginEndpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnget"
+    },
+    {
+      "name": "RotateChannelCredentials",
+      "methodName": "toRotateChannelCredentials",
+      "description": "Grants permission to rotate credentials for the first IngestEndpoint of a Channel in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-credentials.html#channels-id-credentialsput"
+    },
+    {
+      "name": "RotateIngestEndpointCredentials",
+      "methodName": "toRotateIngestEndpointCredentials",
+      "description": "Grants permission to rotate IngestEndpoint credentials for a Channel in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-ingest_endpoints-ingest_endpoint_id-credentials.html#channels-id-ingest_endpoints-ingest_endpoint_id-credentialsput"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a MediaPackage resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/hj-create.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to delete tags to a Channel or OriginEndpoint",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arndelete"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to make changes to a channel in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput"
+    },
+    {
+      "name": "UpdateOriginEndpoint",
+      "methodName": "toUpdateOriginEndpoint",
+      "description": "Grants permission to make changes to an endpoint in AWS Elemental MediaPackage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput"
+    }
+  ],
+  "resources": [
+    {
+      "name": "channels",
+      "methodName": "onChannels",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html",
+      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelIdentifier",
+          "name": "channelIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "harvest_jobs",
+      "methodName": "onHarvestJobs",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/harvest-jobs.html",
+      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:harvest_jobs/${HarvestJobIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "HarvestJobIdentifier",
+          "name": "harvestJobIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "origin_endpoints",
+      "methodName": "onOriginEndpoints",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html",
+      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "OriginEndpointIdentifier",
+          "name": "originEndpointIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag for a MediaPackage request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateHarvestJob",
+        "toCreateOriginEndpoint",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag for a MediaPackage resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toConfigureLogs",
+        "toDeleteChannel",
+        "toDeleteOriginEndpoint",
+        "toDescribeChannel",
+        "toDescribeHarvestJob",
+        "toDescribeOriginEndpoint",
+        "toListTagsForResource",
+        "toRotateChannelCredentials",
+        "toRotateIngestEndpointCredentials",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChannel",
+        "toUpdateOriginEndpoint"
+      ],
+      "relatedResourceTypes": [
+        "channels",
+        "harvest_jobs",
+        "origin_endpoints"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys for a MediaPackage resource or request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateHarvestJob",
+        "toCreateOriginEndpoint",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

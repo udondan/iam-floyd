@@ -1,0 +1,1001 @@
+{
+  "schemaVersion": 1,
+  "filename": "location",
+  "className": "Geo",
+  "name": "geo",
+  "servicePrefix": "geo",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_location.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateTrackerConsumer",
+      "BatchDeleteDevicePositionHistory",
+      "BatchDeleteGeofence",
+      "BatchEvaluateGeofences",
+      "BatchPutGeofence",
+      "BatchUpdateDevicePosition",
+      "CancelJob",
+      "CreateGeofenceCollection",
+      "CreateKey",
+      "CreateMap",
+      "CreatePlaceIndex",
+      "CreateRouteCalculator",
+      "CreateTracker",
+      "DeleteGeofenceCollection",
+      "DeleteKey",
+      "DeleteMap",
+      "DeletePlaceIndex",
+      "DeleteRouteCalculator",
+      "DeleteTracker",
+      "DisassociateTrackerConsumer",
+      "PutGeofence",
+      "StartJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateGeofenceCollection",
+      "UpdateKey",
+      "UpdateMap",
+      "UpdatePlaceIndex",
+      "UpdateRouteCalculator",
+      "UpdateTracker"
+    ],
+    "Read": [
+      "BatchGetDevicePosition",
+      "CalculateRoute",
+      "CalculateRouteMatrix",
+      "DescribeGeofenceCollection",
+      "DescribeKey",
+      "DescribeMap",
+      "DescribePlaceIndex",
+      "DescribeRouteCalculator",
+      "DescribeTracker",
+      "ForecastGeofenceEvents",
+      "GetDevicePosition",
+      "GetDevicePositionHistory",
+      "GetGeofence",
+      "GetJob",
+      "GetMapGlyphs",
+      "GetMapSprites",
+      "GetMapStyleDescriptor",
+      "GetMapTile",
+      "GetPlace",
+      "ListDevicePositions",
+      "ListGeofences",
+      "ListTagsForResource",
+      "ListTrackerConsumers",
+      "SearchPlaceIndexForPosition",
+      "SearchPlaceIndexForSuggestions",
+      "SearchPlaceIndexForText",
+      "VerifyDevicePosition"
+    ],
+    "List": [
+      "ListGeofenceCollections",
+      "ListJobs",
+      "ListKeys",
+      "ListMaps",
+      "ListPlaceIndexes",
+      "ListRouteCalculators",
+      "ListTrackers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateTrackerConsumer",
+      "methodName": "toAssociateTrackerConsumer",
+      "description": "Grants permission to create an association between a geofence-collection and a tracker resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_AssociateTrackerConsumer.html"
+    },
+    {
+      "name": "BatchDeleteDevicePositionHistory",
+      "methodName": "toBatchDeleteDevicePositionHistory",
+      "description": "Grants permission to delete a batch of device position histories from a tracker resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchDeleteDevicePositionHistory.html"
+    },
+    {
+      "name": "BatchDeleteGeofence",
+      "methodName": "toBatchDeleteGeofence",
+      "description": "Grants permission to delete a batch of geofences from a geofence collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchDeleteGeofence.html"
+    },
+    {
+      "name": "BatchEvaluateGeofences",
+      "methodName": "toBatchEvaluateGeofences",
+      "description": "Grants permission to evaluate device positions against the position of geofences in a given geofence collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchEvaluateGeofences.html"
+    },
+    {
+      "name": "BatchGetDevicePosition",
+      "methodName": "toBatchGetDevicePosition",
+      "description": "Grants permission to send a batch request to retrieve device positions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchGetDevicePosition.html"
+    },
+    {
+      "name": "BatchPutGeofence",
+      "methodName": "toBatchPutGeofence",
+      "description": "Grants permission to send a batch request for adding geofences into a given geofence collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchPutGeofence.html"
+    },
+    {
+      "name": "BatchUpdateDevicePosition",
+      "methodName": "toBatchUpdateDevicePosition",
+      "description": "Grants permission to upload a position update for one or more devices to a tracker resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchUpdateDevicePosition.html"
+    },
+    {
+      "name": "CalculateRoute",
+      "methodName": "toCalculateRoute",
+      "description": "Grants permission to calculate routes using a given route calculator resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CalculateRoute.html"
+    },
+    {
+      "name": "CalculateRouteMatrix",
+      "methodName": "toCalculateRouteMatrix",
+      "description": "Grants permission to calculate a route matrix using a given route calculator resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CalculateRouteMatrix.html"
+    },
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_CancelJob.html"
+    },
+    {
+      "name": "CreateGeofenceCollection",
+      "methodName": "toCreateGeofenceCollection",
+      "description": "Grants permission to create a geofence-collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_CreateGeofenceCollection.html"
+    },
+    {
+      "name": "CreateKey",
+      "methodName": "toCreateKey",
+      "description": "Grants permission to create an API key resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_CreateKey.html"
+    },
+    {
+      "name": "CreateMap",
+      "methodName": "toCreateMap",
+      "description": "Grants permission to create a map resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CreateMap.html"
+    },
+    {
+      "name": "CreatePlaceIndex",
+      "methodName": "toCreatePlaceIndex",
+      "description": "Grants permission to create a place index resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CreatePlaceIndex.html"
+    },
+    {
+      "name": "CreateRouteCalculator",
+      "methodName": "toCreateRouteCalculator",
+      "description": "Grants permission to create a route calculator resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_CreateRouteCalculator.html"
+    },
+    {
+      "name": "CreateTracker",
+      "methodName": "toCreateTracker",
+      "description": "Grants permission to create a tracker resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_CreateTracker.html"
+    },
+    {
+      "name": "DeleteGeofenceCollection",
+      "methodName": "toDeleteGeofenceCollection",
+      "description": "Grants permission to delete a geofence-collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_DeleteGeofenceCollection.html"
+    },
+    {
+      "name": "DeleteKey",
+      "methodName": "toDeleteKey",
+      "description": "Grants permission to delete an API key resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_DeleteKey.html"
+    },
+    {
+      "name": "DeleteMap",
+      "methodName": "toDeleteMap",
+      "description": "Grants permission to delete a map resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DeleteMap.html"
+    },
+    {
+      "name": "DeletePlaceIndex",
+      "methodName": "toDeletePlaceIndex",
+      "description": "Grants permission to delete a place index resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DeletePlaceIndex.html"
+    },
+    {
+      "name": "DeleteRouteCalculator",
+      "methodName": "toDeleteRouteCalculator",
+      "description": "Grants permission to delete a route calculator resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DeleteRouteCalculator.html"
+    },
+    {
+      "name": "DeleteTracker",
+      "methodName": "toDeleteTracker",
+      "description": "Grants permission to delete a tracker resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_DeleteTracker.html"
+    },
+    {
+      "name": "DescribeGeofenceCollection",
+      "methodName": "toDescribeGeofenceCollection",
+      "description": "Grants permission to retrieve geofence collection details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_DescribeGeofenceCollection.html"
+    },
+    {
+      "name": "DescribeKey",
+      "methodName": "toDescribeKey",
+      "description": "Grants permission to retrieve API key resource details and secret",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_DescribeKey.html"
+    },
+    {
+      "name": "DescribeMap",
+      "methodName": "toDescribeMap",
+      "description": "Grants permission to retrieve map resource details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DescribeMap.html"
+    },
+    {
+      "name": "DescribePlaceIndex",
+      "methodName": "toDescribePlaceIndex",
+      "description": "Grants permission to retrieve place-index resource details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DescribePlaceIndex.html"
+    },
+    {
+      "name": "DescribeRouteCalculator",
+      "methodName": "toDescribeRouteCalculator",
+      "description": "Grants permission to retrieve route calculator resource details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_DescribeRouteCalculator.html"
+    },
+    {
+      "name": "DescribeTracker",
+      "methodName": "toDescribeTracker",
+      "description": "Grants permission to retrieve a tracker resource details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_DescribeTracker.html"
+    },
+    {
+      "name": "DisassociateTrackerConsumer",
+      "methodName": "toDisassociateTrackerConsumer",
+      "description": "Grants permission to remove the association between a tracker resource and a geofence-collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_DisassociateTrackerConsumer.html"
+    },
+    {
+      "name": "ForecastGeofenceEvents",
+      "methodName": "toForecastGeofenceEvents",
+      "description": "Grants permission to forecast events for geofences stored in a given geofence collection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_ForecastGeofenceEvents.html"
+    },
+    {
+      "name": "GetDevicePosition",
+      "methodName": "toGetDevicePosition",
+      "description": "Grants permission to retrieve the latest device position",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_GetDevicePosition.html"
+    },
+    {
+      "name": "GetDevicePositionHistory",
+      "methodName": "toGetDevicePositionHistory",
+      "description": "Grants permission to retrieve the device position history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_GetDevicePositionHistory.html"
+    },
+    {
+      "name": "GetGeofence",
+      "methodName": "toGetGeofence",
+      "description": "Grants permission to retrieve the geofence details from a geofence-collection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_GetGeofence.html"
+    },
+    {
+      "name": "GetJob",
+      "methodName": "toGetJob",
+      "description": "Grants permission to retrieve job details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_GetJob.html"
+    },
+    {
+      "name": "GetMapGlyphs",
+      "methodName": "toGetMapGlyphs",
+      "description": "Grants permission to retrieve the glyph file for a map resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html"
+    },
+    {
+      "name": "GetMapSprites",
+      "methodName": "toGetMapSprites",
+      "description": "Grants permission to retrieve the sprite file for a map resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapSprites.html"
+    },
+    {
+      "name": "GetMapStyleDescriptor",
+      "methodName": "toGetMapStyleDescriptor",
+      "description": "Grants permission to retrieve the map style descriptor from a map resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapStyleDescriptor.html"
+    },
+    {
+      "name": "GetMapTile",
+      "methodName": "toGetMapTile",
+      "description": "Grants permission to retrieve the map tile from the map resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapTile.html"
+    },
+    {
+      "name": "GetPlace",
+      "methodName": "toGetPlace",
+      "description": "Grants permission to find a place by its unique ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_GetPlace.html"
+    },
+    {
+      "name": "ListDevicePositions",
+      "methodName": "toListDevicePositions",
+      "description": "Grants permission to retrieve a list of devices and their latest positions from the given tracker resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_ListDevicePositions.html"
+    },
+    {
+      "name": "ListGeofenceCollections",
+      "methodName": "toListGeofenceCollections",
+      "description": "Grants permission to lists geofence-collections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_ListGeofenceCollections.html"
+    },
+    {
+      "name": "ListGeofences",
+      "methodName": "toListGeofences",
+      "description": "Grants permission to list geofences stored in a given geofence collection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_ListGeofences.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_ListJobs.html"
+    },
+    {
+      "name": "ListKeys",
+      "methodName": "toListKeys",
+      "description": "Grants permission to list API key resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_ListKeys.html"
+    },
+    {
+      "name": "ListMaps",
+      "methodName": "toListMaps",
+      "description": "Grants permission to list map resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_ListMaps.html"
+    },
+    {
+      "name": "ListPlaceIndexes",
+      "methodName": "toListPlaceIndexes",
+      "description": "Grants permission to return a list of place index resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_ListPlaceIndexes.html"
+    },
+    {
+      "name": "ListRouteCalculators",
+      "methodName": "toListRouteCalculators",
+      "description": "Grants permission to return a list of route calculator resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_ListRouteCalculators.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags (metadata) which you have assigned to the resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTrackerConsumers",
+      "methodName": "toListTrackerConsumers",
+      "description": "Grants permission to retrieve a list of geofence collections currently associated to the given tracker resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_ListTrackerConsumers.html"
+    },
+    {
+      "name": "ListTrackers",
+      "methodName": "toListTrackers",
+      "description": "Grants permission to return a list of tracker resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_ListTrackers.html"
+    },
+    {
+      "name": "PutGeofence",
+      "methodName": "toPutGeofence",
+      "description": "Grants permission to add a new geofence or update an existing geofence to a given geofence-collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_PutGeofence.html"
+    },
+    {
+      "name": "SearchPlaceIndexForPosition",
+      "methodName": "toSearchPlaceIndexForPosition",
+      "description": "Grants permission to reverse geocodes a given coordinate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_SearchPlaceIndexForPosition.html"
+    },
+    {
+      "name": "SearchPlaceIndexForSuggestions",
+      "methodName": "toSearchPlaceIndexForSuggestions",
+      "description": "Grants permission to generate suggestions for addresses and points of interest based on partial or misspelled free-form text",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_SearchPlaceIndexForSuggestions.html"
+    },
+    {
+      "name": "SearchPlaceIndexForText",
+      "methodName": "toSearchPlaceIndexForText",
+      "description": "Grants permission to geocode free-form text, such as an address, name, city or region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_SearchPlaceIndexForText.html"
+    },
+    {
+      "name": "StartJob",
+      "methodName": "toStartJob",
+      "description": "Grants permission to start a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_StartJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the given tags (metadata) from the resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_UntagResource.html"
+    },
+    {
+      "name": "UpdateGeofenceCollection",
+      "methodName": "toUpdateGeofenceCollection",
+      "description": "Grants permission to update a geofence collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_UpdateGeofenceCollection.html"
+    },
+    {
+      "name": "UpdateKey",
+      "methodName": "toUpdateKey",
+      "description": "Grants permission to update an API key resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_UpdateKey.html"
+    },
+    {
+      "name": "UpdateMap",
+      "methodName": "toUpdateMap",
+      "description": "Grants permission to update a map resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_UpdateMap.html"
+    },
+    {
+      "name": "UpdatePlaceIndex",
+      "methodName": "toUpdatePlaceIndex",
+      "description": "Grants permission to update a place index resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_UpdatePlaceIndex.html"
+    },
+    {
+      "name": "UpdateRouteCalculator",
+      "methodName": "toUpdateRouteCalculator",
+      "description": "Grants permission to update a route calculator resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/previous/APIReference/API_UpdateRouteCalculator.html"
+    },
+    {
+      "name": "UpdateTracker",
+      "methodName": "toUpdateTracker",
+      "description": "Grants permission to update a tracker resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_UpdateTracker.html"
+    },
+    {
+      "name": "VerifyDevicePosition",
+      "methodName": "toVerifyDevicePosition",
+      "description": "Grants permission to verify a device position",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_VerifyDevicePosition.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "api-key",
+      "methodName": "onApiKey",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:api-key/${KeyName}",
+      "placeholders": [
+        {
+          "placeholder": "KeyName",
+          "name": "keyName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IAPIKeyRef",
+        "property": "apiKeyRef",
+        "arn": "apiKeyArn"
+      }
+    },
+    {
+      "name": "geofence-collection",
+      "methodName": "onGeofenceCollection",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/geofence-components.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:geofence-collection/${GeofenceCollectionName}",
+      "placeholders": [
+        {
+          "placeholder": "GeofenceCollectionName",
+          "name": "geofenceCollectionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifGeofenceIds"
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IGeofenceCollectionRef",
+        "property": "geofenceCollectionRef",
+        "arn": "geofenceCollectionArn"
+      }
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "map",
+      "methodName": "onMap",
+      "url": "https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:map/${MapName}",
+      "placeholders": [
+        {
+          "placeholder": "MapName",
+          "name": "mapName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IMapRef",
+        "property": "mapRef",
+        "arn": "mapArn"
+      }
+    },
+    {
+      "name": "place-index",
+      "methodName": "onPlaceIndex",
+      "url": "https://docs.aws.amazon.com/location/previous/developerguide/places-concepts.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:place-index/${IndexName}",
+      "placeholders": [
+        {
+          "placeholder": "IndexName",
+          "name": "indexName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IPlaceIndexRef",
+        "property": "placeIndexRef",
+        "arn": "placeIndexArn"
+      }
+    },
+    {
+      "name": "route-calculator",
+      "methodName": "onRouteCalculator",
+      "url": "https://docs.aws.amazon.com/location/previous/developerguide/route-concepts.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:route-calculator/${CalculatorName}",
+      "placeholders": [
+        {
+          "placeholder": "CalculatorName",
+          "name": "calculatorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IRouteCalculatorRef",
+        "property": "routeCalculatorRef",
+        "arn": "routeCalculatorArn"
+      }
+    },
+    {
+      "name": "tracker",
+      "methodName": "onTracker",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/tracking-components.html",
+      "arn": "arn:${Partition}:geo:${Region}:${Account}:tracker/${TrackerName}",
+      "placeholders": [
+        {
+          "placeholder": "TrackerName",
+          "name": "trackerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifDeviceIds"
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "ITrackerRef",
+        "property": "trackerRef",
+        "arn": "trackerArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateGeofenceCollection",
+        "toCreateKey",
+        "toCreateMap",
+        "toCreatePlaceIndex",
+        "toCreateRouteCalculator",
+        "toCreateTracker",
+        "toStartJob",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateTrackerConsumer",
+        "toBatchDeleteDevicePositionHistory",
+        "toBatchDeleteGeofence",
+        "toBatchEvaluateGeofences",
+        "toBatchGetDevicePosition",
+        "toBatchPutGeofence",
+        "toBatchUpdateDevicePosition",
+        "toCalculateRoute",
+        "toCalculateRouteMatrix",
+        "toCancelJob",
+        "toCreateGeofenceCollection",
+        "toCreateKey",
+        "toCreateMap",
+        "toCreatePlaceIndex",
+        "toCreateRouteCalculator",
+        "toCreateTracker",
+        "toDeleteGeofenceCollection",
+        "toDeleteKey",
+        "toDeleteMap",
+        "toDeletePlaceIndex",
+        "toDeleteRouteCalculator",
+        "toDeleteTracker",
+        "toDescribeGeofenceCollection",
+        "toDescribeKey",
+        "toDescribeMap",
+        "toDescribePlaceIndex",
+        "toDescribeRouteCalculator",
+        "toDescribeTracker",
+        "toDisassociateTrackerConsumer",
+        "toForecastGeofenceEvents",
+        "toGetDevicePosition",
+        "toGetDevicePositionHistory",
+        "toGetGeofence",
+        "toGetJob",
+        "toGetMapGlyphs",
+        "toGetMapSprites",
+        "toGetMapStyleDescriptor",
+        "toGetMapTile",
+        "toGetPlace",
+        "toListDevicePositions",
+        "toListGeofenceCollections",
+        "toListGeofences",
+        "toListJobs",
+        "toListKeys",
+        "toListMaps",
+        "toListPlaceIndexes",
+        "toListRouteCalculators",
+        "toListTagsForResource",
+        "toListTrackerConsumers",
+        "toListTrackers",
+        "toPutGeofence",
+        "toSearchPlaceIndexForPosition",
+        "toSearchPlaceIndexForSuggestions",
+        "toSearchPlaceIndexForText",
+        "toStartJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateGeofenceCollection",
+        "toUpdateKey",
+        "toUpdateMap",
+        "toUpdatePlaceIndex",
+        "toUpdateRouteCalculator",
+        "toUpdateTracker",
+        "toVerifyDevicePosition"
+      ],
+      "relatedResourceTypes": [
+        "api-key",
+        "geofence-collection",
+        "job",
+        "map",
+        "place-index",
+        "route-calculator",
+        "tracker"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateGeofenceCollection",
+        "toCreateKey",
+        "toCreateMap",
+        "toCreatePlaceIndex",
+        "toCreateRouteCalculator",
+        "toCreateTracker",
+        "toStartJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "geo:DeviceIds",
+      "methodName": "ifDeviceIds",
+      "description": "Filters access by the presence of device ids in the request",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toAssociateTrackerConsumer",
+        "toBatchDeleteDevicePositionHistory",
+        "toBatchGetDevicePosition",
+        "toBatchUpdateDevicePosition",
+        "toCreateTracker",
+        "toDeleteTracker",
+        "toDescribeTracker",
+        "toDisassociateTrackerConsumer",
+        "toGetDevicePosition",
+        "toGetDevicePositionHistory",
+        "toListDevicePositions",
+        "toListTagsForResource",
+        "toListTrackerConsumers",
+        "toListTrackers",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTracker",
+        "toVerifyDevicePosition"
+      ],
+      "relatedResourceTypes": [
+        "tracker"
+      ],
+      "keyLiteral": "DeviceIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "geo:GeofenceIds",
+      "methodName": "ifGeofenceIds",
+      "description": "Filters access by the presence of geofence ids in the request",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toBatchDeleteGeofence",
+        "toBatchEvaluateGeofences",
+        "toBatchPutGeofence",
+        "toCreateGeofenceCollection",
+        "toDeleteGeofenceCollection",
+        "toDescribeGeofenceCollection",
+        "toForecastGeofenceEvents",
+        "toGetGeofence",
+        "toListGeofenceCollections",
+        "toListGeofences",
+        "toListTagsForResource",
+        "toPutGeofence",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateGeofenceCollection"
+      ],
+      "relatedResourceTypes": [
+        "geofence-collection"
+      ],
+      "keyLiteral": "GeofenceIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

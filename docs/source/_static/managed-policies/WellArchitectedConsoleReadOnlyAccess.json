@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "wellarchitected:Get*",
+        "wellarchitected:List*",
+        "wellarchitected:ExportLens",
+        "organizations:DescribeAccount",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAccountsForParent",
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "trustedadvisor:List*",
+        "trustedadvisor:Get*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

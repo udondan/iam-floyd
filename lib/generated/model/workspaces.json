@@ -1,0 +1,1347 @@
+{
+  "schemaVersion": 1,
+  "filename": "workspaces",
+  "className": "Workspaces",
+  "name": "workspaces",
+  "servicePrefix": "workspaces",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workspaces.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptAccountLinkInvitation",
+      "AssociateConnectionAlias",
+      "AssociateIpGroups",
+      "AssociateWorkspaceApplication",
+      "AuthorizeIpRules",
+      "CopyWorkspaceImage",
+      "CreateAccountLinkInvitation",
+      "CreateConnectClientAddIn",
+      "CreateConnectionAlias",
+      "CreateIpGroup",
+      "CreateStandbyWorkspaces",
+      "CreateTags",
+      "CreateUpdatedWorkspaceImage",
+      "CreateWorkspaceBundle",
+      "CreateWorkspaceImage",
+      "CreateWorkspaces",
+      "CreateWorkspacesPool",
+      "DeleteAccountLinkInvitation",
+      "DeleteClientBranding",
+      "DeleteConnectClientAddIn",
+      "DeleteConnectionAlias",
+      "DeleteIpGroup",
+      "DeleteTags",
+      "DeleteWorkspaceBundle",
+      "DeleteWorkspaceImage",
+      "DeployWorkspaceApplications",
+      "DeregisterWorkspaceDirectory",
+      "DisassociateConnectionAlias",
+      "DisassociateIpGroups",
+      "DisassociateWorkspaceApplication",
+      "ImportClientBranding",
+      "ImportCustomWorkspaceImage",
+      "ImportWorkspaceImage",
+      "MigrateWorkspace",
+      "ModifyAccount",
+      "ModifyCertificateBasedAuthProperties",
+      "ModifyClientProperties",
+      "ModifyEndpointEncryptionMode",
+      "ModifySamlProperties",
+      "ModifySelfservicePermissions",
+      "ModifyStreamingProperties",
+      "ModifyWorkspaceAccessProperties",
+      "ModifyWorkspaceCreationProperties",
+      "ModifyWorkspaceProperties",
+      "ModifyWorkspaceState",
+      "RebootWorkspaces",
+      "RebuildWorkspaces",
+      "RegisterWorkspaceDirectory",
+      "RejectAccountLinkInvitation",
+      "RestoreWorkspace",
+      "RevokeIpRules",
+      "StartWorkspaces",
+      "StartWorkspacesPool",
+      "StopWorkspaces",
+      "StopWorkspacesPool",
+      "Stream",
+      "TerminateWorkspaces",
+      "TerminateWorkspacesPool",
+      "TerminateWorkspacesPoolSession",
+      "UpdateConnectClientAddIn",
+      "UpdateConnectionAliasPermission",
+      "UpdateRulesOfIpGroup",
+      "UpdateWorkspaceBundle",
+      "UpdateWorkspaceImagePermission",
+      "UpdateWorkspacesPool",
+      "CreateRootClientCertificate",
+      "DeleteRootClientCertificate",
+      "InvokeOnboardingAgent",
+      "Personalization",
+      "UpdateConsent",
+      "UpdateRootClientCertificate"
+    ],
+    "Tagging": [
+      "CreateTags",
+      "DeleteTags"
+    ],
+    "Read": [
+      "DescribeAccount",
+      "DescribeAccountModifications",
+      "DescribeClientBranding",
+      "DescribeConnectionAliasPermissions",
+      "DescribeConnectionAliases",
+      "DescribeCustomWorkspaceImageImport",
+      "DescribeIpGroups",
+      "DescribeTags",
+      "DescribeWorkspaceDirectories",
+      "DescribeWorkspaceImagePermissions",
+      "DescribeWorkspacesConnectionStatus",
+      "GetAccountLink",
+      "DescribeConsent",
+      "GetTroubleshootingRecommendation",
+      "InvokeTroubleshootingInvestigation",
+      "ListTroubleshootingRecommendations"
+    ],
+    "List": [
+      "DescribeApplicationAssociations",
+      "DescribeApplications",
+      "DescribeBundleAssociations",
+      "DescribeClientProperties",
+      "DescribeConnectClientAddIns",
+      "DescribeImageAssociations",
+      "DescribeWorkspaceAssociations",
+      "DescribeWorkspaceBundles",
+      "DescribeWorkspaceImages",
+      "DescribeWorkspaceSnapshots",
+      "DescribeWorkspaces",
+      "DescribeWorkspacesPoolSessions",
+      "DescribeWorkspacesPools",
+      "ListAccountLinks",
+      "ListAvailableManagementCidrRanges",
+      "DirectoryAccessManagement"
+    ],
+    "Permissions management": [
+      "ModifySelfservicePermissions",
+      "UpdateConnectionAliasPermission",
+      "UpdateWorkspaceImagePermission"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptAccountLinkInvitation",
+      "methodName": "toAcceptAccountLinkInvitation",
+      "description": "Grants permission to accept invitations from other AWS accounts to share the same configuration for WorkSpaces BYOL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AcceptAccountLinkInvitation.html"
+    },
+    {
+      "name": "AssociateConnectionAlias",
+      "methodName": "toAssociateConnectionAlias",
+      "description": "Grants permission to associate connection aliases with directories",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateConnectionAlias.html"
+    },
+    {
+      "name": "AssociateIpGroups",
+      "methodName": "toAssociateIpGroups",
+      "description": "Grants permission to associate IP access control groups with directories",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html"
+    },
+    {
+      "name": "AssociateWorkspaceApplication",
+      "methodName": "toAssociateWorkspaceApplication",
+      "description": "Grants permission to associate a workspace application with a WorkSpace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateWorkspaceApplication.html"
+    },
+    {
+      "name": "AuthorizeIpRules",
+      "methodName": "toAuthorizeIpRules",
+      "description": "Grants permission to add rules to IP access control groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html"
+    },
+    {
+      "name": "CopyWorkspaceImage",
+      "methodName": "toCopyWorkspaceImage",
+      "description": "Grants permission to copy a WorkSpace image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CopyWorkspaceImage.html"
+    },
+    {
+      "name": "CreateAccountLinkInvitation",
+      "methodName": "toCreateAccountLinkInvitation",
+      "description": "Grants permission to invite other AWS accounts to share the same configuration for WorkSpaces BYOL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateAccountLinkInvitation.html"
+    },
+    {
+      "name": "CreateConnectClientAddIn",
+      "methodName": "toCreateConnectClientAddIn",
+      "description": "Grants permission to create an Amazon Connect client add-in within a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateConnectClientAddIn.html"
+    },
+    {
+      "name": "CreateConnectionAlias",
+      "methodName": "toCreateConnectionAlias",
+      "description": "Grants permission to create connection aliases for use with cross-Region redirection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateConnectionAlias.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateIpGroup",
+      "methodName": "toCreateIpGroup",
+      "description": "Grants permission to create IP access control groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateIpGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateStandbyWorkspaces",
+      "methodName": "toCreateStandbyWorkspaces",
+      "description": "Grants permission to create one or more Standby WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateStandbyWorkspaces.html"
+    },
+    {
+      "name": "CreateTags",
+      "methodName": "toCreateTags",
+      "description": "Grants permission to create tags for WorkSpaces resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateTags.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateUpdatedWorkspaceImage",
+      "methodName": "toCreateUpdatedWorkspaceImage",
+      "description": "Grants permission to create an updated WorkSpace image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateUpdatedWorkspaceImage.html"
+    },
+    {
+      "name": "CreateWorkspaceBundle",
+      "methodName": "toCreateWorkspaceBundle",
+      "description": "Grants permission to create a WorkSpace bundle",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceBundle.html"
+    },
+    {
+      "name": "CreateWorkspaceImage",
+      "methodName": "toCreateWorkspaceImage",
+      "description": "Grants permission to create a new WorkSpace image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceImage.html"
+    },
+    {
+      "name": "CreateWorkspaces",
+      "methodName": "toCreateWorkspaces",
+      "description": "Grants permission to create one or more WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaces.html"
+    },
+    {
+      "name": "CreateWorkspacesPool",
+      "methodName": "toCreateWorkspacesPool",
+      "description": "Grants permission to create a WorkSpaces Pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspacesPool.html"
+    },
+    {
+      "name": "DeleteAccountLinkInvitation",
+      "methodName": "toDeleteAccountLinkInvitation",
+      "description": "Grants permission to delete invitations to other AWS accounts to share the same configuration for WorkSpaces BYOL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteAccountLinkInvitation.html"
+    },
+    {
+      "name": "DeleteClientBranding",
+      "methodName": "toDeleteClientBranding",
+      "description": "Grants permission to delete AWS WorkSpaces Client branding data within a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteClientBranding.html"
+    },
+    {
+      "name": "DeleteConnectClientAddIn",
+      "methodName": "toDeleteConnectClientAddIn",
+      "description": "Grants permission to delete an Amazon Connect client add-in that is configured within a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteConnectClientAddIn.html"
+    },
+    {
+      "name": "DeleteConnectionAlias",
+      "methodName": "toDeleteConnectionAlias",
+      "description": "Grants permission to delete connection aliases",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteConnectionAlias.html"
+    },
+    {
+      "name": "DeleteIpGroup",
+      "methodName": "toDeleteIpGroup",
+      "description": "Grants permission to delete IP access control groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteIpGroup.html"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Grants permission to delete tags from WorkSpaces resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteTags.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteWorkspaceBundle",
+      "methodName": "toDeleteWorkspaceBundle",
+      "description": "Grants permission to delete WorkSpace bundles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceBundle.html"
+    },
+    {
+      "name": "DeleteWorkspaceImage",
+      "methodName": "toDeleteWorkspaceImage",
+      "description": "Grants permission to delete WorkSpace images",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceImage.html"
+    },
+    {
+      "name": "DeployWorkspaceApplications",
+      "methodName": "toDeployWorkspaceApplications",
+      "description": "Grants permission to deploy all pending workspace applications on a WorkSpace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeployWorkspaceApplications.html"
+    },
+    {
+      "name": "DeregisterWorkspaceDirectory",
+      "methodName": "toDeregisterWorkspaceDirectory",
+      "description": "Grants permission to deregister directories from use with Amazon WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeregisterWorkspaceDirectory.html"
+    },
+    {
+      "name": "DescribeAccount",
+      "methodName": "toDescribeAccount",
+      "description": "Grants permission to retrieve the configuration of Bring Your Own License (BYOL) for WorkSpaces accounts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccount.html"
+    },
+    {
+      "name": "DescribeAccountModifications",
+      "methodName": "toDescribeAccountModifications",
+      "description": "Grants permission to retrieve modifications to the configuration of Bring Your Own License (BYOL) for WorkSpaces accounts",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccountModifications.html"
+    },
+    {
+      "name": "DescribeApplicationAssociations",
+      "methodName": "toDescribeApplicationAssociations",
+      "description": "Grants permission to retrieve information about resources associated with a WorkSpace application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeApplicationAssociations.html"
+    },
+    {
+      "name": "DescribeApplications",
+      "methodName": "toDescribeApplications",
+      "description": "Grants permission to obtain information about WorkSpace applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeApplications.html"
+    },
+    {
+      "name": "DescribeBundleAssociations",
+      "methodName": "toDescribeBundleAssociations",
+      "description": "Grants permission to retrieve information about resources associated with a WorkSpace bundle",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeBundleAssociations.html"
+    },
+    {
+      "name": "DescribeClientBranding",
+      "methodName": "toDescribeClientBranding",
+      "description": "Grants permission to retrieve AWS WorkSpaces Client branding data within a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientBranding.html"
+    },
+    {
+      "name": "DescribeClientProperties",
+      "methodName": "toDescribeClientProperties",
+      "description": "Grants permission to retrieve information about WorkSpaces clients",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientProperties.html"
+    },
+    {
+      "name": "DescribeConnectClientAddIns",
+      "methodName": "toDescribeConnectClientAddIns",
+      "description": "Grants permission to retrieve a list of Amazon Connect client add-ins that have been created",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectClientAddIns.html"
+    },
+    {
+      "name": "DescribeConnectionAliasPermissions",
+      "methodName": "toDescribeConnectionAliasPermissions",
+      "description": "Grants permission to retrieve the permissions that the owners of connection aliases have granted to other AWS accounts for connection aliases",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliasPermissions.html"
+    },
+    {
+      "name": "DescribeConnectionAliases",
+      "methodName": "toDescribeConnectionAliases",
+      "description": "Grants permission to retrieve a list that describes the connection aliases used for cross-Region redirection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html"
+    },
+    {
+      "name": "DescribeCustomWorkspaceImageImport",
+      "methodName": "toDescribeCustomWorkspaceImageImport",
+      "description": "Grants permission to retrieve information about WorkSpace BYOL image import task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeCustomWorkspaceImageImport.html"
+    },
+    {
+      "name": "DescribeImageAssociations",
+      "methodName": "toDescribeImageAssociations",
+      "description": "Grants permission to retrieve information about resources associated with a WorkSpace image",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeImageAssociations.html"
+    },
+    {
+      "name": "DescribeIpGroups",
+      "methodName": "toDescribeIpGroups",
+      "description": "Grants permission to retrieve information about IP access control groups",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Grants permission to describe the tags for WorkSpaces resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeTags.html"
+    },
+    {
+      "name": "DescribeWorkspaceAssociations",
+      "methodName": "toDescribeWorkspaceAssociations",
+      "description": "Grants permission to retrieve information about resources associated with a WorkSpace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceAssociations.html"
+    },
+    {
+      "name": "DescribeWorkspaceBundles",
+      "methodName": "toDescribeWorkspaceBundles",
+      "description": "Grants permission to obtain information about WorkSpace bundles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceBundles.html"
+    },
+    {
+      "name": "DescribeWorkspaceDirectories",
+      "methodName": "toDescribeWorkspaceDirectories",
+      "description": "Grants permission to retrieve information about directories that are registered with WorkSpaces",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"
+    },
+    {
+      "name": "DescribeWorkspaceImagePermissions",
+      "methodName": "toDescribeWorkspaceImagePermissions",
+      "description": "Grants permission to retrieve information about WorkSpace image permissions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html"
+    },
+    {
+      "name": "DescribeWorkspaceImages",
+      "methodName": "toDescribeWorkspaceImages",
+      "description": "Grants permission to retrieve information about WorkSpace images",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html"
+    },
+    {
+      "name": "DescribeWorkspaceSnapshots",
+      "methodName": "toDescribeWorkspaceSnapshots",
+      "description": "Grants permission to retrieve information about WorkSpace snapshots",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceSnapshots.html"
+    },
+    {
+      "name": "DescribeWorkspaces",
+      "methodName": "toDescribeWorkspaces",
+      "description": "Grants permission to obtain information about WorkSpaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"
+    },
+    {
+      "name": "DescribeWorkspacesConnectionStatus",
+      "methodName": "toDescribeWorkspacesConnectionStatus",
+      "description": "Grants permission to obtain the connection status of WorkSpaces",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesConnectionStatus.html"
+    },
+    {
+      "name": "DescribeWorkspacesPoolSessions",
+      "methodName": "toDescribeWorkspacesPoolSessions",
+      "description": "Grants permission to retrieve information about the sessions of a WorkSpaces Pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPoolSessions.html"
+    },
+    {
+      "name": "DescribeWorkspacesPools",
+      "methodName": "toDescribeWorkspacesPools",
+      "description": "Grants permission to retrieve information about WorkSpaces Pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPools.html"
+    },
+    {
+      "name": "DisassociateConnectionAlias",
+      "methodName": "toDisassociateConnectionAlias",
+      "description": "Grants permission to disassociate connection aliases from directories",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateConnectionAlias.html"
+    },
+    {
+      "name": "DisassociateIpGroups",
+      "methodName": "toDisassociateIpGroups",
+      "description": "Grants permission to disassociate IP access control groups from directories",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateIpGroups.html"
+    },
+    {
+      "name": "DisassociateWorkspaceApplication",
+      "methodName": "toDisassociateWorkspaceApplication",
+      "description": "Grants permission to disassociate a workspace application from a WorkSpace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateWorkspaceApplication.html"
+    },
+    {
+      "name": "GetAccountLink",
+      "methodName": "toGetAccountLink",
+      "description": "Grants permission to retrieve a link with another AWS Account for sharing configuration for WorkSpaces BYOL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_GetAccountLink.html"
+    },
+    {
+      "name": "ImportClientBranding",
+      "methodName": "toImportClientBranding",
+      "description": "Grants permission to import AWS WorkSpaces Client branding data within a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportClientBranding.html"
+    },
+    {
+      "name": "ImportCustomWorkspaceImage",
+      "methodName": "toImportCustomWorkspaceImage",
+      "description": "Grants permission to import Bring Your Own License (BYOL) images into Amazon WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportCustomWorkspaceImage.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ImportWorkspaceImage",
+      "methodName": "toImportWorkspaceImage",
+      "description": "Grants permission to import Bring Your Own License (BYOL) images into Amazon WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ListAccountLinks",
+      "methodName": "toListAccountLinks",
+      "description": "Grants permission to retrieve links with the AWS Account(s) that share your configuration for WorkSpaces BYOL",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListAccountLinks.html"
+    },
+    {
+      "name": "ListAvailableManagementCidrRanges",
+      "methodName": "toListAvailableManagementCidrRanges",
+      "description": "Grants permission to list the available CIDR ranges for enabling Bring Your Own License (BYOL) for WorkSpaces accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListAvailableManagementCidrRanges.html"
+    },
+    {
+      "name": "MigrateWorkspace",
+      "methodName": "toMigrateWorkspace",
+      "description": "Grants permission to migrate WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_MigrateWorkspace.html"
+    },
+    {
+      "name": "ModifyAccount",
+      "methodName": "toModifyAccount",
+      "description": "Grants permission to modify the configuration of Bring Your Own License (BYOL) for WorkSpaces accounts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyAccount.html"
+    },
+    {
+      "name": "ModifyCertificateBasedAuthProperties",
+      "methodName": "toModifyCertificateBasedAuthProperties",
+      "description": "Grants permission to modify the certificate-based authorization properties of a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyCertificateBasedAuthProperties.html"
+    },
+    {
+      "name": "ModifyClientProperties",
+      "methodName": "toModifyClientProperties",
+      "description": "Grants permission to modify the properties of WorkSpaces clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyClientProperties.html"
+    },
+    {
+      "name": "ModifyEndpointEncryptionMode",
+      "methodName": "toModifyEndpointEncryptionMode",
+      "description": "Grants permission to configure the specified directory between Standard TLS and FIPS 140-2 validated mode",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyEndpointEncryptionMode.html"
+    },
+    {
+      "name": "ModifySamlProperties",
+      "methodName": "toModifySamlProperties",
+      "description": "Grants permission to modify the SAML properties of a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifySamlProperties.html"
+    },
+    {
+      "name": "ModifySelfservicePermissions",
+      "methodName": "toModifySelfservicePermissions",
+      "description": "Grants permission to modify the self-service WorkSpace management capabilities for your users",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifySelfservicePermissions.html"
+    },
+    {
+      "name": "ModifyStreamingProperties",
+      "methodName": "toModifyStreamingProperties",
+      "description": "Grants permission to modify the streaming properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyStreamingProperties.html"
+    },
+    {
+      "name": "ModifyWorkspaceAccessProperties",
+      "methodName": "toModifyWorkspaceAccessProperties",
+      "description": "Grants permission to specify which devices and operating systems users can use to access their WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceAccessProperties.html"
+    },
+    {
+      "name": "ModifyWorkspaceCreationProperties",
+      "methodName": "toModifyWorkspaceCreationProperties",
+      "description": "Grants permission to modify the default properties used to create WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceCreationProperties.html"
+    },
+    {
+      "name": "ModifyWorkspaceProperties",
+      "methodName": "toModifyWorkspaceProperties",
+      "description": "Grants permission to modify WorkSpace properties, including the running mode and the AutoStop period",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceProperties.html"
+    },
+    {
+      "name": "ModifyWorkspaceState",
+      "methodName": "toModifyWorkspaceState",
+      "description": "Grants permission to modify the state of WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceState.html"
+    },
+    {
+      "name": "RebootWorkspaces",
+      "methodName": "toRebootWorkspaces",
+      "description": "Grants permission to reboot WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RebootWorkspaces.html"
+    },
+    {
+      "name": "RebuildWorkspaces",
+      "methodName": "toRebuildWorkspaces",
+      "description": "Grants permission to rebuild WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RebuildWorkspaces.html"
+    },
+    {
+      "name": "RegisterWorkspaceDirectory",
+      "methodName": "toRegisterWorkspaceDirectory",
+      "description": "Grants permission to register directories for use with Amazon WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RegisterWorkspaceDirectory.html"
+    },
+    {
+      "name": "RejectAccountLinkInvitation",
+      "methodName": "toRejectAccountLinkInvitation",
+      "description": "Grants permission to reject invitations from other AWS accounts to share the same configuration for WorkSpaces BYOL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RejectAccountLinkInvitation.html"
+    },
+    {
+      "name": "RestoreWorkspace",
+      "methodName": "toRestoreWorkspace",
+      "description": "Grants permission to restore WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RestoreWorkspace.html"
+    },
+    {
+      "name": "RevokeIpRules",
+      "methodName": "toRevokeIpRules",
+      "description": "Grants permission to remove rules from IP access control groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html"
+    },
+    {
+      "name": "StartWorkspaces",
+      "methodName": "toStartWorkspaces",
+      "description": "Grants permission to start AutoStop WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspaces.html"
+    },
+    {
+      "name": "StartWorkspacesPool",
+      "methodName": "toStartWorkspacesPool",
+      "description": "Grants permission to start a WorkSpaces Pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspacesPool.html"
+    },
+    {
+      "name": "StopWorkspaces",
+      "methodName": "toStopWorkspaces",
+      "description": "Grants permission to stop AutoStop WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspaces.html"
+    },
+    {
+      "name": "StopWorkspacesPool",
+      "methodName": "toStopWorkspacesPool",
+      "description": "Grants permission to stop a WorkSpaces Pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspacesPool.html"
+    },
+    {
+      "name": "Stream",
+      "methodName": "toStream",
+      "description": "Grants permission to federated users to sign in by using their existing credentials and stream their workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_Stream.html"
+    },
+    {
+      "name": "TerminateWorkspaces",
+      "methodName": "toTerminateWorkspaces",
+      "description": "Grants permission to terminate WorkSpaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspaces.html"
+    },
+    {
+      "name": "TerminateWorkspacesPool",
+      "methodName": "toTerminateWorkspacesPool",
+      "description": "Grants permission to terminate a WorkSpaces Pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspacesPool.html"
+    },
+    {
+      "name": "TerminateWorkspacesPoolSession",
+      "methodName": "toTerminateWorkspacesPoolSession",
+      "description": "Grants permission to terminate a WorkSpaces Pool session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspacesPoolSession.html"
+    },
+    {
+      "name": "UpdateConnectClientAddIn",
+      "methodName": "toUpdateConnectClientAddIn",
+      "description": "Grants permission to update an Amazon Connect client add-in. Use this action to update the name and endpoint URL of an Amazon Connect client add-in",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateConnectClientAddIn.html"
+    },
+    {
+      "name": "UpdateConnectionAliasPermission",
+      "methodName": "toUpdateConnectionAliasPermission",
+      "description": "Grants permission to share or unshare connection aliases with other accounts",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateConnectionAliasPermission.html"
+    },
+    {
+      "name": "UpdateRulesOfIpGroup",
+      "methodName": "toUpdateRulesOfIpGroup",
+      "description": "Grants permission to replace rules for IP access control groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html"
+    },
+    {
+      "name": "UpdateWorkspaceBundle",
+      "methodName": "toUpdateWorkspaceBundle",
+      "description": "Grants permission to update the WorkSpace images used in WorkSpace bundles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspaceBundle.html"
+    },
+    {
+      "name": "UpdateWorkspaceImagePermission",
+      "methodName": "toUpdateWorkspaceImagePermission",
+      "description": "Grants permission to share or unshare WorkSpace images with other accounts by specifying whether other accounts have permission to copy the image",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspaceImagePermission.html"
+    },
+    {
+      "name": "UpdateWorkspacesPool",
+      "methodName": "toUpdateWorkspacesPool",
+      "description": "Grants permission to update the WorkSpaces pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspacesPool.html"
+    },
+    {
+      "name": "CreateRootClientCertificate",
+      "methodName": "toCreateRootClientCertificate",
+      "description": "Grants permission to create a root client certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "DeleteRootClientCertificate",
+      "methodName": "toDeleteRootClientCertificate",
+      "description": "Grants permission to delete root client certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "DescribeConsent",
+      "methodName": "toDescribeConsent",
+      "description": "Grants permission to retrieve information about consent agreement to BYOL minimum requirements",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "DirectoryAccessManagement",
+      "methodName": "toDirectoryAccessManagement",
+      "description": "Grants permission to directory management actions while managing and provisioning workspaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "GetTroubleshootingRecommendation",
+      "methodName": "toGetTroubleshootingRecommendation",
+      "description": "Grants permission to get troubleshooting recommendations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html"
+    },
+    {
+      "name": "InvokeOnboardingAgent",
+      "methodName": "toInvokeOnboardingAgent",
+      "description": "Grants permission to use WorkSpaces Advisor for WorkSpace onboarding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "InvokeTroubleshootingInvestigation",
+      "methodName": "toInvokeTroubleshootingInvestigation",
+      "description": "Grants permission to invoke troubleshooting investigation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html"
+    },
+    {
+      "name": "ListTroubleshootingRecommendations",
+      "methodName": "toListTroubleshootingRecommendations",
+      "description": "Grants permission to list troubleshooting recommendations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html"
+    },
+    {
+      "name": "Personalization",
+      "methodName": "toPersonalization",
+      "description": "Grants permission to manage features that enable personalization of the WorkSpaces console experience",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "UpdateConsent",
+      "methodName": "toUpdateConsent",
+      "description": "Grants permission to update the consent agreement to BYOL minimum requirements",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    },
+    {
+      "name": "UpdateRootClientCertificate",
+      "methodName": "toUpdateRootClientCertificate",
+      "description": "Grants permission to update a root client certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "certificateid",
+      "methodName": "onCertificateid",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspacecertificate/${CertificateId}",
+      "placeholders": [
+        {
+          "placeholder": "CertificateId",
+          "name": "certificateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connectionalias",
+      "methodName": "onConnectionalias",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:connectionalias/${ConnectionAliasId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionAliasId",
+          "name": "connectionAliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "directoryid",
+      "methodName": "onDirectoryid",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/manage-workspaces-directory.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:directory/${DirectoryId}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspaceapplication",
+      "methodName": "onWorkspaceapplication",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/application-bundle-management.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspaceapplication/${WorkSpaceApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkSpaceApplicationId",
+          "name": "workSpaceApplicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspacebundle",
+      "methodName": "onWorkspacebundle",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspacebundle/${BundleId}",
+      "placeholders": [
+        {
+          "placeholder": "BundleId",
+          "name": "bundleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspaceid",
+      "methodName": "onWorkspaceid",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspace/${WorkspaceId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspaceimage",
+      "methodName": "onWorkspaceimage",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspaceimage/${ImageId}",
+      "placeholders": [
+        {
+          "placeholder": "ImageId",
+          "name": "imageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspaceipgroup",
+      "methodName": "onWorkspaceipgroup",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-ip-access-control-groups.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspaceipgroup/${GroupId}",
+      "placeholders": [
+        {
+          "placeholder": "GroupId",
+          "name": "groupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspaces",
+        "interface": "IWorkspaceIpGroupRef",
+        "property": "workspaceIpGroupRef",
+        "arn": "workspaceIpGroupArn"
+      }
+    },
+    {
+      "name": "workspacespool",
+      "methodName": "onWorkspacespool",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-pools.html",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspacespool/${PoolId}",
+      "placeholders": [
+        {
+          "placeholder": "PoolId",
+          "name": "poolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_workspaces",
+        "interface": "IWorkspacesPoolRef",
+        "property": "workspacesPoolRef",
+        "arn": "poolArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCopyWorkspaceImage",
+        "toCreateConnectionAlias",
+        "toCreateIpGroup",
+        "toCreateStandbyWorkspaces",
+        "toCreateTags",
+        "toCreateUpdatedWorkspaceImage",
+        "toCreateWorkspaceBundle",
+        "toCreateWorkspaceImage",
+        "toCreateWorkspaces",
+        "toCreateWorkspacesPool",
+        "toDeleteTags",
+        "toImportCustomWorkspaceImage",
+        "toImportWorkspaceImage",
+        "toRegisterWorkspaceDirectory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access based on the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateConnectionAlias",
+        "toAssociateIpGroups",
+        "toAssociateWorkspaceApplication",
+        "toAuthorizeIpRules",
+        "toCopyWorkspaceImage",
+        "toCreateConnectClientAddIn",
+        "toCreateStandbyWorkspaces",
+        "toCreateUpdatedWorkspaceImage",
+        "toCreateWorkspaceBundle",
+        "toCreateWorkspaceImage",
+        "toCreateWorkspaces",
+        "toCreateWorkspacesPool",
+        "toDeleteClientBranding",
+        "toDeleteConnectClientAddIn",
+        "toDeleteConnectionAlias",
+        "toDeleteIpGroup",
+        "toDeleteWorkspaceBundle",
+        "toDeleteWorkspaceImage",
+        "toDeployWorkspaceApplications",
+        "toDeregisterWorkspaceDirectory",
+        "toDescribeApplicationAssociations",
+        "toDescribeBundleAssociations",
+        "toDescribeClientBranding",
+        "toDescribeClientProperties",
+        "toDescribeConnectClientAddIns",
+        "toDescribeConnectionAliasPermissions",
+        "toDescribeImageAssociations",
+        "toDescribeIpGroups",
+        "toDescribeWorkspaceAssociations",
+        "toDescribeWorkspaceImagePermissions",
+        "toDescribeWorkspaceSnapshots",
+        "toDescribeWorkspacesPoolSessions",
+        "toDisassociateConnectionAlias",
+        "toDisassociateIpGroups",
+        "toDisassociateWorkspaceApplication",
+        "toImportClientBranding",
+        "toMigrateWorkspace",
+        "toModifyCertificateBasedAuthProperties",
+        "toModifyClientProperties",
+        "toModifyEndpointEncryptionMode",
+        "toModifySamlProperties",
+        "toModifySelfservicePermissions",
+        "toModifyStreamingProperties",
+        "toModifyWorkspaceAccessProperties",
+        "toModifyWorkspaceCreationProperties",
+        "toModifyWorkspaceProperties",
+        "toModifyWorkspaceState",
+        "toRebootWorkspaces",
+        "toRebuildWorkspaces",
+        "toRegisterWorkspaceDirectory",
+        "toRestoreWorkspace",
+        "toRevokeIpRules",
+        "toStartWorkspaces",
+        "toStartWorkspacesPool",
+        "toStopWorkspaces",
+        "toStopWorkspacesPool",
+        "toStream",
+        "toTerminateWorkspaces",
+        "toTerminateWorkspacesPool",
+        "toUpdateConnectClientAddIn",
+        "toUpdateConnectionAliasPermission",
+        "toUpdateRulesOfIpGroup",
+        "toUpdateWorkspaceBundle",
+        "toUpdateWorkspaceImagePermission",
+        "toUpdateWorkspacesPool",
+        "toCreateRootClientCertificate",
+        "toDeleteRootClientCertificate",
+        "toDirectoryAccessManagement",
+        "toGetTroubleshootingRecommendation",
+        "toInvokeTroubleshootingInvestigation",
+        "toListTroubleshootingRecommendations",
+        "toUpdateRootClientCertificate"
+      ],
+      "relatedResourceTypes": [
+        "certificateid",
+        "connectionalias",
+        "directoryid",
+        "workspaceapplication",
+        "workspacebundle",
+        "workspaceid",
+        "workspaceimage",
+        "workspaceipgroup",
+        "workspacespool"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCopyWorkspaceImage",
+        "toCreateConnectionAlias",
+        "toCreateIpGroup",
+        "toCreateStandbyWorkspaces",
+        "toCreateTags",
+        "toCreateUpdatedWorkspaceImage",
+        "toCreateWorkspaceBundle",
+        "toCreateWorkspaceImage",
+        "toCreateWorkspaces",
+        "toCreateWorkspacesPool",
+        "toDeleteTags",
+        "toImportCustomWorkspaceImage",
+        "toImportWorkspaceImage",
+        "toRegisterWorkspaceDirectory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "workspaces:userId",
+      "methodName": "ifUserId",
+      "description": "Filters access by the ID of the Workspaces user",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role",
+      "relatedActionMethods": [
+        "toStream"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "userId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

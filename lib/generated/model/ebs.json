@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "filename": "ebs",
+  "className": "Ebs",
+  "name": "ebs",
+  "servicePrefix": "ebs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ebs.html",
+  "accessLevelList": {
+    "Write": [
+      "CompleteSnapshot",
+      "PutSnapshotBlock",
+      "StartSnapshot"
+    ],
+    "Read": [
+      "GetSnapshotBlock",
+      "ListChangedBlocks",
+      "ListSnapshotBlocks"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CompleteSnapshot",
+      "methodName": "toCompleteSnapshot",
+      "description": "Grants permission to seal and complete the snapshot after all of the required blocks of data have been written to it",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_CompleteSnapshot.html"
+    },
+    {
+      "name": "GetSnapshotBlock",
+      "methodName": "toGetSnapshotBlock",
+      "description": "Grants permission to return the data of a block in an Amazon Elastic Block Store (EBS) snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html"
+    },
+    {
+      "name": "ListChangedBlocks",
+      "methodName": "toListChangedBlocks",
+      "description": "Grants permission to list the blocks that are different between two Amazon Elastic Block Store (EBS) snapshots of the same volume/snapshot lineage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListChangedBlocks.html"
+    },
+    {
+      "name": "ListSnapshotBlocks",
+      "methodName": "toListSnapshotBlocks",
+      "description": "Grants permission to list the blocks in an Amazon Elastic Block Store (EBS) snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListSnapshotBlocks.html"
+    },
+    {
+      "name": "PutSnapshotBlock",
+      "methodName": "toPutSnapshotBlock",
+      "description": "Grants permission to write a block of data to a snapshot created by the StartSnapshot operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"
+    },
+    {
+      "name": "StartSnapshot",
+      "methodName": "toStartSnapshot",
+      "description": "Grants permission to create a new EBS snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_StartSnapshot.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "snapshot",
+      "methodName": "onSnapshot",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html",
+      "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotId",
+          "name": "snapshotId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifDescription",
+        "ifParentSnapshot",
+        "ifVolumeSize"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCompleteSnapshot",
+        "toGetSnapshotBlock",
+        "toListChangedBlocks",
+        "toListSnapshotBlocks",
+        "toPutSnapshotBlock",
+        "toStartSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCompleteSnapshot",
+        "toGetSnapshotBlock",
+        "toListChangedBlocks",
+        "toListSnapshotBlocks",
+        "toPutSnapshotBlock",
+        "toStartSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCompleteSnapshot",
+        "toGetSnapshotBlock",
+        "toListChangedBlocks",
+        "toListSnapshotBlocks",
+        "toPutSnapshotBlock",
+        "toStartSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ebs:Description",
+      "methodName": "ifDescription",
+      "description": "Filters access by the description of the snapshot being created",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys",
+      "relatedActionMethods": [
+        "toCompleteSnapshot",
+        "toGetSnapshotBlock",
+        "toListChangedBlocks",
+        "toListSnapshotBlocks",
+        "toPutSnapshotBlock",
+        "toStartSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "Description",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ebs:ParentSnapshot",
+      "methodName": "ifParentSnapshot",
+      "description": "Filters access by the ARN of the parent snapshot",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys",
+      "relatedActionMethods": [
+        "toCompleteSnapshot",
+        "toGetSnapshotBlock",
+        "toListChangedBlocks",
+        "toListSnapshotBlocks",
+        "toPutSnapshotBlock",
+        "toStartSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "ParentSnapshot",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ebs:VolumeSize",
+      "methodName": "ifVolumeSize",
+      "description": "Filters access by the size of the volume for the snapshot being created, in GiB",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys",
+      "relatedActionMethods": [
+        "toCompleteSnapshot",
+        "toGetSnapshotBlock",
+        "toListChangedBlocks",
+        "toListSnapshotBlocks",
+        "toPutSnapshotBlock",
+        "toStartSnapshot"
+      ],
+      "relatedResourceTypes": [
+        "snapshot"
+      ],
+      "keyLiteral": "VolumeSize",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    }
+  ]
+}

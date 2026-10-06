@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "filename": "license-manager-user-subscriptions",
+  "className": "LicenseManagerUserSubscriptions",
+  "name": "license-manager-user-subscriptions",
+  "servicePrefix": "license-manager-user-subscriptions",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_license-manager-user-subscriptions.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateUser",
+      "CreateLicenseServerEndpoint",
+      "DeleteLicenseServerEndpoint",
+      "DeregisterIdentityProvider",
+      "DisassociateUser",
+      "RegisterIdentityProvider",
+      "StartProductSubscription",
+      "StopProductSubscription",
+      "TagResource",
+      "UntagResource",
+      "UpdateIdentityProviderSettings"
+    ],
+    "List": [
+      "ListIdentityProviders",
+      "ListInstances",
+      "ListLicenseServerEndpoints",
+      "ListProductSubscriptions",
+      "ListUserAssociations"
+    ],
+    "Read": [
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateUser",
+      "methodName": "toAssociateUser",
+      "description": "Grants permission to associate a subscribed user to an instance launched with license manager user subscriptions products",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_AssociateUser.html"
+    },
+    {
+      "name": "CreateLicenseServerEndpoint",
+      "methodName": "toCreateLicenseServerEndpoint",
+      "description": "Grants permission to create a license server endpoint for a given server type for a given Identity Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_CreateLicenseServerEndpoint.html"
+    },
+    {
+      "name": "DeleteLicenseServerEndpoint",
+      "methodName": "toDeleteLicenseServerEndpoint",
+      "description": "Grants permission to delete a license server endpoint for a given server type for a given Identity Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_DeleteLicenseServerEndpoint.html"
+    },
+    {
+      "name": "DeregisterIdentityProvider",
+      "methodName": "toDeregisterIdentityProvider",
+      "description": "Grants permission to deregister Microsoft Active Directory with license-manager-user-subscriptions for a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_DeregisterIdentityProvider.html"
+    },
+    {
+      "name": "DisassociateUser",
+      "methodName": "toDisassociateUser",
+      "description": "Grants permission to disassociate a subscribed user from an instance launched with license manager user subscriptions products",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_DisassociateUser.html"
+    },
+    {
+      "name": "ListIdentityProviders",
+      "methodName": "toListIdentityProviders",
+      "description": "Grants permission to list all the identity providers on license manager user subscriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListIdentityProviders.html"
+    },
+    {
+      "name": "ListInstances",
+      "methodName": "toListInstances",
+      "description": "Grants permission to list all the instances launched with license manager user subscription products",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListInstances.html"
+    },
+    {
+      "name": "ListLicenseServerEndpoints",
+      "methodName": "toListLicenseServerEndpoints",
+      "description": "Grants permission to list license server endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListLicenseServerEndpoints.html"
+    },
+    {
+      "name": "ListProductSubscriptions",
+      "methodName": "toListProductSubscriptions",
+      "description": "Grants permission to lists all the product subscriptions for a product and identity provider",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListProductSubscriptions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a selected resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUserAssociations",
+      "methodName": "toListUserAssociations",
+      "description": "Grants permission to list all the users associated to an instance launched for a product",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_ListUserAssociations.html"
+    },
+    {
+      "name": "RegisterIdentityProvider",
+      "methodName": "toRegisterIdentityProvider",
+      "description": "Grants permission to registers Microsoft Active Directory with license-manager-user-subscriptions for a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_RegisterIdentityProvider.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartProductSubscription",
+      "methodName": "toStartProductSubscription",
+      "description": "Grants permission to start product subscription for a user on a registered active directory for a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_StartProductSubscription.html"
+    },
+    {
+      "name": "StopProductSubscription",
+      "methodName": "toStopProductSubscription",
+      "description": "Grants permission to stop product subscription for a user on a registered active directory for a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_StopProductSubscription.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a selected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a selected resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateIdentityProviderSettings",
+      "methodName": "toUpdateIdentityProviderSettings",
+      "description": "Grants permission to update the identity provider configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/license-manager-user-subscriptions/latest/APIReference/API_UpdateIdentityProviderSettings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "identity-provider",
+      "methodName": "onIdentityProvider",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-provider.html",
+      "arn": "arn:${Partition}:license-manager-user-subscriptions:${Region}:${Account}:identity-provider/${IdentityProviderId}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityProviderId",
+          "name": "identityProviderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "instance-user",
+      "methodName": "onInstanceUser",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/instance-user.html",
+      "arn": "arn:${Partition}:license-manager-user-subscriptions:${Region}:${Account}:instance-user/${InstanceUserId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceUserId",
+          "name": "instanceUserId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "license-server-endpoint",
+      "methodName": "onLicenseServerEndpoint",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/license-server-endpoint.html",
+      "arn": "arn:${Partition}:license-manager-user-subscriptions:${Region}:${Account}:license-server-endpoint/${LicenseServerEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "LicenseServerEndpointId",
+          "name": "licenseServerEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "product-subscription",
+      "methodName": "onProductSubscription",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/product-subscription.html",
+      "arn": "arn:${Partition}:license-manager-user-subscriptions:${Region}:${Account}:product-subscription/${ProductSubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "ProductSubscriptionId",
+          "name": "productSubscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toAssociateUser",
+        "toCreateLicenseServerEndpoint",
+        "toRegisterIdentityProvider",
+        "toStartProductSubscription",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toAssociateUser",
+        "toCreateLicenseServerEndpoint",
+        "toDeleteLicenseServerEndpoint",
+        "toDeregisterIdentityProvider",
+        "toDisassociateUser",
+        "toListProductSubscriptions",
+        "toListTagsForResource",
+        "toListUserAssociations",
+        "toStartProductSubscription",
+        "toStopProductSubscription",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIdentityProviderSettings"
+      ],
+      "relatedResourceTypes": [
+        "identity-provider",
+        "instance-user",
+        "license-server-endpoint",
+        "product-subscription"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html",
+      "relatedActionMethods": [
+        "toAssociateUser",
+        "toCreateLicenseServerEndpoint",
+        "toRegisterIdentityProvider",
+        "toStartProductSubscription",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

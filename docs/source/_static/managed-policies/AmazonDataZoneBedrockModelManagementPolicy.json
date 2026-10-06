@@ -1,0 +1,73 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageApplicationInferenceProfile",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:CreateInferenceProfile",
+        "bedrock:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*:*:application-inference-profile/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "AmazonDataZoneProject"
+          ]
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false",
+          "aws:RequestTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DeleteApplicationInferenceProfile",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:DeleteInferenceProfile"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*:*:application-inference-profile/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "CreateApplicationInferenceProfileUsingFoundationModels",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:CreateInferenceProfile"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/*"
+      ]
+    },
+    {
+      "Sid": "CreateApplicationInferenceProfileUsingBedrockModels",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:CreateInferenceProfile"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*:*:inference-profile/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

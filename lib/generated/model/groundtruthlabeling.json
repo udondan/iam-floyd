@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "filename": "groundtruthlabeling",
+  "className": "Groundtruthlabeling",
+  "name": "groundtruthlabeling",
+  "servicePrefix": "groundtruthlabeling",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_groundtruthlabeling.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociatePatchToManifestJob",
+      "CreateBatch",
+      "CreateIntakeForm",
+      "CreateProject",
+      "CreateWorkflowDefinition",
+      "GenerateLIDARPreviewTaskConfigJob",
+      "RunFilterOrSampleDatasetJob",
+      "RunGenerateManifestByCrawlingJob",
+      "RunGenerateManifestMetricsJob",
+      "UpdateBatch"
+    ],
+    "Read": [
+      "DescribeConsoleJob",
+      "GetBatch",
+      "GetIntakeFormStatus",
+      "ListBatches",
+      "ListDatasetObjects",
+      "ListProjects"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociatePatchToManifestJob",
+      "methodName": "toAssociatePatchToManifestJob",
+      "description": "Grants permission to associate a patch file with the manifest file to update the manifest file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "CreateBatch",
+      "methodName": "toCreateBatch",
+      "description": "Grants permission to create a GT+ Batch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "CreateIntakeForm",
+      "methodName": "toCreateIntakeForm",
+      "description": "Grants permission to create intake form",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a GT+ Project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "CreateWorkflowDefinition",
+      "methodName": "toCreateWorkflowDefinition",
+      "description": "Grants permission to create a GT+ Workflow Definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "DescribeConsoleJob",
+      "methodName": "toDescribeConsoleJob",
+      "description": "Grants permission to get status of GroundTruthLabeling Jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "GenerateLIDARPreviewTaskConfigJob",
+      "methodName": "toGenerateLIDARPreviewTaskConfigJob",
+      "description": "Grants permission to generate LiDAR Preview Task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "GetBatch",
+      "methodName": "toGetBatch",
+      "description": "Grants permission to get a GT+ Batch",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "GetIntakeFormStatus",
+      "methodName": "toGetIntakeFormStatus",
+      "description": "Grants permission to get a intake forms",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "ListBatches",
+      "methodName": "toListBatches",
+      "description": "Grants permission to list a GT+ Batchs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "ListDatasetObjects",
+      "methodName": "toListDatasetObjects",
+      "description": "Grants permission to list dataset objects in a manifest file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list a GT+ Projects",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "RunFilterOrSampleDatasetJob",
+      "methodName": "toRunFilterOrSampleDatasetJob",
+      "description": "Grants permission to filter records from a manifest file using S3 select. Get sample entries based on random sampling",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-data-filtering"
+    },
+    {
+      "name": "RunGenerateManifestByCrawlingJob",
+      "methodName": "toRunGenerateManifestByCrawlingJob",
+      "description": "Grants permission to list a S3 prefix and create manifest files from objects in that location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "RunGenerateManifestMetricsJob",
+      "methodName": "toRunGenerateManifestMetricsJob",
+      "description": "Grants permission to generate metrics from objects in manifest",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    },
+    {
+      "name": "UpdateBatch",
+      "methodName": "toUpdateBatch",
+      "description": "Grants permission to update a GT+ Batch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

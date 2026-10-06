@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "filename": "billing",
+  "className": "Billing",
+  "name": "billing",
+  "servicePrefix": "billing",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_billing.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateSourceViews",
+      "CreateBillingView",
+      "DeleteBillingView",
+      "DisassociateSourceViews",
+      "GetResourcePolicy",
+      "RedeemCredits",
+      "TagResource",
+      "UntagResource",
+      "UpdateBillingPreferences",
+      "UpdateBillingView",
+      "DeleteResourcePolicy",
+      "PutContractInformation",
+      "PutResourcePolicy",
+      "UpdateIAMAccessPreference"
+    ],
+    "Read": [
+      "GetBillingPreferences",
+      "GetBillingView",
+      "GetCreditAllocationHistory",
+      "GetCredits",
+      "GetEnterpriseSupportChargeSummary",
+      "GetEnterpriseSupportContractDetails",
+      "ListBillingViews",
+      "ListTagsForResource",
+      "GetBillingData",
+      "GetBillingDetails",
+      "GetBillingNotifications",
+      "GetBillingViewData",
+      "GetContractInformation",
+      "GetIAMAccessPreference",
+      "GetSellerOfRecord",
+      "UseSourceView"
+    ],
+    "Permissions management": [
+      "GetResourcePolicy",
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "List": [
+      "ListBillingViewSegments",
+      "ListBusinessSupportAccountCharges",
+      "ListBusinessSupportSubscriptionHistory",
+      "ListEnterpriseSupportLinkedAccountCharges",
+      "ListSourceViewsForBillingView"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateSourceViews",
+      "methodName": "toAssociateSourceViews",
+      "description": "Grants permission to associate source views to a billing view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_AssociateSourceViews.html"
+    },
+    {
+      "name": "CreateBillingView",
+      "methodName": "toCreateBillingView",
+      "description": "Grants permission to create a billing view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_CreateBillingView.html"
+    },
+    {
+      "name": "DeleteBillingView",
+      "methodName": "toDeleteBillingView",
+      "description": "Grants permission to delete a billing view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DeleteBillingView.html"
+    },
+    {
+      "name": "DisassociateSourceViews",
+      "methodName": "toDisassociateSourceViews",
+      "description": "Grants permission to disassociate source views from a billing view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DisassociateSourceViews.html"
+    },
+    {
+      "name": "GetBillingPreferences",
+      "methodName": "toGetBillingPreferences",
+      "description": "Grants permission to view billing preferences such as reserved instance, savings plans and credits sharing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetBillingView",
+      "methodName": "toGetBillingView",
+      "description": "Grants permission to get the metadata for a specified billing view",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_GetBillingView.html"
+    },
+    {
+      "name": "GetCreditAllocationHistory",
+      "methodName": "toGetCreditAllocationHistory",
+      "description": "Grants permission to view a credit allocation history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetCredits",
+      "methodName": "toGetCredits",
+      "description": "Grants permission to view credits that have been redeemed",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetEnterpriseSupportChargeSummary",
+      "methodName": "toGetEnterpriseSupportChargeSummary",
+      "description": "Grants permission to view Enterprise Support charge summary data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetEnterpriseSupportContractDetails",
+      "methodName": "toGetEnterpriseSupportContractDetails",
+      "description": "Grants permission to view Enterprise Support contract details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get the resource policy specified billing view",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_GetResourcePolicy.html"
+    },
+    {
+      "name": "ListBillingViewSegments",
+      "methodName": "toListBillingViewSegments",
+      "description": "Grants permission to get the list of billing view segments for a specified billing view",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListBillingViewSegments.html"
+    },
+    {
+      "name": "ListBillingViews",
+      "methodName": "toListBillingViews",
+      "description": "Grants permission to get a list of all your available billing views",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListBillingViews.html"
+    },
+    {
+      "name": "ListBusinessSupportAccountCharges",
+      "methodName": "toListBusinessSupportAccountCharges",
+      "description": "Grants permission to view Business Support charges broken down by linked account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListBusinessSupportSubscriptionHistory",
+      "methodName": "toListBusinessSupportSubscriptionHistory",
+      "description": "Grants permission to view Business Support subscription contract history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListEnterpriseSupportLinkedAccountCharges",
+      "methodName": "toListEnterpriseSupportLinkedAccountCharges",
+      "description": "Grants permission to view Enterprise Support charges broken down by linked account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListSourceViewsForBillingView",
+      "methodName": "toListSourceViewsForBillingView",
+      "description": "Grants permission to get the list of source views for a specified billing view",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListSourceViewsForBillingView.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to get the list of tags for a specified billing view",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_ListTagsForResource.html"
+    },
+    {
+      "name": "RedeemCredits",
+      "methodName": "toRedeemCredits",
+      "description": "Grants permission to redeem an AWS credit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a specified billing view",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a specified billing view",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_UntagResource.html"
+    },
+    {
+      "name": "UpdateBillingPreferences",
+      "methodName": "toUpdateBillingPreferences",
+      "description": "Grants permission to update billing preferences such as reserved instance, savings plans and credits sharing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UpdateBillingView",
+      "methodName": "toUpdateBillingView",
+      "description": "Grants permission to update a billing view",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_UpdateBillingView.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a billing view resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "GetBillingData",
+      "methodName": "toGetBillingData",
+      "description": "Grants permission to perform queries on billing information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetBillingDetails",
+      "methodName": "toGetBillingDetails",
+      "description": "Grants permission to view detailed line item billing information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetBillingNotifications",
+      "methodName": "toGetBillingNotifications",
+      "description": "Grants permission to view notifications sent by AWS related to your accounts billing information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetBillingViewData",
+      "methodName": "toGetBillingViewData",
+      "description": "Grants permission to get cost and usage data for a specified billng view",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetContractInformation",
+      "methodName": "toGetContractInformation",
+      "description": "Grants permission to view the account's contract information including the contract number, end-user organization names, PO numbers and if the account is used to service public-sector customers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetIAMAccessPreference",
+      "methodName": "toGetIAMAccessPreference",
+      "description": "Grants permission to retrieve the state of the Allow IAM Access billing preference",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetSellerOfRecord",
+      "methodName": "toGetSellerOfRecord",
+      "description": "Grants permission to retrieve the account's default Seller of Record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "PutContractInformation",
+      "methodName": "toPutContractInformation",
+      "description": "Grants permission to set the account's contract information end-user organization names and if the account is used to service public-sector customers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put a billing view resource policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_PutResourcePolicy.html"
+    },
+    {
+      "name": "UpdateIAMAccessPreference",
+      "methodName": "toUpdateIAMAccessPreference",
+      "description": "Grants permission to update the Allow IAM Access billing preference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UseSourceView",
+      "methodName": "toUseSourceView",
+      "description": "Grants permission to use a billing view as a data source for other billing views",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "billingview",
+      "methodName": "onBillingview",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/",
+      "arn": "arn:${Partition}:billing::${Account}:billingview/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_billing",
+        "interface": "IBillingViewRef",
+        "property": "billingViewRef",
+        "arn": "billingViewArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBillingView",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateSourceViews",
+        "toCreateBillingView",
+        "toDeleteBillingView",
+        "toDisassociateSourceViews",
+        "toGetBillingView",
+        "toGetResourcePolicy",
+        "toListSourceViewsForBillingView",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBillingView",
+        "toDeleteResourcePolicy",
+        "toGetBillingData",
+        "toGetBillingDetails",
+        "toGetBillingViewData",
+        "toPutResourcePolicy"
+      ],
+      "relatedResourceTypes": [
+        "billingview"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBillingView",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateManagedCloudWatchIntegration",
+      "Effect": "Allow",
+      "Action": "cloudwatch:CreateIntegration",
+      "Resource": "arn:aws:cloudwatch:*:*:integration/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "CloudWatchOmniManaged"
+        },
+        "StringEquals": {
+          "aws:RequestTag/CloudWatchOmniManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagOperationForCloudWatchIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:TagResource"
+      ],
+      "Resource": "arn:aws:cloudwatch:*:*:integration/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "CloudWatchOmniManaged"
+        },
+        "StringEquals": {
+          "aws:RequestTag/CloudWatchOmniManaged": "true",
+          "aws:ResourceTag/CloudWatchOmniManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListCloudWatchIntegration",
+      "Effect": "Allow",
+      "Action": "cloudwatch:ListIntegrations",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DeleteManagedCloudWatchIntegration",
+      "Effect": "Allow",
+      "Action": "cloudwatch:DeleteIntegration",
+      "Resource": "arn:aws:cloudwatch:*:*:integration/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CloudWatchOmniManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ManageConfigServiceLinkedRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderForCloudWatch/*"
+    },
+    {
+      "Sid": "CreateConfigServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateCloudWatchOmniAWSIntegrationRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchOmniAWSIntegrationRole-*",
+      "Condition": {
+        "ArnEquals": {
+          "iam:RoleTemplateARN": "arn:aws:iam::aws:role-template/cloudwatch.amazonaws.com/CloudWatchOmniAWSIntegrationForOrgRoleTemplate:1"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReadRoleTemplate",
+      "Effect": "Allow",
+      "Action": "iam:GetRoleTemplateVersion",
+      "Resource": "arn:aws:iam::aws:role-template/cloudwatch.amazonaws.com/CloudWatchOmniAWSIntegrationForOrgRoleTemplate:1"
+    },
+    {
+      "Sid": "PassRolePermissionForCloudWatchOmniAWSIntegrationRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchOmniAWSIntegrationRole-*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "cloudwatch.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListIamUsersAndRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListUsers",
+        "iam:ListRoles"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GetAwsAccountInformation",
+      "Effect": "Allow",
+      "Action": "account:GetAccountInformation",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GetCloudWatchOmniAWSIntegrationRole",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/service-role/CloudWatchOmniAWSIntegrationRole-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccountLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "verifiedpermissions:ListPolicyStores"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PolicyStoreLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "verifiedpermissions:GetIdentitySource",
+        "verifiedpermissions:GetPolicy",
+        "verifiedpermissions:GetPolicyStore",
+        "verifiedpermissions:GetPolicyTemplate",
+        "verifiedpermissions:GetSchema",
+        "verifiedpermissions:IsAuthorized",
+        "verifiedpermissions:IsAuthorizedWithToken",
+        "verifiedpermissions:ListIdentitySources",
+        "verifiedpermissions:ListPolicies",
+        "verifiedpermissions:ListPolicyTemplates"
+      ],
+      "Resource": [
+        "arn:aws:verifiedpermissions::*:policy-store/*"
+      ]
+    }
+  ]
+}

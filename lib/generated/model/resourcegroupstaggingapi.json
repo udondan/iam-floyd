@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "filename": "resourcegroupstaggingapi",
+  "className": "Tag",
+  "name": "tag",
+  "servicePrefix": "tag",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resourcegroupstaggingapi.html",
+  "accessLevelList": {
+    "Read": [
+      "DescribeReportCreation",
+      "GetComplianceSummary",
+      "GetResources",
+      "GetTagKeys",
+      "GetTagValues"
+    ],
+    "List": [
+      "ListRequiredTags"
+    ],
+    "Write": [
+      "StartReportCreation",
+      "TagResources",
+      "UntagResources"
+    ],
+    "Tagging": [
+      "TagResources",
+      "UntagResources"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DescribeReportCreation",
+      "methodName": "toDescribeReportCreation",
+      "description": "Grants permission to describe the status of the StartReportCreation operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_DescribeReportCreation.html"
+    },
+    {
+      "name": "GetComplianceSummary",
+      "methodName": "toGetComplianceSummary",
+      "description": "Grants permission to retrieve a summary of how many resources are noncompliant with their effective tag policies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetComplianceSummary.html"
+    },
+    {
+      "name": "GetResources",
+      "methodName": "toGetResources",
+      "description": "Grants permission to return tagged or previously tagged resources in the specified AWS Region for the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
+    },
+    {
+      "name": "GetTagKeys",
+      "methodName": "toGetTagKeys",
+      "description": "Grants permission to returns tag keys currently in use in the specified AWS Region for the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html"
+    },
+    {
+      "name": "GetTagValues",
+      "methodName": "toGetTagValues",
+      "description": "Grants permission to return tag values for the specified key that are used in the specified AWS Region for the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html"
+    },
+    {
+      "name": "ListRequiredTags",
+      "methodName": "toListRequiredTags",
+      "description": "Grants permission to list required tags for supported resource types in the calling account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_ListRequiredTags.html"
+    },
+    {
+      "name": "StartReportCreation",
+      "methodName": "toStartReportCreation",
+      "description": "Grants permission to start generating a report listing all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_StartReportCreation.html"
+    },
+    {
+      "name": "TagResources",
+      "methodName": "toTagResources",
+      "description": "Grants permission to apply one or more tags to the specified resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"
+    },
+    {
+      "name": "UntagResources",
+      "methodName": "toUntagResources",
+      "description": "Grants permission to remove the specified tags from the specified resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

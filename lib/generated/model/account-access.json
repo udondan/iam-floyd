@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "filename": "account-access",
+  "className": "AccountAccess",
+  "name": "account-access",
+  "servicePrefix": "account-access",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApplication",
+      "CreateEntitlement",
+      "DeleteApplication",
+      "DeleteEntitlement",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetEntitlement",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplications",
+      "ListEntitlements"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to enable an account access manager instance and create an AWS account access application in the associated IAM Identity Center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEntitlement",
+      "methodName": "toCreateEntitlement",
+      "description": "Grants permission to create an entitlement in an account access manager instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an account access manager instance and its AWS account access application in the associated IAM Identity Center instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "DeleteEntitlement",
+      "methodName": "toDeleteEntitlement",
+      "description": "Grants permission to delete an entitlement in an account access manager instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to describe an account access manager instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "GetEntitlement",
+      "methodName": "toGetEntitlement",
+      "description": "Grants permission to get entitlement details for an account access manager instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list account access manager instances",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "ListEntitlements",
+      "methodName": "toListEntitlements",
+      "description": "Grants permission to list entitlements for an account access manager instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an account access manager resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an account access manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an account access manager resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html",
+      "arn": "arn:${Partition}:account-access:${Region}:${Account}:application/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_accountaccess",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateEntitlement",
+        "toDeleteApplication",
+        "toDeleteEntitlement",
+        "toGetApplication",
+        "toGetEntitlement",
+        "toListEntitlements",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "application"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

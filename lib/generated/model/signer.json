@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "filename": "signer",
+  "className": "Signer",
+  "name": "signer",
+  "servicePrefix": "signer",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_signer.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AddProfilePermission",
+      "RemoveProfilePermission"
+    ],
+    "Write": [
+      "AddProfilePermission",
+      "CancelSigningProfile",
+      "PutSigningProfile",
+      "RemoveProfilePermission",
+      "RevokeSignature",
+      "RevokeSigningProfile",
+      "SignPayload",
+      "StartSigningJob",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "DescribeSigningJob",
+      "GetRevocationStatus",
+      "GetSigningPlatform",
+      "GetSigningProfile",
+      "ListProfilePermissions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListSigningJobs",
+      "ListSigningPlatforms",
+      "ListSigningProfiles"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddProfilePermission",
+      "methodName": "toAddProfilePermission",
+      "description": "Grants permission to add cross-account permissions to a Signing Profile",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_AddProfilePermission.html"
+    },
+    {
+      "name": "CancelSigningProfile",
+      "methodName": "toCancelSigningProfile",
+      "description": "Grants permission to change the state of a Signing Profile to CANCELED",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html"
+    },
+    {
+      "name": "DescribeSigningJob",
+      "methodName": "toDescribeSigningJob",
+      "description": "Grants permission to return information about a specific Signing Job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html"
+    },
+    {
+      "name": "GetRevocationStatus",
+      "methodName": "toGetRevocationStatus",
+      "description": "Grants permission to query revocation info of signing resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetRevocationStatus.html"
+    },
+    {
+      "name": "GetSigningPlatform",
+      "methodName": "toGetSigningPlatform",
+      "description": "Grants permission to return information about a specific Signing Platform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html"
+    },
+    {
+      "name": "GetSigningProfile",
+      "methodName": "toGetSigningProfile",
+      "description": "Grants permission to return information about a specific Signing Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html"
+    },
+    {
+      "name": "ListProfilePermissions",
+      "methodName": "toListProfilePermissions",
+      "description": "Grants permission to list the cross-account permissions associated with a Signing Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListProfilePermissions.html"
+    },
+    {
+      "name": "ListSigningJobs",
+      "methodName": "toListSigningJobs",
+      "description": "Grants permission to list all Signing Jobs in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html"
+    },
+    {
+      "name": "ListSigningPlatforms",
+      "methodName": "toListSigningPlatforms",
+      "description": "Grants permission to list all available Signing Platforms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html"
+    },
+    {
+      "name": "ListSigningProfiles",
+      "methodName": "toListSigningProfiles",
+      "description": "Grants permission to list all Signing Profiles in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags associated with a Signing Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutSigningProfile",
+      "methodName": "toPutSigningProfile",
+      "description": "Grants permission to create a new Signing Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "RemoveProfilePermission",
+      "methodName": "toRemoveProfilePermission",
+      "description": "Grants permission to remove cross-account permissions from a Signing Profile",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_RemoveProfilePermission.html"
+    },
+    {
+      "name": "RevokeSignature",
+      "methodName": "toRevokeSignature",
+      "description": "Grants permission to change the state of a Signing Job to REVOKED",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_RevokeSignature.html"
+    },
+    {
+      "name": "RevokeSigningProfile",
+      "methodName": "toRevokeSigningProfile",
+      "description": "Grants permission to change the state of a Signing Profile to REVOKED",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_RevokeSigningProfile.html"
+    },
+    {
+      "name": "SignPayload",
+      "methodName": "toSignPayload",
+      "description": "Grants permission to initiate a Signing Job on the provided payload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_SignPayload.html"
+    },
+    {
+      "name": "StartSigningJob",
+      "methodName": "toStartSigningJob",
+      "description": "Grants permission to initiate a Signing Job on the provided code",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a Signing Profile",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a Signing Profile",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "signing-job",
+      "methodName": "onSigningJob",
+      "url": "https://docs.aws.amazon.com/signer/latest/developerguide/gs-job.html",
+      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "signing-profile",
+      "methodName": "onSigningProfile",
+      "url": "https://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html",
+      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${ProfileName}",
+      "placeholders": [
+        {
+          "placeholder": "ProfileName",
+          "name": "profileName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_signer",
+        "interface": "ISigningProfileRef",
+        "property": "signingProfileRef",
+        "arn": "signingProfileArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toPutSigningProfile",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddProfilePermission",
+        "toCancelSigningProfile",
+        "toGetRevocationStatus",
+        "toGetSigningProfile",
+        "toListProfilePermissions",
+        "toListTagsForResource",
+        "toRemoveProfilePermission",
+        "toRevokeSigningProfile",
+        "toSignPayload",
+        "toStartSigningJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "signing-profile"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toPutSigningProfile",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "signer:ProfileVersion",
+      "methodName": "ifProfileVersion",
+      "description": "Filters access by version of the Signing Profile",
+      "url": "https://docs.aws.amazon.com/signer/latest/developerguide/authen-apipermissions.html",
+      "relatedActionMethods": [
+        "toCancelSigningProfile",
+        "toGetSigningProfile",
+        "toRevokeSignature",
+        "toRevokeSigningProfile",
+        "toSignPayload",
+        "toStartSigningJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProfileVersion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

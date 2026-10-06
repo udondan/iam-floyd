@@ -1,0 +1,117 @@
+---
+name: Generate Code from AWS documentation
+
+on:
+  schedule:
+    # Weekly on Sunday, the release PR is merged on Monday (automerge-schedule.yml).
+    # Why 1:57 not and 2:00? Because most hourly jobs probably run at the hour.
+    # Keeping concurrent jobs low reduces hardware requirements, being nice to
+    # GitHub and the environment.
+    - cron: 57 1 * * 0
+  workflow_dispatch:
+    inputs:
+      command:
+        description: make command to run
+        required: true
+        default: generate
+        type: choice
+        options:
+          - generate
+          - generate-force
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # OIDC token for assuming the AWS role
+      contents: read # checkout
+
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Generate code
+        run: make generate
+        if: ${{ github.event_name == 'schedule' }}
+
+      - name: Generate code
+        run: make "$COMMAND"
+        env:
+          COMMAND: ${{ github.event.inputs.command }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+
+      # Changes of descriptions or URLs alone are not worth a release
+      - name: Check for changes
+        id: changes
+        run: |
+          set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
+          git diff --stat
+          bin/model-diff
+          echo "CHANGED=$(bin/model-diff | wc -l | xargs)" >> "$GITHUB_OUTPUT"
+
+      # fail if the index file does not exist.
+      # this could happen if we cannot reach the AWS documentation, or the
+      # format of the documentation has changed and therefore cannot generate
+      # code.
+      - name: Failsafe
+        run: test -e lib/index.ts || exit 1
+        if: steps.changes.outputs.CHANGED >= 1
+
+      - name: Update stats in documentation
+        run: make stats
+        if: steps.changes.outputs.CHANGED >= 1
+
+      # The release notes are written by release-please.yml, this is for the review of the PR.
+      # PR bodies are limited to 65536 characters
+      - name: Describe changes
+        run: |
+          set -euo pipefail
+          bin/mkchangelog HEAD > "${RUNNER_TEMP}/changes.md"
+          head -c 60000 "${RUNNER_TEMP}/changes.md" > "${RUNNER_TEMP}/body.md"
+          if [[ $(wc -c < "${RUNNER_TEMP}/changes.md") -gt 60000 ]]; then
+            printf "\n\n…\n" >> "${RUNNER_TEMP}/body.md"
+          fi
+        if: steps.changes.outputs.CHANGED >= 1
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        if: steps.changes.outputs.CHANGED >= 1
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Regenerate code example results
+        run: make regenerate-code-example-results
+        if: steps.changes.outputs.CHANGED >= 1
+
+      - name: Add all changes
+        run: |
+          set -xeuo pipefail
+          rm -rf package-lock.json node_modules ./*.tsbuildinfo &&
+          git add -- *
+        if: steps.changes.outputs.CHANGED >= 1
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.OVERRIDE_TOKEN }}
+          commit-message: "feat: add latest IAM updates from AWS"
+          title: "feat: add latest IAM updates from AWS"
+          body-path: ${{ runner.temp }}/body.md
+          branch: iam-updates
+          delete-branch: true
+          committer: udondan <${{ secrets.RELEASE_MAIL }}>
+          author: udondan <${{ secrets.RELEASE_MAIL }}>
+          labels: automerge
+        if: steps.changes.outputs.CHANGED >= 1

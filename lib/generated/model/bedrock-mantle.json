@@ -1,0 +1,700 @@
+{
+  "schemaVersion": 1,
+  "filename": "bedrock-mantle",
+  "className": "BedrockMantle",
+  "name": "bedrock-mantle",
+  "servicePrefix": "bedrock-mantle",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock-mantle.html",
+  "accessLevelList": {
+    "Write": [
+      "ArchiveProject",
+      "AssociateCustomizedModel",
+      "CancelFineTuningJob",
+      "CancelInference",
+      "CreateCustomizedModel",
+      "CreateFile",
+      "CreateFineTuningJob",
+      "CreateInference",
+      "CreateProject",
+      "CreateReservation",
+      "DeleteCustomizedModel",
+      "DeleteFile",
+      "DeleteInference",
+      "DeleteReservation",
+      "DisassociateCustomizedModel",
+      "PutAccountDataRetention",
+      "TagResource",
+      "UntagResource",
+      "UpdateProject",
+      "UpdateReservation"
+    ],
+    "Read": [
+      "CountTokens",
+      "GetAccountDataRetention",
+      "GetCustomizedModel",
+      "GetFile",
+      "GetFineTuningJob",
+      "GetInference",
+      "GetModel",
+      "GetProject",
+      "GetReservation",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCustomizedModelAssociations",
+      "ListCustomizedModels",
+      "ListFiles",
+      "ListFineTuningJobs",
+      "ListModels",
+      "ListProjects",
+      "ListReservations",
+      "CallWithBearerToken"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ArchiveProject",
+      "methodName": "toArchiveProject",
+      "description": "Grants permission to archive a specific project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "AssociateCustomizedModel",
+      "methodName": "toAssociateCustomizedModel",
+      "description": "Grants permission to associate a customized model with a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CancelFineTuningJob",
+      "methodName": "toCancelFineTuningJob",
+      "description": "Grants permission to cancel an in-progress fine tuning job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CancelInference",
+      "methodName": "toCancelInference",
+      "description": "Grants permission to cancel an in-progress inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CountTokens",
+      "methodName": "toCountTokens",
+      "description": "Grants permission to count the tokens in an inference request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CreateCustomizedModel",
+      "methodName": "toCreateCustomizedModel",
+      "description": "Grants permission to import a customized model with custom weights",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CreateFile",
+      "methodName": "toCreateFile",
+      "description": "Grants permission to create a file in a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CreateFineTuningJob",
+      "methodName": "toCreateFineTuningJob",
+      "description": "Grants permission to create a fine tuning job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CreateInference",
+      "methodName": "toCreateInference",
+      "description": "Grants permission to create an inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CreateReservation",
+      "methodName": "toCreateReservation",
+      "description": "Grants permission to create a capacity reservation for a model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "DeleteCustomizedModel",
+      "methodName": "toDeleteCustomizedModel",
+      "description": "Grants permission to delete a customized model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "DeleteFile",
+      "methodName": "toDeleteFile",
+      "description": "Grants permission to delete a specific file",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "DeleteInference",
+      "methodName": "toDeleteInference",
+      "description": "Grants permission to delete a specific inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "DeleteReservation",
+      "methodName": "toDeleteReservation",
+      "description": "Grants permission to delete a capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "DisassociateCustomizedModel",
+      "methodName": "toDisassociateCustomizedModel",
+      "description": "Grants permission to disassociate a customized model from a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetAccountDataRetention",
+      "methodName": "toGetAccountDataRetention",
+      "description": "Grants permission to retrieve the account-wide data retention setting",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetCustomizedModel",
+      "methodName": "toGetCustomizedModel",
+      "description": "Grants permission to get customized model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetFile",
+      "methodName": "toGetFile",
+      "description": "Grants permission to retrieve information about a specific file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetFineTuningJob",
+      "methodName": "toGetFineTuningJob",
+      "description": "Grants permission to retrieve details of a specific fine tuning job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetInference",
+      "methodName": "toGetInference",
+      "description": "Grants permission to retrieve details of a specific inference request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetModel",
+      "methodName": "toGetModel",
+      "description": "Grants permission to retrieve information about a specific model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetProject",
+      "methodName": "toGetProject",
+      "description": "Grants permission to retrieve details of a specific project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "GetReservation",
+      "methodName": "toGetReservation",
+      "description": "Grants permission to get reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListCustomizedModelAssociations",
+      "methodName": "toListCustomizedModelAssociations",
+      "description": "Grants permission to list project associations for a customized model",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListCustomizedModels",
+      "methodName": "toListCustomizedModels",
+      "description": "Grants permission to list customized models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListFiles",
+      "methodName": "toListFiles",
+      "description": "Grants permission to list all available files in a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListFineTuningJobs",
+      "methodName": "toListFineTuningJobs",
+      "description": "Grants permission to list all available fine tuning jobs in a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListModels",
+      "methodName": "toListModels",
+      "description": "Grants permission to list all available models in a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list projects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListReservations",
+      "methodName": "toListReservations",
+      "description": "Grants permission to list reservations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "PutAccountDataRetention",
+      "methodName": "toPutAccountDataRetention",
+      "description": "Grants permission to set the account-wide data retention setting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome",
+      "conditionMethods": [
+        "ifDataRetentionMode"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to update a specific project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "UpdateReservation",
+      "methodName": "toUpdateReservation",
+      "description": "Grants permission to update reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome"
+    },
+    {
+      "name": "CallWithBearerToken",
+      "methodName": "toCallWithBearerToken",
+      "description": "Grants permission to make API calls using bearer token authentication",
+      "accessLevel": "List",
+      "url": "",
+      "conditionMethods": [
+        "ifBearerTokenType"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "customized-model",
+      "methodName": "onCustomizedModel",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html#CustomizedModel",
+      "arn": "arn:${Partition}:bedrock-mantle:${Region}:${Account}:customized-model/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html#Project",
+      "arn": "arn:${Partition}:bedrock-mantle:${Region}:${Account}:project/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockmantle",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
+    },
+    {
+      "name": "reservation",
+      "methodName": "onReservation",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html#Reservation",
+      "arn": "arn:${Partition}:bedrock-mantle:${Region}:${Account}:reservation/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCustomizedModel",
+        "toCreateProject",
+        "toCreateReservation",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toArchiveProject",
+        "toAssociateCustomizedModel",
+        "toCancelFineTuningJob",
+        "toCancelInference",
+        "toCountTokens",
+        "toCreateCustomizedModel",
+        "toCreateFile",
+        "toCreateFineTuningJob",
+        "toCreateInference",
+        "toCreateProject",
+        "toCreateReservation",
+        "toDeleteCustomizedModel",
+        "toDeleteFile",
+        "toDeleteInference",
+        "toDeleteReservation",
+        "toDisassociateCustomizedModel",
+        "toGetCustomizedModel",
+        "toGetFile",
+        "toGetFineTuningJob",
+        "toGetInference",
+        "toGetModel",
+        "toGetProject",
+        "toGetReservation",
+        "toListCustomizedModelAssociations",
+        "toListCustomizedModels",
+        "toListFiles",
+        "toListFineTuningJobs",
+        "toListModels",
+        "toListProjects",
+        "toListReservations",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateProject",
+        "toUpdateReservation"
+      ],
+      "relatedResourceTypes": [
+        "customized-model",
+        "project",
+        "reservation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCustomizedModel",
+        "toCreateProject",
+        "toCreateReservation",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:BearerTokenType",
+      "methodName": "ifBearerTokenType",
+      "description": "Filters access by the Short-term or Long-term bearer tokens",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCallWithBearerToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "BearerTokenType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:CustomizedModelArn",
+      "methodName": "ifCustomizedModelArn",
+      "description": "Filters access by the ARN of the customized model being associated or referenced in cross-resource operations",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toAssociateCustomizedModel",
+        "toDisassociateCustomizedModel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CustomizedModelArn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:DataRetentionMode",
+      "methodName": "ifDataRetentionMode",
+      "description": "Filters access by the data retention mode being set on a project or account",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toPutAccountDataRetention",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataRetentionMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:Files",
+      "methodName": "ifFiles",
+      "description": "Filters access by the specified file identifiers",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCreateFineTuningJob",
+        "toDeleteFile",
+        "toGetFile"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Files",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:FineTuningJob",
+      "methodName": "ifFineTuningJob",
+      "description": "Filters access by the specified fine-tuning job identifier",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCancelFineTuningJob",
+        "toGetFineTuningJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FineTuningJob",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:Model",
+      "methodName": "ifModel",
+      "description": "Filters access by the specified Model",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCountTokens",
+        "toCreateFineTuningJob",
+        "toCreateInference"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Model",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:ProjectArn",
+      "methodName": "ifProjectArn",
+      "description": "Filters access by the ARN of the project being associated or referenced in cross-resource operations",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toAssociateCustomizedModel",
+        "toCreateReservation",
+        "toDeleteReservation",
+        "toDisassociateCustomizedModel",
+        "toUpdateReservation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProjectArn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:ReservationArn",
+      "methodName": "ifReservationArn",
+      "description": "Filters access by the ARN of the reservation being referenced in cross-resource operations",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCreateReservation",
+        "toDeleteReservation",
+        "toUpdateReservation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ReservationArn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-mantle:ServiceTier",
+      "methodName": "ifServiceTier",
+      "description": "Filters access by the specified ServiceTier",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys",
+      "relatedActionMethods": [
+        "toCreateInference"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceTier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

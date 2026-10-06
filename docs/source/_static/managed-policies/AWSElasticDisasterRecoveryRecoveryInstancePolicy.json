@@ -1,0 +1,104 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DRSRecoveryInstancePolicy1",
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendAgentMetricsForDrs",
+        "drs:SendAgentLogsForDrs",
+        "drs:UpdateAgentSourcePropertiesForDrs",
+        "drs:UpdateAgentReplicationInfoForDrs",
+        "drs:UpdateAgentConversionInfoForDrs",
+        "drs:GetAgentCommandForDrs",
+        "drs:GetAgentConfirmedResumeInfoForDrs",
+        "drs:GetAgentRuntimeConfigurationForDrs",
+        "drs:UpdateAgentBacklogForDrs",
+        "drs:GetAgentReplicationInfoForDrs",
+        "drs:UpdateReplicationCertificateForDrs",
+        "drs:NotifyReplicationServerAuthenticationForDrs"
+      ],
+      "Resource": "arn:aws:drs:*:*:recovery-instance/*",
+      "Condition": {
+        "StringEquals": {
+          "drs:EC2InstanceARN": "${ec2:SourceInstanceARN}"
+        }
+      }
+    },
+    {
+      "Sid": "DRSRecoveryInstancePolicy2",
+      "Effect": "Allow",
+      "Action": [
+        "drs:DescribeRecoveryInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSRecoveryInstancePolicy3",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstanceTypes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSRecoveryInstancePolicy4",
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetAgentInstallationAssetsForDrs",
+        "drs:SendClientLogsForDrs",
+        "drs:CreateSourceServerForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSRecoveryInstancePolicy5",
+      "Effect": "Allow",
+      "Action": [
+        "drs:TagResource"
+      ],
+      "Resource": "arn:aws:drs:*:*:source-server/*",
+      "Condition": {
+        "StringEquals": {
+          "drs:CreateAction": "CreateSourceServerForDrs"
+        }
+      }
+    },
+    {
+      "Sid": "DRSRecoveryInstancePolicy6",
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendAgentMetricsForDrs",
+        "drs:SendAgentLogsForDrs",
+        "drs:UpdateAgentSourcePropertiesForDrs",
+        "drs:UpdateAgentReplicationInfoForDrs",
+        "drs:UpdateAgentConversionInfoForDrs",
+        "drs:GetAgentCommandForDrs",
+        "drs:GetAgentConfirmedResumeInfoForDrs",
+        "drs:GetAgentRuntimeConfigurationForDrs",
+        "drs:UpdateAgentBacklogForDrs",
+        "drs:GetAgentReplicationInfoForDrs"
+      ],
+      "Resource": "arn:aws:drs:*:*:source-server/*"
+    },
+    {
+      "Sid": "DRSRecoveryInstancePolicy7",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole",
+        "sts:TagSession"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/DRSCrossAccountAgentAuthorizedRole_*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/SourceInstanceARN": "${ec2:SourceInstanceARN}"
+        },
+        "ForAnyValue:StringEquals": {
+          "sts:TransitiveTagKeys": "SourceInstanceARN"
+        }
+      }
+    }
+  ]
+}

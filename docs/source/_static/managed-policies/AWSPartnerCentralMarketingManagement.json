@@ -1,0 +1,102 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PartnerCentralMarketingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessMarketingCentral"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LegacyPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessLegacyPartnerCentral"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "partnercentral-account-management:LegacyPartnerCentralRole": "MarketingStaff"
+        }
+      }
+    },
+    {
+      "Sid": "PartnerDiscoveryAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:SearchPartnerProfiles",
+        "partnercentral:GetPartnerProfile"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PartnerProfileAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:StartProfileUpdateTask",
+        "partnercentral:GetProfileUpdateTask",
+        "partnercentral:CancelProfileUpdateTask",
+        "partnercentral:PutProfileVisibility",
+        "partnercentral:GetProfileVisibility"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/partner/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListPartners",
+        "partnercentral:GetPartner"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerCentralEphemeralWriteS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+    },
+    {
+      "Sid": "PartnerDashboardAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartnerDashboard"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/MarketingCampaign_V1/Dashboard/*"
+      ]
+    },
+    {
+      "Sid": "AmazonQPartnerAssistantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

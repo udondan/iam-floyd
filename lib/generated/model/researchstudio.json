@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "filename": "researchstudio",
+  "className": "Researchstudio",
+  "name": "researchstudio",
+  "servicePrefix": "researchstudio",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_researchstudio.html",
+  "accessLevelList": {
+    "Write": [
+      "AssignPrincipal",
+      "CreateApplication",
+      "DeleteApplication",
+      "DeletePrincipal"
+    ],
+    "Read": [
+      "GetApplication"
+    ],
+    "List": [
+      "ListApplications"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssignPrincipal",
+      "methodName": "toAssignPrincipal",
+      "description": "Grants permission to assign princiapl",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create application",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete application",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeletePrincipal",
+      "methodName": "toDeletePrincipal",
+      "description": "Grants permission to delete principal",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to get application",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list applications",
+      "accessLevel": "List",
+      "url": ""
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

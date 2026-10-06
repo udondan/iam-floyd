@@ -1,0 +1,124 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityHubServiceRolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:GetEventSelectors",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:DescribeAlarmsForMetric",
+        "logs:DescribeMetricFilters",
+        "sns:ListSubscriptionsByTopic",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:DescribeConfigRules",
+        "config:DescribeConfigRuleEvaluationStatus",
+        "config:BatchGetResourceConfig",
+        "config:SelectResourceConfig",
+        "iam:GenerateCredentialReport",
+        "organizations:ListAccounts",
+        "config:PutEvaluations",
+        "tag:GetResources",
+        "iam:GetCredentialReport",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListChildren",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "securityhub:BatchDisableStandards",
+        "securityhub:BatchEnableStandards",
+        "securityhub:BatchUpdateStandardsControlAssociations",
+        "securityhub:BatchGetSecurityControls",
+        "securityhub:BatchGetStandardsControlAssociations",
+        "securityhub:CreateMembers",
+        "securityhub:DeleteMembers",
+        "securityhub:DescribeHub",
+        "securityhub:DescribeOrganizationConfiguration",
+        "securityhub:DescribeStandards",
+        "securityhub:DescribeStandardsControls",
+        "securityhub:DisassociateFromAdministratorAccount",
+        "securityhub:DisassociateMembers",
+        "securityhub:DisableSecurityHub",
+        "securityhub:EnableSecurityHub",
+        "securityhub:GetEnabledStandards",
+        "securityhub:ListStandardsControlAssociations",
+        "securityhub:ListSecurityControlDefinitions",
+        "securityhub:UpdateOrganizationConfiguration",
+        "securityhub:UpdateSecurityControl",
+        "securityhub:UpdateSecurityHubConfiguration",
+        "securityhub:UpdateStandardsControl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubServiceRoleConfigPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutConfigRule",
+        "config:DeleteConfigRule",
+        "config:GetComplianceDetailsByConfigRule"
+      ],
+      "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/*securityhub*"
+    },
+    {
+      "Sid": "SecurityHubServiceRoleOrganizationsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SecurityHubCSPMServiceRoleConfig",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:PutThirdPartyServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": [
+        "arn:aws:config:*:*:configuration-recorder/*ConfigurationRecorderForSecurityHubCSPM*"
+      ]
+    },
+    {
+      "Sid": "SecurityHubCSPMServiceRoleConfigListAndGet",
+      "Effect": "Allow",
+      "Action": [
+        "config:ListConfigurationRecorders",
+        "config:GetConnector"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubCSPMServiceRoleIamPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SecurityHubCSPMServiceRoleConfigMetricsPermissions",
+      "Effect": "Allow",
+      "Action": "cloudwatch:GetMetricData",
+      "Resource": "*"
+    }
+  ]
+}

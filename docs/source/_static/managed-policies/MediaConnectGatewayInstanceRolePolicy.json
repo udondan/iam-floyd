@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MediaConnectGateway",
+      "Effect": "Allow",
+      "Action": [
+        "mediaconnect:DiscoverGatewayPollEndpoint",
+        "mediaconnect:PollGateway",
+        "mediaconnect:SubmitGatewayStateChange"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/AppIntegrations"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appflow:DescribeConnectorEntity",
+        "appflow:ListConnectorEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appflow:DescribeConnectorProfiles",
+        "appflow:UseConnectorProfile"
+      ],
+      "Resource": "arn:aws:appflow:*:*:connector-profile/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appflow:DeleteFlow",
+        "appflow:DescribeFlow",
+        "appflow:DescribeFlowExecutionRecords",
+        "appflow:StartFlow",
+        "appflow:StopFlow",
+        "appflow:UpdateFlow"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AppIntegrationsManaged": "true"
+        }
+      },
+      "Resource": "arn:aws:appflow:*:*:flow/FlowCreatedByAppIntegrations-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appflow:TagResource"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "AppIntegrationsManaged"
+          ]
+        }
+      },
+      "Resource": "arn:aws:appflow:*:*:flow/FlowCreatedByAppIntegrations-*"
+    }
+  ]
+}

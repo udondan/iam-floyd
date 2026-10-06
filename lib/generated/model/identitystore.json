@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "filename": "identitystore",
+  "className": "Identitystore",
+  "name": "identitystore",
+  "servicePrefix": "identitystore",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_identitystore.html",
+  "accessLevelList": {
+    "Write": [
+      "AddRegion",
+      "CreateGroup",
+      "CreateGroupMembership",
+      "CreateIdentityStore",
+      "CreateUser",
+      "DeleteGroup",
+      "DeleteGroupMembership",
+      "DeleteIdentityStore",
+      "DeleteUser",
+      "RemoveRegion",
+      "ReserveUser",
+      "UpdateGroup",
+      "UpdateIdentityStore",
+      "UpdateUser"
+    ],
+    "Read": [
+      "DescribeGroup",
+      "DescribeGroupMembership",
+      "DescribeIdentityStore",
+      "DescribeRegion",
+      "DescribeUser",
+      "GetGroupId",
+      "GetGroupMembershipId",
+      "GetUserId",
+      "IsMemberInGroups"
+    ],
+    "List": [
+      "ListGroupMemberships",
+      "ListGroupMembershipsForMember",
+      "ListGroups",
+      "ListIdentityStores",
+      "ListRegions",
+      "ListUsers"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddRegion",
+      "methodName": "toAddRegion",
+      "description": "Grants permission to add a region to an IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a group in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateGroupMembership",
+      "methodName": "toCreateGroupMembership",
+      "description": "Grants permission to create a member to a group in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html"
+    },
+    {
+      "name": "CreateIdentityStore",
+      "methodName": "toCreateIdentityStore",
+      "description": "Grants permission to create a new IdentityStore in an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a group in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteGroupMembership",
+      "methodName": "toDeleteGroupMembership",
+      "description": "Grants permission to remove a member that is part of a group in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html"
+    },
+    {
+      "name": "DeleteIdentityStore",
+      "methodName": "toDeleteIdentityStore",
+      "description": "Grants permission to delete an IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DescribeGroup",
+      "methodName": "toDescribeGroup",
+      "description": "Grants permission to retrieve information about a group in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html"
+    },
+    {
+      "name": "DescribeGroupMembership",
+      "methodName": "toDescribeGroupMembership",
+      "description": "Grants permission to retrieve information about a member that is part of a group in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroupMembership.html"
+    },
+    {
+      "name": "DescribeIdentityStore",
+      "methodName": "toDescribeIdentityStore",
+      "description": "Grants permission to retrieve information about an IdentityStore",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "DescribeRegion",
+      "methodName": "toDescribeRegion",
+      "description": "Grants permission to retrieve configuration details for a specific IdentityStore region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DescribeUser",
+      "methodName": "toDescribeUser",
+      "description": "Grants permission to retrieve information about a user in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html"
+    },
+    {
+      "name": "GetGroupId",
+      "methodName": "toGetGroupId",
+      "description": "Grants permission to retrieve ID information about a group in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html"
+    },
+    {
+      "name": "GetGroupMembershipId",
+      "methodName": "toGetGroupMembershipId",
+      "description": "Grants permission to retrieve ID information of a member which is part of a group in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupMembershipId.html"
+    },
+    {
+      "name": "GetUserId",
+      "methodName": "toGetUserId",
+      "description": "Grants permission to retrieve ID information about a user in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html"
+    },
+    {
+      "name": "IsMemberInGroups",
+      "methodName": "toIsMemberInGroups",
+      "description": "Grants permission to check if a member is a part of groups in the specified IdentityStore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html"
+    },
+    {
+      "name": "ListGroupMemberships",
+      "methodName": "toListGroupMemberships",
+      "description": "Grants permission to retrieve all members that are part of a group in the specified IdentityStore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html"
+    },
+    {
+      "name": "ListGroupMembershipsForMember",
+      "methodName": "toListGroupMembershipsForMember",
+      "description": "Grants permission to list groups of the target member in the specified IdentityStore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to retrieve information about all groups in the specified IdentityStore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListIdentityStores",
+      "methodName": "toListIdentityStores",
+      "description": "Grants permission to list IdentityStores in an AWS account",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListRegions",
+      "methodName": "toListRegions",
+      "description": "Grants permission to list all regions configured for an IdentityStore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to retrieve information about all users in the specified IdentityStore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html"
+    },
+    {
+      "name": "RemoveRegion",
+      "methodName": "toRemoveRegion",
+      "description": "Grants permission to remove a region from an IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ReserveUser",
+      "methodName": "toReserveUser",
+      "description": "Grants permission to reserve a user by getting a userId",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update information about a group in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateIdentityStore",
+      "methodName": "toUpdateIdentityStore",
+      "description": "Grants permission to update the configuration of an IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update user information in the specified IdentityStore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "AllGroupMemberships",
+      "methodName": "onAllGroupMemberships",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore:::membership/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "AllGroups",
+      "methodName": "onAllGroups",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore:::group/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "AllUsers",
+      "methodName": "onAllUsers",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore:::user/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Group",
+      "methodName": "onGroup",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore:::group/${GroupId}",
+      "placeholders": [
+        {
+          "placeholder": "GroupId",
+          "name": "groupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_identitystore",
+        "interface": "IGroupRef",
+        "property": "groupRef",
+        "id": "groupId"
+      }
+    },
+    {
+      "name": "GroupMembership",
+      "methodName": "onGroupMembership",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore:::membership/${MembershipId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_identitystore",
+        "interface": "IGroupMembershipRef",
+        "property": "groupMembershipRef",
+        "id": "membershipId"
+      }
+    },
+    {
+      "name": "Identitystore",
+      "methodName": "onIdentitystore",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore::${Account}:identitystore/${IdentityStoreId}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityStoreId",
+          "name": "identityStoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "User",
+      "methodName": "onUser",
+      "url": "",
+      "arn": "arn:${Partition}:identitystore:::user/${UserId}",
+      "placeholders": [
+        {
+          "placeholder": "UserId",
+          "name": "userId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_identitystore",
+        "interface": "IUserRef",
+        "property": "userRef",
+        "arn": "userArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "identitystore:GroupExternalIdIssuers",
+      "methodName": "ifGroupExternalIdIssuers",
+      "description": "Filters access by Issuer present in ExternalIds for Group resources",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toDeleteGroup",
+        "toDescribeGroup",
+        "toListGroups",
+        "toUpdateGroup"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GroupExternalIdIssuers",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "identitystore:IdentityStoreArn",
+      "methodName": "ifIdentityStoreArn",
+      "description": "Filters access by Identity Store ARN",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/condition-context-keys-sts-idc.html#condition-keys-identity-store-arn",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IdentityStoreArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "identitystore:PrimaryRegion",
+      "methodName": "ifPrimaryRegion",
+      "description": "Filters access by Primary Region of Identity Store",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateGroup",
+        "toCreateGroupMembership",
+        "toCreateUser",
+        "toDeleteGroup",
+        "toDeleteGroupMembership",
+        "toDeleteUser",
+        "toDescribeGroup",
+        "toDescribeGroupMembership",
+        "toDescribeIdentityStore",
+        "toDescribeRegion",
+        "toDescribeUser",
+        "toGetGroupId",
+        "toGetGroupMembershipId",
+        "toGetUserId",
+        "toIsMemberInGroups",
+        "toListGroupMemberships",
+        "toListGroupMembershipsForMember",
+        "toListGroups",
+        "toListRegions",
+        "toListUsers",
+        "toReserveUser",
+        "toUpdateGroup",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PrimaryRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:ReservedUserId",
+      "methodName": "ifReservedUserId",
+      "description": "Filters access by a previously reserved User ID for CreateUser operation",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ReservedUserId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:UserExternalIdIssuers",
+      "methodName": "ifUserExternalIdIssuers",
+      "description": "Filters access by Issuer present in ExternalIds for User resources",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateUser",
+        "toDeleteUser",
+        "toDescribeUser",
+        "toListUsers",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "UserExternalIdIssuers",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "identitystore:UserId",
+      "methodName": "ifUserId",
+      "description": "Filters access by Identity Store User ID",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/condition-context-keys-sts-idc.html#condition-keys-identity-store-user-id",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "UserId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}
