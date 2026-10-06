@@ -124,6 +124,11 @@ docs:
 test-typescript: emit
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test
 
+# deletes the test policies and buckets of test-typescript that cancelled or failed runs left behind
+clean-test-resources:
+	@echo -e "$(TARGET_COLOR)Running clean-test-resources$(NO_COLOR)"
+	@npx ts-node bin/clean-test-resources.ts
+
 test-typescript-cdk: emit
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk
 
