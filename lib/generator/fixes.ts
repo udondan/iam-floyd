@@ -17,6 +17,24 @@ export interface ConditionFix {
   };
 }
 
+export interface CdkRefFix {
+  /** Module of `aws-cdk-lib/interfaces`, e.g. `aws_lambda`; defaults to the module of the service */
+  module?: string;
+  /** Reference interface, e.g. `IFunctionRef` */
+  interface: string;
+  /** Field of the reference with the ARN, e.g. `functionArn` */
+  arn?: string;
+  /** Field of the reference with the identifier in the required placeholder of the ARN */
+  id?: string;
+}
+
+export interface ResourceTypeFix {
+  /** Replaces the ARN */
+  arn?: string;
+  /** Sets the CDK reference interface the `on*()` method accepts, or `false` for none */
+  cdkRef?: CdkRefFix | false;
+}
+
 export interface ServiceFixes {
   /** Skips the service */
   ignore?: boolean;
@@ -24,7 +42,9 @@ export interface ServiceFixes {
   name?: string;
   /** Rewrites the service prefix */
   service?: string;
-  resourceTypes?: Record<string, { arn: string }>;
+  /** Module of `aws-cdk-lib/interfaces` with the reference interfaces, e.g. `aws_stepfunctions` */
+  cdkModule?: string;
+  resourceTypes?: Record<string, ResourceTypeFix>;
   conditions?: Record<string, ConditionFix>;
 }
 
@@ -37,6 +57,8 @@ export interface ServiceFixes {
  *
  * name: rewrites the filename and class name. This is needed, because, in some cases, the docs have split up the documentation for the same service prefix on multiple pages
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
+ * resourceTypes.$name.cdkRef: Sets the CDK reference interface the `on*()` method of the resource type accepts, or `false` for none
+ * cdkModule: Module of `aws-cdk-lib/interfaces` with the reference interfaces, if its name differs from the service prefix
  */
 export const fixes: Record<string, ServiceFixes | undefined> = {
   'awsiot1-click': {
@@ -206,6 +228,35 @@ export const fixes: Record<string, ServiceFixes | undefined> = {
         key: 'resource/${AllowRotationLambdaArn}',
       },
     },
+    resourceTypes: {
+      Secret: {
+        cdkRef: { interface: 'ISecretRef', arn: 'secretId' }, // Ref of AWS::SecretsManager::Secret is the ARN
+      },
+    },
+  },
+  route53profiles: {
+    resourceTypes: {
+      'profile-association': {
+        cdkRef: {
+          interface: 'IProfileAssociationRef',
+          id: 'profileAssociationId',
+        }, // resourceId is the VPC
+      },
+    },
+  },
+  route53resolver: {
+    resourceTypes: {
+      'resolver-config': {
+        cdkRef: false, // resourceId is the VPC, not the ID of the resolver config
+      },
+    },
+  },
+  'application-autoscaling': {
+    resourceTypes: {
+      ScalableTarget: {
+        cdkRef: false, // resourceId is the resource of the scalable target, not its ID
+      },
+    },
   },
   mailmanager: {
     name: 'ses-mailmanager',
@@ -228,6 +279,78 @@ export const fixes: Record<string, ServiceFixes | undefined> = {
         arn: 'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}',
       },
     },
+  },
+  acm: {
+    cdkModule: 'aws_certificatemanager',
+  },
+  'cognito-identity': {
+    cdkModule: 'aws_cognito',
+  },
+  'cognito-idp': {
+    cdkModule: 'aws_cognito',
+  },
+  'customer-profiles': {
+    cdkModule: 'aws_customerprofiles',
+  },
+  'devops-agent': {
+    cdkModule: 'aws_devopsagent',
+  },
+  ds: {
+    cdkModule: 'aws_directoryservice',
+  },
+  efs: {
+    cdkModule: 'aws_efs',
+  },
+  emr: {
+    cdkModule: 'aws_emr',
+  },
+  es: {
+    cdkModule: 'aws_opensearchservice',
+  },
+  firehose: {
+    cdkModule: 'aws_kinesisfirehose',
+  },
+  inspector2: {
+    cdkModule: 'aws_inspectorv2',
+  },
+  iotdeviceadvisor: {
+    cdkModule: 'aws_iotcoredeviceadvisor',
+  },
+  location: {
+    cdkModule: 'aws_location',
+  },
+  macie2: {
+    cdkModule: 'aws_macie',
+  },
+  'medical-imaging': {
+    cdkModule: 'aws_healthimaging',
+  },
+  mq: {
+    cdkModule: 'aws_amazonmq',
+  },
+  mwaa: {
+    cdkModule: 'aws_mwaa',
+  },
+  'mwaa-serverless': {
+    cdkModule: 'aws_mwaaserverless',
+  },
+  opensearchserverless: {
+    cdkModule: 'aws_opensearchserverless',
+  },
+  pinpoint: {
+    cdkModule: 'aws_pinpoint',
+  },
+  'route53-recovery-control-config': {
+    cdkModule: 'aws_route53recoverycontrol',
+  },
+  schemas: {
+    cdkModule: 'aws_eventschemas',
+  },
+  stepfunctions: {
+    cdkModule: 'aws_stepfunctions',
+  },
+  'workspaces-thin-client': {
+    cdkModule: 'aws_workspacesthinclient',
   },
 };
 

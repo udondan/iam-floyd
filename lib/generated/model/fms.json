@@ -385,7 +385,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_fms",
+        "interface": "IApplicationsListRef",
+        "property": "applicationsListRef",
+        "arn": "applicationsListArn"
+      }
     },
     {
       "name": "policy",
@@ -416,7 +422,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_fms",
+        "interface": "IPolicyRef",
+        "property": "policyRef",
+        "arn": "policyArn"
+      }
     },
     {
       "name": "protocols-list",
@@ -447,7 +459,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_fms",
+        "interface": "IProtocolsListRef",
+        "property": "protocolsListRef",
+        "arn": "protocolsListArn"
+      }
     },
     {
       "name": "resource-set",

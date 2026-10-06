@@ -406,7 +406,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_outposts",
+        "interface": "IOutpostRef",
+        "property": "outpostRef",
+        "arn": "outpostArn"
+      }
     },
     {
       "name": "site",
@@ -437,7 +443,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_outposts",
+        "interface": "ISiteRef",
+        "property": "siteRef",
+        "arn": "siteArn"
+      }
     }
   ],
   "conditions": [

@@ -719,7 +719,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ecs",
+        "interface": "ICapacityProviderRef",
+        "property": "capacityProviderRef",
+        "id": "capacityProviderName"
+      }
     },
     {
       "name": "cluster",
@@ -751,7 +757,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ecs",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     },
     {
       "name": "container-instance",

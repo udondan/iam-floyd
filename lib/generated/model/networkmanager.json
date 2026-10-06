@@ -896,7 +896,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkmanager",
+        "interface": "ICoreNetworkRef",
+        "property": "coreNetworkRef",
+        "arn": "coreNetworkArn"
+      }
     },
     {
       "name": "device",
@@ -953,7 +959,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkmanager",
+        "interface": "IGlobalNetworkRef",
+        "property": "globalNetworkRef",
+        "arn": "globalNetworkArn"
+      }
     },
     {
       "name": "link",

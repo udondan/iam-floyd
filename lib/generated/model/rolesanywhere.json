@@ -301,7 +301,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rolesanywhere",
+        "interface": "ICRLRef",
+        "property": "crlRef",
+        "id": "crlId"
+      }
     },
     {
       "name": "profile",
@@ -332,7 +338,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rolesanywhere",
+        "interface": "IProfileRef",
+        "property": "profileRef",
+        "arn": "profileArn"
+      }
     },
     {
       "name": "subject",
@@ -394,7 +406,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rolesanywhere",
+        "interface": "ITrustAnchorRef",
+        "property": "trustAnchorRef",
+        "arn": "trustAnchorArn"
+      }
     }
   ],
   "conditions": [

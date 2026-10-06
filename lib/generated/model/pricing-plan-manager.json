@@ -108,7 +108,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_pricingplanmanager",
+        "interface": "ISubscriptionRef",
+        "property": "subscriptionRef",
+        "arn": "subscriptionArn"
+      }
     }
   ],
   "conditions": []

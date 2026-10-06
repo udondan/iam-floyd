@@ -426,7 +426,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appmesh",
+        "interface": "IMeshRef",
+        "property": "meshRef",
+        "arn": "meshArn"
+      }
     },
     {
       "name": "route",

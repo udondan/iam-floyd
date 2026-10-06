@@ -773,7 +773,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IAppBlockRef",
+        "property": "appBlockRef",
+        "arn": "appBlockArn"
+      }
     },
     {
       "name": "app-block-builder",
@@ -804,7 +810,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IAppBlockBuilderRef",
+        "property": "appBlockBuilderRef",
+        "arn": "appBlockBuilderArn"
+      }
     },
     {
       "name": "application",
@@ -835,7 +847,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     },
     {
       "name": "fleet",
@@ -928,7 +946,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IImageBuilderRef",
+        "property": "imageBuilderRef",
+        "id": "imageBuilderName"
+      }
     },
     {
       "name": "stack",
@@ -959,7 +983,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IStackRef",
+        "property": "stackRef",
+        "id": "stackName"
+      }
     }
   ],
   "conditions": [

@@ -746,7 +746,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "IDevicePoolRef",
+        "property": "devicePoolRef",
+        "arn": "devicePoolArn"
+      }
     },
     {
       "name": "instanceprofile",
@@ -777,7 +783,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "IInstanceProfileRef",
+        "property": "instanceProfileRef",
+        "arn": "instanceProfileArn"
+      }
     },
     {
       "name": "job",
@@ -837,7 +849,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "INetworkProfileRef",
+        "property": "networkProfileRef",
+        "arn": "networkProfileArn"
+      }
     },
     {
       "name": "project",
@@ -868,7 +886,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
     },
     {
       "name": "run",
@@ -1048,7 +1072,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "ITestGridProjectRef",
+        "property": "testGridProjectRef",
+        "arn": "testGridProjectArn"
+      }
     },
     {
       "name": "testgrid-session",
@@ -1108,7 +1138,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "IUploadRef",
+        "property": "uploadRef",
+        "arn": "uploadArn"
+      }
     },
     {
       "name": "vpceconfiguration",
@@ -1139,7 +1175,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_devicefarm",
+        "interface": "IVPCEConfigurationRef",
+        "property": "vpceConfigurationRef",
+        "arn": "vpceConfigurationArn"
+      }
     }
   ],
   "conditions": [

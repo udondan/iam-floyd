@@ -277,7 +277,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_healthimaging",
+        "interface": "IDatastoreRef",
+        "property": "datastoreRef",
+        "arn": "datastoreArn"
+      }
     },
     {
       "name": "imageset",

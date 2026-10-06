@@ -11,6 +11,7 @@ eslint.log
 examples/*
 helper/*
 lib/generated/model/*
+lib/generated/cdk-refs.json
 lib/generator/*
 node_modules
 test/*
@@ -34,3 +35,11 @@ Makefile
 
 # jsii-pacmak output
 dist/*
+
+
+# Exclude jsii outdir
+dist
+
+# Include .jsii and .jsii.gz
+!.jsii
+!.jsii.gz

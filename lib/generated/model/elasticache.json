@@ -716,7 +716,13 @@
         "ifReplicasPerNodeGroup",
         "ifSnapshotRetentionLimit",
         "ifTransitEncryptionEnabled"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IGlobalReplicationGroupRef",
+        "property": "globalReplicationGroupRef",
+        "arn": "globalReplicationGroupArn"
+      }
     },
     {
       "name": "parametergroup",
@@ -750,7 +756,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifCacheParameterGroupName"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IParameterGroupRef",
+        "property": "parameterGroupRef",
+        "id": "cacheParameterGroupName"
+      }
     },
     {
       "name": "replicationgroup",
@@ -798,7 +810,13 @@
         "ifReplicasPerNodeGroup",
         "ifSnapshotRetentionLimit",
         "ifTransitEncryptionEnabled"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IReplicationGroupRef",
+        "property": "replicationGroupRef",
+        "id": "replicationGroupId"
+      }
     },
     {
       "name": "reserved-instance",
@@ -906,7 +924,13 @@
         "ifMinimumDataStorage",
         "ifMinimumECPUPerSecond",
         "ifSnapshotRetentionLimit"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IServerlessCacheRef",
+        "property": "serverlessCacheRef",
+        "arn": "serverlessCacheArn"
+      }
     },
     {
       "name": "serverlesscachesnapshot",
@@ -940,7 +964,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifKmsKeyId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IServerlessCacheSnapshotRef",
+        "property": "serverlessCacheSnapshotRef",
+        "arn": "serverlessCacheSnapshotArn"
+      }
     },
     {
       "name": "snapshot",
@@ -1007,7 +1037,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "ISubnetGroupRef",
+        "property": "subnetGroupRef",
+        "id": "cacheSubnetGroupName"
+      }
     },
     {
       "name": "user",
@@ -1041,7 +1077,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifUserAuthenticationMode"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IUserRef",
+        "property": "userRef",
+        "arn": "userArn"
+      }
     },
     {
       "name": "usergroup",
@@ -1074,7 +1116,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "IUserGroupRef",
+        "property": "userGroupRef",
+        "arn": "userGroupArn"
+      }
     }
   ],
   "conditions": [

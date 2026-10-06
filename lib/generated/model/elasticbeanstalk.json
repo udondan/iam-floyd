@@ -450,7 +450,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticbeanstalk",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "id": "applicationName"
+      }
     },
     {
       "name": "applicationversion",

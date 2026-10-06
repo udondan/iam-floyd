@@ -885,7 +885,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "arn": "datasetArn"
+      }
     },
     {
       "name": "datasetExportJob",
@@ -947,7 +953,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "IDatasetGroupRef",
+        "property": "datasetGroupRef",
+        "arn": "datasetGroupArn"
+      }
     },
     {
       "name": "datasetImportJob",
@@ -1009,7 +1021,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "IEventTrackerRef",
+        "property": "eventTrackerRef",
+        "arn": "eventTrackerArn"
+      }
     },
     {
       "name": "featureTransformation",
@@ -1059,7 +1077,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "IFilterRef",
+        "property": "filterRef",
+        "arn": "filterArn"
+      }
     },
     {
       "name": "metricAttribution",
@@ -1088,7 +1112,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "IMetricAttributionRef",
+        "property": "metricAttributionRef",
+        "arn": "metricAttributionArn"
+      }
     },
     {
       "name": "recipe",
@@ -1167,7 +1197,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "ISchemaRef",
+        "property": "schemaRef",
+        "arn": "schemaArn"
+      }
     },
     {
       "name": "solution",
@@ -1198,7 +1234,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "ISolutionRef",
+        "property": "solutionRef",
+        "arn": "solutionArn"
+      }
     }
   ],
   "conditions": [

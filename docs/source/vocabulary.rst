@@ -153,6 +153,10 @@ The ``on*()`` methods take optional parameters to override the default values:
 
 If you want to override the defaults for the whole statement, see `in (ARN defaults)`_.
 
+In ``cdk-iam-floyd``, the ``on*()`` methods of most resource types also take a construct of the AWS CDK, L1 or L2, in place of the name or ID of the resource. The method then adds the ARN of the construct, and the `account`, `region` and `partition` are ignored. This works for every resource type that the AWS CDK has a `reference interface <https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.interfaces-readme.html>`_ for, like ``IBucketRef``, and requires a recent version of ``aws-cdk-lib``:
+
+.. example:: on-construct.cdk
+
 **in** (ARN defaults)
 ---------------------
 

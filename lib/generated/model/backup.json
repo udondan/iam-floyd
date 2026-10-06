@@ -1064,7 +1064,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "IBackupPlanRef",
+        "property": "backupPlanRef",
+        "arn": "backupPlanArn"
+      }
     },
     {
       "name": "backupVault",
@@ -1095,7 +1101,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "IBackupVaultRef",
+        "property": "backupVaultRef",
+        "arn": "backupVaultArn"
+      }
     },
     {
       "name": "framework",
@@ -1162,7 +1174,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "ILegalHoldRef",
+        "property": "legalHoldRef",
+        "arn": "legalHoldArn"
+      }
     },
     {
       "name": "recoveryPoint",

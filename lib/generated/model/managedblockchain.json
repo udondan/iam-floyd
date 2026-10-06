@@ -334,7 +334,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_managedblockchain",
+        "interface": "IAccessorRef",
+        "property": "accessorRef",
+        "arn": "accessorArn"
+      }
     },
     {
       "name": "invitation",
@@ -396,7 +402,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_managedblockchain",
+        "interface": "IMemberRef",
+        "property": "memberRef",
+        "id": "memberId"
+      }
     },
     {
       "name": "network",
@@ -453,7 +465,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_managedblockchain",
+        "interface": "INodeRef",
+        "property": "nodeRef",
+        "arn": "nodeArn"
+      }
     },
     {
       "name": "proposal",

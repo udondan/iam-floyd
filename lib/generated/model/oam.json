@@ -171,7 +171,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_oam",
+        "interface": "ILinkRef",
+        "property": "linkRef",
+        "arn": "linkArn"
+      }
     },
     {
       "name": "Sink",
@@ -202,7 +208,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_oam",
+        "interface": "ISinkRef",
+        "property": "sinkRef",
+        "arn": "sinkArn"
+      }
     }
   ],
   "conditions": [

@@ -187,7 +187,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_scheduler",
+        "interface": "IScheduleGroupRef",
+        "property": "scheduleGroupRef",
+        "arn": "scheduleGroupArn"
+      }
     }
   ],
   "conditions": [

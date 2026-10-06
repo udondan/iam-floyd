@@ -519,7 +519,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifTableBucketTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3tables",
+        "interface": "ITableBucketRef",
+        "property": "tableBucketRef",
+        "arn": "tableBucketArn"
+      }
     }
   ],
   "conditions": [

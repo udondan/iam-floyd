@@ -364,7 +364,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_efs",
+        "interface": "IAccessPointRef",
+        "property": "accessPointRef",
+        "arn": "accessPointArn"
+      }
     },
     {
       "name": "file-system",
@@ -395,7 +401,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_efs",
+        "interface": "IFileSystemRef",
+        "property": "fileSystemRef",
+        "arn": "fileSystemArn"
+      }
     }
   ],
   "conditions": [

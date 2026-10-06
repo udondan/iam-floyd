@@ -372,7 +372,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_connectcampaigns",
+        "interface": "ICampaignRef",
+        "property": "campaignRef",
+        "arn": "campaignArn"
+      }
     }
   ],
   "conditions": [

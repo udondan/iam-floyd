@@ -349,7 +349,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_timestream",
+        "interface": "IDatabaseRef",
+        "property": "databaseRef",
+        "arn": "databaseArn"
+      }
     },
     {
       "name": "scheduled-query",
@@ -380,7 +386,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_timestream",
+        "interface": "IScheduledQueryRef",
+        "property": "scheduledQueryRef",
+        "arn": "scheduledQueryArn"
+      }
     },
     {
       "name": "table",

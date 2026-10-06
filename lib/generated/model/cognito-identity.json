@@ -289,7 +289,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cognito",
+        "interface": "IIdentityPoolRef",
+        "property": "identityPoolRef",
+        "id": "identityPoolId"
+      }
     }
   ],
   "conditions": [

@@ -427,7 +427,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IConfigurationSetRef",
+        "property": "configurationSetRef",
+        "id": "configurationSetName"
+      }
     },
     {
       "name": "dedicated-ip-pool",

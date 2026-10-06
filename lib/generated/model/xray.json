@@ -447,7 +447,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_xray",
+        "interface": "ISamplingRuleRef",
+        "property": "samplingRuleRef",
+        "arn": "ruleArn"
+      }
     }
   ],
   "conditions": [

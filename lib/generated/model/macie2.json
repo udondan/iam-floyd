@@ -701,7 +701,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_macie",
+        "interface": "IAllowListRef",
+        "property": "allowListRef",
+        "arn": "allowListArn"
+      }
     },
     {
       "name": "ClassificationJob",
@@ -763,7 +769,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_macie",
+        "interface": "ICustomDataIdentifierRef",
+        "property": "customDataIdentifierRef",
+        "arn": "customDataIdentifierArn"
+      }
     },
     {
       "name": "FindingsFilter",
@@ -794,7 +806,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_macie",
+        "interface": "IFindingsFilterRef",
+        "property": "findingsFilterRef",
+        "arn": "findingsFilterArn"
+      }
     },
     {
       "name": "Member",
@@ -825,7 +843,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_macie",
+        "interface": "IMemberRef",
+        "property": "memberRef",
+        "arn": "memberArn"
+      }
     }
   ],
   "conditions": [

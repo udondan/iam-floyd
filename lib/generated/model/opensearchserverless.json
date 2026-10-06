@@ -497,7 +497,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_opensearchserverless",
+        "interface": "ICollectionRef",
+        "property": "collectionRef",
+        "arn": "collectionArn"
+      }
     },
     {
       "name": "CollectionGroup",
@@ -528,7 +534,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_opensearchserverless",
+        "interface": "ICollectionGroupRef",
+        "property": "collectionGroupRef",
+        "arn": "collectionGroupArn"
+      }
     },
     {
       "name": "Dashboards",

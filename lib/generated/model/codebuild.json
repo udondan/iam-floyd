@@ -684,7 +684,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codebuild",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
     },
     {
       "name": "report",
@@ -749,7 +755,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codebuild",
+        "interface": "IReportGroupRef",
+        "property": "reportGroupRef",
+        "arn": "reportGroupArn"
+      }
     },
     {
       "name": "sandbox",

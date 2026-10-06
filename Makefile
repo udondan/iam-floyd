@@ -12,7 +12,7 @@ EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
+.PHONY: build emit generate cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -27,6 +27,10 @@ generate:
 	@echo -e "$(TARGET_COLOR)Running generate$(NO_COLOR)"
 	@npm run generate
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
+
+cdk-refs:
+	@echo -e "$(TARGET_COLOR)Running cdk-refs$(NO_COLOR)"
+	@npm run cdk-refs
 
 generate-force:
 	@echo -e "$(TARGET_COLOR)Running generate-force$(NO_COLOR)"

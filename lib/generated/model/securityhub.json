@@ -1124,7 +1124,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IAggregatorV2Ref",
+        "property": "aggregatorV2Ref",
+        "arn": "aggregatorV2Arn"
+      }
     },
     {
       "name": "automation-rule",
@@ -1155,7 +1161,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IAutomationRuleRef",
+        "property": "automationRuleRef",
+        "arn": "ruleArn"
+      }
     },
     {
       "name": "automation-rulev2",
@@ -1186,7 +1198,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IAutomationRuleV2Ref",
+        "property": "automationRuleV2Ref",
+        "arn": "ruleArn"
+      }
     },
     {
       "name": "configuration-policy",
@@ -1217,7 +1235,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IConfigurationPolicyRef",
+        "property": "configurationPolicyRef",
+        "arn": "configurationPolicyArn"
+      }
     },
     {
       "name": "connector",
@@ -1248,7 +1272,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
     },
     {
       "name": "connectorv2",
@@ -1279,7 +1309,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IConnectorV2Ref",
+        "property": "connectorV2Ref",
+        "arn": "connectorArn"
+      }
     },
     {
       "name": "finding-aggregator",
@@ -1308,7 +1344,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IFindingAggregatorRef",
+        "property": "findingAggregatorRef",
+        "arn": "findingAggregatorArn"
+      }
     },
     {
       "name": "hub",
@@ -1365,7 +1407,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityhub",
+        "interface": "IHubV2Ref",
+        "property": "hubV2Ref",
+        "arn": "hubV2Arn"
+      }
     },
     {
       "name": "product",

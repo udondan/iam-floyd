@@ -259,7 +259,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifVectorBucketTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3vectors",
+        "interface": "IVectorBucketRef",
+        "property": "vectorBucketRef",
+        "arn": "vectorBucketArn"
+      }
     }
   ],
   "conditions": [

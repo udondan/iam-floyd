@@ -602,7 +602,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerAddressListRef",
+        "property": "mailManagerAddressListRef",
+        "arn": "addressListArn"
+      }
     },
     {
       "name": "mailmanager-archive",
@@ -633,7 +639,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerArchiveRef",
+        "property": "mailManagerArchiveRef",
+        "arn": "archiveArn"
+      }
     },
     {
       "name": "mailmanager-ingress-point",
@@ -665,7 +677,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifMailManagerIngressPointType"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerIngressPointRef",
+        "property": "mailManagerIngressPointRef",
+        "arn": "ingressPointArn"
+      }
     },
     {
       "name": "mailmanager-rule-set",
@@ -696,7 +714,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerRuleSetRef",
+        "property": "mailManagerRuleSetRef",
+        "arn": "ruleSetArn"
+      }
     },
     {
       "name": "mailmanager-smtp-relay",
@@ -758,7 +782,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerTrafficPolicyRef",
+        "property": "mailManagerTrafficPolicyRef",
+        "arn": "trafficPolicyArn"
+      }
     }
   ],
   "conditions": [

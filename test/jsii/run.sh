@@ -62,7 +62,10 @@ npm pack --silent --pack-destination "${OUT}" > /dev/null
 log "Building floyd-consumer"
 rsync -a --exclude node_modules "${TEST}/consumer/" "${OUT}/consumer/"
 cd "${OUT}/consumer"
-npm pkg set "peerDependencies.cdk-iam-floyd=^${VERSION}" \
+# NuGet takes the lowest version of the range, which must not be below the one of cdk-iam-floyd (NU1605)
+CDK_MIN_VERSION=$(node -p "require('${ROOT}/lib/generated/cdk-refs.json')['aws-cdk-lib']")
+npm pkg set "peerDependencies.aws-cdk-lib=^${CDK_MIN_VERSION}" \
+  "peerDependencies.cdk-iam-floyd=^${VERSION}" \
   "devDependencies.cdk-iam-floyd=file:../cdk-iam-floyd-${VERSION}.tgz"
 npm install --no-audit --no-fund --silent
 npx jsii

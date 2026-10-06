@@ -663,7 +663,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_controltower",
+        "interface": "ILandingZoneRef",
+        "property": "landingZoneRef",
+        "arn": "landingZoneArn"
+      }
     }
   ],
   "conditions": [

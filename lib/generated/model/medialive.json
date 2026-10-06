@@ -1049,7 +1049,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
     },
     {
       "name": "channel-placement-group",
@@ -1116,7 +1122,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "ICloudWatchAlarmTemplateRef",
+        "property": "cloudWatchAlarmTemplateRef",
+        "arn": "cloudWatchAlarmTemplateArn"
+      }
     },
     {
       "name": "cloudwatch-alarm-template-group",
@@ -1147,7 +1159,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "ICloudWatchAlarmTemplateGroupRef",
+        "property": "cloudWatchAlarmTemplateGroupRef",
+        "arn": "cloudWatchAlarmTemplateGroupArn"
+      }
     },
     {
       "name": "cluster",
@@ -1178,7 +1196,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     },
     {
       "name": "eventbridge-rule-template",
@@ -1209,7 +1233,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IEventBridgeRuleTemplateRef",
+        "property": "eventBridgeRuleTemplateRef",
+        "arn": "eventBridgeRuleTemplateArn"
+      }
     },
     {
       "name": "eventbridge-rule-template-group",
@@ -1240,7 +1270,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IEventBridgeRuleTemplateGroupRef",
+        "property": "eventBridgeRuleTemplateGroupRef",
+        "arn": "eventBridgeRuleTemplateGroupArn"
+      }
     },
     {
       "name": "input",
@@ -1271,7 +1307,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IInputRef",
+        "property": "inputRef",
+        "arn": "inputArn"
+      }
     },
     {
       "name": "input-device",
@@ -1331,7 +1373,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IInputSecurityGroupRef",
+        "property": "inputSecurityGroupRef",
+        "arn": "inputSecurityGroupArn"
+      }
     },
     {
       "name": "multiplex",
@@ -1362,7 +1410,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "IMultiplexRef",
+        "property": "multiplexRef",
+        "arn": "multiplexArn"
+      }
     },
     {
       "name": "network",
@@ -1393,7 +1447,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "INetworkRef",
+        "property": "networkRef",
+        "arn": "networkArn"
+      }
     },
     {
       "name": "node",
@@ -1520,7 +1580,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "ISdiSourceRef",
+        "property": "sdiSourceRef",
+        "arn": "sdiSourceArn"
+      }
     },
     {
       "name": "signal-map",
@@ -1551,7 +1617,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_medialive",
+        "interface": "ISignalMapRef",
+        "property": "signalMapRef",
+        "arn": "signalMapArn"
+      }
     }
   ],
   "conditions": [

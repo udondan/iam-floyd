@@ -757,7 +757,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_kendra",
+        "interface": "IIndexRef",
+        "property": "indexRef",
+        "arn": "indexArn"
+      }
     },
     {
       "name": "query-suggestions-block-list",

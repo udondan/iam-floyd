@@ -715,7 +715,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "IDetectorRef",
+        "property": "detectorRef",
+        "arn": "detectorArn"
+      }
     },
     {
       "name": "detector-version",
@@ -777,7 +783,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "IEntityTypeRef",
+        "property": "entityTypeRef",
+        "arn": "entityTypeArn"
+      }
     },
     {
       "name": "event-type",
@@ -808,7 +820,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "IEventTypeRef",
+        "property": "eventTypeRef",
+        "arn": "eventTypeArn"
+      }
     },
     {
       "name": "external-model",
@@ -870,7 +888,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "ILabelRef",
+        "property": "labelRef",
+        "arn": "labelArn"
+      }
     },
     {
       "name": "list",
@@ -901,7 +925,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "IListRef",
+        "property": "listRef",
+        "arn": "listArn"
+      }
     },
     {
       "name": "model",
@@ -994,7 +1024,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "IOutcomeRef",
+        "property": "outcomeRef",
+        "arn": "outcomeArn"
+      }
     },
     {
       "name": "rule",
@@ -1056,7 +1092,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_frauddetector",
+        "interface": "IVariableRef",
+        "property": "variableRef",
+        "arn": "variableArn"
+      }
     }
   ],
   "conditions": [

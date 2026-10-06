@@ -297,7 +297,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gameliftstreams",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
     },
     {
       "name": "stream group",
@@ -328,7 +334,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gameliftstreams",
+        "interface": "IStreamGroupRef",
+        "property": "streamGroupRef",
+        "arn": "streamGroupArn"
+      }
     }
   ],
   "conditions": [

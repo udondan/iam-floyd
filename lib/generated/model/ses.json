@@ -780,7 +780,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IConfigurationSetRef",
+        "property": "configurationSetRef",
+        "id": "configurationSetName"
+      }
     },
     {
       "name": "custom-verification-email-template",
@@ -809,7 +815,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "ICustomVerificationEmailTemplateRef",
+        "property": "customVerificationEmailTemplateRef",
+        "id": "templateName"
+      }
     },
     {
       "name": "identity",

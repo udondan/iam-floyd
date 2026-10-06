@@ -318,7 +318,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_aiops",
+        "interface": "IInvestigationGroupRef",
+        "property": "investigationGroupRef",
+        "arn": "investigationGroupArn"
+      }
     }
   ],
   "conditions": [

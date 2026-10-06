@@ -629,7 +629,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_route53",
+        "interface": "ICidrCollectionRef",
+        "property": "cidrCollectionRef",
+        "arn": "cidrCollectionArn"
+      }
     },
     {
       "name": "delegationset",
@@ -648,7 +654,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_route53",
+        "interface": "IDelegationSetRef",
+        "property": "delegationSetRef",
+        "arn": "delegationSetArn"
+      }
     },
     {
       "name": "healthcheck",
@@ -705,7 +717,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_route53",
+        "interface": "IQueryLoggingConfigRef",
+        "property": "queryLoggingConfigRef",
+        "arn": "queryLoggingConfigArn"
+      }
     },
     {
       "name": "trafficpolicy",
@@ -724,7 +742,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_route53",
+        "interface": "ITrafficPolicyRef",
+        "property": "trafficPolicyRef",
+        "arn": "trafficPolicyArn"
+      }
     },
     {
       "name": "trafficpolicyinstance",
@@ -743,7 +767,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_route53",
+        "interface": "ITrafficPolicyInstanceRef",
+        "property": "trafficPolicyInstanceRef",
+        "arn": "trafficPolicyInstanceArn"
+      }
     },
     {
       "name": "vpc",

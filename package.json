@@ -4,6 +4,7 @@
     "generate": "npx ts-node bin/generate.ts",
     "preemit": "find lib/generator bin -name \"*.js\" -type f -exec rm -vf {} \\;",
     "emit": "npx ts-node bin/emit.ts",
+    "cdk-refs": "npx ts-node bin/cdk-refs.ts",
     "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
     "build": "npx tsc --build --force --verbose tsconfig.main.json tsconfig.types.json"
   },

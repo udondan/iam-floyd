@@ -301,7 +301,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_eventschemas",
+        "interface": "IDiscovererRef",
+        "property": "discovererRef",
+        "arn": "discovererArn"
+      }
     },
     {
       "name": "registry",
@@ -332,7 +338,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_eventschemas",
+        "interface": "IRegistryRef",
+        "property": "registryRef",
+        "arn": "registryArn"
+      }
     },
     {
       "name": "schema",

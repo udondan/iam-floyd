@@ -500,7 +500,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "ICampaignRef",
+        "property": "campaignRef",
+        "arn": "campaignArn"
+      }
     },
     {
       "name": "decodermanifest",
@@ -531,7 +537,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "IDecoderManifestRef",
+        "property": "decoderManifestRef",
+        "arn": "decoderManifestArn"
+      }
     },
     {
       "name": "fleet",
@@ -562,7 +574,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "IFleetRef",
+        "property": "fleetRef",
+        "arn": "fleetArn"
+      }
     },
     {
       "name": "modelmanifest",
@@ -593,7 +611,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "IModelManifestRef",
+        "property": "modelManifestRef",
+        "arn": "modelManifestArn"
+      }
     },
     {
       "name": "signalcatalog",
@@ -624,7 +648,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "ISignalCatalogRef",
+        "property": "signalCatalogRef",
+        "arn": "signalCatalogArn"
+      }
     },
     {
       "name": "statetemplate",
@@ -655,7 +685,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "IStateTemplateRef",
+        "property": "stateTemplateRef",
+        "arn": "stateTemplateArn"
+      }
     },
     {
       "name": "vehicle",
@@ -686,7 +722,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iotfleetwise",
+        "interface": "IVehicleRef",
+        "property": "vehicleRef",
+        "arn": "vehicleArn"
+      }
     }
   ],
   "conditions": [

@@ -285,7 +285,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_resourcegroups",
+        "interface": "IGroupRef",
+        "property": "groupRef",
+        "arn": "groupArn"
+      }
     },
     {
       "name": "tagSyncTask",

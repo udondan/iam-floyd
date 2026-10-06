@@ -683,7 +683,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IBrowserSettingsRef",
+        "property": "browserSettingsRef",
+        "arn": "browserSettingsArn"
+      }
     },
     {
       "name": "dataProtectionSettings",
@@ -714,7 +720,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IDataProtectionSettingsRef",
+        "property": "dataProtectionSettingsRef",
+        "arn": "dataProtectionSettingsArn"
+      }
     },
     {
       "name": "identityProvider",
@@ -781,7 +793,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IIpAccessSettingsRef",
+        "property": "ipAccessSettingsRef",
+        "arn": "ipAccessSettingsArn"
+      }
     },
     {
       "name": "networkSettings",
@@ -812,7 +830,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "INetworkSettingsRef",
+        "property": "networkSettingsRef",
+        "arn": "networkSettingsArn"
+      }
     },
     {
       "name": "portal",
@@ -843,7 +867,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IPortalRef",
+        "property": "portalRef",
+        "arn": "portalArn"
+      }
     },
     {
       "name": "sessionLogger",
@@ -874,7 +904,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "ISessionLoggerRef",
+        "property": "sessionLoggerRef",
+        "arn": "sessionLoggerArn"
+      }
     },
     {
       "name": "trustStore",
@@ -905,7 +941,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "ITrustStoreRef",
+        "property": "trustStoreRef",
+        "arn": "trustStoreArn"
+      }
     },
     {
       "name": "userAccessLoggingSettings",
@@ -936,7 +978,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IUserAccessLoggingSettingsRef",
+        "property": "userAccessLoggingSettingsRef",
+        "arn": "userAccessLoggingSettingsArn"
+      }
     },
     {
       "name": "userSettings",
@@ -967,7 +1015,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspacesweb",
+        "interface": "IUserSettingsRef",
+        "property": "userSettingsRef",
+        "arn": "userSettingsArn"
+      }
     }
   ],
   "conditions": [

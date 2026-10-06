@@ -1044,7 +1044,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityagent",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "id": "applicationId"
+      }
     },
     {
       "name": "Integration",
@@ -1168,7 +1174,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityagent",
+        "interface": "ITargetDomainRef",
+        "property": "targetDomainRef",
+        "id": "targetDomainId"
+      }
     }
   ],
   "conditions": [

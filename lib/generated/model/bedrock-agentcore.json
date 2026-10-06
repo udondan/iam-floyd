@@ -2286,7 +2286,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IBrowserCustomRef",
+        "property": "browserCustomRef",
+        "arn": "browserArn"
+      }
     },
     {
       "name": "browser-profile",
@@ -2317,7 +2323,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IBrowserProfileRef",
+        "property": "browserProfileRef",
+        "arn": "profileArn"
+      }
     },
     {
       "name": "capacity-provider",
@@ -2348,7 +2360,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "ICapacityProviderRef",
+        "property": "capacityProviderRef",
+        "arn": "capacityProviderArn"
+      }
     },
     {
       "name": "code-interpreter",
@@ -2403,7 +2421,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "ICodeInterpreterCustomRef",
+        "property": "codeInterpreterCustomRef",
+        "arn": "codeInterpreterArn"
+      }
     },
     {
       "name": "configuration-bundle",
@@ -2434,7 +2458,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IConfigurationBundleRef",
+        "property": "configurationBundleRef",
+        "arn": "bundleArn"
+      }
     },
     {
       "name": "consent-portal",
@@ -2496,7 +2526,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "arn": "datasetArn"
+      }
     },
     {
       "name": "evaluator",
@@ -2527,7 +2563,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IEvaluatorRef",
+        "property": "evaluatorRef",
+        "arn": "evaluatorArn"
+      }
     },
     {
       "name": "gateway",
@@ -2558,7 +2600,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IGatewayRef",
+        "property": "gatewayRef",
+        "arn": "gatewayArn"
+      }
     },
     {
       "name": "harness",
@@ -2589,7 +2637,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IHarnessRef",
+        "property": "harnessRef",
+        "arn": "harnessArn"
+      }
     },
     {
       "name": "harness-endpoint",
@@ -2656,7 +2710,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IMemoryRef",
+        "property": "memoryRef",
+        "arn": "memoryArn"
+      }
     },
     {
       "name": "oauth2credentialprovider",
@@ -2723,7 +2783,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IOnlineEvaluationConfigRef",
+        "property": "onlineEvaluationConfigRef",
+        "arn": "onlineEvaluationConfigArn"
+      }
     },
     {
       "name": "payment-manager",
@@ -2754,7 +2820,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IPaymentManagerRef",
+        "property": "paymentManagerRef",
+        "arn": "paymentManagerArn"
+      }
     },
     {
       "name": "paymentcredentialprovider",
@@ -2855,7 +2927,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IPolicyEngineRef",
+        "property": "policyEngineRef",
+        "arn": "policyEngineArn"
+      }
     },
     {
       "name": "policy-generation",
@@ -3014,7 +3092,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IRuntimeRef",
+        "property": "runtimeRef",
+        "arn": "agentRuntimeArn"
+      }
     },
     {
       "name": "runtime-endpoint",

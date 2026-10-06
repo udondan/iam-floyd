@@ -3790,7 +3790,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_connect",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "arn": "instanceArn"
+      }
     },
     {
       "name": "integration-association",
@@ -3963,7 +3969,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_connect",
+        "interface": "IPhoneNumberRef",
+        "property": "phoneNumberRef",
+        "arn": "phoneNumberArn"
+      }
     },
     {
       "name": "prompt",
@@ -4357,7 +4369,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_connect",
+        "interface": "ITrafficDistributionGroupRef",
+        "property": "trafficDistributionGroupRef",
+        "arn": "trafficDistributionGroupArn"
+      }
     },
     {
       "name": "use-case",

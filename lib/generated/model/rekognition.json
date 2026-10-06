@@ -665,7 +665,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rekognition",
+        "interface": "ICollectionRef",
+        "property": "collectionRef",
+        "arn": "collectionArn"
+      }
     },
     {
       "name": "dataset",
@@ -814,7 +820,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rekognition",
+        "interface": "IStreamProcessorRef",
+        "property": "streamProcessorRef",
+        "arn": "streamProcessorArn"
+      }
     }
   ],
   "conditions": [

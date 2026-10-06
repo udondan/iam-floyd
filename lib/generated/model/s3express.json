@@ -296,7 +296,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifAccessPointTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_s3express",
+        "interface": "IAccessPointRef",
+        "property": "accessPointRef",
+        "arn": "accessPointArn"
+      }
     },
     {
       "name": "bucket",

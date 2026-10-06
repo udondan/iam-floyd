@@ -305,7 +305,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appflow",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
     },
     {
       "name": "connectorprofile",
@@ -334,7 +340,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_appflow",
+        "interface": "IConnectorProfileRef",
+        "property": "connectorProfileRef",
+        "arn": "connectorProfileArn"
+      }
     },
     {
       "name": "flow",
@@ -365,7 +377,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appflow",
+        "interface": "IFlowRef",
+        "property": "flowRef",
+        "arn": "flowArn"
+      }
     }
   ],
   "conditions": [

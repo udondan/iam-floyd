@@ -164,7 +164,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_opensearch",
+        "interface": "IDataSourceRef",
+        "property": "dataSourceRef",
+        "arn": "dataSourceArn"
+      }
     }
   ],
   "conditions": []

@@ -1066,7 +1066,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifCertTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "ICertificateRef",
+        "property": "certificateRef",
+        "arn": "certificateArn"
+      }
     },
     {
       "name": "DataMigration",
@@ -1098,7 +1104,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifDataMigrationTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IDataMigrationRef",
+        "property": "dataMigrationRef",
+        "arn": "dataMigrationArn"
+      }
     },
     {
       "name": "DataProvider",
@@ -1130,7 +1142,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifDataProviderTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IDataProviderRef",
+        "property": "dataProviderRef",
+        "arn": "dataProviderArn"
+      }
     },
     {
       "name": "Endpoint",
@@ -1162,7 +1180,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifEndpointTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IEndpointRef",
+        "property": "endpointRef",
+        "arn": "endpointArn"
+      }
     },
     {
       "name": "EventSubscription",
@@ -1226,7 +1250,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifInstanceProfileTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IInstanceProfileRef",
+        "property": "instanceProfileRef",
+        "arn": "instanceProfileArn"
+      }
     },
     {
       "name": "MigrationProject",
@@ -1258,7 +1288,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifMigrationProjectTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IMigrationProjectRef",
+        "property": "migrationProjectRef",
+        "arn": "migrationProjectArn"
+      }
     },
     {
       "name": "ReplicationConfig",
@@ -1290,7 +1326,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifReplicationConfigTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IReplicationConfigRef",
+        "property": "replicationConfigRef",
+        "arn": "replicationConfigArn"
+      }
     },
     {
       "name": "ReplicationInstance",
@@ -1386,7 +1428,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifTaskTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IReplicationTaskRef",
+        "property": "replicationTaskRef",
+        "arn": "replicationTaskArn"
+      }
     },
     {
       "name": "ReplicationTaskAssessmentRun",

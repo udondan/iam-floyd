@@ -385,7 +385,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codeconnections",
+        "interface": "IConnectionRef",
+        "property": "connectionRef",
+        "arn": "connectionArn"
+      }
     },
     {
       "name": "Host",
@@ -416,7 +422,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codeconnections",
+        "interface": "IHostRef",
+        "property": "hostRef",
+        "arn": "hostArn"
+      }
     },
     {
       "name": "RepositoryLink",

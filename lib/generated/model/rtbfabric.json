@@ -508,7 +508,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifRequesterGatewayGatewayId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rtbfabric",
+        "interface": "IRequesterGatewayRef",
+        "property": "requesterGatewayRef",
+        "arn": "requesterGatewayArn"
+      }
     },
     {
       "name": "ResponderGateway",
@@ -540,7 +546,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResponderGatewayGatewayId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_rtbfabric",
+        "interface": "IResponderGatewayRef",
+        "property": "responderGatewayRef",
+        "arn": "responderGatewayArn"
+      }
     }
   ],
   "conditions": [

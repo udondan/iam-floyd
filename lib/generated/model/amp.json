@@ -650,7 +650,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_aps",
+        "interface": "IScraperRef",
+        "property": "scraperRef",
+        "arn": "scraperArn"
+      }
     },
     {
       "name": "workspace",
@@ -683,7 +689,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_aps",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
     }
   ],
   "conditions": [

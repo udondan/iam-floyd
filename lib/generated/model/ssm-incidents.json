@@ -335,7 +335,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssmincidents",
+        "interface": "IReplicationSetRef",
+        "property": "replicationSetRef",
+        "arn": "replicationSetArn"
+      }
     },
     {
       "name": "response-plan",
@@ -361,7 +367,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssmincidents",
+        "interface": "IResponsePlanRef",
+        "property": "responsePlanRef",
+        "arn": "responsePlanArn"
+      }
     }
   ],
   "conditions": [

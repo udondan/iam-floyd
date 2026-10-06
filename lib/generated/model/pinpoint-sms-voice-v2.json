@@ -967,7 +967,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IConfigurationSetRef",
+        "property": "configurationSetRef",
+        "arn": "configurationSetArn"
+      }
     },
     {
       "name": "Message",
@@ -1058,7 +1064,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IOptOutListRef",
+        "property": "optOutListRef",
+        "arn": "optOutListArn"
+      }
     },
     {
       "name": "PhoneNumber",
@@ -1089,7 +1101,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IPhoneNumberRef",
+        "property": "phoneNumberRef",
+        "arn": "phoneNumberArn"
+      }
     },
     {
       "name": "Pool",
@@ -1120,7 +1138,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IPoolRef",
+        "property": "poolRef",
+        "arn": "poolArn"
+      }
     },
     {
       "name": "ProtectConfiguration",
@@ -1151,7 +1175,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IProtectConfigurationRef",
+        "property": "protectConfigurationRef",
+        "arn": "protectConfigurationArn"
+      }
     },
     {
       "name": "RcsAgent",
@@ -1213,7 +1243,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IRegistrationRef",
+        "property": "registrationRef",
+        "arn": "registrationArn"
+      }
     },
     {
       "name": "RegistrationAttachment",
@@ -1244,7 +1280,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IRegistrationAttachmentRef",
+        "property": "registrationAttachmentRef",
+        "arn": "registrationAttachmentArn"
+      }
     },
     {
       "name": "SenderId",
@@ -1311,7 +1353,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IVerifiedDestinationNumberRef",
+        "property": "verifiedDestinationNumberRef",
+        "arn": "verifiedDestinationNumberArn"
+      }
     }
   ],
   "conditions": [

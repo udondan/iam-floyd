@@ -265,7 +265,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediastore",
+        "interface": "IContainerRef",
+        "property": "containerRef",
+        "id": "containerName"
+      }
     },
     {
       "name": "folder",

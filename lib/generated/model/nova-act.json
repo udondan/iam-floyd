@@ -171,7 +171,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_novaact",
+        "interface": "IWorkflowDefinitionRef",
+        "property": "workflowDefinitionRef",
+        "arn": "workflowDefinitionArn"
+      }
     },
     {
       "name": "workflow-run",

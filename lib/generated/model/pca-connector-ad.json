@@ -259,7 +259,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_pcaconnectorad",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
     },
     {
       "name": "DirectoryRegistration",
@@ -290,7 +296,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_pcaconnectorad",
+        "interface": "IDirectoryRegistrationRef",
+        "property": "directoryRegistrationRef",
+        "arn": "directoryRegistrationArn"
+      }
     },
     {
       "name": "Template",

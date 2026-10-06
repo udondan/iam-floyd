@@ -1398,7 +1398,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "IAssociationRef",
+        "property": "associationRef",
+        "id": "associationId"
+      }
     },
     {
       "name": "automation-definition",
@@ -1516,7 +1522,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "ICloudConnectorRef",
+        "property": "cloudConnectorRef",
+        "arn": "cloudConnectorArn"
+      }
     },
     {
       "name": "document",
@@ -1550,7 +1562,13 @@
         "ifDocumentCategories",
         "ifDocumentType",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "IDocumentRef",
+        "property": "documentRef",
+        "id": "documentName"
+      }
     },
     {
       "name": "iam-role",
@@ -1730,7 +1748,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "IOpsItemRef",
+        "property": "opsItemRef",
+        "arn": "opsItemArn"
+      }
     },
     {
       "name": "opsitemgroup",
@@ -1818,7 +1842,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "IParameterRef",
+        "property": "parameterRef",
+        "arn": "parameterArn"
+      }
     },
     {
       "name": "patchbaseline",
@@ -1879,7 +1909,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "IResourceDataSyncRef",
+        "property": "resourceDataSyncRef",
+        "id": "syncName"
+      }
     },
     {
       "name": "servicesetting",
@@ -1908,7 +1944,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_ssm",
+        "interface": "IServiceSettingRef",
+        "property": "serviceSettingRef",
+        "arn": "serviceSettingArn"
+      }
     },
     {
       "name": "session",

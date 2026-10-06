@@ -212,7 +212,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sqs",
+        "interface": "IQueueRef",
+        "property": "queueRef",
+        "arn": "queueArn"
+      }
     }
   ],
   "conditions": [

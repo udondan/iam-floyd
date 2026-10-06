@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Project } from 'ts-morph';
 
+import { cdkMinVersion } from '../lib/generator/cdk-refs';
 import { emitTypeScriptFromModels } from '../lib/generator/emit/typescript';
 import { formatCode } from '../lib/generator/format';
 import { PackageJson } from '../lib/generator/package-json';
@@ -133,14 +134,15 @@ function preparePackageJson() {
   jsonData.description += ' for AWS CDK';
   jsonData.keywords.push('cdk', 'aws-cdk');
 
+  // aws-cdk-lib is a devDependency already
   jsonData.devDependencies = {
     ...jsonData.devDependencies,
-    'aws-cdk-lib': '^2.0.0',
     constructs: '^10.0.0',
   };
+  // the minimum version has all reference interfaces the on*() methods accept
   jsonData.peerDependencies = {
-    'aws-cdk-lib': '^2.0.0',
-    constructs: '^10.0.0',
+    'aws-cdk-lib': `^${cdkMinVersion()}`,
+    constructs: `^${cdkMinVersion('constructs')}`,
   };
 
   fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));

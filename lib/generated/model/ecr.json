@@ -542,7 +542,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ecr",
+        "interface": "IRepositoryRef",
+        "property": "repositoryRef",
+        "arn": "repositoryArn"
+      }
     }
   ],
   "conditions": [

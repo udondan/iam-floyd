@@ -721,7 +721,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkfirewall",
+        "interface": "IContainerAssociationRef",
+        "property": "containerAssociationRef",
+        "arn": "containerAssociationArn"
+      }
     },
     {
       "name": "Firewall",
@@ -752,7 +758,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkfirewall",
+        "interface": "IFirewallRef",
+        "property": "firewallRef",
+        "arn": "firewallArn"
+      }
     },
     {
       "name": "FirewallPolicy",
@@ -783,7 +795,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkfirewall",
+        "interface": "IFirewallPolicyRef",
+        "property": "firewallPolicyRef",
+        "arn": "firewallPolicyArn"
+      }
     },
     {
       "name": "Proxy",
@@ -969,7 +987,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkfirewall",
+        "interface": "ITLSInspectionConfigurationRef",
+        "property": "tlsInspectionConfigurationRef",
+        "arn": "tlsInspectionConfigurationArn"
+      }
     },
     {
       "name": "VpcEndpointAssociation",
@@ -1000,7 +1024,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkfirewall",
+        "interface": "IVpcEndpointAssociationRef",
+        "property": "vpcEndpointAssociationRef",
+        "arn": "vpcEndpointAssociationArn"
+      }
     }
   ],
   "conditions": [

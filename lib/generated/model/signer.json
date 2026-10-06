@@ -238,7 +238,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_signer",
+        "interface": "ISigningProfileRef",
+        "property": "signingProfileRef",
+        "arn": "signingProfileArn"
+      }
     }
   ],
   "conditions": [

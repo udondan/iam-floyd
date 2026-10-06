@@ -1034,7 +1034,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_proton",
+        "interface": "IEnvironmentAccountConnectionRef",
+        "property": "environmentAccountConnectionRef",
+        "arn": "environmentAccountConnectionArn"
+      }
     },
     {
       "name": "environment-template",
@@ -1065,7 +1071,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_proton",
+        "interface": "IEnvironmentTemplateRef",
+        "property": "environmentTemplateRef",
+        "arn": "environmentTemplateArn"
+      }
     },
     {
       "name": "environment-template-major-version",
@@ -1317,7 +1329,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_proton",
+        "interface": "IServiceTemplateRef",
+        "property": "serviceTemplateRef",
+        "arn": "serviceTemplateArn"
+      }
     },
     {
       "name": "service-template-major-version",

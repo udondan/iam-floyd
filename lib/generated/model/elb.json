@@ -274,7 +274,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticloadbalancing",
+        "interface": "ILoadBalancerRef",
+        "property": "loadBalancerRef",
+        "id": "loadBalancerName"
+      }
     }
   ],
   "conditions": [

@@ -1129,7 +1129,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifPrimaryRegion"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sso",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "arn": "instanceArn"
+      }
     },
     {
       "name": "PermissionSet",

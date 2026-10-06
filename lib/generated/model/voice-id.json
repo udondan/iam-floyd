@@ -301,7 +301,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_voiceid",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "id": "domainId"
+      }
     }
   ],
   "conditions": [

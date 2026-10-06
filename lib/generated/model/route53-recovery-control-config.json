@@ -268,7 +268,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoverycontrol",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     },
     {
       "name": "controlpanel",
@@ -294,7 +300,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53recoverycontrol",
+        "interface": "IControlPanelRef",
+        "property": "controlPanelRef",
+        "arn": "controlPanelArn"
+      }
     },
     {
       "name": "routingcontrol",

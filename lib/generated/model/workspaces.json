@@ -1119,7 +1119,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspaces",
+        "interface": "IWorkspaceIpGroupRef",
+        "property": "workspaceIpGroupRef",
+        "arn": "workspaceIpGroupArn"
+      }
     },
     {
       "name": "workspacespool",
@@ -1150,7 +1156,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_workspaces",
+        "interface": "IWorkspacesPoolRef",
+        "property": "workspacesPoolRef",
+        "arn": "poolArn"
+      }
     }
   ],
   "conditions": [

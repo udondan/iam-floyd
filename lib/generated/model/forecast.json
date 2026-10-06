@@ -630,7 +630,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_forecast",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "arn": "datasetArn"
+      }
     },
     {
       "name": "datasetGroup",
@@ -661,7 +667,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_forecast",
+        "interface": "IDatasetGroupRef",
+        "property": "datasetGroupRef",
+        "arn": "datasetGroupArn"
+      }
     },
     {
       "name": "datasetImportJob",

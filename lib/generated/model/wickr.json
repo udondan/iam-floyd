@@ -431,7 +431,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wickr",
+        "interface": "INetworkRef",
+        "property": "networkRef",
+        "arn": "networkArn"
+      }
     }
   ],
   "conditions": [

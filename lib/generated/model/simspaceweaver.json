@@ -181,7 +181,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_simspaceweaver",
+        "interface": "ISimulationRef",
+        "property": "simulationRef",
+        "id": "simulationName"
+      }
     }
   ],
   "conditions": [

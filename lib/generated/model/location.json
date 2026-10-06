@@ -561,7 +561,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IAPIKeyRef",
+        "property": "apiKeyRef",
+        "arn": "apiKeyArn"
+      }
     },
     {
       "name": "geofence-collection",
@@ -593,7 +599,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifGeofenceIds"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IGeofenceCollectionRef",
+        "property": "geofenceCollectionRef",
+        "arn": "geofenceCollectionArn"
+      }
     },
     {
       "name": "job",
@@ -655,7 +667,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IMapRef",
+        "property": "mapRef",
+        "arn": "mapArn"
+      }
     },
     {
       "name": "place-index",
@@ -686,7 +704,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IPlaceIndexRef",
+        "property": "placeIndexRef",
+        "arn": "placeIndexArn"
+      }
     },
     {
       "name": "route-calculator",
@@ -717,7 +741,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "IRouteCalculatorRef",
+        "property": "routeCalculatorRef",
+        "arn": "routeCalculatorArn"
+      }
     },
     {
       "name": "tracker",
@@ -749,7 +779,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifDeviceIds"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_location",
+        "interface": "ITrackerRef",
+        "property": "trackerRef",
+        "arn": "trackerArn"
+      }
     }
   ],
   "conditions": [

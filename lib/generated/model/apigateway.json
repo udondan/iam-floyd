@@ -171,7 +171,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IApiKeyRef",
+        "property": "apiKeyRef",
+        "id": "apiKeyId"
+      }
     },
     {
       "name": "ApiKeys",
@@ -370,7 +376,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IClientCertificateRef",
+        "property": "clientCertificateRef",
+        "id": "clientCertificateId"
+      }
     },
     {
       "name": "ClientCertificates",
@@ -633,7 +645,13 @@
         "ifResourceRoutingMode",
         "ifResourceSecurityPolicy",
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IDomainNameRef",
+        "property": "domainNameRef",
+        "arn": "domainNameArn"
+      }
     },
     {
       "name": "DomainNameAccessAssociation",
@@ -1338,7 +1356,13 @@
         "ifResourceRouteAuthorizationType",
         "ifResourceSecurityPolicy",
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IRestApiRef",
+        "property": "restApiRef",
+        "id": "restApiId"
+      }
     },
     {
       "name": "RestApis",
@@ -1576,7 +1600,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IUsagePlanRef",
+        "property": "usagePlanRef",
+        "id": "usagePlanId"
+      }
     },
     {
       "name": "UsagePlanKey",
@@ -1680,7 +1710,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IVpcLinkRef",
+        "property": "vpcLinkRef",
+        "id": "vpcLinkId"
+      }
     },
     {
       "name": "VpcLinks",

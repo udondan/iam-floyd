@@ -764,7 +764,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appsync",
+        "interface": "IApiRef",
+        "property": "apiRef",
+        "arn": "apiArn"
+      }
     },
     {
       "name": "channelNamespace",
@@ -969,7 +975,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appsync",
+        "interface": "IGraphQLApiRef",
+        "property": "graphQlApiRef",
+        "arn": "graphQlApiArn"
+      }
     },
     {
       "name": "mergedApiAssociation",

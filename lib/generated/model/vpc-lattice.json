@@ -669,7 +669,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IAccessLogSubscriptionRef",
+        "property": "accessLogSubscriptionRef",
+        "arn": "accessLogSubscriptionArn"
+      }
     },
     {
       "name": "DomainVerification",
@@ -703,7 +709,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifDomainName"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IDomainVerificationRef",
+        "property": "domainVerificationRef",
+        "arn": "domainVerificationArn"
+      }
     },
     {
       "name": "Listener",
@@ -776,7 +788,13 @@
         "ifAwsRequestTag",
         "ifAwsResourceTag",
         "ifAwsTagKeys"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IResourceConfigurationRef",
+        "property": "resourceConfigurationRef",
+        "arn": "resourceConfigurationArn"
+      }
     },
     {
       "name": "ResourceEndpointAssociation",
@@ -845,7 +863,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifVpcId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IResourceGatewayRef",
+        "property": "resourceGatewayRef",
+        "arn": "resourceGatewayArn"
+      }
     },
     {
       "name": "Rule",
@@ -923,7 +947,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifAuthType"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IServiceRef",
+        "property": "serviceRef",
+        "arn": "serviceArn"
+      }
     },
     {
       "name": "ServiceNetwork",
@@ -957,7 +987,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifAuthType"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IServiceNetworkRef",
+        "property": "serviceNetworkRef",
+        "arn": "serviceNetworkArn"
+      }
     },
     {
       "name": "ServiceNetworkResourceAssociation",
@@ -992,7 +1028,13 @@
         "ifAwsTagKeys",
         "ifResourceConfigurationArn",
         "ifServiceNetworkArn"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IServiceNetworkResourceAssociationRef",
+        "property": "serviceNetworkResourceAssociationRef",
+        "arn": "serviceNetworkResourceAssociationArn"
+      }
     },
     {
       "name": "ServiceNetworkServiceAssociation",
@@ -1027,7 +1069,13 @@
         "ifAwsTagKeys",
         "ifServiceArn",
         "ifServiceNetworkArn"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IServiceNetworkServiceAssociationRef",
+        "property": "serviceNetworkServiceAssociationRef",
+        "arn": "serviceNetworkServiceAssociationArn"
+      }
     },
     {
       "name": "ServiceNetworkVpcAssociation",
@@ -1065,7 +1113,13 @@
         "ifSecurityGroupIds",
         "ifServiceNetworkArn",
         "ifVpcId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "IServiceNetworkVpcAssociationRef",
+        "property": "serviceNetworkVpcAssociationRef",
+        "arn": "serviceNetworkVpcAssociationArn"
+      }
     },
     {
       "name": "TargetGroup",
@@ -1099,7 +1153,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifVpcId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_vpclattice",
+        "interface": "ITargetGroupRef",
+        "property": "targetGroupRef",
+        "arn": "targetGroupArn"
+      }
     }
   ],
   "conditions": [

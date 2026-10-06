@@ -504,7 +504,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_globalaccelerator",
+        "interface": "IAcceleratorRef",
+        "property": "acceleratorRef",
+        "arn": "acceleratorArn"
+      }
     },
     {
       "name": "attachment",

@@ -237,7 +237,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_osis",
+        "interface": "IPipelineRef",
+        "property": "pipelineRef",
+        "arn": "pipelineArn"
+      }
     },
     {
       "name": "pipeline-blueprint",

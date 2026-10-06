@@ -3648,7 +3648,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IActionRef",
+        "property": "actionRef",
+        "arn": "actionArn"
+      }
     },
     {
       "name": "ai-benchmark-job",
@@ -3744,7 +3750,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IAIWorkloadConfigRef",
+        "property": "aiWorkloadConfigRef",
+        "arn": "aiWorkloadConfigArn"
+      }
     },
     {
       "name": "algorithm",
@@ -3776,7 +3788,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IAlgorithmRef",
+        "property": "algorithmRef",
+        "arn": "algorithmArn"
+      }
     },
     {
       "name": "app",
@@ -3855,7 +3873,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IAppImageConfigRef",
+        "property": "appImageConfigRef",
+        "arn": "appImageConfigArn"
+      }
     },
     {
       "name": "artifact",
@@ -3887,7 +3911,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IArtifactRef",
+        "property": "artifactRef",
+        "arn": "artifactArn"
+      }
     },
     {
       "name": "automl-job",
@@ -3951,7 +3981,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
     },
     {
       "name": "cluster-scheduler-config",
@@ -3983,7 +4019,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IClusterSchedulerConfigRef",
+        "property": "clusterSchedulerConfigRef",
+        "arn": "clusterSchedulerConfigArn"
+      }
     },
     {
       "name": "code-repository",
@@ -4015,7 +4057,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "ICodeRepositoryRef",
+        "property": "codeRepositoryRef",
+        "arn": "codeRepositoryArn"
+      }
     },
     {
       "name": "compilation-job",
@@ -4111,7 +4159,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IContextRef",
+        "property": "contextRef",
+        "arn": "contextArn"
+      }
     },
     {
       "name": "data-quality-job-definition",
@@ -4143,7 +4197,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IDataQualityJobDefinitionRef",
+        "property": "dataQualityJobDefinitionRef",
+        "arn": "jobDefinitionArn"
+      }
     },
     {
       "name": "device",
@@ -4212,7 +4272,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IDeviceFleetRef",
+        "property": "deviceFleetRef",
+        "id": "deviceFleetName"
+      }
     },
     {
       "name": "domain",
@@ -4244,7 +4310,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
     },
     {
       "name": "edge-deployment-plan",
@@ -4340,7 +4412,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IEndpointRef",
+        "property": "endpointRef",
+        "arn": "endpointArn"
+      }
     },
     {
       "name": "endpoint-config",
@@ -4372,7 +4450,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IEndpointConfigRef",
+        "property": "endpointConfigRef",
+        "arn": "endpointConfigArn"
+      }
     },
     {
       "name": "experiment",
@@ -4404,7 +4488,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IExperimentRef",
+        "property": "experimentRef",
+        "arn": "experimentArn"
+      }
     },
     {
       "name": "experiment-trial",
@@ -4468,7 +4558,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IExperimentTrialComponentRef",
+        "property": "experimentTrialComponentRef",
+        "arn": "experimentTrialComponentArn"
+      }
     },
     {
       "name": "feature-group",
@@ -4500,7 +4596,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IFeatureGroupRef",
+        "property": "featureGroupRef",
+        "id": "featureGroupName"
+      }
     },
     {
       "name": "flow-definition",
@@ -4564,7 +4666,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IHubRef",
+        "property": "hubRef",
+        "arn": "hubArn"
+      }
     },
     {
       "name": "hub-content",
@@ -4667,7 +4775,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IHumanTaskUiRef",
+        "property": "humanTaskUiRef",
+        "arn": "humanTaskUiArn"
+      }
     },
     {
       "name": "hyper-parameter-tuning-job",
@@ -4731,7 +4845,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IImageRef",
+        "property": "imageRef",
+        "arn": "imageArn"
+      }
     },
     {
       "name": "image-version",
@@ -4800,7 +4920,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IInferenceComponentRef",
+        "property": "inferenceComponentRef",
+        "arn": "inferenceComponentArn"
+      }
     },
     {
       "name": "inference-experiment",
@@ -4832,7 +4958,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IInferenceExperimentRef",
+        "property": "inferenceExperimentRef",
+        "arn": "inferenceExperimentArn"
+      }
     },
     {
       "name": "inference-recommendations-job",
@@ -4997,7 +5129,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IMlflowAppRef",
+        "property": "mlflowAppRef",
+        "arn": "mlflowAppArn"
+      }
     },
     {
       "name": "mlflow-tracking-server",
@@ -5058,7 +5196,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelRef",
+        "property": "modelRef",
+        "arn": "modelArn"
+      }
     },
     {
       "name": "model-bias-job-definition",
@@ -5090,7 +5234,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelBiasJobDefinitionRef",
+        "property": "modelBiasJobDefinitionRef",
+        "arn": "jobDefinitionArn"
+      }
     },
     {
       "name": "model-card",
@@ -5122,7 +5272,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelCardRef",
+        "property": "modelCardRef",
+        "arn": "modelCardArn"
+      }
     },
     {
       "name": "model-card-export-job",
@@ -5191,7 +5347,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelExplainabilityJobDefinitionRef",
+        "property": "modelExplainabilityJobDefinitionRef",
+        "arn": "jobDefinitionArn"
+      }
     },
     {
       "name": "model-package",
@@ -5226,7 +5388,13 @@
         "ifCurrentModelLifeCycleStage",
         "ifCurrentModelLifeCycleStageStatus",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelPackageRef",
+        "property": "modelPackageRef",
+        "arn": "modelPackageArn"
+      }
     },
     {
       "name": "model-package-group",
@@ -5258,7 +5426,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelPackageGroupRef",
+        "property": "modelPackageGroupRef",
+        "arn": "modelPackageGroupArn"
+      }
     },
     {
       "name": "model-quality-job-definition",
@@ -5290,7 +5464,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IModelQualityJobDefinitionRef",
+        "property": "modelQualityJobDefinitionRef",
+        "arn": "jobDefinitionArn"
+      }
     },
     {
       "name": "monitoring-schedule",
@@ -5322,7 +5502,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IMonitoringScheduleRef",
+        "property": "monitoringScheduleRef",
+        "arn": "monitoringScheduleArn"
+      }
     },
     {
       "name": "monitoring-schedule-alert",
@@ -5388,7 +5574,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "INotebookInstanceRef",
+        "property": "notebookInstanceRef",
+        "arn": "notebookInstanceArn"
+      }
     },
     {
       "name": "notebook-instance-lifecycle-config",
@@ -5420,7 +5612,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "INotebookInstanceLifecycleConfigRef",
+        "property": "notebookInstanceLifecycleConfigRef",
+        "arn": "notebookInstanceLifecycleConfigArn"
+      }
     },
     {
       "name": "optimization-job",
@@ -5484,7 +5682,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IPartnerAppRef",
+        "property": "partnerAppRef",
+        "arn": "partnerAppArn"
+      }
     },
     {
       "name": "pipeline",
@@ -5516,7 +5720,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IPipelineRef",
+        "property": "pipelineRef",
+        "id": "pipelineName"
+      }
     },
     {
       "name": "pipeline-execution",
@@ -5585,7 +5795,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IProcessingJobRef",
+        "property": "processingJobRef",
+        "arn": "processingJobArn"
+      }
     },
     {
       "name": "project",
@@ -5617,7 +5833,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
     },
     {
       "name": "reserved-capacity",
@@ -5805,7 +6027,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IStudioLifecycleConfigRef",
+        "property": "studioLifecycleConfigRef",
+        "arn": "studioLifecycleConfigArn"
+      }
     },
     {
       "name": "training-job",
@@ -5970,7 +6198,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IWorkforceRef",
+        "property": "workforceRef",
+        "arn": "workforceArn"
+      }
     },
     {
       "name": "workteam",
@@ -6002,7 +6236,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IWorkteamRef",
+        "property": "workteamRef",
+        "arn": "workteamArn"
+      }
     }
   ],
   "conditions": [

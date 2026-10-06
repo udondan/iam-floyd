@@ -1033,7 +1033,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_pinpoint",
+        "interface": "IAppRef",
+        "property": "appRef",
+        "arn": "appArn"
+      }
     },
     {
       "name": "application-metrics",

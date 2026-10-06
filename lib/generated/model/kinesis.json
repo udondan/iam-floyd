@@ -433,7 +433,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_kinesis",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
     },
     {
       "name": "consumer",
@@ -541,7 +547,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_kinesis",
+        "interface": "IStreamRef",
+        "property": "streamRef",
+        "arn": "streamArn"
+      }
     }
   ],
   "conditions": [

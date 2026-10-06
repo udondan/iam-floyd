@@ -161,7 +161,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ssmquicksetup",
+        "interface": "IConfigurationManagerRef",
+        "property": "configurationManagerRef",
+        "arn": "managerArn"
+      }
     }
   ],
   "conditions": [

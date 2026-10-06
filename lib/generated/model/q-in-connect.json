@@ -952,7 +952,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wisdom",
+        "interface": "IAssistantRef",
+        "property": "assistantRef",
+        "arn": "assistantArn"
+      }
     },
     {
       "name": "AssistantAssociation",
@@ -1096,7 +1102,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_wisdom",
+        "interface": "IKnowledgeBaseRef",
+        "property": "knowledgeBaseRef",
+        "arn": "knowledgeBaseArn"
+      }
     },
     {
       "name": "MessageTemplate",

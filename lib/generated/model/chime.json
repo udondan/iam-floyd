@@ -2641,7 +2641,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_chime",
+        "interface": "IAppInstanceRef",
+        "property": "appInstanceRef",
+        "arn": "appInstanceArn"
+      }
     },
     {
       "name": "app-instance-bot",
@@ -2816,7 +2822,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_chime",
+        "interface": "IMediaInsightsPipelineConfigurationRef",
+        "property": "mediaInsightsPipelineConfigurationRef",
+        "arn": "mediaInsightsPipelineConfigurationArn"
+      }
     },
     {
       "name": "media-pipeline",
@@ -2878,7 +2890,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_chime",
+        "interface": "IMediaPipelineKinesisVideoStreamPoolRef",
+        "property": "mediaPipelineKinesisVideoStreamPoolRef",
+        "arn": "mediaPipelineKinesisVideoStreamPoolArn"
+      }
     },
     {
       "name": "meeting",
@@ -2940,7 +2958,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_chime",
+        "interface": "ISipMediaApplicationRef",
+        "property": "sipMediaApplicationRef",
+        "arn": "sipMediaApplicationArn"
+      }
     },
     {
       "name": "voice-connector",
@@ -2971,7 +2995,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_chime",
+        "interface": "IVoiceConnectorRef",
+        "property": "voiceConnectorRef",
+        "arn": "voiceConnectorArn"
+      }
     },
     {
       "name": "voice-profile",

@@ -363,7 +363,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_servicediscovery",
+        "interface": "IServiceRef",
+        "property": "serviceRef",
+        "arn": "serviceArn"
+      }
     }
   ],
   "conditions": [

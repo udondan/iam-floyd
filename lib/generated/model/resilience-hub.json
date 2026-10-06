@@ -1213,7 +1213,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_resiliencehub",
+        "interface": "IResiliencyPolicyRef",
+        "property": "resiliencyPolicyRef",
+        "arn": "policyArn"
+      }
     },
     {
       "name": "service",

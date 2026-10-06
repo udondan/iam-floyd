@@ -201,7 +201,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_translate",
+        "interface": "IParallelDataRef",
+        "property": "parallelDataRef",
+        "arn": "parallelDataArn"
+      }
     },
     {
       "name": "terminology",

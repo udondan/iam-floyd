@@ -225,7 +225,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_datapipeline",
+        "interface": "IPipelineRef",
+        "property": "pipelineRef",
+        "id": "pipelineId"
+      }
     }
   ],
   "conditions": [

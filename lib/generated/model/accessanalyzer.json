@@ -345,7 +345,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_accessanalyzer",
+        "interface": "IAnalyzerRef",
+        "property": "analyzerRef",
+        "arn": "analyzerArn"
+      }
     },
     {
       "name": "ArchiveRule",

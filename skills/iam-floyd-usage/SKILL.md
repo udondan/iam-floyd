@@ -161,6 +161,17 @@ new Statement.Ec2()
 In **cdk-iam-floyd**, omitting account/region defaults to the CDK stack's values.
 In **iam-floyd** (standalone), they default to `*`.
 
+In **cdk-iam-floyd**, the `on*()` methods also take a CDK construct (L1 or L2) in place
+of the name, if aws-cdk-lib has a reference interface for it (`aws-cdk-lib/interfaces`,
+e.g. `IBucketRef`). The ARN of the construct is used; account, region and partition
+are ignored:
+
+```typescript
+const bucket = new s3.Bucket(this, 'Bucket');
+new Statement.S3().allow().toListBucket().onBucket(bucket);
+new Statement.Lambda().allow().toInvokeFunction().onFunction(myFunction); // lambda.IFunction
+```
+
 **Override defaults for multiple resources** using `in*()` / `in()`:
 
 ```typescript

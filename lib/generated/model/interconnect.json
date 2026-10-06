@@ -157,7 +157,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_interconnect",
+        "interface": "IConnectionRef",
+        "property": "connectionRef",
+        "arn": "connectionArn"
+      }
     },
     {
       "name": "environment",

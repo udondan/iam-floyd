@@ -380,7 +380,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_neptunegraph",
+        "interface": "IGraphRef",
+        "property": "graphRef",
+        "arn": "graphArn"
+      }
     },
     {
       "name": "graph-snapshot",
@@ -411,7 +417,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_neptunegraph",
+        "interface": "IGraphSnapshotRef",
+        "property": "graphSnapshotRef",
+        "arn": "graphSnapshotArn"
+      }
     },
     {
       "name": "import-task",

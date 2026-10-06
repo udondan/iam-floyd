@@ -682,7 +682,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transfer",
+        "interface": "ICertificateRef",
+        "property": "certificateRef",
+        "arn": "certificateArn"
+      }
     },
     {
       "name": "connector",
@@ -713,7 +719,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transfer",
+        "interface": "IConnectorRef",
+        "property": "connectorRef",
+        "arn": "connectorArn"
+      }
     },
     {
       "name": "host-key",
@@ -780,7 +792,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transfer",
+        "interface": "IProfileRef",
+        "property": "profileRef",
+        "arn": "profileArn"
+      }
     },
     {
       "name": "server",
@@ -811,7 +829,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transfer",
+        "interface": "IServerRef",
+        "property": "serverRef",
+        "arn": "serverArn"
+      }
     },
     {
       "name": "user",
@@ -878,7 +902,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transfer",
+        "interface": "IWebAppRef",
+        "property": "webAppRef",
+        "arn": "webAppArn"
+      }
     },
     {
       "name": "workflow",
@@ -909,7 +939,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_transfer",
+        "interface": "IWorkflowRef",
+        "property": "workflowRef",
+        "arn": "workflowArn"
+      }
     }
   ],
   "conditions": [

@@ -249,7 +249,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_arcregionswitch",
+        "interface": "IPlanRef",
+        "property": "planRef",
+        "arn": "planArn"
+      }
     }
   ],
   "conditions": [

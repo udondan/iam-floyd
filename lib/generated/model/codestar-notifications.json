@@ -161,7 +161,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_codestarnotifications",
+        "interface": "INotificationRuleRef",
+        "property": "notificationRuleRef",
+        "arn": "notificationRuleArn"
+      }
     }
   ],
   "conditions": [

@@ -603,7 +603,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_healthlake",
+        "interface": "IDataTransformationProfileRef",
+        "property": "dataTransformationProfileRef",
+        "arn": "dataTransformationProfileArn"
+      }
     },
     {
       "name": "datastore",

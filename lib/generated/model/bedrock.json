@@ -2231,7 +2231,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IAgentRef",
+        "property": "agentRef",
+        "arn": "agentArn"
+      }
     },
     {
       "name": "agent-alias",
@@ -2360,7 +2366,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IAutomatedReasoningPolicyRef",
+        "property": "automatedReasoningPolicyRef",
+        "arn": "policyArn"
+      }
     },
     {
       "name": "automated-reasoning-policy-version",
@@ -2451,7 +2463,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IBlueprintRef",
+        "property": "blueprintRef",
+        "arn": "blueprintArn"
+      }
     },
     {
       "name": "blueprint-optimization-invocation",
@@ -2606,7 +2624,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IDataAutomationLibraryRef",
+        "property": "dataAutomationLibraryRef",
+        "arn": "libraryArn"
+      }
     },
     {
       "name": "data-automation-library-ingestion-job",
@@ -2697,7 +2721,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IDataAutomationProjectRef",
+        "property": "dataAutomationProjectRef",
+        "arn": "projectArn"
+      }
     },
     {
       "name": "default-prompt-router",
@@ -2788,7 +2818,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IFlowRef",
+        "property": "flowRef",
+        "arn": "flowArn"
+      }
     },
     {
       "name": "flow-alias",
@@ -2918,7 +2954,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IGuardrailRef",
+        "property": "guardrailRef",
+        "arn": "guardrailArn"
+      }
     },
     {
       "name": "guardrail-profile",
@@ -3038,7 +3080,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IKnowledgeBaseRef",
+        "property": "knowledgeBaseRef",
+        "arn": "knowledgeBaseArn"
+      }
     },
     {
       "name": "model-copy-job",
@@ -3255,7 +3303,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IPromptRef",
+        "property": "promptRef",
+        "arn": "promptArn"
+      }
     },
     {
       "name": "prompt-router",
@@ -3384,7 +3438,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "ISessionRef",
+        "property": "sessionRef",
+        "arn": "sessionArn"
+      }
     },
     {
       "name": "system-tool",

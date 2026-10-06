@@ -57,12 +57,15 @@ def read_expected(path):
 
 
 def unresolve(value):
-    """Replaces the references to pseudo parameters, e.g. {"Ref": "AWS::Partition"}."""
+    """Replaces the references to pseudo parameters, e.g. {"Ref": "AWS::Partition"}, and those to
+    resources, which the TypeScript examples print as `${Token[TOKEN.24]}`."""
     if isinstance(value, list):
         return [unresolve(item) for item in value]
     if isinstance(value, dict):
-        if list(value) == ['Ref'] and value['Ref'] in PSEUDO_PARAMETERS:
-            return PSEUDO_PARAMETERS[value['Ref']]
+        if list(value) == ['Ref']:
+            return PSEUDO_PARAMETERS.get(value['Ref'], 'TOKEN')
+        if list(value) == ['Fn::GetAtt']:
+            return 'TOKEN'
         if list(value) == ['Fn::Join']:
             separator, parts = value['Fn::Join']
             return separator.join(unresolve(part) for part in parts)

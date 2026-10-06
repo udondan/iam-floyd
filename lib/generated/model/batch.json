@@ -418,7 +418,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IComputeEnvironmentRef",
+        "property": "computeEnvironmentRef",
+        "arn": "computeEnvironmentArn"
+      }
     },
     {
       "name": "consumable-resource",
@@ -449,7 +455,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IConsumableResourceRef",
+        "property": "consumableResourceRef",
+        "arn": "consumableResourceArn"
+      }
     },
     {
       "name": "job",
@@ -509,7 +521,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IJobDefinitionRef",
+        "property": "jobDefinitionRef",
+        "arn": "jobDefinitionArn"
+      }
     },
     {
       "name": "job-definition-revision",
@@ -576,7 +594,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IJobQueueRef",
+        "property": "jobQueueRef",
+        "arn": "jobQueueArn"
+      }
     },
     {
       "name": "quota-share",
@@ -643,7 +667,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "ISchedulingPolicyRef",
+        "property": "schedulingPolicyRef",
+        "arn": "schedulingPolicyArn"
+      }
     },
     {
       "name": "service-environment",
@@ -674,7 +704,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IServiceEnvironmentRef",
+        "property": "serviceEnvironmentRef",
+        "arn": "serviceEnvironmentArn"
+      }
     },
     {
       "name": "service-job",

@@ -926,7 +926,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "IConnectorDefinitionRef",
+        "property": "connectorDefinitionRef",
+        "arn": "connectorDefinitionArn"
+      }
     },
     {
       "name": "connectorDefinitionVersion",
@@ -991,7 +997,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "ICoreDefinitionRef",
+        "property": "coreDefinitionRef",
+        "arn": "coreDefinitionArn"
+      }
     },
     {
       "name": "coreDefinitionVersion",
@@ -1112,7 +1124,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "IDeviceDefinitionRef",
+        "property": "deviceDefinitionRef",
+        "arn": "deviceDefinitionArn"
+      }
     },
     {
       "name": "deviceDefinitionVersion",
@@ -1177,7 +1195,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "IFunctionDefinitionRef",
+        "property": "functionDefinitionRef",
+        "arn": "functionDefinitionArn"
+      }
     },
     {
       "name": "functionDefinitionVersion",
@@ -1242,7 +1266,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "IGroupRef",
+        "property": "groupRef",
+        "arn": "groupArn"
+      }
     },
     {
       "name": "groupVersion",
@@ -1307,7 +1337,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "ILoggerDefinitionRef",
+        "property": "loggerDefinitionRef",
+        "arn": "loggerDefinitionArn"
+      }
     },
     {
       "name": "loggerDefinitionVersion",
@@ -1372,7 +1408,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "IResourceDefinitionRef",
+        "property": "resourceDefinitionRef",
+        "arn": "resourceDefinitionArn"
+      }
     },
     {
       "name": "resourceDefinitionVersion",
@@ -1437,7 +1479,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_greengrass",
+        "interface": "ISubscriptionDefinitionRef",
+        "property": "subscriptionDefinitionRef",
+        "arn": "subscriptionDefinitionArn"
+      }
     },
     {
       "name": "subscriptionDefinitionVersion",

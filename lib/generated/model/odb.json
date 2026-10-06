@@ -843,7 +843,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_odb",
+        "interface": "ICloudAutonomousVmClusterRef",
+        "property": "cloudAutonomousVmClusterRef",
+        "arn": "cloudAutonomousVmClusterArn"
+      }
     },
     {
       "name": "cloud-exadata-infrastructure",
@@ -874,7 +880,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_odb",
+        "interface": "ICloudExadataInfrastructureRef",
+        "property": "cloudExadataInfrastructureRef",
+        "arn": "cloudExadataInfrastructureArn"
+      }
     },
     {
       "name": "cloud-vm-cluster",
@@ -905,7 +917,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_odb",
+        "interface": "ICloudVmClusterRef",
+        "property": "cloudVmClusterRef",
+        "arn": "cloudVmClusterArn"
+      }
     },
     {
       "name": "db-node",
@@ -1029,7 +1047,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_odb",
+        "interface": "IOdbNetworkRef",
+        "property": "odbNetworkRef",
+        "arn": "odbNetworkArn"
+      }
     },
     {
       "name": "odb-peering-connection",
@@ -1060,7 +1084,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_odb",
+        "interface": "IOdbPeeringConnectionRef",
+        "property": "odbPeeringConnectionRef",
+        "arn": "odbPeeringConnectionArn"
+      }
     }
   ],
   "conditions": [

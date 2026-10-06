@@ -628,7 +628,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_datasync",
+        "interface": "IAgentRef",
+        "property": "agentRef",
+        "arn": "agentArn"
+      }
     },
     {
       "name": "discoveryjob",
@@ -757,7 +763,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_datasync",
+        "interface": "ITaskRef",
+        "property": "taskRef",
+        "arn": "taskArn"
+      }
     },
     {
       "name": "taskexecution",

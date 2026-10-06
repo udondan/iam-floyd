@@ -274,7 +274,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_invoicing",
+        "interface": "IInvoiceUnitRef",
+        "property": "invoiceUnitRef",
+        "arn": "invoiceUnitArn"
+      }
     },
     {
       "name": "procurement-portal-preference",
@@ -300,7 +306,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_invoicing",
+        "interface": "IProcurementPortalPreferenceRef",
+        "property": "procurementPortalPreferenceRef",
+        "arn": "procurementPortalPreferenceArn"
+      }
     }
   ],
   "conditions": [

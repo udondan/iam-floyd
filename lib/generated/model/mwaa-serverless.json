@@ -173,7 +173,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mwaaserverless",
+        "interface": "IWorkflowRef",
+        "property": "workflowRef",
+        "arn": "workflowArn"
+      }
     }
   ],
   "conditions": [

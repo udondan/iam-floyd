@@ -1086,7 +1086,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cognito",
+        "interface": "IUserPoolRef",
+        "property": "userPoolRef",
+        "arn": "userPoolArn"
+      }
     },
     {
       "name": "webacl",

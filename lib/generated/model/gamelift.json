@@ -1048,7 +1048,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IAliasRef",
+        "property": "aliasRef",
+        "arn": "aliasArn"
+      }
     },
     {
       "name": "build",
@@ -1079,7 +1085,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IBuildRef",
+        "property": "buildRef",
+        "arn": "buildArn"
+      }
     },
     {
       "name": "containerFleet",
@@ -1110,7 +1122,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IContainerFleetRef",
+        "property": "containerFleetRef",
+        "arn": "fleetArn"
+      }
     },
     {
       "name": "containerGroupDefinition",
@@ -1141,7 +1159,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IContainerGroupDefinitionRef",
+        "property": "containerGroupDefinitionRef",
+        "arn": "containerGroupDefinitionArn"
+      }
     },
     {
       "name": "fleet",
@@ -1172,7 +1196,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IFleetRef",
+        "property": "fleetRef",
+        "arn": "fleetArn"
+      }
     },
     {
       "name": "gameServerGroup",
@@ -1203,7 +1233,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IGameServerGroupRef",
+        "property": "gameServerGroupRef",
+        "arn": "gameServerGroupArn"
+      }
     },
     {
       "name": "gameSessionQueue",
@@ -1234,7 +1270,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IGameSessionQueueRef",
+        "property": "gameSessionQueueRef",
+        "arn": "gameSessionQueueArn"
+      }
     },
     {
       "name": "location",
@@ -1265,7 +1307,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "ILocationRef",
+        "property": "locationRef",
+        "arn": "locationArn"
+      }
     },
     {
       "name": "matchmakingConfiguration",
@@ -1296,7 +1344,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IMatchmakingConfigurationRef",
+        "property": "matchmakingConfigurationRef",
+        "arn": "matchmakingConfigurationArn"
+      }
     },
     {
       "name": "matchmakingRuleSet",
@@ -1327,7 +1381,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IMatchmakingRuleSetRef",
+        "property": "matchmakingRuleSetRef",
+        "arn": "matchmakingRuleSetArn"
+      }
     },
     {
       "name": "script",
@@ -1358,7 +1418,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IScriptRef",
+        "property": "scriptRef",
+        "arn": "scriptArn"
+      }
     }
   ],
   "conditions": [
