@@ -8,9 +8,9 @@ import {
   ReceiveMessageCommand,
   SQSClient,
 } from '@aws-sdk/client-sqs';
-import generator, { MegalodonInterface } from 'megalodon';
 
 const region = 'us-east-1';
+const mastodonUrl = 'https://awscommunity.social';
 const sqsClient = new SQSClient({ region });
 const secretsManagerClient = new SecretsManagerClient({ region });
 
@@ -61,15 +61,23 @@ async function toot(data: Envelope) {
     throw new Error('Message body is not a string');
   }
   console.log(`Tooting: ${data.message.Body}`);
-  const mastodon = await authenticateMastodon();
-  try {
-    const response = await mastodon.postStatus(data.message.Body, {
+  const accessToken = await getAccessToken();
+  // https://docs.joinmastodon.org/methods/statuses/#create
+  const response = await fetch(`${mastodonUrl}/api/v1/statuses`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      status: data.message.Body,
       visibility: 'public',
-    });
-    log(JSON.stringify(response));
-  } catch (err) {
-    log(JSON.stringify(err));
-    throw err;
+    }),
+  });
+  const body = await response.text();
+  log(body);
+  if (!response.ok) {
+    throw new Error(`Mastodon responded with ${response.status}: ${body}`);
   }
 }
 
@@ -90,17 +98,13 @@ async function deleteTootFromQueue(data: Envelope): Promise<void> {
   }
 }
 
-async function authenticateMastodon(): Promise<MegalodonInterface> {
+async function getAccessToken(): Promise<string> {
   try {
     const data = await secretsManagerClient.send(
       new GetSecretValueCommand({ SecretId: process.env.credentials! }),
     );
     const credentials = JSON.parse(data.SecretString!) as Credentials;
-    return generator(
-      'mastodon',
-      'https://awscommunity.social',
-      credentials.access_token,
-    );
+    return credentials.access_token;
   } catch (err) {
     console.error('Error retrieving secret', err);
     throw err;
