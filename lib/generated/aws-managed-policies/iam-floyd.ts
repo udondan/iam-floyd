@@ -2366,6 +2366,8 @@ export class AwsManagedPolicy {
     public static AWSSDMPServiceRolePolicy = 'aws-service-role/AWSSDMPServiceRolePolicy';
     /** Provides access to retrieve and describe secrets from Secrets Manager. This policy also allows decrypting KMS keys for Secrets Manager secrets. */
     public static AWSSecretsManagerClientReadOnlyAccess = 'AWSSecretsManagerClientReadOnlyAccess';
+    /** Grants the permissions required to run AWS Security Agent continuous scoped penetration tests from a CI/CD pipeline. Attached to a customer-created IAM role that a 3P CI/CD pipeline assumes via OIDC */
+    public static AWSSecurityAgentContinuousPentestPolicy = 'AWSSecurityAgentContinuousPentestPolicy';
     /** Allows AWS Security Agent to manage resources on your behalf. */
     public static AWSSecurityAgentServiceRolePolicy = 'aws-service-role/AWSSecurityAgentServiceRolePolicy';
     /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
