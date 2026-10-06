@@ -142,7 +142,7 @@ function preparePackageJson() {
   // the minimum version has all reference interfaces the on*() methods accept
   jsonData.peerDependencies = {
     'aws-cdk-lib': `^${cdkMinVersion()}`,
-    constructs: '^10.0.0',
+    constructs: `^${cdkMinVersion('constructs')}`,
   };
 
   fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));

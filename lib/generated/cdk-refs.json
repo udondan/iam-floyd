@@ -1,5 +1,6 @@
 {
   "aws-cdk-lib": "2.272.0",
+  "constructs": "10.5.0",
   "interfaces": [
     "aws_accessanalyzer.IAnalyzerRef",
     "aws_accountaccess.IApplicationRef",

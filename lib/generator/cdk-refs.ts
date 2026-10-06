@@ -19,6 +19,8 @@ export const cdkVersionFile = 'lib/generated/cdk-refs.json';
 
 interface CdkVersion {
   'aws-cdk-lib': string;
+  /** Minimum version of constructs, the one aws-cdk-lib requires */
+  constructs: string;
   /** Reference interfaces the model uses, e.g. `aws_lambda.IFunctionRef` */
   interfaces: string[];
 }
@@ -245,11 +247,14 @@ function usedInterfaces(models: ServiceModel[]): string[] {
 }
 
 /**
- * The minimum version of aws-cdk-lib for the CDK variant
+ * The minimum version of aws-cdk-lib or constructs for the CDK variant. The one of constructs is
+ * the minimum of aws-cdk-lib, as NuGet fails when a dependency requires a higher version (NU1605).
  */
-export function cdkMinVersion(): string {
+export function cdkMinVersion(
+  pkg: 'aws-cdk-lib' | 'constructs' = 'aws-cdk-lib',
+): string {
   return (JSON.parse(fs.readFileSync(cdkVersionFile, 'utf8')) as CdkVersion)[
-    'aws-cdk-lib'
+    pkg
   ];
 }
 
@@ -276,18 +281,24 @@ export function updateCdkRefs(): void {
   const previous = fs.existsSync(cdkVersionFile)
     ? (JSON.parse(fs.readFileSync(cdkVersionFile, 'utf8')) as CdkVersion)
     : undefined;
-  const installed = (
-    JSON.parse(fs.readFileSync(`${cdkLibDir}/package.json`, 'utf8')) as {
-      version: string;
-    }
-  ).version;
+  const installed = JSON.parse(
+    fs.readFileSync(`${cdkLibDir}/package.json`, 'utf8'),
+  ) as { version: string; peerDependencies: { constructs: string } };
   const added = interfaces.filter(
     (iface) => !previous?.interfaces.includes(iface),
   );
-  const version: CdkVersion = {
-    'aws-cdk-lib': added.length ? installed : previous!['aws-cdk-lib'],
-    interfaces,
-  };
+  const version: CdkVersion =
+    added.length || !previous?.constructs
+      ? {
+          'aws-cdk-lib': installed.version,
+          constructs: installed.peerDependencies.constructs.replace(/^\^/, ''),
+          interfaces,
+        }
+      : {
+          'aws-cdk-lib': previous['aws-cdk-lib'],
+          constructs: previous.constructs,
+          interfaces,
+        };
   fs.writeFileSync(cdkVersionFile, `${JSON.stringify(version, null, 2)}\n`);
 
   const resources = models.reduce(

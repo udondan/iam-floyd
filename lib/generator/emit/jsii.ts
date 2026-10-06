@@ -1046,7 +1046,10 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
   if (variant == 'cdk') keywords.push('cdk', 'aws-cdk');
   const dependencies: Record<string, string> =
     variant == 'cdk'
-      ? { 'aws-cdk-lib': `^${cdkMinVersion()}`, constructs: '^10.0.0' }
+      ? {
+          'aws-cdk-lib': `^${cdkMinVersion()}`,
+          constructs: `^${cdkMinVersion('constructs')}`,
+        }
       : {};
 
   const pythonModule = name.replace(/-/g, '_');
