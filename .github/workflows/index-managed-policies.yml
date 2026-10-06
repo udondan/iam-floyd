@@ -38,6 +38,10 @@ jobs:
       - name: Index managed policies
         run: make install index-managed-policies
 
+      # needs iam:CreateRole and iam:DeleteRole on the role iam-floyd-service-principal-check
+      - name: Index service principals
+        run: make index-service-principals
+
       - name: Check for changes
         id: changes
         run: |
@@ -64,9 +68,9 @@ jobs:
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.OVERRIDE_TOKEN }}
-          commit-message: "feat: update AWS managed policies"
-          title: "feat: update AWS managed policies"
-          body: Updates AWS managed policies
+          commit-message: "feat: update AWS managed policies and service principals"
+          title: "feat: update AWS managed policies and service principals"
+          body: Updates AWS managed policies and service principals
           branch: update-aws-managed-policies
           delete-branch: true
           committer: udondan <${{ secrets.RELEASE_MAIL }}>

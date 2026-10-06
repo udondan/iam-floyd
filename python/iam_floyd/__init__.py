@@ -29,16 +29,19 @@ from ._version import __version__
 
 if TYPE_CHECKING:
     from ._aws_managed_policies import AwsManagedPolicy
+    from ._aws_service_principals import AwsServicePrincipal
     from ._collection import Collection
 
 # The modules are imported on first access, the collection imports the large EC2 module
 _MODULES = {
     'AwsManagedPolicy': '._aws_managed_policies',
+    'AwsServicePrincipal': '._aws_service_principals',
     'Collection': '._collection',
 }
 
 __all__ = [
     'AwsManagedPolicy',
+    'AwsServicePrincipal',
     'Collection',
     'InlineGroupPolicyDocument',
     'InlineRolePolicyDocument',

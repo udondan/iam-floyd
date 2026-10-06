@@ -23,3 +23,4 @@ export {
 import * as Statement from './statements';
 export { Statement };
 export * from './generated/aws-managed-policies';
+export * from './generated/aws-service-principals';

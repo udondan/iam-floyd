@@ -755,6 +755,8 @@ export class CSharpTranspiler {
       } else if (tag.getTagName() == 'see') {
         const url = (tag.getCommentText() ?? '').trim().replace(/"/g, '%22');
         tags.push(`<seealso href="${url}">${escapeXml(url)}</seealso>`);
+      } else if (tag.getTagName() == 'deprecated') {
+        tags.push(`<remarks>Deprecated: ${comment}</remarks>`);
       } else {
         fail(tag, 'Unsupported JSDoc tag');
       }

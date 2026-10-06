@@ -18,6 +18,10 @@ import { buildServiceModel, ServiceModel } from './model';
 
 export { emitTypeScriptFromModels } from './emit/typescript';
 export { indexManagedPolicies } from './managed-policies';
+export {
+  emitServicePrincipals,
+  indexServicePrincipals,
+} from './service-principals';
 export { camelCase, getArnPlaceholders, lowerFirst } from './naming';
 
 const timeThreshold = new Date();
@@ -418,7 +422,7 @@ function validateUrl(url: string | undefined) {
   return url;
 }
 
-async function requestWithRetry(url: string): Promise<string> {
+export async function requestWithRetry(url: string): Promise<string> {
   const response = await fetchWithRetry(url, 'GET');
   return response.text();
 }

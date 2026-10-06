@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Prints the changes of the AWS managed policies and of the services, actions, resource types and
+# Prints the changes of the AWS managed policies, the service principals and of the services, actions, resource types and
 # condition keys between a git ref and the working tree as markdown. Prints nothing if there are
 # no changes.
 #
@@ -15,6 +15,7 @@ TMP=$(mktemp -d)
 trap 'rm -rf "${TMP}"' EXIT
 
 MANAGED_POLICIES="lib/generated/aws-managed-policies/iam-floyd.ts"
+SERVICE_PRINCIPALS="lib/generated/aws-service-principals/principals.json"
 
 # Names of the AWS managed policies in a file of the AwsManagedPolicy class
 function policyNames() {
@@ -22,8 +23,14 @@ function policyNames() {
     sed 's|.*/||' | sort -u
 }
 
-# Writes the lists of services, actions, resource types, condition keys and managed policies of a
-# git ref (or of the working tree, if no ref is given) to the directory $1
+# The service principals of a file of the list, IAM accepts them or not ($2: true or false)
+function servicePrincipals() {
+  jq -r --argjson deprecated "$2" \
+    'to_entries[] | select((.value.deprecated != null) == $deprecated) | .key' "$1" | sort -u
+}
+
+# Writes the lists of services, actions, resource types, condition keys, managed policies and
+# service principals of a git ref (or of the working tree, if no ref is given) to the directory $1
 function writeLists() {
   local out="$1"
   local ref="${2:-}"
@@ -33,6 +40,9 @@ function writeLists() {
   if [[ -n "${ref}" ]]; then
     git show "${ref}:${MANAGED_POLICIES}" > "${out}/policies.ts"
     policyNames "${out}/policies.ts" > "${out}/policies"
+    # releases before the list of service principals have none
+    git show "${ref}:${SERVICE_PRINCIPALS}" 2> /dev/null > "${out}/principals.json" ||
+      echo "{}" > "${out}/principals.json"
 
     local src="${out}/src"
     mkdir -p "${src}"
@@ -51,7 +61,10 @@ function writeLists() {
     fi
   else
     policyNames "${MANAGED_POLICIES}" > "${out}/policies"
+    cp "${SERVICE_PRINCIPALS}" "${out}/principals.json"
   fi
+  servicePrincipals "${out}/principals.json" false > "${out}/principals"
+  servicePrincipals "${out}/principals.json" true > "${out}/principals-deprecated"
 
   for kind in services actions resources conditions; do
     bin/model-list "${kind}" "${modelDir}" > "${out}/${kind}"
@@ -113,6 +126,10 @@ function endBlock() {
 
 section ":warning: **Removed AWS managed policies:**" "$(removed policies | toList)"
 section "**New AWS managed policies:**" "$(added policies | toList)"
+endBlock
+
+section ":warning: **Deprecated service principals:**" "$(added principals-deprecated | toList)"
+section "**New service principals:**" "$(comm -13 "${TMP}/before/principals-deprecated" <(added principals) | toList)"
 endBlock
 
 section ":warning: **Removed services:**" "$(removed services | toList)"

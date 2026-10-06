@@ -7,14 +7,15 @@ var preferredImports = 'Yes';
 var selectFilled = false;
 var selectExtensionLoaded = false;
 
-// the services with their classes and actions, see lib/generator/emit/converter.ts
-var services = null;
+// the services with their classes and actions, and the service principals, see
+// lib/generator/emit/converter.ts
+var index = null;
 
 $(function () {
   activateNavItem();
   populateManagedPolicies();
   $.getJSON('_static/policy-converter/services.json', function (data) {
-    services = data;
+    index = data;
     convertInputPolicy();
   });
   $('#managedPolicies').change(loadManagedPolicy);
@@ -71,7 +72,7 @@ function beautifySelect() {
 function convertInputPolicy() {
   setErrors([]);
   let input = $('#policyConverterInput').val();
-  if (!input.length || services === null) {
+  if (!input.length || index === null) {
     return;
   }
   try {
@@ -83,7 +84,7 @@ function convertInputPolicy() {
 
   const result = PolicyConverter.convert(
     parsed,
-    services,
+    index,
     preferredLanguage,
     preferredVariant,
   );

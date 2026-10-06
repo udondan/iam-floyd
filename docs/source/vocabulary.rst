@@ -191,6 +191,10 @@ Some of the ``for*`` methods accept multiple values at once:
 
 .. example:: principal-multiple
 
+The names of service principals are provided by the class ``AwsServicePrincipal``. The name of a constant is the service principal without ``.amazonaws.com``, in upper case, with ``_`` in place of ``.`` and ``-``, e.g. ``AwsServicePrincipal.ECS_TASKS`` for ``ecs-tasks.amazonaws.com``. In Python, ``lambda`` is a keyword, so the constant of ``lambda.amazonaws.com`` is ``AwsServicePrincipal.LAMBDA_``. The list is collected from the AWS managed policies, the documentation of service-linked roles and `a community list <https://gist.github.com/shortjared/4c1e3fe52bdfa47522cfe5b41e5d6f22>`_, and every entry is checked with IAM. Entries are never removed: a service principal that IAM no longer accepts is deprecated.
+
+.. example:: principal-service
+
 ``cdk-iam-floyd`` has an additional method ``forCdkPrincipal``, which takes any number of `iam.IPrincipal <https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.IPrincipal.html>`_ objects:
 
 .. example:: principal.cdk

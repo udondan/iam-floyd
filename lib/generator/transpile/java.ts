@@ -630,6 +630,8 @@ export class JavaTranspiler {
       } else if (tag.getTagName() == 'see') {
         const url = (tag.getCommentText() ?? '').trim().replace(/"/g, '%22');
         tags.push(`@see <a href="${url}">${javadocText(url)}</a>`);
+      } else if (tag.getTagName() == 'deprecated') {
+        tags.push(`@deprecated ${comment}`.trim());
       } else {
         fail(tag, 'Unsupported JSDoc tag');
       }

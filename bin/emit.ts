@@ -3,6 +3,7 @@ import * as fs from 'fs';
 
 import { emitConverterIndex } from '../lib/generator/emit/converter';
 import { emitTypeScriptFromModels } from '../lib/generator/emit/typescript';
+import { emitServicePrincipals } from '../lib/generator/service-principals';
 
 // after `make cdk`, the package is cdk-iam-floyd and the CDK variant is emitted
 const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8')) as {
@@ -13,6 +14,7 @@ const cdk =
   packageJson.name === 'cdk-iam-floyd';
 
 emitConverterIndex();
+emitServicePrincipals();
 emitTypeScriptFromModels({ cdk })
   .then(() => {
     console.log('ALL DONE');

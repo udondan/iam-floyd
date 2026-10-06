@@ -99,6 +99,13 @@ export function managedPoliciesSourceFiles(): SourceFile[] {
   return sourceFiles('lib/generated/aws-managed-policies/iam-floyd.ts');
 }
 
+/**
+ * Loads the names of the AWS service principals
+ */
+export function servicePrincipalsSourceFiles(): SourceFile[] {
+  return sourceFiles('lib/generated/aws-service-principals/index.ts');
+}
+
 export type Kind =
   | 'any'
   | 'string'

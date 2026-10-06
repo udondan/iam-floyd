@@ -3,8 +3,9 @@
  * the CDK and the standalone variant. Used by the policy converter in the docs and by the test in
  * test/converter/.
  *
- * `services` is the index written by lib/generator/emit/converter.ts: the service prefixes with
- * their classes and the names of their actions.
+ * `index` is the index written by lib/generator/emit/converter.ts: the service prefixes with
+ * their classes and the names of their actions, and the service principals with the names of their
+ * constants in `AwsServicePrincipal`.
  */
 var PolicyConverter = (function () {
   const languages = ['TypeScript', 'JavaScript', 'Python', 'Java', 'C#', 'Go'];
@@ -36,18 +37,19 @@ var PolicyConverter = (function () {
     Service: [['forService', /^(.*)$/]],
   };
 
-  const pythonKeywords = ['for', 'if', 'in'];
+  // the Python keywords that are names of methods or constants
+  const pythonKeywords = ['for', 'if', 'in', 'lambda'];
 
   /**
    * Converts the policy. Returns the imports, the code that assigns the policy to the variable
    * `policy`, and the errors.
    *
    * @param policy The policy, parsed from JSON
-   * @param services The index of the services
+   * @param index The index of the services and service principals
    * @param language One of `languages`
    * @param variant One of `variants`
    */
-  function convert(policy, services, language, variant) {
+  function convert(policy, index, language, variant) {
     const errors = [];
     const lang = languageSpecs[language];
     if (!lang) {
@@ -64,10 +66,15 @@ var PolicyConverter = (function () {
 
     const statements = [];
     for (const statement of ensureList(policy.Statement)) {
-      statements.push(...convertStatement(statement, services, errors));
+      statements.push(...convertStatement(statement, index, errors));
     }
 
-    const context = { cdk, helperUsed: false, classes: new Set() };
+    const context = {
+      cdk,
+      helperUsed: false,
+      classes: new Set(),
+      constants: new Set(),
+    };
     const code = lang.policy(
       statements.map((statement) => lang.statement(statement, context)),
       context,
@@ -96,7 +103,12 @@ var PolicyConverter = (function () {
     return { type: 'string', value };
   }
 
-  function convertStatement(statement, services, errors) {
+  // a static property, e.g. `AwsServicePrincipal.LAMBDA`
+  function constant(className, name) {
+    return { type: 'constant', className, name };
+  }
+
+  function convertStatement(statement, index, errors) {
     const effect = statement.Effect === 'Deny' ? 'deny' : 'allow';
     if (statement.Effect && !['Allow', 'Deny'].includes(statement.Effect)) {
       errors.push(`Invalid effect: ${statement.Effect}`);
@@ -144,7 +156,9 @@ var PolicyConverter = (function () {
       }
     }
     if (principals !== undefined) {
-      common.push(...convertPrincipals(principals, errors));
+      common.push(
+        ...convertPrincipals(principals, index.servicePrincipals, errors),
+      );
     }
 
     const head = [call(effect)];
@@ -152,10 +166,12 @@ var PolicyConverter = (function () {
     if (notResource) head.push(call('notResource'));
     if (notPrincipal) head.push(call('notPrincipal'));
 
-    return splitActions(actions, notAction, services, errors).map((group) => ({
-      className: group.className,
-      calls: [...head, ...group.calls, ...common],
-    }));
+    return splitActions(actions, notAction, index.services, errors).map(
+      (group) => ({
+        className: group.className,
+        calls: [...head, ...group.calls, ...common],
+      }),
+    );
   }
 
   /**
@@ -275,7 +291,7 @@ var PolicyConverter = (function () {
     return v === undefined ? undefined : str(v);
   }
 
-  function convertPrincipals(principals, errors) {
+  function convertPrincipals(principals, servicePrincipals, errors) {
     const calls = [];
     if (typeof principals === 'string') {
       if (principals === '*') {
@@ -294,6 +310,15 @@ var PolicyConverter = (function () {
       for (const value of ensureList(values)) {
         if (typeof value !== 'string') {
           errors.push(`Unsupported principal: ${JSON.stringify(value)}`);
+          continue;
+        }
+        if (type === 'Service' && Object.hasOwn(servicePrincipals, value)) {
+          calls.push(
+            call(
+              'forService',
+              constant('AwsServicePrincipal', servicePrincipals[value]),
+            ),
+          );
           continue;
         }
         for (const [method, pattern] of patterns) {
@@ -339,6 +364,21 @@ var PolicyConverter = (function () {
       .toLowerCase();
   }
 
+  /**
+   * The arguments of a call. A constant is `Class.NAME`, the class is added to the imports
+   */
+  function renderArgs(c, context, strings, string, constantName = (n) => n) {
+    return c.args
+      .map((a) => {
+        if (a.type === 'constant') {
+          context.constants.add(a.className);
+          return `${a.className}.${constantName(a.name)}`;
+        }
+        return a.type === 'strings' ? strings(a.value) : string(a.value);
+      })
+      .join(', ');
+  }
+
   function indent(code, prefix) {
     return code.replace(/^(?=.)/gm, prefix);
   }
@@ -353,16 +393,13 @@ var PolicyConverter = (function () {
     ].join('\n');
   }
 
+  const singleQuotedList = (values) =>
+    `[${values.map(singleQuoted).join(', ')}]`;
+
   const typescript = (declaration) => ({
-    statement(statement) {
+    statement(statement, context) {
       const args = (c) =>
-        c.args
-          .map((a) =>
-            a.type === 'strings'
-              ? `[${a.value.map(singleQuoted).join(', ')}]`
-              : singleQuoted(a.value),
-          )
-          .join(', ');
+        renderArgs(c, context, singleQuotedList, singleQuoted);
       return chain(
         `new Statement.${statement.className || 'All'}()`,
         statement.calls,
@@ -377,24 +414,26 @@ var PolicyConverter = (function () {
     },
     imports(context) {
       const pkg = context.cdk ? 'cdk-iam-floyd' : 'iam-floyd';
-      return declaration('ManagedPolicyDocument, Statement', pkg);
+      const names = [
+        ...context.constants,
+        'ManagedPolicyDocument',
+        'Statement',
+      ];
+      return declaration(names.sort().join(', '), pkg);
     },
   });
 
   const python = {
-    statement(statement) {
+    statement(statement, context) {
       const method = (m) => {
         const snake = snakeCase(m);
         return pythonKeywords.includes(snake) ? `${snake}_` : snake;
       };
+      // like jsii-pacmak, a keyword gets a `_`, e.g. `AwsServicePrincipal.LAMBDA_`
+      const constantName = (n) =>
+        pythonKeywords.includes(n.toLowerCase()) ? `${n}_` : n;
       const args = (c) =>
-        c.args
-          .map((a) =>
-            a.type === 'strings'
-              ? `[${a.value.map(singleQuoted).join(', ')}]`
-              : singleQuoted(a.value),
-          )
-          .join(', ');
+        renderArgs(c, context, singleQuotedList, singleQuoted, constantName);
       return chain(
         `Statement.${statement.className || 'All'}()`,
         statement.calls,
@@ -409,18 +448,14 @@ var PolicyConverter = (function () {
     },
     imports(context) {
       const pkg = context.cdk ? 'cdk_iam_floyd' : 'iam_floyd';
-      return `from ${pkg} import ManagedPolicyDocument, Statement`;
+      const names = [
+        ...context.constants,
+        'ManagedPolicyDocument',
+        'Statement',
+      ];
+      return `from ${pkg} import ${names.sort().join(', ')}`;
     },
   };
-
-  const javaArgs = (c) =>
-    c.args
-      .map((a) =>
-        a.type === 'strings'
-          ? `List.of(${a.value.map(doubleQuoted).join(', ')})`
-          : doubleQuoted(a.value),
-      )
-      .join(', ');
 
   const java = {
     statement(statement, context) {
@@ -433,13 +468,14 @@ var PolicyConverter = (function () {
       ) {
         context.listUsed = true;
       }
-      return chain(
-        `new ${className}()`,
-        statement.calls,
-        method,
-        javaArgs,
-        '    ',
-      );
+      const args = (c) =>
+        renderArgs(
+          c,
+          context,
+          (values) => `List.of(${values.map(doubleQuoted).join(', ')})`,
+          doubleQuoted,
+        );
+      return chain(`new ${className}()`, statement.calls, method, args, '    ');
     },
     policy(statements) {
       const list = indent(statements.join(',\n'), '    ');
@@ -451,6 +487,7 @@ var PolicyConverter = (function () {
         : 'com.udondan.iamFloyd';
       const imports = [...context.classes].map((c) => `${pkg}.statement.${c}`);
       imports.push(`${pkg}.ManagedPolicyDocument`);
+      imports.push(...[...context.constants].map((c) => `${pkg}.${c}`));
       if (context.listUsed) {
         imports.push('java.util.List');
       }
@@ -462,17 +499,17 @@ var PolicyConverter = (function () {
   };
 
   const csharp = {
-    statement(statement) {
+    statement(statement, context) {
       const args = (c) =>
-        c.args
-          .map((a) =>
-            a.type === 'strings'
-              ? a.value.length
-                ? `new[] { ${a.value.map(doubleQuoted).join(', ')} }`
-                : 'new string[] { }'
-              : doubleQuoted(a.value),
-          )
-          .join(', ');
+        renderArgs(
+          c,
+          context,
+          (values) =>
+            values.length
+              ? `new[] { ${values.map(doubleQuoted).join(', ')} }`
+              : 'new string[] { }',
+          doubleQuoted,
+        );
       return chain(
         `new Statement.${statement.className || 'All'}()`,
         statement.calls,
@@ -495,8 +532,15 @@ var PolicyConverter = (function () {
     statement(statement, context) {
       // the helpers of the pointers
       const helper = context.cdk ? 'jsii' : 'iamfloyd';
+      const pkg = context.cdk ? 'cdkiamfloyd' : 'iamfloyd';
       const args = (c) => {
         const values = c.args.map((a) => {
+          // functions in jsii, string constants in the native package
+          if (a.type === 'constant') {
+            return context.cdk
+              ? `${pkg}.${a.className}_${a.name}()`
+              : `${pkg}.String(${pkg}.${a.className}_${a.name})`;
+          }
           context.helperUsed = true;
           return a.type === 'strings'
             ? `${helper}.Strings(${a.value.map(doubleQuoted).join(', ')})`

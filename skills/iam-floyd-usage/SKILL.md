@@ -62,7 +62,7 @@ const { Statement } = require('iam-floyd');
 
 The statement providers (`Ec2`, `S3`, ...) live in a sub-package or namespace
 `statement`. The core classes (`Operator`, `Collection`, the policy documents,
-`AwsManagedPolicy`) live in the package itself:
+`AwsManagedPolicy`, `AwsServicePrincipal`) live in the package itself:
 
 | Language | `iam-floyd`                                                           | `cdk-iam-floyd`                                                             |
 | -------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -281,6 +281,7 @@ new Statement.Sts()
   .forUser('123456789012', 'Alice', 'Bob') // IAM users (same account)
   .forRole('123456789012', 'my-role') // IAM role ARN
   .forService('lambda.amazonaws.com') // AWS service
+  .forService(AwsServicePrincipal.ECS_TASKS) // AWS service, by constant
   .forFederatedCognito() // Cognito identity pool
   .forPublic() // Principal: *
   .for('arn:foo:bar'); // Arbitrary ARN
@@ -550,10 +551,13 @@ in every language.
 | `new Operator().stringEquals()` | `Operator().string_equals()`   | `new Operator().stringEquals()` | `new Operator().StringEquals()` | `iamfloyd.NewOperator().StringEquals()` |
 | `JSON.stringify(policy)`        | `json.dumps(policy.to_json())` | `Json.stringify(policy)`        | `Json.Stringify(policy)`        | `json.Marshal(policy)`                  |
 
-- **Static properties** like `Operator.stringEquals` and
-  `AwsManagedPolicy.ReadOnlyAccess` are constants in the native `iam-floyd`
+- **Static properties** like `Operator.stringEquals`,
+  `AwsManagedPolicy.ReadOnlyAccess` and `AwsServicePrincipal.LAMBDA` are constants in the native `iam-floyd`
   packages (`Operator.STRING_EQUALS`, in Go `iamfloyd.Operator_STRING_EQUALS`) and
-  methods of the same name in the jsii packages of `cdk-iam-floyd`.
+  methods of the same name in the jsii packages of `cdk-iam-floyd`, except
+  `AwsServicePrincipal`, which has constants there too (in Go functions:
+  `cdkiamfloyd.AwsServicePrincipal_LAMBDA()`). In Python, `lambda` is a keyword:
+  `AwsServicePrincipal.LAMBDA_` in both packages.
   `new Operator().stringEquals()` works everywhere.
 - **Go** has no optional arguments and works with pointers: every optional argument
   must be passed, as `nil` if not needed
