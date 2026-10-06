@@ -200,7 +200,7 @@
       ],
       "Condition": {
         "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
         }
       }
     },
@@ -236,7 +236,7 @@
       ],
       "Condition": {
         "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
         }
       }
     },
@@ -273,7 +273,7 @@
       ],
       "Condition": {
         "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
         }
       }
     },

@@ -738,6 +738,62 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "TransactionSearchXRayPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "xray:GetTraceSegmentDestination",
+        "xray:UpdateTraceSegmentDestination"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "TransactionSearchLogGroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/application-signals/data:*",
+        "arn:aws:logs:*:*:log-group:aws/spans:*"
+      ]
+    },
+    {
+      "Sid": "TransactionSearchApplicationSignalsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "application-signals:StartDiscovery"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCreateServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals",
+      "Condition": {
+        "StringLike": {
+          "aws:CalledViaLast": "application-signals.cloudwatch.amazonaws.com",
+          "iam:AWSServiceName": "application-signals.cloudwatch.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsGetRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
     }
   ]
 }
