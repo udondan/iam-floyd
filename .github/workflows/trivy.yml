@@ -1,0 +1,66 @@
+---
+name: Trivy
+
+permissions:
+  contents: read
+
+# Scans the dependencies for vulnerabilities, and the code for secrets and misconfigurations. The
+# results of main are the baseline for the alerts of a pull request in code scanning.
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  trivy:
+    name: Trivy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write # upload the results to code scanning
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # package-lock.json is not committed, and Trivy finds the npm dependencies only in the lockfile
+      - name: Write package-lock.json
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Scan
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          version: v0.75.0
+          scan-type: fs
+          trivy-config: trivy.yaml
+          format: sarif
+          output: trivy-results.sarif
+
+      # Pull requests from forks can't write security events
+      - name: Upload to code scanning
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          sarif_file: trivy-results.sarif
+          category: trivy
+
+      # Fails on vulnerabilities, secrets and misconfigurations that are high or critical. Uses the
+      # Trivy and the database of the scan before.
+      - name: Check
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          skip-setup-trivy: true
+          scan-type: fs
+          trivy-config: trivy.yaml
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: 1
