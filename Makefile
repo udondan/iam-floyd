@@ -42,6 +42,13 @@ index-managed-policies:
 	@npm run index-managed-policies
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
+# Checks the service principals with IAM, needs AWS credentials. Run after index-managed-policies,
+# which updates the managed policies the principals are collected from
+index-service-principals:
+	@echo -e "$(TARGET_COLOR)Running index-service-principals$(NO_COLOR)"
+	@npm run index-service-principals
+	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
+
 package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@npm pack

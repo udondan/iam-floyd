@@ -82,7 +82,7 @@ Install ``iam-floyd``, or ``cdk-iam-floyd`` for the AWS CDK, as described in :do
              // the statement providers, e.g. statement.NewEc2
              "udondan.github.io/iam-floyd/go/iamfloyd/statement"
 
-             // Operator, AwsManagedPolicy and String, Strings, Number, Bool
+             // Operator, AwsManagedPolicy, AwsServicePrincipal and String, Strings, Number, Bool
              "udondan.github.io/iam-floyd/go/iamfloyd"
 
              // Collection
@@ -290,9 +290,9 @@ Differences Between the Variants
    * - ARN defaults
      - ``aws``, ``*`` and ``*`` for partition, region and account
      - References to the partition, region and account of the stack
-   * - Static properties of ``Operator`` and ``AwsManagedPolicy``
+   * - Static properties of ``Operator``, ``AwsManagedPolicy`` and ``AwsServicePrincipal``
      - Constants: ``Operator.STRING_EQUALS``, ``AwsManagedPolicy.READ_ONLY_ACCESS``, in Go ``iamfloyd.Operator_STRING_EQUALS``, ``iamfloyd.AwsManagedPolicy_READ_ONLY_ACCESS``
-     - In TypeScript static properties, in the other languages methods of the same name, see :doc:`operators` and :doc:`aws-managed-policies`
+     - In TypeScript static properties, in the other languages methods of the same name, see :doc:`operators` and :doc:`aws-managed-policies`. ``AwsServicePrincipal`` has constants like in ``iam-floyd``, in Go functions: ``cdkiamfloyd.AwsServicePrincipal_LAMBDA()``
    * - ``AwsManagedPolicy``
      - The names of the policies
      - The names of the policies, and methods that create an ``iam.IManagedPolicy``

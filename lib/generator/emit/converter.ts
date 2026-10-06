@@ -1,14 +1,20 @@
 import * as fs from 'fs';
 
 import { ServiceModel } from '../model';
+import {
+  readPrincipals,
+  servicePrincipalConstantName,
+} from '../service-principals';
 
 const modelDir = 'lib/generated/model';
 const outFile = 'docs/source/_static/policy-converter/services.json';
 
 /**
- * Writes the index of the policy converter: the service prefixes with their classes and the
- * names of their actions, e.g. `{ "s3": { "S3": ["AbortMultipartUpload", ...] } }`. The method of
- * an action is `to` plus the name with the first letter in upper case.
+ * Writes the index of the policy converter: in `services` the service prefixes with their classes
+ * and the names of their actions, e.g. `{ "s3": { "S3": ["AbortMultipartUpload", ...] } }`, and in
+ * `servicePrincipals` the service principals with the names of their constants in
+ * `AwsServicePrincipal`, without the deprecated ones. The method of an action is `to` plus the name
+ * with the first letter in upper case.
  *
  * When several classes have the same prefix, the class named after the prefix comes first, e.g.
  * `Ses` before `SesV2`.
@@ -25,7 +31,7 @@ export function emitConverterIndex(): void {
         ) as ServiceModel,
     );
 
-  const index: Record<string, Record<string, string[]>> = {};
+  const services: Record<string, Record<string, string[]>> = {};
   const main = (model: ServiceModel) =>
     model.className.toLowerCase() ===
     model.servicePrefix.replace(/-/g, '').toLowerCase()
@@ -48,9 +54,17 @@ export function emitConverterIndex(): void {
       }
       return action.name;
     });
-    index[model.servicePrefix] ??= {};
-    index[model.servicePrefix][model.className] = actions;
+    services[model.servicePrefix] ??= {};
+    services[model.servicePrefix][model.className] = actions;
   }
+
+  const servicePrincipals: Record<string, string> = {};
+  for (const [principal, info] of Object.entries(readPrincipals())) {
+    if (info.deprecated === undefined) {
+      servicePrincipals[principal] = servicePrincipalConstantName(principal);
+    }
+  }
+  const index = { services, servicePrincipals };
 
   fs.mkdirSync(outFile.replace(/\/[^/]+$/, ''), { recursive: true });
   fs.writeFileSync(outFile, `${JSON.stringify(index, null, 2)}\n`);

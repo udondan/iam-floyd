@@ -64,6 +64,7 @@ interface Property {
   docs?: Docs;
   static?: boolean;
   immutable?: boolean;
+  const?: boolean;
   optional?: boolean;
 }
 
@@ -770,6 +771,10 @@ class SharedExtractor {
     };
     if (property.isStatic()) result.static = true;
     if (property.isReadonly()) result.immutable = true;
+    // like the jsii compiler: constants keep their name, e.g. `AwsServicePrincipal.LAMBDA`
+    if (result.static && result.immutable && property.hasInitializer()) {
+      result.const = true;
+    }
     if (property.hasQuestionToken()) result.optional = true;
     return result;
   }

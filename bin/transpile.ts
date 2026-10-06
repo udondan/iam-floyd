@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Writes the generated sources of the native packages: the core transpiled from lib/shared/, the
- * collection, the names of the AWS managed policies, the services emitted from the model and the
+ * collection, the names of the AWS managed policies and service principals, the services emitted from the model and the
  * version of package.json
  */
 import { spawnSync } from 'child_process';
@@ -18,6 +18,7 @@ import {
   coreSourceFiles,
   managedPoliciesSourceFiles,
   isServiceFile,
+  servicePrincipalsSourceFiles,
   TranspileError,
 } from '../lib/generator/transpile';
 import { CSharpTranspiler } from '../lib/generator/transpile/csharp';
@@ -48,6 +49,13 @@ try {
     new PythonTranspiler().transpile(
       managedPoliciesSourceFiles(),
       header('lib/generated/aws-managed-policies/iam-floyd.ts'),
+    ),
+  );
+  fs.writeFileSync(
+    'python/iam_floyd/_aws_service_principals.py',
+    new PythonTranspiler().transpile(
+      servicePrincipalsSourceFiles(),
+      header('lib/generated/aws-service-principals/index.ts'),
     ),
   );
 
@@ -109,6 +117,10 @@ function modules(): [SourceFile[], string][] {
     [
       managedPoliciesSourceFiles(),
       'lib/generated/aws-managed-policies/iam-floyd.ts',
+    ],
+    [
+      servicePrincipalsSourceFiles(),
+      'lib/generated/aws-service-principals/index.ts',
     ],
   ];
 }

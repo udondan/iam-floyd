@@ -118,6 +118,8 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
         -e 's#\*\{0,1\}cdkiamfloyd\.NewCollection()#collection.NewCollection()#'
         -e 's#return \*statements#return statements#')
     fi
+    # the constants are functions in jsii, and strings in the native package
+    rewrite+=(-e 's#cdkiamfloyd\.AwsServicePrincipal_\([A-Z0-9_]*\)()#iamfloyd.String(iamfloyd.AwsServicePrincipal_\1)#g')
     rewrite+=(-e 's#go/cdkiamfloyd#go/iamfloyd#' -e 's#cdkiamfloyd\.#iamfloyd.#g')
     sed "${rewrite[@]}" "${example}" > "${OUT}/example.go"
     # without the props of the statement, some examples no longer use awsiam

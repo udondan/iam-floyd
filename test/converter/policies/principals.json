@@ -14,7 +14,11 @@
           "arn:aws-cn:iam::123456789012:root",
           "123456789012"
         ],
-        "Service": ["lambda.amazonaws.com", "ec2.amazonaws.com"],
+        "Service": [
+          "lambda.amazonaws.com",
+          "ec2.amazonaws.com",
+          "unknown.example.com"
+        ],
         "Federated": [
           "cognito-identity.amazonaws.com",
           "www.amazon.com",

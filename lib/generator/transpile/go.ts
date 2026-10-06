@@ -682,6 +682,8 @@ export class GoTranspiler {
         lines.push('', ...`Returns ${comment}`.split('\n'));
       } else if (tag.getTagName() == 'see') {
         lines.push('', ...`See ${comment}`.split('\n'));
+      } else if (tag.getTagName() == 'deprecated') {
+        lines.push('', ...`Deprecated: ${comment}`.split('\n'));
       } else {
         fail(tag, 'Unsupported JSDoc tag');
       }

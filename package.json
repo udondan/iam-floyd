@@ -6,6 +6,7 @@
     "emit": "npx ts-node bin/emit.ts",
     "cdk-refs": "npx ts-node bin/cdk-refs.ts",
     "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
+    "index-service-principals": "npx ts-node bin/index-service-principals.ts",
     "build": "npx tsc --build --force --verbose tsconfig.main.json tsconfig.types.json"
   },
   "name": "iam-floyd",

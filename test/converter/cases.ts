@@ -18,7 +18,11 @@ import * as vm from 'vm';
 
 import { App, Stack } from 'aws-cdk-lib';
 
-import { ManagedPolicyDocument, Statement } from '../../lib';
+import {
+  AwsServicePrincipal,
+  ManagedPolicyDocument,
+  Statement,
+} from '../../lib';
 
 interface Result {
   imports: string;
@@ -29,7 +33,7 @@ interface Result {
 interface Converter {
   convert(
     policy: unknown,
-    services: unknown,
+    index: unknown,
     language: string,
     variant: string,
   ): Result;
@@ -40,7 +44,7 @@ type Json = Record<string, unknown>;
 const converter = createRequire(__filename)(
   '../../docs/source/_static/js/converter.js',
 ) as Converter;
-const services = JSON.parse(
+const index = JSON.parse(
   fs.readFileSync('docs/source/_static/policy-converter/services.json', 'utf8'),
 ) as unknown;
 const policiesDir = 'test/converter/policies';
@@ -71,17 +75,21 @@ if (!['CDK', 'Standalone'].includes(variant)) {
 }
 const cdk = variant === 'CDK';
 const stack = cdk ? new Stack(new App(), 'Stack') : undefined;
-const context = vm.createContext({ ManagedPolicyDocument, Statement });
+const context = vm.createContext({
+  AwsServicePrincipal,
+  ManagedPolicyDocument,
+  Statement,
+});
 
 /**
  * Converts the policy to JavaScript and returns the policy of the code
  */
 function run(policy: unknown): Json {
-  const result = converter.convert(policy, services, 'JavaScript', variant);
+  const result = converter.convert(policy, index, 'JavaScript', variant);
   if (result.errors.length) {
     throw new Error(result.errors.join(', '));
   }
-  const typescript = converter.convert(policy, services, 'TypeScript', variant);
+  const typescript = converter.convert(policy, index, 'TypeScript', variant);
   if (typescript.code !== result.code) {
     throw new Error('TypeScript and JavaScript differ');
   }
@@ -266,7 +274,7 @@ function writeExample(name: string, policy: Json) {
     `${JSON.stringify(run(policy), null, 2)}\n`,
   );
   for (const [language, [extension, wrap]] of Object.entries(wrappers)) {
-    const result = converter.convert(policy, services, language, variant);
+    const result = converter.convert(policy, index, language, variant);
     fs.writeFileSync(`${dir}/${name}.${extension}`, wrap(name, result));
   }
 }

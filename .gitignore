@@ -5,6 +5,7 @@ examples/*/*.*.result
 lib/generated/index.ts
 lib/generated/model/.cache
 lib/generated/policy-statements
+lib/generated/aws-service-principals/index.ts
 node_modules
 package-lock.json
 test/cdk.out
@@ -22,6 +23,7 @@ lint/target/
 __pycache__/
 /python/LICENSE
 /python/iam_floyd/_aws_managed_policies.py
+/python/iam_floyd/_aws_service_principals.py
 /python/iam_floyd/_collection.py
 /python/iam_floyd/_shared.py
 /python/iam_floyd/_version.py
