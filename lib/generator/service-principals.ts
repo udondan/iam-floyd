@@ -182,7 +182,15 @@ async function fromServiceLinkedRoleDocs(): Promise<Set<string>> {
   });
   const principals = new Set<string>();
   for (const url of [...urls].sort()) {
-    const page = cheerio.load(await requestWithRetry(url));
+    // some links of the table are broken, e.g. a page that AWS moved
+    let html: string;
+    try {
+      html = await requestWithRetry(url);
+    } catch (error) {
+      console.warn(`Skipping ${url}: ${String(error)}`);
+      continue;
+    }
+    const page = cheerio.load(html);
     for (const principal of fromText(
       page('#main-col-body').text() || page('body').text(),
     )) {
