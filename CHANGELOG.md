@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.851.0](https://github.com/udondan/iam-floyd/compare/v0.850.0...v0.851.0) (2026-10-06)
+
+
+### Features
+
+* constants for AWS service principals ([#2326](https://github.com/udondan/iam-floyd/issues/2326)) ([6b2c92d](https://github.com/udondan/iam-floyd/commit/6b2c92dd62a12ac59bd686772d6ad4fbb1b6f527))
+* on*() methods of cdk-iam-floyd take CDK constructs ([#2324](https://github.com/udondan/iam-floyd/issues/2324)) ([dde9410](https://github.com/udondan/iam-floyd/commit/dde9410bffc98c2e926008ae149b87eb157be7a8))
+* policy documents with size limits and splitting ([#2321](https://github.com/udondan/iam-floyd/issues/2321)) ([bec2497](https://github.com/udondan/iam-floyd/commit/bec24978e93d543f1c8277cea5353d49366a06d9))
+* update AWS managed policies and service principals ([#2328](https://github.com/udondan/iam-floyd/issues/2328)) ([4a0483f](https://github.com/udondan/iam-floyd/commit/4a0483fe47e79acbfe275ac4fdb5ec3036e23db6))
+
+
+### Bug Fixes
+
+* numeric type for four condition keys documented as String ([#2319](https://github.com/udondan/iam-floyd/issues/2319)) ([d06d890](https://github.com/udondan/iam-floyd/commit/d06d8909420db3be0a2d40ba76c8f4393f5ad2e6)), closes [#6](https://github.com/udondan/iam-floyd/issues/6)
+
+
+### Dependencies
+
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1146.0 ([#2323](https://github.com/udondan/iam-floyd/issues/2323)) ([6c30ccc](https://github.com/udondan/iam-floyd/commit/6c30cccc187577701a7441ee11cf961f92efb1e4))
+
 ## [0.850.0](https://github.com/udondan/iam-floyd/compare/v0.849.0...v0.850.0) (2026-10-05)
 
 
