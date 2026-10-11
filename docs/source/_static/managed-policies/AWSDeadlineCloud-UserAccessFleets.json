@@ -140,7 +140,8 @@
       "Sid": "ListBasedOnMembership",
       "Effect": "Allow",
       "Action": [
-        "deadline:ListFleets"
+        "deadline:ListFleets",
+        "deadline:ListMemberships"
       ],
       "Resource": [
         "*"

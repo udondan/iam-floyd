@@ -215,6 +215,7 @@
         "deadline:ListFarms",
         "deadline:ListFleets",
         "deadline:ListJobs",
+        "deadline:ListMemberships",
         "deadline:ListQueues"
       ],
       "Resource": [

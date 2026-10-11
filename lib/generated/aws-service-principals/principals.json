@@ -321,6 +321,7 @@
   "rolesanywhere.amazonaws.com": {},
   "route53.amazonaws.com": {},
   "route53domains.amazonaws.com": {},
+  "route53healthchecks.amazonaws.com": {},
   "route53resolver.amazonaws.com": {},
   "rtbfabric.amazonaws.com": {},
   "runtime-identity.bedrock-agentcore.amazonaws.com": {},

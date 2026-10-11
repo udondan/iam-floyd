@@ -184,6 +184,7 @@
       "Effect": "Allow",
       "Action": [
         "deadline:ListJobs",
+        "deadline:ListMemberships",
         "deadline:ListQueues"
       ],
       "Resource": [
