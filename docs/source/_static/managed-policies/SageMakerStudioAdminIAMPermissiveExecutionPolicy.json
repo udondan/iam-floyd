@@ -211,7 +211,8 @@
             "emr-serverless.amazonaws.com",
             "elasticmapreduce.amazonaws.com",
             "airflow-serverless.amazonaws.com",
-            "pods.eks.amazonaws.com"
+            "pods.eks.amazonaws.com",
+            "access-grants.s3.amazonaws.com"
           ]
         }
       }
@@ -687,7 +688,11 @@
       "Sid": "SSOApplicationPermissions",
       "Effect": "Allow",
       "Action": [
+        "identitystore:DescribeUser",
+        "identitystore:DescribeGroup",
         "sso:CreateApplication",
+        "sso:DescribeInstance",
+        "sso:DescribeApplication",
         "sso:PutApplicationGrant",
         "sso:PutApplicationAssignmentConfiguration",
         "sso:PutApplicationAuthenticationMethod",

@@ -149,7 +149,8 @@
       "Sid": "ListBasedOnMembership",
       "Effect": "Allow",
       "Action": [
-        "deadline:ListJobs"
+        "deadline:ListJobs",
+        "deadline:ListMemberships"
       ],
       "Resource": [
         "*"
