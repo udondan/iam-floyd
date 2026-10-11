@@ -13,7 +13,9 @@
       "DisassociateSourceViews",
       "GetResourcePolicy",
       "RedeemCredits",
+      "SplitCredit",
       "TagResource",
+      "TransferCredit",
       "UntagResource",
       "UpdateBillingPreferences",
       "UpdateBillingView",
@@ -30,6 +32,8 @@
       "GetEnterpriseSupportChargeSummary",
       "GetEnterpriseSupportContractDetails",
       "ListBillingViews",
+      "ListCreditEntitlementPeriods",
+      "ListCreditEntitlements",
       "ListTagsForResource",
       "GetBillingData",
       "GetBillingDetails",
@@ -164,6 +168,20 @@
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
     {
+      "name": "ListCreditEntitlementPeriods",
+      "methodName": "toListCreditEntitlementPeriods",
+      "description": "Grants permission to view the measurement periods of a credit entitlement",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListCreditEntitlements",
+      "methodName": "toListCreditEntitlements",
+      "description": "Grants permission to view the credit entitlements the caller's account is set to receive",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
       "name": "ListEnterpriseSupportLinkedAccountCharges",
       "methodName": "toListEnterpriseSupportLinkedAccountCharges",
       "description": "Grants permission to view Enterprise Support charges broken down by linked account",
@@ -192,11 +210,25 @@
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
     {
+      "name": "SplitCredit",
+      "methodName": "toSplitCredit",
+      "description": "Grants permission to split a credit into multiple child credits in the same account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
       "name": "TagResource",
       "methodName": "toTagResource",
       "description": "Grants permission to add tags to a specified billing view",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_TagResource.html"
+    },
+    {
+      "name": "TransferCredit",
+      "methodName": "toTransferCredit",
+      "description": "Grants permission to transfer a credit to another account under the same payer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
     {
       "name": "UntagResource",

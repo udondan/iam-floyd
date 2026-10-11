@@ -123,6 +123,7 @@
       "ListJobs",
       "ListLicenseEndpoints",
       "ListLimits",
+      "ListMemberships",
       "ListMeteredProducts",
       "ListMonitors",
       "ListQueueEnvironments",
@@ -665,6 +666,17 @@
       "description": "Grants permission to list all limits in a farm",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListLimits.html"
+    },
+    {
+      "name": "ListMemberships",
+      "methodName": "toListMemberships",
+      "description": "Grants permission to list Deadline Cloud resource memberships associated with an IAM Identity Center principal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListMemberships.html",
+      "conditionMethods": [
+        "ifPrincipalId",
+        "ifRequesterPrincipalId"
+      ]
     },
     {
       "name": "ListMeteredProducts",
@@ -1840,6 +1852,7 @@
         "toListFarms",
         "toListFleets",
         "toListJobs",
+        "toListMemberships",
         "toListQueues"
       ],
       "relatedResourceTypes": [],
@@ -1938,6 +1951,7 @@
         "toListFarms",
         "toListFleets",
         "toListJobs",
+        "toListMemberships",
         "toListQueues"
       ],
       "relatedResourceTypes": [],
