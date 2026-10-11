@@ -16,6 +16,7 @@
       "BatchUpdateAutomationRules",
       "BatchUpdateFindings",
       "BatchUpdateStandardsControlAssociations",
+      "CancelExportJobV2",
       "ConnectorRegistrationsV2",
       "CreateActionTarget",
       "CreateAggregatorV2",
@@ -56,6 +57,7 @@
       "InviteMembers",
       "StartConfigurationPolicyAssociation",
       "StartConfigurationPolicyDisassociation",
+      "StartExportJobV2",
       "TagResource",
       "UntagResource",
       "UpdateActionTarget",
@@ -93,6 +95,7 @@
       "GetConfigurationPolicyAssociation",
       "GetConnector",
       "GetConnectorV2",
+      "GetExportJobV2",
       "GetFindingAggregator",
       "GetFindingHistory",
       "GetFindings",
@@ -133,6 +136,7 @@
       "ListConnectors",
       "ListConnectorsV2",
       "ListEnabledProductsForImport",
+      "ListExportJobsV2",
       "ListExposuresByRemediationV2",
       "ListFindingAggregators",
       "ListFreeTrialStatusesV2",
@@ -242,6 +246,13 @@
       "description": "Grants permission to update the enablement status of a batch of security controls in standards",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"
+    },
+    {
+      "name": "CancelExportJobV2",
+      "methodName": "toCancelExportJobV2",
+      "description": "Grants permission to cancel an export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CancelExportJobV2.html"
     },
     {
       "name": "ConnectorRegistrationsV2",
@@ -639,6 +650,13 @@
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html"
     },
     {
+      "name": "GetExportJobV2",
+      "methodName": "toGetExportJobV2",
+      "description": "Grants permission to retrieve an export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetExportJobV2.html"
+    },
+    {
       "name": "GetFindingAggregator",
       "methodName": "toGetFindingAggregator",
       "description": "Grants permission to retrieve details for a finding aggregator, which configures finding aggregation across Regions",
@@ -807,6 +825,13 @@
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html"
     },
     {
+      "name": "ListExportJobsV2",
+      "methodName": "toListExportJobsV2",
+      "description": "Grants permission to list export jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListExportJobsV2.html"
+    },
+    {
       "name": "ListExposuresByRemediationV2",
       "methodName": "toListExposuresByRemediationV2",
       "description": "Grants permission to retrieve a list of exposure findings associated with a remediation target",
@@ -882,6 +907,13 @@
       "description": "Grants permission to remove a configuration policy association from a member account or organizational unit in the calling account's organization",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartConfigurationPolicyDisassociation.html"
+    },
+    {
+      "name": "StartExportJobV2",
+      "methodName": "toStartExportJobV2",
+      "description": "Grants permission to start an export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_StartExportJobV2.html"
     },
     {
       "name": "TagResource",
@@ -1552,6 +1584,7 @@
         "toListTagsForResource",
         "toStartConfigurationPolicyAssociation",
         "toStartConfigurationPolicyDisassociation",
+        "toStartExportJobV2",
         "toTagResource",
         "toUntagResource",
         "toUpdateActionTarget",

@@ -17,7 +17,8 @@
       "SendPhoneNumberVerification",
       "StartPrimaryEmailUpdate",
       "VerifyPhoneNumber",
-      "CloseAccount"
+      "CloseAccount",
+      "ReopenAccount"
     ],
     "Read": [
       "GetAccountInformation",
@@ -163,6 +164,13 @@
       "name": "CloseAccount",
       "methodName": "toCloseAccount",
       "description": "Grants permission to close an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html"
+    },
+    {
+      "name": "ReopenAccount",
+      "methodName": "toReopenAccount",
+      "description": "Grants permission to reopen a closed account",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html"
     }

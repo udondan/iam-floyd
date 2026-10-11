@@ -101,10 +101,10 @@ s := statement.NewEc2(nil).
 
 Support for:
 
-- 455 Services
-- 22036 Actions
-- 2329 Resource Types
-- 2497 Condition keys
+- 456 Services
+- 22080 Actions
+- 2331 Resource Types
+- 2500 Condition keys
 
 <!-- /stats -->
 

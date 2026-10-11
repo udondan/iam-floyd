@@ -12,6 +12,7 @@
       "HoldKey",
       "InvokeMcp",
       "KeyPress",
+      "LaunchApplication",
       "LeftClick",
       "LeftClickDrag",
       "LeftMouseDown",
@@ -20,12 +21,14 @@
       "MovePointer",
       "RightClick",
       "Scroll",
+      "ToggleAppSwitcher",
       "TripleClick",
       "TypeText"
     ],
     "Read": [
       "CheckConnectionStatus",
-      "GetScreenshot"
+      "GetScreenshot",
+      "GetSessionInfo"
     ]
   },
   "actions": [
@@ -70,6 +73,16 @@
       ]
     },
     {
+      "name": "GetSessionInfo",
+      "methodName": "toGetSessionInfo",
+      "description": "Grants permission to retrieve information about the current session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
       "name": "HoldKey",
       "methodName": "toHoldKey",
       "description": "Grants permission to hold key down",
@@ -93,6 +106,16 @@
       "name": "KeyPress",
       "methodName": "toKeyPress",
       "description": "Grants permission to press key or key combination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "LaunchApplication",
+      "methodName": "toLaunchApplication",
+      "description": "Grants permission to launch an application on a streaming session",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
       "conditionMethods": [
@@ -180,6 +203,16 @@
       ]
     },
     {
+      "name": "ToggleAppSwitcher",
+      "methodName": "toToggleAppSwitcher",
+      "description": "Grants permission to toggle the application switcher overlay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
       "name": "TripleClick",
       "methodName": "toTripleClick",
       "description": "Grants permission to perform triple click at coordinates",
@@ -212,9 +245,11 @@
         "toCheckConnectionStatus",
         "toDoubleClick",
         "toGetScreenshot",
+        "toGetSessionInfo",
         "toHoldKey",
         "toInvokeMcp",
         "toKeyPress",
+        "toLaunchApplication",
         "toLeftClick",
         "toLeftClickDrag",
         "toLeftMouseDown",
@@ -223,6 +258,7 @@
         "toMovePointer",
         "toRightClick",
         "toScroll",
+        "toToggleAppSwitcher",
         "toTripleClick",
         "toTypeText"
       ],
