@@ -11,8 +11,8 @@
     "@types/aws-lambda": "8.10.164"
   },
   "dependencies": {
-    "@aws-sdk/client-secrets-manager": "3.1147.0",
-    "@aws-sdk/client-sqs": "3.1147.0",
+    "@aws-sdk/client-secrets-manager": "3.1148.0",
+    "@aws-sdk/client-sqs": "3.1148.0",
     "@types/node": "24.19.0",
     "aws-cdk-lib": "2.272.0",
     "constructs": "10.6.0",
