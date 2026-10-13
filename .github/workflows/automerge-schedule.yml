@@ -34,6 +34,9 @@ jobs:
           PR=$(printf '%s' "$PRS" | jq -r '.[0].number // empty')
 
           if [ -n "$PR" ]; then
+            # Auto-merge waits for the branch to be up to date with main, and release-please leaves it
+            # behind when the new commits don't change the release notes.
+            gh pr update-branch "$PR"
             gh pr merge "$PR" --auto --squash --delete-branch
             echo "Auto-merge enabled on PR #$PR"
           else
