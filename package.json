@@ -41,9 +41,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@aws-sdk/client-iam": "3.1148.0",
-    "@aws-sdk/client-s3": "3.1148.0",
-    "@aws-sdk/client-sqs": "3.1148.0",
+    "@aws-sdk/client-iam": "3.1149.0",
+    "@aws-sdk/client-s3": "3.1149.0",
+    "@aws-sdk/client-sqs": "3.1149.0",
     "@eslint/js": "10.0.1",
     "@jsii/spec": "1.141.0",
     "@swc/core": "1.16.13",
