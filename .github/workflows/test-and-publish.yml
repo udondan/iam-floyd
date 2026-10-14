@@ -21,7 +21,9 @@ on:
         required: true
 
 jobs:
-  # Only one run at a time may deploy to the AWS test account.
+  # Only one run at a time may deploy to the AWS test account. All other jobs of a pull request wait
+  # for the turn as well: the waiting runs of all open pull requests would otherwise take the
+  # runners of the account at once, and most of them are tested again after a rebase anyway.
   wait-for-turn:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -50,7 +52,8 @@ jobs:
 
   lint:
     name: Lint
-    if: github.event_name == 'pull_request'
+    needs: wait-for-turn
+    if: needs.wait-for-turn.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -93,6 +96,9 @@ jobs:
   # tested with the oldest and the newest supported version.
   test-transpile:
     name: Test native iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
+    needs: wait-for-turn
+    # A release doesn't wait for the turn, wait-for-turn is skipped then
+    if: ${{ !cancelled() && (github.event_name == 'workflow_dispatch' || needs.wait-for-turn.result == 'success') }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -324,6 +330,9 @@ jobs:
   # the packages are only built, the PR tested them, and the publish jobs publish them.
   test-cdk-iam-floyd-jsii:
     name: ${{ github.event_name == 'workflow_dispatch' && 'Build' || 'Test' }} cdk-iam-floyd in ${{ matrix.language }}
+    needs: wait-for-turn
+    # A release doesn't wait for the turn, wait-for-turn is skipped then
+    if: ${{ !cancelled() && (github.event_name == 'workflow_dispatch' || needs.wait-for-turn.result == 'success') }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
