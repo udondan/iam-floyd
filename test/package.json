@@ -11,7 +11,7 @@
   "devDependencies": {
     "@swc/core": "1.16.18",
     "@swc/helpers": "0.5.23",
-    "@types/node": "20.19.43",
+    "@types/node": "24.19.2",
     "aws-cdk": "2.1145.0",
     "aws-cdk-lib": "2.273.0",
     "constructs": "10.8.1",
