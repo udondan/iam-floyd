@@ -48,7 +48,7 @@
     "@jsii/spec": "1.141.0",
     "@swc/core": "1.16.18",
     "@swc/helpers": "0.5.23",
-    "@types/node": "24.19.0",
+    "@types/node": "24.19.2",
     "aws-cdk-lib": "2.273.0",
     "cheerio": "1.2.0",
     "colors": "1.4.0",
