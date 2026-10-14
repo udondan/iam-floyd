@@ -931,7 +931,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_comprehend",
+        "interface": "IEntityRecognizerEndpointRef",
+        "property": "entityRecognizerEndpointRef",
+        "arn": "entityRecognizerEndpointArn"
+      }
     },
     {
       "name": "events-detection-job",

@@ -2060,7 +2060,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IViewRef",
+        "property": "viewRef",
+        "arn": "viewArn"
+      }
     }
   ],
   "conditions": [

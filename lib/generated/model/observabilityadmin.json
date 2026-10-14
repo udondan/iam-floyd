@@ -421,7 +421,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_observabilityadmin",
+        "interface": "IDatasetIntegrationRef",
+        "property": "datasetIntegrationRef",
+        "arn": "datasetIntegrationArn"
+      }
     },
     {
       "name": "organization-centralization-rule",

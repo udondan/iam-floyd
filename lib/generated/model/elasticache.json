@@ -1004,7 +1004,13 @@
         "ifAwsResourceTag",
         "ifAwsTagKeys",
         "ifKmsKeyId"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_elasticache",
+        "interface": "ISnapshotRef",
+        "property": "snapshotRef",
+        "arn": "snapshotArn"
+      }
     },
     {
       "name": "subnetgroup",

@@ -1547,7 +1547,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_lambda",
+        "interface": "IWebFunctionRef",
+        "property": "webFunctionRef",
+        "arn": "functionArn"
+      }
     },
     {
       "name": "webFunctionEndpoint",

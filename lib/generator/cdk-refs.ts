@@ -261,9 +261,10 @@ export function cdkMinVersion(
 /**
  * Sets `cdkRef` of the resource types in all service models from the installed aws-cdk-lib.
  *
- * When the model uses reference interfaces it did not use before, the minimum version of
- * aws-cdk-lib becomes the installed version, so the CDK variant does not require a newer
- * aws-cdk-lib on every update of the dependency.
+ * When the model uses reference interfaces it did not use before, or other fields of a reference
+ * than before (aws-cdk-lib changed the reference), the minimum version of aws-cdk-lib becomes the
+ * installed version, so the CDK variant does not require a newer aws-cdk-lib on every update of
+ * the dependency.
  */
 export function updateCdkRefs(): void {
   const modules = readReferences();
@@ -272,8 +273,25 @@ export function updateCdkRefs(): void {
     model: JSON.parse(fs.readFileSync(file, 'utf8')) as ServiceModel,
   }));
   const unmatched: string[] = [];
+  const changed: string[] = [];
   for (const { file, model } of models) {
+    const before = new Map(
+      model.resources.map((resource) => [
+        resource.name,
+        JSON.stringify(resource.cdkRef),
+      ]),
+    );
     addCdkRefs(model, modules, unmatched);
+    for (const resource of model.resources) {
+      const previousRef = before.get(resource.name);
+      if (
+        resource.cdkRef &&
+        previousRef !== undefined &&
+        previousRef != JSON.stringify(resource.cdkRef)
+      ) {
+        changed.push(`${model.servicePrefix}:${resource.name}`);
+      }
+    }
     fs.writeFileSync(file, `${JSON.stringify(model, null, 2)}\n`);
   }
 
@@ -288,7 +306,7 @@ export function updateCdkRefs(): void {
     (iface) => !previous?.interfaces.includes(iface),
   );
   const version: CdkVersion =
-    added.length || !previous?.constructs
+    added.length || changed.length || !previous?.constructs
       ? {
           'aws-cdk-lib': installed.version,
           constructs: installed.peerDependencies.constructs.replace(/^\^/, ''),

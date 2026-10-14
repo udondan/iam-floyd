@@ -1098,7 +1098,7 @@
         "module": "aws_config",
         "interface": "IOrganizationConfigRuleRef",
         "property": "organizationConfigRuleRef",
-        "id": "organizationConfigRuleId"
+        "arn": "organizationConfigRuleArn"
       }
     },
     {

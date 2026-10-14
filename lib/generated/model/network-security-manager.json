@@ -425,7 +425,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networksecuritymanager",
+        "interface": "IDeploymentRef",
+        "property": "deploymentRef",
+        "arn": "deploymentArn"
+      }
     },
     {
       "name": "deployment-snapshot",
@@ -559,7 +565,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networksecuritymanager",
+        "interface": "IRuleRef",
+        "property": "ruleRef",
+        "arn": "ruleArn"
+      }
     },
     {
       "name": "rule-snapshot",
@@ -626,7 +638,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networksecuritymanager",
+        "interface": "IScopeRef",
+        "property": "scopeRef",
+        "arn": "scopeArn"
+      }
     },
     {
       "name": "scope-snapshot",
@@ -693,7 +711,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networksecuritymanager",
+        "interface": "ITemplateRef",
+        "property": "templateRef",
+        "arn": "templateArn"
+      }
     },
     {
       "name": "template-snapshot",
