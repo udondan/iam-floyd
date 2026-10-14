@@ -238,7 +238,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_translate",
+        "interface": "ITerminologyRef",
+        "property": "terminologyRef",
+        "arn": "terminologyArn"
+      }
     }
   ],
   "conditions": [

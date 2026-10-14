@@ -884,7 +884,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appstream",
+        "interface": "IFleetRef",
+        "property": "fleetRef",
+        "arn": "fleetArn"
+      }
     },
     {
       "name": "image",
