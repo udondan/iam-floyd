@@ -39,7 +39,9 @@ jobs:
       group: test-wait-${{ github.head_ref || github.ref }}
       cancel-in-progress: true
     steps:
-      # Queue order: manual PRs and releases first, then Renovate updates.
+      # Queue order: manual PRs first, then Renovate updates, releases last.
+      # The release PR isn't auto-merged, so it doesn't take the turn from
+      # Renovate PRs that are about to be tested after a merge.
       # Fails right away if the branch is behind main. Branch protection
       # requires PRs to be up to date, so testing an outdated branch is wasted
       # time: it has to be updated and tested again.
@@ -48,6 +50,7 @@ jobs:
         with:
           require-up-to-date: true
           label-weights: |
+            autorelease: pending=-10
             renovate=-5
 
   lint:
