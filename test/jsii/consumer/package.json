@@ -49,7 +49,7 @@
     "aws-cdk-lib": "2.273.0",
     "cdk-iam-floyd": "0.0.0",
     "constructs": "10.8.1",
-    "jsii": "6.0.17",
+    "jsii": "6.0.18",
     "jsii-pacmak": "1.141.0"
   }
 }
