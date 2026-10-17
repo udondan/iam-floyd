@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mediaconnect:ListBridges",
+        "mediaconnect:ListEntitlements",
+        "mediaconnect:ListFlows",
+        "mediaconnect:ListGatewayInstances",
+        "mediaconnect:ListGateways",
+        "mediaconnect:ListOfferings",
+        "mediaconnect:ListReservations",
+        "mediaconnect:DescribeBridge",
+        "mediaconnect:DescribeFlow",
+        "mediaconnect:DescribeFlowSourceMetadata",
+        "mediaconnect:DescribeFlowSourceThumbnail",
+        "mediaconnect:DescribeGateway",
+        "mediaconnect:DescribeGatewayInstance",
+        "mediaconnect:DescribeOffering",
+        "mediaconnect:DescribeReservation",
+        "mediaconnect:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

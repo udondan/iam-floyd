@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "sid1",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/Q"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "sid2",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ListGroupMembershipsForMember"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

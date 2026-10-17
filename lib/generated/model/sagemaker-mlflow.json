@@ -1,0 +1,616 @@
+{
+  "schemaVersion": 1,
+  "filename": "sagemaker-mlflow",
+  "className": "SagemakerMlflow",
+  "name": "sagemaker-mlflow",
+  "servicePrefix": "sagemaker-mlflow",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker-mlflow.html",
+  "accessLevelList": {
+    "Read": [
+      "AccessUI",
+      "GetDownloadURIForModelVersionArtifacts",
+      "GetExperiment",
+      "GetExperimentByName",
+      "GetLoggedModel",
+      "GetMetricHistory",
+      "GetModelVersion",
+      "GetModelVersionByAlias",
+      "GetRegisteredModel",
+      "GetRun",
+      "GetTraceInfo",
+      "SearchExperiments",
+      "SearchLoggedModels",
+      "SearchModelVersions",
+      "SearchRegisteredModels",
+      "SearchRuns",
+      "SearchTraces"
+    ],
+    "Write": [
+      "CreateExperiment",
+      "CreateModelVersion",
+      "CreateRegisteredModel",
+      "CreateRun",
+      "DeleteExperiment",
+      "DeleteLoggedModel",
+      "DeleteLoggedModelTag",
+      "DeleteModelVersion",
+      "DeleteModelVersionTag",
+      "DeleteRegisteredModel",
+      "DeleteRegisteredModelAlias",
+      "DeleteRegisteredModelTag",
+      "DeleteRun",
+      "DeleteTag",
+      "DeleteTraceTag",
+      "DeleteTraces",
+      "EndTrace",
+      "FinalizeLoggedModel",
+      "LogBatch",
+      "LogInputs",
+      "LogLoggedModelParams",
+      "LogMetric",
+      "LogModel",
+      "LogOutputs",
+      "LogParam",
+      "RenameRegisteredModel",
+      "RestoreExperiment",
+      "RestoreRun",
+      "SetExperimentTag",
+      "SetLoggedModelTags",
+      "SetModelVersionTag",
+      "SetRegisteredModelAlias",
+      "SetRegisteredModelTag",
+      "SetTag",
+      "SetTraceTag",
+      "StartTrace",
+      "TransitionModelVersionStage",
+      "UpdateExperiment",
+      "UpdateModelVersion",
+      "UpdateRegisteredModel",
+      "UpdateRun"
+    ],
+    "List": [
+      "GetLatestModelVersions",
+      "ListArtifacts",
+      "ListLoggedModelArtifacts"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AccessUI",
+      "methodName": "toAccessUI",
+      "description": "Grants permission to access the MLflow UI",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "CreateExperiment",
+      "methodName": "toCreateExperiment",
+      "description": "Grants permission to create an MLflow experiment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateModelVersion",
+      "methodName": "toCreateModelVersion",
+      "description": "Grants permission to create a new model version",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateRegisteredModel",
+      "methodName": "toCreateRegisteredModel",
+      "description": "Grants permission to create a registered model",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateRun",
+      "methodName": "toCreateRun",
+      "description": "Grants permission to create a new run within an experiment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteExperiment",
+      "methodName": "toDeleteExperiment",
+      "description": "Grants permission to mark an MLflow experiment for deletion",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteLoggedModel",
+      "methodName": "toDeleteLoggedModel",
+      "description": "Grants permission to delete a logged model in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteLoggedModelTag",
+      "methodName": "toDeleteLoggedModelTag",
+      "description": "Grants permission to delete a tag for a logged model in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteModelVersion",
+      "methodName": "toDeleteModelVersion",
+      "description": "Grants permission to delete a model version",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteModelVersionTag",
+      "methodName": "toDeleteModelVersionTag",
+      "description": "Grants permission to delete a model version tag",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteRegisteredModel",
+      "methodName": "toDeleteRegisteredModel",
+      "description": "Grants permission to delete a registered model",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteRegisteredModelAlias",
+      "methodName": "toDeleteRegisteredModelAlias",
+      "description": "Grants permission to delete a registered model alias",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteRegisteredModelTag",
+      "methodName": "toDeleteRegisteredModelTag",
+      "description": "Grants permission to delete a registered model tag",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteRun",
+      "methodName": "toDeleteRun",
+      "description": "Grants permission to mark a run for deletion",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteTag",
+      "methodName": "toDeleteTag",
+      "description": "Grants permission to delete a tag on a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteTraceTag",
+      "methodName": "toDeleteTraceTag",
+      "description": "Grants permission to delete a trace tag in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteTraces",
+      "methodName": "toDeleteTraces",
+      "description": "Grants permission to delete traces in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "EndTrace",
+      "methodName": "toEndTrace",
+      "description": "Grants permission to end a trace in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "FinalizeLoggedModel",
+      "methodName": "toFinalizeLoggedModel",
+      "description": "Grants permission to set status for a logged model in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetDownloadURIForModelVersionArtifacts",
+      "methodName": "toGetDownloadURIForModelVersionArtifacts",
+      "description": "Grants permission to get a URI to download model artifacts for a specific model version",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetExperiment",
+      "methodName": "toGetExperiment",
+      "description": "Grants permission to get metadata for an MLflow experiment",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetExperimentByName",
+      "methodName": "toGetExperimentByName",
+      "description": "Grants permission to get metadata for an MLflow experiment by name",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetLatestModelVersions",
+      "methodName": "toGetLatestModelVersions",
+      "description": "Grants permission to get the latest model versions",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "GetLoggedModel",
+      "methodName": "toGetLoggedModel",
+      "description": "Grants permission to get a logged model in MLflow",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetMetricHistory",
+      "methodName": "toGetMetricHistory",
+      "description": "Grants permission to get a list of all values for the specified metric for a given run",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetModelVersion",
+      "methodName": "toGetModelVersion",
+      "description": "Grants permission to get a model version by model name and version",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetModelVersionByAlias",
+      "methodName": "toGetModelVersionByAlias",
+      "description": "Grants permission to get model version by alias in MLflow",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetRegisteredModel",
+      "methodName": "toGetRegisteredModel",
+      "description": "Grants permission to get a registered model",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetRun",
+      "methodName": "toGetRun",
+      "description": "Grants permission to get metadata, metrics, parameters, and tags for a run",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetTraceInfo",
+      "methodName": "toGetTraceInfo",
+      "description": "Grants permission to get information about a trace in MLflow",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListArtifacts",
+      "methodName": "toListArtifacts",
+      "description": "Grants permission to list artifacts for a run",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListLoggedModelArtifacts",
+      "methodName": "toListLoggedModelArtifacts",
+      "description": "Grants permission to list artifacts for a logged model in MLflow",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "LogBatch",
+      "methodName": "toLogBatch",
+      "description": "Grants permission to log a batch of metrics, parameters, and tags for a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "LogInputs",
+      "methodName": "toLogInputs",
+      "description": "Grants permission to log inputs for a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "LogLoggedModelParams",
+      "methodName": "toLogLoggedModelParams",
+      "description": "Grants permission to log params for a logged model in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "LogMetric",
+      "methodName": "toLogMetric",
+      "description": "Grants permission to log a metric for a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "LogModel",
+      "methodName": "toLogModel",
+      "description": "Grants permission to log the model associated with a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "LogOutputs",
+      "methodName": "toLogOutputs",
+      "description": "Grants permission to log outputs, such as models, for a run in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "LogParam",
+      "methodName": "toLogParam",
+      "description": "Grants permission to log a parameter tracked during a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RenameRegisteredModel",
+      "methodName": "toRenameRegisteredModel",
+      "description": "Grants permission to rename a registered model",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RestoreExperiment",
+      "methodName": "toRestoreExperiment",
+      "description": "Grants permission to restore an experiment marked for deletion",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RestoreRun",
+      "methodName": "toRestoreRun",
+      "description": "Grants permission to restore a deleted run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SearchExperiments",
+      "methodName": "toSearchExperiments",
+      "description": "Grants permission to search for MLflow experiments",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SearchLoggedModels",
+      "methodName": "toSearchLoggedModels",
+      "description": "Grants permission to search for logged models in MLflow",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SearchModelVersions",
+      "methodName": "toSearchModelVersions",
+      "description": "Grants permission to search for a model version",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SearchRegisteredModels",
+      "methodName": "toSearchRegisteredModels",
+      "description": "Grants permission to search for registered models in MLflow",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SearchRuns",
+      "methodName": "toSearchRuns",
+      "description": "Grants permission to search for runs that satisfy expressions",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SearchTraces",
+      "methodName": "toSearchTraces",
+      "description": "Grants permission to search for traces in MLflow",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SetExperimentTag",
+      "methodName": "toSetExperimentTag",
+      "description": "Grants permission to set a tag on an experiment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SetLoggedModelTags",
+      "methodName": "toSetLoggedModelTags",
+      "description": "Grants permission to set tags for a logged model in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SetModelVersionTag",
+      "methodName": "toSetModelVersionTag",
+      "description": "Grants permission to set a tag for the model version",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SetRegisteredModelAlias",
+      "methodName": "toSetRegisteredModelAlias",
+      "description": "Grants permission to set a registered model alias",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SetRegisteredModelTag",
+      "methodName": "toSetRegisteredModelTag",
+      "description": "Grants permission to set a tag for a registered model",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SetTag",
+      "methodName": "toSetTag",
+      "description": "Grants permission to set a tag on a run",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SetTraceTag",
+      "methodName": "toSetTraceTag",
+      "description": "Grants permission to set a trace tag in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartTrace",
+      "methodName": "toStartTrace",
+      "description": "Grants permission to start a trace in MLflow",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "TransitionModelVersionStage",
+      "methodName": "toTransitionModelVersionStage",
+      "description": "Grants permission to transition a model version to a particular stage",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateExperiment",
+      "methodName": "toUpdateExperiment",
+      "description": "Grants permission to update the metadata for an MLflow experiment",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateModelVersion",
+      "methodName": "toUpdateModelVersion",
+      "description": "Grants permission to update the model version",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateRegisteredModel",
+      "methodName": "toUpdateRegisteredModel",
+      "description": "Grants permission to update a registered model",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateRun",
+      "methodName": "toUpdateRun",
+      "description": "Grants permission to update run metadata",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "mlflow-tracking-server",
+      "methodName": "onMlflowTrackingServer",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowTrackingServer.html",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:mlflow-tracking-server/${MlflowTrackingServerName}",
+      "placeholders": [
+        {
+          "placeholder": "MlflowTrackingServerName",
+          "name": "mlflowTrackingServerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys",
+      "relatedActionMethods": [
+        "toCreateExperiment",
+        "toCreateModelVersion",
+        "toCreateRegisteredModel",
+        "toCreateRun",
+        "toDeleteExperiment",
+        "toDeleteLoggedModel",
+        "toDeleteLoggedModelTag",
+        "toDeleteModelVersion",
+        "toDeleteModelVersionTag",
+        "toDeleteRegisteredModel",
+        "toDeleteRegisteredModelAlias",
+        "toDeleteRegisteredModelTag",
+        "toDeleteRun",
+        "toDeleteTag",
+        "toDeleteTraceTag",
+        "toDeleteTraces",
+        "toEndTrace",
+        "toFinalizeLoggedModel",
+        "toGetDownloadURIForModelVersionArtifacts",
+        "toGetExperiment",
+        "toGetExperimentByName",
+        "toGetLatestModelVersions",
+        "toGetLoggedModel",
+        "toGetMetricHistory",
+        "toGetModelVersion",
+        "toGetModelVersionByAlias",
+        "toGetRegisteredModel",
+        "toGetRun",
+        "toGetTraceInfo",
+        "toListArtifacts",
+        "toListLoggedModelArtifacts",
+        "toLogBatch",
+        "toLogInputs",
+        "toLogLoggedModelParams",
+        "toLogMetric",
+        "toLogModel",
+        "toLogOutputs",
+        "toLogParam",
+        "toRenameRegisteredModel",
+        "toRestoreExperiment",
+        "toRestoreRun",
+        "toSearchExperiments",
+        "toSearchLoggedModels",
+        "toSearchModelVersions",
+        "toSearchRegisteredModels",
+        "toSearchRuns",
+        "toSearchTraces",
+        "toSetExperimentTag",
+        "toSetLoggedModelTags",
+        "toSetModelVersionTag",
+        "toSetRegisteredModelAlias",
+        "toSetRegisteredModelTag",
+        "toSetTag",
+        "toSetTraceTag",
+        "toStartTrace",
+        "toTransitionModelVersionStage",
+        "toUpdateExperiment",
+        "toUpdateModelVersion",
+        "toUpdateRegisteredModel",
+        "toUpdateRun"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

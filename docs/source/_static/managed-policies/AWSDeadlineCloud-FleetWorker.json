@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RunTasksPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssumeFleetRoleForWorker",
+        "deadline:UpdateWorker",
+        "deadline:UpdateWorkerSchedule",
+        "deadline:BatchGetJobEntity",
+        "deadline:AssumeQueueRoleForWorker"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    }
+  ]
+}

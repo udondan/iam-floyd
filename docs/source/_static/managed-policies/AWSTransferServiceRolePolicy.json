@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TransferSecretsManagerBatchAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:BatchGetSecretValue",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TransferSecretsManagerReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:transfer!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "transfer",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TransferSecretsManagerDeleteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DeleteSecret"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:transfer!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "transfer",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Bool": {
+          "secretsmanager:ForceDeleteWithoutRecovery": false
+        }
+      }
+    }
+  ]
+}

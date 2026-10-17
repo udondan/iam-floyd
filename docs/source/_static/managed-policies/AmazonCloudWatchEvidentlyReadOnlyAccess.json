@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "evidently:GetExperiment",
+        "evidently:GetFeature",
+        "evidently:GetLaunch",
+        "evidently:GetProject",
+        "evidently:ListExperiments",
+        "evidently:ListFeatures",
+        "evidently:ListLaunches",
+        "evidently:ListProjects"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

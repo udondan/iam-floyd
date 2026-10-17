@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "filename": "acm",
+  "className": "Acm",
+  "name": "acm",
+  "servicePrefix": "acm",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_acm.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTagsToCertificate",
+      "RemoveTagsFromCertificate",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Write": [
+      "AddTagsToCertificate",
+      "CreateAcmeDomainValidation",
+      "CreateAcmeEndpoint",
+      "CreateAcmeExternalAccountBinding",
+      "DeleteAcmeDomainValidation",
+      "DeleteAcmeEndpoint",
+      "DeleteAcmeExternalAccountBinding",
+      "DeleteCertificate",
+      "ImportCertificate",
+      "PutAccountConfiguration",
+      "RemoveTagsFromCertificate",
+      "RenewCertificate",
+      "RequestCertificate",
+      "ResendValidationEmail",
+      "RevokeAcmeAccount",
+      "RevokeAcmeExternalAccountBinding",
+      "RevokeCertificate",
+      "TagResource",
+      "UntagResource",
+      "UpdateAcmeDomainValidation",
+      "UpdateAcmeEndpoint",
+      "UpdateCertificate",
+      "UpdateCertificateOptions"
+    ],
+    "Read": [
+      "DescribeAcmeAccount",
+      "DescribeAcmeDomainValidation",
+      "DescribeAcmeEndpoint",
+      "DescribeAcmeExternalAccountBinding",
+      "DescribeCertificate",
+      "ExportCertificate",
+      "GetAccountConfiguration",
+      "GetAcmeExternalAccountBindingCredentials",
+      "GetCertificate",
+      "ListTagsForCertificate",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAcmeAccounts",
+      "ListAcmeDomainValidations",
+      "ListAcmeEndpoints",
+      "ListAcmeExternalAccountBindings",
+      "ListCertificateDomainValidations",
+      "ListCertificates",
+      "SearchCertificates"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTagsToCertificate",
+      "methodName": "toAddTagsToCertificate",
+      "description": "Grants permission to add one or more tags to a certificate",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html"
+    },
+    {
+      "name": "CreateAcmeDomainValidation",
+      "methodName": "toCreateAcmeDomainValidation",
+      "description": "Grants permission to create an ACME domain validation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_CreateAcmeDomainValidation.html"
+    },
+    {
+      "name": "CreateAcmeEndpoint",
+      "methodName": "toCreateAcmeEndpoint",
+      "description": "Grants permission to create an ACME endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_CreateAcmeEndpoint.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAcmeExternalAccountBinding",
+      "methodName": "toCreateAcmeExternalAccountBinding",
+      "description": "Grants permission to create an ACME external account binding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_CreateAcmeExternalAccountBinding.html"
+    },
+    {
+      "name": "DeleteAcmeDomainValidation",
+      "methodName": "toDeleteAcmeDomainValidation",
+      "description": "Grants permission to delete an ACME domain validation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteAcmeDomainValidation.html"
+    },
+    {
+      "name": "DeleteAcmeEndpoint",
+      "methodName": "toDeleteAcmeEndpoint",
+      "description": "Grants permission to delete an ACME endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteAcmeEndpoint.html"
+    },
+    {
+      "name": "DeleteAcmeExternalAccountBinding",
+      "methodName": "toDeleteAcmeExternalAccountBinding",
+      "description": "Grants permission to delete an ACME external account binding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteAcmeExternalAccountBinding.html"
+    },
+    {
+      "name": "DeleteCertificate",
+      "methodName": "toDeleteCertificate",
+      "description": "Grants permission to delete a certificate and its associated private key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html"
+    },
+    {
+      "name": "DescribeAcmeAccount",
+      "methodName": "toDescribeAcmeAccount",
+      "description": "Grants permission to retrieve details of an ACME account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeAcmeAccount.html"
+    },
+    {
+      "name": "DescribeAcmeDomainValidation",
+      "methodName": "toDescribeAcmeDomainValidation",
+      "description": "Grants permission to retrieve details of an ACME domain validation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeAcmeDomainValidation.html"
+    },
+    {
+      "name": "DescribeAcmeEndpoint",
+      "methodName": "toDescribeAcmeEndpoint",
+      "description": "Grants permission to retrieve details of an ACME endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeAcmeEndpoint.html"
+    },
+    {
+      "name": "DescribeAcmeExternalAccountBinding",
+      "methodName": "toDescribeAcmeExternalAccountBinding",
+      "description": "Grants permission to retrieve details of an ACME external account binding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeAcmeExternalAccountBinding.html"
+    },
+    {
+      "name": "DescribeCertificate",
+      "methodName": "toDescribeCertificate",
+      "description": "Grants permission to retreive a certificates and its metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html"
+    },
+    {
+      "name": "ExportCertificate",
+      "methodName": "toExportCertificate",
+      "description": "Grants permission to export an exportable certificate for use anywhere",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ExportCertificate.html"
+    },
+    {
+      "name": "GetAccountConfiguration",
+      "methodName": "toGetAccountConfiguration",
+      "description": "Grants permission to retrieve account level configuration from AWS Certificate Manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_GetAccountConfiguration.html"
+    },
+    {
+      "name": "GetAcmeExternalAccountBindingCredentials",
+      "methodName": "toGetAcmeExternalAccountBindingCredentials",
+      "description": "Grants permission to retrieve credentials for an ACME external account binding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_GetAcmeExternalAccountBindingCredentials.html"
+    },
+    {
+      "name": "GetCertificate",
+      "methodName": "toGetCertificate",
+      "description": "Grants permission to retrieve a certificate and certificate chain for a certificate ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html"
+    },
+    {
+      "name": "ImportCertificate",
+      "methodName": "toImportCertificate",
+      "description": "Grants permission to import a 3rd party certificate into AWS Certificate Manager (ACM)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html"
+    },
+    {
+      "name": "ListAcmeAccounts",
+      "methodName": "toListAcmeAccounts",
+      "description": "Grants permission to list ACME accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListAcmeAccounts.html"
+    },
+    {
+      "name": "ListAcmeDomainValidations",
+      "methodName": "toListAcmeDomainValidations",
+      "description": "Grants permission to list ACME domain validations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListAcmeDomainValidations.html"
+    },
+    {
+      "name": "ListAcmeEndpoints",
+      "methodName": "toListAcmeEndpoints",
+      "description": "Grants permission to list ACME endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListAcmeEndpoints.html"
+    },
+    {
+      "name": "ListAcmeExternalAccountBindings",
+      "methodName": "toListAcmeExternalAccountBindings",
+      "description": "Grants permission to list ACME external account bindings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListAcmeExternalAccountBindings.html"
+    },
+    {
+      "name": "ListCertificateDomainValidations",
+      "methodName": "toListCertificateDomainValidations",
+      "description": "Grants permission to list domain validation methods for a certificate",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificateDomainValidations.html"
+    },
+    {
+      "name": "ListCertificates",
+      "methodName": "toListCertificates",
+      "description": "Grants permission to retrieve a list of certificates for specific certificate parameters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html"
+    },
+    {
+      "name": "ListTagsForCertificate",
+      "methodName": "toListTagsForCertificate",
+      "description": "Grants permission to lists the tags that have been associated with a certificate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutAccountConfiguration",
+      "methodName": "toPutAccountConfiguration",
+      "description": "Grants permission to update account level configuration in AWS Certificate Manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_PutAccountConfiguration.html"
+    },
+    {
+      "name": "RemoveTagsFromCertificate",
+      "methodName": "toRemoveTagsFromCertificate",
+      "description": "Grants permission to remove one or more tags from a certificate",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html"
+    },
+    {
+      "name": "RenewCertificate",
+      "methodName": "toRenewCertificate",
+      "description": "Grants permission to renew an eligible private certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_RenewCertificate.html"
+    },
+    {
+      "name": "RequestCertificate",
+      "methodName": "toRequestCertificate",
+      "description": "Grants permission to requests a public or private certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html",
+      "conditionMethods": [
+        "ifCertificateAuthority",
+        "ifCertificateKeyPairOrigin",
+        "ifCertificateTransparencyLogging",
+        "ifDomainNames",
+        "ifExport",
+        "ifKeyAlgorithm",
+        "ifValidationMethod",
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "ResendValidationEmail",
+      "methodName": "toResendValidationEmail",
+      "description": "Grants permission to resend an email to request domain ownership validation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html"
+    },
+    {
+      "name": "RevokeAcmeAccount",
+      "methodName": "toRevokeAcmeAccount",
+      "description": "Grants permission to revoke an ACME account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_RevokeAcmeAccount.html"
+    },
+    {
+      "name": "RevokeAcmeExternalAccountBinding",
+      "methodName": "toRevokeAcmeExternalAccountBinding",
+      "description": "Grants permission to revoke an ACME external account binding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_RevokeAcmeExternalAccountBinding.html"
+    },
+    {
+      "name": "RevokeCertificate",
+      "methodName": "toRevokeCertificate",
+      "description": "Grants permission to revoke an exportable certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_RevokeCertificate.html"
+    },
+    {
+      "name": "SearchCertificates",
+      "methodName": "toSearchCertificates",
+      "description": "Grants permission to retrieve a list of certificates matching search criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_SearchCertificates.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAcmeDomainValidation",
+      "methodName": "toUpdateAcmeDomainValidation",
+      "description": "Grants permission to update an ACME domain validation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateAcmeDomainValidation.html"
+    },
+    {
+      "name": "UpdateAcmeEndpoint",
+      "methodName": "toUpdateAcmeEndpoint",
+      "description": "Grants permission to update an ACME endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateAcmeEndpoint.html"
+    },
+    {
+      "name": "UpdateCertificate",
+      "methodName": "toUpdateCertificate",
+      "description": "Grants permission to update a certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificate.html"
+    },
+    {
+      "name": "UpdateCertificateOptions",
+      "methodName": "toUpdateCertificateOptions",
+      "description": "Grants permission to update a certificate configuration. Use this to specify whether to opt in to or out of certificate transparency logging or to update the certificate domain validation method",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificateOptions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "acme-domain-validation",
+      "methodName": "onAcmeDomainValidation",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-acme-domain-validation.html",
+      "arn": "arn:${Partition}:acm:${Region}:${Account}:acme-endpoint/${AcmeEndpointId}/acme-domain-validation/${AcmeDomainValidationId}",
+      "placeholders": [
+        {
+          "placeholder": "AcmeEndpointId",
+          "name": "acmeEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AcmeDomainValidationId",
+          "name": "acmeDomainValidationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "acme-endpoint",
+      "methodName": "onAcmeEndpoint",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-acme-endpoints.html",
+      "arn": "arn:${Partition}:acm:${Region}:${Account}:acme-endpoint/${AcmeEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "AcmeEndpointId",
+          "name": "acmeEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_certificatemanager",
+        "interface": "IAcmeEndpointRef",
+        "property": "acmeEndpointRef",
+        "arn": "acmeEndpointArn"
+      }
+    },
+    {
+      "name": "acme-external-account-binding",
+      "methodName": "onAcmeExternalAccountBinding",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-acme-eab.html",
+      "arn": "arn:${Partition}:acm:${Region}:${Account}:acme-endpoint/${AcmeEndpointId}/acme-external-account-binding/${ExternalAccountBindingId}",
+      "placeholders": [
+        {
+          "placeholder": "AcmeEndpointId",
+          "name": "acmeEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExternalAccountBindingId",
+          "name": "externalAccountBindingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "certificate",
+      "methodName": "onCertificate",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-acm-cert",
+      "arn": "arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}",
+      "placeholders": [
+        {
+          "placeholder": "CertificateId",
+          "name": "certificateId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_certificatemanager",
+        "interface": "ICertificateRef",
+        "property": "certificateRef",
+        "arn": "certificateArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "acm:CertificateAuthority",
+      "methodName": "ifCertificateAuthority",
+      "description": "Filters access by certificateAuthority in the request. Can be used to restrict which Certificate Authorites certificates can be issued from",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toRequestCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CertificateAuthority",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "acm:CertificateKeyPairOrigin",
+      "methodName": "ifCertificateKeyPairOrigin",
+      "description": "Filters access by certificateKeyPairOrigin in the request. Can be used to restrict which certificate provisioning paths are permitted",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toAddTagsToCertificate",
+        "toDeleteCertificate",
+        "toRequestCertificate",
+        "toRevokeCertificate",
+        "toUpdateCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CertificateKeyPairOrigin",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "acm:CertificateTransparencyLogging",
+      "methodName": "ifCertificateTransparencyLogging",
+      "description": "Filters access by certificateTransparencyLogging option in the request. Default 'ENABLED' if no key is present in the request",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toRequestCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CertificateTransparencyLogging",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "acm:DomainNames",
+      "methodName": "ifDomainNames",
+      "description": "Filters access by domainNames in the request. This key can be used to restrict which domains can be in certificate requests",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportCertificate",
+        "toRequestCertificate",
+        "toRevokeCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DomainNames",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "acm:Export",
+      "methodName": "ifExport",
+      "description": "Filters access by the export option in the request. Can be used to restrict creation of certificates that can be exported",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toRequestCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Export",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "acm:KeyAlgorithm",
+      "methodName": "ifKeyAlgorithm",
+      "description": "Filters access by keyAlgorithm in the request",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toRequestCertificate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KeyAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "acm:ValidationMethod",
+      "methodName": "ifValidationMethod",
+      "description": "Filters access by validationMethod in the request. Default 'EMAIL' if no key is present in the request",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toRequestCertificate",
+        "toUpdateCertificateOptions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ValidationMethod",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTagsToCertificate",
+        "toCreateAcmeDomainValidation",
+        "toCreateAcmeEndpoint",
+        "toCreateAcmeExternalAccountBinding",
+        "toImportCertificate",
+        "toRemoveTagsFromCertificate",
+        "toRequestCertificate",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddTagsToCertificate",
+        "toCreateAcmeDomainValidation",
+        "toCreateAcmeExternalAccountBinding",
+        "toDeleteAcmeDomainValidation",
+        "toDeleteAcmeEndpoint",
+        "toDeleteAcmeExternalAccountBinding",
+        "toDeleteCertificate",
+        "toDescribeAcmeAccount",
+        "toDescribeAcmeDomainValidation",
+        "toDescribeAcmeEndpoint",
+        "toDescribeAcmeExternalAccountBinding",
+        "toDescribeCertificate",
+        "toExportCertificate",
+        "toGetAcmeExternalAccountBindingCredentials",
+        "toGetCertificate",
+        "toImportCertificate",
+        "toListAcmeAccounts",
+        "toListAcmeDomainValidations",
+        "toListAcmeExternalAccountBindings",
+        "toListCertificateDomainValidations",
+        "toListTagsForCertificate",
+        "toListTagsForResource",
+        "toRemoveTagsFromCertificate",
+        "toRenewCertificate",
+        "toResendValidationEmail",
+        "toRevokeAcmeAccount",
+        "toRevokeAcmeExternalAccountBinding",
+        "toRevokeCertificate",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAcmeDomainValidation",
+        "toUpdateAcmeEndpoint",
+        "toUpdateCertificate",
+        "toUpdateCertificateOptions"
+      ],
+      "relatedResourceTypes": [
+        "acme-domain-validation",
+        "acme-endpoint",
+        "acme-external-account-binding",
+        "certificate"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTagsToCertificate",
+        "toCreateAcmeDomainValidation",
+        "toCreateAcmeEndpoint",
+        "toCreateAcmeExternalAccountBinding",
+        "toImportCertificate",
+        "toRemoveTagsFromCertificate",
+        "toRequestCertificate",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

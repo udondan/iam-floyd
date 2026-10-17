@@ -1,0 +1,121 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/idt-*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "iot.amazonaws.com",
+            "lambda.amazonaws.com",
+            "greengrass.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "VisualEditor2",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "iot:DeleteCertificate",
+        "lambda:DeleteFunction",
+        "execute-api:Invoke",
+        "iot:UpdateCertificate"
+      ],
+      "Resource": [
+        "arn:aws:execute-api:us-east-1:098862408343:9xpmnvs5h4/prod/POST/metrics",
+        "arn:aws:lambda:*:*:function:idt-*",
+        "arn:aws:iot:*:*:cert/*"
+      ]
+    },
+    {
+      "Sid": "VisualEditor3",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreateThing",
+        "iot:DeleteThing"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:thing/idt-*",
+        "arn:aws:iot:*:*:cert/*"
+      ]
+    },
+    {
+      "Sid": "VisualEditor4",
+      "Effect": "Allow",
+      "Action": [
+        "iot:AttachPolicy",
+        "iot:DetachPolicy",
+        "iot:DeletePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:policy/idt-*",
+        "arn:aws:iot:*:*:cert/*"
+      ]
+    },
+    {
+      "Sid": "VisualEditor5",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreateJob",
+        "iot:DescribeJob",
+        "iot:DescribeJobExecution",
+        "iot:DeleteJob"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:thing/idt-*",
+        "arn:aws:iot:*:*:job/*"
+      ]
+    },
+    {
+      "Sid": "VisualEditor6",
+      "Effect": "Allow",
+      "Action": [
+        "iot:DescribeEndpoint",
+        "greengrass:*",
+        "iam:ListAttachedRolePolicies",
+        "iot:CreatePolicy",
+        "iot:GetThingShadow",
+        "iot:CreateKeysAndCertificate",
+        "iot:ListThings",
+        "iot:UpdateThingShadow",
+        "iot:CreateCertificateFromCsr",
+        "iot-device-tester:SendMetrics",
+        "iot-device-tester:SupportedVersion",
+        "iot-device-tester:LatestIdt",
+        "iot-device-tester:CheckVersion",
+        "iot-device-tester:DownloadTestSuite"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor7",
+      "Effect": "Allow",
+      "Action": [
+        "iot:DetachThingPrincipal",
+        "iot:AttachThingPrincipal"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:thing/idt-*",
+        "arn:aws:iot:*:*:cert/*"
+      ]
+    },
+    {
+      "Sid": "VisualEditor8",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:DeleteObjectVersion",
+        "s3:ListBucketVersions",
+        "s3:CreateBucket",
+        "s3:DeleteObject",
+        "s3:DeleteBucket"
+      ],
+      "Resource": "arn:aws:s3:::idt*"
+    }
+  ]
+}

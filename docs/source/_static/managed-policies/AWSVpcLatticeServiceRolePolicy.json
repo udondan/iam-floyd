@@ -1,0 +1,110 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/VpcLattice"
+        }
+      }
+    },
+    {
+      "Sid": "VpcLatticeDescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VpcLatticeCreateNetworkInterfaceWithTag",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/VpcLatticeManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VpcLatticeCreateNetworkInterfaceWithSubnetAndSecurityGroup",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "VpcLatticeTagNetworkInterfaceActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface"
+        }
+      }
+    },
+    {
+      "Sid": "VpcLatticeMutateNetworkInterfaceActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/VpcLatticeManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VpcLatticeModifyNetworkInterfaceSecurityGroup",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "arn:aws:ec2:*:*:security-group/*"
+    },
+    {
+      "Sid": "VpcLatticeModifyNetworkInterfaceActionsIpAddressActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignIpv6Addresses",
+        "ec2:UnassignIpv6Addresses",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:UnassignPrivateIpAddresses"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/VpcLatticeManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VpcLatticeAssociateHostedZoneToVpc",
+      "Effect": "Allow",
+      "Action": [
+        "route53:AssociateVPCWithHostedZone"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

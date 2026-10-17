@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "filename": "supplychain",
+  "className": "Scn",
+  "name": "scn",
+  "servicePrefix": "scn",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_supplychain.html",
+  "accessLevelList": {
+    "Write": [
+      "AssignAdminPermissionsToUser",
+      "CreateBillOfMaterialsImportJob",
+      "CreateDataIntegrationFlow",
+      "CreateDataLakeDataset",
+      "CreateDataLakeNamespace",
+      "CreateInstance",
+      "CreateSSOApplication",
+      "DeleteDataIntegrationFlow",
+      "DeleteDataLakeDataset",
+      "DeleteDataLakeNamespace",
+      "DeleteInstance",
+      "DeleteSSOApplication",
+      "RemoveAdminPermissionsForUser",
+      "SendDataIntegrationEvent",
+      "TagResource",
+      "UntagResource",
+      "UpdateDataIntegrationFlow",
+      "UpdateDataLakeDataset",
+      "UpdateDataLakeNamespace",
+      "UpdateInstance"
+    ],
+    "Read": [
+      "DescribeInstance",
+      "GetBillOfMaterialsImportJob",
+      "GetDataIntegrationEvent",
+      "GetDataIntegrationFlow",
+      "GetDataIntegrationFlowExecution",
+      "GetDataLakeDataset",
+      "GetDataLakeNamespace",
+      "GetInstance"
+    ],
+    "List": [
+      "ListAdminUsers",
+      "ListDataIntegrationEvents",
+      "ListDataIntegrationFlowExecutions",
+      "ListDataIntegrationFlows",
+      "ListDataLakeDatasets",
+      "ListDataLakeNamespaces",
+      "ListInstances",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssignAdminPermissionsToUser",
+      "methodName": "toAssignAdminPermissionsToUser",
+      "description": "Grants permission to add AWS Supply Chain administrator permission to federated user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "CreateBillOfMaterialsImportJob",
+      "methodName": "toCreateBillOfMaterialsImportJob",
+      "description": "Grants permission to create a BillOfMaterialsImportJob which will import a CSV file of BillOfMaterials records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "CreateDataIntegrationFlow",
+      "methodName": "toCreateDataIntegrationFlow",
+      "description": "Grants permission to create DataIntegrationFlow that can transform from multiple sources to one target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "CreateDataLakeDataset",
+      "methodName": "toCreateDataLakeDataset",
+      "description": "Grants permission to create the data lake dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "CreateDataLakeNamespace",
+      "methodName": "toCreateDataLakeNamespace",
+      "description": "Grants permission to create the data lake namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "CreateInstance",
+      "methodName": "toCreateInstance",
+      "description": "Grants permission to create a new AWS Supply Chain instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "CreateSSOApplication",
+      "methodName": "toCreateSSOApplication",
+      "description": "Grants permission to create IAM Identity Center application for a AWS Supply Chain instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "DeleteDataIntegrationFlow",
+      "methodName": "toDeleteDataIntegrationFlow",
+      "description": "Grants permission to delete the DataIntegrationFlow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "DeleteDataLakeDataset",
+      "methodName": "toDeleteDataLakeDataset",
+      "description": "Grants permission to delete the data lake dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "DeleteDataLakeNamespace",
+      "methodName": "toDeleteDataLakeNamespace",
+      "description": "Grants permission to delete the data lake namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "DeleteInstance",
+      "methodName": "toDeleteInstance",
+      "description": "Grants permission to delete an AWS Supply Chain instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "DeleteSSOApplication",
+      "methodName": "toDeleteSSOApplication",
+      "description": "Grants permission to delete IAM Identity Center application of the AWS Supply Chain instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "DescribeInstance",
+      "methodName": "toDescribeInstance",
+      "description": "Grants permission to view details of an AWS Supply Chain instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetBillOfMaterialsImportJob",
+      "methodName": "toGetBillOfMaterialsImportJob",
+      "description": "Grants permission to view status and details of a BillOfMaterialsImportJob",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetDataIntegrationEvent",
+      "methodName": "toGetDataIntegrationEvent",
+      "description": "Grants permission to get a DataIntegrationEvent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetDataIntegrationFlow",
+      "methodName": "toGetDataIntegrationFlow",
+      "description": "Grants permission to get the DataIntegrationFlow details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetDataIntegrationFlowExecution",
+      "methodName": "toGetDataIntegrationFlowExecution",
+      "description": "Grants permission to get a particular execution of one specified DataIntegrationFlow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetDataLakeDataset",
+      "methodName": "toGetDataLakeDataset",
+      "description": "Grants permission to get the dataset details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetDataLakeNamespace",
+      "methodName": "toGetDataLakeNamespace",
+      "description": "Grants permission to get the namespace details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "GetInstance",
+      "methodName": "toGetInstance",
+      "description": "Grants permission to view details of an AWS Supply Chain instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListAdminUsers",
+      "methodName": "toListAdminUsers",
+      "description": "Grants permission to list AWS Supply Chain administrators of an instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListDataIntegrationEvents",
+      "methodName": "toListDataIntegrationEvents",
+      "description": "Grants permission to list all DataIntegrationEvents under an instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListDataIntegrationFlowExecutions",
+      "methodName": "toListDataIntegrationFlowExecutions",
+      "description": "Grants permission to list all executions of one specified DataIntegrationFlow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListDataIntegrationFlows",
+      "methodName": "toListDataIntegrationFlows",
+      "description": "Grants permission to list all the DataIntegrationFlows in a paginated way",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListDataLakeDatasets",
+      "methodName": "toListDataLakeDatasets",
+      "description": "Grants permission to list the data lake datasets under specific instance or namespace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListDataLakeNamespaces",
+      "methodName": "toListDataLakeNamespaces",
+      "description": "Grants permission to list the data lake namespaces under specific instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListInstances",
+      "methodName": "toListInstances",
+      "description": "Grants permission to view the AWS Supply Chain instances associated with an AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an AWS Supply Chain resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "RemoveAdminPermissionsForUser",
+      "methodName": "toRemoveAdminPermissionsForUser",
+      "description": "Grants permission to remove AWS Supply Chain administrator permission from federated user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "SendDataIntegrationEvent",
+      "methodName": "toSendDataIntegrationEvent",
+      "description": "Grants permission to create a DataIntegrationEvent which will ingest data in real-time",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS Supply Chain resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tag from an AWS Supply Chain resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "UpdateDataIntegrationFlow",
+      "methodName": "toUpdateDataIntegrationFlow",
+      "description": "Grants permission to update the DataIntegrationFlow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "UpdateDataLakeDataset",
+      "methodName": "toUpdateDataLakeDataset",
+      "description": "Grants permission to update the data lake dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "UpdateDataLakeNamespace",
+      "methodName": "toUpdateDataLakeNamespace",
+      "description": "Grants permission to update the data lake namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    },
+    {
+      "name": "UpdateInstance",
+      "methodName": "toUpdateInstance",
+      "description": "Grants permission to update an AWS Supply Chain instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "bill-of-materials-import-job",
+      "methodName": "onBillOfMaterialsImportJob",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html",
+      "arn": "arn:${Partition}:scn:${Region}:${Account}:instance/${InstanceId}/bill-of-materials-import-job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "data-integration-flow",
+      "methodName": "onDataIntegrationFlow",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html",
+      "arn": "arn:${Partition}:scn:${Region}:${Account}:instance/${InstanceId}/data-integration-flows/${FlowName}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FlowName",
+          "name": "flowName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html",
+      "arn": "arn:${Partition}:scn:${Region}:${Account}:instance/${InstanceId}/namespaces/${Namespace}/datasets/${DatasetName}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Namespace",
+          "name": "namespace",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasetName",
+          "name": "datasetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "instance",
+      "methodName": "onInstance",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html",
+      "arn": "arn:${Partition}:scn:${Region}:${Account}:instance/${InstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "namespace",
+      "methodName": "onNamespace",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html",
+      "arn": "arn:${Partition}:scn:${Region}:${Account}:instance/${InstanceId}/namespaces/${Namespace}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Namespace",
+          "name": "namespace",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by using tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataIntegrationFlow",
+        "toCreateDataLakeDataset",
+        "toCreateDataLakeNamespace",
+        "toCreateInstance",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by using tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssignAdminPermissionsToUser",
+        "toCreateBillOfMaterialsImportJob",
+        "toCreateDataIntegrationFlow",
+        "toCreateDataLakeDataset",
+        "toCreateDataLakeNamespace",
+        "toCreateInstance",
+        "toCreateSSOApplication",
+        "toDeleteDataIntegrationFlow",
+        "toDeleteDataLakeDataset",
+        "toDeleteDataLakeNamespace",
+        "toDeleteInstance",
+        "toDeleteSSOApplication",
+        "toDescribeInstance",
+        "toGetDataIntegrationEvent",
+        "toGetDataIntegrationFlow",
+        "toGetDataIntegrationFlowExecution",
+        "toGetDataLakeDataset",
+        "toGetDataLakeNamespace",
+        "toGetInstance",
+        "toListAdminUsers",
+        "toListDataIntegrationEvents",
+        "toListDataIntegrationFlowExecutions",
+        "toListDataIntegrationFlows",
+        "toListDataLakeDatasets",
+        "toListDataLakeNamespaces",
+        "toListInstances",
+        "toListTagsForResource",
+        "toRemoveAdminPermissionsForUser",
+        "toSendDataIntegrationEvent",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDataIntegrationFlow",
+        "toUpdateDataLakeDataset",
+        "toUpdateDataLakeNamespace",
+        "toUpdateInstance"
+      ],
+      "relatedResourceTypes": [
+        "data-integration-flow",
+        "dataset",
+        "instance",
+        "namespace"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by using tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataIntegrationFlow",
+        "toCreateDataLakeDataset",
+        "toCreateDataLakeNamespace",
+        "toCreateInstance",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

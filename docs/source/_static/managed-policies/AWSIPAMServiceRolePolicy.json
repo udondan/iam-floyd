@@ -1,0 +1,82 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IPAMDiscoveryDescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeByoipCidrs",
+        "ec2:DescribeIpv6Pools",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribePublicIpv4Pools",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupRules",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeVpnConnections",
+        "ec2:GetIpamDiscoveredAccounts",
+        "ec2:GetIpamDiscoveredPublicAddresses",
+        "ec2:GetIpamDiscoveredResourceCidrs",
+        "ec2:GetIpamDiscoveredRoutes",
+        "globalaccelerator:ListAccelerators",
+        "globalaccelerator:ListByoipCidrs",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListChildren",
+        "organizations:ListParents",
+        "organizations:DescribeOrganizationalUnit",
+        "cloudfront:ListAnycastIpLists",
+        "cloudfront:ListDistributionsByAnycastIpListId",
+        "cloudfront:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchMetricsPublishActions",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/IPAM"
+        }
+      }
+    },
+    {
+      "Sid": "IPAMAllocationPolicyActions",
+      "Effect": "Allow",
+      "Action": "ec2:AllocateIpamPoolCidr",
+      "Resource": "*"
+    },
+    {
+      "Sid": "PrefixListResolverWriteActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyManagedPrefixList"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Null": {
+          "ec2:Attribute/ExpectedIpamPrefixListResolverTarget": "false"
+        }
+      }
+    },
+    {
+      "Sid": "PrefixListResolverReadActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeManagedPrefixLists",
+        "ec2:GetManagedPrefixListEntries"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "filename": "transform",
+  "className": "Transform",
+  "name": "transform",
+  "servicePrefix": "transform",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_transform.html",
+  "accessLevelList": {
+    "Write": [
+      "AccessTransformProfile",
+      "AssociateConnectorResource",
+      "CreateProfile",
+      "DeleteAgentRuntimeConfiguration",
+      "DeleteConnector",
+      "DeleteProfile",
+      "PutAgentRuntimeConfiguration",
+      "RejectConnector",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccountSettings",
+      "UpdateAgentAccess",
+      "UpdateProfile"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetAgent",
+      "GetAgentRuntimeConfiguration",
+      "GetConnector",
+      "GetWebAppUrl",
+      "ListAgents",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConnectors",
+      "ListProfiles"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AccessTransformProfile",
+      "methodName": "toAccessTransformProfile",
+      "description": "Grants permission to invoke AccessTransformProfile on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "AssociateConnectorResource",
+      "methodName": "toAssociateConnectorResource",
+      "description": "Grants permission to invoke AssociateConnectorResource on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to invoke CreateProfile on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "DeleteAgentRuntimeConfiguration",
+      "methodName": "toDeleteAgentRuntimeConfiguration",
+      "description": "Grants permission to invoke DeleteAgentRuntimeConfiguration on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to invoke DeleteConnector on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to invoke DeleteProfile on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to invoke GetAccountSettings on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetAgent",
+      "methodName": "toGetAgent",
+      "description": "Grants permission to invoke GetAgent on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetAgentRuntimeConfiguration",
+      "methodName": "toGetAgentRuntimeConfiguration",
+      "description": "Grants permission to invoke GetAgentRuntimeConfiguration on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetConnector",
+      "methodName": "toGetConnector",
+      "description": "Grants permission to invoke GetConnector on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetWebAppUrl",
+      "methodName": "toGetWebAppUrl",
+      "description": "Grants permission to invoke GetWebAppUrl on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "ListAgents",
+      "methodName": "toListAgents",
+      "description": "Grants permission to invoke ListAgents on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to invoke ListConnectors on AWS Transform",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to invoke ListProfiles on AWS Transform",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to invoke ListTagsForResource on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "PutAgentRuntimeConfiguration",
+      "methodName": "toPutAgentRuntimeConfiguration",
+      "description": "Grants permission to invoke PutAgentRuntimeConfiguration on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "RejectConnector",
+      "methodName": "toRejectConnector",
+      "description": "Grants permission to invoke RejectConnector on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to invoke TagResource on AWS Transform",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to invoke UntagResource on AWS Transform",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to invoke UpdateAccountSettings on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "UpdateAgentAccess",
+      "methodName": "toUpdateAgentAccess",
+      "description": "Grants permission to invoke UpdateAgentAccess on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to invoke UpdateProfile on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "arn": "arn:${Partition}:transform:${Region}:${Account}:connector/${WorkspaceId}/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "arn": "arn:${Partition}:transform:${Region}:${Account}:profile/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateConnectorResource",
+        "toDeleteConnector",
+        "toGetConnector",
+        "toListConnectors",
+        "toListTagsForResource",
+        "toRejectConnector",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "connector"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

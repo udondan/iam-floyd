@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "firehose:PutRecord",
+        "firehose:PutRecordBatch"
+      ],
+      "Resource": [
+        "arn:aws:firehose:*:*:deliverystream/aws-waf-logs-*"
+      ]
+    },
+    {
+      "Sid": "KMSForFirehoseSSECMK",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "firehose.*.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

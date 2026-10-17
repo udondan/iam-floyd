@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAddresses",
+        "ec2:DescribeCoipPools",
+        "ec2:DescribeInstances",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeClassicLinkInstances",
+        "ec2:DescribeVpcClassicLink",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:GetCoipPoolUsage",
+        "ec2:GetSecurityGroupsForVpc",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:AllocateAddress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:AssociateAddress",
+        "ec2:DisassociateAddress",
+        "ec2:AttachNetworkInterface",
+        "ec2:DetachNetworkInterface",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:AssignIpv6Addresses",
+        "ec2:ReleaseAddress",
+        "ec2:UnassignIpv6Addresses",
+        "ec2:DescribeVpcPeeringConnections",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:AllocateIpamPoolCidr",
+        "logs:CreateLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:UpdateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:ListLogDeliveries",
+        "outposts:GetOutpostInstanceTypes"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

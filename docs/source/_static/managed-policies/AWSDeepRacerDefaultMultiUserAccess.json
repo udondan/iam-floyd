@@ -1,0 +1,58 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "deepracer:Add*",
+        "deepracer:Remove*",
+        "deepracer:Create*",
+        "deepracer:Perform*",
+        "deepracer:Clone*",
+        "deepracer:Get*",
+        "deepracer:List*",
+        "deepracer:Edit*",
+        "deepracer:Start*",
+        "deepracer:Set*",
+        "deepracer:Update*",
+        "deepracer:Delete*",
+        "deepracer:Stop*",
+        "deepracer:Import*",
+        "deepracer:Tag*",
+        "deepracer:Untag*"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Null": {
+          "deepracer:UserToken": "false"
+        },
+        "Bool": {
+          "deepracer:MultiUser": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "deepracer:GetAccountConfig",
+        "deepracer:GetTrack",
+        "deepracer:ListTracks",
+        "deepracer:TestRewardFunction"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "deepracer:Admin*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

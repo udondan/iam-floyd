@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 1,
+  "filename": "appintegrations",
+  "className": "AppIntegrations",
+  "name": "app-integrations",
+  "servicePrefix": "app-integrations",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appintegrations.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApplication",
+      "CreateDataIntegration",
+      "CreateDataIntegrationAssociation",
+      "CreateDataIntegrationSchedule",
+      "CreateEventIntegration",
+      "DeleteApplication",
+      "DeleteDataIntegration",
+      "DeleteEventIntegration",
+      "StartDataIntegrationExecution",
+      "TagResource",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateDataIntegration",
+      "UpdateDataIntegrationAssociation",
+      "UpdateDataIntegrationSchedule",
+      "UpdateEventIntegration",
+      "CreateApplicationAssociation",
+      "CreateEventIntegrationAssociation",
+      "DeleteApplicationAssociation",
+      "DeleteDataIntegrationAssociation",
+      "DeleteEventIntegrationAssociation"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetDataIntegration",
+      "GetDataIntegrationExecution",
+      "GetDataIntegrationSchedule",
+      "GetEventIntegration",
+      "ListEventIntegrationAssociations",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplicationAssociations",
+      "ListApplications",
+      "ListDataIntegrationAssociations",
+      "ListDataIntegrationExecutions",
+      "ListDataIntegrationSchedules",
+      "ListDataIntegrations",
+      "ListEventIntegrations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create a new Application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateApplication.html"
+    },
+    {
+      "name": "CreateDataIntegration",
+      "methodName": "toCreateDataIntegration",
+      "description": "Grants permission to create a new DataIntegration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html"
+    },
+    {
+      "name": "CreateDataIntegrationAssociation",
+      "methodName": "toCreateDataIntegrationAssociation",
+      "description": "Grants permission to create a DataIntegrationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html"
+    },
+    {
+      "name": "CreateDataIntegrationSchedule",
+      "methodName": "toCreateDataIntegrationSchedule",
+      "description": "Grants permission to create a data integration schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegrationSchedule.html"
+    },
+    {
+      "name": "CreateEventIntegration",
+      "methodName": "toCreateEventIntegration",
+      "description": "Grants permission to create a new EventIntegration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an Application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteDataIntegration",
+      "methodName": "toDeleteDataIntegration",
+      "description": "Grants permission to delete a DataIntegration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html"
+    },
+    {
+      "name": "DeleteEventIntegration",
+      "methodName": "toDeleteEventIntegration",
+      "description": "Grants permission to delete an EventIntegration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteEventIntegration.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to view details about Application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetApplication.html"
+    },
+    {
+      "name": "GetDataIntegration",
+      "methodName": "toGetDataIntegration",
+      "description": "Grants permission to view details about DataIntegrations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegration.html"
+    },
+    {
+      "name": "GetDataIntegrationExecution",
+      "methodName": "toGetDataIntegrationExecution",
+      "description": "Grants permission to get details about a data integration execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationExecution.html"
+    },
+    {
+      "name": "GetDataIntegrationSchedule",
+      "methodName": "toGetDataIntegrationSchedule",
+      "description": "Grants permission to get details about a data integration schedule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationSchedule.html"
+    },
+    {
+      "name": "GetEventIntegration",
+      "methodName": "toGetEventIntegration",
+      "description": "Grants permission to view details about EventIntegrations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetEventIntegration.html"
+    },
+    {
+      "name": "ListApplicationAssociations",
+      "methodName": "toListApplicationAssociations",
+      "description": "Grants permission to list ApplicationAssociations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListApplicationAssociations.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list Applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListDataIntegrationAssociations",
+      "methodName": "toListDataIntegrationAssociations",
+      "description": "Grants permission to list DataIntegrationAssociations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationAssociations.html"
+    },
+    {
+      "name": "ListDataIntegrationExecutions",
+      "methodName": "toListDataIntegrationExecutions",
+      "description": "Grants permission to list data integration executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationExecutions.html"
+    },
+    {
+      "name": "ListDataIntegrationSchedules",
+      "methodName": "toListDataIntegrationSchedules",
+      "description": "Grants permission to list data integration schedules",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationSchedules.html"
+    },
+    {
+      "name": "ListDataIntegrations",
+      "methodName": "toListDataIntegrations",
+      "description": "Grants permission to list DataIntegrations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrations.html"
+    },
+    {
+      "name": "ListEventIntegrationAssociations",
+      "methodName": "toListEventIntegrationAssociations",
+      "description": "Grants permission to list EventIntegrationAssociations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListEventIntegrationAssociations.html"
+    },
+    {
+      "name": "ListEventIntegrations",
+      "methodName": "toListEventIntegrations",
+      "description": "Grants permission to list EventIntegrations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListEventIntegrations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tag for an Amazon AppIntegration resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartDataIntegrationExecution",
+      "methodName": "toStartDataIntegrationExecution",
+      "description": "Grants permission to start a data integration execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_StartDataIntegrationExecution.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Amazon AppIntegration resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Amazon AppIntegration resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to modify an Application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateDataIntegration",
+      "methodName": "toUpdateDataIntegration",
+      "description": "Grants permission to modify a DataIntegration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegration.html"
+    },
+    {
+      "name": "UpdateDataIntegrationAssociation",
+      "methodName": "toUpdateDataIntegrationAssociation",
+      "description": "Grants permission to modify a DataIntegrationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationAssociation.html"
+    },
+    {
+      "name": "UpdateDataIntegrationSchedule",
+      "methodName": "toUpdateDataIntegrationSchedule",
+      "description": "Grants permission to update a data integration schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationSchedule.html"
+    },
+    {
+      "name": "UpdateEventIntegration",
+      "methodName": "toUpdateEventIntegration",
+      "description": "Grants permission to modify an EventIntegration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateEventIntegration.html"
+    },
+    {
+      "name": "CreateApplicationAssociation",
+      "methodName": "toCreateApplicationAssociation",
+      "description": "Grants permission to create an ApplicationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html"
+    },
+    {
+      "name": "CreateEventIntegrationAssociation",
+      "methodName": "toCreateEventIntegrationAssociation",
+      "description": "Grants permission to create an EventIntegrationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html"
+    },
+    {
+      "name": "DeleteApplicationAssociation",
+      "methodName": "toDeleteApplicationAssociation",
+      "description": "Grants permission to delete an ApplicationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/onboard-3p-apps.html"
+    },
+    {
+      "name": "DeleteDataIntegrationAssociation",
+      "methodName": "toDeleteDataIntegrationAssociation",
+      "description": "Grants permission to delete a DataIntegrationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html"
+    },
+    {
+      "name": "DeleteEventIntegrationAssociation",
+      "methodName": "toDeleteEventIntegrationAssociation",
+      "description": "Grants permission to delete an EventIntegrationAssociation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteEventIntegration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ApplicationSummary.html",
+      "arn": "arn:${Partition}:app-integrations:${Region}:${Account}:application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appintegrations",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "arn": "applicationArn"
+      }
+    },
+    {
+      "name": "application-association",
+      "methodName": "onApplicationAssociation",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ApplicationAssociationSummary.html",
+      "arn": "arn:${Partition}:app-integrations:${Region}:${Account}:application-association/${ApplicationId}/${ApplicationAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationAssociationId",
+          "name": "applicationAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-integration",
+      "methodName": "onDataIntegration",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DataIntegrationSummary.html",
+      "arn": "arn:${Partition}:app-integrations:${Region}:${Account}:data-integration/${DataIntegrationId}",
+      "placeholders": [
+        {
+          "placeholder": "DataIntegrationId",
+          "name": "dataIntegrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appintegrations",
+        "interface": "IDataIntegrationRef",
+        "property": "dataIntegrationRef",
+        "arn": "dataIntegrationArn"
+      }
+    },
+    {
+      "name": "data-integration-association",
+      "methodName": "onDataIntegrationAssociation",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DataIntegrationAssociationSummary.html",
+      "arn": "arn:${Partition}:app-integrations:${Region}:${Account}:data-integration-association/${DataIntegrationId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "DataIntegrationId",
+          "name": "dataIntegrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "event-integration",
+      "methodName": "onEventIntegration",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegration.html",
+      "arn": "arn:${Partition}:app-integrations:${Region}:${Account}:event-integration/${EventIntegrationName}",
+      "placeholders": [
+        {
+          "placeholder": "EventIntegrationName",
+          "name": "eventIntegrationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appintegrations",
+        "interface": "IEventIntegrationRef",
+        "property": "eventIntegrationRef",
+        "arn": "eventIntegrationArn"
+      }
+    },
+    {
+      "name": "event-integration-association",
+      "methodName": "onEventIntegrationAssociation",
+      "url": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_EventIntegrationAssociation.html",
+      "arn": "arn:${Partition}:app-integrations:${Region}:${Account}:event-integration-association/${EventIntegrationName}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "EventIntegrationName",
+          "name": "eventIntegrationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateDataIntegration",
+        "toCreateDataIntegrationAssociation",
+        "toCreateEventIntegration",
+        "toTagResource",
+        "toCreateApplicationAssociation",
+        "toCreateEventIntegrationAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateDataIntegration",
+        "toCreateDataIntegrationAssociation",
+        "toCreateDataIntegrationSchedule",
+        "toCreateEventIntegration",
+        "toDeleteApplication",
+        "toDeleteDataIntegration",
+        "toDeleteEventIntegration",
+        "toGetApplication",
+        "toGetDataIntegration",
+        "toGetDataIntegrationExecution",
+        "toGetDataIntegrationSchedule",
+        "toGetEventIntegration",
+        "toListDataIntegrationExecutions",
+        "toListDataIntegrationSchedules",
+        "toListTagsForResource",
+        "toStartDataIntegrationExecution",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateDataIntegration",
+        "toUpdateDataIntegrationAssociation",
+        "toUpdateDataIntegrationSchedule",
+        "toUpdateEventIntegration",
+        "toCreateApplicationAssociation",
+        "toCreateEventIntegrationAssociation",
+        "toDeleteApplicationAssociation",
+        "toDeleteDataIntegrationAssociation",
+        "toDeleteEventIntegrationAssociation"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "application-association",
+        "data-integration",
+        "data-integration-association",
+        "event-integration",
+        "event-integration-association"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateDataIntegration",
+        "toCreateDataIntegrationAssociation",
+        "toCreateEventIntegration",
+        "toTagResource",
+        "toUntagResource",
+        "toCreateApplicationAssociation",
+        "toCreateEventIntegrationAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+    "Action": [
+        "s3:AssociateAccessGrantsIdentityCenter",
+        "s3:BypassGovernanceRetention",
+        "s3:CreateAccessGrant",
+        "s3:CreateAccessGrantsInstance",
+        "s3:CreateAccessGrantsLocation",
+        "s3:DeleteAccessGrant",
+        "s3:DeleteAccessGrantsInstance",
+        "s3:DeleteAccessGrantsInstanceResourcePolicy",
+        "s3:DeleteAccessGrantsLocation",
+        "s3:DeleteAccessPointPolicy",
+        "s3:DeleteAccessPointPolicyForObjectLambda",
+        "s3:DeleteBucketPolicy",
+        "s3:DissociateAccessGrantsIdentityCenter",
+        "s3:ObjectOwnerOverrideToBucketOwner",
+        "s3:PutAccessGrantsInstanceResourcePolicy",
+        "s3:PutAccessPointPolicy",
+        "s3:PutAccessPointPolicyForObjectLambda",
+        "s3:PutAccessPointPublicAccessBlock",
+        "s3:PutAccountPublicAccessBlock",
+        "s3:PutBucketAcl",
+        "s3:PutBucketOwnershipControls",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutMultiRegionAccessPointPolicy",
+        "s3:PutObjectAcl",
+        "s3:PutObjectVersionAcl",
+        "s3:UpdateAccessGrantsLocation"
+    ],
+    "Resource": "*",
+    "Effect": "Allow"
+}

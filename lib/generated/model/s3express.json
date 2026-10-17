@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "filename": "s3express",
+  "className": "S3express",
+  "name": "s3express",
+  "servicePrefix": "s3express",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3express.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccessPoint",
+      "CreateBucket",
+      "CreateSession",
+      "DeleteAccessPoint",
+      "DeleteAccessPointPolicy",
+      "DeleteAccessPointScope",
+      "DeleteBucket",
+      "DeleteBucketPolicy",
+      "PutAccessPointPolicy",
+      "PutAccessPointScope",
+      "PutBucketPolicy",
+      "PutEncryptionConfiguration",
+      "PutInventoryConfiguration",
+      "PutLifecycleConfiguration",
+      "PutMetricsConfiguration",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "DeleteAccessPointPolicy",
+      "DeleteAccessPointScope",
+      "DeleteBucketPolicy",
+      "PutAccessPointPolicy",
+      "PutAccessPointScope",
+      "PutBucketPolicy"
+    ],
+    "Read": [
+      "GetAccessPoint",
+      "GetAccessPointPolicy",
+      "GetAccessPointScope",
+      "GetBucketPolicy",
+      "GetEncryptionConfiguration",
+      "GetInventoryConfiguration",
+      "GetLifecycleConfiguration",
+      "GetMetricsConfiguration"
+    ],
+    "List": [
+      "ListAccessPointsForDirectoryBuckets",
+      "ListAllMyDirectoryBuckets",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccessPoint",
+      "methodName": "toCreateAccessPoint",
+      "description": "Grants permission to create a new access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html"
+    },
+    {
+      "name": "CreateBucket",
+      "methodName": "toCreateBucket",
+      "description": "Grants permission to create a new bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html"
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permission to Create Session token which is used for object APIs such as PutObject, GetObject, etc",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html"
+    },
+    {
+      "name": "DeleteAccessPoint",
+      "methodName": "toDeleteAccessPoint",
+      "description": "Grants permission to delete the access point named in the URI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html"
+    },
+    {
+      "name": "DeleteAccessPointPolicy",
+      "methodName": "toDeleteAccessPointPolicy",
+      "description": "Grants permission to delete the policy on a specified access point",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html"
+    },
+    {
+      "name": "DeleteAccessPointScope",
+      "methodName": "toDeleteAccessPointScope",
+      "description": "Grants permission to delete the scope configuration on a specified access point",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointScope.html"
+    },
+    {
+      "name": "DeleteBucket",
+      "methodName": "toDeleteBucket",
+      "description": "Grants permission to delete the bucket named in the URI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html"
+    },
+    {
+      "name": "DeleteBucketPolicy",
+      "methodName": "toDeleteBucketPolicy",
+      "description": "Grants permission to delete the policy on a specified bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html"
+    },
+    {
+      "name": "GetAccessPoint",
+      "methodName": "toGetAccessPoint",
+      "description": "Grants permission to return configuration information about the specified access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html"
+    },
+    {
+      "name": "GetAccessPointPolicy",
+      "methodName": "toGetAccessPointPolicy",
+      "description": "Grants permission to return the access point policy associated with the specified access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html"
+    },
+    {
+      "name": "GetAccessPointScope",
+      "methodName": "toGetAccessPointScope",
+      "description": "Grants permission to return the scope configuration associated with the specified access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointScope.html"
+    },
+    {
+      "name": "GetBucketPolicy",
+      "methodName": "toGetBucketPolicy",
+      "description": "Grants permission to return the policy of the specified bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html"
+    },
+    {
+      "name": "GetEncryptionConfiguration",
+      "methodName": "toGetEncryptionConfiguration",
+      "description": "Grants permission to return the default encryption configuration for a directory bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html"
+    },
+    {
+      "name": "GetInventoryConfiguration",
+      "methodName": "toGetInventoryConfiguration",
+      "description": "Grants permission to return an inventory configuration identified by the inventory configuration ID for a S3 directory bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html"
+    },
+    {
+      "name": "GetLifecycleConfiguration",
+      "methodName": "toGetLifecycleConfiguration",
+      "description": "Grants permission to return the lifecycle configuration information set on a directory bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html"
+    },
+    {
+      "name": "GetMetricsConfiguration",
+      "methodName": "toGetMetricsConfiguration",
+      "description": "Grants permission to get a metrics configuration of a directory bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html"
+    },
+    {
+      "name": "ListAccessPointsForDirectoryBuckets",
+      "methodName": "toListAccessPointsForDirectoryBuckets",
+      "description": "Grants permission to list access points",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html",
+      "conditionMethods": [
+        "ifAuthType",
+        "ifResourceAccount",
+        "ifSignatureversion",
+        "ifTlsVersion",
+        "ifXAmzContentSha256"
+      ]
+    },
+    {
+      "name": "ListAllMyDirectoryBuckets",
+      "methodName": "toListAllMyDirectoryBuckets",
+      "description": "Grants permission to list all directory buckets owned by the authenticated sender of the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListDirectoryBuckets.html",
+      "conditionMethods": [
+        "ifAuthType",
+        "ifResourceAccount",
+        "ifSignatureversion",
+        "ifTlsVersion",
+        "ifXAmzContentSha256"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists all of the tags for a specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html"
+    },
+    {
+      "name": "PutAccessPointPolicy",
+      "methodName": "toPutAccessPointPolicy",
+      "description": "Grants permission to associate an access policy with a specified access point",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html"
+    },
+    {
+      "name": "PutAccessPointScope",
+      "methodName": "toPutAccessPointScope",
+      "description": "Grants permission to associate an access point with a specified access point scope configuration",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointScope.html"
+    },
+    {
+      "name": "PutBucketPolicy",
+      "methodName": "toPutBucketPolicy",
+      "description": "Grants permission to add or replace a bucket policy on a bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html"
+    },
+    {
+      "name": "PutEncryptionConfiguration",
+      "methodName": "toPutEncryptionConfiguration",
+      "description": "Grants permission to set the encryption configuration for a directory bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html"
+    },
+    {
+      "name": "PutInventoryConfiguration",
+      "methodName": "toPutInventoryConfiguration",
+      "description": "Grants permission to add an inventory configuration to the bucket, identified by the inventory ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html"
+    },
+    {
+      "name": "PutLifecycleConfiguration",
+      "methodName": "toPutLifecycleConfiguration",
+      "description": "Grants permission to create a new lifecycle configuration for the directory bucket or replace an existing lifecycle configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
+    },
+    {
+      "name": "PutMetricsConfiguration",
+      "methodName": "toPutMetricsConfiguration",
+      "description": "Grants permission to set or update a metrics configuration for the CloudWatch request metrics of a directory bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to create a new user-defined tag or update an existing tag",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified user-defined tags from an S3 resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "accesspoint",
+      "methodName": "onAccesspoint",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html",
+      "arn": "arn:${Partition}:s3express:${Region}:${Account}:accesspoint/${AccessPointName}",
+      "placeholders": [
+        {
+          "placeholder": "AccessPointName",
+          "name": "accessPointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAccessPointTag"
+      ],
+      "cdkRef": {
+        "module": "aws_s3express",
+        "interface": "IAccessPointRef",
+        "property": "accessPointRef",
+        "arn": "accessPointArn"
+      }
+    },
+    {
+      "name": "bucket",
+      "methodName": "onBucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html",
+      "arn": "arn:${Partition}:s3express:${Region}:${Account}:bucket/${BucketName}",
+      "placeholders": [
+        {
+          "placeholder": "BucketName",
+          "name": "bucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifBucketTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-request-tag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-resource-tag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "accesspoint",
+        "bucket"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-tag-keys",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:AccessPointNetworkOrigin",
+      "methodName": "ifAccessPointNetworkOrigin",
+      "description": "Filters access by the network origin (Internet or VPC)",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccessPointNetworkOrigin",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:AccessPointTag/${TagKey}",
+      "methodName": "ifAccessPointTag",
+      "description": "Filters access by tag key-value pairs attached to the access point",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html#example-access-points-db-policy-bucket-tag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "accesspoint"
+      ],
+      "keyLiteral": "AccessPointTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:AllAccessRestrictedToLocalZoneGroup",
+      "methodName": "ifAllAccessRestrictedToLocalZoneGroup",
+      "description": "Filters access by AWS Local Zone network border group(s) provided in this condition key",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AllAccessRestrictedToLocalZoneGroup",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:BucketTag/${TagKey}",
+      "methodName": "ifBucketTag",
+      "description": "Filters access by tag key-value pairs attached to the bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-policy-bucket-tag",
+      "relatedActionMethods": [
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListTagsForResource",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "bucket"
+      ],
+      "keyLiteral": "BucketTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:DataAccessPointAccount",
+      "methodName": "ifDataAccessPointAccount",
+      "description": "Filters access by the AWS Account ID that owns the access point",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataAccessPointAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:DataAccessPointArn",
+      "methodName": "ifDataAccessPointArn",
+      "description": "Filters access by an access point Amazon Resource Name (ARN)",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataAccessPointArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "s3express:InventoryAccessibleOptionalFields",
+      "methodName": "ifInventoryAccessibleOptionalFields",
+      "description": "Filters access by restricting which optional metadata fields a user can add when configuring S3 Inventory reports",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-s3-inventory-3",
+      "relatedActionMethods": [
+        "toPutInventoryConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InventoryAccessibleOptionalFields",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:LocationName",
+      "methodName": "ifLocationName",
+      "description": "Filters access by a specific Availability Zone or Local Zone ID",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-location-name",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LocationName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:Permissions",
+      "methodName": "ifPermissions",
+      "description": "Filters access by the permission requested by Access Point Scope configuration, such as GetObject, PutObject",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Permissions",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:ResourceAccount",
+      "methodName": "ifResourceAccount",
+      "description": "Filters access by the resource owner AWS account ID",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-object-resource-account",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListAccessPointsForDirectoryBuckets",
+        "toListAllMyDirectoryBuckets",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:SessionMode",
+      "methodName": "ifSessionMode",
+      "description": "Filters access by the permission requested by CreateSession API, such as ReadOnly and ReadWrite",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-session-mode",
+      "relatedActionMethods": [
+        "toCreateSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SessionMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:TlsVersion",
+      "methodName": "ifTlsVersion",
+      "description": "Filters access by the TLS version used by the client",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListAccessPointsForDirectoryBuckets",
+        "toListAllMyDirectoryBuckets",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TlsVersion",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "s3express:authType",
+      "methodName": "ifAuthType",
+      "description": "Filters access by authentication method",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListAccessPointsForDirectoryBuckets",
+        "toListAllMyDirectoryBuckets",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "authType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:signatureAge",
+      "methodName": "ifSignatureAge",
+      "description": "Filters access by the age in milliseconds of the request signature",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toCreateSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "signatureAge",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "s3express:signatureversion",
+      "methodName": "ifSignatureversion",
+      "description": "Filters access by the AWS Signature Version used on the request",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListAccessPointsForDirectoryBuckets",
+        "toListAllMyDirectoryBuckets",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "signatureversion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:x-amz-content-sha256",
+      "methodName": "ifXAmzContentSha256",
+      "description": "Filters access by unsigned content in your bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toCreateSession",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteAccessPointScope",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetAccessPointScope",
+        "toGetBucketPolicy",
+        "toGetEncryptionConfiguration",
+        "toGetInventoryConfiguration",
+        "toGetLifecycleConfiguration",
+        "toGetMetricsConfiguration",
+        "toListAccessPointsForDirectoryBuckets",
+        "toListAllMyDirectoryBuckets",
+        "toListTagsForResource",
+        "toPutAccessPointPolicy",
+        "toPutAccessPointScope",
+        "toPutBucketPolicy",
+        "toPutEncryptionConfiguration",
+        "toPutInventoryConfiguration",
+        "toPutLifecycleConfiguration",
+        "toPutMetricsConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-content-sha256",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:x-amz-server-side-encryption",
+      "methodName": "ifXAmzServerSideEncryption",
+      "description": "Filters access by server-side encryption",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-data-protection.html",
+      "relatedActionMethods": [
+        "toCreateSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-server-side-encryption",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3express:x-amz-server-side-encryption-aws-kms-key-id",
+      "methodName": "ifXAmzServerSideEncryptionAwsKmsKeyId",
+      "description": "Filters access by AWS KMS customer managed key for server-side encryption",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-UsingKMSEncryption.html#s3-express-require-sse-kms",
+      "relatedActionMethods": [
+        "toCreateSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-server-side-encryption-aws-kms-key-id",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

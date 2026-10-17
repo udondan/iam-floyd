@@ -1,0 +1,756 @@
+{
+  "schemaVersion": 1,
+  "filename": "controltower",
+  "className": "Controltower",
+  "name": "controltower",
+  "servicePrefix": "controltower",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_controltower.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateLandingZone",
+      "DeleteLandingZone",
+      "DisableBaseline",
+      "DisableControl",
+      "EnableBaseline",
+      "EnableControl",
+      "ResetEnabledBaseline",
+      "ResetEnabledControl",
+      "ResetLandingZone",
+      "TagResource",
+      "UntagResource",
+      "UpdateEnabledBaseline",
+      "UpdateEnabledControl",
+      "UpdateLandingZone",
+      "CreateManagedAccount",
+      "DeregisterManagedAccount",
+      "DeregisterOrganizationalUnit",
+      "DisableGuardrail",
+      "EnableGuardrail",
+      "ManageOrganizationalUnit",
+      "SetupLandingZone",
+      "UpdateAccountFactoryConfig"
+    ],
+    "Read": [
+      "GetBaseline",
+      "GetBaselineOperation",
+      "GetControlOperation",
+      "GetEnabledBaseline",
+      "GetEnabledControl",
+      "GetLandingZone",
+      "GetLandingZoneDriftStatus",
+      "GetLandingZoneOperation",
+      "ListDriftDetails",
+      "ListExternalConfigRuleCompliance",
+      "ListTagsForResource",
+      "DescribeAccountFactoryConfig",
+      "DescribeCoreService",
+      "DescribeGuardrail",
+      "DescribeGuardrailForTarget",
+      "DescribeLandingZoneConfiguration",
+      "DescribeManagedAccount",
+      "DescribeManagedOrganizationalUnit",
+      "DescribeRegisterOrganizationalUnitOperation",
+      "DescribeSingleSignOn",
+      "GetAccountInfo",
+      "GetAvailableUpdates",
+      "GetGuardrailComplianceStatus",
+      "GetHomeRegion",
+      "GetLandingZoneStatus",
+      "PerformPreLaunchChecks"
+    ],
+    "List": [
+      "ListBaselines",
+      "ListControlOperations",
+      "ListEnabledBaselines",
+      "ListEnabledControls",
+      "ListLandingZoneOperations",
+      "ListLandingZones",
+      "ListDirectoryGroups",
+      "ListEnabledGuardrails",
+      "ListExtendGovernancePrecheckDetails",
+      "ListGuardrailViolations",
+      "ListGuardrails",
+      "ListGuardrailsForTarget",
+      "ListManagedAccounts",
+      "ListManagedAccountsForGuardrail",
+      "ListManagedAccountsForParent",
+      "ListManagedOrganizationalUnits",
+      "ListManagedOrganizationalUnitsForGuardrail"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateLandingZone",
+      "methodName": "toCreateLandingZone",
+      "description": "Grants permission to create a landing zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_CreateLandingZone.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteLandingZone",
+      "methodName": "toDeleteLandingZone",
+      "description": "Grants permission to delete AWS Control Tower landing zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_DeleteLandingZone.html"
+    },
+    {
+      "name": "DisableBaseline",
+      "methodName": "toDisableBaseline",
+      "description": "Grants permission to disable a Baseline on a target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableBaseline.html"
+    },
+    {
+      "name": "DisableControl",
+      "methodName": "toDisableControl",
+      "description": "Grants permission to remove a control from an organizational unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableControl.html"
+    },
+    {
+      "name": "EnableBaseline",
+      "methodName": "toEnableBaseline",
+      "description": "Grants permission to enable a Baseline on a target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableBaseline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "EnableControl",
+      "methodName": "toEnableControl",
+      "description": "Grants permission to activate a control for an organizational unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html"
+    },
+    {
+      "name": "GetBaseline",
+      "methodName": "toGetBaseline",
+      "description": "Grants permission to get Baseline details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaseline.html"
+    },
+    {
+      "name": "GetBaselineOperation",
+      "methodName": "toGetBaselineOperation",
+      "description": "Grants permission to get the current status of a particular Baseline operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaselineOperation.html"
+    },
+    {
+      "name": "GetControlOperation",
+      "methodName": "toGetControlOperation",
+      "description": "Grants permission to get the current status of a particular EnabledControl or DisableControl operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetControlOperation.html"
+    },
+    {
+      "name": "GetEnabledBaseline",
+      "methodName": "toGetEnabledBaseline",
+      "description": "Grants permission to get an enabled Baseline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledBaseline.html"
+    },
+    {
+      "name": "GetEnabledControl",
+      "methodName": "toGetEnabledControl",
+      "description": "Grants permission to get an enabled control from an organizational unit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledControl.html"
+    },
+    {
+      "name": "GetLandingZone",
+      "methodName": "toGetLandingZone",
+      "description": "Grants permission to get the current status of the landing zone setup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetLandingZone.html"
+    },
+    {
+      "name": "GetLandingZoneDriftStatus",
+      "methodName": "toGetLandingZoneDriftStatus",
+      "description": "Grants permission to get the current landing zone drift status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/drift.html"
+    },
+    {
+      "name": "GetLandingZoneOperation",
+      "methodName": "toGetLandingZoneOperation",
+      "description": "Grants permission to get the current status of a particular landing zone operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetLandingZoneOperation.html"
+    },
+    {
+      "name": "ListBaselines",
+      "methodName": "toListBaselines",
+      "description": "Grants permission to list Baselines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListBaselines.html"
+    },
+    {
+      "name": "ListControlOperations",
+      "methodName": "toListControlOperations",
+      "description": "Grants permission to list all control operations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListControlOperations.html"
+    },
+    {
+      "name": "ListDriftDetails",
+      "methodName": "toListDriftDetails",
+      "description": "Grants permission to list occurrences of drift in AWS Control Tower",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/drift.html"
+    },
+    {
+      "name": "ListEnabledBaselines",
+      "methodName": "toListEnabledBaselines",
+      "description": "Grants permission to list enabled Baselines",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledBaselines.html"
+    },
+    {
+      "name": "ListEnabledControls",
+      "methodName": "toListEnabledControls",
+      "description": "Grants permission to list all enabled controls in a specified organizational unit",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledControls.html"
+    },
+    {
+      "name": "ListExternalConfigRuleCompliance",
+      "methodName": "toListExternalConfigRuleCompliance",
+      "description": "Grants permission to list the compliance of external AWS Config rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/review-compliance.html"
+    },
+    {
+      "name": "ListLandingZoneOperations",
+      "methodName": "toListLandingZoneOperations",
+      "description": "Grants permission to list all landing zone operations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZoneOperations.html"
+    },
+    {
+      "name": "ListLandingZones",
+      "methodName": "toListLandingZones",
+      "description": "Grants permission to list all landing zones",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZones.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ResetEnabledBaseline",
+      "methodName": "toResetEnabledBaseline",
+      "description": "Grants permission to reset an enabled Baseline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledBaseline.html"
+    },
+    {
+      "name": "ResetEnabledControl",
+      "methodName": "toResetEnabledControl",
+      "description": "Grants permission to reset an enabled control for an organizational unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledControl.html"
+    },
+    {
+      "name": "ResetLandingZone",
+      "methodName": "toResetLandingZone",
+      "description": "Grants permission to reset a landing zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetLandingZone.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateEnabledBaseline",
+      "methodName": "toUpdateEnabledBaseline",
+      "description": "Grants permission to update an enabled Baseline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledBaseline.html"
+    },
+    {
+      "name": "UpdateEnabledControl",
+      "methodName": "toUpdateEnabledControl",
+      "description": "Grants permission to update an enabled control for an organizational unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html"
+    },
+    {
+      "name": "UpdateLandingZone",
+      "methodName": "toUpdateLandingZone",
+      "description": "Grants permission to update a landing zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateLandingZone.html"
+    },
+    {
+      "name": "CreateManagedAccount",
+      "methodName": "toCreateManagedAccount",
+      "description": "Grants permission to create an account managed by AWS Control Tower",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "DeregisterManagedAccount",
+      "methodName": "toDeregisterManagedAccount",
+      "description": "Grants permission to deregister an account created through the account factory from AWS Control Tower",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "DeregisterOrganizationalUnit",
+      "methodName": "toDeregisterOrganizationalUnit",
+      "description": "Grants permission to deregister an organizational unit from AWS Control Tower management",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/organizations.html"
+    },
+    {
+      "name": "DescribeAccountFactoryConfig",
+      "methodName": "toDescribeAccountFactoryConfig",
+      "description": "Grants permission to describe the current account factory configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "DescribeCoreService",
+      "methodName": "toDescribeCoreService",
+      "description": "Grants permission to describe resources managed by core accounts in AWS Control Tower",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/how-control-tower-works.html#what-shared"
+    },
+    {
+      "name": "DescribeGuardrail",
+      "methodName": "toDescribeGuardrail",
+      "description": "Grants permission to describe a guardrail",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "DescribeGuardrailForTarget",
+      "methodName": "toDescribeGuardrailForTarget",
+      "description": "Grants permission to describe a guardrail for a organizational unit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "DescribeLandingZoneConfiguration",
+      "methodName": "toDescribeLandingZoneConfiguration",
+      "description": "Grants permission to describe the current Landing Zone configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/step-two.html"
+    },
+    {
+      "name": "DescribeManagedAccount",
+      "methodName": "toDescribeManagedAccount",
+      "description": "Grants permission to describe an account created through account factory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "DescribeManagedOrganizationalUnit",
+      "methodName": "toDescribeManagedOrganizationalUnit",
+      "description": "Grants permission to describe an AWS Organizations organizational unit managed by AWS Control Tower",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/organizations.html"
+    },
+    {
+      "name": "DescribeRegisterOrganizationalUnitOperation",
+      "methodName": "toDescribeRegisterOrganizationalUnitOperation",
+      "description": "Grants permission to describe a Register Organizational Unit Operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/about-extending-governance.html"
+    },
+    {
+      "name": "DescribeSingleSignOn",
+      "methodName": "toDescribeSingleSignOn",
+      "description": "Grants permission to describe the current AWS Control Tower IAM Identity Center configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/sso.html"
+    },
+    {
+      "name": "DisableGuardrail",
+      "methodName": "toDisableGuardrail",
+      "description": "Grants permission to disable a guardrail from an organizational unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls-on-ou.html"
+    },
+    {
+      "name": "EnableGuardrail",
+      "methodName": "toEnableGuardrail",
+      "description": "Grants permission to enable a guardrail to an organizational unit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls-on-ou.html"
+    },
+    {
+      "name": "GetAccountInfo",
+      "methodName": "toGetAccountInfo",
+      "description": "Grants permission to describe an account email and validate that it exists",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/accounts.html"
+    },
+    {
+      "name": "GetAvailableUpdates",
+      "methodName": "toGetAvailableUpdates",
+      "description": "Grants permission to list available updates for the current AWS Control Tower deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/configuration-updates.html"
+    },
+    {
+      "name": "GetGuardrailComplianceStatus",
+      "methodName": "toGetGuardrailComplianceStatus",
+      "description": "Grants permission to get the current compliance status of a guardrail",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "GetHomeRegion",
+      "methodName": "toGetHomeRegion",
+      "description": "Grants permission to get the home region of the AWS Control Tower setup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/how-control-tower-works.html#region-how"
+    },
+    {
+      "name": "GetLandingZoneStatus",
+      "methodName": "toGetLandingZoneStatus",
+      "description": "Grants permission to get the current status of the landing zone setup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-with-control-tower.html#step-two"
+    },
+    {
+      "name": "ListDirectoryGroups",
+      "methodName": "toListDirectoryGroups",
+      "description": "Grants permission to list the current directory groups available through IAM Identity Center",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/sso.html"
+    },
+    {
+      "name": "ListEnabledGuardrails",
+      "methodName": "toListEnabledGuardrails",
+      "description": "Grants permission to list currently enabled guardrails",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "ListExtendGovernancePrecheckDetails",
+      "methodName": "toListExtendGovernancePrecheckDetails",
+      "description": "Grants permission to list Precheck details for an Organizational Unit",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/about-extending-governance.html"
+    },
+    {
+      "name": "ListGuardrailViolations",
+      "methodName": "toListGuardrailViolations",
+      "description": "Grants permission to list existing guardrail violations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "ListGuardrails",
+      "methodName": "toListGuardrails",
+      "description": "Grants permission to list all available guardrails",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "ListGuardrailsForTarget",
+      "methodName": "toListGuardrailsForTarget",
+      "description": "Grants permission to list guardrails and their current state for a organizational unit",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
+    },
+    {
+      "name": "ListManagedAccounts",
+      "methodName": "toListManagedAccounts",
+      "description": "Grants permission to list accounts managed through AWS Control Tower",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "ListManagedAccountsForGuardrail",
+      "methodName": "toListManagedAccountsForGuardrail",
+      "description": "Grants permission to list managed accounts with a specified guardrail applied",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "ListManagedAccountsForParent",
+      "methodName": "toListManagedAccountsForParent",
+      "description": "Grants permission to list managed accounts under an organizational unit",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    },
+    {
+      "name": "ListManagedOrganizationalUnits",
+      "methodName": "toListManagedOrganizationalUnits",
+      "description": "Grants permission to list organizational units managed by AWS Control Tower",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/organizations.html"
+    },
+    {
+      "name": "ListManagedOrganizationalUnitsForGuardrail",
+      "methodName": "toListManagedOrganizationalUnitsForGuardrail",
+      "description": "Grants permission to list managed organizational units that have a specified guardrail applied",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/organizations.html"
+    },
+    {
+      "name": "ManageOrganizationalUnit",
+      "methodName": "toManageOrganizationalUnit",
+      "description": "Grants permission to set up an organizational unit to be managed by AWS Control Tower",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/organizations.html"
+    },
+    {
+      "name": "PerformPreLaunchChecks",
+      "methodName": "toPerformPreLaunchChecks",
+      "description": "Grants permission to perform validations in an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-prereqs.html"
+    },
+    {
+      "name": "SetupLandingZone",
+      "methodName": "toSetupLandingZone",
+      "description": "Grants permission to set up or update AWS Control Tower landing zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-with-control-tower.html#step-two"
+    },
+    {
+      "name": "UpdateAccountFactoryConfig",
+      "methodName": "toUpdateAccountFactoryConfig",
+      "description": "Grants permission to update the account factory configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Baseline",
+      "methodName": "onBaseline",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaseline.html",
+      "arn": "arn:${Partition}:controltower:${Region}::baseline/${BaselineId}",
+      "placeholders": [
+        {
+          "placeholder": "BaselineId",
+          "name": "baselineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "EnabledBaseline",
+      "methodName": "onEnabledBaseline",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableBaseline.html",
+      "arn": "arn:${Partition}:controltower:${Region}:${Account}:enabledbaseline/${EnabledBaselineId}",
+      "placeholders": [
+        {
+          "placeholder": "EnabledBaselineId",
+          "name": "enabledBaselineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "EnabledControl",
+      "methodName": "onEnabledControl",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html",
+      "arn": "arn:${Partition}:controltower:${Region}:${Account}:enabledcontrol/${EnabledControlId}",
+      "placeholders": [
+        {
+          "placeholder": "EnabledControlId",
+          "name": "enabledControlId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "LandingZone",
+      "methodName": "onLandingZone",
+      "url": "https://docs.aws.amazon.com/controltower/latest/APIReference/API_CreateLandingZone.html",
+      "arn": "arn:${Partition}:controltower:${Region}:${Account}:landingzone/${LandingZoneId}",
+      "placeholders": [
+        {
+          "placeholder": "LandingZoneId",
+          "name": "landingZoneId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_controltower",
+        "interface": "ILandingZoneRef",
+        "property": "landingZoneRef",
+        "arn": "landingZoneArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateLandingZone",
+        "toEnableBaseline",
+        "toEnableControl",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteLandingZone",
+        "toDisableBaseline",
+        "toDisableControl",
+        "toEnableControl",
+        "toGetEnabledBaseline",
+        "toGetEnabledControl",
+        "toGetLandingZone",
+        "toListTagsForResource",
+        "toResetEnabledBaseline",
+        "toResetEnabledControl",
+        "toResetLandingZone",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEnabledBaseline",
+        "toUpdateEnabledControl",
+        "toUpdateLandingZone"
+      ],
+      "relatedResourceTypes": [
+        "EnabledBaseline",
+        "EnabledControl",
+        "LandingZone"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateLandingZone",
+        "toEnableBaseline",
+        "toEnableControl",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

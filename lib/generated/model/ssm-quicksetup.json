@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "filename": "ssm-quicksetup",
+  "className": "SsmQuicksetup",
+  "name": "ssm-quicksetup",
+  "servicePrefix": "ssm-quicksetup",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ssm-quicksetup.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateConfigurationManager",
+      "DeleteConfigurationManager",
+      "TagResource",
+      "UntagResource",
+      "UpdateConfigurationDefinition",
+      "UpdateConfigurationManager",
+      "UpdateServiceSettings"
+    ],
+    "Read": [
+      "GetConfiguration",
+      "GetConfigurationManager",
+      "GetServiceSettings",
+      "ListQuickSetupTypes",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConfigurationManagers",
+      "ListConfigurations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateConfigurationManager",
+      "methodName": "toCreateConfigurationManager",
+      "description": "Grants permission to create a Quick Setup configuration manager resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_CreateConfigurationManager.html"
+    },
+    {
+      "name": "DeleteConfigurationManager",
+      "methodName": "toDeleteConfigurationManager",
+      "description": "Grants permission to delete a configuration manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_DeleteConfigurationManager.html"
+    },
+    {
+      "name": "GetConfiguration",
+      "methodName": "toGetConfiguration",
+      "description": "Grants permission to get Quick Setup configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_GetConfiguration.html"
+    },
+    {
+      "name": "GetConfigurationManager",
+      "methodName": "toGetConfigurationManager",
+      "description": "Grants permission to get a configuration manager",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_GetConfigurationManager.html"
+    },
+    {
+      "name": "GetServiceSettings",
+      "methodName": "toGetServiceSettings",
+      "description": "Grants permission to get settings configured for Quick Setup in the requesting AWS account and AWS Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_GetServiceSettings.html"
+    },
+    {
+      "name": "ListConfigurationManagers",
+      "methodName": "toListConfigurationManagers",
+      "description": "Grants permission to list Quick Setup configuration managers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_ListConfigurationManagers.html"
+    },
+    {
+      "name": "ListConfigurations",
+      "methodName": "toListConfigurations",
+      "description": "Grants permission to list Quick Setup configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_ListConfigurations.html"
+    },
+    {
+      "name": "ListQuickSetupTypes",
+      "methodName": "toListQuickSetupTypes",
+      "description": "Grants permission to list the available Quick Setup types",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_ListQuickSetupTypes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags assigned to the resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to Assign key-value pairs of metadata to AWS resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConfigurationDefinition",
+      "methodName": "toUpdateConfigurationDefinition",
+      "description": "Grants permission to update a Quick Setup configuration definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_UpdateConfigurationDefinition.html"
+    },
+    {
+      "name": "UpdateConfigurationManager",
+      "methodName": "toUpdateConfigurationManager",
+      "description": "Grants permission to update a Quick Setup configuration manager",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_UpdateConfigurationManager.html"
+    },
+    {
+      "name": "UpdateServiceSettings",
+      "methodName": "toUpdateServiceSettings",
+      "description": "Grants permission to update settings configured for Quick Setup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_UpdateServiceSettings.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "configuration-manager",
+      "methodName": "onConfigurationManager",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-quick-setup.html",
+      "arn": "arn:${Partition}:ssm-quicksetup:${Region}:${Account}:configuration-manager/${ConfigurationManagerId}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationManagerId",
+          "name": "configurationManagerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ssmquicksetup",
+        "interface": "IConfigurationManagerRef",
+        "property": "configurationManagerRef",
+        "arn": "managerArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConfigurationManager",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateConfigurationManager",
+        "toDeleteConfigurationManager",
+        "toGetConfiguration",
+        "toGetConfigurationManager",
+        "toListConfigurations",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConfigurationDefinition",
+        "toUpdateConfigurationManager"
+      ],
+      "relatedResourceTypes": [
+        "configuration-manager"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConfigurationManager",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonWorkSpacesAdmin",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:ListKeys",
+        "workspaces:CreateTags",
+        "workspaces:CreateWorkspaceImage",
+        "workspaces:CreateWorkspaces",
+        "workspaces:CreateWorkspacesPool",
+        "workspaces:CreateStandbyWorkspaces",
+        "workspaces:DeleteTags",
+        "workspaces:DeregisterWorkspaceDirectory",
+        "workspaces:DescribeTags",
+        "workspaces:DescribeWorkspaceBundles",
+        "workspaces:DescribeWorkspaceDirectories",
+        "workspaces:DescribeWorkspaces",
+        "workspaces:DescribeWorkspacesPools",
+        "workspaces:DescribeWorkspacesPoolSessions",
+        "workspaces:DescribeWorkspacesConnectionStatus",
+        "workspaces:ModifyCertificateBasedAuthProperties",
+        "workspaces:ModifySamlProperties",
+        "workspaces:ModifyStreamingProperties",
+        "workspaces:ModifyWorkspaceCreationProperties",
+        "workspaces:ModifyWorkspaceProperties",
+        "workspaces:RebootWorkspaces",
+        "workspaces:RebuildWorkspaces",
+        "workspaces:RegisterWorkspaceDirectory",
+        "workspaces:RestoreWorkspace",
+        "workspaces:StartWorkspaces",
+        "workspaces:StartWorkspacesPool",
+        "workspaces:StopWorkspaces",
+        "workspaces:StopWorkspacesPool",
+        "workspaces:TerminateWorkspaces",
+        "workspaces:TerminateWorkspacesPool",
+        "workspaces:TerminateWorkspacesPoolSession",
+        "workspaces:UpdateWorkspacesPool"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

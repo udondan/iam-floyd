@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>udondan/renovate-config"],
+  "packageRules": [
+    {
+      "description": "Ignore docutils updates due to sphinx-tabs incompatibility - see https://github.com/executablebooks/sphinx-tabs/issues/212",
+      "matchPackageNames": ["docutils"],
+      "enabled": false
+    }
+  ]
+}

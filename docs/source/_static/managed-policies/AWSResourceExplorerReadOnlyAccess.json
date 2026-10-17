@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ResourceExplorerReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:Get*",
+        "resource-explorer-2:List*",
+        "resource-explorer-2:Search",
+        "resource-explorer-2:BatchGetView",
+        "ec2:DescribeRegions",
+        "ram:ListResources",
+        "ram:GetResourceShares",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

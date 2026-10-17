@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "codeguru",
+  "className": "Codeguru",
+  "name": "codeguru",
+  "servicePrefix": "codeguru",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codeguru.html",
+  "accessLevelList": {
+    "Read": [
+      "GetCodeGuruFreeTrialSummary"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetCodeGuruFreeTrialSummary",
+      "methodName": "toGetCodeGuruFreeTrialSummary",
+      "description": "Grants permission to get free trial summary for the CodeGuru service which includes expiration date",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

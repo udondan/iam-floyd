@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "WriteGameSessionLogsToLogStream",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:gamelift-*:log-stream:*"
+    },
+    {
+      "Sid": "CreateLogGroupToStoreGameSessionLogs",
+      "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": "arn:aws:logs:*:*:log-group:gamelift-*"
+    },
+    {
+      "Sid": "WriteGameSessionLogsToS3Bucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::gamelift-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "RetrieveComputeAuthToken",
+      "Effect": "Allow",
+      "Action": [
+        "gamelift:GetComputeAuthToken"
+      ],
+      "Resource": [
+        "arn:aws:gamelift:*:*:containerfleet/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "filename": "sms",
+  "className": "Sms",
+  "name": "sms",
+  "servicePrefix": "sms",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sms.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApp",
+      "CreateReplicationJob",
+      "DeleteApp",
+      "DeleteAppLaunchConfiguration",
+      "DeleteAppReplicationConfiguration",
+      "DeleteAppValidationConfiguration",
+      "DeleteReplicationJob",
+      "DeleteServerCatalog",
+      "DisassociateConnector",
+      "GenerateChangeSet",
+      "GenerateTemplate",
+      "ImportAppCatalog",
+      "ImportServerCatalog",
+      "LaunchApp",
+      "NotifyAppValidationOutput",
+      "PutAppLaunchConfiguration",
+      "PutAppReplicationConfiguration",
+      "PutAppValidationConfiguration",
+      "StartAppReplication",
+      "StartOnDemandAppReplication",
+      "StartOnDemandReplicationRun",
+      "StopAppReplication",
+      "TerminateApp",
+      "UpdateApp",
+      "UpdateReplicationJob",
+      "SendMessage"
+    ],
+    "Read": [
+      "GetApp",
+      "GetAppLaunchConfiguration",
+      "GetAppReplicationConfiguration",
+      "GetAppValidationConfiguration",
+      "GetAppValidationOutput",
+      "GetConnectors",
+      "GetReplicationJobs",
+      "GetReplicationRuns",
+      "GetServers",
+      "GetMessages"
+    ],
+    "List": [
+      "ListApps"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApp",
+      "methodName": "toCreateApp",
+      "description": "Grants permission to create an application configuration to migrate on-premise application onto AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateApp.html"
+    },
+    {
+      "name": "CreateReplicationJob",
+      "methodName": "toCreateReplicationJob",
+      "description": "Grants permission to create a job to migrate on-premise server onto AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateReplicationJob.html"
+    },
+    {
+      "name": "DeleteApp",
+      "methodName": "toDeleteApp",
+      "description": "Grants permission to delete an existing application configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteApp.html"
+    },
+    {
+      "name": "DeleteAppLaunchConfiguration",
+      "methodName": "toDeleteAppLaunchConfiguration",
+      "description": "Grants permission to delete launch configuration for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppLaunchConfiguration.html"
+    },
+    {
+      "name": "DeleteAppReplicationConfiguration",
+      "methodName": "toDeleteAppReplicationConfiguration",
+      "description": "Grants permission to delete replication configuration for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppReplicationConfiguration.html"
+    },
+    {
+      "name": "DeleteAppValidationConfiguration",
+      "methodName": "toDeleteAppValidationConfiguration",
+      "description": "Grants permission to delete validation configuration for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppValidationConfiguration.html"
+    },
+    {
+      "name": "DeleteReplicationJob",
+      "methodName": "toDeleteReplicationJob",
+      "description": "Grants permission to delete an existing job to migrate on-premise server onto AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteReplicationJob.html"
+    },
+    {
+      "name": "DeleteServerCatalog",
+      "methodName": "toDeleteServerCatalog",
+      "description": "Grants permission to delete the complete list of on-premise servers gathered into AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteServerCatalog.html"
+    },
+    {
+      "name": "DisassociateConnector",
+      "methodName": "toDisassociateConnector",
+      "description": "Grants permission to disassociate a connector that has been associated",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DisassociateConnector.html"
+    },
+    {
+      "name": "GenerateChangeSet",
+      "methodName": "toGenerateChangeSet",
+      "description": "Grants permission to generate a changeSet for the CloudFormation stack of an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateChangeSet.html"
+    },
+    {
+      "name": "GenerateTemplate",
+      "methodName": "toGenerateTemplate",
+      "description": "Grants permission to generate a CloudFormation template for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateTemplate.html"
+    },
+    {
+      "name": "GetApp",
+      "methodName": "toGetApp",
+      "description": "Grants permission to get the configuration and statuses for an existing application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetApp.html"
+    },
+    {
+      "name": "GetAppLaunchConfiguration",
+      "methodName": "toGetAppLaunchConfiguration",
+      "description": "Grants permission to get launch configuration for an existing application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppLaunchConfiguration.html"
+    },
+    {
+      "name": "GetAppReplicationConfiguration",
+      "methodName": "toGetAppReplicationConfiguration",
+      "description": "Grants permission to get replication configuration for an existing application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppReplicationConfiguration.html"
+    },
+    {
+      "name": "GetAppValidationConfiguration",
+      "methodName": "toGetAppValidationConfiguration",
+      "description": "Grants permission to get validation configuration for an existing application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationConfiguration.html"
+    },
+    {
+      "name": "GetAppValidationOutput",
+      "methodName": "toGetAppValidationOutput",
+      "description": "Grants permission to get notification sent from application validation script.",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationOutput.html"
+    },
+    {
+      "name": "GetConnectors",
+      "methodName": "toGetConnectors",
+      "description": "Grants permission to get all connectors that have been associated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetConnectors.html"
+    },
+    {
+      "name": "GetReplicationJobs",
+      "methodName": "toGetReplicationJobs",
+      "description": "Grants permission to get all existing jobs to migrate on-premise servers onto AWS",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationJobs.html"
+    },
+    {
+      "name": "GetReplicationRuns",
+      "methodName": "toGetReplicationRuns",
+      "description": "Grants permission to get all runs for an existing job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationRuns.html"
+    },
+    {
+      "name": "GetServers",
+      "methodName": "toGetServers",
+      "description": "Grants permission to get all servers that have been imported",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetServers.html"
+    },
+    {
+      "name": "ImportAppCatalog",
+      "methodName": "toImportAppCatalog",
+      "description": "Grants permission to import application catalog from AWS Application Discovery Service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportAppCatalog.html"
+    },
+    {
+      "name": "ImportServerCatalog",
+      "methodName": "toImportServerCatalog",
+      "description": "Grants permission to gather a complete list of on-premise servers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportServerCatalog.html"
+    },
+    {
+      "name": "LaunchApp",
+      "methodName": "toLaunchApp",
+      "description": "Grants permission to create and launch a CloudFormation stack for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_LaunchApp.html"
+    },
+    {
+      "name": "ListApps",
+      "methodName": "toListApps",
+      "description": "Grants permission to get a list of summaries for existing applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ListAppss.html"
+    },
+    {
+      "name": "NotifyAppValidationOutput",
+      "methodName": "toNotifyAppValidationOutput",
+      "description": "Grants permission to send notification for application validation script",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_NotifyAppValidationOutput.html"
+    },
+    {
+      "name": "PutAppLaunchConfiguration",
+      "methodName": "toPutAppLaunchConfiguration",
+      "description": "Grants permission to create or update launch configuration for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppLaunchConfiguration.html"
+    },
+    {
+      "name": "PutAppReplicationConfiguration",
+      "methodName": "toPutAppReplicationConfiguration",
+      "description": "Grants permission to create or update replication configuration for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppReplicationConfiguration.html"
+    },
+    {
+      "name": "PutAppValidationConfiguration",
+      "methodName": "toPutAppValidationConfiguration",
+      "description": "Grants permission to put validation configuration for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppValidationConfiguration.html"
+    },
+    {
+      "name": "StartAppReplication",
+      "methodName": "toStartAppReplication",
+      "description": "Grants permission to create and start replication jobs for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartAppReplication.html"
+    },
+    {
+      "name": "StartOnDemandAppReplication",
+      "methodName": "toStartOnDemandAppReplication",
+      "description": "Grants permission to start a replication run for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandAppReplication.html"
+    },
+    {
+      "name": "StartOnDemandReplicationRun",
+      "methodName": "toStartOnDemandReplicationRun",
+      "description": "Grants permission to start a replication run for an existing replication job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandReplicationRun.html"
+    },
+    {
+      "name": "StopAppReplication",
+      "methodName": "toStopAppReplication",
+      "description": "Grants permission to stop and delete replication jobs for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StopAppReplication.html"
+    },
+    {
+      "name": "TerminateApp",
+      "methodName": "toTerminateApp",
+      "description": "Grants permission to terminate the CloudFormation stack for an existing application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_TerminateApp.html"
+    },
+    {
+      "name": "UpdateApp",
+      "methodName": "toUpdateApp",
+      "description": "Grants permission to update an existing application configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateApp.html"
+    },
+    {
+      "name": "UpdateReplicationJob",
+      "methodName": "toUpdateReplicationJob",
+      "description": "Grants permission to update an existing job to migrate on-premise server onto AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateReplicationJob.html"
+    },
+    {
+      "name": "GetMessages",
+      "methodName": "toGetMessages",
+      "description": "Grants permission to gets messages from AWS Server Migration Service to Server Migration Connector",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to send message from Server Migration Connector to AWS Server Migration Service",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

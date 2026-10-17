@@ -1,0 +1,1164 @@
+{
+  "schemaVersion": 1,
+  "filename": "s3outposts",
+  "className": "S3Outposts",
+  "name": "s3-outposts",
+  "servicePrefix": "s3-outposts",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3outposts.html",
+  "accessLevelList": {
+    "Write": [
+      "AbortMultipartUpload",
+      "CreateAccessPoint",
+      "CreateBucket",
+      "CreateEndpoint",
+      "DeleteAccessPoint",
+      "DeleteAccessPointPolicy",
+      "DeleteBucket",
+      "DeleteBucketPolicy",
+      "DeleteEndpoint",
+      "DeleteObject",
+      "DeleteObjectTagging",
+      "DeleteObjectVersion",
+      "DeleteObjectVersionTagging",
+      "PutAccessPointPolicy",
+      "PutBucketPolicy",
+      "PutBucketTagging",
+      "PutBucketVersioning",
+      "PutLifecycleConfiguration",
+      "PutObject",
+      "PutObjectAcl",
+      "PutObjectTagging",
+      "PutObjectVersionTagging",
+      "PutReplicationConfiguration",
+      "ReplicateDelete",
+      "ReplicateObject",
+      "ReplicateTags"
+    ],
+    "Permissions management": [
+      "DeleteAccessPointPolicy",
+      "DeleteBucketPolicy",
+      "PutAccessPointPolicy",
+      "PutBucketPolicy",
+      "PutObjectAcl"
+    ],
+    "Tagging": [
+      "DeleteObjectTagging",
+      "DeleteObjectVersionTagging",
+      "PutBucketTagging",
+      "PutObjectTagging",
+      "PutObjectVersionTagging",
+      "ReplicateTags"
+    ],
+    "Read": [
+      "GetAccessPoint",
+      "GetAccessPointPolicy",
+      "GetBucket",
+      "GetBucketPolicy",
+      "GetBucketTagging",
+      "GetBucketVersioning",
+      "GetLifecycleConfiguration",
+      "GetObject",
+      "GetObjectTagging",
+      "GetObjectVersion",
+      "GetObjectVersionForReplication",
+      "GetObjectVersionTagging",
+      "GetReplicationConfiguration"
+    ],
+    "List": [
+      "ListAccessPoints",
+      "ListBucket",
+      "ListBucketMultipartUploads",
+      "ListBucketVersions",
+      "ListEndpoints",
+      "ListMultipartUploadParts",
+      "ListOutpostsWithS3",
+      "ListRegionalBuckets",
+      "ListSharedEndpoints"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AbortMultipartUpload",
+      "methodName": "toAbortMultipartUpload",
+      "description": "Grants permission to abort a multipart upload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html"
+    },
+    {
+      "name": "CreateAccessPoint",
+      "methodName": "toCreateAccessPoint",
+      "description": "Grants permission to create a new access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html"
+    },
+    {
+      "name": "CreateBucket",
+      "methodName": "toCreateBucket",
+      "description": "Grants permission to create a new bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html"
+    },
+    {
+      "name": "CreateEndpoint",
+      "methodName": "toCreateEndpoint",
+      "description": "Grants permission to create a new endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html"
+    },
+    {
+      "name": "DeleteAccessPoint",
+      "methodName": "toDeleteAccessPoint",
+      "description": "Grants permission to delete the access point named in the URI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html"
+    },
+    {
+      "name": "DeleteAccessPointPolicy",
+      "methodName": "toDeleteAccessPointPolicy",
+      "description": "Grants permission to delete the policy on a specified access point",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html"
+    },
+    {
+      "name": "DeleteBucket",
+      "methodName": "toDeleteBucket",
+      "description": "Grants permission to delete the bucket named in the URI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html"
+    },
+    {
+      "name": "DeleteBucketPolicy",
+      "methodName": "toDeleteBucketPolicy",
+      "description": "Grants permission to delete the policy on a specified bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html"
+    },
+    {
+      "name": "DeleteEndpoint",
+      "methodName": "toDeleteEndpoint",
+      "description": "Grants permission to delete the endpoint named in the URI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html"
+    },
+    {
+      "name": "DeleteObject",
+      "methodName": "toDeleteObject",
+      "description": "Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html"
+    },
+    {
+      "name": "DeleteObjectTagging",
+      "methodName": "toDeleteObjectTagging",
+      "description": "Grants permission to use the tagging subresource to remove the entire tag set from the specified object",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html"
+    },
+    {
+      "name": "DeleteObjectVersion",
+      "methodName": "toDeleteObjectVersion",
+      "description": "Grants permission to remove a specific version of an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html"
+    },
+    {
+      "name": "DeleteObjectVersionTagging",
+      "methodName": "toDeleteObjectVersionTagging",
+      "description": "Grants permission to remove the entire tag set for a specific version of the object",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html"
+    },
+    {
+      "name": "GetAccessPoint",
+      "methodName": "toGetAccessPoint",
+      "description": "Grants permission to return configuration information about the specified access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html",
+      "conditionMethods": [
+        "ifAccessPointNetworkOrigin",
+        "ifAuthType",
+        "ifDataAccessPointAccount",
+        "ifDataAccessPointArn",
+        "ifSignatureAge",
+        "ifSignatureversion",
+        "ifXAmzContentSha256"
+      ]
+    },
+    {
+      "name": "GetAccessPointPolicy",
+      "methodName": "toGetAccessPointPolicy",
+      "description": "Grants permission to returns the access point policy associated with the specified access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html"
+    },
+    {
+      "name": "GetBucket",
+      "methodName": "toGetBucket",
+      "description": "Grants permission to return the bucket configuration associated with an Amazon S3 bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html"
+    },
+    {
+      "name": "GetBucketPolicy",
+      "methodName": "toGetBucketPolicy",
+      "description": "Grants permission to return the policy of the specified bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html"
+    },
+    {
+      "name": "GetBucketTagging",
+      "methodName": "toGetBucketTagging",
+      "description": "Grants permission to return the tag set associated with an Amazon S3 bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html"
+    },
+    {
+      "name": "GetBucketVersioning",
+      "methodName": "toGetBucketVersioning",
+      "description": "Grants permission to return the versioning state of an Amazon S3 bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html"
+    },
+    {
+      "name": "GetLifecycleConfiguration",
+      "methodName": "toGetLifecycleConfiguration",
+      "description": "Grants permission to return the lifecycle configuration information set on an Amazon S3 bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html"
+    },
+    {
+      "name": "GetObject",
+      "methodName": "toGetObject",
+      "description": "Grants permission to retrieve objects from Amazon S3",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "name": "GetObjectTagging",
+      "methodName": "toGetObjectTagging",
+      "description": "Grants permission to return the tag set of an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html"
+    },
+    {
+      "name": "GetObjectVersion",
+      "methodName": "toGetObjectVersion",
+      "description": "Grants permission to retrieve a specific version of an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "name": "GetObjectVersionForReplication",
+      "methodName": "toGetObjectVersionForReplication",
+      "description": "Grants permission to replicate both unencrypted objects and objects encrypted with SSE-KMS",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "name": "GetObjectVersionTagging",
+      "methodName": "toGetObjectVersionTagging",
+      "description": "Grants permission to return the tag set for a specific version of the object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "name": "GetReplicationConfiguration",
+      "methodName": "toGetReplicationConfiguration",
+      "description": "Grants permission to get the replication configuration information set on an Amazon S3 bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html"
+    },
+    {
+      "name": "ListAccessPoints",
+      "methodName": "toListAccessPoints",
+      "description": "Grants permission to list access points",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html",
+      "conditionMethods": [
+        "ifAuthType",
+        "ifSignatureAge",
+        "ifSignatureversion",
+        "ifXAmzContentSha256"
+      ]
+    },
+    {
+      "name": "ListBucket",
+      "methodName": "toListBucket",
+      "description": "Grants permission to list some or all of the objects in an Amazon S3 bucket (up to 1000)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"
+    },
+    {
+      "name": "ListBucketMultipartUploads",
+      "methodName": "toListBucketMultipartUploads",
+      "description": "Grants permission to list in-progress multipart uploads",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html"
+    },
+    {
+      "name": "ListBucketVersions",
+      "methodName": "toListBucketVersions",
+      "description": "Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html"
+    },
+    {
+      "name": "ListEndpoints",
+      "methodName": "toListEndpoints",
+      "description": "Grants permission to list endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html"
+    },
+    {
+      "name": "ListMultipartUploadParts",
+      "methodName": "toListMultipartUploadParts",
+      "description": "Grants permission to list the parts that have been uploaded for a specific multipart upload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html"
+    },
+    {
+      "name": "ListOutpostsWithS3",
+      "methodName": "toListOutpostsWithS3",
+      "description": "Grants permission to list outposts with S3 capacity",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListOutpostsWithS3.html"
+    },
+    {
+      "name": "ListRegionalBuckets",
+      "methodName": "toListRegionalBuckets",
+      "description": "Grants permission to list all buckets owned by the authenticated sender of the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListRegionalBuckets.html",
+      "conditionMethods": [
+        "ifAuthType",
+        "ifSignatureAge",
+        "ifSignatureversion",
+        "ifXAmzContentSha256"
+      ]
+    },
+    {
+      "name": "ListSharedEndpoints",
+      "methodName": "toListSharedEndpoints",
+      "description": "Grants permission to list shared endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListSharedEndpoints.html"
+    },
+    {
+      "name": "PutAccessPointPolicy",
+      "methodName": "toPutAccessPointPolicy",
+      "description": "Grants permission to associate an access policy with a specified access point",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html"
+    },
+    {
+      "name": "PutBucketPolicy",
+      "methodName": "toPutBucketPolicy",
+      "description": "Grants permission to add or replace a bucket policy on a bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html"
+    },
+    {
+      "name": "PutBucketTagging",
+      "methodName": "toPutBucketTagging",
+      "description": "Grants permission to add a set of tags to an existing Amazon S3 bucket",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html"
+    },
+    {
+      "name": "PutBucketVersioning",
+      "methodName": "toPutBucketVersioning",
+      "description": "Grants permission to set the versioning state of an existing Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html"
+    },
+    {
+      "name": "PutLifecycleConfiguration",
+      "methodName": "toPutLifecycleConfiguration",
+      "description": "Grants permission to create a new lifecycle configuration for the bucket or replace an existing lifecycle configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html"
+    },
+    {
+      "name": "PutObject",
+      "methodName": "toPutObject",
+      "description": "Grants permission to add an object to a bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"
+    },
+    {
+      "name": "PutObjectAcl",
+      "methodName": "toPutObjectAcl",
+      "description": "Grants permission to set the access control list (ACL) permissions for an object that already exists in a bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html"
+    },
+    {
+      "name": "PutObjectTagging",
+      "methodName": "toPutObjectTagging",
+      "description": "Grants permission to set the supplied tag-set to an object that already exists in a bucket",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html"
+    },
+    {
+      "name": "PutObjectVersionTagging",
+      "methodName": "toPutObjectVersionTagging",
+      "description": "Grants permission to set the supplied tag-set for a specific version of an object",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html"
+    },
+    {
+      "name": "PutReplicationConfiguration",
+      "methodName": "toPutReplicationConfiguration",
+      "description": "Grants permission to create a new replication configuration or replace an existing one",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html"
+    },
+    {
+      "name": "ReplicateDelete",
+      "methodName": "toReplicateDelete",
+      "description": "Grants permission to replicate delete markers to the destination bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html"
+    },
+    {
+      "name": "ReplicateObject",
+      "methodName": "toReplicateObject",
+      "description": "Grants permission to replicate objects and object tags to the destination bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"
+    },
+    {
+      "name": "ReplicateTags",
+      "methodName": "toReplicateTags",
+      "description": "Grants permission to replicate object tags to the destination bucket",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "accesspoint",
+      "methodName": "onAccesspoint",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/accesspoint/${AccessPointName}",
+      "placeholders": [
+        {
+          "placeholder": "OutpostId",
+          "name": "outpostId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccessPointName",
+          "name": "accessPointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "bucket",
+      "methodName": "onBucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/bucket/${BucketName}",
+      "placeholders": [
+        {
+          "placeholder": "OutpostId",
+          "name": "outpostId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BucketName",
+          "name": "bucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "endpoint",
+      "methodName": "onEndpoint",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-endpoints.html",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/endpoint/${EndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "OutpostId",
+          "name": "outpostId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EndpointId",
+          "name": "endpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "object",
+      "methodName": "onObject",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/bucket/${BucketName}/object/${ObjectName}",
+      "placeholders": [
+        {
+          "placeholder": "OutpostId",
+          "name": "outpostId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BucketName",
+          "name": "bucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ObjectName",
+          "name": "objectName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "s3-outposts:AccessPointNetworkOrigin",
+      "methodName": "ifAccessPointNetworkOrigin",
+      "description": "Filters access by the network origin (Internet or VPC)",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionTagging",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toPutAccessPointPolicy",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccessPointNetworkOrigin",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:DataAccessPointAccount",
+      "methodName": "ifDataAccessPointAccount",
+      "description": "Filters access by the AWS Account ID that owns the access point",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionTagging",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toPutAccessPointPolicy",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataAccessPointAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:DataAccessPointArn",
+      "methodName": "ifDataAccessPointArn",
+      "description": "Filters access by an access point Amazon Resource Name (ARN)",
+      "url": "",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionTagging",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toPutAccessPointPolicy",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataAccessPointArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "s3-outposts:ExistingObjectTag/<key>",
+      "methodName": "ifExistingObjectTag",
+      "description": "Filters access by requiring that an existing object tag has a specific tag key and value",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies",
+      "relatedActionMethods": [
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersionTagging",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionTagging",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExistingObjectTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "key",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:RequestObjectTag/<key>",
+      "methodName": "ifRequestObjectTag",
+      "description": "Filters access by restricting the tag keys and values allowed on objects",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies",
+      "relatedActionMethods": [
+        "toPutObject",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestObjectTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "key",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:RequestObjectTagKeys",
+      "methodName": "ifRequestObjectTagKeys",
+      "description": "Filters access by restricting the tag keys allowed on objects",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies",
+      "relatedActionMethods": [
+        "toPutObject",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestObjectTagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:authType",
+      "methodName": "ifAuthType",
+      "description": "Filters access by restricting incoming requests to a specific authentication method",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetBucket",
+        "toGetBucketPolicy",
+        "toGetBucketTagging",
+        "toGetBucketVersioning",
+        "toGetLifecycleConfiguration",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionForReplication",
+        "toGetObjectVersionTagging",
+        "toGetReplicationConfiguration",
+        "toListAccessPoints",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toListRegionalBuckets",
+        "toPutAccessPointPolicy",
+        "toPutBucketPolicy",
+        "toPutBucketTagging",
+        "toPutBucketVersioning",
+        "toPutLifecycleConfiguration",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging",
+        "toPutReplicationConfiguration",
+        "toReplicateDelete",
+        "toReplicateObject",
+        "toReplicateTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "authType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:delimiter",
+      "methodName": "ifDelimiter",
+      "description": "Filters access by requiring the delimiter parameter",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/walkthrough1.html",
+      "relatedActionMethods": [
+        "toListBucket",
+        "toListBucketVersions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "delimiter",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:max-keys",
+      "methodName": "ifMaxKeys",
+      "description": "Filters access by limiting the maximum number of keys returned in a ListBucket request",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-numeric-condition-operators",
+      "relatedActionMethods": [
+        "toListBucket",
+        "toListBucketVersions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "max-keys",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "s3-outposts:prefix",
+      "methodName": "ifPrefix",
+      "description": "Filters access by key name prefix",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#condition-key-bucket-ops-2",
+      "relatedActionMethods": [
+        "toListBucket",
+        "toListBucketVersions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "prefix",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:signatureAge",
+      "methodName": "ifSignatureAge",
+      "description": "Filters access by identifying the length of time, in milliseconds, that a signature is valid in an authenticated request",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetBucket",
+        "toGetBucketPolicy",
+        "toGetBucketTagging",
+        "toGetBucketVersioning",
+        "toGetLifecycleConfiguration",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionForReplication",
+        "toGetObjectVersionTagging",
+        "toGetReplicationConfiguration",
+        "toListAccessPoints",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toListRegionalBuckets",
+        "toPutAccessPointPolicy",
+        "toPutBucketPolicy",
+        "toPutBucketTagging",
+        "toPutBucketVersioning",
+        "toPutLifecycleConfiguration",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging",
+        "toPutReplicationConfiguration",
+        "toReplicateDelete",
+        "toReplicateObject",
+        "toReplicateTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "signatureAge",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "s3-outposts:signatureversion",
+      "methodName": "ifSignatureversion",
+      "description": "Filters access by identifying the version of AWS Signature that is supported for authenticated requests",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetBucket",
+        "toGetBucketPolicy",
+        "toGetBucketTagging",
+        "toGetBucketVersioning",
+        "toGetLifecycleConfiguration",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionForReplication",
+        "toGetObjectVersionTagging",
+        "toGetReplicationConfiguration",
+        "toListAccessPoints",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toListRegionalBuckets",
+        "toPutAccessPointPolicy",
+        "toPutBucketPolicy",
+        "toPutBucketTagging",
+        "toPutBucketVersioning",
+        "toPutLifecycleConfiguration",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging",
+        "toPutReplicationConfiguration",
+        "toReplicateDelete",
+        "toReplicateObject",
+        "toReplicateTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "signatureversion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:versionid",
+      "methodName": "ifVersionid",
+      "description": "Filters access by a specific object version",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3",
+      "relatedActionMethods": [
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionTagging",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "versionid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:x-amz-acl",
+      "methodName": "ifXAmzAcl",
+      "description": "Filters access by requiring the x-amz-acl header with a specific canned ACL in a request",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#permissions",
+      "relatedActionMethods": [
+        "toPutObject",
+        "toPutObjectAcl"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-acl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:x-amz-content-sha256",
+      "methodName": "ifXAmzContentSha256",
+      "description": "Filters access by disallowing unsigned content in your bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toCreateAccessPoint",
+        "toCreateBucket",
+        "toDeleteAccessPoint",
+        "toDeleteAccessPointPolicy",
+        "toDeleteBucket",
+        "toDeleteBucketPolicy",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetAccessPoint",
+        "toGetAccessPointPolicy",
+        "toGetBucket",
+        "toGetBucketPolicy",
+        "toGetBucketTagging",
+        "toGetBucketVersioning",
+        "toGetLifecycleConfiguration",
+        "toGetObject",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionForReplication",
+        "toGetObjectVersionTagging",
+        "toGetReplicationConfiguration",
+        "toListAccessPoints",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toListRegionalBuckets",
+        "toPutAccessPointPolicy",
+        "toPutBucketPolicy",
+        "toPutBucketTagging",
+        "toPutBucketVersioning",
+        "toPutLifecycleConfiguration",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectTagging",
+        "toPutObjectVersionTagging",
+        "toPutReplicationConfiguration",
+        "toReplicateDelete",
+        "toReplicateObject",
+        "toReplicateTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-content-sha256",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:x-amz-copy-source",
+      "methodName": "ifXAmzCopySource",
+      "description": "Filters access by restricting the copy source to a specific bucket, prefix, or object",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#putobject-limit-copy-source-3",
+      "relatedActionMethods": [
+        "toPutObject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-copy-source",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:x-amz-metadata-directive",
+      "methodName": "ifXAmzMetadataDirective",
+      "description": "Filters access by enabling enforcement of object metadata behavior (COPY or REPLACE) when objects are copied",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html",
+      "relatedActionMethods": [
+        "toPutObject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-metadata-directive",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:x-amz-server-side-encryption",
+      "methodName": "ifXAmzServerSideEncryption",
+      "description": "Filters access by requiring server-side encryption",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html",
+      "relatedActionMethods": [
+        "toPutObject",
+        "toReplicateObject"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-server-side-encryption",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-outposts:x-amz-storage-class",
+      "methodName": "ifXAmzStorageClass",
+      "description": "Filters access by storage class",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-howtoset",
+      "relatedActionMethods": [
+        "toPutObject",
+        "toPutObjectAcl"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "x-amz-storage-class",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

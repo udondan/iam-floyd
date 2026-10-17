@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonSQSReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:ListDeadLetterSourceQueues",
+        "sqs:ListQueues",
+        "sqs:ListMessageMoveTasks",
+        "sqs:ListQueueTags"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

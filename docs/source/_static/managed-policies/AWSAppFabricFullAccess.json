@@ -1,0 +1,51 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appfabric:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMSListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3ReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "FirehoseReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:DescribeDeliveryStream",
+        "firehose:ListDeliveryStreams"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowUseOfServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "appfabric.amazonaws.com"
+        }
+      },
+      "Resource": "arn:aws:iam::*:role/aws-service-role/appfabric.amazonaws.com/AWSServiceRoleForAppFabric"
+    }
+  ]
+}

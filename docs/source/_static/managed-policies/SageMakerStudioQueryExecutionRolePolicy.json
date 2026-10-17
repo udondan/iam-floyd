@@ -1,0 +1,72 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GlueGetConnectionOnCatalog",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetConnection"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog"
+      ]
+    },
+    {
+      "Sid": "GlueGetConnectionsForProject",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetConnection",
+        "glue:GetConnections",
+        "glue:GetTags"
+      ],
+      "Resource": "arn:aws:glue:*:*:connection/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "S3GetObjectForAthenaSpillBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*/dzd*/*/dev/sys/athena/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/SageMakerStudioQueryExecutionRole": "true"
+        }
+      }
+    },
+    {
+      "Sid": "S3ListBucketOwnershipCheckForAthenaSpillBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::amazon-sagemaker-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/SageMakerStudioQueryExecutionRole": "true"
+        }
+      }
+    },
+    {
+      "Sid": "InvokeFunctionPermissionsForAthenaCatalogLambda",
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:*:*:function:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/SageMakerStudioQueryExecutionRole": "true",
+          "aws:ResourceTag/federated_athena_datacatalog": "true"
+        }
+      }
+    }
+  ]
+}

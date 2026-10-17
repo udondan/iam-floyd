@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "filename": "consoleapp",
+  "className": "Consoleapp",
+  "name": "consoleapp",
+  "servicePrefix": "consoleapp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_consoleapp.html",
+  "accessLevelList": {
+    "Read": [
+      "GetDeviceIdentity"
+    ],
+    "List": [
+      "ListDeviceIdentities"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetDeviceIdentity",
+      "methodName": "toGetDeviceIdentity",
+      "description": "Grants permission to retrieve the device identity for a Console Mobile App device",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/consolemobileapp/latest/userguide/permissions-policies.html"
+    },
+    {
+      "name": "ListDeviceIdentities",
+      "methodName": "toListDeviceIdentities",
+      "description": "Grants permission to retrieve a list of device identities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/consolemobileapp/latest/userguide/permissions-policies.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "DeviceIdentity",
+      "methodName": "onDeviceIdentity",
+      "url": "https://docs.aws.amazon.com/consolemobileapp/latest/userguide/permissions-policies.html",
+      "arn": "arn:${Partition}:consoleapp::${Account}:device/${DeviceId}/identity/${IdentityId}",
+      "placeholders": [
+        {
+          "placeholder": "DeviceId",
+          "name": "deviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdentityId",
+          "name": "identityId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

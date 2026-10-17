@@ -1,0 +1,108 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PanoramaIoTThingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreateThing",
+        "iot:DeleteThing",
+        "iot:DeleteThingShadow",
+        "iot:DescribeThing",
+        "iot:GetThingShadow",
+        "iot:UpdateThing",
+        "iot:UpdateThingShadow"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:thing/panorama*"
+      ]
+    },
+    {
+      "Sid": "PanoramaIoTCertificateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iot:AttachThingPrincipal",
+        "iot:DetachThingPrincipal",
+        "iot:UpdateCertificate",
+        "iot:DeleteCertificate",
+        "iot:AttachPrincipalPolicy",
+        "iot:DetachPrincipalPolicy"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:thing/panorama*",
+        "arn:aws:iot:*:*:cert/*"
+      ]
+    },
+    {
+      "Sid": "PanoramaIoTCreateCertificateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreateKeysAndCertificate"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "PanoramaIoTCreatePolicyAndVersionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreatePolicy",
+        "iot:CreatePolicyVersion",
+        "iot:AttachPolicy"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:policy/panorama*"
+      ]
+    },
+    {
+      "Sid": "PanoramaIoTJobAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iot:DescribeJobExecution",
+        "iot:CreateJob",
+        "iot:DeleteJob"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:job/panorama*",
+        "arn:aws:iot:*:*:thing/panorama*"
+      ]
+    },
+    {
+      "Sid": "PanoramaIoTEndpointAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iot:DescribeEndpoint"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "PanoramaReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "panorama:Describe*",
+        "panorama:List*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "SecretsManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:ListSecretVersionIds",
+        "secretsmanager:DeleteSecret"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:panorama*",
+        "arn:aws:secretsmanager:*:*:secret:Panorama*"
+      ]
+    }
+  ]
+}

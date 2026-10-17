@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "es:Describe*",
+        "es:List*",
+        "es:Get*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

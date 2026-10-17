@@ -1,0 +1,84 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "cfflistbuckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Sid": "cffullaccess",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DescribeCertificate",
+        "acm:ListCertificates",
+        "cloudfront:*",
+        "cloudfront-keyvaluestore:*",
+        "iam:ListServerCertificates",
+        "waf:ListWebACLs",
+        "waf:GetWebACL",
+        "wafv2:ListWebACLs",
+        "wafv2:GetWebACL",
+        "wafv2:CreateWebACL",
+        "kinesis:ListStreams",
+        "ec2:DescribeInstances",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeIpamPools",
+        "ec2:GetIpamPoolCidrs",
+        "pricingplanmanager:ListSubscriptions",
+        "pricingplanmanager:CreateSubscription",
+        "cloudwatch:GetMetricData",
+        "freetier:GetAccountPlanState",
+        "shield:ListProtections"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "cfrequestcertificate",
+      "Effect": "Allow",
+      "Action": [
+        "acm:RequestCertificate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "cloudfront.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "cffdescribestream",
+      "Effect": "Allow",
+      "Action": [
+        "kinesis:DescribeStream"
+      ],
+      "Resource": "arn:aws:kinesis:*:*:*"
+    },
+    {
+      "Sid": "cfflistroles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": "arn:aws:iam::*:*"
+    },
+    {
+      "Sid": "ppmFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "pricingplanmanager:ApprovePaidSubscription",
+        "pricingplanmanager:AssociateResourcesToSubscription",
+        "pricingplanmanager:CancelSubscription",
+        "pricingplanmanager:CancelSubscriptionChange",
+        "pricingplanmanager:DisassociateResourcesFromSubscription",
+        "pricingplanmanager:GetSubscription",
+        "pricingplanmanager:UpdateSubscription"
+      ],
+      "Resource": "arn:aws:pricingplanmanager::*:subscription:*"
+    }
+  ]
+}

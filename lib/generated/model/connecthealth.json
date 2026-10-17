@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "filename": "connecthealth",
+  "className": "HealthAgent",
+  "name": "health-agent",
+  "servicePrefix": "health-agent",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_connecthealth.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateSubscription",
+      "CreateDomain",
+      "CreateSubscription",
+      "DeactivateSubscription",
+      "DeleteDomain",
+      "StartMedicalScribeListeningSession",
+      "StartPatientInsightsJob",
+      "TagResource",
+      "UntagResource",
+      "CancelAppointment",
+      "CreateAgent",
+      "CreateIntegration",
+      "CreateSession",
+      "DeleteAgent",
+      "DeleteIntegration",
+      "InvokeAgent",
+      "PublishAgent",
+      "RescheduleAppointment",
+      "ResetPassword",
+      "ScheduleAppointment",
+      "SubmitMedicationRenewal",
+      "UpdateAgent",
+      "UpdateIntegration",
+      "UpdateSession"
+    ],
+    "Read": [
+      "GetDomain",
+      "GetDomainAnalytics",
+      "GetMedicalScribeListeningSession",
+      "GetPatientInsightsJob",
+      "GetSubscription",
+      "GetAgent",
+      "GetCareTeamProvider",
+      "GetIntegration",
+      "GetPatient",
+      "GetPractitioner",
+      "GetSessionContext",
+      "ListAppointmentSlots",
+      "ListPatientAppointments",
+      "ListPatientInsuranceCoverages",
+      "ListPatientMedications",
+      "ListProviders",
+      "MatchPatient"
+    ],
+    "List": [
+      "ListDomains",
+      "ListSessionRecords",
+      "ListSubscriptions",
+      "ListTagsForResource",
+      "ListAgents",
+      "ListIntegrations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateSubscription",
+      "methodName": "toActivateSubscription",
+      "description": "Grants permission to activate a subscription to enable billing for a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ActivateSubscription.html"
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to create a new domain for managing HealthAgent resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_CreateDomain.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSubscription",
+      "methodName": "toCreateSubscription",
+      "description": "Grants permission to create a new subscription within a domain for billing and user management",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_CreateSubscription.html"
+    },
+    {
+      "name": "DeactivateSubscription",
+      "methodName": "toDeactivateSubscription",
+      "description": "Grants permission to deactivate a subscription to stop billing for a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeactivateSubscription.html"
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a domain and all associated resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeleteDomain.html"
+    },
+    {
+      "name": "GetDomain",
+      "methodName": "toGetDomain",
+      "description": "Grants permission to retrieve information about a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetDomain.html"
+    },
+    {
+      "name": "GetDomainAnalytics",
+      "methodName": "toGetDomainAnalytics",
+      "description": "Grants permission to retrieve aggregated analytics for a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetDomainAnalytics.html"
+    },
+    {
+      "name": "GetMedicalScribeListeningSession",
+      "methodName": "toGetMedicalScribeListeningSession",
+      "description": "Grants permission to retrieve details about an existing Medical Scribe listening session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetMedicalScribeListeningSession.html"
+    },
+    {
+      "name": "GetPatientInsightsJob",
+      "methodName": "toGetPatientInsightsJob",
+      "description": "Grants permission to get details of a started patient insights job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetPatientInsightsJob.html"
+    },
+    {
+      "name": "GetSubscription",
+      "methodName": "toGetSubscription",
+      "description": "Grants permission to retrieve information about a subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetSubscription.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list domains for a given account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListDomains.html"
+    },
+    {
+      "name": "ListSessionRecords",
+      "methodName": "toListSessionRecords",
+      "description": "Grants permission to list session records for a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListSessionRecords.html"
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to list all subscriptions within a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListSubscriptions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartMedicalScribeListeningSession",
+      "methodName": "toStartMedicalScribeListeningSession",
+      "description": "Grants permission to start a new Medical Scribe listening session for real-time audio transcription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartMedicalScribeListeningSession.html"
+    },
+    {
+      "name": "StartPatientInsightsJob",
+      "methodName": "toStartPatientInsightsJob",
+      "description": "Grants permission to start a new patient insights job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartPatientInsightsJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add the specified tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the tags identified by the TagKeys list from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "CancelAppointment",
+      "methodName": "toCancelAppointment",
+      "description": "Grants permission to cancel an appointment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "CreateAgent",
+      "methodName": "toCreateAgent",
+      "description": "Grants permission to create a new agent with an initial version in DRAFT state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "CreateIntegration",
+      "methodName": "toCreateIntegration",
+      "description": "Grants permission to create a new integration for a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permission to create a new session with specified agent configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "DeleteAgent",
+      "methodName": "toDeleteAgent",
+      "description": "Grants permission to delete an agent configuration and all its versions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete an integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "GetAgent",
+      "methodName": "toGetAgent",
+      "description": "Grants permission to retrieve an agent configuration, defaulting to the most recent version if not specified",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "GetCareTeamProvider",
+      "methodName": "toGetCareTeamProvider",
+      "description": "Grants permission to retrieve the care team provider of a patient",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "GetIntegration",
+      "methodName": "toGetIntegration",
+      "description": "Grants permission to get an existing integration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "GetPatient",
+      "methodName": "toGetPatient",
+      "description": "Grants permission to retrieve patient information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "GetPractitioner",
+      "methodName": "toGetPractitioner",
+      "description": "Grants permission to retrieve practitioner information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "GetSessionContext",
+      "methodName": "toGetSessionContext",
+      "description": "Grants permission to retrieve structured session context including attributes and collected data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "InvokeAgent",
+      "methodName": "toInvokeAgent",
+      "description": "Grants permission to invoke an agent within a session with streaming response support",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListAgents",
+      "methodName": "toListAgents",
+      "description": "Grants permission to list all agents in a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListAppointmentSlots",
+      "methodName": "toListAppointmentSlots",
+      "description": "Grants permission to list available appointment slots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListIntegrations",
+      "methodName": "toListIntegrations",
+      "description": "Grants permission to list integrations for a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListPatientAppointments",
+      "methodName": "toListPatientAppointments",
+      "description": "Grants permission to list patient appointments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListPatientInsuranceCoverages",
+      "methodName": "toListPatientInsuranceCoverages",
+      "description": "Grants permission to list patient insurance coverages",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListPatientMedications",
+      "methodName": "toListPatientMedications",
+      "description": "Grants permission to list patient medications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListProviders",
+      "methodName": "toListProviders",
+      "description": "Grants permission to retrieve active providers available for scheduling appointments with a patient",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "MatchPatient",
+      "methodName": "toMatchPatient",
+      "description": "Grants permission to match a patient",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "PublishAgent",
+      "methodName": "toPublishAgent",
+      "description": "Grants permission to publish an agent configuration version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "RescheduleAppointment",
+      "methodName": "toRescheduleAppointment",
+      "description": "Grants permission to reschedule an appointment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ResetPassword",
+      "methodName": "toResetPassword",
+      "description": "Grants permission to reset a patient MyChart password via email or SMS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ScheduleAppointment",
+      "methodName": "toScheduleAppointment",
+      "description": "Grants permission to schedule an appointment for a patient",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "SubmitMedicationRenewal",
+      "methodName": "toSubmitMedicationRenewal",
+      "description": "Grants permission to submit a medication renewal for a patient",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "UpdateAgent",
+      "methodName": "toUpdateAgent",
+      "description": "Grants permission to update a draft agent configuration, creating a new draft version if none exists",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "UpdateIntegration",
+      "methodName": "toUpdateIntegration",
+      "description": "Grants permission to update an existing integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "UpdateSession",
+      "methodName": "toUpdateSession",
+      "description": "Grants permission to update session attributes such as departmentId and appointmentType",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Agent",
+      "methodName": "onAgent",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/agent-customization.html",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/agent/${AgentId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AgentId",
+          "name": "agentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/setting-up.html#setting-up-create-domain",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_healthagent",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
+    },
+    {
+      "name": "Integration",
+      "methodName": "onIntegration",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/configuring-testing-pe-agents.html",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/integration/${IntegrationId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntegrationId",
+          "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "PatientInsightsJob",
+      "methodName": "onPatientInsightsJob",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-insights.html",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/patient-insights-job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/session/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Subscription",
+      "methodName": "onSubscription",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/ambient-documentation.html#al-subscription-management",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/subscription/${SubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SubscriptionId",
+          "name": "subscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/security-iam-service-with-iam.htmlsecurity-iam-service-with-iam.html#security-iam-service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/security-iam-service-with-iam.htmlsecurity-iam-service-with-iam.html#security-iam-service-with-iam-tags",
+      "relatedActionMethods": [
+        "toActivateSubscription",
+        "toCreateSubscription",
+        "toDeactivateSubscription",
+        "toDeleteDomain",
+        "toGetDomain",
+        "toGetDomainAnalytics",
+        "toGetMedicalScribeListeningSession",
+        "toGetPatientInsightsJob",
+        "toGetSubscription",
+        "toListSessionRecords",
+        "toListSubscriptions",
+        "toListTagsForResource",
+        "toStartMedicalScribeListeningSession",
+        "toStartPatientInsightsJob",
+        "toTagResource",
+        "toUntagResource",
+        "toCancelAppointment",
+        "toCreateAgent",
+        "toCreateIntegration",
+        "toCreateSession",
+        "toDeleteAgent",
+        "toDeleteIntegration",
+        "toGetAgent",
+        "toGetCareTeamProvider",
+        "toGetIntegration",
+        "toGetPatient",
+        "toGetPractitioner",
+        "toGetSessionContext",
+        "toInvokeAgent",
+        "toListAgents",
+        "toListAppointmentSlots",
+        "toListIntegrations",
+        "toListPatientAppointments",
+        "toListPatientInsuranceCoverages",
+        "toListPatientMedications",
+        "toListProviders",
+        "toMatchPatient",
+        "toPublishAgent",
+        "toRescheduleAppointment",
+        "toResetPassword",
+        "toScheduleAppointment",
+        "toSubmitMedicationRenewal",
+        "toUpdateAgent",
+        "toUpdateIntegration",
+        "toUpdateSession"
+      ],
+      "relatedResourceTypes": [
+        "Agent",
+        "Domain",
+        "Integration",
+        "PatientInsightsJob",
+        "Session",
+        "Subscription"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/security-iam-service-with-iam.htmlsecurity-iam-service-with-iam.html#security-iam-service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

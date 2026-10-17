@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "filename": "support-app",
+  "className": "Supportapp",
+  "name": "supportapp",
+  "servicePrefix": "supportapp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_support-app.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSlackChannelConfiguration",
+      "DeleteAccountAlias",
+      "DeleteSlackChannelConfiguration",
+      "DeleteSlackWorkspaceConfiguration",
+      "PutAccountAlias",
+      "RegisterSlackWorkspaceForOrganization",
+      "UpdateSlackChannelConfiguration",
+      "RedeemSlackOauthCode"
+    ],
+    "Read": [
+      "GetAccountAlias",
+      "ListSlackChannelConfigurations",
+      "ListSlackWorkspaceConfigurations",
+      "DescribeSlackChannels",
+      "GetSlackOauthParameters"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSlackChannelConfiguration",
+      "methodName": "toCreateSlackChannelConfiguration",
+      "description": "Grants permission to create a Slack channel configuration for your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_CreateSlackChannelConfiguration.html"
+    },
+    {
+      "name": "DeleteAccountAlias",
+      "methodName": "toDeleteAccountAlias",
+      "description": "Grants permission to delete an alias from your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_DeleteAccountAlias.html"
+    },
+    {
+      "name": "DeleteSlackChannelConfiguration",
+      "methodName": "toDeleteSlackChannelConfiguration",
+      "description": "Grants permission to delete a Slack channel configuration from your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_DeleteSlackChannelConfiguration.html"
+    },
+    {
+      "name": "DeleteSlackWorkspaceConfiguration",
+      "methodName": "toDeleteSlackWorkspaceConfiguration",
+      "description": "Grants permission to delete a Slack workspace configuration from your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_DeleteSlackWorkspaceConfiguration.html"
+    },
+    {
+      "name": "GetAccountAlias",
+      "methodName": "toGetAccountAlias",
+      "description": "Grants permission to get the alias for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_GetAccountAlias.html"
+    },
+    {
+      "name": "ListSlackChannelConfigurations",
+      "methodName": "toListSlackChannelConfigurations",
+      "description": "Grants permission to list all Slack channel configurations for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_ListSlackChannelConfigurations.html"
+    },
+    {
+      "name": "ListSlackWorkspaceConfigurations",
+      "methodName": "toListSlackWorkspaceConfigurations",
+      "description": "Grants permission to list all Slack workspace configurations for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_ListSlackWorkspaceConfigurations.html"
+    },
+    {
+      "name": "PutAccountAlias",
+      "methodName": "toPutAccountAlias",
+      "description": "Grants permission to create or update an alias for your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_PutAccountAlias.html"
+    },
+    {
+      "name": "RegisterSlackWorkspaceForOrganization",
+      "methodName": "toRegisterSlackWorkspaceForOrganization",
+      "description": "Grants permission to register a Slack workspace for an AWS account that is part of an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_RegisterSlackWorkspaceForOrganization.html"
+    },
+    {
+      "name": "UpdateSlackChannelConfiguration",
+      "methodName": "toUpdateSlackChannelConfiguration",
+      "description": "Grants permission to update a Slack channel configuration for your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/supportapp/latest/APIReference/API_UpdateSlackChannelConfiguration.html"
+    },
+    {
+      "name": "DescribeSlackChannels",
+      "methodName": "toDescribeSlackChannels",
+      "description": "Grants permission to list all public Slack channels in a workspace that have invited the AWS Support App",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/slack-authorization-permissions.html"
+    },
+    {
+      "name": "GetSlackOauthParameters",
+      "methodName": "toGetSlackOauthParameters",
+      "description": "Grants permission to get parameters for the Slack OAuth code, which the AWS Support App uses to authorize the workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/slack-authorization-permissions.html"
+    },
+    {
+      "name": "RedeemSlackOauthCode",
+      "methodName": "toRedeemSlackOauthCode",
+      "description": "Grants permission to redeem the Slack OAuth code, which the AWS Support App uses to authorize the workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/slack-authorization-permissions.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

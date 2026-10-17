@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "filename": "backup-storage",
+  "className": "BackupStorage",
+  "name": "backup-storage",
+  "servicePrefix": "backup-storage",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_backup-storage.html",
+  "accessLevelList": {
+    "Write": [
+      "CommitBackupJob",
+      "DeleteObjects",
+      "DescribeBackupJob",
+      "GetBaseBackup",
+      "GetChunk",
+      "GetIncrementalBaseBackup",
+      "GetObjectMetadata",
+      "ListChunks",
+      "ListObjects",
+      "MountCapsule",
+      "NotifyObjectComplete",
+      "PutChunk",
+      "PutObject",
+      "StartObject",
+      "UpdateObjectComplete"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CommitBackupJob",
+      "methodName": "toCommitBackupJob",
+      "description": "Grants permission to commit backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "DeleteObjects",
+      "methodName": "toDeleteObjects",
+      "description": "Grants permission to delete objects",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "DescribeBackupJob",
+      "methodName": "toDescribeBackupJob",
+      "description": "Grants permission to describe backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "GetBaseBackup",
+      "methodName": "toGetBaseBackup",
+      "description": "Grants permission to get base backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "GetChunk",
+      "methodName": "toGetChunk",
+      "description": "Grants permission to get data from a recovery point for a restore job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "GetIncrementalBaseBackup",
+      "methodName": "toGetIncrementalBaseBackup",
+      "description": "Grants permission to get incremental base backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "GetObjectMetadata",
+      "methodName": "toGetObjectMetadata",
+      "description": "Grants permission to get metadata from a recovery point for a restore job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "ListChunks",
+      "methodName": "toListChunks",
+      "description": "Grants permission to list data from a recovery point for a restore job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "ListObjects",
+      "methodName": "toListObjects",
+      "description": "Grants permission to list data from a recovery point for a restore job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "MountCapsule",
+      "methodName": "toMountCapsule",
+      "description": "Associates a KMS key to a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html"
+    },
+    {
+      "name": "NotifyObjectComplete",
+      "methodName": "toNotifyObjectComplete",
+      "description": "Grants permission to mark an uploaded data as completed for a backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "PutChunk",
+      "methodName": "toPutChunk",
+      "description": "Grants permission to upload data to an AWS Backup-managed recovery point for a backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "PutObject",
+      "methodName": "toPutObject",
+      "description": "Grants permission to put object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "StartObject",
+      "methodName": "toStartObject",
+      "description": "Grants permission to upload data to an AWS Backup-managed recovery point for a backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    },
+    {
+      "name": "UpdateObjectComplete",
+      "methodName": "toUpdateObjectComplete",
+      "description": "Grants permission to update object complete",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-data-transfer.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

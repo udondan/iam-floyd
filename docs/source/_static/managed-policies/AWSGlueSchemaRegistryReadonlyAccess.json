@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSGlueSchemaRegistryReadonlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetRegistry",
+        "glue:ListRegistries",
+        "glue:GetSchema",
+        "glue:ListSchemas",
+        "glue:GetSchemaByDefinition",
+        "glue:GetSchemaVersion",
+        "glue:ListSchemaVersions",
+        "glue:GetSchemaVersionsDiff",
+        "glue:CheckSchemaVersionValidity",
+        "glue:QuerySchemaVersionMetadata",
+        "glue:GetTags"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

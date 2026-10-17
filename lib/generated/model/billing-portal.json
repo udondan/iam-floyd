@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "filename": "billing-portal",
+  "className": "BillingPortal",
+  "name": "billing-portal",
+  "servicePrefix": "aws-portal",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aws-portal.html",
+  "accessLevelList": {
+    "Read": [
+      "GetConsoleActionSetEnforced",
+      "ViewAccount",
+      "ViewBilling",
+      "ViewPaymentMethods",
+      "ViewUsage"
+    ],
+    "Write": [
+      "ModifyAccount",
+      "ModifyBilling",
+      "ModifyPaymentMethods",
+      "UpdateConsoleActionSetEnforced"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetConsoleActionSetEnforced",
+      "methodName": "toGetConsoleActionSetEnforced",
+      "description": "Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ModifyAccount",
+      "methodName": "toModifyAccount",
+      "description": "Allow or deny IAM users permission to modify Account Settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ModifyBilling",
+      "methodName": "toModifyBilling",
+      "description": "Allow or deny IAM users permission to modify billing settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ModifyPaymentMethods",
+      "methodName": "toModifyPaymentMethods",
+      "description": "Allow or deny IAM users permission to modify payment methods",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UpdateConsoleActionSetEnforced",
+      "methodName": "toUpdateConsoleActionSetEnforced",
+      "description": "Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ViewAccount",
+      "methodName": "toViewAccount",
+      "description": "Allow or deny IAM users permission to view account settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ViewBilling",
+      "methodName": "toViewBilling",
+      "description": "Allow or deny IAM users permission to view billing pages in the console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ViewPaymentMethods",
+      "methodName": "toViewPaymentMethods",
+      "description": "Allow or deny IAM users permission to view payment methods",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ViewUsage",
+      "methodName": "toViewUsage",
+      "description": "Allow or deny IAM users permission to view AWS usage reports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

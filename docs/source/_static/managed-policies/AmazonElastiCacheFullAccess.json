@@ -1,0 +1,135 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ElastiCacheManagementActions",
+      "Effect": "Allow",
+      "Action": "elasticache:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "elasticache.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateVPCEndpoints",
+      "Effect": "Allow",
+      "Action": "ec2:CreateVpcEndpoint",
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringLike": {
+          "ec2:VpceServiceName": "com.amazonaws.elasticache.serverless.*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAccessToElastiCacheTaggedVpcEndpoints",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint"
+      ],
+      "NotResource": "arn:aws:ec2:*:*:vpc-endpoint/*"
+    },
+    {
+      "Sid": "TagVPCEndpointsOnCreation",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpoint",
+          "aws:RequestTag/AmazonElastiCacheManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAccessToEc2",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToKMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:ListKeys"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToCloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToAutoScaling",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScheduledActions",
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-autoscaling:DescribeScalingActivities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeLogGroups",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListLogDeliveryStreams",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:ListDeliveryStreams"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeS3Buckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToOutposts",
+      "Effect": "Allow",
+      "Action": [
+        "outposts:ListOutposts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToSNS",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

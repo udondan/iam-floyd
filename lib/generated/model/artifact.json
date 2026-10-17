@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "filename": "artifact",
+  "className": "Artifact",
+  "name": "artifact",
+  "servicePrefix": "artifact",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_artifact.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptAgreement",
+      "AcceptNdaForAgreement",
+      "CreateComplianceInquiry",
+      "PutAccountSettings",
+      "PutComplianceInquiryFeedback",
+      "TagResource",
+      "TerminateAgreement",
+      "UntagResource"
+    ],
+    "Read": [
+      "ExportComplianceInquiry",
+      "GetAccountSettings",
+      "GetAgreement",
+      "GetComplianceInquiryMetadata",
+      "GetCustomerAgreement",
+      "GetNdaForAgreement",
+      "GetReport",
+      "GetReportMetadata",
+      "GetTermForReport",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAgreements",
+      "ListComplianceInquiries",
+      "ListComplianceInquiryQueries",
+      "ListCustomerAgreements",
+      "ListReportVersions",
+      "ListReports"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptAgreement",
+      "methodName": "toAcceptAgreement",
+      "description": "Grants permission to accept an AWS agreement that has not yet been accepted by the customer account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_AcceptAgreement.html"
+    },
+    {
+      "name": "AcceptNdaForAgreement",
+      "methodName": "toAcceptNdaForAgreement",
+      "description": "Grants permission to accept the terms of an NDA Document for a given agreement resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_AcceptNdaForAgreement.html"
+    },
+    {
+      "name": "CreateComplianceInquiry",
+      "methodName": "toCreateComplianceInquiry",
+      "description": "Grants permission to create a compliance inquiry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_CreateComplianceInquiry.html"
+    },
+    {
+      "name": "ExportComplianceInquiry",
+      "methodName": "toExportComplianceInquiry",
+      "description": "Grants permission to export a compliance inquiry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ExportComplianceInquiry.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to get the account settings for Artifact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetAgreement",
+      "methodName": "toGetAgreement",
+      "description": "Grants permission to get an AWS agreement that has not yet been accepted by the customer account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetAgreement.html"
+    },
+    {
+      "name": "GetComplianceInquiryMetadata",
+      "methodName": "toGetComplianceInquiryMetadata",
+      "description": "Grants permission to get metadata associated with a compliance inquiry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetComplianceInquiryMetadata.html"
+    },
+    {
+      "name": "GetCustomerAgreement",
+      "methodName": "toGetCustomerAgreement",
+      "description": "Grants permission to get an AWS agreement that has been accepted by the customer account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetCustomerAgreement.html"
+    },
+    {
+      "name": "GetNdaForAgreement",
+      "methodName": "toGetNdaForAgreement",
+      "description": "Grants permission to retrieve the NDA Document for a given agreement resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetNdaForAgreement.html"
+    },
+    {
+      "name": "GetReport",
+      "methodName": "toGetReport",
+      "description": "Grants permission to download a report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetReport.html"
+    },
+    {
+      "name": "GetReportMetadata",
+      "methodName": "toGetReportMetadata",
+      "description": "Grants permission to download metadata associated with a report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetReportMetadata.html"
+    },
+    {
+      "name": "GetTermForReport",
+      "methodName": "toGetTermForReport",
+      "description": "Grants permission to download a term associated with a report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetTermForReport.html"
+    },
+    {
+      "name": "ListAgreements",
+      "methodName": "toListAgreements",
+      "description": "Grants permission to list AWS agreements",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListAgreements.html"
+    },
+    {
+      "name": "ListComplianceInquiries",
+      "methodName": "toListComplianceInquiries",
+      "description": "Grants permission to list compliance inquiries submitted by the customer account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListComplianceInquiries.html"
+    },
+    {
+      "name": "ListComplianceInquiryQueries",
+      "methodName": "toListComplianceInquiryQueries",
+      "description": "Grants permission to list queries for a compliance inquiry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListComplianceInquiryQueries.html"
+    },
+    {
+      "name": "ListCustomerAgreements",
+      "methodName": "toListCustomerAgreements",
+      "description": "Grants permission to list customer-agreement resources that have been accepted by the customer account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListCustomerAgreements.html"
+    },
+    {
+      "name": "ListReportVersions",
+      "methodName": "toListReportVersions",
+      "description": "Grants permission to list report versions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListReportVersions.html"
+    },
+    {
+      "name": "ListReports",
+      "methodName": "toListReports",
+      "description": "Grants permission to list reports in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListReports.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags on an AWS Artifact resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutAccountSettings",
+      "methodName": "toPutAccountSettings",
+      "description": "Grants permission to put account settings for Artifact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_PutAccountSettings.html"
+    },
+    {
+      "name": "PutComplianceInquiryFeedback",
+      "methodName": "toPutComplianceInquiryFeedback",
+      "description": "Grants permission to submit feedback on a compliance inquiry response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_PutComplianceInquiryFeedback.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate a set of tags with an AWS Artifact resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateAgreement",
+      "methodName": "toTerminateAgreement",
+      "description": "Grants permission to terminate a customer agreement that was previously accepted by the customer account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_TerminateAgreement.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the association of tags from an AWS Artifact resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agreement",
+      "methodName": "onAgreement",
+      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html",
+      "arn": "arn:${Partition}:artifact:::agreement/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "compliance-inquiry",
+      "methodName": "onComplianceInquiry",
+      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managing-compliance-inquiries.html",
+      "arn": "arn:${Partition}:artifact:${Region}:${Account}:compliance-inquiry/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "customer-agreement",
+      "methodName": "onCustomerAgreement",
+      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html",
+      "arn": "arn:${Partition}:artifact::${Account}:customer-agreement/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "report",
+      "methodName": "onReport",
+      "url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html",
+      "arn": "arn:${Partition}:artifact:${Region}::report/${ReportId}:${Version}",
+      "placeholders": [
+        {
+          "placeholder": "ReportId",
+          "name": "reportId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Version",
+          "name": "version",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifReportCategory",
+        "ifReportSeries"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "artifact:ReportCategory",
+      "methodName": "ifReportCategory",
+      "description": "Filters access by which category reports are associated with",
+      "url": "https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html",
+      "relatedActionMethods": [
+        "toGetReport",
+        "toGetReportMetadata",
+        "toGetTermForReport"
+      ],
+      "relatedResourceTypes": [
+        "report"
+      ],
+      "keyLiteral": "ReportCategory",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "artifact:ReportSeries",
+      "methodName": "ifReportSeries",
+      "description": "Filters access by which series reports are associated with",
+      "url": "https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html",
+      "relatedActionMethods": [
+        "toGetReport",
+        "toGetReportMetadata",
+        "toGetTermForReport"
+      ],
+      "relatedResourceTypes": [
+        "report"
+      ],
+      "keyLiteral": "ReportSeries",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateComplianceInquiry",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateComplianceInquiry",
+        "toExportComplianceInquiry",
+        "toGetComplianceInquiryMetadata",
+        "toListComplianceInquiryQueries",
+        "toListTagsForResource",
+        "toPutComplianceInquiryFeedback",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "compliance-inquiry"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateComplianceInquiry",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ApplicationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "securityagent:ListAgentSpaces",
+        "securityagent:ListSecurityRequirements"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AgentSpaceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "securityagent:AddArtifact",
+        "securityagent:BatchDeletePentests",
+        "securityagent:BatchGetAgentSpaces",
+        "securityagent:BatchGetArtifactMetadata",
+        "securityagent:BatchGetFindings",
+        "securityagent:BatchGetPentestJobs",
+        "securityagent:BatchGetPentests",
+        "securityagent:BatchGetPentestJobContentMetadata",
+        "securityagent:BatchGetPentestJobTasks",
+        "securityagent:CreateDesignReview",
+        "securityagent:CreatePentest",
+        "securityagent:DeleteArtifact",
+        "securityagent:GetArtifact",
+        "securityagent:DeleteDesignReview",
+        "securityagent:GetDesignReview",
+        "securityagent:GetDesignReviewArtifact",
+        "securityagent:ListArtifacts",
+        "securityagent:ListSecurityRequirements",
+        "securityagent:ListDiscoveredEndpoints",
+        "securityagent:ListDesignReviewComments",
+        "securityagent:ListDesignReviews",
+        "securityagent:ListFindings",
+        "securityagent:ListIntegratedResources",
+        "securityagent:ListPentestJobsForPentest",
+        "securityagent:ListPentests",
+        "securityagent:ListPentestJobTasks",
+        "securityagent:StartCodeRemediation",
+        "securityagent:StartPentestJob",
+        "securityagent:StopPentestJob",
+        "securityagent:UpdateFinding",
+        "securityagent:UpdatePentest"
+      ],
+      "Resource": "arn:aws:securityagent:*:*:agent-space*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

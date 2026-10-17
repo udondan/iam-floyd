@@ -1,0 +1,91 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PassRoleToEMREC2InstanceRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/datazone_emr_ec2_instance_role_${aws:PrincipalTag/AmazonDataZoneProject}_${aws:PrincipalTag/AmazonDataZoneEnvironment}",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "ec2.amazonaws.com"
+        },
+        "StringNotEquals": {
+          "aws:PrincipalTag/AmazonDataZoneProject": "",
+          "aws:PrincipalTag/AmazonDataZoneEnvironment": ""
+        },
+        "Null": {
+          "aws:PrincipalTag/AmazonDataZoneProject": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CreateInNetworkForSharedSubnet",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:RunInstances",
+        "ec2:CreateFleet"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "ec2:Vpc": "arn:aws:ec2:*:*:vpc/${aws:PrincipalTag/VpcId}"
+        }
+      }
+    },
+    {
+      "Sid": "EMRKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "ec2.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "kms:EncryptionContextKeys": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AllowGenerateDataKeyForEbsEncryption",
+      "Effect": "Allow",
+      "Action": "kms:GenerateDataKey",
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowDescribeKeyForLogPusherCMK",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

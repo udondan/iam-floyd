@@ -1,0 +1,252 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchFullAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-signals:*",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribePolicies",
+        "cloudwatch:*",
+        "logs:*",
+        "sns:CreateTopic",
+        "sns:ListSubscriptions",
+        "sns:ListSubscriptionsByTopic",
+        "sns:ListTopics",
+        "sns:Subscribe",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "oam:ListSinks",
+        "observabilityadmin:GetCentralizationRuleForOrganization",
+        "observabilityadmin:ListCentralizationRulesForOrganization",
+        "observabilityadmin:CreateCentralizationRuleForOrganization",
+        "observabilityadmin:UpdateCentralizationRuleForOrganization",
+        "observabilityadmin:DeleteCentralizationRuleForOrganization",
+        "observabilityadmin:StartTelemetryEvaluation",
+        "observabilityadmin:GetTelemetryEvaluationStatus",
+        "observabilityadmin:ListResourceTelemetry",
+        "observabilityadmin:StopTelemetryEvaluation",
+        "observabilityadmin:StartTelemetryEvaluationForOrganization",
+        "observabilityadmin:GetTelemetryEvaluationStatusForOrganization",
+        "observabilityadmin:ListResourceTelemetryForOrganization",
+        "observabilityadmin:StopTelemetryEvaluationForOrganization",
+        "observabilityadmin:CreateTelemetryRule",
+        "observabilityadmin:GetTelemetryRule",
+        "observabilityadmin:ListTelemetryRules",
+        "observabilityadmin:UpdateTelemetryRule",
+        "observabilityadmin:DeleteTelemetryRule",
+        "observabilityadmin:CreateTelemetryRuleForOrganization",
+        "observabilityadmin:GetTelemetryRuleForOrganization",
+        "observabilityadmin:ListTelemetryRulesForOrganization",
+        "observabilityadmin:UpdateTelemetryRuleForOrganization",
+        "observabilityadmin:DeleteTelemetryRuleForOrganization",
+        "observabilityadmin:GetTelemetryEnrichmentStatus",
+        "observabilityadmin:StartTelemetryEnrichment",
+        "observabilityadmin:StopTelemetryEnrichment",
+        "observabilityadmin:TagResource",
+        "observabilityadmin:UntagResource",
+        "observabilityadmin:ListTagsForResource",
+        "observabilityadmin:CreateTelemetryPipeline",
+        "observabilityadmin:GetTelemetryPipeline",
+        "observabilityadmin:UpdateTelemetryPipeline",
+        "observabilityadmin:DeleteTelemetryPipeline",
+        "observabilityadmin:ListTelemetryPipelines",
+        "observabilityadmin:TestTelemetryPipeline",
+        "observabilityadmin:ValidateTelemetryPipelineConfiguration",
+        "observabilityadmin:CreateS3TableIntegration",
+        "observabilityadmin:GetS3TableIntegration",
+        "observabilityadmin:ListS3TableIntegrations",
+        "observabilityadmin:DeleteS3TableIntegration",
+        "observabilityadmin:CreateDatasetIntegration",
+        "observabilityadmin:GetDatasetIntegration",
+        "observabilityadmin:ListDatasetIntegrations",
+        "observabilityadmin:UpdateDatasetIntegration",
+        "observabilityadmin:DeleteDatasetIntegration",
+        "rum:*",
+        "synthetics:*",
+        "xray:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "application-signals.cloudwatch.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EventsServicePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents*",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "events.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "OAMReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "oam:ListAttachedLinks"
+      ],
+      "Resource": "arn:aws:oam:*:*:sink/*"
+    },
+    {
+      "Sid": "CloudWatchCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:GetChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:ListChannels"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchServiceQuotaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": [
+        "arn:aws:servicequotas:*:*:s3/*",
+        "arn:aws:servicequotas:*:*:dynamodb/*",
+        "arn:aws:servicequotas:*:*:kinesis/*",
+        "arn:aws:servicequotas:*:*:sns/*",
+        "arn:aws:servicequotas:*:*:bedrock/*",
+        "arn:aws:servicequotas:*:*:lambda/*",
+        "arn:aws:servicequotas:*:*:fargate/*",
+        "arn:aws:servicequotas:*:*:elasticloadbalancing/*",
+        "arn:aws:servicequotas:*:*:ec2/*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchResourceExplorerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:Search"
+      ],
+      "Resource": [
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignals/service-view",
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignalsOrgScopeProd/service-view"
+      ]
+    },
+    {
+      "Sid": "CloudWatchResourceExplorerSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "resource-explorer-2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchResourceExplorerCreateIndexPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:CreateIndex"
+      ],
+      "Resource": "arn:aws:resource-explorer-2:*:*:index/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "logs.amazonaws.com"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:observabilityadmin:*:*:s3tableintegration/*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "logs.amazonaws.com",
+            "telemetry-pipelines.observabilityadmin.amazonaws.com"
+          ]
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:observabilityadmin:*:*:telemetry-pipeline/*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:CreateTableBucket",
+        "s3tables:PutTableBucketEncryption"
+      ],
+      "Resource": "arn:aws:s3tables:*:*:bucket/aws-cloudwatch",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "observabilityadmin.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:PutTableBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3tables:*:*:bucket/aws-cloudwatch"
+    },
+    {
+      "Sid": "LogAlarmScheduledQueryPassRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "logs.amazonaws.com"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:logs:*:*:scheduled-query:*"
+        }
+      }
+    },
+    {
+      "Sid": "LogAlarmLogLinesPassRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "cloudwatch.amazonaws.com"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:cloudwatch:*:*:alarm:*"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "filename": "nova-act",
+  "className": "NovaAct",
+  "name": "nova-act",
+  "servicePrefix": "nova-act",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAct",
+      "CreateSession",
+      "CreateWorkflowDefinition",
+      "CreateWorkflowRun",
+      "DeleteWorkflowDefinition",
+      "DeleteWorkflowRun",
+      "InvokeActStep",
+      "UpdateAct",
+      "UpdateWorkflowRun"
+    ],
+    "Read": [
+      "GetWorkflowDefinition",
+      "GetWorkflowRun",
+      "ListActs",
+      "ListModels",
+      "ListSessions"
+    ],
+    "List": [
+      "ListWorkflowDefinitions",
+      "ListWorkflowRuns"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAct",
+      "methodName": "toCreateAct",
+      "description": "Grants permission to create a new AI task (act) within a session that can interact with tools and perform specific actions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateAct.html"
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permission to create a new session context within a workflow run to manage conversation state and acts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateSession.html"
+    },
+    {
+      "name": "CreateWorkflowDefinition",
+      "methodName": "toCreateWorkflowDefinition",
+      "description": "Grants permission to create a new workflow definition template that can be used to execute multiple workflow runs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowDefinition.html"
+    },
+    {
+      "name": "CreateWorkflowRun",
+      "methodName": "toCreateWorkflowRun",
+      "description": "Grants permission to create a new execution instance of a workflow definition with specified parameters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowRun.html"
+    },
+    {
+      "name": "DeleteWorkflowDefinition",
+      "methodName": "toDeleteWorkflowDefinition",
+      "description": "Grants permission to delete a workflow definition and all associated resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowDefinition.html"
+    },
+    {
+      "name": "DeleteWorkflowRun",
+      "methodName": "toDeleteWorkflowRun",
+      "description": "Grants permission to terminate and clean up a workflow run, stopping all associated acts and sessions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowRun.html"
+    },
+    {
+      "name": "GetWorkflowDefinition",
+      "methodName": "toGetWorkflowDefinition",
+      "description": "Grants permission to retrieve details and configuration of a specific workflow definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowDefinition.html"
+    },
+    {
+      "name": "GetWorkflowRun",
+      "methodName": "toGetWorkflowRun",
+      "description": "Grants permission to retrieve the current state, configuration, and execution details of a workflow run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowRun.html"
+    },
+    {
+      "name": "InvokeActStep",
+      "methodName": "toInvokeActStep",
+      "description": "Grants permission to execute the next step of an act, processing tool call results and returning new tool calls if needed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_InvokeActStep.html"
+    },
+    {
+      "name": "ListActs",
+      "methodName": "toListActs",
+      "description": "Grants permission to list all acts within a specific session with their current status and execution details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListActs.html"
+    },
+    {
+      "name": "ListModels",
+      "methodName": "toListModels",
+      "description": "Grants permission to list all available AI models that can be used for workflow execution, including their status and compatibility information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListModels.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list all sessions within a specific workflow run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListWorkflowDefinitions",
+      "methodName": "toListWorkflowDefinitions",
+      "description": "Grants permission to list all workflow definitions in your account with optional filtering and pagination",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowDefinitions.html"
+    },
+    {
+      "name": "ListWorkflowRuns",
+      "methodName": "toListWorkflowRuns",
+      "description": "Grants permission to list all workflow runs for a specific workflow definition with optional filtering and pagination",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowRuns.html"
+    },
+    {
+      "name": "UpdateAct",
+      "methodName": "toUpdateAct",
+      "description": "Grants permission to update an existing act's configuration, status, or error information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateAct.html"
+    },
+    {
+      "name": "UpdateWorkflowRun",
+      "methodName": "toUpdateWorkflowRun",
+      "description": "Grants permission to update the configuration or state of an active workflow run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateWorkflowRun.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "workflow-definition",
+      "methodName": "onWorkflowDefinition",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/userguide/workflow-definition.html",
+      "arn": "arn:${Partition}:nova-act:${Region}:${Account}:workflow-definition/${WorkflowDefinitionName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowDefinitionName",
+          "name": "workflowDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_novaact",
+        "interface": "IWorkflowDefinitionRef",
+        "property": "workflowDefinitionRef",
+        "arn": "workflowDefinitionArn"
+      }
+    },
+    {
+      "name": "workflow-run",
+      "methodName": "onWorkflowRun",
+      "url": "https://docs.aws.amazon.com/nova-act/latest/userguide/workflow-run.html",
+      "arn": "arn:${Partition}:nova-act:${Region}:${Account}:workflow-definition/${WorkflowDefinitionName}/workflow-run/${WorkflowRunId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowDefinitionName",
+          "name": "workflowDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkflowRunId",
+          "name": "workflowRunId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

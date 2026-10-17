@@ -1,0 +1,66 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IdentityStoreUserCreation",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:CreateUser"
+      ],
+      "Resource": [
+        "arn:aws:identitystore::*:identitystore/${aws:PrincipalTag/IdentityStoreId}",
+        "arn:aws:identitystore:::user/*"
+      ],
+      "Condition": {
+        "ForAllValues:ArnEquals": {
+          "identitystore:UserExternalIdIssuers": [
+            "arn:aws:identitystore::*:identitystore/${aws:PrincipalTag/IdentityStoreId}/provisioningtenant/${aws:PrincipalTag/IdentityStoreExternalIdIssuer}"
+          ]
+        },
+        "Null": {
+          "identitystore:UserExternalIdIssuers": "false",
+          "identitystore:ReservedUserId": "false"
+        }
+      }
+    },
+    {
+      "Sid": "IdentityStoreUserManagement",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:UpdateUser",
+        "identitystore:DeleteUser",
+        "identitystore:DescribeUser"
+      ],
+      "Resource": [
+        "arn:aws:identitystore::*:identitystore/${aws:PrincipalTag/IdentityStoreId}",
+        "arn:aws:identitystore:::user/*"
+      ],
+      "Condition": {
+        "ForAllValues:ArnEquals": {
+          "identitystore:UserExternalIdIssuers": [
+            "arn:aws:identitystore::*:identitystore/${aws:PrincipalTag/IdentityStoreId}/provisioningtenant/${aws:PrincipalTag/IdentityStoreExternalIdIssuer}"
+          ]
+        },
+        "Null": {
+          "identitystore:UserExternalIdIssuers": "false"
+        }
+      }
+    },
+    {
+      "Sid": "IdentityStoreCMKAccess",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": [
+            "arn:aws:identitystore::${aws:PrincipalAccount}:identitystore/${aws:PrincipalTag/IdentityStoreId}"
+          ]
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

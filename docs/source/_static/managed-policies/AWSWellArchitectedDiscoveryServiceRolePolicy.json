@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "trustedadvisor:DescribeChecks",
+        "trustedadvisor:DescribeCheckItems"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStackResources",
+        "resource-groups:ListGroupResources",
+        "tag:GetResources"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:ListAssociatedResources",
+        "servicecatalog:GetApplication",
+        "servicecatalog:CreateAttributeGroup"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:AssociateAttributeGroup",
+        "servicecatalog:DisassociateAttributeGroup"
+      ],
+      "Resource": [
+        "arn:*:servicecatalog:*:*:/applications/*",
+        "arn:*:servicecatalog:*:*:/attribute-groups/AWS_WellArchitected-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:UpdateAttributeGroup",
+        "servicecatalog:DeleteAttributeGroup"
+      ],
+      "Resource": [
+        "arn:*:servicecatalog:*:*:/attribute-groups/AWS_WellArchitected-*"
+      ]
+    }
+  ]
+}

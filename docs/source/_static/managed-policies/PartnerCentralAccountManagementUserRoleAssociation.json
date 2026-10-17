@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PassPartnerCentralRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/PartnerCentralRoleFor*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "partnercentral-account-management.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PartnerUserRoleAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "partnercentral-account-management:AssociatePartnerUser",
+        "partnercentral-account-management:DisassociatePartnerUser"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

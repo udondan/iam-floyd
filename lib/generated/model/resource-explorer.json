@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "filename": "resource-explorer",
+  "className": "ResourceExplorer",
+  "name": "resource-explorer",
+  "servicePrefix": "resource-explorer",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_resource-explorer.html",
+  "accessLevelList": {
+    "List": [
+      "ListResourceTypes",
+      "ListResources"
+    ],
+    "Read": [
+      "ListTags"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ListResourceTypes",
+      "methodName": "toListResourceTypes",
+      "description": "Grants permission to retrieve the resource types currently supported by Tag Editor",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to retrieve the identifiers of the resources in the AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to retrieve the tags attached to the specified resource identifiers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}
