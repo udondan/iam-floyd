@@ -8,6 +8,7 @@
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeAddresses",
         "ec2:DescribeByoipCidrs",
+        "ec2:DescribeDhcpOptions",
         "ec2:DescribeIpv6Pools",
         "ec2:DescribeNetworkInterfaces",
         "ec2:DescribePublicIpv4Pools",
@@ -31,7 +32,11 @@
         "organizations:DescribeOrganizationalUnit",
         "cloudfront:ListAnycastIpLists",
         "cloudfront:ListDistributionsByAnycastIpListId",
-        "cloudfront:ListTagsForResource"
+        "cloudfront:ListTagsForResource",
+        "route53:GetHostedZone",
+        "route53:ListHostedZones",
+        "route53:ListResourceRecordSets",
+        "route53:ListTagsForResource"
       ],
       "Resource": "*"
     },
@@ -77,6 +82,16 @@
       "Resource": [
         "*"
       ]
+    },
+    {
+      "Sid": "IPAMDhcpOptionSetManagementActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateDhcpOptions",
+        "ec2:AssociateDhcpOptions",
+        "ec2:DeleteDhcpOptions"
+      ],
+      "Resource": "*"
     }
   ]
 }

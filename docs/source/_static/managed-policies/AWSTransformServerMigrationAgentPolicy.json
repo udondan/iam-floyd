@@ -1033,6 +1033,25 @@
           "sts:ExternalId": "${aws:PrincipalAccount}:workspace/${aws:PrincipalTag/WorkspaceId}"
         }
       }
+    },
+    {
+      "Sid": "StsCrossAccountAssumeRoleViaMgn",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/AWSTransformRehostSharingRole_${aws:PrincipalAccount}",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceOrgID": "${aws:PrincipalOrgID}",
+          "sts:ExternalId": "${aws:PrincipalAccount}:AWSTransform"
+        }
+      }
     }
   ]
 }

@@ -237,7 +237,8 @@
           "iam:PolicyARN": [
             "arn:aws:iam::aws:policy/SageMakerStudioUserIAMDefaultExecutionPolicy",
             "arn:aws:iam::aws:policy/SageMakerStudioUserIAMPermissiveExecutionPolicy",
-            "arn:aws:iam::aws:policy/service-role/AmazonS3TablesLakeFormationServiceRole"
+            "arn:aws:iam::aws:policy/service-role/AmazonS3TablesLakeFormationServiceRole",
+            "arn:aws:iam::aws:policy/service-role/SageMakerStudioDataAppsAccessRolePolicy"
           ]
         }
       }
@@ -691,6 +692,7 @@
         "identitystore:DescribeUser",
         "identitystore:DescribeGroup",
         "sso:CreateApplication",
+        "sso:DeleteApplication",
         "sso:DescribeInstance",
         "sso:DescribeApplication",
         "sso:PutApplicationGrant",

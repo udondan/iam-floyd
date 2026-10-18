@@ -69,6 +69,25 @@
       }
     },
     {
+      "Sid": "PartnerCentralContentAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartnerCentralContentDocument",
+        "partnercentral:GetPartnerCentralContentMetadata",
+        "partnercentral:ListPartnerCentralContent",
+        "partnercentral:SearchPartnerCentralContent"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "PartnerCentralEphemeralWriteS3Access",
       "Effect": "Allow",
       "Action": [
