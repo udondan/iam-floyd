@@ -1142,8 +1142,10 @@
       "Sid": "ConsumerS3AGPermission",
       "Effect": "Allow",
       "Action": [
+        "s3:GetAccessGrantsInstance",
         "s3:GetAccessGrantsInstanceForPrefix",
         "s3:GetDataAccess",
+        "s3:ListAccessGrants",
         "s3:ListCallerAccessGrants",
         "ram:GetResourceShareInvitations"
       ],
@@ -1252,13 +1254,19 @@
       "Action": [
         "datazone:GenerateCode",
         "datazone:CreateAsset*",
+        "datazone:Get*",
+        "datazone:CreateListingChangeSet",
+        "datazone:CreateSubscriptionRequest",
+        "datazone:RevokeSubscription",
         "datazone:List*",
         "datazone:Search*",
         "datazone:*Message*",
         "datazone:*Conversation*",
         "datazone:*Cell*",
         "datazone:*Notebook*",
-        "datazone:*Compute*"
+        "datazone:*Compute*",
+        "datazone:*Agent*",
+        "datazone:*DataApp*"
       ],
       "Resource": "*"
     },
@@ -1288,6 +1296,22 @@
         "StringEquals": {
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
           "aws:ResourceTag/sqlworkbench-resource-owner": "${aws:userid}"
+        }
+      }
+    },
+    {
+      "Sid": "SSOReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeUser",
+        "identitystore:DescribeGroup",
+        "sso:DescribeInstance",
+        "sso:DescribeApplication"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:ViaAWSService": "true"
         }
       }
     }

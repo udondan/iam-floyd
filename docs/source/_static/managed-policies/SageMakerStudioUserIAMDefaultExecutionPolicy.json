@@ -7,6 +7,8 @@
       "Action": [
         "datazone:AcceptPredictions",
         "datazone:AcceptSubscriptionRequest",
+        "datazone:BatchGetAttributesMetadata",
+        "datazone:BatchPutAttributesMetadata",
         "datazone:BatchUpdateNotifications",
         "datazone:CancelMetadataGenerationRun",
         "datazone:CancelSubscription",
@@ -58,7 +60,18 @@
         "datazone:CancelMessage",
         "datazone:QueryGraph",
         "datazone:StartCompute",
-        "datazone:StopCompute"
+        "datazone:StopCompute",
+        "datazone:InvokeAgent",
+        "datazone:StopAgent",
+        "datazone:RegisterAgentArtifact",
+        "datazone:DeregisterAgentArtifact",
+        "datazone:DeleteConversation",
+        "datazone:UpdateConversation",
+        "datazone:CreateDataApp",
+        "datazone:UpdateDataApp",
+        "datazone:DeleteDataApp",
+        "datazone:PutAgentApprovalPolicy",
+        "datazone:DeleteAgentApprovalPolicy"
       ],
       "Resource": "*"
     },

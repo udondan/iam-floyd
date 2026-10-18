@@ -386,6 +386,7 @@
   "thirdparty.inspector2.amazonaws.com": {},
   "timestream-influxdb.amazonaws.com": {},
   "timestream.amazonaws.com": {},
+  "training-session.sagemaker.amazonaws.com": {},
   "transcribe.amazonaws.com": {},
   "transfer.amazonaws.com": {},
   "transform-custom.amazonaws.com": {},

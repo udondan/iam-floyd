@@ -237,7 +237,7 @@
       ]
     },
     {
-      "Sid": "IAMMng",
+      "Sid": "IamManage",
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
@@ -819,10 +819,11 @@
       }
     },
     {
-      "Sid": "GlueDbDelete",
+      "Sid": "GlueDbManage",
       "Effect": "Allow",
       "Action": [
-        "glue:DeleteDatabase"
+        "glue:DeleteDatabase",
+        "glue:UpdateDatabase"
       ],
       "Resource": "*",
       "Condition": {
@@ -2018,7 +2019,8 @@
       "Condition": {
         "ForAllValues:StringLike": {
           "aws:TagKeys": [
-            "AmazonDataZone*"
+            "AmazonDataZone*",
+            "aws:cloudformation:*"
           ]
         },
         "Null": {

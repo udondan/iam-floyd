@@ -996,6 +996,10 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerSpacesRouterPolicy = 'AmazonSageMakerSpacesRouterPolicy';
     /** This Amazon Managed Policy provides the necessary permissions to create and manage SageMaker Training Plans. It allows users to create Training Plans and Reserved Capacities, describe existing Training Plans, and perform search and listing operations. */
     public static AmazonSageMakerTrainingPlanCreateAccess = 'AmazonSageMakerTrainingPlanCreateAccess';
+    /** Provides permissions for a caller identity to create and manage Amazon SageMaker training sessions, run training and sampling operations, use customer managed AWS KMS keys through SageMaker, pass an execution role to SageMaker, publish model packages, access public hub content, and manage SageMaker default Amazon S3 buckets. */
+    public static AmazonSageMakerTrainingSessionAccess = 'AmazonSageMakerTrainingSessionAccess';
+    /** Provides permissions for Amazon SageMaker training session execution roles to access data in Amazon S3, use customer managed AWS KMS keys, publish model packages, access public hub content, and manage Amazon VPC network interfaces. */
+    public static AmazonSageMakerTrainingSessionFullAccess = 'AmazonSageMakerTrainingSessionFullAccess';
     /** Provides full access to Amazon Security Lake and related services needed to administer Security Lake. */
     public static AmazonSecurityLakeAdministrator = 'AmazonSecurityLakeAdministrator';
     /** Policy for Amazon SecurityLake meta store manager lambda which allows the access to cloudwatch, S3, Glue and SQS. */
@@ -1530,6 +1534,8 @@ export class AwsManagedPolicy {
     public static AWSConfigUserAccess = 'AWSConfigUserAccess';
     /** Enables broad read/write access to ALL EC2 objects, read/write access to S3 buckets starting with 'import-to-ec2-', and the ability to list all S3 buckets, for the AWS Connector to import VMs on your behalf. */
     public static AWSConnector = 'AWSConnector';
+    /** Grants Amazon Continuum access to AWS services for discovering and reading configuration, assessing network reachability and security posture data in your account. */
+    public static AWSContinuumCollectorServiceRolePolicy = 'aws-service-role/AWSContinuumCollectorServiceRolePolicy';
     /** Allows AWS Control Tower to call AWS services that provide automated account configuration and centralized governance on your behalf. */
     public static AWSControlTowerAccountServiceRolePolicy = 'aws-service-role/AWSControlTowerAccountServiceRolePolicy';
     /** AWS Control Tower enables AWS CloudTrail as a best practice and provides this role to AWS CloudTrail. AWS CloudTrail assumes this role to create and publish CloudTrail logs */
@@ -1902,10 +1908,6 @@ export class AwsManagedPolicy {
     public static AWSIoTDeviceTesterForFreeRTOSFullAccess = 'AWSIoTDeviceTesterForFreeRTOSFullAccess';
     /** Allows AWS IoT Device Tester to run the AWS Greengrass qualification suite by allowing access to related services including Lambda, IoT, API Gateway, IAM */
     public static AWSIoTDeviceTesterForGreengrassFullAccess = 'AWSIoTDeviceTesterForGreengrassFullAccess';
-    /** Provides full access to IoT Events. */
-    public static AWSIoTEventsFullAccess = 'AWSIoTEventsFullAccess';
-    /** Provides read only access to IoT Events. */
-    public static AWSIoTEventsReadOnlyAccess = 'AWSIoTEventsReadOnlyAccess';
     /** Federation access for IoT Fleet Hub applications */
     public static AWSIoTFleetHubFederationAccess = 'service-role/AWSIoTFleetHubFederationAccess';
     /** Grants permissions to AWS Resources and metaData used or managed by AWSIoTFleetwise for auxiliary features */
@@ -3070,6 +3072,8 @@ export class AwsManagedPolicy {
     public static SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy = 'service-role/SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy';
     /** Provides access to an Amazon Bedrock prompt and its configuration in SageMaker Studio. */
     public static SageMakerStudioBedrockPromptUserRolePolicy = 'service-role/SageMakerStudioBedrockPromptUserRolePolicy';
+    /** Amazon SageMaker Studio uses this policy to access data apps shared with a user in the Amazon SageMaker Studio domain. */
+    public static SageMakerStudioDataAppsAccessRolePolicy = 'service-role/SageMakerStudioDataAppsAccessRolePolicy';
     /** This policy is used by Amazon SageMaker Studio to catalog, discover, govern, share, and analyze data in the Amazon SageMaker Studio domain. */
     public static SageMakerStudioDomainExecutionRolePolicy = 'service-role/SageMakerStudioDomainExecutionRolePolicy';
     /** Service role for domain level actions in the portal that are performed by Amazon SageMaker Studio. */

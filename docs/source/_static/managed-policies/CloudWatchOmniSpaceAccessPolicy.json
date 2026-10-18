@@ -477,6 +477,50 @@
           "aws:ResourceTag/cw-omni": "true"
         }
       }
+    },
+    {
+      "Sid": "IdentityStoreReadForPrincipalSearch",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ListUsers",
+        "identitystore:ListGroups",
+        "identitystore:DescribeUser",
+        "identitystore:DescribeGroup"
+      ],
+      "Resource": [
+        "arn:aws:identitystore::*:identitystore/*",
+        "arn:aws:identitystore:::user/*",
+        "arn:aws:identitystore:::group/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudwatch.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "KmsDecryptForIdentityStoreCMK",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": [
+            "aws:identitystore:identitystore-arn"
+          ]
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SnsTopicDiscoveryForAlerts",
+      "Effect": "Allow",
+      "Action": "sns:ListTopics",
+      "Resource": "*"
     }
   ]
 }

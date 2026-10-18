@@ -115,6 +115,8 @@
       "Action": [
         "datazone:AcceptPredictions",
         "datazone:AcceptSubscriptionRequest",
+        "datazone:BatchGetAttributesMetadata",
+        "datazone:BatchPutAttributesMetadata",
         "datazone:BatchUpdateNotifications",
         "datazone:CancelMetadataGenerationRun",
         "datazone:CancelSubscription",
@@ -166,7 +168,11 @@
         "datazone:CancelMessage",
         "datazone:QueryGraph",
         "datazone:StartCompute",
-        "datazone:StopCompute"
+        "datazone:StopCompute",
+        "datazone:*Agent*",
+        "datazone:DeleteConversation",
+        "datazone:UpdateConversation",
+        "datazone:*DataApp*"
       ],
       "Resource": "*"
     },

@@ -33,7 +33,7 @@
         "*"
       ],
       "Condition": {
-        "StringEquals": {
+        "StringEqualsIfExists": {
           "cloudwatch:namespace": "/aws/sagemaker/Clusters"
         }
       }

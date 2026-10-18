@@ -16,6 +16,7 @@
         "aws-external-anthropic:CountTokens",
         "aws-external-anthropic:CreateAgent",
         "aws-external-anthropic:CreateBatchInference",
+        "aws-external-anthropic:CreateDeployment",
         "aws-external-anthropic:CreateEnvironment",
         "aws-external-anthropic:CreateFile",
         "aws-external-anthropic:CreateInference",

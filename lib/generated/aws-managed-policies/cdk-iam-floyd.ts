@@ -2499,6 +2499,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerTrainingPlanCreateAccess);
     }
 
+    /** Provides permissions for a caller identity to create and manage Amazon SageMaker training sessions, run training and sampling operations, use customer managed AWS KMS keys through SageMaker, pass an execution role to SageMaker, publish model packages, access public hub content, and manage SageMaker default Amazon S3 buckets. */
+    public AmazonSageMakerTrainingSessionAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerTrainingSessionAccess);
+    }
+
+    /** Provides permissions for Amazon SageMaker training session execution roles to access data in Amazon S3, use customer managed AWS KMS keys, publish model packages, access public hub content, and manage Amazon VPC network interfaces. */
+    public AmazonSageMakerTrainingSessionFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerTrainingSessionFullAccess);
+    }
+
     /** Provides full access to Amazon Security Lake and related services needed to administer Security Lake. */
     public AmazonSecurityLakeAdministrator(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSecurityLakeAdministrator);
@@ -3834,6 +3844,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSConnector);
     }
 
+    /** Grants Amazon Continuum access to AWS services for discovering and reading configuration, assessing network reachability and security posture data in your account. */
+    public AWSContinuumCollectorServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSContinuumCollectorServiceRolePolicy);
+    }
+
     /** Allows AWS Control Tower to call AWS services that provide automated account configuration and centralized governance on your behalf. */
     public AWSControlTowerAccountServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSControlTowerAccountServiceRolePolicy);
@@ -4762,16 +4777,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS IoT Device Tester to run the AWS Greengrass qualification suite by allowing access to related services including Lambda, IoT, API Gateway, IAM */
     public AWSIoTDeviceTesterForGreengrassFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTDeviceTesterForGreengrassFullAccess);
-    }
-
-    /** Provides full access to IoT Events. */
-    public AWSIoTEventsFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTEventsFullAccess);
-    }
-
-    /** Provides read only access to IoT Events. */
-    public AWSIoTEventsReadOnlyAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTEventsReadOnlyAccess);
     }
 
     /** Federation access for IoT Fleet Hub applications */
@@ -7682,6 +7687,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides access to an Amazon Bedrock prompt and its configuration in SageMaker Studio. */
     public SageMakerStudioBedrockPromptUserRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockPromptUserRolePolicy);
+    }
+
+    /** Amazon SageMaker Studio uses this policy to access data apps shared with a user in the Amazon SageMaker Studio domain. */
+    public SageMakerStudioDataAppsAccessRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioDataAppsAccessRolePolicy);
     }
 
     /** This policy is used by Amazon SageMaker Studio to catalog, discover, govern, share, and analyze data in the Amazon SageMaker Studio domain. */

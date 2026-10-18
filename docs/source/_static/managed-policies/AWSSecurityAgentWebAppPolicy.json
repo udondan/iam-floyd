@@ -76,6 +76,8 @@
         "securityagent:BatchDeleteCodeReviews",
         "securityagent:BatchDeletePentests",
         "securityagent:BatchDeleteThreatModels",
+        "securityagent:BatchDisassociateFindingIssue",
+        "securityagent:BatchExportFindings",
         "securityagent:BatchGetAgentSpaces",
         "securityagent:BatchGetArtifactMetadata",
         "securityagent:BatchGetCodeReviewJobs",
