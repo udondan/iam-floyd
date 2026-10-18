@@ -14,6 +14,8 @@
       "BatchDeleteSecurityRequirements",
       "BatchDeleteThreatModels",
       "BatchDeleteThreats",
+      "BatchDisassociateFindingIssue",
+      "BatchExportFindings",
       "BatchUpdateSecurityRequirements",
       "CreateAgentSpace",
       "CreateApplication",
@@ -184,6 +186,20 @@
       "description": "Grants permission to delete multiple threats",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreats.html"
+    },
+    {
+      "name": "BatchDisassociateFindingIssue",
+      "methodName": "toBatchDisassociateFindingIssue",
+      "description": "Grants permission to disassociate issues from findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityagent/API_BatchDisassociateFindingIssue.html"
+    },
+    {
+      "name": "BatchExportFindings",
+      "methodName": "toBatchExportFindings",
+      "description": "Grants permission to create issues for the findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityagent/API_BatchExportFindings.html"
     },
     {
       "name": "BatchGetAgentSpaces",
@@ -1220,6 +1236,8 @@
         "toBatchDeleteSecurityRequirements",
         "toBatchDeleteThreatModels",
         "toBatchDeleteThreats",
+        "toBatchDisassociateFindingIssue",
+        "toBatchExportFindings",
         "toBatchGetAgentSpaces",
         "toBatchGetArtifactMetadata",
         "toBatchGetCodeReviewJobTasks",

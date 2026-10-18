@@ -87,6 +87,7 @@
       "CreateStudioLifecycleConfig",
       "CreateTrainingJob",
       "CreateTrainingPlan",
+      "CreateTrainingSession",
       "CreateTransformJob",
       "CreateTrial",
       "CreateTrialComponent",
@@ -153,6 +154,7 @@
       "DeleteStudioLifecycleConfig",
       "DeleteTags",
       "DeleteTrainingJob",
+      "DeleteTrainingSession",
       "DeleteTrial",
       "DeleteTrialComponent",
       "DeleteUserProfile",
@@ -164,6 +166,8 @@
       "DisableSagemakerServicecatalogPortfolio",
       "DisassociateTrialComponent",
       "EnableSagemakerServicecatalogPortfolio",
+      "ExecuteSamplingOperation",
+      "ExecuteTrainingOperation",
       "ExtendTrainingPlan",
       "ImportHubContent",
       "PutLineageGroupPolicy",
@@ -172,6 +176,8 @@
       "RegisterDevices",
       "RetryPipelineExecution",
       "Sample",
+      "SampleTrainingSession",
+      "SampleTrainingSessionWithResponseStream",
       "SampleWithResponseStream",
       "SendHeartbeat",
       "SendPipelineExecutionStepFailure",
@@ -204,6 +210,7 @@
       "StopPipelineExecution",
       "StopProcessingJob",
       "StopTrainingJob",
+      "StopTrainingSession",
       "StopTransformJob",
       "TrainHubModel",
       "UpdateAction",
@@ -340,6 +347,7 @@
       "DescribeTrainingJob",
       "DescribeTrainingPlan",
       "DescribeTrainingPlanExtensionHistory",
+      "DescribeTrainingSession",
       "DescribeTransformJob",
       "DescribeTrial",
       "DescribeTrialComponent",
@@ -353,8 +361,10 @@
       "GetModelPackageGroupPolicy",
       "GetRecord",
       "GetSagemakerServicecatalogPortfolioStatus",
+      "GetSamplingOperationResult",
       "GetScalingConfigurationRecommendation",
       "GetSearchSuggestions",
+      "GetTrainingOperationResult",
       "InvokeEndpoint",
       "InvokeEndpointAsync",
       "InvokeEndpointWithResponseStream",
@@ -453,6 +463,7 @@
       "ListTrainingJobs",
       "ListTrainingJobsForHyperParameterTuningJob",
       "ListTrainingPlans",
+      "ListTrainingSessions",
       "ListTransformJobs",
       "ListTrialComponents",
       "ListTrials",
@@ -1056,6 +1067,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html"
     },
     {
+      "name": "CreateTrainingSession",
+      "methodName": "toCreateTrainingSession",
+      "description": "Grants permission to create a SageMaker training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingSession.html"
+    },
+    {
       "name": "CreateTransformJob",
       "methodName": "toCreateTransformJob",
       "description": "Grants permission to start a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that you specify",
@@ -1516,6 +1534,13 @@
       "description": "Grants permission to delete a training job",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTrainingJob.html"
+    },
+    {
+      "name": "DeleteTrainingSession",
+      "methodName": "toDeleteTrainingSession",
+      "description": "Grants permission to delete a SageMaker training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTrainingSession.html"
     },
     {
       "name": "DeleteTrial",
@@ -2064,6 +2089,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html"
     },
     {
+      "name": "DescribeTrainingSession",
+      "methodName": "toDescribeTrainingSession",
+      "description": "Grants permission to return information about a SageMaker training session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingSession.html"
+    },
+    {
       "name": "DescribeTransformJob",
       "methodName": "toDescribeTransformJob",
       "description": "Grants permission to return information about a transform job",
@@ -2134,6 +2166,20 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EnableSagemakerServicecatalogPortfolio.html"
     },
     {
+      "name": "ExecuteSamplingOperation",
+      "methodName": "toExecuteSamplingOperation",
+      "description": "Grants permission to execute a sampling operation against a training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExecuteSamplingOperation.html"
+    },
+    {
+      "name": "ExecuteTrainingOperation",
+      "methodName": "toExecuteTrainingOperation",
+      "description": "Grants permission to execute a training operation against a training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExecuteTrainingOperation.html"
+    },
+    {
       "name": "ExtendTrainingPlan",
       "methodName": "toExtendTrainingPlan",
       "description": "Grants permission to extend an existing training plan by purchasing an extension offering",
@@ -2190,6 +2236,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSagemakerServicecatalogPortfolioStatus.html"
     },
     {
+      "name": "GetSamplingOperationResult",
+      "methodName": "toGetSamplingOperationResult",
+      "description": "Grants permission to get the result of a sampling operation for a training session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSamplingOperationResult.html"
+    },
+    {
       "name": "GetScalingConfigurationRecommendation",
       "methodName": "toGetScalingConfigurationRecommendation",
       "description": "Grants permission to get a scaling policy configuration recommendation",
@@ -2202,6 +2255,13 @@
       "description": "Grants permission to get search suggestions when provided with a keyword",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSearchSuggestions.html"
+    },
+    {
+      "name": "GetTrainingOperationResult",
+      "methodName": "toGetTrainingOperationResult",
+      "description": "Grants permission to get the result of a training operation for a training session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetTrainingOperationResult.html"
     },
     {
       "name": "ImportHubContent",
@@ -2827,6 +2887,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrainingPlans.html"
     },
     {
+      "name": "ListTrainingSessions",
+      "methodName": "toListTrainingSessions",
+      "description": "Grants permission to list SageMaker training sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrainingSessions.html"
+    },
+    {
       "name": "ListTransformJobs",
       "methodName": "toListTransformJobs",
       "description": "Grants permission to list transform jobs",
@@ -2930,6 +2997,20 @@
       "description": "Grants permission to invoke a sample request against a job",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Sample.html"
+    },
+    {
+      "name": "SampleTrainingSession",
+      "methodName": "toSampleTrainingSession",
+      "description": "Grants permission to invoke a synchronous sample request against a training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SampleTrainingSession.html"
+    },
+    {
+      "name": "SampleTrainingSessionWithResponseStream",
+      "methodName": "toSampleTrainingSessionWithResponseStream",
+      "description": "Grants permission to invoke a streaming sample request against a training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SampleTrainingSessionWithResponseStream.html"
     },
     {
       "name": "SampleWithResponseStream",
@@ -3171,6 +3252,13 @@
       "description": "Grants permission to stop a training job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopTrainingJob.html"
+    },
+    {
+      "name": "StopTrainingSession",
+      "methodName": "toStopTrainingSession",
+      "description": "Grants permission to stop a SageMaker training session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopTrainingSession.html"
     },
     {
       "name": "StopTransformJob",
@@ -6100,6 +6188,38 @@
       ]
     },
     {
+      "name": "training-session",
+      "methodName": "onTrainingSession",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_TrainingSession.html",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:training-session/${SessionName}",
+      "placeholders": [
+        {
+          "placeholder": "SessionName",
+          "name": "sessionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
       "name": "transform-job",
       "methodName": "onTransformJob",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TransformJob.html.html",
@@ -6311,6 +6431,7 @@
         "toCreateStudioLifecycleConfig",
         "toCreateTrainingJob",
         "toCreateTrainingPlan",
+        "toCreateTrainingSession",
         "toCreateTransformJob",
         "toCreateTrial",
         "toCreateTrialComponent",
@@ -6422,6 +6543,7 @@
         "toCreateStudioLifecycleConfig",
         "toCreateTrainingJob",
         "toCreateTrainingPlan",
+        "toCreateTrainingSession",
         "toCreateTransformJob",
         "toCreateTrial",
         "toCreateTrialComponent",
@@ -6486,6 +6608,7 @@
         "toDeleteStudioLifecycleConfig",
         "toDeleteTags",
         "toDeleteTrainingJob",
+        "toDeleteTrainingSession",
         "toDeleteTrial",
         "toDeleteTrialComponent",
         "toDeleteUserProfile",
@@ -6561,6 +6684,7 @@
         "toDescribeTrainingJob",
         "toDescribeTrainingPlan",
         "toDescribeTrainingPlanExtensionHistory",
+        "toDescribeTrainingSession",
         "toDescribeTransformJob",
         "toDescribeTrial",
         "toDescribeTrialComponent",
@@ -6569,12 +6693,16 @@
         "toDescribeWorkteam",
         "toDetachClusterNodeVolume",
         "toDisassociateTrialComponent",
+        "toExecuteSamplingOperation",
+        "toExecuteTrainingOperation",
         "toGetDeployments",
         "toGetDeviceFleetReport",
         "toGetDeviceRegistration",
         "toGetModelPackageGroupPolicy",
         "toGetRecord",
+        "toGetSamplingOperationResult",
         "toGetScalingConfigurationRecommendation",
+        "toGetTrainingOperationResult",
         "toImportHubContent",
         "toInvokeEndpoint",
         "toInvokeEndpointAsync",
@@ -6602,6 +6730,8 @@
         "toRegisterDevices",
         "toRetryPipelineExecution",
         "toSample",
+        "toSampleTrainingSession",
+        "toSampleTrainingSessionWithResponseStream",
         "toSampleWithResponseStream",
         "toSendHeartbeat",
         "toSendPipelineExecutionStepFailure",
@@ -6633,6 +6763,7 @@
         "toStopPipelineExecution",
         "toStopProcessingJob",
         "toStopTrainingJob",
+        "toStopTrainingSession",
         "toStopTransformJob",
         "toTrainHubModel",
         "toUpdateAction",
@@ -6750,6 +6881,7 @@
         "studio-lifecycle-config",
         "training-job",
         "training-plan",
+        "training-session",
         "transform-job",
         "user-profile",
         "workforce",
@@ -6829,6 +6961,7 @@
         "toCreateStudioLifecycleConfig",
         "toCreateTrainingJob",
         "toCreateTrainingPlan",
+        "toCreateTrainingSession",
         "toCreateTransformJob",
         "toCreateTrial",
         "toCreateTrialComponent",
@@ -7660,6 +7793,7 @@
         "toCreateMonitoringSchedule",
         "toCreateProcessingJob",
         "toCreateTrainingJob",
+        "toCreateTrainingSession",
         "toCreateTransformJob",
         "toUpdateMonitoringSchedule"
       ],
@@ -7834,6 +7968,7 @@
         "toCreateStudioLifecycleConfig",
         "toCreateTrainingJob",
         "toCreateTrainingPlan",
+        "toCreateTrainingSession",
         "toCreateTransformJob",
         "toCreateTrial",
         "toCreateTrialComponent",
@@ -7898,6 +8033,7 @@
         "toDeleteStudioLifecycleConfig",
         "toDeleteTags",
         "toDeleteTrainingJob",
+        "toDeleteTrainingSession",
         "toDeleteTrial",
         "toDeleteTrialComponent",
         "toDeleteUserProfile",
@@ -7973,6 +8109,7 @@
         "toDescribeTrainingJob",
         "toDescribeTrainingPlan",
         "toDescribeTrainingPlanExtensionHistory",
+        "toDescribeTrainingSession",
         "toDescribeTransformJob",
         "toDescribeTrial",
         "toDescribeTrialComponent",
@@ -7981,12 +8118,16 @@
         "toDescribeWorkteam",
         "toDetachClusterNodeVolume",
         "toDisassociateTrialComponent",
+        "toExecuteSamplingOperation",
+        "toExecuteTrainingOperation",
         "toGetDeployments",
         "toGetDeviceFleetReport",
         "toGetDeviceRegistration",
         "toGetModelPackageGroupPolicy",
         "toGetRecord",
+        "toGetSamplingOperationResult",
         "toGetScalingConfigurationRecommendation",
+        "toGetTrainingOperationResult",
         "toImportHubContent",
         "toInvokeEndpoint",
         "toInvokeEndpointAsync",
@@ -8014,6 +8155,8 @@
         "toRegisterDevices",
         "toRetryPipelineExecution",
         "toSample",
+        "toSampleTrainingSession",
+        "toSampleTrainingSessionWithResponseStream",
         "toSampleWithResponseStream",
         "toSendHeartbeat",
         "toSendPipelineExecutionStepFailure",
@@ -8045,6 +8188,7 @@
         "toStopPipelineExecution",
         "toStopProcessingJob",
         "toStopTrainingJob",
+        "toStopTrainingSession",
         "toStopTransformJob",
         "toTrainHubModel",
         "toUpdateAction",
@@ -8162,6 +8306,7 @@
         "studio-lifecycle-config",
         "training-job",
         "training-plan",
+        "training-session",
         "transform-job",
         "user-profile",
         "workforce",
@@ -8425,6 +8570,7 @@
         "toCreateNotebookInstance",
         "toCreateProcessingJob",
         "toCreateTrainingJob",
+        "toCreateTrainingSession",
         "toCreateUserProfile",
         "toUpdateCluster",
         "toUpdateDomain",
@@ -8462,6 +8608,7 @@
         "toCreateNotebookInstance",
         "toCreateProcessingJob",
         "toCreateTrainingJob",
+        "toCreateTrainingSession",
         "toUpdateCluster",
         "toUpdateDomain",
         "toUpdateMonitoringSchedule"

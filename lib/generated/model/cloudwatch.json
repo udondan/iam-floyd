@@ -2255,6 +2255,21 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
     },
     {
+      "key": "cloudwatch:AlarmTagsPropagationEnabled",
+      "methodName": "ifAlarmTagsPropagationEnabled",
+      "description": "Filters access by whether the request enables propagation of the alarm's tags in notification payloads",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-tags-in-notifications.html#alarm-tags-prerequisites",
+      "relatedActionMethods": [
+        "toPutCompositeAlarm",
+        "toPutLogAlarm",
+        "toPutMetricAlarm"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AlarmTagsPropagationEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
       "key": "cloudwatch:HasAccessGrant",
       "methodName": "ifHasAccessGrant",
       "description": "Filters access by the presence of access grants associated with the request",

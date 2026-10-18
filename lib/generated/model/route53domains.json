@@ -36,6 +36,7 @@
       "CheckDomainTransferability",
       "GetContactReachabilityStatus",
       "GetDomainDetail",
+      "GetDomainPrices",
       "GetDomainSuggestions",
       "GetOperationDetail",
       "ListTagsForDomain",
@@ -149,6 +150,13 @@
       "description": "Grants permission to get detailed information about a domain",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html"
+    },
+    {
+      "name": "GetDomainPrices",
+      "methodName": "toGetDomainPrices",
+      "description": "Grants permission to get the prices of operations for the given domain name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainPrices.html"
     },
     {
       "name": "GetDomainSuggestions",

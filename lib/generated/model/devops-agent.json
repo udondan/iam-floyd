@@ -895,6 +895,27 @@
   ],
   "conditions": [
     {
+      "key": "aidevops:ServiceType",
+      "methodName": "ifServiceType",
+      "description": "Filters access by the type of service in the association, such as github, slack, aws or sourceAws. Set by the service from the association's configuration, not supplied by the caller",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "relatedActionMethods": [
+        "toAssociateService",
+        "toDisassociateService",
+        "toGetAssociation",
+        "toListWebhooks",
+        "toUpdateAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "aidevops:SourceAgentSpaceArn",
       "methodName": "ifSourceAgentSpaceArn",
       "description": "Filters access by the source AgentSpace ARN on the request. Set by the service from the request context, not supplied by the caller",

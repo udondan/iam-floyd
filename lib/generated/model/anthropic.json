@@ -8,6 +8,7 @@
   "accessLevelList": {
     "Write": [
       "ArchiveAgent",
+      "ArchiveDeployment",
       "ArchiveEnvironment",
       "ArchiveMemoryStore",
       "ArchiveSession",
@@ -18,6 +19,7 @@
       "CountTokens",
       "CreateAgent",
       "CreateBatchInference",
+      "CreateDeployment",
       "CreateEnvironment",
       "CreateFile",
       "CreateInference",
@@ -38,12 +40,16 @@
       "DeleteVault",
       "DeleteWebhook",
       "DisableKey",
+      "PauseDeployment",
       "ProcessEnvironmentWork",
       "RegisterKey",
       "RotateWebhookSecret",
+      "RunDeployment",
       "TagResource",
+      "UnpauseDeployment",
       "UntagResource",
       "UpdateAgent",
+      "UpdateDeployment",
       "UpdateEnvironment",
       "UpdateKey",
       "UpdateMemoryStore",
@@ -58,6 +64,7 @@
       "GetAccountStatus",
       "GetAgent",
       "GetBatchInference",
+      "GetDeployment",
       "GetEnvironment",
       "GetFile",
       "GetKey",
@@ -74,6 +81,7 @@
     "List": [
       "ListAgents",
       "ListBatchInferences",
+      "ListDeployments",
       "ListEnvironments",
       "ListFiles",
       "ListKeys",
@@ -97,6 +105,13 @@
       "name": "ArchiveAgent",
       "methodName": "toArchiveAgent",
       "description": "Grants permission to archive a managed agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "ArchiveDeployment",
+      "methodName": "toArchiveDeployment",
+      "description": "Grants permission to archive a managed agent deployment",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
@@ -170,6 +185,13 @@
       "name": "CreateBatchInference",
       "methodName": "toCreateBatchInference",
       "description": "Grants permission to create a batch inference request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to create a managed agent deployment in a workspace",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
@@ -343,6 +365,13 @@
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
     {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to retrieve details of a managed agent deployment or its runs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
       "name": "GetEnvironment",
       "methodName": "toGetEnvironment",
       "description": "Grants permission to retrieve details of a managed agent environment",
@@ -437,6 +466,13 @@
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
     {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to list managed agent deployments in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
       "name": "ListEnvironments",
       "methodName": "toListEnvironments",
       "description": "Grants permission to list managed agent environments in a workspace",
@@ -521,6 +557,13 @@
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
     {
+      "name": "PauseDeployment",
+      "methodName": "toPauseDeployment",
+      "description": "Grants permission to pause a managed agent deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
       "name": "ProcessEnvironmentWork",
       "methodName": "toProcessEnvironmentWork",
       "description": "Grants permission to process work items in a self-hosted managed agent environment",
@@ -542,10 +585,24 @@
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
     {
+      "name": "RunDeployment",
+      "methodName": "toRunDeployment",
+      "description": "Grants permission to trigger a managed agent deployment run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
       "name": "TagResource",
       "methodName": "toTagResource",
       "description": "Grants permission to tag a resource",
       "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UnpauseDeployment",
+      "methodName": "toUnpauseDeployment",
+      "description": "Grants permission to resume a paused managed agent deployment",
+      "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
     {
@@ -559,6 +616,13 @@
       "name": "UpdateAgent",
       "methodName": "toUpdateAgent",
       "description": "Grants permission to update a managed agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
+    },
+    {
+      "name": "UpdateDeployment",
+      "methodName": "toUpdateDeployment",
+      "description": "Grants permission to update a managed agent deployment",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions"
     },
@@ -771,6 +835,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toArchiveAgent",
+        "toArchiveDeployment",
         "toArchiveEnvironment",
         "toArchiveMemoryStore",
         "toArchiveSession",
@@ -780,6 +845,7 @@
         "toCountTokens",
         "toCreateAgent",
         "toCreateBatchInference",
+        "toCreateDeployment",
         "toCreateEnvironment",
         "toCreateFile",
         "toCreateInference",
@@ -798,6 +864,7 @@
         "toDeleteWebhook",
         "toGetAgent",
         "toGetBatchInference",
+        "toGetDeployment",
         "toGetEnvironment",
         "toGetFile",
         "toGetMemoryStore",
@@ -809,6 +876,7 @@
         "toGetWorkspace",
         "toListAgents",
         "toListBatchInferences",
+        "toListDeployments",
         "toListEnvironments",
         "toListFiles",
         "toListMemoryStores",
@@ -818,11 +886,15 @@
         "toListTagsForResource",
         "toListVaults",
         "toListWebhooks",
+        "toPauseDeployment",
         "toProcessEnvironmentWork",
         "toRotateWebhookSecret",
+        "toRunDeployment",
         "toTagResource",
+        "toUnpauseDeployment",
         "toUntagResource",
         "toUpdateAgent",
+        "toUpdateDeployment",
         "toUpdateEnvironment",
         "toUpdateMemoryStore",
         "toUpdateSession",

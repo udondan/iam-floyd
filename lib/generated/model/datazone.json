@@ -25,6 +25,7 @@
       "CreateCell",
       "CreateCellRun",
       "CreateConnection",
+      "CreateDataApp",
       "CreateDataProduct",
       "CreateDataProductRevision",
       "CreateDataSource",
@@ -50,12 +51,15 @@
       "CreateSubscriptionTarget",
       "CreateUserProfile",
       "DeleteAccountPool",
+      "DeleteAgentApprovalPolicy",
       "DeleteAsset",
       "DeleteAssetFilter",
       "DeleteAssetType",
       "DeleteCell",
       "DeleteCellRun",
       "DeleteConnection",
+      "DeleteConversation",
+      "DeleteDataApp",
       "DeleteDataExportConfiguration",
       "DeleteDataProduct",
       "DeleteDataSource",
@@ -81,15 +85,19 @@
       "DeleteSubscriptionRequest",
       "DeleteSubscriptionTarget",
       "DeleteTimeSeriesDataPoints",
+      "DeregisterAgentArtifact",
       "DisassociateEnvironmentRole",
       "DisassociateGovernedTerms",
       "GenerateCode",
       "GetIamPortalLoginUrl",
+      "InvokeAgent",
       "PostLineageEvent",
       "PostTimeSeriesDataPoints",
+      "PutAgentApprovalPolicy",
       "PutCellRunResult",
       "PutDataExportConfiguration",
       "PutEnvironmentBlueprintConfiguration",
+      "RegisterAgentArtifact",
       "RejectPredictions",
       "RejectSubscriptionRequest",
       "RemoveEntityOwner",
@@ -105,6 +113,7 @@
       "StartNotebookImport",
       "StartNotebookRun",
       "StartNotebookSync",
+      "StopAgent",
       "StopCompute",
       "StopMetadataGenerationRun",
       "StopNotebookCompute",
@@ -116,6 +125,8 @@
       "UpdateCell",
       "UpdateCellRun",
       "UpdateConnection",
+      "UpdateConversation",
+      "UpdateDataApp",
       "UpdateDataSource",
       "UpdateDesignation",
       "UpdateDomain",
@@ -163,6 +174,7 @@
       "BatchGetCell",
       "BatchGetCellRun",
       "GetAccountPool",
+      "GetAgentApprovalPolicy",
       "GetAsset",
       "GetAssetFilter",
       "GetAssetType",
@@ -173,6 +185,7 @@
       "GetConnection",
       "GetConversation",
       "GetCurrentEffectivePolicy",
+      "GetDataApp",
       "GetDataExportConfiguration",
       "GetDataProduct",
       "GetDataSource",
@@ -220,11 +233,14 @@
       "ListAccountEnvironments",
       "ListAccountPools",
       "ListAccountsInAccountPool",
+      "ListAgentArtifacts",
+      "ListAgentSessionRecords",
       "ListAssetFilters",
       "ListAssetRevisions",
       "ListCellRuns",
       "ListConnections",
       "ListConversations",
+      "ListDataApps",
       "ListDataProductRevisions",
       "ListDataSourceRunActivities",
       "ListDataSourceRuns",
@@ -251,6 +267,7 @@
       "ListProjectProfiles",
       "ListProjects",
       "ListRules",
+      "ListSharedDataApps",
       "ListSubscriptionGrants",
       "ListSubscriptionRequests",
       "ListSubscriptionTargets",
@@ -417,6 +434,13 @@
       "name": "CreateConnection",
       "methodName": "toCreateConnection",
       "description": "Grants permission to create connections",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateDataApp",
+      "methodName": "toCreateDataApp",
+      "description": "Grants permission to create data apps",
       "accessLevel": "Write",
       "url": ""
     },
@@ -600,6 +624,13 @@
       "url": ""
     },
     {
+      "name": "DeleteAgentApprovalPolicy",
+      "methodName": "toDeleteAgentApprovalPolicy",
+      "description": "Grants permission to delete an agent approval policy",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "DeleteAsset",
       "methodName": "toDeleteAsset",
       "description": "Grants permission to delete an asset",
@@ -638,6 +669,20 @@
       "name": "DeleteConnection",
       "methodName": "toDeleteConnection",
       "description": "Grants permission to delete connections",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteConversation",
+      "methodName": "toDeleteConversation",
+      "description": "Grants permission to delete conversations",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteDataApp",
+      "methodName": "toDeleteDataApp",
+      "description": "Grants permission to delete data apps",
       "accessLevel": "Write",
       "url": ""
     },
@@ -817,6 +862,13 @@
       "url": ""
     },
     {
+      "name": "DeregisterAgentArtifact",
+      "methodName": "toDeregisterAgentArtifact",
+      "description": "Grants permission to deregister agent artifacts",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "DisassociateEnvironmentRole",
       "methodName": "toDisassociateEnvironmentRole",
       "description": "Grants permission to disassociate a role in a default service blueprint environment",
@@ -841,6 +893,13 @@
       "name": "GetAccountPool",
       "methodName": "toGetAccountPool",
       "description": "Grants permission to get account pool details",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetAgentApprovalPolicy",
+      "methodName": "toGetAgentApprovalPolicy",
+      "description": "Grants permission to get an agent approval policy",
       "accessLevel": "Read",
       "url": ""
     },
@@ -911,6 +970,13 @@
       "name": "GetCurrentEffectivePolicy",
       "methodName": "toGetCurrentEffectivePolicy",
       "description": "Grants permission to Get Current Effective Policy",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetDataApp",
+      "methodName": "toGetDataApp",
+      "description": "Grants permission to get data apps",
       "accessLevel": "Read",
       "url": ""
     },
@@ -1174,6 +1240,13 @@
       "url": ""
     },
     {
+      "name": "InvokeAgent",
+      "methodName": "toInvokeAgent",
+      "description": "Grants permission to invoke agent",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "ListAccountEnvironments",
       "methodName": "toListAccountEnvironments",
       "description": "Grants permission to list Environments across all domains in an AWS Account",
@@ -1191,6 +1264,20 @@
       "name": "ListAccountsInAccountPool",
       "methodName": "toListAccountsInAccountPool",
       "description": "Grants permission to list accounts in an account pool",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListAgentArtifacts",
+      "methodName": "toListAgentArtifacts",
+      "description": "Grants permission to list agent artifacts",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListAgentSessionRecords",
+      "methodName": "toListAgentSessionRecords",
+      "description": "Grants permission to list agent session records",
       "accessLevel": "List",
       "url": ""
     },
@@ -1226,6 +1313,13 @@
       "name": "ListConversations",
       "methodName": "toListConversations",
       "description": "Grants permission to list conversations",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDataApps",
+      "methodName": "toListDataApps",
+      "description": "Grants permission to list data apps",
       "accessLevel": "List",
       "url": ""
     },
@@ -1412,6 +1506,13 @@
       "url": ""
     },
     {
+      "name": "ListSharedDataApps",
+      "methodName": "toListSharedDataApps",
+      "description": "Grants permission to list shared data apps",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
       "name": "ListSubscriptionGrants",
       "methodName": "toListSubscriptionGrants",
       "description": "Grants permission to List subscription grants for a subscribed principal",
@@ -1468,6 +1569,13 @@
       "url": ""
     },
     {
+      "name": "PutAgentApprovalPolicy",
+      "methodName": "toPutAgentApprovalPolicy",
+      "description": "Grants permission to create or update an agent approval policy",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "PutCellRunResult",
       "methodName": "toPutCellRunResult",
       "description": "Grants permission to put cell run results",
@@ -1493,6 +1601,13 @@
       "methodName": "toQueryGraph",
       "description": "Grants permission to query graph",
       "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "RegisterAgentArtifact",
+      "methodName": "toRegisterAgentArtifact",
+      "description": "Grants permission to register agent artifacts",
+      "accessLevel": "Write",
       "url": ""
     },
     {
@@ -1636,6 +1751,13 @@
       "url": ""
     },
     {
+      "name": "StopAgent",
+      "methodName": "toStopAgent",
+      "description": "Grants permission to stop agent",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "StopCompute",
       "methodName": "toStopCompute",
       "description": "Grants permission to stop compute",
@@ -1709,6 +1831,20 @@
       "name": "UpdateConnection",
       "methodName": "toUpdateConnection",
       "description": "Grants permission to update connections",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateConversation",
+      "methodName": "toUpdateConversation",
+      "description": "Grants permission to update conversations",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateDataApp",
+      "methodName": "toUpdateDataApp",
+      "description": "Grants permission to update data apps",
       "accessLevel": "Write",
       "url": ""
     },

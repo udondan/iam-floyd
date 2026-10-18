@@ -52,6 +52,7 @@
       "RemoveDraftAppVersionResourceMappings",
       "ResolveAppVersionResources",
       "StartAppAssessment",
+      "StartDependencyInsights",
       "StartFailureModeAssessment",
       "StartMetricsExport",
       "StartResourceGroupingRecommendationTask",
@@ -86,6 +87,7 @@
       "DescribeMetricsExport",
       "DescribeResiliencyPolicy",
       "DescribeResourceGroupingRecommendationTask",
+      "GetDependencyInsights",
       "GetFailureModeFinding",
       "GetPolicy",
       "GetService",
@@ -100,6 +102,7 @@
       "ListFailureModeFindings",
       "ListInputSources",
       "ListPolicies",
+      "ListPolicyEvents",
       "ListReports",
       "ListResolvedTestRunTargetResources",
       "ListResources",
@@ -471,6 +474,13 @@
       "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeResourceGroupingRecommendationTask.html"
     },
     {
+      "name": "GetDependencyInsights",
+      "methodName": "toGetDependencyInsights",
+      "description": "Grants permission to retrieve dependency insights for a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_GetDependencyInsights.html"
+    },
+    {
       "name": "GetFailureModeFinding",
       "methodName": "toGetFailureModeFinding",
       "description": "Grants permission to retrieve a failure mode finding",
@@ -679,6 +689,13 @@
       "description": "Grants permission to list resilience policies",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListPolicies.html"
+    },
+    {
+      "name": "ListPolicyEvents",
+      "methodName": "toListPolicyEvents",
+      "description": "Grants permission to list events for a resilience policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_ListPolicyEvents.html"
     },
     {
       "name": "ListRecommendationTemplates",
@@ -910,6 +927,13 @@
       "description": "Grants permission to create application assessment",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartAppAssessment.html"
+    },
+    {
+      "name": "StartDependencyInsights",
+      "methodName": "toStartDependencyInsights",
+      "description": "Grants permission to start generating dependency insights for a service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/resilience-hub/v2/APIReference/API_StartDependencyInsights.html"
     },
     {
       "name": "StartFailureModeAssessment",
@@ -1392,6 +1416,7 @@
         "toDescribeDraftAppVersionResourcesImportStatus",
         "toDescribeResiliencyPolicy",
         "toDescribeResourceGroupingRecommendationTask",
+        "toGetDependencyInsights",
         "toGetFailureModeFinding",
         "toGetPolicy",
         "toGetService",
@@ -1416,6 +1441,7 @@
         "toListFailureModeAssessments",
         "toListFailureModeFindings",
         "toListInputSources",
+        "toListPolicyEvents",
         "toListRecommendationTemplates",
         "toListReports",
         "toListResolvedTestRunTargetResources",
@@ -1444,6 +1470,7 @@
         "toRemoveDraftAppVersionResourceMappings",
         "toResolveAppVersionResources",
         "toStartAppAssessment",
+        "toStartDependencyInsights",
         "toStartFailureModeAssessment",
         "toStartResourceGroupingRecommendationTask",
         "toStartTestRun",

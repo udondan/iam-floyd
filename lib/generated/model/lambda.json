@@ -149,6 +149,7 @@
       "ListMicrovmImageVersions",
       "ListMicrovmImages",
       "ListMicrovms",
+      "ListNetworkConnectorVersions",
       "ListNetworkConnectors",
       "ListProvisionedConcurrencyConfigs",
       "ListVersionsByFunction",
@@ -264,7 +265,7 @@
       "methodName": "toCreateNetworkConnector",
       "description": "Grants permission to create an AWS Lambda network connector",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateNetworkConnector.html"
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_CreateNetworkConnector.html"
     },
     {
       "name": "CreateWebFunction",
@@ -376,7 +377,7 @@
       "methodName": "toDeleteNetworkConnector",
       "description": "Grants permission to delete an AWS Lambda network connector",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteNetworkConnector.html"
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_DeleteNetworkConnector.html"
     },
     {
       "name": "DeleteProvisionedConcurrencyConfig",
@@ -572,7 +573,7 @@
       "methodName": "toGetNetworkConnector",
       "description": "Grants permission to view details about an AWS Lambda network connector",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetNetworkConnector.html"
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_GetNetworkConnector.html"
     },
     {
       "name": "GetPolicy",
@@ -771,11 +772,18 @@
       "url": "https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovms.html"
     },
     {
+      "name": "ListNetworkConnectorVersions",
+      "methodName": "toListNetworkConnectorVersions",
+      "description": "Grants permission to retrieve a list of versions of an AWS Lambda network connector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_ListNetworkConnectorVersions.html"
+    },
+    {
       "name": "ListNetworkConnectors",
       "methodName": "toListNetworkConnectors",
       "description": "Grants permission to retrieve a list of AWS Lambda network connectors",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListNetworkConnectors.html"
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_ListNetworkConnectors.html"
     },
     {
       "name": "ListProvisionedConcurrencyConfigs",
@@ -1055,7 +1063,7 @@
       "methodName": "toUpdateNetworkConnector",
       "description": "Grants permission to update an AWS Lambda network connector",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateNetworkConnector.html"
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_UpdateNetworkConnector.html"
     },
     {
       "name": "UpdateWebFunctionEndpoint",
@@ -1727,6 +1735,7 @@
         "toListManagedMicrovmImageVersions",
         "toListMicrovmImageBuilds",
         "toListMicrovmImageVersions",
+        "toListNetworkConnectorVersions",
         "toListProvisionedConcurrencyConfigs",
         "toListTags",
         "toListVersionsByFunction",
