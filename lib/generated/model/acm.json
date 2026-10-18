@@ -17,6 +17,7 @@
       "CreateAcmeDomainValidation",
       "CreateAcmeEndpoint",
       "CreateAcmeExternalAccountBinding",
+      "CreateTimeStamp",
       "DeleteAcmeDomainValidation",
       "DeleteAcmeEndpoint",
       "DeleteAcmeExternalAccountBinding",
@@ -92,6 +93,13 @@
       "description": "Grants permission to create an ACME external account binding",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_CreateAcmeExternalAccountBinding.html"
+    },
+    {
+      "name": "CreateTimeStamp",
+      "methodName": "toCreateTimeStamp",
+      "description": "Grants permission to create an RFC 3161 timestamp token over a submitted message digest",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_CreateTimeStamp.html"
     },
     {
       "name": "DeleteAcmeDomainValidation",

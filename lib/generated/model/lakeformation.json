@@ -12,6 +12,7 @@
     ],
     "Write": [
       "AddLFTagsToResource",
+      "AttachRLSPolicy",
       "BatchGrantPermissions",
       "BatchRevokePermissions",
       "CancelTransaction",
@@ -21,13 +22,16 @@
       "CreateLFTagExpression",
       "CreateLakeFormationIdentityCenterConfiguration",
       "CreateLakeFormationOptIn",
+      "CreateRLSPolicy",
       "DeleteDataCellsFilter",
       "DeleteLFTag",
       "DeleteLFTagExpression",
       "DeleteLakeFormationIdentityCenterConfiguration",
       "DeleteLakeFormationOptIn",
       "DeleteObjectsOnCancel",
+      "DeleteRLSPolicy",
       "DeregisterResource",
+      "DetachRLSPolicy",
       "ExtendTransaction",
       "GetDataAccess",
       "GrantPermissions",
@@ -42,13 +46,16 @@
       "UpdateLFTag",
       "UpdateLFTagExpression",
       "UpdateLakeFormationIdentityCenterConfiguration",
+      "UpdateRLSPolicy",
       "UpdateResource",
       "UpdateTableObjects",
       "UpdateTableStorageOptimizer"
     ],
     "Permissions management": [
+      "AttachRLSPolicy",
       "BatchGrantPermissions",
       "BatchRevokePermissions",
+      "DetachRLSPolicy",
       "GrantPermissions",
       "PutDataLakeSettings",
       "RevokePermissions"
@@ -65,6 +72,7 @@
       "GetLFTagExpression",
       "GetQueryState",
       "GetQueryStatistics",
+      "GetRLSPolicy",
       "GetResourceLFTags",
       "GetTableObjects",
       "GetTemporaryGluePartitionCredentials",
@@ -80,6 +88,8 @@
       "ListDataCellsFilter",
       "ListLakeFormationOptIns",
       "ListPermissions",
+      "ListRLSPolicies",
+      "ListRLSPolicyAttachments",
       "ListResources",
       "ListTableStorageOptimizers",
       "ListTransactions"
@@ -92,6 +102,13 @@
       "description": "Grants permission to attach Lake Formation tags to catalog resources",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_AddLFTagsToResource.html"
+    },
+    {
+      "name": "AttachRLSPolicy",
+      "methodName": "toAttachRLSPolicy",
+      "description": "Grants permission to attach a Lake Formation row-level security policy to a resource for one or more principals",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_AttachRLSPolicy.html"
     },
     {
       "name": "BatchGrantPermissions",
@@ -157,6 +174,13 @@
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLakeFormationOptIn.html"
     },
     {
+      "name": "CreateRLSPolicy",
+      "methodName": "toCreateRLSPolicy",
+      "description": "Grants permission to create a Lake Formation row-level security policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateRLSPolicy.html"
+    },
+    {
       "name": "DeleteDataCellsFilter",
       "methodName": "toDeleteDataCellsFilter",
       "description": "Grants permission to delete a Lake Formation data cell filter",
@@ -199,6 +223,13 @@
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteObjectsOnCancel.html"
     },
     {
+      "name": "DeleteRLSPolicy",
+      "methodName": "toDeleteRLSPolicy",
+      "description": "Grants permission to delete a Lake Formation row-level security policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteRLSPolicy.html"
+    },
+    {
       "name": "DeregisterResource",
       "methodName": "toDeregisterResource",
       "description": "Grants permission to deregister a registered location",
@@ -225,6 +256,13 @@
       "description": "Grants permission to get status of the given transaction",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeTransaction.html"
+    },
+    {
+      "name": "DetachRLSPolicy",
+      "methodName": "toDetachRLSPolicy",
+      "description": "Grants permission to detach a Lake Formation row-level security policy from a resource for one or more principals",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DetachRLSPolicy.html"
     },
     {
       "name": "ExtendTransaction",
@@ -298,6 +336,13 @@
       "description": "Grants permission to retrieve the statistics for the given query",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryStatistics.html"
+    },
+    {
+      "name": "GetRLSPolicy",
+      "methodName": "toGetRLSPolicy",
+      "description": "Grants permission to retrieve a Lake Formation row-level security policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetRLSPolicy.html"
     },
     {
       "name": "GetResourceLFTags",
@@ -382,6 +427,20 @@
       "description": "Grants permission to list permissions filtered by principal or resource",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListPermissions.html"
+    },
+    {
+      "name": "ListRLSPolicies",
+      "methodName": "toListRLSPolicies",
+      "description": "Grants permission to list Lake Formation row-level security policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListRLSPolicies.html"
+    },
+    {
+      "name": "ListRLSPolicyAttachments",
+      "methodName": "toListRLSPolicyAttachments",
+      "description": "Grants permission to list the resource and principal attachments of Lake Formation row-level security policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListRLSPolicyAttachments.html"
     },
     {
       "name": "ListResources",
@@ -494,6 +553,13 @@
       "description": "Grants permission to update the IAM Identity Center connection parameters",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLakeFormationIdentityCenterConfiguration.html"
+    },
+    {
+      "name": "UpdateRLSPolicy",
+      "methodName": "toUpdateRLSPolicy",
+      "description": "Grants permission to update the filter expression of a Lake Formation row-level security policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateRLSPolicy.html"
     },
     {
       "name": "UpdateResource",

@@ -38,9 +38,9 @@ It comes in two variants: ``iam-floyd`` creates statements as JSON, for the AWS 
 Support for:
 
 - 456 Services
-- 22080 Actions
-- 2331 Resource Types
-- 2500 Condition keys
+- 22137 Actions
+- 2332 Resource Types
+- 2502 Condition keys
 
 ..
    /stats

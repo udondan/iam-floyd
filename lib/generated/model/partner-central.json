@@ -94,6 +94,8 @@
       "GetMarketplaceRevenueShareAllocation",
       "GetOpportunity",
       "GetPartner",
+      "GetPartnerCentralContentDocument",
+      "GetPartnerCentralContentMetadata",
       "GetPartnerDashboard",
       "GetProfileUpdateTask",
       "GetProfileVisibility",
@@ -132,6 +134,7 @@
       "ListMarketplaceRevenueShares",
       "ListOpportunities",
       "ListOpportunityFromEngagementTasks",
+      "ListPartnerCentralContent",
       "ListPartners",
       "ListProgramManagementAccounts",
       "ListProspectingFromEngagementTasks",
@@ -141,6 +144,7 @@
       "ListRevenueAttributionAllocations",
       "ListRevenueAttributions",
       "ListSolutions",
+      "SearchPartnerCentralContent",
       "ListBusinessPlans",
       "ListCollaborationChannels",
       "ListPartnerPaths",
@@ -525,6 +529,26 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetPartner.html"
     },
     {
+      "name": "GetPartnerCentralContentDocument",
+      "methodName": "toGetPartnerCentralContentDocument",
+      "description": "Grants permission to retrieve a content document in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "GetPartnerCentralContentMetadata",
+      "methodName": "toGetPartnerCentralContentMetadata",
+      "description": "Grants permission to retrieve content metadata in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
       "name": "GetPartnerDashboard",
       "methodName": "toGetPartnerDashboard",
       "description": "Grants permission to retrieve partner dashboard information in AWS Partner Central",
@@ -776,6 +800,16 @@
       ]
     },
     {
+      "name": "ListPartnerCentralContent",
+      "methodName": "toListPartnerCentralContent",
+      "description": "Grants permission to list content in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
       "name": "ListPartners",
       "methodName": "toListPartners",
       "description": "Grants permission to list partners in AWS Partner Central",
@@ -918,6 +952,16 @@
       "description": "Grants permission to reject Engagement Invitations on AWS Partner Central",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectEngagementInvitation.html"
+    },
+    {
+      "name": "SearchPartnerCentralContent",
+      "methodName": "toSearchPartnerCentralContent",
+      "description": "Grants permission to search content in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
     },
     {
       "name": "SendEmailVerificationCode",
@@ -2194,6 +2238,8 @@
         "toGetMarketplaceRevenueShareAllocation",
         "toGetOpportunity",
         "toGetPartner",
+        "toGetPartnerCentralContentDocument",
+        "toGetPartnerCentralContentMetadata",
         "toGetPartnerDashboard",
         "toGetProfileUpdateTask",
         "toGetProfileVisibility",
@@ -2225,6 +2271,7 @@
         "toListMarketplaceRevenueShares",
         "toListOpportunities",
         "toListOpportunityFromEngagementTasks",
+        "toListPartnerCentralContent",
         "toListPartners",
         "toListProgramManagementAccounts",
         "toListProspectingFromEngagementTasks",
@@ -2242,6 +2289,7 @@
         "toRejectChannelHandshake",
         "toRejectConnectionInvitation",
         "toRejectEngagementInvitation",
+        "toSearchPartnerCentralContent",
         "toSendEmailVerificationCode",
         "toStartEngagementByAcceptingInvitationTask",
         "toStartEngagementFromOpportunityTask",
