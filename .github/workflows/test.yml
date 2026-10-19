@@ -1,0 +1,324 @@
+---
+name: Test
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Only one run at a time may deploy to the AWS test account. All other jobs of a pull request wait
+  # for the turn as well: the waiting runs of all open pull requests would otherwise take the
+  # runners of the account at once, and most of them are tested again after a rebase anyway.
+  wait-for-turn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      actions: read
+      contents: write # lock refs under refs/wait-for-turn/
+      pull-requests: read # labels for label-weights
+    # A new commit on the branch cancels the waiting of the outdated run, so the
+    # new run doesn't queue behind it. Once a run has the turn, this job is
+    # done: test jobs that already run are never cancelled.
+    concurrency:
+      group: test-wait-${{ github.head_ref || github.ref }}
+      cancel-in-progress: true
+    steps:
+      # Queue order: manual PRs first, then Renovate updates, releases last.
+      # The release PR isn't auto-merged, so it doesn't take the turn from
+      # Renovate PRs that are about to be tested after a merge.
+      # Fails right away if the branch is behind main. Branch protection
+      # requires PRs to be up to date, so testing an outdated branch is wasted
+      # time: it has to be updated and tested again.
+      - name: Wait for turn
+        uses: udondan/wait-for-turn@bf890d60b9e238c05c224dbfb03442bdc09bde72 # v1.4.0
+        with:
+          require-up-to-date: true
+          label-weights: |
+            autorelease: pending=-10
+            renovate=-5
+
+  lint:
+    name: Lint
+    needs: wait-for-turn
+    if: needs.wait-for-turn.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.x
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: lint/go.mod
+          cache-dependency-path: lint/go.sum
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Set up Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Lint
+        run: make install lint
+        env:
+          GH_TOKEN: ${{ github.token }} # zizmor checks the actions online
+
+  # The native packages of iam-floyd, built by the action package-iam-floyd like in publish.yml.
+  # Each package is built with the newest version and tested with the oldest and the newest
+  # supported version.
+  test-iam-floyd-native:
+    name: Test iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
+    needs: lint
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+            version: "3.9"
+            newest: false
+          - language: python
+            name: Python
+            version: "3.14"
+            newest: true
+          - language: java
+            name: Java
+            version: "11"
+            newest: false
+          - language: java
+            name: Java
+            version: "25"
+            newest: true
+          - language: dotnet
+            name: .NET
+            version: "8"
+            newest: false
+          - language: dotnet
+            name: .NET
+            version: "10"
+            newest: true
+          - language: go
+            name: Go
+            version: "1.21"
+            newest: false
+          - language: go
+            name: Go
+            version: stable
+            newest: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Build
+        uses: $/.github/actions/package-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+          version: ${{ matrix.version }}
+
+      - name: Set up Java to test
+        if: matrix.language == 'java'
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.version }}
+
+      - name: Test
+        run: |
+          export PYTHON_WHEEL JAVA_JAR DOTNET_PACKAGES DOTNET_FRAMEWORK GO_MODULE
+          PYTHON_WHEEL="$(find dist/iam-floyd -name '*.whl')"
+          JAVA_JAR="$(find dist/iam-floyd -name 'iam-floyd-*[0-9].jar')"
+          DOTNET_PACKAGES=dist/iam-floyd/dotnet
+          DOTNET_FRAMEWORK="net${VERSION}.0"
+          GO_MODULE="$(find dist/iam-floyd -name '*.zip')"
+          make test-transpile LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+          VERSION: ${{ matrix.version }}
+
+      # Signs, but does not upload without the Maven Central credentials
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java' && matrix.newest
+        run: bin/publish-maven dist/iam-floyd/java
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+
+  test-iam-floyd:
+    name: Test iam-floyd npm package
+    needs: lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for AWS
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Configure AWS credentials
+        id: aws-credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Test npm package
+        run: make install test-typescript
+
+      # A cancelled run can leave a test policy behind, the next run deletes it
+      - name: Clean up test resources
+        if: ${{ always() && steps.aws-credentials.outcome == 'success' }}
+        run: make clean-test-resources
+
+      - name: Dry run npm publish
+        run: make build publish
+
+  test-cdk-iam-floyd:
+    name: Test cdk-iam-floyd npm package
+    needs: lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for AWS
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      - name: Lint CDK variant
+        run: make lint-cdk
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Test npm package
+        run: |
+          make package
+          make test-typescript-cdk
+          make cdk-test
+
+      # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
+      # peer dependency, which has all reference interfaces the on*() methods accept. The exact
+      # version is the one of lib/generated/cdk-refs.json.
+      - name: Test with the minimum version of aws-cdk-lib
+        run: | # zizmor: ignore[adhoc-packages]
+          npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
+          node -p "require('aws-cdk-lib/package.json').version"
+          make build test-typescript-cdk
+
+  # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak by the action
+  # package-cdk-iam-floyd like in publish.yml. One job per language for speed; TypeScript is the
+  # baseline the others are compared to.
+  test-cdk-iam-floyd-jsii:
+    name: Test cdk-iam-floyd in ${{ matrix.name }}
+    needs: lint
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: typescript
+            name: TypeScript
+          - language: python
+            name: Python
+          - language: java
+            name: Java
+          - language: dotnet
+            name: .NET
+          - language: go
+            name: Go
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build packages
+        uses: $/.github/actions/package-cdk-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+
+      - name: Test packages
+        run: make test-jsii LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+
+      # The npm package is published by publish-cdk-iam-floyd-npm in publish.yml, with the jsii
+      # assembly
+      - name: Dry run npm publish
+        if: matrix.language == 'typescript'
+        run: make publish
+
+      # Signs, but does not upload without the Maven Central credentials
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java'
+        run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+
+  # The only test check the ruleset requires.
+  required:
+    # A skipped job counts as passed for required checks, so this job must not
+    # be skipped when a test failed.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - test-iam-floyd-native
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+      - test-cdk-iam-floyd-jsii
+    steps:
+      - name: Check tests
+        if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success'
+        run: exit 1
+
+      - name: Report success
+        run: echo 'Success'

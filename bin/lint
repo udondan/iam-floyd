@@ -109,7 +109,7 @@ if has uv; then
   fi
   run yamllint py yamllint --strict .
   run doc8 py doc8 --quiet docs/source
-  run zizmor py zizmor --quiet .github/workflows
+  run zizmor py zizmor --quiet .github
   run shellcheck py shellcheck "${SCRIPTS[@]}"
 fi
 
