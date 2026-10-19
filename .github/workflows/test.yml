@@ -87,8 +87,7 @@ jobs:
   # supported version.
   test-iam-floyd-native:
     name: Test iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
-    needs: wait-for-turn
-    if: ${{ !cancelled() && needs.wait-for-turn.result == 'success' }}
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -168,19 +167,12 @@ jobs:
 
   test-iam-floyd:
     name: Test iam-floyd npm package
-    needs: wait-for-turn
-    # A skipped job counts as passed for required checks. Run the job even if
-    # wait-for-turn failed and fail it in the first step.
-    if: ${{ !cancelled() }}
+    needs: lint
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write # OIDC for AWS
     steps:
-      - name: Check turn
-        if: needs.wait-for-turn.result != 'success'
-        run: exit 1
-
       - name: Set up Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
@@ -212,19 +204,12 @@ jobs:
 
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd npm package
-    needs: wait-for-turn
-    # A skipped job counts as passed for required checks. Run the job even if
-    # wait-for-turn failed and fail it in the first step.
-    if: ${{ !cancelled() }}
+    needs: lint
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write # OIDC for AWS
     steps:
-      - name: Check turn
-        if: needs.wait-for-turn.result != 'success'
-        run: exit 1
-
       - name: Set up Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
@@ -271,8 +256,7 @@ jobs:
   # baseline the others are compared to.
   test-cdk-iam-floyd-jsii:
     name: Test cdk-iam-floyd in ${{ matrix.name }}
-    needs: wait-for-turn
-    if: ${{ !cancelled() && needs.wait-for-turn.result == 'success' }}
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
