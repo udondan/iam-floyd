@@ -1,5 +1,629 @@
 # Changelog
 
+## [0.851.0](https://github.com/udondan/iam-floyd/compare/v0.850.0...v0.851.0) (2026-10-19)
+
+
+### Features
+
+* add latest IAM updates from AWS ([#2332](https://github.com/udondan/iam-floyd/issues/2332)) ([9f69bac](https://github.com/udondan/iam-floyd/commit/9f69bac3b715d3946f677281be1a982bf98846fc))
+* add latest IAM updates from AWS ([#2379](https://github.com/udondan/iam-floyd/issues/2379)) ([01162fc](https://github.com/udondan/iam-floyd/commit/01162fce58656407041fc1ce3ac604067c17733c))
+* constants for AWS service principals ([#2326](https://github.com/udondan/iam-floyd/issues/2326)) ([6b2c92d](https://github.com/udondan/iam-floyd/commit/6b2c92dd62a12ac59bd686772d6ad4fbb1b6f527))
+* on*() methods of cdk-iam-floyd take CDK constructs ([#2324](https://github.com/udondan/iam-floyd/issues/2324)) ([dde9410](https://github.com/udondan/iam-floyd/commit/dde9410bffc98c2e926008ae149b87eb157be7a8))
+* policy documents with size limits and splitting ([#2321](https://github.com/udondan/iam-floyd/issues/2321)) ([bec2497](https://github.com/udondan/iam-floyd/commit/bec24978e93d543f1c8277cea5353d49366a06d9))
+* update AWS managed policies and service principals ([#2328](https://github.com/udondan/iam-floyd/issues/2328)) ([4a0483f](https://github.com/udondan/iam-floyd/commit/4a0483fe47e79acbfe275ac4fdb5ec3036e23db6))
+* update AWS managed policies and service principals ([#2331](https://github.com/udondan/iam-floyd/issues/2331)) ([01aec54](https://github.com/udondan/iam-floyd/commit/01aec54f95f34cd98016b3534c9f54ce83be9ac3))
+* update AWS managed policies and service principals ([#2378](https://github.com/udondan/iam-floyd/issues/2378)) ([15e5080](https://github.com/udondan/iam-floyd/commit/15e508095ed47b82f477d83730921ff9ab50262a))
+
+
+### Bug Fixes
+
+* numeric type for four condition keys documented as String ([#2319](https://github.com/udondan/iam-floyd/issues/2319)) ([d06d890](https://github.com/udondan/iam-floyd/commit/d06d8909420db3be0a2d40ba76c8f4393f5ad2e6)), closes [#6](https://github.com/udondan/iam-floyd/issues/6)
+
+
+### Dependencies
+
+* **deps:** update actions/download-artifact action to v8.0.2 ([#2339](https://github.com/udondan/iam-floyd/issues/2339)) ([d304d38](https://github.com/udondan/iam-floyd/commit/d304d3853a176152054211b3ad9f3feb042cb888))
+* **deps:** update actions/setup-java action to v6.1.0 ([#2376](https://github.com/udondan/iam-floyd/issues/2376)) ([6e6df25](https://github.com/udondan/iam-floyd/commit/6e6df253d5e7be60166dfa76795461c795be2cc3))
+* **deps:** update actions/setup-node action to v7.1.0 ([#2334](https://github.com/udondan/iam-floyd/issues/2334)) ([ebd063c](https://github.com/udondan/iam-floyd/commit/ebd063c9a602b73c5a39d5ebebf0cd9ac514a48a))
+* **deps:** update actions/upload-artifact action to v7.0.2 ([#2340](https://github.com/udondan/iam-floyd/issues/2340)) ([cd92da6](https://github.com/udondan/iam-floyd/commit/cd92da6ccd2475df7c81c5cc6da6c1adc1aab8c9))
+* **deps:** update astral-sh/setup-uv action to v10.3.0 ([#2346](https://github.com/udondan/iam-floyd/issues/2346)) ([2960db5](https://github.com/udondan/iam-floyd/commit/2960db5404686429bc57de5591220e42072194fa))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1146.0 ([#2323](https://github.com/udondan/iam-floyd/issues/2323)) ([6c30ccc](https://github.com/udondan/iam-floyd/commit/6c30cccc187577701a7441ee11cf961f92efb1e4))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1147.0 ([#2333](https://github.com/udondan/iam-floyd/issues/2333)) ([af676b1](https://github.com/udondan/iam-floyd/commit/af676b17c31883934b43940544d2fd88272764aa))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1148.0 ([#2335](https://github.com/udondan/iam-floyd/issues/2335)) ([4607540](https://github.com/udondan/iam-floyd/commit/46075408f9294e004231236e9945afc7d8f91780))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1149.0 ([#2337](https://github.com/udondan/iam-floyd/issues/2337)) ([5e43cec](https://github.com/udondan/iam-floyd/commit/5e43cec618393c6e49429973b7c7c87b429623dd))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1151.0 ([#2374](https://github.com/udondan/iam-floyd/issues/2374)) ([a924e7b](https://github.com/udondan/iam-floyd/commit/a924e7beed5e10526eca31e1df20b6449234eaef))
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1152.0 ([#2377](https://github.com/udondan/iam-floyd/issues/2377)) ([b73093f](https://github.com/udondan/iam-floyd/commit/b73093f9e8755c669d8fb75dd970127796b9ac6f))
+* **deps:** update dependency @swc/core to v1.16.17 ([#2348](https://github.com/udondan/iam-floyd/issues/2348)) ([9291aa9](https://github.com/udondan/iam-floyd/commit/9291aa904b5fbcb14efd397e9ad473b7f7003072))
+* **deps:** update dependency @swc/core to v1.16.18 ([#2355](https://github.com/udondan/iam-floyd/issues/2355)) ([9e919cd](https://github.com/udondan/iam-floyd/commit/9e919cd99f23afdbd1e12a935aab1182db649a1e))
+* **deps:** update dependency @types/node to v24.19.2 ([#2368](https://github.com/udondan/iam-floyd/issues/2368)) ([8993db0](https://github.com/udondan/iam-floyd/commit/8993db00d0bcf11df97171b795e4ce1663447296))
+* **deps:** update dependency aquasecurity/trivy to v0.76.0 ([#2375](https://github.com/udondan/iam-floyd/issues/2375)) ([4ef803f](https://github.com/udondan/iam-floyd/commit/4ef803fbf5616391bbe03c111bdfdee3525cb4fa))
+* **deps:** update dependency aws-cdk to v2.1145.0 ([#2347](https://github.com/udondan/iam-floyd/issues/2347)) ([e7ac560](https://github.com/udondan/iam-floyd/commit/e7ac560335a79956a4d170a686a0a581efe940e0))
+* **deps:** update dependency aws-cdk-lib to v2 ([#2369](https://github.com/udondan/iam-floyd/issues/2369)) ([eddb47f](https://github.com/udondan/iam-floyd/commit/eddb47f8a3ca29e16f4276289f2482e3682f5ad9))
+* **deps:** update dependency aws-cdk-lib to v2.273.0 ([#2336](https://github.com/udondan/iam-floyd/issues/2336)) ([065885c](https://github.com/udondan/iam-floyd/commit/065885c4a70bc9a678d5af03c911e7fd6a077b09))
+* **deps:** update dependency cdk-iam-floyd to v0.850.0 ([#2350](https://github.com/udondan/iam-floyd/issues/2350)) ([8ba766e](https://github.com/udondan/iam-floyd/commit/8ba766e02cab0c129ab41221da4e5c3d0bc19c52))
+* **deps:** update dependency charset-normalizer to v3.5.2 ([#2341](https://github.com/udondan/iam-floyd/issues/2341)) ([6d348c4](https://github.com/udondan/iam-floyd/commit/6d348c43335922f3b14146adbac12e3df93aa8c8))
+* **deps:** update dependency constructs to v10.8.1 ([#2351](https://github.com/udondan/iam-floyd/issues/2351)) ([d8a117b](https://github.com/udondan/iam-floyd/commit/d8a117b24bc26230791964a52c2a5adc7ff827de))
+* **deps:** update dependency jsii to v5.9.55 ([#2342](https://github.com/udondan/iam-floyd/issues/2342)) ([88175ea](https://github.com/udondan/iam-floyd/commit/88175ea307fc169e87f539524cf18aecff8ba675))
+* **deps:** update dependency jsii to v6 ([#2370](https://github.com/udondan/iam-floyd/issues/2370)) ([1f67ac0](https://github.com/udondan/iam-floyd/commit/1f67ac0b0f325cf517cf10270b4f50fe58bbc2e4))
+* **deps:** update dependency jsii to v6.0.18 ([#2372](https://github.com/udondan/iam-floyd/issues/2372)) ([fc6d310](https://github.com/udondan/iam-floyd/commit/fc6d3105003da5a692149056656c370b6b5cbf29))
+* **deps:** update dependency jsii-docgen to v10.12.7 ([#2343](https://github.com/udondan/iam-floyd/issues/2343)) ([e2fb3a4](https://github.com/udondan/iam-floyd/commit/e2fb3a49b3dc8b88e6298dec3d8d67a6f2f08ea0))
+* **deps:** update dependency markupsafe to v3.0.4 ([#2344](https://github.com/udondan/iam-floyd/issues/2344)) ([46f5a68](https://github.com/udondan/iam-floyd/commit/46f5a68d9c406bf645fd25e2ada940e600754556))
+* **deps:** update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.16.0 ([#2352](https://github.com/udondan/iam-floyd/issues/2352)) ([8aec693](https://github.com/udondan/iam-floyd/commit/8aec693d6a390f4b0cab07aaee97afc32743b0e9))
+* **deps:** update dependency org.apache.maven.plugins:maven-deploy-plugin to v3.2.0 ([#2353](https://github.com/udondan/iam-floyd/issues/2353)) ([ff7ff49](https://github.com/udondan/iam-floyd/commit/ff7ff49c6b555a498ce755c0432b24e045b58ecc))
+* **deps:** update dependency org.apache.maven.plugins:maven-install-plugin to v3.2.0 ([#2354](https://github.com/udondan/iam-floyd/issues/2354)) ([71bd8e2](https://github.com/udondan/iam-floyd/commit/71bd8e2e7627049df589c4c79f71c704ea6dde30))
+* **deps:** update dependency org.apache.maven.plugins:maven-jar-plugin to v3.5.1 ([#2356](https://github.com/udondan/iam-floyd/issues/2356)) ([e0574f9](https://github.com/udondan/iam-floyd/commit/e0574f9fb661386131c6ad0c396b5305d6b981b1))
+* **deps:** update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.12.0 ([#2357](https://github.com/udondan/iam-floyd/issues/2357)) ([3071460](https://github.com/udondan/iam-floyd/commit/3071460e813934887aa41fc8881190d41fd65c75))
+* **deps:** update dependency org.apache.maven.plugins:maven-resources-plugin to v3.5.0 ([#2359](https://github.com/udondan/iam-floyd/issues/2359)) ([008bc95](https://github.com/udondan/iam-floyd/commit/008bc9542c6d9f1de1c6670b5b6ff9888f07e352))
+* **deps:** update dependency org.apache.maven.plugins:maven-source-plugin to v3.4.0 ([#2361](https://github.com/udondan/iam-floyd/issues/2361)) ([9d3d0c9](https://github.com/udondan/iam-floyd/commit/9d3d0c9755b6b2643e6299f96d467fde5a32cc9b))
+* **deps:** update dependency org.codehaus.mojo:exec-maven-plugin to v3.6.4 ([#2362](https://github.com/udondan/iam-floyd/issues/2362)) ([1ee1be5](https://github.com/udondan/iam-floyd/commit/1ee1be5008668d97c5fa5e5d365af4aaa2add3ea))
+* **deps:** update dependency org.codehaus.mojo:flatten-maven-plugin to v1.8.0 ([#2363](https://github.com/udondan/iam-floyd/issues/2363)) ([0cecde3](https://github.com/udondan/iam-floyd/commit/0cecde32ffb66f9b174d67d6290664c51f9ef8cc))
+* **deps:** update dependency python to 3.15 ([#2364](https://github.com/udondan/iam-floyd/issues/2364)) ([10ac5d0](https://github.com/udondan/iam-floyd/commit/10ac5d094c224a0ad6a0ddf0563f565de5265201))
+* **deps:** update dependency ruff to v0.17.0 ([#2365](https://github.com/udondan/iam-floyd/issues/2365)) ([cf42451](https://github.com/udondan/iam-floyd/commit/cf424518d41c0b3cc1d4b8b634cac905048e5434))
+* **deps:** update dependency ruff to v0.17.1 ([#2382](https://github.com/udondan/iam-floyd/issues/2382)) ([6aefe33](https://github.com/udondan/iam-floyd/commit/6aefe33be5bf464876703542f2bfe7ea13f65b7c))
+* **deps:** update dependency zizmor to v1.31.0 ([#2380](https://github.com/udondan/iam-floyd/issues/2380)) ([4910fb2](https://github.com/udondan/iam-floyd/commit/4910fb24bd740686ba7e74bc68b3cf47a203f48d))
+* **deps:** update github/codeql-action action to v4.38.3 ([#2345](https://github.com/udondan/iam-floyd/issues/2345)) ([ef46237](https://github.com/udondan/iam-floyd/commit/ef46237ab1981a9535ccd799f6cbe77a33b53ead))
+* **deps:** update github/codeql-action action to v4.39.0 ([#2381](https://github.com/udondan/iam-floyd/issues/2381)) ([e3cc9f2](https://github.com/udondan/iam-floyd/commit/e3cc9f20f125e674448762a5831ddb7a13991c63))
+* **deps:** update lint tooling ([#2366](https://github.com/udondan/iam-floyd/issues/2366)) ([9383315](https://github.com/udondan/iam-floyd/commit/938331599d39ad118b6ae7d79bc57d4d9531bbb0))
+* **deps:** update lint tooling ([#2373](https://github.com/udondan/iam-floyd/issues/2373)) ([bba135d](https://github.com/udondan/iam-floyd/commit/bba135dcf100690038b4024814fcd62d47cfd330))
+* **deps:** update module udondan.github.io/iam-floyd/go/iamfloyd to v0.850.0 ([#2367](https://github.com/udondan/iam-floyd/issues/2367)) ([18567d8](https://github.com/udondan/iam-floyd/commit/18567d8abb4a91731dd91d9b010bff248bf6c920))
+* **deps:** update udondan/wait-for-turn to v1.4.0 ([#2358](https://github.com/udondan/iam-floyd/issues/2358)) ([814493c](https://github.com/udondan/iam-floyd/commit/814493c8561ef78f07eb3346ea742ef6015f8b99))
+
+---
+
+:warning: **Removed AWS managed policies:**
+
+- AWSIoTEventsFullAccess
+- AWSIoTEventsReadOnlyAccess
+
+**New AWS managed policies:**
+
+- AWSContinuumCollectorServiceRolePolicy
+- AWSSecurityAgentContinuousPentestPolicy
+- AmazonSageMakerTrainingSessionAccess
+- AmazonSageMakerTrainingSessionFullAccess
+- SageMakerStudioDataAppsAccessRolePolicy
+
+---
+
+**New service principals:**
+
+- a4b.amazonaws.com
+- access-analyzer.amazonaws.com
+- access-grants.s3.amazonaws.com
+- account-access.amazonaws.com
+- account.amazonaws.com
+- acm-pca.amazonaws.com
+- acm.amazonaws.com
+- aco-automation.amazonaws.com
+- agent-registry.amazonaws.com
+- agent.wellarchitected.amazonaws.com
+- agentless.inspector2.amazonaws.com
+- aiops.amazonaws.com
+- airflow-env.amazonaws.com
+- airflow-serverless.amazonaws.com
+- airflow.amazonaws.com
+- ami.inspector2.amazonaws.com
+- amplify.amazonaws.com
+- apidestinations.events.amazonaws.com
+- apigateway.amazonaws.com
+- app-integrations.amazonaws.com
+- appfabric.amazonaws.com
+- appflow.amazonaws.com
+- application-autoscaling.amazonaws.com
+- application-insights.amazonaws.com
+- application-signals.cloudwatch.amazonaws.com
+- application-transformation.amazonaws.com
+- appmesh.amazonaws.com
+- apprunner.amazonaws.com
+- appstream.amazonaws.com
+- appstream.application-autoscaling.amazonaws.com
+- appsync.amazonaws.com
+- aps.amazonaws.com
+- artifact.amazonaws.com
+- assets.marketplace.amazonaws.com
+- athena.amazonaws.com
+- auditmanager.amazonaws.com
+- automation.amazonaws.com
+- autoscaling-plans.amazonaws.com
+- autoscaling.amazonaws.com
+- aws-artifact-account-sync.amazonaws.com
+- aws-external-anthropic.amazonaws.com
+- backup.amazonaws.com
+- batch.amazonaws.com
+- bedrock-agentcore.amazonaws.com
+- bedrock-mantle.amazonaws.com
+- bedrock.amazonaws.com
+- braket.amazonaws.com
+- budgets.amazonaws.com
+- bugbust.amazonaws.com
+- cassandra-streams.amazonaws.com
+- cassandra.application-autoscaling.amazonaws.com
+- channels.lex.amazonaws.com
+- channels.lexv2.amazonaws.com
+- chatbot.amazonaws.com
+- chime.amazonaws.com
+- cleanrooms-ml.amazonaws.com
+- cleanrooms.amazonaws.com
+- cloud9.amazonaws.com
+- clouddirectory.amazonaws.com
+- cloudformation.amazonaws.com
+- cloudfront.amazonaws.com
+- cloudhsm.amazonaws.com
+- cloudsearch.amazonaws.com
+- cloudtrail.amazonaws.com
+- cloudwatch-crossaccount.amazonaws.com
+- cloudwatch.amazonaws.com
+- codeartifact.amazonaws.com
+- codebuild.amazonaws.com
+- codecatalyst-runner.amazonaws.com
+- codecatalyst.amazonaws.com
+- codecommit.amazonaws.com
+- codedeploy.amazonaws.com
+- codeguru-profiler.amazonaws.com
+- codeguru-reviewer.amazonaws.com
+- codeguru-security.amazonaws.com
+- codepipeline.amazonaws.com
+- codestar-notifications.amazonaws.com
+- codestar.amazonaws.com
+- cognito-idp.amazonaws.com
+- cognito-sync.amazonaws.com
+- comprehend.amazonaws.com
+- comprehend.application-autoscaling.amazonaws.com
+- compute-optimizer.amazonaws.com
+- config-conforms.amazonaws.com
+- config-multiaccountsetup.amazonaws.com
+- config.amazonaws.com
+- connect-campaigns.amazonaws.com
+- connect.amazonaws.com
+- context.cloudtrail.amazonaws.com
+- continuousexport.discovery.amazonaws.com
+- contract.iq.amazonaws.com
+- contributorinsights.dynamodb.amazonaws.com
+- controltower.amazonaws.com
+- cost-optimization-hub.bcm.amazonaws.com
+- costalerts.amazonaws.com
+- credentials.iot.amazonaws.com
+- custom-resource.application-autoscaling.amazonaws.com
+- custom.rds-preview.amazonaws.com
+- custom.rds.amazonaws.com
+- databrew.amazonaws.com
+- dataexchange.amazonaws.com
+- datapipeline.amazonaws.com
+- datasync.amazonaws.com
+- datazone.amazonaws.com
+- datazonecontrol.amazonaws.com
+- dax.amazonaws.com
+- deeplens.amazonaws.com
+- delivery.logs.amazonaws.com
+- detective.amazonaws.com
+- devops-guru.amazonaws.com
+- diode.amazonaws.com
+- directconnect.amazonaws.com
+- directquery.opensearchservice.amazonaws.com
+- discovery.amazonaws.com
+- dlm.amazonaws.com
+- dms.amazonaws.com
+- dmsintegration.migrationhub.amazonaws.com
+- docdb-elastic.amazonaws.com
+- drs.amazonaws.com
+- ds.amazonaws.com
+- dsql.amazonaws.com
+- dynamodb.amazonaws.com
+- dynamodb.application-autoscaling.amazonaws.com
+- ec.amazonaws.com
+- ec2-images.amazonaws.com
+- ec2-instance-connect.amazonaws.com
+- ec2.amazonaws.com
+- ec2.application-autoscaling.amazonaws.com
+- ec2.application-status-checks.amazonaws.com
+- ec2.capacitymanager.amazonaws.com
+- ec2fastlaunch.amazonaws.com
+- ec2fleet.amazonaws.com
+- ec2scheduled.amazonaws.com
+- ec2sqlha.amazonaws.com
+- ecr.amazonaws.com
+- ecs-compute.amazonaws.com
+- ecs-tasks.amazonaws.com
+- ecs.amazonaws.com
+- ecs.application-autoscaling.amazonaws.com
+- edgelambda.amazonaws.com
+- eks-connector.amazonaws.com
+- eks-fargate-pods.amazonaws.com
+- eks-fargate.amazonaws.com
+- eks-nodegroup.amazonaws.com
+- eks.amazonaws.com
+- elasticache.amazonaws.com
+- elasticache.application-autoscaling.amazonaws.com
+- elasticbeanstalk.amazonaws.com
+- elasticfilesystem.amazonaws.com
+- elasticloadbalancing.amazonaws.com
+- elasticmapreduce.amazonaws.com
+- elastictranscoder.amazonaws.com
+- email.cognito-idp.amazonaws.com
+- emr-containers.amazonaws.com
+- emr-serverless.amazonaws.com
+- entityresolution.amazonaws.com
+- es.amazonaws.com
+- event-processor.health.amazonaws.com
+- events.amazonaws.com
+- events.managedservices.amazonaws.com
+- events.workmail.amazonaws.com
+- evs.amazonaws.com
+- finops-agent.amazonaws.com
+- finspace.amazonaws.com
+- firehose.amazonaws.com
+- fis.amazonaws.com
+- fms.amazonaws.com
+- forecast.amazonaws.com
+- frauddetector.amazonaws.com
+- freertos.amazonaws.com
+- fsx.amazonaws.com
+- gamelift.amazonaws.com
+- glacier.amazonaws.com
+- globalaccelerator.amazonaws.com
+- glue.amazonaws.com
+- grafana.amazonaws.com
+- greengrass.amazonaws.com
+- groundstation.amazonaws.com
+- guardduty.amazonaws.com
+- health.amazonaws.com
+- healthlake.amazonaws.com
+- honeycode.amazonaws.com
+- iam.amazonaws.com
+- imagebuilder.amazonaws.com
+- importexport.amazonaws.com
+- inspector.amazonaws.com
+- inspector2.amazonaws.com
+- internetmonitor.amazonaws.com
+- iot.amazonaws.com
+- iotanalytics.amazonaws.com
+- iotevents.amazonaws.com
+- iotmanagedintegrations.amazonaws.com
+- iotroborunner.amazonaws.com
+- iotsitewise.amazonaws.com
+- iotthingsgraph.amazonaws.com
+- iottwinmaker.amazonaws.com
+- ivs.amazonaws.com
+- job.sagemaker.amazonaws.com
+- justintimeaccess.ssm.amazonaws.com
+- kafka.amazonaws.com
+- kafka.application-autoscaling.amazonaws.com
+- kafkaconnect.amazonaws.com
+- kendra.amazonaws.com
+- kinesis.amazonaws.com
+- kinesisanalytics.amazonaws.com
+- kinesisreplication.dynamodb.amazonaws.com
+- kms.amazonaws.com
+- lakeformation.amazonaws.com
+- lambda.amazonaws.com
+- lambda.application-autoscaling.amazonaws.com
+- launchwizard.amazonaws.com
+- lex.amazonaws.com
+- lexv2.amazonaws.com
+- license-management.marketplace.amazonaws.com
+- license-manager-user-subscriptions.amazonaws.com
+- license-manager.amazonaws.com
+- license-manager.member-account.amazonaws.com
+- lightsail.amazonaws.com
+- logger.cloudfront.amazonaws.com
+- logs.amazonaws.com
+- lookoutequipment.amazonaws.com
+- lookoutmetrics.amazonaws.com
+- m2.amazonaws.com
+- machinelearning.amazonaws.com
+- macie.amazonaws.com
+- maintenance.elasticbeanstalk.amazonaws.com
+- malware-protection-plan.guardduty.amazonaws.com
+- malware-protection.guardduty.amazonaws.com
+- managedblockchain.amazonaws.com
+- managedservices.amazonaws.com
+- managedupdates.elasticbeanstalk.amazonaws.com
+- mediaconnect.amazonaws.com
+- mediaconvert.amazonaws.com
+- mediapackage.amazonaws.com
+- mediastore.amazonaws.com
+- mediatailor.amazonaws.com
+- medical-imaging.amazonaws.com
+- meetings.chime.amazonaws.com
+- member.org.stacksets.cloudformation.amazonaws.com
+- memorydb.amazonaws.com
+- metrics.wellarchitected.amazonaws.com
+- mgn.amazonaws.com
+- migrationhub-orchestrator.amazonaws.com
+- migrationhub-strategy.amazonaws.com
+- migrationhub.amazonaws.com
+- mobileanalytics.amazonaws.com
+- mobilehub.amazonaws.com
+- monitoring.rds.amazonaws.com
+- monitoring.thinclient.amazonaws.com
+- monitron.amazonaws.com
+- mpa.amazonaws.com
+- mq.amazonaws.com
+- neptune-graph.amazonaws.com
+- neptune.application-autoscaling.amazonaws.com
+- network-connectors.lambda.amazonaws.com
+- network-firewall.amazonaws.com
+- network-security-director.amazonaws.com
+- network-security-manager.amazonaws.com
+- network.bedrock-agentcore.amazonaws.com
+- networkmanager.amazonaws.com
+- notifications.amazonaws.com
+- notifications.ssm.amazonaws.com
+- observability.aoss.amazonaws.com
+- observabilityadmin.amazonaws.com
+- odb.amazonaws.com
+- omics.amazonaws.com
+- opensearchservice.amazonaws.com
+- ops.apigateway.amazonaws.com
+- ops.emr-serverless.amazonaws.com
+- opsworks-cm.amazonaws.com
+- opsworks.amazonaws.com
+- organizations.amazonaws.com
+- orgsdatasync.servicecatalog.amazonaws.com
+- osis.amazonaws.com
+- outposts.amazonaws.com
+- panorama.amazonaws.com
+- partnercentral-account-management.amazonaws.com
+- pcs.amazonaws.com
+- permission.iq.amazonaws.com
+- personalize.amazonaws.com
+- pinpoint.amazonaws.com
+- pipes.amazonaws.com
+- pods.eks.amazonaws.com
+- practice-run.arc-zonal-shift.amazonaws.com
+- private-marketplace.marketplace.amazonaws.com
+- profile.amazonaws.com
+- proton.amazonaws.com
+- purchaseorders.amazonaws.com
+- q.amazonaws.com
+- qapps.amazonaws.com
+- qbusiness.amazonaws.com
+- qldb.amazonaws.com
+- quicksight.amazonaws.com
+- ram.amazonaws.com
+- rds-preview.amazonaws.com
+- rds.amazonaws.com
+- rds.application-autoscaling.amazonaws.com
+- redshift-data.amazonaws.com
+- redshift-serverless.amazonaws.com
+- redshift.amazonaws.com
+- refactor-spaces.amazonaws.com
+- rekognition.amazonaws.com
+- remediation.config.amazonaws.com
+- replication.cassandra.amazonaws.com
+- replication.dynamodb.amazonaws.com
+- replication.ecr.amazonaws.com
+- replication.lexv2.amazonaws.com
+- replication.s3tables.amazonaws.com
+- replicator.lambda.amazonaws.com
+- reporting.trustedadvisor.amazonaws.com
+- repository.sync.codeconnections.amazonaws.com
+- repostspace.amazonaws.com
+- resale-authorization.marketplace.amazonaws.com
+- researchstudio.amazonaws.com
+- resource-explorer-2.amazonaws.com
+- resource-groups.amazonaws.com
+- resource-snapshot-job.partnercentral-selling.amazonaws.com
+- restore-testing.backup.amazonaws.com
+- robomaker.amazonaws.com
+- rolesanywhere.amazonaws.com
+- route53.amazonaws.com
+- route53domains.amazonaws.com
+- route53healthchecks.amazonaws.com
+- route53resolver.amazonaws.com
+- rtbfabric.amazonaws.com
+- runtime-identity.bedrock-agentcore.amazonaws.com
+- runtime-instances.bedrock-agentcore.amazonaws.com
+- s3-outposts.amazonaws.com
+- s3.amazonaws.com
+- s3.data-source.lustre.fsx.amazonaws.com
+- sagemaker-geospatial.amazonaws.com
+- sagemaker.amazonaws.com
+- sagemaker.application-autoscaling.amazonaws.com
+- scaler.lambda.amazonaws.com
+- scheduler.amazonaws.com
+- schema-conversion.dms.amazonaws.com
+- schemas.amazonaws.com
+- scraper.aps.amazonaws.com
+- secretsmanager.amazonaws.com
+- security-ir.amazonaws.com
+- securityagent.amazonaws.com
+- securityhub.amazonaws.com
+- securityhubv2.amazonaws.com
+- securitylake.amazonaws.com
+- self-managed-vpce.osis.amazonaws.com
+- serverlessrepo.amazonaws.com
+- servicecatalog-appregistry.amazonaws.com
+- servicecatalog.amazonaws.com
+- servicediscovery.amazonaws.com
+- servicequotas.amazonaws.com
+- ses.amazonaws.com
+- shield.amazonaws.com
+- signer.amazonaws.com
+- signin.amazonaws.com
+- sms-voice.amazonaws.com
+- sms.amazonaws.com
+- smsintegration.migrationhub.amazonaws.com
+- sns.amazonaws.com
+- social-messaging.amazonaws.com
+- spot.amazonaws.com
+- spotfleet.amazonaws.com
+- sqlworkbench.amazonaws.com
+- sqs.amazonaws.com
+- ssm-guiconnect.amazonaws.com
+- ssm-incidents.amazonaws.com
+- ssm-quicksetup.amazonaws.com
+- ssm-sap.amazonaws.com
+- ssm.amazonaws.com
+- ssm.integrations.amazonaws.com
+- sso.amazonaws.com
+- states.amazonaws.com
+- storagegateway.amazonaws.com
+- streams.metrics.cloudwatch.amazonaws.com
+- sts.amazonaws.com
+- support.amazonaws.com
+- supportplans.amazonaws.com
+- swf.amazonaws.com
+- sync.proton.amazonaws.com
+- synthetics.amazonaws.com
+- tagpolicies.tag.amazonaws.com
+- telemetry-enablement.observabilityadmin.amazonaws.com
+- telemetry-pipelines.observabilityadmin.amazonaws.com
+- textract.amazonaws.com
+- thirdparty.config.amazonaws.com
+- thirdparty.inspector2.amazonaws.com
+- timestream-influxdb.amazonaws.com
+- timestream.amazonaws.com
+- training-session.sagemaker.amazonaws.com
+- transcribe.amazonaws.com
+- transfer.amazonaws.com
+- transform-custom.amazonaws.com
+- transitgateway.amazonaws.com
+- translate.amazonaws.com
+- triage.security-ir.amazonaws.com
+- trustedadvisor.amazonaws.com
+- tts.amazonaws.com
+- vmie.amazonaws.com
+- vpc-flow-logs.amazonaws.com
+- vpc-lattice.amazonaws.com
+- vpcorigin.cloudfront.amazonaws.com
+- waf-regional.amazonaws.com
+- waf.amazonaws.com
+- wafv2.amazonaws.com
+- wam.amazonaws.com
+- wellarchitected.amazonaws.com
+- workdocs.amazonaws.com
+- worklink.amazonaws.com
+- workmail.amazonaws.com
+- workspaces-instances.amazonaws.com
+- workspaces.amazonaws.com
+- workspaces.application-autoscaling.amazonaws.com
+- xray.amazonaws.com
+
+---
+
+**New services:**
+
+- end-user-messaging
+
+**New actions:**
+
+- account:ReopenAccount
+- acm:CreateTimeStamp
+- agentaccess-mcp:GetSessionInfo
+- agentaccess-mcp:LaunchApplication
+- agentaccess-mcp:ToggleAppSwitcher
+- aws-external-anthropic:ArchiveDeployment
+- aws-external-anthropic:CreateDeployment
+- aws-external-anthropic:GetDeployment
+- aws-external-anthropic:ListDeployments
+- aws-external-anthropic:PauseDeployment
+- aws-external-anthropic:RunDeployment
+- aws-external-anthropic:UnpauseDeployment
+- aws-external-anthropic:UpdateDeployment
+- billing:ListCreditEntitlementPeriods
+- billing:ListCreditEntitlements
+- billing:SplitCredit
+- billing:TransferCredit
+- cloudwatch:PutRecords
+- cloudwatch:SubmitAlarmFeedback
+- datazone:CreateDataApp
+- datazone:DeleteAgentApprovalPolicy
+- datazone:DeleteConversation
+- datazone:DeleteDataApp
+- datazone:DeregisterAgentArtifact
+- datazone:GetAgentApprovalPolicy
+- datazone:GetDataApp
+- datazone:InvokeAgent
+- datazone:ListAgentArtifacts
+- datazone:ListAgentSessionRecords
+- datazone:ListDataApps
+- datazone:ListSharedDataApps
+- datazone:PutAgentApprovalPolicy
+- datazone:RegisterAgentArtifact
+- datazone:StopAgent
+- datazone:UpdateConversation
+- datazone:UpdateDataApp
+- deadline:ListMemberships
+- end-user-messaging:CreateBrandProfile
+- end-user-messaging:CreateBrandProfileAttributes
+- end-user-messaging:CreateBrandProfileFromRegistration
+- end-user-messaging:CreateNotifyCodeConfiguration
+- end-user-messaging:CreateRegistrationsFromBrandProfile
+- end-user-messaging:DeleteBrandProfile
+- end-user-messaging:DeleteBrandProfileAttribute
+- end-user-messaging:DeleteNotifyCodeConfiguration
+- end-user-messaging:GetBrandProfile
+- end-user-messaging:GetBrandProfileAttribute
+- end-user-messaging:GetJob
+- end-user-messaging:GetNotifyCodeConfiguration
+- end-user-messaging:ListBrandProfileAttributes
+- end-user-messaging:ListBrandProfiles
+- end-user-messaging:ListJobs
+- end-user-messaging:ListNotifyCodeConfigurations
+- end-user-messaging:ListRegistrationsFromBrandProfile
+- end-user-messaging:ListTagsForResource
+- end-user-messaging:SendNotifyCodeVerification
+- end-user-messaging:TagResource
+- end-user-messaging:UntagResource
+- end-user-messaging:UpdateBrandProfile
+- end-user-messaging:UpdateBrandProfileAttribute
+- end-user-messaging:UpdateBrandProfileFromRegistration
+- end-user-messaging:UpdateNotifyCodeConfiguration
+- end-user-messaging:UpdateRegistrationsFromBrandProfile
+- end-user-messaging:ValidateNotifyCodeVerification
+- glue:GetSystemLogsForJobRun
+- glue:GetSystemLogsForSession
+- lakeformation:AttachRLSPolicy
+- lakeformation:CreateRLSPolicy
+- lakeformation:DeleteRLSPolicy
+- lakeformation:DetachRLSPolicy
+- lakeformation:GetRLSPolicy
+- lakeformation:ListRLSPolicies
+- lakeformation:ListRLSPolicyAttachments
+- lakeformation:UpdateRLSPolicy
+- lambda:ListNetworkConnectorVersions
+- partnercentral:GetPartnerCentralContentDocument
+- partnercentral:GetPartnerCentralContentMetadata
+- partnercentral:ListPartnerCentralContent
+- partnercentral:SearchPartnerCentralContent
+- resiliencehub:GetDependencyInsights
+- resiliencehub:ListPolicyEvents
+- resiliencehub:StartDependencyInsights
+- route53domains:GetDomainPrices
+- sagemaker:CreateTrainingSession
+- sagemaker:DeleteTrainingSession
+- sagemaker:DescribeTrainingSession
+- sagemaker:ExecuteSamplingOperation
+- sagemaker:ExecuteTrainingOperation
+- sagemaker:GetSamplingOperationResult
+- sagemaker:GetTrainingOperationResult
+- sagemaker:ListTrainingSessions
+- sagemaker:SampleTrainingSession
+- sagemaker:SampleTrainingSessionWithResponseStream
+- sagemaker:StopTrainingSession
+- securityagent:BatchDisassociateFindingIssue
+- securityagent:BatchExportFindings
+- securityhub:CancelExportJobV2
+- securityhub:GetExportJobV2
+- securityhub:ListExportJobsV2
+- securityhub:StartExportJobV2
+- transfer:ExportHostKey
+
+**New resource types:**
+
+- end-user-messaging:brand-profile
+- end-user-messaging:notify-code-configuration
+- sagemaker:training-session
+
+**New condition keys:**
+
+- aidevops:ServiceType
+- cloudwatch:AlarmTagsPropagationEnabled
+- end-user-messaging:RequestTag/${TagKey}
+- end-user-messaging:ResourceTag/${TagKey}
+- end-user-messaging:TagKeys
+
 ## [0.850.0](https://github.com/udondan/iam-floyd/compare/v0.849.0...v0.850.0) (2026-10-05)
 
 
