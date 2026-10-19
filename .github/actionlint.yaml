@@ -1,0 +1,7 @@
+---
+paths:
+  .github/workflows/*.yml:
+    ignore:
+      # The self-repository syntax (uses: $/...) isn't supported yet:
+      # https://github.com/rhysd/actionlint/issues/711
+      - 'specifying action "\$/\.github/actions/[a-z-]+" in invalid format'

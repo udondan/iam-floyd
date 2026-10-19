@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "filename": "pipes",
+  "className": "Pipes",
+  "name": "pipes",
+  "servicePrefix": "pipes",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pipes.html",
+  "accessLevelList": {
+    "Write": [
+      "CreatePipe",
+      "DeletePipe",
+      "StartPipe",
+      "StopPipe",
+      "TagResource",
+      "UntagResource",
+      "UpdatePipe"
+    ],
+    "Read": [
+      "DescribePipe",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListPipes"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreatePipe",
+      "methodName": "toCreatePipe",
+      "description": "Grants permission to create a pipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_CreatePipe.html"
+    },
+    {
+      "name": "DeletePipe",
+      "methodName": "toDeletePipe",
+      "description": "Grants permission to delete a pipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_DeletePipe.html"
+    },
+    {
+      "name": "DescribePipe",
+      "methodName": "toDescribePipe",
+      "description": "Grants permission to describe a pipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_DescribePipe.html"
+    },
+    {
+      "name": "ListPipes",
+      "methodName": "toListPipes",
+      "description": "Grants permission to list all pipes in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_ListPipes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartPipe",
+      "methodName": "toStartPipe",
+      "description": "Grants permission to start a pipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_StartPipe.html"
+    },
+    {
+      "name": "StopPipe",
+      "methodName": "toStopPipe",
+      "description": "Grants permission to stop a pipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_StopPipe.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdatePipe",
+      "methodName": "toUpdatePipe",
+      "description": "Grants permission to update a pipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_UpdatePipe.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "pipe",
+      "methodName": "onPipe",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html",
+      "arn": "arn:${Partition}:pipes:${Region}:${Account}:pipe/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_pipes",
+        "interface": "IPipeRef",
+        "property": "pipeRef",
+        "arn": "pipeArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreatePipe",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreatePipe",
+        "toDeletePipe",
+        "toDescribePipe",
+        "toListTagsForResource",
+        "toStartPipe",
+        "toStopPipe",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePipe"
+      ],
+      "relatedResourceTypes": [
+        "pipe"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreatePipe",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

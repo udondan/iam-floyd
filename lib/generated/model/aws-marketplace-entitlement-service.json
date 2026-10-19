@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-entitlement-service",
+  "className": "AwsMarketplaceEntitlementService",
+  "name": "aws-marketplace-entitlement-service",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-entitlement.html",
+  "accessLevelList": {
+    "Read": [
+      "GetEntitlements"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetEntitlements",
+      "methodName": "toGetEntitlements",
+      "description": "Grants permission to retrieve entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-entitlements_GetEntitlements.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

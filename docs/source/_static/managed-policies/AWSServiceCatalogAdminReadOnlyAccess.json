@@ -1,0 +1,51 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:ListChangeSets",
+        "cloudformation:ListStackResources",
+        "cloudformation:DescribeStackSet",
+        "cloudformation:DescribeStackInstance",
+        "cloudformation:DescribeStackSetOperation",
+        "cloudformation:ListStackInstances",
+        "cloudformation:ListStackSetOperations",
+        "cloudformation:ListStackSetOperationResults"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/SC-*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-SC-*",
+        "arn:aws:cloudformation:*:*:changeSet/SC-*",
+        "arn:aws:cloudformation:*:*:stackset/SC-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:GetTemplateSummary",
+        "iam:GetGroup",
+        "iam:GetRole",
+        "iam:GetUser",
+        "iam:ListGroups",
+        "iam:ListRoles",
+        "iam:ListUsers",
+        "servicecatalog:Get*",
+        "servicecatalog:List*",
+        "servicecatalog:Describe*",
+        "servicecatalog:ScanProvisionedProducts",
+        "servicecatalog:Search*",
+        "ssm:DescribeDocument",
+        "ssm:GetAutomationExecution",
+        "ssm:ListDocuments",
+        "ssm:ListDocumentVersions",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

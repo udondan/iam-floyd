@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "timestream:Select",
+        "timestream:CancelQuery",
+        "timestream:ListTables",
+        "timestream:ListDatabases",
+        "timestream:ListMeasures",
+        "timestream:DescribeTable",
+        "timestream:DescribeDatabase",
+        "timestream:SelectValues",
+        "timestream:DescribeEndpoints"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

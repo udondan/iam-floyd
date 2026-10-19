@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "filename": "snowball",
+  "className": "Snowball",
+  "name": "snowball",
+  "servicePrefix": "snowball",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_snowball.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelCluster",
+      "CancelJob",
+      "CreateAddress",
+      "CreateCluster",
+      "CreateJob",
+      "CreateLongTermPricing",
+      "CreateReturnShippingLabel",
+      "UpdateCluster",
+      "UpdateJob",
+      "UpdateJobShipmentState",
+      "UpdateLongTermPricing"
+    ],
+    "Read": [
+      "DescribeAddress",
+      "DescribeCluster",
+      "DescribeJob",
+      "DescribeReturnShippingLabel",
+      "GetJobManifest",
+      "GetJobUnlockCode",
+      "GetSnowballUsage",
+      "GetSoftwareUpdates",
+      "ListLongTermPricing"
+    ],
+    "List": [
+      "DescribeAddresses",
+      "ListClusterJobs",
+      "ListClusters",
+      "ListCompatibleImages",
+      "ListJobs",
+      "ListPickupLocations",
+      "ListServiceVersions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelCluster",
+      "methodName": "toCancelCluster",
+      "description": "Grants permission to cancel a cluster job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelCluster.html"
+    },
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel the specified job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelJob.html"
+    },
+    {
+      "name": "CreateAddress",
+      "methodName": "toCreateAddress",
+      "description": "Grants permission to create an address for a Snowball to be shipped to",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateAddress.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create an empty cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateCluster.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Grants permission to creates a job to import or export data between Amazon S3 and your on-premises data center",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateJob.html"
+    },
+    {
+      "name": "CreateLongTermPricing",
+      "methodName": "toCreateLongTermPricing",
+      "description": "Grants permission to creates a LongTermPricingListEntry for allowing customers to add an upfront billing contract for a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateLongTermPricing.html"
+    },
+    {
+      "name": "CreateReturnShippingLabel",
+      "methodName": "toCreateReturnShippingLabel",
+      "description": "Grants permission to create a shipping label that will be used to return the Snow device to AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateReturnShippingLabel.html"
+    },
+    {
+      "name": "DescribeAddress",
+      "methodName": "toDescribeAddress",
+      "description": "Grants permission to get specific details about that address in the form of an Address object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddress.html"
+    },
+    {
+      "name": "DescribeAddresses",
+      "methodName": "toDescribeAddresses",
+      "description": "Grants permission to describe a specified number of ADDRESS objects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddresses.html"
+    },
+    {
+      "name": "DescribeCluster",
+      "methodName": "toDescribeCluster",
+      "description": "Grants permission to describe information about a specific cluster including shipping information, cluster status, and other important metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeCluster.html"
+    },
+    {
+      "name": "DescribeJob",
+      "methodName": "toDescribeJob",
+      "description": "Grants permission to describe information about a specific job including shipping information, job status, and other important metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeJob.html"
+    },
+    {
+      "name": "DescribeReturnShippingLabel",
+      "methodName": "toDescribeReturnShippingLabel",
+      "description": "Grants permission to describe information on the shipping label of a Snow device that is being returned to AWS",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeReturnShippingLabel.html"
+    },
+    {
+      "name": "GetJobManifest",
+      "methodName": "toGetJobManifest",
+      "description": "Grants permission to get a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobManifest.html"
+    },
+    {
+      "name": "GetJobUnlockCode",
+      "methodName": "toGetJobUnlockCode",
+      "description": "Grants permission to get the UnlockCode code value for the specified job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobUnlockCode.html"
+    },
+    {
+      "name": "GetSnowballUsage",
+      "methodName": "toGetSnowballUsage",
+      "description": "Grants permission to get information about the Snowball service limit for your account, and also the number of Snowballs your account has in use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetSnowballUsage.html"
+    },
+    {
+      "name": "GetSoftwareUpdates",
+      "methodName": "toGetSoftwareUpdates",
+      "description": "Grants permission to return an Amazon S3 presigned URL for an update file associated with a specified JobId",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetSoftwareUpdates.html"
+    },
+    {
+      "name": "ListClusterJobs",
+      "methodName": "toListClusterJobs",
+      "description": "Grants permission to list JobListEntry objects of the specified length",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusterJobs.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to list ClusterListEntry objects of the specified length",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusters.html"
+    },
+    {
+      "name": "ListCompatibleImages",
+      "methodName": "toListCompatibleImages",
+      "description": "Grants permission to return a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS account that would be supported for use on a Snow device",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListCompatibleImages.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list JobListEntry objects of the specified length",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html"
+    },
+    {
+      "name": "ListLongTermPricing",
+      "methodName": "toListLongTermPricing",
+      "description": "Grants permission to list LongTermPricingListEntry objects for the account making the request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListLongTermPricing.html"
+    },
+    {
+      "name": "ListPickupLocations",
+      "methodName": "toListPickupLocations",
+      "description": "Grants permission to list Address objects where pickup is available, of the specified length",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListPickupLocations.html"
+    },
+    {
+      "name": "ListServiceVersions",
+      "methodName": "toListServiceVersions",
+      "description": "Grants permission to list all supported versions for Snow on-device services",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListServiceVersions.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permission to update while a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateCluster.html"
+    },
+    {
+      "name": "UpdateJob",
+      "methodName": "toUpdateJob",
+      "description": "Grants permission to update while a job's JobState value is New, you can update some of the information associated with a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJob.html"
+    },
+    {
+      "name": "UpdateJobShipmentState",
+      "methodName": "toUpdateJobShipmentState",
+      "description": "Grants permission to update the state when a the shipment states changes to a different state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJobShipmentState.html"
+    },
+    {
+      "name": "UpdateLongTermPricing",
+      "methodName": "toUpdateLongTermPricing",
+      "description": "Grants permission to update a specific upfront billing contract for a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateLongTermPricing.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

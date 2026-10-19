@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 1,
+  "filename": "amplifyuibuilder",
+  "className": "Amplifyuibuilder",
+  "name": "amplifyuibuilder",
+  "servicePrefix": "amplifyuibuilder",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amplifyuibuilder.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateComponent",
+      "CreateForm",
+      "CreateTheme",
+      "DeleteComponent",
+      "DeleteForm",
+      "DeleteTheme",
+      "ExchangeCodeForToken",
+      "PutMetadataFlag",
+      "RefreshToken",
+      "ResetMetadataFlag",
+      "StartCodegenJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateComponent",
+      "UpdateForm",
+      "UpdateTheme"
+    ],
+    "Read": [
+      "ExportComponents",
+      "ExportForms",
+      "ExportThemes",
+      "GetCodegenJob",
+      "GetComponent",
+      "GetForm",
+      "GetMetadata",
+      "GetTheme"
+    ],
+    "List": [
+      "ListCodegenJobs",
+      "ListComponents",
+      "ListForms",
+      "ListTagsForResource",
+      "ListThemes"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateComponent",
+      "methodName": "toCreateComponent",
+      "description": "Grants permission to create a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateComponent.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateForm",
+      "methodName": "toCreateForm",
+      "description": "Grants permission to create a form",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateForm.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTheme",
+      "methodName": "toCreateTheme",
+      "description": "Grants permission to create a theme",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CreateTheme.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteComponent",
+      "methodName": "toDeleteComponent",
+      "description": "Grants permission to delete a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteComponent.html"
+    },
+    {
+      "name": "DeleteForm",
+      "methodName": "toDeleteForm",
+      "description": "Grants permission to delete a form",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteForm.html"
+    },
+    {
+      "name": "DeleteTheme",
+      "methodName": "toDeleteTheme",
+      "description": "Grants permission to delete a theme",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_DeleteTheme.html"
+    },
+    {
+      "name": "ExchangeCodeForToken",
+      "methodName": "toExchangeCodeForToken",
+      "description": "Grants permission to exchange a code for a token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExchangeCodeForToken.html"
+    },
+    {
+      "name": "ExportComponents",
+      "methodName": "toExportComponents",
+      "description": "Grants permission to export components",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExportComponents.html"
+    },
+    {
+      "name": "ExportForms",
+      "methodName": "toExportForms",
+      "description": "Grants permission to export forms",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExportForms.html"
+    },
+    {
+      "name": "ExportThemes",
+      "methodName": "toExportThemes",
+      "description": "Grants permission to export themes",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ExportThemes.html"
+    },
+    {
+      "name": "GetCodegenJob",
+      "methodName": "toGetCodegenJob",
+      "description": "Grants permission to get an existing codegen job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetCodegenJob.html"
+    },
+    {
+      "name": "GetComponent",
+      "methodName": "toGetComponent",
+      "description": "Grants permission to get an existing component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetComponent.html"
+    },
+    {
+      "name": "GetForm",
+      "methodName": "toGetForm",
+      "description": "Grants permission to get an existing form",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetForm.html"
+    },
+    {
+      "name": "GetMetadata",
+      "methodName": "toGetMetadata",
+      "description": "Grants permission to get an existing metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetMetadata.html"
+    },
+    {
+      "name": "GetTheme",
+      "methodName": "toGetTheme",
+      "description": "Grants permission to get an existing theme",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_GetTheme.html"
+    },
+    {
+      "name": "ListCodegenJobs",
+      "methodName": "toListCodegenJobs",
+      "description": "Grants permission to list codegen jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListCodegenJobs.html"
+    },
+    {
+      "name": "ListComponents",
+      "methodName": "toListComponents",
+      "description": "Grants permission to list components",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListComponents.html"
+    },
+    {
+      "name": "ListForms",
+      "methodName": "toListForms",
+      "description": "Grants permission to list forms",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListForms.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a specified Amazon Resource Name (ARN)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListThemes",
+      "methodName": "toListThemes",
+      "description": "Grants permission to list themes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ListThemes.html"
+    },
+    {
+      "name": "PutMetadataFlag",
+      "methodName": "toPutMetadataFlag",
+      "description": "Grants permission to put an existing metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_PutMetadataFlag.html"
+    },
+    {
+      "name": "RefreshToken",
+      "methodName": "toRefreshToken",
+      "description": "Grants permission to refresh an access token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_RefreshToken.html"
+    },
+    {
+      "name": "ResetMetadataFlag",
+      "methodName": "toResetMetadataFlag",
+      "description": "Grants permission to reset an existing metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_ResetMetadataFlag.html"
+    },
+    {
+      "name": "StartCodegenJob",
+      "methodName": "toStartCodegenJob",
+      "description": "Grants permission to start a codegen job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_StartCodegenJob.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag the resource with a tag key and value",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource with a specified Amazon Resource Name (ARN)",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateComponent",
+      "methodName": "toUpdateComponent",
+      "description": "Grants permission to update a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateComponent.html"
+    },
+    {
+      "name": "UpdateForm",
+      "methodName": "toUpdateForm",
+      "description": "Grants permission to update a form",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateForm.html"
+    },
+    {
+      "name": "UpdateTheme",
+      "methodName": "toUpdateTheme",
+      "description": "Grants permission to update a theme",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_UpdateTheme.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "CodegenJobResource",
+      "methodName": "onCodegenJobResource",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CodegenJob.html",
+      "arn": "arn:${Partition}:amplifyuibuilder:${Region}:${Account}:app/${AppId}/environment/${EnvironmentName}/codegen-jobs/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifCodegenJobResourceAppId",
+        "ifCodegenJobResourceEnvironmentName",
+        "ifCodegenJobResourceId",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ComponentResource",
+      "methodName": "onComponentResource",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Component.html",
+      "arn": "arn:${Partition}:amplifyuibuilder:${Region}:${Account}:app/${AppId}/environment/${EnvironmentName}/components/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifComponentResourceAppId",
+        "ifComponentResourceEnvironmentName",
+        "ifComponentResourceId",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "FormResource",
+      "methodName": "onFormResource",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Form.html",
+      "arn": "arn:${Partition}:amplifyuibuilder:${Region}:${Account}:app/${AppId}/environment/${EnvironmentName}/forms/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifFormResourceAppId",
+        "ifFormResourceEnvironmentName",
+        "ifFormResourceId",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ThemeResource",
+      "methodName": "onThemeResource",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Theme.html",
+      "arn": "arn:${Partition}:amplifyuibuilder:${Region}:${Account}:app/${AppId}/environment/${EnvironmentName}/themes/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifThemeResourceAppId",
+        "ifThemeResourceEnvironmentName",
+        "ifThemeResourceId",
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "amplifyuibuilder:CodegenJobResourceAppId",
+      "methodName": "ifCodegenJobResourceAppId",
+      "description": "Filters access by the app ID",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html",
+      "relatedActionMethods": [
+        "toGetCodegenJob",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "CodegenJobResource"
+      ],
+      "keyLiteral": "CodegenJobResourceAppId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:CodegenJobResourceEnvironmentName",
+      "methodName": "ifCodegenJobResourceEnvironmentName",
+      "description": "Filters access by the backend environment name",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html",
+      "relatedActionMethods": [
+        "toGetCodegenJob",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "CodegenJobResource"
+      ],
+      "keyLiteral": "CodegenJobResourceEnvironmentName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:CodegenJobResourceId",
+      "methodName": "ifCodegenJobResourceId",
+      "description": "Filters access by the codegen job ID",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_CodegenJob.html",
+      "relatedActionMethods": [
+        "toGetCodegenJob",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "CodegenJobResource"
+      ],
+      "keyLiteral": "CodegenJobResourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:ComponentResourceAppId",
+      "methodName": "ifComponentResourceAppId",
+      "description": "Filters access by the app ID",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html",
+      "relatedActionMethods": [
+        "toDeleteComponent",
+        "toGetComponent",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateComponent"
+      ],
+      "relatedResourceTypes": [
+        "ComponentResource"
+      ],
+      "keyLiteral": "ComponentResourceAppId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:ComponentResourceEnvironmentName",
+      "methodName": "ifComponentResourceEnvironmentName",
+      "description": "Filters access by the backend environment name",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html",
+      "relatedActionMethods": [
+        "toDeleteComponent",
+        "toGetComponent",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateComponent"
+      ],
+      "relatedResourceTypes": [
+        "ComponentResource"
+      ],
+      "keyLiteral": "ComponentResourceEnvironmentName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:ComponentResourceId",
+      "methodName": "ifComponentResourceId",
+      "description": "Filters access by the component ID",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Component.html",
+      "relatedActionMethods": [
+        "toDeleteComponent",
+        "toGetComponent",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateComponent"
+      ],
+      "relatedResourceTypes": [
+        "ComponentResource"
+      ],
+      "keyLiteral": "ComponentResourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:FormResourceAppId",
+      "methodName": "ifFormResourceAppId",
+      "description": "Filters access by the app ID",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html",
+      "relatedActionMethods": [
+        "toDeleteForm",
+        "toGetForm",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateForm"
+      ],
+      "relatedResourceTypes": [
+        "FormResource"
+      ],
+      "keyLiteral": "FormResourceAppId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:FormResourceEnvironmentName",
+      "methodName": "ifFormResourceEnvironmentName",
+      "description": "Filters access by the backend environment name",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html",
+      "relatedActionMethods": [
+        "toDeleteForm",
+        "toGetForm",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateForm"
+      ],
+      "relatedResourceTypes": [
+        "FormResource"
+      ],
+      "keyLiteral": "FormResourceEnvironmentName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:FormResourceId",
+      "methodName": "ifFormResourceId",
+      "description": "Filters access by the form ID",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Form.html",
+      "relatedActionMethods": [
+        "toDeleteForm",
+        "toGetForm",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateForm"
+      ],
+      "relatedResourceTypes": [
+        "FormResource"
+      ],
+      "keyLiteral": "FormResourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:ThemeResourceAppId",
+      "methodName": "ifThemeResourceAppId",
+      "description": "Filters access by the app ID",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_App.html",
+      "relatedActionMethods": [
+        "toDeleteTheme",
+        "toGetTheme",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTheme"
+      ],
+      "relatedResourceTypes": [
+        "ThemeResource"
+      ],
+      "keyLiteral": "ThemeResourceAppId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:ThemeResourceEnvironmentName",
+      "methodName": "ifThemeResourceEnvironmentName",
+      "description": "Filters access by the backend environment name",
+      "url": "https://docs.aws.amazon.com/amplify/latest/APIReference/API_BackendEnvironment.html",
+      "relatedActionMethods": [
+        "toDeleteTheme",
+        "toGetTheme",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTheme"
+      ],
+      "relatedResourceTypes": [
+        "ThemeResource"
+      ],
+      "keyLiteral": "ThemeResourceEnvironmentName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "amplifyuibuilder:ThemeResourceId",
+      "methodName": "ifThemeResourceId",
+      "description": "Filters access by the theme ID",
+      "url": "https://docs.aws.amazon.com/amplifyuibuilder/latest/APIReference/API_Theme.html",
+      "relatedActionMethods": [
+        "toDeleteTheme",
+        "toGetTheme",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTheme"
+      ],
+      "relatedResourceTypes": [
+        "ThemeResource"
+      ],
+      "keyLiteral": "ThemeResourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateComponent",
+        "toCreateForm",
+        "toCreateTheme",
+        "toStartCodegenJob",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteComponent",
+        "toDeleteForm",
+        "toDeleteTheme",
+        "toGetCodegenJob",
+        "toGetComponent",
+        "toGetForm",
+        "toGetTheme",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateComponent",
+        "toUpdateForm",
+        "toUpdateTheme"
+      ],
+      "relatedResourceTypes": [
+        "CodegenJobResource",
+        "ComponentResource",
+        "FormResource",
+        "ThemeResource"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateComponent",
+        "toCreateForm",
+        "toCreateTheme",
+        "toStartCodegenJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonDataZoneStatement",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:ListDomains",
+        "datazone:GetDomain",
+        "datazone:GetUserProfile",
+        "datazone:ListProjects",
+        "datazone:ListProjectProfiles",
+        "datazone:CreateProject",
+        "datazone:GetProject",
+        "datazone:DeleteProject",
+        "datazone:GetIamPortalLoginUrl",
+        "datazone:ListEnvironmentBlueprints",
+        "datazone:ListEnvironments",
+        "datazone:GetEnvironment",
+        "datazone:GetEnvironmentCredentials",
+        "datazone:GetGroupProfile",
+        "datazone:SearchGroupProfiles",
+        "datazone:SearchUserProfiles",
+        "datazone:ListProjectMemberships",
+        "datazone:GetConnection",
+        "datazone:ListConnections"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "ReadOnlyStatement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "iam:GetRole",
+        "iam:GetUser"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "DataZoneKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "datazone.*.amazonaws.com"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:datazone:domainId"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ComputeOptimizerFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "compute-optimizer:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AwsOrgsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:DescribeAlarms"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AutoScalingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DescribeAutoScalingInstances",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribePolicies",
+        "autoscaling:DescribeScheduledActions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ec2Access",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeNatGateways",
+        "ec2:DescribeRouteTables"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ElastiCacheAccess",
+      "Effect": "Allow",
+      "Action": [
+        "elasticache:DescribeCacheClusters",
+        "elasticache:DescribeServerlessCaches"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MemoryDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "memorydb:DescribeClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DocumentDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DynamoDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:ListTables",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "WorkSpacesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces:DescribeWorkspaces",
+        "workspaces:DescribeWorkspacesConnectionStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListEndpoints",
+        "sagemaker:DescribeEndpoint"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

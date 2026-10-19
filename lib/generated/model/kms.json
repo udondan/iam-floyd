@@ -1,0 +1,1817 @@
+{
+  "schemaVersion": 1,
+  "filename": "kms",
+  "className": "Kms",
+  "name": "kms",
+  "servicePrefix": "kms",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kms.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelKeyDeletion",
+      "ConnectCustomKeyStore",
+      "CreateAlias",
+      "CreateCustomKeyStore",
+      "CreateGrant",
+      "CreateKey",
+      "Decrypt",
+      "DeleteAlias",
+      "DeleteCustomKeyStore",
+      "DeleteImportedKeyMaterial",
+      "DeriveSharedSecret",
+      "DisableKey",
+      "DisableKeyRotation",
+      "DisconnectCustomKeyStore",
+      "EnableKey",
+      "EnableKeyRotation",
+      "Encrypt",
+      "GenerateDataKey",
+      "GenerateDataKeyPair",
+      "GenerateDataKeyPairWithoutPlaintext",
+      "GenerateDataKeyWithoutPlaintext",
+      "GenerateMac",
+      "GenerateRandom",
+      "ImportKeyMaterial",
+      "PutKeyPolicy",
+      "ReEncryptFrom",
+      "ReEncryptTo",
+      "ReplicateKey",
+      "RetireGrant",
+      "RevokeGrant",
+      "RotateKeyOnDemand",
+      "ScheduleKeyDeletion",
+      "Sign",
+      "TagResource",
+      "UntagResource",
+      "UpdateAlias",
+      "UpdateCustomKeyStore",
+      "UpdateKeyDescription",
+      "UpdatePrimaryRegion",
+      "Verify",
+      "VerifyMac",
+      "SynchronizeMultiRegionKey"
+    ],
+    "Permissions management": [
+      "CreateGrant",
+      "PutKeyPolicy",
+      "RetireGrant",
+      "RevokeGrant"
+    ],
+    "Read": [
+      "DescribeCustomKeyStores",
+      "DescribeKey",
+      "GetKeyLastUsage",
+      "GetKeyPolicy",
+      "GetKeyRotationStatus",
+      "GetParametersForImport",
+      "GetPublicKey"
+    ],
+    "List": [
+      "ListAliases",
+      "ListGrants",
+      "ListKeyPolicies",
+      "ListKeyRotations",
+      "ListKeys",
+      "ListResourceTags",
+      "ListRetirableGrants"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelKeyDeletion",
+      "methodName": "toCancelKeyDeletion",
+      "description": "Controls permission to cancel the scheduled deletion of an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html"
+    },
+    {
+      "name": "ConnectCustomKeyStore",
+      "methodName": "toConnectCustomKeyStore",
+      "description": "Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster or external key manager outside of AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ConnectCustomKeyStore.html",
+      "conditionMethods": [
+        "ifCallerAccount"
+      ]
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Controls permission to create an alias for an AWS KMS key. Aliases are optional friendly names that you can associate with KMS keys",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateAlias.html"
+    },
+    {
+      "name": "CreateCustomKeyStore",
+      "methodName": "toCreateCustomKeyStore",
+      "description": "Controls permission to create a custom key store that is backed by an AWS CloudHSM cluster or an external key manager outside of AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html",
+      "conditionMethods": [
+        "ifCallerAccount"
+      ]
+    },
+    {
+      "name": "CreateGrant",
+      "methodName": "toCreateGrant",
+      "description": "Controls permission to add a grant to an AWS KMS key. You can use grants to add permissions without changing the key policy or IAM policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html"
+    },
+    {
+      "name": "CreateKey",
+      "methodName": "toCreateKey",
+      "description": "Controls permission to create an AWS KMS key that can be used to protect data keys and other sensitive information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifBypassPolicyLockoutSafetyCheck",
+        "ifCallerAccount",
+        "ifKeyOrigin",
+        "ifKeySpec",
+        "ifKeyUsage",
+        "ifMultiRegion",
+        "ifMultiRegionKeyType",
+        "ifViaService"
+      ]
+    },
+    {
+      "name": "Decrypt",
+      "methodName": "toDecrypt",
+      "description": "Controls permission to decrypt ciphertext that was encrypted under an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html"
+    },
+    {
+      "name": "DeleteAlias",
+      "methodName": "toDeleteAlias",
+      "description": "Controls permission to delete an alias. Aliases are optional friendly names that you can associate with AWS KMS keys",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html"
+    },
+    {
+      "name": "DeleteCustomKeyStore",
+      "methodName": "toDeleteCustomKeyStore",
+      "description": "Controls permission to delete a custom key store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteCustomKeyStore.html",
+      "conditionMethods": [
+        "ifCallerAccount"
+      ]
+    },
+    {
+      "name": "DeleteImportedKeyMaterial",
+      "methodName": "toDeleteImportedKeyMaterial",
+      "description": "Controls permission to delete cryptographic material that you imported into an AWS KMS key. This action makes the key unusable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteImportedKeyMaterial.html"
+    },
+    {
+      "name": "DeriveSharedSecret",
+      "methodName": "toDeriveSharedSecret",
+      "description": "Controls permission to use the specified AWS KMS key to derive shared secrets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DeriveSharedSecret.html"
+    },
+    {
+      "name": "DescribeCustomKeyStores",
+      "methodName": "toDescribeCustomKeyStores",
+      "description": "Controls permission to view detailed information about custom key stores in the account and region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeCustomKeyStores.html",
+      "conditionMethods": [
+        "ifCallerAccount"
+      ]
+    },
+    {
+      "name": "DescribeKey",
+      "methodName": "toDescribeKey",
+      "description": "Controls permission to view detailed information about an AWS KMS key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html"
+    },
+    {
+      "name": "DisableKey",
+      "methodName": "toDisableKey",
+      "description": "Controls permission to disable an AWS KMS key, which prevents it from being used in cryptographic operations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html"
+    },
+    {
+      "name": "DisableKeyRotation",
+      "methodName": "toDisableKeyRotation",
+      "description": "Controls permission to disable automatic rotation of a customer managed AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKeyRotation.html"
+    },
+    {
+      "name": "DisconnectCustomKeyStore",
+      "methodName": "toDisconnectCustomKeyStore",
+      "description": "Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster or external key manager outside of AWS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_DisconnectCustomKeyStore.html",
+      "conditionMethods": [
+        "ifCallerAccount"
+      ]
+    },
+    {
+      "name": "EnableKey",
+      "methodName": "toEnableKey",
+      "description": "Controls permission to change the state of an AWS KMS key to enabled. This allows the KMS key to be used in cryptographic operations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKey.html"
+    },
+    {
+      "name": "EnableKeyRotation",
+      "methodName": "toEnableKeyRotation",
+      "description": "Controls permission to enable automatic rotation of the cryptographic material in an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html"
+    },
+    {
+      "name": "Encrypt",
+      "methodName": "toEncrypt",
+      "description": "Controls permission to use the specified AWS KMS key to encrypt data and data keys",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html"
+    },
+    {
+      "name": "GenerateDataKey",
+      "methodName": "toGenerateDataKey",
+      "description": "Controls permission to use the AWS KMS key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html"
+    },
+    {
+      "name": "GenerateDataKeyPair",
+      "methodName": "toGenerateDataKeyPair",
+      "description": "Controls permission to use the AWS KMS key to generate data key pairs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html"
+    },
+    {
+      "name": "GenerateDataKeyPairWithoutPlaintext",
+      "methodName": "toGenerateDataKeyPairWithoutPlaintext",
+      "description": "Controls permission to use the AWS KMS key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html"
+    },
+    {
+      "name": "GenerateDataKeyWithoutPlaintext",
+      "methodName": "toGenerateDataKeyWithoutPlaintext",
+      "description": "Controls permission to use the AWS KMS key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyWithoutPlaintext.html"
+    },
+    {
+      "name": "GenerateMac",
+      "methodName": "toGenerateMac",
+      "description": "Controls permission to use the AWS KMS key to generate message authentication codes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateMac.html"
+    },
+    {
+      "name": "GenerateRandom",
+      "methodName": "toGenerateRandom",
+      "description": "Controls permission to get a cryptographically secure random byte string from AWS KMS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateRandom.html",
+      "conditionMethods": [
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation",
+        "ifRecipientAttestation"
+      ]
+    },
+    {
+      "name": "GetKeyLastUsage",
+      "methodName": "toGetKeyLastUsage",
+      "description": "Controls permission to view the last usage of an AWS KMS key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyLastUsage.html"
+    },
+    {
+      "name": "GetKeyPolicy",
+      "methodName": "toGetKeyPolicy",
+      "description": "Controls permission to view the key policy for the specified AWS KMS key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html"
+    },
+    {
+      "name": "GetKeyRotationStatus",
+      "methodName": "toGetKeyRotationStatus",
+      "description": "Controls permission to view the key rotation status for an AWS KMS key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyRotationStatus.html"
+    },
+    {
+      "name": "GetParametersForImport",
+      "methodName": "toGetParametersForImport",
+      "description": "Controls permission to get data that is required to import cryptographic material into a customer managed key, including a public key and import token",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GetParametersForImport.html"
+    },
+    {
+      "name": "GetPublicKey",
+      "methodName": "toGetPublicKey",
+      "description": "Controls permission to download the public key of an asymmetric AWS KMS key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html"
+    },
+    {
+      "name": "ImportKeyMaterial",
+      "methodName": "toImportKeyMaterial",
+      "description": "Controls permission to import cryptographic material into an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ImportKeyMaterial.html"
+    },
+    {
+      "name": "ListAliases",
+      "methodName": "toListAliases",
+      "description": "Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with AWS KMS keys",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListAliases.html"
+    },
+    {
+      "name": "ListGrants",
+      "methodName": "toListGrants",
+      "description": "Controls permission to view all grants for an AWS KMS key",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListGrants.html"
+    },
+    {
+      "name": "ListKeyPolicies",
+      "methodName": "toListKeyPolicies",
+      "description": "Controls permission to view the names of key policies for an AWS KMS key",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyPolicies.html"
+    },
+    {
+      "name": "ListKeyRotations",
+      "methodName": "toListKeyRotations",
+      "description": "Controls permission to view the list of key materials for an AWS KMS key",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyRotations.html"
+    },
+    {
+      "name": "ListKeys",
+      "methodName": "toListKeys",
+      "description": "Controls permission to view the key ID and Amazon Resource Name (ARN) of all AWS KMS keys in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeys.html"
+    },
+    {
+      "name": "ListResourceTags",
+      "methodName": "toListResourceTags",
+      "description": "Controls permission to view all tags that are attached to an AWS KMS key",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html"
+    },
+    {
+      "name": "ListRetirableGrants",
+      "methodName": "toListRetirableGrants",
+      "description": "Controls permission to view grants in which the specified principal is the retiring principal. Other principals might be able to retire the grant and this principal might be able to retire other grants",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ListRetirableGrants.html"
+    },
+    {
+      "name": "PutKeyPolicy",
+      "methodName": "toPutKeyPolicy",
+      "description": "Controls permission to replace the key policy for the specified AWS KMS key",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html"
+    },
+    {
+      "name": "ReEncryptFrom",
+      "methodName": "toReEncryptFrom",
+      "description": "Controls permission to decrypt data as part of the process that decrypts and reencrypts the data within AWS KMS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+    },
+    {
+      "name": "ReEncryptTo",
+      "methodName": "toReEncryptTo",
+      "description": "Controls permission to encrypt data as part of the process that decrypts and reencrypts the data within AWS KMS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+    },
+    {
+      "name": "ReplicateKey",
+      "methodName": "toReplicateKey",
+      "description": "Controls permission to replicate a multi-Region primary key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ReplicateKey.html"
+    },
+    {
+      "name": "RetireGrant",
+      "methodName": "toRetireGrant",
+      "description": "Controls permission to retire a grant. The RetireGrant operation is typically called by the grant user after they complete the tasks that the grant allowed them to perform",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html"
+    },
+    {
+      "name": "RevokeGrant",
+      "methodName": "toRevokeGrant",
+      "description": "Controls permission to revoke a grant, which denies permission for all operations that depend on the grant",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html"
+    },
+    {
+      "name": "RotateKeyOnDemand",
+      "methodName": "toRotateKeyOnDemand",
+      "description": "Controls permission to invoke on-demand rotation of the cryptographic material in an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_RotateKeyOnDemand.html"
+    },
+    {
+      "name": "ScheduleKeyDeletion",
+      "methodName": "toScheduleKeyDeletion",
+      "description": "Controls permission to schedule deletion of an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html"
+    },
+    {
+      "name": "Sign",
+      "methodName": "toSign",
+      "description": "Controls permission to produce a digital signature for a message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Controls permission to create or update tags that are attached to an AWS KMS key",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Controls permission to delete tags that are attached to an AWS KMS key",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAlias",
+      "methodName": "toUpdateAlias",
+      "description": "Controls permission to associate an alias with a different AWS KMS key. An alias is an optional friendly name that you can associate with a KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateAlias.html"
+    },
+    {
+      "name": "UpdateCustomKeyStore",
+      "methodName": "toUpdateCustomKeyStore",
+      "description": "Controls permission to change the properties of a custom key store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateCustomKeyStore.html",
+      "conditionMethods": [
+        "ifCallerAccount"
+      ]
+    },
+    {
+      "name": "UpdateKeyDescription",
+      "methodName": "toUpdateKeyDescription",
+      "description": "Controls permission to delete or change the description of an AWS KMS key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateKeyDescription.html"
+    },
+    {
+      "name": "UpdatePrimaryRegion",
+      "methodName": "toUpdatePrimaryRegion",
+      "description": "Controls permission to update the primary Region of a multi-Region primary key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdatePrimaryRegion.html"
+    },
+    {
+      "name": "Verify",
+      "methodName": "toVerify",
+      "description": "Controls permission to use the specified AWS KMS key to verify digital signatures",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_Verify.html"
+    },
+    {
+      "name": "VerifyMac",
+      "methodName": "toVerifyMac",
+      "description": "Controls permission to use the AWS KMS key to verify message authentication codes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_VerifyMac.html"
+    },
+    {
+      "name": "SynchronizeMultiRegionKey",
+      "methodName": "toSynchronizeMultiRegionKey",
+      "description": "Controls access to internal APIs that synchronize multi-Region keys",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-auth.html#multi-region-auth-slr"
+    }
+  ],
+  "resources": [
+    {
+      "name": "alias",
+      "methodName": "onAlias",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#alias-concept",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:alias/${Alias}",
+      "placeholders": [
+        {
+          "placeholder": "Alias",
+          "name": "alias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "key",
+      "methodName": "onKey",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
+      "placeholders": [
+        {
+          "placeholder": "KeyId",
+          "name": "keyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifKeyOrigin",
+        "ifKeySpec",
+        "ifKeyUsage",
+        "ifMultiRegion",
+        "ifMultiRegionKeyType",
+        "ifResourceAliases"
+      ],
+      "cdkRef": {
+        "module": "aws_kms",
+        "interface": "IKeyRef",
+        "property": "keyRef",
+        "arn": "keyArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access to the specified AWS KMS operations based on both the key and value of the tag in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateKey",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access to the specified AWS KMS operations based on tags assigned to the AWS KMS key",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/tag-authorization.html",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access to the specified AWS KMS operations based on tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateKey",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:BypassPolicyLockoutSafetyCheck",
+      "methodName": "ifBypassPolicyLockoutSafetyCheck",
+      "description": "Filters access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-bypass-policy-lockout-safety-check",
+      "relatedActionMethods": [
+        "toCreateKey",
+        "toPutKeyPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "BypassPolicyLockoutSafetyCheck",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "kms:CallerAccount",
+      "methodName": "ifCallerAccount",
+      "description": "Filters access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-caller-account",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toConnectCustomKeyStore",
+        "toCreateAlias",
+        "toCreateCustomKeyStore",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteCustomKeyStore",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeCustomKeyStores",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toDisconnectCustomKeyStore",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateCustomKeyStore",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CallerAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:CustomerMasterKeySpec",
+      "methodName": "ifCustomerMasterKeySpec",
+      "description": "The kms:CustomerMasterKeySpec condition key is deprecated. Instead, use the kms:KeySpec condition key",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-spec-replaced",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CustomerMasterKeySpec",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:CustomerMasterKeyUsage",
+      "methodName": "ifCustomerMasterKeyUsage",
+      "description": "The kms:CustomerMasterKeyUsage condition key is deprecated. Instead, use the kms:KeyUsage condition key",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-usage-replaced",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CustomerMasterKeyUsage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:DataKeyPairSpec",
+      "methodName": "ifDataKeyPairSpec",
+      "description": "Filters access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the KeyPairSpec parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-data-key-pair-spec",
+      "relatedActionMethods": [
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DataKeyPairSpec",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:EncryptionAlgorithm",
+      "methodName": "ifEncryptionAlgorithm",
+      "description": "Filters access to encryption operations based on the value of the encryption algorithm in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-algorithm",
+      "relatedActionMethods": [
+        "toDecrypt",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toReEncryptFrom",
+        "toReEncryptTo"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EncryptionAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:EncryptionContext",
+      "methodName": "ifEncryptionContext",
+      "description": "Filters access to a symmetric AWS KMS key based on the encryption context in a cryptographic operation. This condition evaluates the key and value in each key-value encryption context pair",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-context",
+      "relatedActionMethods": [
+        "toCreateGrant",
+        "toDecrypt",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toRetireGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EncryptionContext",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:EncryptionContextKeys",
+      "methodName": "ifEncryptionContextKeys",
+      "description": "Filters access to a symmetric AWS KMS key based on the encryption context in a cryptographic operation. This condition key evaluates only the key in each key-value encryption context pair",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-context-keys",
+      "relatedActionMethods": [
+        "toCreateGrant",
+        "toDecrypt",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toRetireGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EncryptionContextKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:ExpirationModel",
+      "methodName": "ifExpirationModel",
+      "description": "Filters access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-expiration-model",
+      "relatedActionMethods": [
+        "toImportKeyMaterial"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExpirationModel",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:GrantConstraintSourceArn",
+      "methodName": "ifGrantConstraintSourceArn",
+      "description": "Filters access to the CreateGrant operation based on the value of SourceArn constraint in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-constraint-source-arn",
+      "relatedActionMethods": [
+        "toCreateGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GrantConstraintSourceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "kms:GrantConstraintType",
+      "methodName": "ifGrantConstraintType",
+      "description": "Filters access to the CreateGrant operation based on the grant constraint in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-constraint-type",
+      "relatedActionMethods": [
+        "toCreateGrant",
+        "toRetireGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GrantConstraintType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:GrantIsForAWSResource",
+      "methodName": "ifGrantIsForAWSResource",
+      "description": "Filters access to the CreateGrant operation when the request comes from a specified AWS service",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-is-for-aws-resource",
+      "relatedActionMethods": [
+        "toCreateGrant",
+        "toListGrants",
+        "toRevokeGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GrantIsForAWSResource",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "kms:GrantOperations",
+      "methodName": "ifGrantOperations",
+      "description": "Filters access to the CreateGrant operation based on the operations in the grant",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-operations",
+      "relatedActionMethods": [
+        "toCreateGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GrantOperations",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:GranteePrincipal",
+      "methodName": "ifGranteePrincipal",
+      "description": "Filters access to the CreateGrant operation based on the grantee principal in the grant",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grantee-principal",
+      "relatedActionMethods": [
+        "toCreateGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GranteePrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:GranteeServicePrincipal",
+      "methodName": "ifGranteeServicePrincipal",
+      "description": "Filters access to the CreateGrant operation based on the value of GranteeServicePrincipal in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grantee-service-principal",
+      "relatedActionMethods": [
+        "toCreateGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "GranteeServicePrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:KeyAgreementAlgorithm",
+      "methodName": "ifKeyAgreementAlgorithm",
+      "description": "Filters access to the DeriveSharedSecret operation based on the value of the KeyAgreementAlgorithm parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-agreement-algorithm",
+      "relatedActionMethods": [
+        "toDeriveSharedSecret"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KeyAgreementAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:KeyOrigin",
+      "methodName": "ifKeyOrigin",
+      "description": "Filters access to an API operation based on the Origin property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-origin",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "KeyOrigin",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:KeySpec",
+      "methodName": "ifKeySpec",
+      "description": "Filters access to an API operation based on the KeySpec property of the AWS KMS key that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-spec",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "KeySpec",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:KeyUsage",
+      "methodName": "ifKeyUsage",
+      "description": "Filters access to an API operation based on the KeyUsage property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-usage",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "KeyUsage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:MacAlgorithm",
+      "methodName": "ifMacAlgorithm",
+      "description": "Filters access to the GenerateMac and VerifyMac operations based on the MacAlgorithm parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-mac-algorithm",
+      "relatedActionMethods": [
+        "toGenerateMac",
+        "toVerifyMac"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MacAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:MessageType",
+      "methodName": "ifMessageType",
+      "description": "Filters access to the Sign and Verify operations based on the value of the MessageType parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-message-type",
+      "relatedActionMethods": [
+        "toSign",
+        "toVerify"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MessageType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:MultiRegion",
+      "methodName": "ifMultiRegion",
+      "description": "Filters access to an API operation based on the MultiRegion property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-multi-region",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "MultiRegion",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "kms:MultiRegionKeyType",
+      "methodName": "ifMultiRegionKeyType",
+      "description": "Filters access to an API operation based on the MultiRegionKeyType property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-multi-region-key-type",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "MultiRegionKeyType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:PrimaryRegion",
+      "methodName": "ifPrimaryRegion",
+      "description": "Filters access to the UpdatePrimaryRegion operation based on the value of the PrimaryRegion parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-primary-region",
+      "relatedActionMethods": [
+        "toUpdatePrimaryRegion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PrimaryRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:ReEncryptOnSameKey",
+      "methodName": "ifReEncryptOnSameKey",
+      "description": "Filters access to the ReEncrypt operation when it uses the same AWS KMS key that was used for the Encrypt operation",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-reencrypt-on-same-key",
+      "relatedActionMethods": [
+        "toReEncryptFrom",
+        "toReEncryptTo"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ReEncryptOnSameKey",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "kms:RecipientAttestation",
+      "methodName": "ifRecipientAttestation",
+      "description": "Filters access by the platform configuration register (PCR) 9 in the attestation document in the request. PCR9 is a custom PCR that can be defined by the user for specific use cases",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-nitro-enclaves.html#conditions-kms-recipient-pcrs",
+      "relatedActionMethods": [
+        "toDecrypt",
+        "toDeriveSharedSecret",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateRandom"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RecipientAttestation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:ReplicaRegion",
+      "methodName": "ifReplicaRegion",
+      "description": "Filters access to the ReplicateKey operation based on the value of the ReplicaRegion parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-replica-region",
+      "relatedActionMethods": [
+        "toReplicateKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ReplicaRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:RequestAlias",
+      "methodName": "ifRequestAlias",
+      "description": "Filters access to cryptographic operations, DescribeKey, and GetPublicKey based on the alias in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-request-alias",
+      "relatedActionMethods": [
+        "toDecrypt",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetPublicKey",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toSign",
+        "toVerify",
+        "toVerifyMac"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestAlias",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:ResourceAliases",
+      "methodName": "ifResourceAliases",
+      "description": "Filters access to specified AWS KMS operations based on aliases associated with the AWS KMS key",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-resource-aliases",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac",
+        "toSynchronizeMultiRegionKey"
+      ],
+      "relatedResourceTypes": [
+        "key"
+      ],
+      "keyLiteral": "ResourceAliases",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:RetiringPrincipal",
+      "methodName": "ifRetiringPrincipal",
+      "description": "Filters access to the CreateGrant operation based on the retiring principal in the grant",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-retiring-principal",
+      "relatedActionMethods": [
+        "toCreateGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RetiringPrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:RetiringServicePrincipal",
+      "methodName": "ifRetiringServicePrincipal",
+      "description": "Filters access to the CreateGrant operation based on the value of RetiringServicePrincipal in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-retiring-service-principal",
+      "relatedActionMethods": [
+        "toCreateGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RetiringServicePrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:RotationPeriodInDays",
+      "methodName": "ifRotationPeriodInDays",
+      "description": "Filters access to the EnableKeyRotation operation based on the value of the RotationPeriodInDays parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days",
+      "relatedActionMethods": [
+        "toEnableKeyRotation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RotationPeriodInDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "kms:ScheduleKeyDeletionPendingWindowInDays",
+      "methodName": "ifScheduleKeyDeletionPendingWindowInDays",
+      "description": "Filters access to the ScheduleKeyDeletion operation based on the value of the PendingWindowInDays parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days",
+      "relatedActionMethods": [
+        "toScheduleKeyDeletion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ScheduleKeyDeletionPendingWindowInDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "kms:SigningAlgorithm",
+      "methodName": "ifSigningAlgorithm",
+      "description": "Filters access to the Sign and Verify operations based on the signing algorithm in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-signing-algorithm",
+      "relatedActionMethods": [
+        "toSign",
+        "toVerify"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SigningAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:TrailingDaysWithoutKeyUsage",
+      "methodName": "ifTrailingDaysWithoutKeyUsage",
+      "description": "Filters access to the ScheduleKeyDeletion and DisableKey operations based on the number of days since the AWS KMS key was last used",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-trailing-days-without-key-usage",
+      "relatedActionMethods": [
+        "toDisableKey",
+        "toScheduleKeyDeletion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TrailingDaysWithoutKeyUsage",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "kms:ValidTo",
+      "methodName": "ifValidTo",
+      "description": "Filters access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-valid-to",
+      "relatedActionMethods": [
+        "toImportKeyMaterial"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ValidTo",
+      "valueKind": "date",
+      "defaultOperator": "DateEquals",
+      "valueTypes": [
+        "Date",
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date"
+    },
+    {
+      "key": "kms:ViaService",
+      "methodName": "ifViaService",
+      "description": "Filters access when a request made on the principal's behalf comes from a specified AWS service",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-via-service",
+      "relatedActionMethods": [
+        "toCancelKeyDeletion",
+        "toCreateAlias",
+        "toCreateGrant",
+        "toCreateKey",
+        "toDecrypt",
+        "toDeleteAlias",
+        "toDeleteImportedKeyMaterial",
+        "toDeriveSharedSecret",
+        "toDescribeKey",
+        "toDisableKey",
+        "toDisableKeyRotation",
+        "toEnableKey",
+        "toEnableKeyRotation",
+        "toEncrypt",
+        "toGenerateDataKey",
+        "toGenerateDataKeyPair",
+        "toGenerateDataKeyPairWithoutPlaintext",
+        "toGenerateDataKeyWithoutPlaintext",
+        "toGenerateMac",
+        "toGetKeyLastUsage",
+        "toGetKeyPolicy",
+        "toGetKeyRotationStatus",
+        "toGetParametersForImport",
+        "toGetPublicKey",
+        "toImportKeyMaterial",
+        "toListGrants",
+        "toListKeyPolicies",
+        "toListKeyRotations",
+        "toListResourceTags",
+        "toPutKeyPolicy",
+        "toReEncryptFrom",
+        "toReEncryptTo",
+        "toReplicateKey",
+        "toRetireGrant",
+        "toRevokeGrant",
+        "toRotateKeyOnDemand",
+        "toScheduleKeyDeletion",
+        "toSign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateKeyDescription",
+        "toUpdatePrimaryRegion",
+        "toVerify",
+        "toVerifyMac"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ViaService",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:WrappingAlgorithm",
+      "methodName": "ifWrappingAlgorithm",
+      "description": "Filters access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-wrapping-algorithm",
+      "relatedActionMethods": [
+        "toGetParametersForImport"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "WrappingAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kms:WrappingKeySpec",
+      "methodName": "ifWrappingKeySpec",
+      "description": "Filters access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-wrapping-key-spec",
+      "relatedActionMethods": [
+        "toGetParametersForImport"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "WrappingKeySpec",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

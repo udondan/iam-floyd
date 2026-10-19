@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "filename": "uxc",
+  "className": "Uxc",
+  "name": "uxc",
+  "servicePrefix": "uxc",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_uxc.html",
+  "accessLevelList": {
+    "Write": [
+      "DeleteAccountColor",
+      "PutAccountColor",
+      "UpdateAccountCustomizations"
+    ],
+    "Read": [
+      "GetAccountColor",
+      "GetAccountCustomizations",
+      "ListServices"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeleteAccountColor",
+      "methodName": "toDeleteAccountColor",
+      "description": "Grants permission to delete account color setting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_DeleteAccountColor.html"
+    },
+    {
+      "name": "GetAccountColor",
+      "methodName": "toGetAccountColor",
+      "description": "Grants permission to retrieve account color for given account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_GetAccountColor.html"
+    },
+    {
+      "name": "GetAccountCustomizations",
+      "methodName": "toGetAccountCustomizations",
+      "description": "Grants permission to retrieve account customizations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_GetAccountCustomizations.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list available services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_ListServices.html"
+    },
+    {
+      "name": "PutAccountColor",
+      "methodName": "toPutAccountColor",
+      "description": "Grants permission to set account color",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_PutAccountColor.html"
+    },
+    {
+      "name": "UpdateAccountCustomizations",
+      "methodName": "toUpdateAccountCustomizations",
+      "description": "Grants permission to update account customizations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_UpdateAccountCustomizations.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

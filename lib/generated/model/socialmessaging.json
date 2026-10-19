@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "filename": "socialmessaging",
+  "className": "SocialMessaging",
+  "name": "social-messaging",
+  "servicePrefix": "social-messaging",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_socialmessaging.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateWhatsAppBusinessAccount",
+      "CreateWhatsAppDataset",
+      "CreateWhatsAppFlow",
+      "CreateWhatsAppMessageTemplate",
+      "CreateWhatsAppMessageTemplateFromLibrary",
+      "CreateWhatsAppMessageTemplateMedia",
+      "DeleteWhatsAppFlow",
+      "DeleteWhatsAppMessageMedia",
+      "DeleteWhatsAppMessageTemplate",
+      "DeprecateWhatsAppFlow",
+      "DisassociateWhatsAppBusinessAccount",
+      "GetWhatsAppMessageMedia",
+      "PostWhatsAppMessageMedia",
+      "PublishWhatsAppFlow",
+      "PutWhatsAppBusinessAccountEventDestinations",
+      "PutWhatsAppBusinessPublicKey",
+      "SendWhatsAppCallEvent",
+      "SendWhatsAppConversionEvent",
+      "SendWhatsAppMessage",
+      "TagResource",
+      "UntagResource",
+      "UpdateLinkedWhatsAppBusinessAccountPhoneNumber",
+      "UpdateWhatsAppFlow",
+      "UpdateWhatsAppFlowAssets",
+      "UpdateWhatsAppMessageTemplate"
+    ],
+    "Read": [
+      "GetLinkedWhatsAppBusinessAccount",
+      "GetLinkedWhatsAppBusinessAccountPhoneNumber",
+      "GetWhatsAppBusinessPublicKey",
+      "GetWhatsAppCallPermission",
+      "GetWhatsAppFlow",
+      "GetWhatsAppFlowPreview",
+      "GetWhatsAppMessageTemplate",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListLinkedWhatsAppBusinessAccounts",
+      "ListWhatsAppFlowAssets",
+      "ListWhatsAppFlows",
+      "ListWhatsAppMessageTemplates",
+      "ListWhatsAppTemplateLibrary"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateWhatsAppBusinessAccount",
+      "methodName": "toAssociateWhatsAppBusinessAccount",
+      "description": "Grants permission to associate a WhatsApp Business Account with your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_AssociateWhatsAppBusinessAccount.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWhatsAppDataset",
+      "methodName": "toCreateWhatsAppDataset",
+      "description": "Grants permission to create a new WhatsApp dataset for a WhatsApp Business Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppDataset.html"
+    },
+    {
+      "name": "CreateWhatsAppFlow",
+      "methodName": "toCreateWhatsAppFlow",
+      "description": "Grants permission to create a new WhatsApp Flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppFlow.html"
+    },
+    {
+      "name": "CreateWhatsAppMessageTemplate",
+      "methodName": "toCreateWhatsAppMessageTemplate",
+      "description": "Grants permission to create a WhatsApp message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplate.html"
+    },
+    {
+      "name": "CreateWhatsAppMessageTemplateFromLibrary",
+      "methodName": "toCreateWhatsAppMessageTemplateFromLibrary",
+      "description": "Grants permission to create a WhatsApp message template from Meta's template library",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplateFromLibrary.html"
+    },
+    {
+      "name": "CreateWhatsAppMessageTemplateMedia",
+      "methodName": "toCreateWhatsAppMessageTemplateMedia",
+      "description": "Grants permission to create media for WhatsApp message templates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplateMedia.html"
+    },
+    {
+      "name": "DeleteWhatsAppFlow",
+      "methodName": "toDeleteWhatsAppFlow",
+      "description": "Grants permission to delete a WhatsApp Flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppFlow.html"
+    },
+    {
+      "name": "DeleteWhatsAppMessageMedia",
+      "methodName": "toDeleteWhatsAppMessageMedia",
+      "description": "Grants permission to delete a media object from WhatsApp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppMessageMedia.html"
+    },
+    {
+      "name": "DeleteWhatsAppMessageTemplate",
+      "methodName": "toDeleteWhatsAppMessageTemplate",
+      "description": "Grants permission to delete a WhatsApp message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppMessageTemplate.html"
+    },
+    {
+      "name": "DeprecateWhatsAppFlow",
+      "methodName": "toDeprecateWhatsAppFlow",
+      "description": "Grants permission to deprecate a published WhatsApp Flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeprecateWhatsAppFlow.html"
+    },
+    {
+      "name": "DisassociateWhatsAppBusinessAccount",
+      "methodName": "toDisassociateWhatsAppBusinessAccount",
+      "description": "Grants permission to disassociate a WhatsApp Business Account from your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DisassociateWhatsAppBusinessAccount.html"
+    },
+    {
+      "name": "GetLinkedWhatsAppBusinessAccount",
+      "methodName": "toGetLinkedWhatsAppBusinessAccount",
+      "description": "Grants permission to view the details of a WhatsApp Business Account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccount.html"
+    },
+    {
+      "name": "GetLinkedWhatsAppBusinessAccountPhoneNumber",
+      "methodName": "toGetLinkedWhatsAppBusinessAccountPhoneNumber",
+      "description": "Grants permission to view the details of a phone number",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html"
+    },
+    {
+      "name": "GetWhatsAppBusinessPublicKey",
+      "methodName": "toGetWhatsAppBusinessPublicKey",
+      "description": "Grants permission to retrieve the WhatsApp business public key for a phone number",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppBusinessPublicKey.html"
+    },
+    {
+      "name": "GetWhatsAppCallPermission",
+      "methodName": "toGetWhatsAppCallPermission",
+      "description": "Grants permission to retrieve voice calling permission for a WhatsApp phone number",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppCallPermission.html"
+    },
+    {
+      "name": "GetWhatsAppFlow",
+      "methodName": "toGetWhatsAppFlow",
+      "description": "Grants permission to retrieve the metadata and status of a WhatsApp Flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppFlow.html"
+    },
+    {
+      "name": "GetWhatsAppFlowPreview",
+      "methodName": "toGetWhatsAppFlowPreview",
+      "description": "Grants permission to generate a web preview URL for testing a WhatsApp Flow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppFlowPreview.html"
+    },
+    {
+      "name": "GetWhatsAppMessageMedia",
+      "methodName": "toGetWhatsAppMessageMedia",
+      "description": "Grants permission to get a media object from WhatsApp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppMessageMedia.html"
+    },
+    {
+      "name": "GetWhatsAppMessageTemplate",
+      "methodName": "toGetWhatsAppMessageTemplate",
+      "description": "Grants permission to get details of a WhatsApp message template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppMessageTemplate.html"
+    },
+    {
+      "name": "ListLinkedWhatsAppBusinessAccounts",
+      "methodName": "toListLinkedWhatsAppBusinessAccounts",
+      "description": "Grants permission to view all of your WhatsApp Business Accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListLinkedWhatsAppBusinessAccounts.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWhatsAppFlowAssets",
+      "methodName": "toListWhatsAppFlowAssets",
+      "description": "Grants permission to list the assets of a WhatsApp Flow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppFlowAssets.html"
+    },
+    {
+      "name": "ListWhatsAppFlows",
+      "methodName": "toListWhatsAppFlows",
+      "description": "Grants permission to list all WhatsApp Flows for a WhatsApp Business Account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppFlows.html"
+    },
+    {
+      "name": "ListWhatsAppMessageTemplates",
+      "methodName": "toListWhatsAppMessageTemplates",
+      "description": "Grants permission to list WhatsApp message templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppMessageTemplates.html"
+    },
+    {
+      "name": "ListWhatsAppTemplateLibrary",
+      "methodName": "toListWhatsAppTemplateLibrary",
+      "description": "Grants permission to list available templates from Meta's template library",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppTemplateLibrary.html"
+    },
+    {
+      "name": "PostWhatsAppMessageMedia",
+      "methodName": "toPostWhatsAppMessageMedia",
+      "description": "Grants permission to upload a media object to WhatsApp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PostWhatsAppMessageMedia.html"
+    },
+    {
+      "name": "PublishWhatsAppFlow",
+      "methodName": "toPublishWhatsAppFlow",
+      "description": "Grants permission to publish a WhatsApp Flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PublishWhatsAppFlow.html"
+    },
+    {
+      "name": "PutWhatsAppBusinessAccountEventDestinations",
+      "methodName": "toPutWhatsAppBusinessAccountEventDestinations",
+      "description": "Grants permission to update a WhatsApp Business Accounts event destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PutWhatsAppBusinessAccountEventDestinations.html"
+    },
+    {
+      "name": "PutWhatsAppBusinessPublicKey",
+      "methodName": "toPutWhatsAppBusinessPublicKey",
+      "description": "Grants permission to set the WhatsApp business public key for a phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PutWhatsAppBusinessPublicKey.html"
+    },
+    {
+      "name": "SendWhatsAppCallEvent",
+      "methodName": "toSendWhatsAppCallEvent",
+      "description": "Grants permission to send a voice calling event through WhatsApp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_SendWhatsAppCallEvent.html"
+    },
+    {
+      "name": "SendWhatsAppConversionEvent",
+      "methodName": "toSendWhatsAppConversionEvent",
+      "description": "Grants permission to send a conversion event through WhatsApp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_SendWhatsAppConversionEvent.html"
+    },
+    {
+      "name": "SendWhatsAppMessage",
+      "methodName": "toSendWhatsAppMessage",
+      "description": "Grants permission to send a message through WhatsApp",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_SendWhatsAppMessage.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLinkedWhatsAppBusinessAccountPhoneNumber",
+      "methodName": "toUpdateLinkedWhatsAppBusinessAccountPhoneNumber",
+      "description": "Grants permission to update the settings of a linked WhatsApp phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateLinkedWhatsAppBusinessAccountPhoneNumber.html"
+    },
+    {
+      "name": "UpdateWhatsAppFlow",
+      "methodName": "toUpdateWhatsAppFlow",
+      "description": "Grants permission to update the metadata of a WhatsApp Flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlow.html"
+    },
+    {
+      "name": "UpdateWhatsAppFlowAssets",
+      "methodName": "toUpdateWhatsAppFlowAssets",
+      "description": "Grants permission to update the Flow JSON definition of a WhatsApp Flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlowAssets.html"
+    },
+    {
+      "name": "UpdateWhatsAppMessageTemplate",
+      "methodName": "toUpdateWhatsAppMessageTemplate",
+      "description": "Grants permission to update a WhatsApp message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppMessageTemplate.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "phone-number-id",
+      "methodName": "onPhoneNumberId",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_WhatsAppPhoneNumberDetail.html",
+      "arn": "arn:${Partition}:social-messaging:${Region}:${Account}:phone-number-id/${OriginationPhoneNumberId}",
+      "placeholders": [
+        {
+          "placeholder": "OriginationPhoneNumberId",
+          "name": "originationPhoneNumberId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "waba",
+      "methodName": "onWaba",
+      "url": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_LinkedWhatsAppBusinessAccountSummary.html",
+      "arn": "arn:${Partition}:social-messaging:${Region}:${Account}:waba/${WabaId}",
+      "placeholders": [
+        {
+          "placeholder": "WabaId",
+          "name": "wabaId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAssociateWhatsAppBusinessAccount",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateWhatsAppBusinessAccount",
+        "toCreateWhatsAppDataset",
+        "toCreateWhatsAppFlow",
+        "toCreateWhatsAppMessageTemplate",
+        "toCreateWhatsAppMessageTemplateFromLibrary",
+        "toCreateWhatsAppMessageTemplateMedia",
+        "toDeleteWhatsAppFlow",
+        "toDeleteWhatsAppMessageMedia",
+        "toDeleteWhatsAppMessageTemplate",
+        "toDeprecateWhatsAppFlow",
+        "toDisassociateWhatsAppBusinessAccount",
+        "toGetLinkedWhatsAppBusinessAccount",
+        "toGetLinkedWhatsAppBusinessAccountPhoneNumber",
+        "toGetWhatsAppBusinessPublicKey",
+        "toGetWhatsAppCallPermission",
+        "toGetWhatsAppFlow",
+        "toGetWhatsAppFlowPreview",
+        "toGetWhatsAppMessageMedia",
+        "toGetWhatsAppMessageTemplate",
+        "toListTagsForResource",
+        "toListWhatsAppFlowAssets",
+        "toListWhatsAppFlows",
+        "toListWhatsAppMessageTemplates",
+        "toListWhatsAppTemplateLibrary",
+        "toPostWhatsAppMessageMedia",
+        "toPublishWhatsAppFlow",
+        "toPutWhatsAppBusinessAccountEventDestinations",
+        "toPutWhatsAppBusinessPublicKey",
+        "toSendWhatsAppCallEvent",
+        "toSendWhatsAppConversionEvent",
+        "toSendWhatsAppMessage",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLinkedWhatsAppBusinessAccountPhoneNumber",
+        "toUpdateWhatsAppFlow",
+        "toUpdateWhatsAppFlowAssets",
+        "toUpdateWhatsAppMessageTemplate"
+      ],
+      "relatedResourceTypes": [
+        "phone-number-id",
+        "waba"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAssociateWhatsAppBusinessAccount",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "rhelkb",
+  "className": "Rhelkb",
+  "name": "rhelkb",
+  "servicePrefix": "rhelkb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_rhelkb.html",
+  "accessLevelList": {
+    "Read": [
+      "GetRhelURL"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetRhelURL",
+      "methodName": "toGetRhelURL",
+      "description": "Grants permission to access the Red Hat Knowledgebase portal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rhel.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

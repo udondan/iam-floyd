@@ -1,0 +1,107 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeCluster",
+        "eks:ListNodeGroups",
+        "eks:DescribeNodeGroup",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "elasticloadbalancing:DescribeInstanceHealth",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "eks:ListPodIdentityAssociations",
+        "eks:DescribePodIdentityAssociation",
+        "ec2:DescribeVpcEndpointServiceConfigurations",
+        "ec2:DescribeVpcEndpointServicePermissions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:ImportCertificate",
+        "acm:AddTagsToCertificate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/emr-container:endpoint:managed-certificate": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:DeleteCertificate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/emr-container:endpoint:managed-certificate": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VPCEndpointServiceCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpointServiceConfiguration"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint-service/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/emr-containers:managed-endpoint-resource": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VPCEndpointServiceManage",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVpcEndpointServiceConfigurations",
+        "ec2:ModifyVpcEndpointServicePermissions"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint-service/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/emr-containers:managed-endpoint-resource": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VPCEndpointServiceTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint-service/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpointServiceConfiguration"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchPolicyStatement",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/EMRContainers"
+          ]
+        }
+      }
+    }
+  ]
+}

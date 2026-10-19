@@ -1,0 +1,1240 @@
+{
+  "schemaVersion": 1,
+  "filename": "interactive-video-service",
+  "className": "Ivs",
+  "name": "ivs",
+  "servicePrefix": "ivs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_interactive-video-service.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetChannel",
+      "BatchGetStreamKey",
+      "GetAdConfiguration",
+      "GetChannel",
+      "GetComposition",
+      "GetEncoderConfiguration",
+      "GetIngestConfiguration",
+      "GetParticipant",
+      "GetPlaybackKeyPair",
+      "GetPlaybackRestrictionPolicy",
+      "GetPublicKey",
+      "GetRecordingConfiguration",
+      "GetStage",
+      "GetStageSession",
+      "GetStorageConfiguration",
+      "GetStream",
+      "GetStreamKey",
+      "GetStreamSession",
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "BatchStartViewerSessionRevocation",
+      "CreateAdConfiguration",
+      "CreateChannel",
+      "CreateEncoderConfiguration",
+      "CreateIngestConfiguration",
+      "CreateParticipantToken",
+      "CreatePlaybackRestrictionPolicy",
+      "CreateRecordingConfiguration",
+      "CreateStage",
+      "CreateStorageConfiguration",
+      "CreateStreamKey",
+      "DeleteAdConfiguration",
+      "DeleteChannel",
+      "DeleteEncoderConfiguration",
+      "DeleteIngestConfiguration",
+      "DeletePlaybackKeyPair",
+      "DeletePlaybackRestrictionPolicy",
+      "DeletePublicKey",
+      "DeleteRecordingConfiguration",
+      "DeleteStage",
+      "DeleteStorageConfiguration",
+      "DeleteStreamKey",
+      "DisconnectParticipant",
+      "ImportPlaybackKeyPair",
+      "ImportPublicKey",
+      "InsertAdBreak",
+      "PutMetadata",
+      "StartComposition",
+      "StartParticipantReplication",
+      "StartViewerSessionRevocation",
+      "StopComposition",
+      "StopParticipantReplication",
+      "StopStream",
+      "TagResource",
+      "UntagResource",
+      "UpdateAdConfiguration",
+      "UpdateChannel",
+      "UpdateIngestConfiguration",
+      "UpdatePlaybackRestrictionPolicy",
+      "UpdateStage"
+    ],
+    "List": [
+      "ListAdConfigurations",
+      "ListChannels",
+      "ListCompositions",
+      "ListEncoderConfigurations",
+      "ListIngestConfigurations",
+      "ListParticipantEvents",
+      "ListParticipantReplicas",
+      "ListParticipants",
+      "ListPlaybackKeyPairs",
+      "ListPlaybackRestrictionPolicies",
+      "ListPublicKeys",
+      "ListRecordingConfigurations",
+      "ListStageSessions",
+      "ListStages",
+      "ListStorageConfigurations",
+      "ListStreamKeys",
+      "ListStreamSessions",
+      "ListStreams"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetChannel",
+      "methodName": "toBatchGetChannel",
+      "description": "Grants permission to get multiple channels simultaneously by channel ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchGetChannel.html"
+    },
+    {
+      "name": "BatchGetStreamKey",
+      "methodName": "toBatchGetStreamKey",
+      "description": "Grants permission to get multiple stream keys simultaneously by stream key ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchGetStreamKey.html"
+    },
+    {
+      "name": "BatchStartViewerSessionRevocation",
+      "methodName": "toBatchStartViewerSessionRevocation",
+      "description": "Grants permission to perform StartViewerSessionRevocation on multiple channel ARN and viewer ID pairs simultaneously",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_BatchStartViewerSessionRevocation.html"
+    },
+    {
+      "name": "CreateAdConfiguration",
+      "methodName": "toCreateAdConfiguration",
+      "description": "Grants permission to create a new ad configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateAdConfiguration.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a new channel and an associated stream key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateChannel.html"
+    },
+    {
+      "name": "CreateEncoderConfiguration",
+      "methodName": "toCreateEncoderConfiguration",
+      "description": "Grants permission to create a new encoder configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateEncoderConfiguration.html"
+    },
+    {
+      "name": "CreateIngestConfiguration",
+      "methodName": "toCreateIngestConfiguration",
+      "description": "Grants permission to create a new ingest configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateIngestConfiguration.html"
+    },
+    {
+      "name": "CreateParticipantToken",
+      "methodName": "toCreateParticipantToken",
+      "description": "Grants permission to create a participant token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateParticipantToken.html"
+    },
+    {
+      "name": "CreatePlaybackRestrictionPolicy",
+      "methodName": "toCreatePlaybackRestrictionPolicy",
+      "description": "Grants permission to create a playback restriction policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreatePlaybackRestrictionPolicy.html"
+    },
+    {
+      "name": "CreateRecordingConfiguration",
+      "methodName": "toCreateRecordingConfiguration",
+      "description": "Grants permission to create a a new recording configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateRecordingConfiguration.html"
+    },
+    {
+      "name": "CreateStage",
+      "methodName": "toCreateStage",
+      "description": "Grants permission to create a stage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateStage.html"
+    },
+    {
+      "name": "CreateStorageConfiguration",
+      "methodName": "toCreateStorageConfiguration",
+      "description": "Grants permission to create a new storage configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateStorageConfiguration.html"
+    },
+    {
+      "name": "CreateStreamKey",
+      "methodName": "toCreateStreamKey",
+      "description": "Grants permission to create a stream key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateStreamKey.html"
+    },
+    {
+      "name": "DeleteAdConfiguration",
+      "methodName": "toDeleteAdConfiguration",
+      "description": "Grants permission to delete an ad configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteAdConfiguration.html"
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete a channel and channel's stream keys",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteChannel.html"
+    },
+    {
+      "name": "DeleteEncoderConfiguration",
+      "methodName": "toDeleteEncoderConfiguration",
+      "description": "Grants permission to delete an encoder configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteEncoderConfiguration.html"
+    },
+    {
+      "name": "DeleteIngestConfiguration",
+      "methodName": "toDeleteIngestConfiguration",
+      "description": "Grants permission to delete an ingest configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteIngestConfiguration.html"
+    },
+    {
+      "name": "DeletePlaybackKeyPair",
+      "methodName": "toDeletePlaybackKeyPair",
+      "description": "Grants permission to delete the playback key pair for a specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeletePlaybackKeyPair.html"
+    },
+    {
+      "name": "DeletePlaybackRestrictionPolicy",
+      "methodName": "toDeletePlaybackRestrictionPolicy",
+      "description": "Grants permission to delete the playback restriction policy for a specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeletePlaybackRestrictionPolicy.html"
+    },
+    {
+      "name": "DeletePublicKey",
+      "methodName": "toDeletePublicKey",
+      "description": "Grants permission to delete the public key for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeletePublicKey.html"
+    },
+    {
+      "name": "DeleteRecordingConfiguration",
+      "methodName": "toDeleteRecordingConfiguration",
+      "description": "Grants permission to delete a recording configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteRecordingConfiguration.html"
+    },
+    {
+      "name": "DeleteStage",
+      "methodName": "toDeleteStage",
+      "description": "Grants permission to delete the stage for a specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteStage.html"
+    },
+    {
+      "name": "DeleteStorageConfiguration",
+      "methodName": "toDeleteStorageConfiguration",
+      "description": "Grants permission to delete an storage configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteStorageConfiguration.html"
+    },
+    {
+      "name": "DeleteStreamKey",
+      "methodName": "toDeleteStreamKey",
+      "description": "Grants permission to delete the stream key for a specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteStreamKey.html"
+    },
+    {
+      "name": "DisconnectParticipant",
+      "methodName": "toDisconnectParticipant",
+      "description": "Grants permission to disconnect a participant from for the specified stage ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DisconnectParticipant.html"
+    },
+    {
+      "name": "GetAdConfiguration",
+      "methodName": "toGetAdConfiguration",
+      "description": "Grants permission to get the ad configuration for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetAdConfiguration.html"
+    },
+    {
+      "name": "GetChannel",
+      "methodName": "toGetChannel",
+      "description": "Grants permission to get the channel configuration for a specified channel ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetChannel.html"
+    },
+    {
+      "name": "GetComposition",
+      "methodName": "toGetComposition",
+      "description": "Grants permission to get the composition for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetComposition.html"
+    },
+    {
+      "name": "GetEncoderConfiguration",
+      "methodName": "toGetEncoderConfiguration",
+      "description": "Grants permission to get the encoder configuration for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetEncoderConfiguration.html"
+    },
+    {
+      "name": "GetIngestConfiguration",
+      "methodName": "toGetIngestConfiguration",
+      "description": "Grants permission to get the ingest configuration for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetIngestConfiguration.html"
+    },
+    {
+      "name": "GetParticipant",
+      "methodName": "toGetParticipant",
+      "description": "Grants permission to get participant information for a specified stage ARN, session, and participant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetParticipant.html"
+    },
+    {
+      "name": "GetPlaybackKeyPair",
+      "methodName": "toGetPlaybackKeyPair",
+      "description": "Grants permission to get the playback keypair information for a specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetPlaybackKeyPair.html"
+    },
+    {
+      "name": "GetPlaybackRestrictionPolicy",
+      "methodName": "toGetPlaybackRestrictionPolicy",
+      "description": "Grants permission to get the playback restriction policy for a specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetPlaybackRestrictionPolicy.html"
+    },
+    {
+      "name": "GetPublicKey",
+      "methodName": "toGetPublicKey",
+      "description": "Grants permission to get the public key for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetPublicKey.html"
+    },
+    {
+      "name": "GetRecordingConfiguration",
+      "methodName": "toGetRecordingConfiguration",
+      "description": "Grants permission to get the recording configuration for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetRecordingConfiguration.html"
+    },
+    {
+      "name": "GetStage",
+      "methodName": "toGetStage",
+      "description": "Grants permission to get stage information for a specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetStage.html"
+    },
+    {
+      "name": "GetStageSession",
+      "methodName": "toGetStageSession",
+      "description": "Grants permission to get stage session information for a specified stage ARN and session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetStageSession.html"
+    },
+    {
+      "name": "GetStorageConfiguration",
+      "methodName": "toGetStorageConfiguration",
+      "description": "Grants permission to get the storage configuration for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetStorageConfiguration.html"
+    },
+    {
+      "name": "GetStream",
+      "methodName": "toGetStream",
+      "description": "Grants permission to get information about the active (live) stream on a specified channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetStream.html"
+    },
+    {
+      "name": "GetStreamKey",
+      "methodName": "toGetStreamKey",
+      "description": "Grants permission to get stream-key information for a specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetStreamKey.html"
+    },
+    {
+      "name": "GetStreamSession",
+      "methodName": "toGetStreamSession",
+      "description": "Grants permission to get information about the stream session on a specified channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetStreamSession.html"
+    },
+    {
+      "name": "ImportPlaybackKeyPair",
+      "methodName": "toImportPlaybackKeyPair",
+      "description": "Grants permission to import the public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ImportPlaybackKeyPair.html"
+    },
+    {
+      "name": "ImportPublicKey",
+      "methodName": "toImportPublicKey",
+      "description": "Grants permission to import a public key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ImportPublicKey.html"
+    },
+    {
+      "name": "InsertAdBreak",
+      "methodName": "toInsertAdBreak",
+      "description": "Grants permission to request an ad insertion on a channel using an associated ad configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_InsertAdBreak.html"
+    },
+    {
+      "name": "ListAdConfigurations",
+      "methodName": "toListAdConfigurations",
+      "description": "Grants permission to get summary information about ad configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListAdConfigurations.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to get summary information about channels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListChannels.html"
+    },
+    {
+      "name": "ListCompositions",
+      "methodName": "toListCompositions",
+      "description": "Grants permission to get summary information about compositions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListCompositions.html"
+    },
+    {
+      "name": "ListEncoderConfigurations",
+      "methodName": "toListEncoderConfigurations",
+      "description": "Grants permission to get summary information about encoder configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListEncoderConfigurations.html"
+    },
+    {
+      "name": "ListIngestConfigurations",
+      "methodName": "toListIngestConfigurations",
+      "description": "Grants permission to get summary information about ingest configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListIngestConfigurations.html"
+    },
+    {
+      "name": "ListParticipantEvents",
+      "methodName": "toListParticipantEvents",
+      "description": "Grants permission to list participant events for a specified stage ARN, session, and participant",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListParticipantEvents.html"
+    },
+    {
+      "name": "ListParticipantReplicas",
+      "methodName": "toListParticipantReplicas",
+      "description": "Grants permission to get summary information about participant replicas",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListParticipantReplicas.html"
+    },
+    {
+      "name": "ListParticipants",
+      "methodName": "toListParticipants",
+      "description": "Grants permission to list participants for a specified stage ARN and session",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListParticipants.html"
+    },
+    {
+      "name": "ListPlaybackKeyPairs",
+      "methodName": "toListPlaybackKeyPairs",
+      "description": "Grants permission to get summary information about playback key pairs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListPlaybackKeyPairs.html"
+    },
+    {
+      "name": "ListPlaybackRestrictionPolicies",
+      "methodName": "toListPlaybackRestrictionPolicies",
+      "description": "Grants permission to get summary information about playback restriction policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListPlaybackRestrictionPolicies.html"
+    },
+    {
+      "name": "ListPublicKeys",
+      "methodName": "toListPublicKeys",
+      "description": "Grants permission to get summary information about public keys",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListPublicKeys.html"
+    },
+    {
+      "name": "ListRecordingConfigurations",
+      "methodName": "toListRecordingConfigurations",
+      "description": "Grants permission to get summary information about recording configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListRecordingConfigurations.html"
+    },
+    {
+      "name": "ListStageSessions",
+      "methodName": "toListStageSessions",
+      "description": "Grants permission to list stage sessions for a specified stage ARN",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListStageSessions.html"
+    },
+    {
+      "name": "ListStages",
+      "methodName": "toListStages",
+      "description": "Grants permission to get summary information about stages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListStages.html"
+    },
+    {
+      "name": "ListStorageConfigurations",
+      "methodName": "toListStorageConfigurations",
+      "description": "Grants permission to get summary information about storage configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListStorageConfigurations.html"
+    },
+    {
+      "name": "ListStreamKeys",
+      "methodName": "toListStreamKeys",
+      "description": "Grants permission to get summary information about stream keys",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListStreamKeys.html"
+    },
+    {
+      "name": "ListStreamSessions",
+      "methodName": "toListStreamSessions",
+      "description": "Grants permission to get summary information about streams sessions on a specified channel",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListStreamSessions.html"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to get summary information about live streams",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListStreams.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to get information about the tags for a specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutMetadata",
+      "methodName": "toPutMetadata",
+      "description": "Grants permission to insert metadata into an RTMP stream for a specified channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PutMetadata.html"
+    },
+    {
+      "name": "StartComposition",
+      "methodName": "toStartComposition",
+      "description": "Grants permission to start a new composition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StartComposition.html"
+    },
+    {
+      "name": "StartParticipantReplication",
+      "methodName": "toStartParticipantReplication",
+      "description": "Grants permission to start a new participant replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StartParticipantReplication.html"
+    },
+    {
+      "name": "StartViewerSessionRevocation",
+      "methodName": "toStartViewerSessionRevocation",
+      "description": "Grants permission to start the process of revoking the viewer session associated with a specified channel ARN and viewer ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StartViewerSessionRevocation.html"
+    },
+    {
+      "name": "StopComposition",
+      "methodName": "toStopComposition",
+      "description": "Grants permission to stop the composition for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StopComposition.html"
+    },
+    {
+      "name": "StopParticipantReplication",
+      "methodName": "toStopParticipantReplication",
+      "description": "Grants permission to stop the participant replication for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StopParticipantReplication.html"
+    },
+    {
+      "name": "StopStream",
+      "methodName": "toStopStream",
+      "description": "Grants permission to disconnect a streamer on a specified channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StopStream.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update tags for a resource with a specified ARN",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags for a resource with a specified ARN",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAdConfiguration",
+      "methodName": "toUpdateAdConfiguration",
+      "description": "Grants permission to update an ad configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdateAdConfiguration.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update a channel's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdateChannel.html"
+    },
+    {
+      "name": "UpdateIngestConfiguration",
+      "methodName": "toUpdateIngestConfiguration",
+      "description": "Grants permission to update ingest configuration for a specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_UpdateIngestConfiguration.html"
+    },
+    {
+      "name": "UpdatePlaybackRestrictionPolicy",
+      "methodName": "toUpdatePlaybackRestrictionPolicy",
+      "description": "Grants permission to update a playback restriction policy for a specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdatePlaybackRestrictionPolicy.html"
+    },
+    {
+      "name": "UpdateStage",
+      "methodName": "toUpdateStage",
+      "description": "Grants permission to update a stage's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_UpdateStage.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Ad-Configuration",
+      "methodName": "onAdConfiguration",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_AdConfiguration.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:ad-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_Channel.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:channel/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
+    },
+    {
+      "name": "Composition",
+      "methodName": "onComposition",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Composition.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:composition/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Encoder-Configuration",
+      "methodName": "onEncoderConfiguration",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_EncoderConfiguration.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:encoder-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IEncoderConfigurationRef",
+        "property": "encoderConfigurationRef",
+        "arn": "encoderConfigurationArn"
+      }
+    },
+    {
+      "name": "Ingest-Configuration",
+      "methodName": "onIngestConfiguration",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_IngestConfiguration.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:ingest-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IIngestConfigurationRef",
+        "property": "ingestConfigurationRef",
+        "arn": "ingestConfigurationArn"
+      }
+    },
+    {
+      "name": "Playback-Key-Pair",
+      "methodName": "onPlaybackKeyPair",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PlaybackKeyPair.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:playback-key/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IPlaybackKeyPairRef",
+        "property": "playbackKeyPairRef",
+        "arn": "playbackKeyPairArn"
+      }
+    },
+    {
+      "name": "Playback-Restriction-Policy",
+      "methodName": "onPlaybackRestrictionPolicy",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PlaybackRestrictionPolicy.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:playback-restriction-policy/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IPlaybackRestrictionPolicyRef",
+        "property": "playbackRestrictionPolicyRef",
+        "arn": "playbackRestrictionPolicyArn"
+      }
+    },
+    {
+      "name": "Public-Key",
+      "methodName": "onPublicKey",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_PublicKey.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:public-key/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IPublicKeyRef",
+        "property": "publicKeyRef",
+        "arn": "publicKeyArn"
+      }
+    },
+    {
+      "name": "Recording-Configuration",
+      "methodName": "onRecordingConfiguration",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_RecordingConfiguration.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:recording-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IRecordingConfigurationRef",
+        "property": "recordingConfigurationRef",
+        "arn": "recordingConfigurationArn"
+      }
+    },
+    {
+      "name": "Stage",
+      "methodName": "onStage",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Stage.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:stage/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IStageRef",
+        "property": "stageRef",
+        "arn": "stageArn"
+      }
+    },
+    {
+      "name": "Storage-Configuration",
+      "methodName": "onStorageConfiguration",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StorageConfiguration.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:storage-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IStorageConfigurationRef",
+        "property": "storageConfigurationRef",
+        "arn": "storageConfigurationArn"
+      }
+    },
+    {
+      "name": "Stream-Key",
+      "methodName": "onStreamKey",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_StreamKey.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:stream-key/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IStreamKeyRef",
+        "property": "streamKeyRef",
+        "arn": "streamKeyArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags associated with the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAdConfiguration",
+        "toCreateChannel",
+        "toCreateEncoderConfiguration",
+        "toCreateIngestConfiguration",
+        "toCreateParticipantToken",
+        "toCreatePlaybackRestrictionPolicy",
+        "toCreateRecordingConfiguration",
+        "toCreateStage",
+        "toCreateStorageConfiguration",
+        "toCreateStreamKey",
+        "toImportPlaybackKeyPair",
+        "toImportPublicKey",
+        "toListTagsForResource",
+        "toStartComposition",
+        "toStartParticipantReplication",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetChannel",
+        "toBatchGetStreamKey",
+        "toBatchStartViewerSessionRevocation",
+        "toCreateAdConfiguration",
+        "toCreateChannel",
+        "toCreateEncoderConfiguration",
+        "toCreateIngestConfiguration",
+        "toCreateParticipantToken",
+        "toCreatePlaybackRestrictionPolicy",
+        "toCreateRecordingConfiguration",
+        "toCreateStage",
+        "toCreateStorageConfiguration",
+        "toCreateStreamKey",
+        "toDeleteAdConfiguration",
+        "toDeleteChannel",
+        "toDeleteEncoderConfiguration",
+        "toDeleteIngestConfiguration",
+        "toDeletePlaybackKeyPair",
+        "toDeletePlaybackRestrictionPolicy",
+        "toDeletePublicKey",
+        "toDeleteRecordingConfiguration",
+        "toDeleteStage",
+        "toDeleteStorageConfiguration",
+        "toDeleteStreamKey",
+        "toDisconnectParticipant",
+        "toGetAdConfiguration",
+        "toGetChannel",
+        "toGetComposition",
+        "toGetEncoderConfiguration",
+        "toGetIngestConfiguration",
+        "toGetParticipant",
+        "toGetPlaybackKeyPair",
+        "toGetPlaybackRestrictionPolicy",
+        "toGetPublicKey",
+        "toGetRecordingConfiguration",
+        "toGetStage",
+        "toGetStageSession",
+        "toGetStorageConfiguration",
+        "toGetStream",
+        "toGetStreamKey",
+        "toGetStreamSession",
+        "toImportPlaybackKeyPair",
+        "toImportPublicKey",
+        "toInsertAdBreak",
+        "toListChannels",
+        "toListCompositions",
+        "toListParticipantEvents",
+        "toListParticipantReplicas",
+        "toListParticipants",
+        "toListPlaybackKeyPairs",
+        "toListRecordingConfigurations",
+        "toListStageSessions",
+        "toListStages",
+        "toListStreamKeys",
+        "toListStreamSessions",
+        "toListStreams",
+        "toListTagsForResource",
+        "toPutMetadata",
+        "toStartComposition",
+        "toStartParticipantReplication",
+        "toStartViewerSessionRevocation",
+        "toStopComposition",
+        "toStopParticipantReplication",
+        "toStopStream",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChannel",
+        "toUpdateIngestConfiguration",
+        "toUpdatePlaybackRestrictionPolicy",
+        "toUpdateStage"
+      ],
+      "relatedResourceTypes": [
+        "Ad-Configuration",
+        "Channel",
+        "Composition",
+        "Encoder-Configuration",
+        "Ingest-Configuration",
+        "Playback-Key-Pair",
+        "Playback-Restriction-Policy",
+        "Public-Key",
+        "Recording-Configuration",
+        "Stage",
+        "Storage-Configuration",
+        "Stream-Key"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAdConfiguration",
+        "toCreateChannel",
+        "toCreateEncoderConfiguration",
+        "toCreateIngestConfiguration",
+        "toCreateParticipantToken",
+        "toCreatePlaybackRestrictionPolicy",
+        "toCreateRecordingConfiguration",
+        "toCreateStage",
+        "toCreateStorageConfiguration",
+        "toCreateStreamKey",
+        "toImportPlaybackKeyPair",
+        "toImportPublicKey",
+        "toListTagsForResource",
+        "toStartComposition",
+        "toStartParticipantReplication",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

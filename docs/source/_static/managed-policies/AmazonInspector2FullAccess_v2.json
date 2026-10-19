@@ -1,0 +1,137 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowFullAccessToInspectorApis",
+      "Effect": "Allow",
+      "Action": "inspector2:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToCodeGuruApis",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:BatchGetFindings",
+        "codeguru-security:GetAccountConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToCreateSlr",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "agentless.inspector2.amazonaws.com",
+            "inspector2.amazonaws.com",
+            "thirdparty.inspector2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowServicePrincipalBasedAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess",
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "inspector2.amazonaws.com",
+            "agentless.inspector2.amazonaws.com",
+            "thirdparty.inspector2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowOrganizationalBasedAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganizationalUnit"
+      ],
+      "Resource": "arn:aws:organizations::*:ou/o-*/ou-*"
+    },
+    {
+      "Sid": "AllowAccountsBasedAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount"
+      ],
+      "Resource": "arn:aws:organizations::*:account/o-*/*"
+    },
+    {
+      "Sid": "AllowAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListPoliciesForInspectorPolicyType",
+      "Effect": "Allow",
+      "Action": "organizations:ListPolicies",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": [
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowDescribeResourcePolicyForDelegation",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeResourcePolicy",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowDescribeEffectivePolicyForInspector",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeEffectivePolicy",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": [
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowConfigConnectorWriteAndList",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutConnector",
+        "config:ListConnectors"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigConnectorRead",
+      "Effect": "Allow",
+      "Action": "config:GetConnector",
+      "Resource": "arn:aws:config:*:*:connector/*"
+    },
+    {
+      "Sid": "AllowCreateConfigThirdPartySLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/thirdparty.config.amazonaws.com/AWSServiceRoleForConfigThirdParty",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "thirdparty.config.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

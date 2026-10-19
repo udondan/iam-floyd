@@ -1,0 +1,79 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Ec2ImagePermission",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:EnableImage",
+        "ec2:DeregisterImage",
+        "ec2:EnableImageDeprecation",
+        "ec2:DescribeImageAttribute",
+        "ec2:DisableImage",
+        "ec2:DisableImageDeprecation"
+      ],
+      "Resource": "arn:aws:ec2:*::image/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Sid": "EC2DeleteSnapshotPermission",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteSnapshot",
+      "Resource": "arn:aws:ec2:*::snapshot/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Sid": "EC2TagsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::snapshot/*",
+        "arn:aws:ec2:*::image/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/DeprecatedBy": "EC2 Image Builder",
+          "aws:ResourceTag/CreatedBy": "EC2 Image Builder"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "DeprecatedBy"
+        }
+      }
+    },
+    {
+      "Sid": "ECRImagePermission",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchGetImage",
+        "ecr:BatchDeleteImage"
+      ],
+      "Resource": "arn:aws:ecr:*:*:repository/*",
+      "Condition": {
+        "StringEquals": {
+          "ecr:ResourceTag/LifecycleExecutionAccess": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Sid": "ImageBuilderEC2TagServicePermission",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeImages",
+        "tag:GetResources",
+        "imagebuilder:DeleteImage"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

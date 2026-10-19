@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCreateOpsItem",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateOpsItem",
+        "ssm:AddTagsToResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessOpsItem",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:UpdateOpsItem",
+        "ssm:GetOpsItem"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/SsmOperationalInsight": "true"
+        }
+      }
+    }
+  ]
+}

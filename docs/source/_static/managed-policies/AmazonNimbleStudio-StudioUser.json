@@ -1,0 +1,84 @@
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ds:CreateComputer",
+        "ec2:DescribeSubnets",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:CreateNetworkInterface",
+        "ec2:DescribeSecurityGroups",
+        "fsx:DescribeFileSystems",
+        "ds:DescribeDirectories"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "nimble.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:DescribeUsers",
+        "sso-directory:SearchUsers",
+        "identitystore:DescribeUser",
+        "identitystore:ListUsers"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "nimble:ListLaunchProfiles"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "nimble:requesterPrincipalId": "${nimble:principalId}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "nimble:ListStudioMembers",
+        "nimble:GetStudioMember",
+        "nimble:ListEulas",
+        "nimble:ListEulaAcceptances",
+        "nimble:GetFeatureMap",
+        "nimble:PutStudioLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "nimble:DeleteStreamingSession",
+        "nimble:GetStreamingSession",
+        "nimble:StartStreamingSession",
+        "nimble:StopStreamingSession",
+        "nimble:CreateStreamingSessionStream",
+        "nimble:GetStreamingSessionStream",
+        "nimble:ListStreamingSessions",
+        "nimble:ListStreamingSessionBackups",
+        "nimble:GetStreamingSessionBackup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "nimble:ownedBy": "${nimble:requesterPrincipalId}"
+        }
+      }
+    }
+  ],
+  "Version": "2012-10-17"
+}

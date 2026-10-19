@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "filename": "network-security-director",
+  "className": "NetworkSecurityDirector",
+  "name": "network-security-director",
+  "servicePrefix": "network-security-director",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_network-security-director.html",
+  "accessLevelList": {
+    "Read": [
+      "GetFinding",
+      "GetResource"
+    ],
+    "List": [
+      "ListAccountSummaries",
+      "ListFindings",
+      "ListInsights",
+      "ListRemediations",
+      "ListResources"
+    ],
+    "Write": [
+      "UpdateFinding"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetFinding",
+      "methodName": "toGetFinding",
+      "description": "Grants permission to get a finding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetFinding.html"
+    },
+    {
+      "name": "GetResource",
+      "methodName": "toGetResource",
+      "description": "Grants permission to get a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetResource.html"
+    },
+    {
+      "name": "ListAccountSummaries",
+      "methodName": "toListAccountSummaries",
+      "description": "Grants permission to list account summaries for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListAccountSummaries.html"
+    },
+    {
+      "name": "ListFindings",
+      "methodName": "toListFindings",
+      "description": "Grants permission to list findings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListFindings.html"
+    },
+    {
+      "name": "ListInsights",
+      "methodName": "toListInsights",
+      "description": "Grants permission to list insights about the latest network security scan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListInsights.html"
+    },
+    {
+      "name": "ListRemediations",
+      "methodName": "toListRemediations",
+      "description": "Grants permission to list remediations for a finding",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListRemediations.html"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to list resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListResources.html"
+    },
+    {
+      "name": "UpdateFinding",
+      "methodName": "toUpdateFinding",
+      "description": "Grants permission to update the status of a finding",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_UpdateFinding.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

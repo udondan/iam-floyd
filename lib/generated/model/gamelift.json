@@ -1,0 +1,1587 @@
+{
+  "schemaVersion": 1,
+  "filename": "gamelift",
+  "className": "Gamelift",
+  "name": "gamelift",
+  "servicePrefix": "gamelift",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_gamelift.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptMatch",
+      "ClaimGameServer",
+      "CreateAlias",
+      "CreateBuild",
+      "CreateContainerFleet",
+      "CreateContainerGroupDefinition",
+      "CreateFleet",
+      "CreateFleetLocations",
+      "CreateGameServerGroup",
+      "CreateGameSession",
+      "CreateGameSessionQueue",
+      "CreateLocation",
+      "CreateMatchmakingConfiguration",
+      "CreateMatchmakingRuleSet",
+      "CreatePlayerSession",
+      "CreatePlayerSessions",
+      "CreateScript",
+      "CreateVpcPeeringAuthorization",
+      "CreateVpcPeeringConnection",
+      "DeleteAlias",
+      "DeleteBuild",
+      "DeleteContainerFleet",
+      "DeleteContainerGroupDefinition",
+      "DeleteFleet",
+      "DeleteFleetLocations",
+      "DeleteGameServerGroup",
+      "DeleteGameSessionQueue",
+      "DeleteLocation",
+      "DeleteMatchmakingConfiguration",
+      "DeleteMatchmakingRuleSet",
+      "DeleteScalingPolicy",
+      "DeleteScript",
+      "DeleteVpcPeeringAuthorization",
+      "DeleteVpcPeeringConnection",
+      "DeregisterCompute",
+      "DeregisterGameServer",
+      "PutScalingPolicy",
+      "RegisterCompute",
+      "RegisterGameServer",
+      "ResumeGameServerGroup",
+      "StartFleetActions",
+      "StartGameSessionPlacement",
+      "StartMatchBackfill",
+      "StartMatchmaking",
+      "StopFleetActions",
+      "StopGameSessionPlacement",
+      "StopMatchmaking",
+      "SuspendGameServerGroup",
+      "TagResource",
+      "TerminateGameSession",
+      "UntagResource",
+      "UpdateAlias",
+      "UpdateBuild",
+      "UpdateContainerFleet",
+      "UpdateContainerGroupDefinition",
+      "UpdateFleetAttributes",
+      "UpdateFleetCapacity",
+      "UpdateFleetPortSettings",
+      "UpdateGameServer",
+      "UpdateGameServerGroup",
+      "UpdateGameSession",
+      "UpdateGameSessionQueue",
+      "UpdateMatchmakingConfiguration",
+      "UpdateRuntimeConfiguration",
+      "UpdateScript"
+    ],
+    "Read": [
+      "DescribeAlias",
+      "DescribeBuild",
+      "DescribeCompute",
+      "DescribeContainerFleet",
+      "DescribeContainerGroupDefinition",
+      "DescribeContainerGroupPortMappings",
+      "DescribeEC2InstanceLimits",
+      "DescribeFleetAttributes",
+      "DescribeFleetCapacity",
+      "DescribeFleetDeployment",
+      "DescribeFleetEvents",
+      "DescribeFleetLocationAttributes",
+      "DescribeFleetLocationCapacity",
+      "DescribeFleetLocationUtilization",
+      "DescribeFleetPortSettings",
+      "DescribeFleetUtilization",
+      "DescribeGameServer",
+      "DescribeGameServerGroup",
+      "DescribeGameServerInstances",
+      "DescribeGameSessionDetails",
+      "DescribeGameSessionPlacement",
+      "DescribeGameSessionQueues",
+      "DescribeGameSessions",
+      "DescribeInstances",
+      "DescribeMatchmaking",
+      "DescribeMatchmakingConfigurations",
+      "DescribeMatchmakingRuleSets",
+      "DescribePlayerSessions",
+      "DescribeRuntimeConfiguration",
+      "DescribeScalingPolicies",
+      "DescribeScript",
+      "DescribeVpcPeeringAuthorizations",
+      "DescribeVpcPeeringConnections",
+      "GetComputeAccess",
+      "GetComputeAuthToken",
+      "GetGameSessionLogUrl",
+      "GetInstanceAccess",
+      "GetPlayerConnectionDetails",
+      "ListTagsForResource",
+      "RequestUploadCredentials",
+      "ResolveAlias",
+      "SearchGameSessions",
+      "ValidateMatchmakingRuleSet"
+    ],
+    "List": [
+      "ListAliases",
+      "ListBuilds",
+      "ListCompute",
+      "ListContainerFleets",
+      "ListContainerGroupDefinitionVersions",
+      "ListContainerGroupDefinitions",
+      "ListFleetDeployments",
+      "ListFleets",
+      "ListGameServerGroups",
+      "ListGameServers",
+      "ListLocations",
+      "ListScripts"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptMatch",
+      "methodName": "toAcceptMatch",
+      "description": "Grants permission to register player acceptance or rejection of a proposed FlexMatch match",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_AcceptMatch.html"
+    },
+    {
+      "name": "ClaimGameServer",
+      "methodName": "toClaimGameServer",
+      "description": "Grants permission to locate and reserve a game server to host a new game session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ClaimGameServer.html"
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Grants permission to define a new alias for a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateAlias.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateBuild",
+      "methodName": "toCreateBuild",
+      "description": "Grants permission to create a new game build using files stored in an Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateBuild.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateContainerFleet",
+      "methodName": "toCreateContainerFleet",
+      "description": "Grants permission to create a new container fleet of computing resources to run your game servers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateContainerFleet.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateContainerGroupDefinition",
+      "methodName": "toCreateContainerGroupDefinition",
+      "description": "Grants permission to create a new container group definition using images stored in an Amazon ECR repository",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateContainerGroupDefinition.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFleet",
+      "methodName": "toCreateFleet",
+      "description": "Grants permission to create a new fleet of computing resources to run your game servers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateFleet.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFleetLocations",
+      "methodName": "toCreateFleetLocations",
+      "description": "Grants permission to specify additional locations for a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateFleetLocations.html"
+    },
+    {
+      "name": "CreateGameServerGroup",
+      "methodName": "toCreateGameServerGroup",
+      "description": "Grants permission to create a new game server group, set up a corresponding Auto Scaling group, and launche instances to host game servers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameServerGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateGameSession",
+      "methodName": "toCreateGameSession",
+      "description": "Grants permission to start a new game session on a specified fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameSession.html"
+    },
+    {
+      "name": "CreateGameSessionQueue",
+      "methodName": "toCreateGameSessionQueue",
+      "description": "Grants permission to set up a new queue for processing game session placement requests",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameSessionQueue.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLocation",
+      "methodName": "toCreateLocation",
+      "description": "Grants permission to define a new location for a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateLocation.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMatchmakingConfiguration",
+      "methodName": "toCreateMatchmakingConfiguration",
+      "description": "Grants permission to create a new FlexMatch matchmaker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateMatchmakingConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMatchmakingRuleSet",
+      "methodName": "toCreateMatchmakingRuleSet",
+      "description": "Grants permission to create a new matchmaking rule set for FlexMatch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateMatchmakingRuleSet.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePlayerSession",
+      "methodName": "toCreatePlayerSession",
+      "description": "Grants permission to reserve an available game session slot for a player",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreatePlayerSession.html"
+    },
+    {
+      "name": "CreatePlayerSessions",
+      "methodName": "toCreatePlayerSessions",
+      "description": "Grants permission to reserve available game session slots for multiple players",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreatePlayerSessions.html"
+    },
+    {
+      "name": "CreateScript",
+      "methodName": "toCreateScript",
+      "description": "Grants permission to create a new Realtime Servers script",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateScript.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateVpcPeeringAuthorization",
+      "methodName": "toCreateVpcPeeringAuthorization",
+      "description": "Grants permission to allow GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateVpcPeeringAuthorization.html"
+    },
+    {
+      "name": "CreateVpcPeeringConnection",
+      "methodName": "toCreateVpcPeeringConnection",
+      "description": "Grants permission to establish a peering connection between your GameLift fleet VPC and a VPC on another account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateVpcPeeringConnection.html"
+    },
+    {
+      "name": "DeleteAlias",
+      "methodName": "toDeleteAlias",
+      "description": "Grants permission to delete an alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteAlias.html"
+    },
+    {
+      "name": "DeleteBuild",
+      "methodName": "toDeleteBuild",
+      "description": "Grants permission to delete a game build",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteBuild.html"
+    },
+    {
+      "name": "DeleteContainerFleet",
+      "methodName": "toDeleteContainerFleet",
+      "description": "Grants permission to delete a container fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteContainerFleet.html"
+    },
+    {
+      "name": "DeleteContainerGroupDefinition",
+      "methodName": "toDeleteContainerGroupDefinition",
+      "description": "Grants permission to delete a container group definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteContainerGroupDefinition.html"
+    },
+    {
+      "name": "DeleteFleet",
+      "methodName": "toDeleteFleet",
+      "description": "Grants permission to delete an empty fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteFleet.html"
+    },
+    {
+      "name": "DeleteFleetLocations",
+      "methodName": "toDeleteFleetLocations",
+      "description": "Grants permission to delete locations for a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteFleetLocations.html"
+    },
+    {
+      "name": "DeleteGameServerGroup",
+      "methodName": "toDeleteGameServerGroup",
+      "description": "Grants permission to permanently delete a game server group and terminate FleetIQ activity for the corresponding Auto Scaling group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteGameServerGroup.html"
+    },
+    {
+      "name": "DeleteGameSessionQueue",
+      "methodName": "toDeleteGameSessionQueue",
+      "description": "Grants permission to delete an existing game session queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteGameSessionQueue.html"
+    },
+    {
+      "name": "DeleteLocation",
+      "methodName": "toDeleteLocation",
+      "description": "Grants permission to delete a location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteLocation.html"
+    },
+    {
+      "name": "DeleteMatchmakingConfiguration",
+      "methodName": "toDeleteMatchmakingConfiguration",
+      "description": "Grants permission to delete an existing FlexMatch matchmaker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteMatchmakingConfiguration.html"
+    },
+    {
+      "name": "DeleteMatchmakingRuleSet",
+      "methodName": "toDeleteMatchmakingRuleSet",
+      "description": "Grants permission to delete an existing FlexMatch matchmaking rule set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteMatchmakingRuleSet.html"
+    },
+    {
+      "name": "DeleteScalingPolicy",
+      "methodName": "toDeleteScalingPolicy",
+      "description": "Grants permission to delete a set of auto-scaling rules",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteScalingPolicy.html"
+    },
+    {
+      "name": "DeleteScript",
+      "methodName": "toDeleteScript",
+      "description": "Grants permission to delete a Realtime Servers script",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteScript.html"
+    },
+    {
+      "name": "DeleteVpcPeeringAuthorization",
+      "methodName": "toDeleteVpcPeeringAuthorization",
+      "description": "Grants permission to cancel a VPC peering authorization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteVpcPeeringAuthorization.html"
+    },
+    {
+      "name": "DeleteVpcPeeringConnection",
+      "methodName": "toDeleteVpcPeeringConnection",
+      "description": "Grants permission to remove a peering connection between VPCs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteVpcPeeringConnection.html"
+    },
+    {
+      "name": "DeregisterCompute",
+      "methodName": "toDeregisterCompute",
+      "description": "Grants permission to deregister a compute against a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeregisterCompute.html"
+    },
+    {
+      "name": "DeregisterGameServer",
+      "methodName": "toDeregisterGameServer",
+      "description": "Grants permission to remove a game server from a game server group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeregisterGameServer.html"
+    },
+    {
+      "name": "DescribeAlias",
+      "methodName": "toDescribeAlias",
+      "description": "Grants permission to retrieve properties for an alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeAlias.html"
+    },
+    {
+      "name": "DescribeBuild",
+      "methodName": "toDescribeBuild",
+      "description": "Grants permission to retrieve properties for a game build",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeBuild.html"
+    },
+    {
+      "name": "DescribeCompute",
+      "methodName": "toDescribeCompute",
+      "description": "Grants permission to retrieve information for a compute in a fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeCompute.html"
+    },
+    {
+      "name": "DescribeContainerFleet",
+      "methodName": "toDescribeContainerFleet",
+      "description": "Grants permission to retrieve the properties of an existing container fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerFleet.html"
+    },
+    {
+      "name": "DescribeContainerGroupDefinition",
+      "methodName": "toDescribeContainerGroupDefinition",
+      "description": "Grants permission to retrieve the properties of an existing container group definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerGroupDefinition.html"
+    },
+    {
+      "name": "DescribeContainerGroupPortMappings",
+      "methodName": "toDescribeContainerGroupPortMappings",
+      "description": "Grants permission to retrieve container port mappings for a container fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerGroupPortMappings.html"
+    },
+    {
+      "name": "DescribeEC2InstanceLimits",
+      "methodName": "toDescribeEC2InstanceLimits",
+      "description": "Grants permission to retrieve the maximum allowed and current usage for EC2 instance types",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeEC2InstanceLimits.html"
+    },
+    {
+      "name": "DescribeFleetAttributes",
+      "methodName": "toDescribeFleetAttributes",
+      "description": "Grants permission to retrieve general properties, including status, for fleets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetAttributes.html"
+    },
+    {
+      "name": "DescribeFleetCapacity",
+      "methodName": "toDescribeFleetCapacity",
+      "description": "Grants permission to retrieve the current capacity settings for managed fleets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetCapacity.html"
+    },
+    {
+      "name": "DescribeFleetDeployment",
+      "methodName": "toDescribeFleetDeployment",
+      "description": "Grants permission to retrieve the properties of an existing fleet deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetDeployment.html"
+    },
+    {
+      "name": "DescribeFleetEvents",
+      "methodName": "toDescribeFleetEvents",
+      "description": "Grants permission to retrieve entries from a fleet's event log",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetEvents.html"
+    },
+    {
+      "name": "DescribeFleetLocationAttributes",
+      "methodName": "toDescribeFleetLocationAttributes",
+      "description": "Grants permission to retrieve general properties, including statuses, for a fleet's locations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationAttributes.html"
+    },
+    {
+      "name": "DescribeFleetLocationCapacity",
+      "methodName": "toDescribeFleetLocationCapacity",
+      "description": "Grants permission to retrieve the current capacity setting for a fleet's location",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationCapacity.html"
+    },
+    {
+      "name": "DescribeFleetLocationUtilization",
+      "methodName": "toDescribeFleetLocationUtilization",
+      "description": "Grants permission to retrieve utilization statistics for fleet's location",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationUtilization.html"
+    },
+    {
+      "name": "DescribeFleetPortSettings",
+      "methodName": "toDescribeFleetPortSettings",
+      "description": "Grants permission to retrieve the inbound connection permissions for a fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetPortSettings.html"
+    },
+    {
+      "name": "DescribeFleetUtilization",
+      "methodName": "toDescribeFleetUtilization",
+      "description": "Grants permission to retrieve utilization statistics for fleets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetUtilization.html"
+    },
+    {
+      "name": "DescribeGameServer",
+      "methodName": "toDescribeGameServer",
+      "description": "Grants permission to retrieve properties for a game server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServer.html"
+    },
+    {
+      "name": "DescribeGameServerGroup",
+      "methodName": "toDescribeGameServerGroup",
+      "description": "Grants permission to retrieve properties for a game server group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServerGroup.html"
+    },
+    {
+      "name": "DescribeGameServerInstances",
+      "methodName": "toDescribeGameServerInstances",
+      "description": "Grants permission to retrieve the status of EC2 instances in a game server group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServerInstances.html"
+    },
+    {
+      "name": "DescribeGameSessionDetails",
+      "methodName": "toDescribeGameSessionDetails",
+      "description": "Grants permission to retrieve properties for game sessions in a fleet, including the protection policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionDetails.html"
+    },
+    {
+      "name": "DescribeGameSessionPlacement",
+      "methodName": "toDescribeGameSessionPlacement",
+      "description": "Grants permission to retrieve details of a game session placement request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionPlacement.html"
+    },
+    {
+      "name": "DescribeGameSessionQueues",
+      "methodName": "toDescribeGameSessionQueues",
+      "description": "Grants permission to retrieve properties for game session queues",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionQueues.html"
+    },
+    {
+      "name": "DescribeGameSessions",
+      "methodName": "toDescribeGameSessions",
+      "description": "Grants permission to retrieve properties for game sessions in a fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessions.html"
+    },
+    {
+      "name": "DescribeInstances",
+      "methodName": "toDescribeInstances",
+      "description": "Grants permission to retrieve information about instances in a managed fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeInstances.html"
+    },
+    {
+      "name": "DescribeMatchmaking",
+      "methodName": "toDescribeMatchmaking",
+      "description": "Grants permission to retrieve details of matchmaking tickets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmaking.html"
+    },
+    {
+      "name": "DescribeMatchmakingConfigurations",
+      "methodName": "toDescribeMatchmakingConfigurations",
+      "description": "Grants permission to retrieve properties for FlexMatch matchmakers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmakingConfigurations.html"
+    },
+    {
+      "name": "DescribeMatchmakingRuleSets",
+      "methodName": "toDescribeMatchmakingRuleSets",
+      "description": "Grants permission to retrieve properties for FlexMatch matchmaking rule sets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmakingRuleSets.html"
+    },
+    {
+      "name": "DescribePlayerSessions",
+      "methodName": "toDescribePlayerSessions",
+      "description": "Grants permission to retrieve properties for player sessions in a game session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribePlayerSessions.html"
+    },
+    {
+      "name": "DescribeRuntimeConfiguration",
+      "methodName": "toDescribeRuntimeConfiguration",
+      "description": "Grants permission to retrieve the current runtime configuration for a fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeRuntimeConfiguration.html"
+    },
+    {
+      "name": "DescribeScalingPolicies",
+      "methodName": "toDescribeScalingPolicies",
+      "description": "Grants permission to retrieve all scaling policies that are applied to a fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeScalingPolicies.html"
+    },
+    {
+      "name": "DescribeScript",
+      "methodName": "toDescribeScript",
+      "description": "Grants permission to retrieve properties for a Realtime Servers script",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeScript.html"
+    },
+    {
+      "name": "DescribeVpcPeeringAuthorizations",
+      "methodName": "toDescribeVpcPeeringAuthorizations",
+      "description": "Grants permission to retrieve valid VPC peering authorizations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeVpcPeeringAuthorizations.html"
+    },
+    {
+      "name": "DescribeVpcPeeringConnections",
+      "methodName": "toDescribeVpcPeeringConnections",
+      "description": "Grants permission to retrieve details on active or pending VPC peering connections",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeVpcPeeringConnections.html"
+    },
+    {
+      "name": "GetComputeAccess",
+      "methodName": "toGetComputeAccess",
+      "description": "Grants permission to retrieve credentials to remotely access a compute in a managed fleet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetComputeAccess.html"
+    },
+    {
+      "name": "GetComputeAuthToken",
+      "methodName": "toGetComputeAuthToken",
+      "description": "Grants permission to retrieve an authentication token that allows processes on a compute to send requests to the Amazon GameLift service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetComputeAuthToken.html"
+    },
+    {
+      "name": "GetGameSessionLogUrl",
+      "methodName": "toGetGameSessionLogUrl",
+      "description": "Grants permission to retrieve the location of stored logs for a game session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetGameSessionLogUrl.html"
+    },
+    {
+      "name": "GetInstanceAccess",
+      "methodName": "toGetInstanceAccess",
+      "description": "Grants permission to request remote access to a specified fleet instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetInstanceAccess.html"
+    },
+    {
+      "name": "GetPlayerConnectionDetails",
+      "methodName": "toGetPlayerConnectionDetails",
+      "description": "Grants permission to retrieve player connection endpoints and player gateway tokens for a game session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetPlayerConnectionDetails.html"
+    },
+    {
+      "name": "ListAliases",
+      "methodName": "toListAliases",
+      "description": "Grants permission to retrieve all aliases that are defined in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListAliases.html"
+    },
+    {
+      "name": "ListBuilds",
+      "methodName": "toListBuilds",
+      "description": "Grants permission to retrieve all game build in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListBuilds.html"
+    },
+    {
+      "name": "ListCompute",
+      "methodName": "toListCompute",
+      "description": "Grants permission to retrieve all compute resources in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListCompute.html"
+    },
+    {
+      "name": "ListContainerFleets",
+      "methodName": "toListContainerFleets",
+      "description": "Grants permission to retrieve the properties of all existing container fleets in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerFleets.html"
+    },
+    {
+      "name": "ListContainerGroupDefinitionVersions",
+      "methodName": "toListContainerGroupDefinitionVersions",
+      "description": "Grants permission to retrieve the properties of all versions of an existing container group definition",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerGroupDefinitionVersions.html"
+    },
+    {
+      "name": "ListContainerGroupDefinitions",
+      "methodName": "toListContainerGroupDefinitions",
+      "description": "Grants permission to retrieve the properties of all existing container group definitions in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerGroupDefinitions.html"
+    },
+    {
+      "name": "ListFleetDeployments",
+      "methodName": "toListFleetDeployments",
+      "description": "Grants permission to retrieve the properties of all existing fleet deployments in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListFleetDeployments.html"
+    },
+    {
+      "name": "ListFleets",
+      "methodName": "toListFleets",
+      "description": "Grants permission to retrieve a list of fleet IDs for all fleets in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListFleets.html"
+    },
+    {
+      "name": "ListGameServerGroups",
+      "methodName": "toListGameServerGroups",
+      "description": "Grants permission to retrieve all game server groups that are defined in the current Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListGameServerGroups.html"
+    },
+    {
+      "name": "ListGameServers",
+      "methodName": "toListGameServers",
+      "description": "Grants permission to retrieve all game servers that are currently running in a game server group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListGameServers.html"
+    },
+    {
+      "name": "ListLocations",
+      "methodName": "toListLocations",
+      "description": "Grants permission to retrieve all locations in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListLocations.html"
+    },
+    {
+      "name": "ListScripts",
+      "methodName": "toListScripts",
+      "description": "Grants permission to retrieve properties for all Realtime Servers scripts in the current region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListScripts.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve tags for GameLift resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutScalingPolicy",
+      "methodName": "toPutScalingPolicy",
+      "description": "Grants permission to create or update a fleet auto-scaling policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_PutScalingPolicy.html"
+    },
+    {
+      "name": "RegisterCompute",
+      "methodName": "toRegisterCompute",
+      "description": "Grants permission to register a compute against a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RegisterCompute.html"
+    },
+    {
+      "name": "RegisterGameServer",
+      "methodName": "toRegisterGameServer",
+      "description": "Grants permission to notify GameLift FleetIQ when a new game server is ready to host gameplay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RegisterGameServer.html"
+    },
+    {
+      "name": "RequestUploadCredentials",
+      "methodName": "toRequestUploadCredentials",
+      "description": "Grants permission to retrieve fresh upload credentials to use when uploading a new game build",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RequestUploadCredentials.html"
+    },
+    {
+      "name": "ResolveAlias",
+      "methodName": "toResolveAlias",
+      "description": "Grants permission to retrieve the fleet ID associated with an alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ResolveAlias.html"
+    },
+    {
+      "name": "ResumeGameServerGroup",
+      "methodName": "toResumeGameServerGroup",
+      "description": "Grants permission to reinstate suspended FleetIQ activity for a game server group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ResumeGameServerGroup.html"
+    },
+    {
+      "name": "SearchGameSessions",
+      "methodName": "toSearchGameSessions",
+      "description": "Grants permission to retrieve game sessions that match a set of search criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_SearchGameSessions.html"
+    },
+    {
+      "name": "StartFleetActions",
+      "methodName": "toStartFleetActions",
+      "description": "Grants permission to resume auto-scaling activity on a fleet after it was suspended with StopFleetActions()",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartFleetActions.html"
+    },
+    {
+      "name": "StartGameSessionPlacement",
+      "methodName": "toStartGameSessionPlacement",
+      "description": "Grants permission to send a game session placement request to a game session queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartGameSessionPlacement.html"
+    },
+    {
+      "name": "StartMatchBackfill",
+      "methodName": "toStartMatchBackfill",
+      "description": "Grants permission to request FlexMatch matchmaking to fill available player slots in an existing game session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartMatchBackfill.html"
+    },
+    {
+      "name": "StartMatchmaking",
+      "methodName": "toStartMatchmaking",
+      "description": "Grants permission to request FlexMatch matchmaking for one or a group of players and initiate game session placement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartMatchmaking.html"
+    },
+    {
+      "name": "StopFleetActions",
+      "methodName": "toStopFleetActions",
+      "description": "Grants permission to suspend auto-scaling activity on a fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopFleetActions.html"
+    },
+    {
+      "name": "StopGameSessionPlacement",
+      "methodName": "toStopGameSessionPlacement",
+      "description": "Grants permission to cancel a game session placement request that is in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopGameSessionPlacement.html"
+    },
+    {
+      "name": "StopMatchmaking",
+      "methodName": "toStopMatchmaking",
+      "description": "Grants permission to cancel a matchmaking or match backfill request that is in progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopMatchmaking.html"
+    },
+    {
+      "name": "SuspendGameServerGroup",
+      "methodName": "toSuspendGameServerGroup",
+      "description": "Grants permission to temporarily stop FleetIQ activity for a game server group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_SuspendGameServerGroup.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag GameLift resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateGameSession",
+      "methodName": "toTerminateGameSession",
+      "description": "Grants permission to shut down an existing game session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_TerminateGameSession.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag GameLift resources",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAlias",
+      "methodName": "toUpdateAlias",
+      "description": "Grants permission to update the properties of an existing alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateAlias.html"
+    },
+    {
+      "name": "UpdateBuild",
+      "methodName": "toUpdateBuild",
+      "description": "Grants permission to update an existing build's metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateBuild.html"
+    },
+    {
+      "name": "UpdateContainerFleet",
+      "methodName": "toUpdateContainerFleet",
+      "description": "Grants permission to update an existing container fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateContainerFleet.html"
+    },
+    {
+      "name": "UpdateContainerGroupDefinition",
+      "methodName": "toUpdateContainerGroupDefinition",
+      "description": "Grants permission to update the properties of an existing container group definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateContainerGroupDefinition.html"
+    },
+    {
+      "name": "UpdateFleetAttributes",
+      "methodName": "toUpdateFleetAttributes",
+      "description": "Grants permission to update the general properties of an existing fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetAttributes.html"
+    },
+    {
+      "name": "UpdateFleetCapacity",
+      "methodName": "toUpdateFleetCapacity",
+      "description": "Grants permission to adjust a managed fleet's capacity settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetCapacity.html"
+    },
+    {
+      "name": "UpdateFleetPortSettings",
+      "methodName": "toUpdateFleetPortSettings",
+      "description": "Grants permission to adjust a fleet's port settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetPortSettings.html"
+    },
+    {
+      "name": "UpdateGameServer",
+      "methodName": "toUpdateGameServer",
+      "description": "Grants permission to change game server properties, health status, or utilization status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameServer.html"
+    },
+    {
+      "name": "UpdateGameServerGroup",
+      "methodName": "toUpdateGameServerGroup",
+      "description": "Grants permission to update properties for game server group, including allowed instance types",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameServerGroup.html"
+    },
+    {
+      "name": "UpdateGameSession",
+      "methodName": "toUpdateGameSession",
+      "description": "Grants permission to update the properties of an existing game session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameSession.html"
+    },
+    {
+      "name": "UpdateGameSessionQueue",
+      "methodName": "toUpdateGameSessionQueue",
+      "description": "Grants permission to update properties of an existing game session queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameSessionQueue.html"
+    },
+    {
+      "name": "UpdateMatchmakingConfiguration",
+      "methodName": "toUpdateMatchmakingConfiguration",
+      "description": "Grants permission to update properties of an existing FlexMatch matchmaking configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateMatchmakingConfiguration.html"
+    },
+    {
+      "name": "UpdateRuntimeConfiguration",
+      "methodName": "toUpdateRuntimeConfiguration",
+      "description": "Grants permission to update how server processes are configured on instances in an existing fleet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateRuntimeConfiguration.html"
+    },
+    {
+      "name": "UpdateScript",
+      "methodName": "toUpdateScript",
+      "description": "Grants permission to update the metadata and content of an existing Realtime Servers script",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateScript.html"
+    },
+    {
+      "name": "ValidateMatchmakingRuleSet",
+      "methodName": "toValidateMatchmakingRuleSet",
+      "description": "Grants permission to validate the syntax of a FlexMatch matchmaking rule set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ValidateMatchmakingRuleSet.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "alias",
+      "methodName": "onAlias",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-aliases.html",
+      "arn": "arn:${Partition}:gamelift:${Region}::alias/${AliasId}",
+      "placeholders": [
+        {
+          "placeholder": "AliasId",
+          "name": "aliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IAliasRef",
+        "property": "aliasRef",
+        "arn": "aliasArn"
+      }
+    },
+    {
+      "name": "build",
+      "methodName": "onBuild",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-builds.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:build/${BuildId}",
+      "placeholders": [
+        {
+          "placeholder": "BuildId",
+          "name": "buildId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IBuildRef",
+        "property": "buildRef",
+        "arn": "buildArn"
+      }
+    },
+    {
+      "name": "containerFleet",
+      "methodName": "onContainerFleet",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-intro.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:containerfleet/${FleetId}",
+      "placeholders": [
+        {
+          "placeholder": "FleetId",
+          "name": "fleetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IContainerFleetRef",
+        "property": "containerFleetRef",
+        "arn": "fleetArn"
+      }
+    },
+    {
+      "name": "containerGroupDefinition",
+      "methodName": "onContainerGroupDefinition",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-intro.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:containergroupdefinition/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IContainerGroupDefinitionRef",
+        "property": "containerGroupDefinitionRef",
+        "arn": "containerGroupDefinitionArn"
+      }
+    },
+    {
+      "name": "fleet",
+      "methodName": "onFleet",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-fleets.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:fleet/${FleetId}",
+      "placeholders": [
+        {
+          "placeholder": "FleetId",
+          "name": "fleetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IFleetRef",
+        "property": "fleetRef",
+        "arn": "fleetArn"
+      }
+    },
+    {
+      "name": "gameServerGroup",
+      "methodName": "onGameServerGroup",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/fleetiqguide/gsg-integrate-gameservergroup.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:gameservergroup/${GameServerGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "GameServerGroupName",
+          "name": "gameServerGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IGameServerGroupRef",
+        "property": "gameServerGroupRef",
+        "arn": "gameServerGroupArn"
+      }
+    },
+    {
+      "name": "gameSessionQueue",
+      "methodName": "onGameSessionQueue",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/queues-console.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:gamesessionqueue/${GameSessionQueueName}",
+      "placeholders": [
+        {
+          "placeholder": "GameSessionQueueName",
+          "name": "gameSessionQueueName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IGameSessionQueueRef",
+        "property": "gameSessionQueueRef",
+        "arn": "gameSessionQueueArn"
+      }
+    },
+    {
+      "name": "location",
+      "methodName": "onLocation",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/developerguide/fleets-creating-anywhere.html#fleet-anywhere-location",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:location/${LocationId}",
+      "placeholders": [
+        {
+          "placeholder": "LocationId",
+          "name": "locationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "ILocationRef",
+        "property": "locationRef",
+        "arn": "locationArn"
+      }
+    },
+    {
+      "name": "matchmakingConfiguration",
+      "methodName": "onMatchmakingConfiguration",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/flexmatchguide/match-create-configuration.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:matchmakingconfiguration/${MatchmakingConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "MatchmakingConfigurationName",
+          "name": "matchmakingConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IMatchmakingConfigurationRef",
+        "property": "matchmakingConfigurationRef",
+        "arn": "matchmakingConfigurationArn"
+      }
+    },
+    {
+      "name": "matchmakingRuleSet",
+      "methodName": "onMatchmakingRuleSet",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/flexmatchguide/match-rulesets.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:matchmakingruleset/${MatchmakingRuleSetName}",
+      "placeholders": [
+        {
+          "placeholder": "MatchmakingRuleSetName",
+          "name": "matchmakingRuleSetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IMatchmakingRuleSetRef",
+        "property": "matchmakingRuleSetRef",
+        "arn": "matchmakingRuleSetArn"
+      }
+    },
+    {
+      "name": "script",
+      "methodName": "onScript",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/realtimeguide/realtime-intro.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:script/${ScriptId}",
+      "placeholders": [
+        {
+          "placeholder": "ScriptId",
+          "name": "scriptId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_gamelift",
+        "interface": "IScriptRef",
+        "property": "scriptRef",
+        "arn": "scriptArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAlias",
+        "toCreateBuild",
+        "toCreateContainerFleet",
+        "toCreateContainerGroupDefinition",
+        "toCreateFleet",
+        "toCreateGameServerGroup",
+        "toCreateGameSessionQueue",
+        "toCreateLocation",
+        "toCreateMatchmakingConfiguration",
+        "toCreateMatchmakingRuleSet",
+        "toCreateScript",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toClaimGameServer",
+        "toCreateFleetLocations",
+        "toDeleteAlias",
+        "toDeleteBuild",
+        "toDeleteContainerFleet",
+        "toDeleteContainerGroupDefinition",
+        "toDeleteFleet",
+        "toDeleteFleetLocations",
+        "toDeleteGameServerGroup",
+        "toDeleteGameSessionQueue",
+        "toDeleteLocation",
+        "toDeleteMatchmakingConfiguration",
+        "toDeleteMatchmakingRuleSet",
+        "toDeleteScalingPolicy",
+        "toDeleteScript",
+        "toDeregisterCompute",
+        "toDeregisterGameServer",
+        "toDescribeAlias",
+        "toDescribeBuild",
+        "toDescribeCompute",
+        "toDescribeContainerFleet",
+        "toDescribeContainerGroupDefinition",
+        "toDescribeContainerGroupPortMappings",
+        "toDescribeFleetDeployment",
+        "toDescribeFleetEvents",
+        "toDescribeFleetLocationAttributes",
+        "toDescribeFleetLocationCapacity",
+        "toDescribeFleetLocationUtilization",
+        "toDescribeFleetPortSettings",
+        "toDescribeGameServer",
+        "toDescribeGameServerGroup",
+        "toDescribeGameServerInstances",
+        "toDescribeInstances",
+        "toDescribeRuntimeConfiguration",
+        "toDescribeScalingPolicies",
+        "toDescribeScript",
+        "toGetComputeAccess",
+        "toGetComputeAuthToken",
+        "toGetInstanceAccess",
+        "toListCompute",
+        "toListContainerGroupDefinitionVersions",
+        "toListGameServers",
+        "toListTagsForResource",
+        "toPutScalingPolicy",
+        "toRegisterCompute",
+        "toRegisterGameServer",
+        "toRequestUploadCredentials",
+        "toResolveAlias",
+        "toResumeGameServerGroup",
+        "toStartFleetActions",
+        "toStartGameSessionPlacement",
+        "toStopFleetActions",
+        "toSuspendGameServerGroup",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toUpdateBuild",
+        "toUpdateContainerFleet",
+        "toUpdateContainerGroupDefinition",
+        "toUpdateFleetAttributes",
+        "toUpdateFleetCapacity",
+        "toUpdateFleetPortSettings",
+        "toUpdateGameServer",
+        "toUpdateGameServerGroup",
+        "toUpdateGameSessionQueue",
+        "toUpdateMatchmakingConfiguration",
+        "toUpdateRuntimeConfiguration",
+        "toUpdateScript"
+      ],
+      "relatedResourceTypes": [
+        "alias",
+        "build",
+        "containerFleet",
+        "containerGroupDefinition",
+        "fleet",
+        "gameServerGroup",
+        "gameSessionQueue",
+        "location",
+        "matchmakingConfiguration",
+        "matchmakingRuleSet",
+        "script"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAlias",
+        "toCreateBuild",
+        "toCreateContainerFleet",
+        "toCreateContainerGroupDefinition",
+        "toCreateFleet",
+        "toCreateGameServerGroup",
+        "toCreateGameSessionQueue",
+        "toCreateLocation",
+        "toCreateMatchmakingConfiguration",
+        "toCreateMatchmakingRuleSet",
+        "toCreateScript",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

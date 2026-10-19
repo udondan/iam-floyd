@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "filename": "dlm",
+  "className": "Dlm",
+  "name": "dlm",
+  "servicePrefix": "dlm",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dlm.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateLifecyclePolicy",
+      "DeleteLifecyclePolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateLifecyclePolicy"
+    ],
+    "List": [
+      "GetLifecyclePolicies"
+    ],
+    "Read": [
+      "GetLifecyclePolicy",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateLifecyclePolicy",
+      "methodName": "toCreateLifecyclePolicy",
+      "description": "Grants permission to create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteLifecyclePolicy",
+      "methodName": "toDeleteLifecyclePolicy",
+      "description": "Grants permission to delete an existing data lifecycle policy. In addition, this action halts the creation and deletion of snapshots that the policy specified. Existing snapshots are not affected",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html"
+    },
+    {
+      "name": "GetLifecyclePolicies",
+      "methodName": "toGetLifecyclePolicies",
+      "description": "Grants permission to returns a list of summary descriptions of data lifecycle policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html"
+    },
+    {
+      "name": "GetLifecyclePolicy",
+      "methodName": "toGetLifecyclePolicy",
+      "description": "Grants permission to return a complete description of a single data lifecycle policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags associated with a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update tags of a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLifecyclePolicy",
+      "methodName": "toUpdateLifecyclePolicy",
+      "description": "Grants permission to update an existing data lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "policy",
+      "methodName": "onPolicy",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_LifecyclePolicy.html",
+      "arn": "arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateLifecyclePolicy",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteLifecyclePolicy",
+        "toGetLifecyclePolicy",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLifecyclePolicy"
+      ],
+      "relatedResourceTypes": [
+        "policy"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateLifecyclePolicy",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DRSReplicationServerPolicy1",
+      "Effect": "Allow",
+      "Action": [
+        "drs:SendClientMetricsForDrs",
+        "drs:SendClientLogsForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSReplicationServerPolicy2",
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetChannelCommandsForDrs",
+        "drs:SendChannelCommandResultForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSReplicationServerPolicy3",
+      "Effect": "Allow",
+      "Action": [
+        "drs:GetAgentSnapshotCreditsForDrs",
+        "drs:DescribeReplicationServerAssociationsForDrs",
+        "drs:DescribeSnapshotRequestsForDrs",
+        "drs:BatchDeleteSnapshotRequestForDrs",
+        "drs:NotifyAgentAuthenticationForDrs",
+        "drs:BatchCreateVolumeSnapshotGroupForDrs",
+        "drs:UpdateAgentReplicationProcessStateForDrs",
+        "drs:NotifyAgentReplicationProgressForDrs",
+        "drs:NotifyAgentConnectedForDrs",
+        "drs:NotifyAgentDisconnectedForDrs",
+        "drs:NotifyVolumeEventForDrs",
+        "drs:SendVolumeStatsForDrs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSReplicationServerPolicy4",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DRSReplicationServerPolicy5",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DRSReplicationServerPolicy6",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DRSReplicationServerPolicy7",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateSnapshot"
+        }
+      }
+    }
+  ]
+}

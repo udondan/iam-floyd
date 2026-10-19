@@ -1,0 +1,103 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DsqlAllPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:PutClusterPolicy",
+        "dsql:GetClusterPolicy",
+        "dsql:DeleteClusterPolicy",
+        "dsql:CreateCluster",
+        "dsql:GetCluster",
+        "dsql:UpdateCluster",
+        "dsql:DeleteCluster",
+        "dsql:ListClusters",
+        "dsql:TagResource",
+        "dsql:UntagResource",
+        "dsql:ListTagsForResource",
+        "dsql:DbConnectAdmin",
+        "dsql:DbConnect",
+        "dsql:PutMultiRegionProperties",
+        "dsql:PutWitnessRegion",
+        "dsql:AddPeerCluster",
+        "dsql:RemovePeerCluster",
+        "dsql:GetVpcEndpointServiceName",
+        "dsql:StartBackupJob",
+        "dsql:GetBackupJob",
+        "dsql:StopBackupJob",
+        "dsql:StartRestoreJob",
+        "dsql:GetRestoreJob",
+        "dsql:StopRestoreJob",
+        "dsql:InjectError",
+        "dsql:CreateStream",
+        "dsql:DeleteStream",
+        "dsql:GetStream",
+        "dsql:ListStreams",
+        "dsql:UpdateStream"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DsqlConsolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:ValidatePolicy",
+        "tag:GetTagKeys",
+        "tag:GetTagValues",
+        "cloudwatch:GetMetricData",
+        "ec2:DescribeVpcEndpoints",
+        "kms:ListAliases",
+        "kms:DescribeKey",
+        "cloudwatch:ListMetrics",
+        "kinesis:DescribeStreamSummary",
+        "kinesis:ListStreams"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMSCryptographicPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "dsql.*.amazonaws.com"
+          ]
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:dsql:ClusterId"
+        }
+      }
+    },
+    {
+      "Sid": "CreateDsqlServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "dsql.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PassRoleForChangeStreams",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "dsql.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

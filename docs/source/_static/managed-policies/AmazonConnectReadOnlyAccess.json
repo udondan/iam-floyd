@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowConnectReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "connect:Get*",
+        "connect:Describe*",
+        "connect:List*",
+        "ds:DescribeDirectories"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyConnectEmergencyAccess",
+      "Effect": "Deny",
+      "Action": "connect:AdminGetEmergencyAccessToken",
+      "Resource": "*"
+    }
+  ]
+}

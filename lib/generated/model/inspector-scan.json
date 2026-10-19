@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "inspector-scan",
+  "className": "InspectorScan",
+  "name": "inspector-scan",
+  "servicePrefix": "inspector-scan",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector-scan.html",
+  "accessLevelList": {
+    "Read": [
+      "ScanSbom"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ScanSbom",
+      "methodName": "toScanSbom",
+      "description": "Grants permission to scan the customer provided SBOM and return vulnerabilities detected within",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ScanSbom.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

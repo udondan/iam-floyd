@@ -1,0 +1,184 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CDKPreDeploy",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:GetTemplate",
+        "cloudformation:ListStackResources",
+        "cloudformation:GetTemplateSummary",
+        "cloudformation:DeleteStack"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/amplify-*",
+        "arn:aws:cloudformation:*:*:stack/CDKToolkit/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifyMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:ListApps",
+        "cloudformation:ListStacks",
+        "ssm:DescribeParameters",
+        "appsync:GetIntrospectionSchema",
+        "amplify:GetBackendEnvironment"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AmplifyHotSwappableResources",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetSchemaCreationStatus",
+        "appsync:StartSchemaCreation",
+        "appsync:UpdateResolver",
+        "appsync:ListFunctions",
+        "appsync:UpdateFunction",
+        "appsync:UpdateApiKey"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AmplifyHotSwappableFunctionResource",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:GetFunction",
+        "lambda:UpdateFunctionConfiguration"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:amplify-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifySandboxLambdaLogsStreamingListTags",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:ListTags"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:amplify-*"
+      ]
+    },
+    {
+      "Sid": "AmplifySandboxLambdaLogsStreamingFilterLogEvents",
+      "Effect": "Allow",
+      "Action": [
+        "logs:FilterLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/lambda/amplify-*:*",
+        "arn:aws:logs:*:*:log-group:amplify-*:*"
+      ]
+    },
+    {
+      "Sid": "AmplifySchema",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*amplify*",
+        "arn:aws:s3:::cdk-*-assets-*-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CDKDeploy",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/cdk-*-deploy-role-*-*",
+        "arn:aws:iam::*:role/cdk-*-file-publishing-role-*-*",
+        "arn:aws:iam::*:role/cdk-*-image-publishing-role-*-*",
+        "arn:aws:iam::*:role/cdk-*-lookup-role-*-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifySSM",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParametersByPath",
+        "ssm:GetParameters",
+        "ssm:GetParameter"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/amplify/*",
+        "arn:aws:ssm:*:*:parameter/cdk-bootstrap/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifyModifySSMParam",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:PutParameter",
+        "ssm:DeleteParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/amplify/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmplifyDiscoverRDSVpcConfig",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBProxies",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "ec2:DescribeSubnets",
+        "rds:DescribeDBSubnetGroups"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:db:*",
+        "arn:aws:rds:*:*:cluster:*",
+        "arn:aws:rds:*:*:db-proxy:*",
+        "arn:aws:rds:*:*:subgrp:*",
+        "arn:aws:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

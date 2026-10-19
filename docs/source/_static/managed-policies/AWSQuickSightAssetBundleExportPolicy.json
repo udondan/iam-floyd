@@ -1,0 +1,87 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TagReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:*/*"
+    },
+    {
+      "Sid": "DashboardReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeDashboard",
+        "quicksight:DescribeDashboardPermissions"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:dashboard/*"
+    },
+    {
+      "Sid": "AnalysisReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeAnalysis",
+        "quicksight:DescribeAnalysisPermissions"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:analysis/*"
+    },
+    {
+      "Sid": "DataSetReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeDataSet",
+        "quicksight:DescribeDataSetRefreshProperties",
+        "quicksight:ListRefreshSchedules",
+        "quicksight:DescribeDataSetPermissions"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:dataset/*"
+    },
+    {
+      "Sid": "DataSourceReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeDataSource",
+        "quicksight:DescribeDataSourcePermissions"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:datasource/*"
+    },
+    {
+      "Sid": "ThemeReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeTheme",
+        "quicksight:DescribeThemePermissions"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:theme/*"
+    },
+    {
+      "Sid": "VPCConnectionReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeVPCConnection",
+        "quicksight:ListVPCConnections"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:vpcConnection/*"
+    },
+    {
+      "Sid": "RefreshScheduleReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeRefreshSchedule"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:dataset/*/refresh-schedule/*"
+    },
+    {
+      "Sid": "AssetBundleExportOperations",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeAssetBundleExportJob",
+        "quicksight:ListAssetBundleExportJobs",
+        "quicksight:StartAssetBundleExportJob"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:asset-bundle-export-job/*"
+    }
+  ]
+}

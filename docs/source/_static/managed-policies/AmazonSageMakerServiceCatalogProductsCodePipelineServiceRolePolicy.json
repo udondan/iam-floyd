@@ -1,0 +1,117 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonSageMakerCodePipelineCFnPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateChangeSet",
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:DeleteChangeSet",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:SetStackPolicy",
+        "cloudformation:UpdateStack"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/sagemaker-*"
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelineCFnTagPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/sagemaker-*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "sagemaker:project-name"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelineS3Permission",
+      "Effect": "Allow",
+      "Action": [
+        "s3:AbortMultipartUpload",
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::sagemaker-*"
+      ]
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelinePassRolePermission",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerServiceCatalogProductsCloudformationRole"
+      ]
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelineCodeBuildPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codebuild:BatchGetBuilds",
+        "codebuild:StartBuild"
+      ],
+      "Resource": [
+        "arn:aws:codebuild:*:*:project/sagemaker-*",
+        "arn:aws:codebuild:*:*:build/sagemaker-*"
+      ]
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelineCodeCommitPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:CancelUploadArchive",
+        "codecommit:GetBranch",
+        "codecommit:GetCommit",
+        "codecommit:GetUploadArchiveStatus",
+        "codecommit:UploadArchive"
+      ],
+      "Resource": "arn:aws:codecommit:*:*:sagemaker-*"
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelineCodeStarConnectionPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:UseConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/sagemaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerCodePipelineCodeConnectionPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:UseConnection"
+      ],
+      "Resource": [
+        "arn:aws:codeconnections:*:*:connection/*",
+        "arn:aws:codestar-connections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/sagemaker": "true"
+        }
+      }
+    }
+  ]
+}

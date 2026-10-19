@@ -1,0 +1,178 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInternetGateways",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBSubnetGroups",
+        "secretsmanager:ListSecrets",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "rds:ModifyDBSubnetGroup",
+      "Resource": "arn:aws:rds:*:*:subgrp:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:EnableHttpEndpoint",
+        "rds:DisableHttpEndpoint",
+        "rds-data:ExecuteStatement"
+      ],
+      "Resource": "arn:aws:rds:*:*:cluster:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion"
+      ],
+      "Resource": "arn:aws:iam::*:policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:SecretArn": "arn:aws:secretsmanager:*:${aws:PrincipalAccount}:secret:*",
+          "kms:ViaService": "secretsmanager.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "secretsmanager:UpdateSecret",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:atx-db-modernization-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:atx-db-modernization-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Project": "atx-db-modernization",
+          "aws:RequestTag/Owner": "database-connector",
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutBucketTagging",
+        "s3:PutBucketVersioning",
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:GetBucketLocation",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetBucketVersioning"
+      ],
+      "Resource": [
+        "arn:aws:s3:::atx-db-modernization-*",
+        "arn:aws:s3:::atx-db-modernization-*/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBSubnetGroup",
+        "rds:CreateDBCluster",
+        "rds:CreateDBInstance",
+        "rds:AddTagsToResource"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:subgrp:*",
+        "arn:aws:rds:*:*:cluster:*",
+        "arn:aws:rds:*:*:db:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Project": "atx-db-modernization",
+          "aws:RequestTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DescribeSecret"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "rds.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

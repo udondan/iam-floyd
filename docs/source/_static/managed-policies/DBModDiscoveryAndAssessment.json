@@ -1,0 +1,164 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInternetGateways",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBSubnetGroups",
+        "dms:DescribeEndpoints",
+        "dms:DescribeReplicationInstances",
+        "dms:DescribeReplicationTasks",
+        "dms:DescribeReplicationSubnetGroups",
+        "dms:DescribeOrderableReplicationInstances",
+        "dms:ListDataProviders",
+        "dms:ListInstanceProfiles",
+        "dms:ListMigrationProjects",
+        "dms:ModifyReplicationSubnetGroup",
+        "secretsmanager:ListSecrets",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "rds:ModifyDBSubnetGroup",
+      "Resource": "arn:aws:rds:*:*:subgrp:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:EnableHttpEndpoint",
+        "rds:DisableHttpEndpoint",
+        "rds-data:ExecuteStatement"
+      ],
+      "Resource": "arn:aws:rds:*:*:cluster:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dms:DescribeTableStatistics",
+        "dms:DescribeReplicationTaskAssessmentRuns",
+        "dms:DescribeReplicationTaskIndividualAssessments",
+        "dms:DescribeApplicableIndividualAssessments"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:task:*",
+        "arn:aws:dms:*:*:assessment-run:*",
+        "arn:aws:dms:*:*:instance-profile:*",
+        "arn:aws:dms:*:*:data-provider:*",
+        "arn:aws:dms:*:*:migration-project:*",
+        "arn:aws:dms:*:*:rep:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dms:ListMetadataModelAssessments",
+        "dms:ListMetadataModelConversions",
+        "dms:ListMetadataModelExports",
+        "dms:DescribeMetadataModelImports",
+        "dms:DescribeConversionConfiguration",
+        "dms:DescribeMetadataModelCreations",
+        "dms:DescribeMetadataModel",
+        "dms:DescribeMetadataModelChildren",
+        "dms:GetTargetSelectionRules"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies",
+        "iam:GetRolePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/dms-vpc-role",
+        "arn:aws:iam::*:role/dms-cloudwatch-logs-role",
+        "arn:aws:iam::*:role/dms-secrets-manager-role",
+        "arn:aws:iam::*:role/dms-s3-access-role",
+        "arn:aws:iam::*:role/aws-service-role/dms.amazonaws.com/AWSServiceRoleForDMSServerless"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:policy/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion"
+      ],
+      "Resource": [
+        "arn:aws:iam::aws:policy/service-role/AmazonDMSCloudWatchLogsRole",
+        "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:EncryptionContext:SecretArn": "arn:aws:secretsmanager:*:${aws:PrincipalAccount}:secret:*",
+          "kms:ViaService": "secretsmanager.*.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

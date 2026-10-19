@@ -1,0 +1,56 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityHubAllowAll",
+      "Effect": "Allow",
+      "Action": "securityhub:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "securityhub.amazonaws.com",
+            "securityhubv2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OtherServicePermission",
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:GetDetector",
+        "guardduty:ListDetectors",
+        "guardduty:UpdateDetector",
+        "guardduty:EnableOrganizationAdminAccount",
+        "guardduty:ListOrganizationAdminAccounts",
+        "guardduty:DeleteDetector",
+        "guardduty:CreateDetector",
+        "guardduty:CreateMembers",
+        "guardduty:UpdateOrganizationConfiguration",
+        "guardduty:DescribeOrganizationConfiguration",
+        "inspector2:BatchGetAccountStatus",
+        "inspector2:Enable",
+        "inspector2:Disable",
+        "inspector2:EnableDelegatedAdminAccount",
+        "inspector2:DisableDelegatedAdminAccount",
+        "inspector2:ListDelegatedAdminAccounts",
+        "inspector2:UpdateOrganizationConfiguration",
+        "inspector2:DescribeOrganizationConfiguration",
+        "pricing:GetProducts",
+        "account:ListRegions",
+        "account:GetRegionOptStatus",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

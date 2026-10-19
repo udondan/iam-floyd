@@ -1,0 +1,864 @@
+{
+  "schemaVersion": 1,
+  "filename": "apprunner",
+  "className": "Apprunner",
+  "name": "apprunner",
+  "servicePrefix": "apprunner",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apprunner.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateCustomDomain",
+      "CreateAutoScalingConfiguration",
+      "CreateConnection",
+      "CreateObservabilityConfiguration",
+      "CreateService",
+      "CreateVpcConnector",
+      "CreateVpcIngressConnection",
+      "DeleteAutoScalingConfiguration",
+      "DeleteConnection",
+      "DeleteObservabilityConfiguration",
+      "DeleteService",
+      "DeleteVpcConnector",
+      "DeleteVpcIngressConnection",
+      "DisassociateCustomDomain",
+      "PauseService",
+      "ResumeService",
+      "StartDeployment",
+      "TagResource",
+      "UntagResource",
+      "UpdateDefaultAutoScalingConfiguration",
+      "UpdateService",
+      "UpdateVpcIngressConnection",
+      "AssociateWebAcl",
+      "DisassociateWebAcl"
+    ],
+    "Read": [
+      "DescribeAutoScalingConfiguration",
+      "DescribeCustomDomains",
+      "DescribeObservabilityConfiguration",
+      "DescribeOperation",
+      "DescribeService",
+      "DescribeVpcConnector",
+      "DescribeVpcIngressConnection",
+      "ListTagsForResource",
+      "DescribeWebAclForService"
+    ],
+    "List": [
+      "ListAutoScalingConfigurations",
+      "ListConnections",
+      "ListObservabilityConfigurations",
+      "ListOperations",
+      "ListServices",
+      "ListServicesForAutoScalingConfiguration",
+      "ListVpcConnectors",
+      "ListVpcIngressConnections",
+      "ListAssociatedServicesForWebAcl"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateCustomDomain",
+      "methodName": "toAssociateCustomDomain",
+      "description": "Grants permission to associate your own domain name with the AWS App Runner subdomain URL of your App Runner service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_AssociateCustomDomain.html"
+    },
+    {
+      "name": "CreateAutoScalingConfiguration",
+      "methodName": "toCreateAutoScalingConfiguration",
+      "description": "Grants permission to create an AWS App Runner automatic scaling configuration resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_CreateAutoScalingConfiguration.html"
+    },
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create an AWS App Runner connection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_CreateConnection.html"
+    },
+    {
+      "name": "CreateObservabilityConfiguration",
+      "methodName": "toCreateObservabilityConfiguration",
+      "description": "Grants permission to create an AWS App Runner observability configuration resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_CreateObservabilityConfiguration.html"
+    },
+    {
+      "name": "CreateService",
+      "methodName": "toCreateService",
+      "description": "Grants permission to create an AWS App Runner service resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html"
+    },
+    {
+      "name": "CreateVpcConnector",
+      "methodName": "toCreateVpcConnector",
+      "description": "Grants permission to create an AWS App Runner VPC connector resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_CreateVpcConnector.html"
+    },
+    {
+      "name": "CreateVpcIngressConnection",
+      "methodName": "toCreateVpcIngressConnection",
+      "description": "Grants permission to create an AWS App Runner VpcIngressConnection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_CreateVpcIngressConnection.html"
+    },
+    {
+      "name": "DeleteAutoScalingConfiguration",
+      "methodName": "toDeleteAutoScalingConfiguration",
+      "description": "Grants permission to delete an AWS App Runner automatic scaling configuration resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteAutoScalingConfiguration.html"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete an AWS App Runner connection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteConnection.html"
+    },
+    {
+      "name": "DeleteObservabilityConfiguration",
+      "methodName": "toDeleteObservabilityConfiguration",
+      "description": "Grants permission to delete an AWS App Runner observability configuration resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteObservabilityConfiguration.html"
+    },
+    {
+      "name": "DeleteService",
+      "methodName": "toDeleteService",
+      "description": "Grants permission to delete an AWS App Runner service resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteService.html"
+    },
+    {
+      "name": "DeleteVpcConnector",
+      "methodName": "toDeleteVpcConnector",
+      "description": "Grants permission to delete an AWS App Runner VPC connector resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteVpcConnector.html"
+    },
+    {
+      "name": "DeleteVpcIngressConnection",
+      "methodName": "toDeleteVpcIngressConnection",
+      "description": "Grants permission to delete an AWS App Runner VpcIngressConnection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteVpcIngressConnection.html"
+    },
+    {
+      "name": "DescribeAutoScalingConfiguration",
+      "methodName": "toDescribeAutoScalingConfiguration",
+      "description": "Grants permission to retrieve the description of an AWS App Runner automatic scaling configuration resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeAutoScalingConfiguration.html"
+    },
+    {
+      "name": "DescribeCustomDomains",
+      "methodName": "toDescribeCustomDomains",
+      "description": "Grants permission to retrieve descriptions of custom domain names associated with an AWS App Runner service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeCustomDomains.html"
+    },
+    {
+      "name": "DescribeObservabilityConfiguration",
+      "methodName": "toDescribeObservabilityConfiguration",
+      "description": "Grants permission to retrieve the description of an AWS App Runner observability configuration resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeObservabilityConfiguration.html"
+    },
+    {
+      "name": "DescribeOperation",
+      "methodName": "toDescribeOperation",
+      "description": "Grants permission to retrieve the description of an operation that occurred on an AWS App Runner service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeOperation.html"
+    },
+    {
+      "name": "DescribeService",
+      "methodName": "toDescribeService",
+      "description": "Grants permission to retrieve the description of an AWS App Runner service resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeService.html"
+    },
+    {
+      "name": "DescribeVpcConnector",
+      "methodName": "toDescribeVpcConnector",
+      "description": "Grants permission to retrieve the description of an AWS App Runner VPC connector resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeVpcConnector.html"
+    },
+    {
+      "name": "DescribeVpcIngressConnection",
+      "methodName": "toDescribeVpcIngressConnection",
+      "description": "Grants permission to retrieve the description of an AWS App Runner VpcIngressConnection resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeVpcIngressConnection.html"
+    },
+    {
+      "name": "DisassociateCustomDomain",
+      "methodName": "toDisassociateCustomDomain",
+      "description": "Grants permission to disassociate a custom domain name from an AWS App Runner service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_DisassociateCustomDomain.html"
+    },
+    {
+      "name": "ListAutoScalingConfigurations",
+      "methodName": "toListAutoScalingConfigurations",
+      "description": "Grants permission to retrieve a list of AWS App Runner automatic scaling configurations in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListAutoScalingConfigurations.html"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to retrieve a list of AWS App Runner connections in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListConnections.html"
+    },
+    {
+      "name": "ListObservabilityConfigurations",
+      "methodName": "toListObservabilityConfigurations",
+      "description": "Grants permission to retrieve a list of AWS App Runner observability configurations in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListObservabilityConfigurations.html"
+    },
+    {
+      "name": "ListOperations",
+      "methodName": "toListOperations",
+      "description": "Grants permission to retrieve a list of operations that occurred on an AWS App Runner service resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to retrieve a list of running AWS App Runner services in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListServices.html"
+    },
+    {
+      "name": "ListServicesForAutoScalingConfiguration",
+      "methodName": "toListServicesForAutoScalingConfiguration",
+      "description": "Grants permission to retrieve a list of associated AppRunner services of an AWS App Runner automatic scaling configuration in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListServicesForAutoScalingConfiguration.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags associated with an AWS App Runner resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListVpcConnectors",
+      "methodName": "toListVpcConnectors",
+      "description": "Grants permission to retrieve a list of AWS App Runner VPC connectors in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListVpcConnectors.html"
+    },
+    {
+      "name": "ListVpcIngressConnections",
+      "methodName": "toListVpcIngressConnections",
+      "description": "Grants permission to retrieve a list of AWS App Runner VpcIngressConnections in your AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ListVpcConnections.html"
+    },
+    {
+      "name": "PauseService",
+      "methodName": "toPauseService",
+      "description": "Grants permission to pause an active AWS App Runner service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_PauseService.html"
+    },
+    {
+      "name": "ResumeService",
+      "methodName": "toResumeService",
+      "description": "Grants permission to resume an active AWS App Runner service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_ResumeService.html"
+    },
+    {
+      "name": "StartDeployment",
+      "methodName": "toStartDeployment",
+      "description": "Grants permission to initiate a manual deployemnt to an AWS App Runner service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_StartDeployment.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to, or update tag values of, an AWS App Runner resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an AWS App Runner resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDefaultAutoScalingConfiguration",
+      "methodName": "toUpdateDefaultAutoScalingConfiguration",
+      "description": "Grants permission to update an AWS App Runner automatic scaling configuration to be the default in your AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateDefaultAutoScalingConfiguration.html"
+    },
+    {
+      "name": "UpdateService",
+      "methodName": "toUpdateService",
+      "description": "Grants permission to update an AWS App Runner service resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateService.html"
+    },
+    {
+      "name": "UpdateVpcIngressConnection",
+      "methodName": "toUpdateVpcIngressConnection",
+      "description": "Grants permission to update an AWS App Runner VpcIngressConnection resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateVpcIngressConnection.html"
+    },
+    {
+      "name": "AssociateWebAcl",
+      "methodName": "toAssociateWebAcl",
+      "description": "Grants permission to associate the service with an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html"
+    },
+    {
+      "name": "DescribeWebAclForService",
+      "methodName": "toDescribeWebAclForService",
+      "description": "Grants permission to get the AWS WAF web ACL that is associated with an AWS App Runner service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html"
+    },
+    {
+      "name": "DisassociateWebAcl",
+      "methodName": "toDisassociateWebAcl",
+      "description": "Grants permission to disassociate the service with an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html"
+    },
+    {
+      "name": "ListAssociatedServicesForWebAcl",
+      "methodName": "toListAssociatedServicesForWebAcl",
+      "description": "Grants permission to list the services that are associated with an AWS WAF web ACL",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "autoscalingconfiguration",
+      "methodName": "onAutoscalingconfiguration",
+      "url": "",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:autoscalingconfiguration/${AutoscalingConfigurationName}/${AutoscalingConfigurationVersion}/${AutoscalingConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "AutoscalingConfigurationName",
+          "name": "autoscalingConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AutoscalingConfigurationVersion",
+          "name": "autoscalingConfigurationVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AutoscalingConfigurationId",
+          "name": "autoscalingConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "connection",
+      "methodName": "onConnection",
+      "url": "",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:connection/${ConnectionName}/${ConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionName",
+          "name": "connectionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConnectionId",
+          "name": "connectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "observabilityconfiguration",
+      "methodName": "onObservabilityconfiguration",
+      "url": "",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:observabilityconfiguration/${ObservabilityConfigurationName}/${ObservabilityConfigurationVersion}/${ObservabilityConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "ObservabilityConfigurationName",
+          "name": "observabilityConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ObservabilityConfigurationVersion",
+          "name": "observabilityConfigurationVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ObservabilityConfigurationId",
+          "name": "observabilityConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "service",
+      "methodName": "onService",
+      "url": "",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:service/${ServiceName}/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceName",
+          "name": "serviceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "vpcconnector",
+      "methodName": "onVpcconnector",
+      "url": "",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:vpcconnector/${VpcConnectorName}/${VpcConnectorVersion}/${VpcConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "VpcConnectorName",
+          "name": "vpcConnectorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VpcConnectorVersion",
+          "name": "vpcConnectorVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VpcConnectorId",
+          "name": "vpcConnectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "vpcingressconnection",
+      "methodName": "onVpcingressconnection",
+      "url": "",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:vpcingressconnection/${VpcIngressConnectionName}/${VpcIngressConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "VpcIngressConnectionName",
+          "name": "vpcIngressConnectionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VpcIngressConnectionId",
+          "name": "vpcIngressConnectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "webacl",
+      "methodName": "onWebacl",
+      "url": "",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "apprunner:AutoScalingConfigurationArn",
+      "methodName": "ifAutoScalingConfigurationArn",
+      "description": "Filters access by the CreateService and UpdateService actions based on the ARN of an associated AutoScalingConfiguration resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateService",
+        "toUpdateService"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AutoScalingConfigurationArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apprunner:ConnectionArn",
+      "methodName": "ifConnectionArn",
+      "description": "Filters access by the CreateService and UpdateService actions based on the ARN of an associated Connection resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateService",
+        "toUpdateService"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ConnectionArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apprunner:ObservabilityConfigurationArn",
+      "methodName": "ifObservabilityConfigurationArn",
+      "description": "Filters access by the CreateService and UpdateService actions based on the ARN of an associated ObservabilityConfiguration resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateService",
+        "toUpdateService"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ObservabilityConfigurationArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apprunner:ServiceArn",
+      "methodName": "ifServiceArn",
+      "description": "Filters access by the CreateVpcIngressConnection action based on the ARN of an associated Service resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateVpcIngressConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apprunner:VpcConnectorArn",
+      "methodName": "ifVpcConnectorArn",
+      "description": "Filters access by the CreateService and UpdateService actions based on the ARN of an associated VpcConnector resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateService",
+        "toUpdateService"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcConnectorArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apprunner:VpcEndpointId",
+      "methodName": "ifVpcEndpointId",
+      "description": "Filters access by the CreateVpcIngressConnection and UpdateVpcIngressConnection actions based on the VPC Endpoint in the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateVpcIngressConnection",
+        "toUpdateVpcIngressConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcEndpointId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apprunner:VpcId",
+      "methodName": "ifVpcId",
+      "description": "Filters access by the CreateVpcIngressConnection and UpdateVpcIngressConnection actions based on the VPC in the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateVpcIngressConnection",
+        "toUpdateVpcIngressConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by actions based on the presence of tag key-value pairs in the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateAutoScalingConfiguration",
+        "toCreateConnection",
+        "toCreateObservabilityConfiguration",
+        "toCreateService",
+        "toCreateVpcConnector",
+        "toCreateVpcIngressConnection",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by actions based on tag key-value pairs attached to the resource",
+      "url": "",
+      "relatedActionMethods": [
+        "toAssociateCustomDomain",
+        "toCreateAutoScalingConfiguration",
+        "toCreateConnection",
+        "toCreateObservabilityConfiguration",
+        "toCreateService",
+        "toCreateVpcConnector",
+        "toCreateVpcIngressConnection",
+        "toDeleteAutoScalingConfiguration",
+        "toDeleteConnection",
+        "toDeleteObservabilityConfiguration",
+        "toDeleteService",
+        "toDeleteVpcConnector",
+        "toDeleteVpcIngressConnection",
+        "toDescribeAutoScalingConfiguration",
+        "toDescribeCustomDomains",
+        "toDescribeObservabilityConfiguration",
+        "toDescribeOperation",
+        "toDescribeService",
+        "toDescribeVpcConnector",
+        "toDescribeVpcIngressConnection",
+        "toDisassociateCustomDomain",
+        "toListOperations",
+        "toListServicesForAutoScalingConfiguration",
+        "toListTagsForResource",
+        "toPauseService",
+        "toResumeService",
+        "toStartDeployment",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDefaultAutoScalingConfiguration",
+        "toUpdateService",
+        "toUpdateVpcIngressConnection",
+        "toAssociateWebAcl",
+        "toDescribeWebAclForService",
+        "toDisassociateWebAcl"
+      ],
+      "relatedResourceTypes": [
+        "autoscalingconfiguration",
+        "connection",
+        "observabilityconfiguration",
+        "service",
+        "vpcconnector",
+        "vpcingressconnection"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by actions based on the presence of tag keys in the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateAutoScalingConfiguration",
+        "toCreateConnection",
+        "toCreateObservabilityConfiguration",
+        "toCreateService",
+        "toCreateVpcConnector",
+        "toCreateVpcIngressConnection",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

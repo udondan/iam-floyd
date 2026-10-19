@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "trustedadvisor:DescribeAccount*",
+        "trustedadvisor:DescribeOrganization",
+        "trustedadvisor:DescribeRisk*",
+        "trustedadvisor:DownloadRisk",
+        "trustedadvisor:DescribeNotificationConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "reporting.trustedadvisor.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

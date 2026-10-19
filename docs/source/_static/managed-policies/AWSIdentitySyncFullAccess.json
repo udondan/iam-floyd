@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ds:AuthorizeApplication",
+        "ds:UnauthorizeApplication"
+      ],
+      "Resource": "arn:*:ds:*:*:*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "identity-sync:DeleteSyncProfile",
+        "identity-sync:CreateSyncProfile",
+        "identity-sync:GetSyncProfile",
+        "identity-sync:StartSync",
+        "identity-sync:StopSync",
+        "identity-sync:CreateSyncFilter",
+        "identity-sync:DeleteSyncFilter",
+        "identity-sync:ListSyncFilters",
+        "identity-sync:CreateSyncTarget",
+        "identity-sync:DeleteSyncTarget",
+        "identity-sync:GetSyncTarget",
+        "identity-sync:UpdateSyncTarget"
+      ],
+      "Resource": "arn:*:identity-sync:*:*:*/*"
+    }
+  ]
+}

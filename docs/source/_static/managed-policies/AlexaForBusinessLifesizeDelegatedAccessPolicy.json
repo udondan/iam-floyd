@@ -1,0 +1,93 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:DisassociateDeviceFromRoom",
+        "a4b:DeleteDevice",
+        "a4b:UpdateDevice",
+        "a4b:GetDevice"
+      ],
+      "Resource": [
+        "arn:aws:a4b:us-east-1:*:device/*/*:A2IWO7UEGWV4TL"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:RegisterAVSDevice"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "a4b:amazonId": [
+            "A2IWO7UEGWV4TL"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:SearchDevices"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringLike": {
+          "a4b:filters_deviceType": [
+            "*A2IWO7UEGWV4TL"
+          ]
+        },
+        "Null": {
+          "a4b:filters_deviceType": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:AssociateDeviceWithRoom"
+      ],
+      "Resource": [
+        "arn:aws:a4b:us-east-1:*:device/*/*:A2IWO7UEGWV4TL",
+        "arn:aws:a4b:us-east-1:*:room/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:GetRoom",
+        "a4b:GetAddressBook",
+        "a4b:SearchRooms",
+        "a4b:CreateContact",
+        "a4b:CreateRoom",
+        "a4b:UpdateContact",
+        "a4b:ListConferenceProviders",
+        "a4b:DeleteRoom",
+        "a4b:CreateAddressBook",
+        "a4b:DisassociateContactFromAddressBook",
+        "a4b:CreateConferenceProvider",
+        "a4b:PutConferencePreference",
+        "a4b:DeleteAddressBook",
+        "a4b:AssociateContactWithAddressBook",
+        "a4b:DeleteContact",
+        "a4b:SearchProfiles",
+        "a4b:UpdateProfile",
+        "a4b:GetContact"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:kms:*:*:key/*"
+    }
+  ]
+}

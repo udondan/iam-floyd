@@ -1,0 +1,114 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateSystemsManagerSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/ssm.amazonaws.com/AWSServiceRoleForAmazonSSM"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateDevOpsGuruSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "devops-guru.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudformationReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:ListStacks",
+        "cloudformation:DescribeStacks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DevOpsGuruNotificationChannelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "devops-guru:AddNotificationChannel"
+      ],
+      "Resource": [
+        "arn:aws:sns:*:*:DevOpsGuru-Default-Topic",
+        "arn:aws:devops-guru:*:*:/channels"
+      ]
+    },
+    {
+      "Sid": "DevOpsGuruConfigurationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "devops-guru:UpdateResourceCollection",
+        "devops-guru:UpdateServiceIntegration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNSReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DevOpsGuruDefaultSNSTopicConfigurationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sns:AddPermission",
+        "sns:CreateTopic",
+        "sns:GetTopicAttributes",
+        "sns:Publish",
+        "sns:SetTopicAttributes",
+        "sns:RemovePermission"
+      ],
+      "Resource": "arn:aws:sns:*:*:DevOpsGuru-Default-Topic"
+    },
+    {
+      "Sid": "ReadOnlyPermissionsForEnablingExplorer",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "config:DescribeConfigurationRecorders",
+        "compute-optimizer:GetEnrollmentStatus",
+        "support:DescribeTrustedAdvisorChecks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMExplorerServiceSettingsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:UpdateServiceSetting",
+        "ssm:GetServiceSetting"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/ssm-patchmanager",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/EC2",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ExplorerOnboarded",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/Association",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ComputeOptimizer",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ConfigCompliance",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/OpsData-TrustedAdvisor",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/SupportCenterCase"
+      ]
+    }
+  ]
+}
