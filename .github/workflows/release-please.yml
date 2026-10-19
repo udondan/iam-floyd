@@ -82,7 +82,7 @@ jobs:
       actions: write
     steps:
       - name: Start publish workflow
-        run: gh workflow run test-and-publish.yml --repo "${{ github.repository }}" --ref main -f tag="${TAG}"
+        run: gh workflow run publish.yml --repo "${{ github.repository }}" --ref main -f tag="${TAG}"
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ needs.release-please.outputs.tag_name }}

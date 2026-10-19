@@ -1,0 +1,53 @@
+---
+name: Package cdk-iam-floyd
+description: >-
+  Builds the CDK variant and its package for one language with jsii-pacmak into dist/. Needs the
+  checked out code with the tags.
+
+inputs:
+  language:
+    description: typescript, python, java, dotnet or go
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version: 24.x
+
+    - name: Set up Python
+      if: inputs.language == 'python'
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      with:
+        python-version: 3.15
+
+    - name: Set up Java
+      if: inputs.language == 'java'
+      uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+      with:
+        distribution: temurin
+        java-version: 21
+
+    - name: Set up .NET
+      if: inputs.language == 'dotnet'
+      uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+      with:
+        dotnet-version: 10.x
+
+    - name: Set up Go
+      if: inputs.language == 'go'
+      uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+      with:
+        go-version: stable
+        cache: false
+
+    - name: Build packages
+      shell: bash
+      run: |
+        make install
+        make cdk
+        make package-jsii LANGUAGES="$LANGUAGE"
+      env:
+        LANGUAGE: ${{ inputs.language }}
