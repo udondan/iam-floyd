@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kafkaconnect:ListConnectors",
+        "kafkaconnect:ListCustomPlugins",
+        "kafkaconnect:ListWorkerConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kafkaconnect:DescribeConnector"
+      ],
+      "Resource": [
+        "arn:aws:kafkaconnect:*:*:connector/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kafkaconnect:DescribeCustomPlugin"
+      ],
+      "Resource": [
+        "arn:aws:kafkaconnect:*:*:custom-plugin/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kafkaconnect:DescribeWorkerConfiguration"
+      ],
+      "Resource": [
+        "arn:aws:kafkaconnect:*:*:worker-configuration/*"
+      ]
+    }
+  ]
+}

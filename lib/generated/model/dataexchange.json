@@ -1,0 +1,758 @@
+{
+  "schemaVersion": 1,
+  "filename": "dataexchange",
+  "className": "Dataexchange",
+  "name": "dataexchange",
+  "servicePrefix": "dataexchange",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dataexchange.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptDataGrant",
+      "CancelJob",
+      "CreateDataGrant",
+      "CreateDataSet",
+      "CreateEventAction",
+      "CreateJob",
+      "CreateRevision",
+      "DeleteAsset",
+      "DeleteDataGrant",
+      "DeleteDataSet",
+      "DeleteEventAction",
+      "DeleteRevision",
+      "RevokeRevision",
+      "SendApiAsset",
+      "SendDataSetNotification",
+      "StartJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateAsset",
+      "UpdateDataSet",
+      "UpdateEventAction",
+      "UpdateRevision",
+      "CreateAsset",
+      "PublishDataSet",
+      "PublishToDataGrant"
+    ],
+    "Read": [
+      "GetAsset",
+      "GetDataGrant",
+      "GetDataSet",
+      "GetEventAction",
+      "GetJob",
+      "GetReceivedDataGrant",
+      "GetRevision"
+    ],
+    "List": [
+      "ListDataGrants",
+      "ListDataSetRevisions",
+      "ListDataSets",
+      "ListEventActions",
+      "ListJobs",
+      "ListReceivedDataGrants",
+      "ListRevisionAssets",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptDataGrant",
+      "methodName": "toAcceptDataGrant",
+      "description": "Grants permission to accept a data grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_AcceptDataGrant.html"
+    },
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CancelJob.html"
+    },
+    {
+      "name": "CreateDataGrant",
+      "methodName": "toCreateDataGrant",
+      "description": "Grants permission to create a data grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataGrant.html"
+    },
+    {
+      "name": "CreateDataSet",
+      "methodName": "toCreateDataSet",
+      "description": "Grants permission to create a data set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataSet.html"
+    },
+    {
+      "name": "CreateEventAction",
+      "methodName": "toCreateEventAction",
+      "description": "Grants permission to create an event action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateEventAction.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Grants permission to create a job to import or export assets",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateJob.html"
+    },
+    {
+      "name": "CreateRevision",
+      "methodName": "toCreateRevision",
+      "description": "Grants permission to create a revision",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateRevision.html"
+    },
+    {
+      "name": "DeleteAsset",
+      "methodName": "toDeleteAsset",
+      "description": "Grants permission to delete an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteAsset.html"
+    },
+    {
+      "name": "DeleteDataGrant",
+      "methodName": "toDeleteDataGrant",
+      "description": "Grants permission to delete a data grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteDataGrant.html"
+    },
+    {
+      "name": "DeleteDataSet",
+      "methodName": "toDeleteDataSet",
+      "description": "Grants permission to delete a data set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteDataSet.html"
+    },
+    {
+      "name": "DeleteEventAction",
+      "methodName": "toDeleteEventAction",
+      "description": "Grants permission to delete an event action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteEventAction.html"
+    },
+    {
+      "name": "DeleteRevision",
+      "methodName": "toDeleteRevision",
+      "description": "Grants permission to delete a revision",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteRevision.html"
+    },
+    {
+      "name": "GetAsset",
+      "methodName": "toGetAsset",
+      "description": "Grants permission to get information about an asset and to export it (for example, in a Job)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetAsset.html"
+    },
+    {
+      "name": "GetDataGrant",
+      "methodName": "toGetDataGrant",
+      "description": "Grants permission to get a data grant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetDataGrant.html"
+    },
+    {
+      "name": "GetDataSet",
+      "methodName": "toGetDataSet",
+      "description": "Grants permission to get information about a data set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetDataSet.html"
+    },
+    {
+      "name": "GetEventAction",
+      "methodName": "toGetEventAction",
+      "description": "Grants permission to get an event action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetEventAction.html"
+    },
+    {
+      "name": "GetJob",
+      "methodName": "toGetJob",
+      "description": "Grants permission to get information about a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetJob.html"
+    },
+    {
+      "name": "GetReceivedDataGrant",
+      "methodName": "toGetReceivedDataGrant",
+      "description": "Grants permission to get a received data grant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetReceivedDataGrant.html"
+    },
+    {
+      "name": "GetRevision",
+      "methodName": "toGetRevision",
+      "description": "Grants permission to get information about a revision",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetRevision.html"
+    },
+    {
+      "name": "ListDataGrants",
+      "methodName": "toListDataGrants",
+      "description": "Grants permission to list data grants for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListDataGrants.html"
+    },
+    {
+      "name": "ListDataSetRevisions",
+      "methodName": "toListDataSetRevisions",
+      "description": "Grants permission to list the revisions of a data set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListDataSetRevisions.html"
+    },
+    {
+      "name": "ListDataSets",
+      "methodName": "toListDataSets",
+      "description": "Grants permission to list data sets for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListDataSets.html"
+    },
+    {
+      "name": "ListEventActions",
+      "methodName": "toListEventActions",
+      "description": "Grants permission to list event actions for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListEventActions.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list jobs for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListJobs.html"
+    },
+    {
+      "name": "ListReceivedDataGrants",
+      "methodName": "toListReceivedDataGrants",
+      "description": "Grants permission to list received data grants for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListReceivedDataGrants.html"
+    },
+    {
+      "name": "ListRevisionAssets",
+      "methodName": "toListRevisionAssets",
+      "description": "Grants permission to get list the assets of a revision",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListRevisionAssets.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags that you associated with the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RevokeRevision",
+      "methodName": "toRevokeRevision",
+      "description": "Grants permission to revoke subscriber access to a revision",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_RevokeRevision.html"
+    },
+    {
+      "name": "SendApiAsset",
+      "methodName": "toSendApiAsset",
+      "description": "Grants permission to send a request to an API asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_SendApiAsset.html"
+    },
+    {
+      "name": "SendDataSetNotification",
+      "methodName": "toSendDataSetNotification",
+      "description": "Grants permission to send a notification to subscribers of a data set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_SendDataSetNotification.html"
+    },
+    {
+      "name": "StartJob",
+      "methodName": "toStartJob",
+      "description": "Grants permission to start a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_StartJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAsset",
+      "methodName": "toUpdateAsset",
+      "description": "Grants permission to get update information about an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateAsset.html"
+    },
+    {
+      "name": "UpdateDataSet",
+      "methodName": "toUpdateDataSet",
+      "description": "Grants permission to update information about a data set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateDataSet.html"
+    },
+    {
+      "name": "UpdateEventAction",
+      "methodName": "toUpdateEventAction",
+      "description": "Grants permission to update information for an event action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateEventAction.html"
+    },
+    {
+      "name": "UpdateRevision",
+      "methodName": "toUpdateRevision",
+      "description": "Grants permission to update information about a revision",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateRevision.html"
+    },
+    {
+      "name": "CreateAsset",
+      "methodName": "toCreateAsset",
+      "description": "Grants permission to create an asset (for example, in a Job)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html"
+    },
+    {
+      "name": "PublishDataSet",
+      "methodName": "toPublishDataSet",
+      "description": "Grants permission to publish a data set to a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html"
+    },
+    {
+      "name": "PublishToDataGrant",
+      "methodName": "toPublishToDataGrant",
+      "description": "Grants permission to publish a data set to a data grant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "assets",
+      "methodName": "onAssets",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}",
+      "placeholders": [
+        {
+          "placeholder": "DataSetId",
+          "name": "dataSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RevisionId",
+          "name": "revisionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AssetId",
+          "name": "assetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-grants",
+      "methodName": "onDataGrants",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-grants/${DataGrantId}",
+      "placeholders": [
+        {
+          "placeholder": "DataGrantId",
+          "name": "dataGrantId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "data-sets",
+      "methodName": "onDataSets",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}",
+      "placeholders": [
+        {
+          "placeholder": "DataSetId",
+          "name": "dataSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "entitled-assets",
+      "methodName": "onEntitledAssets",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets",
+      "arn": "arn:${Partition}:dataexchange:${Region}::data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}",
+      "placeholders": [
+        {
+          "placeholder": "DataSetId",
+          "name": "dataSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RevisionId",
+          "name": "revisionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AssetId",
+          "name": "assetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "entitled-data-sets",
+      "methodName": "onEntitledDataSets",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
+      "arn": "arn:${Partition}:dataexchange:${Region}::data-sets/${DataSetId}",
+      "placeholders": [
+        {
+          "placeholder": "DataSetId",
+          "name": "dataSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "entitled-revisions",
+      "methodName": "onEntitledRevisions",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions",
+      "arn": "arn:${Partition}:dataexchange:${Region}::data-sets/${DataSetId}/revisions/${RevisionId}",
+      "placeholders": [
+        {
+          "placeholder": "DataSetId",
+          "name": "dataSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RevisionId",
+          "name": "revisionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "event-actions",
+      "methodName": "onEventActions",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:event-actions/${EventActionId}",
+      "placeholders": [
+        {
+          "placeholder": "EventActionId",
+          "name": "eventActionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "jobs",
+      "methodName": "onJobs",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifJobType"
+      ]
+    },
+    {
+      "name": "revisions",
+      "methodName": "onRevisions",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}",
+      "placeholders": [
+        {
+          "placeholder": "DataSetId",
+          "name": "dataSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RevisionId",
+          "name": "revisionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the mandatory tags in the create request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateDataGrant",
+        "toCreateDataSet",
+        "toCreateEventAction",
+        "toCreateRevision",
+        "toTagResource",
+        "toCreateAsset",
+        "toPublishToDataGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toAcceptDataGrant",
+        "toCreateDataGrant",
+        "toCreateDataSet",
+        "toCreateEventAction",
+        "toCreateRevision",
+        "toDeleteAsset",
+        "toDeleteDataGrant",
+        "toDeleteDataSet",
+        "toDeleteEventAction",
+        "toDeleteRevision",
+        "toGetAsset",
+        "toGetDataGrant",
+        "toGetDataSet",
+        "toGetEventAction",
+        "toGetReceivedDataGrant",
+        "toGetRevision",
+        "toListDataSetRevisions",
+        "toListRevisionAssets",
+        "toListTagsForResource",
+        "toRevokeRevision",
+        "toSendApiAsset",
+        "toSendDataSetNotification",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAsset",
+        "toUpdateDataSet",
+        "toUpdateEventAction",
+        "toUpdateRevision",
+        "toCreateAsset",
+        "toPublishDataSet",
+        "toPublishToDataGrant"
+      ],
+      "relatedResourceTypes": [
+        "assets",
+        "data-grants",
+        "data-sets",
+        "event-actions",
+        "revisions"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the create request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
+      "relatedActionMethods": [
+        "toCreateDataGrant",
+        "toCreateDataSet",
+        "toCreateEventAction",
+        "toCreateRevision",
+        "toTagResource",
+        "toUntagResource",
+        "toCreateAsset",
+        "toPublishToDataGrant"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "dataexchange:JobType",
+      "methodName": "ifJobType",
+      "description": "Filters access by the specified job type",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html",
+      "relatedActionMethods": [
+        "toCancelJob",
+        "toCreateJob",
+        "toGetJob",
+        "toStartJob"
+      ],
+      "relatedResourceTypes": [
+        "jobs"
+      ],
+      "keyLiteral": "JobType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+docs/build
+skills/*-workspace
+eslint.log
+examples/*/*.*.result
+lib/generated/index.ts
+lib/generated/model/.cache
+lib/generated/policy-statements
+lib/generated/aws-service-principals/index.ts
+node_modules
+package-lock.json
+test/cdk.out
+test/package-lock.json
+*.tgz
+*.tsbuildinfo
+**/*.d.ts
+**/*.d.ts.map
+**/*.js
+!/docs/source/_static/js/*.js
+/.jsii
+/.jsii.gz
+/dist
+lint/target/
+__pycache__/
+/python/LICENSE
+/python/iam_floyd/_aws_managed_policies.py
+/python/iam_floyd/_aws_service_principals.py
+/python/iam_floyd/_collection.py
+/python/iam_floyd/_shared.py
+/python/iam_floyd/_version.py
+/test/transpile/out
+/python/iam_floyd/statement
+# the Java sources are written by bin/transpile.ts, except the runtime
+/java/src/main/java/com/udondan/iamFloyd/*
+!/java/src/main/java/com/udondan/iamFloyd/Js.java
+!/java/src/main/java/com/udondan/iamFloyd/Json.java
+/java/target
+/java/.flattened-pom.xml
+# the C# sources are written by bin/transpile.ts, except the runtime
+/dotnet/src/IAM.Floyd/*
+!/dotnet/src/IAM.Floyd/IAM.Floyd.csproj
+!/dotnet/src/IAM.Floyd/Js.cs
+!/dotnet/src/IAM.Floyd/Json.cs
+# the Go sources are written by bin/transpile.ts, except the helpers and the runtime
+/go/iamfloyd/*
+!/go/iamfloyd/go.mod
+!/go/iamfloyd/helpers.go
+!/go/iamfloyd/internal

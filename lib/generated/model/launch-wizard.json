@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "filename": "launch-wizard",
+  "className": "Launchwizard",
+  "name": "launchwizard",
+  "servicePrefix": "launchwizard",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_launch-wizard.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDeployment",
+      "DeleteDeployment",
+      "TagResource",
+      "UntagResource",
+      "UpdateDeployment",
+      "CreateAdditionalNode",
+      "CreateSettingsSet",
+      "DeleteAdditionalNode",
+      "DeleteApp",
+      "DeleteSettingsSet",
+      "PutSettingsSet",
+      "StartProvisioning",
+      "UpdateSettingsSet"
+    ],
+    "Read": [
+      "GetDeployment",
+      "GetDeploymentPatternVersion",
+      "GetWorkload",
+      "GetWorkloadDeploymentPattern",
+      "ListTagsForResource",
+      "DescribeAdditionalNode",
+      "DescribeProvisionedApp",
+      "DescribeProvisioningEvents",
+      "DescribeSettingsSet",
+      "GetInfrastructureSuggestion",
+      "GetIpAddress",
+      "GetResourceCostEstimate",
+      "GetResourceRecommendation",
+      "GetSettingsSet",
+      "GetWorkloadAsset",
+      "GetWorkloadAssets"
+    ],
+    "List": [
+      "ListDeploymentEvents",
+      "ListDeploymentPatternVersions",
+      "ListDeployments",
+      "ListWorkloadDeploymentPatterns",
+      "ListWorkloads",
+      "ListAdditionalNodes",
+      "ListAllowedResources",
+      "ListProvisionedApps",
+      "ListResourceCostEstimates",
+      "ListSettingsSets",
+      "ListWorkloadDeploymentOptions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDeployment",
+      "methodName": "toCreateDeployment",
+      "description": "Grants permission to create a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_CreateDeployment.html"
+    },
+    {
+      "name": "DeleteDeployment",
+      "methodName": "toDeleteDeployment",
+      "description": "Grants permission to delete a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_DeleteDeployment.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to get a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeployment.html"
+    },
+    {
+      "name": "GetDeploymentPatternVersion",
+      "methodName": "toGetDeploymentPatternVersion",
+      "description": "Grants permission to get a version of a deployment pattern",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeploymentPatternVersion.html"
+    },
+    {
+      "name": "GetWorkload",
+      "methodName": "toGetWorkload",
+      "description": "Grants permission to get a workload",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkload.html"
+    },
+    {
+      "name": "GetWorkloadDeploymentPattern",
+      "methodName": "toGetWorkloadDeploymentPattern",
+      "description": "Grants permission to get a deployment pattern",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"
+    },
+    {
+      "name": "ListDeploymentEvents",
+      "methodName": "toListDeploymentEvents",
+      "description": "Grants permission to list the events that occured during a deployment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentEvents.html"
+    },
+    {
+      "name": "ListDeploymentPatternVersions",
+      "methodName": "toListDeploymentPatternVersions",
+      "description": "Grants permission to list the versions of a deployment pattern",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentPatternVersions.html"
+    },
+    {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to list deployments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeployments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a LaunchWizard resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkloadDeploymentPatterns",
+      "methodName": "toListWorkloadDeploymentPatterns",
+      "description": "Grants permission to list the deployment patterns of a workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"
+    },
+    {
+      "name": "ListWorkloads",
+      "methodName": "toListWorkloads",
+      "description": "Grants permission to list workloads",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a LaunchWizard resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a LaunchWizard resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDeployment",
+      "methodName": "toUpdateDeployment",
+      "description": "Grants permission to update a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UpdateDeployment.html"
+    },
+    {
+      "name": "CreateAdditionalNode",
+      "methodName": "toCreateAdditionalNode",
+      "description": "Grants permission to create an additional node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "CreateSettingsSet",
+      "methodName": "toCreateSettingsSet",
+      "description": "Grants permission to create an application settings set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DeleteAdditionalNode",
+      "methodName": "toDeleteAdditionalNode",
+      "description": "Grants permission to delete an additional node",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DeleteApp",
+      "methodName": "toDeleteApp",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DeleteSettingsSet",
+      "methodName": "toDeleteSettingsSet",
+      "description": "Grants permission to delete a settings set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DescribeAdditionalNode",
+      "methodName": "toDescribeAdditionalNode",
+      "description": "Grants permission to describe an additional node",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DescribeProvisionedApp",
+      "methodName": "toDescribeProvisionedApp",
+      "description": "Grants permission to describe provisioning applications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DescribeProvisioningEvents",
+      "methodName": "toDescribeProvisioningEvents",
+      "description": "Grants permission to describe provisioning events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "DescribeSettingsSet",
+      "methodName": "toDescribeSettingsSet",
+      "description": "Grants permission to describe an application settings set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetInfrastructureSuggestion",
+      "methodName": "toGetInfrastructureSuggestion",
+      "description": "Grants permission to get infrastructure suggestion",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetIpAddress",
+      "methodName": "toGetIpAddress",
+      "description": "Grants permission to get customer's ip address",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetResourceCostEstimate",
+      "methodName": "toGetResourceCostEstimate",
+      "description": "Grants permission to get resource cost estimate",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetResourceRecommendation",
+      "methodName": "toGetResourceRecommendation",
+      "description": "Grants permission to get recommendation for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetSettingsSet",
+      "methodName": "toGetSettingsSet",
+      "description": "Grants permission to get a settings set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetWorkloadAsset",
+      "methodName": "toGetWorkloadAsset",
+      "description": "Grants permission to get a workload's asset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "GetWorkloadAssets",
+      "methodName": "toGetWorkloadAssets",
+      "description": "Grants permission to get workload assets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "ListAdditionalNodes",
+      "methodName": "toListAdditionalNodes",
+      "description": "Grants permission to list additional nodes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "ListAllowedResources",
+      "methodName": "toListAllowedResources",
+      "description": "Grants permission to list the allowed resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "ListProvisionedApps",
+      "methodName": "toListProvisionedApps",
+      "description": "Grants permission to list provisioning applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "ListResourceCostEstimates",
+      "methodName": "toListResourceCostEstimates",
+      "description": "Grants permission to list the cost estimates of resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "ListSettingsSets",
+      "methodName": "toListSettingsSets",
+      "description": "Grants permission to list settings sets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "ListWorkloadDeploymentOptions",
+      "methodName": "toListWorkloadDeploymentOptions",
+      "description": "Grants permission to list deployment options of a given workload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "PutSettingsSet",
+      "methodName": "toPutSettingsSet",
+      "description": "Grants permission to create a settings set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "StartProvisioning",
+      "methodName": "toStartProvisioning",
+      "description": "Grants permission to start a provisioning",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    },
+    {
+      "name": "UpdateSettingsSet",
+      "methodName": "toUpdateSettingsSet",
+      "description": "Grants permission to update an application settings set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/launchwizard/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "deployment",
+      "methodName": "onDeployment",
+      "url": "https://docs.aws.amazon.com/launchwizard/Resources/Deployment.html",
+      "arn": "arn:${Partition}:launchwizard:${Region}:${Account}:deployment/${DeploymentId}",
+      "placeholders": [
+        {
+          "placeholder": "DeploymentId",
+          "name": "deploymentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_launchwizard",
+        "interface": "IDeploymentRef",
+        "property": "deploymentRef",
+        "arn": "deploymentArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDeployment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDeployment",
+        "toDeleteDeployment",
+        "toGetDeployment",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDeployment"
+      ],
+      "relatedResourceTypes": [
+        "deployment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDeployment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

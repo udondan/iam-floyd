@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "filename": "iq-permission",
+  "className": "IqPermission",
+  "name": "iq-permission",
+  "servicePrefix": "iq-permission",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iq-permission.html",
+  "accessLevelList": {
+    "Write": [
+      "ApproveAccessGrant",
+      "ApprovePermissionRequest",
+      "AssumePermissionRole",
+      "CreatePermissionRequest",
+      "RejectPermissionRequest",
+      "RevokePermissionRequest",
+      "WithdrawPermissionRequest"
+    ],
+    "Read": [
+      "GetPermissionRequest",
+      "ListPermissionRequests"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ApproveAccessGrant",
+      "methodName": "toApproveAccessGrant",
+      "description": "Grants permission to approve a permission request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ApprovePermissionRequest",
+      "methodName": "toApprovePermissionRequest",
+      "description": "Grants permission to approve a permission request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "AssumePermissionRole",
+      "methodName": "toAssumePermissionRole",
+      "description": "Grants permission to obtain a set of temporary security credentials for experts which they can use to access buyers' AWS resources",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreatePermissionRequest",
+      "methodName": "toCreatePermissionRequest",
+      "description": "Grants permission to create a permission request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetPermissionRequest",
+      "methodName": "toGetPermissionRequest",
+      "description": "Grants permission to get a permission request",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListPermissionRequests",
+      "methodName": "toListPermissionRequests",
+      "description": "Grants permission to list permission requests",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "RejectPermissionRequest",
+      "methodName": "toRejectPermissionRequest",
+      "description": "Grants permission to reject a permission request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "RevokePermissionRequest",
+      "methodName": "toRevokePermissionRequest",
+      "description": "Grants permission to revoke a permission request which was previously approved",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "WithdrawPermissionRequest",
+      "methodName": "toWithdrawPermissionRequest",
+      "description": "Grants permission to withdraw a permission request that has not been approved or declined",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "permission",
+      "methodName": "onPermission",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq-permission:${Region}::permission/${PermissionRequestId}",
+      "placeholders": [
+        {
+          "placeholder": "PermissionRequestId",
+          "name": "permissionRequestId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

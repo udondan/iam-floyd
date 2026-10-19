@@ -1,0 +1,119 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BackupActions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:DescribeRecoveryPoint",
+        "backup:DescribeRestoreJob",
+        "backup:DescribeProtectedResource",
+        "backup:GetRecoveryPointRestoreMetadata",
+        "backup:ListBackupVaults",
+        "backup:ListProtectedResources",
+        "backup:ListProtectedResourcesByBackupVault",
+        "backup:ListRecoveryPointsByBackupVault",
+        "backup:ListRecoveryPointsByResource",
+        "backup:ListTags",
+        "backup:StartRestoreJob"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IamPassRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "backup.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeSnapshotTierStatus",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeMountTargets",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeVolumes",
+        "fsx:ListTagsForResource",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBInstanceAutomatedBackups",
+        "rds:DescribeDBClusterAutomatedBackups",
+        "rds:ListTagsForResource",
+        "redshift:DescribeClusters",
+        "redshift:DescribeTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DeleteActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVolume",
+        "ec2:TerminateInstances",
+        "elasticfilesystem:DeleteFilesystem",
+        "elasticfilesystem:DeleteMountTarget",
+        "rds:DeleteDBCluster",
+        "rds:DeleteDBInstance",
+        "rds:DeleteTenantDatabase",
+        "fsx:DeleteFileSystem",
+        "fsx:DeleteVolume"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/awsbackup-restore-test": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DdbDeleteActions",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DeleteTable",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/awsbackup-restore-test-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftDeleteActions",
+      "Effect": "Allow",
+      "Action": "redshift:DeleteCluster",
+      "Resource": "arn:aws:redshift:*:*:cluster:awsbackup-restore-test-*"
+    },
+    {
+      "Sid": "S3DeleteActions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteBucket",
+        "s3:GetLifecycleConfiguration",
+        "s3:PutLifecycleConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::awsbackup-restore-test-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TimestreamDeleteActions",
+      "Effect": "Allow",
+      "Action": "timestream:DeleteTable",
+      "Resource": "arn:aws:timestream:*:*:database/*/table/awsbackup-restore-test-*"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 1,
+  "filename": "sso-directory",
+  "className": "SsoDirectory",
+  "name": "sso-directory",
+  "servicePrefix": "sso-directory",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sso-directory.html",
+  "accessLevelList": {
+    "Write": [
+      "AddMemberToGroup",
+      "CompleteVirtualMfaDeviceRegistration",
+      "CompleteWebAuthnDeviceRegistration",
+      "CreateAlias",
+      "CreateBearerToken",
+      "CreateExternalIdPConfigurationForDirectory",
+      "CreateGroup",
+      "CreateProvisioningTenant",
+      "CreateUser",
+      "DeleteBearerToken",
+      "DeleteExternalIdPCertificate",
+      "DeleteExternalIdPConfigurationForDirectory",
+      "DeleteGroup",
+      "DeleteMfaDeviceForUser",
+      "DeleteProvisioningTenant",
+      "DeleteUser",
+      "DisableExternalIdPConfigurationForDirectory",
+      "DisableUser",
+      "EnableExternalIdPConfigurationForDirectory",
+      "EnableUser",
+      "ImportExternalIdPCertificate",
+      "RemoveMemberFromGroup",
+      "StartVirtualMfaDeviceRegistration",
+      "StartWebAuthnDeviceRegistration",
+      "UpdateExternalIdPConfigurationForDirectory",
+      "UpdateGroup",
+      "UpdateGroupDisplayName",
+      "UpdateMfaDeviceForUser",
+      "UpdatePassword",
+      "UpdateUser",
+      "UpdateUserName",
+      "VerifyEmail"
+    ],
+    "Read": [
+      "DescribeDirectory",
+      "DescribeGroup",
+      "DescribeGroups",
+      "DescribeProvisioningTenant",
+      "DescribeUser",
+      "DescribeUserByUniqueAttribute",
+      "DescribeUsers",
+      "GetAWSSPConfigurationForDirectory",
+      "GetGroupId",
+      "GetUserId",
+      "GetUserPoolInfo",
+      "IsMemberInGroup",
+      "IsMemberInGroups",
+      "ListBearerTokens",
+      "ListExternalIdPCertificates",
+      "ListExternalIdPConfigurationsForDirectory",
+      "ListGroups",
+      "ListGroupsForMember",
+      "ListGroupsForUser",
+      "ListMembersInGroup",
+      "ListMfaDevicesForUser",
+      "ListProvisioningTenants",
+      "ListUsers",
+      "SearchGroups",
+      "SearchUsers"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddMemberToGroup",
+      "methodName": "toAddMemberToGroup",
+      "description": "Grants permission to add a member to a group in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html"
+    },
+    {
+      "name": "CompleteVirtualMfaDeviceRegistration",
+      "methodName": "toCompleteVirtualMfaDeviceRegistration",
+      "description": "Grants permission to complete the creation process of a virtual MFA device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CompleteWebAuthnDeviceRegistration",
+      "methodName": "toCompleteWebAuthnDeviceRegistration",
+      "description": "Grants permission to complete the registration process of a WebAuthn device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Grants permission to create an alias for the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateBearerToken",
+      "methodName": "toCreateBearerToken",
+      "description": "Grants permission to create a bearer token for a given provisioning tenant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateExternalIdPConfigurationForDirectory",
+      "methodName": "toCreateExternalIdPConfigurationForDirectory",
+      "description": "Grants permission to create an External Identity Provider configuration for the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a group in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateProvisioningTenant",
+      "methodName": "toCreateProvisioningTenant",
+      "description": "Grants permission to create a provisioning tenant for a given directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html"
+    },
+    {
+      "name": "DeleteBearerToken",
+      "methodName": "toDeleteBearerToken",
+      "description": "Grants permission to delete a bearer token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteExternalIdPCertificate",
+      "methodName": "toDeleteExternalIdPCertificate",
+      "description": "Grants permission to delete the given external IdP certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteExternalIdPConfigurationForDirectory",
+      "methodName": "toDeleteExternalIdPConfigurationForDirectory",
+      "description": "Grants permission to delete an External Identity Provider configuration associated with the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a group from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteMfaDeviceForUser",
+      "methodName": "toDeleteMfaDeviceForUser",
+      "description": "Grants permission to delete a MFA device by device name for a given user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteProvisioningTenant",
+      "methodName": "toDeleteProvisioningTenant",
+      "description": "Grants permission to delete the provisioning tenant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DescribeDirectory",
+      "methodName": "toDescribeDirectory",
+      "description": "Grants permission to retrieve information about the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DescribeGroup",
+      "methodName": "toDescribeGroup",
+      "description": "Grants permission to query the group data, not including user and group members",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html"
+    },
+    {
+      "name": "DescribeGroups",
+      "methodName": "toDescribeGroups",
+      "description": "Grants permission to retrieve information about groups from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html"
+    },
+    {
+      "name": "DescribeProvisioningTenant",
+      "methodName": "toDescribeProvisioningTenant",
+      "description": "Grants permission to describes the provisioning tenant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DescribeUser",
+      "methodName": "toDescribeUser",
+      "description": "Grants permission to retrieve information about a user from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html"
+    },
+    {
+      "name": "DescribeUserByUniqueAttribute",
+      "methodName": "toDescribeUserByUniqueAttribute",
+      "description": "Grants permission to describe user with a valid unique attribute represented for the user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DescribeUsers",
+      "methodName": "toDescribeUsers",
+      "description": "Grants permission to retrieve information about user from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html"
+    },
+    {
+      "name": "DisableExternalIdPConfigurationForDirectory",
+      "methodName": "toDisableExternalIdPConfigurationForDirectory",
+      "description": "Grants permission to disable authentication of end users with an External Identity Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "DisableUser",
+      "methodName": "toDisableUser",
+      "description": "Grants permission to deactivate a user in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "EnableExternalIdPConfigurationForDirectory",
+      "methodName": "toEnableExternalIdPConfigurationForDirectory",
+      "description": "Grants permission to enable authentication of end users with an External Identity Provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "EnableUser",
+      "methodName": "toEnableUser",
+      "description": "Grants permission to activate user in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetAWSSPConfigurationForDirectory",
+      "methodName": "toGetAWSSPConfigurationForDirectory",
+      "description": "Grants permission to retrieve the AWS IAM Identity Center Service Provider configurations for the directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "GetGroupId",
+      "methodName": "toGetGroupId",
+      "description": "Grants permission to retrieve ID information about group from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html"
+    },
+    {
+      "name": "GetUserId",
+      "methodName": "toGetUserId",
+      "description": "Grants permission to retrieve ID information about user from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html"
+    },
+    {
+      "name": "GetUserPoolInfo",
+      "methodName": "toGetUserPoolInfo",
+      "description": "(Deprecated) Grants permission to get UserPool Info",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ImportExternalIdPCertificate",
+      "methodName": "toImportExternalIdPCertificate",
+      "description": "Grants permission to import the IdP certificate used for verifying external IdP responses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "IsMemberInGroup",
+      "methodName": "toIsMemberInGroup",
+      "description": "Grants permission to check if a member is a part of the group in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html"
+    },
+    {
+      "name": "IsMemberInGroups",
+      "methodName": "toIsMemberInGroups",
+      "description": "Grants permission to check if a member is a part of multiple groups in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html"
+    },
+    {
+      "name": "ListBearerTokens",
+      "methodName": "toListBearerTokens",
+      "description": "Grants permission to list bearer tokens for a given provisioning tenant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListExternalIdPCertificates",
+      "methodName": "toListExternalIdPCertificates",
+      "description": "Grants permission to list the external IdP certificates of a given directory and IdP",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListExternalIdPConfigurationsForDirectory",
+      "methodName": "toListExternalIdPConfigurationsForDirectory",
+      "description": "Grants permission to list all the External Identity Provider configurations created for the directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list groups from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListGroupsForMember",
+      "methodName": "toListGroupsForMember",
+      "description": "Grants permission to list groups of the target member",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html"
+    },
+    {
+      "name": "ListGroupsForUser",
+      "methodName": "toListGroupsForUser",
+      "description": "Grants permission to list groups for a user from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html"
+    },
+    {
+      "name": "ListMembersInGroup",
+      "methodName": "toListMembersInGroup",
+      "description": "Grants permission to retrieve all members that are part of a group in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html"
+    },
+    {
+      "name": "ListMfaDevicesForUser",
+      "methodName": "toListMfaDevicesForUser",
+      "description": "Grants permission to list all active MFA devices and their MFA device metadata for a user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListProvisioningTenants",
+      "methodName": "toListProvisioningTenants",
+      "description": "Grants permission to list provisioning tenants for a given directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list users from the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html"
+    },
+    {
+      "name": "RemoveMemberFromGroup",
+      "methodName": "toRemoveMemberFromGroup",
+      "description": "Grants permission to remove a member that is part of a group in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html"
+    },
+    {
+      "name": "SearchGroups",
+      "methodName": "toSearchGroups",
+      "description": "Grants permission to search for groups within the associated directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "SearchUsers",
+      "methodName": "toSearchUsers",
+      "description": "Grants permission to search for users within the associated directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "StartVirtualMfaDeviceRegistration",
+      "methodName": "toStartVirtualMfaDeviceRegistration",
+      "description": "Grants permission to begin the creation process of virtual mfa device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "StartWebAuthnDeviceRegistration",
+      "methodName": "toStartWebAuthnDeviceRegistration",
+      "description": "Grants permission to begin the registration process of a WebAuthn device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateExternalIdPConfigurationForDirectory",
+      "methodName": "toUpdateExternalIdPConfigurationForDirectory",
+      "description": "Grants permission to update an External Identity Provider configuration associated with the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update information about a group in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateGroupDisplayName",
+      "methodName": "toUpdateGroupDisplayName",
+      "description": "Grants permission to update group display name update group display name response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateMfaDeviceForUser",
+      "methodName": "toUpdateMfaDeviceForUser",
+      "description": "Grants permission to update MFA device information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdatePassword",
+      "methodName": "toUpdatePassword",
+      "description": "Grants permission to update a password by sending password reset link via email or generating one time password for a user in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update user information in the directory that AWS IAM Identity Center provides by default",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html"
+    },
+    {
+      "name": "UpdateUserName",
+      "methodName": "toUpdateUserName",
+      "description": "Grants permission to update user name update user name response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    },
+    {
+      "name": "VerifyEmail",
+      "methodName": "toVerifyEmail",
+      "description": "Grants permission to verify an email address of an User",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

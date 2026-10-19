@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "chime:CreateMeeting",
+        "chime:CreateMeetingWithAttendees",
+        "chime:DeleteMeeting",
+        "chime:GetMeeting",
+        "chime:ListMeetings",
+        "chime:CreateAttendee",
+        "chime:BatchCreateAttendee",
+        "chime:DeleteAttendee",
+        "chime:GetAttendee",
+        "chime:ListAttendees",
+        "chime:ListAttendeeTags",
+        "chime:ListMeetingTags",
+        "chime:ListTagsForResource",
+        "chime:TagAttendee",
+        "chime:TagMeeting",
+        "chime:TagResource",
+        "chime:UntagAttendee",
+        "chime:UntagMeeting",
+        "chime:UntagResource",
+        "chime:StartMeetingTranscription",
+        "chime:StopMeetingTranscription",
+        "chime:CreateMediaCapturePipeline",
+        "chime:CreateMediaConcatenationPipeline",
+        "chime:CreateMediaLiveConnectorPipeline",
+        "chime:DeleteMediaCapturePipeline",
+        "chime:DeleteMediaPipeline",
+        "chime:GetMediaCapturePipeline",
+        "chime:GetMediaPipeline",
+        "chime:ListMediaCapturePipelines",
+        "chime:ListMediaPipelines"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

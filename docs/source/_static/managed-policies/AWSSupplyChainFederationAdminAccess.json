@@ -1,0 +1,288 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSSupplyChain",
+      "Effect": "Allow",
+      "Action": [
+        "scn:*"
+      ],
+      "Resource": [
+        "arn:aws:scn:*:*:instance/*"
+      ]
+    },
+    {
+      "Sid": "ChimeAppInstance",
+      "Effect": "Allow",
+      "Action": [
+        "chime:BatchCreateChannelMembership",
+        "chime:CreateAppInstanceUser",
+        "chime:CreateChannel",
+        "chime:CreateChannelMembership",
+        "chime:CreateChannelModerator",
+        "chime:Connect",
+        "chime:DeleteChannelMembership",
+        "chime:DeleteChannelModerator",
+        "chime:DescribeChannelMembershipForAppInstanceUser",
+        "chime:GetChannelMembershipPreferences",
+        "chime:ListChannelMemberships",
+        "chime:ListChannelMembershipsForAppInstanceUser",
+        "chime:ListChannelMessages",
+        "chime:ListChannelModerators",
+        "chime:TagResource",
+        "chime:PutChannelMembershipPreferences",
+        "chime:SendChannelMessage",
+        "chime:UpdateChannelReadMarker",
+        "chime:UpdateAppInstanceUser"
+      ],
+      "Resource": [
+        "arn:aws:chime:*:*:app-instance/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/SCNInstanceId": "*"
+        }
+      }
+    },
+    {
+      "Sid": "ChimeChannel",
+      "Effect": "Allow",
+      "Action": [
+        "chime:DescribeChannel"
+      ],
+      "Resource": [
+        "arn:aws:chime:*:*:app-instance/*"
+      ]
+    },
+    {
+      "Sid": "ChimeMessaging",
+      "Effect": "Allow",
+      "Action": [
+        "chime:GetMessagingSessionEndpoint"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMIdentityCenter",
+      "Effect": "Allow",
+      "Action": [
+        "sso:GetManagedApplicationInstance",
+        "sso:ListDirectoryAssociations",
+        "sso:AssociateProfile",
+        "sso:DisassociateProfile",
+        "sso:ListProfiles",
+        "sso:GetProfile",
+        "sso:ListProfileAssociations",
+        "sso:ListApplicationAssignments",
+        "sso:DescribeApplication",
+        "sso:DescribeInstance",
+        "sso:GetApplicationAssignmentConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BuilderIDCollaboration",
+      "Effect": "Allow",
+      "Action": [
+        "builderid:CreateInvitation",
+        "builderid:ListInvitations",
+        "builderid:DeleteInvitation",
+        "builderid:DisassociateCollaborator"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IdentityStoreCollaboration",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ReserveUser",
+        "identitystore:DeleteUser"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AppflowConnectorProfile",
+      "Effect": "Allow",
+      "Action": [
+        "appflow:CreateConnectorProfile",
+        "appflow:UseConnectorProfile",
+        "appflow:DeleteConnectorProfile",
+        "appflow:UpdateConnectorProfile"
+      ],
+      "Resource": [
+        "arn:aws:appflow:*:*:connectorprofile/scn-*"
+      ]
+    },
+    {
+      "Sid": "AppflowFlow",
+      "Effect": "Allow",
+      "Action": [
+        "appflow:CreateFlow",
+        "appflow:DeleteFlow",
+        "appflow:DescribeFlow",
+        "appflow:DescribeFlowExecutionRecords",
+        "appflow:ListFlows",
+        "appflow:StartFlow",
+        "appflow:StopFlow",
+        "appflow:UpdateFlow",
+        "appflow:TagResource",
+        "appflow:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:appflow:*:*:flow/scn-*"
+      ]
+    },
+    {
+      "Sid": "S3ListAllBuckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3ListSupplyChainBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:GetBucketPolicy",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aws-supply-chain-data-*"
+      ]
+    },
+    {
+      "Sid": "S3ReadWriteObject",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aws-supply-chain-data-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SecretsManagerCreateSecret",
+      "Effect": "Allow",
+      "Action": "secretsmanager:CreateSecret",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:*",
+      "Condition": {
+        "StringLike": {
+          "secretsmanager:Name": "appflow!*"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "appflow.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SecretsManagerPutResourcePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:PutResourcePolicy"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "appflow.amazonaws.com"
+          ]
+        },
+        "StringEqualsIgnoreCase": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "appflow"
+        }
+      }
+    },
+    {
+      "Sid": "KMSListKeys",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*"
+    },
+    {
+      "Sid": "KMSListGrants",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListGrants"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "appflow.*.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceTag/aws-supply-chain-access": "true"
+        }
+      }
+    },
+    {
+      "Sid": "KMSCreateGrant",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "appflow.*.amazonaws.com"
+        },
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceTag/aws-supply-chain-access": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityCenter",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:sso:instance-arn": "arn:*:sso:::instance/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityStore",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "arn:*:identitystore::*:identitystore/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

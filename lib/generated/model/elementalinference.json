@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "filename": "elementalinference",
+  "className": "ElementalInference",
+  "name": "elemental-inference",
+  "servicePrefix": "elemental-inference",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateFeed",
+      "CreateDictionary",
+      "CreateFeed",
+      "DeleteDictionary",
+      "DeleteFeed",
+      "DeleteFeedPolicy",
+      "DisassociateFeed",
+      "PutFeedPolicy",
+      "PutMedia",
+      "TagResource",
+      "UntagResource",
+      "UpdateDictionary",
+      "UpdateFeed"
+    ],
+    "Read": [
+      "ExportDictionaryEntries",
+      "GetDictionary",
+      "GetFeed",
+      "GetFeedPolicy",
+      "GetMetadata",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDictionaries",
+      "ListFeeds"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateFeed",
+      "methodName": "toAssociateFeed",
+      "description": "Grants permission to associate a feed with an AWS resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_AssociateFeed.html"
+    },
+    {
+      "name": "CreateDictionary",
+      "methodName": "toCreateDictionary",
+      "description": "Grants permission to create a new dictionary",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateDictionary.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFeed",
+      "methodName": "toCreateFeed",
+      "description": "Grants permission to create a new feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateFeed.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDictionary",
+      "methodName": "toDeleteDictionary",
+      "description": "Grants permission to delete a dictionary",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteDictionary.html"
+    },
+    {
+      "name": "DeleteFeed",
+      "methodName": "toDeleteFeed",
+      "description": "Grants permission to delete a feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteFeed.html"
+    },
+    {
+      "name": "DeleteFeedPolicy",
+      "methodName": "toDeleteFeedPolicy",
+      "description": "Grants permission to delete the resource-based policy of a feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteFeedPolicy.html"
+    },
+    {
+      "name": "DisassociateFeed",
+      "methodName": "toDisassociateFeed",
+      "description": "Grants permission to disassociate a feed from an AWS resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DisassociateFeed.html"
+    },
+    {
+      "name": "ExportDictionaryEntries",
+      "methodName": "toExportDictionaryEntries",
+      "description": "Grants permission to export dictionary entries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ExportDictionaryEntries.html"
+    },
+    {
+      "name": "GetDictionary",
+      "methodName": "toGetDictionary",
+      "description": "Grants permission to get dictionary details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetDictionary.html"
+    },
+    {
+      "name": "GetFeed",
+      "methodName": "toGetFeed",
+      "description": "Grants permission to get feed details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetFeed.html"
+    },
+    {
+      "name": "GetFeedPolicy",
+      "methodName": "toGetFeedPolicy",
+      "description": "Grants permission to get the resource-based policy of a feed",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetFeedPolicy.html"
+    },
+    {
+      "name": "GetMetadata",
+      "methodName": "toGetMetadata",
+      "description": "Grants permission to retrieve metadata for a specific feed output",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetMetadata.html"
+    },
+    {
+      "name": "ListDictionaries",
+      "methodName": "toListDictionaries",
+      "description": "Grants permission to list dictionaries in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListDictionaries.html"
+    },
+    {
+      "name": "ListFeeds",
+      "methodName": "toListFeeds",
+      "description": "Grants permission to list feeds in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListFeeds.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags on a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutFeedPolicy",
+      "methodName": "toPutFeedPolicy",
+      "description": "Grants permission to put a resource-based policy on a feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_PutFeedPolicy.html"
+    },
+    {
+      "name": "PutMedia",
+      "methodName": "toPutMedia",
+      "description": "Grants permission to upload media data for a specified feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_PutMedia.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDictionary",
+      "methodName": "toUpdateDictionary",
+      "description": "Grants permission to update dictionary configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UpdateDictionary.html"
+    },
+    {
+      "name": "UpdateFeed",
+      "methodName": "toUpdateFeed",
+      "description": "Grants permission to update feed configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UpdateFeed.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "dictionary",
+      "methodName": "onDictionary",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/userguide/elemental-inference-configuration.html",
+      "arn": "arn:${Partition}:elemental-inference:${Region}:${Account}:dictionary/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_elementalinference",
+        "interface": "IDictionaryRef",
+        "property": "dictionaryRef",
+        "arn": "dictionaryArn"
+      }
+    },
+    {
+      "name": "feed",
+      "methodName": "onFeed",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/userguide/elemental-inference-configuration.html",
+      "arn": "arn:${Partition}:elemental-inference:${Region}:${Account}:feed/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_elementalinference",
+        "interface": "IFeedRef",
+        "property": "feedRef",
+        "arn": "feedArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDictionary",
+        "toCreateFeed",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateFeed",
+        "toDeleteDictionary",
+        "toDeleteFeed",
+        "toDeleteFeedPolicy",
+        "toDisassociateFeed",
+        "toExportDictionaryEntries",
+        "toGetDictionary",
+        "toGetFeed",
+        "toGetFeedPolicy",
+        "toGetMetadata",
+        "toPutFeedPolicy",
+        "toPutMedia",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDictionary",
+        "toUpdateFeed"
+      ],
+      "relatedResourceTypes": [
+        "dictionary",
+        "feed"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDictionary",
+        "toCreateFeed",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

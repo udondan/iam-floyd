@@ -1,0 +1,100 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TrustAnchors",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListTrustAnchors",
+        "rolesanywhere:GetTrustAnchor",
+        "rolesanywhere:CreateTrustAnchor",
+        "rolesanywhere:DeleteTrustAnchor",
+        "rolesanywhere:DisableTrustAnchor",
+        "rolesanywhere:EnableTrustAnchor",
+        "rolesanywhere:UpdateTrustAnchor"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:trust-anchor/*"
+      ]
+    },
+    {
+      "Sid": "Profiles",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListProfiles",
+        "rolesanywhere:GetProfile",
+        "rolesanywhere:CreateProfile",
+        "rolesanywhere:DeleteProfile",
+        "rolesanywhere:DisableProfile",
+        "rolesanywhere:EnableProfile",
+        "rolesanywhere:UpdateProfile"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:profile/*"
+      ]
+    },
+    {
+      "Sid": "CRLs",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListCrls",
+        "rolesanywhere:GetCrl",
+        "rolesanywhere:DeleteCrl",
+        "rolesanywhere:DisableCrl",
+        "rolesanywhere:EnableCrl",
+        "rolesanywhere:ImportCrl",
+        "rolesanywhere:UpdateCrl"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:crl/*"
+      ]
+    },
+    {
+      "Sid": "Subjects",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListSubjects",
+        "rolesanywhere:GetSubject"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:subject/*"
+      ]
+    },
+    {
+      "Sid": "OtherRolesAnywherePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:PutAttributeMapping",
+        "rolesanywhere:DeleteAttributeMapping",
+        "rolesanywhere:ResetNotificationSettings",
+        "rolesanywhere:ListTagsForResource",
+        "rolesanywhere:TagResource",
+        "rolesanywhere:UntagResource",
+        "rolesanywhere:PutNotificationSettings"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PassRoleToRolesAnywhere",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "rolesanywhere.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateRolesAnywhereServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "rolesanywhere.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

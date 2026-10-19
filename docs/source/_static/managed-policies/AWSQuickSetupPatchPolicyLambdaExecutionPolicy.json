@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageSSMAssociations",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeAssociationExecutions",
+        "ssm:UpdateAssociation",
+        "ssm:DescribeAssociation"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:association/*",
+        "arn:aws:ssm:*:*:document/AWSQuickSetup-*",
+        "arn:aws:ssm:*:*:document/AWSQuickSetupType-*"
+      ]
+    },
+    {
+      "Sid": "PassQuickSetupAutomationRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/AWS-QuickSetup-AutomationRole-*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ssm.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

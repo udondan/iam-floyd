@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowRDS",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBSecurityGroup",
+        "rds:DeleteDBSecurityGroup",
+        "rds:AuthorizeDBSecurityGroupIngress",
+        "rds:CreateDBInstance",
+        "rds:ModifyDBInstance",
+        "rds:DeleteDBInstance"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:secgrp:awseb-e-*",
+        "arn:aws:rds:*:*:db:*"
+      ]
+    }
+  ]
+}

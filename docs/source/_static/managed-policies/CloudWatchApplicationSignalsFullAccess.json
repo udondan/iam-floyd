@@ -1,0 +1,216 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchApplicationSignalsFullAccessPermissions",
+      "Effect": "Allow",
+      "Action": "application-signals:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsAlarmsPermissions",
+      "Effect": "Allow",
+      "Action": "cloudwatch:DescribeAlarms",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsMetricsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:ListMetrics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsLogsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "logs:GetQueryResults",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsSyntheticsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "synthetics:DescribeCanaries",
+        "synthetics:DescribeCanariesLastRun",
+        "synthetics:GetCanaryRuns"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsRumPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "rum:BatchCreateRumMetricDefinitions",
+        "rum:BatchDeleteRumMetricDefinitions",
+        "rum:BatchGetRumMetricDefinitions",
+        "rum:GetAppMonitor",
+        "rum:GetAppMonitorData",
+        "rum:ListAppMonitors",
+        "rum:PutRumMetricsDestination",
+        "rum:UpdateRumMetricDefinition"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsXrayTracePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "xray:GetTraceSummaries"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsXrayPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "xray:StartTraceRetrieval",
+        "xray:ListRetrievedTraces",
+        "xray:BatchGetTraces",
+        "xray:GetTraceSegmentDestination"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "application-signals.cloudwatch.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsPutMetricAlarmPermissions",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricAlarm",
+      "Resource": [
+        "arn:aws:cloudwatch:*:*:alarm:SLO-AttainmentGoalAlarm-*",
+        "arn:aws:cloudwatch:*:*:alarm:SLO-WarningAlarm-*",
+        "arn:aws:cloudwatch:*:*:alarm:SLI-HealthAlarm-*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCreateServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "application-signals.cloudwatch.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsGetRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsSnsWritePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sns:CreateTopic",
+        "sns:Subscribe"
+      ],
+      "Resource": "arn:aws:sns:*:*:cloudwatch-application-signals-*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsSnsReadPermissions",
+      "Effect": "Allow",
+      "Action": "sns:ListTopics",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:GetChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:ListChannels"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsServiceQuotaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": [
+        "arn:aws:servicequotas:*:*:s3/*",
+        "arn:aws:servicequotas:*:*:dynamodb/*",
+        "arn:aws:servicequotas:*:*:kinesis/*",
+        "arn:aws:servicequotas:*:*:sns/*",
+        "arn:aws:servicequotas:*:*:bedrock/*",
+        "arn:aws:servicequotas:*:*:lambda/*",
+        "arn:aws:servicequotas:*:*:fargate/*",
+        "arn:aws:servicequotas:*:*:elasticloadbalancing/*",
+        "arn:aws:servicequotas:*:*:ec2/*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsResourceExplorerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:Search"
+      ],
+      "Resource": [
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignals/service-view",
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignalsOrgScopeProd/service-view"
+      ]
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsResourceExplorerSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "resource-explorer-2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsResourceExplorerCreateIndexPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:CreateIndex"
+      ],
+      "Resource": "arn:aws:resource-explorer-2:*:*:index/*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsOAMAttachedLinksPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "oam:ListAttachedLinks"
+      ],
+      "Resource": "arn:aws:oam:*:*:sink/*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsOAMListSinksPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "oam:ListSinks"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

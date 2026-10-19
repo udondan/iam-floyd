@@ -1,0 +1,53 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PanoramaS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucket*",
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*aws-panorama*"
+      ]
+    },
+    {
+      "Sid": "PanoramaCLoudWatchPutDashboard",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutDashboard",
+      "Resource": [
+        "arn:aws:cloudwatch::*:dashboard/panorama*"
+      ]
+    },
+    {
+      "Sid": "PanoramaCloudWatchPutMetricData",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*"
+    },
+    {
+      "Sid": "PanoramaGreenGrassCloudWatchAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents",
+        "logs:CreateLogGroup"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/greengrass/*"
+    },
+    {
+      "Sid": "PanoramaAccess",
+      "Effect": "Allow",
+      "Action": [
+        "panorama:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

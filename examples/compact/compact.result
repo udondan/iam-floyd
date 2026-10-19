@@ -1,0 +1,14 @@
+{
+    "Action": [
+        "ec2:Describe*",
+        "ec2:ExportClientVpnClientC*",
+        "ec2:ExportVerifiedAccessInstanceClientConfiguration",
+        "ec2:Get*",
+        "ec2:List*",
+        "ec2:Search*",
+        "ec2:StartDeclarativePoliciesReport",
+        "ec2:ValidateSecurityGroupQuotasForInterface"
+    ],
+    "Resource": "*",
+    "Effect": "Allow"
+}

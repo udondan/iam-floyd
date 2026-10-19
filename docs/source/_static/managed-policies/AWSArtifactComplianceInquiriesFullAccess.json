@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListAndCreateComplianceInquiryActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:ListComplianceInquiries",
+        "artifact:CreateComplianceInquiry"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ComplianceInquiryActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:ListComplianceInquiryQueries",
+        "artifact:GetComplianceInquiryMetadata",
+        "artifact:ExportComplianceInquiry",
+        "artifact:PutComplianceInquiryFeedback"
+      ],
+      "Resource": "arn:aws:artifact:*:*:compliance-inquiry/*"
+    },
+    {
+      "Sid": "NotificationConfigurationListActions",
+      "Effect": "Allow",
+      "Action": [
+        "notifications:ListNotificationConfigurations",
+        "notifications:ListChannels",
+        "notifications:ListEventRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "NotificationConfigurationContactReadActions",
+      "Effect": "Allow",
+      "Action": [
+        "notifications-contacts:GetEmailContact"
+      ],
+      "Resource": "arn:aws:notifications-contacts::*:emailcontact/*"
+    }
+  ]
+}

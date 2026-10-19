@@ -1,0 +1,79 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCreateEniInAnySubnet",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:subnet/*"
+    },
+    {
+      "Sid": "AllowCreateEniWithSecurityGroups",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:security-group/*"
+    },
+    {
+      "Sid": "AllowCreateEniWithBedrockManagedRequestTag",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "AmazonBedrockAgentCoreManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/AmazonBedrockAgentCoreManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowTagEniOnCreate",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface"
+        }
+      }
+    },
+    {
+      "Sid": "AllowManageEniWhenBedrockManaged",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:UnassignPrivateIpAddresses",
+        "ec2:CreateNetworkInterfacePermission"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonBedrockAgentCoreManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowGetSecurityGroupsForVpc",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:GetSecurityGroupsForVPC"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc/*"
+    },
+    {
+      "Sid": "AllowDescribeNetworkingResources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

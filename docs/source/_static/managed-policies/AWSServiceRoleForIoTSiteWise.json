@@ -1,0 +1,52 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSiteWiseReadGreenGrass",
+      "Effect": "Allow",
+      "Action": [
+        "greengrass:GetAssociatedRole",
+        "greengrass:GetCoreDefinition",
+        "greengrass:GetCoreDefinitionVersion",
+        "greengrass:GetGroup",
+        "greengrass:GetGroupVersion"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSiteWiseAccessLogGroup",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/iotsitewise*"
+    },
+    {
+      "Sid": "AllowSiteWiseAccessLog",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/iotsitewise*:log-stream:*"
+    },
+    {
+      "Sid": "AllowSiteWiseAccessSiteWiseManagedWorkspaceInTwinMaker",
+      "Effect": "Allow",
+      "Action": [
+        "iottwinmaker:GetWorkspace",
+        "iottwinmaker:ExecuteQuery"
+      ],
+      "Resource": "arn:aws:iottwinmaker:*:*:workspace/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "iottwinmaker:linkedServices": [
+            "IOTSITEWISE"
+          ]
+        }
+      }
+    }
+  ]
+}

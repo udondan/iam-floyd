@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Resource": "*",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeletePlacementGroup",
+        "ec2:DescribePlacementGroups"
+      ]
+    },
+    {
+      "Resource": "arn:aws:ec2:*:*:placement-group/EMR_*",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreatePlacementGroup"
+      ]
+    }
+  ]
+}

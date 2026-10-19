@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "filename": "ds-data",
+  "className": "DsData",
+  "name": "ds-data",
+  "servicePrefix": "ds-data",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ds-data.html",
+  "accessLevelList": {
+    "Write": [
+      "AddGroupMember",
+      "CreateGroup",
+      "CreateUser",
+      "DeleteGroup",
+      "DeleteUser",
+      "DisableUser",
+      "RemoveGroupMember",
+      "UpdateGroup",
+      "UpdateUser"
+    ],
+    "Read": [
+      "DescribeGroup",
+      "DescribeUser",
+      "SearchGroups",
+      "SearchUsers"
+    ],
+    "List": [
+      "ListGroupMembers",
+      "ListGroups",
+      "ListGroupsForMember",
+      "ListUsers"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddGroupMember",
+      "methodName": "toAddGroupMember",
+      "description": "Grants permission to add a member to a group on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_AddGroupMember.html"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a group on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_CreateUser.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a group on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DescribeGroup",
+      "methodName": "toDescribeGroup",
+      "description": "Grants permission to describe a group on a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DescribeGroup.html"
+    },
+    {
+      "name": "DescribeUser",
+      "methodName": "toDescribeUser",
+      "description": "Grants permission to describe a user on a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DescribeUser.html"
+    },
+    {
+      "name": "DisableUser",
+      "methodName": "toDisableUser",
+      "description": "Grants permission to disable a user on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_DisableUser.html"
+    },
+    {
+      "name": "ListGroupMembers",
+      "methodName": "toListGroupMembers",
+      "description": "Grants permission to list members in a group on a directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListGroupMembers.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list groups on a directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListGroupsForMember",
+      "methodName": "toListGroupsForMember",
+      "description": "Grants permission to list the groups that a member is in on a directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListGroupsForMember.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list users on a directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_ListUsers.html"
+    },
+    {
+      "name": "RemoveGroupMember",
+      "methodName": "toRemoveGroupMember",
+      "description": "Grants permission to remove a member from a group on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_RemoveGroupMember.html"
+    },
+    {
+      "name": "SearchGroups",
+      "methodName": "toSearchGroups",
+      "description": "Grants permission to search for groups on a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_SearchGroups.html"
+    },
+    {
+      "name": "SearchUsers",
+      "methodName": "toSearchUsers",
+      "description": "Grants permission to search for users on a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_SearchUsers.html"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update a group on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update a user on a directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/API_UpdateUser.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "directory",
+      "methodName": "onDirectory",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/IAM_Auth_Access_Overview.html",
+      "arn": "arn:${Partition}:ds:${Region}:${Account}:directory/${DirectoryId}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the AWS DS Resource being acted upon",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddGroupMember",
+        "toCreateGroup",
+        "toCreateUser",
+        "toDeleteGroup",
+        "toDeleteUser",
+        "toDescribeGroup",
+        "toDescribeUser",
+        "toDisableUser",
+        "toListGroupMembers",
+        "toListGroups",
+        "toListGroupsForMember",
+        "toListUsers",
+        "toRemoveGroupMember",
+        "toSearchGroups",
+        "toSearchUsers",
+        "toUpdateGroup",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [
+        "directory"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ds-data:Identifier",
+      "methodName": "ifIdentifier",
+      "description": "Filters access by the type of identifier provided in the request (i.e. SAM Account Name)",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_dsdata-condition-keys.html#dsdata_condition-Identifier",
+      "relatedActionMethods": [
+        "toAddGroupMember",
+        "toCreateGroup",
+        "toCreateUser",
+        "toDeleteGroup",
+        "toDeleteUser",
+        "toDescribeGroup",
+        "toDescribeUser",
+        "toDisableUser",
+        "toListGroupMembers",
+        "toListGroupsForMember",
+        "toRemoveGroupMember",
+        "toUpdateGroup",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Identifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ds-data:MemberName",
+      "methodName": "ifMemberName",
+      "description": "Filters access by the directory SAM Account Name included in the MemberName input of the request",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_dsdata-condition-keys.html#dsdata_condition-MemberName",
+      "relatedActionMethods": [
+        "toAddGroupMember",
+        "toRemoveGroupMember"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MemberName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ds-data:MemberRealm",
+      "methodName": "ifMemberRealm",
+      "description": "Filters access by the directory realm name included in the MemberRealm input of the request",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_dsdata-condition-keys.html#dsdata_condition-MemberRealm",
+      "relatedActionMethods": [
+        "toAddGroupMember",
+        "toListGroupMembers",
+        "toListGroupsForMember",
+        "toRemoveGroupMember"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MemberRealm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ds-data:Realm",
+      "methodName": "ifRealm",
+      "description": "Filters access by the directory realm name for the request",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_dsdata-condition-keys.html#dsdata_condition-Realm",
+      "relatedActionMethods": [
+        "toAddGroupMember",
+        "toCreateGroup",
+        "toCreateUser",
+        "toDeleteGroup",
+        "toDeleteUser",
+        "toDescribeGroup",
+        "toDescribeUser",
+        "toDisableUser",
+        "toListGroupMembers",
+        "toListGroups",
+        "toListGroupsForMember",
+        "toListUsers",
+        "toRemoveGroupMember",
+        "toSearchGroups",
+        "toSearchUsers",
+        "toUpdateGroup",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Realm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ds-data:SAMAccountName",
+      "methodName": "ifSAMAccountName",
+      "description": "Filters access by the directory SAM Account Name included in the SAMAccountName input of the request",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_dsdata-condition-keys.html#dsdata_condition-SAMAccountName",
+      "relatedActionMethods": [
+        "toAddGroupMember",
+        "toCreateGroup",
+        "toCreateUser",
+        "toDeleteGroup",
+        "toDeleteUser",
+        "toDescribeGroup",
+        "toDescribeUser",
+        "toDisableUser",
+        "toListGroupMembers",
+        "toListGroupsForMember",
+        "toRemoveGroupMember",
+        "toUpdateGroup",
+        "toUpdateUser"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SAMAccountName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

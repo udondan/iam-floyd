@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSTransformCustomManageTransformations",
+      "Effect": "Allow",
+      "Action": [
+        "transform-custom:ConverseStream",
+        "transform-custom:CreateTransformationPackageUrl",
+        "transform-custom:CompleteTransformationPackageUpload",
+        "transform-custom:DeleteTransformationPackage",
+        "transform-custom:GetTransformationPackageUrl",
+        "transform-custom:ListTransformationPackageMetadata",
+        "transform-custom:ExecuteTransformation",
+        "transform-custom:ListKnowledgeItems",
+        "transform-custom:GetKnowledgeItem",
+        "transform-custom:DeleteKnowledgeItem",
+        "transform-custom:UpdateKnowledgeItemConfiguration",
+        "transform-custom:UpdateKnowledgeItemStatus",
+        "transform-custom:GetCampaign",
+        "transform-custom:UpdateCampaignRepositoryStatus",
+        "transform-custom:UpdateCampaign",
+        "transform-custom:ListTagsForResource",
+        "transform-custom:TagResource",
+        "transform-custom:UntagResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/transform-custom.amazonaws.com/AWSServiceRoleForAWSTransformCustom"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "transform-custom.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

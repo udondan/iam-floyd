@@ -1,0 +1,960 @@
+{
+  "schemaVersion": 1,
+  "filename": "finspace",
+  "className": "Finspace",
+  "name": "finspace",
+  "servicePrefix": "finspace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_finspace.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateEnvironment",
+      "CreateKxChangeset",
+      "CreateKxCluster",
+      "CreateKxDatabase",
+      "CreateKxDataview",
+      "CreateKxEnvironment",
+      "CreateKxScalingGroup",
+      "CreateKxUser",
+      "CreateKxVolume",
+      "CreateUser",
+      "DeleteEnvironment",
+      "DeleteKxCluster",
+      "DeleteKxClusterNode",
+      "DeleteKxDatabase",
+      "DeleteKxDataview",
+      "DeleteKxEnvironment",
+      "DeleteKxScalingGroup",
+      "DeleteKxUser",
+      "DeleteKxVolume",
+      "LoadSampleDataSetGroupIntoEnvironment",
+      "ResetUserPassword",
+      "TagResource",
+      "UntagResource",
+      "UpdateEnvironment",
+      "UpdateKxClusterCodeConfiguration",
+      "UpdateKxClusterDatabases",
+      "UpdateKxDatabase",
+      "UpdateKxDataview",
+      "UpdateKxEnvironment",
+      "UpdateKxEnvironmentNetwork",
+      "UpdateKxUser",
+      "UpdateKxVolume",
+      "UpdateUser",
+      "ConnectKxCluster",
+      "MountKxDatabase"
+    ],
+    "Read": [
+      "GetEnvironment",
+      "GetKxChangeset",
+      "GetKxCluster",
+      "GetKxConnectionString",
+      "GetKxDatabase",
+      "GetKxDataview",
+      "GetKxEnvironment",
+      "GetKxScalingGroup",
+      "GetKxUser",
+      "GetKxVolume",
+      "GetLoadSampleDataSetGroupIntoEnvironmentStatus",
+      "GetUser"
+    ],
+    "List": [
+      "ListEnvironments",
+      "ListKxChangesets",
+      "ListKxClusterNodes",
+      "ListKxClusters",
+      "ListKxDatabases",
+      "ListKxDataviews",
+      "ListKxEnvironments",
+      "ListKxScalingGroups",
+      "ListKxUsers",
+      "ListKxVolumes",
+      "ListTagsForResource",
+      "ListUsers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create a FinSpace environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateEnvironment.html"
+    },
+    {
+      "name": "CreateKxChangeset",
+      "methodName": "toCreateKxChangeset",
+      "description": "Grants permission to create a changeset for a kdb database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxChangeset.html"
+    },
+    {
+      "name": "CreateKxCluster",
+      "methodName": "toCreateKxCluster",
+      "description": "Grants permission to create a cluster in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxCluster.html"
+    },
+    {
+      "name": "CreateKxDatabase",
+      "methodName": "toCreateKxDatabase",
+      "description": "Grants permission to create a kdb database in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxDatabase.html"
+    },
+    {
+      "name": "CreateKxDataview",
+      "methodName": "toCreateKxDataview",
+      "description": "Grants permission to create a dataview in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxDataview.html"
+    },
+    {
+      "name": "CreateKxEnvironment",
+      "methodName": "toCreateKxEnvironment",
+      "description": "Grants permission to create a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxEnvironment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateKxScalingGroup",
+      "methodName": "toCreateKxScalingGroup",
+      "description": "Grants permission to create a scaling group in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxScalingGroup.html"
+    },
+    {
+      "name": "CreateKxUser",
+      "methodName": "toCreateKxUser",
+      "description": "Grants permission to create a user in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxUser.html"
+    },
+    {
+      "name": "CreateKxVolume",
+      "methodName": "toCreateKxVolume",
+      "description": "Grants permission to create a volume in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateKxVolume.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a FinSpace user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete a FinSpace environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteKxCluster",
+      "methodName": "toDeleteKxCluster",
+      "description": "Grants permission to delete a kdb cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxCluster.html"
+    },
+    {
+      "name": "DeleteKxClusterNode",
+      "methodName": "toDeleteKxClusterNode",
+      "description": "Grants permission to delete a node from a kdb cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxClusterNode.html"
+    },
+    {
+      "name": "DeleteKxDatabase",
+      "methodName": "toDeleteKxDatabase",
+      "description": "Grants permission to delete a kdb database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxDatabase.html"
+    },
+    {
+      "name": "DeleteKxDataview",
+      "methodName": "toDeleteKxDataview",
+      "description": "Grants permission to delete a dataview in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxDataview.html"
+    },
+    {
+      "name": "DeleteKxEnvironment",
+      "methodName": "toDeleteKxEnvironment",
+      "description": "Grants permission to delete a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxEnvironment.html"
+    },
+    {
+      "name": "DeleteKxScalingGroup",
+      "methodName": "toDeleteKxScalingGroup",
+      "description": "Grants permission to delete a scaling group in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxScalingGroup.html"
+    },
+    {
+      "name": "DeleteKxUser",
+      "methodName": "toDeleteKxUser",
+      "description": "Grants permission to delete a kdb user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxUser.html"
+    },
+    {
+      "name": "DeleteKxVolume",
+      "methodName": "toDeleteKxVolume",
+      "description": "Grants permission to delete a volume in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxVolume.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to describe a FinSpace environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetKxChangeset",
+      "methodName": "toGetKxChangeset",
+      "description": "Grants permission to describe a changeset for a kdb database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxChangeset.html"
+    },
+    {
+      "name": "GetKxCluster",
+      "methodName": "toGetKxCluster",
+      "description": "Grants permission to describe a cluster in a managed kdb environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxCluster.html"
+    },
+    {
+      "name": "GetKxConnectionString",
+      "methodName": "toGetKxConnectionString",
+      "description": "Grants permission to retrieve a connection string for kdb clusters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxConnectionString.html"
+    },
+    {
+      "name": "GetKxDatabase",
+      "methodName": "toGetKxDatabase",
+      "description": "Grants permission to describe a kdb database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxDatabase.html"
+    },
+    {
+      "name": "GetKxDataview",
+      "methodName": "toGetKxDataview",
+      "description": "Grants permission to describe a databiew in a managed kdb environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxDataview.html"
+    },
+    {
+      "name": "GetKxEnvironment",
+      "methodName": "toGetKxEnvironment",
+      "description": "Grants permission to describe a managed kdb environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxEnvironment.html"
+    },
+    {
+      "name": "GetKxScalingGroup",
+      "methodName": "toGetKxScalingGroup",
+      "description": "Grants permission to describe a scaling group in a managed kdb environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxScalingGroup.html"
+    },
+    {
+      "name": "GetKxUser",
+      "methodName": "toGetKxUser",
+      "description": "Grants permission to describe a kdb user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxUser.html"
+    },
+    {
+      "name": "GetKxVolume",
+      "methodName": "toGetKxVolume",
+      "description": "Grants permission to describe a volume in a managed kdb environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_GetKxVolume.html"
+    },
+    {
+      "name": "GetLoadSampleDataSetGroupIntoEnvironmentStatus",
+      "methodName": "toGetLoadSampleDataSetGroupIntoEnvironmentStatus",
+      "description": "Grants permission to request status of the loading of sample data bundle",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "GetUser",
+      "methodName": "toGetUser",
+      "description": "Grants permission to describe a FinSpace user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list FinSpace environments in the AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListKxChangesets",
+      "methodName": "toListKxChangesets",
+      "description": "Grants permission to list changesets for a kdb database",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxChangesets.html"
+    },
+    {
+      "name": "ListKxClusterNodes",
+      "methodName": "toListKxClusterNodes",
+      "description": "Grants permission to list cluster nodes in a managed kdb environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxClusterNodes.html"
+    },
+    {
+      "name": "ListKxClusters",
+      "methodName": "toListKxClusters",
+      "description": "Grants permission to list clusters in a managed kdb environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxClusters.html"
+    },
+    {
+      "name": "ListKxDatabases",
+      "methodName": "toListKxDatabases",
+      "description": "Grants permission to list kdb databases in a managed kdb environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxDatabases.html"
+    },
+    {
+      "name": "ListKxDataviews",
+      "methodName": "toListKxDataviews",
+      "description": "Grants permission to list dataviews in a database",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxDataviews.html"
+    },
+    {
+      "name": "ListKxEnvironments",
+      "methodName": "toListKxEnvironments",
+      "description": "Grants permission to list managed kdb environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxEnvironments.html"
+    },
+    {
+      "name": "ListKxScalingGroups",
+      "methodName": "toListKxScalingGroups",
+      "description": "Grants permission to list scaling groups in a managed kdb environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxScalingGroups.html"
+    },
+    {
+      "name": "ListKxUsers",
+      "methodName": "toListKxUsers",
+      "description": "Grants permission to list users in a managed kdb environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxUsers.html"
+    },
+    {
+      "name": "ListKxVolumes",
+      "methodName": "toListKxVolumes",
+      "description": "Grants permission to list volumes in a managed kdb environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListKxVolumes.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list FinSpace users in an environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "LoadSampleDataSetGroupIntoEnvironment",
+      "methodName": "toLoadSampleDataSetGroupIntoEnvironment",
+      "description": "Grants permission to load sample data bundle into your FinSpace environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "ResetUserPassword",
+      "methodName": "toResetUserPassword",
+      "description": "Grants permission to reset the password for a FinSpace user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update a FinSpace environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateKxClusterCodeConfiguration",
+      "methodName": "toUpdateKxClusterCodeConfiguration",
+      "description": "Grants permission to update code configuration for a cluster in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxClusterCodeConfiguration.html"
+    },
+    {
+      "name": "UpdateKxClusterDatabases",
+      "methodName": "toUpdateKxClusterDatabases",
+      "description": "Grants permission to update databases for a cluster in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxClusterDatabases.html"
+    },
+    {
+      "name": "UpdateKxDatabase",
+      "methodName": "toUpdateKxDatabase",
+      "description": "Grants permission to update a kdb database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxDatabase.html"
+    },
+    {
+      "name": "UpdateKxDataview",
+      "methodName": "toUpdateKxDataview",
+      "description": "Grants permission to update a dataview in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxDataview.html"
+    },
+    {
+      "name": "UpdateKxEnvironment",
+      "methodName": "toUpdateKxEnvironment",
+      "description": "Grants permission to update a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxEnvironment.html"
+    },
+    {
+      "name": "UpdateKxEnvironmentNetwork",
+      "methodName": "toUpdateKxEnvironmentNetwork",
+      "description": "Grants permission to update the network for a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxEnvironmentNetwork.html"
+    },
+    {
+      "name": "UpdateKxUser",
+      "methodName": "toUpdateKxUser",
+      "description": "Grants permission to update a kdb user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxUser.html"
+    },
+    {
+      "name": "UpdateKxVolume",
+      "methodName": "toUpdateKxVolume",
+      "description": "Grants permission to update a volume in a managed kdb environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/management-api/API_UpdateKxVolume.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update a FinSpace user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+    },
+    {
+      "name": "ConnectKxCluster",
+      "methodName": "toConnectKxCluster",
+      "description": "Grants permission to connect to a kdb cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/interacting-with-kdb-clusters.html"
+    },
+    {
+      "name": "MountKxDatabase",
+      "methodName": "toMountKxDatabase",
+      "description": "Grants permission to mount a database to a kdb cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-managed-kdb-db.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:environment/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_finspace",
+        "interface": "IEnvironmentRef",
+        "property": "environmentRef",
+        "arn": "environmentArn"
+      }
+    },
+    {
+      "name": "kxCluster",
+      "methodName": "onKxCluster",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}/kxCluster/${KxCluster}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KxCluster",
+          "name": "kxCluster",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kxDatabase",
+      "methodName": "onKxDatabase",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}/kxDatabase/${KxDatabase}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KxDatabase",
+          "name": "kxDatabase",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kxDataview",
+      "methodName": "onKxDataview",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}/kxDatabase/${KxDatabase}/kxDataview/${KxDataview}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KxDatabase",
+          "name": "kxDatabase",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KxDataview",
+          "name": "kxDataview",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kxEnvironment",
+      "methodName": "onKxEnvironment",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kxScalingGroup",
+      "methodName": "onKxScalingGroup",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}/kxScalingGroup/${KxScalingGroup}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KxScalingGroup",
+          "name": "kxScalingGroup",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kxUser",
+      "methodName": "onKxUser",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}/kxUser/${UserName}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UserName",
+          "name": "userName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kxVolume",
+      "methodName": "onKxVolume",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:kxEnvironment/${EnvironmentId}/kxVolume/${KxVolume}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KxVolume",
+          "name": "kxVolume",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "user",
+      "methodName": "onUser",
+      "url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html",
+      "arn": "arn:${Partition}:finspace:${Region}:${Account}:user/${UserId}",
+      "placeholders": [
+        {
+          "placeholder": "UserId",
+          "name": "userId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toCreateKxCluster",
+        "toCreateKxDatabase",
+        "toCreateKxDataview",
+        "toCreateKxEnvironment",
+        "toCreateKxScalingGroup",
+        "toCreateKxUser",
+        "toCreateKxVolume",
+        "toCreateUser",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toCreateKxChangeset",
+        "toCreateKxCluster",
+        "toCreateKxDatabase",
+        "toCreateKxDataview",
+        "toCreateKxScalingGroup",
+        "toCreateKxUser",
+        "toCreateKxVolume",
+        "toCreateUser",
+        "toDeleteEnvironment",
+        "toDeleteKxCluster",
+        "toDeleteKxClusterNode",
+        "toDeleteKxDatabase",
+        "toDeleteKxDataview",
+        "toDeleteKxEnvironment",
+        "toDeleteKxScalingGroup",
+        "toDeleteKxUser",
+        "toDeleteKxVolume",
+        "toGetEnvironment",
+        "toGetKxChangeset",
+        "toGetKxCluster",
+        "toGetKxConnectionString",
+        "toGetKxDatabase",
+        "toGetKxDataview",
+        "toGetKxEnvironment",
+        "toGetKxScalingGroup",
+        "toGetKxUser",
+        "toGetKxVolume",
+        "toGetLoadSampleDataSetGroupIntoEnvironmentStatus",
+        "toGetUser",
+        "toListEnvironments",
+        "toListKxChangesets",
+        "toListKxClusterNodes",
+        "toListKxClusters",
+        "toListKxDatabases",
+        "toListKxDataviews",
+        "toListKxScalingGroups",
+        "toListKxUsers",
+        "toListKxVolumes",
+        "toListTagsForResource",
+        "toListUsers",
+        "toLoadSampleDataSetGroupIntoEnvironment",
+        "toResetUserPassword",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEnvironment",
+        "toUpdateKxClusterCodeConfiguration",
+        "toUpdateKxClusterDatabases",
+        "toUpdateKxDatabase",
+        "toUpdateKxDataview",
+        "toUpdateKxEnvironment",
+        "toUpdateKxEnvironmentNetwork",
+        "toUpdateKxUser",
+        "toUpdateKxVolume",
+        "toUpdateUser",
+        "toConnectKxCluster",
+        "toMountKxDatabase"
+      ],
+      "relatedResourceTypes": [
+        "environment",
+        "kxCluster",
+        "kxDatabase",
+        "kxDataview",
+        "kxEnvironment",
+        "kxScalingGroup",
+        "kxUser",
+        "kxVolume",
+        "user"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toCreateKxCluster",
+        "toCreateKxDatabase",
+        "toCreateKxDataview",
+        "toCreateKxEnvironment",
+        "toCreateKxScalingGroup",
+        "toCreateKxUser",
+        "toCreateKxVolume",
+        "toCreateUser",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

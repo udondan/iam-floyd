@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": 1,
+  "filename": "cognito-idp",
+  "className": "CognitoIdp",
+  "name": "cognito-idp",
+  "servicePrefix": "cognito-idp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cognito-idp.html",
+  "accessLevelList": {
+    "Write": [
+      "AddCustomAttributes",
+      "AddUserPoolClientSecret",
+      "AdminAddUserToGroup",
+      "AdminConfirmSignUp",
+      "AdminCreateUser",
+      "AdminDeleteSoftwareToken",
+      "AdminDeleteUser",
+      "AdminDeleteUserAttributes",
+      "AdminDisableProviderForUser",
+      "AdminDisableUser",
+      "AdminEnableUser",
+      "AdminForgetDevice",
+      "AdminInitiateAuth",
+      "AdminLinkProviderForUser",
+      "AdminRemoveUserFromGroup",
+      "AdminResetUserPassword",
+      "AdminRespondToAuthChallenge",
+      "AdminSetUserMFAPreference",
+      "AdminSetUserPassword",
+      "AdminSetUserSettings",
+      "AdminUpdateAuthEventFeedback",
+      "AdminUpdateDeviceStatus",
+      "AdminUpdateUserAttributes",
+      "AdminUserGlobalSignOut",
+      "AssociateSoftwareToken",
+      "ChangePassword",
+      "ConfirmDevice",
+      "ConfirmForgotPassword",
+      "ConfirmSignUp",
+      "CreateGroup",
+      "CreateIdentityProvider",
+      "CreateManagedLoginBranding",
+      "CreateResourceServer",
+      "CreateTerms",
+      "CreateUserImportJob",
+      "CreateUserPool",
+      "CreateUserPoolClient",
+      "CreateUserPoolDomain",
+      "CreateUserPoolReplica",
+      "DeleteGroup",
+      "DeleteIdentityProvider",
+      "DeleteManagedLoginBranding",
+      "DeleteResourceServer",
+      "DeleteTerms",
+      "DeleteUser",
+      "DeleteUserAttributes",
+      "DeleteUserPool",
+      "DeleteUserPoolClient",
+      "DeleteUserPoolClientSecret",
+      "DeleteUserPoolDomain",
+      "DeleteUserPoolReplica",
+      "ForgetDevice",
+      "ForgotPassword",
+      "GetTokensFromRefreshToken",
+      "GlobalSignOut",
+      "InitiateAuth",
+      "ResendConfirmationCode",
+      "RespondToAuthChallenge",
+      "RevokeToken",
+      "SetLogDeliveryConfiguration",
+      "SetRiskConfiguration",
+      "SetUICustomization",
+      "SetUserMFAPreference",
+      "SetUserPoolMfaConfig",
+      "SetUserSettings",
+      "SignUp",
+      "StartUserImportJob",
+      "StopUserImportJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateAuthEventFeedback",
+      "UpdateDeviceStatus",
+      "UpdateGroup",
+      "UpdateIdentityProvider",
+      "UpdateManagedLoginBranding",
+      "UpdateProvisionedLimit",
+      "UpdateResourceServer",
+      "UpdateTerms",
+      "UpdateUserAttributes",
+      "UpdateUserPool",
+      "UpdateUserPoolClient",
+      "UpdateUserPoolDomain",
+      "UpdateUserPoolReplica",
+      "VerifySoftwareToken",
+      "VerifyUserAttribute",
+      "AssociateWebACL",
+      "DisassociateWebACL"
+    ],
+    "Read": [
+      "AdminGetDevice",
+      "AdminGetUser",
+      "AdminGetUserAuthFactors",
+      "AdminListUserAuthEvents",
+      "DescribeIdentityProvider",
+      "DescribeManagedLoginBranding",
+      "DescribeManagedLoginBrandingByClient",
+      "DescribeResourceServer",
+      "DescribeRiskConfiguration",
+      "DescribeTerms",
+      "DescribeUserImportJob",
+      "DescribeUserPool",
+      "DescribeUserPoolClient",
+      "DescribeUserPoolDomain",
+      "GetCSVHeader",
+      "GetDevice",
+      "GetGroup",
+      "GetIdentityProviderByIdentifier",
+      "GetLogDeliveryConfiguration",
+      "GetProvisionedLimit",
+      "GetSigningCertificate",
+      "GetUICustomization",
+      "GetUser",
+      "GetUserAttributeVerificationCode",
+      "GetUserPoolMfaConfig",
+      "GetWebACLForResource"
+    ],
+    "List": [
+      "AdminListDevices",
+      "AdminListGroupsForUser",
+      "ListDevices",
+      "ListGroups",
+      "ListIdentityProviders",
+      "ListResourceServers",
+      "ListTagsForResource",
+      "ListTerms",
+      "ListUserImportJobs",
+      "ListUserPoolClientSecrets",
+      "ListUserPoolClients",
+      "ListUserPoolReplicas",
+      "ListUserPools",
+      "ListUsers",
+      "ListUsersInGroup",
+      "ListResourcesForWebACL"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddCustomAttributes",
+      "methodName": "toAddCustomAttributes",
+      "description": "Grants permission to add user attributes to the user pool schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html"
+    },
+    {
+      "name": "AddUserPoolClientSecret",
+      "methodName": "toAddUserPoolClientSecret",
+      "description": "Grants permission to add a new secret to a confidential client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddUserPoolClientSecret.html"
+    },
+    {
+      "name": "AdminAddUserToGroup",
+      "methodName": "toAdminAddUserToGroup",
+      "description": "Grants permission to add any user to any group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminAddUserToGroup.html"
+    },
+    {
+      "name": "AdminConfirmSignUp",
+      "methodName": "toAdminConfirmSignUp",
+      "description": "Grants permission to confirm any user's registration without a confirmation code",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html"
+    },
+    {
+      "name": "AdminCreateUser",
+      "methodName": "toAdminCreateUser",
+      "description": "Grants permission to create new users and send welcome messages via email or SMS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html"
+    },
+    {
+      "name": "AdminDeleteSoftwareToken",
+      "methodName": "toAdminDeleteSoftwareToken",
+      "description": "Grants permission to delete a user's software token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteSoftwareToken.html"
+    },
+    {
+      "name": "AdminDeleteUser",
+      "methodName": "toAdminDeleteUser",
+      "description": "Grants permission to delete any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html"
+    },
+    {
+      "name": "AdminDeleteUserAttributes",
+      "methodName": "toAdminDeleteUserAttributes",
+      "description": "Grants permission to delete attributes from any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html"
+    },
+    {
+      "name": "AdminDisableProviderForUser",
+      "methodName": "toAdminDisableProviderForUser",
+      "description": "Grants permission to unlink any user pool user from a third-party identity provider (IdP) user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableProviderForUser.html"
+    },
+    {
+      "name": "AdminDisableUser",
+      "methodName": "toAdminDisableUser",
+      "description": "Grants permission to deactivate any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html"
+    },
+    {
+      "name": "AdminEnableUser",
+      "methodName": "toAdminEnableUser",
+      "description": "Grants permission to activate any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html"
+    },
+    {
+      "name": "AdminForgetDevice",
+      "methodName": "toAdminForgetDevice",
+      "description": "Grants permission to deregister any user's devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html"
+    },
+    {
+      "name": "AdminGetDevice",
+      "methodName": "toAdminGetDevice",
+      "description": "Grants permission to get information about any user's devices",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html"
+    },
+    {
+      "name": "AdminGetUser",
+      "methodName": "toAdminGetUser",
+      "description": "Grants permission to look up any user by user name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetUser.html"
+    },
+    {
+      "name": "AdminGetUserAuthFactors",
+      "methodName": "toAdminGetUserAuthFactors",
+      "description": "Grants permission to look up any user's configured auth factors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetUserAuthFactors.html"
+    },
+    {
+      "name": "AdminInitiateAuth",
+      "methodName": "toAdminInitiateAuth",
+      "description": "Grants permission to authenticate any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+    },
+    {
+      "name": "AdminLinkProviderForUser",
+      "methodName": "toAdminLinkProviderForUser",
+      "description": "Grants permission to link any user pool user to a third-party IdP user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+    },
+    {
+      "name": "AdminListDevices",
+      "methodName": "toAdminListDevices",
+      "description": "Grants permission to list any user's remembered devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html"
+    },
+    {
+      "name": "AdminListGroupsForUser",
+      "methodName": "toAdminListGroupsForUser",
+      "description": "Grants permission to list the groups that any user belongs to",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html"
+    },
+    {
+      "name": "AdminListUserAuthEvents",
+      "methodName": "toAdminListUserAuthEvents",
+      "description": "Grants permission to lists sign-in events for any user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html"
+    },
+    {
+      "name": "AdminRemoveUserFromGroup",
+      "methodName": "toAdminRemoveUserFromGroup",
+      "description": "Grants permission to remove any user from any group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRemoveUserFromGroup.html"
+    },
+    {
+      "name": "AdminResetUserPassword",
+      "methodName": "toAdminResetUserPassword",
+      "description": "Grants permission to reset any user's password",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminResetUserPassword.html"
+    },
+    {
+      "name": "AdminRespondToAuthChallenge",
+      "methodName": "toAdminRespondToAuthChallenge",
+      "description": "Grants permission to respond to an authentication challenge during the authentication of any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html"
+    },
+    {
+      "name": "AdminSetUserMFAPreference",
+      "methodName": "toAdminSetUserMFAPreference",
+      "description": "Grants permission to set any user's preferred MFA method",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html"
+    },
+    {
+      "name": "AdminSetUserPassword",
+      "methodName": "toAdminSetUserPassword",
+      "description": "Grants permission to set any user's password",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html"
+    },
+    {
+      "name": "AdminSetUserSettings",
+      "methodName": "toAdminSetUserSettings",
+      "description": "Grants permission to set user settings for any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserSettings.html"
+    },
+    {
+      "name": "AdminUpdateAuthEventFeedback",
+      "methodName": "toAdminUpdateAuthEventFeedback",
+      "description": "Grants permission to update advanced security feedback for any user's authentication event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html"
+    },
+    {
+      "name": "AdminUpdateDeviceStatus",
+      "methodName": "toAdminUpdateDeviceStatus",
+      "description": "Grants permission to update the status of any user's remembered devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateDeviceStatus.html"
+    },
+    {
+      "name": "AdminUpdateUserAttributes",
+      "methodName": "toAdminUpdateUserAttributes",
+      "description": "Grants permission to updates any user's standard or custom attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
+    },
+    {
+      "name": "AdminUserGlobalSignOut",
+      "methodName": "toAdminUserGlobalSignOut",
+      "description": "Grants permission to sign out any user from all sessions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUserGlobalSignOut.html"
+    },
+    {
+      "name": "AssociateSoftwareToken",
+      "methodName": "toAssociateSoftwareToken",
+      "description": "Grants permission to return a unique generated shared secret key code for the user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
+    },
+    {
+      "name": "ChangePassword",
+      "methodName": "toChangePassword",
+      "description": "Grants permission to change the password for a specified user in a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ChangePassword.html"
+    },
+    {
+      "name": "ConfirmDevice",
+      "methodName": "toConfirmDevice",
+      "description": "Grants permission to confirm tracking of the device. This API call is the call that begins device tracking",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"
+    },
+    {
+      "name": "ConfirmForgotPassword",
+      "methodName": "toConfirmForgotPassword",
+      "description": "Grants permission to allow a user to enter a confirmation code to reset a forgotten password",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html"
+    },
+    {
+      "name": "ConfirmSignUp",
+      "methodName": "toConfirmSignUp",
+      "description": "Grants permission to confirm registration of a user and handles the existing alias from a previous user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create new user pool groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateIdentityProvider",
+      "methodName": "toCreateIdentityProvider",
+      "description": "Grants permission to add identity providers to user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html"
+    },
+    {
+      "name": "CreateManagedLoginBranding",
+      "methodName": "toCreateManagedLoginBranding",
+      "description": "Grants permission to create a branding settings for managed login and associate it with an app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateManagedLoginBranding.html"
+    },
+    {
+      "name": "CreateResourceServer",
+      "methodName": "toCreateResourceServer",
+      "description": "Grants permission to create and configure scopes for OAuth 2.0 resource servers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html"
+    },
+    {
+      "name": "CreateTerms",
+      "methodName": "toCreateTerms",
+      "description": "Grants permission to create terms and associate it with an app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateTerms.html"
+    },
+    {
+      "name": "CreateUserImportJob",
+      "methodName": "toCreateUserImportJob",
+      "description": "Grants permission to create user CSV import jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html"
+    },
+    {
+      "name": "CreateUserPool",
+      "methodName": "toCreateUserPool",
+      "description": "Grants permission to create and set password policy for user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateUserPoolClient",
+      "methodName": "toCreateUserPoolClient",
+      "description": "Grants permission to create user pool app clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html"
+    },
+    {
+      "name": "CreateUserPoolDomain",
+      "methodName": "toCreateUserPoolDomain",
+      "description": "Grants permission to add user pool domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolDomain.html"
+    },
+    {
+      "name": "CreateUserPoolReplica",
+      "methodName": "toCreateUserPoolReplica",
+      "description": "Grants permission to create a replica of a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolReplica.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete any empty user pool group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteIdentityProvider",
+      "methodName": "toDeleteIdentityProvider",
+      "description": "Grants permission to delete any identity provider from user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteIdentityProvider.html"
+    },
+    {
+      "name": "DeleteManagedLoginBranding",
+      "methodName": "toDeleteManagedLoginBranding",
+      "description": "Grants permission to delete the managed login branding style for any app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html"
+    },
+    {
+      "name": "DeleteResourceServer",
+      "methodName": "toDeleteResourceServer",
+      "description": "Grants permission to delete any OAuth 2.0 resource server from user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteResourceServer.html"
+    },
+    {
+      "name": "DeleteTerms",
+      "methodName": "toDeleteTerms",
+      "description": "Grants permission to delete terms for an app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteTerms.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to allow a user to delete one's self",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DeleteUserAttributes",
+      "methodName": "toDeleteUserAttributes",
+      "description": "Grants permission to delete the attributes for a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html"
+    },
+    {
+      "name": "DeleteUserPool",
+      "methodName": "toDeleteUserPool",
+      "description": "Grants permission to delete user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPool.html"
+    },
+    {
+      "name": "DeleteUserPoolClient",
+      "methodName": "toDeleteUserPoolClient",
+      "description": "Grants permission to delete any user pool app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html"
+    },
+    {
+      "name": "DeleteUserPoolClientSecret",
+      "methodName": "toDeleteUserPoolClientSecret",
+      "description": "Grants permission to delete a secret from a list of secrets associated with a client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClientSecret.html"
+    },
+    {
+      "name": "DeleteUserPoolDomain",
+      "methodName": "toDeleteUserPoolDomain",
+      "description": "Grants permission to delete any user pool domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolDomain.html"
+    },
+    {
+      "name": "DeleteUserPoolReplica",
+      "methodName": "toDeleteUserPoolReplica",
+      "description": "Grants permission to delete a replica of a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolReplica.html"
+    },
+    {
+      "name": "DescribeIdentityProvider",
+      "methodName": "toDescribeIdentityProvider",
+      "description": "Grants permission to describe any user pool identity provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html"
+    },
+    {
+      "name": "DescribeManagedLoginBranding",
+      "methodName": "toDescribeManagedLoginBranding",
+      "description": "Grants permission to get the detailed information about the branding style of managed login",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBranding.html"
+    },
+    {
+      "name": "DescribeManagedLoginBrandingByClient",
+      "methodName": "toDescribeManagedLoginBrandingByClient",
+      "description": "Grants permission to get the detailed information about the branding style of managed login associated with an appclient",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBrandingByClient.html"
+    },
+    {
+      "name": "DescribeResourceServer",
+      "methodName": "toDescribeResourceServer",
+      "description": "Grants permission to describe any OAuth 2.0 resource server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html"
+    },
+    {
+      "name": "DescribeRiskConfiguration",
+      "methodName": "toDescribeRiskConfiguration",
+      "description": "Grants permission to describe the risk configuration settings of user pools and app clients",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html"
+    },
+    {
+      "name": "DescribeTerms",
+      "methodName": "toDescribeTerms",
+      "description": "Grants permission to get the detailed information about terms for an app client",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeTerms.html"
+    },
+    {
+      "name": "DescribeUserImportJob",
+      "methodName": "toDescribeUserImportJob",
+      "description": "Grants permission to describe any user import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserImportJob.html"
+    },
+    {
+      "name": "DescribeUserPool",
+      "methodName": "toDescribeUserPool",
+      "description": "Grants permission to describe user pools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html"
+    },
+    {
+      "name": "DescribeUserPoolClient",
+      "methodName": "toDescribeUserPoolClient",
+      "description": "Grants permission to describe any user pool app client",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html"
+    },
+    {
+      "name": "DescribeUserPoolDomain",
+      "methodName": "toDescribeUserPoolDomain",
+      "description": "Grants permission to describe any user pool domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html"
+    },
+    {
+      "name": "ForgetDevice",
+      "methodName": "toForgetDevice",
+      "description": "Grants permission to forget the specified device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html"
+    },
+    {
+      "name": "ForgotPassword",
+      "methodName": "toForgotPassword",
+      "description": "Grants permission to send a message to the end user with a confirmation code that is required to change the user's password",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html"
+    },
+    {
+      "name": "GetCSVHeader",
+      "methodName": "toGetCSVHeader",
+      "description": "Grants permission to generate headers for a user import .csv file",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html"
+    },
+    {
+      "name": "GetDevice",
+      "methodName": "toGetDevice",
+      "description": "Grants permission to get the device",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html"
+    },
+    {
+      "name": "GetGroup",
+      "methodName": "toGetGroup",
+      "description": "Grants permission to describe a user pool group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html"
+    },
+    {
+      "name": "GetIdentityProviderByIdentifier",
+      "methodName": "toGetIdentityProviderByIdentifier",
+      "description": "Grants permission to correlate a user pool IdP identifier to the IdP Name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html"
+    },
+    {
+      "name": "GetLogDeliveryConfiguration",
+      "methodName": "toGetLogDeliveryConfiguration",
+      "description": "Grants permission to get the detailed activity logging configuration for a user pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html"
+    },
+    {
+      "name": "GetProvisionedLimit",
+      "methodName": "toGetProvisionedLimit",
+      "description": "Grants permission to get a provisioned limit for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetProvisionedLimit.html"
+    },
+    {
+      "name": "GetSigningCertificate",
+      "methodName": "toGetSigningCertificate",
+      "description": "Grants permission to look up signing certificates for user pools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetSigningCertificate.html"
+    },
+    {
+      "name": "GetTokensFromRefreshToken",
+      "methodName": "toGetTokensFromRefreshToken",
+      "description": "Grants permission to update user tokens with refresh tokens",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetTokensFromRefreshToken.html"
+    },
+    {
+      "name": "GetUICustomization",
+      "methodName": "toGetUICustomization",
+      "description": "Grants permission to get UI customization information for the hosted UI of any app client",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUICustomization.html"
+    },
+    {
+      "name": "GetUser",
+      "methodName": "toGetUser",
+      "description": "Grants permission to get the user attributes and metadata for a user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+    },
+    {
+      "name": "GetUserAttributeVerificationCode",
+      "methodName": "toGetUserAttributeVerificationCode",
+      "description": "Grants permission to get the user attribute verification code for the specified attribute name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserAttributeVerificationCode.html"
+    },
+    {
+      "name": "GetUserPoolMfaConfig",
+      "methodName": "toGetUserPoolMfaConfig",
+      "description": "Grants permission to look up the MFA configuration of user pools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html"
+    },
+    {
+      "name": "GlobalSignOut",
+      "methodName": "toGlobalSignOut",
+      "description": "Grants permission to sign out users from all devices",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GlobalSignOut.html"
+    },
+    {
+      "name": "InitiateAuth",
+      "methodName": "toInitiateAuth",
+      "description": "Grants permission to initiate the authentication flow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+    },
+    {
+      "name": "ListDevices",
+      "methodName": "toListDevices",
+      "description": "Grants permission to list the devices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListDevices.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list all groups in user pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListIdentityProviders",
+      "methodName": "toListIdentityProviders",
+      "description": "Grants permission to list all identity providers in user pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html"
+    },
+    {
+      "name": "ListResourceServers",
+      "methodName": "toListResourceServers",
+      "description": "Grants permission to list all resource servers in user pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListResourceServers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags that are assigned to an Amazon Cognito user pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTerms",
+      "methodName": "toListTerms",
+      "description": "Grants permission to list all terms for a user pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTerms.html"
+    },
+    {
+      "name": "ListUserImportJobs",
+      "methodName": "toListUserImportJobs",
+      "description": "Grants permission to list all user import jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html"
+    },
+    {
+      "name": "ListUserPoolClientSecrets",
+      "methodName": "toListUserPoolClientSecrets",
+      "description": "Grants permission to list all secrets associated with a client",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClientSecrets.html"
+    },
+    {
+      "name": "ListUserPoolClients",
+      "methodName": "toListUserPoolClients",
+      "description": "Grants permission to list all app clients in user pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html"
+    },
+    {
+      "name": "ListUserPoolReplicas",
+      "methodName": "toListUserPoolReplicas",
+      "description": "Grants permission to list replicas of a user pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolReplicas.html"
+    },
+    {
+      "name": "ListUserPools",
+      "methodName": "toListUserPools",
+      "description": "Grants permission to list all user pools",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list all user pool users",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html"
+    },
+    {
+      "name": "ListUsersInGroup",
+      "methodName": "toListUsersInGroup",
+      "description": "Grants permission to list the users in any group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html"
+    },
+    {
+      "name": "ResendConfirmationCode",
+      "methodName": "toResendConfirmationCode",
+      "description": "Grants permission to resend the confirmation (for confirmation of registration) to a specific user in the user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html"
+    },
+    {
+      "name": "RespondToAuthChallenge",
+      "methodName": "toRespondToAuthChallenge",
+      "description": "Grants permission to respond to the authentication challenge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html"
+    },
+    {
+      "name": "RevokeToken",
+      "methodName": "toRevokeToken",
+      "description": "Grants permission to revoke all of the access tokens generated by the specified refresh token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+    },
+    {
+      "name": "SetLogDeliveryConfiguration",
+      "methodName": "toSetLogDeliveryConfiguration",
+      "description": "Grants permission to set up or modify the detailed activity logging configuration of a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html"
+    },
+    {
+      "name": "SetRiskConfiguration",
+      "methodName": "toSetRiskConfiguration",
+      "description": "Grants permission to set risk configuration for user pools and app clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html"
+    },
+    {
+      "name": "SetUICustomization",
+      "methodName": "toSetUICustomization",
+      "description": "Grants permission to customize the hosted UI for any app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUICustomization.html"
+    },
+    {
+      "name": "SetUserMFAPreference",
+      "methodName": "toSetUserMFAPreference",
+      "description": "Grants permission to set MFA preference for the user in the userpool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html"
+    },
+    {
+      "name": "SetUserPoolMfaConfig",
+      "methodName": "toSetUserPoolMfaConfig",
+      "description": "Grants permission to set user pool MFA configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+    },
+    {
+      "name": "SetUserSettings",
+      "methodName": "toSetUserSettings",
+      "description": "Grants permission to set the user settings like multi-factor authentication (MFA)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserSettings.html"
+    },
+    {
+      "name": "SignUp",
+      "methodName": "toSignUp",
+      "description": "Grants permission to register the user in the specified user pool and creates a user name, password, and user attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html"
+    },
+    {
+      "name": "StartUserImportJob",
+      "methodName": "toStartUserImportJob",
+      "description": "Grants permission to start any user import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartUserImportJob.html"
+    },
+    {
+      "name": "StopUserImportJob",
+      "methodName": "toStopUserImportJob",
+      "description": "Grants permission to stop any user import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StopUserImportJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a user pool",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a user pool",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAuthEventFeedback",
+      "methodName": "toUpdateAuthEventFeedback",
+      "description": "Grants permission to update the feedback for the user authentication event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html"
+    },
+    {
+      "name": "UpdateDeviceStatus",
+      "methodName": "toUpdateDeviceStatus",
+      "description": "Grants permission to update the device status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update the configuration of any group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateIdentityProvider",
+      "methodName": "toUpdateIdentityProvider",
+      "description": "Grants permission to update the configuration of any user pool IdP",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html"
+    },
+    {
+      "name": "UpdateManagedLoginBranding",
+      "methodName": "toUpdateManagedLoginBranding",
+      "description": "Grants permission to update the branding settings of a managed login",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateManagedLoginBranding.html"
+    },
+    {
+      "name": "UpdateProvisionedLimit",
+      "methodName": "toUpdateProvisionedLimit",
+      "description": "Grants permission to update a provisioned limit for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateProvisionedLimit.html"
+    },
+    {
+      "name": "UpdateResourceServer",
+      "methodName": "toUpdateResourceServer",
+      "description": "Grants permission to update the configuration of any OAuth 2.0 resource server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateResourceServer.html"
+    },
+    {
+      "name": "UpdateTerms",
+      "methodName": "toUpdateTerms",
+      "description": "Grants permission to update terms for an app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateTerms.html"
+    },
+    {
+      "name": "UpdateUserAttributes",
+      "methodName": "toUpdateUserAttributes",
+      "description": "Grants permission to allow a user to update a specific attribute (one at a time)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+    },
+    {
+      "name": "UpdateUserPool",
+      "methodName": "toUpdateUserPool",
+      "description": "Grants permission to updates the configuration of user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html"
+    },
+    {
+      "name": "UpdateUserPoolClient",
+      "methodName": "toUpdateUserPoolClient",
+      "description": "Grants permission to update any user pool client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html"
+    },
+    {
+      "name": "UpdateUserPoolDomain",
+      "methodName": "toUpdateUserPoolDomain",
+      "description": "Grants permission to replace the certificate for any custom domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolDomain.html"
+    },
+    {
+      "name": "UpdateUserPoolReplica",
+      "methodName": "toUpdateUserPoolReplica",
+      "description": "Grants permission to update a replica of a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolReplica.html"
+    },
+    {
+      "name": "VerifySoftwareToken",
+      "methodName": "toVerifySoftwareToken",
+      "description": "Grants permission to register a user's entered TOTP code and mark the user's software token MFA status as verified if successful",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html"
+    },
+    {
+      "name": "VerifyUserAttribute",
+      "methodName": "toVerifyUserAttribute",
+      "description": "Grants permission to verify a user attribute using a one time verification code",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
+    },
+    {
+      "name": "AssociateWebACL",
+      "methodName": "toAssociateWebACL",
+      "description": "Grants permission to associate the user pool with an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DisassociateWebACL",
+      "methodName": "toDisassociateWebACL",
+      "description": "Grants permission to disassociate the user pool with an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "GetWebACLForResource",
+      "methodName": "toGetWebACLForResource",
+      "description": "Grants permission to get the AWS WAF web ACL that is associated with an Amazon Cognito user pool",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListResourcesForWebACL",
+      "methodName": "toListResourcesForWebACL",
+      "description": "Grants permission to list the user pools that are associated with an AWS WAF web ACL",
+      "accessLevel": "List",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "userpool",
+      "methodName": "onUserpool",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html",
+      "arn": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
+      "placeholders": [
+        {
+          "placeholder": "UserPoolId",
+          "name": "userPoolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_cognito",
+        "interface": "IUserPoolRef",
+        "property": "userPoolRef",
+        "arn": "userPoolArn"
+      }
+    },
+    {
+      "name": "webacl",
+      "methodName": "onWebacl",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Scope",
+          "name": "scope",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateUserPool",
+        "toTagResource",
+        "toUpdateUserPool"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddCustomAttributes",
+        "toAddUserPoolClientSecret",
+        "toAdminAddUserToGroup",
+        "toAdminConfirmSignUp",
+        "toAdminCreateUser",
+        "toAdminDeleteSoftwareToken",
+        "toAdminDeleteUser",
+        "toAdminDeleteUserAttributes",
+        "toAdminDisableProviderForUser",
+        "toAdminDisableUser",
+        "toAdminEnableUser",
+        "toAdminForgetDevice",
+        "toAdminGetDevice",
+        "toAdminGetUser",
+        "toAdminGetUserAuthFactors",
+        "toAdminInitiateAuth",
+        "toAdminLinkProviderForUser",
+        "toAdminListDevices",
+        "toAdminListGroupsForUser",
+        "toAdminListUserAuthEvents",
+        "toAdminRemoveUserFromGroup",
+        "toAdminResetUserPassword",
+        "toAdminRespondToAuthChallenge",
+        "toAdminSetUserMFAPreference",
+        "toAdminSetUserPassword",
+        "toAdminSetUserSettings",
+        "toAdminUpdateAuthEventFeedback",
+        "toAdminUpdateDeviceStatus",
+        "toAdminUpdateUserAttributes",
+        "toAdminUserGlobalSignOut",
+        "toCreateGroup",
+        "toCreateIdentityProvider",
+        "toCreateManagedLoginBranding",
+        "toCreateResourceServer",
+        "toCreateTerms",
+        "toCreateUserImportJob",
+        "toCreateUserPool",
+        "toCreateUserPoolClient",
+        "toCreateUserPoolDomain",
+        "toCreateUserPoolReplica",
+        "toDeleteGroup",
+        "toDeleteIdentityProvider",
+        "toDeleteManagedLoginBranding",
+        "toDeleteResourceServer",
+        "toDeleteTerms",
+        "toDeleteUserPool",
+        "toDeleteUserPoolClient",
+        "toDeleteUserPoolClientSecret",
+        "toDeleteUserPoolDomain",
+        "toDeleteUserPoolReplica",
+        "toDescribeIdentityProvider",
+        "toDescribeManagedLoginBranding",
+        "toDescribeManagedLoginBrandingByClient",
+        "toDescribeResourceServer",
+        "toDescribeRiskConfiguration",
+        "toDescribeTerms",
+        "toDescribeUserImportJob",
+        "toDescribeUserPool",
+        "toDescribeUserPoolClient",
+        "toGetCSVHeader",
+        "toGetGroup",
+        "toGetIdentityProviderByIdentifier",
+        "toGetLogDeliveryConfiguration",
+        "toGetSigningCertificate",
+        "toGetUICustomization",
+        "toGetUserPoolMfaConfig",
+        "toListGroups",
+        "toListIdentityProviders",
+        "toListResourceServers",
+        "toListTagsForResource",
+        "toListTerms",
+        "toListUserImportJobs",
+        "toListUserPoolClientSecrets",
+        "toListUserPoolClients",
+        "toListUserPoolReplicas",
+        "toListUsers",
+        "toListUsersInGroup",
+        "toSetLogDeliveryConfiguration",
+        "toSetRiskConfiguration",
+        "toSetUICustomization",
+        "toSetUserPoolMfaConfig",
+        "toStartUserImportJob",
+        "toStopUserImportJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAuthEventFeedback",
+        "toUpdateGroup",
+        "toUpdateIdentityProvider",
+        "toUpdateManagedLoginBranding",
+        "toUpdateResourceServer",
+        "toUpdateTerms",
+        "toUpdateUserPool",
+        "toUpdateUserPoolClient",
+        "toUpdateUserPoolDomain",
+        "toUpdateUserPoolReplica",
+        "toAssociateWebACL",
+        "toDisassociateWebACL",
+        "toGetWebACLForResource"
+      ],
+      "relatedResourceTypes": [
+        "userpool"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a key that is present in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateUserPool",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateUserPool"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

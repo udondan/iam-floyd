@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "filename": "inspector2-telemetry",
+  "className": "Inspector2Telemetry",
+  "name": "inspector2-telemetry",
+  "servicePrefix": "inspector2-telemetry",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_inspector2-telemetry.html",
+  "accessLevelList": {
+    "Write": [
+      "NotifyHeartbeat",
+      "SendTelemetry",
+      "SendTelemetryEvent",
+      "StartSession",
+      "StopSession"
+    ]
+  },
+  "actions": [
+    {
+      "name": "NotifyHeartbeat",
+      "methodName": "toNotifyHeartbeat",
+      "description": "Grants permission to notify heartbeat for an active telemetry session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_NotifyHeartbeat.html"
+    },
+    {
+      "name": "SendTelemetry",
+      "methodName": "toSendTelemetry",
+      "description": "Grants permission to send telemetry for an active telemetry session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendTelemetry.html"
+    },
+    {
+      "name": "SendTelemetryEvent",
+      "methodName": "toSendTelemetryEvent",
+      "description": "Grants permission to send telemetry event for a telemetry session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendTelemetryEvent.html"
+    },
+    {
+      "name": "StartSession",
+      "methodName": "toStartSession",
+      "description": "Grants permission to start a telemetry session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartSession.html"
+    },
+    {
+      "name": "StopSession",
+      "methodName": "toStopSession",
+      "description": "Grants permission to stop a telemetry session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StopSession.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

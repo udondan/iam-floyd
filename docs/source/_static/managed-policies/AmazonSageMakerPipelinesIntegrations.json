@@ -1,0 +1,75 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunction",
+        "lambda:InvokeFunction",
+        "lambda:UpdateFunctionCode"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:*sagemaker*",
+        "arn:aws:lambda:*:*:function:*sageMaker*",
+        "arn:aws:lambda:*:*:function:*SageMaker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:CreateQueue",
+        "sqs:SendMessage"
+      ],
+      "Resource": [
+        "arn:aws:sqs:*:*:*sagemaker*",
+        "arn:aws:sqs:*:*:*sageMaker*",
+        "arn:aws:sqs:*:*:*SageMaker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "lambda.amazonaws.com",
+            "elasticmapreduce.amazonaws.com",
+            "ec2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:PutRule",
+        "events:PutTargets"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:rule/SageMakerPipelineExecutionEMRStepStatusUpdateRule",
+        "arn:aws:events:*:*:rule/SageMakerPipelineExecutionEMRClusterStatusUpdateRule"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticmapreduce:AddJobFlowSteps",
+        "elasticmapreduce:CancelSteps",
+        "elasticmapreduce:DescribeStep",
+        "elasticmapreduce:RunJobFlow",
+        "elasticmapreduce:DescribeCluster",
+        "elasticmapreduce:TerminateJobFlows",
+        "elasticmapreduce:ListSteps"
+      ],
+      "Resource": [
+        "arn:aws:elasticmapreduce:*:*:cluster/*"
+      ]
+    }
+  ]
+}

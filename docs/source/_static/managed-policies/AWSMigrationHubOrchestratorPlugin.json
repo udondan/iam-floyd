@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:GetBucketAcl"
+      ],
+      "Resource": "arn:aws:s3:::migrationhub-orchestrator-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "execute-api:Invoke",
+        "execute-api:ManageConnections"
+      ],
+      "Resource": [
+        "arn:aws:execute-api:*:*:*/prod/*/put-log-data",
+        "arn:aws:execute-api:*:*:*/prod/*/put-metric-data"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "migrationhub-orchestrator:RegisterPlugin",
+        "migrationhub-orchestrator:GetMessage",
+        "migrationhub-orchestrator:SendMessage"
+      ],
+      "Resource": "arn:aws:migrationhub-orchestrator:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:migrationhub-orchestrator-*"
+    }
+  ]
+}

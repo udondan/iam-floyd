@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "cloudwatch:DeleteInsightRules",
+        "cloudwatch:PutInsightRule"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:cloudwatch:*:*:insight-rule/DynamoDBContributorInsights*"
+    },
+    {
+      "Action": [
+        "cloudwatch:DescribeInsightRules"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

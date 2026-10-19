@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:ListTagsForResource",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBClusterParameters",
+        "cloudwatch:DescribeAlarms"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "rds:AddTagsToResource",
+      "Resource": [
+        "arn:aws:rds:*:*:db:autoscaled-reader*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "rds:DatabaseEngine": "neptune"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "rds:CreateDBInstance",
+      "Resource": [
+        "arn:aws:rds:*:*:db:autoscaled-reader*",
+        "arn:aws:rds:*:*:cluster:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "rds:DatabaseEngine": "neptune"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:DeleteDBInstance"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:db:autoscaled-reader*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Resource": [
+        "arn:aws:cloudwatch:*:*:alarm:TargetTracking*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDescribeClusterNodeOnHyperPodClusters",
+      "Effect": "Allow",
+      "Action": "sagemaker:DescribeClusterNode",
+      "Resource": "arn:aws:sagemaker:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/SageMaker": "true"
+        }
+      }
+    }
+  ]
+}

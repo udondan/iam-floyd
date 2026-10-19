@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDescribeOnAllLogGroups",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowDescribeOfAllLogStreamsOnDmsTasksLogGroup",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:dms-tasks-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*"
+      ]
+    },
+    {
+      "Sid": "AllowCreationOfDmsLogGroups",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:dms-tasks-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*:log-stream:"
+      ]
+    },
+    {
+      "Sid": "AllowCreationOfDmsLogStream",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:dms-tasks-*:log-stream:dms-task-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*:log-stream:dms-serverless-*"
+      ]
+    },
+    {
+      "Sid": "AllowUploadOfLogEventsToDmsLogStream",
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:dms-tasks-*:log-stream:dms-task-*",
+        "arn:aws:logs:*:*:log-group:dms-serverless-replication-*:log-stream:dms-serverless-*"
+      ]
+    }
+  ]
+}

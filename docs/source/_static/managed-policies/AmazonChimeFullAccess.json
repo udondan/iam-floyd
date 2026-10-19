@@ -1,0 +1,86 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "chime:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketAcl",
+        "s3:GetBucketLocation",
+        "s3:GetBucketLogging",
+        "s3:GetBucketVersioning",
+        "s3:GetBucketWebsite"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:DescribeResourcePolicies",
+        "logs:PutResourcePolicy",
+        "logs:CreateLogGroup",
+        "logs:DescribeLogGroups"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sns:CreateTopic",
+        "sns:GetTopicAttributes"
+      ],
+      "Resource": [
+        "arn:aws:sns:*:*:ChimeVoiceConnector-Streaming*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:GetQueueAttributes",
+        "sqs:CreateQueue"
+      ],
+      "Resource": [
+        "arn:aws:sqs:*:*:ChimeVoiceConnector-Streaming*"
+      ]
+    },
+    {
+      "Action": [
+        "kinesis:ListStreams"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kinesis:DescribeStream"
+      ],
+      "Resource": [
+        "arn:aws:kinesis:*:*:stream/chime-chat-*",
+        "arn:aws:kinesis:*:*:stream/chime-messaging-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetEncryptionConfiguration",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::chime-chat-*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "serviceextract",
+  "className": "Serviceextract",
+  "name": "serviceextract",
+  "servicePrefix": "serviceextract",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_serviceextract.html",
+  "accessLevelList": {
+    "Read": [
+      "GetConfig"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetConfig",
+      "methodName": "toGetConfig",
+      "description": "Grants permission to get required configuration for the AWS Microservice Extractor for .NET desktop client",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

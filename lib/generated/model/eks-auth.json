@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "filename": "eks-auth",
+  "className": "EksAuth",
+  "name": "eks-auth",
+  "servicePrefix": "eks-auth",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_eks-auth.html",
+  "accessLevelList": {
+    "Read": [
+      "AssumeRoleForPodIdentity"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssumeRoleForPodIdentity",
+      "methodName": "toAssumeRoleForPodIdentity",
+      "description": "Grants permission to exchange a Kubernetes service account token for temporary AWS credentials",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_auth_AssumeRoleForPodIdentity.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/clusters.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toAssumeRoleForPodIdentity"
+      ],
+      "relatedResourceTypes": [
+        "cluster"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

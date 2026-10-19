@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3FilesPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3files:Get*",
+        "s3files:List*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "EC2ReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
