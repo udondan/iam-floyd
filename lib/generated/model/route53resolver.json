@@ -43,7 +43,8 @@
       "UpdateResolverConfig",
       "UpdateResolverDnssecConfig",
       "UpdateResolverEndpoint",
-      "UpdateResolverRule"
+      "UpdateResolverRule",
+      "AssociateFirewallRuleGroupWithService"
     ],
     "Read": [
       "GetFirewallConfig",
@@ -574,6 +575,13 @@
       "description": "Grants permission to update settings for a specified Resolver rule",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html"
+    },
+    {
+      "name": "AssociateFirewallRuleGroupWithService",
+      "methodName": "toAssociateFirewallRuleGroupWithService",
+      "description": "Grants permission to associate a Firewall rule group with other AWS services, such as Network Firewall",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-resolved-ip-validation.html"
     }
   ],
   "resources": [
@@ -1038,7 +1046,8 @@
         "toUpdateOutpostResolver",
         "toUpdateResolverDnssecConfig",
         "toUpdateResolverEndpoint",
-        "toUpdateResolverRule"
+        "toUpdateResolverRule",
+        "toAssociateFirewallRuleGroupWithService"
       ],
       "relatedResourceTypes": [
         "autodefined-rule",

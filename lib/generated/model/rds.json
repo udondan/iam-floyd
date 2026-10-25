@@ -14,6 +14,7 @@
       "ApplyPendingMaintenanceAction",
       "AuthorizeDBSecurityGroupIngress",
       "BacktrackDBCluster",
+      "CancelDBCapacityReservation",
       "CancelExportTask",
       "CopyDBClusterParameterGroup",
       "CopyDBClusterSnapshot",
@@ -22,6 +23,7 @@
       "CopyOptionGroup",
       "CreateBlueGreenDeployment",
       "CreateCustomDBEngineVersion",
+      "CreateDBCapacityReservation",
       "CreateDBCluster",
       "CreateDBClusterEndpoint",
       "CreateDBClusterParameterGroup",
@@ -70,6 +72,7 @@
       "ModifyCertificates",
       "ModifyCurrentDBClusterCapacity",
       "ModifyCustomDBEngineVersion",
+      "ModifyDBCapacityReservation",
       "ModifyDBCluster",
       "ModifyDBClusterEndpoint",
       "ModifyDBClusterParameterGroup",
@@ -137,6 +140,7 @@
       "DescribeAccountAttributes",
       "DescribeBlueGreenDeployments",
       "DescribeCertificates",
+      "DescribeDBCapacityReservations",
       "DescribeDBClusterAutomatedBackups",
       "DescribeDBClusterBacktracks",
       "DescribeDBClusterEndpoints",
@@ -240,6 +244,13 @@
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BacktrackDBCluster.html"
     },
     {
+      "name": "CancelDBCapacityReservation",
+      "methodName": "toCancelDBCapacityReservation",
+      "description": "Grants permission to cancel a DB capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CancelDBCapacityReservation.html"
+    },
+    {
       "name": "CancelExportTask",
       "methodName": "toCancelExportTask",
       "description": "Grants permission to cancel an export task in progress",
@@ -294,6 +305,13 @@
       "description": "Grants permission to create a custom engine version",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateCustomDBEngineVersion.html"
+    },
+    {
+      "name": "CreateDBCapacityReservation",
+      "methodName": "toCreateDBCapacityReservation",
+      "description": "Grants permission to create a DB capacity reservation that reserves DB instance capacity in one or more Availability Zones",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCapacityReservation.html"
     },
     {
       "name": "CreateDBCluster",
@@ -599,6 +617,13 @@
       "description": "Grants permission to list the set of CA certificates provided by Amazon RDS for this AWS account",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html"
+    },
+    {
+      "name": "DescribeDBCapacityReservations",
+      "methodName": "toDescribeDBCapacityReservations",
+      "description": "Grants permission to return information about DB capacity reservations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBCapacityReservations.html"
     },
     {
       "name": "DescribeDBClusterAutomatedBackups",
@@ -977,6 +1002,13 @@
       "description": "Grants permission to modify an existing custom engine version",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCustomDBEngineVersion.html"
+    },
+    {
+      "name": "ModifyDBCapacityReservation",
+      "methodName": "toModifyDBCapacityReservation",
+      "description": "Grants permission to modify settings for a DB capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCapacityReservation.html"
     },
     {
       "name": "ModifyDBCluster",
@@ -1656,6 +1688,37 @@
       ]
     },
     {
+      "name": "db-capacity-reservation",
+      "methodName": "onDbCapacityReservation",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/capacity-reservations.html",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:db-capacity-reservation:${DBCapacityReservationIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "DBCapacityReservationIdentifier",
+          "name": "dBCapacityReservationIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "deployment",
       "methodName": "onDeployment",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html",
@@ -2180,6 +2243,7 @@
         "toCopyOptionGroup",
         "toCreateBlueGreenDeployment",
         "toCreateCustomDBEngineVersion",
+        "toCreateDBCapacityReservation",
         "toCreateDBCluster",
         "toCreateDBClusterEndpoint",
         "toCreateDBClusterParameterGroup",
@@ -2231,6 +2295,7 @@
         "toApplyPendingMaintenanceAction",
         "toAuthorizeDBSecurityGroupIngress",
         "toBacktrackDBCluster",
+        "toCancelDBCapacityReservation",
         "toCopyDBClusterParameterGroup",
         "toCopyDBClusterSnapshot",
         "toCopyDBParameterGroup",
@@ -2238,6 +2303,7 @@
         "toCopyOptionGroup",
         "toCreateBlueGreenDeployment",
         "toCreateCustomDBEngineVersion",
+        "toCreateDBCapacityReservation",
         "toCreateDBCluster",
         "toCreateDBClusterEndpoint",
         "toCreateDBClusterParameterGroup",
@@ -2278,6 +2344,7 @@
         "toDeleteTenantDatabase",
         "toDeregisterDBProxyTargets",
         "toDescribeBlueGreenDeployments",
+        "toDescribeDBCapacityReservations",
         "toDescribeDBClusterAutomatedBackups",
         "toDescribeDBClusterBacktracks",
         "toDescribeDBClusterEndpoints",
@@ -2320,6 +2387,7 @@
         "toModifyActivityStream",
         "toModifyCurrentDBClusterCapacity",
         "toModifyCustomDBEngineVersion",
+        "toModifyDBCapacityReservation",
         "toModifyDBCluster",
         "toModifyDBClusterEndpoint",
         "toModifyDBClusterParameterGroup",
@@ -2383,6 +2451,7 @@
         "cluster-pg",
         "cluster-snapshot",
         "db",
+        "db-capacity-reservation",
         "deployment",
         "es",
         "global-cluster",
@@ -2423,6 +2492,7 @@
         "toCopyOptionGroup",
         "toCreateBlueGreenDeployment",
         "toCreateCustomDBEngineVersion",
+        "toCreateDBCapacityReservation",
         "toCreateDBCluster",
         "toCreateDBClusterEndpoint",
         "toCreateDBClusterParameterGroup",
@@ -3389,6 +3459,7 @@
         "toCopyOptionGroup",
         "toCreateBlueGreenDeployment",
         "toCreateCustomDBEngineVersion",
+        "toCreateDBCapacityReservation",
         "toCreateDBCluster",
         "toCreateDBClusterEndpoint",
         "toCreateDBClusterParameterGroup",

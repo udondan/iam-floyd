@@ -17,7 +17,7 @@
     {
       "name": "connect",
       "methodName": "toConnect",
-      "description": "Allows IAM role or user to connect to RDS database",
+      "description": "Grants permission to connect to an RDS database from an IAM role or user",
       "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html"
     }
@@ -55,8 +55,31 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     }
   ],
-  "conditions": []
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the parent RDS DB instance or Aurora DB cluster of the db-user",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html",
+      "relatedActionMethods": [
+        "toConnect"
+      ],
+      "relatedResourceTypes": [
+        "db-user"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
 }

@@ -36,6 +36,7 @@
       "UntagResource",
       "UpdateCustomDomainAssociation",
       "UpdateEndpointAccess",
+      "UpdateLakehouseConfiguration",
       "UpdateNamespace",
       "UpdateScheduledAction",
       "UpdateSnapshot",
@@ -500,6 +501,13 @@
       "url": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UpdateEndpointAccess.html"
     },
     {
+      "name": "UpdateLakehouseConfiguration",
+      "methodName": "toUpdateLakehouseConfiguration",
+      "description": "Grants permission to manage Amazon Redshift federated permissions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UpdateLakehouseConfiguration.html"
+    },
+    {
       "name": "UpdateNamespace",
       "methodName": "toUpdateNamespace",
       "description": "Grants permission to update a namespace with the specified configuration settings",
@@ -805,6 +813,7 @@
         "toTagResource",
         "toUntagResource",
         "toUpdateCustomDomainAssociation",
+        "toUpdateLakehouseConfiguration",
         "toUpdateNamespace",
         "toUpdateSnapshot",
         "toUpdateWorkgroup",

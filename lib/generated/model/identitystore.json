@@ -533,6 +533,19 @@
         "string"
       ],
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "identitystore:VpceAccessRequired",
+      "methodName": "ifVpceAccessRequired",
+      "description": "Filters access by whether the Identity Store requires access through a VPC endpoint",
+      "url": "",
+      "relatedActionMethods": [
+        "toUpdateIdentityStore"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpceAccessRequired",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
     }
   ]
 }

@@ -7,9 +7,13 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_billing.html",
   "accessLevelList": {
     "Write": [
+      "AssociateContract",
       "AssociateSourceViews",
+      "CancelContractualInvestmentAttestation",
       "CreateBillingView",
+      "CreateContractualInvestmentAttestation",
       "DeleteBillingView",
+      "DisassociateContract",
       "DisassociateSourceViews",
       "GetResourcePolicy",
       "RedeemCredits",
@@ -32,6 +36,9 @@
       "GetEnterpriseSupportChargeSummary",
       "GetEnterpriseSupportContractDetails",
       "ListBillingViews",
+      "ListContractualInvestmentAttestations",
+      "ListContractualInvestmentSummaries",
+      "ListContractualInvestments",
       "ListCreditEntitlementPeriods",
       "ListCreditEntitlements",
       "ListTagsForResource",
@@ -53,6 +60,7 @@
       "ListBillingViewSegments",
       "ListBusinessSupportAccountCharges",
       "ListBusinessSupportSubscriptionHistory",
+      "ListContracts",
       "ListEnterpriseSupportLinkedAccountCharges",
       "ListSourceViewsForBillingView"
     ],
@@ -63,11 +71,25 @@
   },
   "actions": [
     {
+      "name": "AssociateContract",
+      "methodName": "toAssociateContract",
+      "description": "Grants permission to associate a Private Pricing Addendum with the caller's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
       "name": "AssociateSourceViews",
       "methodName": "toAssociateSourceViews",
       "description": "Grants permission to associate source views to a billing view",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_AssociateSourceViews.html"
+    },
+    {
+      "name": "CancelContractualInvestmentAttestation",
+      "methodName": "toCancelContractualInvestmentAttestation",
+      "description": "Grants permission to cancel an attestation claiming an investment award for an outcome completion within a Private Pricing Addendum",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
     {
       "name": "CreateBillingView",
@@ -77,11 +99,25 @@
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_CreateBillingView.html"
     },
     {
+      "name": "CreateContractualInvestmentAttestation",
+      "methodName": "toCreateContractualInvestmentAttestation",
+      "description": "Grants permission to create an attestation claiming an investment award for an outcome completion within a Private Pricing Addendum",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
       "name": "DeleteBillingView",
       "methodName": "toDeleteBillingView",
       "description": "Grants permission to delete a billing view",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DeleteBillingView.html"
+    },
+    {
+      "name": "DisassociateContract",
+      "methodName": "toDisassociateContract",
+      "description": "Grants permission to disassociate a Private Pricing Addendum from the caller's AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
     {
       "name": "DisassociateSourceViews",
@@ -165,6 +201,34 @@
       "methodName": "toListBusinessSupportSubscriptionHistory",
       "description": "Grants permission to view Business Support subscription contract history",
       "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListContracts",
+      "methodName": "toListContracts",
+      "description": "Grants permission to list the contracts visible to the caller's account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListContractualInvestmentAttestations",
+      "methodName": "toListContractualInvestmentAttestations",
+      "description": "Grants permission to list the investment attestations submitted under a Private Pricing Addendum",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListContractualInvestmentSummaries",
+      "methodName": "toListContractualInvestmentSummaries",
+      "description": "Grants permission to list the investment summaries within a Private Pricing Addendum",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListContractualInvestments",
+      "methodName": "toListContractualInvestments",
+      "description": "Grants permission to list the investments under an investment summary of a Private Pricing Addendum",
+      "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
     {
@@ -289,7 +353,7 @@
     {
       "name": "GetContractInformation",
       "methodName": "toGetContractInformation",
-      "description": "Grants permission to view the account's contract information including the contract number, end-user organization names, PO numbers and if the account is used to service public-sector customers",
+      "description": "Grants permision to retrieve your contract information such as the contract's Legal Entity Name, term and accounts",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
     },
@@ -368,6 +432,30 @@
         "property": "billingViewRef",
         "arn": "billingViewArn"
       }
+    },
+    {
+      "name": "contract",
+      "methodName": "onContract",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/",
+      "arn": "arn:${Partition}:billing::${Account}:contract/${ContractId}",
+      "placeholders": [
+        {
+          "placeholder": "ContractId",
+          "name": "contractId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
     }
   ],
   "conditions": [

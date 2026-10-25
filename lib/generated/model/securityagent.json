@@ -13,7 +13,6 @@
       "BatchDeletePentests",
       "BatchDeleteSecurityRequirements",
       "BatchDeleteThreatModels",
-      "BatchDeleteThreats",
       "BatchDisassociateFindingIssue",
       "BatchExportFindings",
       "BatchUpdateSecurityRequirements",
@@ -179,13 +178,6 @@
       "description": "Grants permission to delete multiple threat models in a single request",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreatModels.html"
-    },
-    {
-      "name": "BatchDeleteThreats",
-      "methodName": "toBatchDeleteThreats",
-      "description": "Grants permission to delete multiple threats",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreats.html"
     },
     {
       "name": "BatchDisassociateFindingIssue",
@@ -1235,7 +1227,6 @@
         "toBatchDeletePentests",
         "toBatchDeleteSecurityRequirements",
         "toBatchDeleteThreatModels",
-        "toBatchDeleteThreats",
         "toBatchDisassociateFindingIssue",
         "toBatchExportFindings",
         "toBatchGetAgentSpaces",

@@ -74,6 +74,7 @@
       "CreateTableReplica",
       "DeleteGlobalTableWitness",
       "DeleteTableReplica",
+      "DisassociateTableReplica",
       "InjectError",
       "PurchaseReservedCapacityOfferings",
       "ReplicateSettings",
@@ -586,6 +587,13 @@
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html"
     },
     {
+      "name": "DisassociateTableReplica",
+      "methodName": "toDisassociateTableReplica",
+      "description": "Grants permission to disassociate a replica table from a global table while retaining the table and its data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html"
+    },
+    {
       "name": "GetAbacStatus",
       "methodName": "toGetAbacStatus",
       "description": "Grants permission to view the status of Attribute Based Access Control for the account",
@@ -983,6 +991,7 @@
         "toCreateTableReplica",
         "toDeleteGlobalTableWitness",
         "toDeleteTableReplica",
+        "toDisassociateTableReplica",
         "toReadDataForReplication",
         "toReplicateSettings",
         "toRestoreTableFromAwsBackup",
