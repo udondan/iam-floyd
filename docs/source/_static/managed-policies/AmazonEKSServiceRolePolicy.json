@@ -21,6 +21,7 @@
         "ec2:DescribeAvailabilityZones",
         "ec2:DescribeCapacityReservations",
         "ec2:DescribeCoipPools",
+        "ec2:DescribeDhcpOptions",
         "ec2:DescribeInstances",
         "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeInstanceTypes",

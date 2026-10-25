@@ -770,6 +770,8 @@ export class AwsManagedPolicy {
     public static AmazonQLDBFullAccess = 'AmazonQLDBFullAccess';
     /** Provides read only access to Amazon QLDB. */
     public static AmazonQLDBReadOnly = 'AmazonQLDBReadOnly';
+    /** Provides permissions for Amazon Quick Suite to manage its IAM Identity Center application, identity store users and groups, user subscriptions, and QuickSight resources on your behalf. */
+    public static AmazonQuickSuiteAccessPolicy = 'service-role/AmazonQuickSuiteAccessPolicy';
     /** Allows Amazon RDS to manage AWS resources on your behalf. */
     public static AmazonRDSBetaServiceRolePolicy = 'aws-service-role/AmazonRDSBetaServiceRolePolicy';
     /** Allows Amazon RDS Custom to perform various automation actions and database management tasks through an EC2 instance profile. */
@@ -1144,6 +1146,8 @@ export class AwsManagedPolicy {
     public static AppRunnerServiceRolePolicy = 'aws-service-role/AppRunnerServiceRolePolicy';
     /** Allows AppStudio to manage associated AWS resources on your behalf. */
     public static AppStudioServiceRolePolicy = 'aws-service-role/AppStudioServiceRolePolicy';
+    /** Provides full access to AWS Assurance environments and read-only access to IAM Identity Center user details */
+    public static AssuranceOperatorPolicy = 'service-role/AssuranceOperatorPolicy';
     /** Allows AWS Assurance to access your resources for compliance assessments and evidence collection. */
     public static AssuranceServiceRolePolicy = 'aws-service-role/AssuranceServiceRolePolicy';
     /** Policy for Amazon Aurora DSQL Service Linked Role */
@@ -1790,6 +1794,8 @@ export class AwsManagedPolicy {
     public static AWSFaultInjectionSimulatorRDSAccess = 'service-role/AWSFaultInjectionSimulatorRDSAccess';
     /** This policy grants the Fault Injection Simulator Service permission in SSM and other required services to perform FIS actions. */
     public static AWSFaultInjectionSimulatorSSMAccess = 'service-role/AWSFaultInjectionSimulatorSSMAccess';
+    /** Provides AWS FinOps Agent access to billing, cost management, usage, optimization, and resource configuration capabilities to generate cost and savings insights, and allows it to manage its own Amazon EventBridge rules for configured workflows. */
+    public static AWSFinOpsAgentServiceRolePolicy = 'aws-service-role/AWSFinOpsAgentServiceRolePolicy';
     /** Policy to enable access to AWS Service and Resources used or managed by Amazon FinSpace */
     public static AWSFinSpaceServiceRolePolicy = 'aws-service-role/AWSFinSpaceServiceRolePolicy';
     /** Full access for AWS FM Administrator */

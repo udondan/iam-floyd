@@ -1934,6 +1934,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonQLDBReadOnly);
     }
 
+    /** Provides permissions for Amazon Quick Suite to manage its IAM Identity Center application, identity store users and groups, user subscriptions, and QuickSight resources on your behalf. */
+    public AmazonQuickSuiteAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonQuickSuiteAccessPolicy);
+    }
+
     /** Allows Amazon RDS to manage AWS resources on your behalf. */
     public AmazonRDSBetaServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRDSBetaServiceRolePolicy);
@@ -2867,6 +2872,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AppStudio to manage associated AWS resources on your behalf. */
     public AppStudioServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AppStudioServiceRolePolicy);
+    }
+
+    /** Provides full access to AWS Assurance environments and read-only access to IAM Identity Center user details */
+    public AssuranceOperatorPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AssuranceOperatorPolicy);
     }
 
     /** Allows AWS Assurance to access your resources for compliance assessments and evidence collection. */
@@ -4482,6 +4492,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This policy grants the Fault Injection Simulator Service permission in SSM and other required services to perform FIS actions. */
     public AWSFaultInjectionSimulatorSSMAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSFaultInjectionSimulatorSSMAccess);
+    }
+
+    /** Provides AWS FinOps Agent access to billing, cost management, usage, optimization, and resource configuration capabilities to generate cost and savings insights, and allows it to manage its own Amazon EventBridge rules for configured workflows. */
+    public AWSFinOpsAgentServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSFinOpsAgentServiceRolePolicy);
     }
 
     /** Policy to enable access to AWS Service and Resources used or managed by Amazon FinSpace */
