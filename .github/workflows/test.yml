@@ -245,9 +245,12 @@ jobs:
 
       # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
       # peer dependency, which has all reference interfaces the on*() methods accept. The exact
-      # version is the one of lib/generated/cdk-refs.json.
+      # version is the one of lib/generated/cdk-refs.json. npm leaves out dependencies of
+      # aws-cdk-lib when it downgrades it with the lock files of the newer version (e.g.
+      # @aws-cdk/cloud-assembly-schema across a major version), so they are removed first.
       - name: Test with the minimum version of aws-cdk-lib
         run: | # zizmor: ignore[adhoc-packages]
+          rm -rf package-lock.json node_modules/.package-lock.json node_modules/aws-cdk-lib node_modules/@aws-cdk
           npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
           node -p "require('aws-cdk-lib/package.json').version"
           make build test-typescript-cdk
