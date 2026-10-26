@@ -15,6 +15,7 @@
       "CreateContainerAssociation",
       "CreateFirewall",
       "CreateFirewallPolicy",
+      "CreateFirewallPolicyV2",
       "CreateProxy",
       "CreateProxyConfiguration",
       "CreateProxyRuleGroup",
@@ -25,6 +26,7 @@
       "DeleteContainerAssociation",
       "DeleteFirewall",
       "DeleteFirewallPolicy",
+      "DeleteFirewallPolicyV2",
       "DeleteNetworkFirewallTransitGatewayAttachment",
       "DeleteProxy",
       "DeleteProxyConfiguration",
@@ -52,6 +54,7 @@
       "UpdateFirewallEncryptionConfiguration",
       "UpdateFirewallPolicy",
       "UpdateFirewallPolicyChangeProtection",
+      "UpdateFirewallPolicyV2",
       "UpdateLoggingConfiguration",
       "UpdateProxy",
       "UpdateProxyConfiguration",
@@ -67,6 +70,7 @@
       "DescribeFirewall",
       "DescribeFirewallMetadata",
       "DescribeFirewallPolicy",
+      "DescribeFirewallPolicyV2",
       "DescribeFlowOperation",
       "DescribeLoggingConfiguration",
       "DescribeProxy",
@@ -86,6 +90,7 @@
       "ListAnalysisReports",
       "ListContainerAssociations",
       "ListFirewallPolicies",
+      "ListFirewallPoliciesV2",
       "ListFirewalls",
       "ListFlowOperations",
       "ListProxies",
@@ -159,6 +164,13 @@
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewallPolicy.html"
     },
     {
+      "name": "CreateFirewallPolicyV2",
+      "methodName": "toCreateFirewallPolicyV2",
+      "description": "Grants permission to create an AWS Network Firewall firewall policy v2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewallPolicyV2.html"
+    },
+    {
       "name": "CreateProxy",
       "methodName": "toCreateProxy",
       "description": "Grants permission to create an AWS Network Firewall proxy",
@@ -227,6 +239,13 @@
       "description": "Grants permission to delete a firewall policy",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteFirewallPolicy.html"
+    },
+    {
+      "name": "DeleteFirewallPolicyV2",
+      "methodName": "toDeleteFirewallPolicyV2",
+      "description": "Grants permission to delete a firewall policy v2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteFirewallPolicyV2.html"
     },
     {
       "name": "DeleteNetworkFirewallTransitGatewayAttachment",
@@ -318,6 +337,13 @@
       "description": "Grants permission to retrieve the data objects that define a firewall policy",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewallPolicy.html"
+    },
+    {
+      "name": "DescribeFirewallPolicyV2",
+      "methodName": "toDescribeFirewallPolicyV2",
+      "description": "Grants permission to retrieve the data objects that define a firewall policy v2",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewallPolicyV2.html"
     },
     {
       "name": "DescribeFlowOperation",
@@ -451,6 +477,13 @@
       "description": "Grants permission to retrieve the metadata for firewall policies",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFirewallPolicies.html"
+    },
+    {
+      "name": "ListFirewallPoliciesV2",
+      "methodName": "toListFirewallPoliciesV2",
+      "description": "Grants permission to retrieve the metadata for firewall policies v2",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFirewallPoliciesV2.html"
     },
     {
       "name": "ListFirewalls",
@@ -628,6 +661,13 @@
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallPolicyChangeProtection.html"
     },
     {
+      "name": "UpdateFirewallPolicyV2",
+      "methodName": "toUpdateFirewallPolicyV2",
+      "description": "Grants permission to modify a firewall policy v2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallPolicyV2.html"
+    },
+    {
       "name": "UpdateLoggingConfiguration",
       "methodName": "toUpdateLoggingConfiguration",
       "description": "Grants permission to modify the logging configuration of a firewall",
@@ -802,6 +842,99 @@
         "property": "firewallPolicyRef",
         "arn": "firewallPolicyArn"
       }
+    },
+    {
+      "name": "FirewallPolicyV2",
+      "methodName": "onFirewallPolicyV2",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_FirewallPolicyV2Response.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy-v2/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "FirewallRuleGroup",
+      "methodName": "onFirewallRuleGroup",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RuleGroupResponse.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-rulegroup/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "IpsRuleGroup",
+      "methodName": "onIpsRuleGroup",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RuleGroupResponse.html",
+      "arn": "arn:${Partition}:network-firewall:${Region}:${Account}:ips-rulegroup/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "Proxy",
@@ -1044,6 +1177,7 @@
         "toCreateContainerAssociation",
         "toCreateFirewall",
         "toCreateFirewallPolicy",
+        "toCreateFirewallPolicyV2",
         "toCreateProxy",
         "toCreateProxyConfiguration",
         "toCreateProxyRuleGroup",
@@ -1076,6 +1210,7 @@
         "toCreateContainerAssociation",
         "toCreateFirewall",
         "toCreateFirewallPolicy",
+        "toCreateFirewallPolicyV2",
         "toCreateProxy",
         "toCreateProxyConfiguration",
         "toCreateProxyRuleGroup",
@@ -1086,6 +1221,7 @@
         "toDeleteContainerAssociation",
         "toDeleteFirewall",
         "toDeleteFirewallPolicy",
+        "toDeleteFirewallPolicyV2",
         "toDeleteNetworkFirewallTransitGatewayAttachment",
         "toDeleteProxy",
         "toDeleteProxyConfiguration",
@@ -1099,6 +1235,7 @@
         "toDescribeFirewall",
         "toDescribeFirewallMetadata",
         "toDescribeFirewallPolicy",
+        "toDescribeFirewallPolicyV2",
         "toDescribeFlowOperation",
         "toDescribeLoggingConfiguration",
         "toDescribeProxy",
@@ -1117,6 +1254,7 @@
         "toGetAnalysisReportResults",
         "toListAnalysisReports",
         "toListFirewallPolicies",
+        "toListFirewallPoliciesV2",
         "toListFirewalls",
         "toListFlowOperationResults",
         "toListFlowOperations",
@@ -1141,6 +1279,7 @@
         "toUpdateFirewallEncryptionConfiguration",
         "toUpdateFirewallPolicy",
         "toUpdateFirewallPolicyChangeProtection",
+        "toUpdateFirewallPolicyV2",
         "toUpdateLoggingConfiguration",
         "toUpdateProxy",
         "toUpdateProxyConfiguration",
@@ -1155,6 +1294,9 @@
         "ContainerAssociation",
         "Firewall",
         "FirewallPolicy",
+        "FirewallPolicyV2",
+        "FirewallRuleGroup",
+        "IpsRuleGroup",
         "Proxy",
         "ProxyConfiguration",
         "ProxyRuleGroup",
@@ -1182,6 +1324,7 @@
         "toCreateContainerAssociation",
         "toCreateFirewall",
         "toCreateFirewallPolicy",
+        "toCreateFirewallPolicyV2",
         "toCreateProxy",
         "toCreateProxyConfiguration",
         "toCreateProxyRuleGroup",

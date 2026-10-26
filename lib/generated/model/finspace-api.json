@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "filename": "finspace-data",
+  "filename": "finspace-api",
   "className": "FinspaceApi",
   "name": "finspace-api",
   "servicePrefix": "finspace-api",
-  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_finspace-data.html",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_finspace-api.html",
   "accessLevelList": {
     "Read": [
       "GetProgrammaticAccessCredentials"

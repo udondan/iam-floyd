@@ -35,6 +35,7 @@
       "TagResource",
       "UntagResource",
       "UpdateCallAnalyticsCategory",
+      "UpdateLanguageModel",
       "UpdateMedicalVocabulary",
       "UpdateVocabulary",
       "UpdateVocabularyFilter"
@@ -471,6 +472,13 @@
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateCallAnalyticsCategory.html"
     },
     {
+      "name": "UpdateLanguageModel",
+      "methodName": "toUpdateLanguageModel",
+      "description": "Grants permission to update a custom language model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateLanguageModel.html"
+    },
+    {
       "name": "UpdateMedicalVocabulary",
       "methodName": "toUpdateMedicalVocabulary",
       "description": "Grants permission to update an existing medical vocabulary with new values. The UpdateMedicalVocabulary operation overwrites all of the existing information with the values that you provide in the request",
@@ -859,6 +867,7 @@
         "toStartTranscriptionJob",
         "toTagResource",
         "toUpdateCallAnalyticsCategory",
+        "toUpdateLanguageModel",
         "toUpdateMedicalVocabulary",
         "toUpdateVocabulary",
         "toUpdateVocabularyFilter"

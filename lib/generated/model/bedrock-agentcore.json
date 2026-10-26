@@ -87,6 +87,7 @@
       "GetWorkloadAccessToken",
       "GetWorkloadAccessTokenForJWT",
       "GetWorkloadAccessTokenForUserId",
+      "IngestData",
       "InvokeAgentRuntime",
       "InvokeAgentRuntimeCommand",
       "InvokeAgentRuntimeCommandShell",
@@ -97,6 +98,7 @@
       "InvokeHarness",
       "ProcessPayment",
       "PutResourcePolicy",
+      "ResetTokenVaultKeyMaterial",
       "SaveBrowserSessionProfile",
       "SetTokenVaultCMK",
       "StartBatchEvaluation",
@@ -152,7 +154,8 @@
       "PartiallyAuthorizeActions",
       "PassCapacityProvider",
       "PutSystemLogEvents",
-      "SynchronizeGatewayTargets"
+      "SynchronizeGatewayTargets",
+      "UpdateMemoryRecordExpirySpecification"
     ],
     "Read": [
       "CompleteResourceTokenAuth",
@@ -1273,6 +1276,13 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetWorkloadIdentity.html"
     },
     {
+      "name": "IngestData",
+      "methodName": "toIngestData",
+      "description": "Grants permission to ingest content to generate long-term memory records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_IngestData.html"
+    },
+    {
       "name": "InvokeAgentRuntime",
       "methodName": "toInvokeAgentRuntime",
       "description": "Grants permission to invoke an agent runtime endpoint",
@@ -1714,6 +1724,13 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_PutResourcePolicy.html"
     },
     {
+      "name": "ResetTokenVaultKeyMaterial",
+      "methodName": "toResetTokenVaultKeyMaterial",
+      "description": "Grants permission to reset a TokenVault's key material to a Service Managed Key after its Customer Managed Key (CMK) has been deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ResetTokenVaultKeyMaterial.html"
+    },
+    {
       "name": "RetrieveMemoryRecords",
       "methodName": "toRetrieveMemoryRecords",
       "description": "Grants permission to retrieve memory records through sematic query",
@@ -2131,6 +2148,13 @@
       "methodName": "toSynchronizeGatewayTargets",
       "description": "Grants permission to enable search on gateways",
       "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
+      "name": "UpdateMemoryRecordExpirySpecification",
+      "methodName": "toUpdateMemoryRecordExpirySpecification",
+      "description": "Grants permission to set or remove the expiry specification of long-term memory records",
+      "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
     }
   ],
@@ -3417,6 +3441,7 @@
         "toGetWorkloadAccessTokenForJWT",
         "toGetWorkloadAccessTokenForUserId",
         "toGetWorkloadIdentity",
+        "toIngestData",
         "toInvokeAgentRuntime",
         "toInvokeAgentRuntimeCommand",
         "toInvokeAgentRuntimeCommandShell",
@@ -3452,6 +3477,7 @@
         "toListWorkloadIdentities",
         "toProcessPayment",
         "toPutResourcePolicy",
+        "toResetTokenVaultKeyMaterial",
         "toRetrieveMemoryRecords",
         "toSaveBrowserSessionProfile",
         "toSetTokenVaultCMK",
@@ -3501,7 +3527,8 @@
         "toPartiallyAuthorizeActions",
         "toPassCapacityProvider",
         "toPutSystemLogEvents",
-        "toSynchronizeGatewayTargets"
+        "toSynchronizeGatewayTargets",
+        "toUpdateMemoryRecordExpirySpecification"
       ],
       "relatedResourceTypes": [
         "ab-test",
@@ -3940,6 +3967,7 @@
         "toCreateEvent",
         "toDeleteEvent",
         "toGetEvent",
+        "toIngestData",
         "toListEvents",
         "toListSessions",
         "toStartMemoryExtractionJob"
@@ -3960,7 +3988,10 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-namespace",
       "relatedActionMethods": [
         "toBatchCreateMemoryRecords",
+        "toBatchDeleteMemoryRecords",
         "toBatchUpdateMemoryRecords",
+        "toDeleteMemoryRecord",
+        "toGetMemoryRecord",
         "toListMemoryRecords",
         "toRetrieveMemoryRecords"
       ],
@@ -3968,6 +3999,43 @@
       "keyLiteral": "namespace",
       "valueKind": "string",
       "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:namespacePath",
+      "methodName": "ifNamespacePath",
+      "description": "Filters access by the namespace path hierarchy of the memory records in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-namespacePath",
+      "relatedActionMethods": [
+        "toListMemoryRecords",
+        "toRetrieveMemoryRecords"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "namespacePath",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:namespaceVariable/${VariableName}",
+      "methodName": "ifNamespaceVariable",
+      "description": "Filters access by the value of a custom namespace variable in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-namespaceVariable",
+      "relatedActionMethods": [
+        "toCreateEvent",
+        "toIngestData"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "namespaceVariable/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "variableName",
       "valueTypes": [
         "string"
       ],
@@ -4019,11 +4087,29 @@
         "toCreateEvent",
         "toDeleteEvent",
         "toGetEvent",
+        "toIngestData",
         "toListEvents",
         "toStartMemoryExtractionJob"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "sessionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "bedrock-agentcore:sourceNamespace",
+      "methodName": "ifSourceNamespace",
+      "description": "Filters access by the source namespace of the memory records in the request",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sourceNamespace",
+      "relatedActionMethods": [
+        "toBatchUpdateMemoryRecords"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "sourceNamespace",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [
