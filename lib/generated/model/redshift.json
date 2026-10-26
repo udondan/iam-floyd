@@ -82,6 +82,7 @@
       "ModifyEndpointAccess",
       "ModifyEventSubscription",
       "ModifyIntegration",
+      "ModifyLakehouseConfiguration",
       "ModifyRedshiftIdcApplication",
       "ModifyScheduledAction",
       "ModifySnapshotCopyRetentionPeriod",
@@ -1048,6 +1049,13 @@
       "description": "Grants permission to modify an Amazon Redshift zero-ETL integration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyIntegration.html"
+    },
+    {
+      "name": "ModifyLakehouseConfiguration",
+      "methodName": "toModifyLakehouseConfiguration",
+      "description": "Grants permission to manage Amazon Redshift federated permissions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyLakehouseConfiguration.html"
     },
     {
       "name": "ModifyRedshiftIdcApplication",
@@ -2205,6 +2213,7 @@
         "toModifyCustomDomainAssociation",
         "toModifyEventSubscription",
         "toModifyIntegration",
+        "toModifyLakehouseConfiguration",
         "toModifySnapshotCopyRetentionPeriod",
         "toModifySnapshotSchedule",
         "toModifyUsageLimit",

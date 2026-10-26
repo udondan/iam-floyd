@@ -55,6 +55,7 @@
       "ImportPublicKey",
       "InsertAdBreak",
       "PutMetadata",
+      "RevokeConnectionToken",
       "StartComposition",
       "StartParticipantReplication",
       "StartViewerSessionRevocation",
@@ -542,6 +543,13 @@
       "description": "Grants permission to insert metadata into an RTMP stream for a specified channel",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_PutMetadata.html"
+    },
+    {
+      "name": "RevokeConnectionToken",
+      "methodName": "toRevokeConnectionToken",
+      "description": "Grants permission to revoke connection token for a specified token ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_RevokeConnectionToken.html"
     },
     {
       "name": "StartComposition",
