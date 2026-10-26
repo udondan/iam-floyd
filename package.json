@@ -46,7 +46,7 @@
     "@aws-sdk/client-sqs": "3.1152.0",
     "@eslint/js": "10.0.1",
     "@jsii/spec": "1.141.0",
-    "@swc/core": "1.16.18",
+    "@swc/core": "1.16.20",
     "@swc/helpers": "0.5.23",
     "@types/node": "24.19.2",
     "aws-cdk-lib": "2.273.0",
