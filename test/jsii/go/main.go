@@ -6,6 +6,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 
 	"example.com/floyd-consumer-go/floydconsumer"
 	"github.com/aws/aws-cdk-go/awscdk/v2"
@@ -125,5 +126,14 @@ func main() {
 				Roles:    roles,
 			})
 		}
+	})
+
+	scenario("k dates as condition values", func(stack awscdk.Stack) {
+		role(stack).AddToPolicy(statement.NewS3(nil).
+			Allow().
+			ToPutObject().
+			OnObject(jsii.String("bucket"), jsii.String("*"), nil).
+			IfAwsCurrentTime(jsii.Time(time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)), nil).
+			IfObjectLockRetainUntilDate(jsii.Time(time.Date(2026, 6, 30, 12, 0, 0, 0, time.UTC)), nil))
 	})
 }

@@ -10,6 +10,7 @@ import com.udondan.iamFloyd.cdk.PolicyDocument;
 import com.udondan.iamFloyd.cdk.statement.Dynamodb;
 import com.udondan.iamFloyd.cdk.statement.S3;
 import com.udondan.iamFloyd.cdk.statement.Sqs;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -143,5 +144,17 @@ public class Main {
                 PolicyProps.builder().document(parts.get(index)).roles(roles).build());
           }
         });
+
+    scenario(
+        "k dates as condition values",
+        stack ->
+            role(stack)
+                .addToPolicy(
+                    new S3()
+                        .allow()
+                        .toPutObject()
+                        .onObject("bucket", "*")
+                        .ifAwsCurrentTime(Instant.parse("2026-01-01T00:00:00Z"))
+                        .ifObjectLockRetainUntilDate(Instant.parse("2026-06-30T12:00:00Z"))));
   }
 }

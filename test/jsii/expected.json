@@ -320,5 +320,33 @@
         }
       }
     ]
+  },
+  "k dates as condition values": {
+    "RoleDefaultPolicy5FFB7DAB": [
+      {
+        "Action": "s3:PutObject",
+        "Condition": {
+          "DateEquals": {
+            "s3:object-lock-retain-until-date": "2026-06-30T12:00:00.000Z"
+          },
+          "DateLessThanEquals": {
+            "aws:CurrentTime": "2026-01-01T00:00:00.000Z"
+          }
+        },
+        "Effect": "Allow",
+        "Resource": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":s3:::bucket/*"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

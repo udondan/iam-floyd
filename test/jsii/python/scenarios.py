@@ -5,6 +5,7 @@ Prints one line per scenario: the name, a tab and the IAM policies of the stack 
 
 import json
 import traceback
+from datetime import datetime, timezone
 
 import aws_cdk as cdk
 import floyd_consumer
@@ -111,3 +112,15 @@ def _(stack):
     roles = [role(stack)]
     for index, part in enumerate(policy.split()):
         iam.Policy(stack, f'Part{index}', document=part, roles=roles)
+
+
+@scenario('k dates as condition values')
+def _(stack):
+    role(stack).add_to_policy(
+        Statement.S3()
+        .allow()
+        .to_put_object()
+        .on_object('bucket', '*')
+        .if_aws_current_time(datetime(2026, 1, 1, tzinfo=timezone.utc))
+        .if_object_lock_retain_until_date(datetime(2026, 6, 30, 12, tzinfo=timezone.utc))
+    )
