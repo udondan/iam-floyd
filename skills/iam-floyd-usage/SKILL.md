@@ -36,7 +36,7 @@ with names adapted to the language, see [Other languages](#other-languages).
 | Language                | `iam-floyd`                                      | `cdk-iam-floyd`                                     |
 | ----------------------- | ------------------------------------------------ | --------------------------------------------------- |
 | TypeScript / JavaScript | `npm install iam-floyd`                          | `npm install cdk-iam-floyd`                         |
-| Python (3.9+)           | `pip install iam-floyd`                          | `pip install cdk-iam-floyd`                         |
+| Python (3.10+)          | `pip install iam-floyd`                          | `pip install cdk-iam-floyd`                         |
 | Java (11+)              | Maven `com.udondan:iam-floyd`                    | Maven `com.udondan:cdk-iam-floyd`                   |
 | C# / .NET (8+)          | `dotnet add package IAM.Floyd`                   | `dotnet add package CDK.IAM.Floyd`                  |
 | Go (1.21+)              | `go get udondan.github.io/iam-floyd/go/iamfloyd` | `go get udondan.github.io/iam-floyd/go/cdkiamfloyd` |
