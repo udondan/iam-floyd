@@ -30,7 +30,7 @@ iam-floyd
      - Node.js
    * - Python
      - |iam-floyd-pypi|_
-     - Python 3.9
+     - Python 3.10
    * - Java
      - |iam-floyd-maven|_
      - Java 11

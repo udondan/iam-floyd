@@ -9,7 +9,7 @@ description = "AWS IAM policy statement generator with fluent interface"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{ name = "Daniel Schroeder" }]
 keywords = ["aws", "iam", "policy", "iam-floyd"]
 classifiers = [
