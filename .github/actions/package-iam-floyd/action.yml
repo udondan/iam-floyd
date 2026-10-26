@@ -62,4 +62,4 @@ runs:
       env:
         LANGUAGE: ${{ inputs.language }}
         # renovate: datasource=python-version depName=python
-        UV_PYTHON: "3.14"
+        UV_PYTHON: "3.15"
