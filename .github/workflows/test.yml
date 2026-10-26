@@ -95,10 +95,11 @@ jobs:
         include:
           - language: python
             name: Python
-            version: "3.9"
+            version: "3.10"
             newest: false
           - language: python
             name: Python
+            # renovate: datasource=python-version depName=python
             version: "3.14"
             newest: true
           - language: java

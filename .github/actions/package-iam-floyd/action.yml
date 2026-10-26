@@ -61,4 +61,5 @@ runs:
       run: make install package-native LANGUAGES="$LANGUAGE"
       env:
         LANGUAGE: ${{ inputs.language }}
+        # renovate: datasource=python-version depName=python
         UV_PYTHON: "3.14"
