@@ -13,6 +13,7 @@
       "DeleteVolume",
       "DeleteWorkspaceInstance",
       "DisassociateVolume",
+      "ModifyVolume",
       "TagResource",
       "UntagResource"
     ],
@@ -36,21 +37,21 @@
       "methodName": "toAssociateVolume",
       "description": "Grants permission to associate a workspace managed volume to a workspace managed instance in your account",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateVolume.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_AssociateVolume.html"
     },
     {
       "name": "CreateVolume",
       "methodName": "toCreateVolume",
       "description": "Grants permission to create a workspace managed volume in your account",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateVolume.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_CreateVolume.html"
     },
     {
       "name": "CreateWorkspaceInstance",
       "methodName": "toCreateWorkspaceInstance",
       "description": "Grants permission to create a workspace managed instance in your account",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaceInstance.html",
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_CreateWorkspaceInstance.html",
       "conditionMethods": [
         "ifAwsRequestTag",
         "ifAwsTagKeys"
@@ -61,77 +62,84 @@
       "methodName": "toDeleteVolume",
       "description": "Grants permission to delete a workspace managed volume in your account",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteVolume.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_DeleteVolume.html"
     },
     {
       "name": "DeleteWorkspaceInstance",
       "methodName": "toDeleteWorkspaceInstance",
       "description": "Grants permission to delete a workspace managed instance in your account",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceInstance.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_DeleteWorkspaceInstance.html"
     },
     {
       "name": "DisassociateVolume",
       "methodName": "toDisassociateVolume",
       "description": "Grants permission to disassociate a workspace managed volume from a workspace managed instance in your account",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateVolume.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_DisassociateVolume.html"
     },
     {
       "name": "GetWorkspaceInstance",
       "methodName": "toGetWorkspaceInstance",
       "description": "Grants permission to get details for a specific workspace managed instance in your account",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_GetWorkspaceInstance.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_GetWorkspaceInstance.html"
     },
     {
       "name": "ListInstanceTypes",
       "methodName": "toListInstanceTypes",
       "description": "Grants permission to list all supported instance types",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListInstanceTypes.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_ListInstanceTypes.html"
     },
     {
       "name": "ListRegions",
       "methodName": "toListRegions",
       "description": "Grants permission to list all supported AWS regions",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListRegions.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_ListRegions.html"
     },
     {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
       "description": "Grants permission to list user tags for resources in your account",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListTagsForResource.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_ListTagsForResource.html"
     },
     {
       "name": "ListWorkspaceInstances",
       "methodName": "toListWorkspaceInstances",
       "description": "Grants permission to list workspace managed instances in your account",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListWorkspaceInstances.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_ListWorkspaceInstances.html"
+    },
+    {
+      "name": "ModifyVolume",
+      "methodName": "toModifyVolume",
+      "description": "Grants permission to modify a workspace managed volume in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_ModifyVolume.html"
     },
     {
       "name": "TagResource",
       "methodName": "toTagResource",
       "description": "Grants permission to add user tags to resources in your account",
       "accessLevel": "Tagging, Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TagResource.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_TagResource.html"
     },
     {
       "name": "UntagResource",
       "methodName": "toUntagResource",
       "description": "Grants permission to remove user tags from resources in your account",
       "accessLevel": "Tagging, Write",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UntagResource.html"
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_UntagResource.html"
     }
   ],
   "resources": [
     {
       "name": "VolumeId",
       "methodName": "onVolumeId",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/managed-workspaces-volumes.html",
+      "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html",
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:volume/${VolumeId}",
       "placeholders": [
         {
@@ -162,7 +170,7 @@
     {
       "name": "WorkspaceInstanceId",
       "methodName": "onWorkspaceInstanceId",
-      "url": "https://docs.aws.amazon.com/workspaces/latest/api/managed-workspaces-instances.html",
+      "url": "https://docs.aws.amazon.com/workspaces-instances/latest/api/API_WorkspaceInstance.html",
       "arn": "arn:${Partition}:workspaces-instances:${Region}:${Account}:workspaceinstance/${WorkspaceInstanceId}",
       "placeholders": [
         {
@@ -223,6 +231,7 @@
         "toDisassociateVolume",
         "toGetWorkspaceInstance",
         "toListTagsForResource",
+        "toModifyVolume",
         "toTagResource",
         "toUntagResource"
       ],

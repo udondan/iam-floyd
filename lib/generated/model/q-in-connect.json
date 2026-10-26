@@ -42,6 +42,8 @@
       "DeleteQuickResponse",
       "NotifyRecommendationsReceived",
       "PutFeedback",
+      "RegisterAssistantReplicaKey",
+      "RegisterKnowledgeBaseReplicaKey",
       "RemoveAssistantAIAgent",
       "RemoveKnowledgeBaseTemplateUri",
       "SendMessage",
@@ -637,6 +639,20 @@
       "description": "Grants permission to perform a manual search against the specified assistant",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html"
+    },
+    {
+      "name": "RegisterAssistantReplicaKey",
+      "methodName": "toRegisterAssistantReplicaKey",
+      "description": "Grants permission to register a replica KMS key for an assistant",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RegisterAssistantReplicaKey.html"
+    },
+    {
+      "name": "RegisterKnowledgeBaseReplicaKey",
+      "methodName": "toRegisterKnowledgeBaseReplicaKey",
+      "description": "Grants permission to register a replica KMS key for a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_RegisterKnowledgeBaseReplicaKey.html"
     },
     {
       "name": "RemoveAssistantAIAgent",
@@ -1315,6 +1331,8 @@
         "toNotifyRecommendationsReceived",
         "toPutFeedback",
         "toQueryAssistant",
+        "toRegisterAssistantReplicaKey",
+        "toRegisterKnowledgeBaseReplicaKey",
         "toRemoveAssistantAIAgent",
         "toRemoveKnowledgeBaseTemplateUri",
         "toRenderMessageTemplate",

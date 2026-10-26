@@ -9,10 +9,13 @@
     "Write": [
       "APIAccessAll",
       "AddCollectionToCollectionGroup",
+      "CancelIngestionJob",
       "CreateAccessPolicy",
       "CreateCollection",
       "CreateCollectionGroup",
       "CreateIndex",
+      "CreateIngestionJob",
+      "CreateIngestionStream",
       "CreateLifecyclePolicy",
       "CreateSecurityConfig",
       "CreateSecurityPolicy",
@@ -22,6 +25,7 @@
       "DeleteCollection",
       "DeleteCollectionGroup",
       "DeleteIndex",
+      "DeleteIngestionStream",
       "DeleteLifecyclePolicy",
       "DeleteSecurityConfig",
       "DeleteSecurityPolicy",
@@ -47,6 +51,8 @@
       "GetAccessPolicy",
       "GetAccountSettings",
       "GetIndex",
+      "GetIngestionJob",
+      "GetIngestionStream",
       "GetPoliciesStats",
       "GetSecurityConfig",
       "GetSecurityPolicy"
@@ -55,11 +61,17 @@
       "ListAccessPolicies",
       "ListCollectionGroups",
       "ListCollections",
+      "ListIngestionJobs",
+      "ListIngestionStreams",
       "ListLifecyclePolicies",
       "ListSecurityConfigs",
       "ListSecurityPolicies",
       "ListTagsForResource",
       "ListVpcEndpoints"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   },
   "actions": [
@@ -90,7 +102,7 @@
     {
       "name": "BatchGetCollectionGroup",
       "methodName": "toBatchGetCollectionGroup",
-      "description": "Grants permission to get attributes for one or more collection groups",
+      "description": "Grants permission to get attributes for one or more collection-groups",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollectionGroup.html",
       "conditionMethods": [
@@ -117,6 +129,13 @@
       "description": "Grants permission to get attributes for one or more VPC endpoints",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetVpcEndpoint.html"
+    },
+    {
+      "name": "CancelIngestionJob",
+      "methodName": "toCancelIngestionJob",
+      "description": "Grants permission to cancel an ingestion job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CancelIngestionJob.html"
     },
     {
       "name": "CreateAccessPolicy",
@@ -158,6 +177,20 @@
       "description": "Grants permission to create an opensearch index",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateIndex.html"
+    },
+    {
+      "name": "CreateIngestionJob",
+      "methodName": "toCreateIngestionJob",
+      "description": "Grants permission to create an ingestion job on a collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateIngestionJob.html"
+    },
+    {
+      "name": "CreateIngestionStream",
+      "methodName": "toCreateIngestionStream",
+      "description": "Grants permission to create an ingestion stream on a collection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateIngestionStream.html"
     },
     {
       "name": "CreateLifecyclePolicy",
@@ -233,6 +266,13 @@
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteIndex.html"
     },
     {
+      "name": "DeleteIngestionStream",
+      "methodName": "toDeleteIngestionStream",
+      "description": "Grants permission to delete an ingestion stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteIngestionStream.html"
+    },
+    {
       "name": "DeleteLifecyclePolicy",
       "methodName": "toDeleteLifecyclePolicy",
       "description": "Grants permission to delete a lifecycle policy",
@@ -292,6 +332,20 @@
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetIndex.html"
     },
     {
+      "name": "GetIngestionJob",
+      "methodName": "toGetIngestionJob",
+      "description": "Grants permission to get information about an ingestion job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetIngestionJob.html"
+    },
+    {
+      "name": "GetIngestionStream",
+      "methodName": "toGetIngestionStream",
+      "description": "Grants permission to get information about an ingestion stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetIngestionStream.html"
+    },
+    {
       "name": "GetPoliciesStats",
       "methodName": "toGetPoliciesStats",
       "description": "Grants permission to get statistis about the security policies in your account",
@@ -325,7 +379,7 @@
     {
       "name": "ListCollectionGroups",
       "methodName": "toListCollectionGroups",
-      "description": "Grants permission to list collection groups",
+      "description": "Grants permission to list collection-groups",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollectionGroups.html"
     },
@@ -335,6 +389,20 @@
       "description": "Grants permission to list collections",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html"
+    },
+    {
+      "name": "ListIngestionJobs",
+      "methodName": "toListIngestionJobs",
+      "description": "Grants permission to list ingestion jobs for a collection",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListIngestionJobs.html"
+    },
+    {
+      "name": "ListIngestionStreams",
+      "methodName": "toListIngestionStreams",
+      "description": "Grants permission to list ingestion streams for a collection",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListIngestionStreams.html"
     },
     {
       "name": "ListLifecyclePolicies",
@@ -360,7 +428,7 @@
     {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
-      "description": "Grants permission to list tags for a collection",
+      "description": "Grants permission to list tags for a collection, collection group, ingestion job, or ingestion stream",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListTagsForResource.html"
     },
@@ -374,24 +442,16 @@
     {
       "name": "TagResource",
       "methodName": "toTagResource",
-      "description": "Grants permission to tag a serverless collection",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_TagResource.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsResourceTag",
-        "ifAwsTagKeys"
-      ]
+      "description": "Grants permission to add tags to a collection, collection group, ingestion job, or ingestion stream",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_TagResource.html"
     },
     {
       "name": "UntagResource",
       "methodName": "toUntagResource",
-      "description": "Grants permission to remove tags from a collection",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UntagResource.html",
-      "conditionMethods": [
-        "ifAwsTagKeys"
-      ]
+      "description": "Grants permission to remove tags from a collection, collection group, ingestion job, or ingestion stream",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UntagResource.html"
     },
     {
       "name": "UpdateAccessPolicy",
@@ -565,6 +625,78 @@
         }
       ],
       "conditionMethods": []
+    },
+    {
+      "name": "IngestionJob",
+      "methodName": "onIngestionJob",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:collection/${CollectionId}/ingestion-job/${IngestionJobId}",
+      "placeholders": [
+        {
+          "placeholder": "CollectionId",
+          "name": "collectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IngestionJobId",
+          "name": "ingestionJobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "IngestionStream",
+      "methodName": "onIngestionStream",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:collection/${CollectionId}/ingestion-stream/${IngestionStreamId}",
+      "placeholders": [
+        {
+          "placeholder": "CollectionId",
+          "name": "collectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IngestionStreamId",
+          "name": "ingestionStreamId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     }
   ],
   "conditions": [
@@ -579,6 +711,23 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "CollectionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aoss:DeletionProtection",
+      "methodName": "ifDeletionProtection",
+      "description": "Filters access by the deletion protection value set on a collection in the request. Valid values are enabled and disabled",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys",
+      "relatedActionMethods": [
+        "toUpdateCollection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DeletionProtection",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [
@@ -662,6 +811,8 @@
       "relatedActionMethods": [
         "toCreateCollection",
         "toCreateCollectionGroup",
+        "toCreateIngestionJob",
+        "toCreateIngestionStream",
         "toTagResource"
       ],
       "relatedResourceTypes": [],
@@ -682,16 +833,28 @@
       "relatedActionMethods": [
         "toAPIAccessAll",
         "toAddCollectionToCollectionGroup",
+        "toCancelIngestionJob",
         "toCreateCollection",
+        "toCreateIngestionJob",
+        "toCreateIngestionStream",
         "toDeleteCollection",
         "toDeleteCollectionGroup",
+        "toDeleteIngestionStream",
+        "toGetIngestionJob",
+        "toGetIngestionStream",
+        "toListIngestionJobs",
+        "toListIngestionStreams",
+        "toListTagsForResource",
         "toTagResource",
+        "toUntagResource",
         "toUpdateCollection",
         "toUpdateCollectionGroup"
       ],
       "relatedResourceTypes": [
         "Collection",
-        "CollectionGroup"
+        "CollectionGroup",
+        "IngestionJob",
+        "IngestionStream"
       ],
       "keyLiteral": "aws:ResourceTag/",
       "valueKind": "string",
@@ -710,6 +873,8 @@
       "relatedActionMethods": [
         "toCreateCollection",
         "toCreateCollectionGroup",
+        "toCreateIngestionJob",
+        "toCreateIngestionStream",
         "toTagResource",
         "toUntagResource"
       ],

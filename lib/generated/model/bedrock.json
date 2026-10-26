@@ -71,6 +71,7 @@
       "GetPrompt",
       "GetPromptRouter",
       "GetProvisionedModelThroughput",
+      "GetRetrievalInstruction",
       "GetSession",
       "GetUseCaseForModelAccess",
       "InvokeAgent",
@@ -133,6 +134,8 @@
       "CreatePromptRouter",
       "CreatePromptVersion",
       "CreateProvisionedModelThroughput",
+      "CreateRetrievalInstruction",
+      "CreateRetrievalInstructionVersion",
       "CreateSession",
       "DeleteAgent",
       "DeleteAgentActionGroup",
@@ -165,6 +168,7 @@
       "DeletePrompt",
       "DeletePromptRouter",
       "DeleteProvisionedModelThroughput",
+      "DeleteRetrievalInstruction",
       "DeleteSession",
       "DeregisterMarketplaceModelEndpoint",
       "DisassociateAgentCollaborator",
@@ -218,6 +222,7 @@
       "UpdateMarketplaceModelEndpoint",
       "UpdatePrompt",
       "UpdateProvisionedModelThroughput",
+      "UpdateRetrievalInstruction",
       "UpdateSession",
       "AllowVendedLogDeliveryForResource",
       "AssociateThirdPartyKnowledgeBase",
@@ -272,6 +277,8 @@
       "ListPromptRouters",
       "ListPrompts",
       "ListProvisionedModelThroughputs",
+      "ListRetrievalInstructionVersions",
+      "ListRetrievalInstructions",
       "ListSessions"
     ],
     "Tagging": [
@@ -652,6 +659,24 @@
       "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateProvisionedModelThroughput.html"
     },
     {
+      "name": "CreateRetrievalInstruction",
+      "methodName": "toCreateRetrievalInstruction",
+      "description": "Grants permission to create a retrieval instruction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateRetrievalInstruction.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRetrievalInstructionVersion",
+      "methodName": "toCreateRetrievalInstructionVersion",
+      "description": "Grants permission to create a version of a retrieval instruction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateRetrievalInstructionVersion.html"
+    },
+    {
       "name": "CreateSession",
       "methodName": "toCreateSession",
       "description": "Grants permission to create a new session",
@@ -878,6 +903,13 @@
       "description": "Grants permission to delete a provisioned model throughput that you created earlier",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteProvisionedModelThroughput.html"
+    },
+    {
+      "name": "DeleteRetrievalInstruction",
+      "methodName": "toDeleteRetrievalInstruction",
+      "description": "Grants permission to delete a retrieval instruction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteRetrievalInstruction.html"
     },
     {
       "name": "DeleteSession",
@@ -1328,6 +1360,13 @@
       "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetProvisionedModelThroughput.html"
     },
     {
+      "name": "GetRetrievalInstruction",
+      "methodName": "toGetRetrievalInstruction",
+      "description": "Grants permission to retrieve a retrieval instruction",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetRetrievalInstruction.html"
+    },
+    {
       "name": "GetSession",
       "methodName": "toGetSession",
       "description": "Grants permission to retrieve an existing session",
@@ -1751,6 +1790,20 @@
       "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListProvisionedModelThroughputs.html"
     },
     {
+      "name": "ListRetrievalInstructionVersions",
+      "methodName": "toListRetrievalInstructionVersions",
+      "description": "Grants permission to list the versions of a retrieval instruction",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListRetrievalInstructionVersions.html"
+    },
+    {
+      "name": "ListRetrievalInstructions",
+      "methodName": "toListRetrievalInstructions",
+      "description": "Grants permission to list retrieval instructions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListRetrievalInstructions.html"
+    },
+    {
       "name": "ListSessions",
       "methodName": "toListSessions",
       "description": "Grants permission to list existing sessions",
@@ -2081,6 +2134,13 @@
       "description": "Grants permission to update a provisioned model throughput that you created earlier",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateProvisionedModelThroughput.html"
+    },
+    {
+      "name": "UpdateRetrievalInstruction",
+      "methodName": "toUpdateRetrievalInstruction",
+      "description": "Grants permission to update a retrieval instruction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateRetrievalInstruction.html"
     },
     {
       "name": "UpdateSession",
@@ -3410,6 +3470,37 @@
       ]
     },
     {
+      "name": "retrieval-instruction",
+      "methodName": "onRetrievalInstruction",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:retrieval-instruction/${RetrievalInstructionId}",
+      "placeholders": [
+        {
+          "placeholder": "RetrievalInstructionId",
+          "name": "retrievalInstructionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "session",
       "methodName": "onSession",
       "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
@@ -3504,6 +3595,7 @@
         "toCreatePromptRouter",
         "toCreatePromptVersion",
         "toCreateProvisionedModelThroughput",
+        "toCreateRetrievalInstruction",
         "toCreateSession",
         "toInvokeBlueprintOptimizationAsync",
         "toInvokeDataAutomationAsync",
@@ -3559,6 +3651,7 @@
         "toCreatePromptRouter",
         "toCreatePromptVersion",
         "toCreateProvisionedModelThroughput",
+        "toCreateRetrievalInstructionVersion",
         "toDeleteAgent",
         "toDeleteAgentActionGroup",
         "toDeleteAgentAlias",
@@ -3585,6 +3678,7 @@
         "toDeletePrompt",
         "toDeletePromptRouter",
         "toDeleteProvisionedModelThroughput",
+        "toDeleteRetrievalInstruction",
         "toDeleteSession",
         "toDisassociateAgentCollaborator",
         "toDisassociateAgentKnowledgeBase",
@@ -3638,6 +3732,7 @@
         "toGetPrompt",
         "toGetPromptRouter",
         "toGetProvisionedModelThroughput",
+        "toGetRetrievalInstruction",
         "toGetSession",
         "toIngestKnowledgeBaseDocuments",
         "toInvokeAgent",
@@ -3673,6 +3768,7 @@
         "toListInvocations",
         "toListKnowledgeBaseDocuments",
         "toListPrompts",
+        "toListRetrievalInstructionVersions",
         "toListTagsForResource",
         "toPrepareAgent",
         "toPrepareFlow",
@@ -3709,6 +3805,7 @@
         "toUpdateKnowledgeBase",
         "toUpdatePrompt",
         "toUpdateProvisionedModelThroughput",
+        "toUpdateRetrievalInstruction",
         "toUpdateSession",
         "toAllowVendedLogDeliveryForResource",
         "toDeleteResourcePolicy",
@@ -3749,6 +3846,7 @@
         "prompt-router",
         "prompt-version",
         "provisioned-model",
+        "retrieval-instruction",
         "session"
       ],
       "keyLiteral": "aws:ResourceTag/",
@@ -3792,6 +3890,7 @@
         "toCreatePromptRouter",
         "toCreatePromptVersion",
         "toCreateProvisionedModelThroughput",
+        "toCreateRetrievalInstruction",
         "toCreateSession",
         "toInvokeBlueprintOptimizationAsync",
         "toInvokeDataAutomationAsync",

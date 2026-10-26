@@ -7,11 +7,13 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecs.html",
   "accessLevelList": {
     "Write": [
+      "AssociateGatewayWithCluster",
       "ContinueServiceDeployment",
       "CreateCapacityProvider",
       "CreateCluster",
       "CreateDaemon",
       "CreateExpressGatewayService",
+      "CreateGateway",
       "CreateService",
       "CreateTaskSet",
       "DeleteAccountSetting",
@@ -21,11 +23,13 @@
       "DeleteDaemon",
       "DeleteDaemonTaskDefinition",
       "DeleteExpressGatewayService",
+      "DeleteGateway",
       "DeleteService",
       "DeleteTaskDefinitions",
       "DeleteTaskSet",
       "DeregisterContainerInstance",
       "DeregisterTaskDefinition",
+      "DisassociateGatewayFromCluster",
       "DiscoverPollEndpoint",
       "ExecuteCommand",
       "PutAccountSetting",
@@ -51,6 +55,7 @@
       "UpdateContainerInstancesState",
       "UpdateDaemon",
       "UpdateExpressGatewayService",
+      "UpdateGateway",
       "UpdateService",
       "UpdateServicePrimaryTaskSet",
       "UpdateTaskProtection",
@@ -69,6 +74,9 @@
       "DescribeDaemonRevisions",
       "DescribeDaemonTaskDefinition",
       "DescribeExpressGatewayService",
+      "DescribeGateway",
+      "DescribeGatewayResources",
+      "DescribeGatewayRoute",
       "DescribeServiceDeployments",
       "DescribeServiceRevisions",
       "DescribeServices",
@@ -86,6 +94,9 @@
       "ListDaemonDeployments",
       "ListDaemonTaskDefinitions",
       "ListDaemons",
+      "ListGatewayClusterAssociations",
+      "ListGatewayRoutes",
+      "ListGateways",
       "ListServiceDeployments",
       "ListServices",
       "ListServicesByNamespace",
@@ -102,6 +113,13 @@
     ]
   },
   "actions": [
+    {
+      "name": "AssociateGatewayWithCluster",
+      "methodName": "toAssociateGatewayWithCluster",
+      "description": "Grants permission to associate an Amazon ECS gateway with a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_AssociateGatewayWithCluster.html"
+    },
     {
       "name": "ContinueServiceDeployment",
       "methodName": "toContinueServiceDeployment",
@@ -136,6 +154,13 @@
       "description": "Grants permission to create a new Amazon ECS Express Gateway service with cluster and task definition",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateExpressGatewayService.html"
+    },
+    {
+      "name": "CreateGateway",
+      "methodName": "toCreateGateway",
+      "description": "Grants permission to create an Amazon ECS gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateGateway.html"
     },
     {
       "name": "CreateService",
@@ -202,6 +227,13 @@
       "description": "Grants permission to delete a specified Express Gateway service",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteExpressGatewayService.html"
+    },
+    {
+      "name": "DeleteGateway",
+      "methodName": "toDeleteGateway",
+      "description": "Grants permission to delete an Amazon ECS gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteGateway.html"
     },
     {
       "name": "DeleteService",
@@ -295,6 +327,27 @@
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeExpressGatewayService.html"
     },
     {
+      "name": "DescribeGateway",
+      "methodName": "toDescribeGateway",
+      "description": "Grants permission to describe an Amazon ECS gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeGateway.html"
+    },
+    {
+      "name": "DescribeGatewayResources",
+      "methodName": "toDescribeGatewayResources",
+      "description": "Grants permission to describe the resources associated with an Amazon ECS gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeGatewayResources.html"
+    },
+    {
+      "name": "DescribeGatewayRoute",
+      "methodName": "toDescribeGatewayRoute",
+      "description": "Grants permission to describe a route for an Amazon ECS gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeGatewayRoute.html"
+    },
+    {
       "name": "DescribeServiceDeployments",
       "methodName": "toDescribeServiceDeployments",
       "description": "Grants permission to describe one or more of your service deployments",
@@ -335,6 +388,13 @@
       "description": "Grants permission to describe a specified task or tasks",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"
+    },
+    {
+      "name": "DisassociateGatewayFromCluster",
+      "methodName": "toDisassociateGatewayFromCluster",
+      "description": "Grants permission to disassociate an Amazon ECS gateway from a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DisassociateGatewayFromCluster.html"
     },
     {
       "name": "DiscoverPollEndpoint",
@@ -408,6 +468,27 @@
       "conditionMethods": [
         "ifCluster"
       ]
+    },
+    {
+      "name": "ListGatewayClusterAssociations",
+      "methodName": "toListGatewayClusterAssociations",
+      "description": "Grants permission to list the cluster associations for Amazon ECS gateways",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListGatewayClusterAssociations.html"
+    },
+    {
+      "name": "ListGatewayRoutes",
+      "methodName": "toListGatewayRoutes",
+      "description": "Grants permission to list the routes for an Amazon ECS gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListGatewayRoutes.html"
+    },
+    {
+      "name": "ListGateways",
+      "methodName": "toListGateways",
+      "description": "Grants permission to list Amazon ECS gateways",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListGateways.html"
     },
     {
       "name": "ListServiceDeployments",
@@ -630,6 +711,13 @@
       "description": "Grants permission to modify the parameters of an Express Gateway service",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateExpressGatewayService.html"
+    },
+    {
+      "name": "UpdateGateway",
+      "methodName": "toUpdateGateway",
+      "description": "Grants permission to modify the parameters of an Amazon ECS gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateGateway.html"
     },
     {
       "name": "UpdateService",
@@ -962,6 +1050,84 @@
       ]
     },
     {
+      "name": "gateway",
+      "methodName": "onGateway",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/gateway.html",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:gateway/${GatewayName}/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayName",
+          "name": "gatewayName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "gateway-route",
+      "methodName": "onGatewayRoute",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/gateway-route.html",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:gateway-route/${GatewayName}/${GatewayId}/${RouteId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayName",
+          "name": "gatewayName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteId",
+          "name": "routeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifGateway"
+      ]
+    },
+    {
       "name": "service",
       "methodName": "onService",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html",
@@ -1212,6 +1378,7 @@
         "toCreateCluster",
         "toCreateDaemon",
         "toCreateExpressGatewayService",
+        "toCreateGateway",
         "toCreateService",
         "toCreateTaskSet",
         "toRegisterContainerInstance",
@@ -1237,11 +1404,13 @@
       "description": "Filters access by the tag key-value pairs attached to the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toAssociateGatewayWithCluster",
         "toContinueServiceDeployment",
         "toCreateCapacityProvider",
         "toCreateCluster",
         "toCreateDaemon",
         "toCreateExpressGatewayService",
+        "toCreateGateway",
         "toCreateService",
         "toCreateTaskSet",
         "toDeleteAttributes",
@@ -1250,6 +1419,7 @@
         "toDeleteDaemon",
         "toDeleteDaemonTaskDefinition",
         "toDeleteExpressGatewayService",
+        "toDeleteGateway",
         "toDeleteService",
         "toDeleteTaskDefinitions",
         "toDeleteTaskSet",
@@ -1262,16 +1432,23 @@
         "toDescribeDaemonRevisions",
         "toDescribeDaemonTaskDefinition",
         "toDescribeExpressGatewayService",
+        "toDescribeGateway",
+        "toDescribeGatewayResources",
+        "toDescribeGatewayRoute",
         "toDescribeServiceDeployments",
         "toDescribeServiceRevisions",
         "toDescribeServices",
         "toDescribeTaskSets",
         "toDescribeTasks",
+        "toDisassociateGatewayFromCluster",
         "toExecuteCommand",
         "toGetTaskProtection",
         "toListAttributes",
         "toListContainerInstances",
         "toListDaemonDeployments",
+        "toListGatewayClusterAssociations",
+        "toListGatewayRoutes",
+        "toListGateways",
         "toListServiceDeployments",
         "toListTagsForResource",
         "toListTasks",
@@ -1296,6 +1473,7 @@
         "toUpdateContainerInstancesState",
         "toUpdateDaemon",
         "toUpdateExpressGatewayService",
+        "toUpdateGateway",
         "toUpdateService",
         "toUpdateServicePrimaryTaskSet",
         "toUpdateTaskProtection",
@@ -1313,6 +1491,8 @@
         "daemon-deployment",
         "daemon-revision",
         "daemon-task-definition",
+        "gateway",
+        "gateway-route",
         "service",
         "service-deployment",
         "service-revision",
@@ -1339,6 +1519,7 @@
         "toCreateCluster",
         "toCreateDaemon",
         "toCreateExpressGatewayService",
+        "toCreateGateway",
         "toCreateService",
         "toCreateTaskSet",
         "toRegisterContainerInstance",
@@ -1408,6 +1589,8 @@
         "toGetTaskProtection",
         "toListAttributes",
         "toListContainerInstances",
+        "toListGatewayClusterAssociations",
+        "toListGatewayRoutes",
         "toListServiceDeployments",
         "toListTagsForResource",
         "toListTasks",
@@ -1521,6 +1704,7 @@
       "description": "Filters access by the ARN of an Amazon ECS cluster",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
       "relatedActionMethods": [
+        "toAssociateGatewayWithCluster",
         "toContinueServiceDeployment",
         "toCreateDaemon",
         "toCreateExpressGatewayService",
@@ -1541,10 +1725,13 @@
         "toDescribeServices",
         "toDescribeTaskSets",
         "toDescribeTasks",
+        "toDisassociateGatewayFromCluster",
         "toExecuteCommand",
         "toGetTaskProtection",
         "toListDaemonDeployments",
         "toListDaemons",
+        "toListGatewayClusterAssociations",
+        "toListGatewayRoutes",
         "toListServiceDeployments",
         "toListServices",
         "toListTasks",
@@ -1700,9 +1887,11 @@
       "relatedActionMethods": [
         "toCreateDaemon",
         "toCreateExpressGatewayService",
+        "toCreateGateway",
         "toCreateService",
         "toUpdateDaemon",
         "toUpdateExpressGatewayService",
+        "toUpdateGateway",
         "toUpdateService"
       ],
       "relatedResourceTypes": [],
@@ -1791,8 +1980,15 @@
       "methodName": "ifGateway",
       "description": "Filters access by the ARN of an Amazon ECS gateway",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
-      "relatedActionMethods": [],
-      "relatedResourceTypes": [],
+      "relatedActionMethods": [
+        "toDescribeGatewayRoute",
+        "toListGatewayClusterAssociations",
+        "toListGatewayRoutes",
+        "toListGateways"
+      ],
+      "relatedResourceTypes": [
+        "gateway-route"
+      ],
       "keyLiteral": "gateway",
       "valueKind": "arn",
       "defaultOperator": "ArnLike",
@@ -1861,10 +2057,12 @@
         "toCreateCapacityProvider",
         "toCreateDaemon",
         "toCreateExpressGatewayService",
+        "toCreateGateway",
         "toCreateService",
         "toUpdateCapacityProvider",
         "toUpdateDaemon",
         "toUpdateExpressGatewayService",
+        "toUpdateGateway",
         "toUpdateService"
       ],
       "relatedResourceTypes": [],
@@ -1888,6 +2086,7 @@
         "toDescribeServiceDeployments",
         "toDescribeServiceRevisions",
         "toDescribeTaskSets",
+        "toListGatewayRoutes",
         "toStopServiceDeployment",
         "toUpdateTaskSet"
       ],

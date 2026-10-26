@@ -55,6 +55,7 @@
       "StartRouteAnalysis",
       "TagResource",
       "UntagResource",
+      "UpdateAttachmentNatConfiguration",
       "UpdateConnection",
       "UpdateCoreNetwork",
       "UpdateDevice",
@@ -80,6 +81,7 @@
       "GetSites",
       "GetTransitGatewayConnectPeerAssociations",
       "GetTransitGatewayRegistrations",
+      "ListAttachmentNatConfigurations",
       "ListAttachmentRoutingPolicyAssociations",
       "ListAttachments",
       "ListConnectPeers",
@@ -578,6 +580,13 @@
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetVpcAttachment.html"
     },
     {
+      "name": "ListAttachmentNatConfigurations",
+      "methodName": "toListAttachmentNatConfigurations",
+      "description": "Grants permission to list the NAT configurations of attachments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachmentNatConfigurations.html"
+    },
+    {
       "name": "ListAttachmentRoutingPolicyAssociations",
       "methodName": "toListAttachmentRoutingPolicyAssociations",
       "description": "Grants permission to list all routing policies associated to core network attachments",
@@ -723,6 +732,13 @@
       "description": "Grants permission to untag a Network Manager resource",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAttachmentNatConfiguration",
+      "methodName": "toUpdateAttachmentNatConfiguration",
+      "description": "Grants permission to update the NAT configuration of an attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateAttachmentNatConfiguration.html"
     },
     {
       "name": "UpdateConnection",
@@ -1160,6 +1176,7 @@
         "toGetTransitGatewayRegistrations",
         "toGetTransitGatewayRouteTableAttachment",
         "toGetVpcAttachment",
+        "toListAttachmentNatConfigurations",
         "toListAttachmentRoutingPolicyAssociations",
         "toListAttachments",
         "toListConnectPeers",
@@ -1177,6 +1194,7 @@
         "toStartRouteAnalysis",
         "toTagResource",
         "toUntagResource",
+        "toUpdateAttachmentNatConfiguration",
         "toUpdateConnection",
         "toUpdateCoreNetwork",
         "toUpdateDevice",
