@@ -35,8 +35,15 @@ jobs:
 
           if [ -n "$PR" ]; then
             # Auto-merge waits for the branch to be up to date with main, and release-please leaves it
-            # behind when the new commits don't change the release notes.
-            gh pr update-branch "$PR"
+            # behind when the new commits don't change the release notes. With the REST API, as
+            # `gh pr update-branch` queries fields that need the scope `repo`, and the token has
+            # only `public_repo`.
+            HEAD=$(gh api "repos/$GH_REPO/pulls/$PR" --jq .head.ref)
+            BEHIND=$(gh api "repos/$GH_REPO/compare/$DEFAULT_BRANCH...$HEAD" --jq .behind_by)
+            if [ "$BEHIND" -gt 0 ]; then
+              gh api --method PUT "repos/$GH_REPO/pulls/$PR/update-branch" --silent
+              echo "Updated PR #$PR, which was $BEHIND commit(s) behind $DEFAULT_BRANCH"
+            fi
             gh pr merge "$PR" --auto --squash --delete-branch
             echo "Auto-merge enabled on PR #$PR"
           else
