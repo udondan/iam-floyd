@@ -197,6 +197,21 @@
         "tag:GetResources"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ValidateDataVolumeConfigurationForManagedInstances",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:volume/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AmazonECSManaged": "true"
+        }
+      }
     }
   ]
 }

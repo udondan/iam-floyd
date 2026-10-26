@@ -247,6 +247,20 @@
           "iam:AssociatedResourceArn": "arn:aws:cloudwatch:*:*:alarm:*"
         }
       }
+    },
+    {
+      "Sid": "CloudWatchLogsKmsDescribeKeyPermissions",
+      "Effect": "Allow",
+      "Action": "kms:DescribeKey",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "logs.*.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

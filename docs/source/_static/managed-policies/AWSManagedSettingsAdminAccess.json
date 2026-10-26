@@ -68,7 +68,8 @@
         "budgets:DeleteBudget",
         "budgets:DescribeBudgets",
         "budgets:DescribeBudget",
-        "budgets:DescribeBudgetActionHistories"
+        "budgets:DescribeBudgetActionHistories",
+        "budgets:ExecuteBudgetAction"
       ],
       "Resource": "*"
     },

@@ -129,6 +129,38 @@
         "q:PassRequest"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ListAccountConnections",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListConnections"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ReadAccountConnections",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetConnection"
+      ],
+      "Resource": "arn:aws:partnercentral:*::catalog/*/connection/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
     }
   ]
 }
