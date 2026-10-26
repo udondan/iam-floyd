@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>udondan/renovate-config"],
+  "extends": ["github>udondan/renovate-config", "group:allNonMajor"],
   "customManagers": [
     {
       "description": "Versions in the workflows and actions with a renovate comment on the line above",
