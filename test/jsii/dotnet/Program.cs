@@ -106,3 +106,11 @@ Scenario("j policies of split used as documents", stack =>
         new IamPolicy(stack, $"Part{index}", new PolicyProps { Document = parts[index], Roles = roles });
     }
 });
+
+Scenario("k dates as condition values", stack =>
+    NewRole(stack).AddToPolicy(new Statement.S3()
+        .Allow()
+        .ToPutObject()
+        .OnObject("bucket", "*")
+        .IfAwsCurrentTime(new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc))
+        .IfObjectLockRetainUntilDate(new DateTime(2026, 6, 30, 12, 0, 0, DateTimeKind.Utc))));

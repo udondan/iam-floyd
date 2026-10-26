@@ -125,3 +125,14 @@ scenario('j policies of split used as documents', (stack) => {
     new iam.Policy(stack, `Part${index}`, { document: part, roles });
   });
 });
+
+scenario('k dates as condition values', (stack) => {
+  role(stack).addToPolicy(
+    new Statement.S3()
+      .allow()
+      .toPutObject()
+      .onObject('bucket', '*')
+      .ifAwsCurrentTime(new Date('2026-01-01T00:00:00Z'))
+      .ifObjectLockRetainUntilDate(new Date('2026-06-30T12:00:00Z')),
+  );
+});

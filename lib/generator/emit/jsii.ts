@@ -185,9 +185,7 @@ function modelValueType(name: string): TypeReference {
     case 'number':
       return primitive('number');
     case 'Date':
-      // Dates are passed as ISO 8601 strings. jsii-pacmak's Go target misses the `time` import
-      // for dates in unions, which breaks every Go library that subclasses a statement provider.
-      return primitive('string');
+      return primitive('date');
     case 'boolean':
       return primitive('boolean');
     default:
@@ -854,8 +852,7 @@ class SharedExtractor {
       return unionOf(refs);
     }
     const symbol = type.getSymbol() ?? type.getAliasSymbol();
-    // see modelValueType() on why dates are strings
-    if (symbol?.getName() === 'Date') return primitive('string');
+    if (symbol?.getName() === 'Date') return primitive('date');
     const declaration = symbol?.getDeclarations()[0];
     if (
       declaration &&

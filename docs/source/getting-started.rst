@@ -304,7 +304,7 @@ Differences Between the Variants
      - An `iam.PolicyDocument`_ of the AWS CDK, see :doc:`policy`
    * - Dates
      - A ``datetime`` in Python, an ``Instant`` in Java, a ``DateTime`` in C# and a ``time.Time`` in Go, or a string
-     - In TypeScript a ``Date`` or a string, in the other languages a string in ISO 8601
+     - A ``datetime`` in Python, an ``Instant`` in Java, a ``DateTime`` in C# and a ``*time.Time`` in Go (``jsii.Time(t)``), or a string
    * - Collection
      - In Java and C#, the statement providers are generic: ``new Collection().allowEc2InstanceDeleteByOwner()`` returns a ``List<Ec2>``, and a list of several statement providers is a ``List<? extends PolicyStatement<?>>`` in Java and, for example, a ``List<PolicyStatementBase>`` in C#. In Go, the collection is in the package ``collection`` and returns a slice: ``collection.NewCollection().AllowEc2InstanceDeleteByOwner()`` returns ``[]*statement.Ec2``
      - Lists of the statement providers, which are an `iam.PolicyStatement`_
