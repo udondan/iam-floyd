@@ -114,6 +114,10 @@ export interface JsiiOptions {
    * Where to write `.jsii` and `.jsii.gz`
    */
   outDir: string;
+  /**
+   * The readme of the package in Markdown
+   */
+  readme: string;
 }
 
 const statementNamespace = 'Statement';
@@ -1034,7 +1038,7 @@ function dependencyClosure(
  * on Construct Hub without being compiled by jsii.
  */
 export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
-  const { variant, version, outDir } = options;
+  const { variant, version, outDir, readme } = options;
   const packageJson = JSON.parse(
     fs.readFileSync('package.json', 'utf8'),
   ) as PackageJson;
@@ -1112,7 +1116,7 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
     },
     keywords,
     docs: { stability: 'stable' },
-    readme: { markdown: fs.readFileSync('README.md', 'utf8') },
+    readme: { markdown: readme },
     jsiiVersion: '5.9.0 (build iam-floyd)',
     targets: {
       js: { npm: name },
@@ -1138,7 +1142,23 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
     types: sortedTypes,
   };
 
+  const bytes = writeJsii(outDir, assembly);
+
+  return {
+    name,
+    types: Object.keys(sortedTypes).length,
+    bytes,
+    warnings: [...warnings],
+  };
+}
+
+/**
+ * Writes the assembly with its fingerprint to `.jsii.gz` in `outDir`, and `.jsii` as redirect to
+ * it. Returns the size of the uncompressed assembly
+ */
+export function writeJsii(outDir: string, assembly: Record<string, unknown>) {
   // jsii fingerprints the assembly without the fingerprint itself
+  delete assembly.fingerprint;
   assembly.fingerprint = createHash('sha256')
     .update(JSON.stringify(assembly))
     .digest('base64');
@@ -1150,11 +1170,5 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
     path.join(outDir, '.jsii'),
     `${JSON.stringify({ schema: 'jsii/file-redirect', compression: 'gzip', filename: '.jsii.gz' }, null, 2)}\n`,
   );
-
-  return {
-    name,
-    types: Object.keys(sortedTypes).length,
-    bytes: Buffer.byteLength(json),
-    warnings: [...warnings],
-  };
+  return Buffer.byteLength(json);
 }

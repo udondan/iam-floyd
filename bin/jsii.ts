@@ -4,7 +4,9 @@
  * packages from the npm package and its jsii assembly. Run after `make cdk build`.
  *
  * - sets the jsii targets in package.json
- * - writes the jsii assembly (`.jsii`) from the service models
+ * - writes the jsii assembly (`.jsii`) from the service models, with the README in TypeScript, for
+ *   npm and Construct Hub. `bin/readme.ts --jsii` sets it to another language before jsii-pacmak
+ *   builds the package of that language
  * - appends the jsii runtime type information to `lib/index.js`
  */
 import * as fs from 'fs';
@@ -13,6 +15,7 @@ import { loadAssemblyFromFile, TypeKind } from '@jsii/spec';
 import { emitJsii } from '../lib/generator/emit/jsii';
 import { ServiceModel } from '../lib/generator/model';
 import { PackageJson } from '../lib/generator/package-json';
+import { readme } from '../lib/generator/readme';
 
 const modelDir = 'lib/generated/model';
 
@@ -62,7 +65,17 @@ const models = fs
       ) as ServiceModel,
   );
 
-const result = emitJsii(models, { variant: 'cdk', version, outDir: '.' });
+const result = emitJsii(models, {
+  variant: 'cdk',
+  version,
+  outDir: '.',
+  readme: readme(
+    fs.readFileSync('README.md', 'utf8'),
+    'typescript',
+    'cdk-iam-floyd',
+    version,
+  ),
+});
 console.log(
   `Wrote .jsii for ${result.name}@${version}: ${result.types} types, ${result.bytes} bytes`,
 );
