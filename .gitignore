@@ -22,6 +22,7 @@ test/package-lock.json
 lint/target/
 __pycache__/
 /python/LICENSE
+/python/README.md
 /python/iam_floyd/_aws_managed_policies.py
 /python/iam_floyd/_aws_service_principals.py
 /python/iam_floyd/_collection.py
@@ -35,6 +36,7 @@ __pycache__/
 !/java/src/main/java/com/udondan/iamFloyd/Json.java
 /java/target
 /java/.flattened-pom.xml
+/dotnet/README.md
 # the C# sources are written by bin/transpile.ts, except the runtime
 /dotnet/src/IAM.Floyd/*
 !/dotnet/src/IAM.Floyd/IAM.Floyd.csproj

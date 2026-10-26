@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * Writes the generated sources of the native packages: the core transpiled from lib/shared/, the
- * collection, the names of the AWS managed policies and service principals, the services emitted from the model and the
- * version of package.json
+ * collection, the names of the AWS managed policies and service principals, the services emitted from the model, the
+ * version of package.json and the README of each package
  */
 import { spawnSync } from 'child_process';
 import * as fs from 'fs';
@@ -13,6 +13,7 @@ import { emitCSharpFromModels } from '../lib/generator/emit/csharp';
 import { emitGoFromModels, goModulePath } from '../lib/generator/emit/go';
 import { emitJavaFromModels } from '../lib/generator/emit/java';
 import { emitPythonFromModels } from '../lib/generator/emit/python';
+import { readme } from '../lib/generator/readme';
 import {
   collectionSourceFiles,
   coreSourceFiles,
@@ -74,6 +75,15 @@ fs.writeFileSync(
   'python/iam_floyd/_version.py',
   `# Written by bin/transpile.ts from package.json. Do not edit.\n__version__ = '${version}'\n`,
 );
+
+const markdown = fs.readFileSync('README.md', 'utf8');
+for (const [file, language] of [
+  ['python/README.md', 'python'],
+  ['dotnet/README.md', 'dotnet'],
+  ['go/iamfloyd/README.md', 'go'],
+] as const) {
+  fs.writeFileSync(file, readme(markdown, language, 'iam-floyd', version));
+}
 
 /**
  * Removes the files with the extension that start with a header that ends with "Do not edit."
