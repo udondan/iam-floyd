@@ -49,9 +49,15 @@ index-service-principals:
 	@npm run index-service-principals
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
+# Runs the npm command $(1) with README.md in TypeScript, which npm packs, and restores README.md
+# after it. The copy is not next to it, as npm packs every README*
+npm-readme = original=$$(mktemp) && cp README.md "$$original" && \
+	npx ts-node bin/readme.ts typescript "$$(node -p "require('./package.json').name")" README.md && \
+	{ $(1); status=$$?; cp "$$original" README.md; rm "$$original"; exit $$status; }
+
 package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
-	@npm pack
+	@$(call npm-readme,npm pack)
 
 # The native packages of iam-floyd in dist/iam-floyd/: Python, Java (a Maven repository), .NET and
 # the module zip of Go.
@@ -75,11 +81,17 @@ package-native: emit
 # The runtime type checks of jsii-pacmak are left out: they add a third to the code, and in Go they
 # reject nil for optional union parameters like the operator of `if*` methods. bin/jsii-pack.ts
 # writes a smaller npm tarball for embedding in the packages.
+# jsii-pacmak runs once per language, with the readme of the jsii assembly in that language, which
+# is set back to TypeScript for npm and Construct Hub at the end.
 package-jsii: build
 	@echo -e "$(TARGET_COLOR)Running package-jsii$(NO_COLOR)"
 	@npx ts-node bin/jsii.ts
 	@rm -rf dist
-	$(if $(JSII_TARGETS),@npx jsii-pacmak --targets $(subst $(SPACE),$(COMMA),$(JSII_TARGETS)) --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts")
+	@for target in $(JSII_TARGETS); do \
+		npx ts-node bin/readme.ts --jsii "$$target" && \
+		npx jsii-pacmak --targets "$$target" --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts" || exit 1; \
+	done
+	$(if $(JSII_TARGETS),@npx ts-node bin/readme.ts --jsii typescript)
 	$(if $(filter go,$(JSII_TARGETS)),@bin/go-proxy zip dist/go/cdkiamfloyd v$(VERSION) dist/go-module/cdk-iam-floyd-go-module-v$(VERSION).zip)
 
 cdk:
@@ -155,7 +167,7 @@ toot: install
 publish:
 	@echo -e "$(TARGET_COLOR)Running publish$(NO_COLOR)"
 	@find . -type f -name 'README.md' -mindepth 2 -exec rm {} \;
-	@npm publish --dry-run 2>&1 | tee publish_output.txt
+	@$(call npm-readme,npm publish --dry-run 2>&1 | tee publish_output.txt)
 	@if ! grep -q "lib/index.js" publish_output.txt; then \
 		echo "❌ lib/index.js is NOT included in the package"; \
 		exit 1; \
@@ -172,7 +184,7 @@ publish:
 	@if [ "$${NPM_PUBLISH}" != "true" ]; then \
 		echo "⚠️ NPM_PUBLISH is not true. Skipping publish"; \
 	else \
-		npm publish; \
+		$(call npm-readme,npm publish); \
 	fi
 
 # The TypeScript is linted with types, which need the emitted service classes

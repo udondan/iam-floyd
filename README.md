@@ -9,6 +9,8 @@
 
 IAM Floyd has a class for every AWS service, with a method for every action, resource type and condition key. Your IDE completes them and shows their documentation, so you neither look up action names and ARN formats, nor deploy policies with typos.
 
+<!-- language: typescript -->
+
 ```ts
 import { Statement } from 'iam-floyd';
 
@@ -18,6 +20,8 @@ const statement = new Statement.Ec2()
   .toStopInstances()
   .ifResourceTag('Owner', '${aws:username}');
 ```
+
+<!-- /language -->
 
 ```json
 {
@@ -31,6 +35,8 @@ const statement = new Statement.Ec2()
   "Effect": "Allow"
 }
 ```
+
+<!-- language: python -->
 
 <details>
 <summary>Python</summary>
@@ -49,6 +55,10 @@ statement = (
 
 </details>
 
+<!-- /language -->
+
+<!-- language: java -->
+
 <details>
 <summary>Java</summary>
 
@@ -64,6 +74,10 @@ Ec2 statement = new Ec2()
 
 </details>
 
+<!-- /language -->
+
+<!-- language: dotnet -->
+
 <details>
 <summary>C#</summary>
 
@@ -78,6 +92,10 @@ var statement = new Statement.Ec2()
 ```
 
 </details>
+
+<!-- /language -->
+
+<!-- language: go -->
 
 <details>
 <summary>Go</summary>
@@ -96,6 +114,8 @@ s := statement.NewEc2(nil).
 ```
 
 </details>
+
+<!-- /language -->
 
 <!-- stats -->
 
@@ -137,6 +157,8 @@ IAM Floyd comes in two variants, with the same API and the same version number i
 
 ### Installation
 
+<!-- install -->
+
 ```bash
 # TypeScript / JavaScript
 npm install iam-floyd           # or cdk-iam-floyd
@@ -153,6 +175,8 @@ dotnet add package IAM.Floyd    # or CDK.IAM.Floyd
 # Go
 go get udondan.github.io/iam-floyd/go/iamfloyd   # or .../go/cdkiamfloyd
 ```
+
+<!-- /install -->
 
 IAM Floyd has not reached 1.0.0 yet, and the API can still change between releases. Pin the exact version.
 
