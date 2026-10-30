@@ -68,6 +68,7 @@
     "typescript-eslint": "8.72.0"
   },
   "overrides": {
-    "katex": "0.18.2"
+    "katex": "0.18.2",
+    "re2js": "2.8.7"
   }
 }
