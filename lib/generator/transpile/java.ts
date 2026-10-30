@@ -305,10 +305,22 @@ function assignable(from: string, to: string): boolean {
 }
 
 /**
+ * The type without its type arguments: from the first `<` to the last `>`
+ */
+export function withoutTypeArguments(type: string): string {
+  const start = type.indexOf('<');
+  const end = type.lastIndexOf('>');
+  if (start < 0 || end < start) {
+    return type;
+  }
+  return type.slice(0, start) + type.slice(end + 1);
+}
+
+/**
  * The type without type arguments, as the JVM sees it
  */
 function erasure(type: string): string {
-  return type.replace(/<.*>/, '').replace('...', '[]');
+  return withoutTypeArguments(type).replace('...', '[]');
 }
 
 interface Param {
