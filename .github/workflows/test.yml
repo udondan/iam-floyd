@@ -20,6 +20,7 @@ jobs:
       actions: read
       contents: write # lock refs under refs/wait-for-turn/
       pull-requests: read # labels for label-weights
+      statuses: write # queue position as commit status
     # A new commit on the branch cancels the waiting of the outdated run, so the
     # new run doesn't queue behind it. Once a run has the turn, this job is
     # done: test jobs that already run are never cancelled.
@@ -35,8 +36,9 @@ jobs:
       # be up to date, so testing an outdated branch is wasted time. The rebase
       # needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
       - name: Wait for turn
-        uses: udondan/wait-for-turn@3efa3aeb1c711be9f0171a27ecfa6cf43ff2f307 # v1.7.0
+        uses: udondan/wait-for-turn@5d5087178d139c5f6af28997dff9addf49738a86 # v1.7.1
         with:
+          status-context: wait-for-turn
           require-up-to-date: true
           update-token: ${{ secrets.OVERRIDE_TOKEN }}
           label-weights: |
