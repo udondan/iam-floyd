@@ -41,15 +41,15 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@aws-sdk/client-iam": "3.1156.0",
-    "@aws-sdk/client-s3": "3.1156.0",
-    "@aws-sdk/client-sqs": "3.1156.0",
+    "@aws-sdk/client-iam": "3.1158.0",
+    "@aws-sdk/client-s3": "3.1158.0",
+    "@aws-sdk/client-sqs": "3.1158.0",
     "@eslint/js": "10.0.1",
     "@jsii/spec": "1.142.0",
     "@swc/core": "1.16.20",
     "@swc/helpers": "0.5.23",
     "@types/node": "24.19.2",
-    "aws-cdk-lib": "2.274.0",
+    "aws-cdk-lib": "2.275.0",
     "cheerio": "1.2.0",
     "colors": "1.4.0",
     "eslint": "10.13.0",
@@ -57,7 +57,7 @@
     "eslint-plugin-prettier": "5.5.7",
     "glob": "13.0.6",
     "globals": "17.13.0",
-    "jsii-docgen": "10.12.7",
+    "jsii-docgen": "10.12.8",
     "jsii-pacmak": "1.142.0",
     "markdownlint-cli2": "0.24.0",
     "prettier": "3.9.10",
@@ -65,10 +65,10 @@
     "ts-morph": "28.0.0",
     "ts-node": "10.9.2",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.72.0"
+    "typescript-eslint": "8.72.1"
   },
   "overrides": {
-    "katex": "0.18.2",
-    "re2js": "2.8.7"
+    "katex": "0.19.1",
+    "re2js": "2.9.0"
   }
 }
