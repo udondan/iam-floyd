@@ -30,13 +30,15 @@ jobs:
       # Queue order: manual PRs first, then Renovate updates, releases last.
       # The release PR isn't auto-merged, so it doesn't take the turn from
       # Renovate PRs that are about to be tested after a merge.
-      # Fails right away if the branch is behind main. Branch protection
-      # requires PRs to be up to date, so testing an outdated branch is wasted
-      # time: it has to be updated and tested again.
+      # A branch that is behind main is rebased and the run stops right away;
+      # the rebased commit starts a new run. Branch protection requires PRs to
+      # be up to date, so testing an outdated branch is wasted time. The rebase
+      # needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
       - name: Wait for turn
-        uses: udondan/wait-for-turn@bf890d60b9e238c05c224dbfb03442bdc09bde72 # v1.4.0
+        uses: udondan/wait-for-turn@58f1a8ffab1d08231b455fb0e5f9d25470c327fe # v1.6.0
         with:
           require-up-to-date: true
+          update-token: ${{ secrets.OVERRIDE_TOKEN }}
           label-weights: |
             autorelease: pending=-10
             renovate=-5
