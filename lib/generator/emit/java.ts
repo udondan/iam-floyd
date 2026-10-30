@@ -7,6 +7,7 @@ import {
   javaLocalName,
   javaMethodName,
   javaString,
+  withoutTypeArguments,
 } from '../transpile/java';
 
 const modelDir = 'lib/generated/model';
@@ -90,7 +91,7 @@ export function emitJava(model: ServiceModel): string {
     body: string[],
   ) => {
     const javaName = javaMethodName(name);
-    const signature = `${javaName}(${parameters.map((p) => p.type.replace(/<.*>/, '')).join(',')})`;
+    const signature = `${javaName}(${parameters.map((p) => withoutTypeArguments(p.type)).join(',')})`;
     if (signatures.has(signature)) {
       throw new Error(`Duplicate method ${signature} in ${className}`);
     }
