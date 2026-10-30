@@ -35,7 +35,7 @@ jobs:
       # be up to date, so testing an outdated branch is wasted time. The rebase
       # needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
       - name: Wait for turn
-        uses: udondan/wait-for-turn@58f1a8ffab1d08231b455fb0e5f9d25470c327fe # v1.6.0
+        uses: udondan/wait-for-turn@3efa3aeb1c711be9f0171a27ecfa6cf43ff2f307 # v1.7.0
         with:
           require-up-to-date: true
           update-token: ${{ secrets.OVERRIDE_TOKEN }}
