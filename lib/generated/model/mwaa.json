@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "filename": "mwaa",
+  "className": "Airflow",
+  "name": "airflow",
+  "servicePrefix": "airflow",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mwaa.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCliToken",
+      "CreateEnvironment",
+      "CreateWebLoginToken",
+      "DeleteEnvironment",
+      "InvokeRestApi",
+      "PublishMetrics",
+      "TagResource",
+      "UntagResource",
+      "UpdateEnvironment"
+    ],
+    "Read": [
+      "GetEnvironment",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListEnvironments"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCliToken",
+      "methodName": "toCreateCliToken",
+      "description": "Grants permission to create a short-lived token that allows a user to invoke Airflow CLI via an endpoint on the Apache Airflow Webserver",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create an Amazon MWAA environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html"
+    },
+    {
+      "name": "CreateWebLoginToken",
+      "methodName": "toCreateWebLoginToken",
+      "description": "Grants permission to create a short-lived token that allows a user to log into Apache Airflow web UI",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete an Amazon MWAA environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to view details about an Amazon MWAA environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_GetEnvironment.html"
+    },
+    {
+      "name": "InvokeRestApi",
+      "methodName": "toInvokeRestApi",
+      "description": "Grants permission to invoke Airflow REST API via an endpoint on the Apache Airflow Webserver",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list the Amazon MWAA environments in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tag for an Amazon MWAA environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PublishMetrics",
+      "methodName": "toPublishMetrics",
+      "description": "Grants permission to publish metrics for an Amazon MWAA environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Amazon MWAA environment",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Amazon MWAA environment",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to modify an Amazon MWAA environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_UpdateEnvironment.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/using-mwaa.html",
+      "arn": "arn:${Partition}:airflow:${Region}:${Account}:environment/${EnvironmentName}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_mwaa",
+        "interface": "IEnvironmentRef",
+        "property": "environmentRef",
+        "arn": "environmentArn"
+      }
+    },
+    {
+      "name": "rbac-role",
+      "methodName": "onRbacRole",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
+      "arn": "arn:${Partition}:airflow:${Region}:${Account}:role/${EnvironmentName}/${RoleName}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentName",
+          "name": "environmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RoleName",
+          "name": "roleName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "airflow:DagAccessEntity",
+      "methodName": "ifDagAccessEntity",
+      "description": "Filters access by the DAG sub-resource being accessed",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DagAccessEntity",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "airflow:ResourceAction",
+      "methodName": "ifResourceAction",
+      "description": "Filters access by the action being performed on the Airflow resource",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "airflow:ResourceId",
+      "methodName": "ifResourceId",
+      "description": "Filters access by the identifier of the specific Airflow resource, such as a DAG ID or connection ID",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "airflow:ResourceType",
+      "methodName": "ifResourceType",
+      "description": "Filters access by the Airflow resource type specified in the request",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "airflow:TeamNames",
+      "methodName": "ifTeamNames",
+      "description": "Filters access by the team names associated with the caller's identity, enabling team-based access control for Airflow resources",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TeamNames",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCliToken",
+        "toCreateEnvironment",
+        "toCreateWebLoginToken",
+        "toDeleteEnvironment",
+        "toGetEnvironment",
+        "toInvokeRestApi",
+        "toListTagsForResource",
+        "toPublishMetrics",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [
+        "environment",
+        "rbac-role"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

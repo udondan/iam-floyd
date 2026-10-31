@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PermissionsForInspector2Telemetry",
+      "Effect": "Allow",
+      "Action": [
+        "inspector2-telemetry:StartSession",
+        "inspector2-telemetry:StopSession",
+        "inspector2-telemetry:SendTelemetry",
+        "inspector2-telemetry:NotifyHeartbeat"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

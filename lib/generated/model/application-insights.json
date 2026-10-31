@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "filename": "application-insights",
+  "className": "Applicationinsights",
+  "name": "applicationinsights",
+  "servicePrefix": "applicationinsights",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-insights.html",
+  "accessLevelList": {
+    "Write": [
+      "AddWorkload",
+      "CreateApplication",
+      "CreateComponent",
+      "CreateLogPattern",
+      "DeleteApplication",
+      "DeleteComponent",
+      "DeleteLogPattern",
+      "RemoveWorkload",
+      "TagResource",
+      "UntagResource",
+      "UpdateApplication",
+      "UpdateComponent",
+      "UpdateComponentConfiguration",
+      "UpdateLogPattern",
+      "UpdateProblem",
+      "UpdateWorkload",
+      "Link"
+    ],
+    "Read": [
+      "DescribeApplication",
+      "DescribeComponent",
+      "DescribeComponentConfiguration",
+      "DescribeComponentConfigurationRecommendation",
+      "DescribeLogPattern",
+      "DescribeObservation",
+      "DescribeProblem",
+      "DescribeProblemObservations",
+      "DescribeWorkload",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplications",
+      "ListComponents",
+      "ListConfigurationHistory",
+      "ListLogPatternSets",
+      "ListLogPatterns",
+      "ListProblems",
+      "ListWorkloads"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddWorkload",
+      "methodName": "toAddWorkload",
+      "description": "Grants permission to add a workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_AddWorkload.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application from a resource group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateApplication.html"
+    },
+    {
+      "name": "CreateComponent",
+      "methodName": "toCreateComponent",
+      "description": "Grants permission to create a component from a group of resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateComponent.html"
+    },
+    {
+      "name": "CreateLogPattern",
+      "methodName": "toCreateLogPattern",
+      "description": "Grants permission to create log a pattern",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_CreateLogPattern.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteComponent",
+      "methodName": "toDeleteComponent",
+      "description": "Grants permission to delete a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DeleteComponent.html"
+    },
+    {
+      "name": "DeleteLogPattern",
+      "methodName": "toDeleteLogPattern",
+      "description": "Grants permission to delete a log pattern",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DeleteLogPattern.html"
+    },
+    {
+      "name": "DescribeApplication",
+      "methodName": "toDescribeApplication",
+      "description": "Grants permission to describe an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeApplication.html"
+    },
+    {
+      "name": "DescribeComponent",
+      "methodName": "toDescribeComponent",
+      "description": "Grants permission to describe a component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeComponent.html"
+    },
+    {
+      "name": "DescribeComponentConfiguration",
+      "methodName": "toDescribeComponentConfiguration",
+      "description": "Grants permission to describe a component's configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeComponentConfiguration.html"
+    },
+    {
+      "name": "DescribeComponentConfigurationRecommendation",
+      "methodName": "toDescribeComponentConfigurationRecommendation",
+      "description": "Grants permission to describe the recommended application component configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html"
+    },
+    {
+      "name": "DescribeLogPattern",
+      "methodName": "toDescribeLogPattern",
+      "description": "Grants permission to describe a log pattern",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeLogPattern.html"
+    },
+    {
+      "name": "DescribeObservation",
+      "methodName": "toDescribeObservation",
+      "description": "Grants permission to describe an observation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeObservation.html"
+    },
+    {
+      "name": "DescribeProblem",
+      "methodName": "toDescribeProblem",
+      "description": "Grants permission to describe a problem",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeProblem.html"
+    },
+    {
+      "name": "DescribeProblemObservations",
+      "methodName": "toDescribeProblemObservations",
+      "description": "Grants permission to describe the observation in a problem",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeProblemObservations.html"
+    },
+    {
+      "name": "DescribeWorkload",
+      "methodName": "toDescribeWorkload",
+      "description": "Grants permission to describe a workload",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_DescribeWorkload.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list all applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListComponents",
+      "methodName": "toListComponents",
+      "description": "Grants permission to list an application's components",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListComponents.html"
+    },
+    {
+      "name": "ListConfigurationHistory",
+      "methodName": "toListConfigurationHistory",
+      "description": "Grants permission to list configuration history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListConfigurationHistory.html"
+    },
+    {
+      "name": "ListLogPatternSets",
+      "methodName": "toListLogPatternSets",
+      "description": "Grants permission to list log pattern sets for an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListLogPatternSets.html"
+    },
+    {
+      "name": "ListLogPatterns",
+      "methodName": "toListLogPatterns",
+      "description": "Grants permission to list log patterns",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListLogPatterns.html"
+    },
+    {
+      "name": "ListProblems",
+      "methodName": "toListProblems",
+      "description": "Grants permission to list the problems in an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListProblems.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for the resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkloads",
+      "methodName": "toListWorkloads",
+      "description": "Grants permission to list workloads",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_ListWorkloads.html"
+    },
+    {
+      "name": "RemoveWorkload",
+      "methodName": "toRemoveWorkload",
+      "description": "Grants permission to remove a workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_RemoveWorkload.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_TagResource.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UntagResource.html",
+      "conditionMethods": [
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateComponent",
+      "methodName": "toUpdateComponent",
+      "description": "Grants permission to update a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateComponent.html"
+    },
+    {
+      "name": "UpdateComponentConfiguration",
+      "methodName": "toUpdateComponentConfiguration",
+      "description": "Grants permission to update a component's configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateComponentConfiguration.html"
+    },
+    {
+      "name": "UpdateLogPattern",
+      "methodName": "toUpdateLogPattern",
+      "description": "Grants permission to update a log pattern",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateLogPattern.html"
+    },
+    {
+      "name": "UpdateProblem",
+      "methodName": "toUpdateProblem",
+      "description": "Grants permission to update a problem",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateProblem.html"
+    },
+    {
+      "name": "UpdateWorkload",
+      "methodName": "toUpdateWorkload",
+      "description": "Grants permission to update a workload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/APIReference/API_UpdateWorkload.html"
+    },
+    {
+      "name": "Link",
+      "methodName": "toLink",
+      "description": "Grants permission to share Application Insights resources with a monitoring account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions"
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

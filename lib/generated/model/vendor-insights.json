@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "filename": "vendor-insights",
+  "className": "VendorInsights",
+  "name": "vendor-insights",
+  "servicePrefix": "vendor-insights",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_vendor-insights.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateSecurityProfile",
+      "AssociateDataSource",
+      "CreateDataSource",
+      "CreateSecurityProfile",
+      "DeactivateSecurityProfile",
+      "DeleteDataSource",
+      "DisassociateDataSource",
+      "TagResource",
+      "UntagResource",
+      "UpdateDataSource",
+      "UpdateSecurityProfile",
+      "UpdateSecurityProfileSnapshotCreationConfiguration",
+      "UpdateSecurityProfileSnapshotReleaseConfiguration"
+    ],
+    "Read": [
+      "GetDataSource",
+      "GetEntitledSecurityProfileSnapshot",
+      "GetProfileAccessTerms",
+      "GetSecurityProfile",
+      "GetSecurityProfileSnapshot",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDataSources",
+      "ListEntitledSecurityProfileSnapshots",
+      "ListEntitledSecurityProfiles",
+      "ListSecurityProfileSnapshots",
+      "ListSecurityProfiles"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateSecurityProfile",
+      "methodName": "toActivateSecurityProfile",
+      "description": "Grants permission to activate the security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "AssociateDataSource",
+      "methodName": "toAssociateDataSource",
+      "description": "Grants permission to associate security profile with a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "CreateDataSource",
+      "methodName": "toCreateDataSource",
+      "description": "Grants permission to create a new data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSecurityProfile",
+      "methodName": "toCreateSecurityProfile",
+      "description": "Grants permission to create a new security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeactivateSecurityProfile",
+      "methodName": "toDeactivateSecurityProfile",
+      "description": "Grants permission to deactivate the security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Grants permission to delete a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "DisassociateDataSource",
+      "methodName": "toDisassociateDataSource",
+      "description": "Grants permission to disassociate security profile from a data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "GetDataSource",
+      "methodName": "toGetDataSource",
+      "description": "Grants permission to retrieve the details of an existing data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "GetEntitledSecurityProfileSnapshot",
+      "methodName": "toGetEntitledSecurityProfileSnapshot",
+      "description": "Grants permission to return the details of a security profile snapshot that requester is entitled to read",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html"
+    },
+    {
+      "name": "GetProfileAccessTerms",
+      "methodName": "toGetProfileAccessTerms",
+      "description": "Grants permission to get the access terms for a vendor insights profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html"
+    },
+    {
+      "name": "GetSecurityProfile",
+      "methodName": "toGetSecurityProfile",
+      "description": "Grants permission to return the details of an existing security profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "GetSecurityProfileSnapshot",
+      "methodName": "toGetSecurityProfileSnapshot",
+      "description": "Grants permission to return the details of a security profile snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "ListDataSources",
+      "methodName": "toListDataSources",
+      "description": "Grants permission to list existing data sources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "ListEntitledSecurityProfileSnapshots",
+      "methodName": "toListEntitledSecurityProfileSnapshots",
+      "description": "Grants permission to return the snapshot summary list for an existing security profile that requester is entitled to list",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html"
+    },
+    {
+      "name": "ListEntitledSecurityProfiles",
+      "methodName": "toListEntitledSecurityProfiles",
+      "description": "Grants permission to list entitled security profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-vendor-insights-controlling-access.html"
+    },
+    {
+      "name": "ListSecurityProfileSnapshots",
+      "methodName": "toListSecurityProfileSnapshots",
+      "description": "Grants permission to return the snapshot summary list for an existing security profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "ListSecurityProfiles",
+      "methodName": "toListSecurityProfiles",
+      "description": "Grants permission to list existing security profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for vendor insights resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag vendor insights resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag vendor insights resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Grants permission to update an existing data source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "UpdateSecurityProfile",
+      "methodName": "toUpdateSecurityProfile",
+      "description": "Grants permission to update the security profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "UpdateSecurityProfileSnapshotCreationConfiguration",
+      "methodName": "toUpdateSecurityProfileSnapshotCreationConfiguration",
+      "description": "Grants permission to update the security profile snapshot creation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    },
+    {
+      "name": "UpdateSecurityProfileSnapshotReleaseConfiguration",
+      "methodName": "toUpdateSecurityProfileSnapshotReleaseConfiguration",
+      "description": "Grants permission to update the security profile snapshot release configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/vendor-insights-seller-controlling-access.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "DataSource",
+      "methodName": "onDataSource",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html#awsmarketplacevendorinsights-resources-for-iam-policies",
+      "arn": "arn:${Partition}:vendor-insights:::data-source:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "SecurityProfile",
+      "methodName": "onSecurityProfile",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacevendorinsights.html#awsmarketplacevendorinsights-resources-for-iam-policies",
+      "arn": "arn:${Partition}:vendor-insights:::security-profile:${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toActivateSecurityProfile",
+        "toAssociateDataSource",
+        "toCreateDataSource",
+        "toCreateSecurityProfile",
+        "toDeactivateSecurityProfile",
+        "toDeleteDataSource",
+        "toDisassociateDataSource",
+        "toGetDataSource",
+        "toGetEntitledSecurityProfileSnapshot",
+        "toGetSecurityProfile",
+        "toGetSecurityProfileSnapshot",
+        "toListEntitledSecurityProfileSnapshots",
+        "toListSecurityProfileSnapshots",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDataSource",
+        "toUpdateSecurityProfile",
+        "toUpdateSecurityProfileSnapshotCreationConfiguration",
+        "toUpdateSecurityProfileSnapshotReleaseConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "DataSource",
+        "SecurityProfile"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toActivateSecurityProfile",
+        "toAssociateDataSource",
+        "toCreateDataSource",
+        "toCreateSecurityProfile",
+        "toDeactivateSecurityProfile",
+        "toDeleteDataSource",
+        "toDisassociateDataSource",
+        "toGetDataSource",
+        "toGetEntitledSecurityProfileSnapshot",
+        "toGetSecurityProfile",
+        "toGetSecurityProfileSnapshot",
+        "toListEntitledSecurityProfileSnapshots",
+        "toListSecurityProfileSnapshots",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDataSource",
+        "toUpdateSecurityProfile",
+        "toUpdateSecurityProfileSnapshotCreationConfiguration",
+        "toUpdateSecurityProfileSnapshotReleaseConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "DataSource",
+        "SecurityProfile"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toActivateSecurityProfile",
+        "toAssociateDataSource",
+        "toCreateDataSource",
+        "toCreateSecurityProfile",
+        "toDeactivateSecurityProfile",
+        "toDeleteDataSource",
+        "toDisassociateDataSource",
+        "toGetDataSource",
+        "toGetEntitledSecurityProfileSnapshot",
+        "toGetSecurityProfile",
+        "toGetSecurityProfileSnapshot",
+        "toListEntitledSecurityProfileSnapshots",
+        "toListSecurityProfileSnapshots",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDataSource",
+        "toUpdateSecurityProfile",
+        "toUpdateSecurityProfileSnapshotCreationConfiguration",
+        "toUpdateSecurityProfileSnapshotReleaseConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "DataSource",
+        "SecurityProfile"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

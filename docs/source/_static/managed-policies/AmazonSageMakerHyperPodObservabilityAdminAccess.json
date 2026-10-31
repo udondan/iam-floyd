@@ -1,0 +1,266 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PrometheusCreateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aps:CreateWorkspace"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "PrometheusTagsAccess",
+      "Effect": "Allow",
+      "Action": "aps:TagResource",
+      "Resource": [
+        "arn:aws:aps:*:*:/workspaces",
+        "arn:aws:aps:*:*:rulegroupsnamespace/*/HyperPodObservabilityNamespace"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SageMaker"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true",
+          "aws:ResourceTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "PrometheusDescribeAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aps:DescribeWorkspace"
+      ],
+      "Resource": "arn:aws:aps:*:*:workspace/*"
+    },
+    {
+      "Sid": "PrometheusListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aps:ListWorkspaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PrometheusAlertsRuleGroupAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aps:CreateAlertManagerDefinition",
+        "aps:DescribeAlertManagerDefinition",
+        "aps:DescribeRuleGroupsNamespace",
+        "aps:ListRuleGroupsNamespaces"
+      ],
+      "Resource": [
+        "arn:aws:aps:*:*:workspace/*",
+        "arn:aws:aps:*:*:rulegroupsnamespace/*/HyperPodObservabilityNamespace"
+      ]
+    },
+    {
+      "Sid": "PrometheusCreateRuleGroupAccess",
+      "Effect": "Allow",
+      "Action": "aps:CreateRuleGroupsNamespace",
+      "Resource": "arn:aws:aps:*:*:rulegroupsnamespace/*/HyperPodObservabilityNamespace",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true",
+          "aws:ResourceTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GrafanaCreateWorkspaceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "grafana:CreateWorkspace"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GrafanaTagsAccess",
+      "Effect": "Allow",
+      "Action": "grafana:TagResource",
+      "Resource": "arn:aws:grafana:*:*:/workspaces",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SageMaker"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true",
+          "aws:ResourceTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GrafanaListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "grafana:ListWorkspaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GrafanaServiceAccountAccess",
+      "Effect": "Allow",
+      "Action": [
+        "grafana:DescribeWorkspace",
+        "grafana:CreateWorkspaceApiKey",
+        "grafana:CreateWorkspaceServiceAccount",
+        "grafana:CreateWorkspaceServiceAccountToken",
+        "grafana:ListWorkspaceServiceAccounts",
+        "grafana:ListWorkspaceServiceAccountTokens",
+        "grafana:DeleteWorkspaceServiceAccountToken"
+      ],
+      "Resource": "arn:aws:grafana:*:*:/workspaces/*"
+    },
+    {
+      "Sid": "IAMGrafanaPassRoleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/service-role/AmazonSageMakerHyperPodObservabilityGrafanaAccess-*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": [
+            "grafana.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "IAMEKSPassRoleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/service-role/AmazonSageMakerHyperPodObservabilityAddonAccess-*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": [
+            "pods.eks.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "IAMGetRoleAccess",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerHyperPodObservabilityAddonAccess-*"
+      ]
+    },
+    {
+      "Sid": "HyperPodClusterAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListClusters",
+        "sagemaker:DescribeCluster"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EKSAddonAccess",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DeleteAddon",
+        "eks:UpdateAddon",
+        "eks:DescribeAddon"
+      ],
+      "Resource": "arn:aws:eks:*:*:addon/*/amazon-sagemaker-hyperpod-observability/*"
+    },
+    {
+      "Sid": "EKSAddonDescribeAccess",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeAddonConfiguration",
+        "eks:DescribeAddonVersions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EKSAddonPodIdentityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribePodIdentityAssociation",
+        "eks:DeletePodIdentityAssociation",
+        "eks:UpdatePodIdentityAssociation"
+      ],
+      "Resource": "arn:aws:eks:*:*:podidentityassociation/*/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "EKSListDescribeAccess",
+      "Effect": "Allow",
+      "Action": [
+        "eks:ListAddons",
+        "eks:DescribeCluster"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*"
+    },
+    {
+      "Sid": "EKSCreateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "eks:CreateAddon",
+        "eks:CreatePodIdentityAssociation"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "EKSTagsAccess",
+      "Effect": "Allow",
+      "Action": "eks:TagResource",
+      "Resource": [
+        "arn:aws:eks:*:*:cluster/*",
+        "arn:aws:eks:*:*:addon/*/*/*",
+        "arn:aws:eks:*:*:podidentityassociation/*/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SageMaker"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/SageMaker": "true",
+          "aws:ResourceTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SSOAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeRegisteredRegions",
+        "sso:CreateManagedApplicationInstance"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

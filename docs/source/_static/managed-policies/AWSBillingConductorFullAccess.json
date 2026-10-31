@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "billingconductor:*",
+        "organizations:ListAccounts",
+        "pricing:DescribeServices",
+        "pricing:GetAttributeValues",
+        "pricing:GetProducts",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListChildren",
+        "organizations:DescribeAccount",
+        "organizations:DescribeResponsibilityTransfer",
+        "organizations:ListInboundResponsibilityTransfers"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

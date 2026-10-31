@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "filename": "finops-agent",
+  "className": "FinopsAgent",
+  "name": "finops-agent",
+  "servicePrefix": "finops-agent",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_finops-agent.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptAgentRequest",
+      "CancelTask",
+      "CancelTurn",
+      "CreateAgentSpace",
+      "CreateAutomation",
+      "CreateConnection",
+      "CreateConversation",
+      "CreateDocument",
+      "CreateIntegration",
+      "CreateOneTimeLoginSession",
+      "CreateTask",
+      "CreateTurn",
+      "DeleteAgentSpace",
+      "DeleteArtifact",
+      "DeleteAutomation",
+      "DeleteConnection",
+      "DeleteDocument",
+      "DeleteIntegration",
+      "RejectAgentRequest",
+      "RestoreDocument",
+      "SendFeedback",
+      "UpdateAgentSpace",
+      "UpdateAutomation",
+      "UpdateConnection",
+      "UpdateDocument"
+    ],
+    "Read": [
+      "GetAgentRequest",
+      "GetAgentSpace",
+      "GetArtifactContent",
+      "GetArtifactMetadata",
+      "GetAutomation",
+      "GetConnection",
+      "GetDocumentContent",
+      "GetDocumentMetadata",
+      "GetIntegration",
+      "GetTask",
+      "GetTurn"
+    ],
+    "List": [
+      "ListAgentSpaces",
+      "ListArtifacts",
+      "ListAutomations",
+      "ListConnections",
+      "ListConversations",
+      "ListDocuments",
+      "ListIntegrations",
+      "ListRecords",
+      "ListTasks",
+      "ListTurns"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptAgentRequest",
+      "methodName": "toAcceptAgentRequest",
+      "description": "Grants permission to accept a pending approval request from the agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CancelTask",
+      "methodName": "toCancelTask",
+      "description": "Grants permission to cancel a task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CancelTurn",
+      "methodName": "toCancelTurn",
+      "description": "Grants permission to cancel an in-progress conversation turn",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateAgentSpace",
+      "methodName": "toCreateAgentSpace",
+      "description": "Grants permission to create a new FinOps Agent workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateAutomation",
+      "methodName": "toCreateAutomation",
+      "description": "Grants permission to create a reusable automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateConnection",
+      "methodName": "toCreateConnection",
+      "description": "Grants permission to create a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateConversation",
+      "methodName": "toCreateConversation",
+      "description": "Grants permission to create a new conversation with the FinOps Agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateDocument",
+      "methodName": "toCreateDocument",
+      "description": "Grants permission to create a document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateIntegration",
+      "methodName": "toCreateIntegration",
+      "description": "Grants permission to create a third-party integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateOneTimeLoginSession",
+      "methodName": "toCreateOneTimeLoginSession",
+      "description": "Grants permission to create a one-time login session for the FinOps Agent web application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateTask",
+      "methodName": "toCreateTask",
+      "description": "Grants permission to create a task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "CreateTurn",
+      "methodName": "toCreateTurn",
+      "description": "Grants permission to create a new turn in a conversation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "DeleteAgentSpace",
+      "methodName": "toDeleteAgentSpace",
+      "description": "Grants permission to delete a FinOps Agent workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "DeleteArtifact",
+      "methodName": "toDeleteArtifact",
+      "description": "Grants permission to delete an artifact and its content",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "DeleteAutomation",
+      "methodName": "toDeleteAutomation",
+      "description": "Grants permission to delete an automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "DeleteDocument",
+      "methodName": "toDeleteDocument",
+      "description": "Grants permission to delete a document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete a third-party integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetAgentRequest",
+      "methodName": "toGetAgentRequest",
+      "description": "Grants permission to view details of a pending approval request from the agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetAgentSpace",
+      "methodName": "toGetAgentSpace",
+      "description": "Grants permission to view details of a FinOps Agent workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetArtifactContent",
+      "methodName": "toGetArtifactContent",
+      "description": "Grants permission to download artifact content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetArtifactMetadata",
+      "methodName": "toGetArtifactMetadata",
+      "description": "Grants permission to view artifact metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetAutomation",
+      "methodName": "toGetAutomation",
+      "description": "Grants permission to view details of an automation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to view details of a connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetDocumentContent",
+      "methodName": "toGetDocumentContent",
+      "description": "Grants permission to download document content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetDocumentMetadata",
+      "methodName": "toGetDocumentMetadata",
+      "description": "Grants permission to view document metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetIntegration",
+      "methodName": "toGetIntegration",
+      "description": "Grants permission to view details of a third-party integration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetTask",
+      "methodName": "toGetTask",
+      "description": "Grants permission to view details of a task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "GetTurn",
+      "methodName": "toGetTurn",
+      "description": "Grants permission to view details of a conversation turn",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListAgentSpaces",
+      "methodName": "toListAgentSpaces",
+      "description": "Grants permission to list all FinOps Agent workspaces in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListArtifacts",
+      "methodName": "toListArtifacts",
+      "description": "Grants permission to list artifacts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListAutomations",
+      "methodName": "toListAutomations",
+      "description": "Grants permission to list automations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list connections",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListConversations",
+      "methodName": "toListConversations",
+      "description": "Grants permission to list conversations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListDocuments",
+      "methodName": "toListDocuments",
+      "description": "Grants permission to list documents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListIntegrations",
+      "methodName": "toListIntegrations",
+      "description": "Grants permission to list third-party integrations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListRecords",
+      "methodName": "toListRecords",
+      "description": "Grants permission to list records for real-time agent activity display",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListTasks",
+      "methodName": "toListTasks",
+      "description": "Grants permission to list tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "ListTurns",
+      "methodName": "toListTurns",
+      "description": "Grants permission to list turns in a conversation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "RejectAgentRequest",
+      "methodName": "toRejectAgentRequest",
+      "description": "Grants permission to reject a pending approval request from the agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "RestoreDocument",
+      "methodName": "toRestoreDocument",
+      "description": "Grants permission to restore an archived document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "SendFeedback",
+      "methodName": "toSendFeedback",
+      "description": "Grants permission to submit feedback on agent responses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "UpdateAgentSpace",
+      "methodName": "toUpdateAgentSpace",
+      "description": "Grants permission to update a FinOps Agent workspace configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "UpdateAutomation",
+      "methodName": "toUpdateAutomation",
+      "description": "Grants permission to update an automation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "UpdateConnection",
+      "methodName": "toUpdateConnection",
+      "description": "Grants permission to update a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "UpdateDocument",
+      "methodName": "toUpdateDocument",
+      "description": "Grants permission to update a document's content and metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

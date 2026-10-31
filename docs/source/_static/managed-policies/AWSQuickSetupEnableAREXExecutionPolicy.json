@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowReadActions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:GetDefaultView",
+        "resource-explorer-2:GetIndex",
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:ListViews"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowUpdateExistingIndexAndAssociateDefaultView",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:UpdateIndexType",
+        "resource-explorer-2:AssociateDefaultView"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowCreateViewAndIndex",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:CreateView",
+        "resource-explorer-2:CreateIndex",
+        "resource-explorer-2:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:resource-explorer-2:*:*:view/all-resources/*",
+        "arn:aws:resource-explorer-2:*:*:index/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Type": "QuickSetup",
+          "aws:ResourceTag/Type": "QuickSetup"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "Type"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "resource-explorer-2.amazonaws.com"
+          ]
+        }
+      },
+      "Resource": "arn:aws:iam::*:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer"
+    }
+  ]
+}

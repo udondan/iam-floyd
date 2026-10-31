@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "filename": "marketplacecommerceanalytics",
+  "className": "Marketplacecommerceanalytics",
+  "name": "marketplacecommerceanalytics",
+  "servicePrefix": "marketplacecommerceanalytics",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplacecommerceanalytics.html",
+  "accessLevelList": {
+    "Write": [
+      "GenerateDataSet",
+      "StartSupportDataExport"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GenerateDataSet",
+      "methodName": "toGenerateDataSet",
+      "description": "Request a data set to be published to your Amazon S3 bucket.",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartSupportDataExport",
+      "methodName": "toStartSupportDataExport",
+      "description": "Request a support data set to be published to your Amazon S3 bucket.",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

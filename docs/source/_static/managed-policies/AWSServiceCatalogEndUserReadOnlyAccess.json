@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:ListChangeSets",
+        "cloudformation:DescribeStackSet",
+        "cloudformation:DescribeStackInstance",
+        "cloudformation:DescribeStackSetOperation",
+        "cloudformation:ListStackInstances",
+        "cloudformation:ListStackResources",
+        "cloudformation:ListStackSetOperations",
+        "cloudformation:ListStackSetOperationResults"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/SC-*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-SC-*",
+        "arn:aws:cloudformation:*:*:changeSet/SC-*",
+        "arn:aws:cloudformation:*:*:stackset/SC-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:GetTemplateSummary",
+        "servicecatalog:DescribeProduct",
+        "servicecatalog:DescribeProductView",
+        "servicecatalog:DescribeProvisioningParameters",
+        "servicecatalog:ListLaunchPaths",
+        "servicecatalog:SearchProducts",
+        "ssm:DescribeDocument",
+        "ssm:GetAutomationExecution",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicecatalog:DescribeProvisionedProduct",
+        "servicecatalog:DescribeRecord",
+        "servicecatalog:ListRecordHistory",
+        "servicecatalog:ListStackInstancesForProvisionedProduct",
+        "servicecatalog:ScanProvisionedProducts",
+        "servicecatalog:SearchProvisionedProducts",
+        "servicecatalog:DescribeProvisionedProductPlan",
+        "servicecatalog:ListProvisionedProductPlans",
+        "servicecatalog:ListServiceActionsForProvisioningArtifact",
+        "servicecatalog:DescribeServiceActionExecutionParameters"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "servicecatalog:userLevel": "self"
+        }
+      }
+    }
+  ]
+}

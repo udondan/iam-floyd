@@ -1,0 +1,1701 @@
+{
+  "schemaVersion": 1,
+  "filename": "mgn",
+  "className": "Mgn",
+  "name": "mgn",
+  "servicePrefix": "mgn",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mgn.html",
+  "accessLevelList": {
+    "Write": [
+      "ArchiveApplication",
+      "ArchiveWave",
+      "AssociateApplications",
+      "AssociateSourceServers",
+      "ChangeServerLifeCycleState",
+      "CreateApplication",
+      "CreateConnector",
+      "CreateLaunchConfigurationTemplate",
+      "CreateNetworkMigrationDefinition",
+      "CreateReplicationConfigurationTemplate",
+      "CreateWave",
+      "DeleteApplication",
+      "DeleteConnector",
+      "DeleteJob",
+      "DeleteLaunchConfigurationTemplate",
+      "DeleteNetworkMigrationDefinition",
+      "DeleteReplicationConfigurationTemplate",
+      "DeleteSourceServer",
+      "DeleteVcenterClient",
+      "DeleteWave",
+      "DisassociateApplications",
+      "DisassociateSourceServers",
+      "DisconnectFromService",
+      "FinalizeCutover",
+      "InitializeService",
+      "MarkAsArchived",
+      "PauseReplication",
+      "PutSourceServerAction",
+      "PutTemplateAction",
+      "RemoveSourceServerAction",
+      "RemoveTemplateAction",
+      "ResumeReplication",
+      "RetryDataReplication",
+      "StartCutover",
+      "StartExport",
+      "StartImport",
+      "StartImportFileEnrichment",
+      "StartNetworkMigrationAnalysis",
+      "StartNetworkMigrationCodeGeneration",
+      "StartNetworkMigrationDeployedStacksDeletion",
+      "StartNetworkMigrationDeployment",
+      "StartNetworkMigrationMapping",
+      "StartNetworkMigrationMappingUpdate",
+      "StartReplication",
+      "StartTest",
+      "StopReplication",
+      "TagResource",
+      "TerminateTargetInstances",
+      "UnarchiveApplication",
+      "UnarchiveWave",
+      "UntagResource",
+      "UpdateAccountSettings",
+      "UpdateApplication",
+      "UpdateConnector",
+      "UpdateLaunchConfiguration",
+      "UpdateLaunchConfigurationTemplate",
+      "UpdateNetworkMigrationDefinition",
+      "UpdateNetworkMigrationMapperSegment",
+      "UpdateNetworkMigrationMapperSegmentConstruct",
+      "UpdateReplicationConfiguration",
+      "UpdateReplicationConfigurationTemplate",
+      "UpdateSourceServer",
+      "UpdateSourceServerReplicationType",
+      "UpdateWave",
+      "BatchCreateVolumeSnapshotGroupForMgn",
+      "BatchDeleteSnapshotRequestForMgn",
+      "CreateVcenterClientForMgn",
+      "IssueClientCertificateForMgn",
+      "NotifyAgentAuthenticationForMgn",
+      "NotifyAgentConnectedForMgn",
+      "NotifyAgentDisconnectedForMgn",
+      "NotifyAgentReplicationProgressForMgn",
+      "NotifyVcenterClientStartedForMgn",
+      "RegisterAgentForMgn",
+      "SendAgentLogsForMgn",
+      "SendAgentMetricsForMgn",
+      "SendChannelCommandResultForMgn",
+      "SendClientLogsForMgn",
+      "SendClientMetricsForMgn",
+      "SendVcenterClientCommandResultForMgn",
+      "SendVcenterClientLogsForMgn",
+      "SendVcenterClientMetricsForMgn",
+      "StartSnapshotGroupForMgn",
+      "UpdateAgentBacklogForMgn",
+      "UpdateAgentConversionInfoForMgn",
+      "UpdateAgentReplicationInfoForMgn",
+      "UpdateAgentReplicationProcessStateForMgn",
+      "UpdateAgentSourcePropertiesForMgn"
+    ],
+    "Read": [
+      "DescribeJobLogItems",
+      "GetAccountSettings",
+      "GetLaunchConfiguration",
+      "GetNetworkMigrationDefinition",
+      "GetNetworkMigrationMapperSegmentConstruct",
+      "GetReplicationConfiguration",
+      "ListConnectors",
+      "ListTagsForResource",
+      "DescribeReplicationServerAssociationsForMgn",
+      "DescribeSnapshotRequestsForMgn",
+      "GetAgentCommandForMgn",
+      "GetAgentConfirmedResumeInfoForMgn",
+      "GetAgentInstallationAssetsForMgn",
+      "GetAgentReplicationInfoForMgn",
+      "GetAgentRuntimeConfigurationForMgn",
+      "GetAgentSnapshotCreditsForMgn",
+      "GetChannelCommandsForMgn",
+      "GetVcenterClientCommandsForMgn",
+      "VerifyClientRoleForMgn"
+    ],
+    "List": [
+      "DescribeJobs",
+      "DescribeLaunchConfigurationTemplates",
+      "DescribeReplicationConfigurationTemplates",
+      "DescribeSourceServers",
+      "DescribeVcenterClients",
+      "ListApplications",
+      "ListExportErrors",
+      "ListExports",
+      "ListImportErrors",
+      "ListImportFileEnrichments",
+      "ListImports",
+      "ListManagedAccounts",
+      "ListNetworkMigrationAnalyses",
+      "ListNetworkMigrationAnalysisResults",
+      "ListNetworkMigrationCodeGenerationSegments",
+      "ListNetworkMigrationCodeGenerations",
+      "ListNetworkMigrationDefinitions",
+      "ListNetworkMigrationDeployedStacks",
+      "ListNetworkMigrationDeployedStacksDeletions",
+      "ListNetworkMigrationDeployments",
+      "ListNetworkMigrationExecutionArtifacts",
+      "ListNetworkMigrationExecutions",
+      "ListNetworkMigrationMapperSegmentConstructs",
+      "ListNetworkMigrationMapperSegments",
+      "ListNetworkMigrationMappingUpdates",
+      "ListNetworkMigrationMappings",
+      "ListSourceServerActions",
+      "ListTemplateActions",
+      "ListWaves"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ArchiveApplication",
+      "methodName": "toArchiveApplication",
+      "description": "Grants permission to archive an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ArchiveApplication.html"
+    },
+    {
+      "name": "ArchiveWave",
+      "methodName": "toArchiveWave",
+      "description": "Grants permission to archive a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ArchiveWave.html"
+    },
+    {
+      "name": "AssociateApplications",
+      "methodName": "toAssociateApplications",
+      "description": "Grants permission to associate applications to a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_AssociateApplications.html"
+    },
+    {
+      "name": "AssociateSourceServers",
+      "methodName": "toAssociateSourceServers",
+      "description": "Grants permission to associate source servers to an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_AssociateSourceServers.html"
+    },
+    {
+      "name": "ChangeServerLifeCycleState",
+      "methodName": "toChangeServerLifeCycleState",
+      "description": "Grants permission to change source server life cycle state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ChangeServerLifeCycleState.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateConnector.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLaunchConfigurationTemplate",
+      "methodName": "toCreateLaunchConfigurationTemplate",
+      "description": "Grants permission to create launch configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateLaunchConfigurationTemplate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateNetworkMigrationDefinition",
+      "methodName": "toCreateNetworkMigrationDefinition",
+      "description": "Grants permission to create a network migration definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateNetworkMigrationDefinition.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateReplicationConfigurationTemplate",
+      "methodName": "toCreateReplicationConfigurationTemplate",
+      "description": "Grants permission to create replication configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateReplicationConfigurationTemplate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWave",
+      "methodName": "toCreateWave",
+      "description": "Grants permission to create a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateWave.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteConnector.html"
+    },
+    {
+      "name": "DeleteJob",
+      "methodName": "toDeleteJob",
+      "description": "Grants permission to delete job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteJob.html"
+    },
+    {
+      "name": "DeleteLaunchConfigurationTemplate",
+      "methodName": "toDeleteLaunchConfigurationTemplate",
+      "description": "Grants permission to delete launch configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteLaunchConfigurationTemplate.html"
+    },
+    {
+      "name": "DeleteNetworkMigrationDefinition",
+      "methodName": "toDeleteNetworkMigrationDefinition",
+      "description": "Grants permission to delete a network migration definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteNetworkMigrationDefinition.html"
+    },
+    {
+      "name": "DeleteReplicationConfigurationTemplate",
+      "methodName": "toDeleteReplicationConfigurationTemplate",
+      "description": "Grants permission to delete replication configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteReplicationConfigurationTemplate.html"
+    },
+    {
+      "name": "DeleteSourceServer",
+      "methodName": "toDeleteSourceServer",
+      "description": "Grants permission to delete source server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteSourceServer.html"
+    },
+    {
+      "name": "DeleteVcenterClient",
+      "methodName": "toDeleteVcenterClient",
+      "description": "Grants permission to delete vcenter client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteVcenterClient.html"
+    },
+    {
+      "name": "DeleteWave",
+      "methodName": "toDeleteWave",
+      "description": "Grants permission to delete a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteWave.html"
+    },
+    {
+      "name": "DescribeJobLogItems",
+      "methodName": "toDescribeJobLogItems",
+      "description": "Grants permission to describe job log items",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeJobLogItems.html"
+    },
+    {
+      "name": "DescribeJobs",
+      "methodName": "toDescribeJobs",
+      "description": "Grants permission to describe jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeJobs.html"
+    },
+    {
+      "name": "DescribeLaunchConfigurationTemplates",
+      "methodName": "toDescribeLaunchConfigurationTemplates",
+      "description": "Grants permission to describe launch configuration template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeLaunchConfigurationTemplates.html"
+    },
+    {
+      "name": "DescribeReplicationConfigurationTemplates",
+      "methodName": "toDescribeReplicationConfigurationTemplates",
+      "description": "Grants permission to describe replication configuration template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeReplicationConfigurationTemplates.html"
+    },
+    {
+      "name": "DescribeSourceServers",
+      "methodName": "toDescribeSourceServers",
+      "description": "Grants permission to describe source servers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeSourceServers.html"
+    },
+    {
+      "name": "DescribeVcenterClients",
+      "methodName": "toDescribeVcenterClients",
+      "description": "Grants permission to describe vcenter clients",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeVcenterClients.html"
+    },
+    {
+      "name": "DisassociateApplications",
+      "methodName": "toDisassociateApplications",
+      "description": "Grants permission to disassociate applications from a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DisassociateApplications.html"
+    },
+    {
+      "name": "DisassociateSourceServers",
+      "methodName": "toDisassociateSourceServers",
+      "description": "Grants permission to disassociate source servers from an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DisassociateSourceServers.html"
+    },
+    {
+      "name": "DisconnectFromService",
+      "methodName": "toDisconnectFromService",
+      "description": "Grants permission to disconnect source server from service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DisconnectFromService.html"
+    },
+    {
+      "name": "FinalizeCutover",
+      "methodName": "toFinalizeCutover",
+      "description": "Grants permission to finalize cutover",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_FinalizeCutover.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to get account settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetLaunchConfiguration",
+      "methodName": "toGetLaunchConfiguration",
+      "description": "Grants permission to get launch configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetLaunchConfiguration.html"
+    },
+    {
+      "name": "GetNetworkMigrationDefinition",
+      "methodName": "toGetNetworkMigrationDefinition",
+      "description": "Grants permission to get a network migration definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetNetworkMigrationDefinition.html"
+    },
+    {
+      "name": "GetNetworkMigrationMapperSegmentConstruct",
+      "methodName": "toGetNetworkMigrationMapperSegmentConstruct",
+      "description": "Grants permission to get a network migration mapper segment construct",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetNetworkMigrationMapperSegmentConstruct.html"
+    },
+    {
+      "name": "GetReplicationConfiguration",
+      "methodName": "toGetReplicationConfiguration",
+      "description": "Grants permission to get replication configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetReplicationConfiguration.html"
+    },
+    {
+      "name": "InitializeService",
+      "methodName": "toInitializeService",
+      "description": "Grants permission to initialize service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_InitializeService.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list application summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list connectors",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListConnectors.html"
+    },
+    {
+      "name": "ListExportErrors",
+      "methodName": "toListExportErrors",
+      "description": "Grants permission to list the errors of an export task",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListExportErrors.html"
+    },
+    {
+      "name": "ListExports",
+      "methodName": "toListExports",
+      "description": "Grants permission to list export tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListExports.html"
+    },
+    {
+      "name": "ListImportErrors",
+      "methodName": "toListImportErrors",
+      "description": "Grants permission to list the errors of an import task",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImportErrors.html"
+    },
+    {
+      "name": "ListImportFileEnrichments",
+      "methodName": "toListImportFileEnrichments",
+      "description": "Grants permission to list the import file enrichment tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImportFileEnrichments.html"
+    },
+    {
+      "name": "ListImports",
+      "methodName": "toListImports",
+      "description": "Grants permission to list the import tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImports.html"
+    },
+    {
+      "name": "ListManagedAccounts",
+      "methodName": "toListManagedAccounts",
+      "description": "Grants permission to list managed accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListManagedAccounts.html"
+    },
+    {
+      "name": "ListNetworkMigrationAnalyses",
+      "methodName": "toListNetworkMigrationAnalyses",
+      "description": "Grants permission to list network migration analyses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationAnalyses.html"
+    },
+    {
+      "name": "ListNetworkMigrationAnalysisResults",
+      "methodName": "toListNetworkMigrationAnalysisResults",
+      "description": "Grants permission to list network migration analysis results",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationAnalysisResults.html"
+    },
+    {
+      "name": "ListNetworkMigrationCodeGenerationSegments",
+      "methodName": "toListNetworkMigrationCodeGenerationSegments",
+      "description": "Grants permission to list network migration code generation segments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationCodeGenerationSegments.html"
+    },
+    {
+      "name": "ListNetworkMigrationCodeGenerations",
+      "methodName": "toListNetworkMigrationCodeGenerations",
+      "description": "Grants permission to list network migration code generations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationCodeGenerations.html"
+    },
+    {
+      "name": "ListNetworkMigrationDefinitions",
+      "methodName": "toListNetworkMigrationDefinitions",
+      "description": "Grants permission to list network migration definitions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDefinitions.html"
+    },
+    {
+      "name": "ListNetworkMigrationDeployedStacks",
+      "methodName": "toListNetworkMigrationDeployedStacks",
+      "description": "Grants permission to list network migration deployed stacks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDeployedStacks.html"
+    },
+    {
+      "name": "ListNetworkMigrationDeployedStacksDeletions",
+      "methodName": "toListNetworkMigrationDeployedStacksDeletions",
+      "description": "Grants permission to list network migration deployed stacks deletions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDeployedStacksDeletions.html"
+    },
+    {
+      "name": "ListNetworkMigrationDeployments",
+      "methodName": "toListNetworkMigrationDeployments",
+      "description": "Grants permission to list network migration deployments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDeployments.html"
+    },
+    {
+      "name": "ListNetworkMigrationExecutionArtifacts",
+      "methodName": "toListNetworkMigrationExecutionArtifacts",
+      "description": "Grants permission to list network migration execution artifacts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationExecutionArtifacts.html"
+    },
+    {
+      "name": "ListNetworkMigrationExecutions",
+      "methodName": "toListNetworkMigrationExecutions",
+      "description": "Grants permission to list network migration executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationExecutions.html"
+    },
+    {
+      "name": "ListNetworkMigrationMapperSegmentConstructs",
+      "methodName": "toListNetworkMigrationMapperSegmentConstructs",
+      "description": "Grants permission to list network migration mapper segment constructs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMapperSegmentConstructs.html"
+    },
+    {
+      "name": "ListNetworkMigrationMapperSegments",
+      "methodName": "toListNetworkMigrationMapperSegments",
+      "description": "Grants permission to list network migration mapper segments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMapperSegments.html"
+    },
+    {
+      "name": "ListNetworkMigrationMappingUpdates",
+      "methodName": "toListNetworkMigrationMappingUpdates",
+      "description": "Grants permission to list network migration mapping updates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMappingUpdates.html"
+    },
+    {
+      "name": "ListNetworkMigrationMappings",
+      "methodName": "toListNetworkMigrationMappings",
+      "description": "Grants permission to list network migration mappings",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMappings.html"
+    },
+    {
+      "name": "ListSourceServerActions",
+      "methodName": "toListSourceServerActions",
+      "description": "Grants permission to list source server action documents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListSourceServerActions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTemplateActions",
+      "methodName": "toListTemplateActions",
+      "description": "Grants permission to list launch configuration template action documents",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListTemplateActions.html"
+    },
+    {
+      "name": "ListWaves",
+      "methodName": "toListWaves",
+      "description": "Grants permission to list wave summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListWaves.html"
+    },
+    {
+      "name": "MarkAsArchived",
+      "methodName": "toMarkAsArchived",
+      "description": "Grants permission to mark source server as archived",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_MarkAsArchived.html"
+    },
+    {
+      "name": "PauseReplication",
+      "methodName": "toPauseReplication",
+      "description": "Grants permission to pause replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_PauseReplication.html"
+    },
+    {
+      "name": "PutSourceServerAction",
+      "methodName": "toPutSourceServerAction",
+      "description": "Grants permission to put source server action document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_PutSourceServerAction.html"
+    },
+    {
+      "name": "PutTemplateAction",
+      "methodName": "toPutTemplateAction",
+      "description": "Grants permission to put launch configuration template action document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_PutTemplateAction.html"
+    },
+    {
+      "name": "RemoveSourceServerAction",
+      "methodName": "toRemoveSourceServerAction",
+      "description": "Grants permission to remove source server action document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_RemoveSourceServerAction.html"
+    },
+    {
+      "name": "RemoveTemplateAction",
+      "methodName": "toRemoveTemplateAction",
+      "description": "Grants permission to remove launch configuration template action document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_RemoveTemplateAction.html"
+    },
+    {
+      "name": "ResumeReplication",
+      "methodName": "toResumeReplication",
+      "description": "Grants permission to resume replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ResumeReplication.html"
+    },
+    {
+      "name": "RetryDataReplication",
+      "methodName": "toRetryDataReplication",
+      "description": "Grants permission to retry replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_RetryDataReplication.html"
+    },
+    {
+      "name": "StartCutover",
+      "methodName": "toStartCutover",
+      "description": "Grants permission to start cutover",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartCutover.html"
+    },
+    {
+      "name": "StartExport",
+      "methodName": "toStartExport",
+      "description": "Grants permission to start an export task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartExport.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartImport",
+      "methodName": "toStartImport",
+      "description": "Grants permission to create an import task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartImport.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartImportFileEnrichment",
+      "methodName": "toStartImportFileEnrichment",
+      "description": "Grants permission to start import file enrichment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartImportFileEnrichment.html"
+    },
+    {
+      "name": "StartNetworkMigrationAnalysis",
+      "methodName": "toStartNetworkMigrationAnalysis",
+      "description": "Grants permission to start a network migration analysis",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationAnalysis.html"
+    },
+    {
+      "name": "StartNetworkMigrationCodeGeneration",
+      "methodName": "toStartNetworkMigrationCodeGeneration",
+      "description": "Grants permission to start network migration code generation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationCodeGeneration.html"
+    },
+    {
+      "name": "StartNetworkMigrationDeployedStacksDeletion",
+      "methodName": "toStartNetworkMigrationDeployedStacksDeletion",
+      "description": "Grants permission to start deletion of network migration deployed stacks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationDeployedStacksDeletion.html"
+    },
+    {
+      "name": "StartNetworkMigrationDeployment",
+      "methodName": "toStartNetworkMigrationDeployment",
+      "description": "Grants permission to start a network migration deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationDeployment.html"
+    },
+    {
+      "name": "StartNetworkMigrationMapping",
+      "methodName": "toStartNetworkMigrationMapping",
+      "description": "Grants permission to start a network migration mapping",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationMapping.html"
+    },
+    {
+      "name": "StartNetworkMigrationMappingUpdate",
+      "methodName": "toStartNetworkMigrationMappingUpdate",
+      "description": "Grants permission to start a network migration mapping update",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationMappingUpdate.html"
+    },
+    {
+      "name": "StartReplication",
+      "methodName": "toStartReplication",
+      "description": "Grants permission to start replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartReplication.html"
+    },
+    {
+      "name": "StartTest",
+      "methodName": "toStartTest",
+      "description": "Grants permission to start test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartTest.html"
+    },
+    {
+      "name": "StopReplication",
+      "methodName": "toStopReplication",
+      "description": "Grants permission to stop replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StopReplication.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to assign a resource tag",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateTargetInstances",
+      "methodName": "toTerminateTargetInstances",
+      "description": "Grants permission to terminate target instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_TerminateTargetInstances.html"
+    },
+    {
+      "name": "UnarchiveApplication",
+      "methodName": "toUnarchiveApplication",
+      "description": "Grants permission to unarchive an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UnarchiveApplication.html"
+    },
+    {
+      "name": "UnarchiveWave",
+      "methodName": "toUnarchiveWave",
+      "description": "Grants permission to unarchive a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UnarchiveWave.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to update account settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateConnector",
+      "methodName": "toUpdateConnector",
+      "description": "Grants permission to update connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateConnector.html"
+    },
+    {
+      "name": "UpdateLaunchConfiguration",
+      "methodName": "toUpdateLaunchConfiguration",
+      "description": "Grants permission to update launch configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateLaunchConfiguration.html"
+    },
+    {
+      "name": "UpdateLaunchConfigurationTemplate",
+      "methodName": "toUpdateLaunchConfigurationTemplate",
+      "description": "Grants permission to update launch configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateLaunchConfigurationTemplate.html"
+    },
+    {
+      "name": "UpdateNetworkMigrationDefinition",
+      "methodName": "toUpdateNetworkMigrationDefinition",
+      "description": "Grants permission to update a network migration definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationDefinition.html"
+    },
+    {
+      "name": "UpdateNetworkMigrationMapperSegment",
+      "methodName": "toUpdateNetworkMigrationMapperSegment",
+      "description": "Grants permission to update a network migration mapper segment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationMapperSegment.html"
+    },
+    {
+      "name": "UpdateNetworkMigrationMapperSegmentConstruct",
+      "methodName": "toUpdateNetworkMigrationMapperSegmentConstruct",
+      "description": "Grants permission to update a network migration mapper segment construct",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationMapperSegmentConstruct.html"
+    },
+    {
+      "name": "UpdateReplicationConfiguration",
+      "methodName": "toUpdateReplicationConfiguration",
+      "description": "Grants permission to update replication configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateReplicationConfiguration.html"
+    },
+    {
+      "name": "UpdateReplicationConfigurationTemplate",
+      "methodName": "toUpdateReplicationConfigurationTemplate",
+      "description": "Grants permission to update replication configuration template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateReplicationConfigurationTemplate.html"
+    },
+    {
+      "name": "UpdateSourceServer",
+      "methodName": "toUpdateSourceServer",
+      "description": "Grants permission to update source server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateSourceServer.html"
+    },
+    {
+      "name": "UpdateSourceServerReplicationType",
+      "methodName": "toUpdateSourceServerReplicationType",
+      "description": "Grants permission to update source server replication type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateSourceServerReplicationType.html"
+    },
+    {
+      "name": "UpdateWave",
+      "methodName": "toUpdateWave",
+      "description": "Grants permission to update a wave",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateWave.html"
+    },
+    {
+      "name": "BatchCreateVolumeSnapshotGroupForMgn",
+      "methodName": "toBatchCreateVolumeSnapshotGroupForMgn",
+      "description": "Grants permission to create volume snapshot group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "BatchDeleteSnapshotRequestForMgn",
+      "methodName": "toBatchDeleteSnapshotRequestForMgn",
+      "description": "Grants permission to batch delete snapshot request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "CreateVcenterClientForMgn",
+      "methodName": "toCreateVcenterClientForMgn",
+      "description": "Grants permission to create vcenter client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeReplicationServerAssociationsForMgn",
+      "methodName": "toDescribeReplicationServerAssociationsForMgn",
+      "description": "Grants permission to describe replication server associations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "DescribeSnapshotRequestsForMgn",
+      "methodName": "toDescribeSnapshotRequestsForMgn",
+      "description": "Grants permission to describe snapshots requests",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetAgentCommandForMgn",
+      "methodName": "toGetAgentCommandForMgn",
+      "description": "Grants permission to get agent command",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetAgentConfirmedResumeInfoForMgn",
+      "methodName": "toGetAgentConfirmedResumeInfoForMgn",
+      "description": "Grants permission to get agent confirmed resume info",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetAgentInstallationAssetsForMgn",
+      "methodName": "toGetAgentInstallationAssetsForMgn",
+      "description": "Grants permission to get agent installation assets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetAgentReplicationInfoForMgn",
+      "methodName": "toGetAgentReplicationInfoForMgn",
+      "description": "Grants permission to get agent replication info",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetAgentRuntimeConfigurationForMgn",
+      "methodName": "toGetAgentRuntimeConfigurationForMgn",
+      "description": "Grants permission to get agent runtime configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetAgentSnapshotCreditsForMgn",
+      "methodName": "toGetAgentSnapshotCreditsForMgn",
+      "description": "Grants permission to get agent snapshots credits",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetChannelCommandsForMgn",
+      "methodName": "toGetChannelCommandsForMgn",
+      "description": "Grants permission to get channel commands",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "GetVcenterClientCommandsForMgn",
+      "methodName": "toGetVcenterClientCommandsForMgn",
+      "description": "Grants permission to get vcenter client commands",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "IssueClientCertificateForMgn",
+      "methodName": "toIssueClientCertificateForMgn",
+      "description": "Grants permission to issue a client certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "NotifyAgentAuthenticationForMgn",
+      "methodName": "toNotifyAgentAuthenticationForMgn",
+      "description": "Grants permission to notify agent authentication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "NotifyAgentConnectedForMgn",
+      "methodName": "toNotifyAgentConnectedForMgn",
+      "description": "Grants permission to notify agent is connected",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "NotifyAgentDisconnectedForMgn",
+      "methodName": "toNotifyAgentDisconnectedForMgn",
+      "description": "Grants permission to notify agent is disconnected",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "NotifyAgentReplicationProgressForMgn",
+      "methodName": "toNotifyAgentReplicationProgressForMgn",
+      "description": "Grants permission to notify agent replication progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "NotifyVcenterClientStartedForMgn",
+      "methodName": "toNotifyVcenterClientStartedForMgn",
+      "description": "Grants permission to notify vcenter client started",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "RegisterAgentForMgn",
+      "methodName": "toRegisterAgentForMgn",
+      "description": "Grants permission to register agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "SendAgentLogsForMgn",
+      "methodName": "toSendAgentLogsForMgn",
+      "description": "Grants permission to send agent logs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendAgentMetricsForMgn",
+      "methodName": "toSendAgentMetricsForMgn",
+      "description": "Grants permission to send agent metrics",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendChannelCommandResultForMgn",
+      "methodName": "toSendChannelCommandResultForMgn",
+      "description": "Grants permission to send channel command result",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendClientLogsForMgn",
+      "methodName": "toSendClientLogsForMgn",
+      "description": "Grants permission to send client logs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendClientMetricsForMgn",
+      "methodName": "toSendClientMetricsForMgn",
+      "description": "Grants permission to send client metrics",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendVcenterClientCommandResultForMgn",
+      "methodName": "toSendVcenterClientCommandResultForMgn",
+      "description": "Grants permission to send vcenter client command result",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendVcenterClientLogsForMgn",
+      "methodName": "toSendVcenterClientLogsForMgn",
+      "description": "Grants permission to send vcenter client logs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "SendVcenterClientMetricsForMgn",
+      "methodName": "toSendVcenterClientMetricsForMgn",
+      "description": "Grants permission to send vcenter client metrics",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "StartSnapshotGroupForMgn",
+      "methodName": "toStartSnapshotGroupForMgn",
+      "description": "Grants permission to start snapshot group requests",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "UpdateAgentBacklogForMgn",
+      "methodName": "toUpdateAgentBacklogForMgn",
+      "description": "Grants permission to update agent backlog",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "UpdateAgentConversionInfoForMgn",
+      "methodName": "toUpdateAgentConversionInfoForMgn",
+      "description": "Grants permission to update agent conversion info",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "UpdateAgentReplicationInfoForMgn",
+      "methodName": "toUpdateAgentReplicationInfoForMgn",
+      "description": "Grants permission to update agent replication info",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "UpdateAgentReplicationProcessStateForMgn",
+      "methodName": "toUpdateAgentReplicationProcessStateForMgn",
+      "description": "Grants permission to update agent replication process state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "UpdateAgentSourcePropertiesForMgn",
+      "methodName": "toUpdateAgentSourcePropertiesForMgn",
+      "description": "Grants permission to update agent source properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    },
+    {
+      "name": "VerifyClientRoleForMgn",
+      "methodName": "toVerifyClientRoleForMgn",
+      "description": "Grants permission to verify client role",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ApplicationResource",
+      "methodName": "onApplicationResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/applications.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:application/${ApplicationID}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationID",
+          "name": "applicationID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ConnectorResource",
+      "methodName": "onConnectorResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/connectors.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:connector/${ConnectorID}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorID",
+          "name": "connectorID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ExportResource",
+      "methodName": "onExportResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/exports.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:export/${ExportID}",
+      "placeholders": [
+        {
+          "placeholder": "ExportID",
+          "name": "exportID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ImportResource",
+      "methodName": "onImportResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/imports.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:import/${ImportID}",
+      "placeholders": [
+        {
+          "placeholder": "ImportID",
+          "name": "importID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "JobResource",
+      "methodName": "onJobResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/launching-target-servers.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:job/${JobID}",
+      "placeholders": [
+        {
+          "placeholder": "JobID",
+          "name": "jobID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "LaunchConfigurationTemplateResource",
+      "methodName": "onLaunchConfigurationTemplateResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/post-launch-settings.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:launch-configuration-template/${LaunchConfigurationTemplateID}",
+      "placeholders": [
+        {
+          "placeholder": "LaunchConfigurationTemplateID",
+          "name": "launchConfigurationTemplateID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "NetworkMigrationDefinitionResource",
+      "methodName": "onNetworkMigrationDefinitionResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/network-migration-definition.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:network-migration-definition/${NetworkMigrationDefinitionID}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkMigrationDefinitionID",
+          "name": "networkMigrationDefinitionID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ReplicationConfigurationTemplateResource",
+      "methodName": "onReplicationConfigurationTemplateResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/replication-settings-template.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:replication-configuration-template/${ReplicationConfigurationTemplateID}",
+      "placeholders": [
+        {
+          "placeholder": "ReplicationConfigurationTemplateID",
+          "name": "replicationConfigurationTemplateID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "SourceServerResource",
+      "methodName": "onSourceServerResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/source-servers.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:source-server/${SourceServerID}",
+      "placeholders": [
+        {
+          "placeholder": "SourceServerID",
+          "name": "sourceServerID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "VcenterClientResource",
+      "methodName": "onVcenterClientResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/agentless-mgn.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:vcenter-client/${VcenterClientID}",
+      "placeholders": [
+        {
+          "placeholder": "VcenterClientID",
+          "name": "vcenterClientID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "WaveResource",
+      "methodName": "onWaveResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/waves.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:wave/${WaveID}",
+      "placeholders": [
+        {
+          "placeholder": "WaveID",
+          "name": "waveID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateConnector",
+        "toCreateLaunchConfigurationTemplate",
+        "toCreateNetworkMigrationDefinition",
+        "toCreateReplicationConfigurationTemplate",
+        "toCreateWave",
+        "toStartCutover",
+        "toStartExport",
+        "toStartImport",
+        "toStartTest",
+        "toTagResource",
+        "toTerminateTargetInstances",
+        "toCreateVcenterClientForMgn",
+        "toRegisterAgentForMgn"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toArchiveApplication",
+        "toArchiveWave",
+        "toAssociateApplications",
+        "toAssociateSourceServers",
+        "toChangeServerLifeCycleState",
+        "toDeleteApplication",
+        "toDeleteConnector",
+        "toDeleteJob",
+        "toDeleteLaunchConfigurationTemplate",
+        "toDeleteNetworkMigrationDefinition",
+        "toDeleteReplicationConfigurationTemplate",
+        "toDeleteSourceServer",
+        "toDeleteVcenterClient",
+        "toDeleteWave",
+        "toDescribeJobLogItems",
+        "toDisassociateApplications",
+        "toDisassociateSourceServers",
+        "toDisconnectFromService",
+        "toFinalizeCutover",
+        "toGetLaunchConfiguration",
+        "toGetNetworkMigrationDefinition",
+        "toGetNetworkMigrationMapperSegmentConstruct",
+        "toGetReplicationConfiguration",
+        "toListExportErrors",
+        "toListImportErrors",
+        "toListNetworkMigrationAnalyses",
+        "toListNetworkMigrationAnalysisResults",
+        "toListNetworkMigrationCodeGenerationSegments",
+        "toListNetworkMigrationCodeGenerations",
+        "toListNetworkMigrationDeployedStacks",
+        "toListNetworkMigrationDeployedStacksDeletions",
+        "toListNetworkMigrationDeployments",
+        "toListNetworkMigrationExecutionArtifacts",
+        "toListNetworkMigrationExecutions",
+        "toListNetworkMigrationMapperSegmentConstructs",
+        "toListNetworkMigrationMapperSegments",
+        "toListNetworkMigrationMappingUpdates",
+        "toListNetworkMigrationMappings",
+        "toListSourceServerActions",
+        "toListTemplateActions",
+        "toMarkAsArchived",
+        "toPauseReplication",
+        "toPutSourceServerAction",
+        "toPutTemplateAction",
+        "toRemoveSourceServerAction",
+        "toRemoveTemplateAction",
+        "toResumeReplication",
+        "toRetryDataReplication",
+        "toStartCutover",
+        "toStartNetworkMigrationAnalysis",
+        "toStartNetworkMigrationCodeGeneration",
+        "toStartNetworkMigrationDeployedStacksDeletion",
+        "toStartNetworkMigrationDeployment",
+        "toStartNetworkMigrationMapping",
+        "toStartNetworkMigrationMappingUpdate",
+        "toStartReplication",
+        "toStartTest",
+        "toStopReplication",
+        "toTagResource",
+        "toTerminateTargetInstances",
+        "toUnarchiveApplication",
+        "toUnarchiveWave",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateConnector",
+        "toUpdateLaunchConfiguration",
+        "toUpdateLaunchConfigurationTemplate",
+        "toUpdateNetworkMigrationDefinition",
+        "toUpdateNetworkMigrationMapperSegment",
+        "toUpdateNetworkMigrationMapperSegmentConstruct",
+        "toUpdateReplicationConfiguration",
+        "toUpdateReplicationConfigurationTemplate",
+        "toUpdateSourceServer",
+        "toUpdateSourceServerReplicationType",
+        "toUpdateWave",
+        "toBatchCreateVolumeSnapshotGroupForMgn",
+        "toGetAgentCommandForMgn",
+        "toGetAgentConfirmedResumeInfoForMgn",
+        "toGetAgentReplicationInfoForMgn",
+        "toGetAgentRuntimeConfigurationForMgn",
+        "toGetAgentSnapshotCreditsForMgn",
+        "toGetVcenterClientCommandsForMgn",
+        "toIssueClientCertificateForMgn",
+        "toNotifyAgentAuthenticationForMgn",
+        "toNotifyAgentConnectedForMgn",
+        "toNotifyAgentDisconnectedForMgn",
+        "toNotifyAgentReplicationProgressForMgn",
+        "toNotifyVcenterClientStartedForMgn",
+        "toSendAgentLogsForMgn",
+        "toSendAgentMetricsForMgn",
+        "toSendVcenterClientCommandResultForMgn",
+        "toSendVcenterClientLogsForMgn",
+        "toSendVcenterClientMetricsForMgn",
+        "toUpdateAgentBacklogForMgn",
+        "toUpdateAgentConversionInfoForMgn",
+        "toUpdateAgentReplicationInfoForMgn",
+        "toUpdateAgentReplicationProcessStateForMgn",
+        "toUpdateAgentSourcePropertiesForMgn"
+      ],
+      "relatedResourceTypes": [
+        "ApplicationResource",
+        "ConnectorResource",
+        "ExportResource",
+        "ImportResource",
+        "JobResource",
+        "LaunchConfigurationTemplateResource",
+        "NetworkMigrationDefinitionResource",
+        "ReplicationConfigurationTemplateResource",
+        "SourceServerResource",
+        "VcenterClientResource",
+        "WaveResource"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateConnector",
+        "toCreateLaunchConfigurationTemplate",
+        "toCreateNetworkMigrationDefinition",
+        "toCreateReplicationConfigurationTemplate",
+        "toCreateWave",
+        "toStartCutover",
+        "toStartExport",
+        "toStartImport",
+        "toStartTest",
+        "toTagResource",
+        "toTerminateTargetInstances",
+        "toUntagResource",
+        "toCreateVcenterClientForMgn",
+        "toRegisterAgentForMgn"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "mgn:CreateAction",
+      "methodName": "ifCreateAction",
+      "description": "Filters access by the name of a resource-creating API action",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/supported-iam-actions-tagging.html",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

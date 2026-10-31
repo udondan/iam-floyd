@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "StartIncidentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm-incidents:StartIncident",
+        "ssm-contacts:StartEngagement"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ResponsePlanReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm-incidents:ListResponsePlans",
+        "ssm-incidents:GetResponsePlan"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IncidentRecordResolverPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm-incidents:ListIncidentRecords",
+        "ssm-incidents:GetIncidentRecord",
+        "ssm-incidents:UpdateIncidentRecord",
+        "ssm-incidents:ListTimelineEvents",
+        "ssm-incidents:CreateTimelineEvent",
+        "ssm-incidents:GetTimelineEvent",
+        "ssm-incidents:UpdateTimelineEvent",
+        "ssm-incidents:DeleteTimelineEvent",
+        "ssm-incidents:ListRelatedItems",
+        "ssm-incidents:UpdateRelatedItems"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

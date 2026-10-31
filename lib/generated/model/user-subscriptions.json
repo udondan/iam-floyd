@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "filename": "user-subscriptions",
+  "className": "UserSubscriptions",
+  "name": "user-subscriptions",
+  "servicePrefix": "user-subscriptions",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_user-subscriptions.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelPurchaseSession",
+      "ConfirmPurchaseSession",
+      "CreateClaim",
+      "CreateClaimAddOn",
+      "CreatePurchaseSession",
+      "CreateUpdatePlanPreview",
+      "DeleteAutoTopUpRule",
+      "DeleteClaim",
+      "SetAutoTopUpRule",
+      "SetOverageConfig",
+      "SetUsageLimit",
+      "UpdateClaim"
+    ],
+    "Read": [
+      "GetAutoTopUpRule",
+      "GetCurrentPlanDetails",
+      "GetEffectiveUsageLimit",
+      "GetPurchaseSession",
+      "GetUsageLimitHistory"
+    ],
+    "List": [
+      "ListApplicationClaims",
+      "ListClaimAddOns",
+      "ListClaims",
+      "ListEntitlements",
+      "ListUsageLimits",
+      "ListUserSubscriptions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelPurchaseSession",
+      "methodName": "toCancelPurchaseSession",
+      "description": "Grants permission to cancel a User subscription purchase session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ConfirmPurchaseSession",
+      "methodName": "toConfirmPurchaseSession",
+      "description": "Grants permission to confirm a User subscription purchase session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "CreateClaim",
+      "methodName": "toCreateClaim",
+      "description": "Grants permission to create a User subscription Claim",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html",
+      "conditionMethods": [
+        "ifCreateForSelf"
+      ]
+    },
+    {
+      "name": "CreateClaimAddOn",
+      "methodName": "toCreateClaimAddOn",
+      "description": "Grants permission to create a User subscription Claim add-on",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "CreatePurchaseSession",
+      "methodName": "toCreatePurchaseSession",
+      "description": "Grants permission to create a User subscription purchase session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "CreateUpdatePlanPreview",
+      "methodName": "toCreateUpdatePlanPreview",
+      "description": "Grants permission to create a preview of a User subscription plan update",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "DeleteAutoTopUpRule",
+      "methodName": "toDeleteAutoTopUpRule",
+      "description": "Grants permission to delete a User subscription auto-top-up rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "DeleteClaim",
+      "methodName": "toDeleteClaim",
+      "description": "Grants permission to delete a User subscription Claim",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "GetAutoTopUpRule",
+      "methodName": "toGetAutoTopUpRule",
+      "description": "Grants permission to get a User subscription auto-top-up rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "GetCurrentPlanDetails",
+      "methodName": "toGetCurrentPlanDetails",
+      "description": "Grants permission to get the current plan details for a User subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "GetEffectiveUsageLimit",
+      "methodName": "toGetEffectiveUsageLimit",
+      "description": "Grants permission to get a User subscription effective usage limit",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "GetPurchaseSession",
+      "methodName": "toGetPurchaseSession",
+      "description": "Grants permission to get a User subscription purchase session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "GetUsageLimitHistory",
+      "methodName": "toGetUsageLimitHistory",
+      "description": "Grants permission to get User subscription usage limit history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ListApplicationClaims",
+      "methodName": "toListApplicationClaims",
+      "description": "Grants permission to list all User subscription Claims for Application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ListClaimAddOns",
+      "methodName": "toListClaimAddOns",
+      "description": "Grants permission to list all User subscription Claim add-ons",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ListClaims",
+      "methodName": "toListClaims",
+      "description": "Grants permission to list all User subscription Claims",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ListEntitlements",
+      "methodName": "toListEntitlements",
+      "description": "Grants permission to list all User subscription entitlements",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ListUsageLimits",
+      "methodName": "toListUsageLimits",
+      "description": "Grants permission to list all User subscription usage limits",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "ListUserSubscriptions",
+      "methodName": "toListUserSubscriptions",
+      "description": "Grants permission to list all User subscriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "SetAutoTopUpRule",
+      "methodName": "toSetAutoTopUpRule",
+      "description": "Grants permission to set a User subscription auto-top-up rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "SetOverageConfig",
+      "methodName": "toSetOverageConfig",
+      "description": "Grants permission to set a User subscription overage configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "SetUsageLimit",
+      "methodName": "toSetUsageLimit",
+      "description": "Grants permission to set a User subscription usage limit",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    },
+    {
+      "name": "UpdateClaim",
+      "methodName": "toUpdateClaim",
+      "description": "Grants permission to update a User subscription Claim",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html"
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "user-subscriptions:CreateForSelf",
+      "methodName": "ifCreateForSelf",
+      "description": "Filters access by only allowing creation of User subscription Claims for the caller",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateClaim"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateForSelf",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

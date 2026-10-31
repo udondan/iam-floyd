@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllPrometheusActions",
+      "Effect": "Allow",
+      "Action": [
+        "aps:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeCluster",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeCluster",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "aps.amazonaws.com"
+          ]
+        }
+      },
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/scraper.aps.amazonaws.com/AWSServiceRoleForAmazonPrometheusScraper*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "scraper.aps.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

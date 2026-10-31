@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "filename": "mediastore",
+  "className": "Mediastore",
+  "name": "mediastore",
+  "servicePrefix": "mediastore",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediastore.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateContainer",
+      "DeleteContainer",
+      "DeleteContainerPolicy",
+      "DeleteCorsPolicy",
+      "DeleteLifecyclePolicy",
+      "DeleteMetricPolicy",
+      "DeleteObject",
+      "PutContainerPolicy",
+      "PutCorsPolicy",
+      "PutLifecyclePolicy",
+      "PutMetricPolicy",
+      "PutObject",
+      "StartAccessLogging",
+      "StopAccessLogging",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "DeleteContainerPolicy",
+      "PutContainerPolicy"
+    ],
+    "List": [
+      "DescribeContainer",
+      "DescribeObject",
+      "ListContainers",
+      "ListItems"
+    ],
+    "Read": [
+      "GetContainerPolicy",
+      "GetCorsPolicy",
+      "GetLifecyclePolicy",
+      "GetMetricPolicy",
+      "GetObject",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateContainer",
+      "methodName": "toCreateContainer",
+      "description": "Grants permission to create a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteContainer",
+      "methodName": "toDeleteContainer",
+      "description": "Grants permission to delete a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainer.html"
+    },
+    {
+      "name": "DeleteContainerPolicy",
+      "methodName": "toDeleteContainerPolicy",
+      "description": "Grants permission to delete the access policy of a container",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainerPolicy.html"
+    },
+    {
+      "name": "DeleteCorsPolicy",
+      "methodName": "toDeleteCorsPolicy",
+      "description": "Grants permission to delete the CORS policy from a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteCorsPolicy.html"
+    },
+    {
+      "name": "DeleteLifecyclePolicy",
+      "methodName": "toDeleteLifecyclePolicy",
+      "description": "Grants permission to delete the lifecycle policy from a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteLifecyclePolicy.html"
+    },
+    {
+      "name": "DeleteMetricPolicy",
+      "methodName": "toDeleteMetricPolicy",
+      "description": "Grants permission to delete the metric policy from a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteMetricPolicy.html"
+    },
+    {
+      "name": "DeleteObject",
+      "methodName": "toDeleteObject",
+      "description": "Grants permission to delete an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DeleteObject.html"
+    },
+    {
+      "name": "DescribeContainer",
+      "methodName": "toDescribeContainer",
+      "description": "Grants permission to retrieve details on a container",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_DescribeContainer.html"
+    },
+    {
+      "name": "DescribeObject",
+      "methodName": "toDescribeObject",
+      "description": "Grants permission to retrieve metadata for an object",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DescribeObject.html"
+    },
+    {
+      "name": "GetContainerPolicy",
+      "methodName": "toGetContainerPolicy",
+      "description": "Grants permission to retrieve the access policy of a container",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetContainerPolicy.html"
+    },
+    {
+      "name": "GetCorsPolicy",
+      "methodName": "toGetCorsPolicy",
+      "description": "Grants permission to retrieve the CORS policy of a container",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetCorsPolicy.html"
+    },
+    {
+      "name": "GetLifecyclePolicy",
+      "methodName": "toGetLifecyclePolicy",
+      "description": "Grants permission to retrieve the lifecycle policy that is assigned to a container",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetLifecyclePolicy.html"
+    },
+    {
+      "name": "GetMetricPolicy",
+      "methodName": "toGetMetricPolicy",
+      "description": "Grants permission to retrieve the metric policy that is assigned to a container",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetMetricPolicy.html"
+    },
+    {
+      "name": "GetObject",
+      "methodName": "toGetObject",
+      "description": "Grants permission to retrieve an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_GetObject.html"
+    },
+    {
+      "name": "ListContainers",
+      "methodName": "toListContainers",
+      "description": "Grants permission to retrieve a list of containers in the current account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListContainers.html"
+    },
+    {
+      "name": "ListItems",
+      "methodName": "toListItems",
+      "description": "Grants permission to retrieve a list of objects and subfolders that are stored in a folder",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_ListItems.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags on a container",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutContainerPolicy",
+      "methodName": "toPutContainerPolicy",
+      "description": "Grants permission to create or replace the access policy of a container",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutContainerPolicy.html"
+    },
+    {
+      "name": "PutCorsPolicy",
+      "methodName": "toPutCorsPolicy",
+      "description": "Grants permission to add or modify the CORS policy of a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutCorsPolicy.html"
+    },
+    {
+      "name": "PutLifecyclePolicy",
+      "methodName": "toPutLifecyclePolicy",
+      "description": "Grants permission to add or modify the lifecycle policy that is assigned to a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutLifecyclePolicy.html"
+    },
+    {
+      "name": "PutMetricPolicy",
+      "methodName": "toPutMetricPolicy",
+      "description": "Grants permission to add or modify the metric policy that is assigned to a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutMetricPolicy.html"
+    },
+    {
+      "name": "PutObject",
+      "methodName": "toPutObject",
+      "description": "Grants permission to upload an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_PutObject.html"
+    },
+    {
+      "name": "StartAccessLogging",
+      "methodName": "toStartAccessLogging",
+      "description": "Grants permission to start access logging on a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html"
+    },
+    {
+      "name": "StopAccessLogging",
+      "methodName": "toStopAccessLogging",
+      "description": "Grants permission to stop access logging on a container",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_StopAccessLogging.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a container",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a container",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "container",
+      "methodName": "onContainer",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/ug/containers.html",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}",
+      "placeholders": [
+        {
+          "placeholder": "ContainerName",
+          "name": "containerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_mediastore",
+        "interface": "IContainerRef",
+        "property": "containerRef",
+        "id": "containerName"
+      }
+    },
+    {
+      "name": "folder",
+      "methodName": "onFolder",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/ug/folders.html",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}/${FolderPath}",
+      "placeholders": [
+        {
+          "placeholder": "ContainerName",
+          "name": "containerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FolderPath",
+          "name": "folderPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "object",
+      "methodName": "onObject",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/ug/objects.html",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}/${ObjectPath}",
+      "placeholders": [
+        {
+          "placeholder": "ContainerName",
+          "name": "containerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ObjectPath",
+          "name": "objectPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateContainer",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteContainer",
+        "toDeleteContainerPolicy",
+        "toDeleteCorsPolicy",
+        "toDeleteLifecyclePolicy",
+        "toDeleteMetricPolicy",
+        "toDescribeContainer",
+        "toGetContainerPolicy",
+        "toGetCorsPolicy",
+        "toGetLifecyclePolicy",
+        "toGetMetricPolicy",
+        "toListTagsForResource",
+        "toPutContainerPolicy",
+        "toPutCorsPolicy",
+        "toPutLifecyclePolicy",
+        "toPutMetricPolicy",
+        "toStartAccessLogging",
+        "toStopAccessLogging",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "container"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateContainer",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

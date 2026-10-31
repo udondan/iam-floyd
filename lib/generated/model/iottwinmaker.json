@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "filename": "iottwinmaker",
+  "className": "Iottwinmaker",
+  "name": "iottwinmaker",
+  "servicePrefix": "iottwinmaker",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iottwinmaker.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchPutPropertyValues",
+      "CancelMetadataTransferJob",
+      "CreateComponentType",
+      "CreateEntity",
+      "CreateMetadataTransferJob",
+      "CreateScene",
+      "CreateSyncJob",
+      "CreateWorkspace",
+      "DeleteComponentType",
+      "DeleteEntity",
+      "DeleteScene",
+      "DeleteSyncJob",
+      "DeleteWorkspace",
+      "TagResource",
+      "UntagResource",
+      "UpdateComponentType",
+      "UpdateEntity",
+      "UpdatePricingPlan",
+      "UpdateScene",
+      "UpdateWorkspace"
+    ],
+    "Read": [
+      "ExecuteQuery",
+      "GetComponentType",
+      "GetEntity",
+      "GetMetadataTransferJob",
+      "GetPricingPlan",
+      "GetPropertyValue",
+      "GetPropertyValueHistory",
+      "GetScene",
+      "GetSyncJob",
+      "GetWorkspace"
+    ],
+    "List": [
+      "ListComponentTypes",
+      "ListComponents",
+      "ListEntities",
+      "ListMetadataTransferJobs",
+      "ListProperties",
+      "ListScenes",
+      "ListSyncJobs",
+      "ListSyncResources",
+      "ListTagsForResource",
+      "ListWorkspaces"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchPutPropertyValues",
+      "methodName": "toBatchPutPropertyValues",
+      "description": "Grants permission to set values for multiple time series properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html"
+    },
+    {
+      "name": "CancelMetadataTransferJob",
+      "methodName": "toCancelMetadataTransferJob",
+      "description": "Grants permission to cancel a metadata transfer job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CancelMetadataTransferJob.html"
+    },
+    {
+      "name": "CreateComponentType",
+      "methodName": "toCreateComponentType",
+      "description": "Grants permission to create a componentType",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateComponentType.html"
+    },
+    {
+      "name": "CreateEntity",
+      "methodName": "toCreateEntity",
+      "description": "Grants permission to create an entity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateEntity.html"
+    },
+    {
+      "name": "CreateMetadataTransferJob",
+      "methodName": "toCreateMetadataTransferJob",
+      "description": "Grants permission to create a metadata transfer job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html"
+    },
+    {
+      "name": "CreateScene",
+      "methodName": "toCreateScene",
+      "description": "Grants permission to create a scene",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateScene.html"
+    },
+    {
+      "name": "CreateSyncJob",
+      "methodName": "toCreateSyncJob",
+      "description": "Grants permission to create a sync job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateSyncJob.html"
+    },
+    {
+      "name": "CreateWorkspace",
+      "methodName": "toCreateWorkspace",
+      "description": "Grants permission to create a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateWorkspace.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteComponentType",
+      "methodName": "toDeleteComponentType",
+      "description": "Grants permission to delete a componentType",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_DeleteComponentType.html"
+    },
+    {
+      "name": "DeleteEntity",
+      "methodName": "toDeleteEntity",
+      "description": "Grants permission to delete an entity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_DeleteEntity.html"
+    },
+    {
+      "name": "DeleteScene",
+      "methodName": "toDeleteScene",
+      "description": "Grants permission to delete a scene",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_DeleteScene.html"
+    },
+    {
+      "name": "DeleteSyncJob",
+      "methodName": "toDeleteSyncJob",
+      "description": "Grants permission to delete a sync job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_DeleteSyncJob.html"
+    },
+    {
+      "name": "DeleteWorkspace",
+      "methodName": "toDeleteWorkspace",
+      "description": "Grants permission to delete a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_DeleteWorkspace.html"
+    },
+    {
+      "name": "ExecuteQuery",
+      "methodName": "toExecuteQuery",
+      "description": "Grants permission to execute query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ExecuteQuery.html"
+    },
+    {
+      "name": "GetComponentType",
+      "methodName": "toGetComponentType",
+      "description": "Grants permission to get a componentType",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetComponentType.html"
+    },
+    {
+      "name": "GetEntity",
+      "methodName": "toGetEntity",
+      "description": "Grants permission to get an entity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetEntity.html"
+    },
+    {
+      "name": "GetMetadataTransferJob",
+      "methodName": "toGetMetadataTransferJob",
+      "description": "Grants permission to get a metadata transfer job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetMetadataTransferJob.html"
+    },
+    {
+      "name": "GetPricingPlan",
+      "methodName": "toGetPricingPlan",
+      "description": "Grants permission to get pricing plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetPricingPlan.html"
+    },
+    {
+      "name": "GetPropertyValue",
+      "methodName": "toGetPropertyValue",
+      "description": "Grants permission to retrieve the property values",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetPropertyValue.html"
+    },
+    {
+      "name": "GetPropertyValueHistory",
+      "methodName": "toGetPropertyValueHistory",
+      "description": "Grants permission to retrieve the time series value history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetPropertyValueHistory.html"
+    },
+    {
+      "name": "GetScene",
+      "methodName": "toGetScene",
+      "description": "Grants permission to get a scene",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetScene.html"
+    },
+    {
+      "name": "GetSyncJob",
+      "methodName": "toGetSyncJob",
+      "description": "Grants permission to get a sync job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetSyncJob.html"
+    },
+    {
+      "name": "GetWorkspace",
+      "methodName": "toGetWorkspace",
+      "description": "Grants permission to get a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_GetWorkspace.html"
+    },
+    {
+      "name": "ListComponentTypes",
+      "methodName": "toListComponentTypes",
+      "description": "Grants permission to list all componentTypes in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListComponentTypes.html"
+    },
+    {
+      "name": "ListComponents",
+      "methodName": "toListComponents",
+      "description": "Grants permission to list components attached to an entity",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListComponents.html"
+    },
+    {
+      "name": "ListEntities",
+      "methodName": "toListEntities",
+      "description": "Grants permission to list all entities in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListEntities.html"
+    },
+    {
+      "name": "ListMetadataTransferJobs",
+      "methodName": "toListMetadataTransferJobs",
+      "description": "Grants permission to list all metadata transfer jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListMetadataTransferJobs.html"
+    },
+    {
+      "name": "ListProperties",
+      "methodName": "toListProperties",
+      "description": "Grants permission to list properties of an entity component",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListProperties.html"
+    },
+    {
+      "name": "ListScenes",
+      "methodName": "toListScenes",
+      "description": "Grants permission to list all scenes in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListScenes.html"
+    },
+    {
+      "name": "ListSyncJobs",
+      "methodName": "toListSyncJobs",
+      "description": "Grants permission to list all sync jobs in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListSyncJobs.html"
+    },
+    {
+      "name": "ListSyncResources",
+      "methodName": "toListSyncResources",
+      "description": "Grants permission to list all sync resources for a sync job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListSyncResources.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkspaces",
+      "methodName": "toListWorkspaces",
+      "description": "Grants permission to list all workspaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_ListWorkspaces.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateComponentType",
+      "methodName": "toUpdateComponentType",
+      "description": "Grants permission to update a componentType",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UpdateComponentType.html"
+    },
+    {
+      "name": "UpdateEntity",
+      "methodName": "toUpdateEntity",
+      "description": "Grants permission to update an entity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UpdateEntity.html"
+    },
+    {
+      "name": "UpdatePricingPlan",
+      "methodName": "toUpdatePricingPlan",
+      "description": "Grants permission to update pricing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UpdatePricingPlan.html"
+    },
+    {
+      "name": "UpdateScene",
+      "methodName": "toUpdateScene",
+      "description": "Grants permission to update a scene",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UpdateScene.html"
+    },
+    {
+      "name": "UpdateWorkspace",
+      "methodName": "toUpdateWorkspace",
+      "description": "Grants permission to update a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_UpdateWorkspace.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "componentType",
+      "methodName": "onComponentType",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateComponentType.html",
+      "arn": "arn:${Partition}:iottwinmaker:${Region}:${Account}:workspace/${WorkspaceId}/component-type/${ComponentTypeId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ComponentTypeId",
+          "name": "componentTypeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "entity",
+      "methodName": "onEntity",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateEntity.html",
+      "arn": "arn:${Partition}:iottwinmaker:${Region}:${Account}:workspace/${WorkspaceId}/entity/${EntityId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EntityId",
+          "name": "entityId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "metadataTransferJob",
+      "methodName": "onMetadataTransferJob",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateMetadataTransferJob.html",
+      "arn": "arn:${Partition}:iottwinmaker:${Region}:${Account}:metadata-transfer-job/${MetadataTransferJobId}",
+      "placeholders": [
+        {
+          "placeholder": "MetadataTransferJobId",
+          "name": "metadataTransferJobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "scene",
+      "methodName": "onScene",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateScene.html",
+      "arn": "arn:${Partition}:iottwinmaker:${Region}:${Account}:workspace/${WorkspaceId}/scene/${SceneId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SceneId",
+          "name": "sceneId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "syncJob",
+      "methodName": "onSyncJob",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateSyncJob.html",
+      "arn": "arn:${Partition}:iottwinmaker:${Region}:${Account}:workspace/${WorkspaceId}/sync-job/${SyncJobId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SyncJobId",
+          "name": "syncJobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspace",
+      "methodName": "onWorkspace",
+      "url": "https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_CreateWorkspace.html",
+      "arn": "arn:${Partition}:iottwinmaker:${Region}:${Account}:workspace/${WorkspaceId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceId",
+          "name": "workspaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iottwinmaker",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateComponentType",
+        "toCreateEntity",
+        "toCreateScene",
+        "toCreateSyncJob",
+        "toCreateWorkspace",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchPutPropertyValues",
+        "toCreateComponentType",
+        "toCreateEntity",
+        "toCreateScene",
+        "toCreateSyncJob",
+        "toDeleteComponentType",
+        "toDeleteEntity",
+        "toDeleteScene",
+        "toDeleteSyncJob",
+        "toDeleteWorkspace",
+        "toExecuteQuery",
+        "toGetComponentType",
+        "toGetEntity",
+        "toGetPropertyValue",
+        "toGetPropertyValueHistory",
+        "toGetScene",
+        "toGetSyncJob",
+        "toGetWorkspace",
+        "toListComponentTypes",
+        "toListComponents",
+        "toListEntities",
+        "toListProperties",
+        "toListScenes",
+        "toListSyncJobs",
+        "toListSyncResources",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateComponentType",
+        "toUpdateEntity",
+        "toUpdateScene",
+        "toUpdateWorkspace"
+      ],
+      "relatedResourceTypes": [
+        "componentType",
+        "entity",
+        "scene",
+        "syncJob",
+        "workspace"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateComponentType",
+        "toCreateEntity",
+        "toCreateScene",
+        "toCreateSyncJob",
+        "toCreateWorkspace",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iottwinmaker:destinationType",
+      "methodName": "ifDestinationType",
+      "description": "Filters access by destination type of metadata transfer job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html#awsiottwinmaker-policy-keys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "destinationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iottwinmaker:linkedServices",
+      "methodName": "ifLinkedServices",
+      "description": "Filters access by workspace linked to services",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html#awsiottwinmaker-policy-keys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "linkedServices",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iottwinmaker:sourceType",
+      "methodName": "ifSourceType",
+      "description": "Filters access by source type of metadata transfer job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiottwinmaker.html#awsiottwinmaker-policy-keys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "sourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

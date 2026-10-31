@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "filename": "migrationhubstrategy",
+  "className": "MigrationhubStrategy",
+  "name": "migrationhub-strategy",
+  "servicePrefix": "migrationhub-strategy",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_migrationhubstrategy.html",
+  "accessLevelList": {
+    "Read": [
+      "GetAntiPattern",
+      "GetApplicationComponentDetails",
+      "GetApplicationComponentStrategies",
+      "GetAssessment",
+      "GetImportFileTask",
+      "GetLatestAssessmentId",
+      "GetMessage",
+      "GetPortfolioPreferences",
+      "GetPortfolioSummary",
+      "GetRecommendationReportDetails",
+      "GetServerDetails",
+      "GetServerStrategies"
+    ],
+    "List": [
+      "ListAnalyzableServers",
+      "ListAntiPatterns",
+      "ListApplicationComponents",
+      "ListCollectors",
+      "ListImportFileTask",
+      "ListJarArtifacts",
+      "ListServers"
+    ],
+    "Write": [
+      "PutLogData",
+      "PutMetricData",
+      "PutPortfolioPreferences",
+      "RegisterCollector",
+      "SendMessage",
+      "StartAssessment",
+      "StartImportFileTask",
+      "StartRecommendationReportGeneration",
+      "StopAssessment",
+      "UpdateApplicationComponentConfig",
+      "UpdateCollectorConfiguration",
+      "UpdateServerConfig"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetAntiPattern",
+      "methodName": "toGetAntiPattern",
+      "description": "Grants permission to get details of each anti pattern that collector should look at in a customer's environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetAntiPattern.html"
+    },
+    {
+      "name": "GetApplicationComponentDetails",
+      "methodName": "toGetApplicationComponentDetails",
+      "description": "Grants permission to get details of an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetApplicationComponentDetails.html"
+    },
+    {
+      "name": "GetApplicationComponentStrategies",
+      "methodName": "toGetApplicationComponentStrategies",
+      "description": "Grants permission to get a list of all recommended strategies and tools for an application running in a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetApplicationComponentStrategies.html"
+    },
+    {
+      "name": "GetAssessment",
+      "methodName": "toGetAssessment",
+      "description": "Grants permission to retrieve status of an on-going assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetAssessment.html"
+    },
+    {
+      "name": "GetImportFileTask",
+      "methodName": "toGetImportFileTask",
+      "description": "Grants permission to get details of a specific import task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetImportFileTask.html"
+    },
+    {
+      "name": "GetLatestAssessmentId",
+      "methodName": "toGetLatestAssessmentId",
+      "description": "Grants permission to retrieve the latest assessment id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetLatestAssessmentId.html"
+    },
+    {
+      "name": "GetMessage",
+      "methodName": "toGetMessage",
+      "description": "Grants permission to the collector to receive information from the service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetMessage.html"
+    },
+    {
+      "name": "GetPortfolioPreferences",
+      "methodName": "toGetPortfolioPreferences",
+      "description": "Grants permission to retrieve customer migration/Modernization preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetPortfolioPreferences.html"
+    },
+    {
+      "name": "GetPortfolioSummary",
+      "methodName": "toGetPortfolioSummary",
+      "description": "Grants permission to retrieve overall summary (number-of servers to rehost etc as well as overall number of anti patterns)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetPortfolioSummary.html"
+    },
+    {
+      "name": "GetRecommendationReportDetails",
+      "methodName": "toGetRecommendationReportDetails",
+      "description": "Grants permission to retrieve detailed information about a recommendation report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetRecommendationReportDetails.html"
+    },
+    {
+      "name": "GetServerDetails",
+      "methodName": "toGetServerDetails",
+      "description": "Grants permission to get info about a specific server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetServerDetails.html"
+    },
+    {
+      "name": "GetServerStrategies",
+      "methodName": "toGetServerStrategies",
+      "description": "Grants permission to get recommended strategies and tools for a specific server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_GetServerStrategies.html"
+    },
+    {
+      "name": "ListAnalyzableServers",
+      "methodName": "toListAnalyzableServers",
+      "description": "Grants permission to get a list of all analyzable servers in a customer's vcenter environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListAnalyzableServers.html"
+    },
+    {
+      "name": "ListAntiPatterns",
+      "methodName": "toListAntiPatterns",
+      "description": "Grants permission to get a list of all anti patterns that collector should look for in a customer's environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListAntiPatterns.html"
+    },
+    {
+      "name": "ListApplicationComponents",
+      "methodName": "toListApplicationComponents",
+      "description": "Grants permission to get a list of all applications running on servers on customer's servers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListApplicationComponents.html"
+    },
+    {
+      "name": "ListCollectors",
+      "methodName": "toListCollectors",
+      "description": "Grants permission to get a list of all collectors installed by the customer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListCollectors.html"
+    },
+    {
+      "name": "ListImportFileTask",
+      "methodName": "toListImportFileTask",
+      "description": "Grants permission to get list of all imports performed by the customer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListImportFileTask.html"
+    },
+    {
+      "name": "ListJarArtifacts",
+      "methodName": "toListJarArtifacts",
+      "description": "Grants permission to get a list of binaries that collector should assess",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListJarArtifacts.html"
+    },
+    {
+      "name": "ListServers",
+      "methodName": "toListServers",
+      "description": "Grants permission to get a list of all servers in a customer's environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_ListServers.html"
+    },
+    {
+      "name": "PutLogData",
+      "methodName": "toPutLogData",
+      "description": "Grants permission to the collector to send logs to the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutLogData.html"
+    },
+    {
+      "name": "PutMetricData",
+      "methodName": "toPutMetricData",
+      "description": "Grants permission to the collector to send metrics to the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutMetricData.html"
+    },
+    {
+      "name": "PutPortfolioPreferences",
+      "methodName": "toPutPortfolioPreferences",
+      "description": "Grants permission to save customer's Migration/Modernization preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutPortfolioPreferences.html"
+    },
+    {
+      "name": "RegisterCollector",
+      "methodName": "toRegisterCollector",
+      "description": "Grants permission to register the collector to receive an ID and to start receiving messages from the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_RegisterCollector.html"
+    },
+    {
+      "name": "SendMessage",
+      "methodName": "toSendMessage",
+      "description": "Grants permission to the collector to send information to the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_SendMessage.html"
+    },
+    {
+      "name": "StartAssessment",
+      "methodName": "toStartAssessment",
+      "description": "Grants permission to start assessment in a customer's environment (collect data from all servers and provide recommendations)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_StartAssessment.html"
+    },
+    {
+      "name": "StartImportFileTask",
+      "methodName": "toStartImportFileTask",
+      "description": "Grants permission to start importing data from a file provided by customer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_StartImportFileTask.html"
+    },
+    {
+      "name": "StartRecommendationReportGeneration",
+      "methodName": "toStartRecommendationReportGeneration",
+      "description": "Grants permission to start generating a recommendation report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_StartRecommendationReportGeneration.html"
+    },
+    {
+      "name": "StopAssessment",
+      "methodName": "toStopAssessment",
+      "description": "Grants permission to stop an on-going assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_StopAssessment.html"
+    },
+    {
+      "name": "UpdateApplicationComponentConfig",
+      "methodName": "toUpdateApplicationComponentConfig",
+      "description": "Grants permission to update details for an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_UpdateApplicationComponentConfig.html"
+    },
+    {
+      "name": "UpdateCollectorConfiguration",
+      "methodName": "toUpdateCollectorConfiguration",
+      "description": "Grants permission to the collector to send configuration information to the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_UpdateCollectorConfiguration.html"
+    },
+    {
+      "name": "UpdateServerConfig",
+      "methodName": "toUpdateServerConfig",
+      "description": "Grants permission to update info on a server along with the recommended strategy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_UpdateServerConfig.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

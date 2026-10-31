@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSBudgetsReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-portal:ViewBilling",
+        "budgets:ViewBudget",
+        "budgets:Describe*",
+        "budgets:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

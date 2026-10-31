@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "codedeploy:Batch*",
+        "codedeploy:Get*",
+        "codedeploy:List*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarNotificationsPowerUserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:DescribeNotificationRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codedeploy:*:*:application:*"
+        }
+      }
+    },
+    {
+      "Sid": "CodeStarNotificationsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListEventTypes",
+        "codestar-notifications:ListTargets"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

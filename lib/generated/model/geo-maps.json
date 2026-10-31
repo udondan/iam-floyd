@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "filename": "geo-maps",
+  "className": "GeoMaps",
+  "name": "geo-maps",
+  "servicePrefix": "geo-maps",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_geo-maps.html",
+  "accessLevelList": {
+    "Read": [
+      "GetStaticMap",
+      "GetTile"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetStaticMap",
+      "methodName": "toGetStaticMap",
+      "description": "Grants permission to retrieve the static map",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStaticMap.html"
+    },
+    {
+      "name": "GetTile",
+      "methodName": "toGetTile",
+      "description": "Grants permission to retrieve the map tile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "provider",
+      "methodName": "onProvider",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/Welcome.html",
+      "arn": "arn:${Partition}:geo-maps:${Region}::provider/default",
+      "placeholders": [
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,0 +1,1629 @@
+{
+  "schemaVersion": 1,
+  "filename": "backup",
+  "className": "Backup",
+  "name": "backup",
+  "servicePrefix": "backup",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_backup.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateBackupVaultMpaApprovalTeam",
+      "CancelLegalHold",
+      "CreateBackupAccessPoint",
+      "CreateBackupPlan",
+      "CreateBackupSelection",
+      "CreateBackupVault",
+      "CreateFramework",
+      "CreateLegalHold",
+      "CreateLogicallyAirGappedBackupVault",
+      "CreateReportPlan",
+      "CreateRestoreAccessBackupVault",
+      "CreateRestoreTestingPlan",
+      "CreateRestoreTestingSelection",
+      "CreateTieringConfiguration",
+      "DeleteBackupAccessPoint",
+      "DeleteBackupPlan",
+      "DeleteBackupSelection",
+      "DeleteBackupVault",
+      "DeleteBackupVaultAccessPolicy",
+      "DeleteBackupVaultLockConfiguration",
+      "DeleteBackupVaultNotifications",
+      "DeleteFramework",
+      "DeleteRecoveryPoint",
+      "DeleteReportPlan",
+      "DeleteRestoreTestingPlan",
+      "DeleteRestoreTestingSelection",
+      "DeleteTieringConfiguration",
+      "DisassociateBackupVaultMpaApprovalTeam",
+      "DisassociateRecoveryPoint",
+      "DisassociateRecoveryPointFromParent",
+      "PutBackupVaultAccessPolicy",
+      "PutBackupVaultLockConfiguration",
+      "PutBackupVaultNotifications",
+      "PutRestoreValidationResult",
+      "RevokeRestoreAccessBackupVault",
+      "StartBackupJob",
+      "StartCopyJob",
+      "StartReportJob",
+      "StartRestoreJob",
+      "StartScanJob",
+      "StopBackupJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateBackupPlan",
+      "UpdateFramework",
+      "UpdateGlobalSettings",
+      "UpdateRecoveryPointIndexSettings",
+      "UpdateRecoveryPointLifecycle",
+      "UpdateRegionSettings",
+      "UpdateReportPlan",
+      "UpdateRestoreTestingPlan",
+      "UpdateRestoreTestingSelection",
+      "UpdateTieringConfiguration",
+      "CopyFromBackupVault",
+      "CopyIntoBackupVault",
+      "DeleteBackupVaultSharingPolicy",
+      "ListIndexedRecoveryPointsForSearch",
+      "PutBackupVaultSharingPolicy",
+      "SearchRecoveryPoint"
+    ],
+    "Permissions management": [
+      "DeleteBackupVaultAccessPolicy",
+      "PutBackupVaultAccessPolicy",
+      "DeleteBackupVaultSharingPolicy",
+      "ListIndexedRecoveryPointsForSearch",
+      "PutBackupVaultSharingPolicy",
+      "SearchRecoveryPoint"
+    ],
+    "Read": [
+      "DescribeBackupAccessPoint",
+      "DescribeBackupJob",
+      "DescribeBackupVault",
+      "DescribeCopyJob",
+      "DescribeFramework",
+      "DescribeGlobalSettings",
+      "DescribeProtectedResource",
+      "DescribeRecoveryPoint",
+      "DescribeRegionSettings",
+      "DescribeReportJob",
+      "DescribeReportPlan",
+      "DescribeRestoreJob",
+      "DescribeScanJob",
+      "ExportBackupPlanTemplate",
+      "GetBackupPlan",
+      "GetBackupPlanFromJSON",
+      "GetBackupPlanFromTemplate",
+      "GetBackupSelection",
+      "GetBackupVaultAccessPolicy",
+      "GetBackupVaultNotifications",
+      "GetLegalHold",
+      "GetPITRMalwareScanResults",
+      "GetRecoveryPointIndexDetails",
+      "GetRecoveryPointRestoreMetadata",
+      "GetRestoreJobMetadata",
+      "GetRestoreTestingInferredMetadata",
+      "GetRestoreTestingPlan",
+      "GetRestoreTestingSelection",
+      "GetSupportedResourceTypes",
+      "GetTieringConfiguration",
+      "ListTags",
+      "GetBackupVaultSharingPolicy"
+    ],
+    "List": [
+      "ListBackupAccessPoints",
+      "ListBackupAccessPointsByRecoveryPoint",
+      "ListBackupAccessPointsByResource",
+      "ListBackupJobSummaries",
+      "ListBackupJobs",
+      "ListBackupPlanTemplates",
+      "ListBackupPlanVersions",
+      "ListBackupPlans",
+      "ListBackupSelections",
+      "ListBackupVaults",
+      "ListCopyJobSummaries",
+      "ListCopyJobs",
+      "ListFrameworks",
+      "ListIndexedRecoveryPoints",
+      "ListLegalHolds",
+      "ListProtectedResources",
+      "ListProtectedResourcesByBackupVault",
+      "ListRecoveryPointsByBackupVault",
+      "ListRecoveryPointsByLegalHold",
+      "ListRecoveryPointsByResource",
+      "ListReportJobs",
+      "ListReportPlans",
+      "ListRestoreAccessBackupVaults",
+      "ListRestoreJobSummaries",
+      "ListRestoreJobs",
+      "ListRestoreJobsByProtectedResource",
+      "ListRestoreTestingPlans",
+      "ListRestoreTestingSelections",
+      "ListScanJobSummaries",
+      "ListScanJobs",
+      "ListTieringConfigurations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateBackupVaultMpaApprovalTeam",
+      "methodName": "toAssociateBackupVaultMpaApprovalTeam",
+      "description": "Grants permission to associate an MPA approval team with a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_AssociateBackupVaultMpaApprovalTeam.html"
+    },
+    {
+      "name": "CancelLegalHold",
+      "methodName": "toCancelLegalHold",
+      "description": "Grants permission to cancel a legal hold",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CancelLegalHold.html"
+    },
+    {
+      "name": "CreateBackupAccessPoint",
+      "methodName": "toCreateBackupAccessPoint",
+      "description": "Grants permission to create a new backup access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupAccessPoint.html"
+    },
+    {
+      "name": "CreateBackupPlan",
+      "methodName": "toCreateBackupPlan",
+      "description": "Grants permission to create a new backup plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupPlan.html"
+    },
+    {
+      "name": "CreateBackupSelection",
+      "methodName": "toCreateBackupSelection",
+      "description": "Grants permission to create a new resource assignment in a backup plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupSelection.html"
+    },
+    {
+      "name": "CreateBackupVault",
+      "methodName": "toCreateBackupVault",
+      "description": "Grants permission to create a new backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html"
+    },
+    {
+      "name": "CreateFramework",
+      "methodName": "toCreateFramework",
+      "description": "Grants permission to create a new framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateFramework.html"
+    },
+    {
+      "name": "CreateLegalHold",
+      "methodName": "toCreateLegalHold",
+      "description": "Grants permission to create a new legal hold",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateLegalHold.html"
+    },
+    {
+      "name": "CreateLogicallyAirGappedBackupVault",
+      "methodName": "toCreateLogicallyAirGappedBackupVault",
+      "description": "Grants permission to create a new logically air-gapped backup vault, a logical container where backups are stored",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateLogicallyAirGappedBackupVault.html"
+    },
+    {
+      "name": "CreateReportPlan",
+      "methodName": "toCreateReportPlan",
+      "description": "Grants permission to create a new report plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateReportPlan.html"
+    },
+    {
+      "name": "CreateRestoreAccessBackupVault",
+      "methodName": "toCreateRestoreAccessBackupVault",
+      "description": "Grants permission to create a restore access backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateRestoreAccessBackupVault.html"
+    },
+    {
+      "name": "CreateRestoreTestingPlan",
+      "methodName": "toCreateRestoreTestingPlan",
+      "description": "Grants permission to create a new restore testing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateRestoreTestingPlan.html"
+    },
+    {
+      "name": "CreateRestoreTestingSelection",
+      "methodName": "toCreateRestoreTestingSelection",
+      "description": "Grants permission to create a new resource assignment in a restore testing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateRestoreTestingSelection.html"
+    },
+    {
+      "name": "CreateTieringConfiguration",
+      "methodName": "toCreateTieringConfiguration",
+      "description": "Grants permission to create a new tiering configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateTieringConfiguration.html"
+    },
+    {
+      "name": "DeleteBackupAccessPoint",
+      "methodName": "toDeleteBackupAccessPoint",
+      "description": "Grants permission to delete the backup access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupAccessPoint.html"
+    },
+    {
+      "name": "DeleteBackupPlan",
+      "methodName": "toDeleteBackupPlan",
+      "description": "Grants permission to delete a backup plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupPlan.html"
+    },
+    {
+      "name": "DeleteBackupSelection",
+      "methodName": "toDeleteBackupSelection",
+      "description": "Grants permission to delete a resource assignment from a backup plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupSelection.html"
+    },
+    {
+      "name": "DeleteBackupVault",
+      "methodName": "toDeleteBackupVault",
+      "description": "Grants permission to delete a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVault.html"
+    },
+    {
+      "name": "DeleteBackupVaultAccessPolicy",
+      "methodName": "toDeleteBackupVaultAccessPolicy",
+      "description": "Grants permission to delete backup vault access policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultAccessPolicy.html"
+    },
+    {
+      "name": "DeleteBackupVaultLockConfiguration",
+      "methodName": "toDeleteBackupVaultLockConfiguration",
+      "description": "Grants permission to remove the lock configuration from a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultLockConfiguration.html"
+    },
+    {
+      "name": "DeleteBackupVaultNotifications",
+      "methodName": "toDeleteBackupVaultNotifications",
+      "description": "Grants permission to remove the notifications from a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultNotifications.html"
+    },
+    {
+      "name": "DeleteFramework",
+      "methodName": "toDeleteFramework",
+      "description": "Grants permission to delete a framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteFramework.html"
+    },
+    {
+      "name": "DeleteRecoveryPoint",
+      "methodName": "toDeleteRecoveryPoint",
+      "description": "Grants permission to delete a recovery point from a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteRecoveryPoint.html"
+    },
+    {
+      "name": "DeleteReportPlan",
+      "methodName": "toDeleteReportPlan",
+      "description": "Grants permission to delete a report plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteReportPlan.html"
+    },
+    {
+      "name": "DeleteRestoreTestingPlan",
+      "methodName": "toDeleteRestoreTestingPlan",
+      "description": "Grants permission to delete a restore testing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteRestoreTestingPlan.html"
+    },
+    {
+      "name": "DeleteRestoreTestingSelection",
+      "methodName": "toDeleteRestoreTestingSelection",
+      "description": "Grants permission to delete a resource assignment from a restore testing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteRestoreTestingSelection.html"
+    },
+    {
+      "name": "DeleteTieringConfiguration",
+      "methodName": "toDeleteTieringConfiguration",
+      "description": "Grants permission to delete a tiering configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteTieringConfiguration.html"
+    },
+    {
+      "name": "DescribeBackupAccessPoint",
+      "methodName": "toDescribeBackupAccessPoint",
+      "description": "Grants permission to return information about the specified backup access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupAccessPoint.html"
+    },
+    {
+      "name": "DescribeBackupJob",
+      "methodName": "toDescribeBackupJob",
+      "description": "Grants permission to describe a backup job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupJob.html"
+    },
+    {
+      "name": "DescribeBackupVault",
+      "methodName": "toDescribeBackupVault",
+      "description": "Grants permission to describe a new backup vault with the specified name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupVault.html"
+    },
+    {
+      "name": "DescribeCopyJob",
+      "methodName": "toDescribeCopyJob",
+      "description": "Grants permission to describe a copy job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeCopyJob.html"
+    },
+    {
+      "name": "DescribeFramework",
+      "methodName": "toDescribeFramework",
+      "description": "Grants permission to describe a framework with the specified name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeFramework.html"
+    },
+    {
+      "name": "DescribeGlobalSettings",
+      "methodName": "toDescribeGlobalSettings",
+      "description": "Grants permission to describe global settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeGlobalSettings.html"
+    },
+    {
+      "name": "DescribeProtectedResource",
+      "methodName": "toDescribeProtectedResource",
+      "description": "Grants permission to describe a protected resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeProtectedResource.html"
+    },
+    {
+      "name": "DescribeRecoveryPoint",
+      "methodName": "toDescribeRecoveryPoint",
+      "description": "Grants permission to describe a recovery point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html"
+    },
+    {
+      "name": "DescribeRegionSettings",
+      "methodName": "toDescribeRegionSettings",
+      "description": "Grants permission to describe region settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRegionSettings.html"
+    },
+    {
+      "name": "DescribeReportJob",
+      "methodName": "toDescribeReportJob",
+      "description": "Grants permission to describe a report job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeReportJob.html"
+    },
+    {
+      "name": "DescribeReportPlan",
+      "methodName": "toDescribeReportPlan",
+      "description": "Grants permission to describe a report plan with the specified name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeReportPlan.html"
+    },
+    {
+      "name": "DescribeRestoreJob",
+      "methodName": "toDescribeRestoreJob",
+      "description": "Grants permission to describe a restore job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRestoreJob.html"
+    },
+    {
+      "name": "DescribeScanJob",
+      "methodName": "toDescribeScanJob",
+      "description": "Grants permission to describe a scan job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeScanJob.html"
+    },
+    {
+      "name": "DisassociateBackupVaultMpaApprovalTeam",
+      "methodName": "toDisassociateBackupVaultMpaApprovalTeam",
+      "description": "Grants permission to disassociate an MPA approval team from a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateBackupVaultMpaApprovalTeam.html"
+    },
+    {
+      "name": "DisassociateRecoveryPoint",
+      "methodName": "toDisassociateRecoveryPoint",
+      "description": "Grants permission to disassociate a recovery point from a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateRecoveryPoint.html"
+    },
+    {
+      "name": "DisassociateRecoveryPointFromParent",
+      "methodName": "toDisassociateRecoveryPointFromParent",
+      "description": "Grants permission to disassociate a recovery point from its parent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateRecoveryPointFromParent.html"
+    },
+    {
+      "name": "ExportBackupPlanTemplate",
+      "methodName": "toExportBackupPlanTemplate",
+      "description": "Grants permission to export a backup plan as a JSON",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ExportBackupPlanTemplate.html"
+    },
+    {
+      "name": "GetBackupPlan",
+      "methodName": "toGetBackupPlan",
+      "description": "Grants permission to get a backup plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupPlan.html"
+    },
+    {
+      "name": "GetBackupPlanFromJSON",
+      "methodName": "toGetBackupPlanFromJSON",
+      "description": "Grants permission to transform a JSON to a backup plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupPlanFromJSON.html"
+    },
+    {
+      "name": "GetBackupPlanFromTemplate",
+      "methodName": "toGetBackupPlanFromTemplate",
+      "description": "Grants permission to transform a template to a backup plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupPlanFromTemplate.html"
+    },
+    {
+      "name": "GetBackupSelection",
+      "methodName": "toGetBackupSelection",
+      "description": "Grants permission to get a backup plan resource assignment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupSelection.html"
+    },
+    {
+      "name": "GetBackupVaultAccessPolicy",
+      "methodName": "toGetBackupVaultAccessPolicy",
+      "description": "Grants permission to get backup vault access policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupVaultAccessPolicy.html"
+    },
+    {
+      "name": "GetBackupVaultNotifications",
+      "methodName": "toGetBackupVaultNotifications",
+      "description": "Grants permission to get backup vault notifications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupVaultNotifications.html"
+    },
+    {
+      "name": "GetLegalHold",
+      "methodName": "toGetLegalHold",
+      "description": "Grants permission to get a legal hold",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetLegalHold.html"
+    },
+    {
+      "name": "GetPITRMalwareScanResults",
+      "methodName": "toGetPITRMalwareScanResults",
+      "description": "Grants permission to get point-in-time recovery (PITR) malware scan results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetPITRMalwareScanResults.html"
+    },
+    {
+      "name": "GetRecoveryPointIndexDetails",
+      "methodName": "toGetRecoveryPointIndexDetails",
+      "description": "Grants permission to get indexing details for a recovery point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRecoveryPointIndexDetails.html"
+    },
+    {
+      "name": "GetRecoveryPointRestoreMetadata",
+      "methodName": "toGetRecoveryPointRestoreMetadata",
+      "description": "Grants permission to get recovery point restore metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRecoveryPointRestoreMetadata.html"
+    },
+    {
+      "name": "GetRestoreJobMetadata",
+      "methodName": "toGetRestoreJobMetadata",
+      "description": "Grants permission to get the restore metadata associated with a restore job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRestoreJobMetadata.html"
+    },
+    {
+      "name": "GetRestoreTestingInferredMetadata",
+      "methodName": "toGetRestoreTestingInferredMetadata",
+      "description": "Grants permission to get inferred metadata generated by restore testing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRestoreTestingInferredMetadata.html"
+    },
+    {
+      "name": "GetRestoreTestingPlan",
+      "methodName": "toGetRestoreTestingPlan",
+      "description": "Grants permission to get a restore testing plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRestoreTestingPlan.html"
+    },
+    {
+      "name": "GetRestoreTestingSelection",
+      "methodName": "toGetRestoreTestingSelection",
+      "description": "Grants permission to get a restore testing plan resource assignment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRestoreTestingSelection.html"
+    },
+    {
+      "name": "GetSupportedResourceTypes",
+      "methodName": "toGetSupportedResourceTypes",
+      "description": "Grants permission to get supported resource types",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetSupportedResourceTypes.html"
+    },
+    {
+      "name": "GetTieringConfiguration",
+      "methodName": "toGetTieringConfiguration",
+      "description": "Grants permission to describe a tiering configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetTieringConfiguration.html"
+    },
+    {
+      "name": "ListBackupAccessPoints",
+      "methodName": "toListBackupAccessPoints",
+      "description": "Grants permission to list backup access points in the caller's account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupAccessPoints.html"
+    },
+    {
+      "name": "ListBackupAccessPointsByRecoveryPoint",
+      "methodName": "toListBackupAccessPointsByRecoveryPoint",
+      "description": "Grants permission to list backup access points associated with a recovery point",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupAccessPointsByRecoveryPoint.html"
+    },
+    {
+      "name": "ListBackupAccessPointsByResource",
+      "methodName": "toListBackupAccessPointsByResource",
+      "description": "Grants permission to list backup access points associated with a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupAccessPointsByResource.html"
+    },
+    {
+      "name": "ListBackupJobSummaries",
+      "methodName": "toListBackupJobSummaries",
+      "description": "Grants permission to list backup job summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobSummaries.html"
+    },
+    {
+      "name": "ListBackupJobs",
+      "methodName": "toListBackupJobs",
+      "description": "Grants permission to list backup jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html"
+    },
+    {
+      "name": "ListBackupPlanTemplates",
+      "methodName": "toListBackupPlanTemplates",
+      "description": "Grants permission to list backup plan templates provided by AWS Backup",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupPlanTemplates.html"
+    },
+    {
+      "name": "ListBackupPlanVersions",
+      "methodName": "toListBackupPlanVersions",
+      "description": "Grants permission to list backup plan versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupPlanVersions.html"
+    },
+    {
+      "name": "ListBackupPlans",
+      "methodName": "toListBackupPlans",
+      "description": "Grants permission to list backup plans",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupPlans.html"
+    },
+    {
+      "name": "ListBackupSelections",
+      "methodName": "toListBackupSelections",
+      "description": "Grants permission to list resource assignments for a specific backup plan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupSelections.html"
+    },
+    {
+      "name": "ListBackupVaults",
+      "methodName": "toListBackupVaults",
+      "description": "Grants permission to list backup vaults",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupVaults.html"
+    },
+    {
+      "name": "ListCopyJobSummaries",
+      "methodName": "toListCopyJobSummaries",
+      "description": "Grants permission to list copy job summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListCopyJobSummaries.html"
+    },
+    {
+      "name": "ListCopyJobs",
+      "methodName": "toListCopyJobs",
+      "description": "Grants permission to list copy jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListCopyJobs.html"
+    },
+    {
+      "name": "ListFrameworks",
+      "methodName": "toListFrameworks",
+      "description": "Grants permission to list frameworks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListFrameworks.html"
+    },
+    {
+      "name": "ListIndexedRecoveryPoints",
+      "methodName": "toListIndexedRecoveryPoints",
+      "description": "Grants permission to get list indexed recovery points",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListIndexedRecoveryPoints.html"
+    },
+    {
+      "name": "ListLegalHolds",
+      "methodName": "toListLegalHolds",
+      "description": "Grants permission to list legal holds",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListLegalHolds.html"
+    },
+    {
+      "name": "ListProtectedResources",
+      "methodName": "toListProtectedResources",
+      "description": "Grants permission to list protected resources by AWS Backup",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListProtectedResources.html"
+    },
+    {
+      "name": "ListProtectedResourcesByBackupVault",
+      "methodName": "toListProtectedResourcesByBackupVault",
+      "description": "Grants permission to list protected resources inside a backup vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListProtectedResourcesByBackupVault.html"
+    },
+    {
+      "name": "ListRecoveryPointsByBackupVault",
+      "methodName": "toListRecoveryPointsByBackupVault",
+      "description": "Grants permission to list recovery points inside a backup vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html"
+    },
+    {
+      "name": "ListRecoveryPointsByLegalHold",
+      "methodName": "toListRecoveryPointsByLegalHold",
+      "description": "Grants permission to list recovery points by legal hold",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByLegalHold.html"
+    },
+    {
+      "name": "ListRecoveryPointsByResource",
+      "methodName": "toListRecoveryPointsByResource",
+      "description": "Grants permission to list recovery points for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByResource.html"
+    },
+    {
+      "name": "ListReportJobs",
+      "methodName": "toListReportJobs",
+      "description": "Grants permission to list report jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListReportJobs.html"
+    },
+    {
+      "name": "ListReportPlans",
+      "methodName": "toListReportPlans",
+      "description": "Grants permission to list report plans",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListReportPlans.html"
+    },
+    {
+      "name": "ListRestoreAccessBackupVaults",
+      "methodName": "toListRestoreAccessBackupVaults",
+      "description": "Grants permission to list a restore access backup vaults associated with a backup vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreAccessBackupVaults.html"
+    },
+    {
+      "name": "ListRestoreJobSummaries",
+      "methodName": "toListRestoreJobSummaries",
+      "description": "Grants permission to list restore job summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreJobSummaries.html"
+    },
+    {
+      "name": "ListRestoreJobs",
+      "methodName": "toListRestoreJobs",
+      "description": "Grants permission to list restore jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreJobs.html"
+    },
+    {
+      "name": "ListRestoreJobsByProtectedResource",
+      "methodName": "toListRestoreJobsByProtectedResource",
+      "description": "Grants permission to list restore jobs for a protected resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreJobsByProtectedResource.html"
+    },
+    {
+      "name": "ListRestoreTestingPlans",
+      "methodName": "toListRestoreTestingPlans",
+      "description": "Grants permission to list restore testing plans",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreTestingPlans.html"
+    },
+    {
+      "name": "ListRestoreTestingSelections",
+      "methodName": "toListRestoreTestingSelections",
+      "description": "Grants permission to list resource assignments for a specific restore testing plan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreTestingSelections.html"
+    },
+    {
+      "name": "ListScanJobSummaries",
+      "methodName": "toListScanJobSummaries",
+      "description": "Grants permission to list scan job summaries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListScanJobSummaries.html"
+    },
+    {
+      "name": "ListScanJobs",
+      "methodName": "toListScanJobs",
+      "description": "Grants permission to list scan jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListScanJobs.html"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTags.html"
+    },
+    {
+      "name": "ListTieringConfigurations",
+      "methodName": "toListTieringConfigurations",
+      "description": "Grants permission to list tiering configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTieringConfigurations.html"
+    },
+    {
+      "name": "PutBackupVaultAccessPolicy",
+      "methodName": "toPutBackupVaultAccessPolicy",
+      "description": "Grants permission to add an access policy to the backup vault",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultAccessPolicy.html"
+    },
+    {
+      "name": "PutBackupVaultLockConfiguration",
+      "methodName": "toPutBackupVaultLockConfiguration",
+      "description": "Grants permission to add a lock configuration to the backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultLockConfiguration.html"
+    },
+    {
+      "name": "PutBackupVaultNotifications",
+      "methodName": "toPutBackupVaultNotifications",
+      "description": "Grants permission to add an SNS topic to the backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultNotifications.html"
+    },
+    {
+      "name": "PutRestoreValidationResult",
+      "methodName": "toPutRestoreValidationResult",
+      "description": "Grants permission to put a restore validation result",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutRestoreValidationResult.html"
+    },
+    {
+      "name": "RevokeRestoreAccessBackupVault",
+      "methodName": "toRevokeRestoreAccessBackupVault",
+      "description": "Grants permission to revoke a restore access backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_RevokeRestoreAccessBackupVault.html"
+    },
+    {
+      "name": "StartBackupJob",
+      "methodName": "toStartBackupJob",
+      "description": "Grants permission to start a new backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartBackupJob.html"
+    },
+    {
+      "name": "StartCopyJob",
+      "methodName": "toStartCopyJob",
+      "description": "Grants permission to copy a backup from a source backup vault to a destination backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html"
+    },
+    {
+      "name": "StartReportJob",
+      "methodName": "toStartReportJob",
+      "description": "Grants permission to start a new report job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartReportJob.html"
+    },
+    {
+      "name": "StartRestoreJob",
+      "methodName": "toStartRestoreJob",
+      "description": "Grants permission to start a new restore job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartRestoreJob.html"
+    },
+    {
+      "name": "StartScanJob",
+      "methodName": "toStartScanJob",
+      "description": "Grants permission to start a new scan job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartScanJob.html"
+    },
+    {
+      "name": "StopBackupJob",
+      "methodName": "toStopBackupJob",
+      "description": "Grants permission to stop a backup job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StopBackupJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBackupPlan",
+      "methodName": "toUpdateBackupPlan",
+      "description": "Grants permission to update a backup plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html"
+    },
+    {
+      "name": "UpdateFramework",
+      "methodName": "toUpdateFramework",
+      "description": "Grants permission to update a framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateFramework.html"
+    },
+    {
+      "name": "UpdateGlobalSettings",
+      "methodName": "toUpdateGlobalSettings",
+      "description": "Grants permission to update the current global settings for the AWS Account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateGlobalSettings.html"
+    },
+    {
+      "name": "UpdateRecoveryPointIndexSettings",
+      "methodName": "toUpdateRecoveryPointIndexSettings",
+      "description": "Grants permission to update recovery point index settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRecoveryPointIndexSettings.html"
+    },
+    {
+      "name": "UpdateRecoveryPointLifecycle",
+      "methodName": "toUpdateRecoveryPointLifecycle",
+      "description": "Grants permission to update the lifecycle of the recovery point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRecoveryPointLifecycle.html"
+    },
+    {
+      "name": "UpdateRegionSettings",
+      "methodName": "toUpdateRegionSettings",
+      "description": "Grants permission to update the current service opt-in settings for the Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html"
+    },
+    {
+      "name": "UpdateReportPlan",
+      "methodName": "toUpdateReportPlan",
+      "description": "Grants permission to update a report plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateReportPlan.html"
+    },
+    {
+      "name": "UpdateRestoreTestingPlan",
+      "methodName": "toUpdateRestoreTestingPlan",
+      "description": "Grants permission to update a restore testing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRestoreTestingPlan.html"
+    },
+    {
+      "name": "UpdateRestoreTestingSelection",
+      "methodName": "toUpdateRestoreTestingSelection",
+      "description": "Grants permission to update a resource assignment in a restore testing plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRestoreTestingSelection.html"
+    },
+    {
+      "name": "UpdateTieringConfiguration",
+      "methodName": "toUpdateTieringConfiguration",
+      "description": "Grants permission to update a tiering configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateTieringConfiguration.html"
+    },
+    {
+      "name": "CopyFromBackupVault",
+      "methodName": "toCopyFromBackupVault",
+      "description": "Grants permission to copy from a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html.html"
+    },
+    {
+      "name": "CopyIntoBackupVault",
+      "methodName": "toCopyIntoBackupVault",
+      "description": "Grants permission to copy into a backup vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html"
+    },
+    {
+      "name": "DeleteBackupVaultSharingPolicy",
+      "methodName": "toDeleteBackupVaultSharingPolicy",
+      "description": "Grants permission to delete backup vault sharing policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/logicallyairgappedvault.html"
+    },
+    {
+      "name": "GetBackupVaultSharingPolicy",
+      "methodName": "toGetBackupVaultSharingPolicy",
+      "description": "Grants permission to get backup vault sharing policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/logicallyairgappedvault.html"
+    },
+    {
+      "name": "ListIndexedRecoveryPointsForSearch",
+      "methodName": "toListIndexedRecoveryPointsForSearch",
+      "description": "Grants permission to list indexed recovery points to search",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListIndexedRecoveryPointsForSearch.html"
+    },
+    {
+      "name": "PutBackupVaultSharingPolicy",
+      "methodName": "toPutBackupVaultSharingPolicy",
+      "description": "Grants permission to add a sharing policy to the backup vault",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/logicallyairgappedvault.html"
+    },
+    {
+      "name": "SearchRecoveryPoint",
+      "methodName": "toSearchRecoveryPoint",
+      "description": "Grants permission to search a recovery point",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_SearchRecoveryPoint.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "backupAccessPoint",
+      "methodName": "onBackupAccessPoint",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-access-points.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:accesspoint/${AccessPointName}",
+      "placeholders": [
+        {
+          "placeholder": "AccessPointName",
+          "name": "accessPointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "backupPlan",
+      "methodName": "onBackupPlan",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/about-backup-plans.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}",
+      "placeholders": [
+        {
+          "placeholder": "BackupPlanId",
+          "name": "backupPlanId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "IBackupPlanRef",
+        "property": "backupPlanRef",
+        "arn": "backupPlanArn"
+      }
+    },
+    {
+      "name": "backupVault",
+      "methodName": "onBackupVault",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}",
+      "placeholders": [
+        {
+          "placeholder": "BackupVaultName",
+          "name": "backupVaultName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "IBackupVaultRef",
+        "property": "backupVaultRef",
+        "arn": "backupVaultArn"
+      }
+    },
+    {
+      "name": "framework",
+      "methodName": "onFramework",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/working-with-audit-frameworks.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:framework:${FrameworkName}-${FrameworkId}",
+      "placeholders": [
+        {
+          "placeholder": "FrameworkName",
+          "name": "frameworkName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FrameworkId",
+          "name": "frameworkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "legalHold",
+      "methodName": "onLegalHold",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/legalhold.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:legal-hold:${LegalHoldId}",
+      "placeholders": [
+        {
+          "placeholder": "LegalHoldId",
+          "name": "legalHoldId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "ILegalHoldRef",
+        "property": "legalHoldRef",
+        "arn": "legalHoldArn"
+      }
+    },
+    {
+      "name": "recoveryPoint",
+      "methodName": "onRecoveryPoint",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/recovery-points.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}",
+      "placeholders": [
+        {
+          "placeholder": "RecoveryPointId",
+          "name": "recoveryPointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "reportPlan",
+      "methodName": "onReportPlan",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/create-report-plan-api.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:report-plan:${ReportPlanName}-${ReportPlanId}",
+      "placeholders": [
+        {
+          "placeholder": "ReportPlanName",
+          "name": "reportPlanName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ReportPlanId",
+          "name": "reportPlanId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "restoreTestingPlan",
+      "methodName": "onRestoreTestingPlan",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:restore-testing-plan:${RestoreTestingPlanName}-${RestoreTestingPlanId}",
+      "placeholders": [
+        {
+          "placeholder": "RestoreTestingPlanName",
+          "name": "restoreTestingPlanName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestoreTestingPlanId",
+          "name": "restoreTestingPlanId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "tieringConfiguration",
+      "methodName": "onTieringConfiguration",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/tiering-configuration.html",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:tiering-configuration:${TieringConfigurationName}-${TieringConfigurationId}",
+      "placeholders": [
+        {
+          "placeholder": "TieringConfigurationName",
+          "name": "tieringConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TieringConfigurationId",
+          "name": "tieringConfigurationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBackupAccessPoint",
+        "toCreateBackupPlan",
+        "toCreateBackupVault",
+        "toCreateFramework",
+        "toCreateLegalHold",
+        "toCreateLogicallyAirGappedBackupVault",
+        "toCreateReportPlan",
+        "toCreateRestoreAccessBackupVault",
+        "toCreateRestoreTestingPlan",
+        "toCreateTieringConfiguration",
+        "toTagResource",
+        "toCopyIntoBackupVault"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateBackupVaultMpaApprovalTeam",
+        "toCancelLegalHold",
+        "toCreateBackupAccessPoint",
+        "toCreateBackupPlan",
+        "toCreateBackupSelection",
+        "toCreateBackupVault",
+        "toCreateFramework",
+        "toCreateLegalHold",
+        "toCreateLogicallyAirGappedBackupVault",
+        "toCreateReportPlan",
+        "toCreateRestoreAccessBackupVault",
+        "toCreateRestoreTestingPlan",
+        "toCreateRestoreTestingSelection",
+        "toCreateTieringConfiguration",
+        "toDeleteBackupAccessPoint",
+        "toDeleteBackupPlan",
+        "toDeleteBackupSelection",
+        "toDeleteBackupVault",
+        "toDeleteBackupVaultAccessPolicy",
+        "toDeleteBackupVaultLockConfiguration",
+        "toDeleteBackupVaultNotifications",
+        "toDeleteFramework",
+        "toDeleteRecoveryPoint",
+        "toDeleteReportPlan",
+        "toDeleteRestoreTestingPlan",
+        "toDeleteRestoreTestingSelection",
+        "toDeleteTieringConfiguration",
+        "toDescribeBackupAccessPoint",
+        "toDescribeBackupVault",
+        "toDescribeFramework",
+        "toDescribeRecoveryPoint",
+        "toDescribeReportPlan",
+        "toDisassociateBackupVaultMpaApprovalTeam",
+        "toDisassociateRecoveryPoint",
+        "toDisassociateRecoveryPointFromParent",
+        "toGetBackupPlan",
+        "toGetBackupSelection",
+        "toGetBackupVaultAccessPolicy",
+        "toGetBackupVaultNotifications",
+        "toGetLegalHold",
+        "toGetPITRMalwareScanResults",
+        "toGetRecoveryPointIndexDetails",
+        "toGetRecoveryPointRestoreMetadata",
+        "toGetRestoreTestingPlan",
+        "toGetRestoreTestingSelection",
+        "toGetTieringConfiguration",
+        "toListBackupPlanVersions",
+        "toListBackupSelections",
+        "toListProtectedResourcesByBackupVault",
+        "toListRecoveryPointsByBackupVault",
+        "toListRecoveryPointsByLegalHold",
+        "toListRestoreAccessBackupVaults",
+        "toListRestoreTestingSelections",
+        "toListTags",
+        "toPutBackupVaultAccessPolicy",
+        "toPutBackupVaultLockConfiguration",
+        "toPutBackupVaultNotifications",
+        "toRevokeRestoreAccessBackupVault",
+        "toStartBackupJob",
+        "toStartCopyJob",
+        "toStartReportJob",
+        "toStartRestoreJob",
+        "toStartScanJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateBackupPlan",
+        "toUpdateFramework",
+        "toUpdateRecoveryPointIndexSettings",
+        "toUpdateRecoveryPointLifecycle",
+        "toUpdateReportPlan",
+        "toUpdateRestoreTestingPlan",
+        "toUpdateRestoreTestingSelection",
+        "toUpdateTieringConfiguration",
+        "toCopyFromBackupVault",
+        "toCopyIntoBackupVault",
+        "toDeleteBackupVaultSharingPolicy",
+        "toGetBackupVaultSharingPolicy",
+        "toPutBackupVaultSharingPolicy",
+        "toSearchRecoveryPoint"
+      ],
+      "relatedResourceTypes": [
+        "backupAccessPoint",
+        "backupPlan",
+        "backupVault",
+        "framework",
+        "legalHold",
+        "recoveryPoint",
+        "reportPlan",
+        "restoreTestingPlan",
+        "tieringConfiguration"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBackupAccessPoint",
+        "toCreateBackupPlan",
+        "toCreateBackupVault",
+        "toCreateFramework",
+        "toCreateLegalHold",
+        "toCreateLogicallyAirGappedBackupVault",
+        "toCreateReportPlan",
+        "toCreateRestoreAccessBackupVault",
+        "toCreateRestoreTestingPlan",
+        "toCreateTieringConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "backup:ChangeableForDays",
+      "methodName": "ifChangeableForDays",
+      "description": "Filters access by the value of the ChangeableForDays parameter",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toPutBackupVaultLockConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ChangeableForDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "backup:CopyTargetOrgPaths",
+      "methodName": "ifCopyTargetOrgPaths",
+      "description": "Filters access by the organization unit",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toCopyFromBackupVault"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CopyTargetOrgPaths",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "backup:CopyTargets",
+      "methodName": "ifCopyTargets",
+      "description": "Filters access by the ARN of a backup vault",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toCopyFromBackupVault"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CopyTargets",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "backup:FrameworkArns",
+      "methodName": "ifFrameworkArns",
+      "description": "Filters access by the Framework ARNs",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toCreateReportPlan",
+        "toUpdateReportPlan"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FrameworkArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "backup:Index",
+      "methodName": "ifIndex",
+      "description": "Filters access by the value of Index parameter",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toUpdateRecoveryPointIndexSettings"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Index",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "backup:MaxRetentionDays",
+      "methodName": "ifMaxRetentionDays",
+      "description": "Filters access by the value of the MaxRetentionDays parameter",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toCreateLogicallyAirGappedBackupVault",
+        "toPutBackupVaultLockConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MaxRetentionDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "backup:MinRetentionDays",
+      "methodName": "ifMinRetentionDays",
+      "description": "Filters access by the value of the MinRetentionDays parameter",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toCreateLogicallyAirGappedBackupVault",
+        "toPutBackupVaultLockConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MinRetentionDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "backup:MpaApprovalTeamArn",
+      "methodName": "ifMpaApprovalTeamArn",
+      "description": "Filters access by the MPA Approval Team ARN of a backup vault",
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys",
+      "relatedActionMethods": [
+        "toAssociateBackupVaultMpaApprovalTeam"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MpaApprovalTeamArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

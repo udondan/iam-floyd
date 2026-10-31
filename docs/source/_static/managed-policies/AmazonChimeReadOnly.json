@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "chime:List*",
+        "chime:Get*",
+        "chime:Describe*",
+        "chime:SearchAvailablePhoneNumbers"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!--
+  Tests the native .NET package of iam-floyd, see Program.cs. Built by test/transpile/run.sh with
+  the properties:
+    TestFramework    the target framework to test with
+    Examples         the examples of the docs, rewritten for the native package
+    FloydPackages    the directory of the package of `make package-native`, and FloydVersion its
+                     version. Without them, the test uses the sources in dotnet/src/IAM.Floyd.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>$(TestFramework)</TargetFramework>
+    <AssemblyName>Test</AssemblyName>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <!-- the examples are not documented and not formatted for the analyzers -->
+    <NoWarn>$(NoWarn);CS1591;CS8981</NoWarn>
+    <RestoreAdditionalProjectSources Condition="'$(FloydPackages)' != ''">$(FloydPackages)</RestoreAdditionalProjectSources>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(FloydPackages)' == ''">
+    <ProjectReference Include="../../../dotnet/src/IAM.Floyd/IAM.Floyd.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(FloydPackages)' != ''">
+    <PackageReference Include="IAM.Floyd" Version="[$(FloydVersion)]" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(Examples)/*/*.cs" Condition="'$(Examples)' != ''" />
+  </ItemGroup>
+</Project>

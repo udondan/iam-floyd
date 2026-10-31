@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup-storage:StartObject",
+        "backup-storage:PutChunk",
+        "backup-storage:GetChunk",
+        "backup-storage:ListChunks",
+        "backup-storage:ListObjects",
+        "backup-storage:GetObjectMetadata",
+        "backup-storage:NotifyObjectComplete"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

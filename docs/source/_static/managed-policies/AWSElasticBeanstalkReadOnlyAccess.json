@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticbeanstalk:Check*",
+        "elasticbeanstalk:Describe*",
+        "elasticbeanstalk:List*",
+        "elasticbeanstalk:RequestEnvironmentInfo",
+        "elasticbeanstalk:RetrieveEnvironmentInfo",
+        "ec2:Describe*",
+        "elasticloadbalancing:Describe*",
+        "autoscaling:Describe*",
+        "cloudwatch:Describe*",
+        "cloudwatch:List*",
+        "cloudwatch:Get*",
+        "s3:Get*",
+        "s3:List*",
+        "sns:Get*",
+        "sns:List*",
+        "cloudformation:Describe*",
+        "cloudformation:Get*",
+        "cloudformation:List*",
+        "cloudformation:Validate*",
+        "cloudformation:Estimate*",
+        "rds:Describe*",
+        "sqs:Get*",
+        "sqs:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

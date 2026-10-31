@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:Link",
+        "oam:ListLinks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "oam:DeleteLink",
+        "oam:GetLink",
+        "oam:TagResource"
+      ],
+      "Resource": "arn:aws:oam:*:*:link/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "oam:CreateLink",
+        "oam:UpdateLink"
+      ],
+      "Resource": [
+        "arn:aws:oam:*:*:link/*",
+        "arn:aws:oam:*:*:sink/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ConstellationScopedCoordination",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateBacklogTask",
+        "aidevops:GetBacklogTask",
+        "aidevops:ListBacklogTasks",
+        "aidevops:GetAsset",
+        "aidevops:GetAssetContent",
+        "aidevops:GetAssetFile",
+        "aidevops:ListAssets",
+        "aidevops:ListAssetFiles",
+        "aidevops:ListExecutions",
+        "aidevops:ListJournalRecords",
+        "aidevops:SendMessage",
+        "aidevops:UpdateBacklogTask"
+      ],
+      "Resource": "arn:aws:aidevops:*:*:agentspace/*",
+      "Condition": {
+        "Null": {
+          "aidevops:SourceAgentSpaceArn": "false",
+          "aidevops:TargetAgentSpaceArn": "false"
+        }
+      }
+    },
+    {
+      "Sid": "ConstellationCoordination",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetAgentSpace"
+      ],
+      "Resource": "arn:aws:aidevops:*:*:agentspace/*"
+    }
+  ]
+}

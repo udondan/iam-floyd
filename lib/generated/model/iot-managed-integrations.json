@@ -1,0 +1,1005 @@
+{
+  "schemaVersion": 1,
+  "filename": "iot-managed-integrations",
+  "className": "Iotmanagedintegrations",
+  "name": "iotmanagedintegrations",
+  "servicePrefix": "iotmanagedintegrations",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iot-managed-integrations.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccountAssociation",
+      "CreateCloudConnector",
+      "CreateConnectorDestination",
+      "CreateCredentialLocker",
+      "CreateDestination",
+      "CreateEventLogConfiguration",
+      "CreateManagedThing",
+      "CreateNotificationConfiguration",
+      "CreateOtaTask",
+      "CreateOtaTaskConfiguration",
+      "CreateProvisioningProfile",
+      "DeleteAccountAssociation",
+      "DeleteCloudConnector",
+      "DeleteConnectorDestination",
+      "DeleteCredentialLocker",
+      "DeleteDestination",
+      "DeleteEventLogConfiguration",
+      "DeleteManagedThing",
+      "DeleteNotificationConfiguration",
+      "DeleteOtaTask",
+      "DeleteOtaTaskConfiguration",
+      "DeleteProvisioningProfile",
+      "DeregisterAccountAssociation",
+      "PutDefaultEncryptionConfiguration",
+      "PutHubConfiguration",
+      "PutRuntimeLogConfiguration",
+      "RegisterAccountAssociation",
+      "RegisterCustomEndpoint",
+      "ResetRuntimeLogConfiguration",
+      "SendConnectorEvent",
+      "SendManagedThingCommand",
+      "StartAccountAssociationRefresh",
+      "StartDeviceDiscovery",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccountAssociation",
+      "UpdateCloudConnector",
+      "UpdateConnectorDestination",
+      "UpdateDestination",
+      "UpdateEventLogConfiguration",
+      "UpdateManagedThing",
+      "UpdateNotificationConfiguration",
+      "UpdateOtaTask"
+    ],
+    "Read": [
+      "GetAccountAssociation",
+      "GetCloudConnector",
+      "GetConnectorDestination",
+      "GetCredentialLocker",
+      "GetCustomEndpoint",
+      "GetDefaultEncryptionConfiguration",
+      "GetDestination",
+      "GetDeviceDiscovery",
+      "GetEventLogConfiguration",
+      "GetHubConfiguration",
+      "GetManagedThing",
+      "GetManagedThingCapabilities",
+      "GetManagedThingCertificate",
+      "GetManagedThingConnectivityData",
+      "GetManagedThingMetaData",
+      "GetManagedThingState",
+      "GetNotificationConfiguration",
+      "GetOtaTask",
+      "GetOtaTaskConfiguration",
+      "GetProvisioningProfile",
+      "GetRuntimeLogConfiguration",
+      "GetSchemaVersion",
+      "ListDiscoveredDevices",
+      "ListEventLogConfigurations",
+      "ListManagedThingSchemas",
+      "ListNotificationConfigurations",
+      "ListOtaTaskConfigurations",
+      "ListOtaTaskExecutions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAccountAssociations",
+      "ListCloudConnectors",
+      "ListConnectorDestinations",
+      "ListCredentialLockers",
+      "ListDestinations",
+      "ListDeviceDiscoveries",
+      "ListManagedThingAccountAssociations",
+      "ListManagedThings",
+      "ListOtaTasks",
+      "ListProvisioningProfiles",
+      "ListSchemaVersions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccountAssociation",
+      "methodName": "toCreateAccountAssociation",
+      "description": "Grants permission to create a new account association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateAccountAssociation.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifConnectorDestinationId"
+      ]
+    },
+    {
+      "name": "CreateCloudConnector",
+      "methodName": "toCreateCloudConnector",
+      "description": "Grants permission to create a new cloud connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateCloudConnector.html"
+    },
+    {
+      "name": "CreateConnectorDestination",
+      "methodName": "toCreateConnectorDestination",
+      "description": "Grants permission to create a new connector destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateConnectorDestination.html",
+      "conditionMethods": [
+        "ifCloudConnectorId"
+      ]
+    },
+    {
+      "name": "CreateCredentialLocker",
+      "methodName": "toCreateCredentialLocker",
+      "description": "Grants permission to create a product credential locker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateCredentialLocker.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDestination",
+      "methodName": "toCreateDestination",
+      "description": "Grants permission to create a new destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateDestination.html"
+    },
+    {
+      "name": "CreateEventLogConfiguration",
+      "methodName": "toCreateEventLogConfiguration",
+      "description": "Grants permission to create a new event configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateEventLogConfiguration.html"
+    },
+    {
+      "name": "CreateManagedThing",
+      "methodName": "toCreateManagedThing",
+      "description": "Grants permission to create a new managed thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateManagedThing.html"
+    },
+    {
+      "name": "CreateNotificationConfiguration",
+      "methodName": "toCreateNotificationConfiguration",
+      "description": "Grants permission to create a new notification configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateNotificationConfiguration.html"
+    },
+    {
+      "name": "CreateOtaTask",
+      "methodName": "toCreateOtaTask",
+      "description": "Grants permission to create a new ota task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateOtaTask.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateOtaTaskConfiguration",
+      "methodName": "toCreateOtaTaskConfiguration",
+      "description": "Grants permission to create a new ota task configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateOtaTaskConfiguration.html"
+    },
+    {
+      "name": "CreateProvisioningProfile",
+      "methodName": "toCreateProvisioningProfile",
+      "description": "Grants permission to create a new provisioning profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateProvisioningProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAccountAssociation",
+      "methodName": "toDeleteAccountAssociation",
+      "description": "Grants permission to delete an account association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteAccountAssociation.html"
+    },
+    {
+      "name": "DeleteCloudConnector",
+      "methodName": "toDeleteCloudConnector",
+      "description": "Grants permission to delete a cloud connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteCloudConnector.html",
+      "conditionMethods": [
+        "ifCloudConnectorId"
+      ]
+    },
+    {
+      "name": "DeleteConnectorDestination",
+      "methodName": "toDeleteConnectorDestination",
+      "description": "Grants permission to delete a connector destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteConnectorDestination.html"
+    },
+    {
+      "name": "DeleteCredentialLocker",
+      "methodName": "toDeleteCredentialLocker",
+      "description": "Grants permission to delete a credential locker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteCredentialLocker.html"
+    },
+    {
+      "name": "DeleteDestination",
+      "methodName": "toDeleteDestination",
+      "description": "Grants permission to delete destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteDestination.html"
+    },
+    {
+      "name": "DeleteEventLogConfiguration",
+      "methodName": "toDeleteEventLogConfiguration",
+      "description": "Grants permission to delete event log configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteEventLogConfiguration.html"
+    },
+    {
+      "name": "DeleteManagedThing",
+      "methodName": "toDeleteManagedThing",
+      "description": "Grants permission to delete managed thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteManagedThing.html"
+    },
+    {
+      "name": "DeleteNotificationConfiguration",
+      "methodName": "toDeleteNotificationConfiguration",
+      "description": "Grants permission to delete notification configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteNotificationConfiguration.html"
+    },
+    {
+      "name": "DeleteOtaTask",
+      "methodName": "toDeleteOtaTask",
+      "description": "Grants permission to delete ota task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteOtaTask.html"
+    },
+    {
+      "name": "DeleteOtaTaskConfiguration",
+      "methodName": "toDeleteOtaTaskConfiguration",
+      "description": "Grants permission to delete ota task configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteOtaTaskConfiguration.html"
+    },
+    {
+      "name": "DeleteProvisioningProfile",
+      "methodName": "toDeleteProvisioningProfile",
+      "description": "Grants permission to delete provisioning profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteProvisioningProfile.html"
+    },
+    {
+      "name": "DeregisterAccountAssociation",
+      "methodName": "toDeregisterAccountAssociation",
+      "description": "Grants permission to deregister account association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeregisterAccountAssociation.html"
+    },
+    {
+      "name": "GetAccountAssociation",
+      "methodName": "toGetAccountAssociation",
+      "description": "Grants permission to get information about an account association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetAccountAssociation.html"
+    },
+    {
+      "name": "GetCloudConnector",
+      "methodName": "toGetCloudConnector",
+      "description": "Grants permission to get information about a cloud connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCloudConnector.html"
+    },
+    {
+      "name": "GetConnectorDestination",
+      "methodName": "toGetConnectorDestination",
+      "description": "Grants permission to get information about a cloud destination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetConnectorDestination.html"
+    },
+    {
+      "name": "GetCredentialLocker",
+      "methodName": "toGetCredentialLocker",
+      "description": "Grants permission to get information about a credential locker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCredentialLocker.html"
+    },
+    {
+      "name": "GetCustomEndpoint",
+      "methodName": "toGetCustomEndpoint",
+      "description": "Grants permission to get information about a custom endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCustomEndpoint.html"
+    },
+    {
+      "name": "GetDefaultEncryptionConfiguration",
+      "methodName": "toGetDefaultEncryptionConfiguration",
+      "description": "Grants permission to get information about a default encryption configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetDefaultEncryptionConfiguration.html"
+    },
+    {
+      "name": "GetDestination",
+      "methodName": "toGetDestination",
+      "description": "Grants permission to get information about a destination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetDestination.html"
+    },
+    {
+      "name": "GetDeviceDiscovery",
+      "methodName": "toGetDeviceDiscovery",
+      "description": "Grants permission to get information about a device discovery",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetDeviceDiscovery.html"
+    },
+    {
+      "name": "GetEventLogConfiguration",
+      "methodName": "toGetEventLogConfiguration",
+      "description": "Grants permission to get information about an event log configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetEventLogConfiguration.html"
+    },
+    {
+      "name": "GetHubConfiguration",
+      "methodName": "toGetHubConfiguration",
+      "description": "Grants permission to get information about a hub configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetHubConfiguration.html"
+    },
+    {
+      "name": "GetManagedThing",
+      "methodName": "toGetManagedThing",
+      "description": "Grants permission to get information about a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThing.html"
+    },
+    {
+      "name": "GetManagedThingCapabilities",
+      "methodName": "toGetManagedThingCapabilities",
+      "description": "Grants permission to get the capability report for a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingCapabilities.html"
+    },
+    {
+      "name": "GetManagedThingCertificate",
+      "methodName": "toGetManagedThingCertificate",
+      "description": "Grants permission to get the certificate pem for a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingCertificate.html"
+    },
+    {
+      "name": "GetManagedThingConnectivityData",
+      "methodName": "toGetManagedThingConnectivityData",
+      "description": "Grants permission to get the connectivity data for a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingConnectivityData.html"
+    },
+    {
+      "name": "GetManagedThingMetaData",
+      "methodName": "toGetManagedThingMetaData",
+      "description": "Grants permission to get the meta data information for a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingMetaData.html"
+    },
+    {
+      "name": "GetManagedThingState",
+      "methodName": "toGetManagedThingState",
+      "description": "Grants permission to get the device state information for a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingState.html"
+    },
+    {
+      "name": "GetNotificationConfiguration",
+      "methodName": "toGetNotificationConfiguration",
+      "description": "Grants permission to get information for a notification configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetNotificationConfiguration.html"
+    },
+    {
+      "name": "GetOtaTask",
+      "methodName": "toGetOtaTask",
+      "description": "Grants permission to get information for an ota task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetOtaTask.html"
+    },
+    {
+      "name": "GetOtaTaskConfiguration",
+      "methodName": "toGetOtaTaskConfiguration",
+      "description": "Grants permission to get information for an ota task configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetOtaTaskConfiguration.html"
+    },
+    {
+      "name": "GetProvisioningProfile",
+      "methodName": "toGetProvisioningProfile",
+      "description": "Grants permission to get information for a provisioning profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetProvisioningProfile.html"
+    },
+    {
+      "name": "GetRuntimeLogConfiguration",
+      "methodName": "toGetRuntimeLogConfiguration",
+      "description": "Grants permission to get information for a runtime log configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetRuntimeLogConfiguration.html"
+    },
+    {
+      "name": "GetSchemaVersion",
+      "methodName": "toGetSchemaVersion",
+      "description": "Grants permission to get information for a version of a schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetSchemaVersion.html"
+    },
+    {
+      "name": "ListAccountAssociations",
+      "methodName": "toListAccountAssociations",
+      "description": "Grants permission to list information for account associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListAccountAssociations.html"
+    },
+    {
+      "name": "ListCloudConnectors",
+      "methodName": "toListCloudConnectors",
+      "description": "Grants permission to list information for cloud connectors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListCloudConnectors.html"
+    },
+    {
+      "name": "ListConnectorDestinations",
+      "methodName": "toListConnectorDestinations",
+      "description": "Grants permission to list information for connector destinations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListConnectorDestinations.html"
+    },
+    {
+      "name": "ListCredentialLockers",
+      "methodName": "toListCredentialLockers",
+      "description": "Grants permission to list information for credential lockers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListCredentialLockers.html"
+    },
+    {
+      "name": "ListDestinations",
+      "methodName": "toListDestinations",
+      "description": "Grants permission to list information for destinations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDestinations.html"
+    },
+    {
+      "name": "ListDeviceDiscoveries",
+      "methodName": "toListDeviceDiscoveries",
+      "description": "Grants permission to list information for device discoveries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDeviceDiscoveries.html"
+    },
+    {
+      "name": "ListDiscoveredDevices",
+      "methodName": "toListDiscoveredDevices",
+      "description": "Grants permission to list information for device discovered in a device discoveries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDiscoveredDevices.html"
+    },
+    {
+      "name": "ListEventLogConfigurations",
+      "methodName": "toListEventLogConfigurations",
+      "description": "Grants permission to list information for event log configurations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListEventLogConfigurations.html"
+    },
+    {
+      "name": "ListManagedThingAccountAssociations",
+      "methodName": "toListManagedThingAccountAssociations",
+      "description": "Grants permission to list information for associations between managed thing and account associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThingAccountAssociations.html"
+    },
+    {
+      "name": "ListManagedThingSchemas",
+      "methodName": "toListManagedThingSchemas",
+      "description": "Grants permission to list schemas associated with a managed thing",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThingSchemas.html"
+    },
+    {
+      "name": "ListManagedThings",
+      "methodName": "toListManagedThings",
+      "description": "Grants permission to list information for managed things",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThings.html"
+    },
+    {
+      "name": "ListNotificationConfigurations",
+      "methodName": "toListNotificationConfigurations",
+      "description": "Grants permission to list information for notification configurations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListNotificationConfigurations.html"
+    },
+    {
+      "name": "ListOtaTaskConfigurations",
+      "methodName": "toListOtaTaskConfigurations",
+      "description": "Grants permission to list information for ota task configurations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTaskConfigurations.html"
+    },
+    {
+      "name": "ListOtaTaskExecutions",
+      "methodName": "toListOtaTaskExecutions",
+      "description": "Grants permission to list information for ota task executions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTaskExecutions.html"
+    },
+    {
+      "name": "ListOtaTasks",
+      "methodName": "toListOtaTasks",
+      "description": "Grants permission to list information for ota tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTasks.html"
+    },
+    {
+      "name": "ListProvisioningProfiles",
+      "methodName": "toListProvisioningProfiles",
+      "description": "Grants permission to list information for provisioning profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListProvisioningProfiles.html"
+    },
+    {
+      "name": "ListSchemaVersions",
+      "methodName": "toListSchemaVersions",
+      "description": "Grants permission to list information for schemas",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListSchemaVersions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutDefaultEncryptionConfiguration",
+      "methodName": "toPutDefaultEncryptionConfiguration",
+      "description": "Grants permission to update the default settings for an encryption configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_PutDefaultEncryptionConfiguration.html"
+    },
+    {
+      "name": "PutHubConfiguration",
+      "methodName": "toPutHubConfiguration",
+      "description": "Grants permission to update a hub configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_PutHubConfiguration.html"
+    },
+    {
+      "name": "PutRuntimeLogConfiguration",
+      "methodName": "toPutRuntimeLogConfiguration",
+      "description": "Grants permission to update a runtime log configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_PutRuntimeLogConfiguration.html"
+    },
+    {
+      "name": "RegisterAccountAssociation",
+      "methodName": "toRegisterAccountAssociation",
+      "description": "Grants permission to register an account association to a managed thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_RegisterAccountAssociation.html"
+    },
+    {
+      "name": "RegisterCustomEndpoint",
+      "methodName": "toRegisterCustomEndpoint",
+      "description": "Grants permission to register a custom endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_RegisterCustomEndpoint.html"
+    },
+    {
+      "name": "ResetRuntimeLogConfiguration",
+      "methodName": "toResetRuntimeLogConfiguration",
+      "description": "Grants permission to reset a runtime log configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ResetRuntimeLogConfiguration.html"
+    },
+    {
+      "name": "SendConnectorEvent",
+      "methodName": "toSendConnectorEvent",
+      "description": "Grants permission to send a connector event",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_SendConnectorEvent.html"
+    },
+    {
+      "name": "SendManagedThingCommand",
+      "methodName": "toSendManagedThingCommand",
+      "description": "Grants permission to send a command to a managed thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_SendManagedThingCommand.html"
+    },
+    {
+      "name": "StartAccountAssociationRefresh",
+      "methodName": "toStartAccountAssociationRefresh",
+      "description": "Grants permission to start a refresh of access tokens associated with an account association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_StartAccountAssociationRefresh.html"
+    },
+    {
+      "name": "StartDeviceDiscovery",
+      "methodName": "toStartDeviceDiscovery",
+      "description": "Grants permission to start a device discovery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_StartDeviceDiscovery.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags for the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags for the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountAssociation",
+      "methodName": "toUpdateAccountAssociation",
+      "description": "Grants permission to update an account association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateAccountAssociation.html"
+    },
+    {
+      "name": "UpdateCloudConnector",
+      "methodName": "toUpdateCloudConnector",
+      "description": "Grants permission to update a cloud connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateCloudConnector.html",
+      "conditionMethods": [
+        "ifCloudConnectorId"
+      ]
+    },
+    {
+      "name": "UpdateConnectorDestination",
+      "methodName": "toUpdateConnectorDestination",
+      "description": "Grants permission to update a connector destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateConnectorDestination.html"
+    },
+    {
+      "name": "UpdateDestination",
+      "methodName": "toUpdateDestination",
+      "description": "Grants permission to update a destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateDestination.html"
+    },
+    {
+      "name": "UpdateEventLogConfiguration",
+      "methodName": "toUpdateEventLogConfiguration",
+      "description": "Grants permission to update an event log configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateEventLogConfiguration.html"
+    },
+    {
+      "name": "UpdateManagedThing",
+      "methodName": "toUpdateManagedThing",
+      "description": "Grants permission to update a managed thing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateManagedThing.html"
+    },
+    {
+      "name": "UpdateNotificationConfiguration",
+      "methodName": "toUpdateNotificationConfiguration",
+      "description": "Grants permission to update a notification configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateNotificationConfiguration.html"
+    },
+    {
+      "name": "UpdateOtaTask",
+      "methodName": "toUpdateOtaTask",
+      "description": "Grants permission to update an ota task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateOtaTask.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "account-association",
+      "methodName": "onAccountAssociation",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:account-association/${AccountAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "AccountAssociationId",
+          "name": "accountAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "credential-locker",
+      "methodName": "onCredentialLocker",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:credential-locker/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "managed-thing",
+      "methodName": "onManagedThing",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:managed-thing/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ota-task",
+      "methodName": "onOtaTask",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:ota-task/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "provisioning-profile",
+      "methodName": "onProvisioningProfile",
+      "url": "https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:provisioning-profile/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccountAssociation",
+        "toCreateCredentialLocker",
+        "toCreateManagedThing",
+        "toCreateOtaTask",
+        "toCreateProvisioningProfile",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateManagedThing",
+        "toDeleteAccountAssociation",
+        "toDeleteCredentialLocker",
+        "toDeleteManagedThing",
+        "toDeleteOtaTask",
+        "toDeleteProvisioningProfile",
+        "toDeregisterAccountAssociation",
+        "toGetAccountAssociation",
+        "toGetCredentialLocker",
+        "toGetManagedThing",
+        "toGetManagedThingCapabilities",
+        "toGetManagedThingCertificate",
+        "toGetManagedThingConnectivityData",
+        "toGetManagedThingMetaData",
+        "toGetManagedThingState",
+        "toGetOtaTask",
+        "toGetProvisioningProfile",
+        "toListManagedThingSchemas",
+        "toListOtaTaskExecutions",
+        "toListTagsForResource",
+        "toRegisterAccountAssociation",
+        "toSendManagedThingCommand",
+        "toStartAccountAssociationRefresh",
+        "toStartDeviceDiscovery",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccountAssociation",
+        "toUpdateManagedThing",
+        "toUpdateOtaTask"
+      ],
+      "relatedResourceTypes": [
+        "account-association",
+        "credential-locker",
+        "managed-thing",
+        "ota-task",
+        "provisioning-profile"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccountAssociation",
+        "toCreateCredentialLocker",
+        "toCreateManagedThing",
+        "toCreateOtaTask",
+        "toCreateProvisioningProfile",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotmanagedintegrations:cloudConnectorId",
+      "methodName": "ifCloudConnectorId",
+      "description": "Filters access by the CloudConnectorId",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-policy-keys",
+      "relatedActionMethods": [
+        "toCreateConnectorDestination",
+        "toDeleteCloudConnector",
+        "toUpdateCloudConnector"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cloudConnectorId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotmanagedintegrations:connectorDestinationId",
+      "methodName": "ifConnectorDestinationId",
+      "description": "Filters access by the ConnectorDestinationId",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-policy-keys",
+      "relatedActionMethods": [
+        "toCreateAccountAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "connectorDestinationId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "iam:ListUsers",
+        "iam:ListGroups",
+        "iam:ListPolicies",
+        "iam:ListPoliciesGrantingServiceAccess",
+        "iam:GenerateServiceLastAccessedDetails",
+        "iam:GenerateOrganizationsAccessReport",
+        "iam:GenerateCredentialReport",
+        "iam:GetRole",
+        "iam:GetPolicy",
+        "iam:GetServiceLastAccessedDetails",
+        "iam:GetServiceLastAccessedDetailsWithEntities",
+        "iam:GetOrganizationsAccessReport",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribePolicy",
+        "organizations:ListChildren",
+        "organizations:ListParents",
+        "organizations:ListPoliciesForTarget",
+        "organizations:ListRoots",
+        "organizations:ListPolicies",
+        "organizations:ListTargetsForPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

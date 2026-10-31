@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ppmglobalactions",
+      "Effect": "Allow",
+      "Action": [
+        "pricingplanmanager:GetSubscription",
+        "pricingplanmanager:ListSubscriptions",
+        "pricingplanmanager:CreateSubscription",
+        "pricingplanmanager:ApprovePaidSubscription",
+        "pricingplanmanager:UpdateSubscription",
+        "pricingplanmanager:CancelSubscription",
+        "pricingplanmanager:CancelSubscriptionChange",
+        "pricingplanmanager:AssociateResourcesToSubscription",
+        "pricingplanmanager:DisassociateResourcesFromSubscription",
+        "freetier:GetAccountPlanState",
+        "cloudwatch:GetMetricData",
+        "shield:ListProtections"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

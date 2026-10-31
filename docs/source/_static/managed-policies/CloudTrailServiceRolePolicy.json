@@ -1,0 +1,65 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudTrailFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AwsOrgsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AwsOrgsDelegatedAdminAccess",
+      "Effect": "Allow",
+      "Action": "organizations:ListDelegatedAdministrators",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "cloudtrail.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DeleteTableAccess",
+      "Effect": "Allow",
+      "Action": "glue:DeleteTable",
+      "Resource": [
+        "arn:*:glue:*:*:catalog",
+        "arn:*:glue:*:*:database/aws:cloudtrail",
+        "arn:*:glue:*:*:table/aws:cloudtrail/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DeregisterResourceAccess",
+      "Effect": "Allow",
+      "Action": "lakeformation:DeregisterResource",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

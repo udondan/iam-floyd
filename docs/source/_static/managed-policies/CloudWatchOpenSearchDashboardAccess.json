@@ -1,0 +1,101 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchOpenSearchDashboardsIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "logs:ListIntegrations",
+        "logs:GetIntegration",
+        "logs:DescribeLogGroups",
+        "opensearch:ApplicationAccessAll",
+        "iam:ListRoles",
+        "iam:ListUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchLogsOpensearchReadAPIs",
+      "Effect": "Allow",
+      "Action": [
+        "aoss:BatchGetCollection",
+        "aoss:BatchGetLifecyclePolicy",
+        "es:ListApplications"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": "logs.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchLogsAPIAccessAll",
+      "Effect": "Allow",
+      "Action": [
+        "aoss:APIAccessAll"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aoss:collection": "cloudwatch-logs-*"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchLogsDQSCollectionPolicyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aoss:GetAccessPolicy",
+        "aoss:GetSecurityPolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:CalledViaFirst": "logs.amazonaws.com",
+          "aoss:collection": "cloudwatch-logs-*"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchLogsApplicationResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "es:GetApplication"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": "logs.amazonaws.com",
+          "aws:ResourceTag/OpenSearchIntegration": [
+            "Dashboards"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchLogsDQSResourceQueryAccess",
+      "Effect": "Allow",
+      "Action": [
+        "es:GetDirectQueryDataSource"
+      ],
+      "Resource": "arn:aws:opensearch:*:*:datasource/cloudwatch_logs_*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaFirst": "logs.amazonaws.com",
+          "aws:ResourceTag/CloudWatchOpenSearchIntegration": [
+            "Dashboards"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchLogsDirectQueryStatusAccess",
+      "Effect": "Allow",
+      "Action": [
+        "opensearch:GetDirectQuery"
+      ],
+      "Resource": "arn:aws:opensearch:*:*:datasource/cloudwatch_logs_*"
+    }
+  ]
+}

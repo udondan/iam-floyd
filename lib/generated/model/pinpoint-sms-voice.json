@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "filename": "pinpoint-sms-voice",
+  "className": "SmsVoice",
+  "name": "sms-voice",
+  "servicePrefix": "sms-voice",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pinpoint-sms-voice.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateConfigurationSet",
+      "CreateConfigurationSetEventDestination",
+      "DeleteConfigurationSet",
+      "DeleteConfigurationSetEventDestination",
+      "SendVoiceMessage",
+      "UpdateConfigurationSetEventDestination"
+    ],
+    "Read": [
+      "GetConfigurationSetEventDestinations",
+      "ListConfigurationSets"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateConfigurationSet",
+      "methodName": "toCreateConfigurationSet",
+      "description": "Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets.html"
+    },
+    {
+      "name": "CreateConfigurationSetEventDestination",
+      "methodName": "toCreateConfigurationSetEventDestination",
+      "description": "Create a new event destination in a configuration set.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html"
+    },
+    {
+      "name": "DeleteConfigurationSet",
+      "methodName": "toDeleteConfigurationSet",
+      "description": "Deletes an existing configuration set.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname.html"
+    },
+    {
+      "name": "DeleteConfigurationSetEventDestination",
+      "methodName": "toDeleteConfigurationSetEventDestination",
+      "description": "Deletes an event destination in a configuration set.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html"
+    },
+    {
+      "name": "GetConfigurationSetEventDestinations",
+      "methodName": "toGetConfigurationSetEventDestinations",
+      "description": "Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html"
+    },
+    {
+      "name": "ListConfigurationSets",
+      "methodName": "toListConfigurationSets",
+      "description": "Return a list of configuration sets. This operation only returns the configuration sets that are associated with your account in the current AWS Region.",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets.html"
+    },
+    {
+      "name": "SendVoiceMessage",
+      "methodName": "toSendVoiceMessage",
+      "description": "Create a new voice message and send it to a recipient's phone number.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-voice-message.html"
+    },
+    {
+      "name": "UpdateConfigurationSetEventDestination",
+      "methodName": "toUpdateConfigurationSetEventDestination",
+      "description": "Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

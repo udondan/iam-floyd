@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "filename": "identity-sync",
+  "className": "IdentitySync",
+  "name": "identity-sync",
+  "servicePrefix": "identity-sync",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_identity-sync.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSyncFilter",
+      "CreateSyncProfile",
+      "CreateSyncTarget",
+      "DeleteSyncFilter",
+      "DeleteSyncProfile",
+      "DeleteSyncTarget",
+      "StartSync",
+      "StopSync",
+      "UpdateSyncTarget",
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Read": [
+      "GetSyncProfile",
+      "GetSyncTarget"
+    ],
+    "List": [
+      "ListSyncFilters"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSyncFilter",
+      "methodName": "toCreateSyncFilter",
+      "description": "Grants permission to create a sync filter on the sync profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "CreateSyncProfile",
+      "methodName": "toCreateSyncProfile",
+      "description": "Grants permission to create a sync profile for the identity source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "CreateSyncTarget",
+      "methodName": "toCreateSyncTarget",
+      "description": "Grants permission to create a sync target for the identity source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "DeleteSyncFilter",
+      "methodName": "toDeleteSyncFilter",
+      "description": "Grants permission to delete a sync filter from the sync profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "DeleteSyncProfile",
+      "methodName": "toDeleteSyncProfile",
+      "description": "Grants permission to delete a sync profile from the source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "DeleteSyncTarget",
+      "methodName": "toDeleteSyncTarget",
+      "description": "Grants permission to delete a sync target from the source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "GetSyncProfile",
+      "methodName": "toGetSyncProfile",
+      "description": "Grants permission to retrieve a sync profile by using a sync profile name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "GetSyncTarget",
+      "methodName": "toGetSyncTarget",
+      "description": "Grants permission to retrieve a sync target from the sync profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "ListSyncFilters",
+      "methodName": "toListSyncFilters",
+      "description": "Grants permission to list the sync filters from the sync profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "StartSync",
+      "methodName": "toStartSync",
+      "description": "Grants permission to start a sync process or to resume a sync process that was previously paused",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "StopSync",
+      "methodName": "toStopSync",
+      "description": "Grants permission to stop any planned sync process in the sync schedule from starting",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "UpdateSyncTarget",
+      "methodName": "toUpdateSyncTarget",
+      "description": "Grants permission to update a sync target on the sync profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for a Sync Profile",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/logging-ad-sync-errors.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "SyncProfileResource",
+      "methodName": "onSyncProfileResource",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html",
+      "arn": "arn:${Partition}:identity-sync:${Region}:${Account}:profile/${SyncProfileName}",
+      "placeholders": [
+        {
+          "placeholder": "SyncProfileName",
+          "name": "syncProfileName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "SyncTargetResource",
+      "methodName": "onSyncTargetResource",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html",
+      "arn": "arn:${Partition}:identity-sync:${Region}:${Account}:target/${SyncProfileName}/${SyncTargetName}",
+      "placeholders": [
+        {
+          "placeholder": "SyncProfileName",
+          "name": "syncProfileName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SyncTargetName",
+          "name": "syncTargetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

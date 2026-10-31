@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudhsm:CreateLunaClient",
+        "cloudhsm:DeleteLunaClient",
+        "cloudhsm:DescribeHapg",
+        "cloudhsm:DescribeLunaClient",
+        "cloudhsm:GetConfig",
+        "cloudhsm:ModifyHapg",
+        "cloudhsm:ModifyLunaClient"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

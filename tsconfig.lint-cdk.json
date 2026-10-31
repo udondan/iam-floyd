@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "paths": {
+      "cdk-iam-floyd": ["./lib"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": [
+    "**/node_modules",
+    "**/cdk.out",
+    "dist",
+    "lib/generated/model/.cache"
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "filename": "apigatewaymanagementapi",
+  "className": "ExecuteApi",
+  "name": "execute-api",
+  "servicePrefix": "execute-api",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apigatewaymanagementapi.html",
+  "accessLevelList": {
+    "Write": [
+      "InvalidateCache",
+      "Invoke",
+      "ManageConnections"
+    ]
+  },
+  "actions": [
+    {
+      "name": "InvalidateCache",
+      "methodName": "toInvalidateCache",
+      "description": "Grants permission to invalidate API cache upon a client request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html"
+    },
+    {
+      "name": "Invoke",
+      "methodName": "toInvoke",
+      "description": "Grants permission to invoke an API upon a client request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html"
+    },
+    {
+      "name": "ManageConnections",
+      "methodName": "toManageConnections",
+      "description": "Grants permission to access the Websocket @connections Route",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-control-access-iam.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "execute-api-domain",
+      "methodName": "onExecuteApiDomain",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:execute-api:${Region}:${Account}:/domainnames/${DomainName}+${DomainIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DomainIdentifier",
+          "name": "domainIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "execute-api-general",
+      "methodName": "onExecuteApiGeneral",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:execute-api:${Region}:${Account}:${ApiId}/${Stage}/${Method}/${ApiSpecificResourcePath}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Stage",
+          "name": "stage",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Method",
+          "name": "method",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApiSpecificResourcePath",
+          "name": "apiSpecificResourcePath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifViaDomainArn"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "execute-api:viaDomainArn",
+      "methodName": "ifViaDomainArn",
+      "description": "Filters access by the DomainName ARN the API is called from",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toInvalidateCache",
+        "toInvoke",
+        "toManageConnections"
+      ],
+      "relatedResourceTypes": [
+        "execute-api-general"
+      ],
+      "keyLiteral": "viaDomainArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

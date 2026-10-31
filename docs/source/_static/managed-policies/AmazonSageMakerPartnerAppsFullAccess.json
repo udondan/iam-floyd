@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonSageMakerPartnerListAppsPermission",
+      "Effect": "Allow",
+      "Action": "sagemaker:ListPartnerApps",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonSageMakerPartnerAppsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreatePartnerAppPresignedUrl",
+        "sagemaker:DescribePartnerApp",
+        "sagemaker:CallPartnerAppApi"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:sagemaker:*:*:partner-app/*"
+    }
+  ]
+}

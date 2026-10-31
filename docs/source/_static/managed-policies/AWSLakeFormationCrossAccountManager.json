@@ -1,0 +1,79 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCreateResourceShare",
+      "Effect": "Allow",
+      "Action": [
+        "ram:CreateResourceShare"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "ram:RequestedResourceType": [
+            "glue:Table",
+            "glue:Database",
+            "glue:Catalog"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowManageResourceShare",
+      "Effect": "Allow",
+      "Action": [
+        "ram:UpdateResourceShare",
+        "ram:DeleteResourceShare",
+        "ram:AssociateResourceShare",
+        "ram:DisassociateResourceShare",
+        "ram:GetResourceShares"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ram:ResourceShareName": [
+            "LakeFormation*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowManageResourceSharePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AssociateResourceSharePermission"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "ram:PermissionArn": [
+            "arn:aws:ram::aws:permission/AWSRAMLFEnabled*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowXAcctManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:PutResourcePolicy",
+        "glue:DeleteResourcePolicy",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount",
+        "ram:Get*",
+        "ram:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowOrganizationsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListRoots",
+        "organizations:ListAccountsForParent",
+        "organizations:ListOrganizationalUnitsForParent"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

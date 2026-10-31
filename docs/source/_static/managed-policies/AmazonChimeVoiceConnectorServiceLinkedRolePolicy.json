@@ -1,0 +1,73 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "chime:GetVoiceConnector*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kinesisvideo:GetDataEndpoint",
+        "kinesisvideo:PutMedia",
+        "kinesisvideo:UpdateDataRetention",
+        "kinesisvideo:DescribeStream",
+        "kinesisvideo:CreateStream"
+      ],
+      "Resource": [
+        "arn:aws:kinesisvideo:*:*:stream/ChimeVoiceConnector-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kinesisvideo:ListStreams"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "SNS:Publish"
+      ],
+      "Resource": [
+        "arn:aws:sns:*:*:ChimeVoiceConnector-Streaming*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:SendMessage"
+      ],
+      "Resource": [
+        "arn:aws:sqs:*:*:ChimeVoiceConnector-Streaming*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "polly:SynthesizeSpeech"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "chime:CreateMediaInsightsPipeline",
+        "chime:GetMediaInsightsPipelineConfiguration"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

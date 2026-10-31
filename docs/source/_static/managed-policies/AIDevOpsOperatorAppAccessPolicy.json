@@ -1,0 +1,130 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowOperatorAgentSpaceActions",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateAccessToken",
+        "aidevops:CreateAsset",
+        "aidevops:CreateAssetFile",
+        "aidevops:CreateBacklogTask",
+        "aidevops:CreateChat",
+        "aidevops:CreateKnowledgeItem",
+        "aidevops:CreateTrigger",
+        "aidevops:DeleteAsset",
+        "aidevops:DeleteAssetFile",
+        "aidevops:DeleteKnowledgeItem",
+        "aidevops:DeleteTrigger",
+        "aidevops:DescribeServices",
+        "aidevops:DescribeSupportLevel",
+        "aidevops:DiscoverTopology",
+        "aidevops:EndChatForCase",
+        "aidevops:GetAccessToken",
+        "aidevops:GetAgentSpace",
+        "aidevops:GetAsset",
+        "aidevops:GetAssetContent",
+        "aidevops:GetAssetFile",
+        "aidevops:GetAssociation",
+        "aidevops:GetBacklogTask",
+        "aidevops:GetKnowledgeItem",
+        "aidevops:GetRecommendation",
+        "aidevops:GetTrigger",
+        "aidevops:InitiateChatForCase",
+        "aidevops:ListAccessTokens",
+        "aidevops:ListAssetFiles",
+        "aidevops:ListAssets",
+        "aidevops:ListAssetTypes",
+        "aidevops:ListAssetVersions",
+        "aidevops:ListAssociations",
+        "aidevops:ListBacklogTasks",
+        "aidevops:ListChats",
+        "aidevops:ListExecutions",
+        "aidevops:ListGoals",
+        "aidevops:ListJournalRecords",
+        "aidevops:ListKnowledgeItems",
+        "aidevops:ListKnowledgeItemVersions",
+        "aidevops:ListPendingMessages",
+        "aidevops:ListRecommendations",
+        "aidevops:ListTriggers",
+        "aidevops:ListWebhooks",
+        "aidevops:RevokeAccessToken",
+        "aidevops:RotateAccessToken",
+        "aidevops:SendMessage",
+        "aidevops:UpdateApprovalAction",
+        "aidevops:UpdateAsset",
+        "aidevops:UpdateAssetFile",
+        "aidevops:UpdateBacklogTask",
+        "aidevops:UpdateGoal",
+        "aidevops:UpdateKnowledgeItem",
+        "aidevops:UpdateRecommendation",
+        "aidevops:UpdateTrigger"
+      ],
+      "Resource": [
+        "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}",
+        "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowOperatorAccountActions",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetAccountUsage"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSupportOperatorActions",
+      "Effect": "Allow",
+      "Action": [
+        "support:DescribeCases",
+        "support:DescribeServices",
+        "support:InitiateChatForCase",
+        "support:DescribeSupportLevel"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSecretsManagerOperatorActions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowTranscribeOperatorActions",
+      "Effect": "Allow",
+      "Action": [
+        "transcribe:StartStreamTranscriptionWebSocket"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

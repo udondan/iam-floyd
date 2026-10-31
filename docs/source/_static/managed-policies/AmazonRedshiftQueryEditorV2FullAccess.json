@@ -1,0 +1,54 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RedshiftPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift:DescribeClusters",
+        "redshift-serverless:ListNamespaces",
+        "redshift-serverless:ListWorkgroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KeyManagementServicePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecretsManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:sqlworkbench!*"
+    },
+    {
+      "Sid": "ResourceGroupsTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "sqlworkbench.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonRedshiftQueryEditorV2Permissions",
+      "Effect": "Allow",
+      "Action": "sqlworkbench:*",
+      "Resource": "*"
+    }
+  ]
+}
