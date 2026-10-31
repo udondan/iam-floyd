@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.851.1](https://github.com/udondan/iam-floyd/compare/v0.851.0...v0.851.1) (2026-10-31)
+
+
+### Dependencies
+
+* **deps:** override re2js with 2.8.7, which fixes CVE-2026-116795 ([#2410](https://github.com/udondan/iam-floyd/issues/2410)) ([498009a](https://github.com/udondan/iam-floyd/commit/498009ae1574699a10202dc712988a0f0b2e01b0))
+* **deps:** update all non-major dependencies ([#2408](https://github.com/udondan/iam-floyd/issues/2408)) ([733d0c7](https://github.com/udondan/iam-floyd/commit/733d0c75ce417de4b1331332c03a6e84edd78aa6))
+* **deps:** update all non-major dependencies ([#2415](https://github.com/udondan/iam-floyd/issues/2415)) ([11d1557](https://github.com/udondan/iam-floyd/commit/11d15574775f87d993b50b7d82cf652a3a4f4f89))
+* **deps:** update all non-major dependencies ([#2416](https://github.com/udondan/iam-floyd/issues/2416)) ([2bb08bc](https://github.com/udondan/iam-floyd/commit/2bb08bc80eda0a761ab186ca2f95982c0bcb9d54))
+* **deps:** update dependency certifi to v2026.10.23 ([#2405](https://github.com/udondan/iam-floyd/issues/2405)) ([1f872e4](https://github.com/udondan/iam-floyd/commit/1f872e4a60d1c158a63adc1ba1ef9251d82a3edf))
+* **deps:** update dependency glob to v14 ([#2412](https://github.com/udondan/iam-floyd/issues/2412)) ([1ad1b4f](https://github.com/udondan/iam-floyd/commit/1ad1b4fa98695971e2808cceaaddd43afb5aeaa2))
+* **deps:** update dependency node to v26 ([#2409](https://github.com/udondan/iam-floyd/issues/2409)) ([a0343a0](https://github.com/udondan/iam-floyd/commit/a0343a0af0e05b5c6b2739f20fefc7e5b801bfaa))
+* **deps:** update udondan/wait-for-turn action to v1.7.0 ([#2413](https://github.com/udondan/iam-floyd/issues/2413)) ([88321bf](https://github.com/udondan/iam-floyd/commit/88321bfcf01a4997508c8371ac97e730182282f2))
+
 ## [0.851.0](https://github.com/udondan/iam-floyd/compare/v0.850.0...v0.851.0) (2026-10-26)
 
 
