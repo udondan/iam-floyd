@@ -14,36 +14,18 @@ jobs:
   # for the turn as well: the waiting runs of all open pull requests would otherwise take the
   # runners of the account at once, and most of them are tested again after a rebase anyway.
   wait-for-turn:
-    runs-on: ubuntu-latest
-    timeout-minutes: 180
     permissions:
       actions: read
       contents: write # lock refs under refs/wait-for-turn/
       pull-requests: read # labels for label-weights
       statuses: write # queue position as commit status
-    # A new commit on the branch cancels the waiting of the outdated run, so the
-    # new run doesn't queue behind it. Once a run has the turn, this job is
-    # done: test jobs that already run are never cancelled.
-    concurrency:
-      group: test-wait-${{ github.head_ref || github.ref }}
-      cancel-in-progress: true
-    steps:
-      # Queue order: manual PRs first, then Renovate updates, releases last.
-      # The release PR isn't auto-merged, so it doesn't take the turn from
-      # Renovate PRs that are about to be tested after a merge.
-      # A branch that is behind main is rebased and the run stops right away;
-      # the rebased commit starts a new run. Branch protection requires PRs to
-      # be up to date, so testing an outdated branch is wasted time. The rebase
-      # needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
-      - name: Wait for turn
-        uses: udondan/wait-for-turn@5d5087178d139c5f6af28997dff9addf49738a86 # v1.7.1
-        with:
-          status-context: wait-for-turn
-          require-up-to-date: true
-          update-token: ${{ secrets.OVERRIDE_TOKEN }}
-          label-weights: |
-            autorelease: pending=-10
-            renovate=-5
+    # Queue order, the concurrency group that cancels outdated waiting runs and
+    # the rebase of branches that are behind main: see
+    # https://github.com/udondan/wait-for-turn#reusable-workflow
+    # The rebase needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
+    uses: udondan/wait-for-turn/.github/workflows/wait-for-turn.yml@v1 # zizmor: ignore[unpinned-uses] used by its major tag, so every release reaches this repo without update PRs
+    secrets:
+      update-token: ${{ secrets.OVERRIDE_TOKEN }}
 
   lint:
     name: Lint
