@@ -110,6 +110,17 @@
           "aws:RequestTag/AWSApplicationMigrationServiceManaged": "false"
         }
       }
+    },
+    {
+      "Sid": "FSxListTagsSnapshot",
+      "Effect": "Allow",
+      "Action": "fsx:ListTagsForResource",
+      "Resource": "arn:aws:fsx:*:*:snapshot/*/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+        }
+      }
     }
   ]
 }

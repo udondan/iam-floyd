@@ -19,7 +19,8 @@
         "sagemaker-data-science-assistant:*",
         "rds:*",
         "quicksight:*",
-        "events:*"
+        "events:*",
+        "xray:*"
       ],
       "Resource": "*"
     },
@@ -29,6 +30,7 @@
       "Action": [
         "athena:*",
         "bedrock:*",
+        "bedrock-agentcore:*",
         "codewhisperer:*",
         "sagemaker-unified-studio-mcp:*",
         "elasticmapreduce:*",
@@ -115,9 +117,9 @@
       "Action": [
         "datazone:AcceptPredictions",
         "datazone:AcceptSubscriptionRequest",
+        "datazone:BatchUpdateNotifications",
         "datazone:BatchGetAttributesMetadata",
         "datazone:BatchPutAttributesMetadata",
-        "datazone:BatchUpdateNotifications",
         "datazone:CancelMetadataGenerationRun",
         "datazone:CancelSubscription",
         "datazone:CreateAsset*",
@@ -125,6 +127,7 @@
         "datazone:CreateEnvironment",
         "datazone:CreateListingChangeSet",
         "datazone:CreateProject",
+        "datazone:CreateProjectMembership",
         "datazone:CreateSubscriptionGrant",
         "datazone:CreateSubscriptionRequest",
         "datazone:DeleteAsset*",
@@ -132,6 +135,7 @@
         "datazone:DeleteEnvironment",
         "datazone:DeleteListing",
         "datazone:DeleteProject",
+        "datazone:DeleteProjectMembership",
         "datazone:DeleteSubscriptionGrant",
         "datazone:DeleteSubscriptionRequest",
         "datazone:Get*",
@@ -198,7 +202,9 @@
       "Action": [
         "iam:GetRole",
         "iam:ListRoles",
-        "sts:AssumeRole"
+        "sts:AssumeRole",
+        "ecr-public:GetAuthorizationToken",
+        "sts:GetServiceBearerToken"
       ],
       "Resource": "*"
     },
@@ -215,7 +221,11 @@
         "arn:aws:iam::*:role/aws-service-role/airflow-serverless.amazonaws.com/AWSServiceRoleForAmazonMWAAServerless",
         "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com/AWSServiceRoleForEMRCleanup",
         "arn:aws:iam::*:role/aws-service-role/sagemaker.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_SageMakerEndpoint",
-        "arn:aws:iam::*:role/aws-service-role/observability.aoss.amazonaws.com/AWSServiceRoleForAmazonOpenSearchServerless"
+        "arn:aws:iam::*:role/aws-service-role/observability.aoss.amazonaws.com/AWSServiceRoleForAmazonOpenSearchServerless",
+        "arn:aws:iam::*:role/aws-service-role/runtime-identity.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreRuntimeIdentity",
+        "arn:aws:iam::*:role/aws-service-role/network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreNetwork",
+        "arn:aws:iam::*:role/aws-service-role/bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreGatewayNetwork",
+        "arn:aws:iam::*:role/aws-service-role/identity-network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreIdentity"
       ]
     },
     {
@@ -245,6 +255,8 @@
             "lakeformation.amazonaws.com",
             "glue.amazonaws.com",
             "bedrock.amazonaws.com",
+            "bedrock-agentcore.amazonaws.com",
+            "agent-registry.amazonaws.com",
             "redshift-serverless.amazonaws.com",
             "redshift.amazonaws.com",
             "scheduler.amazonaws.com",
@@ -633,6 +645,14 @@
       "Resource": [
         "arn:aws:ec2:*:*:network-interface/*"
       ]
+    },
+    {
+      "Sid": "TagLookup",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
     },
     {
       "Sid": "SSOInstanceReadOnlyPermissions",

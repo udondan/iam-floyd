@@ -382,6 +382,8 @@
         "config:ListStoredQueries",
         "config:ListTagsForResource",
         "config:SelectResourceConfig",
+        "config:BatchGetResourceConfig",
+        "config:ListDiscoveredResources",
         "connect-campaigns:DescribeCampaign",
         "connect-campaigns:ListCampaigns",
         "connect:DescribeInstance",
@@ -1654,6 +1656,19 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "DenyApiGatewayKeys",
+      "Effect": "Deny",
+      "Action": [
+        "apigateway:GET"
+      ],
+      "Resource": [
+        "arn:aws:apigateway:*::/apikeys",
+        "arn:aws:apigateway:*::/apikeys/*",
+        "arn:aws:apigateway:*::/usageplans/*/keys",
+        "arn:aws:apigateway:*::/usageplans/*/keys/*"
+      ]
     },
     {
       "Sid": "OrganizationsRead",

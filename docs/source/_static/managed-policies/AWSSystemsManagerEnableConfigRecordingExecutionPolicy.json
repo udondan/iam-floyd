@@ -74,6 +74,19 @@
           "iam:AWSServiceName": "config.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:GetCalendarState",
+      "Resource": "arn:aws:ssm:*:*:document/*",
+      "Condition": {
+        "StringLike": {
+          "aws:userid": "*:SystemsManager-Automation-ChangeCalendar-Check"
+        },
+        "StringEquals": {
+          "ssm:DocumentType": "ChangeCalendar"
+        }
+      }
     }
   ]
 }

@@ -7,6 +7,7 @@
         "ec2:AttachVolume",
         "ec2:DetachVolume",
         "ec2:ModifyVolume",
+        "ec2:CopyVolumes",
         "ec2:EnableFastSnapshotRestores"
       ],
       "Resource": "*",
@@ -24,6 +25,7 @@
         "StringEquals": {
           "ec2:CreateAction": [
             "CreateVolume",
+            "CopyVolumes",
             "CreateSnapshot"
           ]
         }
@@ -32,7 +34,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:CreateVolume"
+        "ec2:CreateVolume",
+        "ec2:CopyVolumes"
       ],
       "Resource": "arn:aws:ec2:*:*:volume/*",
       "Condition": {

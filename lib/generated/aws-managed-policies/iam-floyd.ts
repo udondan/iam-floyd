@@ -1956,6 +1956,8 @@ export class AwsManagedPolicy {
     public static AWSIoTWirelessLogging = 'AWSIoTWirelessLogging';
     /** Allows the associated identity read only access to AWS IoT wireless. */
     public static AWSIoTWirelessReadOnlyAccess = 'AWSIoTWirelessReadOnlyAccess';
+    /** Grants permissions to request web identity tokens for outbound federation */
+    public static AWSIPAMOutboundServiceRolePolicy = 'aws-service-role/AWSIPAMOutboundServiceRolePolicy';
     /** Allows VPC IP Address Manager to access VPC resources and integrate with AWS Organizations on your behalf. */
     public static AWSIPAMServiceRolePolicy = 'aws-service-role/AWSIPAMServiceRolePolicy';
     /** Used by AWS IQ to execute payment requests on behalf of a customer */
@@ -2090,6 +2092,8 @@ export class AwsManagedPolicy {
     public static AWSMarketplaceSellerProductsFullAccess = 'AWSMarketplaceSellerProductsFullAccess';
     /** Provide sellers read-only access to AWS Marketplace Management Products page. */
     public static AWSMarketplaceSellerProductsReadOnly = 'AWSMarketplaceSellerProductsReadOnly';
+    /** Enables AWS Marketplace to share Subsidiary Authorization entities across AWS accounts on the customer's behalf using AWS Resource Access Manager. */
+    public static AWSMarketplaceSubsidiaryAuthorizationServiceRolePolicy = 'service-role/AWSMarketplaceSubsidiaryAuthorizationServiceRolePolicy';
     /** Provides full access to all MCP service actions. This policy does not grant access to the actions taken by the MCP, only the MCP actions themselves. */
     public static AWSMcpServiceActionsFullAccess = 'AWSMcpServiceActionsFullAccess';
     /** Provides access to authenticate to the AWS MCP server using AWS Sign-In OAuth */
@@ -2638,6 +2642,8 @@ export class AwsManagedPolicy {
     public static AWSWellArchitectedOrganizationsServiceRolePolicy = 'aws-service-role/AWSWellArchitectedOrganizationsServiceRolePolicy';
     /** This policy grants full administrative permissions to the Wickr service, including the Wickr administrative functions under the AWS Management Console. */
     public static AWSWickrFullAccess = 'AWSWickrFullAccess';
+    /** Grants permissions to call AWS X-Ray using API key authentication. */
+    public static AWSXRayAPIKeyAccess = 'AWSXRayAPIKeyAccess';
     /** Provides capabilities to manage Observability Access Manager links and establish sharing of X-Ray traces */
     public static AWSXrayCrossAccountSharingConfiguration = 'AWSXrayCrossAccountSharingConfiguration';
     /** Allow the AWS X-Ray Daemon to relay raw trace segments data to the service's API and retrieve sampling data (rules, targets, etc.) to be used by the X-Ray SDK. */
@@ -2878,6 +2884,8 @@ export class AwsManagedPolicy {
     public static EndUserMessagingServiceRolePolicy = 'aws-service-role/EndUserMessagingServiceRolePolicy';
     /** Provides permissions required by the AWS FinOps Agent to perform cost analysis and spot cost saving opportunity on customer AWS resources. */
     public static FinOpsAgentAgentPolicy = 'FinOpsAgentAgentPolicy';
+    /** Provides permissions required by AWS FinOps Agent to read IAM Identity Center user and group information and check group membership for agent access */
+    public static FinOpsAgentIdentityReaderPolicy = 'FinOpsAgentIdentityReaderPolicy';
     /** Provides access to use the AWS FinOps Agent web app for an Agent. */
     public static FinOpsAgentOperatorPolicy = 'FinOpsAgentOperatorPolicy';
     /** Access policy to allow FM service linked role to perform FM-related actions on FM-managed resources within a customer AWS Organization account. */
@@ -3044,6 +3052,8 @@ export class AwsManagedPolicy {
     public static ROSASRESupportPolicy = 'service-role/ROSASRESupportPolicy';
     /** Allows Red Hat OpenShift Service on AWS (ROSA) worker nodes in your account read-only access to Amazon EC2 instances and AWS Regions for compute node lifecycle management. */
     public static ROSAWorkerInstancePolicy = 'service-role/ROSAWorkerInstancePolicy';
+    /** Allows Amazon Route 53 health checks to describe subnets in your VPC. Helps Amazon Route 53 health checks determine whether IPv6 should be enabled for a customer's resource. */
+    public static Route53PrivateHealthChecksServiceRolePolicy = 'aws-service-role/Route53PrivateHealthChecksServiceRolePolicy';
     /** Service Linked Role Policy for Route 53 Recovery Readiness */
     public static Route53RecoveryReadinessServiceRolePolicy = 'aws-service-role/Route53RecoveryReadinessServiceRolePolicy';
     /** Enables access to AWS Services and Resources used or managed by Route53 Resolver */
@@ -3150,6 +3160,8 @@ export class AwsManagedPolicy {
     public static SupportUser = 'job-function/SupportUser';
     /** Grants full access permissions necessary for resources required for application and development operations. */
     public static SystemAdministrator = 'job-function/SystemAdministrator';
+    /** Provides read-only access to the AWS Resource Groups Tagging API for the Tags Health service-linked role. */
+    public static TagsHealthServiceRolePolicy = 'aws-service-role/TagsHealthServiceRolePolicy';
     /** Provides full access to Amazon Translate. */
     public static TranslateFullAccess = 'TranslateFullAccess';
     /** Provides read-only access to Amazon Translate. */

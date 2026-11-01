@@ -113,6 +113,18 @@
         "support:DescribeCommunications"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "user-subscriptions:CreatePurchaseSession",
+        "user-subscriptions:ConfirmPurchaseSession",
+        "user-subscriptions:CancelPurchaseSession",
+        "user-subscriptions:GetPurchaseSession",
+        "user-subscriptions:ListEntitlements",
+        "user-subscriptions:SetOverageConfig"
+      ],
+      "Resource": "*"
     }
   ]
 }

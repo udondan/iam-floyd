@@ -862,7 +862,6 @@
         "ssm:GetCommandInvocation",
         "ssm:GetDefaultPatchBaseline",
         "ssm:GetDocument",
-        "ssm:GetParameters",
         "ssm:GetPatchBaseline",
         "ssm:GetResourcePolicies",
         "ssm:List*",

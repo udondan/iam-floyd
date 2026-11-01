@@ -333,6 +333,7 @@
   "sagemaker.amazonaws.com": {},
   "sagemaker.application-autoscaling.amazonaws.com": {},
   "scaler.lambda.amazonaws.com": {},
+  "scanning.agent.wellarchitected.amazonaws.com": {},
   "scheduler.amazonaws.com": {},
   "schema-conversion.dms.amazonaws.com": {},
   "schemas.amazonaws.com": {},

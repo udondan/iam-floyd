@@ -526,7 +526,8 @@
         "logs:GetQueryResults"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:airflow-DataZoneMWAAEnv-${aws:PrincipalTag/AmazonDataZoneDomain}-${aws:PrincipalTag/AmazonDataZoneProject}-${aws:PrincipalTag/AmazonDataZoneScopeName}-*"
+        "arn:aws:logs:*:*:log-group:airflow-DataZoneMWAAEnv-${aws:PrincipalTag/AmazonDataZoneDomain}-${aws:PrincipalTag/AmazonDataZoneProject}-${aws:PrincipalTag/AmazonDataZoneScopeName}-*",
+        "arn:aws:logs:*:*:log-group:/aws/bedrock-agentcore/agent-builder/${aws:PrincipalTag/AmazonDataZoneProject}/evaluations*"
       ]
     },
     {
@@ -543,7 +544,7 @@
       }
     },
     {
-      "Sid": "GlueJobCWPutMetricActions",
+      "Sid": "CWPutMetrics",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData"
@@ -554,7 +555,8 @@
           "cloudwatch:namespace": [
             "Glue",
             "AWS/Glue",
-            "Glue Data Quality"
+            "Glue Data Quality",
+            "bedrock-agentcore"
           ]
         }
       }
@@ -874,7 +876,8 @@
       ],
       "Resource": [
         "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}",
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}:log-stream:*"
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}:log-stream:*",
+        "arn:aws:logs:*:*:log-group:/aws/bedrock-agentcore/agent-builder/${aws:PrincipalTag/AmazonDataZoneProject}/evaluations"
       ]
     },
     {
@@ -1358,7 +1361,9 @@
             "elasticmapreduce.amazonaws.com",
             "scheduler.amazonaws.com",
             "access-grants.s3.amazonaws.com",
-            "pods.eks.amazonaws.com"
+            "pods.eks.amazonaws.com",
+            "bedrock-agentcore.amazonaws.com",
+            "agent-registry.amazonaws.com"
           ]
         }
       }
@@ -1911,6 +1916,23 @@
       }
     },
     {
+      "Sid": "ACInvoke",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*:*:inference-profile/*",
+        "arn:aws:bedrock:*::foundation-model/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockPermissions": "true"
+        }
+      }
+    },
+    {
       "Sid": "InvokeBedrockModel",
       "Effect": "Allow",
       "Action": [
@@ -2004,6 +2026,7 @@
         "bedrock:GetDataAutomationProject",
         "bedrock:GetDataAutomationStatus",
         "bedrock:GetEvaluationJob",
+        "bedrock:GetKnowledgeBase",
         "bedrock:GetIngestionJob",
         "bedrock:GetPrompt",
         "bedrock:InvokeAgent",
@@ -2127,7 +2150,9 @@
       "Action": [
         "bedrock:ListEvaluationJobs",
         "bedrock:RetrieveAndGenerate",
-        "bedrock:ListFoundationModels"
+        "bedrock:ListFoundationModels",
+        "bedrock:ListInferenceProfiles",
+        "bedrock:ListKnowledgeBases"
       ],
       "Resource": "*",
       "Condition": {
@@ -2360,27 +2385,12 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:GetTemplate",
-        "cloudformation:DescribeStacks"
-      ],
-      "Resource": "arn:aws:cloudformation:*:*:stack/DataZone-Env-*",
-      "Condition": {
-        "StringEquals": {
-          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
-          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
-        }
-      }
-    },
-    {
-      "Sid": "CFNGetDataZoneEnvironmentStack",
-      "Effect": "Allow",
-      "Action": [
         "cloudformation:DescribeStacks",
-        "cloudformation:GetTemplate"
+        "cloudformation:ListStackResources"
       ],
       "Resource": "arn:aws:cloudformation:*:*:stack/DataZone-Env-*",
       "Condition": {
         "StringEquals": {
-          "aws:PrincipalTag/EnableAmazonBedrockPermissions": "true",
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
         }
       }
@@ -2441,9 +2451,13 @@
       "Action": [
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:PutLogEvents"
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams"
       ],
-      "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/athenafederatedcatalog*"
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/lambda/athenafederatedcatalog*",
+        "arn:aws:logs:*:*:log-group:/aws/bedrock-agentcore/runtimes/*"
+      ]
     },
     {
       "Sid": "DataConnOpen",
