@@ -25,6 +25,7 @@
         "StringEquals": {
           "iam:AWSServiceName": [
             "agentless.inspector2.amazonaws.com",
+            "ami.inspector2.amazonaws.com",
             "inspector2.amazonaws.com",
             "thirdparty.inspector2.amazonaws.com"
           ]

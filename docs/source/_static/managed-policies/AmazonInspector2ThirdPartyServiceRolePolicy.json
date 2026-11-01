@@ -30,6 +30,7 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnAzure*",
+        "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnGcp*",
         "arn:aws:ssm:*:*:association/*"
       ]
     },
@@ -59,7 +60,8 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:document/AmazonInspector2-*",
-        "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnAzure*"
+        "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnAzure*",
+        "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnGcp*"
       ],
       "Condition": {
         "StringEquals": {
@@ -79,6 +81,7 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnAzure*",
+        "arn:aws:ssm:*:*:document/AWS-InstallDistributorPackageOnGcp*",
         "arn:aws:ssm:*:*:automation-execution/*"
       ]
     },
@@ -172,7 +175,8 @@
         },
         "ForAnyValue:StringLike": {
           "sts:IdentityTokenAudience": [
-            "api://AzureADTokenExchange"
+            "api://AzureADTokenExchange",
+            "https://sts.googleapis.com"
           ]
         }
       }

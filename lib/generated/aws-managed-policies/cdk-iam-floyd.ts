@@ -4899,6 +4899,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTWirelessReadOnlyAccess);
     }
 
+    /** Grants permissions to request web identity tokens for outbound federation */
+    public AWSIPAMOutboundServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIPAMOutboundServiceRolePolicy);
+    }
+
     /** Allows VPC IP Address Manager to access VPC resources and integrate with AWS Organizations on your behalf. */
     public AWSIPAMServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIPAMServiceRolePolicy);
@@ -5232,6 +5237,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provide sellers read-only access to AWS Marketplace Management Products page. */
     public AWSMarketplaceSellerProductsReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceSellerProductsReadOnly);
+    }
+
+    /** Enables AWS Marketplace to share Subsidiary Authorization entities across AWS accounts on the customer's behalf using AWS Resource Access Manager. */
+    public AWSMarketplaceSubsidiaryAuthorizationServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceSubsidiaryAuthorizationServiceRolePolicy);
     }
 
     /** Provides full access to all MCP service actions. This policy does not grant access to the actions taken by the MCP, only the MCP actions themselves. */
@@ -6604,6 +6614,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWickrFullAccess);
     }
 
+    /** Grants permissions to call AWS X-Ray using API key authentication. */
+    public AWSXRayAPIKeyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSXRayAPIKeyAccess);
+    }
+
     /** Provides capabilities to manage Observability Access Manager links and establish sharing of X-Ray traces */
     public AWSXrayCrossAccountSharingConfiguration(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSXrayCrossAccountSharingConfiguration);
@@ -7204,6 +7219,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.FinOpsAgentAgentPolicy);
     }
 
+    /** Provides permissions required by AWS FinOps Agent to read IAM Identity Center user and group information and check group membership for agent access */
+    public FinOpsAgentIdentityReaderPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.FinOpsAgentIdentityReaderPolicy);
+    }
+
     /** Provides access to use the AWS FinOps Agent web app for an Agent. */
     public FinOpsAgentOperatorPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.FinOpsAgentOperatorPolicy);
@@ -7619,6 +7639,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ROSAWorkerInstancePolicy);
     }
 
+    /** Allows Amazon Route 53 health checks to describe subnets in your VPC. Helps Amazon Route 53 health checks determine whether IPv6 should be enabled for a customer's resource. */
+    public Route53PrivateHealthChecksServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.Route53PrivateHealthChecksServiceRolePolicy);
+    }
+
     /** Service Linked Role Policy for Route 53 Recovery Readiness */
     public Route53RecoveryReadinessServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.Route53RecoveryReadinessServiceRolePolicy);
@@ -7882,6 +7907,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Grants full access permissions necessary for resources required for application and development operations. */
     public SystemAdministrator(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SystemAdministrator);
+    }
+
+    /** Provides read-only access to the AWS Resource Groups Tagging API for the Tags Health service-linked role. */
+    public TagsHealthServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.TagsHealthServiceRolePolicy);
     }
 
     /** Provides full access to Amazon Translate. */

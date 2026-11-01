@@ -57,6 +57,19 @@
         }
       },
       "Resource": "arn:aws:iam::*:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:GetCalendarState",
+      "Resource": "arn:aws:ssm:*:*:document/*",
+      "Condition": {
+        "StringLike": {
+          "aws:userid": "*:SystemsManager-Automation-ChangeCalendar-Check"
+        },
+        "StringEquals": {
+          "ssm:DocumentType": "ChangeCalendar"
+        }
+      }
     }
   ]
 }

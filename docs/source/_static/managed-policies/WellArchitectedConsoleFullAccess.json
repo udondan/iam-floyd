@@ -53,7 +53,8 @@
           "iam:AWSServiceName": [
             "wellarchitected.amazonaws.com",
             "agent.wellarchitected.amazonaws.com",
-            "metrics.wellarchitected.amazonaws.com"
+            "metrics.wellarchitected.amazonaws.com",
+            "scanning.agent.wellarchitected.amazonaws.com"
           ]
         }
       }
@@ -100,6 +101,11 @@
           ]
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/scanning.agent.wellarchitected.amazonaws.com/AWSServiceRoleForWellArchitectedAgent_ResourceScanning"
     }
   ]
 }

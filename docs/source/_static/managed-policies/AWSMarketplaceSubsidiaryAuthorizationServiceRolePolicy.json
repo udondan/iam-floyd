@@ -1,0 +1,102 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSubsidiaryAuthorizationShareActionsRAMCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ram:CreateResourceShare"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ram:RequestedResourceType": "aws-marketplace:Entity"
+        },
+        "ArnLike": {
+          "ram:ResourceArn": [
+            "arn:aws:aws-marketplace:*:*:*/SubsidiaryAuthorization/*"
+          ]
+        },
+        "Null": {
+          "ram:Principal": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSubsidiaryAuthorizationShareActionsRAMAssociate",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AssociateResourceShare"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ],
+      "Condition": {
+        "Null": {
+          "ram:Principal": "false"
+        },
+        "StringEquals": {
+          "ram:ResourceShareName": "AWSMarketplaceSubsidiaryAuthorization"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSubsidiaryAuthorizationShareActionsRAMAcceptDelete",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AcceptResourceShareInvitation",
+        "ram:DeleteResourceShare"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ram:ResourceShareName": "AWSMarketplaceSubsidiaryAuthorization"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSubsidiaryAuthorizationShareActionsRAMGet",
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShareInvitations",
+        "ram:GetResourceShareAssociations"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ]
+    },
+    {
+      "Sid": "AllowSubsidiaryAuthorizationShareActionsMarketplace",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:PutResourcePolicy",
+        "aws-marketplace:GetResourcePolicy",
+        "aws-marketplace:DeleteResourcePolicy"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:*/SubsidiaryAuthorization/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "ram.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowSubsidiaryAuthorizationShareActionsMarketplaceDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:*/SubsidiaryAuthorization/*"
+      ]
+    }
+  ]
+}

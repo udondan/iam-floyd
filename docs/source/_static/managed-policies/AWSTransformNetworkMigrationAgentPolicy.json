@@ -1215,6 +1215,58 @@
           "sts:ExternalId": "${aws:PrincipalAccount}:workspace/${aws:PrincipalTag/WorkspaceId}"
         }
       }
+    },
+    {
+      "Sid": "WellArchitectedAgentProfileListReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "wellarchitected:ListAgentProfiles"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "${aws:PrincipalTag/TargetRegion}"
+        }
+      }
+    },
+    {
+      "Sid": "WellArchitectedAgentProfileOperationsWithResourceTag",
+      "Effect": "Allow",
+      "Action": [
+        "wellarchitected:CreateAgentContext",
+        "wellarchitected:CreateAgentGoal",
+        "wellarchitected:GetAgentProfile",
+        "wellarchitected:GetAgentRecommendationGeneration",
+        "wellarchitected:ListAgentContexts",
+        "wellarchitected:ListAgentGoals",
+        "wellarchitected:ListAgentRecommendations",
+        "wellarchitected:StartAgentRecommendationGeneration",
+        "wellarchitected:UpdateAgentContext",
+        "wellarchitected:UpdateAgentGoal",
+        "wellarchitected:UpdateAgentProfile"
+      ],
+      "Resource": "arn:aws:wellarchitected:*:*:agent-profile/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "${aws:PrincipalTag/TargetRegion}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AWSTransformNetworkMigration": "enabled"
+        }
+      }
+    },
+    {
+      "Sid": "WellArchitectedAgentRecommendationReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "wellarchitected:GetAgentRecommendation"
+      ],
+      "Resource": "arn:aws:wellarchitected:*:*:agent-recommendation/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "${aws:PrincipalTag/TargetRegion}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

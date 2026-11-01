@@ -16,6 +16,7 @@
         "billing:GetIAMAccessPreference",
         "billing:GetSellerOfRecord",
         "billing:ListBillingViews",
+        "billing:ListContracts",
         "budgets:ViewBudget",
         "budgets:DescribeBudgetActionsForBudget",
         "budgets:DescribeBudgetAction",
@@ -84,6 +85,16 @@
         "tax:ListTaxRegistrations"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ContractualInvestmentReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "billing:ListContractualInvestmentAttestations",
+        "billing:ListContractualInvestments",
+        "billing:ListContractualInvestmentSummaries"
+      ],
+      "Resource": "arn:aws:billing::*:contract/*"
     }
   ]
 }

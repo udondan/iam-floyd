@@ -54,7 +54,8 @@
         "arn:aws:aws-marketplace:*:*:AWSMarketplace/ProfessionalServicesProduct/*",
         "arn:aws:aws-marketplace:*:*:AWSMarketplace/SaaSProduct/*",
         "arn:aws:aws-marketplace:*:*:AWSMarketplace/AmiProduct/*",
-        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ResaleAuthorization/*"
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ResaleAuthorization/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/SubsidiaryAuthorization/*"
       ]
     },
     {

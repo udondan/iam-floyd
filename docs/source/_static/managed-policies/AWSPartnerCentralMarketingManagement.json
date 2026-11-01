@@ -116,6 +116,89 @@
         "q:PassRequest"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CaseStudyStartChangeSet",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartChangeSet"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/CaseStudy/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/ChangeSet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "catalog:ChangeType": [
+            "CreateCaseStudy",
+            "UpdateInformation",
+            "ReleaseCaseStudy",
+            "RestrictCaseStudy",
+            "UpdateVisibility"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CaseStudyDescribeChangeSet",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeChangeSet"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace*/ChangeSet/*"
+    },
+    {
+      "Sid": "CaseStudyListChangeSets",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListChangeSets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CaseStudyEntityTagAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListTagsForResource",
+        "aws-marketplace:TagResource",
+        "aws-marketplace:UntagResource"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace*/CaseStudy/*"
+    },
+    {
+      "Sid": "CaseStudyEntityReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeEntityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace*/CaseStudy/*"
+    },
+    {
+      "Sid": "PartnerCentralAgentsSessionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:UseSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        },
+        "Bool": {
+          "aws:IsMcpServiceAction": "true"
+        }
+      }
     }
   ]
 }

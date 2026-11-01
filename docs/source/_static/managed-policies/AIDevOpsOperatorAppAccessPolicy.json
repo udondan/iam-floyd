@@ -50,6 +50,7 @@
         "aidevops:ListWebhooks",
         "aidevops:RevokeAccessToken",
         "aidevops:RotateAccessToken",
+        "aidevops:SearchAssets",
         "aidevops:SendMessage",
         "aidevops:UpdateApprovalAction",
         "aidevops:UpdateAsset",

@@ -549,8 +549,11 @@
       "Condition": {
         "StringEquals": {
           "iam:AWSServiceName": [
-            "ssm.amazonaws.com",
-            "ec2fastlaunch.amazonaws.com"
+            "agentless.inspector2.amazonaws.com",
+            "ami.inspector2.amazonaws.com",
+            "ec2fastlaunch.amazonaws.com",
+            "inspector2.amazonaws.com",
+            "ssm.amazonaws.com"
           ]
         }
       }
@@ -579,6 +582,18 @@
         "inspector2:ListFindings"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "InspectorOnDemandScanningPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "inspector2:StartOnDemandScan",
+        "inspector2:GetOnDemandScanStatus",
+        "inspector2:ListOnDemandScans"
+      ],
+      "Resource": [
+        "arn:aws:inspector2:*:*:*"
+      ]
     },
     {
       "Sid": "CreateECRImageForInspectorScanningPermissions",

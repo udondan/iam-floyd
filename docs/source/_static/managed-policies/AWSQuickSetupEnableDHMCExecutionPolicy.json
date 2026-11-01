@@ -38,6 +38,19 @@
         "ssm:UpdateServiceSetting"
       ],
       "Resource": "arn:aws:ssm:*:*:servicesetting/ssm/managed-instance/default-ec2-instance-management-role"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:GetCalendarState",
+      "Resource": "arn:aws:ssm:*:*:document/*",
+      "Condition": {
+        "StringLike": {
+          "aws:userid": "*:SystemsManager-Automation-ChangeCalendar-Check"
+        },
+        "StringEquals": {
+          "ssm:DocumentType": "ChangeCalendar"
+        }
+      }
     }
   ]
 }

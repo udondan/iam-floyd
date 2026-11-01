@@ -17,6 +17,7 @@
         "datazone:CreateEnvironment",
         "datazone:CreateListingChangeSet",
         "datazone:CreateProject",
+        "datazone:CreateProjectMembership",
         "datazone:CreateSubscriptionGrant",
         "datazone:CreateSubscriptionRequest",
         "datazone:DeleteAsset*",
@@ -24,6 +25,7 @@
         "datazone:DeleteEnvironment",
         "datazone:DeleteListing",
         "datazone:DeleteProject",
+        "datazone:DeleteProjectMembership",
         "datazone:DeleteSubscriptionGrant",
         "datazone:DeleteSubscriptionRequest",
         "datazone:Get*",
@@ -97,7 +99,9 @@
       "Action": [
         "iam:GetRole",
         "iam:ListRoles",
-        "sts:AssumeRole"
+        "sts:AssumeRole",
+        "ecr-public:GetAuthorizationToken",
+        "sts:GetServiceBearerToken"
       ],
       "Resource": "*"
     },
@@ -114,7 +118,11 @@
         "arn:aws:iam::*:role/aws-service-role/airflow-serverless.amazonaws.com/AWSServiceRoleForAmazonMWAAServerless",
         "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com/AWSServiceRoleForEMRCleanup",
         "arn:aws:iam::*:role/aws-service-role/sagemaker.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_SageMakerEndpoint",
-        "arn:aws:iam::*:role/aws-service-role/observability.aoss.amazonaws.com/AWSServiceRoleForAmazonOpenSearchServerless"
+        "arn:aws:iam::*:role/aws-service-role/observability.aoss.amazonaws.com/AWSServiceRoleForAmazonOpenSearchServerless",
+        "arn:aws:iam::*:role/aws-service-role/runtime-identity.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreRuntimeIdentity",
+        "arn:aws:iam::*:role/aws-service-role/network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreNetwork",
+        "arn:aws:iam::*:role/aws-service-role/bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreGatewayNetwork",
+        "arn:aws:iam::*:role/aws-service-role/identity-network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreIdentity"
       ]
     },
     {
@@ -319,7 +327,8 @@
         "logs:Describe*",
         "logs:Get*",
         "logs:PutLogEvents",
-        "logs:StopQuery"
+        "logs:StopQuery",
+        "logs:StartQuery"
       ],
       "Resource": "*"
     },
@@ -505,6 +514,8 @@
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}",
           "iam:PassedToService": [
+            "bedrock-agentcore.amazonaws.com",
+            "agent-registry.amazonaws.com",
             "bedrock.amazonaws.com",
             "glue.amazonaws.com",
             "lakeformation.amazonaws.com",
@@ -1078,6 +1089,129 @@
       }
     },
     {
+      "Sid": "ACActions",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:*Harness*",
+        "bedrock-agentcore:*AgentRuntime",
+        "bedrock-agentcore:*AgentRuntimeEndpoint",
+        "bedrock-agentcore:StopRuntimeSession",
+        "bedrock-agentcore:*Memory",
+        "bedrock-agentcore:*MemoryRecord*",
+        "bedrock-agentcore:*Event",
+        "bedrock-agentcore:ListEvents",
+        "bedrock-agentcore:*Gateway",
+        "bedrock-agentcore:*GatewayTarget",
+        "bedrock-agentcore:*GatewayTargets",
+        "bedrock-agentcore:*Dataset*",
+        "bedrock-agentcore:*BatchEvaluation*",
+        "bedrock-agentcore:*WorkloadIdentity",
+        "bedrock-agentcore:GetWorkloadAccessToken",
+        "bedrock-agentcore:GetWorkloadAccessTokenForJWT",
+        "bedrock-agentcore:ListHarnesses",
+        "bedrock-agentcore:ListAgentRuntimes",
+        "bedrock-agentcore:ListAgentRuntimeEndpoints",
+        "bedrock-agentcore:ListGateways",
+        "bedrock-agentcore:ListDatasets",
+        "bedrock-agentcore:ListBatchEvaluations",
+        "bedrock-agentcore:ListEvaluators",
+        "bedrock-agentcore:ListMemories",
+        "bedrock-agentcore:ListAgentRuntimeVersions",
+        "bedrock-agentcore:ListActors",
+        "bedrock-agentcore:ListSessions",
+        "bedrock-agentcore:ListTagsForResource",
+        "bedrock-agentcore:GetEvaluator",
+        "bedrock-agentcore:GetConfigurationBundleVersion",
+        "bedrock-agentcore:ListCodeInterpreterSessions",
+        "bedrock-agentcore:ListBrowserSessions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ACManagedBuiltInTools",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:*CodeInterpreterSession",
+        "bedrock-agentcore:InvokeCodeInterpreter",
+        "bedrock-agentcore:*BrowserSession",
+        "bedrock-agentcore:ConnectBrowserAutomationStream"
+      ],
+      "Resource": [
+        "arn:*:bedrock-agentcore:*:aws:code-interpreter/*",
+        "arn:*:bedrock-agentcore:*:aws:browser/*"
+      ]
+    },
+    {
+      "Sid": "ACTagOwnProject",
+      "Effect": "Allow",
+      "Action": "bedrock-agentcore:TagResource",
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:RequestTag/AmazonDataZoneProject": "${datazone:projectId}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${datazone:projectId}"
+        }
+      }
+    },
+    {
+      "Sid": "ACXRay",
+      "Effect": "Allow",
+      "Action": [
+        "xray:GetTraceSegmentDestination",
+        "xray:GetSamplingRules",
+        "xray:GetSamplingTargets",
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ACLogRetention",
+      "Effect": "Allow",
+      "Action": "logs:PutRetentionPolicy",
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock-agentcore/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "bedrock-agentcore.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ACResourcePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutResourcePolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock-agentcore/runtimes/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagLookup",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ACIdentityDirectory",
+      "Effect": "Allow",
+      "Action": "bedrock-agentcore:DeleteWorkloadIdentity",
+      "Resource": "arn:*:bedrock-agentcore:*:*:workload-identity-directory/default",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "S3AGObjectPermissions",
       "Effect": "Allow",
       "Action": [
@@ -1098,6 +1232,22 @@
           "s3:AccessGrantsInstanceArn": [
             "arn:aws:s3:*:*:access-grants/default"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "S3AGInstancePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetAccessGrantsInstance",
+        "s3:CreateAccessGrantsInstance"
+      ],
+      "Resource": [
+        "arn:aws:s3:*:*:access-grants/default"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     },
