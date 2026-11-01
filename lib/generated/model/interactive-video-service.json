@@ -673,7 +673,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ivs",
+        "interface": "IAdConfigurationRef",
+        "property": "adConfigurationRef",
+        "arn": "adConfigurationArn"
+      }
     },
     {
       "name": "Channel",

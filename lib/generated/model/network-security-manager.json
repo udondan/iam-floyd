@@ -498,7 +498,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networksecuritymanager",
+        "interface": "IPolicyRef",
+        "property": "policyRef",
+        "arn": "policyArn"
+      }
     },
     {
       "name": "policy-snapshot",

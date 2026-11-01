@@ -5056,32 +5056,6 @@
         "UpdatePipeline"
       ]
     },
-    "codestar": {
-      "Codestar": [
-        "AssociateTeamMember",
-        "CreateProject",
-        "CreateUserProfile",
-        "DeleteProject",
-        "DeleteUserProfile",
-        "DescribeProject",
-        "DescribeUserProfile",
-        "DisassociateTeamMember",
-        "ListProjects",
-        "ListResources",
-        "ListTagsForProject",
-        "ListTeamMembers",
-        "ListUserProfiles",
-        "TagProject",
-        "UntagProject",
-        "UpdateProject",
-        "UpdateTeamMember",
-        "UpdateUserProfile",
-        "VerifyServiceRole",
-        "DeleteExtendedAccess",
-        "GetExtendedAccess",
-        "PutExtendedAccess"
-      ]
-    },
     "codestar-connections": {
       "CodestarConnections": [
         "CreateConnection",
@@ -24653,6 +24627,7 @@
     "sagemaker.amazonaws.com": "SAGEMAKER",
     "sagemaker.application-autoscaling.amazonaws.com": "SAGEMAKER_APPLICATION_AUTOSCALING",
     "scaler.lambda.amazonaws.com": "SCALER_LAMBDA",
+    "scanning.agent.wellarchitected.amazonaws.com": "SCANNING_AGENT_WELLARCHITECTED",
     "scheduler.amazonaws.com": "SCHEDULER",
     "schema-conversion.dms.amazonaws.com": "SCHEMA_CONVERSION_DMS",
     "schemas.amazonaws.com": "SCHEMAS",

@@ -1033,7 +1033,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "INotifyConfigurationRef",
+        "property": "notifyConfigurationRef",
+        "arn": "notifyConfigurationArn"
+      }
     },
     {
       "name": "OptOutList",
@@ -1212,7 +1218,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_smsvoice",
+        "interface": "IRcsAgentRef",
+        "property": "rcsAgentRef",
+        "arn": "rcsAgentArn"
+      }
     },
     {
       "name": "Registration",

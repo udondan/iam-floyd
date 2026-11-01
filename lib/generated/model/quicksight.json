@@ -3106,7 +3106,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IAssignmentRef",
+        "property": "assignmentRef",
+        "arn": "assignmentArn"
+      }
     },
     {
       "name": "automation",
@@ -3239,7 +3245,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IBrandRef",
+        "property": "brandRef",
+        "arn": "brandArn"
+      }
     },
     {
       "name": "customization",
@@ -3689,7 +3701,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_quicksight",
+        "interface": "IGroupRef",
+        "property": "groupRef",
+        "arn": "groupArn"
+      }
     },
     {
       "name": "ingestion",

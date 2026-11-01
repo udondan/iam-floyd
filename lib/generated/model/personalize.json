@@ -794,7 +794,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "ICampaignRef",
+        "property": "campaignRef",
+        "arn": "campaignArn"
+      }
     },
     {
       "name": "dataDeletionJob",

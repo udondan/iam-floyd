@@ -37,10 +37,10 @@ It comes in two variants: ``iam-floyd`` creates statements as JSON, for the AWS 
 
 Support for:
 
-- 458 Services
-- 22327 Actions
-- 2349 Resource Types
-- 2516 Condition keys
+- 457 Services
+- 22305 Actions
+- 2347 Resource Types
+- 2513 Condition keys
 
 ..
    /stats
