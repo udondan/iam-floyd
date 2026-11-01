@@ -448,7 +448,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_scn",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "arn": "instanceArn"
+      }
     },
     {
       "name": "namespace",

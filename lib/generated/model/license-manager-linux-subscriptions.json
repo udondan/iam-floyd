@@ -139,7 +139,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanagerlinuxsubscriptions",
+        "interface": "ISubscriptionProviderRef",
+        "property": "subscriptionProviderRef",
+        "arn": "subscriptionProviderArn"
+      }
     }
   ],
   "conditions": [

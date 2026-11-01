@@ -2519,7 +2519,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrockagentcore",
+        "interface": "IConsentPortalRef",
+        "property": "consentPortalRef",
+        "arn": "consentPortalArn"
+      }
     },
     {
       "name": "dataset",

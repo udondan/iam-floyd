@@ -8842,7 +8842,13 @@
         "ifAttribute",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "IIpamInternetRegistryAssociationRef",
+        "property": "ipamInternetRegistryAssociationRef",
+        "arn": "ipamInternetRegistryAssociationArn"
+      }
     },
     {
       "name": "ipam-policy",
@@ -10354,7 +10360,13 @@
         "ifAwsTagKeys",
         "ifRegion",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ISecondaryNetworkRef",
+        "property": "secondaryNetworkRef",
+        "arn": "secondaryNetworkArn"
+      }
     },
     {
       "name": "secondary-subnet",

@@ -313,7 +313,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_mediaconvert",
+        "interface": "ICertificateAssociationRef",
+        "property": "certificateAssociationRef",
+        "arn": "certificateAssociationArn"
+      }
     },
     {
       "name": "Job",

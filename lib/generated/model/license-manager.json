@@ -703,7 +703,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanager",
+        "interface": "ILicenseConfigurationRef",
+        "property": "licenseConfigurationRef",
+        "arn": "licenseConfigurationArn"
+      }
     },
     {
       "name": "report-generator",
@@ -735,7 +741,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanager",
+        "interface": "IReportGeneratorRef",
+        "property": "reportGeneratorRef",
+        "arn": "reportGeneratorArn"
+      }
     }
   ],
   "conditions": [

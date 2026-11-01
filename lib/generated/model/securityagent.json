@@ -1089,7 +1089,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityagent",
+        "interface": "IIntegrationRef",
+        "property": "integrationRef",
+        "arn": "integrationArn"
+      }
     },
     {
       "name": "PrivateConnection",

@@ -123,7 +123,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_polly",
+        "interface": "ILexiconRef",
+        "property": "lexiconRef",
+        "arn": "lexiconArn"
+      }
     }
   ],
   "conditions": []

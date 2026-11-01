@@ -251,7 +251,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_licensemanagerusersubscriptions",
+        "interface": "ILicenseServerEndpointRef",
+        "property": "licenseServerEndpointRef",
+        "arn": "licenseServerEndpointArn"
+      }
     },
     {
       "name": "product-subscription",

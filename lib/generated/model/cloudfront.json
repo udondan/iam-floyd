@@ -1671,7 +1671,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_cloudfront",
+        "interface": "IFieldLevelEncryptionConfigRef",
+        "property": "fieldLevelEncryptionConfigRef",
+        "arn": "fieldLevelEncryptionConfigArn"
+      }
     },
     {
       "name": "field-level-encryption-profile",
