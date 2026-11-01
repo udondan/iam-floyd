@@ -20,6 +20,65 @@
 * **deps:** update dependency node to v26 ([#2409](https://github.com/udondan/iam-floyd/issues/2409)) ([a0343a0](https://github.com/udondan/iam-floyd/commit/a0343a0af0e05b5c6b2739f20fefc7e5b801bfaa))
 * **deps:** update udondan/wait-for-turn action to v1.7.0 ([#2413](https://github.com/udondan/iam-floyd/issues/2413)) ([88321bf](https://github.com/udondan/iam-floyd/commit/88321bfcf01a4997508c8371ac97e730182282f2))
 
+---
+
+**New AWS managed policies:**
+
+- AWSIPAMOutboundServiceRolePolicy
+- AWSMarketplaceSubsidiaryAuthorizationServiceRolePolicy
+- AWSXRayAPIKeyAccess
+- FinOpsAgentIdentityReaderPolicy
+- Route53PrivateHealthChecksServiceRolePolicy
+- TagsHealthServiceRolePolicy
+
+---
+
+**New service principals:**
+
+- scanning.agent.wellarchitected.amazonaws.com
+
+---
+
+:warning: **Removed services:**
+
+- codestar
+
+:warning: **Removed actions:**
+
+- codestar:AssociateTeamMember
+- codestar:CreateProject
+- codestar:CreateUserProfile
+- codestar:DeleteExtendedAccess
+- codestar:DeleteProject
+- codestar:DeleteUserProfile
+- codestar:DescribeProject
+- codestar:DescribeUserProfile
+- codestar:DisassociateTeamMember
+- codestar:GetExtendedAccess
+- codestar:ListProjects
+- codestar:ListResources
+- codestar:ListTagsForProject
+- codestar:ListTeamMembers
+- codestar:ListUserProfiles
+- codestar:PutExtendedAccess
+- codestar:TagProject
+- codestar:UntagProject
+- codestar:UpdateProject
+- codestar:UpdateTeamMember
+- codestar:UpdateUserProfile
+- codestar:VerifyServiceRole
+
+:warning: **Removed condition keys:**
+
+- codestar:RequestTag/${TagKey}
+- codestar:ResourceTag/${TagKey}
+- codestar:TagKeys
+
+:warning: **Removed resource types:**
+
+- codestar:project
+- codestar:user
+
 ## [0.851.0](https://github.com/udondan/iam-floyd/compare/v0.850.0...v0.851.0) (2026-10-26)
 
 
