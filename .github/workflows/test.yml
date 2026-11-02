@@ -13,7 +13,11 @@ jobs:
   # Only one run at a time may deploy to the AWS test account. All other jobs of a pull request wait
   # for the turn as well: the waiting runs of all open pull requests would otherwise take the
   # runners of the account at once, and most of them are tested again after a rebase anyway.
+  # Pull requests from forks get no secrets and no AWS credentials. They skip the wait, the AWS
+  # tests and the signing of the Maven bundles, and run the other jobs. The required job fails for
+  # them, as the AWS tests didn't run.
   boarding-gate:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       actions: read
       contents: write # lock refs under refs/boarding-gate/
@@ -30,7 +34,8 @@ jobs:
   lint:
     name: Lint
     needs: boarding-gate
-    if: needs.boarding-gate.result == 'success'
+    # The wait is skipped for forks.
+    if: ${{ !cancelled() && (needs.boarding-gate.result == 'success' || needs.boarding-gate.result == 'skipped') }}
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
@@ -74,6 +79,8 @@ jobs:
   test-iam-floyd-native:
     name: Test iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
     needs: lint
+    # Without !cancelled() the skipped wait of forks would skip this job as well.
+    if: ${{ !cancelled() && needs.lint.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -144,9 +151,9 @@ jobs:
           LANGUAGE: ${{ matrix.language }}
           VERSION: ${{ matrix.version }}
 
-      # Signs, but does not upload without the Maven Central credentials
+      # Signs, but does not upload without the Maven Central credentials. Forks have no signing key.
       - name: Build Maven Central bundle
-        if: matrix.language == 'java' && matrix.newest
+        if: matrix.language == 'java' && matrix.newest && github.event.pull_request.head.repo.full_name == github.repository
         run: bin/publish-maven dist/iam-floyd/java
         env:
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
@@ -155,6 +162,7 @@ jobs:
   test-iam-floyd:
     name: Test iam-floyd npm package
     needs: lint
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -192,6 +200,7 @@ jobs:
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd npm package
     needs: lint
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -247,6 +256,8 @@ jobs:
   test-cdk-iam-floyd-jsii:
     name: Test cdk-iam-floyd in ${{ matrix.name }}
     needs: lint
+    # Without !cancelled() the skipped wait of forks would skip this job as well.
+    if: ${{ !cancelled() && needs.lint.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -285,9 +296,9 @@ jobs:
         if: matrix.language == 'typescript'
         run: make publish
 
-      # Signs, but does not upload without the Maven Central credentials
+      # Signs, but does not upload without the Maven Central credentials. Forks have no signing key.
       - name: Build Maven Central bundle
-        if: matrix.language == 'java'
+        if: matrix.language == 'java' && github.event.pull_request.head.repo.full_name == github.repository
         run: bin/publish-maven
         env:
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
@@ -308,7 +319,13 @@ jobs:
     steps:
       - name: Check tests
         if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success'
-        run: exit 1
+        env:
+          FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        run: |
+          if [ "$FORK" = true ]; then
+            echo "::error::Pull requests from forks don't run the AWS tests. A maintainer has to test this change from a branch of the repository."
+          fi
+          exit 1
 
       - name: Report success
         run: echo 'Success'
