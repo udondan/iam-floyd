@@ -1,0 +1,102 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GlueDatalakePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateTable",
+        "glue:DeleteTable",
+        "glue:BatchDeleteTable",
+        "glue:UpdateTable",
+        "glue:BatchCreatePartition",
+        "glue:CreatePartition",
+        "glue:DeletePartition",
+        "glue:BatchDeletePartition",
+        "glue:UpdatePartition",
+        "glue:BatchGetPartition",
+        "glue:BatchGetTableOptimizer",
+        "glue:GetCatalogImportStatus",
+        "glue:GetColumnStatisticsForPartition",
+        "glue:GetColumnStatisticsForTable",
+        "glue:GetColumnStatisticsTaskRun",
+        "glue:GetColumnStatisticsTaskRuns",
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetPartition",
+        "glue:GetPartitionIndexes",
+        "glue:GetPartitions",
+        "glue:GetTable",
+        "glue:GetTableOptimizer",
+        "glue:GetTableVersion",
+        "glue:GetTableVersions",
+        "glue:GetTables",
+        "glue:SearchTables",
+        "glue:ListTableOptimizerRuns",
+        "glue:CreatePartitionIndex",
+        "glue:BatchUpdatePartition",
+        "glue:DeleteTableVersion",
+        "glue:DeleteColumnStatisticsForPartition",
+        "glue:DeleteColumnStatisticsForTable",
+        "glue:DeletePartitionIndex",
+        "glue:UpdateColumnStatisticsForPartition",
+        "glue:UpdateColumnStatisticsForTable",
+        "glue:BatchDeleteTableVersion",
+        "glue:GetCatalogs",
+        "glue:GetCatalog"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:database/*",
+        "arn:aws:glue:*:*:table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "aws:PrincipalTag/BootstrappedServices": "*glue*"
+        }
+      }
+    },
+    {
+      "Sid": "GlueCatalogDatabasePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateDatabase",
+        "glue:DeleteDatabase"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "aws:PrincipalTag/BootstrappedServices": "*glue*"
+        }
+      }
+    },
+    {
+      "Sid": "DataAccessPermissionsForS3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "aws:PrincipalTag/BootstrappedServices": "*glue*"
+        }
+      }
+    }
+  ]
+}

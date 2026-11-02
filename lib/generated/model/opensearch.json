@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "filename": "opensearch",
+  "className": "Opensearch",
+  "name": "opensearch",
+  "servicePrefix": "opensearch",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearch.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelAutoOptimizeJob",
+      "CancelDirectQuery",
+      "DeleteAutoOptimizeJob",
+      "StartDirectQuery",
+      "SubmitAutoOptimizeJob",
+      "ApplicationAccessAll",
+      "ViewLoginPage"
+    ],
+    "Read": [
+      "GetAutoOptimizeJob",
+      "GetDirectQuery",
+      "GetDirectQueryResult"
+    ],
+    "List": [
+      "ListAutoOptimizeJobs"
+    ],
+    "Permissions management": [
+      "ApplicationAccessAll",
+      "ViewLoginPage"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelAutoOptimizeJob",
+      "methodName": "toCancelAutoOptimizeJob",
+      "description": "Grants permission to cancel submitted Auto Optimize Job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html"
+    },
+    {
+      "name": "CancelDirectQuery",
+      "methodName": "toCancelDirectQuery",
+      "description": "Grants permission to cancel the query that is submitted on the OpenSearch DataSource resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CancelDirectQuery.html"
+    },
+    {
+      "name": "DeleteAutoOptimizeJob",
+      "methodName": "toDeleteAutoOptimizeJob",
+      "description": "Grants permission to delete Auto Optimize Job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html"
+    },
+    {
+      "name": "GetAutoOptimizeJob",
+      "methodName": "toGetAutoOptimizeJob",
+      "description": "Grants permission to get the Auto Optimize Job details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html"
+    },
+    {
+      "name": "GetDirectQuery",
+      "methodName": "toGetDirectQuery",
+      "description": "Grants permission to get the query status that are performed on the OpenSearch DataSource resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDirectQuery.html"
+    },
+    {
+      "name": "GetDirectQueryResult",
+      "methodName": "toGetDirectQueryResult",
+      "description": "Grants permission to get the results of a query that is performed on the OpenSearch DataSource resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDirectQueryResult.html"
+    },
+    {
+      "name": "ListAutoOptimizeJobs",
+      "methodName": "toListAutoOptimizeJobs",
+      "description": "Grants permission to retrieve a list of Auto Optimize Jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html"
+    },
+    {
+      "name": "StartDirectQuery",
+      "methodName": "toStartDirectQuery",
+      "description": "Grants permission to start a direct query on the provided OpenSearch DataSource arns",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_StartDirectQuery.html"
+    },
+    {
+      "name": "SubmitAutoOptimizeJob",
+      "methodName": "toSubmitAutoOptimizeJob",
+      "description": "Grants permission to create new Auto Optimize Job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html"
+    },
+    {
+      "name": "ApplicationAccessAll",
+      "methodName": "toApplicationAccessAll",
+      "description": "Grants permission to access OpenSearch Application",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/"
+    },
+    {
+      "name": "ViewLoginPage",
+      "methodName": "toViewLoginPage",
+      "description": "Grants permission to view the login page of an OpenSearch Application",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html",
+      "arn": "arn:${Partition}:opensearch:${Region}:${Account}:application/${AppId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "datasource",
+      "methodName": "onDatasource",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/datasource.html",
+      "arn": "arn:${Partition}:opensearch:${Region}:${Account}:datasource/${DataSourceName}",
+      "placeholders": [
+        {
+          "placeholder": "DataSourceName",
+          "name": "dataSourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_opensearch",
+        "interface": "IDataSourceRef",
+        "property": "dataSourceRef",
+        "arn": "dataSourceArn"
+      }
+    }
+  ],
+  "conditions": []
+}

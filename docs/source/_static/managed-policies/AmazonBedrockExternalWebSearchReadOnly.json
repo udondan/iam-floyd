@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonBedrockExternalWebSearchReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-websearch:InvokeSearch",
+        "bedrock-websearch:InvokeFetch",
+        "bedrock-websearch:ExternalWebAccess"
+      ],
+      "Resource": "arn:aws:bedrock-websearch:*:*:*"
+    }
+  ]
+}

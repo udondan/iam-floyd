@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ds:Check*",
+        "ds:Describe*",
+        "ds:Get*",
+        "ds:List*",
+        "ds:Verify*",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "sns:ListTopics",
+        "sns:GetTopicAttributes",
+        "sns:ListSubscriptions",
+        "sns:ListSubscriptionsByTopic",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

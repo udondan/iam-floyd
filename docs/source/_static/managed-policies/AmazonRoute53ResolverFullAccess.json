@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRoute53ResolverFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "route53resolver:*",
+        "ec2:DescribeSubnets",
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

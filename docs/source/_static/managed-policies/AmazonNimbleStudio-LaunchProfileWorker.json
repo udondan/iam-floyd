@@ -1,0 +1,23 @@
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "fsx:DescribeFileSystems",
+        "ds:DescribeDirectories"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "nimble.amazonaws.com"
+        }
+      },
+      "Sid": "GetLaunchProfileInitializationDependencies"
+    }
+  ],
+  "Version": "2012-10-17"
+}

@@ -1,0 +1,117 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateFileSystem",
+      "Effect": "Allow",
+      "Action": [
+        "ds:AuthorizeApplication",
+        "ds:GetAuthorizedApplicationDetails",
+        "ds:UnauthorizeApplication",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DisassociateAddress",
+        "ec2:GetSecurityGroupsForVpc",
+        "route53:AssociateVPCWithHostedZone"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PutMetrics",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/FSx"
+        }
+      }
+    },
+    {
+      "Sid": "TagResourceNetworkInterface",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "AmazonFSx.FileSystemId"
+        }
+      }
+    },
+    {
+      "Sid": "ManageNetworkInterface",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignIpv6Addresses",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:UnassignIpv6Addresses",
+        "ec2:UnassignPrivateIpAddresses"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonFSx.FileSystemId": "false"
+        }
+      }
+    },
+    {
+      "Sid": "ManageRouteTable",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateRoute",
+        "ec2:ReplaceRoute",
+        "ec2:DeleteRoute"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:route-table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonFSx": "ManagedByAmazonFSx"
+        }
+      }
+    },
+    {
+      "Sid": "PutCloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/fsx/*"
+    },
+    {
+      "Sid": "ManageAuditLogs",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:DescribeDeliveryStream",
+        "firehose:PutRecord",
+        "firehose:PutRecordBatch"
+      ],
+      "Resource": "arn:aws:firehose:*:*:deliverystream/aws-fsx-*"
+    }
+  ]
+}

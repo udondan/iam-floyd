@@ -1,0 +1,125 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3Permissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:ViaService": "s3.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "KMSDescribeKey",
+      "Effect": "Allow",
+      "Action": "kms:DescribeKey",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerPublicHubReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeHubContent"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:aws:hub/SageMakerPublicHub",
+        "arn:aws:sagemaker:*:aws:hub-content/SageMakerPublicHub/*"
+      ]
+    },
+    {
+      "Sid": "SageMakerModelPackagePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AccessModelPackage",
+        "sagemaker:CreateModelPackage",
+        "sagemaker:DescribeModelPackage",
+        "sagemaker:DescribeModelPackageGroup"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:model-package/*",
+        "arn:aws:sagemaker:*:*:model-package-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EC2NetworkPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeDhcpOptions"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EC2NetworkInterfaceTagPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "ec2:CreateAction": "CreateNetworkInterface"
+        }
+      }
+    },
+    {
+      "Sid": "EC2NetworkInterfaceDeletePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteNetworkInterfacePermission"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

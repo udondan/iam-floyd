@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DetectivePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "detective:BatchGetGraphMemberDatasources",
+        "detective:BatchGetMembershipDatasources",
+        "detective:DescribeOrganizationConfiguration",
+        "detective:GetFreeTrialEligibility",
+        "detective:GetGraphIngestState",
+        "detective:GetMembers",
+        "detective:GetPricingInformation",
+        "detective:GetUsageInformation",
+        "detective:ListDatasourcePackages",
+        "detective:ListGraphs",
+        "detective:ListHighDegreeEntities",
+        "detective:ListInvitations",
+        "detective:ListMembers",
+        "detective:ListOrganizationAdminAccount",
+        "detective:ListTagsForResource",
+        "detective:SearchGraph",
+        "detective:StartInvestigation",
+        "detective:GetInvestigation",
+        "detective:ListInvestigations",
+        "detective:UpdateInvestigationState",
+        "detective:ListIndicators",
+        "detective:InvokeAssistant"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GuardDutyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:ArchiveFindings",
+        "guardduty:GetFindings",
+        "guardduty:ListDetectors"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "securityHub:GetFindings"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

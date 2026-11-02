@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "aws-marketplace:DescribeEntity",
+      "Resource": "arn:aws:aws-marketplace:*:*:*/SaaSProduct/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "aws-marketplace:ListEntities",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "vendor-insights:GetDataSource",
+        "vendor-insights:ListDataSources",
+        "vendor-insights:ListSecurityProfiles",
+        "vendor-insights:GetSecurityProfile",
+        "vendor-insights:GetSecurityProfileSnapshot",
+        "vendor-insights:ListSecurityProfileSnapshots",
+        "vendor-insights:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "artifact:GetReport",
+        "artifact:GetReportMetadata",
+        "artifact:GetTermForReport",
+        "artifact:ListReports"
+      ],
+      "Resource": "arn:aws:artifact:*::report/*"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSSSODirectoryReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:Search*",
+        "sso-directory:Describe*",
+        "sso-directory:List*",
+        "sso-directory:Get*",
+        "identitystore:Describe*",
+        "identitystore:List*",
+        "identitystore-auth:ListSessions",
+        "identitystore-auth:BatchGetSession"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIdentityStoreService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com",
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "*"
+        }
+      }
+    }
+  ]
+}

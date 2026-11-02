@@ -1,0 +1,131 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MetricsAccess",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "XRayAccess",
+      "Action": [
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords",
+        "xray:GetSamplingRules",
+        "xray:GetSamplingTargets",
+        "xray:GetSamplingStatisticSummaries"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "QueueAccess",
+      "Action": [
+        "sqs:ChangeMessageVisibility",
+        "sqs:DeleteMessage",
+        "sqs:ReceiveMessage",
+        "sqs:SendMessage"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "BucketAccess",
+      "Action": [
+        "s3:Get*",
+        "s3:List*",
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::elasticbeanstalk-*",
+        "arn:aws:s3:::elasticbeanstalk-*/*"
+      ]
+    },
+    {
+      "Sid": "DynamoPeriodicTasks",
+      "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:dynamodb:*:*:table/*-stack-AWSEBWorkerCronLeaderRegistry*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchLogsAccess",
+      "Action": [
+        "logs:PutLogEvents",
+        "logs:CreateLogStream"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
+      ]
+    },
+    {
+      "Sid": "ElasticBeanstalkHealthAccess",
+      "Action": [
+        "elasticbeanstalk:PutInstanceStatistics"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:elasticbeanstalk:*:*:application/*",
+        "arn:aws:elasticbeanstalk:*:*:environment/*"
+      ]
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisInvokeFoundationModel",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/anthropic.claude-*",
+        "arn:aws:bedrock:*::foundation-model/amazon.nova-*"
+      ]
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisInvokeInferenceProfile",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": [
+        "arn:aws:bedrock:*:*:inference-profile/*anthropic.claude-*",
+        "arn:aws:bedrock:*:*:inference-profile/*amazon.nova-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:ListFoundationModels",
+        "elasticbeanstalk:DescribeEvents",
+        "elasticbeanstalk:DescribeEnvironmentHealth"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceOperationsFromBedrock",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:Unsubscribe"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

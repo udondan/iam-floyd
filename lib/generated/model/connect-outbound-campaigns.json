@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "filename": "connect-outbound-campaigns",
+  "className": "ConnectCampaigns",
+  "name": "connect-campaigns",
+  "servicePrefix": "connect-campaigns",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_connect-outbound-campaigns.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCampaign",
+      "DeleteCampaign",
+      "DeleteCampaignChannelSubtypeConfig",
+      "DeleteCampaignCommunicationLimits",
+      "DeleteCampaignCommunicationTime",
+      "DeleteCampaignEntryLimits",
+      "DeleteConnectInstanceConfig",
+      "DeleteConnectInstanceIntegration",
+      "DeleteInstanceOnboardingJob",
+      "PauseCampaign",
+      "PutConnectInstanceIntegration",
+      "PutDialRequestBatch",
+      "PutInstanceCommunicationLimits",
+      "PutOutboundRequestBatch",
+      "PutProfileOutboundRequestBatch",
+      "ResumeCampaign",
+      "StartCampaign",
+      "StartInstanceOnboardingJob",
+      "StopCampaign",
+      "TagResource",
+      "UntagResource",
+      "UpdateCampaignChannelSubtypeConfig",
+      "UpdateCampaignCommunicationLimits",
+      "UpdateCampaignCommunicationTime",
+      "UpdateCampaignDialerConfig",
+      "UpdateCampaignEntryLimits",
+      "UpdateCampaignFlowAssociation",
+      "UpdateCampaignName",
+      "UpdateCampaignOutboundCallConfig",
+      "UpdateCampaignSchedule",
+      "UpdateCampaignSource"
+    ],
+    "Read": [
+      "DescribeCampaign",
+      "GetCampaignState",
+      "GetCampaignStateBatch",
+      "GetConnectInstanceConfig",
+      "GetInstanceCommunicationLimits",
+      "GetInstanceOnboardingJobStatus",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCampaigns",
+      "ListConnectInstanceIntegrations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCampaign",
+      "methodName": "toCreateCampaign",
+      "description": "Grants permission to create a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteCampaign",
+      "methodName": "toDeleteCampaign",
+      "description": "Grants permission to delete a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteCampaignChannelSubtypeConfig",
+      "methodName": "toDeleteCampaignChannelSubtypeConfig",
+      "description": "Grants permission to delete the channel subtype configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteCampaignCommunicationLimits",
+      "methodName": "toDeleteCampaignCommunicationLimits",
+      "description": "Grants permission to delete the communication limits configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteCampaignCommunicationTime",
+      "methodName": "toDeleteCampaignCommunicationTime",
+      "description": "Grants permission to delete the communication time configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteCampaignEntryLimits",
+      "methodName": "toDeleteCampaignEntryLimits",
+      "description": "Grants permission to delete the entry limits configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteConnectInstanceConfig",
+      "methodName": "toDeleteConnectInstanceConfig",
+      "description": "Grants permission to remove configuration information for an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteConnectInstanceIntegration",
+      "methodName": "toDeleteConnectInstanceIntegration",
+      "description": "Grants permission to remove integration information for an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DeleteInstanceOnboardingJob",
+      "methodName": "toDeleteInstanceOnboardingJob",
+      "description": "Grants permission to remove onboarding job for an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "DescribeCampaign",
+      "methodName": "toDescribeCampaign",
+      "description": "Grants permission to describe a specific campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "GetCampaignState",
+      "methodName": "toGetCampaignState",
+      "description": "Grants permission to get state of a campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "GetCampaignStateBatch",
+      "methodName": "toGetCampaignStateBatch",
+      "description": "Grants permission to get state of campaigns",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "GetConnectInstanceConfig",
+      "methodName": "toGetConnectInstanceConfig",
+      "description": "Grants permission to get configuration information for an Amazon Connect instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "GetInstanceCommunicationLimits",
+      "methodName": "toGetInstanceCommunicationLimits",
+      "description": "Grants permission to get the communication limits configuration of an Amazon Connect instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "GetInstanceOnboardingJobStatus",
+      "methodName": "toGetInstanceOnboardingJobStatus",
+      "description": "Grants permission to get onboarding job status for an Amazon Connect instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "ListCampaigns",
+      "methodName": "toListCampaigns",
+      "description": "Grants permission to provide summary of all campaigns",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html",
+      "conditionMethods": [
+        "ifAwsRequestTag"
+      ]
+    },
+    {
+      "name": "ListConnectInstanceIntegrations",
+      "methodName": "toListConnectInstanceIntegrations",
+      "description": "Grants permission to provide summary of all integrations with an Amazon Connect instance",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "PauseCampaign",
+      "methodName": "toPauseCampaign",
+      "description": "Grants permission to pause a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "PutConnectInstanceIntegration",
+      "methodName": "toPutConnectInstanceIntegration",
+      "description": "Grants permission to put an integration configuration with an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "PutDialRequestBatch",
+      "methodName": "toPutDialRequestBatch",
+      "description": "Grants permission to create dial requests for the specified campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "PutInstanceCommunicationLimits",
+      "methodName": "toPutInstanceCommunicationLimits",
+      "description": "Grants permission to put the communication limits configuration of an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "PutOutboundRequestBatch",
+      "methodName": "toPutOutboundRequestBatch",
+      "description": "Grants permission to create dial requests for the specified campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "PutProfileOutboundRequestBatch",
+      "methodName": "toPutProfileOutboundRequestBatch",
+      "description": "Grants permission to create profile outbound requests for the specified campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "ResumeCampaign",
+      "methodName": "toResumeCampaign",
+      "description": "Grants permission to resume a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "StartCampaign",
+      "methodName": "toStartCampaign",
+      "description": "Grants permission to start a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "StartInstanceOnboardingJob",
+      "methodName": "toStartInstanceOnboardingJob",
+      "description": "Grants permission to start onboarding job for an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "StopCampaign",
+      "methodName": "toStopCampaign",
+      "description": "Grants permission to stop a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignChannelSubtypeConfig",
+      "methodName": "toUpdateCampaignChannelSubtypeConfig",
+      "description": "Grants permission to update the channel subtype configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignCommunicationLimits",
+      "methodName": "toUpdateCampaignCommunicationLimits",
+      "description": "Grants permission to update the communication limits configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignCommunicationTime",
+      "methodName": "toUpdateCampaignCommunicationTime",
+      "description": "Grants permission to update the communication time configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignDialerConfig",
+      "methodName": "toUpdateCampaignDialerConfig",
+      "description": "Grants permission to update the dialer configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignEntryLimits",
+      "methodName": "toUpdateCampaignEntryLimits",
+      "description": "Grants permission to update the entry limits configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignFlowAssociation",
+      "methodName": "toUpdateCampaignFlowAssociation",
+      "description": "Grants permission to update the flow association of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignName",
+      "methodName": "toUpdateCampaignName",
+      "description": "Grants permission to update the name of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignOutboundCallConfig",
+      "methodName": "toUpdateCampaignOutboundCallConfig",
+      "description": "Grants permission to update the outbound call configuration of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignSchedule",
+      "methodName": "toUpdateCampaignSchedule",
+      "description": "Grants permission to update the schedule of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    },
+    {
+      "name": "UpdateCampaignSource",
+      "methodName": "toUpdateCampaignSource",
+      "description": "Grants permission to update the source of a campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "campaign",
+      "methodName": "onCampaign",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html",
+      "arn": "arn:${Partition}:connect-campaigns:${Region}:${Account}:campaign/${CampaignId}",
+      "placeholders": [
+        {
+          "placeholder": "CampaignId",
+          "name": "campaignId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_connectcampaigns",
+        "interface": "ICampaignRef",
+        "property": "campaignRef",
+        "arn": "campaignArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCampaign",
+        "toDescribeCampaign",
+        "toGetCampaignState",
+        "toGetCampaignStateBatch",
+        "toListCampaigns",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCampaign",
+        "toDeleteCampaign",
+        "toDeleteCampaignChannelSubtypeConfig",
+        "toDeleteCampaignCommunicationLimits",
+        "toDeleteCampaignCommunicationTime",
+        "toDeleteCampaignEntryLimits",
+        "toDescribeCampaign",
+        "toGetCampaignState",
+        "toGetCampaignStateBatch",
+        "toListTagsForResource",
+        "toPauseCampaign",
+        "toPutDialRequestBatch",
+        "toPutOutboundRequestBatch",
+        "toPutProfileOutboundRequestBatch",
+        "toResumeCampaign",
+        "toStartCampaign",
+        "toStopCampaign",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCampaignChannelSubtypeConfig",
+        "toUpdateCampaignCommunicationLimits",
+        "toUpdateCampaignCommunicationTime",
+        "toUpdateCampaignDialerConfig",
+        "toUpdateCampaignEntryLimits",
+        "toUpdateCampaignFlowAssociation",
+        "toUpdateCampaignName",
+        "toUpdateCampaignOutboundCallConfig",
+        "toUpdateCampaignSchedule",
+        "toUpdateCampaignSource"
+      ],
+      "relatedResourceTypes": [
+        "campaign"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCampaign",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

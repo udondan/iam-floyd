@@ -1,0 +1,108 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "connect:*",
+        "ds:CreateAlias",
+        "ds:AuthorizeApplication",
+        "ds:CreateIdentityPoolDirectory",
+        "ds:DeleteDirectory",
+        "ds:DescribeDirectories",
+        "ds:UnauthorizeApplication",
+        "firehose:DescribeDeliveryStream",
+        "firehose:ListDeliveryStreams",
+        "kinesis:DescribeStream",
+        "kinesis:ListStreams",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "lex:GetBots",
+        "lex:ListBots",
+        "lex:ListBotAliases",
+        "logs:CreateLogGroup",
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets",
+        "lambda:ListFunctions",
+        "ds:CheckAlias",
+        "profile:ListAccountIntegrations",
+        "profile:GetDomain",
+        "profile:ListDomains",
+        "profile:GetProfileObjectType",
+        "profile:ListProfileObjectTypeTemplates"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "profile:AddProfileKey",
+        "profile:CreateDomain",
+        "profile:CreateProfile",
+        "profile:DeleteDomain",
+        "profile:DeleteIntegration",
+        "profile:DeleteProfile",
+        "profile:DeleteProfileKey",
+        "profile:DeleteProfileObject",
+        "profile:DeleteProfileObjectType",
+        "profile:GetIntegration",
+        "profile:GetMatches",
+        "profile:GetProfileObjectType",
+        "profile:ListIntegrations",
+        "profile:ListProfileObjects",
+        "profile:ListProfileObjectTypes",
+        "profile:ListTagsForResource",
+        "profile:MergeProfiles",
+        "profile:PutIntegration",
+        "profile:PutProfileObject",
+        "profile:PutProfileObjectType",
+        "profile:SearchProfiles",
+        "profile:TagResource",
+        "profile:UntagResource",
+        "profile:UpdateDomain",
+        "profile:UpdateProfile"
+      ],
+      "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:GetBucketAcl"
+      ],
+      "Resource": "arn:aws:s3:::amazon-connect-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": "arn:aws:servicequotas:*:*:connect/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "connect.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:DeleteServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/connect.amazonaws.com/AWSServiceRoleForAmazonConnect*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/profile.amazonaws.com/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "profile.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

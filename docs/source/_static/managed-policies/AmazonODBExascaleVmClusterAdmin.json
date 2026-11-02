@@ -1,0 +1,73 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:GetExascaleDbStorageVault",
+        "odb:ListExascaleDbStorageVaults",
+        "odb:CreateExadbVmCluster",
+        "odb:GetExadbVmCluster",
+        "odb:UpdateExadbVmCluster",
+        "odb:DeleteExadbVmCluster",
+        "odb:ListExadbVmClusters",
+        "odb:AssociateVirtualMachinesToExadbVmCluster",
+        "odb:DisassociateVirtualMachinesFromExadbVmCluster",
+        "odb:AssociateIamRoleToResource",
+        "odb:DisassociateIamRoleFromResource",
+        "odb:CreateDbNode",
+        "odb:GetDbNode",
+        "odb:RebootDbNode",
+        "odb:StartDbNode",
+        "odb:StopDbNode",
+        "odb:DeleteDbNode",
+        "odb:ListDbNodes",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:GetOdbNetwork",
+        "odb:ListOdbNetworks",
+        "odb:ListDbSystemShapes",
+        "odb:ListFlexComponents",
+        "odb:ListGiVersions",
+        "odb:ListGiMinorVersions",
+        "odb:ListSystemVersions",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowTaggingActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:TagResource",
+        "odb:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:exadb-vm-cluster/*",
+        "arn:aws:odb:*:*:db-node/*"
+      ]
+    },
+    {
+      "Sid": "AllowOutboundIntegrationActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:CreateOutboundIntegration",
+        "odb:UpdateOutboundIntegration"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:exadb-vm-cluster/*"
+      ]
+    }
+  ]
+}

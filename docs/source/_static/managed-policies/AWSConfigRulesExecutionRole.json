@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::*/AWSLogs/*/Config/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:Put*",
+        "config:Get*",
+        "config:List*",
+        "config:Describe*",
+        "config:BatchGet*",
+        "config:Select*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

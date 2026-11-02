@@ -1,0 +1,79 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "robomaker:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/robomaker/SimulationJobs",
+        "arn:aws:logs:*:*:log-group:/aws/robomaker/SimulationJobs:log-stream:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*DeepRacer*",
+        "arn:aws:s3:::*Deepracer*",
+        "arn:aws:s3:::*deepracer*",
+        "arn:aws:s3:::dr-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "s3:ExistingObjectTag/DeepRacer": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kinesisvideo:CreateStream",
+        "kinesisvideo:DescribeStream",
+        "kinesisvideo:GetDataEndpoint",
+        "kinesisvideo:PutMedia",
+        "kinesisvideo:TagStream"
+      ],
+      "Resource": [
+        "arn:aws:kinesisvideo:*:*:stream/dr-*"
+      ]
+    }
+  ]
+}

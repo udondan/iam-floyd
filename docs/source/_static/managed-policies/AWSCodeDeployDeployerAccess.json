@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "codedeploy:Batch*",
+        "codedeploy:CreateDeployment",
+        "codedeploy:Get*",
+        "codedeploy:List*",
+        "codedeploy:RegisterApplicationRevision"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarNotificationsReadWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:CreateNotificationRule",
+        "codestar-notifications:DescribeNotificationRule",
+        "codestar-notifications:UpdateNotificationRule",
+        "codestar-notifications:Subscribe",
+        "codestar-notifications:Unsubscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codedeploy:*:*:application:*"
+        }
+      }
+    },
+    {
+      "Sid": "CodeStarNotificationsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListTargets",
+        "codestar-notifications:ListTagsforResource",
+        "codestar-notifications:ListEventTypes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarNotificationsChatbotAccess",
+      "Effect": "Allow",
+      "Action": [
+        "chatbot:DescribeSlackChannelConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNSTopicListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

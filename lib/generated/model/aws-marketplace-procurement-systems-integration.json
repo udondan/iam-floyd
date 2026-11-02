@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-procurement-systems-integration",
+  "className": "AwsMarketplaceProcurementSystemsIntegration",
+  "name": "aws-marketplace-procurement-systems-integration",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-procurement-integration.html",
+  "accessLevelList": {
+    "Read": [
+      "DescribeProcurementSystemConfiguration"
+    ],
+    "Write": [
+      "PutProcurementSystemConfiguration"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DescribeProcurementSystemConfiguration",
+      "methodName": "toDescribeProcurementSystemConfiguration",
+      "description": "Grants permission to describe the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html"
+    },
+    {
+      "name": "PutProcurementSystemConfiguration",
+      "methodName": "toPutProcurementSystemConfiguration",
+      "description": "Grants permission to create or update the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,36 @@
+<!--
+  The native .NET package of iam-floyd. Most of the sources are written by bin/transpile.ts.
+  `make package-native` packs it with the version of package.json into dist/iam-floyd/dotnet.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>IAM.Floyd</RootNamespace>
+    <AssemblyName>IAM.Floyd</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- protected members have no documentation -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+
+    <Version>0.0.0</Version>
+    <PackageId>IAM.Floyd</PackageId>
+    <Title>iam-floyd</Title>
+    <Description>AWS IAM policy statement generator with fluent interface</Description>
+    <Authors>Daniel Schroeder</Authors>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/udondan/iam-floyd</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/udondan/iam-floyd.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>aws;iam;policy;statement;generator</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

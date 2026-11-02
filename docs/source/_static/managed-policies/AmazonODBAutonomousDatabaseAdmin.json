@@ -1,0 +1,86 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:CreateAutonomousDatabase",
+        "odb:GetAutonomousDatabase",
+        "odb:UpdateAutonomousDatabase",
+        "odb:DeleteAutonomousDatabase",
+        "odb:ListAutonomousDatabases",
+        "odb:ListAutonomousDatabaseClones",
+        "odb:ListAutonomousDatabasePeers",
+        "odb:StartAutonomousDatabase",
+        "odb:StopAutonomousDatabase",
+        "odb:RebootAutonomousDatabase",
+        "odb:ShrinkAutonomousDatabase",
+        "odb:SwitchoverAutonomousDatabase",
+        "odb:FailoverAutonomousDatabase",
+        "odb:RestoreAutonomousDatabase",
+        "odb:CreateAutonomousDatabaseWallet",
+        "odb:GetAutonomousDatabaseWalletDetails",
+        "odb:CreateAutonomousDatabaseBackup",
+        "odb:GetAutonomousDatabaseBackup",
+        "odb:UpdateAutonomousDatabaseBackup",
+        "odb:DeleteAutonomousDatabaseBackup",
+        "odb:ListAutonomousDatabaseBackups",
+        "odb:GetOdbNetwork",
+        "odb:ListOdbNetworks",
+        "odb:ListAutonomousDatabaseVersions",
+        "odb:ListAutonomousDatabaseCharacterSets",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSLRActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "odb.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowTaggingActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:TagResource",
+        "odb:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:autonomous-database/*",
+        "arn:aws:odb:*:*:autonomous-database-backup/*"
+      ]
+    },
+    {
+      "Sid": "AllowOutboundIntegrationActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:CreateOutboundIntegration",
+        "odb:UpdateOutboundIntegration"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:autonomous-database/*"
+      ]
+    }
+  ]
+}

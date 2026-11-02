@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowProServeToolsOrgReaderIndividualContributorAccess",
+      "Effect": "Allow",
+      "Action": "partnercentral-account-management:AccessProServeTools",
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "partnercentral-account-management:ProServeRole": [
+            "AssessmentOrganizationReader",
+            "AssessmentIndividualContributor"
+          ]
+        }
+      }
+    }
+  ]
+}

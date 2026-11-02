@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecretsManagerReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:amazon-bedrock*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "KMSSameAccountBedrockViaSecretsManagerPermissions",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "secretsmanager.*.amazonaws.com",
+          "kms:EncryptionContext:SecretARN": "arn:aws:secretsmanager:*:${aws:PrincipalAccount}:secret:amazon-bedrock*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,998 @@
+{
+  "schemaVersion": 1,
+  "filename": "assurance",
+  "className": "Assurance",
+  "name": "assurance",
+  "servicePrefix": "assurance",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_assurance.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptInvitation",
+      "AssignPermissionSet",
+      "Chat",
+      "CreateComment",
+      "CreateControl",
+      "CreateControlGroup",
+      "CreateEnvironment",
+      "CreateEnvironmentConnection",
+      "CreateFramework",
+      "CreateInvitation",
+      "CreatePermissionSet",
+      "CreateProject",
+      "DeleteComment",
+      "DeleteControl",
+      "DeleteControlGroup",
+      "DeleteEnvironment",
+      "DeleteEnvironmentConnection",
+      "DeleteEvidence",
+      "DeleteFramework",
+      "DeleteInvitation",
+      "DeletePermissionSet",
+      "DeleteProject",
+      "DeregisterOrganizationDelegatedAdmin",
+      "DisableFramework",
+      "EnableFramework",
+      "PublishFramework",
+      "PutControlStatusOverride",
+      "PutEvidence",
+      "RegisterOrganizationDelegatedAdmin",
+      "RejectInvitation",
+      "RevokePermissionSet",
+      "StartAssessment",
+      "StartAssessmentReportExport",
+      "StartResourceDiscovery",
+      "TagResource",
+      "UntagResource",
+      "UpdateComment",
+      "UpdateControl",
+      "UpdateControlGroup",
+      "UpdateEnvironment",
+      "UpdateEvidence",
+      "UpdateFramework",
+      "UpdatePermissionSet",
+      "UpdateProject",
+      "UpdateTask",
+      "CreateAnnotation",
+      "CreateTask",
+      "DeleteAnnotation",
+      "UpdateAnnotation",
+      "UpdateAssessment",
+      "UploadEvidence",
+      "VendConnectionAccessToken"
+    ],
+    "Read": [
+      "BatchGetComment",
+      "BatchGetControl",
+      "BatchGetTask",
+      "GetAnnotation",
+      "GetAssessment",
+      "GetAssessmentReportContent",
+      "GetAssessmentReportExport",
+      "GetChatMessages",
+      "GetComment",
+      "GetControl",
+      "GetControlGroup",
+      "GetControlStatus",
+      "GetEnvironment",
+      "GetEvidence",
+      "GetEvidenceContent",
+      "GetFramework",
+      "GetInvitation",
+      "GetPermissionSet",
+      "GetProject",
+      "GetTask",
+      "ListAssessmentAnnotations",
+      "ListAssessmentJournalRecords",
+      "ListAssessmentOutcomes",
+      "ListAssessments",
+      "ListChatSessions",
+      "ListComments",
+      "ListConnectionItems",
+      "ListControlGroups",
+      "ListControlResources",
+      "ListControls",
+      "ListDiscoveredResources",
+      "ListEnabledFrameworks",
+      "ListEnvironmentConnections",
+      "ListEnvironments",
+      "ListEvidence",
+      "ListEvidenceAnnotations",
+      "ListFrameworks",
+      "ListInboundInvitations",
+      "ListOutboundInvitations",
+      "ListPermissionSetAssignments",
+      "ListPermissionSets",
+      "ListProjects",
+      "ListResourcesForControl",
+      "ListTagsForResource",
+      "ListTaskHistory",
+      "ListTasks",
+      "DownloadEvidence"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptInvitation",
+      "methodName": "toAcceptInvitation",
+      "description": "Grants permission to accept an invitation to connect an account to an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_AcceptInvitation.html"
+    },
+    {
+      "name": "AssignPermissionSet",
+      "methodName": "toAssignPermissionSet",
+      "description": "Grants permission to assign a permission set to a principal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_AssignPermissionSet.html"
+    },
+    {
+      "name": "BatchGetComment",
+      "methodName": "toBatchGetComment",
+      "description": "Grants permission to retrieve multiple comments in a single request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_BatchGetComment.html"
+    },
+    {
+      "name": "BatchGetControl",
+      "methodName": "toBatchGetControl",
+      "description": "Grants permission to retrieve multiple controls in a single request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_BatchGetControl.html"
+    },
+    {
+      "name": "BatchGetTask",
+      "methodName": "toBatchGetTask",
+      "description": "Grants permission to retrieve multiple tasks in a single request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_BatchGetTask.html"
+    },
+    {
+      "name": "Chat",
+      "methodName": "toChat",
+      "description": "Grants permission to start a streaming chat session with the AI Governance agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_Chat.html"
+    },
+    {
+      "name": "CreateComment",
+      "methodName": "toCreateComment",
+      "description": "Grants permission to add a new comment to a specific control",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateComment.html"
+    },
+    {
+      "name": "CreateControl",
+      "methodName": "toCreateControl",
+      "description": "Grants permission to create a leaf control within a custom framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateControl.html"
+    },
+    {
+      "name": "CreateControlGroup",
+      "methodName": "toCreateControlGroup",
+      "description": "Grants permission to create a control group within a custom framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateControlGroup.html"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create a new governance environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateEnvironment.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEnvironmentConnection",
+      "methodName": "toCreateEnvironmentConnection",
+      "description": "Grants permission to create an environment connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateEnvironmentConnection.html"
+    },
+    {
+      "name": "CreateFramework",
+      "methodName": "toCreateFramework",
+      "description": "Grants permission to create a custom customer-owned framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateFramework.html"
+    },
+    {
+      "name": "CreateInvitation",
+      "methodName": "toCreateInvitation",
+      "description": "Grants permission to invite an account to connect to an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateInvitation.html"
+    },
+    {
+      "name": "CreatePermissionSet",
+      "methodName": "toCreatePermissionSet",
+      "description": "Grants permission to create a permission set in an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreatePermissionSet.html"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateProject.html"
+    },
+    {
+      "name": "DeleteComment",
+      "methodName": "toDeleteComment",
+      "description": "Grants permission to delete a specific comment by its identifying fields",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteComment.html"
+    },
+    {
+      "name": "DeleteControl",
+      "methodName": "toDeleteControl",
+      "description": "Grants permission to delete a custom control",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteControl.html"
+    },
+    {
+      "name": "DeleteControlGroup",
+      "methodName": "toDeleteControlGroup",
+      "description": "Grants permission to delete a control group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteControlGroup.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete a governance environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteEnvironmentConnection",
+      "methodName": "toDeleteEnvironmentConnection",
+      "description": "Grants permission to delete an environment connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteEnvironmentConnection.html"
+    },
+    {
+      "name": "DeleteEvidence",
+      "methodName": "toDeleteEvidence",
+      "description": "Grants permission to remove an evidence item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteEvidence.html"
+    },
+    {
+      "name": "DeleteFramework",
+      "methodName": "toDeleteFramework",
+      "description": "Grants permission to delete a custom framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteFramework.html"
+    },
+    {
+      "name": "DeleteInvitation",
+      "methodName": "toDeleteInvitation",
+      "description": "Grants permission to delete an invitation or unlink a connected account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteInvitation.html"
+    },
+    {
+      "name": "DeletePermissionSet",
+      "methodName": "toDeletePermissionSet",
+      "description": "Grants permission to delete a permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeletePermissionSet.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a project and all its associated resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteProject.html"
+    },
+    {
+      "name": "DeregisterOrganizationDelegatedAdmin",
+      "methodName": "toDeregisterOrganizationDelegatedAdmin",
+      "description": "Grants permission to deregister the delegated administrator for AWS Assurance in the caller's organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeregisterOrganizationDelegatedAdmin.html"
+    },
+    {
+      "name": "DisableFramework",
+      "methodName": "toDisableFramework",
+      "description": "Grants permission to disable a previously enabled framework for a specific project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DisableFramework.html"
+    },
+    {
+      "name": "EnableFramework",
+      "methodName": "toEnableFramework",
+      "description": "Grants permission to enable a framework for a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_EnableFramework.html"
+    },
+    {
+      "name": "GetAnnotation",
+      "methodName": "toGetAnnotation",
+      "description": "Grants permission to retrieve the annotation for a specific piece of evidence",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetAnnotation.html"
+    },
+    {
+      "name": "GetAssessment",
+      "methodName": "toGetAssessment",
+      "description": "Grants permission to retrieve a single assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetAssessment.html"
+    },
+    {
+      "name": "GetAssessmentReportContent",
+      "methodName": "toGetAssessmentReportContent",
+      "description": "Grants permission to retrieve the content of a prepared assessment report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetAssessmentReportContent.html"
+    },
+    {
+      "name": "GetAssessmentReportExport",
+      "methodName": "toGetAssessmentReportExport",
+      "description": "Grants permission to retrieve the state of an assessment report export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetAssessmentReportExport.html"
+    },
+    {
+      "name": "GetChatMessages",
+      "methodName": "toGetChatMessages",
+      "description": "Grants permission to get messages for a chat session in chronological order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetChatMessages.html"
+    },
+    {
+      "name": "GetComment",
+      "methodName": "toGetComment",
+      "description": "Grants permission to retrieve a specific comment by its identifying fields",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetComment.html"
+    },
+    {
+      "name": "GetControl",
+      "methodName": "toGetControl",
+      "description": "Grants permission to retrieve a single leaf control within a framework version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetControl.html"
+    },
+    {
+      "name": "GetControlGroup",
+      "methodName": "toGetControlGroup",
+      "description": "Grants permission to retrieve a single control group within a framework version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetControlGroup.html"
+    },
+    {
+      "name": "GetControlStatus",
+      "methodName": "toGetControlStatus",
+      "description": "Grants permission to retrieve the effective compliance status of a control",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetControlStatus.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to retrieve a governance environment by ARN or domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetEvidence",
+      "methodName": "toGetEvidence",
+      "description": "Grants permission to retrieve metadata for an evidence item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetEvidence.html"
+    },
+    {
+      "name": "GetEvidenceContent",
+      "methodName": "toGetEvidenceContent",
+      "description": "Grants permission to retrieve the content of an evidence item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetEvidenceContent.html"
+    },
+    {
+      "name": "GetFramework",
+      "methodName": "toGetFramework",
+      "description": "Grants permission to retrieve a framework resource by type and key fields",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetFramework.html"
+    },
+    {
+      "name": "GetInvitation",
+      "methodName": "toGetInvitation",
+      "description": "Grants permission to retrieve an invitation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetInvitation.html"
+    },
+    {
+      "name": "GetPermissionSet",
+      "methodName": "toGetPermissionSet",
+      "description": "Grants permission to retrieve a permission set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetPermissionSet.html"
+    },
+    {
+      "name": "GetProject",
+      "methodName": "toGetProject",
+      "description": "Grants permission to retrieve a project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetProject.html"
+    },
+    {
+      "name": "GetTask",
+      "methodName": "toGetTask",
+      "description": "Grants permission to retrieve a specific task by its identifying fields",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetTask.html"
+    },
+    {
+      "name": "ListAssessmentAnnotations",
+      "methodName": "toListAssessmentAnnotations",
+      "description": "Grants permission to list the annotations on one assessment, paginated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListAssessmentAnnotations.html"
+    },
+    {
+      "name": "ListAssessmentJournalRecords",
+      "methodName": "toListAssessmentJournalRecords",
+      "description": "Grants permission to list assessment journal records, paginated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListAssessmentJournalRecords.html"
+    },
+    {
+      "name": "ListAssessmentOutcomes",
+      "methodName": "toListAssessmentOutcomes",
+      "description": "Grants permission to list a compliance score over time",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListAssessmentOutcomes.html"
+    },
+    {
+      "name": "ListAssessments",
+      "methodName": "toListAssessments",
+      "description": "Grants permission to list assessments, paginated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListAssessments.html"
+    },
+    {
+      "name": "ListChatSessions",
+      "methodName": "toListChatSessions",
+      "description": "Grants permission to list chat sessions for the calling user in a governance environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListChatSessions.html"
+    },
+    {
+      "name": "ListComments",
+      "methodName": "toListComments",
+      "description": "Grants permission to list comments in a governance environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListComments.html"
+    },
+    {
+      "name": "ListConnectionItems",
+      "methodName": "toListConnectionItems",
+      "description": "Grants permission to list the contents of an environment connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListConnectionItems.html"
+    },
+    {
+      "name": "ListControlGroups",
+      "methodName": "toListControlGroups",
+      "description": "Grants permission to list control groups in a framework version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListControlGroups.html"
+    },
+    {
+      "name": "ListControlResources",
+      "methodName": "toListControlResources",
+      "description": "Grants permission to list in-scope resources for a control",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListControlResources.html"
+    },
+    {
+      "name": "ListControls",
+      "methodName": "toListControls",
+      "description": "Grants permission to list controls within a control group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListControls.html"
+    },
+    {
+      "name": "ListDiscoveredResources",
+      "methodName": "toListDiscoveredResources",
+      "description": "Grants permission to list the resources found by a discovery job (paginated)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListDiscoveredResources.html"
+    },
+    {
+      "name": "ListEnabledFrameworks",
+      "methodName": "toListEnabledFrameworks",
+      "description": "Grants permission to list enabled frameworks for a governance environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListEnabledFrameworks.html"
+    },
+    {
+      "name": "ListEnvironmentConnections",
+      "methodName": "toListEnvironmentConnections",
+      "description": "Grants permission to list environment connections in a governance environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListEnvironmentConnections.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list all governance environments with optional pagination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListEvidence",
+      "methodName": "toListEvidence",
+      "description": "Grants permission to list evidence items (paginated)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListEvidence.html"
+    },
+    {
+      "name": "ListEvidenceAnnotations",
+      "methodName": "toListEvidenceAnnotations",
+      "description": "Grants permission to list the annotations on one version of a piece of evidence within a project, paginated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListEvidenceAnnotations.html"
+    },
+    {
+      "name": "ListFrameworks",
+      "methodName": "toListFrameworks",
+      "description": "Grants permission to list frameworks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListFrameworks.html"
+    },
+    {
+      "name": "ListInboundInvitations",
+      "methodName": "toListInboundInvitations",
+      "description": "Grants permission to list invitations addressed to the caller's account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListInboundInvitations.html"
+    },
+    {
+      "name": "ListOutboundInvitations",
+      "methodName": "toListOutboundInvitations",
+      "description": "Grants permission to list invitations extended from an owned environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListOutboundInvitations.html"
+    },
+    {
+      "name": "ListPermissionSetAssignments",
+      "methodName": "toListPermissionSetAssignments",
+      "description": "Grants permission to list permission set assignments in an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListPermissionSetAssignments.html"
+    },
+    {
+      "name": "ListPermissionSets",
+      "methodName": "toListPermissionSets",
+      "description": "Grants permission to list permission sets in an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListPermissionSets.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list all projects within a governance environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListProjects.html"
+    },
+    {
+      "name": "ListResourcesForControl",
+      "methodName": "toListResourcesForControl",
+      "description": "Grants permission to list in-scope resources for a control",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListResourcesForControl.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTaskHistory",
+      "methodName": "toListTaskHistory",
+      "description": "Grants permission to list task history for a task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListTaskHistory.html"
+    },
+    {
+      "name": "ListTasks",
+      "methodName": "toListTasks",
+      "description": "Grants permission to list all tasks within a governance environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListTasks.html"
+    },
+    {
+      "name": "PublishFramework",
+      "methodName": "toPublishFramework",
+      "description": "Grants permission to publish a custom framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_PublishFramework.html"
+    },
+    {
+      "name": "PutControlStatusOverride",
+      "methodName": "toPutControlStatusOverride",
+      "description": "Grants permission to declare or remove an applicability override on a control or requirement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_PutControlStatusOverride.html"
+    },
+    {
+      "name": "PutEvidence",
+      "methodName": "toPutEvidence",
+      "description": "Grants permission to add evidence, or a new version of existing evidence, to support a compliance assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_PutEvidence.html"
+    },
+    {
+      "name": "RegisterOrganizationDelegatedAdmin",
+      "methodName": "toRegisterOrganizationDelegatedAdmin",
+      "description": "Grants permission to register a delegated administrator for AWS Assurance in the caller's organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_RegisterOrganizationDelegatedAdmin.html"
+    },
+    {
+      "name": "RejectInvitation",
+      "methodName": "toRejectInvitation",
+      "description": "Grants permission to reject an invitation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_RejectInvitation.html"
+    },
+    {
+      "name": "RevokePermissionSet",
+      "methodName": "toRevokePermissionSet",
+      "description": "Grants permission to revoke a permission set assignment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_RevokePermissionSet.html"
+    },
+    {
+      "name": "StartAssessment",
+      "methodName": "toStartAssessment",
+      "description": "Grants permission to begin a new assessment for a control or framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_StartAssessment.html"
+    },
+    {
+      "name": "StartAssessmentReportExport",
+      "methodName": "toStartAssessmentReportExport",
+      "description": "Grants permission to start preparing an assessment report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_StartAssessmentReportExport.html"
+    },
+    {
+      "name": "StartResourceDiscovery",
+      "methodName": "toStartResourceDiscovery",
+      "description": "Grants permission to start discovery of in-scope resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_StartResourceDiscovery.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite tags on a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateComment",
+      "methodName": "toUpdateComment",
+      "description": "Grants permission to modify the content of an existing comment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateComment.html"
+    },
+    {
+      "name": "UpdateControl",
+      "methodName": "toUpdateControl",
+      "description": "Grants permission to update a custom control",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateControl.html"
+    },
+    {
+      "name": "UpdateControlGroup",
+      "methodName": "toUpdateControlGroup",
+      "description": "Grants permission to update a control group's mutable attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateControlGroup.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update a governance environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateEvidence",
+      "methodName": "toUpdateEvidence",
+      "description": "Grants permission to update evidence metadata and manage control links",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateEvidence.html"
+    },
+    {
+      "name": "UpdateFramework",
+      "methodName": "toUpdateFramework",
+      "description": "Grants permission to update a custom framework",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateFramework.html"
+    },
+    {
+      "name": "UpdatePermissionSet",
+      "methodName": "toUpdatePermissionSet",
+      "description": "Grants permission to update a permission set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdatePermissionSet.html"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to update a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateProject.html"
+    },
+    {
+      "name": "UpdateTask",
+      "methodName": "toUpdateTask",
+      "description": "Grants permission to update an existing task's mutable fields",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateTask.html"
+    },
+    {
+      "name": "CreateAnnotation",
+      "methodName": "toCreateAnnotation",
+      "description": "Grants permission to create an annotation on a piece of evidence",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateAnnotation.html"
+    },
+    {
+      "name": "CreateTask",
+      "methodName": "toCreateTask",
+      "description": "Grants permission to create a new task for a specific control and assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_CreateTask.html"
+    },
+    {
+      "name": "DeleteAnnotation",
+      "methodName": "toDeleteAnnotation",
+      "description": "Grants permission to delete an annotation from a piece of evidence",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteAnnotation.html"
+    },
+    {
+      "name": "DownloadEvidence",
+      "methodName": "toDownloadEvidence",
+      "description": "Grants permission to retrieve the content of an evidence item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DownloadEvidence.html"
+    },
+    {
+      "name": "UpdateAnnotation",
+      "methodName": "toUpdateAnnotation",
+      "description": "Grants permission to update the reviewer notes on an existing annotation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateAnnotation.html"
+    },
+    {
+      "name": "UpdateAssessment",
+      "methodName": "toUpdateAssessment",
+      "description": "Grants permission to update an assessment's status and result",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateAssessment.html"
+    },
+    {
+      "name": "UploadEvidence",
+      "methodName": "toUploadEvidence",
+      "description": "Grants permission to upload new evidence to support a compliance assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UploadEvidence.html"
+    },
+    {
+      "name": "VendConnectionAccessToken",
+      "methodName": "toVendConnectionAccessToken",
+      "description": "Grants permission to retrieve a short-lived access token for a third-party connection in an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_VendConnectionAccessToken.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/security-iam.html",
+      "arn": "arn:${Partition}:assurance:${Region}:${Account}:environment/${Environment}",
+      "placeholders": [
+        {
+          "placeholder": "Environment",
+          "name": "environment",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAcceptInvitation",
+        "toAssignPermissionSet",
+        "toBatchGetComment",
+        "toBatchGetControl",
+        "toBatchGetTask",
+        "toChat",
+        "toCreateComment",
+        "toCreateControl",
+        "toCreateControlGroup",
+        "toCreateFramework",
+        "toCreateInvitation",
+        "toCreatePermissionSet",
+        "toCreateProject",
+        "toDeleteComment",
+        "toDeleteControl",
+        "toDeleteControlGroup",
+        "toDeleteEnvironment",
+        "toDeleteEvidence",
+        "toDeleteFramework",
+        "toDeleteInvitation",
+        "toDeletePermissionSet",
+        "toDeleteProject",
+        "toDisableFramework",
+        "toEnableFramework",
+        "toGetAnnotation",
+        "toGetAssessment",
+        "toGetAssessmentReportContent",
+        "toGetAssessmentReportExport",
+        "toGetChatMessages",
+        "toGetComment",
+        "toGetControl",
+        "toGetControlGroup",
+        "toGetControlStatus",
+        "toGetEnvironment",
+        "toGetEvidence",
+        "toGetEvidenceContent",
+        "toGetFramework",
+        "toGetInvitation",
+        "toGetPermissionSet",
+        "toGetProject",
+        "toGetTask",
+        "toListAssessmentAnnotations",
+        "toListAssessmentJournalRecords",
+        "toListAssessmentOutcomes",
+        "toListAssessments",
+        "toListChatSessions",
+        "toListComments",
+        "toListConnectionItems",
+        "toListControlGroups",
+        "toListControlResources",
+        "toListControls",
+        "toListDiscoveredResources",
+        "toListEnabledFrameworks",
+        "toListEvidence",
+        "toListEvidenceAnnotations",
+        "toListFrameworks",
+        "toListOutboundInvitations",
+        "toListPermissionSetAssignments",
+        "toListPermissionSets",
+        "toListProjects",
+        "toListResourcesForControl",
+        "toListTagsForResource",
+        "toListTaskHistory",
+        "toListTasks",
+        "toPublishFramework",
+        "toPutControlStatusOverride",
+        "toPutEvidence",
+        "toRejectInvitation",
+        "toRevokePermissionSet",
+        "toStartAssessment",
+        "toStartAssessmentReportExport",
+        "toStartResourceDiscovery",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateComment",
+        "toUpdateControl",
+        "toUpdateControlGroup",
+        "toUpdateEnvironment",
+        "toUpdateEvidence",
+        "toUpdateFramework",
+        "toUpdatePermissionSet",
+        "toUpdateProject",
+        "toUpdateTask",
+        "toCreateAnnotation",
+        "toCreateTask",
+        "toDeleteAnnotation",
+        "toDownloadEvidence",
+        "toUpdateAnnotation",
+        "toUpdateAssessment",
+        "toUploadEvidence"
+      ],
+      "relatedResourceTypes": [
+        "environment"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

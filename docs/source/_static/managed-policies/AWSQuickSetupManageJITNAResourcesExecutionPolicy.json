@@ -1,0 +1,82 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateJustInTimeAccessServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/justintimeaccess.ssm.amazonaws.com/AWSServiceRoleForSystemsManagerJustInTimeAccess"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "justintimeaccess.ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateSystemsManagerNotificationServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/notifications.ssm.amazonaws.com/AWSServiceRoleForSystemsManagerNotifications"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "notifications.ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/SSM-JustInTimeAccessTokenRole",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": "arn:aws:iam::*:policy/AWSSystemsManagerJustInTimeAccessTokenPolicy"
+        }
+      }
+    },
+    {
+      "Sid": "IAMRoleManagementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:GetRole",
+        "iam:TagRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/SSM-JustInTimeAccessTokenRole"
+      ],
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": [
+            "QuickSetup*"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/QuickSetupDocument": [
+            "AWSQuickSetupType-JITNA"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ServiceSettingsManagementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:UpdateServiceSetting",
+        "ssm:GetServiceSetting"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:servicesetting/ssm/just-in-time-access/identity-provider"
+      ]
+    }
+  ]
+}

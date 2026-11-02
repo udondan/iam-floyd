@@ -1,0 +1,2162 @@
+{
+  "schemaVersion": 1,
+  "filename": "iotsitewise",
+  "className": "Iotsitewise",
+  "name": "iotsitewise",
+  "servicePrefix": "iotsitewise",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotsitewise.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateAssets",
+      "AssociateTimeSeriesToAssetProperty",
+      "BatchAssociateDataSegmentsToDataset",
+      "BatchAssociateProjectAssets",
+      "BatchDeleteDatasetDataSegments",
+      "BatchDisassociateDataSegmentsFromDataset",
+      "BatchDisassociateProjectAssets",
+      "BatchPutAssetPropertyValue",
+      "CancelEnrichmentJob",
+      "CancelPipelineExecution",
+      "CancelQuery",
+      "CreateAccessPolicy",
+      "CreateApplication",
+      "CreateAsset",
+      "CreateAssetModel",
+      "CreateAssetModelCompositeModel",
+      "CreateBulkImportJob",
+      "CreateComputationModel",
+      "CreateDashboard",
+      "CreateDataset",
+      "CreateDatasetExportJob",
+      "CreateEnrichmentJob",
+      "CreateGateway",
+      "CreatePipeline",
+      "CreatePortal",
+      "CreateProject",
+      "CreateTask",
+      "CreateWorkspace",
+      "DeleteAccessPolicy",
+      "DeleteApplication",
+      "DeleteAsset",
+      "DeleteAssetModel",
+      "DeleteAssetModelCompositeModel",
+      "DeleteAssetModelInterfaceRelationship",
+      "DeleteComputationModel",
+      "DeleteDashboard",
+      "DeleteDataset",
+      "DeleteGateway",
+      "DeletePipeline",
+      "DeletePortal",
+      "DeleteProject",
+      "DeleteTask",
+      "DeleteTimeSeries",
+      "DeleteWorkspace",
+      "DisassociateAssets",
+      "DisassociateTimeSeriesFromAssetProperty",
+      "ExecuteAction",
+      "PutAssetModelInterfaceRelationship",
+      "PutDefaultEncryptionConfiguration",
+      "PutLoggingOptions",
+      "PutStorageConfiguration",
+      "StartPipelineExecution",
+      "StartQuery",
+      "StartSearch",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccessPolicy",
+      "UpdateAsset",
+      "UpdateAssetModel",
+      "UpdateAssetModelCompositeModel",
+      "UpdateAssetProperty",
+      "UpdateComputationModel",
+      "UpdateDashboard",
+      "UpdateDataset",
+      "UpdateGateway",
+      "UpdateGatewayCapabilityConfiguration",
+      "UpdatePipeline",
+      "UpdatePortal",
+      "UpdateProject",
+      "UpdateTask",
+      "UpdateWorkspace",
+      "EnableSiteWiseIntegration",
+      "UpdateAssetModelPropertyRouting"
+    ],
+    "Read": [
+      "BatchGetAssetPropertyAggregates",
+      "BatchGetAssetPropertyValue",
+      "BatchGetAssetPropertyValueHistory",
+      "DescribeAccessPolicy",
+      "DescribeAction",
+      "DescribeApplication",
+      "DescribeAsset",
+      "DescribeAssetCompositeModel",
+      "DescribeAssetModel",
+      "DescribeAssetModelCompositeModel",
+      "DescribeAssetModelInterfaceRelationship",
+      "DescribeAssetProperty",
+      "DescribeBulkImportJob",
+      "DescribeComputationModel",
+      "DescribeComputationModelExecutionSummary",
+      "DescribeDashboard",
+      "DescribeDataset",
+      "DescribeDatasetExportJob",
+      "DescribeDefaultEncryptionConfiguration",
+      "DescribeEnrichmentJob",
+      "DescribeExecution",
+      "DescribeGateway",
+      "DescribeGatewayCapabilityConfiguration",
+      "DescribeLoggingOptions",
+      "DescribePipeline",
+      "DescribePipelineExecution",
+      "DescribePortal",
+      "DescribeProject",
+      "DescribeQuery",
+      "DescribeSearch",
+      "DescribeStorageConfiguration",
+      "DescribeTask",
+      "DescribeTimeSeries",
+      "DescribeWorkspace",
+      "ExecuteQuery",
+      "GetAssetPropertyAggregates",
+      "GetAssetPropertyValue",
+      "GetAssetPropertyValueHistory",
+      "GetCaptureData",
+      "GetInterpolatedAssetPropertyValues",
+      "GetQueryResults",
+      "GetSearchResults",
+      "InvokeAssistant",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAccessPolicies",
+      "ListActions",
+      "ListApplications",
+      "ListAssetModelCompositeModels",
+      "ListAssetModelProperties",
+      "ListAssetModels",
+      "ListAssetProperties",
+      "ListAssetRelationships",
+      "ListAssets",
+      "ListAssociatedAssets",
+      "ListBulkImportJobs",
+      "ListCompositionRelationships",
+      "ListComputationModelDataBindingUsages",
+      "ListComputationModelResolveToResources",
+      "ListComputationModels",
+      "ListDashboards",
+      "ListDatasetDataSegmentRelationships",
+      "ListDatasetDataSegments",
+      "ListDatasetExportJobs",
+      "ListDatasets",
+      "ListEnrichmentJobs",
+      "ListExecutions",
+      "ListGateways",
+      "ListInterfaceRelationships",
+      "ListPipelineExecutions",
+      "ListPipelines",
+      "ListPortals",
+      "ListProjectAssets",
+      "ListProjects",
+      "ListQueries",
+      "ListSearches",
+      "ListTasks",
+      "ListTimeSeries",
+      "ListWorkspaces"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateAssets",
+      "methodName": "toAssociateAssets",
+      "description": "Grants permission to associate a child asset with a parent asset through a hierarchy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateAssets.html"
+    },
+    {
+      "name": "AssociateTimeSeriesToAssetProperty",
+      "methodName": "toAssociateTimeSeriesToAssetProperty",
+      "description": "Grants permission to associate a time series with an asset property",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateTimeSeriesToAssetProperty.html"
+    },
+    {
+      "name": "BatchAssociateDataSegmentsToDataset",
+      "methodName": "toBatchAssociateDataSegmentsToDataset",
+      "description": "Grants permission to associate data segments to a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchAssociateDataSegmentsToDataset.html"
+    },
+    {
+      "name": "BatchAssociateProjectAssets",
+      "methodName": "toBatchAssociateProjectAssets",
+      "description": "Grants permission to associate assets to a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchAssociateProjectAssets.html"
+    },
+    {
+      "name": "BatchDeleteDatasetDataSegments",
+      "methodName": "toBatchDeleteDatasetDataSegments",
+      "description": "Grants permission to batch delete data segments from a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDeleteDatasetDataSegments.html"
+    },
+    {
+      "name": "BatchDisassociateDataSegmentsFromDataset",
+      "methodName": "toBatchDisassociateDataSegmentsFromDataset",
+      "description": "Grants permission to disassociate data segments from a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDisassociateDataSegmentsFromDataset.html"
+    },
+    {
+      "name": "BatchDisassociateProjectAssets",
+      "methodName": "toBatchDisassociateProjectAssets",
+      "description": "Grants permission to disassociate assets from a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDisassociateProjectAssets.html"
+    },
+    {
+      "name": "BatchGetAssetPropertyAggregates",
+      "methodName": "toBatchGetAssetPropertyAggregates",
+      "description": "Grants permission to retrieve computed aggregates for multiple asset properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html"
+    },
+    {
+      "name": "BatchGetAssetPropertyValue",
+      "methodName": "toBatchGetAssetPropertyValue",
+      "description": "Grants permission to retrieve the latest value for multiple asset properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html"
+    },
+    {
+      "name": "BatchGetAssetPropertyValueHistory",
+      "methodName": "toBatchGetAssetPropertyValueHistory",
+      "description": "Grants permission to retrieve the value history for multiple asset properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html"
+    },
+    {
+      "name": "BatchPutAssetPropertyValue",
+      "methodName": "toBatchPutAssetPropertyValue",
+      "description": "Grants permission to put property values for asset properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html"
+    },
+    {
+      "name": "CancelEnrichmentJob",
+      "methodName": "toCancelEnrichmentJob",
+      "description": "Grants permission to cancel an enrichment job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CancelEnrichmentJob.html"
+    },
+    {
+      "name": "CancelPipelineExecution",
+      "methodName": "toCancelPipelineExecution",
+      "description": "Grants permission to cancel a pipeline execution in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CancelPipelineExecution.html"
+    },
+    {
+      "name": "CancelQuery",
+      "methodName": "toCancelQuery",
+      "description": "Grants permission to cancel a query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CancelQuery.html"
+    },
+    {
+      "name": "CreateAccessPolicy",
+      "methodName": "toCreateAccessPolicy",
+      "description": "Grants permission to create an access policy for a portal or a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html"
+    },
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAsset",
+      "methodName": "toCreateAsset",
+      "description": "Grants permission to create an asset from an asset model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html"
+    },
+    {
+      "name": "CreateAssetModel",
+      "methodName": "toCreateAssetModel",
+      "description": "Grants permission to create an asset model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAssetModelCompositeModel",
+      "methodName": "toCreateAssetModelCompositeModel",
+      "description": "Grants permission to create an asset model composite model inside an asset model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+    },
+    {
+      "name": "CreateBulkImportJob",
+      "methodName": "toCreateBulkImportJob",
+      "description": "Grants permission to create bulk import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateBulkImportJob.html"
+    },
+    {
+      "name": "CreateComputationModel",
+      "methodName": "toCreateComputationModel",
+      "description": "Grants permission to create a computation model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html"
+    },
+    {
+      "name": "CreateDashboard",
+      "methodName": "toCreateDashboard",
+      "description": "Grants permission to create a dashboard in a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html"
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html"
+    },
+    {
+      "name": "CreateDatasetExportJob",
+      "methodName": "toCreateDatasetExportJob",
+      "description": "Grants permission to create a dataset export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDatasetExportJob.html"
+    },
+    {
+      "name": "CreateEnrichmentJob",
+      "methodName": "toCreateEnrichmentJob",
+      "description": "Grants permission to create an enrichment job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateEnrichmentJob.html"
+    },
+    {
+      "name": "CreateGateway",
+      "methodName": "toCreateGateway",
+      "description": "Grants permission to create a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePipeline",
+      "methodName": "toCreatePipeline",
+      "description": "Grants permission to create a new pipeline definition in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePipeline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifTaskArns"
+      ]
+    },
+    {
+      "name": "CreatePortal",
+      "methodName": "toCreatePortal",
+      "description": "Grants permission to create a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a project in a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html"
+    },
+    {
+      "name": "CreateTask",
+      "methodName": "toCreateTask",
+      "description": "Grants permission to create a new task definition in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateTask.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWorkspace",
+      "methodName": "toCreateWorkspace",
+      "description": "Grants permission to create a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateWorkspace.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAccessPolicy",
+      "methodName": "toDeleteAccessPolicy",
+      "description": "Grants permission to delete an access policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAccessPolicy.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteAsset",
+      "methodName": "toDeleteAsset",
+      "description": "Grants permission to delete an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAsset.html"
+    },
+    {
+      "name": "DeleteAssetModel",
+      "methodName": "toDeleteAssetModel",
+      "description": "Grants permission to delete an asset model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModel.html"
+    },
+    {
+      "name": "DeleteAssetModelCompositeModel",
+      "methodName": "toDeleteAssetModelCompositeModel",
+      "description": "Grants permission to delete an asset model composite model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModelCompositeModel.html"
+    },
+    {
+      "name": "DeleteAssetModelInterfaceRelationship",
+      "methodName": "toDeleteAssetModelInterfaceRelationship",
+      "description": "Grants permission to delete a relationship between asset model and interface",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModelInterfaceRelationship.html"
+    },
+    {
+      "name": "DeleteComputationModel",
+      "methodName": "toDeleteComputationModel",
+      "description": "Grants permission to delete a computation model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteComputationModel.html"
+    },
+    {
+      "name": "DeleteDashboard",
+      "methodName": "toDeleteDashboard",
+      "description": "Grants permission to delete a dashboard",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDashboard.html"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDataset.html"
+    },
+    {
+      "name": "DeleteGateway",
+      "methodName": "toDeleteGateway",
+      "description": "Grants permission to delete a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteGateway.html"
+    },
+    {
+      "name": "DeletePipeline",
+      "methodName": "toDeletePipeline",
+      "description": "Grants permission to delete a pipeline definition from a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePipeline.html"
+    },
+    {
+      "name": "DeletePortal",
+      "methodName": "toDeletePortal",
+      "description": "Grants permission to delete a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteProject.html"
+    },
+    {
+      "name": "DeleteTask",
+      "methodName": "toDeleteTask",
+      "description": "Grants permission to delete a task definition from a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteTask.html"
+    },
+    {
+      "name": "DeleteTimeSeries",
+      "methodName": "toDeleteTimeSeries",
+      "description": "Grants permission to delete a time series",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteTimeSeries.html"
+    },
+    {
+      "name": "DeleteWorkspace",
+      "methodName": "toDeleteWorkspace",
+      "description": "Grants permission to delete a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteWorkspace.html"
+    },
+    {
+      "name": "DescribeAccessPolicy",
+      "methodName": "toDescribeAccessPolicy",
+      "description": "Grants permission to describe an access policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAccessPolicy.html"
+    },
+    {
+      "name": "DescribeAction",
+      "methodName": "toDescribeAction",
+      "description": "Grants permission to describe actions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAction.html"
+    },
+    {
+      "name": "DescribeApplication",
+      "methodName": "toDescribeApplication",
+      "description": "Grants permission to describe an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeApplication.html"
+    },
+    {
+      "name": "DescribeAsset",
+      "methodName": "toDescribeAsset",
+      "description": "Grants permission to describe an asset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html"
+    },
+    {
+      "name": "DescribeAssetCompositeModel",
+      "methodName": "toDescribeAssetCompositeModel",
+      "description": "Grants permission to describe an asset composite model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetCompositeModel.html"
+    },
+    {
+      "name": "DescribeAssetModel",
+      "methodName": "toDescribeAssetModel",
+      "description": "Grants permission to describe an asset model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html"
+    },
+    {
+      "name": "DescribeAssetModelCompositeModel",
+      "methodName": "toDescribeAssetModelCompositeModel",
+      "description": "Grants permission to describe an asset model composite model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html"
+    },
+    {
+      "name": "DescribeAssetModelInterfaceRelationship",
+      "methodName": "toDescribeAssetModelInterfaceRelationship",
+      "description": "Grants permission to describe a relationship between asset model and interface",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelInterfaceRelationship.html"
+    },
+    {
+      "name": "DescribeAssetProperty",
+      "methodName": "toDescribeAssetProperty",
+      "description": "Grants permission to describe an asset property",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html"
+    },
+    {
+      "name": "DescribeBulkImportJob",
+      "methodName": "toDescribeBulkImportJob",
+      "description": "Grants permission to describe bulk import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeBulkImportJob.html"
+    },
+    {
+      "name": "DescribeComputationModel",
+      "methodName": "toDescribeComputationModel",
+      "description": "Grants permission to describe a computation model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModel.html"
+    },
+    {
+      "name": "DescribeComputationModelExecutionSummary",
+      "methodName": "toDescribeComputationModelExecutionSummary",
+      "description": "Grants permission to describe computation model execution summary",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModelExecutionSummary.html"
+    },
+    {
+      "name": "DescribeDashboard",
+      "methodName": "toDescribeDashboard",
+      "description": "Grants permission to describe a dashboard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDashboard.html"
+    },
+    {
+      "name": "DescribeDataset",
+      "methodName": "toDescribeDataset",
+      "description": "Grants permission to describe dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDataset.html"
+    },
+    {
+      "name": "DescribeDatasetExportJob",
+      "methodName": "toDescribeDatasetExportJob",
+      "description": "Grants permission to describe a dataset export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDatasetExportJob.html"
+    },
+    {
+      "name": "DescribeDefaultEncryptionConfiguration",
+      "methodName": "toDescribeDefaultEncryptionConfiguration",
+      "description": "Grants permission to describe the default encryption configuration for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDefaultEncryptionConfiguration.html"
+    },
+    {
+      "name": "DescribeEnrichmentJob",
+      "methodName": "toDescribeEnrichmentJob",
+      "description": "Grants permission to describe an enrichment job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeEnrichmentJob.html"
+    },
+    {
+      "name": "DescribeExecution",
+      "methodName": "toDescribeExecution",
+      "description": "Grants permission to describe an execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeExecution.html"
+    },
+    {
+      "name": "DescribeGateway",
+      "methodName": "toDescribeGateway",
+      "description": "Grants permission to describe a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html"
+    },
+    {
+      "name": "DescribeGatewayCapabilityConfiguration",
+      "methodName": "toDescribeGatewayCapabilityConfiguration",
+      "description": "Grants permission to describe a capability configuration for a gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html"
+    },
+    {
+      "name": "DescribeLoggingOptions",
+      "methodName": "toDescribeLoggingOptions",
+      "description": "Grants permission to describe logging options for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeLoggingOptions.html"
+    },
+    {
+      "name": "DescribePipeline",
+      "methodName": "toDescribePipeline",
+      "description": "Grants permission to retrieve detailed information about a pipeline in a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePipeline.html"
+    },
+    {
+      "name": "DescribePipelineExecution",
+      "methodName": "toDescribePipelineExecution",
+      "description": "Grants permission to retrieve detailed information about a pipeline execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePipelineExecution.html"
+    },
+    {
+      "name": "DescribePortal",
+      "methodName": "toDescribePortal",
+      "description": "Grants permission to describe a portal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePortal.html"
+    },
+    {
+      "name": "DescribeProject",
+      "methodName": "toDescribeProject",
+      "description": "Grants permission to describe a project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeProject.html"
+    },
+    {
+      "name": "DescribeQuery",
+      "methodName": "toDescribeQuery",
+      "description": "Grants permission to describe a query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeQuery.html"
+    },
+    {
+      "name": "DescribeSearch",
+      "methodName": "toDescribeSearch",
+      "description": "Grants permission to describe a search",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeSearch.html"
+    },
+    {
+      "name": "DescribeStorageConfiguration",
+      "methodName": "toDescribeStorageConfiguration",
+      "description": "Grants permission to describe the storage configuration for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeStorageConfiguration.html"
+    },
+    {
+      "name": "DescribeTask",
+      "methodName": "toDescribeTask",
+      "description": "Grants permission to retrieve detailed information about a task in a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTask.html"
+    },
+    {
+      "name": "DescribeTimeSeries",
+      "methodName": "toDescribeTimeSeries",
+      "description": "Grants permission to describe a time series",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html"
+    },
+    {
+      "name": "DescribeWorkspace",
+      "methodName": "toDescribeWorkspace",
+      "description": "Grants permission to describe a workspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeWorkspace.html"
+    },
+    {
+      "name": "DisassociateAssets",
+      "methodName": "toDisassociateAssets",
+      "description": "Grants permission to disassociate a child asset from a parent asset by a hierarchy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html"
+    },
+    {
+      "name": "DisassociateTimeSeriesFromAssetProperty",
+      "methodName": "toDisassociateTimeSeriesFromAssetProperty",
+      "description": "Grants permission to disassociate a time series from an asset property",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateTimeSeriesFromAssetProperty.html"
+    },
+    {
+      "name": "ExecuteAction",
+      "methodName": "toExecuteAction",
+      "description": "Grants permission to execute actions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ExecuteAction.html"
+    },
+    {
+      "name": "ExecuteQuery",
+      "methodName": "toExecuteQuery",
+      "description": "Grants permission to execute query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ExecuteQuery.html"
+    },
+    {
+      "name": "GetAssetPropertyAggregates",
+      "methodName": "toGetAssetPropertyAggregates",
+      "description": "Grants permission to retrieve computed aggregates for an asset property",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyAggregates.html"
+    },
+    {
+      "name": "GetAssetPropertyValue",
+      "methodName": "toGetAssetPropertyValue",
+      "description": "Grants permission to retrieve the latest value for an asset property",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html"
+    },
+    {
+      "name": "GetAssetPropertyValueHistory",
+      "methodName": "toGetAssetPropertyValueHistory",
+      "description": "Grants permission to retrieve the value history for an asset property",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValueHistory.html"
+    },
+    {
+      "name": "GetCaptureData",
+      "methodName": "toGetCaptureData",
+      "description": "Grants permission to retrieve captured data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetCaptureData.html"
+    },
+    {
+      "name": "GetInterpolatedAssetPropertyValues",
+      "methodName": "toGetInterpolatedAssetPropertyValues",
+      "description": "Grants permission to retrieve interpolated values for an asset property",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetInterpolatedAssetPropertyValues.html"
+    },
+    {
+      "name": "GetQueryResults",
+      "methodName": "toGetQueryResults",
+      "description": "Grants permission to retrieve query results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetQueryResults.html"
+    },
+    {
+      "name": "GetSearchResults",
+      "methodName": "toGetSearchResults",
+      "description": "Grants permission to retrieve search results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetSearchResults.html"
+    },
+    {
+      "name": "InvokeAssistant",
+      "methodName": "toInvokeAssistant",
+      "description": "Grants permission to invoke an assistant",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_InvokeAssistant.html"
+    },
+    {
+      "name": "ListAccessPolicies",
+      "methodName": "toListAccessPolicies",
+      "description": "Grants permission to list all access policies for an identity or a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAccessPolicies.html"
+    },
+    {
+      "name": "ListActions",
+      "methodName": "toListActions",
+      "description": "Grants permission to list all actions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListActions.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list all applications",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListAssetModelCompositeModels",
+      "methodName": "toListAssetModelCompositeModels",
+      "description": "Grants permission to list all asset model composite models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModelCompositeModels.html"
+    },
+    {
+      "name": "ListAssetModelProperties",
+      "methodName": "toListAssetModelProperties",
+      "description": "Grants permission to list asset model properties",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModelProperties.html"
+    },
+    {
+      "name": "ListAssetModels",
+      "methodName": "toListAssetModels",
+      "description": "Grants permission to list all asset models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html"
+    },
+    {
+      "name": "ListAssetProperties",
+      "methodName": "toListAssetProperties",
+      "description": "Grants permission to list asset properties",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetProperties.html"
+    },
+    {
+      "name": "ListAssetRelationships",
+      "methodName": "toListAssetRelationships",
+      "description": "Grants permission to list the asset relationship graph for an asset",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetRelationships.html"
+    },
+    {
+      "name": "ListAssets",
+      "methodName": "toListAssets",
+      "description": "Grants permission to list all assets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssets.html"
+    },
+    {
+      "name": "ListAssociatedAssets",
+      "methodName": "toListAssociatedAssets",
+      "description": "Grants permission to list all assets associated with an asset through a hierarchy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssociatedAssets.html"
+    },
+    {
+      "name": "ListBulkImportJobs",
+      "methodName": "toListBulkImportJobs",
+      "description": "Grants permission to list bulk import jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListBulkImportJobs.html"
+    },
+    {
+      "name": "ListCompositionRelationships",
+      "methodName": "toListCompositionRelationships",
+      "description": "Grants permission to list all asset model composition relationships",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListCompositionRelationships.html"
+    },
+    {
+      "name": "ListComputationModelDataBindingUsages",
+      "methodName": "toListComputationModelDataBindingUsages",
+      "description": "Grants permission to list computation model data binding usages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelDataBindingUsages.html"
+    },
+    {
+      "name": "ListComputationModelResolveToResources",
+      "methodName": "toListComputationModelResolveToResources",
+      "description": "Grants permission to list computation model resolve to resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelResolveToResources.html"
+    },
+    {
+      "name": "ListComputationModels",
+      "methodName": "toListComputationModels",
+      "description": "Grants permission to list all computation models",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModels.html"
+    },
+    {
+      "name": "ListDashboards",
+      "methodName": "toListDashboards",
+      "description": "Grants permission to list all dashboards in a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDashboards.html"
+    },
+    {
+      "name": "ListDatasetDataSegmentRelationships",
+      "methodName": "toListDatasetDataSegmentRelationships",
+      "description": "Grants permission to list dataset data segment relationships",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasetDataSegmentRelationships.html"
+    },
+    {
+      "name": "ListDatasetDataSegments",
+      "methodName": "toListDatasetDataSegments",
+      "description": "Grants permission to list data segments for a dataset",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasetDataSegments.html"
+    },
+    {
+      "name": "ListDatasetExportJobs",
+      "methodName": "toListDatasetExportJobs",
+      "description": "Grants permission to list dataset export jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasetExportJobs.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list all datasets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasets.html"
+    },
+    {
+      "name": "ListEnrichmentJobs",
+      "methodName": "toListEnrichmentJobs",
+      "description": "Grants permission to list enrichment jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListEnrichmentJobs.html"
+    },
+    {
+      "name": "ListExecutions",
+      "methodName": "toListExecutions",
+      "description": "Grants permission to list executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListExecutions.html"
+    },
+    {
+      "name": "ListGateways",
+      "methodName": "toListGateways",
+      "description": "Grants permission to list all gateways",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListGateways.html"
+    },
+    {
+      "name": "ListInterfaceRelationships",
+      "methodName": "toListInterfaceRelationships",
+      "description": "Grants permission to list all asset models that are enforced by an interface",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListInterfaceRelationships.html"
+    },
+    {
+      "name": "ListPipelineExecutions",
+      "methodName": "toListPipelineExecutions",
+      "description": "Grants permission to list pipeline executions for a pipeline in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPipelineExecutions.html"
+    },
+    {
+      "name": "ListPipelines",
+      "methodName": "toListPipelines",
+      "description": "Grants permission to list pipeline definitions in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPipelines.html"
+    },
+    {
+      "name": "ListPortals",
+      "methodName": "toListPortals",
+      "description": "Grants permission to list all portals",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPortals.html"
+    },
+    {
+      "name": "ListProjectAssets",
+      "methodName": "toListProjectAssets",
+      "description": "Grants permission to list all assets associated with a project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjectAssets.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list all projects in a portal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjects.html"
+    },
+    {
+      "name": "ListQueries",
+      "methodName": "toListQueries",
+      "description": "Grants permission to list queries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListQueries.html"
+    },
+    {
+      "name": "ListSearches",
+      "methodName": "toListSearches",
+      "description": "Grants permission to list searches",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListSearches.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTasks",
+      "methodName": "toListTasks",
+      "description": "Grants permission to list task definitions in a workspace",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTasks.html"
+    },
+    {
+      "name": "ListTimeSeries",
+      "methodName": "toListTimeSeries",
+      "description": "Grants permission to list time series",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTimeSeries.html"
+    },
+    {
+      "name": "ListWorkspaces",
+      "methodName": "toListWorkspaces",
+      "description": "Grants permission to list all workspaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListWorkspaces.html"
+    },
+    {
+      "name": "PutAssetModelInterfaceRelationship",
+      "methodName": "toPutAssetModelInterfaceRelationship",
+      "description": "Grants permission to create a relationship between asset model and interface",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutAssetModelInterfaceRelationship.html"
+    },
+    {
+      "name": "PutDefaultEncryptionConfiguration",
+      "methodName": "toPutDefaultEncryptionConfiguration",
+      "description": "Grants permission to set the default encryption configuration for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutDefaultEncryptionConfiguration.html"
+    },
+    {
+      "name": "PutLoggingOptions",
+      "methodName": "toPutLoggingOptions",
+      "description": "Grants permission to set logging options for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutLoggingOptions.html"
+    },
+    {
+      "name": "PutStorageConfiguration",
+      "methodName": "toPutStorageConfiguration",
+      "description": "Grants permission to configure storage settings for the AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
+    },
+    {
+      "name": "StartPipelineExecution",
+      "methodName": "toStartPipelineExecution",
+      "description": "Grants permission to start execution of a pipeline in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_StartPipelineExecution.html"
+    },
+    {
+      "name": "StartQuery",
+      "methodName": "toStartQuery",
+      "description": "Grants permission to start a query on sensor data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_StartQuery.html"
+    },
+    {
+      "name": "StartSearch",
+      "methodName": "toStartSearch",
+      "description": "Grants permission to start a search",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_StartSearch.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccessPolicy",
+      "methodName": "toUpdateAccessPolicy",
+      "description": "Grants permission to update an access policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAccessPolicy.html"
+    },
+    {
+      "name": "UpdateAsset",
+      "methodName": "toUpdateAsset",
+      "description": "Grants permission to update an asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAsset.html"
+    },
+    {
+      "name": "UpdateAssetModel",
+      "methodName": "toUpdateAssetModel",
+      "description": "Grants permission to update an asset model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+    },
+    {
+      "name": "UpdateAssetModelCompositeModel",
+      "methodName": "toUpdateAssetModelCompositeModel",
+      "description": "Grants permission to update asset model composite model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModelCompositeModel.html"
+    },
+    {
+      "name": "UpdateAssetProperty",
+      "methodName": "toUpdateAssetProperty",
+      "description": "Grants permission to update an asset property",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html"
+    },
+    {
+      "name": "UpdateComputationModel",
+      "methodName": "toUpdateComputationModel",
+      "description": "Grants permission to update a computation model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateComputationModel.html"
+    },
+    {
+      "name": "UpdateDashboard",
+      "methodName": "toUpdateDashboard",
+      "description": "Grants permission to update a dashboard",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateDashboard.html"
+    },
+    {
+      "name": "UpdateDataset",
+      "methodName": "toUpdateDataset",
+      "description": "Grants permission to update a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateDataset.html"
+    },
+    {
+      "name": "UpdateGateway",
+      "methodName": "toUpdateGateway",
+      "description": "Grants permission to update a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGateway.html"
+    },
+    {
+      "name": "UpdateGatewayCapabilityConfiguration",
+      "methodName": "toUpdateGatewayCapabilityConfiguration",
+      "description": "Grants permission to update a capability configuration for a gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGatewayCapabilityConfiguration.html"
+    },
+    {
+      "name": "UpdatePipeline",
+      "methodName": "toUpdatePipeline",
+      "description": "Grants permission to update an existing pipeline definition in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdatePipeline.html"
+    },
+    {
+      "name": "UpdatePortal",
+      "methodName": "toUpdatePortal",
+      "description": "Grants permission to update a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdatePortal.html"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to update a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateProject.html"
+    },
+    {
+      "name": "UpdateTask",
+      "methodName": "toUpdateTask",
+      "description": "Grants permission to update an existing task definition in a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateTask.html"
+    },
+    {
+      "name": "UpdateWorkspace",
+      "methodName": "toUpdateWorkspace",
+      "description": "Grants permission to update a workspace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateWorkspace.html"
+    },
+    {
+      "name": "EnableSiteWiseIntegration",
+      "methodName": "toEnableSiteWiseIntegration",
+      "description": "Grants permission to allow IoT SiteWise integrate with other services",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateAssetModelPropertyRouting",
+      "methodName": "toUpdateAssetModelPropertyRouting",
+      "description": "Grants permission to update an AssetModel property routing",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "access-policy",
+      "methodName": "onAccessPolicy",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "AccessPolicyId",
+          "name": "accessPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IAccessPolicyRef",
+        "property": "accessPolicyRef",
+        "arn": "accessPolicyArn"
+      }
+    },
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateApplication.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:workspace/${WorkspaceName}/application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceName",
+          "name": "workspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "asset",
+      "methodName": "onAsset",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}",
+      "placeholders": [
+        {
+          "placeholder": "AssetId",
+          "name": "assetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IAssetRef",
+        "property": "assetRef",
+        "arn": "assetArn"
+      }
+    },
+    {
+      "name": "asset-model",
+      "methodName": "onAssetModel",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}",
+      "placeholders": [
+        {
+          "placeholder": "AssetModelId",
+          "name": "assetModelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IAssetModelRef",
+        "property": "assetModelRef",
+        "arn": "assetModelArn"
+      }
+    },
+    {
+      "name": "computation-model",
+      "methodName": "onComputationModel",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:computation-model/${ComputationModelId}",
+      "placeholders": [
+        {
+          "placeholder": "ComputationModelId",
+          "name": "computationModelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IComputationModelRef",
+        "property": "computationModelRef",
+        "arn": "computationModelArn"
+      }
+    },
+    {
+      "name": "dashboard",
+      "methodName": "onDashboard",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}",
+      "placeholders": [
+        {
+          "placeholder": "DashboardId",
+          "name": "dashboardId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IDashboardRef",
+        "property": "dashboardRef",
+        "arn": "dashboardArn"
+      }
+    },
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:dataset/${DatasetId}",
+      "placeholders": [
+        {
+          "placeholder": "DatasetId",
+          "name": "datasetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IDatasetRef",
+        "property": "datasetRef",
+        "arn": "datasetArn"
+      }
+    },
+    {
+      "name": "gateway",
+      "methodName": "onGateway",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GatewayId",
+          "name": "gatewayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IGatewayRef",
+        "property": "gatewayRef",
+        "id": "gatewayId"
+      }
+    },
+    {
+      "name": "pipeline",
+      "methodName": "onPipeline",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePipeline.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:workspace/${WorkspaceName}/pipeline/${PipelineName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceName",
+          "name": "workspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PipelineName",
+          "name": "pipelineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "portal",
+      "methodName": "onPortal",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalId",
+          "name": "portalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IPortalRef",
+        "property": "portalRef",
+        "arn": "portalArn"
+      }
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}",
+      "placeholders": [
+        {
+          "placeholder": "ProjectId",
+          "name": "projectId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IProjectRef",
+        "property": "projectRef",
+        "arn": "projectArn"
+      }
+    },
+    {
+      "name": "task",
+      "methodName": "onTask",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateTask.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:workspace/${WorkspaceName}/task/${TaskName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceName",
+          "name": "workspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TaskName",
+          "name": "taskName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "time-series",
+      "methodName": "onTimeSeries",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}",
+      "placeholders": [
+        {
+          "placeholder": "TimeSeriesId",
+          "name": "timeSeriesId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workspace",
+      "methodName": "onWorkspace",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateWorkspace.html",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:workspace/${WorkspaceName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkspaceName",
+          "name": "workspaceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_iotsitewise",
+        "interface": "IWorkspaceRef",
+        "property": "workspaceRef",
+        "arn": "workspaceArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccessPolicy",
+        "toCreateApplication",
+        "toCreateAsset",
+        "toCreateAssetModel",
+        "toCreateComputationModel",
+        "toCreateDashboard",
+        "toCreateDataset",
+        "toCreateGateway",
+        "toCreatePipeline",
+        "toCreatePortal",
+        "toCreateProject",
+        "toCreateTask",
+        "toCreateWorkspace",
+        "toDescribeTimeSeries",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateAssets",
+        "toAssociateTimeSeriesToAssetProperty",
+        "toBatchAssociateDataSegmentsToDataset",
+        "toBatchAssociateProjectAssets",
+        "toBatchDeleteDatasetDataSegments",
+        "toBatchDisassociateDataSegmentsFromDataset",
+        "toBatchDisassociateProjectAssets",
+        "toBatchGetAssetPropertyAggregates",
+        "toBatchGetAssetPropertyValue",
+        "toBatchGetAssetPropertyValueHistory",
+        "toBatchPutAssetPropertyValue",
+        "toCancelEnrichmentJob",
+        "toCancelPipelineExecution",
+        "toCancelQuery",
+        "toCreateAccessPolicy",
+        "toCreateAsset",
+        "toCreateAssetModelCompositeModel",
+        "toCreateBulkImportJob",
+        "toCreateComputationModel",
+        "toCreateDashboard",
+        "toCreateDataset",
+        "toCreateDatasetExportJob",
+        "toCreateEnrichmentJob",
+        "toCreateProject",
+        "toDeleteAccessPolicy",
+        "toDeleteApplication",
+        "toDeleteAsset",
+        "toDeleteAssetModel",
+        "toDeleteAssetModelCompositeModel",
+        "toDeleteAssetModelInterfaceRelationship",
+        "toDeleteComputationModel",
+        "toDeleteDashboard",
+        "toDeleteDataset",
+        "toDeleteGateway",
+        "toDeletePipeline",
+        "toDeletePortal",
+        "toDeleteProject",
+        "toDeleteTask",
+        "toDeleteTimeSeries",
+        "toDeleteWorkspace",
+        "toDescribeAccessPolicy",
+        "toDescribeAction",
+        "toDescribeApplication",
+        "toDescribeAsset",
+        "toDescribeAssetCompositeModel",
+        "toDescribeAssetModel",
+        "toDescribeAssetModelCompositeModel",
+        "toDescribeAssetModelInterfaceRelationship",
+        "toDescribeAssetProperty",
+        "toDescribeBulkImportJob",
+        "toDescribeComputationModel",
+        "toDescribeComputationModelExecutionSummary",
+        "toDescribeDashboard",
+        "toDescribeDataset",
+        "toDescribeDatasetExportJob",
+        "toDescribeEnrichmentJob",
+        "toDescribeGateway",
+        "toDescribeGatewayCapabilityConfiguration",
+        "toDescribePipeline",
+        "toDescribePipelineExecution",
+        "toDescribePortal",
+        "toDescribeProject",
+        "toDescribeQuery",
+        "toDescribeSearch",
+        "toDescribeTask",
+        "toDescribeTimeSeries",
+        "toDescribeWorkspace",
+        "toDisassociateAssets",
+        "toDisassociateTimeSeriesFromAssetProperty",
+        "toExecuteAction",
+        "toGetAssetPropertyAggregates",
+        "toGetAssetPropertyValue",
+        "toGetAssetPropertyValueHistory",
+        "toGetCaptureData",
+        "toGetInterpolatedAssetPropertyValues",
+        "toGetQueryResults",
+        "toGetSearchResults",
+        "toListAccessPolicies",
+        "toListActions",
+        "toListAssetModelCompositeModels",
+        "toListAssetModelProperties",
+        "toListAssetProperties",
+        "toListAssetRelationships",
+        "toListAssets",
+        "toListAssociatedAssets",
+        "toListBulkImportJobs",
+        "toListCompositionRelationships",
+        "toListComputationModelDataBindingUsages",
+        "toListComputationModelResolveToResources",
+        "toListDashboards",
+        "toListDatasetDataSegmentRelationships",
+        "toListDatasetDataSegments",
+        "toListDatasetExportJobs",
+        "toListDatasets",
+        "toListEnrichmentJobs",
+        "toListExecutions",
+        "toListInterfaceRelationships",
+        "toListPipelineExecutions",
+        "toListProjectAssets",
+        "toListProjects",
+        "toListQueries",
+        "toListSearches",
+        "toListTagsForResource",
+        "toListTimeSeries",
+        "toPutAssetModelInterfaceRelationship",
+        "toStartPipelineExecution",
+        "toStartQuery",
+        "toStartSearch",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessPolicy",
+        "toUpdateAsset",
+        "toUpdateAssetModel",
+        "toUpdateAssetModelCompositeModel",
+        "toUpdateAssetProperty",
+        "toUpdateComputationModel",
+        "toUpdateDashboard",
+        "toUpdateDataset",
+        "toUpdateGateway",
+        "toUpdateGatewayCapabilityConfiguration",
+        "toUpdatePipeline",
+        "toUpdatePortal",
+        "toUpdateProject",
+        "toUpdateTask",
+        "toUpdateWorkspace",
+        "toUpdateAssetModelPropertyRouting"
+      ],
+      "relatedResourceTypes": [
+        "access-policy",
+        "application",
+        "asset",
+        "asset-model",
+        "computation-model",
+        "dashboard",
+        "dataset",
+        "gateway",
+        "pipeline",
+        "portal",
+        "project",
+        "task",
+        "time-series",
+        "workspace"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccessPolicy",
+        "toCreateApplication",
+        "toCreateAsset",
+        "toCreateAssetModel",
+        "toCreateComputationModel",
+        "toCreateDashboard",
+        "toCreateDataset",
+        "toCreateGateway",
+        "toCreatePipeline",
+        "toCreatePortal",
+        "toCreateProject",
+        "toCreateTask",
+        "toCreateWorkspace",
+        "toDescribeTimeSeries",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:assetHierarchyPath",
+      "methodName": "ifAssetHierarchyPath",
+      "description": "Filters access by an asset hierarchy path, which is the string of asset IDs in the asset's hierarchy, each separated by a forward slash",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "assetHierarchyPath",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:childAssetId",
+      "methodName": "ifChildAssetId",
+      "description": "Filters access by the ID of a child asset being associated whith a parent asset",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "childAssetId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:group",
+      "methodName": "ifGroup",
+      "description": "Filters access by the ID of an AWS Single Sign-On group",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "group",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:iam",
+      "methodName": "ifIam",
+      "description": "Filters access by the ID of an AWS IAM identity",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "iam",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:isAssociatedWithAssetProperty",
+      "methodName": "ifIsAssociatedWithAssetProperty",
+      "description": "Filters access by data streams associated with or not associated with asset properties",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "isAssociatedWithAssetProperty",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:portal",
+      "methodName": "ifPortal",
+      "description": "Filters access by the ID of a portal",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "portal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:project",
+      "methodName": "ifProject",
+      "description": "Filters access by the ID of a project",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "project",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:propertyAlias",
+      "methodName": "ifPropertyAlias",
+      "description": "Filters access by the property alias",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "propertyAlias",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:propertyId",
+      "methodName": "ifPropertyId",
+      "description": "Filters access by the ID of an asset property",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "propertyId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iotsitewise:taskArns",
+      "methodName": "ifTaskArns",
+      "description": "Filters access by the task ARNs specified in the pipeline request",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toCreatePipeline",
+        "toUpdatePipeline"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "taskArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iotsitewise:user",
+      "methodName": "ifUser",
+      "description": "Filters access by the ID of an AWS Single Sign-On user",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "user",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

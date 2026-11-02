@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+# Publishes a Maven repository to Maven Central, through the Publisher API of the Central Portal:
+# signs every file, uploads them as one bundle and waits until the deployment is validated.
+#
+# Usage: bin/publish-maven [repository, default: dist/java]
+#
+# The repositories are dist/java, written by jsii-pacmak for cdk-iam-floyd, and dist/iam-floyd/java,
+# written by `make package-native` for iam-floyd.
+#
+# Environment:
+#   MAVEN_GPG_PRIVATE_KEY              armored private key to sign with
+#   MAVEN_GPG_PRIVATE_KEY_PASSPHRASE   its passphrase
+#   MAVEN_CENTRAL_USERNAME             user token of the Central Portal
+#   MAVEN_CENTRAL_PASSWORD
+#
+# Without MAVEN_CENTRAL_USERNAME, only the bundle is written.
+
+set -euo pipefail
+
+REPO=${1:-dist/java}
+API=https://central.sonatype.com/api/v1/publisher
+
+if [[ ! -d "${REPO}" ]]; then
+  echo "${REPO} does not exist, run \`make package-jsii\` or \`make package-native\` first" >&2
+  exit 1
+fi
+
+# e.g. com/udondan/iam-floyd/0.848.0/iam-floyd-0.848.0.pom: iam-floyd-0.848.0
+POM=$(find "${REPO}" -name '*.pom' | head -1)
+NAME=$(basename "$(dirname "$(dirname "${POM}")")")-$(basename "$(dirname "${POM}")")
+BUNDLE=$(pwd)/dist/maven-central-${NAME}.zip
+
+if [[ -n "${MAVEN_GPG_PRIVATE_KEY:-}" ]]; then
+  export GNUPGHOME
+  GNUPGHOME=$(mktemp -d)
+  echo "${MAVEN_GPG_PRIVATE_KEY}" | gpg --batch --quiet --import
+  while IFS= read -r -d '' file; do
+    gpg --batch --quiet --yes --pinentry-mode loopback \
+      --passphrase "${MAVEN_GPG_PRIVATE_KEY_PASSPHRASE}" \
+      --armor --detach-sign "${file}"
+    gpg --batch --quiet --verify "${file}.asc" "${file}" 2> /dev/null
+  done < <(find "${REPO}" -type f \( -name '*.jar' -o -name '*.pom' \) -print0)
+  echo "Signed with key $(gpg --list-secret-keys --with-colons | awk -F: '$1 == "ssb" { print $5 }')"
+elif [[ -n "${MAVEN_CENTRAL_USERNAME:-}" ]]; then
+  echo "MAVEN_GPG_PRIVATE_KEY is not set" >&2
+  exit 1
+fi
+
+# maven-metadata.xml is maintained by Maven Central itself
+rm -f "${BUNDLE}"
+(cd "${REPO}" && find . -type f ! -name 'maven-metadata.xml*' | sort | zip -q "${BUNDLE}" -@)
+unzip -l "${BUNDLE}"
+
+if [[ -z "${MAVEN_CENTRAL_USERNAME:-}" ]]; then
+  echo "⚠️ MAVEN_CENTRAL_USERNAME is not set. Skipping publish"
+  exit 0
+fi
+
+AUTH="Authorization: Bearer $(printf '%s:%s' "${MAVEN_CENTRAL_USERNAME}" "${MAVEN_CENTRAL_PASSWORD}" | base64 | tr -d '\n')"
+
+DEPLOYMENT=$(curl --fail-with-body --silent --show-error -H "${AUTH}" \
+  -F "bundle=@${BUNDLE};type=application/octet-stream" \
+  "${API}/upload?publishingType=AUTOMATIC&name=${NAME}")
+echo "Deployment ${DEPLOYMENT}"
+
+# Validation takes a few minutes. Once it passes, the release to Maven Central can't fail anymore.
+for _ in $(seq 120); do
+  STATUS=$(curl --fail-with-body --silent --show-error -X POST -H "${AUTH}" \
+    "${API}/status?id=${DEPLOYMENT}")
+  STATE=$(echo "${STATUS}" | jq -r .deploymentState)
+  echo "${STATE}"
+  case "${STATE}" in
+    PUBLISHING | PUBLISHED)
+      exit 0
+      ;;
+    FAILED)
+      echo "${STATUS}" | jq .
+      exit 1
+      ;;
+  esac
+  sleep 15
+done
+
+echo "Deployment ${DEPLOYMENT} was not validated within 30 minutes" >&2
+exit 1

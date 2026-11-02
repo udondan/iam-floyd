@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowIdentityStoreActions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ListGroupMembershipsForMember",
+        "identitystore:ListGroupMemberships",
+        "identitystore:DescribeUser"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowSSOActions",
+      "Effect": "Allow",
+      "Action": [
+        "sso:ListInstances",
+        "sso:DescribeRegisteredRegions",
+        "sso:ListDirectoryAssociations"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowSSODirectoryActions",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:DescribeUser",
+        "sso-directory:ListMembersInGroup"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowIamActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

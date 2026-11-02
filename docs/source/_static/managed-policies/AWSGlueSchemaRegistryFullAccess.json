@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSGlueSchemaRegistryFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateRegistry",
+        "glue:UpdateRegistry",
+        "glue:DeleteRegistry",
+        "glue:GetRegistry",
+        "glue:ListRegistries",
+        "glue:CreateSchema",
+        "glue:UpdateSchema",
+        "glue:DeleteSchema",
+        "glue:GetSchema",
+        "glue:ListSchemas",
+        "glue:RegisterSchemaVersion",
+        "glue:DeleteSchemaVersions",
+        "glue:GetSchemaByDefinition",
+        "glue:GetSchemaVersion",
+        "glue:GetSchemaVersionsDiff",
+        "glue:ListSchemaVersions",
+        "glue:CheckSchemaVersionValidity",
+        "glue:PutSchemaVersionMetadata",
+        "glue:RemoveSchemaVersionMetadata",
+        "glue:QuerySchemaVersionMetadata"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AWSGlueSchemaRegistryTagsFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetTags",
+        "glue:TagResource",
+        "glue:UnTagResource"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:schema/*",
+        "arn:aws:glue:*:*:registry/*"
+      ]
+    }
+  ]
+}

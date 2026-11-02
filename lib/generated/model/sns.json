@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "filename": "sns",
+  "className": "Sns",
+  "name": "sns",
+  "servicePrefix": "sns",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sns.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AddPermission",
+      "RemovePermission",
+      "SetTopicAttributes"
+    ],
+    "Write": [
+      "AddPermission",
+      "ConfirmSubscription",
+      "CreatePlatformApplication",
+      "CreatePlatformEndpoint",
+      "CreateSMSSandboxPhoneNumber",
+      "CreateTopic",
+      "DeleteEndpoint",
+      "DeletePlatformApplication",
+      "DeleteSMSSandboxPhoneNumber",
+      "DeleteTopic",
+      "OptInPhoneNumber",
+      "Publish",
+      "PutDataProtectionPolicy",
+      "RemovePermission",
+      "SetEndpointAttributes",
+      "SetPlatformApplicationAttributes",
+      "SetSMSAttributes",
+      "SetSubscriptionAttributes",
+      "SetTopicAttributes",
+      "Subscribe",
+      "TagResource",
+      "Unsubscribe",
+      "UntagResource",
+      "VerifySMSSandboxPhoneNumber"
+    ],
+    "Read": [
+      "CheckIfPhoneNumberIsOptedOut",
+      "GetDataProtectionPolicy",
+      "GetEndpointAttributes",
+      "GetPlatformApplicationAttributes",
+      "GetSMSAttributes",
+      "GetSMSSandboxAccountStatus",
+      "GetSubscriptionAttributes",
+      "GetTopicAttributes",
+      "ListPhoneNumbersOptedOut",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListEndpointsByPlatformApplication",
+      "ListOriginationNumbers",
+      "ListPlatformApplications",
+      "ListSMSSandboxPhoneNumbers",
+      "ListSubscriptions",
+      "ListSubscriptionsByTopic",
+      "ListTopics"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddPermission",
+      "methodName": "toAddPermission",
+      "description": "Grants permission to add a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_AddPermission.html"
+    },
+    {
+      "name": "CheckIfPhoneNumberIsOptedOut",
+      "methodName": "toCheckIfPhoneNumberIsOptedOut",
+      "description": "Grants permission to accept a phone number and indicate whether the phone holder has opted out of receiving SMS messages from your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_CheckIfPhoneNumberIsOptedOut.html"
+    },
+    {
+      "name": "ConfirmSubscription",
+      "methodName": "toConfirmSubscription",
+      "description": "Grants permission to verify an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier Subscribe action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ConfirmSubscription.html"
+    },
+    {
+      "name": "CreatePlatformApplication",
+      "methodName": "toCreatePlatformApplication",
+      "description": "Grants permission to create a platform application object for one of the supported push notification services, such as APNS and GCM, to which devices and mobile apps may register",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html"
+    },
+    {
+      "name": "CreatePlatformEndpoint",
+      "methodName": "toCreatePlatformEndpoint",
+      "description": "Grants permission to create an endpoint for a device and mobile app on one of the supported push notification services, such as GCM and APNS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformEndpoint.html"
+    },
+    {
+      "name": "CreateSMSSandboxPhoneNumber",
+      "methodName": "toCreateSMSSandboxPhoneNumber",
+      "description": "Grants permission to add a destination phone number and send a one-time password (OTP) to that phone number for an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_CreateSMSSandboxPhoneNumber.html"
+    },
+    {
+      "name": "CreateTopic",
+      "methodName": "toCreateTopic",
+      "description": "Grants permission to create a topic to which notifications can be published",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html"
+    },
+    {
+      "name": "DeleteEndpoint",
+      "methodName": "toDeleteEndpoint",
+      "description": "Grants permission to delete the endpoint for a device and mobile app from Amazon SNS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_DeleteEndpoint.html"
+    },
+    {
+      "name": "DeletePlatformApplication",
+      "methodName": "toDeletePlatformApplication",
+      "description": "Grants permission to delete a platform application object for one of the supported push notification services, such as APNS and GCM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_DeletePlatformApplication.html"
+    },
+    {
+      "name": "DeleteSMSSandboxPhoneNumber",
+      "methodName": "toDeleteSMSSandboxPhoneNumber",
+      "description": "Grants permission to delete an AWS account's verified or pending phone number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_DeleteSMSSandboxPhoneNumber.html"
+    },
+    {
+      "name": "DeleteTopic",
+      "methodName": "toDeleteTopic",
+      "description": "Grants permission to delete a topic and all its subscriptions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_DeleteTopic.html"
+    },
+    {
+      "name": "GetDataProtectionPolicy",
+      "methodName": "toGetDataProtectionPolicy",
+      "description": "Grants permission to return the data protection policy of the topic",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetDataProtectionPolicy.html"
+    },
+    {
+      "name": "GetEndpointAttributes",
+      "methodName": "toGetEndpointAttributes",
+      "description": "Grants permission to retrieve the endpoint attributes for a device on one of the supported push notification services, such as GCM and APNS",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetEndpointAttributes.html"
+    },
+    {
+      "name": "GetPlatformApplicationAttributes",
+      "methodName": "toGetPlatformApplicationAttributes",
+      "description": "Grants permission to retrieve the attributes of the platform application object for the supported push notification services, such as APNS and GCM",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetPlatformApplicationAttributes.html"
+    },
+    {
+      "name": "GetSMSAttributes",
+      "methodName": "toGetSMSAttributes",
+      "description": "Grants permission to return the settings for sending SMS messages from your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetSMSAttributes.html"
+    },
+    {
+      "name": "GetSMSSandboxAccountStatus",
+      "methodName": "toGetSMSSandboxAccountStatus",
+      "description": "Grants permission to retrieve the sandbox status for the calling account in the target region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetSMSSandboxAccountStatus.html"
+    },
+    {
+      "name": "GetSubscriptionAttributes",
+      "methodName": "toGetSubscriptionAttributes",
+      "description": "Grants permission to return all of the properties of a subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html"
+    },
+    {
+      "name": "GetTopicAttributes",
+      "methodName": "toGetTopicAttributes",
+      "description": "Grants permission to return all of the properties of a topic",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_GetTopicAttributes.html"
+    },
+    {
+      "name": "ListEndpointsByPlatformApplication",
+      "methodName": "toListEndpointsByPlatformApplication",
+      "description": "Grants permission to list the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and APNS",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListEndpointsByPlatformApplication.html"
+    },
+    {
+      "name": "ListOriginationNumbers",
+      "methodName": "toListOriginationNumbers",
+      "description": "Grants permission to list all origination numbers, and their metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListOriginationNumbers.html"
+    },
+    {
+      "name": "ListPhoneNumbersOptedOut",
+      "methodName": "toListPhoneNumbersOptedOut",
+      "description": "Grants permission to return a list of phone numbers that are opted out, meaning you cannot send SMS messages to them",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListPhoneNumbersOptedOut.html"
+    },
+    {
+      "name": "ListPlatformApplications",
+      "methodName": "toListPlatformApplications",
+      "description": "Grants permission to list the platform application objects for the supported push notification services, such as APNS and GCM",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListPlatformApplications.html"
+    },
+    {
+      "name": "ListSMSSandboxPhoneNumbers",
+      "methodName": "toListSMSSandboxPhoneNumbers",
+      "description": "Grants permission to list the calling account's current pending and verified destination phone numbers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListSMSSandboxPhoneNumbers.html"
+    },
+    {
+      "name": "ListSubscriptions",
+      "methodName": "toListSubscriptions",
+      "description": "Grants permission to return a list of the requester's subscriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListSubscriptions.html"
+    },
+    {
+      "name": "ListSubscriptionsByTopic",
+      "methodName": "toListSubscriptionsByTopic",
+      "description": "Grants permission to return a list of the subscriptions to a specific topic",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListSubscriptionsByTopic.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags added to the specified Amazon SNS topic",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTopics",
+      "methodName": "toListTopics",
+      "description": "Grants permission to return a list of the requester's topics",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html"
+    },
+    {
+      "name": "OptInPhoneNumber",
+      "methodName": "toOptInPhoneNumber",
+      "description": "Grants permission to opt in a phone number that is currently opted out, which enables you to resume sending SMS messages to the number",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_OptInPhoneNumber.html"
+    },
+    {
+      "name": "Publish",
+      "methodName": "toPublish",
+      "description": "Grants permission to send a message to all of a topic's subscribed endpoints",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_Publish.html"
+    },
+    {
+      "name": "PutDataProtectionPolicy",
+      "methodName": "toPutDataProtectionPolicy",
+      "description": "Grants permission to allow a topic owner to set the data protection policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_PutDataProtectionPolicy.html"
+    },
+    {
+      "name": "RemovePermission",
+      "methodName": "toRemovePermission",
+      "description": "Grants permission to remove a statement from a topic's access control policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_RemovePermission.html"
+    },
+    {
+      "name": "SetEndpointAttributes",
+      "methodName": "toSetEndpointAttributes",
+      "description": "Grants permission to set the attributes for an endpoint for a device on one of the supported push notification services, such as GCM and APNS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
+    },
+    {
+      "name": "SetPlatformApplicationAttributes",
+      "methodName": "toSetPlatformApplicationAttributes",
+      "description": "Grants permission to set the attributes of the platform application object for the supported push notification services, such as APNS and GCM",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+    },
+    {
+      "name": "SetSMSAttributes",
+      "methodName": "toSetSMSAttributes",
+      "description": "Grants permission to set the default settings for sending SMS messages and receiving daily SMS usage reports",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html"
+    },
+    {
+      "name": "SetSubscriptionAttributes",
+      "methodName": "toSetSubscriptionAttributes",
+      "description": "Grants permission to allow a subscription owner to set an attribute of the topic to a new value",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetSubscriptionAttributes.html"
+    },
+    {
+      "name": "SetTopicAttributes",
+      "methodName": "toSetTopicAttributes",
+      "description": "Grants permission to allow a topic owner to set an attribute of the topic to a new value",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html"
+    },
+    {
+      "name": "Subscribe",
+      "methodName": "toSubscribe",
+      "description": "Grants permission to prepare to subscribe an endpoint by sending the endpoint a confirmation message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to the specified Amazon SNS topic",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_TagResource.html"
+    },
+    {
+      "name": "Unsubscribe",
+      "methodName": "toUnsubscribe",
+      "description": "Grants permission to delete a subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_Unsubscribe.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified Amazon SNS topic",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_UntagResource.html"
+    },
+    {
+      "name": "VerifySMSSandboxPhoneNumber",
+      "methodName": "toVerifySMSSandboxPhoneNumber",
+      "description": "Grants permission to verify a destination phone number with a one-time password (OTP) for an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_VerifySMSSandboxPhoneNumber.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "topic",
+      "methodName": "onTopic",
+      "url": "https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html",
+      "arn": "arn:${Partition}:sns:${Region}:${Account}:${TopicName}",
+      "placeholders": [
+        {
+          "placeholder": "TopicName",
+          "name": "topicName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_sns",
+        "interface": "ITopicRef",
+        "property": "topicRef",
+        "arn": "topicArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags from request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateTopic",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddPermission",
+        "toConfirmSubscription",
+        "toCreateTopic",
+        "toDeleteTopic",
+        "toGetDataProtectionPolicy",
+        "toGetSubscriptionAttributes",
+        "toGetTopicAttributes",
+        "toListSubscriptionsByTopic",
+        "toListTagsForResource",
+        "toPublish",
+        "toPutDataProtectionPolicy",
+        "toRemovePermission",
+        "toSetSubscriptionAttributes",
+        "toSetTopicAttributes",
+        "toSubscribe",
+        "toTagResource",
+        "toUnsubscribe",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "topic"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys from request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateTopic",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sns:Endpoint",
+      "methodName": "ifEndpoint",
+      "description": "Filters access by the URL, email address, or ARN from a Subscribe request or a previously confirmed subscription",
+      "url": "https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19",
+      "relatedActionMethods": [
+        "toSubscribe"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Endpoint",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sns:Protocol",
+      "methodName": "ifProtocol",
+      "description": "Filters access by the protocol value from a Subscribe request or a previously confirmed subscription",
+      "url": "https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19",
+      "relatedActionMethods": [
+        "toSubscribe"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Protocol",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "timestream:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": [
+        "arn:aws:kms:*:*:key/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:timestream:database-name"
+        },
+        "Bool": {
+          "kms:GrantIsForAWSResource": true
+        },
+        "StringLike": {
+          "kms:ViaService": "timestream.*.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dbqms:CreateFavoriteQuery",
+        "dbqms:DescribeFavoriteQueries",
+        "dbqms:UpdateFavoriteQuery",
+        "dbqms:DeleteFavoriteQueries",
+        "dbqms:GetQueryString",
+        "dbqms:CreateQueryHistory",
+        "dbqms:DescribeQueryHistory",
+        "dbqms:UpdateQueryHistory",
+        "dbqms:DeleteQueryHistory"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics",
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "pricing:GetProducts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceViewSubscriptions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AWSMarketplaceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:AcceptAgreementRequest",
+        "aws-marketplace:CreateAgreementRequest",
+        "aws-marketplace:ListEntitlementDetails",
+        "aws-marketplace:DescribeAgreement",
+        "aws-marketplace:Subscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws-marketplace:ProductId": [
+            "prod-xcc5llpq4vlbc",
+            "prod-5jijo74ujy36m",
+            "prod-rjppt7huo35fm"
+          ]
+        }
+      }
+    }
+  ]
+}

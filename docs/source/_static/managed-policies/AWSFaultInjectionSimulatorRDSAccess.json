@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowFailover",
+      "Effect": "Allow",
+      "Action": [
+        "rds:FailoverDBCluster"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:cluster:*"
+      ]
+    },
+    {
+      "Sid": "AllowReboot",
+      "Effect": "Allow",
+      "Action": [
+        "rds:RebootDBInstance"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:db:*"
+      ]
+    },
+    {
+      "Sid": "DescribeResources",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "TargetResolutionByTags",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

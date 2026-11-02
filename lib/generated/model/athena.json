@@ -1,0 +1,953 @@
+{
+  "schemaVersion": 1,
+  "filename": "athena",
+  "className": "Athena",
+  "name": "athena",
+  "servicePrefix": "athena",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_athena.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetNamedQuery",
+      "BatchGetPreparedStatement",
+      "BatchGetQueryExecution",
+      "GetCalculationExecution",
+      "GetCalculationExecutionCode",
+      "GetCalculationExecutionStatus",
+      "GetCapacityAssignmentConfiguration",
+      "GetCapacityReservation",
+      "GetCatalogs",
+      "GetDataCatalog",
+      "GetDatabase",
+      "GetExecutionEngine",
+      "GetExecutionEngines",
+      "GetNamedQuery",
+      "GetNamespace",
+      "GetNamespaces",
+      "GetNotebookMetadata",
+      "GetPreparedStatement",
+      "GetQueryExecution",
+      "GetQueryExecutions",
+      "GetQueryResults",
+      "GetQueryResultsStream",
+      "GetQueryRuntimeStatistics",
+      "GetResourceDashboard",
+      "GetSession",
+      "GetSessionStatus",
+      "GetTable",
+      "GetTableMetadata",
+      "GetTables",
+      "GetWorkGroup",
+      "ListEngineVersions",
+      "ListQueryExecutions",
+      "ListTableMetadata",
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "CancelCapacityReservation",
+      "CancelQueryExecution",
+      "CreateCapacityReservation",
+      "CreateDataCatalog",
+      "CreateNamedQuery",
+      "CreateNotebook",
+      "CreatePreparedStatement",
+      "CreatePresignedNotebookUrl",
+      "CreateWorkGroup",
+      "DeleteCapacityReservation",
+      "DeleteDataCatalog",
+      "DeleteNamedQuery",
+      "DeleteNotebook",
+      "DeletePreparedStatement",
+      "DeleteWorkGroup",
+      "ExportNotebook",
+      "GetSessionEndpoint",
+      "ImportNotebook",
+      "PutCapacityAssignmentConfiguration",
+      "RunQuery",
+      "StartCalculationExecution",
+      "StartQueryExecution",
+      "StartSession",
+      "StopCalculationExecution",
+      "StopQueryExecution",
+      "TagResource",
+      "TerminateSession",
+      "UntagResource",
+      "UpdateCapacityReservation",
+      "UpdateDataCatalog",
+      "UpdateNamedQuery",
+      "UpdateNotebook",
+      "UpdateNotebookMetadata",
+      "UpdatePreparedStatement",
+      "UpdateWorkGroup"
+    ],
+    "List": [
+      "ListApplicationDPUSizes",
+      "ListCalculationExecutions",
+      "ListCapacityReservations",
+      "ListDataCatalogs",
+      "ListDatabases",
+      "ListExecutors",
+      "ListNamedQueries",
+      "ListNotebookMetadata",
+      "ListNotebookSessions",
+      "ListPreparedStatements",
+      "ListSessions",
+      "ListWorkGroups"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetNamedQuery",
+      "methodName": "toBatchGetNamedQuery",
+      "description": "Grants permission to get information about one or more named queries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html"
+    },
+    {
+      "name": "BatchGetPreparedStatement",
+      "methodName": "toBatchGetPreparedStatement",
+      "description": "Grants permission to get information about one or more prepared statements",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetPreparedStatement.html"
+    },
+    {
+      "name": "BatchGetQueryExecution",
+      "methodName": "toBatchGetQueryExecution",
+      "description": "Grants permission to get information about one or more query executions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html"
+    },
+    {
+      "name": "CancelCapacityReservation",
+      "methodName": "toCancelCapacityReservation",
+      "description": "Grants permission to cancel a capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CancelCapacityReservation.html"
+    },
+    {
+      "name": "CancelQueryExecution",
+      "methodName": "toCancelQueryExecution",
+      "description": "Grants permission to cancel query execution. Deprecated. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1.1.0. Use StopQueryExecution otherwise",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html"
+    },
+    {
+      "name": "CreateCapacityReservation",
+      "methodName": "toCreateCapacityReservation",
+      "description": "Grants permission to create a capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateCapacityReservation.html"
+    },
+    {
+      "name": "CreateDataCatalog",
+      "methodName": "toCreateDataCatalog",
+      "description": "Grants permission to create a datacatalog",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateDataCatalog.html"
+    },
+    {
+      "name": "CreateNamedQuery",
+      "methodName": "toCreateNamedQuery",
+      "description": "Grants permission to create a named query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html"
+    },
+    {
+      "name": "CreateNotebook",
+      "methodName": "toCreateNotebook",
+      "description": "Grants permission to create a notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNotebook.html"
+    },
+    {
+      "name": "CreatePreparedStatement",
+      "methodName": "toCreatePreparedStatement",
+      "description": "Grants permission to create a prepared statement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreatePreparedStatement.html"
+    },
+    {
+      "name": "CreatePresignedNotebookUrl",
+      "methodName": "toCreatePresignedNotebookUrl",
+      "description": "Grants permission to create a presigned notebook url",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreatePresignedNotebookUrl.html"
+    },
+    {
+      "name": "CreateWorkGroup",
+      "methodName": "toCreateWorkGroup",
+      "description": "Grants permission to create a workgroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html"
+    },
+    {
+      "name": "DeleteCapacityReservation",
+      "methodName": "toDeleteCapacityReservation",
+      "description": "Grants permission to delete a capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteCapacityReservation.html"
+    },
+    {
+      "name": "DeleteDataCatalog",
+      "methodName": "toDeleteDataCatalog",
+      "description": "Grants permission to delete a datacatalog",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteDataCatalog.html"
+    },
+    {
+      "name": "DeleteNamedQuery",
+      "methodName": "toDeleteNamedQuery",
+      "description": "Grants permission to delete a named query specified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html"
+    },
+    {
+      "name": "DeleteNotebook",
+      "methodName": "toDeleteNotebook",
+      "description": "Grants permission to delete a notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNotebook.html"
+    },
+    {
+      "name": "DeletePreparedStatement",
+      "methodName": "toDeletePreparedStatement",
+      "description": "Grants permission to delete a prepared statement specified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeletePreparedStatement.html"
+    },
+    {
+      "name": "DeleteWorkGroup",
+      "methodName": "toDeleteWorkGroup",
+      "description": "Grants permission to delete a workgroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteWorkGroup.html"
+    },
+    {
+      "name": "ExportNotebook",
+      "methodName": "toExportNotebook",
+      "description": "Grants permission to export a notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ExportNotebook.html"
+    },
+    {
+      "name": "GetCalculationExecution",
+      "methodName": "toGetCalculationExecution",
+      "description": "Grants permission to get a calculation execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCalculationExecution.html"
+    },
+    {
+      "name": "GetCalculationExecutionCode",
+      "methodName": "toGetCalculationExecutionCode",
+      "description": "Grants permission to get a calculation execution code",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCalculationExecutionCode.html"
+    },
+    {
+      "name": "GetCalculationExecutionStatus",
+      "methodName": "toGetCalculationExecutionStatus",
+      "description": "Grants permission to get a calculation execution status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCalculationExecutionStatus.html"
+    },
+    {
+      "name": "GetCapacityAssignmentConfiguration",
+      "methodName": "toGetCapacityAssignmentConfiguration",
+      "description": "Grants permission to get capacity assignment information for a capacity reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCapacityAssignmentConfiguration.html"
+    },
+    {
+      "name": "GetCapacityReservation",
+      "methodName": "toGetCapacityReservation",
+      "description": "Grants permission to get a capacity reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetCapacityReservation.html"
+    },
+    {
+      "name": "GetCatalogs",
+      "methodName": "toGetCatalogs",
+      "description": "Grants permission to enable access to databases and tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetDataCatalog",
+      "methodName": "toGetDataCatalog",
+      "description": "Grants permission to get a datacatalog",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDataCatalog.html"
+    },
+    {
+      "name": "GetDatabase",
+      "methodName": "toGetDatabase",
+      "description": "Grants permission to get a database for a given datacatalog",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDatabase.html"
+    },
+    {
+      "name": "GetExecutionEngine",
+      "methodName": "toGetExecutionEngine",
+      "description": "Grants permission to enable access to the specified database and table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetExecutionEngines",
+      "methodName": "toGetExecutionEngines",
+      "description": "Grants permission to enable access to databases and tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetNamedQuery",
+      "methodName": "toGetNamedQuery",
+      "description": "Grants permission to get information about the specified named query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html"
+    },
+    {
+      "name": "GetNamespace",
+      "methodName": "toGetNamespace",
+      "description": "Grants permission to enable access to the specified database and table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetNamespaces",
+      "methodName": "toGetNamespaces",
+      "description": "Grants permission to enable access to databases and tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetNotebookMetadata",
+      "methodName": "toGetNotebookMetadata",
+      "description": "Grants permission to get notebook metadata",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNotebookMetadata.html"
+    },
+    {
+      "name": "GetPreparedStatement",
+      "methodName": "toGetPreparedStatement",
+      "description": "Grants permission to get information about the specified prepared statement",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetPreparedStatement.html"
+    },
+    {
+      "name": "GetQueryExecution",
+      "methodName": "toGetQueryExecution",
+      "description": "Grants permission to get information about the specified query execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html"
+    },
+    {
+      "name": "GetQueryExecutions",
+      "methodName": "toGetQueryExecutions",
+      "description": "Grants permission to get query executions. Deprecated. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1.1.0. Use ListQueryExecutions otherwise",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html"
+    },
+    {
+      "name": "GetQueryResults",
+      "methodName": "toGetQueryResults",
+      "description": "Grants permission to get the query results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html"
+    },
+    {
+      "name": "GetQueryResultsStream",
+      "methodName": "toGetQueryResultsStream",
+      "description": "Grants permission to get the query results stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/jdbc-v3-driver.html#jdbc-v3-driver-download"
+    },
+    {
+      "name": "GetQueryRuntimeStatistics",
+      "methodName": "toGetQueryRuntimeStatistics",
+      "description": "Grants permission to get runtime statistics for the specified query execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryRuntimeStatistics.html"
+    },
+    {
+      "name": "GetResourceDashboard",
+      "methodName": "toGetResourceDashboard",
+      "description": "Grants permission to get a Live UI/Persistence UI for a session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetResourceDashboard.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to get a session",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSession.html"
+    },
+    {
+      "name": "GetSessionEndpoint",
+      "methodName": "toGetSessionEndpoint",
+      "description": "Grants permission to get a connection endpoint and authentication token for a given session Id",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSessionEndpoint.html"
+    },
+    {
+      "name": "GetSessionStatus",
+      "methodName": "toGetSessionStatus",
+      "description": "Grants permission to get a session status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSessionStatus.html"
+    },
+    {
+      "name": "GetTable",
+      "methodName": "toGetTable",
+      "description": "Grants permission to enable access to the specified table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetTableMetadata",
+      "methodName": "toGetTableMetadata",
+      "description": "Grants permission to get a metadata about a table for a given datacatalog",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetTableMetadata.html"
+    },
+    {
+      "name": "GetTables",
+      "methodName": "toGetTables",
+      "description": "Grants permission to enable access to tables. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies"
+    },
+    {
+      "name": "GetWorkGroup",
+      "methodName": "toGetWorkGroup",
+      "description": "Grants permission to get a workgroup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetWorkGroup.html"
+    },
+    {
+      "name": "ImportNotebook",
+      "methodName": "toImportNotebook",
+      "description": "Grants permission to import a notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ImportNotebook.html"
+    },
+    {
+      "name": "ListApplicationDPUSizes",
+      "methodName": "toListApplicationDPUSizes",
+      "description": "Grants permission to return a list of ApplicationRuntimeIds",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListApplicationDPUSizes.html"
+    },
+    {
+      "name": "ListCalculationExecutions",
+      "methodName": "toListCalculationExecutions",
+      "description": "Grants permission to return a list of calculation executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListCalculationExecutions.html"
+    },
+    {
+      "name": "ListCapacityReservations",
+      "methodName": "toListCapacityReservations",
+      "description": "Grants permission to return a list of capacity reservations for the specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListCapacityReservations.html"
+    },
+    {
+      "name": "ListDataCatalogs",
+      "methodName": "toListDataCatalogs",
+      "description": "Grants permission to return a list of datacatalogs for the specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDataCatalogs.html"
+    },
+    {
+      "name": "ListDatabases",
+      "methodName": "toListDatabases",
+      "description": "Grants permission to return a list of databases for a given datacatalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDatabases.html"
+    },
+    {
+      "name": "ListEngineVersions",
+      "methodName": "toListEngineVersions",
+      "description": "Grants permission to return a list of athena engine versions for the specified AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListEngineVersions.html"
+    },
+    {
+      "name": "ListExecutors",
+      "methodName": "toListExecutors",
+      "description": "Grants permission to return a list of executors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListExecutors.html"
+    },
+    {
+      "name": "ListNamedQueries",
+      "methodName": "toListNamedQueries",
+      "description": "Grants permission to return a list of named queries in Amazon Athena for the specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html"
+    },
+    {
+      "name": "ListNotebookMetadata",
+      "methodName": "toListNotebookMetadata",
+      "description": "Grants permission to return a list of notebooks for a given workgroup",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNotebookMetadata.html"
+    },
+    {
+      "name": "ListNotebookSessions",
+      "methodName": "toListNotebookSessions",
+      "description": "Grants permission to return a list of sessions for a given notebook",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNotebookSessions.html"
+    },
+    {
+      "name": "ListPreparedStatements",
+      "methodName": "toListPreparedStatements",
+      "description": "Grants permission to return a list of prepared statements for the specified workgroup",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListPreparedStatements.html"
+    },
+    {
+      "name": "ListQueryExecutions",
+      "methodName": "toListQueryExecutions",
+      "description": "Grants permission to return a list of query executions for the specified AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to return a list of sessions for a given workgroup",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListTableMetadata",
+      "methodName": "toListTableMetadata",
+      "description": "Grants permission to return a list of table metadata in a database for a given datacatalog",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTableMetadata.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkGroups",
+      "methodName": "toListWorkGroups",
+      "description": "Grants permission to return a list of workgroups for the specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListWorkGroups.html"
+    },
+    {
+      "name": "PutCapacityAssignmentConfiguration",
+      "methodName": "toPutCapacityAssignmentConfiguration",
+      "description": "Grants permission to assign capacity from a capacity reservation to queries",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_PutCapacityAssignmentConfiguration.html"
+    },
+    {
+      "name": "RunQuery",
+      "methodName": "toRunQuery",
+      "description": "Grants permission to run a query. Deprecated. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1.1.0. Use StartQueryExecution otherwise",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html"
+    },
+    {
+      "name": "StartCalculationExecution",
+      "methodName": "toStartCalculationExecution",
+      "description": "Grants permission to start a calculation execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StartCalculationExecution.html"
+    },
+    {
+      "name": "StartQueryExecution",
+      "methodName": "toStartQueryExecution",
+      "description": "Grants permission to start a query execution using an SQL query provided as a string",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html"
+    },
+    {
+      "name": "StartSession",
+      "methodName": "toStartSession",
+      "description": "Grants permission to start a session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StartSession.html"
+    },
+    {
+      "name": "StopCalculationExecution",
+      "methodName": "toStopCalculationExecution",
+      "description": "Grants permission to stop a calculation execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StopCalculationExecution.html"
+    },
+    {
+      "name": "StopQueryExecution",
+      "methodName": "toStopQueryExecution",
+      "description": "Grants permission to stop the specified query execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateSession",
+      "methodName": "toTerminateSession",
+      "description": "Grants permission to terminate a session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_TerminateSession.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCapacityReservation",
+      "methodName": "toUpdateCapacityReservation",
+      "description": "Grants permission to update a capacity reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateCapacityReservation.html"
+    },
+    {
+      "name": "UpdateDataCatalog",
+      "methodName": "toUpdateDataCatalog",
+      "description": "Grants permission to update a datacatalog",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateDataCatalog.html"
+    },
+    {
+      "name": "UpdateNamedQuery",
+      "methodName": "toUpdateNamedQuery",
+      "description": "Grants permission to update a named query specified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateNamedQuery.html"
+    },
+    {
+      "name": "UpdateNotebook",
+      "methodName": "toUpdateNotebook",
+      "description": "Grants permission to update a notebook",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateNotebook.html"
+    },
+    {
+      "name": "UpdateNotebookMetadata",
+      "methodName": "toUpdateNotebookMetadata",
+      "description": "Grants permission to update notebook metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateNotebookMetadata.html"
+    },
+    {
+      "name": "UpdatePreparedStatement",
+      "methodName": "toUpdatePreparedStatement",
+      "description": "Grants permission to update a prepared statement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdatePreparedStatement.html"
+    },
+    {
+      "name": "UpdateWorkGroup",
+      "methodName": "toUpdateWorkGroup",
+      "description": "Grants permission to update a workgroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateWorkGroup.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "capacity-reservation",
+      "methodName": "onCapacityReservation",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/example-policies-capacity-reservations.html",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:capacity-reservation/${CapacityReservationName}",
+      "placeholders": [
+        {
+          "placeholder": "CapacityReservationName",
+          "name": "capacityReservationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_athena",
+        "interface": "ICapacityReservationRef",
+        "property": "capacityReservationRef",
+        "arn": "capacityReservationArn"
+      }
+    },
+    {
+      "name": "datacatalog",
+      "methodName": "onDatacatalog",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}",
+      "placeholders": [
+        {
+          "placeholder": "DataCatalogName",
+          "name": "dataCatalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_athena",
+        "interface": "IDataCatalogRef",
+        "property": "dataCatalogRef",
+        "id": "dataCatalogName"
+      }
+    },
+    {
+      "name": "session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}/session/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkGroupName",
+          "name": "workGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workgroup",
+      "methodName": "onWorkgroup",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "WorkGroupName",
+          "name": "workGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_athena",
+        "interface": "IWorkGroupRef",
+        "property": "workGroupRef",
+        "id": "workGroupName"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCapacityReservation",
+        "toCreateDataCatalog",
+        "toCreateWorkGroup",
+        "toStartSession",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetNamedQuery",
+        "toBatchGetPreparedStatement",
+        "toBatchGetQueryExecution",
+        "toCancelCapacityReservation",
+        "toCancelQueryExecution",
+        "toCreateCapacityReservation",
+        "toCreateDataCatalog",
+        "toCreateNamedQuery",
+        "toCreateNotebook",
+        "toCreatePreparedStatement",
+        "toCreatePresignedNotebookUrl",
+        "toCreateWorkGroup",
+        "toDeleteCapacityReservation",
+        "toDeleteDataCatalog",
+        "toDeleteNamedQuery",
+        "toDeleteNotebook",
+        "toDeletePreparedStatement",
+        "toDeleteWorkGroup",
+        "toExportNotebook",
+        "toGetCalculationExecution",
+        "toGetCalculationExecutionCode",
+        "toGetCalculationExecutionStatus",
+        "toGetCapacityAssignmentConfiguration",
+        "toGetCapacityReservation",
+        "toGetDataCatalog",
+        "toGetDatabase",
+        "toGetNamedQuery",
+        "toGetNotebookMetadata",
+        "toGetPreparedStatement",
+        "toGetQueryExecution",
+        "toGetQueryResults",
+        "toGetQueryResultsStream",
+        "toGetQueryRuntimeStatistics",
+        "toGetResourceDashboard",
+        "toGetSession",
+        "toGetSessionEndpoint",
+        "toGetSessionStatus",
+        "toGetTableMetadata",
+        "toGetWorkGroup",
+        "toImportNotebook",
+        "toListCalculationExecutions",
+        "toListDatabases",
+        "toListNamedQueries",
+        "toListNotebookMetadata",
+        "toListNotebookSessions",
+        "toListPreparedStatements",
+        "toListQueryExecutions",
+        "toListSessions",
+        "toListTableMetadata",
+        "toListTagsForResource",
+        "toPutCapacityAssignmentConfiguration",
+        "toStartCalculationExecution",
+        "toStartQueryExecution",
+        "toStartSession",
+        "toStopCalculationExecution",
+        "toStopQueryExecution",
+        "toTagResource",
+        "toTerminateSession",
+        "toUntagResource",
+        "toUpdateCapacityReservation",
+        "toUpdateDataCatalog",
+        "toUpdateNamedQuery",
+        "toUpdateNotebook",
+        "toUpdateNotebookMetadata",
+        "toUpdatePreparedStatement",
+        "toUpdateWorkGroup"
+      ],
+      "relatedResourceTypes": [
+        "capacity-reservation",
+        "datacatalog",
+        "session",
+        "workgroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCapacityReservation",
+        "toCreateDataCatalog",
+        "toCreateWorkGroup",
+        "toStartSession",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

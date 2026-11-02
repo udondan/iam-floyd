@@ -1,0 +1,77 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3FilesPermissions",
+      "Effect": "Allow",
+      "Action": "s3files:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "EC2NetworkingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3BucketPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketNotification",
+        "s3:PutBucketNotification"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Sid": "EventBridgeManage",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "elasticfilesystem.amazonaws.com"
+        }
+      },
+      "Resource": [
+        "arn:aws:events:*:*:rule/DO-NOT-DELETE-S3-Files*"
+      ]
+    },
+    {
+      "Sid": "EventBridgeRead",
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListRules",
+        "events:ListTargetsByRule"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:rule/*"
+      ]
+    },
+    {
+      "Sid": "IAMPassRoleForS3Files",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "elasticfilesystem.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

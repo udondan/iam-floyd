@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "filename": "cloudfront-keyvaluestore",
+  "className": "CloudfrontKeyvaluestore",
+  "name": "cloudfront-keyvaluestore",
+  "servicePrefix": "cloudfront-keyvaluestore",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudfront-keyvaluestore.html",
+  "accessLevelList": {
+    "Write": [
+      "DeleteKey",
+      "PutKey",
+      "UpdateKeys"
+    ],
+    "Read": [
+      "DescribeKeyValueStore",
+      "GetKey"
+    ],
+    "List": [
+      "ListKeys"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeleteKey",
+      "methodName": "toDeleteKey",
+      "description": "Grants permission to delete the key value pair specified by the key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_DeleteKey.html"
+    },
+    {
+      "name": "DescribeKeyValueStore",
+      "methodName": "toDescribeKeyValueStore",
+      "description": "Grants permission to return metadata information about Key Value Store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_DescribeKeyValueStore.html"
+    },
+    {
+      "name": "GetKey",
+      "methodName": "toGetKey",
+      "description": "Grants permission to return a key value pair",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_GetKey.html"
+    },
+    {
+      "name": "ListKeys",
+      "methodName": "toListKeys",
+      "description": "Grants permission to returns a list of key value pairs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_ListKeys.html"
+    },
+    {
+      "name": "PutKey",
+      "methodName": "toPutKey",
+      "description": "Grants permission to create a new key value pair or replace the value of an existing key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_PutKey.html"
+    },
+    {
+      "name": "UpdateKeys",
+      "methodName": "toUpdateKeys",
+      "description": "Grants permission to put or delete multiple key value pairs in a single, all-or-nothing operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_UpdateKeys.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "key-value-store",
+      "methodName": "onKeyValueStore",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html",
+      "arn": "arn:${Partition}:cloudfront::${Account}:key-value-store/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

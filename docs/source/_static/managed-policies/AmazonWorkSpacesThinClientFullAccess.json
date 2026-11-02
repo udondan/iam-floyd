@@ -1,0 +1,51 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowThinClientFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "thinclient:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowWorkSpacesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces:DescribeConnectionAliases",
+        "workspaces:DescribeWorkspaceDirectories"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowWorkSpacesSecureBrowserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces-web:GetPortal",
+        "workspaces-web:GetUserSettings",
+        "workspaces-web:ListPortals"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAppStreamAccess",
+      "Effect": "Allow",
+      "Action": [
+        "appstream:DescribeStacks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/monitoring.thinclient.amazonaws.com/AWSServiceRoleForAmazonWorkSpacesThinClientMonitoring",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "monitoring.thinclient.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

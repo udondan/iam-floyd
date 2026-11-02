@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "filename": "ssmmessages",
+  "className": "Ssmmessages",
+  "name": "ssmmessages",
+  "servicePrefix": "ssmmessages",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ssmmessages.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateControlChannel",
+      "CreateDataChannel",
+      "OpenControlChannel",
+      "OpenDataChannel"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateControlChannel",
+      "methodName": "toCreateControlChannel",
+      "description": "Grants permission to register a control channel for an instance to send control messages to Systems Manager service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html",
+      "conditionMethods": [
+        "ifEc2SourceInstanceARN",
+        "ifSsmSourceInstanceARN"
+      ]
+    },
+    {
+      "name": "CreateDataChannel",
+      "methodName": "toCreateDataChannel",
+      "description": "Grants permission to register a data channel for an instance to send data messages to Systems Manager service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html"
+    },
+    {
+      "name": "OpenControlChannel",
+      "methodName": "toOpenControlChannel",
+      "description": "Grants permission to open a websocket connection for a registered control channel stream from an instance to Systems Manager service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html"
+    },
+    {
+      "name": "OpenDataChannel",
+      "methodName": "toOpenDataChannel",
+      "description": "Grants permission to open a websocket connection for a registered data channel stream from an instance to Systems Manager service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html"
+    }
+  ],
+  "resources": [],
+  "conditions": [
+    {
+      "key": "ec2:SourceInstanceARN",
+      "methodName": "ifEc2SourceInstanceARN",
+      "description": "Filters access by the ARN of the instance from which the request originated",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys",
+      "relatedActionMethods": [
+        "toCreateControlChannel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ec2:SourceInstanceARN",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ssm:SourceInstanceARN",
+      "methodName": "ifSsmSourceInstanceARN",
+      "description": "Filters access by verifying the Amazon Resource Name (ARN) of the AWS Systems Manager's managed instance from which the request is made. This key is not present when the request comes from the managed instance authenticated with an IAM role associated with EC2 instance profile",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#policy-conditions",
+      "relatedActionMethods": [
+        "toCreateControlChannel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ssm:SourceInstanceARN",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

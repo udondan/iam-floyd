@@ -1,0 +1,882 @@
+{
+  "schemaVersion": 1,
+  "filename": "swf",
+  "className": "Swf",
+  "name": "swf",
+  "servicePrefix": "swf",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_swf.html",
+  "accessLevelList": {
+    "Read": [
+      "CountClosedWorkflowExecutions",
+      "CountOpenWorkflowExecutions",
+      "CountPendingActivityTasks",
+      "CountPendingDecisionTasks",
+      "DescribeActivityType",
+      "DescribeDomain",
+      "DescribeWorkflowExecution",
+      "DescribeWorkflowType",
+      "GetWorkflowExecutionHistory"
+    ],
+    "Write": [
+      "DeleteActivityType",
+      "DeleteWorkflowType",
+      "DeprecateActivityType",
+      "DeprecateDomain",
+      "DeprecateWorkflowType",
+      "PollForActivityTask",
+      "PollForDecisionTask",
+      "RecordActivityTaskHeartbeat",
+      "RegisterActivityType",
+      "RegisterDomain",
+      "RegisterWorkflowType",
+      "RequestCancelWorkflowExecution",
+      "RespondActivityTaskCanceled",
+      "RespondActivityTaskCompleted",
+      "RespondActivityTaskFailed",
+      "RespondDecisionTaskCompleted",
+      "SignalWorkflowExecution",
+      "StartWorkflowExecution",
+      "TagResource",
+      "TerminateWorkflowExecution",
+      "UndeprecateActivityType",
+      "UndeprecateDomain",
+      "UndeprecateWorkflowType",
+      "UntagResource",
+      "CancelTimer",
+      "CancelWorkflowExecution",
+      "CompleteWorkflowExecution",
+      "ContinueAsNewWorkflowExecution",
+      "FailWorkflowExecution",
+      "RecordMarker",
+      "RequestCancelActivityTask",
+      "RequestCancelExternalWorkflowExecution",
+      "ScheduleActivityTask",
+      "SignalExternalWorkflowExecution",
+      "StartChildWorkflowExecution",
+      "StartTimer"
+    ],
+    "List": [
+      "ListActivityTypes",
+      "ListClosedWorkflowExecutions",
+      "ListDomains",
+      "ListOpenWorkflowExecutions",
+      "ListTagsForResource",
+      "ListWorkflowTypes"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CountClosedWorkflowExecutions",
+      "methodName": "toCountClosedWorkflowExecutions",
+      "description": "Grants permission to return the number of closed workflow executions within the given domain that meet the specified filtering criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountClosedWorkflowExecutions.html"
+    },
+    {
+      "name": "CountOpenWorkflowExecutions",
+      "methodName": "toCountOpenWorkflowExecutions",
+      "description": "Grants permission to return the number of open workflow executions within the given domain that meet the specified filtering criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountOpenWorkflowExecutions.html"
+    },
+    {
+      "name": "CountPendingActivityTasks",
+      "methodName": "toCountPendingActivityTasks",
+      "description": "Grants permission to return the estimated number of activity tasks in the specified task list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingActivityTasks.html"
+    },
+    {
+      "name": "CountPendingDecisionTasks",
+      "methodName": "toCountPendingDecisionTasks",
+      "description": "Grants permission to return the estimated number of decision tasks in the specified task list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingDecisionTasks.html"
+    },
+    {
+      "name": "DeleteActivityType",
+      "methodName": "toDeleteActivityType",
+      "description": "Grants permission to delete the specified activity type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeleteActivityType.html"
+    },
+    {
+      "name": "DeleteWorkflowType",
+      "methodName": "toDeleteWorkflowType",
+      "description": "Grants permission to delete the specified workflow type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeleteWorkflowType.html"
+    },
+    {
+      "name": "DeprecateActivityType",
+      "methodName": "toDeprecateActivityType",
+      "description": "Grants permission to deprecate the specified activity type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html"
+    },
+    {
+      "name": "DeprecateDomain",
+      "methodName": "toDeprecateDomain",
+      "description": "Grants permission to deprecate the specified domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateDomain.html"
+    },
+    {
+      "name": "DeprecateWorkflowType",
+      "methodName": "toDeprecateWorkflowType",
+      "description": "Grants permission to deprecate the specified workflow type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateWorkflowType.html"
+    },
+    {
+      "name": "DescribeActivityType",
+      "methodName": "toDescribeActivityType",
+      "description": "Grants permission to return information about the specified activity type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeActivityType.html"
+    },
+    {
+      "name": "DescribeDomain",
+      "methodName": "toDescribeDomain",
+      "description": "Grants permission to return information about the specified domain, including its description and status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeDomain.html"
+    },
+    {
+      "name": "DescribeWorkflowExecution",
+      "methodName": "toDescribeWorkflowExecution",
+      "description": "Grants permission to return information about the specified workflow execution including its type and some statistics",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowExecution.html"
+    },
+    {
+      "name": "DescribeWorkflowType",
+      "methodName": "toDescribeWorkflowType",
+      "description": "Grants permission to return information about the specified workflow type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html"
+    },
+    {
+      "name": "GetWorkflowExecutionHistory",
+      "methodName": "toGetWorkflowExecutionHistory",
+      "description": "Grants permission to return the history of the specified workflow execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_GetWorkflowExecutionHistory.html"
+    },
+    {
+      "name": "ListActivityTypes",
+      "methodName": "toListActivityTypes",
+      "description": "Grants permission to return information about all activities registered in the specified domain that match the specified name and registration status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListActivityTypes.html"
+    },
+    {
+      "name": "ListClosedWorkflowExecutions",
+      "methodName": "toListClosedWorkflowExecutions",
+      "description": "Grants permission to return a list of closed workflow executions in the specified domain that meet the filtering criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListClosedWorkflowExecutions.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to return the list of domains registered in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListDomains.html"
+    },
+    {
+      "name": "ListOpenWorkflowExecutions",
+      "methodName": "toListOpenWorkflowExecutions",
+      "description": "Grants permission to return a list of open workflow executions in the specified domain that meet the filtering criteria",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListOpenWorkflowExecutions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an AWS SWF resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWorkflowTypes",
+      "methodName": "toListWorkflowTypes",
+      "description": "Grants permission to return information about workflow types in the specified domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListWorkflowTypes.html"
+    },
+    {
+      "name": "PollForActivityTask",
+      "methodName": "toPollForActivityTask",
+      "description": "Grants permission to workers to get an ActivityTask from the specified activity taskList",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html"
+    },
+    {
+      "name": "PollForDecisionTask",
+      "methodName": "toPollForDecisionTask",
+      "description": "Grants permission to deciders to get a DecisionTask from the specified decision taskList",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html"
+    },
+    {
+      "name": "RecordActivityTaskHeartbeat",
+      "methodName": "toRecordActivityTaskHeartbeat",
+      "description": "Grants permission to workers to report to the service that the ActivityTask represented by the specified taskToken is still making progress",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordActivityTaskHeartbeat.html"
+    },
+    {
+      "name": "RegisterActivityType",
+      "methodName": "toRegisterActivityType",
+      "description": "Grants permission to register a new activity type along with its configuration settings in the specified domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html"
+    },
+    {
+      "name": "RegisterDomain",
+      "methodName": "toRegisterDomain",
+      "description": "Grants permission to register a new domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterDomain.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "RegisterWorkflowType",
+      "methodName": "toRegisterWorkflowType",
+      "description": "Grants permission to register a new workflow type and its configuration settings in the specified domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterWorkflowType.html"
+    },
+    {
+      "name": "RequestCancelWorkflowExecution",
+      "methodName": "toRequestCancelWorkflowExecution",
+      "description": "Grants permission to record a WorkflowExecutionCancelRequested event in the currently running workflow execution identified by the given domain, workflowId, and runId",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelWorkflowExecution.html"
+    },
+    {
+      "name": "RespondActivityTaskCanceled",
+      "methodName": "toRespondActivityTaskCanceled",
+      "description": "Grants permission to workers to tell the service that the ActivityTask identified by the taskToken was successfully canceled",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCanceled.html"
+    },
+    {
+      "name": "RespondActivityTaskCompleted",
+      "methodName": "toRespondActivityTaskCompleted",
+      "description": "Grants permission to workers to tell the service that the ActivityTask identified by the taskToken completed successfully with a result (if provided)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCompleted.html"
+    },
+    {
+      "name": "RespondActivityTaskFailed",
+      "methodName": "toRespondActivityTaskFailed",
+      "description": "Grants permission to workers to tell the service that the ActivityTask identified by the taskToken has failed with reason (if specified)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskFailed.html"
+    },
+    {
+      "name": "RespondDecisionTaskCompleted",
+      "methodName": "toRespondDecisionTaskCompleted",
+      "description": "Grants permission to deciders to tell the service that the DecisionTask identified by the taskToken has successfully completed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondDecisionTaskCompleted.html"
+    },
+    {
+      "name": "SignalWorkflowExecution",
+      "methodName": "toSignalWorkflowExecution",
+      "description": "Grants permission to record a WorkflowExecutionSignaled event in the workflow execution history and create a decision task for the workflow execution identified by the given domain, workflowId and runId",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalWorkflowExecution.html"
+    },
+    {
+      "name": "StartWorkflowExecution",
+      "methodName": "toStartWorkflowExecution",
+      "description": "Grants permission to start an execution of the workflow type in the specified domain using the provided workflowId and input data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS SWF resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateWorkflowExecution",
+      "methodName": "toTerminateWorkflowExecution",
+      "description": "Grants permission to record a WorkflowExecutionTerminated event and force closure of the workflow execution identified by the given domain, runId, and workflowId",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TerminateWorkflowExecution.html"
+    },
+    {
+      "name": "UndeprecateActivityType",
+      "methodName": "toUndeprecateActivityType",
+      "description": "Grants permission to undeprecate a previously deprecated activity type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UndeprecateActivityType.html"
+    },
+    {
+      "name": "UndeprecateDomain",
+      "methodName": "toUndeprecateDomain",
+      "description": "Grants permission to undeprecate a previously deprecated domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UndeprecateDomain.html"
+    },
+    {
+      "name": "UndeprecateWorkflowType",
+      "methodName": "toUndeprecateWorkflowType",
+      "description": "Grants permission to undeprecate a previously deprecated workflow type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UndeprecateWorkflowType.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from an AWS SWF resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UntagResource.html"
+    },
+    {
+      "name": "CancelTimer",
+      "methodName": "toCancelTimer",
+      "description": "Grants permission to cancel a previously started timer and record a TimerCanceled event in the history",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CancelWorkflowExecution",
+      "methodName": "toCancelWorkflowExecution",
+      "description": "Grants permission to close the workflow execution and record a WorkflowExecutionCanceled event in the history",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CompleteWorkflowExecution",
+      "methodName": "toCompleteWorkflowExecution",
+      "description": "Grants permission to close the workflow execution and record a WorkflowExecutionCompleted event in the history",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "ContinueAsNewWorkflowExecution",
+      "methodName": "toContinueAsNewWorkflowExecution",
+      "description": "Grants permission to close the workflow execution and start a new workflow execution of the same type using the same workflow ID and a unique run Id",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "FailWorkflowExecution",
+      "methodName": "toFailWorkflowExecution",
+      "description": "Grants permission to close the workflow execution and record a WorkflowExecutionFailed event in the history",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RecordMarker",
+      "methodName": "toRecordMarker",
+      "description": "Grants permission to record a MarkerRecorded event in the history",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RequestCancelActivityTask",
+      "methodName": "toRequestCancelActivityTask",
+      "description": "Grants permission to attempt to cancel a previously scheduled activity task",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "RequestCancelExternalWorkflowExecution",
+      "methodName": "toRequestCancelExternalWorkflowExecution",
+      "description": "Grants permission to request that a request be made to cancel the specified external workflow execution",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "ScheduleActivityTask",
+      "methodName": "toScheduleActivityTask",
+      "description": "Grants permission to schedule an activity task",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "SignalExternalWorkflowExecution",
+      "methodName": "toSignalExternalWorkflowExecution",
+      "description": "Grants permission to request a signal to be delivered to the specified external workflow execution and records",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartChildWorkflowExecution",
+      "methodName": "toStartChildWorkflowExecution",
+      "description": "Grants permission to request that a child workflow execution be started",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "StartTimer",
+      "methodName": "toStartTimer",
+      "description": "Grants permission to start a timer for a workflow execution",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-domains.html",
+      "arn": "arn:${Partition}:swf::${Account}:/domain/${DomainName}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tag of the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toRegisterDomain",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag of the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCountClosedWorkflowExecutions",
+        "toCountOpenWorkflowExecutions",
+        "toCountPendingActivityTasks",
+        "toCountPendingDecisionTasks",
+        "toDeleteActivityType",
+        "toDeleteWorkflowType",
+        "toDeprecateActivityType",
+        "toDeprecateDomain",
+        "toDeprecateWorkflowType",
+        "toDescribeActivityType",
+        "toDescribeDomain",
+        "toDescribeWorkflowExecution",
+        "toDescribeWorkflowType",
+        "toGetWorkflowExecutionHistory",
+        "toListActivityTypes",
+        "toListClosedWorkflowExecutions",
+        "toListOpenWorkflowExecutions",
+        "toListTagsForResource",
+        "toListWorkflowTypes",
+        "toPollForActivityTask",
+        "toPollForDecisionTask",
+        "toRecordActivityTaskHeartbeat",
+        "toRegisterActivityType",
+        "toRegisterWorkflowType",
+        "toRequestCancelWorkflowExecution",
+        "toRespondActivityTaskCanceled",
+        "toRespondActivityTaskCompleted",
+        "toRespondActivityTaskFailed",
+        "toRespondDecisionTaskCompleted",
+        "toSignalWorkflowExecution",
+        "toStartWorkflowExecution",
+        "toTagResource",
+        "toTerminateWorkflowExecution",
+        "toUndeprecateActivityType",
+        "toUndeprecateDomain",
+        "toUndeprecateWorkflowType",
+        "toUntagResource",
+        "toCancelTimer",
+        "toCancelWorkflowExecution",
+        "toCompleteWorkflowExecution",
+        "toContinueAsNewWorkflowExecution",
+        "toFailWorkflowExecution",
+        "toRecordMarker",
+        "toRequestCancelActivityTask",
+        "toRequestCancelExternalWorkflowExecution",
+        "toScheduleActivityTask",
+        "toSignalExternalWorkflowExecution",
+        "toStartChildWorkflowExecution",
+        "toStartTimer"
+      ],
+      "relatedResourceTypes": [
+        "domain"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag of the key",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toRegisterDomain",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:activityType.name",
+      "methodName": "ifActivityTypeName",
+      "description": "Filters access by the name of the activity type",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toDeleteActivityType",
+        "toDeprecateActivityType",
+        "toDescribeActivityType",
+        "toRespondActivityTaskCompleted",
+        "toUndeprecateActivityType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "activityType.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:activityType.version",
+      "methodName": "ifActivityTypeVersion",
+      "description": "Filters access by the version of the activity type",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toDeleteActivityType",
+        "toDeprecateActivityType",
+        "toDescribeActivityType",
+        "toRespondActivityTaskCompleted",
+        "toUndeprecateActivityType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "activityType.version",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:defaultTaskList.name",
+      "methodName": "ifDefaultTaskListName",
+      "description": "Filters access by the name of the default task list",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRegisterActivityType",
+        "toRegisterWorkflowType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "defaultTaskList.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:name",
+      "methodName": "ifName",
+      "description": "Filters access by the name of activities or workflows",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRegisterActivityType",
+        "toRegisterWorkflowType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:tagFilter.tag",
+      "methodName": "ifTagFilterTag",
+      "description": "Filters access by the value of tagFilter.tag",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toCountClosedWorkflowExecutions",
+        "toCountOpenWorkflowExecutions",
+        "toListClosedWorkflowExecutions",
+        "toListOpenWorkflowExecutions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tagFilter.tag",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:tagList.member.0",
+      "methodName": "ifTagListMember0",
+      "description": "Filters access by the specified tag",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tagList.member.0",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:tagList.member.1",
+      "methodName": "ifTagListMember1",
+      "description": "Filters access by the specified tag",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tagList.member.1",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:tagList.member.2",
+      "methodName": "ifTagListMember2",
+      "description": "Filters access by the specified tag",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tagList.member.2",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:tagList.member.3",
+      "methodName": "ifTagListMember3",
+      "description": "Filters access by the specified tag",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tagList.member.3",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:tagList.member.4",
+      "methodName": "ifTagListMember4",
+      "description": "Filters access by the specified tag",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "tagList.member.4",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:taskList.name",
+      "methodName": "ifTaskListName",
+      "description": "Filters access by the name of the tasklist",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toCountPendingActivityTasks",
+        "toCountPendingDecisionTasks",
+        "toPollForActivityTask",
+        "toPollForDecisionTask",
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "taskList.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:typeFilter.name",
+      "methodName": "ifTypeFilterName",
+      "description": "Filters access by the name of the type filter",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toCountClosedWorkflowExecutions",
+        "toCountOpenWorkflowExecutions",
+        "toListClosedWorkflowExecutions",
+        "toListOpenWorkflowExecutions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "typeFilter.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:typeFilter.version",
+      "methodName": "ifTypeFilterVersion",
+      "description": "Filters access by the version of the type filter",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toCountClosedWorkflowExecutions",
+        "toCountOpenWorkflowExecutions",
+        "toListClosedWorkflowExecutions",
+        "toListOpenWorkflowExecutions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "typeFilter.version",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:version",
+      "methodName": "ifVersion",
+      "description": "Filters access by the version of activities or workflows",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toRegisterActivityType",
+        "toRegisterWorkflowType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "version",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:workflowType.name",
+      "methodName": "ifWorkflowTypeName",
+      "description": "Filters access by the name of the workflow type",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toDeleteWorkflowType",
+        "toDeprecateWorkflowType",
+        "toDescribeWorkflowType",
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution",
+        "toUndeprecateWorkflowType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "workflowType.name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "swf:workflowType.version",
+      "methodName": "ifWorkflowTypeVersion",
+      "description": "Filters access by the version of the workflow type",
+      "url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api",
+      "relatedActionMethods": [
+        "toDeleteWorkflowType",
+        "toDeprecateWorkflowType",
+        "toDescribeWorkflowType",
+        "toRespondActivityTaskCompleted",
+        "toStartWorkflowExecution",
+        "toUndeprecateWorkflowType"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "workflowType.version",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

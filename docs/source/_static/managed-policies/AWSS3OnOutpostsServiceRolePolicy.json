@@ -1,0 +1,109 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeCoipPools",
+        "ec2:GetCoipPoolUsage",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeLocalGatewayRouteTableVpcAssociations"
+      ],
+      "Resource": "*",
+      "Sid": "DescribeVpcResources"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ],
+      "Sid": "CreateNetworkInterface"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/CreatedBy": "S3 On Outposts"
+        }
+      },
+      "Sid": "CreateTagsForCreateNetworkInterface"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AllocateAddress"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:ipv4pool-ec2/*"
+      ],
+      "Sid": "AllocateIpAddress"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AllocateAddress"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:elastic-ip/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/CreatedBy": "S3 On Outposts"
+        }
+      },
+      "Sid": "CreateTagsForAllocateIpAddress"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:DisassociateAddress",
+        "ec2:ReleaseAddress",
+        "ec2:AssociateAddress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "S3 On Outposts"
+        }
+      },
+      "Sid": "ReleaseVpcResources"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateNetworkInterface",
+            "AllocateAddress"
+          ],
+          "aws:RequestTag/CreatedBy": [
+            "S3 On Outposts"
+          ]
+        }
+      },
+      "Sid": "CreateTags"
+    }
+  ]
+}

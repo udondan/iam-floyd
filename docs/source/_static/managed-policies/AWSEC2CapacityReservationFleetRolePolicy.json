@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeCapacityReservations",
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateCapacityReservation",
+        "ec2:CancelCapacityReservation",
+        "ec2:ModifyCapacityReservation"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:capacity-reservation/*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "ec2:CapacityReservationFleet": "arn:aws:ec2:*:*:capacity-reservation-fleet/crf-*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:capacity-reservation/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateCapacityReservation"
+        }
+      }
+    }
+  ]
+}

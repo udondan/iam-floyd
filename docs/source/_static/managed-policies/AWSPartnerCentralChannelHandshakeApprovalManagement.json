@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ChannelHandshakeManagement",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListChannelHandshakes",
+        "partnercentral:AcceptChannelHandshake",
+        "partnercentral:RejectChannelHandshake"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    }
+  ]
+}

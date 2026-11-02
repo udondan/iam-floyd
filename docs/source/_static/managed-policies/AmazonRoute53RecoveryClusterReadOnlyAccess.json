@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "route53-recovery-cluster:GetRoutingControlState",
+        "route53-recovery-cluster:ListRoutingControls"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

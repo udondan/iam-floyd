@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCreateEniInAnySubnet",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:subnet/*"
+    },
+    {
+      "Sid": "AllowCreateEniWithSecurityGroups",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:security-group/*"
+    },
+    {
+      "Sid": "AllowCreateEniWithLambdaTagKeys",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "aws:lambda:networkConnectorName",
+            "aws:lambda:networkConnectorId"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TagENIOnCreate",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface",
+          "ec2:ManagedResourceOperator": "network-connectors.lambda.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

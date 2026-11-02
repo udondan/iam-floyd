@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "filename": "trustedadvisor",
+  "className": "Trustedadvisor",
+  "name": "trustedadvisor",
+  "servicePrefix": "trustedadvisor",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_trustedadvisor.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchUpdateRecommendationResourceExclusion",
+      "DeleteNotificationConfigurationForDelegatedAdmin",
+      "RefreshCheck",
+      "UpdateNotificationConfigurations",
+      "UpdateOrganizationRecommendationLifecycle",
+      "UpdateRecommendationLifecycle",
+      "UpdateRiskStatus",
+      "ExcludeCheckItems",
+      "GenerateReport",
+      "IncludeCheckItems",
+      "SetAccountAccess",
+      "SetOrganizationAccess",
+      "UpdateNotificationPreferences"
+    ],
+    "Read": [
+      "DescribeCheckItems",
+      "DescribeCheckRefreshStatuses",
+      "DescribeCheckSummaries",
+      "DescribeChecks",
+      "DescribeNotificationConfigurations",
+      "DescribeRisk",
+      "DescribeRiskResources",
+      "DescribeRisks",
+      "DownloadRisk",
+      "GetOrganizationRecommendation",
+      "GetRecommendation",
+      "DescribeAccount",
+      "DescribeAccountAccess",
+      "DescribeCheckStatusHistoryChanges",
+      "DescribeNotificationPreferences",
+      "DescribeOrganization",
+      "DescribeOrganizationAccounts",
+      "DescribeReports",
+      "DescribeServiceMetadata",
+      "ListAccountsForParent",
+      "ListOrganizationalUnitsForParent",
+      "ListRoots"
+    ],
+    "List": [
+      "ListChecks",
+      "ListOrganizationRecommendationAccounts",
+      "ListOrganizationRecommendationResources",
+      "ListOrganizationRecommendations",
+      "ListRecommendationResources",
+      "ListRecommendations",
+      "ListRecommendationsForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchUpdateRecommendationResourceExclusion",
+      "methodName": "toBatchUpdateRecommendationResourceExclusion",
+      "description": "Grants permission to update one or more exclusion status for a list of recommendation resources",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "DeleteNotificationConfigurationForDelegatedAdmin",
+      "methodName": "toDeleteNotificationConfigurationForDelegatedAdmin",
+      "description": "Grants permission to the organization management account to delete email notification preferences from a delegated administrator account for Trusted Advisor Priority",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeCheckItems",
+      "methodName": "toDescribeCheckItems",
+      "description": "Grants permission to view details for the check items",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeCheckRefreshStatuses",
+      "methodName": "toDescribeCheckRefreshStatuses",
+      "description": "Grants permission to view the refresh statuses for AWS Trusted Advisor checks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeCheckSummaries",
+      "methodName": "toDescribeCheckSummaries",
+      "description": "Grants permission to view AWS Trusted Advisor check summaries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeChecks",
+      "methodName": "toDescribeChecks",
+      "description": "Grants permission to view details for AWS Trusted Advisor checks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeNotificationConfigurations",
+      "methodName": "toDescribeNotificationConfigurations",
+      "description": "Grants permission to get your email notification preferences for Trusted Advisor Priority",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeRisk",
+      "methodName": "toDescribeRisk",
+      "description": "Grants permission to view risk details in AWS Trusted Advisor Priority",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeRiskResources",
+      "methodName": "toDescribeRiskResources",
+      "description": "Grants permission to view affected resources for a risk in AWS Trusted Advisor Priority",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeRisks",
+      "methodName": "toDescribeRisks",
+      "description": "Grants permission to view risks in AWS Trusted Advisor Priority",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DownloadRisk",
+      "methodName": "toDownloadRisk",
+      "description": "Grants permission to download a file that contains details about the risk in AWS Trusted Advisor Priority",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "GetOrganizationRecommendation",
+      "methodName": "toGetOrganizationRecommendation",
+      "description": "Grants permission to get a specific recommendation within an AWS Organization's organization. This API supports only prioritized recommendations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "GetRecommendation",
+      "methodName": "toGetRecommendation",
+      "description": "Grants permission to get a specific Recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListChecks",
+      "methodName": "toListChecks",
+      "description": "Grants permission to list a filterable set of Checks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListOrganizationRecommendationAccounts",
+      "methodName": "toListOrganizationRecommendationAccounts",
+      "description": "Grants permission to list the accounts that own the resources for an AWS Organization aggregate recommendation. This API only supports prioritized recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListOrganizationRecommendationResources",
+      "methodName": "toListOrganizationRecommendationResources",
+      "description": "Grants permission to list Resources of a Recommendation within an AWS Organization. This API only supports prioritized recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListOrganizationRecommendations",
+      "methodName": "toListOrganizationRecommendations",
+      "description": "Grants permission to list a filterable set of Recommendations within an AWS Organization. This API only supports prioritized recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListRecommendationResources",
+      "methodName": "toListRecommendationResources",
+      "description": "Grants permission to list Resources of a Recommendation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListRecommendations",
+      "methodName": "toListRecommendations",
+      "description": "Grants permission to list a filterable set of Recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "ListRecommendationsForResource",
+      "methodName": "toListRecommendationsForResource",
+      "description": "Grants permission to list Recommendation of a Resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "RefreshCheck",
+      "methodName": "toRefreshCheck",
+      "description": "Grants permission to refresh an AWS Trusted Advisor check",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "UpdateNotificationConfigurations",
+      "methodName": "toUpdateNotificationConfigurations",
+      "description": "Grants permission to create or update your email notification preferences for Trusted Advisor Priority",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "UpdateOrganizationRecommendationLifecycle",
+      "methodName": "toUpdateOrganizationRecommendationLifecycle",
+      "description": "Grants permission to update the lifecyle of a Recommendation within an AWS Organization. This API only supports prioritized recommendations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "UpdateRecommendationLifecycle",
+      "methodName": "toUpdateRecommendationLifecycle",
+      "description": "Grants permission to update the lifecyle of a Recommendation. This API only supports prioritized recommendations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html"
+    },
+    {
+      "name": "UpdateRiskStatus",
+      "methodName": "toUpdateRiskStatus",
+      "description": "Grants permission to update the risk status in AWS Trusted Advisor Priority",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeAccount",
+      "methodName": "toDescribeAccount",
+      "description": "Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeAccountAccess",
+      "methodName": "toDescribeAccountAccess",
+      "description": "Grants permission to view if the AWS account has enabled or disabled AWS Trusted Advisor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeCheckStatusHistoryChanges",
+      "methodName": "toDescribeCheckStatusHistoryChanges",
+      "description": "Grants permission to view the results and changed statuses for checks in the last 30 days",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeNotificationPreferences",
+      "methodName": "toDescribeNotificationPreferences",
+      "description": "Grants permission to view the notification preferences for the AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeOrganization",
+      "methodName": "toDescribeOrganization",
+      "description": "Grants permission to view if the AWS account meets the requirements to enable the organizational view feature",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeOrganizationAccounts",
+      "methodName": "toDescribeOrganizationAccounts",
+      "description": "Grants permission to view the linked AWS accounts that are in the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeReports",
+      "methodName": "toDescribeReports",
+      "description": "Grants permission to view details for organizational view reports, such as the report name, runtime, date created, status, and format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "DescribeServiceMetadata",
+      "methodName": "toDescribeServiceMetadata",
+      "description": "Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "ExcludeCheckItems",
+      "methodName": "toExcludeCheckItems",
+      "description": "Grants permission to exclude recommendations for AWS Trusted Advisor checks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "GenerateReport",
+      "methodName": "toGenerateReport",
+      "description": "Grants permission to create a report for AWS Trusted Advisor checks in your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "IncludeCheckItems",
+      "methodName": "toIncludeCheckItems",
+      "description": "Grants permission to include recommendations for AWS Trusted Advisor checks",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "ListAccountsForParent",
+      "methodName": "toListAccountsForParent",
+      "description": "Grants permission to view, in the Trusted Advisor console, all of the accounts in an AWS organization that are contained by a root or organizational unit (OU)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "ListOrganizationalUnitsForParent",
+      "methodName": "toListOrganizationalUnitsForParent",
+      "description": "Grants permission to view, in the Trusted Advisor console, all of the organizational units (OUs) in a parent organizational unit or root",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "ListRoots",
+      "methodName": "toListRoots",
+      "description": "Grants permission to view, in the Trusted Advisor console, all of the roots that are defined in an AWS organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "SetAccountAccess",
+      "methodName": "toSetAccountAccess",
+      "description": "Grants permission to enable or disable AWS Trusted Advisor for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "SetOrganizationAccess",
+      "methodName": "toSetOrganizationAccess",
+      "description": "Grants permission to enable the organizational view feature for AWS Trusted Advisor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    },
+    {
+      "name": "UpdateNotificationPreferences",
+      "methodName": "toUpdateNotificationPreferences",
+      "description": "Grants permission to update notification preferences for AWS Trusted Advisor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations"
+    }
+  ],
+  "resources": [
+    {
+      "name": "checks",
+      "methodName": "onChecks",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html",
+      "arn": "arn:${Partition}:trustedadvisor:${Region}:${Account}:checks/${CategoryCode}/${CheckId}",
+      "placeholders": [
+        {
+          "placeholder": "CategoryCode",
+          "name": "categoryCode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CheckId",
+          "name": "checkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

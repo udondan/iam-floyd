@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "healthlake:ListFHIRDatastores",
+        "healthlake:DescribeFHIRDatastore",
+        "healthlake:DescribeFHIRImportJob",
+        "healthlake:DescribeFHIRExportJob",
+        "healthlake:GetCapabilities",
+        "healthlake:ReadResource",
+        "healthlake:SearchWithGet",
+        "healthlake:SearchWithPost",
+        "healthlake:GetDataTransformationProfile",
+        "healthlake:ListDataTransformationProfiles",
+        "healthlake:ListDataTransformationProfileVersions",
+        "healthlake:DescribeDataTransformationJob",
+        "healthlake:ListDataTransformationJobs",
+        "healthlake:ValidateSource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

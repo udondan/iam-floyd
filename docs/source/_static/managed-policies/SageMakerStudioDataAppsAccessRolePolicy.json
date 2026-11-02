@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataZonePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:CreateSubscriptionRequest",
+        "datazone:GetListing",
+        "datazone:GetSubscription",
+        "datazone:ListGroupsForUser",
+        "datazone:ListProjects",
+        "datazone:ListSharedDataApps",
+        "datazone:ListSubscriptionGrants",
+        "datazone:ListSubscriptions",
+        "datazone:SearchListings"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3ControlReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetDataAccess",
+        "s3:ListCallerAccessGrants"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

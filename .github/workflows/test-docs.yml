@@ -1,0 +1,48 @@
+---
+name: Test Documentation
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "examples/**"
+      - ".github/workflows/test-docs.yml"
+      - ".readthedocs.yaml"
+
+jobs:
+  test-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # checkout
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # The Python of Read the Docs, which supports only some versions
+      - name: Read the Python version of Read the Docs
+        id: python
+        run: echo "version=$(yq '.build.tools.python' .readthedocs.yaml)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ steps.python.outputs.version }}
+
+      - name: Build documentation
+        run: |
+          cd docs
+          make install html
+
+      - name: Check for build errors
+        run: |
+          if [ -f docs/build/html/index.html ]; then
+            echo "Documentation built successfully"
+          else
+            echo "Documentation build failed - index.html not found"
+            exit 1
+          fi

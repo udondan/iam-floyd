@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "budgets:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-portal:ViewBilling"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "budgets.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-portal:ModifyBilling",
+        "ec2:DescribeInstances",
+        "iam:ListGroups",
+        "iam:ListPolicies",
+        "iam:ListRoles",
+        "iam:ListUsers",
+        "organizations:ListAccounts",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListPolicies",
+        "organizations:ListRoots",
+        "rds:DescribeDBInstances",
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSOrganizationsFullAccess",
+      "Effect": "Allow",
+      "Action": "organizations:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSOrganizationsFullAccessAccount",
+      "Effect": "Allow",
+      "Action": [
+        "account:PutAlternateContact",
+        "account:DeleteAlternateContact",
+        "account:GetAlternateContact",
+        "account:GetContactInformation",
+        "account:PutContactInformation",
+        "account:ListRegions",
+        "account:EnableRegion",
+        "account:DisableRegion",
+        "account:PutAccountName",
+        "account:GetAccountInformation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSOrganizationsFullAccessCreateSLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "organizations.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

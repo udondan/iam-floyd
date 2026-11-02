@@ -1,0 +1,2550 @@
+{
+  "schemaVersion": 1,
+  "filename": "sts",
+  "className": "Sts",
+  "name": "sts",
+  "servicePrefix": "sts",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sts.html",
+  "accessLevelList": {
+    "Write": [
+      "AssumeRole",
+      "AssumeRoleWithSAML",
+      "AssumeRoleWithWebIdentity",
+      "AssumeRoot",
+      "DecodeAuthorizationMessage",
+      "GetDelegatedAccessToken",
+      "GetFederationToken",
+      "GetWebIdentityToken",
+      "SetContext",
+      "SetSourceIdentity",
+      "TagGetWebIdentityToken",
+      "TagSession"
+    ],
+    "Read": [
+      "GetAccessKeyInfo",
+      "GetCallerIdentity",
+      "GetSessionToken",
+      "GetServiceBearerToken"
+    ],
+    "Tagging": [
+      "TagGetWebIdentityToken",
+      "TagSession"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssumeRole",
+      "methodName": "toAssumeRole",
+      "description": "Grants permission to obtain a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+    },
+    {
+      "name": "AssumeRoleWithSAML",
+      "methodName": "toAssumeRoleWithSAML",
+      "description": "Grants permission to obtain a set of temporary security credentials for users who have been authenticated via a SAML authentication response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html"
+    },
+    {
+      "name": "AssumeRoleWithWebIdentity",
+      "methodName": "toAssumeRoleWithWebIdentity",
+      "description": "Grants permission to obtain a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html"
+    },
+    {
+      "name": "AssumeRoot",
+      "methodName": "toAssumeRoot",
+      "description": "Grants permission to obtain a set of temporary security credentials that you can use to perform privileged tasks in member accounts in your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoot.html"
+    },
+    {
+      "name": "DecodeAuthorizationMessage",
+      "methodName": "toDecodeAuthorizationMessage",
+      "description": "Grants permission to decode additional information about the authorization status of a request from an encoded message returned in response to an AWS request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html"
+    },
+    {
+      "name": "GetAccessKeyInfo",
+      "methodName": "toGetAccessKeyInfo",
+      "description": "Grants permission to obtain details about the access key id passed as a parameter to the request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html"
+    },
+    {
+      "name": "GetCallerIdentity",
+      "methodName": "toGetCallerIdentity",
+      "description": "Grants permission to obtain details about the IAM identity whose credentials are used to call the API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html"
+    },
+    {
+      "name": "GetDelegatedAccessToken",
+      "methodName": "toGetDelegatedAccessToken",
+      "description": "Returns temporary security credentials for accessing an AWS account after temporary delegation request approval. This API requires the tradeInToken provided upon request delegation approval and is intended to be used only by Amazon or AWS Partners",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetDelegatedAccessToken.html"
+    },
+    {
+      "name": "GetFederationToken",
+      "methodName": "toGetFederationToken",
+      "description": "Grants permission to obtain a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a federated user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html"
+    },
+    {
+      "name": "GetSessionToken",
+      "methodName": "toGetSessionToken",
+      "description": "Grants permission to obtain a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for an AWS account or IAM user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html"
+    },
+    {
+      "name": "GetWebIdentityToken",
+      "methodName": "toGetWebIdentityToken",
+      "description": "Grants permission to obtain a short-lived, publicly verifiable JSON Web Token (JWT) that represents the calling IAM principal's identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetWebIdentityToken.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifDurationSeconds",
+        "ifIdentityTokenAudience",
+        "ifSigningAlgorithm"
+      ]
+    },
+    {
+      "name": "GetServiceBearerToken",
+      "methodName": "toGetServiceBearerToken",
+      "description": "Grants permission to obtain a STS bearer token for an AWS root user, IAM role, or an IAM user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html",
+      "conditionMethods": [
+        "ifAWSServiceName",
+        "ifDurationSeconds"
+      ]
+    },
+    {
+      "name": "SetContext",
+      "methodName": "toSetContext",
+      "description": "Grants permission to set context keys on a STS session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts"
+    },
+    {
+      "name": "SetSourceIdentity",
+      "methodName": "toSetSourceIdentity",
+      "description": "Grants permission to set a source identity on a STS session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html#id_credentials_temp_control-access_monitor-perms"
+    },
+    {
+      "name": "TagGetWebIdentityToken",
+      "methodName": "toTagGetWebIdentityToken",
+      "description": "Grants permission to add tags to the JSON Web Token (JWT) generated by the GetWebIdentityToken API",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_web_identity_token_tags.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TagSession",
+      "methodName": "toTagSession",
+      "description": "Grants permission to add tags to a STS session",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "context-provider",
+      "methodName": "onContextProvider",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns",
+      "arn": "arn:${Partition}:iam::aws:contextProvider/${ContextProviderName}",
+      "placeholders": [
+        {
+          "placeholder": "ContextProviderName",
+          "name": "contextProviderName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "federated-user",
+      "methodName": "onFederatedUser",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns",
+      "arn": "arn:${Partition}:sts::${Account}:federated-user/${FederatedUserName}",
+      "placeholders": [
+        {
+          "placeholder": "FederatedUserName",
+          "name": "federatedUserName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "role",
+      "methodName": "onRole",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "placeholders": [
+        {
+          "placeholder": "RoleNameWithPath",
+          "name": "roleNameWithPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifIamResourceTag"
+      ]
+    },
+    {
+      "name": "root-user",
+      "methodName": "onRootUser",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+      "arn": "arn:${Partition}:iam::${Account}:root",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "self-session",
+      "methodName": "onSelfSession",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns",
+      "arn": "arn:${Partition}:sts::${Account}:self",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "accounts.google.com:aud",
+      "methodName": "ifGoogleAud",
+      "description": "Filters access by the Google application ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "accounts.google.com:aud",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "accounts.google.com:google/organization_number",
+      "methodName": "ifGoogleGoogleOrganizationNumber",
+      "description": "Filters access by the Google Cloud or Google Workspace organization number",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "accounts.google.com:google/organization_number",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "accounts.google.com:oaud",
+      "methodName": "ifGoogleOaud",
+      "description": "Filters access by the Google audience",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_oaud",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "accounts.google.com:oaud",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "accounts.google.com:sub",
+      "methodName": "ifGoogleSub",
+      "description": "Filters access by the subject of the claim (the Google user ID)",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "accounts.google.com:sub",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:build_branch",
+      "methodName": "ifAgentDomainBuildkiteDevBuildBranch",
+      "description": "Filters access by the git branch that triggered the Buildkite build",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:build_branch",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:cluster_id",
+      "methodName": "ifAgentDomainBuildkiteDevClusterId",
+      "description": "Filters access by the Buildkite cluster ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:cluster_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:cluster_name",
+      "methodName": "ifAgentDomainBuildkiteDevClusterName",
+      "description": "Filters access by the Buildkite cluster name",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:cluster_name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:organization_id",
+      "methodName": "ifAgentDomainBuildkiteDevOrganizationId",
+      "description": "Filters access by the Buildkite organization ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:organization_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:organization_slug",
+      "methodName": "ifAgentDomainBuildkiteDevOrganizationSlug",
+      "description": "Filters access by the Buildkite organization slug",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:organization_slug",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:pipeline_id",
+      "methodName": "ifAgentDomainBuildkiteDevPipelineId",
+      "description": "Filters access by the Buildkite pipeline ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:pipeline_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.dev:pipeline_slug",
+      "methodName": "ifAgentDomainBuildkiteDevPipelineSlug",
+      "description": "Filters access by the Buildkite pipeline slug",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.dev:pipeline_slug",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:build_branch",
+      "methodName": "ifAgentDomainBuildkiteSiteBuildBranch",
+      "description": "Filters access by the git branch that triggered the Buildkite build",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:build_branch",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:cluster_id",
+      "methodName": "ifAgentDomainBuildkiteSiteClusterId",
+      "description": "Filters access by the Buildkite cluster ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:cluster_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:cluster_name",
+      "methodName": "ifAgentDomainBuildkiteSiteClusterName",
+      "description": "Filters access by the Buildkite cluster name",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:cluster_name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:organization_id",
+      "methodName": "ifAgentDomainBuildkiteSiteOrganizationId",
+      "description": "Filters access by the Buildkite organization ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:organization_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:organization_slug",
+      "methodName": "ifAgentDomainBuildkiteSiteOrganizationSlug",
+      "description": "Filters access by the Buildkite organization slug",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:organization_slug",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:pipeline_id",
+      "methodName": "ifAgentDomainBuildkiteSitePipelineId",
+      "description": "Filters access by the Buildkite pipeline ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:pipeline_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.${Domain}.buildkite.site:pipeline_slug",
+      "methodName": "ifAgentDomainBuildkiteSitePipelineSlug",
+      "description": "Filters access by the Buildkite pipeline slug",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.${Domain}.buildkite.site:pipeline_slug",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:build_branch",
+      "methodName": "ifAgentBuildkiteComBuildBranch",
+      "description": "Filters access by the git branch that triggered the Buildkite build",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:build_branch",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:cluster_id",
+      "methodName": "ifAgentBuildkiteComClusterId",
+      "description": "Filters access by the Buildkite cluster ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:cluster_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:cluster_name",
+      "methodName": "ifAgentBuildkiteComClusterName",
+      "description": "Filters access by the Buildkite cluster name",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:cluster_name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:organization_id",
+      "methodName": "ifAgentBuildkiteComOrganizationId",
+      "description": "Filters access by the Buildkite organization ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:organization_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:organization_slug",
+      "methodName": "ifAgentBuildkiteComOrganizationSlug",
+      "description": "Filters access by the Buildkite organization slug",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:organization_slug",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:pipeline_id",
+      "methodName": "ifAgentBuildkiteComPipelineId",
+      "description": "Filters access by the Buildkite pipeline ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:pipeline_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "agent.buildkite.com:pipeline_slug",
+      "methodName": "ifAgentBuildkiteComPipelineSlug",
+      "description": "Filters access by the Buildkite pipeline slug",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "agent.buildkite.com:pipeline_slug",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity",
+        "toGetFederationToken",
+        "toGetWebIdentityToken",
+        "toTagGetWebIdentityToken",
+        "toTagSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity",
+        "toSetContext",
+        "toSetSourceIdentity",
+        "toTagSession"
+      ],
+      "relatedResourceTypes": [
+        "role"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity",
+        "toGetFederationToken",
+        "toGetWebIdentityToken",
+        "toTagGetWebIdentityToken",
+        "toTagSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cognito-identity.amazonaws.com:amr",
+      "methodName": "ifCognitoAmr",
+      "description": "Filters access by the login information for Amazon Cognito",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cognito-identity.amazonaws.com:amr",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cognito-identity.amazonaws.com:aud",
+      "methodName": "ifCognitoAud",
+      "description": "Filters access by the Amazon Cognito identity pool ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cognito-identity.amazonaws.com:aud",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cognito-identity.amazonaws.com:sub",
+      "methodName": "ifCognitoSub",
+      "description": "Filters access by the subject of the claim (the Amazon Cognito user ID)",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "cognito-identity.amazonaws.com:sub",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:actor",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameActor",
+      "description": "Filters access by the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:actor",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:actor_id",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameActorId",
+      "description": "Filters access by the ID of the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:actor_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:enterprise_id",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameEnterpriseId",
+      "description": "Filters access by the ID of the enterprise that contains the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:enterprise_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:environment",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameEnvironment",
+      "description": "Filters access by the name of the environment used by the job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:environment",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:job_workflow_ref",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameJobWorkflowRef",
+      "description": "Filters access by the reference path to the reusable workflow for jobs using a reusable workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:job_workflow_ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:ref",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameRef",
+      "description": "Filters access by the git ref (branch or tag) that triggered the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:repository",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameRepository",
+      "description": "Filters access by the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:repository",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:repository_id",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameRepositoryId",
+      "description": "Filters access by the ID of the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:repository_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:repository_owner_id",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameRepositoryOwnerId",
+      "description": "Filters access by the ID of the repository owner from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:repository_owner_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "github.com/enterprises/${EnterpriseName}:workflow",
+      "methodName": "ifGithubComEnterprisesEnterpriseNameWorkflow",
+      "description": "Filters access by the name of the workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "github.com/enterprises/${EnterpriseName}:workflow",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:namespace_id",
+      "methodName": "ifGitlabComNamespaceId",
+      "description": "Filters access by the GitLab namespace (group) ID of the project running the CI/CD job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:namespace_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:pipeline_source",
+      "methodName": "ifGitlabComPipelineSource",
+      "description": "Filters access by the source that triggered the GitLab pipeline",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:pipeline_source",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:project_id",
+      "methodName": "ifGitlabComProjectId",
+      "description": "Filters access by the GitLab project ID running the CI/CD job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:project_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:ref_protected",
+      "methodName": "ifGitlabComRefProtected",
+      "description": "Filters access by whether the GitLab git ref that triggered the job is protected",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:ref_protected",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:runner_environment",
+      "methodName": "ifGitlabComRunnerEnvironment",
+      "description": "Filters access by the GitLab runner environment for the CI/CD job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:runner_environment",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:user_access_level",
+      "methodName": "ifGitlabComUserAccessLevel",
+      "description": "Filters access by the GitLab user access level within the project",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:user_access_level",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:user_email",
+      "methodName": "ifGitlabComUserEmail",
+      "description": "Filters access by the GitLab user email executing the CI/CD job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:user_email",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:user_id",
+      "methodName": "ifGitlabComUserId",
+      "description": "Filters access by the GitLab user ID executing the CI/CD job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:user_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "gitlab.com:user_login",
+      "methodName": "ifGitlabComUserLogin",
+      "description": "Filters access by the GitLab username executing the CI/CD job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "gitlab.com:user_login",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "graph.facebook.com:app_id",
+      "methodName": "ifFacebookAppId",
+      "description": "Filters access by the Facebook application ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "graph.facebook.com:app_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "graph.facebook.com:id",
+      "methodName": "ifFacebookId",
+      "description": "Filters access by the Facebook user ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "graph.facebook.com:id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:ResourceTag/${TagKey}",
+      "methodName": "ifIamResourceTag",
+      "description": "Filters access by the tags that are attached to the role that is being assumed",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity",
+        "toSetContext",
+        "toSetSourceIdentity",
+        "toTagSession"
+      ],
+      "relatedResourceTypes": [
+        "role"
+      ],
+      "keyLiteral": "iam:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "idcs-${OciUniqueIdentifier}.identity.oraclecloud.com:rpst_id",
+      "methodName": "ifIdcsOciUniqueIdentifierIdentityOraclecloudComRpstId",
+      "description": "Filters access by the OCI resource principal session token ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "idcs-${OciUniqueIdentifier}.identity.oraclecloud.com:rpst_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "oidc.circleci.com/org/${OrgId}:oidc.circleci.com/project-id",
+      "methodName": "ifOidcCircleciComOrgOrgIdOidcCircleciComProjectId",
+      "description": "Filters access by the CircleCI project ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "oidc.circleci.com/org/${OrgId}:oidc.circleci.com/project-id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:aud",
+      "methodName": "ifSamlAud",
+      "description": "Filters access by the endpoint URL to which SAML assertions are presented",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML",
+        "toTagSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:aud",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:cn",
+      "methodName": "ifSamlCn",
+      "description": "Filters access by the eduOrg attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_cn",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:cn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:commonName",
+      "methodName": "ifSamlCommonName",
+      "description": "Filters access by the commonName attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_commonname",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:commonName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:doc",
+      "methodName": "ifSamlDoc",
+      "description": "Filters access by on the principal that was used to assume the role",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_doc",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:doc",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:eduorghomepageuri",
+      "methodName": "ifSamlEduorghomepageuri",
+      "description": "Filters access by the eduOrg attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorghomepageuri",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:eduorghomepageuri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:eduorgidentityauthnpolicyuri",
+      "methodName": "ifSamlEduorgidentityauthnpolicyuri",
+      "description": "Filters access by the eduOrg attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:eduorgidentityauthnpolicyuri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:eduorglegalname",
+      "methodName": "ifSamlEduorglegalname",
+      "description": "Filters access by the eduOrg attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorglegalname",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:eduorglegalname",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:eduorgsuperioruri",
+      "methodName": "ifSamlEduorgsuperioruri",
+      "description": "Filters access by the eduOrg attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgsuperioruri",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:eduorgsuperioruri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:eduorgwhitepagesuri",
+      "methodName": "ifSamlEduorgwhitepagesuri",
+      "description": "Filters access by the eduOrg attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgwhitepagesuri",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:eduorgwhitepagesuri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonaffiliation",
+      "methodName": "ifSamlEdupersonaffiliation",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonaffiliation",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonaffiliation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonassurance",
+      "methodName": "ifSamlEdupersonassurance",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonassurance",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonassurance",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonentitlement",
+      "methodName": "ifSamlEdupersonentitlement",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonentitlement",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonentitlement",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonnickname",
+      "methodName": "ifSamlEdupersonnickname",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonnickname",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonnickname",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonorgdn",
+      "methodName": "ifSamlEdupersonorgdn",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgdn",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonorgdn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonorgunitdn",
+      "methodName": "ifSamlEdupersonorgunitdn",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgunitdn",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonorgunitdn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonprimaryaffiliation",
+      "methodName": "ifSamlEdupersonprimaryaffiliation",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryaffiliation",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonprimaryaffiliation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonprimaryorgunitdn",
+      "methodName": "ifSamlEdupersonprimaryorgunitdn",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryorgunitdn",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonprimaryorgunitdn",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonprincipalname",
+      "methodName": "ifSamlEdupersonprincipalname",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprincipalname",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonprincipalname",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersonscopedaffiliation",
+      "methodName": "ifSamlEdupersonscopedaffiliation",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonscopedaffiliation",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersonscopedaffiliation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:edupersontargetedid",
+      "methodName": "ifSamlEdupersontargetedid",
+      "description": "Filters access by the eduPerson attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersontargetedid",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:edupersontargetedid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:givenName",
+      "methodName": "ifSamlGivenName",
+      "description": "Filters access by the givenName attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_givenname",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:givenName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:iss",
+      "methodName": "ifSamlIss",
+      "description": "Filters access by on the issuer, which is represented by a URN",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_iss",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:iss",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:mail",
+      "methodName": "ifSamlMail",
+      "description": "Filters access by the mail attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_mail",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:mail",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:name",
+      "methodName": "ifSamlName",
+      "description": "Filters access by the name attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_name",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:namequalifier",
+      "methodName": "ifSamlNamequalifier",
+      "description": "Filters access by the hash value of the issuer, account ID, and friendly name",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_namequalifier",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:namequalifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:organizationStatus",
+      "methodName": "ifSamlOrganizationStatus",
+      "description": "Filters access by the organizationStatus attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_organizationstatus",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:organizationStatus",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:primaryGroupSID",
+      "methodName": "ifSamlPrimaryGroupSID",
+      "description": "Filters access by the primaryGroupSID attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_primarygroupsid",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:primaryGroupSID",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:sub",
+      "methodName": "ifSamlSub",
+      "description": "Filters access by the subject of the claim (the SAML user ID)",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:sub",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:sub_type",
+      "methodName": "ifSamlSubType",
+      "description": "Filters access by the value persistent, transient, or the full Format URI",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_subtype",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:sub_type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:surname",
+      "methodName": "ifSamlSurname",
+      "description": "Filters access by the surname attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_surname",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:surname",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:uid",
+      "methodName": "ifSamlUid",
+      "description": "Filters access by the uid attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_uid",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:uid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "saml:x500UniqueIdentifier",
+      "methodName": "ifSamlX500UniqueIdentifier",
+      "description": "Filters access by the uid attribute",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_x500uniqueidentifier",
+      "relatedActionMethods": [
+        "toAssumeRoleWithSAML"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "saml:x500UniqueIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:AWSServiceName",
+      "methodName": "ifAWSServiceName",
+      "description": "Filters access by the service that is obtaining a bearer token",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_awsservicename",
+      "relatedActionMethods": [
+        "toGetServiceBearerToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AWSServiceName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:DurationSeconds",
+      "methodName": "ifDurationSeconds",
+      "description": "Filters access by the duration in seconds when getting a bearer token or a JSON Web Token (JWT) from the GetWebIdentityToken API",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_durationseconds",
+      "relatedActionMethods": [
+        "toGetWebIdentityToken",
+        "toGetServiceBearerToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DurationSeconds",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "sts:ExternalId",
+      "methodName": "ifExternalId",
+      "description": "Filters access by the unique identifier required when you assume a role in another account",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_externalid",
+      "relatedActionMethods": [
+        "toAssumeRole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExternalId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:IdentityTokenAudience",
+      "methodName": "ifIdentityTokenAudience",
+      "description": "Filters access by the audience that is passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_identitytokenaudience",
+      "relatedActionMethods": [
+        "toGetWebIdentityToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IdentityTokenAudience",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:RequestContext/${ContextKey}",
+      "methodName": "ifRequestContext",
+      "description": "Filters access by the session context key-value pairs embedded in the signed context assertion retrieved from a trusted context provider",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts",
+      "relatedActionMethods": [
+        "toSetContext"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestContext/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "contextKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:RequestContextProviders",
+      "methodName": "ifRequestContextProviders",
+      "description": "Filters access by the context provider ARNs",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts",
+      "relatedActionMethods": [
+        "toSetContext"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestContextProviders",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "sts:RoleAuthorizedByIdp",
+      "methodName": "ifRoleAuthorizedByIdp",
+      "description": "Filters access based on whether the identity provider authorized the role via the roles claim in the OIDC token",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RoleAuthorizedByIdp",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "sts:RoleSessionName",
+      "methodName": "ifRoleSessionName",
+      "description": "Filters access by the role session name required when you assume a role",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RoleSessionName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:SigningAlgorithm",
+      "methodName": "ifSigningAlgorithm",
+      "description": "Filters access by the signing algorithm that is passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_signingalgorithm",
+      "relatedActionMethods": [
+        "toGetWebIdentityToken"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SigningAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:SourceIdentity",
+      "methodName": "ifSourceIdentity",
+      "description": "Filters access by the source identity that is passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sourceidentity",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity",
+        "toSetSourceIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceIdentity",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "sts:TaskPolicyArn",
+      "methodName": "ifTaskPolicyArn",
+      "description": "Filters access by TaskPolicyARN",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts",
+      "relatedActionMethods": [
+        "toAssumeRoot"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TaskPolicyArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "sts:TransitiveTagKeys",
+      "methodName": "ifTransitiveTagKeys",
+      "description": "Filters access by the transitive tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TransitiveTagKeys",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithSAML",
+        "toAssumeRoleWithWebIdentity",
+        "toTagSession"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TransitiveTagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:actor",
+      "methodName": "ifTokenActionsDomainGheComActor",
+      "description": "Filters access by the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:actor",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:actor_id",
+      "methodName": "ifTokenActionsDomainGheComActorId",
+      "description": "Filters access by the ID of the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:actor_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:enterprise_id",
+      "methodName": "ifTokenActionsDomainGheComEnterpriseId",
+      "description": "Filters access by the ID of the enterprise that contains the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:enterprise_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:environment",
+      "methodName": "ifTokenActionsDomainGheComEnvironment",
+      "description": "Filters access by the name of the environment used by the job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:environment",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:job_workflow_ref",
+      "methodName": "ifTokenActionsDomainGheComJobWorkflowRef",
+      "description": "Filters access by the reference path to the reusable workflow for jobs using a reusable workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:job_workflow_ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:ref",
+      "methodName": "ifTokenActionsDomainGheComRef",
+      "description": "Filters access by the git ref (branch or tag) that triggered the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:repository",
+      "methodName": "ifTokenActionsDomainGheComRepository",
+      "description": "Filters access by the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:repository",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:repository_id",
+      "methodName": "ifTokenActionsDomainGheComRepositoryId",
+      "description": "Filters access by the ID of the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:repository_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:repository_owner_id",
+      "methodName": "ifTokenActionsDomainGheComRepositoryOwnerId",
+      "description": "Filters access by the ID of the repository owner from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:repository_owner_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.${Domain}.ghe.com:workflow",
+      "methodName": "ifTokenActionsDomainGheComWorkflow",
+      "description": "Filters access by the name of the workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.${Domain}.ghe.com:workflow",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:actor",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathActor",
+      "description": "Filters access by the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:actor",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:actor_id",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathActorId",
+      "description": "Filters access by the ID of the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:actor_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:enterprise_id",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathEnterpriseId",
+      "description": "Filters access by the ID of the enterprise that contains the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:enterprise_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:environment",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathEnvironment",
+      "description": "Filters access by the name of the environment used by the job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:environment",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:job_workflow_ref",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathJobWorkflowRef",
+      "description": "Filters access by the reference path to the reusable workflow for jobs using a reusable workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:job_workflow_ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:ref",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathRef",
+      "description": "Filters access by the git ref (branch or tag) that triggered the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:repository",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathRepository",
+      "description": "Filters access by the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:repository",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:repository_id",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathRepositoryId",
+      "description": "Filters access by the ID of the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:repository_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:repository_owner_id",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathRepositoryOwnerId",
+      "description": "Filters access by the ID of the repository owner from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:repository_owner_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com/${SubPath}:workflow",
+      "methodName": "ifTokenActionsGithubusercontentComSubPathWorkflow",
+      "description": "Filters access by the name of the workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com/${SubPath}:workflow",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:actor",
+      "methodName": "ifTokenActionsGithubusercontentComActor",
+      "description": "Filters access by the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:actor",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:actor_id",
+      "methodName": "ifTokenActionsGithubusercontentComActorId",
+      "description": "Filters access by the ID of the personal account that initiated the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:actor_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:enterprise_id",
+      "methodName": "ifTokenActionsGithubusercontentComEnterpriseId",
+      "description": "Filters access by the ID of the enterprise that contains the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:enterprise_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:environment",
+      "methodName": "ifTokenActionsGithubusercontentComEnvironment",
+      "description": "Filters access by the name of the environment used by the job",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:environment",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:job_workflow_ref",
+      "methodName": "ifTokenActionsGithubusercontentComJobWorkflowRef",
+      "description": "Filters access by the reference path to the reusable workflow for jobs using a reusable workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:job_workflow_ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:ref",
+      "methodName": "ifTokenActionsGithubusercontentComRef",
+      "description": "Filters access by the git ref (branch or tag) that triggered the workflow run",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:ref",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:repository",
+      "methodName": "ifTokenActionsGithubusercontentComRepository",
+      "description": "Filters access by the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:repository",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:repository_id",
+      "methodName": "ifTokenActionsGithubusercontentComRepositoryId",
+      "description": "Filters access by the ID of the repository from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:repository_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:repository_owner_id",
+      "methodName": "ifTokenActionsGithubusercontentComRepositoryOwnerId",
+      "description": "Filters access by the ID of the repository owner from where the workflow is running",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:repository_owner_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "token.actions.githubusercontent.com:workflow",
+      "methodName": "ifTokenActionsGithubusercontentComWorkflow",
+      "description": "Filters access by the name of the workflow",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-wif",
+      "relatedActionMethods": [
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "token.actions.githubusercontent.com:workflow",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "www.amazon.com:app_id",
+      "methodName": "ifAmazonAppId",
+      "description": "Filters access by the Login with Amazon application ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "www.amazon.com:app_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "www.amazon.com:user_id",
+      "methodName": "ifAmazonUserId",
+      "description": "Filters access by the Login with Amazon user ID",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id",
+      "relatedActionMethods": [
+        "toAssumeRole",
+        "toAssumeRoleWithWebIdentity"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "www.amazon.com:user_id",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

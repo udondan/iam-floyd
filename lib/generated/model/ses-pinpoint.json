@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "filename": "ses-pinpoint",
+  "className": "SesPinpoint",
+  "name": "ses-pinpoint",
+  "servicePrefix": "ses",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pinpoint-email.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateConfigurationSet",
+      "CreateConfigurationSetEventDestination",
+      "CreateDedicatedIpPool",
+      "CreateDeliverabilityTestReport",
+      "CreateEmailIdentity",
+      "DeleteConfigurationSet",
+      "DeleteConfigurationSetEventDestination",
+      "DeleteDedicatedIpPool",
+      "DeleteEmailIdentity",
+      "PutAccountDedicatedIpWarmupAttributes",
+      "PutAccountSendingAttributes",
+      "PutConfigurationSetDeliveryOptions",
+      "PutConfigurationSetReputationOptions",
+      "PutConfigurationSetSendingOptions",
+      "PutConfigurationSetTrackingOptions",
+      "PutDedicatedIpInPool",
+      "PutDedicatedIpWarmupAttributes",
+      "PutDeliverabilityDashboardOption",
+      "PutEmailIdentityDkimAttributes",
+      "PutEmailIdentityFeedbackAttributes",
+      "PutEmailIdentityMailFromAttributes",
+      "SendEmail",
+      "TagResource",
+      "UntagResource",
+      "UpdateConfigurationSetEventDestination"
+    ],
+    "Read": [
+      "GetAccount",
+      "GetBlacklistReports",
+      "GetConfigurationSet",
+      "GetConfigurationSetEventDestinations",
+      "GetDedicatedIp",
+      "GetDedicatedIps",
+      "GetDeliverabilityDashboardOptions",
+      "GetDeliverabilityTestReport",
+      "GetDomainDeliverabilityCampaign",
+      "GetDomainStatisticsReport",
+      "GetEmailIdentity",
+      "ListDomainDeliverabilityCampaigns",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConfigurationSets",
+      "ListDedicatedIpPools",
+      "ListDeliverabilityTestReports",
+      "ListEmailIdentities"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateConfigurationSet",
+      "methodName": "toCreateConfigurationSet",
+      "description": "Grants permission to create a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html"
+    },
+    {
+      "name": "CreateConfigurationSetEventDestination",
+      "methodName": "toCreateConfigurationSetEventDestination",
+      "description": "Grants permission to create a configuration set event destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSetEventDestination.html"
+    },
+    {
+      "name": "CreateDedicatedIpPool",
+      "methodName": "toCreateDedicatedIpPool",
+      "description": "Grants permission to create a new pool of dedicated IP addresses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDedicatedIpPool.html"
+    },
+    {
+      "name": "CreateDeliverabilityTestReport",
+      "methodName": "toCreateDeliverabilityTestReport",
+      "description": "Grants permission to create a new predictive inbox placement test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDeliverabilityTestReport.html"
+    },
+    {
+      "name": "CreateEmailIdentity",
+      "methodName": "toCreateEmailIdentity",
+      "description": "Grants permission to start the process of verifying an email identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateEmailIdentity.html"
+    },
+    {
+      "name": "DeleteConfigurationSet",
+      "methodName": "toDeleteConfigurationSet",
+      "description": "Grants permission to delete an existing configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSet.html"
+    },
+    {
+      "name": "DeleteConfigurationSetEventDestination",
+      "methodName": "toDeleteConfigurationSetEventDestination",
+      "description": "Grants permission to delete an event destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSetEventDestination.html"
+    },
+    {
+      "name": "DeleteDedicatedIpPool",
+      "methodName": "toDeleteDedicatedIpPool",
+      "description": "Grants permission to delete a dedicated IP pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteDedicatedIpPool.html"
+    },
+    {
+      "name": "DeleteEmailIdentity",
+      "methodName": "toDeleteEmailIdentity",
+      "description": "Grants permission to delete an email identity that you previously verified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteEmailIdentity.html"
+    },
+    {
+      "name": "GetAccount",
+      "methodName": "toGetAccount",
+      "description": "Grants permission to get information about the email-sending status and capabilities",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetAccount.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "GetBlacklistReports",
+      "methodName": "toGetBlacklistReports",
+      "description": "Grants permission to retrieve a list of the deny lists on which your dedicated IP addresses appear",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetBlacklistReports.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "GetConfigurationSet",
+      "methodName": "toGetConfigurationSet",
+      "description": "Grants permission to get information about an existing configuration set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSet.html"
+    },
+    {
+      "name": "GetConfigurationSetEventDestinations",
+      "methodName": "toGetConfigurationSetEventDestinations",
+      "description": "Grants permission to retrieve a list of event destinations that are associated with a configuration set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSetEventDestinations.html"
+    },
+    {
+      "name": "GetDedicatedIp",
+      "methodName": "toGetDedicatedIp",
+      "description": "Grants permission to get information about a dedicated IP address",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIp.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "GetDedicatedIps",
+      "methodName": "toGetDedicatedIps",
+      "description": "Grants permission to list the dedicated IP addresses that are associated with your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIps.html"
+    },
+    {
+      "name": "GetDeliverabilityDashboardOptions",
+      "methodName": "toGetDeliverabilityDashboardOptions",
+      "description": "Grants permission to get the status of the Deliverability dashboard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityDashboardOptions.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "GetDeliverabilityTestReport",
+      "methodName": "toGetDeliverabilityTestReport",
+      "description": "Grants permission to retrieve the results of a predictive inbox placement test",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityTestReport.html"
+    },
+    {
+      "name": "GetDomainDeliverabilityCampaign",
+      "methodName": "toGetDomainDeliverabilityCampaign",
+      "description": "Grants permission to retrieve all the deliverability data for a specific campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainDeliverabilityCampaign.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "GetDomainStatisticsReport",
+      "methodName": "toGetDomainStatisticsReport",
+      "description": "Grants permission to retrieve inbox placement and engagement rates for the domains that you use to send email",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainStatisticsReport.html"
+    },
+    {
+      "name": "GetEmailIdentity",
+      "methodName": "toGetEmailIdentity",
+      "description": "Grants permission to get information about a specific identity associated with your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetEmailIdentity.html"
+    },
+    {
+      "name": "ListConfigurationSets",
+      "methodName": "toListConfigurationSets",
+      "description": "Grants permission to list all of the configuration sets associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListConfigurationSets.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "ListDedicatedIpPools",
+      "methodName": "toListDedicatedIpPools",
+      "description": "Grants permission to list all of the dedicated IP pools that exist in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDedicatedIpPools.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "ListDeliverabilityTestReports",
+      "methodName": "toListDeliverabilityTestReports",
+      "description": "Grants permission to retrieve a list of the predictive inbox placement tests that you've performed, regardless of their statuses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDeliverabilityTestReports.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "ListDomainDeliverabilityCampaigns",
+      "methodName": "toListDomainDeliverabilityCampaigns",
+      "description": "Grants permission to retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDomainDeliverabilityCampaigns.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "ListEmailIdentities",
+      "methodName": "toListEmailIdentities",
+      "description": "Grants permission to list all of the email identities that are associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListEmailIdentities.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve a list of the tags (keys and values) that are associated with a specific resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutAccountDedicatedIpWarmupAttributes",
+      "methodName": "toPutAccountDedicatedIpWarmupAttributes",
+      "description": "Grants permission to enable or disable the automatic warm-up feature for dedicated IP addresses",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountDedicatedIpWarmupAttributes.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "PutAccountSendingAttributes",
+      "methodName": "toPutAccountSendingAttributes",
+      "description": "Grants permission to enable or disable the ability of your account to send email",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountSendingAttributes.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "PutConfigurationSetDeliveryOptions",
+      "methodName": "toPutConfigurationSetDeliveryOptions",
+      "description": "Grants permission to associate a configuration set with a dedicated IP pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html"
+    },
+    {
+      "name": "PutConfigurationSetReputationOptions",
+      "methodName": "toPutConfigurationSetReputationOptions",
+      "description": "Grants permission to enable or disable collection of reputation metrics for emails that you send using a particular configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetReputationOptions.html"
+    },
+    {
+      "name": "PutConfigurationSetSendingOptions",
+      "methodName": "toPutConfigurationSetSendingOptions",
+      "description": "Grants permission to enable or disable email sending for messages that use a particular configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetSendingOptions.html"
+    },
+    {
+      "name": "PutConfigurationSetTrackingOptions",
+      "methodName": "toPutConfigurationSetTrackingOptions",
+      "description": "Grants permission to specify a custom domain to use for open and click tracking elements in email that you send using a particular configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetTrackingOptions.html"
+    },
+    {
+      "name": "PutDedicatedIpInPool",
+      "methodName": "toPutDedicatedIpInPool",
+      "description": "Grants permission to move a dedicated IP address to an existing dedicated IP pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpInPool.html"
+    },
+    {
+      "name": "PutDedicatedIpWarmupAttributes",
+      "methodName": "toPutDedicatedIpWarmupAttributes",
+      "description": "Grants permission to enable dedicated IP warm up attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpWarmupAttributes.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "PutDeliverabilityDashboardOption",
+      "methodName": "toPutDeliverabilityDashboardOption",
+      "description": "Grants permission to enable or disable the Deliverability dashboard",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDeliverabilityDashboardOption.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "PutEmailIdentityDkimAttributes",
+      "methodName": "toPutEmailIdentityDkimAttributes",
+      "description": "Grants permission to enable or disable DKIM authentication for an email identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityDkimAttributes.html"
+    },
+    {
+      "name": "PutEmailIdentityFeedbackAttributes",
+      "methodName": "toPutEmailIdentityFeedbackAttributes",
+      "description": "Grants permission to enable or disable feedback forwarding for an identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityFeedbackAttributes.html"
+    },
+    {
+      "name": "PutEmailIdentityMailFromAttributes",
+      "methodName": "toPutEmailIdentityMailFromAttributes",
+      "description": "Grants permission to enable or disable the custom MAIL FROM domain configuration for an email identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityMailFromAttributes.html"
+    },
+    {
+      "name": "SendEmail",
+      "methodName": "toSendEmail",
+      "description": "Grants permission to send an email message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_SendEmail.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags (keys and values) to a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags (keys and values) from a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateConfigurationSetEventDestination",
+      "methodName": "toUpdateConfigurationSetEventDestination",
+      "description": "Grants permission to update the configuration of an event destination for a configuration set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UpdateConfigurationSetEventDestination.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "configuration-set",
+      "methodName": "onConfigurationSet",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationSetName",
+          "name": "configurationSetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IConfigurationSetRef",
+        "property": "configurationSetRef",
+        "id": "configurationSetName"
+      }
+    },
+    {
+      "name": "dedicated-ip-pool",
+      "methodName": "onDedicatedIpPool",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DedicatedIp.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${DedicatedIPPool}",
+      "placeholders": [
+        {
+          "placeholder": "DedicatedIPPool",
+          "name": "dedicatedIPPool",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deliverability-test-report",
+      "methodName": "onDeliverabilityTestReport",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeliverabilityTestReport.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${ReportId}",
+      "placeholders": [
+        {
+          "placeholder": "ReportId",
+          "name": "reportId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "identity",
+      "methodName": "onIdentity",
+      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_IdentityInfo.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityName",
+          "name": "identityName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConfigurationSet",
+        "toCreateDedicatedIpPool",
+        "toCreateDeliverabilityTestReport",
+        "toCreateEmailIdentity",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateConfigurationSet",
+        "toCreateConfigurationSetEventDestination",
+        "toCreateDedicatedIpPool",
+        "toCreateDeliverabilityTestReport",
+        "toCreateEmailIdentity",
+        "toDeleteConfigurationSet",
+        "toDeleteConfigurationSetEventDestination",
+        "toDeleteDedicatedIpPool",
+        "toDeleteEmailIdentity",
+        "toGetConfigurationSet",
+        "toGetConfigurationSetEventDestinations",
+        "toGetDedicatedIps",
+        "toGetDeliverabilityTestReport",
+        "toGetDomainStatisticsReport",
+        "toGetEmailIdentity",
+        "toListTagsForResource",
+        "toPutConfigurationSetDeliveryOptions",
+        "toPutConfigurationSetReputationOptions",
+        "toPutConfigurationSetSendingOptions",
+        "toPutConfigurationSetTrackingOptions",
+        "toPutDedicatedIpInPool",
+        "toPutEmailIdentityDkimAttributes",
+        "toPutEmailIdentityFeedbackAttributes",
+        "toPutEmailIdentityMailFromAttributes",
+        "toSendEmail",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConfigurationSetEventDestination"
+      ],
+      "relatedResourceTypes": [
+        "configuration-set",
+        "dedicated-ip-pool",
+        "deliverability-test-report",
+        "identity"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConfigurationSet",
+        "toCreateDedicatedIpPool",
+        "toCreateDeliverabilityTestReport",
+        "toCreateEmailIdentity",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:ApiVersion",
+      "methodName": "ifApiVersion",
+      "description": "Filters actions based on the SES API version",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys",
+      "relatedActionMethods": [
+        "toCreateConfigurationSet",
+        "toCreateConfigurationSetEventDestination",
+        "toCreateDedicatedIpPool",
+        "toCreateDeliverabilityTestReport",
+        "toCreateEmailIdentity",
+        "toDeleteConfigurationSet",
+        "toDeleteConfigurationSetEventDestination",
+        "toDeleteDedicatedIpPool",
+        "toDeleteEmailIdentity",
+        "toGetAccount",
+        "toGetBlacklistReports",
+        "toGetConfigurationSet",
+        "toGetConfigurationSetEventDestinations",
+        "toGetDedicatedIp",
+        "toGetDedicatedIps",
+        "toGetDeliverabilityDashboardOptions",
+        "toGetDeliverabilityTestReport",
+        "toGetDomainDeliverabilityCampaign",
+        "toGetDomainStatisticsReport",
+        "toGetEmailIdentity",
+        "toListConfigurationSets",
+        "toListDedicatedIpPools",
+        "toListDeliverabilityTestReports",
+        "toListDomainDeliverabilityCampaigns",
+        "toListEmailIdentities",
+        "toListTagsForResource",
+        "toPutAccountDedicatedIpWarmupAttributes",
+        "toPutAccountSendingAttributes",
+        "toPutConfigurationSetDeliveryOptions",
+        "toPutConfigurationSetReputationOptions",
+        "toPutConfigurationSetSendingOptions",
+        "toPutConfigurationSetTrackingOptions",
+        "toPutDedicatedIpInPool",
+        "toPutDedicatedIpWarmupAttributes",
+        "toPutDeliverabilityDashboardOption",
+        "toPutEmailIdentityDkimAttributes",
+        "toPutEmailIdentityFeedbackAttributes",
+        "toPutEmailIdentityMailFromAttributes",
+        "toSendEmail",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConfigurationSetEventDestination"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ApiVersion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:FeedbackAddress",
+      "methodName": "ifFeedbackAddress",
+      "description": "Filters actions based on the \"Return-Path\" address, which specifies where bounces and complaints are sent by email feedback forwarding",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys",
+      "relatedActionMethods": [
+        "toSendEmail"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FeedbackAddress",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:FromAddress",
+      "methodName": "ifFromAddress",
+      "description": "Filters actions based on the \"From\" address of a message",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys",
+      "relatedActionMethods": [
+        "toSendEmail"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromAddress",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:FromDisplayName",
+      "methodName": "ifFromDisplayName",
+      "description": "Filters actions based on the \"From\" address that is used as the display name of a message",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys",
+      "relatedActionMethods": [
+        "toSendEmail"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FromDisplayName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:Recipients",
+      "methodName": "ifRecipients",
+      "description": "Filters actions based on the recipient addresses of a message, which include the \"To\", \"CC\", and \"BCC\" addresses",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys",
+      "relatedActionMethods": [
+        "toSendEmail"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Recipients",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

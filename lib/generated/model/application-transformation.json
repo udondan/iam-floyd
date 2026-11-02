@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "filename": "application-transformation",
+  "className": "ApplicationTransformation",
+  "name": "application-transformation",
+  "servicePrefix": "application-transformation",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-transformation.html",
+  "accessLevelList": {
+    "Read": [
+      "GetContainerization",
+      "GetDeployment",
+      "GetGroupingAssessment",
+      "GetPortingCompatibilityAssessment",
+      "GetPortingRecommendationAssessment",
+      "GetRuntimeAssessment"
+    ],
+    "Write": [
+      "PutLogData",
+      "PutMetricData",
+      "StartContainerization",
+      "StartDeployment",
+      "StartGroupingAssessment",
+      "StartPortingCompatibilityAssessment",
+      "StartPortingRecommendationAssessment",
+      "StartRuntimeAssessment"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetContainerization",
+      "methodName": "toGetContainerization",
+      "description": "Grants permission to get the details of all Containerization jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to get the details of all Deployment jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "GetGroupingAssessment",
+      "methodName": "toGetGroupingAssessment",
+      "description": "Grants permission to Get the details of a Grouping Assessment Operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "GetPortingCompatibilityAssessment",
+      "methodName": "toGetPortingCompatibilityAssessment",
+      "description": "Grants permission to Get Porting Compatibility Operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "GetPortingRecommendationAssessment",
+      "methodName": "toGetPortingRecommendationAssessment",
+      "description": "Grants permission to Get the details of a Porting Recommendation Assessment Operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "GetRuntimeAssessment",
+      "methodName": "toGetRuntimeAssessment",
+      "description": "Grants permission to Get the details of a Runtime Assessment Operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "PutLogData",
+      "methodName": "toPutLogData",
+      "description": "Grants permission to Push Logs (Intended for Clients Only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "PutMetricData",
+      "methodName": "toPutMetricData",
+      "description": "Grants permission to Push Metrics Data (Intended for Clients Only)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "StartContainerization",
+      "methodName": "toStartContainerization",
+      "description": "Grants permission to start a Containerization job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "StartDeployment",
+      "methodName": "toStartDeployment",
+      "description": "Grants permission to start a Deployment job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "StartGroupingAssessment",
+      "methodName": "toStartGroupingAssessment",
+      "description": "Grants permission to Start a Grouping Assessment Operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "StartPortingCompatibilityAssessment",
+      "methodName": "toStartPortingCompatibilityAssessment",
+      "description": "Grants permission to Start Porting Compatibility Operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "StartPortingRecommendationAssessment",
+      "methodName": "toStartPortingRecommendationAssessment",
+      "description": "Grants permission to Start the Porting Recommendation Assessment Operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    },
+    {
+      "name": "StartRuntimeAssessment",
+      "methodName": "toStartRuntimeAssessment",
+      "description": "Grants permission to Start a Runtime Assessment Operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

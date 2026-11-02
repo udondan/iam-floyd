@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <!-- version ranges of the generated packages and advisories of their dependencies -->
+    <NoWarn>NU1603;NU1608;NU1900;NU1901;NU1902;NU1903;NU1904</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- passed in by run.sh: the local NuGet source written by jsii-pacmak, the version and the examples -->
+    <PackageReference Include="CDK.IAM.Floyd" Version="$(FloydVersion)" />
+    <Compile Include="$(Examples)/*/*.cs" />
+  </ItemGroup>
+</Project>

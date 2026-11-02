@@ -1,0 +1,539 @@
+---
+name: Publish
+
+permissions:
+  contents: read
+
+# release-please.yml starts this workflow with the tag of the draft release that release-please
+# created: the packages are built from the tag, published, and the release is published last. The
+# release PR was tested by test.yml, so the packages are not tested again. The workflow is started,
+# not called, because trusted publishing on npm, PyPI and NuGet is configured for this workflow
+# file, and PyPI doesn't support reusable workflows.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag of the draft release to publish, e.g. v1.2.3
+        type: string
+        required: true
+
+jobs:
+  # Assets can only be added to a draft release, published releases are immutable
+  check-release:
+    name: Check release
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get_version.outputs.VERSION }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Get the version
+        id: get_version
+        run: |
+          set -euo pipefail
+          VERSION="$(jq -r .version package.json)"
+          if [[ "v${VERSION}" != "${TAG}" ]]; then
+            echo "::error::The version ${VERSION} in package.json does not match the tag ${TAG}"
+            exit 1
+          fi
+          echo "VERSION=${VERSION}" >> "$GITHUB_OUTPUT"
+        env:
+          TAG: ${{ inputs.tag }}
+
+      - name: Check that the release is a draft
+        run: |
+          if [[ "$(gh release view "${TAG}" --repo "${GITHUB_REPOSITORY}" --json isDraft --jq .isDraft)" != "true" ]]; then
+            echo "::error::Release ${TAG} is not a draft"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }} # draft releases need write access
+          TAG: ${{ inputs.tag }}
+
+  # The native packages of iam-floyd, built by the action package-iam-floyd like in test.yml, with
+  # the newest version of each language. publish-iam-floyd-python, publish-iam-floyd-java,
+  # publish-iam-floyd-dotnet and publish-iam-floyd-go publish them.
+  package-iam-floyd:
+    name: Package iam-floyd in ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+            version: "3.14"
+          - language: java
+            name: Java
+            version: "25"
+          - language: dotnet
+            name: .NET
+            version: "10"
+          - language: go
+            name: Go
+            version: stable
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Build
+        uses: $/.github/actions/package-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+          version: ${{ matrix.version }}
+
+      - name: Store packages
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: packages-iam-floyd-${{ matrix.language }}
+          path: dist/iam-floyd/${{ matrix.language }}
+          if-no-files-found: error
+          retention-days: 1
+
+  # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak by the action
+  # package-cdk-iam-floyd like in test.yml. The npm package is built by publish-cdk-iam-floyd-npm,
+  # with the jsii assembly.
+  package-cdk-iam-floyd:
+    name: Package cdk-iam-floyd in ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+          - language: java
+            name: Java
+          - language: dotnet
+            name: .NET
+          - language: go
+            name: Go
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+
+      - name: Build packages
+        uses: $/.github/actions/package-cdk-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+
+      - name: Store packages
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: packages-${{ matrix.language }}
+          path: dist/${{ matrix.language == 'go' && 'go-module' || matrix.language }}
+          if-no-files-found: error
+          retention-days: 1
+
+  publish-iam-floyd-npm:
+    name: Publish iam-floyd to npm
+    needs:
+      - check-release
+      - package-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for npm
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+
+      # npm authenticates with OIDC, there is no token
+      - name: Publish to npm
+        run: make install build publish
+        env:
+          NPM_PUBLISH: "true"
+
+  publish-iam-floyd-python:
+    name: Publish iam-floyd to PyPI
+    needs:
+      - check-release
+      - package-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for PyPI
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-iam-floyd-python
+          path: dist/iam-floyd/python
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # v1.14.3
+        with:
+          packages-dir: dist/iam-floyd/python
+
+  publish-iam-floyd-java:
+    name: Publish iam-floyd to Maven Central
+    needs:
+      - check-release
+      - package-iam-floyd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-iam-floyd-java
+          path: dist/iam-floyd/java
+
+      - name: Publish to Maven Central
+        run: bin/publish-maven dist/iam-floyd/java
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
+  publish-iam-floyd-dotnet:
+    name: Publish iam-floyd to NuGet
+    needs:
+      - check-release
+      - package-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for NuGet
+    steps:
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-iam-floyd-dotnet
+          path: dist/iam-floyd/dotnet
+
+      - name: Log in to NuGet
+        id: nuget
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: udondan
+
+      - name: Publish to NuGet
+        run: |
+          dotnet nuget push dist/iam-floyd/dotnet/*.nupkg \
+            --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.nuget.outputs.NUGET_API_KEY }}
+
+  publish-iam-floyd-go:
+    name: Publish iam-floyd for Go
+    needs:
+      - check-release
+      - package-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # release assets
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-iam-floyd-go
+          path: dist/iam-floyd/go
+
+      - name: Add module zip to release
+        run: gh release upload "v${VERSION}" dist/iam-floyd/go/*.zip --clobber --repo "${GITHUB_REPOSITORY}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.check-release.outputs.version }}
+
+  publish-cdk-iam-floyd-npm:
+    name: Publish cdk-iam-floyd to npm
+    needs:
+      - check-release
+      - package-cdk-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for npm
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      # npm authenticates with OIDC, there is no token
+      - name: Publish to npm
+        run: make package-jsii publish LANGUAGES=typescript
+        env:
+          NPM_PUBLISH: "true"
+
+  publish-cdk-iam-floyd-python:
+    name: Publish cdk-iam-floyd to PyPI
+    needs:
+      - check-release
+      - package-cdk-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for PyPI
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-python
+          path: dist/python
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # v1.14.3
+        with:
+          packages-dir: dist/python
+
+  publish-cdk-iam-floyd-java:
+    name: Publish cdk-iam-floyd to Maven Central
+    needs:
+      - check-release
+      - package-cdk-iam-floyd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-java
+          path: dist/java
+
+      - name: Publish to Maven Central
+        run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
+  publish-cdk-iam-floyd-dotnet:
+    name: Publish cdk-iam-floyd to NuGet
+    needs:
+      - check-release
+      - package-cdk-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for NuGet
+    steps:
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.x
+
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-dotnet
+          path: dist/dotnet
+
+      - name: Log in to NuGet
+        id: nuget
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: udondan
+
+      # The symbols package (.snupkg) next to it is pushed with it
+      - name: Publish to NuGet
+        run: |
+          dotnet nuget push dist/dotnet/*.nupkg \
+            --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.nuget.outputs.NUGET_API_KEY }}
+
+  publish-cdk-iam-floyd-go:
+    name: Publish cdk-iam-floyd for Go
+    needs:
+      - check-release
+      - package-cdk-iam-floyd
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # release assets
+    steps:
+      - name: Fetch packages
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: packages-go
+          path: dist/go-module
+
+      - name: Add module zip to release
+        run: gh release upload "v${VERSION}" dist/go-module/*.zip --clobber --repo "${GITHUB_REPOSITORY}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.check-release.outputs.version }}
+
+  # The Go modules of iam-floyd and cdk-iam-floyd are served by GitHub Pages as a static Go module
+  # proxy. The module zips of every version are release assets; the proxy serves the newest of them.
+  # It needs all publish jobs, so they are grouped by package in the graph of the workflow.
+  publish-go-proxy:
+    name: Publish Go module proxy
+    needs:
+      - check-release
+      - publish-iam-floyd-npm
+      - publish-iam-floyd-python
+      - publish-iam-floyd-java
+      - publish-iam-floyd-dotnet
+      - publish-iam-floyd-go
+      - publish-cdk-iam-floyd-npm
+      - publish-cdk-iam-floyd-python
+      - publish-cdk-iam-floyd-java
+      - publish-cdk-iam-floyd-dotnet
+      - publish-cdk-iam-floyd-go
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      # Pages sites are limited to 1 GB and the module zips of a release have about 11 MB. The
+      # release of this version and the newest 29 published releases make 30; releases before the
+      # Go modules have no zips.
+      - name: Fetch module zips of the newest releases
+        run: |
+          set -euo pipefail
+          mkdir zips
+          gh release download "v${VERSION}" --pattern '*iam-floyd-go-module-*.zip' --dir zips
+          for tag in $(gh release list --exclude-drafts --limit 30 --json tagName --jq '.[].tagName' | grep -v -x -F "v${VERSION}" | head -n 29); do
+            if gh release view "${tag}" --json assets --jq '.assets[].name' | grep -q -- '-go-module-'; then
+              gh release download "${tag}" --pattern '*iam-floyd-go-module-*.zip' --dir zips
+            fi
+          done
+          ls -l zips
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }} # the release of this version is a draft, which needs write access
+          VERSION: ${{ needs.check-release.outputs.version }}
+
+      - name: Build Go module proxy
+        run: bin/go-proxy site site zips/*.zip
+
+      # A re-run uploads to the same run, where deploy-pages fails if two artifacts have its name
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          name: github-pages-${{ github.run_attempt }}
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
+
+  # The release stays a draft until everything is published and all assets are attached, after
+  # publish-go-proxy, which needs all publish jobs
+  publish-release:
+    name: Publish release
+    needs:
+      - check-release
+      - publish-go-proxy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.tag }}
+
+      # release-please takes the notes from the body of the release PR, which has no IAM changes.
+      # The entry of this version in CHANGELOG.md has them, see release-please.yml
+      - name: Get release notes
+        run: |
+          set -euo pipefail
+          awk -v version="${VERSION}" '
+            /^##+ \[/ { if (found) exit; if (index($0, "[" version "]")) found = 1 }
+            found
+          ' CHANGELOG.md > notes.md
+          if [[ ! -s notes.md ]]; then
+            echo "::error::CHANGELOG.md has no entry for ${VERSION}"
+            exit 1
+          fi
+          cat notes.md
+        env:
+          VERSION: ${{ needs.check-release.outputs.version }}
+
+      - name: Publish release
+        run: |
+          gh release edit "v${VERSION}" --repo "${GITHUB_REPOSITORY}" --notes-file notes.md
+          gh release edit "v${VERSION}" --repo "${GITHUB_REPOSITORY}" --draft=false --latest
+        env:
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          VERSION: ${{ needs.check-release.outputs.version }}
+
+  # Fetching the modules through proxy.golang.org caches them there and adds them to the index of
+  # the Go modules, from which pkg.go.dev adds the documentation
+  seed-go-proxy:
+    name: Seed proxy.golang.org
+    needs:
+      - check-release
+      - publish-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Fetch the modules
+        run: |
+          go mod init seed
+          go get "udondan.github.io/iam-floyd/go/iamfloyd@v${VERSION}" "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
+        env:
+          GOPROXY: https://proxy.golang.org
+          VERSION: ${{ needs.check-release.outputs.version }}

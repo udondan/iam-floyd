@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DescribeInstances",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "TerminateInstances",
+      "Effect": "Allow",
+      "Action": "ec2:TerminateInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*"
+    },
+    {
+      "Sid": "DescribeSubnets",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeSubnets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeCluster",
+      "Effect": "Allow",
+      "Action": "eks:DescribeCluster",
+      "Resource": "arn:aws:eks:*:*:cluster/*"
+    },
+    {
+      "Sid": "DescribeNodeGroup",
+      "Effect": "Allow",
+      "Action": "eks:DescribeNodegroup",
+      "Resource": "arn:aws:eks:*:*:nodegroup/*"
+    },
+    {
+      "Sid": "TargetResolutionByTags",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

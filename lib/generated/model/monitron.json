@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "filename": "monitron",
+  "className": "Monitron",
+  "name": "monitron",
+  "servicePrefix": "monitron",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_monitron.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AssociateProjectAdminUser",
+      "CreateProjectUserAssociation",
+      "CreateUserAccessRoleAssociation",
+      "DeleteProjectUserAssociation",
+      "DeleteUserAccessRoleAssociation",
+      "DisassociateProjectAdminUser",
+      "ListProjectAdminUsers"
+    ],
+    "Write": [
+      "AssociateProjectAdminUser",
+      "CreateProject",
+      "CreateProjectUserAssociation",
+      "CreateUserAccessRoleAssociation",
+      "DeleteProject",
+      "DeleteProjectUserAssociation",
+      "DeleteUserAccessRoleAssociation",
+      "DisassociateProjectAdminUser",
+      "ListProjectAdminUsers",
+      "TagResource",
+      "UntagResource",
+      "UpdateProject"
+    ],
+    "Read": [
+      "GetProject",
+      "GetProjectAdminUser",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListProjectUserAssociations",
+      "ListProjects",
+      "ListUserAccessRoleAssociations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateProjectAdminUser",
+      "methodName": "toAssociateProjectAdminUser",
+      "description": "Grants permission to associate a user with the project as an administrator",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-creating-project.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateProjectUserAssociation",
+      "methodName": "toCreateProjectUserAssociation",
+      "description": "Grants permission to associate a user with the project",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html"
+    },
+    {
+      "name": "CreateUserAccessRoleAssociation",
+      "methodName": "toCreateUserAccessRoleAssociation",
+      "description": "Grants permission to associate an access role with the user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/adding-user.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-delete-project.html"
+    },
+    {
+      "name": "DeleteProjectUserAssociation",
+      "methodName": "toDeleteProjectUserAssociation",
+      "description": "Grants permission to disassociate a user from the project",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html"
+    },
+    {
+      "name": "DeleteUserAccessRoleAssociation",
+      "methodName": "toDeleteUserAccessRoleAssociation",
+      "description": "Grants permission to disassociate an access role from the user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/deleting-user.html"
+    },
+    {
+      "name": "DisassociateProjectAdminUser",
+      "methodName": "toDisassociateProjectAdminUser",
+      "description": "Grants permission to disassociate an administrator from the project",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mu-remove-project-admin.html"
+    },
+    {
+      "name": "GetProject",
+      "methodName": "toGetProject",
+      "description": "Grants permission to get information about a project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html"
+    },
+    {
+      "name": "GetProjectAdminUser",
+      "methodName": "toGetProjectAdminUser",
+      "description": "Grants permission to describe an administrator who is associated with the project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html"
+    },
+    {
+      "name": "ListProjectAdminUsers",
+      "methodName": "toListProjectAdminUsers",
+      "description": "Grants permission to list all administrators associated with the project",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html"
+    },
+    {
+      "name": "ListProjectUserAssociations",
+      "methodName": "toListProjectUserAssociations",
+      "description": "Grants permission to list all users associated with the project",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list all projects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-project-tasks.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html"
+    },
+    {
+      "name": "ListUserAccessRoleAssociations",
+      "methodName": "toListUserAccessRoleAssociations",
+      "description": "Grants permission to list all access roles associated with the user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/user-management-chapter.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/tagging.html#modify-tag-1"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to update a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/mp-updating-project.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/Monitron/latest/user-guide/projects-chapter.html",
+      "arn": "arn:${Partition}:monitron:${Region}:${Account}:project/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateProjectAdminUser",
+        "toCreateProjectUserAssociation",
+        "toCreateUserAccessRoleAssociation",
+        "toDeleteProject",
+        "toDeleteProjectUserAssociation",
+        "toDeleteUserAccessRoleAssociation",
+        "toDisassociateProjectAdminUser",
+        "toGetProject",
+        "toGetProjectAdminUser",
+        "toListProjectAdminUsers",
+        "toListProjectUserAssociations",
+        "toListTagsForResource",
+        "toListUserAccessRoleAssociations",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateProject"
+      ],
+      "relatedResourceTypes": [
+        "project"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateProject",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

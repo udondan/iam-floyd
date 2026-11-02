@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "route53:GetHostedZone",
+        "route53:ListResourceRecordSets",
+        "route53:ListHostedZones",
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ChangeResourceRecordSetsRestrictedRecordNames",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ChangeResourceRecordSets"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringLike": {
+          "route53:ChangeResourceRecordSetsNormalizedRecordNames": [
+            "*.hypershift.local",
+            "*.openshiftapps.com",
+            "*.devshift.org",
+            "*.openshiftusgov.com",
+            "*.devshiftusgov.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ChangeTagsForResourceNoCondition",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ChangeTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

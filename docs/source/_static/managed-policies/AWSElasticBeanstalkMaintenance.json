@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCloudformationChangeSetOperationsOnElasticBeanstalkStacks",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateChangeSet",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:DeleteChangeSet",
+        "cloudformation:ListChangeSets",
+        "cloudformation:DescribeStacks",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/awseb-*",
+        "arn:aws:cloudformation:*:*:stack/eb-*"
+      ]
+    },
+    {
+      "Sid": "AllowElasticBeanstalkStacksUpdateExecuteSuccessfully",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:DescribeLoadBalancers",
+      "Resource": "*"
+    }
+  ]
+}

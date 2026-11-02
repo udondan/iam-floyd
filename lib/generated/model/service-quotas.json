@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "filename": "service-quotas",
+  "className": "Servicequotas",
+  "name": "servicequotas",
+  "servicePrefix": "servicequotas",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_service-quotas.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateServiceQuotaTemplate",
+      "CreateSupportCase",
+      "DeleteServiceQuotaIncreaseRequestFromTemplate",
+      "DisassociateServiceQuotaTemplate",
+      "PutServiceQuotaIncreaseRequestIntoTemplate",
+      "RequestServiceQuotaIncrease",
+      "StartAutoManagement",
+      "StopAutoManagement",
+      "TagResource",
+      "UntagResource",
+      "UpdateAutoManagement"
+    ],
+    "Read": [
+      "GetAWSDefaultServiceQuota",
+      "GetAssociationForServiceQuotaTemplate",
+      "GetAutoManagementConfiguration",
+      "GetQuotaUtilizationReport",
+      "GetRequestedServiceQuotaChange",
+      "GetServiceQuota",
+      "GetServiceQuotaIncreaseRequestFromTemplate",
+      "ListAWSDefaultServiceQuotas",
+      "ListRequestedServiceQuotaChangeHistory",
+      "ListRequestedServiceQuotaChangeHistoryByQuota",
+      "ListServiceQuotaIncreaseRequestsInTemplate",
+      "ListServiceQuotas",
+      "ListServices",
+      "ListTagsForResource",
+      "StartQuotaUtilizationReport"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateServiceQuotaTemplate",
+      "methodName": "toAssociateServiceQuotaTemplate",
+      "description": "Grants permission to associate the Service Quotas template with your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html"
+    },
+    {
+      "name": "CreateSupportCase",
+      "methodName": "toCreateSupportCase",
+      "description": "Grants permission to submit a request to create a support case for an existing quota increase request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_CreateSupportCase.html"
+    },
+    {
+      "name": "DeleteServiceQuotaIncreaseRequestFromTemplate",
+      "methodName": "toDeleteServiceQuotaIncreaseRequestFromTemplate",
+      "description": "Grants permission to remove the specified service quota from the service quota template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DeleteServiceQuotaIncreaseRequestFromTemplate.html"
+    },
+    {
+      "name": "DisassociateServiceQuotaTemplate",
+      "methodName": "toDisassociateServiceQuotaTemplate",
+      "description": "Grants permission to disassociate the Service Quotas template from your organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DisassociateServiceQuotaTemplate.html"
+    },
+    {
+      "name": "GetAWSDefaultServiceQuota",
+      "methodName": "toGetAWSDefaultServiceQuota",
+      "description": "Grants permission to return the details for the specified service quota, including the AWS default value",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAWSDefaultServiceQuota.html"
+    },
+    {
+      "name": "GetAssociationForServiceQuotaTemplate",
+      "methodName": "toGetAssociationForServiceQuotaTemplate",
+      "description": "Grants permission to retrieve the ServiceQuotaTemplateAssociationStatus value, which tells you if the Service Quotas template is associated with an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAssociationForServiceQuotaTemplate.html"
+    },
+    {
+      "name": "GetAutoManagementConfiguration",
+      "methodName": "toGetAutoManagementConfiguration",
+      "description": "Grants permission to retrieve the automatic management of Service Quotas configuration, including notification settings, opt-in type, and excluded quotas",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAutoManagementConfiguration.html"
+    },
+    {
+      "name": "GetQuotaUtilizationReport",
+      "methodName": "toGetQuotaUtilizationReport",
+      "description": "Grants permission to view the generated report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetQuotaUtilizationReport.html"
+    },
+    {
+      "name": "GetRequestedServiceQuotaChange",
+      "methodName": "toGetRequestedServiceQuotaChange",
+      "description": "Grants permission to retrieve the details for a particular service quota increase request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetRequestedServiceQuotaChange.html"
+    },
+    {
+      "name": "GetServiceQuota",
+      "methodName": "toGetServiceQuota",
+      "description": "Grants permission to return the details for the specified service quota, including the applied value",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuota.html"
+    },
+    {
+      "name": "GetServiceQuotaIncreaseRequestFromTemplate",
+      "methodName": "toGetServiceQuotaIncreaseRequestFromTemplate",
+      "description": "Grants permission to retrieve the details for a service quota increase request from the service quota template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuotaIncreaseRequestFromTemplate.html"
+    },
+    {
+      "name": "ListAWSDefaultServiceQuotas",
+      "methodName": "toListAWSDefaultServiceQuotas",
+      "description": "Grants permission to list all default service quotas for the specified AWS service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListAWSDefaultServiceQuotas.html"
+    },
+    {
+      "name": "ListRequestedServiceQuotaChangeHistory",
+      "methodName": "toListRequestedServiceQuotaChangeHistory",
+      "description": "Grants permission to request a list of the changes to quotas for a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistory.html"
+    },
+    {
+      "name": "ListRequestedServiceQuotaChangeHistoryByQuota",
+      "methodName": "toListRequestedServiceQuotaChangeHistoryByQuota",
+      "description": "Grants permission to request a list of the changes to specific service quotas",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistoryByQuota.html"
+    },
+    {
+      "name": "ListServiceQuotaIncreaseRequestsInTemplate",
+      "methodName": "toListServiceQuotaIncreaseRequestsInTemplate",
+      "description": "Grants permission to return a list of the service quota increase requests from the service quota template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotaIncreaseRequestsInTemplate.html"
+    },
+    {
+      "name": "ListServiceQuotas",
+      "methodName": "toListServiceQuotas",
+      "description": "Grants permission to list all service quotas for the specified AWS service, in that account, in that Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list the AWS services available in Service Quotas",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServices.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view the existing tags on a SQ resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutServiceQuotaIncreaseRequestIntoTemplate",
+      "methodName": "toPutServiceQuotaIncreaseRequestIntoTemplate",
+      "description": "Grants permission to define and add a quota to the service quota template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html"
+    },
+    {
+      "name": "RequestServiceQuotaIncrease",
+      "methodName": "toRequestServiceQuotaIncrease",
+      "description": "Grants permission to submit the request for a service quota increase",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html"
+    },
+    {
+      "name": "StartAutoManagement",
+      "methodName": "toStartAutoManagement",
+      "description": "Grants permission to enable automatic management of Service Quotas for an AWS account, including notification preferences and excluded quotas configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartAutoManagement.html"
+    },
+    {
+      "name": "StartQuotaUtilizationReport",
+      "methodName": "toStartQuotaUtilizationReport",
+      "description": "Grants permission to query quota utilization and create a report for your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartQuotaUtilizationReport.html"
+    },
+    {
+      "name": "StopAutoManagement",
+      "methodName": "toStopAutoManagement",
+      "description": "Grants permission to stop automatic management of Service Quotas for an AWS account and remove all associated configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StopAutoManagement.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate a set of tags with an existing SQ resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a set of tags from a SQ resource, where tags to be removed match a set of customer-supplied tag keys",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource.html",
+      "conditionMethods": [
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "UpdateAutoManagement",
+      "methodName": "toUpdateAutoManagement",
+      "description": "Grants permission to update the automatic management of Service Quotas configuration, including notification preferences and excluded quotas",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UpdateAutoManagement.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "quota",
+      "methodName": "onQuota",
+      "url": "https://docs.aws.amazon.com/servicequotas/latest/userguide/identity-access-management.html#resources",
+      "arn": "arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceCode",
+          "name": "serviceCode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QuotaCode",
+          "name": "quotaCode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "servicequotas:service",
+      "methodName": "ifService",
+      "description": "Filters access by the specified AWS service",
+      "url": "https://docs.aws.amazon.com/servicequotas/latest/userguide/identity-access-management.html#condition-keys",
+      "relatedActionMethods": [
+        "toGetServiceQuota",
+        "toGetServiceQuotaIncreaseRequestFromTemplate",
+        "toListRequestedServiceQuotaChangeHistoryByQuota",
+        "toPutServiceQuotaIncreaseRequestIntoTemplate",
+        "toRequestServiceQuotaIncrease"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "service",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}
