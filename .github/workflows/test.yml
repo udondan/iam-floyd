@@ -13,24 +13,24 @@ jobs:
   # Only one run at a time may deploy to the AWS test account. All other jobs of a pull request wait
   # for the turn as well: the waiting runs of all open pull requests would otherwise take the
   # runners of the account at once, and most of them are tested again after a rebase anyway.
-  priority-boarding:
+  boarding-gate:
     permissions:
       actions: read
-      contents: write # lock refs under refs/priority-boarding/
+      contents: write # lock refs under refs/boarding-gate/
       pull-requests: read # labels for label-weights
       statuses: write # queue position as commit status
     # Queue order, the concurrency group that cancels outdated waiting runs and
     # the rebase of branches that are behind main: see
-    # https://github.com/udondan/priority-boarding#reusable-workflow
+    # https://github.com/udondan/boarding-gate#reusable-workflow
     # The rebase needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
-    uses: udondan/priority-boarding/.github/workflows/priority-boarding.yml@v1 # zizmor: ignore[unpinned-uses] used by its major tag, so every release reaches this repo without update PRs
+    uses: udondan/boarding-gate/.github/workflows/boarding-gate.yml@v1 # zizmor: ignore[unpinned-uses] used by its major tag, so every release reaches this repo without update PRs
     secrets:
       update-token: ${{ secrets.OVERRIDE_TOKEN }}
 
   lint:
     name: Lint
-    needs: priority-boarding
-    if: needs.priority-boarding.result == 'success'
+    needs: boarding-gate
+    if: needs.boarding-gate.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node.js
