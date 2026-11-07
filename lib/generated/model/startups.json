@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "startups",
+  "className": "Startups",
+  "name": "startups",
+  "servicePrefix": "startups",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_startups.html",
+  "accessLevelList": {
+    "Read": [
+      "GetSpendSummary"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetSpendSummary",
+      "methodName": "toGetSpendSummary",
+      "description": "Grants permission to summarize billing, cost, and cost forecast information for which you have permissions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/startupadvisor/latest/userguide/#"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

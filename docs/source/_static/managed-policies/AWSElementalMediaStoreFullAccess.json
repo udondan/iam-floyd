@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "mediastore:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllActions",
+      "Effect": "Allow",
+      "Action": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:getobject",
+        "S3:PutObject",
+        "s3:List*",
+        "s3:*",
+        "ses:SendEmail",
+        "ses:CreateContact",
+        "cloudsearch:document",
+        "rds-db:connect",
+        "unknown-service:DoSomething"
+      ],
+      "Resource": ["arn:aws:s3:::bucket/*", "*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:Describe?nstances"
+    },
+    {
+      "Effect": "Deny",
+      "NotAction": ["s3:Delete*", "s3:PutObject"],
+      "NotResource": "arn:aws:s3:::bucket/*"
+    },
+    {
+      "Effect": "Deny",
+      "NotAction": ["iam:*", "organizations:*", "unknown-service:*"],
+      "Resource": "*"
+    }
+  ]
+}

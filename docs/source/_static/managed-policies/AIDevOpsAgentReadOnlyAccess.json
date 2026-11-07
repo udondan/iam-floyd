@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AIDevOpsAgentReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:DescribePrivateConnection",
+        "aidevops:DescribeServices",
+        "aidevops:Get*",
+        "aidevops:List*",
+        "aidevops:SearchServiceAccessibleResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

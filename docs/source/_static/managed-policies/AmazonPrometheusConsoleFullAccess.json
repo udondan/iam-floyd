@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetTagValues",
+        "tag:GetTagKeys"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aps:CreateWorkspace",
+        "aps:DescribeWorkspace",
+        "aps:UpdateWorkspaceAlias",
+        "aps:DeleteWorkspace",
+        "aps:ListWorkspaces",
+        "aps:DescribeAlertManagerDefinition",
+        "aps:DescribeRuleGroupsNamespace",
+        "aps:CreateAlertManagerDefinition",
+        "aps:CreateRuleGroupsNamespace",
+        "aps:DeleteAlertManagerDefinition",
+        "aps:DeleteRuleGroupsNamespace",
+        "aps:ListRuleGroupsNamespaces",
+        "aps:PutAlertManagerDefinition",
+        "aps:PutRuleGroupsNamespace",
+        "aps:TagResource",
+        "aps:UntagResource",
+        "aps:CreateLoggingConfiguration",
+        "aps:UpdateLoggingConfiguration",
+        "aps:DeleteLoggingConfiguration",
+        "aps:DescribeLoggingConfiguration",
+        "aps:UpdateWorkspaceConfiguration",
+        "aps:DescribeWorkspaceConfiguration",
+        "aps:CreateQueryLoggingConfiguration",
+        "aps:UpdateQueryLoggingConfiguration",
+        "aps:DeleteQueryLoggingConfiguration",
+        "aps:DescribeQueryLoggingConfiguration"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

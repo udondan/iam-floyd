@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "filename": "codewhisperer",
+  "className": "Codewhisperer",
+  "name": "codewhisperer",
+  "servicePrefix": "codewhisperer",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codewhisperer.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Write": [
+      "AllowVendedLogDeliveryForResource",
+      "AssociateCustomizationPermission",
+      "CreateCustomization",
+      "CreateProfile",
+      "DeleteCustomization",
+      "DeleteProfile",
+      "DisassociateCustomizationPermission",
+      "TagResource",
+      "UntagResource",
+      "UpdateCustomization",
+      "UpdateProfile"
+    ],
+    "Read": [
+      "GenerateRecommendations",
+      "GetCustomization"
+    ],
+    "List": [
+      "ListCustomizationPermissions",
+      "ListCustomizationVersions",
+      "ListCustomizations",
+      "ListProfiles",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for CodeWhisperer customization resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/monitoring-overview.html"
+    },
+    {
+      "name": "AssociateCustomizationPermission",
+      "methodName": "toAssociateCustomizationPermission",
+      "description": "Grants permission to invoke AssociateCustomizationPermission on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "CreateCustomization",
+      "methodName": "toCreateCustomization",
+      "description": "Grants permission to invoke CreateCustomization on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to invoke CreateProfile on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "DeleteCustomization",
+      "methodName": "toDeleteCustomization",
+      "description": "Grants permission to invoke DeleteCustomization on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to invoke DeleteProfile on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "DisassociateCustomizationPermission",
+      "methodName": "toDisassociateCustomizationPermission",
+      "description": "Grants permission to invoke DisassociateCustomizationPermission on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "GenerateRecommendations",
+      "methodName": "toGenerateRecommendations",
+      "description": "Grants permission to invoke GenerateRecommendations on CodeWhisperer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "GetCustomization",
+      "methodName": "toGetCustomization",
+      "description": "Grants permission to invoke GetCustomization on CodeWhisperer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "ListCustomizationPermissions",
+      "methodName": "toListCustomizationPermissions",
+      "description": "Grants permission to invoke ListCustomizationPermissions on CodeWhisperer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "ListCustomizationVersions",
+      "methodName": "toListCustomizationVersions",
+      "description": "Grants permission to invoke ListCustomizationVersions on CodeWhisperer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "ListCustomizations",
+      "methodName": "toListCustomizations",
+      "description": "Grants permission to invoke ListCustomizations on CodeWhisperer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to invoke ListProfiles on CodeWhisperer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to invoke ListTagsForResource on CodeWhisperer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to invoke TagResource on CodeWhisperer",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to invoke UntagResource on CodeWhisperer",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "UpdateCustomization",
+      "methodName": "toUpdateCustomization",
+      "description": "Grants permission to invoke UpdateCustomization on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "UpdateProfile",
+      "methodName": "toUpdateProfile",
+      "description": "Grants permission to invoke UpdateProfile on CodeWhisperer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "customization",
+      "methodName": "onCustomization",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-customizations",
+      "arn": "arn:${Partition}:codewhisperer:${Region}:${Account}:customization/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/as-whisper-admin.html#about-profiles",
+      "arn": "arn:${Partition}:codewhisperer:${Region}:${Account}:profile/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/codewhisperer-setup-enterprise-admin.html",
+      "relatedActionMethods": [
+        "toCreateCustomization",
+        "toCreateProfile",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with CodeWhisperer resource",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/codewhisperer-setup-enterprise-admin.html",
+      "relatedActionMethods": [
+        "toAllowVendedLogDeliveryForResource",
+        "toAssociateCustomizationPermission",
+        "toCreateCustomization",
+        "toCreateProfile",
+        "toDeleteCustomization",
+        "toDeleteProfile",
+        "toDisassociateCustomizationPermission",
+        "toGetCustomization",
+        "toListCustomizationPermissions",
+        "toListCustomizationVersions",
+        "toListCustomizations",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCustomization",
+        "toUpdateProfile"
+      ],
+      "relatedResourceTypes": [
+        "customization",
+        "profile"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/codewhisperer-setup-enterprise-admin.html",
+      "relatedActionMethods": [
+        "toCreateCustomization",
+        "toCreateProfile",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

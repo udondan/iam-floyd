@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "filename": "voice-id",
+  "className": "Voiceid",
+  "name": "voiceid",
+  "servicePrefix": "voiceid",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_voice-id.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateFraudster",
+      "CreateDomain",
+      "CreateWatchlist",
+      "DeleteDomain",
+      "DeleteFraudster",
+      "DeleteSpeaker",
+      "DeleteWatchlist",
+      "DisassociateFraudster",
+      "EvaluateSession",
+      "OptOutSpeaker",
+      "StartFraudsterRegistrationJob",
+      "StartSpeakerEnrollmentJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateDomain",
+      "UpdateWatchlist",
+      "RegisterComplianceConsent"
+    ],
+    "Read": [
+      "DescribeDomain",
+      "DescribeFraudster",
+      "DescribeFraudsterRegistrationJob",
+      "DescribeSpeaker",
+      "DescribeSpeakerEnrollmentJob",
+      "DescribeWatchlist",
+      "ListTagsForResource",
+      "DescribeComplianceConsent"
+    ],
+    "List": [
+      "ListDomains",
+      "ListFraudsterRegistrationJobs",
+      "ListFraudsters",
+      "ListSpeakerEnrollmentJobs",
+      "ListSpeakers",
+      "ListWatchlists"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateFraudster",
+      "methodName": "toAssociateFraudster",
+      "description": "Grants permission to associate a fraudster with a watchlist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_AssociateFraudster.html"
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to create a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_CreateDomain.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateWatchlist",
+      "methodName": "toCreateWatchlist",
+      "description": "Grants permission to create a watchlist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_CreateWatchlist.html"
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DeleteDomain.html"
+    },
+    {
+      "name": "DeleteFraudster",
+      "methodName": "toDeleteFraudster",
+      "description": "Grants permission to delete a fraudster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DeleteFraudster.html"
+    },
+    {
+      "name": "DeleteSpeaker",
+      "methodName": "toDeleteSpeaker",
+      "description": "Grants permission to delete a speaker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DeleteSpeaker.html"
+    },
+    {
+      "name": "DeleteWatchlist",
+      "methodName": "toDeleteWatchlist",
+      "description": "Grants permission to delete a watchlist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DeleteWatchlist.html"
+    },
+    {
+      "name": "DescribeDomain",
+      "methodName": "toDescribeDomain",
+      "description": "Grants permission to describe a domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeDomain.html"
+    },
+    {
+      "name": "DescribeFraudster",
+      "methodName": "toDescribeFraudster",
+      "description": "Grants permission to describe a fraudster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeFraudster.html"
+    },
+    {
+      "name": "DescribeFraudsterRegistrationJob",
+      "methodName": "toDescribeFraudsterRegistrationJob",
+      "description": "Grants permission to describe a fraudster registration job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeFraudsterRegistrationJob.html"
+    },
+    {
+      "name": "DescribeSpeaker",
+      "methodName": "toDescribeSpeaker",
+      "description": "Grants permission to describe a speaker",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeSpeaker.html"
+    },
+    {
+      "name": "DescribeSpeakerEnrollmentJob",
+      "methodName": "toDescribeSpeakerEnrollmentJob",
+      "description": "Grants permission to describe a speaker enrollment job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeSpeakerEnrollmentJob.html"
+    },
+    {
+      "name": "DescribeWatchlist",
+      "methodName": "toDescribeWatchlist",
+      "description": "Grants permission to describe a watchlist",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DescribeWatchlist.html"
+    },
+    {
+      "name": "DisassociateFraudster",
+      "methodName": "toDisassociateFraudster",
+      "description": "Grants permission to disassociate a fraudster from a watchlist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_DisassociateFraudster.html"
+    },
+    {
+      "name": "EvaluateSession",
+      "methodName": "toEvaluateSession",
+      "description": "Grants permission to evaluate a session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_EvaluateSession.html"
+    },
+    {
+      "name": "ListDomains",
+      "methodName": "toListDomains",
+      "description": "Grants permission to list domains for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListDomains.html"
+    },
+    {
+      "name": "ListFraudsterRegistrationJobs",
+      "methodName": "toListFraudsterRegistrationJobs",
+      "description": "Grants permission to list fraudster registration jobs for a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListFraudsterRegistrationJobs.html"
+    },
+    {
+      "name": "ListFraudsters",
+      "methodName": "toListFraudsters",
+      "description": "Grants permission to list fraudsters for a domain or watchlist",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListFraudsters.html"
+    },
+    {
+      "name": "ListSpeakerEnrollmentJobs",
+      "methodName": "toListSpeakerEnrollmentJobs",
+      "description": "Grants permission to list speaker enrollment jobs for a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListSpeakerEnrollmentJobs.html"
+    },
+    {
+      "name": "ListSpeakers",
+      "methodName": "toListSpeakers",
+      "description": "Grants permission to list speakers for a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListSpeakers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a Voice ID resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWatchlists",
+      "methodName": "toListWatchlists",
+      "description": "Grants permission to list watchlists for a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_ListWatchlists.html"
+    },
+    {
+      "name": "OptOutSpeaker",
+      "methodName": "toOptOutSpeaker",
+      "description": "Grants permission to opt out a speaker",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_OptOutSpeaker.html"
+    },
+    {
+      "name": "StartFraudsterRegistrationJob",
+      "methodName": "toStartFraudsterRegistrationJob",
+      "description": "Grants permission to start a fraudster registration job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_StartFraudsterRegistrationJob.html"
+    },
+    {
+      "name": "StartSpeakerEnrollmentJob",
+      "methodName": "toStartSpeakerEnrollmentJob",
+      "description": "Grants permission to start a speaker enrollment job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_StartSpeakerEnrollmentJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a Voice ID resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a Voice ID resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDomain",
+      "methodName": "toUpdateDomain",
+      "description": "Grants permission to update a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_UpdateDomain.html"
+    },
+    {
+      "name": "UpdateWatchlist",
+      "methodName": "toUpdateWatchlist",
+      "description": "Grants permission to update a watchlist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/voiceid/latest/APIReference/API_UpdateWatchlist.html"
+    },
+    {
+      "name": "DescribeComplianceConsent",
+      "methodName": "toDescribeComplianceConsent",
+      "description": "Grants permission to describe compliance consent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-voiceid.html#enable-voiceid-step1"
+    },
+    {
+      "name": "RegisterComplianceConsent",
+      "methodName": "toRegisterComplianceConsent",
+      "description": "Grants permission to register compliance consent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-voiceid.html#enable-voiceid-step1"
+    }
+  ],
+  "resources": [
+    {
+      "name": "domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/enable-voiceid.html#voiceid-domain",
+      "arn": "arn:${Partition}:voiceid:${Region}:${Account}:domain/${DomainId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_voiceid",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "id": "domainId"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateFraudster",
+        "toCreateWatchlist",
+        "toDeleteDomain",
+        "toDeleteFraudster",
+        "toDeleteSpeaker",
+        "toDeleteWatchlist",
+        "toDescribeDomain",
+        "toDescribeFraudster",
+        "toDescribeFraudsterRegistrationJob",
+        "toDescribeSpeaker",
+        "toDescribeSpeakerEnrollmentJob",
+        "toDescribeWatchlist",
+        "toDisassociateFraudster",
+        "toEvaluateSession",
+        "toListFraudsterRegistrationJobs",
+        "toListFraudsters",
+        "toListSpeakerEnrollmentJobs",
+        "toListSpeakers",
+        "toListTagsForResource",
+        "toListWatchlists",
+        "toOptOutSpeaker",
+        "toStartFraudsterRegistrationJob",
+        "toStartSpeakerEnrollmentJob",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDomain",
+        "toUpdateWatchlist"
+      ],
+      "relatedResourceTypes": [
+        "domain"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

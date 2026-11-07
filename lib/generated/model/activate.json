@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "filename": "activate",
+  "className": "Activate",
+  "name": "activate",
+  "servicePrefix": "activate",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_activate.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateForm",
+      "PutMemberInfo"
+    ],
+    "Read": [
+      "GetAccountContact",
+      "GetContentInfo",
+      "GetCosts",
+      "GetCredits",
+      "GetMemberInfo",
+      "GetProgram"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateForm",
+      "methodName": "toCreateForm",
+      "description": "Grants permission to submit an Activate application form",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetAccountContact",
+      "methodName": "toGetAccountContact",
+      "description": "Grants permission to get the AWS account contact information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetContentInfo",
+      "methodName": "toGetContentInfo",
+      "description": "Grants permission to get Activate tech posts and offer information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetCosts",
+      "methodName": "toGetCosts",
+      "description": "Grants permission to get the AWS cost information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetCredits",
+      "methodName": "toGetCredits",
+      "description": "Grants permission to get the AWS credit information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetMemberInfo",
+      "methodName": "toGetMemberInfo",
+      "description": "Grants permission to get the Activate member information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "GetProgram",
+      "methodName": "toGetProgram",
+      "description": "Grants permission to get an Activate program",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/"
+    },
+    {
+      "name": "PutMemberInfo",
+      "methodName": "toPutMemberInfo",
+      "description": "Grants permission to create or update the Activate member information",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

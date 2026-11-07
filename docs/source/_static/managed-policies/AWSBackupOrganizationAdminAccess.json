@@ -1,0 +1,77 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DisableAWSServiceAccess",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "backup.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator"
+      ],
+      "Resource": "arn:aws:organizations::*:account/*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "backup.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:AttachPolicy",
+        "organizations:ListPoliciesForTarget",
+        "organizations:ListTargetsForPolicy",
+        "organizations:DetachPolicy",
+        "organizations:DisablePolicyType",
+        "organizations:DescribePolicy",
+        "organizations:DescribeEffectivePolicy",
+        "organizations:ListPolicies",
+        "organizations:EnablePolicyType",
+        "organizations:CreatePolicy",
+        "organizations:UpdatePolicy",
+        "organizations:DeletePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:PolicyType": [
+            "BACKUP_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListRoots",
+        "organizations:ListParents",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListAccountsForParent",
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListChildren",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganizationalUnit"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

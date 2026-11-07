@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "filename": "qdeveloper",
+  "className": "Qdeveloper",
+  "name": "qdeveloper",
+  "servicePrefix": "qdeveloper",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_qdeveloper.html",
+  "accessLevelList": {
+    "Write": [
+      "ExportArtifact",
+      "ImportArtifact",
+      "StartAgentSession",
+      "TransformCode",
+      "TagResource",
+      "UntagResource"
+    ],
+    "List": [
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ExportArtifact",
+      "methodName": "toExportArtifact",
+      "description": "Grants permission to export artifacts from Amazon Q Developer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ImportArtifact",
+      "methodName": "toImportArtifact",
+      "description": "Grants permission to import artifacts to Amazon Q Developer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "StartAgentSession",
+      "methodName": "toStartAgentSession",
+      "description": "Grants permission to start an agent session with Amazon Q Developer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TransformCode",
+      "methodName": "toTransformCode",
+      "description": "Grants permission to transform code with Amazon Q Developer Transform Agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags associated with an Amazon Q Developer resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate tags with an Amazon Q Developer resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with an Amazon Q Developer resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "codeTransformation",
+      "methodName": "onCodeTransformation",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/codeTransformation.html",
+      "arn": "arn:${Partition}:qdeveloper:${Region}:${Account}:codeTransformation/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toStartAgentSession",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the Amazon Q Developer resource",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toExportArtifact",
+        "toImportArtifact",
+        "toTransformCode",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "codeTransformation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html",
+      "relatedActionMethods": [
+        "toStartAgentSession",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

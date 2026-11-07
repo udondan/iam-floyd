@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "filename": "s3files",
+  "className": "S3files",
+  "name": "s3files",
+  "servicePrefix": "s3files",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3files.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccessPoint",
+      "CreateFileSystem",
+      "CreateMountTarget",
+      "DeleteAccessPoint",
+      "DeleteFileSystem",
+      "DeleteFileSystemPolicy",
+      "DeleteMountTarget",
+      "PutFileSystemPolicy",
+      "PutSynchronizationConfiguration",
+      "TagResource",
+      "UntagResource",
+      "UpdateMountTarget",
+      "ClientRootAccess",
+      "ClientWrite"
+    ],
+    "Permissions management": [
+      "DeleteFileSystemPolicy",
+      "PutFileSystemPolicy"
+    ],
+    "Read": [
+      "GetAccessPoint",
+      "GetFileSystem",
+      "GetFileSystemPolicy",
+      "GetMountTarget",
+      "GetSynchronizationConfiguration",
+      "ListTagsForResource",
+      "ClientMount"
+    ],
+    "List": [
+      "ListAccessPoints",
+      "ListFileSystems",
+      "ListMountTargets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccessPoint",
+      "methodName": "toCreateAccessPoint",
+      "description": "Grants permission to create an access point for the specified file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateAccessPoint.html"
+    },
+    {
+      "name": "CreateFileSystem",
+      "methodName": "toCreateFileSystem",
+      "description": "Grants permission to create a new file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateFileSystem.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMountTarget",
+      "methodName": "toCreateMountTarget",
+      "description": "Grants permission to create a mount target for a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_CreateMountTarget.html"
+    },
+    {
+      "name": "DeleteAccessPoint",
+      "methodName": "toDeleteAccessPoint",
+      "description": "Grants permission to delete a specified access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteAccessPoint.html"
+    },
+    {
+      "name": "DeleteFileSystem",
+      "methodName": "toDeleteFileSystem",
+      "description": "Grants permission to delete a specified file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteFileSystem.html"
+    },
+    {
+      "name": "DeleteFileSystemPolicy",
+      "methodName": "toDeleteFileSystemPolicy",
+      "description": "Grants permission to delete the IAM resource policy for a specified file system",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteFileSystemPolicy.html"
+    },
+    {
+      "name": "DeleteMountTarget",
+      "methodName": "toDeleteMountTarget",
+      "description": "Grants permission to delete a specified mount target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_DeleteMountTarget.html"
+    },
+    {
+      "name": "GetAccessPoint",
+      "methodName": "toGetAccessPoint",
+      "description": "Grants permission to get resource information for a specified access point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetAccessPoint.html"
+    },
+    {
+      "name": "GetFileSystem",
+      "methodName": "toGetFileSystem",
+      "description": "Grants permission to get resource information for a specified file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetFileSystem.html"
+    },
+    {
+      "name": "GetFileSystemPolicy",
+      "methodName": "toGetFileSystemPolicy",
+      "description": "Grants permission to get the IAM resource policy for a specified file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetFileSystemPolicy.html"
+    },
+    {
+      "name": "GetMountTarget",
+      "methodName": "toGetMountTarget",
+      "description": "Grants permission to get resource information for a specified mount target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetMountTarget.html"
+    },
+    {
+      "name": "GetSynchronizationConfiguration",
+      "methodName": "toGetSynchronizationConfiguration",
+      "description": "Grants permission to get a synchronization configuration for a specified file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_GetSynchronizationConfiguration.html"
+    },
+    {
+      "name": "ListAccessPoints",
+      "methodName": "toListAccessPoints",
+      "description": "Grants permission to get a paginated list of all access points in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListAccessPoints.html"
+    },
+    {
+      "name": "ListFileSystems",
+      "methodName": "toListFileSystems",
+      "description": "Grants permission to get a paginated list of all file systems in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListFileSystems.html"
+    },
+    {
+      "name": "ListMountTargets",
+      "methodName": "toListMountTargets",
+      "description": "Grants permission to get a paginated list of all mount targets in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListMountTargets.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a specified S3 Files resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_ListTagsForResource.html"
+    },
+    {
+      "name": "PutFileSystemPolicy",
+      "methodName": "toPutFileSystemPolicy",
+      "description": "Grants permission to add an IAM resource policy to a specified file system",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_PutFileSystemPolicy.html"
+    },
+    {
+      "name": "PutSynchronizationConfiguration",
+      "methodName": "toPutSynchronizationConfiguration",
+      "description": "Grants permission to add a synchronization configuration to a specified file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_PutSynchronizationConfiguration.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a specified S3 Files resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a specified S3 Files resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_UntagResource.html"
+    },
+    {
+      "name": "UpdateMountTarget",
+      "methodName": "toUpdateMountTarget",
+      "description": "Grants permission to update resource information for a specified mount target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3Files_UpdateMountTarget.html"
+    },
+    {
+      "name": "ClientMount",
+      "methodName": "toClientMount",
+      "description": "Grants permission to allow an NFS client read-access to a file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html"
+    },
+    {
+      "name": "ClientRootAccess",
+      "methodName": "toClientRootAccess",
+      "description": "Grants permission to allow an NFS client root-access to a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html"
+    },
+    {
+      "name": "ClientWrite",
+      "methodName": "toClientWrite",
+      "description": "Grants permission to allow an NFS client write-access to a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-client-authorization.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "access-point",
+      "methodName": "onAccessPoint",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-access-points.html",
+      "arn": "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}/access-point/${AccessPointId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemId",
+          "name": "fileSystemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccessPointId",
+          "name": "accessPointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "file-system",
+      "methodName": "onFileSystem",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/creating-using-create-fs.html",
+      "arn": "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemId",
+          "name": "fileSystemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_s3files",
+        "interface": "IFileSystemRef",
+        "property": "fileSystemRef",
+        "arn": "fileSystemArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateFileSystem",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateMountTarget",
+        "toDeleteAccessPoint",
+        "toDeleteFileSystem",
+        "toDeleteFileSystemPolicy",
+        "toDeleteMountTarget",
+        "toGetAccessPoint",
+        "toGetFileSystem",
+        "toGetFileSystemPolicy",
+        "toGetMountTarget",
+        "toGetSynchronizationConfiguration",
+        "toListAccessPoints",
+        "toListFileSystems",
+        "toListMountTargets",
+        "toListTagsForResource",
+        "toPutFileSystemPolicy",
+        "toPutSynchronizationConfiguration",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMountTarget",
+        "toClientMount",
+        "toClientRootAccess",
+        "toClientWrite"
+      ],
+      "relatedResourceTypes": [
+        "access-point",
+        "file-system"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateFileSystem",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3files:AccessPointArn",
+      "methodName": "ifAccessPointArn",
+      "description": "Filters access by the ARN of the access point used to mount the file system",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/s3files-access-points.html",
+      "relatedActionMethods": [
+        "toClientMount",
+        "toClientRootAccess",
+        "toClientWrite"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccessPointArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "s3files:CreateAction",
+      "methodName": "ifCreateAction",
+      "description": "Filters access by the name of a resource-creating API action",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/using-tags-s3files.html",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "filename": "efs",
+  "className": "Elasticfilesystem",
+  "name": "elasticfilesystem",
+  "servicePrefix": "elasticfilesystem",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_efs.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccessPoint",
+      "CreateFileSystem",
+      "CreateMountTarget",
+      "CreateReplicationConfiguration",
+      "CreateTags",
+      "DeleteAccessPoint",
+      "DeleteFileSystem",
+      "DeleteFileSystemPolicy",
+      "DeleteMountTarget",
+      "DeleteReplicationConfiguration",
+      "DeleteTags",
+      "ModifyMountTargetSecurityGroups",
+      "PutAccountPreferences",
+      "PutBackupPolicy",
+      "PutFileSystemPolicy",
+      "PutLifecycleConfiguration",
+      "TagResource",
+      "UntagResource",
+      "UpdateFileSystem",
+      "UpdateFileSystemProtection",
+      "Backup",
+      "ClientRootAccess",
+      "ClientWrite",
+      "ReplicationWrite",
+      "Restore"
+    ],
+    "Tagging": [
+      "CreateTags",
+      "DeleteTags",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "DeleteFileSystemPolicy",
+      "PutFileSystemPolicy"
+    ],
+    "List": [
+      "DescribeAccessPoints",
+      "DescribeAccountPreferences",
+      "DescribeFileSystems",
+      "DescribeReplicationConfigurations"
+    ],
+    "Read": [
+      "DescribeBackupPolicy",
+      "DescribeFileSystemPolicy",
+      "DescribeLifecycleConfiguration",
+      "DescribeMountTargetSecurityGroups",
+      "DescribeMountTargets",
+      "DescribeTags",
+      "ListTagsForResource",
+      "ClientMount",
+      "ReplicationRead"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccessPoint",
+      "methodName": "toCreateAccessPoint",
+      "description": "Grants permission to create an access point for the specified file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_CreateAccessPoint.html"
+    },
+    {
+      "name": "CreateFileSystem",
+      "methodName": "toCreateFileSystem",
+      "description": "Grants permission to create a new, empty file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifEncrypted"
+      ]
+    },
+    {
+      "name": "CreateMountTarget",
+      "methodName": "toCreateMountTarget",
+      "description": "Grants permission to create a mount target for a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html"
+    },
+    {
+      "name": "CreateReplicationConfiguration",
+      "methodName": "toCreateReplicationConfiguration",
+      "description": "Grants permission to create a new replication configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_CreateReplicationConfiguration.html"
+    },
+    {
+      "name": "CreateTags",
+      "methodName": "toCreateTags",
+      "description": "Grants permission to create or overwrite tags associated with a file system; deprecated, see TagResource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html"
+    },
+    {
+      "name": "DeleteAccessPoint",
+      "methodName": "toDeleteAccessPoint",
+      "description": "Grants permission to delete the specified access point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DeleteAccessPoint.html"
+    },
+    {
+      "name": "DeleteFileSystem",
+      "methodName": "toDeleteFileSystem",
+      "description": "Grants permission to delete a file system, permanently severing access to its contents",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystem.html"
+    },
+    {
+      "name": "DeleteFileSystemPolicy",
+      "methodName": "toDeleteFileSystemPolicy",
+      "description": "Grants permission to delete the resource-level policy for a file system",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystemPolicy.html"
+    },
+    {
+      "name": "DeleteMountTarget",
+      "methodName": "toDeleteMountTarget",
+      "description": "Grants permission to delete the specified mount target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html"
+    },
+    {
+      "name": "DeleteReplicationConfiguration",
+      "methodName": "toDeleteReplicationConfiguration",
+      "description": "Grants permission to delete a replication configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DeleteReplicationConfiguration.html"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Grants permission to delete the specified tags from a file system; deprecated, see UntagResource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html"
+    },
+    {
+      "name": "DescribeAccessPoints",
+      "methodName": "toDescribeAccessPoints",
+      "description": "Grants permission to view the descriptions of Amazon EFS access points",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeAccessPoints.html"
+    },
+    {
+      "name": "DescribeAccountPreferences",
+      "methodName": "toDescribeAccountPreferences",
+      "description": "Grants permission to view the account preferences in effect for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeAccountPreferences.html"
+    },
+    {
+      "name": "DescribeBackupPolicy",
+      "methodName": "toDescribeBackupPolicy",
+      "description": "Grants permission to view the BackupPolicy object for an Amazon EFS file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeBackupPolicy.html"
+    },
+    {
+      "name": "DescribeFileSystemPolicy",
+      "methodName": "toDescribeFileSystemPolicy",
+      "description": "Grants permission to view the resource-level policy for an Amazon EFS file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystemPolicy.html"
+    },
+    {
+      "name": "DescribeFileSystems",
+      "methodName": "toDescribeFileSystems",
+      "description": "Grants permission to view the description of an Amazon EFS file system specified by file system CreationToken or FileSystemId; or to view the description of all file systems owned by the caller's AWS account in the AWS region of the endpoint that is being called",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html"
+    },
+    {
+      "name": "DescribeLifecycleConfiguration",
+      "methodName": "toDescribeLifecycleConfiguration",
+      "description": "Grants permission to view the LifecycleConfiguration object for an Amazon EFS file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeLifecycleConfiguration.html"
+    },
+    {
+      "name": "DescribeMountTargetSecurityGroups",
+      "methodName": "toDescribeMountTargetSecurityGroups",
+      "description": "Grants permission to view the security groups in effect for a mount target",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html"
+    },
+    {
+      "name": "DescribeMountTargets",
+      "methodName": "toDescribeMountTargets",
+      "description": "Grants permission to view the descriptions of all mount targets, or a specific mount target, for a file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html"
+    },
+    {
+      "name": "DescribeReplicationConfigurations",
+      "methodName": "toDescribeReplicationConfigurations",
+      "description": "Grants permission to view the description of an Amazon EFS replication configuration specified by FileSystemId; or to view the description of all replication configurations owned by the caller's AWS account in the AWS region of the endpoint that is being called",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeReplicationConfigurations.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Grants permission to view the tags associated with a file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view the tags associated with the specified Amazon EFS resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ModifyMountTargetSecurityGroups",
+      "methodName": "toModifyMountTargetSecurityGroups",
+      "description": "Grants permission to modify the set of security groups in effect for a mount target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html"
+    },
+    {
+      "name": "PutAccountPreferences",
+      "methodName": "toPutAccountPreferences",
+      "description": "Grants permission to set the account preferences of an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_PutAccountPreferences.html"
+    },
+    {
+      "name": "PutBackupPolicy",
+      "methodName": "toPutBackupPolicy",
+      "description": "Grants permission to enable or disable automatic backups with AWS Backup by creating a new BackupPolicy object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_PutBackupPolicy.html"
+    },
+    {
+      "name": "PutFileSystemPolicy",
+      "methodName": "toPutFileSystemPolicy",
+      "description": "Grants permission to apply a resource-level policy that defines the actions allowed or denied from given actors for the specified file system",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_PutFileSystemPolicy.html"
+    },
+    {
+      "name": "PutLifecycleConfiguration",
+      "methodName": "toPutLifecycleConfiguration",
+      "description": "Grants permission to enable lifecycle management by creating a new LifecycleConfiguration object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_PutLifecycleConfiguration.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to create or overwrite tags associated with the specified Amazon EFS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to delete the specified tags from an Amazon EFS resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateFileSystem",
+      "methodName": "toUpdateFileSystem",
+      "description": "Grants permission to update the throughput mode or the amount of provisioned throughput of an existing file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_UpdateFileSystem.html"
+    },
+    {
+      "name": "UpdateFileSystemProtection",
+      "methodName": "toUpdateFileSystemProtection",
+      "description": "Grants permission to update the file system protection of an existing file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_UpdateFileSystemProtection.html"
+    },
+    {
+      "name": "Backup",
+      "methodName": "toBackup",
+      "description": "Grants permission to start a backup job for an existing file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html"
+    },
+    {
+      "name": "ClientMount",
+      "methodName": "toClientMount",
+      "description": "Grants permission to allow an NFS client read-access to a file system",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html"
+    },
+    {
+      "name": "ClientRootAccess",
+      "methodName": "toClientRootAccess",
+      "description": "Grants permission to allow an NFS client root-access to a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html"
+    },
+    {
+      "name": "ClientWrite",
+      "methodName": "toClientWrite",
+      "description": "Grants permission to allow an NFS client write-access to a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html"
+    },
+    {
+      "name": "ReplicationRead",
+      "methodName": "toReplicationRead",
+      "description": "Grants permission to read file system data for replication",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html"
+    },
+    {
+      "name": "ReplicationWrite",
+      "methodName": "toReplicationWrite",
+      "description": "Grants permission to replicate data to a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html"
+    },
+    {
+      "name": "Restore",
+      "methodName": "toRestore",
+      "description": "Grants permission to start a restore job for a backup of a file system",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "access-point",
+      "methodName": "onAccessPoint",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html",
+      "arn": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}",
+      "placeholders": [
+        {
+          "placeholder": "AccessPointId",
+          "name": "accessPointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_efs",
+        "interface": "IAccessPointRef",
+        "property": "accessPointRef",
+        "arn": "accessPointArn"
+      }
+    },
+    {
+      "name": "file-system",
+      "methodName": "onFileSystem",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html",
+      "arn": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemId",
+          "name": "fileSystemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_efs",
+        "interface": "IFileSystemRef",
+        "property": "fileSystemRef",
+        "arn": "fileSystemArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateFileSystem",
+        "toCreateTags",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateMountTarget",
+        "toCreateReplicationConfiguration",
+        "toCreateTags",
+        "toDeleteAccessPoint",
+        "toDeleteFileSystem",
+        "toDeleteFileSystemPolicy",
+        "toDeleteMountTarget",
+        "toDeleteReplicationConfiguration",
+        "toDeleteTags",
+        "toDescribeAccessPoints",
+        "toDescribeBackupPolicy",
+        "toDescribeFileSystemPolicy",
+        "toDescribeFileSystems",
+        "toDescribeLifecycleConfiguration",
+        "toDescribeMountTargetSecurityGroups",
+        "toDescribeMountTargets",
+        "toDescribeReplicationConfigurations",
+        "toDescribeTags",
+        "toListTagsForResource",
+        "toModifyMountTargetSecurityGroups",
+        "toPutBackupPolicy",
+        "toPutFileSystemPolicy",
+        "toPutLifecycleConfiguration",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateFileSystem",
+        "toUpdateFileSystemProtection",
+        "toBackup",
+        "toClientMount",
+        "toClientRootAccess",
+        "toClientWrite",
+        "toReplicationRead",
+        "toReplicationWrite",
+        "toRestore"
+      ],
+      "relatedResourceTypes": [
+        "access-point",
+        "file-system"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccessPoint",
+        "toCreateFileSystem",
+        "toCreateTags",
+        "toDeleteTags",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticfilesystem:AccessPointArn",
+      "methodName": "ifAccessPointArn",
+      "description": "Filters access by the ARN of the access point used to mount the file system",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html",
+      "relatedActionMethods": [
+        "toClientMount",
+        "toClientRootAccess",
+        "toClientWrite"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccessPointArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "elasticfilesystem:AccessedViaMountTarget",
+      "methodName": "ifAccessedViaMountTarget",
+      "description": "Filters access by whether the file system is accessed via mount targets",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/mounting-fs.html",
+      "relatedActionMethods": [
+        "toClientMount",
+        "toClientRootAccess",
+        "toClientWrite"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AccessedViaMountTarget",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "elasticfilesystem:CreateAction",
+      "methodName": "ifCreateAction",
+      "description": "Filters access by the name of a resource-creating API action",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html",
+      "relatedActionMethods": [
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticfilesystem:Encrypted",
+      "methodName": "ifEncrypted",
+      "description": "Filters access by whether users can create only encrypted or unencrypted file systems",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/encryption.html",
+      "relatedActionMethods": [
+        "toCreateFileSystem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Encrypted",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

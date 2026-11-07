@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "node",
+  "changelog-path": "CHANGELOG.md",
+  "include-component-in-tag": false,
+  "bump-minor-pre-major": false,
+  "bump-patch-for-minor-pre-major": false,
+  "draft": true,
+  "force-tag-creation": true,
+  "prerelease": false,
+  "extra-files": ["docs/source/conf.py"],
+  "changelog-sections": [
+    { "type": "feat", "section": "Features" },
+    { "type": "feature", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "perf", "section": "Performance Improvements" },
+    { "type": "revert", "section": "Reverts" },
+    { "type": "deps", "section": "Dependencies" },
+    { "type": "chore", "scope": "deps", "section": "Dependencies" },
+    { "type": "docs", "section": "Documentation", "hidden": true },
+    { "type": "chore", "section": "Miscellaneous Chores", "hidden": true },
+    { "type": "style", "section": "Styles", "hidden": true },
+    { "type": "refactor", "section": "Code Refactoring", "hidden": true },
+    { "type": "test", "section": "Tests", "hidden": true },
+    { "type": "build", "section": "Build System", "hidden": true },
+    { "type": "ci", "section": "Continuous Integration", "hidden": true }
+  ],
+  "packages": {
+    ".": {}
+  }
+}

@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "filename": "clouddirectory",
+  "className": "Clouddirectory",
+  "name": "clouddirectory",
+  "servicePrefix": "clouddirectory",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_clouddirectory.html",
+  "accessLevelList": {
+    "Write": [
+      "AddFacetToObject",
+      "ApplySchema",
+      "AttachObject",
+      "AttachPolicy",
+      "AttachToIndex",
+      "AttachTypedLink",
+      "BatchWrite",
+      "CreateDirectory",
+      "CreateFacet",
+      "CreateIndex",
+      "CreateObject",
+      "CreateSchema",
+      "CreateTypedLinkFacet",
+      "DeleteDirectory",
+      "DeleteFacet",
+      "DeleteObject",
+      "DeleteSchema",
+      "DeleteTypedLinkFacet",
+      "DetachFromIndex",
+      "DetachObject",
+      "DetachPolicy",
+      "DetachTypedLink",
+      "DisableDirectory",
+      "EnableDirectory",
+      "PublishSchema",
+      "PutSchemaFromJson",
+      "RemoveFacetFromObject",
+      "TagResource",
+      "UntagResource",
+      "UpdateFacet",
+      "UpdateLinkAttributes",
+      "UpdateObjectAttributes",
+      "UpdateSchema",
+      "UpdateTypedLinkFacet",
+      "UpgradeAppliedSchema",
+      "UpgradePublishedSchema"
+    ],
+    "Read": [
+      "BatchRead",
+      "GetAppliedSchemaVersion",
+      "GetDirectory",
+      "GetFacet",
+      "GetLinkAttributes",
+      "GetObjectAttributes",
+      "GetObjectInformation",
+      "GetSchemaAsJson",
+      "GetTypedLinkFacetInformation",
+      "ListAttachedIndices",
+      "ListFacetAttributes",
+      "ListFacetNames",
+      "ListIncomingTypedLinks",
+      "ListIndex",
+      "ListObjectAttributes",
+      "ListObjectChildren",
+      "ListObjectParentPaths",
+      "ListObjectParents",
+      "ListObjectPolicies",
+      "ListOutgoingTypedLinks",
+      "ListPolicyAttachments",
+      "ListTagsForResource",
+      "ListTypedLinkFacetAttributes",
+      "ListTypedLinkFacetNames",
+      "LookupPolicy"
+    ],
+    "List": [
+      "ListAppliedSchemaArns",
+      "ListDevelopmentSchemaArns",
+      "ListDirectories",
+      "ListManagedSchemaArns",
+      "ListPublishedSchemaArns"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddFacetToObject",
+      "methodName": "toAddFacetToObject",
+      "description": "Grants permission to add a new Facet to an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AddFacetToObject.html"
+    },
+    {
+      "name": "ApplySchema",
+      "methodName": "toApplySchema",
+      "description": "Grants permission to copy input published schema into Directory with same name and version as that of published schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ApplySchema.html"
+    },
+    {
+      "name": "AttachObject",
+      "methodName": "toAttachObject",
+      "description": "Grants permission to attach an existing object to another existing object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachObject.html"
+    },
+    {
+      "name": "AttachPolicy",
+      "methodName": "toAttachPolicy",
+      "description": "Grants permission to attach a policy object to any other object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachPolicy.html"
+    },
+    {
+      "name": "AttachToIndex",
+      "methodName": "toAttachToIndex",
+      "description": "Grants permission to attach the specified object to the specified index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachToIndex.html"
+    },
+    {
+      "name": "AttachTypedLink",
+      "methodName": "toAttachTypedLink",
+      "description": "Grants permission to attach a typed link b/w a source & target object reference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html"
+    },
+    {
+      "name": "BatchRead",
+      "methodName": "toBatchRead",
+      "description": "Grants permission to perform all the read operations in a batch. Each individual operation inside BatchRead needs to be granted permissions explicitly",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_BatchRead.html"
+    },
+    {
+      "name": "BatchWrite",
+      "methodName": "toBatchWrite",
+      "description": "Grants permission to perform all the write operations in a batch. Each individual operation inside BatchWrite needs to be granted permissions explicitly",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_BatchWrite.html"
+    },
+    {
+      "name": "CreateDirectory",
+      "methodName": "toCreateDirectory",
+      "description": "Grants permission to create a Directory by copying the published schema into the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateDirectory.html"
+    },
+    {
+      "name": "CreateFacet",
+      "methodName": "toCreateFacet",
+      "description": "Grants permission to create a new Facet in a schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateFacet.html"
+    },
+    {
+      "name": "CreateIndex",
+      "methodName": "toCreateIndex",
+      "description": "Grants permission to create an index object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateIndex.html"
+    },
+    {
+      "name": "CreateObject",
+      "methodName": "toCreateObject",
+      "description": "Grants permission to create an object in a Directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateObject.html"
+    },
+    {
+      "name": "CreateSchema",
+      "methodName": "toCreateSchema",
+      "description": "Grants permission to create a new schema in a development state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateSchema.html"
+    },
+    {
+      "name": "CreateTypedLinkFacet",
+      "methodName": "toCreateTypedLinkFacet",
+      "description": "Grants permission to create a new Typed Link facet in a schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html"
+    },
+    {
+      "name": "DeleteDirectory",
+      "methodName": "toDeleteDirectory",
+      "description": "Grants permission to delete a directory. Only disabled directories can be deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteDirectory.html"
+    },
+    {
+      "name": "DeleteFacet",
+      "methodName": "toDeleteFacet",
+      "description": "Grants permission to delete a given Facet. All attributes and Rules associated with the facet will be deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteFacet.html"
+    },
+    {
+      "name": "DeleteObject",
+      "methodName": "toDeleteObject",
+      "description": "Grants permission to delete an object and its associated attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteObject.html"
+    },
+    {
+      "name": "DeleteSchema",
+      "methodName": "toDeleteSchema",
+      "description": "Grants permission to delete a given schema",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteSchema.html"
+    },
+    {
+      "name": "DeleteTypedLinkFacet",
+      "methodName": "toDeleteTypedLinkFacet",
+      "description": "Grants permission to delete a given TypedLink Facet. All attributes and Rules associated with the facet will be deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteTypedLinkFacet.html"
+    },
+    {
+      "name": "DetachFromIndex",
+      "methodName": "toDetachFromIndex",
+      "description": "Grants permission to detach the specified object from the specified index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachFromIndex.html"
+    },
+    {
+      "name": "DetachObject",
+      "methodName": "toDetachObject",
+      "description": "Grants permission to detach a given object from the parent object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachObject.html"
+    },
+    {
+      "name": "DetachPolicy",
+      "methodName": "toDetachPolicy",
+      "description": "Grants permission to detach a policy from an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachPolicy.html"
+    },
+    {
+      "name": "DetachTypedLink",
+      "methodName": "toDetachTypedLink",
+      "description": "Grants permission to detach a given typed link b/w given source and target object reference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html"
+    },
+    {
+      "name": "DisableDirectory",
+      "methodName": "toDisableDirectory",
+      "description": "Grants permission to disable the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DisableDirectory.html"
+    },
+    {
+      "name": "EnableDirectory",
+      "methodName": "toEnableDirectory",
+      "description": "Grants permission to enable the specified directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_EnableDirectory.html"
+    },
+    {
+      "name": "GetAppliedSchemaVersion",
+      "methodName": "toGetAppliedSchemaVersion",
+      "description": "Grants permission to return current applied schema version ARN, including the minor version in use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetAppliedSchemaVersion.html"
+    },
+    {
+      "name": "GetDirectory",
+      "methodName": "toGetDirectory",
+      "description": "Grants permission to retrieve metadata about a directory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetDirectory.html"
+    },
+    {
+      "name": "GetFacet",
+      "methodName": "toGetFacet",
+      "description": "Grants permission to get details of the Facet, such as Facet Name, Attributes, Rules, or ObjectType",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetFacet.html"
+    },
+    {
+      "name": "GetLinkAttributes",
+      "methodName": "toGetLinkAttributes",
+      "description": "Grants permission to retrieve attributes that are associated with a typed link",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetLinkAttributes.html"
+    },
+    {
+      "name": "GetObjectAttributes",
+      "methodName": "toGetObjectAttributes",
+      "description": "Grants permission to retrieve attributes within a facet that are associated with an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetObjectAttributes.html"
+    },
+    {
+      "name": "GetObjectInformation",
+      "methodName": "toGetObjectInformation",
+      "description": "Grants permission to retrieve metadata about an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetObjectInformation.html"
+    },
+    {
+      "name": "GetSchemaAsJson",
+      "methodName": "toGetSchemaAsJson",
+      "description": "Grants permission to retrieve a JSON representation of the schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetSchemaAsJson.html"
+    },
+    {
+      "name": "GetTypedLinkFacetInformation",
+      "methodName": "toGetTypedLinkFacetInformation",
+      "description": "Grants permission to return identity attributes order information associated with a given typed link facet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetTypedLinkFacetInformation.html"
+    },
+    {
+      "name": "ListAppliedSchemaArns",
+      "methodName": "toListAppliedSchemaArns",
+      "description": "Grants permission to list schemas applied to a directory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAppliedSchemaArns.html"
+    },
+    {
+      "name": "ListAttachedIndices",
+      "methodName": "toListAttachedIndices",
+      "description": "Grants permission to list indices attached to an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAttachedIndices.html"
+    },
+    {
+      "name": "ListDevelopmentSchemaArns",
+      "methodName": "toListDevelopmentSchemaArns",
+      "description": "Grants permission to retrieve the ARNs of schemas in the development state",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListDevelopmentSchemaArns.html"
+    },
+    {
+      "name": "ListDirectories",
+      "methodName": "toListDirectories",
+      "description": "Grants permission to list directories created within an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListDirectories.html"
+    },
+    {
+      "name": "ListFacetAttributes",
+      "methodName": "toListFacetAttributes",
+      "description": "Grants permission to retrieve attributes attached to the facet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListFacetAttributes.html"
+    },
+    {
+      "name": "ListFacetNames",
+      "methodName": "toListFacetNames",
+      "description": "Grants permission to retrieve the names of facets that exist in a schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListFacetNames.html"
+    },
+    {
+      "name": "ListIncomingTypedLinks",
+      "methodName": "toListIncomingTypedLinks",
+      "description": "Grants permission to return a paginated list of all incoming TypedLinks for a given object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html"
+    },
+    {
+      "name": "ListIndex",
+      "methodName": "toListIndex",
+      "description": "Grants permission to list objects attached to the specified index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIndex.html"
+    },
+    {
+      "name": "ListManagedSchemaArns",
+      "methodName": "toListManagedSchemaArns",
+      "description": "Grants permission to list the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListManagedSchemaArns.html"
+    },
+    {
+      "name": "ListObjectAttributes",
+      "methodName": "toListObjectAttributes",
+      "description": "Grants permission to list all attributes associated with an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectAttributes.html"
+    },
+    {
+      "name": "ListObjectChildren",
+      "methodName": "toListObjectChildren",
+      "description": "Grants permission to return a paginated list of child objects associated with a given object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectChildren.html"
+    },
+    {
+      "name": "ListObjectParentPaths",
+      "methodName": "toListObjectParentPaths",
+      "description": "Grants permission to retrieve all available parent paths for any object type such as node, leaf node, policy node, and index node objects",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParentPaths.html"
+    },
+    {
+      "name": "ListObjectParents",
+      "methodName": "toListObjectParents",
+      "description": "Grants permission to list parent objects associated with a given object in pagination fashion",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParents.html"
+    },
+    {
+      "name": "ListObjectPolicies",
+      "methodName": "toListObjectPolicies",
+      "description": "Grants permission to return policies attached to an object in pagination fashion",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectPolicies.html"
+    },
+    {
+      "name": "ListOutgoingTypedLinks",
+      "methodName": "toListOutgoingTypedLinks",
+      "description": "Grants permission to return a paginated list of all outgoing TypedLinks for a given object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html"
+    },
+    {
+      "name": "ListPolicyAttachments",
+      "methodName": "toListPolicyAttachments",
+      "description": "Grants permission to return all of the ObjectIdentifiers to which a given policy is attached",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListPolicyAttachments.html"
+    },
+    {
+      "name": "ListPublishedSchemaArns",
+      "methodName": "toListPublishedSchemaArns",
+      "description": "Grants permission to retrieve published schema ARNs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListPublishedSchemaArns.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTypedLinkFacetAttributes",
+      "methodName": "toListTypedLinkFacetAttributes",
+      "description": "Grants permission to return a paginated list of attributes associated with typed link facet",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetAttributes.html"
+    },
+    {
+      "name": "ListTypedLinkFacetNames",
+      "methodName": "toListTypedLinkFacetNames",
+      "description": "Grants permission to return a paginated list of typed link facet names that exist in a schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetNames.html"
+    },
+    {
+      "name": "LookupPolicy",
+      "methodName": "toLookupPolicy",
+      "description": "Grants permission to list all policies from the root of the Directory to the object specified",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_LookupPolicy.html"
+    },
+    {
+      "name": "PublishSchema",
+      "methodName": "toPublishSchema",
+      "description": "Grants permission to publish a development schema with a version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PublishSchema.html"
+    },
+    {
+      "name": "PutSchemaFromJson",
+      "methodName": "toPutSchemaFromJson",
+      "description": "Grants permission to update a schema using JSON upload. Only available for development schemas",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PutSchemaFromJson.html"
+    },
+    {
+      "name": "RemoveFacetFromObject",
+      "methodName": "toRemoveFacetFromObject",
+      "description": "Grants permission to remove the specified facet from the specified object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_RemoveFacetFromObject.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateFacet",
+      "methodName": "toUpdateFacet",
+      "description": "Grants permission to add/update/delete existing Attributes, Rules, or ObjectType of a Facet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateFacet.html"
+    },
+    {
+      "name": "UpdateLinkAttributes",
+      "methodName": "toUpdateLinkAttributes",
+      "description": "Grants permission to update a given typed link's attributes. Attributes to be updated must not contribute to the typed link's identity, as defined by its IdentityAttributeOrder",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateLinkAttributes.html"
+    },
+    {
+      "name": "UpdateObjectAttributes",
+      "methodName": "toUpdateObjectAttributes",
+      "description": "Grants permission to update a given object's attributes",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateObjectAttributes.html"
+    },
+    {
+      "name": "UpdateSchema",
+      "methodName": "toUpdateSchema",
+      "description": "Grants permission to update the schema name with a new name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateSchema.html"
+    },
+    {
+      "name": "UpdateTypedLinkFacet",
+      "methodName": "toUpdateTypedLinkFacet",
+      "description": "Grants permission to add/update/delete existing Attributes, Rules, identity attribute order of a TypedLink Facet",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateTypedLinkFacet.html"
+    },
+    {
+      "name": "UpgradeAppliedSchema",
+      "methodName": "toUpgradeAppliedSchema",
+      "description": "Grants permission to upgrade a single directory in-place using the PublishedSchemaArn with schema updates found in MinorVersion. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpgradeAppliedSchema.html"
+    },
+    {
+      "name": "UpgradePublishedSchema",
+      "methodName": "toUpgradePublishedSchema",
+      "description": "Grants permission to upgrade a published schema under a new minor version revision using the current contents of DevelopmentSchemaArn",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpgradePublishedSchema.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "appliedSchema",
+      "methodName": "onAppliedSchema",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}/schema/${SchemaName}/${Version}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SchemaName",
+          "name": "schemaName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Version",
+          "name": "version",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "developmentSchema",
+      "methodName": "onDevelopmentSchema",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:schema/development/${SchemaName}",
+      "placeholders": [
+        {
+          "placeholder": "SchemaName",
+          "name": "schemaName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "directory",
+      "methodName": "onDirectory",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}",
+      "placeholders": [
+        {
+          "placeholder": "DirectoryId",
+          "name": "directoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "publishedSchema",
+      "methodName": "onPublishedSchema",
+      "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:schema/published/${SchemaName}/${Version}",
+      "placeholders": [
+        {
+          "placeholder": "SchemaName",
+          "name": "schemaName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Version",
+          "name": "version",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

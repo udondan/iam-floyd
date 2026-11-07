@@ -1,0 +1,1004 @@
+{
+  "schemaVersion": 1,
+  "filename": "ses-mailmanager",
+  "className": "SesMailmanager",
+  "name": "ses-mailmanager",
+  "servicePrefix": "ses",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mailmanager.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAddonInstance",
+      "CreateAddonSubscription",
+      "CreateAddressList",
+      "CreateAddressListImportJob",
+      "CreateArchive",
+      "CreateIngressPoint",
+      "CreateRelay",
+      "CreateRuleSet",
+      "CreateTrafficPolicy",
+      "DeleteAddonInstance",
+      "DeleteAddonSubscription",
+      "DeleteAddressList",
+      "DeleteArchive",
+      "DeleteIngressPoint",
+      "DeleteRelay",
+      "DeleteRuleSet",
+      "DeleteTrafficPolicy",
+      "DeregisterMemberFromAddressList",
+      "RegisterMemberToAddressList",
+      "StartAddressListImportJob",
+      "StartArchiveExport",
+      "StartArchiveSearch",
+      "StopAddressListImportJob",
+      "StopArchiveExport",
+      "StopArchiveSearch",
+      "TagResource",
+      "UntagResource",
+      "UpdateArchive",
+      "UpdateIngressPoint",
+      "UpdateRelay",
+      "UpdateRuleSet",
+      "UpdateTrafficPolicy",
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Read": [
+      "GetAddonInstance",
+      "GetAddonSubscription",
+      "GetAddressList",
+      "GetAddressListImportJob",
+      "GetArchive",
+      "GetArchiveExport",
+      "GetArchiveMessage",
+      "GetArchiveMessageContent",
+      "GetArchiveSearch",
+      "GetArchiveSearchResults",
+      "GetIngressPoint",
+      "GetMemberOfAddressList",
+      "GetRelay",
+      "GetRuleSet",
+      "GetTrafficPolicy",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAddonInstances",
+      "ListAddonSubscriptions",
+      "ListAddressListImportJobs",
+      "ListAddressLists",
+      "ListArchiveExports",
+      "ListArchiveSearches",
+      "ListArchives",
+      "ListIngressPoints",
+      "ListMembersOfAddressList",
+      "ListRelays",
+      "ListRuleSets",
+      "ListTrafficPolicies"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAddonInstance",
+      "methodName": "toCreateAddonInstance",
+      "description": "Grants permission to create an addon instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddonInstance.html"
+    },
+    {
+      "name": "CreateAddonSubscription",
+      "methodName": "toCreateAddonSubscription",
+      "description": "Grants permission to create an addon subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddonSubscription.html"
+    },
+    {
+      "name": "CreateAddressList",
+      "methodName": "toCreateAddressList",
+      "description": "Grants permission to create an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddressList.html"
+    },
+    {
+      "name": "CreateAddressListImportJob",
+      "methodName": "toCreateAddressListImportJob",
+      "description": "Grants permission to create an import job on an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddressListImportJob.html"
+    },
+    {
+      "name": "CreateArchive",
+      "methodName": "toCreateArchive",
+      "description": "Grants permission to create an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateArchive.html"
+    },
+    {
+      "name": "CreateIngressPoint",
+      "methodName": "toCreateIngressPoint",
+      "description": "Grants permission to create an ingress point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateIngressPoint.html"
+    },
+    {
+      "name": "CreateRelay",
+      "methodName": "toCreateRelay",
+      "description": "Grants permission to create a SMTP relay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateRelay.html"
+    },
+    {
+      "name": "CreateRuleSet",
+      "methodName": "toCreateRuleSet",
+      "description": "Grants permission to create a rule set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateRuleSet.html"
+    },
+    {
+      "name": "CreateTrafficPolicy",
+      "methodName": "toCreateTrafficPolicy",
+      "description": "Grants permission to create a traffic policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateTrafficPolicy.html"
+    },
+    {
+      "name": "DeleteAddonInstance",
+      "methodName": "toDeleteAddonInstance",
+      "description": "Grants permission to delete an addon instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteAddonInstance.html"
+    },
+    {
+      "name": "DeleteAddonSubscription",
+      "methodName": "toDeleteAddonSubscription",
+      "description": "Grants permission to delete an addon subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteAddonSubscription.html"
+    },
+    {
+      "name": "DeleteAddressList",
+      "methodName": "toDeleteAddressList",
+      "description": "Grants permission to delete an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteAddressList.html"
+    },
+    {
+      "name": "DeleteArchive",
+      "methodName": "toDeleteArchive",
+      "description": "Grants permission to delete an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteArchive.html"
+    },
+    {
+      "name": "DeleteIngressPoint",
+      "methodName": "toDeleteIngressPoint",
+      "description": "Grants permission to delete an ingress point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteIngressPoint.html"
+    },
+    {
+      "name": "DeleteRelay",
+      "methodName": "toDeleteRelay",
+      "description": "Grants permission to delete a SMTP relay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteRelay.html"
+    },
+    {
+      "name": "DeleteRuleSet",
+      "methodName": "toDeleteRuleSet",
+      "description": "Grants permission to delete a rule set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteRuleSet.html"
+    },
+    {
+      "name": "DeleteTrafficPolicy",
+      "methodName": "toDeleteTrafficPolicy",
+      "description": "Grants permission to delete a traffic point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteTrafficPolicy.html"
+    },
+    {
+      "name": "DeregisterMemberFromAddressList",
+      "methodName": "toDeregisterMemberFromAddressList",
+      "description": "Grants permission to remove a member from an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeregisterMemberFromAddressList.html"
+    },
+    {
+      "name": "GetAddonInstance",
+      "methodName": "toGetAddonInstance",
+      "description": "Grants permission to get information about an addon instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddonInstance.html"
+    },
+    {
+      "name": "GetAddonSubscription",
+      "methodName": "toGetAddonSubscription",
+      "description": "Grants permission to get information about an addon subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddonSubscription.html"
+    },
+    {
+      "name": "GetAddressList",
+      "methodName": "toGetAddressList",
+      "description": "Grants permission to get information about an address list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddressList.html"
+    },
+    {
+      "name": "GetAddressListImportJob",
+      "methodName": "toGetAddressListImportJob",
+      "description": "Grants permission to get information about an import job on an address list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddressListImportJob.html"
+    },
+    {
+      "name": "GetArchive",
+      "methodName": "toGetArchive",
+      "description": "Grants permission to get information about an archive",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchive.html"
+    },
+    {
+      "name": "GetArchiveExport",
+      "methodName": "toGetArchiveExport",
+      "description": "Grants permission to get information about an archive export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchiveExport.html"
+    },
+    {
+      "name": "GetArchiveMessage",
+      "methodName": "toGetArchiveMessage",
+      "description": "Grants permission to retrieve archived message",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchiveMessage.html"
+    },
+    {
+      "name": "GetArchiveMessageContent",
+      "methodName": "toGetArchiveMessageContent",
+      "description": "Grants permission to retrieve archived message content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchiveMessageContent.html"
+    },
+    {
+      "name": "GetArchiveSearch",
+      "methodName": "toGetArchiveSearch",
+      "description": "Grants permission to get information about a search",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchiveSearch.html"
+    },
+    {
+      "name": "GetArchiveSearchResults",
+      "methodName": "toGetArchiveSearchResults",
+      "description": "Grants permission to get information about search results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchiveSearchResults.html"
+    },
+    {
+      "name": "GetIngressPoint",
+      "methodName": "toGetIngressPoint",
+      "description": "Grants permission to get information about an ingress point",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetIngressPoint.html"
+    },
+    {
+      "name": "GetMemberOfAddressList",
+      "methodName": "toGetMemberOfAddressList",
+      "description": "Grants permission to get information about a member in an address list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetMemberOfAddressList.html"
+    },
+    {
+      "name": "GetRelay",
+      "methodName": "toGetRelay",
+      "description": "Grants permission to get information about a SMTP relay",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetRelay.html"
+    },
+    {
+      "name": "GetRuleSet",
+      "methodName": "toGetRuleSet",
+      "description": "Grants permission to get information about a rule set",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetRuleSet.html"
+    },
+    {
+      "name": "GetTrafficPolicy",
+      "methodName": "toGetTrafficPolicy",
+      "description": "Grants permission to get information about a traffic policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetTrafficPolicy.html"
+    },
+    {
+      "name": "ListAddonInstances",
+      "methodName": "toListAddonInstances",
+      "description": "Grants permission to list all of the addon instances associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListAddonInstances.html"
+    },
+    {
+      "name": "ListAddonSubscriptions",
+      "methodName": "toListAddonSubscriptions",
+      "description": "Grants permission to list all of the addon subscriptions associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListAddonSubscriptions.html"
+    },
+    {
+      "name": "ListAddressListImportJobs",
+      "methodName": "toListAddressListImportJobs",
+      "description": "Grants permission to list all of the import jobs associated with an address list",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListAddressListImportJobs.html"
+    },
+    {
+      "name": "ListAddressLists",
+      "methodName": "toListAddressLists",
+      "description": "Grants permission to list all of the address lists associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListAddressLists.html"
+    },
+    {
+      "name": "ListArchiveExports",
+      "methodName": "toListArchiveExports",
+      "description": "Grants permission to list all of the archive exports associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListArchiveExports.html"
+    },
+    {
+      "name": "ListArchiveSearches",
+      "methodName": "toListArchiveSearches",
+      "description": "Grants permission to list all of the archive searches associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListArchiveSearches.html"
+    },
+    {
+      "name": "ListArchives",
+      "methodName": "toListArchives",
+      "description": "Grants permission to list all of the archives associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListArchives.html"
+    },
+    {
+      "name": "ListIngressPoints",
+      "methodName": "toListIngressPoints",
+      "description": "Grants permission to list all of the ingress points associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListIngressPoints.html"
+    },
+    {
+      "name": "ListMembersOfAddressList",
+      "methodName": "toListMembersOfAddressList",
+      "description": "Grants permission to list all of the members associated with an address list",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListMembersOfAddressList.html"
+    },
+    {
+      "name": "ListRelays",
+      "methodName": "toListRelays",
+      "description": "Grants permission to list all of the SMTP relays associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListRelays.html"
+    },
+    {
+      "name": "ListRuleSets",
+      "methodName": "toListRuleSets",
+      "description": "Grants permission to list all of the rule sets associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListRuleSets.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all of the tags associated with the resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTrafficPolicies",
+      "methodName": "toListTrafficPolicies",
+      "description": "Grants permission to list all of the traffic policies associated with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListTrafficPolicies.html"
+    },
+    {
+      "name": "RegisterMemberToAddressList",
+      "methodName": "toRegisterMemberToAddressList",
+      "description": "Grants permission to add a member to an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_RegisterMemberToAddressList.html"
+    },
+    {
+      "name": "StartAddressListImportJob",
+      "methodName": "toStartAddressListImportJob",
+      "description": "Grants permission to start an import job on an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StartAddressListImportJob.html"
+    },
+    {
+      "name": "StartArchiveExport",
+      "methodName": "toStartArchiveExport",
+      "description": "Grants permission to start an archive export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StartArchiveExport.html"
+    },
+    {
+      "name": "StartArchiveSearch",
+      "methodName": "toStartArchiveSearch",
+      "description": "Grants permission to start an archive search",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StartArchiveSearch.html"
+    },
+    {
+      "name": "StopAddressListImportJob",
+      "methodName": "toStopAddressListImportJob",
+      "description": "Grants permission to stop an ongoing import job on an address list",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StopAddressListImportJob.html"
+    },
+    {
+      "name": "StopArchiveExport",
+      "methodName": "toStopArchiveExport",
+      "description": "Grants permission to stop archive export",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StopArchiveExport.html"
+    },
+    {
+      "name": "StopArchiveSearch",
+      "methodName": "toStopArchiveSearch",
+      "description": "Grants permission to stop archive search",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StopArchiveSearch.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags (keys and values) to a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags (keys and values) from a specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateArchive",
+      "methodName": "toUpdateArchive",
+      "description": "Grants permission to update an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateArchive.html"
+    },
+    {
+      "name": "UpdateIngressPoint",
+      "methodName": "toUpdateIngressPoint",
+      "description": "Grants permission to update an ingress point",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateIngressPoint.html"
+    },
+    {
+      "name": "UpdateRelay",
+      "methodName": "toUpdateRelay",
+      "description": "Grants permission to update a SMTP relay",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateRelay.html"
+    },
+    {
+      "name": "UpdateRuleSet",
+      "methodName": "toUpdateRuleSet",
+      "description": "Grants permission to update a rule set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateRuleSet.html"
+    },
+    {
+      "name": "UpdateTrafficPolicy",
+      "methodName": "toUpdateTrafficPolicy",
+      "description": "Grants permission to update a traffic policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateTrafficPolicy.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for Mail Manager resources",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/ses/latest/dg/eb-policies.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "addon-instance",
+      "methodName": "onAddonInstance",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_AddonInstance.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:addon-instance/${AddonInstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "AddonInstanceId",
+          "name": "addonInstanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "addon-subscription",
+      "methodName": "onAddonSubscription",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_AddonSubscription.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:addon-subscription/${AddonSubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "AddonSubscriptionId",
+          "name": "addonSubscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "mailmanager-address-list",
+      "methodName": "onMailmanagerAddressList",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_AddressList.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-address-list/${AddressListId}",
+      "placeholders": [
+        {
+          "placeholder": "AddressListId",
+          "name": "addressListId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerAddressListRef",
+        "property": "mailManagerAddressListRef",
+        "arn": "addressListArn"
+      }
+    },
+    {
+      "name": "mailmanager-archive",
+      "methodName": "onMailmanagerArchive",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_Archive.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-archive/${ArchiveId}",
+      "placeholders": [
+        {
+          "placeholder": "ArchiveId",
+          "name": "archiveId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerArchiveRef",
+        "property": "mailManagerArchiveRef",
+        "arn": "archiveArn"
+      }
+    },
+    {
+      "name": "mailmanager-ingress-point",
+      "methodName": "onMailmanagerIngressPoint",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_IngressPoint.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-ingress-point/${IngressPointId}",
+      "placeholders": [
+        {
+          "placeholder": "IngressPointId",
+          "name": "ingressPointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifMailManagerIngressPointType"
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerIngressPointRef",
+        "property": "mailManagerIngressPointRef",
+        "arn": "ingressPointArn"
+      }
+    },
+    {
+      "name": "mailmanager-rule-set",
+      "methodName": "onMailmanagerRuleSet",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_RuleSet.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-rule-set/${RuleSetId}",
+      "placeholders": [
+        {
+          "placeholder": "RuleSetId",
+          "name": "ruleSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerRuleSetRef",
+        "property": "mailManagerRuleSetRef",
+        "arn": "ruleSetArn"
+      }
+    },
+    {
+      "name": "mailmanager-smtp-relay",
+      "methodName": "onMailmanagerSmtpRelay",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_Relay.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-smtp-relay/${RelayId}",
+      "placeholders": [
+        {
+          "placeholder": "RelayId",
+          "name": "relayId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "mailmanager-traffic-policy",
+      "methodName": "onMailmanagerTrafficPolicy",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_TrafficPolicy.html",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-traffic-policy/${TrafficPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "TrafficPolicyId",
+          "name": "trafficPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ses",
+        "interface": "IMailManagerTrafficPolicyRef",
+        "property": "mailManagerTrafficPolicyRef",
+        "arn": "trafficPolicyArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAddonInstance",
+        "toCreateAddonSubscription",
+        "toCreateAddressList",
+        "toCreateArchive",
+        "toCreateIngressPoint",
+        "toCreateRelay",
+        "toCreateRuleSet",
+        "toCreateTrafficPolicy",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateAddonInstance",
+        "toCreateAddonSubscription",
+        "toCreateAddressList",
+        "toCreateAddressListImportJob",
+        "toCreateArchive",
+        "toCreateIngressPoint",
+        "toCreateRelay",
+        "toCreateRuleSet",
+        "toCreateTrafficPolicy",
+        "toDeleteAddonInstance",
+        "toDeleteAddonSubscription",
+        "toDeleteAddressList",
+        "toDeleteArchive",
+        "toDeleteIngressPoint",
+        "toDeleteRelay",
+        "toDeleteRuleSet",
+        "toDeleteTrafficPolicy",
+        "toDeregisterMemberFromAddressList",
+        "toGetAddonInstance",
+        "toGetAddonSubscription",
+        "toGetAddressList",
+        "toGetAddressListImportJob",
+        "toGetArchive",
+        "toGetArchiveExport",
+        "toGetArchiveMessage",
+        "toGetArchiveMessageContent",
+        "toGetArchiveSearch",
+        "toGetArchiveSearchResults",
+        "toGetIngressPoint",
+        "toGetMemberOfAddressList",
+        "toGetRelay",
+        "toGetRuleSet",
+        "toGetTrafficPolicy",
+        "toListAddressListImportJobs",
+        "toListMembersOfAddressList",
+        "toListTagsForResource",
+        "toRegisterMemberToAddressList",
+        "toStartAddressListImportJob",
+        "toStartArchiveExport",
+        "toStartArchiveSearch",
+        "toStopAddressListImportJob",
+        "toStopArchiveExport",
+        "toStopArchiveSearch",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateArchive",
+        "toUpdateIngressPoint",
+        "toUpdateRelay",
+        "toUpdateRuleSet",
+        "toUpdateTrafficPolicy",
+        "toAllowVendedLogDeliveryForResource"
+      ],
+      "relatedResourceTypes": [
+        "addon-instance",
+        "addon-subscription",
+        "mailmanager-address-list",
+        "mailmanager-archive",
+        "mailmanager-ingress-point",
+        "mailmanager-rule-set",
+        "mailmanager-smtp-relay",
+        "mailmanager-traffic-policy"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAddonInstance",
+        "toCreateAddonSubscription",
+        "toCreateAddressList",
+        "toCreateArchive",
+        "toCreateIngressPoint",
+        "toCreateRelay",
+        "toCreateRuleSet",
+        "toCreateTrafficPolicy",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:AddonSubscriptionArn",
+      "methodName": "ifAddonSubscriptionArn",
+      "description": "Filters access by SES Addon Subscription ARN",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsesmailmanager.html#amazonsesmailmanager-policy-keys",
+      "relatedActionMethods": [
+        "toCreateAddonInstance"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AddonSubscriptionArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ses:MailManagerIngressPointType",
+      "methodName": "ifMailManagerIngressPointType",
+      "description": "Filters access by SES Mail Manager ingress point type, for example OPEN or AUTH",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsesmailmanager.html#amazonsesmailmanager-policy-keys",
+      "relatedActionMethods": [
+        "toCreateIngressPoint",
+        "toDeleteIngressPoint",
+        "toGetIngressPoint",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIngressPoint",
+        "toAllowVendedLogDeliveryForResource"
+      ],
+      "relatedResourceTypes": [
+        "mailmanager-ingress-point"
+      ],
+      "keyLiteral": "MailManagerIngressPointType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ses:MailManagerRuleSetArn",
+      "methodName": "ifMailManagerRuleSetArn",
+      "description": "Filters access by SES Mail Manager rule set ARN",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsesmailmanager.html#amazonsesmailmanager-policy-keys",
+      "relatedActionMethods": [
+        "toCreateIngressPoint",
+        "toUpdateIngressPoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MailManagerRuleSetArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ses:MailManagerTrafficPolicyArn",
+      "methodName": "ifMailManagerTrafficPolicyArn",
+      "description": "Filters access by SES Mail Manager traffic policy ARN",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsesmailmanager.html#amazonsesmailmanager-policy-keys",
+      "relatedActionMethods": [
+        "toCreateIngressPoint",
+        "toUpdateIngressPoint"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "MailManagerTrafficPolicyArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

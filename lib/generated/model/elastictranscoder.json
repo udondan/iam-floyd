@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "filename": "elastictranscoder",
+  "className": "Elastictranscoder",
+  "name": "elastictranscoder",
+  "servicePrefix": "elastictranscoder",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elastictranscoder.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelJob",
+      "CreateJob",
+      "CreatePipeline",
+      "CreatePreset",
+      "DeletePipeline",
+      "DeletePreset",
+      "TestRole",
+      "UpdatePipeline",
+      "UpdatePipelineNotifications",
+      "UpdatePipelineStatus"
+    ],
+    "List": [
+      "ListJobsByPipeline",
+      "ListJobsByStatus",
+      "ListPipelines",
+      "ListPresets"
+    ],
+    "Read": [
+      "ReadJob",
+      "ReadPipeline",
+      "ReadPreset"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Cancel a job that Elastic Transcoder has not begun to process",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html"
+    },
+    {
+      "name": "CreateJob",
+      "methodName": "toCreateJob",
+      "description": "Create a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html"
+    },
+    {
+      "name": "CreatePipeline",
+      "methodName": "toCreatePipeline",
+      "description": "Create a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html"
+    },
+    {
+      "name": "CreatePreset",
+      "methodName": "toCreatePreset",
+      "description": "Create a preset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html"
+    },
+    {
+      "name": "DeletePipeline",
+      "methodName": "toDeletePipeline",
+      "description": "Delete a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html"
+    },
+    {
+      "name": "DeletePreset",
+      "methodName": "toDeletePreset",
+      "description": "Delete a preset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html"
+    },
+    {
+      "name": "ListJobsByPipeline",
+      "methodName": "toListJobsByPipeline",
+      "description": "Get a list of the jobs that you assigned to a pipeline",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html"
+    },
+    {
+      "name": "ListJobsByStatus",
+      "methodName": "toListJobsByStatus",
+      "description": "Get information about all of the jobs associated with the current AWS account that have a specified status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html"
+    },
+    {
+      "name": "ListPipelines",
+      "methodName": "toListPipelines",
+      "description": "Get a list of the pipelines associated with the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html"
+    },
+    {
+      "name": "ListPresets",
+      "methodName": "toListPresets",
+      "description": "Get a list of all presets associated with the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html"
+    },
+    {
+      "name": "ReadJob",
+      "methodName": "toReadJob",
+      "description": "Get detailed information about a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html"
+    },
+    {
+      "name": "ReadPipeline",
+      "methodName": "toReadPipeline",
+      "description": "Get detailed information about a pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html"
+    },
+    {
+      "name": "ReadPreset",
+      "methodName": "toReadPreset",
+      "description": "Get detailed information about a preset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html"
+    },
+    {
+      "name": "TestRole",
+      "methodName": "toTestRole",
+      "description": "Test the settings for a pipeline to ensure that Elastic Transcoder can create and process jobs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html"
+    },
+    {
+      "name": "UpdatePipeline",
+      "methodName": "toUpdatePipeline",
+      "description": "Update settings for a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html"
+    },
+    {
+      "name": "UpdatePipelineNotifications",
+      "methodName": "toUpdatePipelineNotifications",
+      "description": "Update only Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html"
+    },
+    {
+      "name": "UpdatePipelineStatus",
+      "methodName": "toUpdatePipelineStatus",
+      "description": "Pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "pipeline",
+      "methodName": "onPipeline",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}",
+      "placeholders": [
+        {
+          "placeholder": "PipelineId",
+          "name": "pipelineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "preset",
+      "methodName": "onPreset",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}",
+      "placeholders": [
+        {
+          "placeholder": "PresetId",
+          "name": "presetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

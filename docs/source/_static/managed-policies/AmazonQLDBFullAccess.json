@@ -1,0 +1,53 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "qldb:CreateLedger",
+        "qldb:UpdateLedger",
+        "qldb:UpdateLedgerPermissionsMode",
+        "qldb:DeleteLedger",
+        "qldb:ListLedgers",
+        "qldb:DescribeLedger",
+        "qldb:ExportJournalToS3",
+        "qldb:ListJournalS3Exports",
+        "qldb:ListJournalS3ExportsForLedger",
+        "qldb:DescribeJournalS3Export",
+        "qldb:CancelJournalKinesisStream",
+        "qldb:DescribeJournalKinesisStream",
+        "qldb:ListJournalKinesisStreamsForLedger",
+        "qldb:StreamJournalToKinesis",
+        "qldb:GetDigest",
+        "qldb:GetRevision",
+        "qldb:GetBlock",
+        "qldb:TagResource",
+        "qldb:UntagResource",
+        "qldb:ListTagsForResource",
+        "qldb:SendCommand",
+        "qldb:PartiQLCreateTable",
+        "qldb:PartiQLCreateIndex",
+        "qldb:PartiQLDropTable",
+        "qldb:PartiQLDropIndex",
+        "qldb:PartiQLUndropTable",
+        "qldb:PartiQLDelete",
+        "qldb:PartiQLInsert",
+        "qldb:PartiQLUpdate",
+        "qldb:PartiQLSelect",
+        "qldb:PartiQLHistoryFunction",
+        "qldb:PartiQLRedact"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "qldb.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

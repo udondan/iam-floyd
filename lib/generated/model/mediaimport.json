@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "mediaimport",
+  "className": "Mediaimport",
+  "name": "mediaimport",
+  "servicePrefix": "mediaimport",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediaimport.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDatabaseBinarySnapshot"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDatabaseBinarySnapshot",
+      "methodName": "toCreateDatabaseBinarySnapshot",
+      "description": "Grants permission to create a database binary snapshot on the customer's aws account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

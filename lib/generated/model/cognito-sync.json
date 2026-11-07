@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "filename": "cognito-sync",
+  "className": "CognitoSync",
+  "name": "cognito-sync",
+  "servicePrefix": "cognito-sync",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cognito-sync.html",
+  "accessLevelList": {
+    "Write": [
+      "BulkPublish",
+      "DeleteDataset",
+      "RegisterDevice",
+      "SetCognitoEvents",
+      "SetIdentityPoolConfiguration",
+      "SubscribeToDataset",
+      "UnsubscribeFromDataset",
+      "UpdateRecords",
+      "SetDatasetConfiguration"
+    ],
+    "Read": [
+      "DescribeDataset",
+      "DescribeIdentityPoolUsage",
+      "DescribeIdentityUsage",
+      "GetBulkPublishDetails",
+      "GetCognitoEvents",
+      "GetIdentityPoolConfiguration",
+      "ListIdentityPoolUsage",
+      "ListRecords",
+      "QueryRecords"
+    ],
+    "List": [
+      "ListDatasets"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BulkPublish",
+      "methodName": "toBulkPublish",
+      "description": "Grants permission to initiate a bulk publish of all existing datasets for an Identity Pool to the configured stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a specific dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DeleteDataset.html"
+    },
+    {
+      "name": "DescribeDataset",
+      "methodName": "toDescribeDataset",
+      "description": "Grants permission to get metadata about a dataset by identity and dataset name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeDataset.html"
+    },
+    {
+      "name": "DescribeIdentityPoolUsage",
+      "methodName": "toDescribeIdentityPoolUsage",
+      "description": "Grants permission to get usage details (for example, data storage) about a particular identity pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html"
+    },
+    {
+      "name": "DescribeIdentityUsage",
+      "methodName": "toDescribeIdentityUsage",
+      "description": "Grants permission to get usage information for an identity, including number of datasets and data usage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityUsage.html"
+    },
+    {
+      "name": "GetBulkPublishDetails",
+      "methodName": "toGetBulkPublishDetails",
+      "description": "Grants permission to get the status of the last BulkPublish operation for an identity pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetBulkPublishDetails.html"
+    },
+    {
+      "name": "GetCognitoEvents",
+      "methodName": "toGetCognitoEvents",
+      "description": "Grants permission to get the events and the corresponding Lambda functions associated with an identity pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetCognitoEvents.html"
+    },
+    {
+      "name": "GetIdentityPoolConfiguration",
+      "methodName": "toGetIdentityPoolConfiguration",
+      "description": "Grants permission to get the configuration settings of an identity pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetIdentityPoolConfiguration.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list datasets for an identity",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListDatasets.html"
+    },
+    {
+      "name": "ListIdentityPoolUsage",
+      "methodName": "toListIdentityPoolUsage",
+      "description": "Grants permission to get a list of identity pools registered with Cognito",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListIdentityPoolUsage.html"
+    },
+    {
+      "name": "ListRecords",
+      "methodName": "toListRecords",
+      "description": "Grants permission to get paginated records, optionally changed after a particular sync count for a dataset and identity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListRecords.html"
+    },
+    {
+      "name": "RegisterDevice",
+      "methodName": "toRegisterDevice",
+      "description": "Grants permission to register a device to receive push sync notifications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html"
+    },
+    {
+      "name": "SetCognitoEvents",
+      "methodName": "toSetCognitoEvents",
+      "description": "Grants permission to set the AWS Lambda function for a given event type for an identity pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetCognitoEvents.html"
+    },
+    {
+      "name": "SetIdentityPoolConfiguration",
+      "methodName": "toSetIdentityPoolConfiguration",
+      "description": "Grants permission to set the necessary configuration for push sync",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetIdentityPoolConfiguration.html"
+    },
+    {
+      "name": "SubscribeToDataset",
+      "methodName": "toSubscribeToDataset",
+      "description": "Grants permission to subscribe to receive notifications when a dataset is modified by another device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SubscribeToDataset.html"
+    },
+    {
+      "name": "UnsubscribeFromDataset",
+      "methodName": "toUnsubscribeFromDataset",
+      "description": "Grants permission to unsubscribe from receiving notifications when a dataset is modified by another device",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html"
+    },
+    {
+      "name": "UpdateRecords",
+      "methodName": "toUpdateRecords",
+      "description": "Grants permission to post updates to records and add and delete records for a dataset and user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html"
+    },
+    {
+      "name": "QueryRecords",
+      "methodName": "toQueryRecords",
+      "description": "Grants permission to query records",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "SetDatasetConfiguration",
+      "methodName": "toSetDatasetConfiguration",
+      "description": "Grants permission to configure datasets",
+      "accessLevel": "Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}/dataset/${DatasetName}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityPoolId",
+          "name": "identityPoolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdentityId",
+          "name": "identityId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasetName",
+          "name": "datasetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "identity",
+      "methodName": "onIdentity",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html#authenticated-and-unauthenticated-identities",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityPoolId",
+          "name": "identityPoolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdentityId",
+          "name": "identityId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "identitypool",
+      "methodName": "onIdentitypool",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityPoolId",
+          "name": "identityPoolId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

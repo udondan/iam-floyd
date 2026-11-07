@@ -1,0 +1,752 @@
+{
+  "schemaVersion": 1,
+  "filename": "mediatailor",
+  "className": "Mediatailor",
+  "name": "mediatailor",
+  "servicePrefix": "mediatailor",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mediatailor.html",
+  "accessLevelList": {
+    "Write": [
+      "ConfigureLogsForChannel",
+      "ConfigureLogsForPlaybackConfiguration",
+      "CreateChannel",
+      "CreateLiveSource",
+      "CreatePrefetchSchedule",
+      "CreateProgram",
+      "CreateSourceLocation",
+      "CreateVodSource",
+      "DeleteChannel",
+      "DeleteChannelPolicy",
+      "DeleteLiveSource",
+      "DeletePlaybackConfiguration",
+      "DeletePrefetchSchedule",
+      "DeleteProgram",
+      "DeleteSourceLocation",
+      "DeleteVodSource",
+      "PutChannelPolicy",
+      "PutPlaybackConfiguration",
+      "StartChannel",
+      "StopChannel",
+      "TagResource",
+      "UntagResource",
+      "UpdateChannel",
+      "UpdateLiveSource",
+      "UpdateProgram",
+      "UpdateSourceLocation",
+      "UpdateVodSource"
+    ],
+    "Permissions management": [
+      "DeleteChannelPolicy",
+      "PutChannelPolicy"
+    ],
+    "Read": [
+      "DescribeChannel",
+      "DescribeLiveSource",
+      "DescribeProgram",
+      "DescribeSourceLocation",
+      "DescribeVodSource",
+      "GetChannelPolicy",
+      "GetChannelSchedule",
+      "GetPlaybackConfiguration",
+      "GetPrefetchSchedule",
+      "ListAlerts",
+      "ListChannels",
+      "ListLiveSources",
+      "ListSourceLocations",
+      "ListTagsForResource",
+      "ListVodSources"
+    ],
+    "List": [
+      "ListPlaybackConfigurations",
+      "ListPrefetchSchedules"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ConfigureLogsForChannel",
+      "methodName": "toConfigureLogsForChannel",
+      "description": "Grants permission to configure logs on the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/configurelogs-channel.html"
+    },
+    {
+      "name": "ConfigureLogsForPlaybackConfiguration",
+      "methodName": "toConfigureLogsForPlaybackConfiguration",
+      "description": "Grants permission to configure logs for a playback configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/configurelogs-playbackconfiguration.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a new channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLiveSource",
+      "methodName": "toCreateLiveSource",
+      "description": "Grants permission to create a new live source on the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreatePrefetchSchedule",
+      "methodName": "toCreatePrefetchSchedule",
+      "description": "Grants permission to create a prefetch schedule for the playback configuration with the specified playback configuration name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html"
+    },
+    {
+      "name": "CreateProgram",
+      "methodName": "toCreateProgram",
+      "description": "Grants permission to create a new program on the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html"
+    },
+    {
+      "name": "CreateSourceLocation",
+      "methodName": "toCreateSourceLocation",
+      "description": "Grants permission to create a new source location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateVodSource",
+      "methodName": "toCreateVodSource",
+      "description": "Grants permission to create a new VOD source on the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html"
+    },
+    {
+      "name": "DeleteChannelPolicy",
+      "methodName": "toDeleteChannelPolicy",
+      "description": "Grants permission to delete the IAM policy on the channel with the specified channel name",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-policy.html"
+    },
+    {
+      "name": "DeleteLiveSource",
+      "methodName": "toDeleteLiveSource",
+      "description": "Grants permission to delete the live source with the specified live source name on the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html"
+    },
+    {
+      "name": "DeletePlaybackConfiguration",
+      "methodName": "toDeletePlaybackConfiguration",
+      "description": "Grants permission to delete the specified playback configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html"
+    },
+    {
+      "name": "DeletePrefetchSchedule",
+      "methodName": "toDeletePrefetchSchedule",
+      "description": "Grants permission to delete a prefetch schedule for a playback configuration with the specified prefetch schedule name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html"
+    },
+    {
+      "name": "DeleteProgram",
+      "methodName": "toDeleteProgram",
+      "description": "Grants permission to delete the program with the specified program name on the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html"
+    },
+    {
+      "name": "DeleteSourceLocation",
+      "methodName": "toDeleteSourceLocation",
+      "description": "Grants permission to delete the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html"
+    },
+    {
+      "name": "DeleteVodSource",
+      "methodName": "toDeleteVodSource",
+      "description": "Grants permission to delete the VOD source with the specified VOD source name on the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html"
+    },
+    {
+      "name": "DescribeChannel",
+      "methodName": "toDescribeChannel",
+      "description": "Grants permission to retrieve the channel with the specified channel name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html"
+    },
+    {
+      "name": "DescribeLiveSource",
+      "methodName": "toDescribeLiveSource",
+      "description": "Grants permission to retrieve the live source with the specified live source name on the source location with the specified source location name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html"
+    },
+    {
+      "name": "DescribeProgram",
+      "methodName": "toDescribeProgram",
+      "description": "Grants permission to retrieve the program with the specified program name on the channel with the specified channel name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html"
+    },
+    {
+      "name": "DescribeSourceLocation",
+      "methodName": "toDescribeSourceLocation",
+      "description": "Grants permission to retrieve the source location with the specified source location name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html"
+    },
+    {
+      "name": "DescribeVodSource",
+      "methodName": "toDescribeVodSource",
+      "description": "Grants permission to retrieve the VOD source with the specified VOD source name on the source location with the specified source location name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html"
+    },
+    {
+      "name": "GetChannelPolicy",
+      "methodName": "toGetChannelPolicy",
+      "description": "Grants permission to read the IAM policy on the channel with the specified channel name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-policy.html"
+    },
+    {
+      "name": "GetChannelSchedule",
+      "methodName": "toGetChannelSchedule",
+      "description": "Grants permission to retrieve the schedule of programs on the channel with the specified channel name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-schedule.html"
+    },
+    {
+      "name": "GetPlaybackConfiguration",
+      "methodName": "toGetPlaybackConfiguration",
+      "description": "Grants permission to retrieve the configuration for the specified name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html"
+    },
+    {
+      "name": "GetPrefetchSchedule",
+      "methodName": "toGetPrefetchSchedule",
+      "description": "Grants permission to retrieve prefetch schedule for a playback configuration with the specified prefetch schedule name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html"
+    },
+    {
+      "name": "ListAlerts",
+      "methodName": "toListAlerts",
+      "description": "Grants permission to retrieve the list of alerts on a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/alerts.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to retrieve the list of existing channels",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channels.html"
+    },
+    {
+      "name": "ListLiveSources",
+      "methodName": "toListLiveSources",
+      "description": "Grants permission to retrieve the list of existing live sources on the source location with the specified source location name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesources.html"
+    },
+    {
+      "name": "ListPlaybackConfigurations",
+      "methodName": "toListPlaybackConfigurations",
+      "description": "Grants permission to retrieve the list of available configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html"
+    },
+    {
+      "name": "ListPrefetchSchedules",
+      "methodName": "toListPrefetchSchedules",
+      "description": "Grants permission to retrieve the list of prefetch schedules for a playback configuration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname.html"
+    },
+    {
+      "name": "ListSourceLocations",
+      "methodName": "toListSourceLocations",
+      "description": "Grants permission to retrieve the list of existing source locations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags assigned to the specified playback configuration resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html"
+    },
+    {
+      "name": "ListVodSources",
+      "methodName": "toListVodSources",
+      "description": "Grants permission to retrieve the list of existing VOD sources on the source location with the specified source location name",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsources.html"
+    },
+    {
+      "name": "PutChannelPolicy",
+      "methodName": "toPutChannelPolicy",
+      "description": "Grants permission to set the IAM policy on the channel with the specified channel name",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-policy.html"
+    },
+    {
+      "name": "PutPlaybackConfiguration",
+      "methodName": "toPutPlaybackConfiguration",
+      "description": "Grants permission to add a new configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartChannel",
+      "methodName": "toStartChannel",
+      "description": "Grants permission to start the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-start.html"
+    },
+    {
+      "name": "StopChannel",
+      "methodName": "toStopChannel",
+      "description": "Grants permission to stop the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-stop.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to the specified playback configuration resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified playback configuration resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html"
+    },
+    {
+      "name": "UpdateLiveSource",
+      "methodName": "toUpdateLiveSource",
+      "description": "Grants permission to update the live source with the specified live source name on the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html"
+    },
+    {
+      "name": "UpdateProgram",
+      "methodName": "toUpdateProgram",
+      "description": "Grants permission to update the program with the specified program name on the channel with the specified channel name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html"
+    },
+    {
+      "name": "UpdateSourceLocation",
+      "methodName": "toUpdateSourceLocation",
+      "description": "Grants permission to update the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html"
+    },
+    {
+      "name": "UpdateVodSource",
+      "methodName": "toUpdateVodSource",
+      "description": "Grants permission to update the VOD source with the specified VOD source name on the source location with the specified source location name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:channel/${ChannelName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
+    },
+    {
+      "name": "liveSource",
+      "methodName": "onLiveSource",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-livesource-livesourcename.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:liveSource/${SourceLocationName}/${LiveSourceName}",
+      "placeholders": [
+        {
+          "placeholder": "SourceLocationName",
+          "name": "sourceLocationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LiveSourceName",
+          "name": "liveSourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "playbackConfiguration",
+      "methodName": "onPlaybackConfiguration",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "IPlaybackConfigurationRef",
+        "property": "playbackConfigurationRef",
+        "arn": "playbackConfigurationArn"
+      }
+    },
+    {
+      "name": "prefetchSchedule",
+      "methodName": "onPrefetchSchedule",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/prefetchschedule-playbackconfigurationname-name.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:prefetchSchedule/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "IPrefetchScheduleRef",
+        "property": "prefetchScheduleRef",
+        "arn": "prefetchScheduleArn"
+      }
+    },
+    {
+      "name": "program",
+      "methodName": "onProgram",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:program/${ChannelName}/${ProgramName}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProgramName",
+          "name": "programName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "sourceLocation",
+      "methodName": "onSourceLocation",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:sourceLocation/${SourceLocationName}",
+      "placeholders": [
+        {
+          "placeholder": "SourceLocationName",
+          "name": "sourceLocationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_mediatailor",
+        "interface": "ISourceLocationRef",
+        "property": "sourceLocationRef",
+        "arn": "sourceLocationArn"
+      }
+    },
+    {
+      "name": "vodSource",
+      "methodName": "onVodSource",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:vodSource/${SourceLocationName}/${VodSourceName}",
+      "placeholders": [
+        {
+          "placeholder": "SourceLocationName",
+          "name": "sourceLocationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VodSourceName",
+          "name": "vodSourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateLiveSource",
+        "toCreateSourceLocation",
+        "toCreateVodSource",
+        "toPutPlaybackConfiguration",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toConfigureLogsForChannel",
+        "toConfigureLogsForPlaybackConfiguration",
+        "toCreatePrefetchSchedule",
+        "toDeleteChannel",
+        "toDeleteChannelPolicy",
+        "toDeleteLiveSource",
+        "toDeletePlaybackConfiguration",
+        "toDeletePrefetchSchedule",
+        "toDeleteSourceLocation",
+        "toDeleteVodSource",
+        "toDescribeChannel",
+        "toDescribeLiveSource",
+        "toDescribeSourceLocation",
+        "toDescribeVodSource",
+        "toGetChannelPolicy",
+        "toGetChannelSchedule",
+        "toGetPlaybackConfiguration",
+        "toGetPrefetchSchedule",
+        "toListPrefetchSchedules",
+        "toListTagsForResource",
+        "toPutChannelPolicy",
+        "toStartChannel",
+        "toStopChannel",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChannel",
+        "toUpdateLiveSource",
+        "toUpdateSourceLocation",
+        "toUpdateVodSource"
+      ],
+      "relatedResourceTypes": [
+        "channel",
+        "liveSource",
+        "playbackConfiguration",
+        "sourceLocation",
+        "vodSource"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateChannel",
+        "toCreateLiveSource",
+        "toCreateSourceLocation",
+        "toCreateVodSource",
+        "toPutPlaybackConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

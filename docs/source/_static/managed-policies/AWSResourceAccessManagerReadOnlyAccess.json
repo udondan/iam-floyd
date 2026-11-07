@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ram:Get*",
+        "ram:List*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

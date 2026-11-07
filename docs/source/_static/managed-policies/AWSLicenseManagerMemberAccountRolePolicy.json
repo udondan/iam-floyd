@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LicenseManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "license-manager:UpdateLicenseSpecificationsForResource",
+        "license-manager:GetLicenseConfiguration"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "SSMPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:ListInventoryEntries",
+        "ssm:GetInventory",
+        "ssm:CreateAssociation",
+        "ssm:CreateResourceDataSync",
+        "ssm:DeleteResourceDataSync",
+        "ssm:ListResourceDataSync",
+        "ssm:ListAssociations"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "RAMPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AcceptResourceShareInvitation",
+        "ram:GetResourceShareInvitations"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

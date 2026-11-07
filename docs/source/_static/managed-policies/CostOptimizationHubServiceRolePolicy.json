@@ -1,0 +1,46 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AwsOrgsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListParents",
+        "organizations:DescribeOrganizationalUnit"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AwsOrgsScopedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:ServicePrincipal": [
+            "cost-optimization-hub.bcm.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CostExplorerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ce:ListCostAllocationTags",
+        "ce:GetCostAndUsage",
+        "ce:GetDimensionValues"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

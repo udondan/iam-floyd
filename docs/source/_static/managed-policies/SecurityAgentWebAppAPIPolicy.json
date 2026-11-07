@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ApplicationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "securityagent:ListAgentInstances",
+        "securityagent:ListControls"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AgentInstanceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "securityagent:AddArtifact",
+        "securityagent:BatchDeletePentests",
+        "securityagent:BatchGetAgentInstances",
+        "securityagent:BatchGetArtifactMetadata",
+        "securityagent:BatchGetFindings",
+        "securityagent:BatchGetPentestJobs",
+        "securityagent:BatchGetPentests",
+        "securityagent:BatchGetSecurityTestContentMetadata",
+        "securityagent:BatchGetTasks",
+        "securityagent:CreateDocumentReview",
+        "securityagent:CreatePentest",
+        "securityagent:DeleteArtifact",
+        "securityagent:DeleteDocumentReview",
+        "securityagent:GetArtifact",
+        "securityagent:GetCodeReviewTask",
+        "securityagent:GetDocReviewTask",
+        "securityagent:GetDocumentReview",
+        "securityagent:GetDocumentReviewArtifact",
+        "securityagent:ListArtifacts",
+        "securityagent:ListControls",
+        "securityagent:ListDiscoveredEndpoints",
+        "securityagent:ListDocumentReviewComments",
+        "securityagent:ListDocumentReviews",
+        "securityagent:ListFindings",
+        "securityagent:ListIntegratedResources",
+        "securityagent:ListPentestJobsForPentest",
+        "securityagent:ListPentests",
+        "securityagent:ListTasks",
+        "securityagent:StartCodeRemediation",
+        "securityagent:StartPentestExecution",
+        "securityagent:StopPentestExecution",
+        "securityagent:UpdateFinding",
+        "securityagent:UpdatePentest"
+      ],
+      "Resource": "arn:aws:securityagent:*:*:agent-instance*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2760 @@
+{
+  "schemaVersion": 1,
+  "filename": "apigatewayv2",
+  "className": "ApigatewayV2",
+  "name": "apigateway-v2",
+  "servicePrefix": "apigateway",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apigatewayv2.html",
+  "accessLevelList": {
+    "Write": [
+      "CreatePortal",
+      "CreatePortalProduct",
+      "CreateProductPage",
+      "CreateProductRestEndpointPage",
+      "CreateRoutingRule",
+      "DELETE",
+      "DeletePortal",
+      "DeletePortalProduct",
+      "DeletePortalProductSharingPolicy",
+      "DeleteProductPage",
+      "DeleteProductRestEndpointPage",
+      "DeleteRoutingRule",
+      "DisablePortal",
+      "PATCH",
+      "POST",
+      "PUT",
+      "PreviewPortal",
+      "PublishPortal",
+      "PutPortalProductSharingPolicy",
+      "UpdatePortal",
+      "UpdatePortalProduct",
+      "UpdateProductPage",
+      "UpdateProductRestEndpointPage",
+      "UpdateRoutingRule"
+    ],
+    "Permissions management": [
+      "DeletePortalProductSharingPolicy",
+      "PutPortalProductSharingPolicy"
+    ],
+    "Read": [
+      "GET",
+      "GetPortal",
+      "GetPortalProduct",
+      "GetPortalProductSharingPolicy",
+      "GetProductPage",
+      "GetProductRestEndpointPage",
+      "GetRoutingRule"
+    ],
+    "List": [
+      "ListPortalProducts",
+      "ListPortals",
+      "ListProductPages",
+      "ListProductRestEndpointPages",
+      "ListRoutingRules"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreatePortal",
+      "methodName": "toCreatePortal",
+      "description": "Grants permission to create a Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals.html#portalspost"
+    },
+    {
+      "name": "CreatePortalProduct",
+      "methodName": "toCreatePortalProduct",
+      "description": "Grants permission to create a Portal Product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts.html#portalproductspost"
+    },
+    {
+      "name": "CreateProductPage",
+      "methodName": "toCreateProductPage",
+      "description": "Grants permission to create a Product Page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages.html#portalproducts-portalproductid-productpagespost"
+    },
+    {
+      "name": "CreateProductRestEndpointPage",
+      "methodName": "toCreateProductRestEndpointPage",
+      "description": "Grants permission to create a Product REST Endpoint Page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages.html#portalproducts-portalproductid-productrestendpointpagespost"
+    },
+    {
+      "name": "CreateRoutingRule",
+      "methodName": "toCreateRoutingRule",
+      "description": "Grants permission to create a routing rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules.html#domainnames-domainname-routingrulespost"
+    },
+    {
+      "name": "DELETE",
+      "methodName": "toDELETE",
+      "description": "Grants permission to delete a particular resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+    },
+    {
+      "name": "DeletePortal",
+      "methodName": "toDeletePortal",
+      "description": "Grants permission to delete a Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portaliddelete"
+    },
+    {
+      "name": "DeletePortalProduct",
+      "methodName": "toDeletePortalProduct",
+      "description": "Grants permission to delete a Portal Product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductiddelete"
+    },
+    {
+      "name": "DeletePortalProductSharingPolicy",
+      "methodName": "toDeletePortalProductSharingPolicy",
+      "description": "Grants permission to delete a Portal Product Sharing Policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicydelete"
+    },
+    {
+      "name": "DeleteProductPage",
+      "methodName": "toDeleteProductPage",
+      "description": "Grants permission to delete a Product Page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageiddelete"
+    },
+    {
+      "name": "DeleteProductRestEndpointPage",
+      "methodName": "toDeleteProductRestEndpointPage",
+      "description": "Grants permission to delete a Product REST Endpoint Page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageiddelete"
+    },
+    {
+      "name": "DeleteRoutingRule",
+      "methodName": "toDeleteRoutingRule",
+      "description": "Grants permission to delete a routing rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleiddelete"
+    },
+    {
+      "name": "DisablePortal",
+      "methodName": "toDisablePortal",
+      "description": "Grants permission to disable a Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-publish.html#portals-portalid-publishdelete"
+    },
+    {
+      "name": "GET",
+      "methodName": "toGET",
+      "description": "Grants permission to read a particular resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+    },
+    {
+      "name": "GetPortal",
+      "methodName": "toGetPortal",
+      "description": "Grants permission to read a Portal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portalidget"
+    },
+    {
+      "name": "GetPortalProduct",
+      "methodName": "toGetPortalProduct",
+      "description": "Grants permission to read a Portal Product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductidget"
+    },
+    {
+      "name": "GetPortalProductSharingPolicy",
+      "methodName": "toGetPortalProductSharingPolicy",
+      "description": "Grants permission to read a Portal Product Sharing Policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicyget"
+    },
+    {
+      "name": "GetProductPage",
+      "methodName": "toGetProductPage",
+      "description": "Grants permission to read a Product Page",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageidget"
+    },
+    {
+      "name": "GetProductRestEndpointPage",
+      "methodName": "toGetProductRestEndpointPage",
+      "description": "Grants permission to read a Product REST Endpoint Page",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageidget"
+    },
+    {
+      "name": "GetRoutingRule",
+      "methodName": "toGetRoutingRule",
+      "description": "Grants permission to read a routing rule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidget"
+    },
+    {
+      "name": "ListPortalProducts",
+      "methodName": "toListPortalProducts",
+      "description": "Grants permission to list Portal Products",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts.html#portalproductsget"
+    },
+    {
+      "name": "ListPortals",
+      "methodName": "toListPortals",
+      "description": "Grants permission to list Portals",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals.html#portalsget"
+    },
+    {
+      "name": "ListProductPages",
+      "methodName": "toListProductPages",
+      "description": "Grants permission to list Product Pages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages.html#portalproducts-portalproductid-productpagesget"
+    },
+    {
+      "name": "ListProductRestEndpointPages",
+      "methodName": "toListProductRestEndpointPages",
+      "description": "Grants permission to list Product REST Endpoint Pages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages.html#portalproducts-portalproductid-productrestendpointpagesget"
+    },
+    {
+      "name": "ListRoutingRules",
+      "methodName": "toListRoutingRules",
+      "description": "Grants permission to list routing rules under a domain name",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules.html#domainnames-domainname-routingrulesget"
+    },
+    {
+      "name": "PATCH",
+      "methodName": "toPATCH",
+      "description": "Grants permission to update a particular resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+    },
+    {
+      "name": "POST",
+      "methodName": "toPOST",
+      "description": "Grants permission to create a particular resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+    },
+    {
+      "name": "PUT",
+      "methodName": "toPUT",
+      "description": "Grants permission to update a particular resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html"
+    },
+    {
+      "name": "PreviewPortal",
+      "methodName": "toPreviewPortal",
+      "description": "Grants permission to preview a Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-preview.html#portals-portalid-previewpost"
+    },
+    {
+      "name": "PublishPortal",
+      "methodName": "toPublishPortal",
+      "description": "Grants permission to publish a Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-publish.html#portals-portalid-publishpost"
+    },
+    {
+      "name": "PutPortalProductSharingPolicy",
+      "methodName": "toPutPortalProductSharingPolicy",
+      "description": "Grants permission to put a Portal Product Sharing Policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicyput"
+    },
+    {
+      "name": "UpdatePortal",
+      "methodName": "toUpdatePortal",
+      "description": "Grants permission to update a Portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portalidpatch"
+    },
+    {
+      "name": "UpdatePortalProduct",
+      "methodName": "toUpdatePortalProduct",
+      "description": "Grants permission to update a Portal Product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductidpatch"
+    },
+    {
+      "name": "UpdateProductPage",
+      "methodName": "toUpdateProductPage",
+      "description": "Grants permission to update a Product Page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageidpatch"
+    },
+    {
+      "name": "UpdateProductRestEndpointPage",
+      "methodName": "toUpdateProductRestEndpointPage",
+      "description": "Grants permission to update a Product REST Endpoint Page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageidpatch"
+    },
+    {
+      "name": "UpdateRoutingRule",
+      "methodName": "toUpdateRoutingRule",
+      "description": "Grants permission to update a routing rule using the PutRoutingRule API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidput"
+    }
+  ],
+  "resources": [
+    {
+      "name": "AccessLogSettings",
+      "methodName": "onAccessLogSettings",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/accesslogsettings",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Api",
+      "methodName": "onApi",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestApiKeyRequired",
+        "ifRequestApiName",
+        "ifRequestAuthorizerType",
+        "ifRequestAuthorizerUri",
+        "ifRequestDisableExecuteApiEndpoint",
+        "ifRequestEndpointType",
+        "ifRequestRouteAuthorizationType",
+        "ifResourceApiKeyRequired",
+        "ifResourceApiName",
+        "ifResourceAuthorizerType",
+        "ifResourceAuthorizerUri",
+        "ifResourceDisableExecuteApiEndpoint",
+        "ifResourceEndpointType",
+        "ifResourceRouteAuthorizationType",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ApiMapping",
+      "methodName": "onApiMapping",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings/${ApiMappingId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApiMappingId",
+          "name": "apiMappingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ApiMappings",
+      "methodName": "onApiMappings",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Apis",
+      "methodName": "onApis",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis",
+      "placeholders": [
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestApiKeyRequired",
+        "ifRequestApiName",
+        "ifRequestAuthorizerType",
+        "ifRequestAuthorizerUri",
+        "ifRequestDisableExecuteApiEndpoint",
+        "ifRequestEndpointType",
+        "ifRequestRouteAuthorizationType",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Authorizer",
+      "methodName": "onAuthorizer",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers/${AuthorizerId}, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/authorizers/${AuthorizerId2}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AuthorizerId",
+          "name": "authorizerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AuthorizerId2",
+          "name": "authorizerId2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestAuthorizerType",
+        "ifRequestAuthorizerUri",
+        "ifResourceAuthorizerType",
+        "ifResourceAuthorizerUri",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Authorizers",
+      "methodName": "onAuthorizers",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/authorizers",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestAuthorizerType",
+        "ifRequestAuthorizerUri",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "AuthorizersCache",
+      "methodName": "onAuthorizersCache",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/cache/authorizers",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Cors",
+      "methodName": "onCors",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/cors",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Deployment",
+      "methodName": "onDeployment",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments/${DeploymentId}, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/deployments/${DeploymentId2}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeploymentId",
+          "name": "deploymentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeploymentId2",
+          "name": "deploymentId2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Deployments",
+      "methodName": "onDeployments",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/deployments",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestStageName",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ExportedAPI",
+      "methodName": "onExportedAPI",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/exports/${Specification}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Specification",
+          "name": "specification",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Integration",
+      "methodName": "onIntegration",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntegrationId",
+          "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "HttpMethodType",
+          "name": "httpMethodType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "IntegrationResponse",
+      "methodName": "onIntegrationResponse",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/integrationresponses/${IntegrationResponseId}, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration/responses/${StatusCode}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntegrationId",
+          "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntegrationResponseId",
+          "name": "integrationResponseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "HttpMethodType",
+          "name": "httpMethodType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StatusCode",
+          "name": "statusCode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "IntegrationResponses",
+      "methodName": "onIntegrationResponses",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/integrationresponses",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntegrationId",
+          "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Integrations",
+      "methodName": "onIntegrations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Model",
+      "methodName": "onModel",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/${ModelId}, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/models/${ModelName}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ModelId",
+          "name": "modelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ModelName",
+          "name": "modelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ModelTemplate",
+      "methodName": "onModelTemplate",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/${ModelId}/template",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ModelId",
+          "name": "modelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Models",
+      "methodName": "onModels",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/models",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Portal",
+      "methodName": "onPortal",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/portals/${PortalId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalId",
+          "name": "portalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceCognitoUserPoolArn",
+        "ifResourcePortalDisplayName",
+        "ifResourcePortalDomainName",
+        "ifResourcePortalPublishStatus",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "PortalProduct",
+      "methodName": "onPortalProduct",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/portalproducts/${PortalProductId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalProductId",
+          "name": "portalProductId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourcePortalProductDisplayName",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProductPage",
+      "methodName": "onProductPage",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/portalproducts/${PortalProductId}/productpages/${ProductPageId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalProductId",
+          "name": "portalProductId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductPageId",
+          "name": "productPageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceProductPageTitle",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProductRestEndpointPage",
+      "methodName": "onProductRestEndpointPage",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/portalproducts/${PortalProductId}/productrestendpointpages/${ProductRestEndpointPageId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalProductId",
+          "name": "portalProductId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductRestEndpointPageId",
+          "name": "productRestEndpointPageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceMethod",
+        "ifResourceProductRestEndpointPageEndpointPrefix",
+        "ifResourceRestApiId",
+        "ifResourceStage",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Route",
+      "methodName": "onRoute",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteId",
+          "name": "routeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestApiKeyRequired",
+        "ifRequestRouteAuthorizationType",
+        "ifResourceApiKeyRequired",
+        "ifResourceRouteAuthorizationType",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RouteRequestParameter",
+      "methodName": "onRouteRequestParameter",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/requestparameters/${RequestParameterKey}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteId",
+          "name": "routeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RequestParameterKey",
+          "name": "requestParameterKey",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RouteResponse",
+      "methodName": "onRouteResponse",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/routeresponses/${RouteResponseId}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteId",
+          "name": "routeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteResponseId",
+          "name": "routeResponseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RouteResponses",
+      "methodName": "onRouteResponses",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/routeresponses",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteId",
+          "name": "routeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RouteSettings",
+      "methodName": "onRouteSettings",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/routesettings/${RouteKey}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RouteKey",
+          "name": "routeKey",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Routes",
+      "methodName": "onRoutes",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestApiKeyRequired",
+        "ifRequestRouteAuthorizationType",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RoutingRule",
+      "methodName": "onRoutingRule",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/domainnames/${DomainName}/routingrules/${RoutingRuleId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainName",
+          "name": "domainName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RoutingRuleId",
+          "name": "routingRuleId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceConditionBasePaths",
+        "ifResourcePriority",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Stage",
+      "methodName": "onStage",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/stages/${StageName2}",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName",
+          "name": "stageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StageName2",
+          "name": "stageName2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestAccessLoggingDestination",
+        "ifRequestAccessLoggingFormat",
+        "ifResourceAccessLoggingDestination",
+        "ifResourceAccessLoggingFormat",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Stages",
+      "methodName": "onStages",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages, arn:${Partition2}:apigateway:${Region2}::/restapis/${RestApiId}/stages",
+      "placeholders": [
+        {
+          "placeholder": "ApiId",
+          "name": "apiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RestApiId",
+          "name": "restApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifRequestAccessLoggingDestination",
+        "ifRequestAccessLoggingFormat",
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "VpcLink",
+      "methodName": "onVpcLink",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}",
+      "placeholders": [
+        {
+          "placeholder": "VpcLinkId",
+          "name": "vpcLinkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_apigateway",
+        "interface": "IVpcLinkRef",
+        "property": "vpcLinkRef",
+        "id": "vpcLinkId"
+      }
+    },
+    {
+      "name": "VpcLinks",
+      "methodName": "onVpcLinks",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "arn": "arn:${Partition}:apigateway:${Region}::/vpclinks",
+      "placeholders": [
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "apigateway:Request/AccessLoggingDestination",
+      "methodName": "ifRequestAccessLoggingDestination",
+      "description": "Filters access by access log destination. Available during the CreateStage and UpdateStage operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST"
+      ],
+      "relatedResourceTypes": [
+        "Stage",
+        "Stages"
+      ],
+      "keyLiteral": "Request/AccessLoggingDestination",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/AccessLoggingFormat",
+      "methodName": "ifRequestAccessLoggingFormat",
+      "description": "Filters access by access log format. Available during the CreateStage and UpdateStage operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST"
+      ],
+      "relatedResourceTypes": [
+        "Stage",
+        "Stages"
+      ],
+      "keyLiteral": "Request/AccessLoggingFormat",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/ApiKeyRequired",
+      "methodName": "ifRequestApiKeyRequired",
+      "description": "Filters access by the requirement of API. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import and reimport",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis",
+        "Route",
+        "Routes"
+      ],
+      "keyLiteral": "Request/ApiKeyRequired",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "apigateway:Request/ApiName",
+      "methodName": "ifRequestApiName",
+      "description": "Filters access by API name. Available during the CreateApi and UpdateApi operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis"
+      ],
+      "keyLiteral": "Request/ApiName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/AuthorizerType",
+      "methodName": "ifRequestAuthorizerType",
+      "description": "Filters access by type of authorizer in the request, for example REQUEST or JWT. Available during CreateAuthorizer and UpdateAuthorizer. Also available during import and reimport as an ArrayOfString",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis",
+        "Authorizer",
+        "Authorizers"
+      ],
+      "keyLiteral": "Request/AuthorizerType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/AuthorizerUri",
+      "methodName": "ifRequestAuthorizerUri",
+      "description": "Filters access by URI of a Lambda authorizer function. Available during CreateAuthorizer and UpdateAuthorizer. Also available during import and reimport as an ArrayOfString",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis",
+        "Authorizer",
+        "Authorizers"
+      ],
+      "keyLiteral": "Request/AuthorizerUri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/CognitoUserPoolArn",
+      "methodName": "ifRequestCognitoUserPoolArn",
+      "description": "Filters access by a Portal's CognitoUserPoolArn that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/CognitoUserPoolArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apigateway:Request/ConditionBasePaths",
+      "methodName": "ifRequestConditionBasePaths",
+      "description": "Filters access by base paths defined on the condition of a routing rule. Available during the CreateRoutingRule and UpdateRoutingRule operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode",
+      "relatedActionMethods": [
+        "toCreateRoutingRule",
+        "toUpdateRoutingRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/ConditionBasePaths",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/DisableExecuteApiEndpoint",
+      "methodName": "ifRequestDisableExecuteApiEndpoint",
+      "description": "Filters access by status of the default execute-api endpoint. Available during the CreateApi and UpdateApi operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis"
+      ],
+      "keyLiteral": "Request/DisableExecuteApiEndpoint",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "apigateway:Request/EndpointType",
+      "methodName": "ifRequestEndpointType",
+      "description": "Filters access by endpoint type. Available during the CreateDomainName, UpdateDomainName, CreateApi, and UpdateApi operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis"
+      ],
+      "keyLiteral": "Request/EndpointType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/Method",
+      "methodName": "ifRequestMethod",
+      "description": "Filters access by a ProductRestEndpointPage's HTTP Method that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/Method",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/MtlsTrustStoreUri",
+      "methodName": "ifRequestMtlsTrustStoreUri",
+      "description": "Filters access by URI of the truststore used for mutual TLS authentication. Available during the CreateDomainName and UpdateDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/MtlsTrustStoreUri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/MtlsTrustStoreVersion",
+      "methodName": "ifRequestMtlsTrustStoreVersion",
+      "description": "Filters access by version of the truststore used for mutual TLS authentication. Available during the CreateDomainName and UpdateDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/MtlsTrustStoreVersion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/PortalDisplayName",
+      "methodName": "ifRequestPortalDisplayName",
+      "description": "Filters access by a Portal's Display Name that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/PortalDisplayName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/PortalDomainName",
+      "methodName": "ifRequestPortalDomainName",
+      "description": "Filters access by a Portal's vanity domain name that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/PortalDomainName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/PortalProductDisplayName",
+      "methodName": "ifRequestPortalProductDisplayName",
+      "description": "Filters access by a PortalProduct's Display Name that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortalProduct",
+        "toUpdatePortalProduct"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/PortalProductDisplayName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/Priority",
+      "methodName": "ifRequestPriority",
+      "description": "Filters access by priority of the routing rule. Available during the CreateRoutingRule and UpdateRoutingRule operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode",
+      "relatedActionMethods": [
+        "toCreateRoutingRule",
+        "toUpdateRoutingRule"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/Priority",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "apigateway:Request/ProductPageTitle",
+      "methodName": "ifRequestProductPageTitle",
+      "description": "Filters access by a ProductPage's Title that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductPage",
+        "toUpdateProductPage"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/ProductPageTitle",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/ProductRestEndpointPageEndpointPrefix",
+      "methodName": "ifRequestProductRestEndpointPageEndpointPrefix",
+      "description": "Filters access by a ProductRestEndpointPage's EndpointPrefix that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage",
+        "toUpdateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/ProductRestEndpointPageEndpointPrefix",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/RestApiId",
+      "methodName": "ifRequestRestApiId",
+      "description": "Filters access by a ProductRestEndpointPage's Amazon API Gateway API ID that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/RestApiId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/RouteAuthorizationType",
+      "methodName": "ifRequestRouteAuthorizationType",
+      "description": "Filters access by authorization type, for example NONE, AWS_IAM, CUSTOM, JWT. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPOST",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Apis",
+        "Route",
+        "Routes"
+      ],
+      "keyLiteral": "Request/RouteAuthorizationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/RoutingMode",
+      "methodName": "ifRequestRoutingMode",
+      "description": "Filters access by routing mode of the domain name. Available during the CreateDomainName and UpdateDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/RoutingMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/SecurityPolicy",
+      "methodName": "ifRequestSecurityPolicy",
+      "description": "Filters access by TLS version. Available during the CreateDomain and UpdateDomain operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/SecurityPolicy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/Stage",
+      "methodName": "ifRequestStage",
+      "description": "Filters access by a ProductRestEndpointPage's Amazon API Gateway Stage Name that is passed in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Request/Stage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Request/StageName",
+      "methodName": "ifRequestStageName",
+      "description": "Filters access by stage name of the deployment that you attempt to create. Available during the CreateDeployment operation",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toGET",
+        "toPOST"
+      ],
+      "relatedResourceTypes": [
+        "Deployments"
+      ],
+      "keyLiteral": "Request/StageName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/AccessLoggingDestination",
+      "methodName": "ifResourceAccessLoggingDestination",
+      "description": "Filters access by access log destination of the current Stage resource. Available during the UpdateStage and DeleteStage operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH"
+      ],
+      "relatedResourceTypes": [
+        "Stage"
+      ],
+      "keyLiteral": "Resource/AccessLoggingDestination",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/AccessLoggingFormat",
+      "methodName": "ifResourceAccessLoggingFormat",
+      "description": "Filters access by access log format of the current Stage resource. Available during the UpdateStage and DeleteStage operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH"
+      ],
+      "relatedResourceTypes": [
+        "Stage"
+      ],
+      "keyLiteral": "Resource/AccessLoggingFormat",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/ApiKeyRequired",
+      "methodName": "ifResourceApiKeyRequired",
+      "description": "Filters access by the requirement of API key for the existing Route resource. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Route"
+      ],
+      "keyLiteral": "Resource/ApiKeyRequired",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "apigateway:Resource/ApiName",
+      "methodName": "ifResourceApiName",
+      "description": "Filters access by API name. Available during the UpdateApi and DeleteApi operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api"
+      ],
+      "keyLiteral": "Resource/ApiName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/AuthorizerType",
+      "methodName": "ifResourceAuthorizerType",
+      "description": "Filters access by the current type of authorizer, for example REQUEST or JWT. Available during UpdateAuthorizer and DeleteAuthorizer operations. Also available during import and reimport as an ArrayOfString",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Authorizer"
+      ],
+      "keyLiteral": "Resource/AuthorizerType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/AuthorizerUri",
+      "methodName": "ifResourceAuthorizerUri",
+      "description": "Filters access by the URI of the current Lambda authorizer associated with the current API. Available during UpdateAuthorizer and DeleteAuthorizer. Also available as a collection during reimport",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Authorizer"
+      ],
+      "keyLiteral": "Resource/AuthorizerUri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/CognitoUserPoolArn",
+      "methodName": "ifResourceCognitoUserPoolArn",
+      "description": "Filters access by a Portal's CognitoUserPoolArn associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toDeletePortal",
+        "toDisablePortal",
+        "toGetPortal",
+        "toListPortals",
+        "toPreviewPortal",
+        "toPublishPortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [
+        "Portal"
+      ],
+      "keyLiteral": "Resource/CognitoUserPoolArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "apigateway:Resource/ConditionBasePaths",
+      "methodName": "ifResourceConditionBasePaths",
+      "description": "Filters access by base paths defined on the condition of the existing routing rule. Available during the UpdateRoutingRule and DeleteRoutingRule operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode",
+      "relatedActionMethods": [
+        "toCreateRoutingRule",
+        "toDeleteRoutingRule",
+        "toGetRoutingRule",
+        "toListRoutingRules",
+        "toUpdateRoutingRule"
+      ],
+      "relatedResourceTypes": [
+        "RoutingRule"
+      ],
+      "keyLiteral": "Resource/ConditionBasePaths",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/DisableExecuteApiEndpoint",
+      "methodName": "ifResourceDisableExecuteApiEndpoint",
+      "description": "Filters access by status of the default execute-api endpoint. Available during the UpdateApi and DeleteApi operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api"
+      ],
+      "keyLiteral": "Resource/DisableExecuteApiEndpoint",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "apigateway:Resource/EndpointType",
+      "methodName": "ifResourceEndpointType",
+      "description": "Filters access by endpoint type. Available during the UpdateDomainName, DeleteDomainName, UpdateApi, and DeleteApi operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api"
+      ],
+      "keyLiteral": "Resource/EndpointType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/Method",
+      "methodName": "ifResourceMethod",
+      "description": "Filters access by a ProductRestEndpointPage's HTTP Method associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage",
+        "toDeleteProductRestEndpointPage",
+        "toGetProductRestEndpointPage",
+        "toListProductRestEndpointPages",
+        "toUpdateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [
+        "ProductRestEndpointPage"
+      ],
+      "keyLiteral": "Resource/Method",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/MtlsTrustStoreUri",
+      "methodName": "ifResourceMtlsTrustStoreUri",
+      "description": "Filters access by URI of the truststore used for mutual TLS authentication. Available during the UpdateDomainName and DeleteDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Resource/MtlsTrustStoreUri",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/MtlsTrustStoreVersion",
+      "methodName": "ifResourceMtlsTrustStoreVersion",
+      "description": "Filters access by version of the truststore used for mutual TLS authentication. Available during the UpdateDomainName and DeleteDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Resource/MtlsTrustStoreVersion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/PortalDisplayName",
+      "methodName": "ifResourcePortalDisplayName",
+      "description": "Filters access by a Portal's Display Name associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toDeletePortal",
+        "toDisablePortal",
+        "toGetPortal",
+        "toListPortals",
+        "toPreviewPortal",
+        "toPublishPortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [
+        "Portal"
+      ],
+      "keyLiteral": "Resource/PortalDisplayName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/PortalDomainName",
+      "methodName": "ifResourcePortalDomainName",
+      "description": "Filters access by a Portal's vanity domain name associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toDeletePortal",
+        "toDisablePortal",
+        "toGetPortal",
+        "toListPortals",
+        "toPreviewPortal",
+        "toPublishPortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [
+        "Portal"
+      ],
+      "keyLiteral": "Resource/PortalDomainName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/PortalProductDisplayName",
+      "methodName": "ifResourcePortalProductDisplayName",
+      "description": "Filters access by a PortalProduct's Display Name associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortalProduct",
+        "toDeletePortalProduct",
+        "toDeletePortalProductSharingPolicy",
+        "toDeleteProductRestEndpointPage",
+        "toGetPortalProduct",
+        "toGetPortalProductSharingPolicy",
+        "toGetProductPage",
+        "toGetProductRestEndpointPage",
+        "toListPortalProducts",
+        "toListProductPages",
+        "toListProductRestEndpointPages",
+        "toPutPortalProductSharingPolicy",
+        "toUpdatePortalProduct"
+      ],
+      "relatedResourceTypes": [
+        "PortalProduct"
+      ],
+      "keyLiteral": "Resource/PortalProductDisplayName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/PortalPublishStatus",
+      "methodName": "ifResourcePortalPublishStatus",
+      "description": "Filters access by a Portal's published status associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toDeletePortal",
+        "toDisablePortal",
+        "toGetPortal",
+        "toListPortals",
+        "toPreviewPortal",
+        "toPublishPortal",
+        "toUpdatePortal"
+      ],
+      "relatedResourceTypes": [
+        "Portal"
+      ],
+      "keyLiteral": "Resource/PortalPublishStatus",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/Priority",
+      "methodName": "ifResourcePriority",
+      "description": "Filters access by priority of the existing routing rule. Available during the UpdateRoutingRule and DeleteRoutingRule operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode",
+      "relatedActionMethods": [
+        "toCreateRoutingRule",
+        "toDeleteRoutingRule",
+        "toGetRoutingRule",
+        "toListRoutingRules",
+        "toUpdateRoutingRule"
+      ],
+      "relatedResourceTypes": [
+        "RoutingRule"
+      ],
+      "keyLiteral": "Resource/Priority",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "apigateway:Resource/ProductPageTitle",
+      "methodName": "ifResourceProductPageTitle",
+      "description": "Filters access by a ProductPage's Title associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductPage",
+        "toDeleteProductPage",
+        "toGetProductPage",
+        "toListProductPages",
+        "toUpdateProductPage"
+      ],
+      "relatedResourceTypes": [
+        "ProductPage"
+      ],
+      "keyLiteral": "Resource/ProductPageTitle",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/ProductRestEndpointPageEndpointPrefix",
+      "methodName": "ifResourceProductRestEndpointPageEndpointPrefix",
+      "description": "Filters access by a ProductRestEndpointPage's EndpointPrefix associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage",
+        "toDeleteProductRestEndpointPage",
+        "toGetProductRestEndpointPage",
+        "toListProductRestEndpointPages",
+        "toUpdateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [
+        "ProductRestEndpointPage"
+      ],
+      "keyLiteral": "Resource/ProductRestEndpointPageEndpointPrefix",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/RestApiId",
+      "methodName": "ifResourceRestApiId",
+      "description": "Filters access by a ProductRestEndpointPage's Amazon API Gateway API ID associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage",
+        "toDeleteProductRestEndpointPage",
+        "toGetProductRestEndpointPage",
+        "toListProductRestEndpointPages",
+        "toUpdateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [
+        "ProductRestEndpointPage"
+      ],
+      "keyLiteral": "Resource/RestApiId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/RouteAuthorizationType",
+      "methodName": "ifResourceRouteAuthorizationType",
+      "description": "Filters access by authorization type of the existing Route resource, for example NONE, AWS_IAM, CUSTOM. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toDELETE",
+        "toGET",
+        "toPATCH",
+        "toPUT"
+      ],
+      "relatedResourceTypes": [
+        "Api",
+        "Route"
+      ],
+      "keyLiteral": "Resource/RouteAuthorizationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/RoutingMode",
+      "methodName": "ifResourceRoutingMode",
+      "description": "Filters access by routing mode of the existing domain name. Available during the UpdateDomainName and DeleteDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Resource/RoutingMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/SecurityPolicy",
+      "methodName": "ifResourceSecurityPolicy",
+      "description": "Filters access by TLS version. Available during the UpdateDomainName and DeleteDomainName operations",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Resource/SecurityPolicy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "apigateway:Resource/Stage",
+      "methodName": "ifResourceStage",
+      "description": "Filters access by a ProductRestEndpointPage's Amazon API Gateway Stage Name associated with the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html",
+      "relatedActionMethods": [
+        "toCreateProductRestEndpointPage",
+        "toDeleteProductRestEndpointPage",
+        "toGetProductRestEndpointPage",
+        "toListProductRestEndpointPages",
+        "toUpdateProductRestEndpointPage"
+      ],
+      "relatedResourceTypes": [
+        "ProductRestEndpointPage"
+      ],
+      "keyLiteral": "Resource/Stage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toCreatePortalProduct",
+        "toDELETE",
+        "toPATCH",
+        "toPOST",
+        "toPUT",
+        "toUpdatePortal",
+        "toUpdatePortalProduct"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toCreatePortalProduct",
+        "toCreateProductPage",
+        "toCreateProductRestEndpointPage",
+        "toCreateRoutingRule",
+        "toDELETE",
+        "toDeletePortal",
+        "toDeletePortalProduct",
+        "toDeletePortalProductSharingPolicy",
+        "toDeleteProductPage",
+        "toDeleteProductRestEndpointPage",
+        "toDeleteRoutingRule",
+        "toDisablePortal",
+        "toGET",
+        "toGetPortal",
+        "toGetPortalProduct",
+        "toGetPortalProductSharingPolicy",
+        "toGetProductPage",
+        "toGetProductRestEndpointPage",
+        "toGetRoutingRule",
+        "toListPortalProducts",
+        "toListPortals",
+        "toListProductPages",
+        "toListProductRestEndpointPages",
+        "toListRoutingRules",
+        "toPATCH",
+        "toPOST",
+        "toPUT",
+        "toPreviewPortal",
+        "toPublishPortal",
+        "toPutPortalProductSharingPolicy",
+        "toUpdatePortal",
+        "toUpdatePortalProduct",
+        "toUpdateProductPage",
+        "toUpdateProductRestEndpointPage",
+        "toUpdateRoutingRule"
+      ],
+      "relatedResourceTypes": [
+        "AccessLogSettings",
+        "Api",
+        "ApiMapping",
+        "ApiMappings",
+        "Apis",
+        "Authorizer",
+        "Authorizers",
+        "AuthorizersCache",
+        "Cors",
+        "Deployment",
+        "Deployments",
+        "ExportedAPI",
+        "Integration",
+        "IntegrationResponse",
+        "IntegrationResponses",
+        "Integrations",
+        "Model",
+        "ModelTemplate",
+        "Models",
+        "Portal",
+        "PortalProduct",
+        "ProductPage",
+        "ProductRestEndpointPage",
+        "Route",
+        "RouteRequestParameter",
+        "RouteResponse",
+        "RouteResponses",
+        "RouteSettings",
+        "Routes",
+        "RoutingRule",
+        "Stage",
+        "Stages",
+        "VpcLink",
+        "VpcLinks"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html",
+      "relatedActionMethods": [
+        "toCreatePortal",
+        "toCreatePortalProduct",
+        "toDELETE",
+        "toPATCH",
+        "toPOST",
+        "toPUT",
+        "toUpdatePortal",
+        "toUpdatePortalProduct"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "filename": "s3tables",
+  "className": "S3tables",
+  "name": "s3tables",
+  "servicePrefix": "s3tables",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3tables.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateNamespace",
+      "CreateTable",
+      "CreateTableBucket",
+      "DeleteNamespace",
+      "DeleteTable",
+      "DeleteTableBucket",
+      "DeleteTableBucketEncryption",
+      "DeleteTableBucketMetricsConfiguration",
+      "DeleteTableBucketPolicy",
+      "DeleteTableBucketReplication",
+      "DeleteTablePolicy",
+      "DeleteTableReplication",
+      "PutTableBucketEncryption",
+      "PutTableBucketMaintenanceConfiguration",
+      "PutTableBucketMetricsConfiguration",
+      "PutTableBucketPolicy",
+      "PutTableBucketReplication",
+      "PutTableBucketStorageClass",
+      "PutTableMaintenanceConfiguration",
+      "PutTablePolicy",
+      "PutTableRecordExpirationConfiguration",
+      "PutTableReplication",
+      "PutTableStorageClass",
+      "RenameTable",
+      "TagResource",
+      "UntagResource",
+      "UpdateTableMetadataLocation",
+      "PutTableData",
+      "PutTableEncryption"
+    ],
+    "Permissions management": [
+      "DeleteTableBucketPolicy",
+      "DeleteTablePolicy",
+      "PutTableBucketPolicy",
+      "PutTablePolicy"
+    ],
+    "Read": [
+      "GetNamespace",
+      "GetTable",
+      "GetTableBucket",
+      "GetTableBucketEncryption",
+      "GetTableBucketMaintenanceConfiguration",
+      "GetTableBucketMetricsConfiguration",
+      "GetTableBucketPolicy",
+      "GetTableBucketReplication",
+      "GetTableBucketStorageClass",
+      "GetTableEncryption",
+      "GetTableMaintenanceConfiguration",
+      "GetTableMaintenanceJobStatus",
+      "GetTableMetadataLocation",
+      "GetTablePolicy",
+      "GetTableRecordExpirationConfiguration",
+      "GetTableRecordExpirationJobStatus",
+      "GetTableReplication",
+      "GetTableReplicationStatus",
+      "GetTableStorageClass",
+      "GetTableData"
+    ],
+    "List": [
+      "ListNamespaces",
+      "ListTableBuckets",
+      "ListTables",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateNamespace",
+      "methodName": "toCreateNamespace",
+      "description": "Grants permission to create a namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_CreateNamespace.html"
+    },
+    {
+      "name": "CreateTable",
+      "methodName": "toCreateTable",
+      "description": "Grants permission to create a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_CreateTable.html"
+    },
+    {
+      "name": "CreateTableBucket",
+      "methodName": "toCreateTableBucket",
+      "description": "Grants permission to create a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_CreateTableBucket.html"
+    },
+    {
+      "name": "DeleteNamespace",
+      "methodName": "toDeleteNamespace",
+      "description": "Grants permission to delete a namespace",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteNamespace.html"
+    },
+    {
+      "name": "DeleteTable",
+      "methodName": "toDeleteTable",
+      "description": "Grants permission to delete a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTable.html"
+    },
+    {
+      "name": "DeleteTableBucket",
+      "methodName": "toDeleteTableBucket",
+      "description": "Grants permission to delete a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucket.html"
+    },
+    {
+      "name": "DeleteTableBucketEncryption",
+      "methodName": "toDeleteTableBucketEncryption",
+      "description": "Grants permission to delete encryption configuration on a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketEncryption.html"
+    },
+    {
+      "name": "DeleteTableBucketMetricsConfiguration",
+      "methodName": "toDeleteTableBucketMetricsConfiguration",
+      "description": "Grants permission to delete a metrics configuration on a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketMetricsConfiguration.html"
+    },
+    {
+      "name": "DeleteTableBucketPolicy",
+      "methodName": "toDeleteTableBucketPolicy",
+      "description": "Grants permission to delete a policy on a table bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketPolicy.html"
+    },
+    {
+      "name": "DeleteTableBucketReplication",
+      "methodName": "toDeleteTableBucketReplication",
+      "description": "Grants permission to delete table bucket replication configuration on a bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketReplication.html"
+    },
+    {
+      "name": "DeleteTablePolicy",
+      "methodName": "toDeleteTablePolicy",
+      "description": "Grants permission to delete a policy on a table",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTablePolicy.html"
+    },
+    {
+      "name": "DeleteTableReplication",
+      "methodName": "toDeleteTableReplication",
+      "description": "Grants permission to delete table replication configuration on a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableReplication.html"
+    },
+    {
+      "name": "GetNamespace",
+      "methodName": "toGetNamespace",
+      "description": "Grants permission to get a namespace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetNamespace.html"
+    },
+    {
+      "name": "GetTable",
+      "methodName": "toGetTable",
+      "description": "Grants permission to retrieve a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTable.html"
+    },
+    {
+      "name": "GetTableBucket",
+      "methodName": "toGetTableBucket",
+      "description": "Grants permission to retrieve a table bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucket.html"
+    },
+    {
+      "name": "GetTableBucketEncryption",
+      "methodName": "toGetTableBucketEncryption",
+      "description": "Grants permission to retrieve encryption configuration on a table bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketEncryption.html"
+    },
+    {
+      "name": "GetTableBucketMaintenanceConfiguration",
+      "methodName": "toGetTableBucketMaintenanceConfiguration",
+      "description": "Grants permission to retrieve a maintenance configuration on a table bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketMaintenanceConfiguration.html"
+    },
+    {
+      "name": "GetTableBucketMetricsConfiguration",
+      "methodName": "toGetTableBucketMetricsConfiguration",
+      "description": "Grants permission to retrieve a metrics configuration on a bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketMetricsConfiguration.html"
+    },
+    {
+      "name": "GetTableBucketPolicy",
+      "methodName": "toGetTableBucketPolicy",
+      "description": "Grants permission to retrieve a policy on a table bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketPolicy.html"
+    },
+    {
+      "name": "GetTableBucketReplication",
+      "methodName": "toGetTableBucketReplication",
+      "description": "Grants permission to retrieve a table bucket replication configuration on a bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketReplication.html"
+    },
+    {
+      "name": "GetTableBucketStorageClass",
+      "methodName": "toGetTableBucketStorageClass",
+      "description": "Grants permission to retrieve the storage class configuration for a table bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketStorageClass.html"
+    },
+    {
+      "name": "GetTableEncryption",
+      "methodName": "toGetTableEncryption",
+      "description": "Grants permission to retrieve encryption configuration on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableEncryption.html"
+    },
+    {
+      "name": "GetTableMaintenanceConfiguration",
+      "methodName": "toGetTableMaintenanceConfiguration",
+      "description": "Grants permission to retrieve a maintenance configuration on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableMaintenanceConfiguration.html"
+    },
+    {
+      "name": "GetTableMaintenanceJobStatus",
+      "methodName": "toGetTableMaintenanceJobStatus",
+      "description": "Grants permission to retrieve the status of maintenance jobs on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableMaintenanceJobStatus.html"
+    },
+    {
+      "name": "GetTableMetadataLocation",
+      "methodName": "toGetTableMetadataLocation",
+      "description": "Grants permission to retrieve the metadata location of a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableMetadataLocation.html"
+    },
+    {
+      "name": "GetTablePolicy",
+      "methodName": "toGetTablePolicy",
+      "description": "Grants permission to retrieve a policy on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTablePolicy.html"
+    },
+    {
+      "name": "GetTableRecordExpirationConfiguration",
+      "methodName": "toGetTableRecordExpirationConfiguration",
+      "description": "Grants permission to retrieve a table maintenance configuration on a system table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableRecordExpirationConfiguration.html"
+    },
+    {
+      "name": "GetTableRecordExpirationJobStatus",
+      "methodName": "toGetTableRecordExpirationJobStatus",
+      "description": "Grants permission to retrieve the status of table record expiration jobs on a system table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableRecordExpirationJobStatus.html"
+    },
+    {
+      "name": "GetTableReplication",
+      "methodName": "toGetTableReplication",
+      "description": "Grants permission to retrieve a table replication configuration on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableReplication.html"
+    },
+    {
+      "name": "GetTableReplicationStatus",
+      "methodName": "toGetTableReplicationStatus",
+      "description": "Grants permission to retrieve a table replication status on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableReplicationStatus.html"
+    },
+    {
+      "name": "GetTableStorageClass",
+      "methodName": "toGetTableStorageClass",
+      "description": "Grants permission to retrieve the storage class configuration for a specific table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableStorageClass.html"
+    },
+    {
+      "name": "ListNamespaces",
+      "methodName": "toListNamespaces",
+      "description": "Grants permission to list namespaces",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_ListNamespaces.html"
+    },
+    {
+      "name": "ListTableBuckets",
+      "methodName": "toListTableBuckets",
+      "description": "Grants permission to list table buckets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_ListTableBuckets.html"
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to list tables",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_ListTables.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an S3 Tables resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables-tagging.html"
+    },
+    {
+      "name": "PutTableBucketEncryption",
+      "methodName": "toPutTableBucketEncryption",
+      "description": "Grants permission to put or overwrite encryption configuration on a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketEncryption.html"
+    },
+    {
+      "name": "PutTableBucketMaintenanceConfiguration",
+      "methodName": "toPutTableBucketMaintenanceConfiguration",
+      "description": "Grants permission to put a maintenance configuration on a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketMaintenanceConfiguration.html"
+    },
+    {
+      "name": "PutTableBucketMetricsConfiguration",
+      "methodName": "toPutTableBucketMetricsConfiguration",
+      "description": "Grants permission to create or overwrite a metrics configuration on a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketMetricsConfiguration.html"
+    },
+    {
+      "name": "PutTableBucketPolicy",
+      "methodName": "toPutTableBucketPolicy",
+      "description": "Grants permission to create or overwrite a policy on a table bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketPolicy.html"
+    },
+    {
+      "name": "PutTableBucketReplication",
+      "methodName": "toPutTableBucketReplication",
+      "description": "Grants permission to put table bucket replication configuration on a bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketReplication.html"
+    },
+    {
+      "name": "PutTableBucketStorageClass",
+      "methodName": "toPutTableBucketStorageClass",
+      "description": "Grants permission to set or update the storage class configuration for a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketStorageClass.html"
+    },
+    {
+      "name": "PutTableMaintenanceConfiguration",
+      "methodName": "toPutTableMaintenanceConfiguration",
+      "description": "Grants permission to put a maintenance configuration on a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableMaintenanceConfiguration.html"
+    },
+    {
+      "name": "PutTablePolicy",
+      "methodName": "toPutTablePolicy",
+      "description": "Grants permission to create or overwrite a policy on a table",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTablePolicy.html"
+    },
+    {
+      "name": "PutTableRecordExpirationConfiguration",
+      "methodName": "toPutTableRecordExpirationConfiguration",
+      "description": "Grants permission to put a table record expiration configuration on a system table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableRecordExpirationConfiguration.html"
+    },
+    {
+      "name": "PutTableReplication",
+      "methodName": "toPutTableReplication",
+      "description": "Grants permission to put table replication configuration on a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableReplication.html"
+    },
+    {
+      "name": "PutTableStorageClass",
+      "methodName": "toPutTableStorageClass",
+      "description": "Grants permission to set or update the storage class configuration for a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableStorageClass.html"
+    },
+    {
+      "name": "RenameTable",
+      "methodName": "toRenameTable",
+      "description": "Grants permission to rename a table or move a table across namespaces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_RenameTable.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a S3 Tables resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables-tagging.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a S3 Tables resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables-tagging.html"
+    },
+    {
+      "name": "UpdateTableMetadataLocation",
+      "methodName": "toUpdateTableMetadataLocation",
+      "description": "Grants permission to update the metadata location of a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_UpdateTableMetadataLocation.html"
+    },
+    {
+      "name": "GetTableData",
+      "methodName": "toGetTableData",
+      "description": "Grants permission to read metadata and data objects from a table storage endpoint using S3 APIs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions"
+    },
+    {
+      "name": "PutTableData",
+      "methodName": "toPutTableData",
+      "description": "Grants permission to write metadata and data objects to a table storage endpoint using S3 APIs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions"
+    },
+    {
+      "name": "PutTableEncryption",
+      "methodName": "toPutTableEncryption",
+      "description": "Grants permission to put encryption configuration on a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html",
+      "arn": "arn:${Partition}:s3tables:${Region}:${Account}:bucket/${TableBucketName}/table/${TableID}",
+      "placeholders": [
+        {
+          "placeholder": "TableBucketName",
+          "name": "tableBucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableID",
+          "name": "tableID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifTableBucketTag",
+        "ifNamespace",
+        "ifTableName"
+      ]
+    },
+    {
+      "name": "TableBucket",
+      "methodName": "onTableBucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html",
+      "arn": "arn:${Partition}:s3tables:${Region}:${Account}:bucket/${TableBucketName}",
+      "placeholders": [
+        {
+          "placeholder": "TableBucketName",
+          "name": "tableBucketName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifTableBucketTag"
+      ],
+      "cdkRef": {
+        "module": "aws_s3tables",
+        "interface": "ITableBucketRef",
+        "property": "tableBucketRef",
+        "arn": "tableBucketArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toCreateTableBucket",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateNamespace",
+        "toCreateTable",
+        "toCreateTableBucket",
+        "toDeleteNamespace",
+        "toDeleteTable",
+        "toDeleteTableBucket",
+        "toDeleteTableBucketEncryption",
+        "toDeleteTableBucketMetricsConfiguration",
+        "toDeleteTableBucketPolicy",
+        "toDeleteTableBucketReplication",
+        "toDeleteTablePolicy",
+        "toDeleteTableReplication",
+        "toGetNamespace",
+        "toGetTable",
+        "toGetTableBucket",
+        "toGetTableBucketEncryption",
+        "toGetTableBucketMaintenanceConfiguration",
+        "toGetTableBucketMetricsConfiguration",
+        "toGetTableBucketPolicy",
+        "toGetTableBucketReplication",
+        "toGetTableBucketStorageClass",
+        "toGetTableEncryption",
+        "toGetTableMaintenanceConfiguration",
+        "toGetTableMaintenanceJobStatus",
+        "toGetTableMetadataLocation",
+        "toGetTablePolicy",
+        "toGetTableRecordExpirationConfiguration",
+        "toGetTableRecordExpirationJobStatus",
+        "toGetTableReplication",
+        "toGetTableReplicationStatus",
+        "toGetTableStorageClass",
+        "toListNamespaces",
+        "toListTables",
+        "toListTagsForResource",
+        "toPutTableBucketEncryption",
+        "toPutTableBucketMaintenanceConfiguration",
+        "toPutTableBucketMetricsConfiguration",
+        "toPutTableBucketPolicy",
+        "toPutTableBucketReplication",
+        "toPutTableBucketStorageClass",
+        "toPutTableMaintenanceConfiguration",
+        "toPutTablePolicy",
+        "toPutTableRecordExpirationConfiguration",
+        "toPutTableReplication",
+        "toPutTableStorageClass",
+        "toRenameTable",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTableMetadataLocation",
+        "toGetTableData",
+        "toPutTableData",
+        "toPutTableEncryption"
+      ],
+      "relatedResourceTypes": [
+        "Table",
+        "TableBucket"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toCreateTableBucket",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3tables:KMSKeyArn",
+      "methodName": "ifKMSKeyArn",
+      "description": "Filters access by the AWS KMS key ARN for the key used to encrypt a table",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toCreateTableBucket",
+        "toPutTableBucketEncryption",
+        "toPutTableEncryption"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KMSKeyArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "s3tables:SSEAlgorithm",
+      "methodName": "ifSSEAlgorithm",
+      "description": "Filters access by the server-side encryption algorithm used to encrypt a table",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toCreateTableBucket",
+        "toPutTableBucketEncryption",
+        "toPutTableEncryption"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SSEAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3tables:StorageClass",
+      "methodName": "ifStorageClass",
+      "description": "Filters access by the storage class that can be set on tables under a table bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html",
+      "relatedActionMethods": [
+        "toPutTableBucketStorageClass",
+        "toPutTableStorageClass"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "StorageClass",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3tables:TableBucketTag/${TagKey}",
+      "methodName": "ifTableBucketTag",
+      "description": "Filters access by the tags associated with the table bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html",
+      "relatedActionMethods": [
+        "toCreateNamespace",
+        "toCreateTable",
+        "toCreateTableBucket",
+        "toDeleteNamespace",
+        "toDeleteTable",
+        "toDeleteTableBucket",
+        "toDeleteTableBucketEncryption",
+        "toDeleteTableBucketMetricsConfiguration",
+        "toDeleteTableBucketPolicy",
+        "toDeleteTableBucketReplication",
+        "toDeleteTablePolicy",
+        "toDeleteTableReplication",
+        "toGetNamespace",
+        "toGetTable",
+        "toGetTableBucket",
+        "toGetTableBucketEncryption",
+        "toGetTableBucketMaintenanceConfiguration",
+        "toGetTableBucketMetricsConfiguration",
+        "toGetTableBucketPolicy",
+        "toGetTableBucketReplication",
+        "toGetTableBucketStorageClass",
+        "toGetTableEncryption",
+        "toGetTableMaintenanceConfiguration",
+        "toGetTableMaintenanceJobStatus",
+        "toGetTableMetadataLocation",
+        "toGetTablePolicy",
+        "toGetTableRecordExpirationConfiguration",
+        "toGetTableRecordExpirationJobStatus",
+        "toGetTableReplication",
+        "toGetTableReplicationStatus",
+        "toGetTableStorageClass",
+        "toListNamespaces",
+        "toListTables",
+        "toListTagsForResource",
+        "toPutTableBucketEncryption",
+        "toPutTableBucketMaintenanceConfiguration",
+        "toPutTableBucketMetricsConfiguration",
+        "toPutTableBucketPolicy",
+        "toPutTableBucketReplication",
+        "toPutTableBucketStorageClass",
+        "toPutTableMaintenanceConfiguration",
+        "toPutTablePolicy",
+        "toPutTableRecordExpirationConfiguration",
+        "toPutTableReplication",
+        "toPutTableStorageClass",
+        "toRenameTable",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTableMetadataLocation",
+        "toGetTableData",
+        "toPutTableData",
+        "toPutTableEncryption"
+      ],
+      "relatedResourceTypes": [
+        "Table",
+        "TableBucket"
+      ],
+      "keyLiteral": "TableBucketTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3tables:namespace",
+      "methodName": "ifNamespace",
+      "description": "Filters access by the namespaces created in the table bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html",
+      "relatedActionMethods": [
+        "toCreateTable",
+        "toDeleteNamespace",
+        "toDeleteTable",
+        "toDeleteTablePolicy",
+        "toDeleteTableReplication",
+        "toGetNamespace",
+        "toGetTable",
+        "toGetTableEncryption",
+        "toGetTableMaintenanceConfiguration",
+        "toGetTableMaintenanceJobStatus",
+        "toGetTableMetadataLocation",
+        "toGetTablePolicy",
+        "toGetTableRecordExpirationConfiguration",
+        "toGetTableRecordExpirationJobStatus",
+        "toGetTableReplication",
+        "toGetTableReplicationStatus",
+        "toGetTableStorageClass",
+        "toListTables",
+        "toListTagsForResource",
+        "toPutTableMaintenanceConfiguration",
+        "toPutTablePolicy",
+        "toPutTableRecordExpirationConfiguration",
+        "toPutTableReplication",
+        "toPutTableStorageClass",
+        "toRenameTable",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTableMetadataLocation",
+        "toGetTableData",
+        "toPutTableData",
+        "toPutTableEncryption"
+      ],
+      "relatedResourceTypes": [
+        "Table"
+      ],
+      "keyLiteral": "namespace",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3tables:tableName",
+      "methodName": "ifTableName",
+      "description": "Filters access by the name of the tables in the table bucket",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html",
+      "relatedActionMethods": [
+        "toDeleteTable",
+        "toDeleteTablePolicy",
+        "toDeleteTableReplication",
+        "toGetTable",
+        "toGetTableEncryption",
+        "toGetTableMaintenanceConfiguration",
+        "toGetTableMaintenanceJobStatus",
+        "toGetTableMetadataLocation",
+        "toGetTablePolicy",
+        "toGetTableRecordExpirationConfiguration",
+        "toGetTableRecordExpirationJobStatus",
+        "toGetTableReplication",
+        "toGetTableReplicationStatus",
+        "toGetTableStorageClass",
+        "toListTagsForResource",
+        "toPutTableMaintenanceConfiguration",
+        "toPutTablePolicy",
+        "toPutTableRecordExpirationConfiguration",
+        "toPutTableReplication",
+        "toPutTableStorageClass",
+        "toRenameTable",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateTableMetadataLocation",
+        "toGetTableData",
+        "toPutTableData",
+        "toPutTableEncryption"
+      ],
+      "relatedResourceTypes": [
+        "Table"
+      ],
+      "keyLiteral": "tableName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

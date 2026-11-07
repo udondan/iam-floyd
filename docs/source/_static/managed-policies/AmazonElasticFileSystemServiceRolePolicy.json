@@ -1,0 +1,86 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup-storage:MountCapsule",
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup:CreateBackupVault",
+        "backup:PutBackupVaultAccessPolicy"
+      ],
+      "Resource": [
+        "arn:aws:backup:*:*:backup-vault:aws/efs/automatic-backup-vault"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup:CreateBackupPlan",
+        "backup:CreateBackupSelection"
+      ],
+      "Resource": [
+        "arn:aws:backup:*:*:backup-plan:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "backup.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/backup.amazonaws.com/AWSServiceRoleForBackup"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "backup.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:CreateReplicationConfiguration",
+        "elasticfilesystem:DescribeReplicationConfigurations",
+        "elasticfilesystem:DeleteReplicationConfiguration",
+        "elasticfilesystem:ReplicationRead",
+        "elasticfilesystem:ReplicationWrite"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

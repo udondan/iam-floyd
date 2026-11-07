@@ -1,0 +1,52 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAutomationExecution"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/*",
+        "arn:aws:ssm:*:*:automation-execution/*",
+        "arn:aws:ssm:*:*:automation-definition/*:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetAutomationExecution",
+        "ssm:StopAutomationExecution"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:automation-execution/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:ListCommands",
+        "ssm:CancelCommand"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

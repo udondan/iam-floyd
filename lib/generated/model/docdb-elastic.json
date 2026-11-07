@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "filename": "docdb-elastic",
+  "className": "DocdbElastic",
+  "name": "docdb-elastic",
+  "servicePrefix": "docdb-elastic",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_docdb-elastic.html",
+  "accessLevelList": {
+    "Write": [
+      "ApplyPendingMaintenanceAction",
+      "CopyClusterSnapshot",
+      "CreateCluster",
+      "CreateClusterSnapshot",
+      "DeleteCluster",
+      "DeleteClusterSnapshot",
+      "RestoreClusterFromSnapshot",
+      "StartCluster",
+      "StopCluster",
+      "TagResource",
+      "UntagResource",
+      "UpdateCluster"
+    ],
+    "Read": [
+      "GetCluster",
+      "GetClusterSnapshot",
+      "GetPendingMaintenanceAction"
+    ],
+    "List": [
+      "ListClusterSnapshots",
+      "ListClusters",
+      "ListPendingMaintenanceActions",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ApplyPendingMaintenanceAction",
+      "methodName": "toApplyPendingMaintenanceAction",
+      "description": "Grants permission to apply pending maintenance actions on Amazon DocDB-Elastic cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ApplyPendingMaintenanceAction.html"
+    },
+    {
+      "name": "CopyClusterSnapshot",
+      "methodName": "toCopyClusterSnapshot",
+      "description": "Grants permission to copy a new Amazon DocDB-Elastic cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CopyClusterSnapshot.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create a new Amazon DocDB-Elastic cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CreateCluster.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateClusterSnapshot",
+      "methodName": "toCreateClusterSnapshot",
+      "description": "Grants permission to create a new Amazon DocDB-Elastic cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CreateClusterSnapshot.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteClusterSnapshot",
+      "methodName": "toDeleteClusterSnapshot",
+      "description": "Grants permission to delete a cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_DeleteClusterSnapshot.html"
+    },
+    {
+      "name": "GetCluster",
+      "methodName": "toGetCluster",
+      "description": "Grants permission to view details about a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_GetCluster.html"
+    },
+    {
+      "name": "GetClusterSnapshot",
+      "methodName": "toGetClusterSnapshot",
+      "description": "Grants permission to view details about a cluster snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_GetClusterSnapshot.html"
+    },
+    {
+      "name": "GetPendingMaintenanceAction",
+      "methodName": "toGetPendingMaintenanceAction",
+      "description": "Grants permission to view details about pending maintenance actions on Amazon DocDB-Elastic cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_GetPendingMaintenanceAction.html"
+    },
+    {
+      "name": "ListClusterSnapshots",
+      "methodName": "toListClusterSnapshots",
+      "description": "Grants permission to list the cluster snapshots in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListClusterSnapshots.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to list the clusters in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListClusters.html"
+    },
+    {
+      "name": "ListPendingMaintenanceActions",
+      "methodName": "toListPendingMaintenanceActions",
+      "description": "Grants permission to list details about pending maintenance actions on any Amazon DocDB-Elastic cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListPendingMaintenanceActions.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to lists tag for an DocumentDB Elastic resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListTagsForResource.html"
+    },
+    {
+      "name": "RestoreClusterFromSnapshot",
+      "methodName": "toRestoreClusterFromSnapshot",
+      "description": "Grants permission to restore cluster from a Amazon DocDB-Elastic cluster snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_RestoreClusterFromSnapshot.html"
+    },
+    {
+      "name": "StartCluster",
+      "methodName": "toStartCluster",
+      "description": "Grants permission to start a stopped Amazon DocDB-Elastic cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_StartCluster.html"
+    },
+    {
+      "name": "StopCluster",
+      "methodName": "toStopCluster",
+      "description": "Grants permission to stop an existing Amazon DocDB-Elastic cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_StopCluster.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an DocumentDB Elastic resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a DocumentDB Elastic resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_UntagResource.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permission to modify a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_UpdateCluster.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/elastic-managing.html",
+      "arn": "arn:${Partition}:docdb-elastic:${Region}:${Account}:cluster/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_docdbelastic",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
+    },
+    {
+      "name": "cluster-snapshot",
+      "methodName": "onClusterSnapshot",
+      "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/elastic-managing.html#elastic-manage-snapshots",
+      "arn": "arn:${Partition}:docdb-elastic:${Region}:${Account}:cluster-snapshot/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_docdbelastic",
+        "interface": "IClusterSnapshotRef",
+        "property": "clusterSnapshotRef",
+        "arn": "snapshotArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the set of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCopyClusterSnapshot",
+        "toCreateCluster",
+        "toCreateClusterSnapshot",
+        "toRestoreClusterFromSnapshot",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the set of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toApplyPendingMaintenanceAction",
+        "toCopyClusterSnapshot",
+        "toCreateClusterSnapshot",
+        "toDeleteCluster",
+        "toDeleteClusterSnapshot",
+        "toGetCluster",
+        "toGetClusterSnapshot",
+        "toGetPendingMaintenanceAction",
+        "toListPendingMaintenanceActions",
+        "toListTagsForResource",
+        "toRestoreClusterFromSnapshot",
+        "toStartCluster",
+        "toStopCluster",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCluster"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "cluster-snapshot"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the set of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCopyClusterSnapshot",
+        "toCreateCluster",
+        "toCreateClusterSnapshot",
+        "toRestoreClusterFromSnapshot",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

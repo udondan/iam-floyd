@@ -1,0 +1,52 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:DescribeEventBus",
+        "events:DescribeEventSource",
+        "events:ListEventBuses",
+        "events:ListEventSources",
+        "events:ListRuleNamesByTarget",
+        "events:ListRules",
+        "events:ListTargetsByRule",
+        "events:TestEventPattern",
+        "events:DescribeArchive",
+        "events:ListArchives",
+        "events:DescribeReplay",
+        "events:ListReplays",
+        "events:DescribeConnection",
+        "events:ListConnections",
+        "events:DescribeApiDestination",
+        "events:ListApiDestinations",
+        "events:DescribeEndpoint",
+        "events:ListEndpoints",
+        "schemas:DescribeCodeBinding",
+        "schemas:DescribeDiscoverer",
+        "schemas:DescribeRegistry",
+        "schemas:DescribeSchema",
+        "schemas:ExportSchema",
+        "schemas:GetCodeBindingSource",
+        "schemas:GetDiscoveredSchema",
+        "schemas:GetResourcePolicy",
+        "schemas:ListDiscoverers",
+        "schemas:ListRegistries",
+        "schemas:ListSchemas",
+        "schemas:ListSchemaVersions",
+        "schemas:ListTagsForResource",
+        "schemas:SearchSchemas",
+        "scheduler:GetSchedule",
+        "scheduler:GetScheduleGroup",
+        "scheduler:ListSchedules",
+        "scheduler:ListScheduleGroups",
+        "scheduler:ListTagsForResource",
+        "pipes:DescribePipe",
+        "pipes:ListPipes",
+        "pipes:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

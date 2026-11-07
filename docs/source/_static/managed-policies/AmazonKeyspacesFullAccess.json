@@ -1,0 +1,85 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CassandraFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cassandra:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApplicationAutoscalingFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DeleteScalingPolicy",
+        "application-autoscaling:DeleteScheduledAction",
+        "application-autoscaling:DeregisterScalableTarget",
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingActivities",
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-autoscaling:DescribeScheduledActions",
+        "application-autoscaling:PutScheduledAction",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:RegisterScalableTarget",
+        "kms:DescribeKey",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudwatchAlarmsFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DeleteAlarms",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:PutMetricAlarm"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApplicationAutoscalingServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/cassandra.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_CassandraTable",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "cassandra.application-autoscaling.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "KeyspacesReplicationServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/replication.cassandra.amazonaws.com/AWSServiceRoleForKeyspacesReplication",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "replication.cassandra.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "KeyspacesCDCServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/cassandra-streams.amazonaws.com/AWSServiceRoleForAmazonKeyspacesCDC",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "cassandra-streams.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "Ec2VpcReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcEndpoints"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

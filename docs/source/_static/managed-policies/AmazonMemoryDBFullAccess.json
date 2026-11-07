@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "memorydb:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/memorydb.amazonaws.com/AWSServiceRoleForMemoryDB",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "memorydb.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

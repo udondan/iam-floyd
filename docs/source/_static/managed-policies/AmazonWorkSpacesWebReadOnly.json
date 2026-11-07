@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "workspaces-web:GetBrowserSettings",
+        "workspaces-web:GetIdentityProvider",
+        "workspaces-web:GetNetworkSettings",
+        "workspaces-web:GetPortal",
+        "workspaces-web:GetPortalServiceProviderMetadata",
+        "workspaces-web:GetTrustStore",
+        "workspaces-web:GetTrustStoreCertificate",
+        "workspaces-web:GetUserSettings",
+        "workspaces-web:GetUserAccessLoggingSettings",
+        "workspaces-web:ListBrowserSettings",
+        "workspaces-web:ListIdentityProviders",
+        "workspaces-web:ListNetworkSettings",
+        "workspaces-web:ListPortals",
+        "workspaces-web:ListTagsForResource",
+        "workspaces-web:ListTrustStoreCertificates",
+        "workspaces-web:ListTrustStores",
+        "workspaces-web:ListUserSettings",
+        "workspaces-web:ListUserAccessLoggingSettings"
+      ],
+      "Resource": "arn:aws:workspaces-web:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "kinesis:ListStreams"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

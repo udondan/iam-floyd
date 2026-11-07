@@ -1,0 +1,167 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AuditManagerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "auditmanager:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccountsForParent",
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribeAccount",
+        "organizations:ListParents",
+        "organizations:ListChildren"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowOnlyAuditManagerIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator",
+        "organizations:EnableAWSServiceAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:ServicePrincipal": [
+            "auditmanager.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "IAMAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetUser",
+        "iam:ListUsers",
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMAccessCreateSLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/auditmanager.amazonaws.com/AWSServiceRoleForAuditManager*",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "auditmanager.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "IAMAccessManageSLR",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteServiceLinkedRole",
+        "iam:UpdateRoleDescription",
+        "iam:GetServiceLinkedRoleDeletionStatus"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/auditmanager.amazonaws.com/AWSServiceRoleForAuditManager*"
+    },
+    {
+      "Sid": "S3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KmsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KmsCreateGrantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
+        },
+        "StringLike": {
+          "kms:ViaService": "auditmanager.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SNSAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateEventsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:detail-type": "Security Hub Findings - Imported"
+        },
+        "ForAllValues:StringEquals": {
+          "events:source": [
+            "aws.securityhub"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "EventsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:EnableRule",
+        "events:DisableRule",
+        "events:ListTargetsByRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/AuditManagerSecurityHubFindingsReceiver"
+    },
+    {
+      "Sid": "TagAccess",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ControlCatalogAccess",
+      "Effect": "Allow",
+      "Action": [
+        "controlcatalog:ListCommonControls",
+        "controlcatalog:ListDomains",
+        "controlcatalog:ListObjectives"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

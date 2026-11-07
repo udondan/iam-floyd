@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "elasticmapreduce:Describe*",
+        "elasticmapreduce:List*",
+        "elasticmapreduce:GetBlockPublicAccessConfiguration",
+        "elasticmapreduce:ViewEventsFromAllClustersInConsole",
+        "s3:GetObject",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "sdb:Select",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

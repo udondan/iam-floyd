@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "verified-access",
+  "className": "VerifiedAccess",
+  "name": "verified-access",
+  "servicePrefix": "verified-access",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_verified-access.html",
+  "accessLevelList": {
+    "Write": [
+      "AllowVerifiedAccess"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AllowVerifiedAccess",
+      "methodName": "toAllowVerifiedAccess",
+      "description": "Grants permission to create Verified Access Instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/verified-access/latest/ug/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-create-instance"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

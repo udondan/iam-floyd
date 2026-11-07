@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "filename": "mapcredits",
+  "className": "Mapcredits",
+  "name": "mapcredits",
+  "servicePrefix": "mapcredits",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mapcredits.html",
+  "accessLevelList": {
+    "List": [
+      "ListAssociatedPrograms",
+      "ListQuarterCredits",
+      "ListQuarterSpend"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ListAssociatedPrograms",
+      "methodName": "toListAssociatedPrograms",
+      "description": "Grants permission to view the user's associated Migration Acceleration Program agreements",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListQuarterCredits",
+      "methodName": "toListQuarterCredits",
+      "description": "Grants permission to view Migration Acceleration Program agreements credits associated with the user's payer account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListQuarterSpend",
+      "methodName": "toListQuarterSpend",
+      "description": "Grants permission to view Migration Acceleration Program agreements eligible spend associated with the user's payer account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agreement",
+      "methodName": "onAgreement",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "arn": "arn:${Partition}:mapcredits:::${Agreement}/${AgreementId}",
+      "placeholders": [
+        {
+          "placeholder": "Agreement",
+          "name": "agreement",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AgreementId",
+          "name": "agreementId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

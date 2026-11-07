@@ -1,0 +1,65 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "datazonecontrol:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "glue:GetConnections",
+        "glue:GetDatabase",
+        "redshift:DescribeClusters",
+        "ec2:DescribeSubnets",
+        "secretsmanager:ListSecrets",
+        "iam:ListRoles",
+        "sso:DescribeRegisteredRegions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateConnection"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:connection/AmazonDataZone-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:AmazonDataZone-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/AmazonDataZoneServiceRole*",
+        "arn:aws:iam::*:role/service-role/AmazonDataZoneServiceRole*",
+        "arn:aws:iam::*:role/AmazonDataZoneBootstrapRole*",
+        "arn:aws:iam::*:role/service-role/AmazonDataZoneBootstrapRole",
+        "arn:aws:iam::*:role/AmazonDataZoneDomainExecutionRole",
+        "arn:aws:iam::*:role/service-role/AmazonDataZoneDomainExecutionRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:passedToService": "datazonecontrol.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

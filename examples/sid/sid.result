@@ -1,0 +1,9 @@
+{
+    "Sid": "MYSID",
+    "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+    ],
+    "Resource": "*",
+    "Effect": "Allow"
+}

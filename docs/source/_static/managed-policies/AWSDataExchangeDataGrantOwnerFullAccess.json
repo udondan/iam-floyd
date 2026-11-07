@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataExchangeActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateDataSet",
+        "dataexchange:UpdateDataSet",
+        "dataexchange:GetDataSet",
+        "dataexchange:DeleteDataSet",
+        "dataexchange:ListDataSets",
+        "dataexchange:CreateRevision",
+        "dataexchange:UpdateRevision",
+        "dataexchange:GetRevision",
+        "dataexchange:DeleteRevision",
+        "dataexchange:RevokeRevision",
+        "dataexchange:ListDataSetRevisions",
+        "dataexchange:CreateAsset",
+        "dataexchange:UpdateAsset",
+        "dataexchange:GetAsset",
+        "dataexchange:DeleteAsset",
+        "dataexchange:ListRevisionAssets",
+        "dataexchange:SendApiAsset",
+        "dataexchange:CreateDataGrant",
+        "dataexchange:GetDataGrant",
+        "dataexchange:DeleteDataGrant",
+        "dataexchange:ListDataGrants",
+        "dataexchange:PublishToDataGrant",
+        "dataexchange:SendDataSetNotification",
+        "dataexchange:TagResource",
+        "dataexchange:UntagResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataExchangeJobsActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateJob",
+        "dataexchange:StartJob",
+        "dataexchange:CancelJob"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "dataexchange:JobType": [
+            "IMPORT_ASSETS_FROM_S3",
+            "IMPORT_ASSET_FROM_SIGNED_URL",
+            "EXPORT_ASSETS_TO_S3",
+            "EXPORT_ASSET_TO_SIGNED_URL",
+            "IMPORT_ASSET_FROM_API_GATEWAY_API",
+            "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
+            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"
+          ]
+        }
+      }
+    }
+  ]
+}

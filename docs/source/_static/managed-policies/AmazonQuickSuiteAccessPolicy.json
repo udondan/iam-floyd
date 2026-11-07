@@ -1,0 +1,137 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "quicksight",
+      "Effect": "Allow",
+      "Action": "quicksight:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "identitystore",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ListUsers",
+        "identitystore:ListGroups",
+        "identitystore:DescribeUser",
+        "identitystore:DescribeGroup",
+        "identitystore:CreateUser",
+        "identitystore:CreateGroup",
+        "identitystore:UpdateUser",
+        "identitystore:UpdateGroup",
+        "identitystore:DeleteUser",
+        "identitystore:DeleteGroup",
+        "identitystore:ReserveUser",
+        "identitystore:GetUserId",
+        "identitystore:GetGroupId",
+        "identitystore:ListGroupMembershipsForMember"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ssoControlPlane",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeInstance",
+        "sso:ListInstances",
+        "sso:DescribeRegisteredRegions",
+        "sso:CreateApplication",
+        "sso:UpdateApplication",
+        "sso:DeleteApplication",
+        "sso:DescribeApplication",
+        "sso:ListApplications",
+        "sso:PutApplicationAuthenticationMethod",
+        "sso:PutApplicationGrant",
+        "sso:ListApplicationGrants",
+        "sso:PutApplicationAccessScope",
+        "sso:DeleteApplicationAccessScope",
+        "sso:ListApplicationAccessScopes",
+        "sso:CreateApplicationAssignment",
+        "sso:DeleteApplicationAssignment",
+        "sso:PutApplicationAssignmentConfiguration",
+        "sso:AssociateProfile",
+        "sso:DisassociateProfile",
+        "sso:ListProfiles",
+        "sso:GetProfile",
+        "sso:ListDirectoryAssociations",
+        "sso:SearchGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ssoOauthRuntime",
+      "Effect": "Allow",
+      "Action": [
+        "sso-oauth:CreateTokenWithIAM",
+        "sso-oauth:IntrospectTokenWithIAM",
+        "sso-oauth:RevokeTokenWithIAM"
+      ],
+      "Resource": "arn:aws:sso::*:application/*"
+    },
+    {
+      "Sid": "signin",
+      "Effect": "Allow",
+      "Action": "signin:CreateOAuth2Token",
+      "Resource": [
+        "arn:aws:signin:*:*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "stsSelf",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole",
+        "sts:SetContext",
+        "sts:TagSession"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/AmazonQuickSuiteAccessRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "passRoleSelf",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/AmazonQuickSuiteAccessRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "userSubscriptions",
+      "Effect": "Allow",
+      "Action": [
+        "user-subscriptions:SetOverageConfig",
+        "user-subscriptions:GetCurrentPlanDetails",
+        "user-subscriptions:ListApplicationClaims",
+        "user-subscriptions:CreateUpdatePlanPreview",
+        "user-subscriptions:UpdateClaim",
+        "user-subscriptions:CreateClaim"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "organizations",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

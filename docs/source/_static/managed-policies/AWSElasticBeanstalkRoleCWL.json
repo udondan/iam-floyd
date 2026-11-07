@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCWL",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DeleteLogGroup",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk/*"
+    }
+  ]
+}

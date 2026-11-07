@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:GetCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructureUnallocatedResources",
+        "odb:ListCloudExadataInfrastructures",
+        "odb:CreateCloudVmCluster",
+        "odb:GetCloudVmCluster",
+        "odb:DeleteCloudVmCluster",
+        "odb:ListCloudVmClusters",
+        "odb:AssociateIamRoleToResource",
+        "odb:DisassociateIamRoleFromResource",
+        "odb:CreateDbNode",
+        "odb:GetDbNode",
+        "odb:RebootDbNode",
+        "odb:StartDbNode",
+        "odb:StopDbNode",
+        "odb:DeleteDbNode",
+        "odb:ListDbNodes",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:GetOdbNetwork",
+        "odb:ListOdbNetworks",
+        "odb:ListDbSystemShapes",
+        "odb:ListFlexComponents",
+        "odb:ListGiVersions",
+        "odb:ListSystemVersions",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowTaggingActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:TagResource",
+        "odb:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:cloud-vm-cluster/*",
+        "arn:aws:odb:*:*:db-node/*"
+      ]
+    },
+    {
+      "Sid": "AllowOutboundIntegrationActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:CreateOutboundIntegration",
+        "odb:UpdateOutboundIntegration"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:cloud-vm-cluster/*"
+      ]
+    }
+  ]
+}

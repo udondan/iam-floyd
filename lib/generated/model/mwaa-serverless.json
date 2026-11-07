@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "filename": "mwaa-serverless",
+  "className": "AirflowServerless",
+  "name": "airflow-serverless",
+  "servicePrefix": "airflow-serverless",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mwaa-serverless.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateWorkflow",
+      "DeleteWorkflow",
+      "StartWorkflowRun",
+      "StopWorkflowRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateWorkflow"
+    ],
+    "Read": [
+      "GetTaskInstance",
+      "GetWorkflow",
+      "GetWorkflowRun",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListTaskInstances",
+      "ListWorkflowRuns",
+      "ListWorkflowVersions",
+      "ListWorkflows"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateWorkflow",
+      "methodName": "toCreateWorkflow",
+      "description": "Grants permission to create a new workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_CreateWorkflow.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteWorkflow",
+      "methodName": "toDeleteWorkflow",
+      "description": "Grants permission to delete a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_DeleteWorkflow.html"
+    },
+    {
+      "name": "GetTaskInstance",
+      "methodName": "toGetTaskInstance",
+      "description": "Grants permission to retrieve the task details for a workflow run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_GetTaskInstance.html"
+    },
+    {
+      "name": "GetWorkflow",
+      "methodName": "toGetWorkflow",
+      "description": "Grants permission to retrieve details about a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_GetWorkflow.html"
+    },
+    {
+      "name": "GetWorkflowRun",
+      "methodName": "toGetWorkflowRun",
+      "description": "Grants permission to retrieve details about a workflow run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_GetWorkflowRun.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTaskInstances",
+      "methodName": "toListTaskInstances",
+      "description": "Grants permission to list the tasks for a workflow run",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_ListTaskInstances.html"
+    },
+    {
+      "name": "ListWorkflowRuns",
+      "methodName": "toListWorkflowRuns",
+      "description": "Grants permission to list the workflow runs of a workflow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_ListWorkflowRuns.html"
+    },
+    {
+      "name": "ListWorkflowVersions",
+      "methodName": "toListWorkflowVersions",
+      "description": "Grants permission to list the workflow versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_ListWorkflowVersions.html"
+    },
+    {
+      "name": "ListWorkflows",
+      "methodName": "toListWorkflows",
+      "description": "Grants permission to list the workflows",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_ListWorkflows.html"
+    },
+    {
+      "name": "StartWorkflowRun",
+      "methodName": "toStartWorkflowRun",
+      "description": "Grants permission to start an on-demand workflow run for the workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_StartWorkflowRun.html"
+    },
+    {
+      "name": "StopWorkflowRun",
+      "methodName": "toStopWorkflowRun",
+      "description": "Grants permission to stop a workflow run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_StopWorkflowRun.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateWorkflow",
+      "methodName": "toUpdateWorkflow",
+      "description": "Grants permission to update an existing workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_UpdateWorkflow.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Workflow",
+      "methodName": "onWorkflow",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/mwaa-serverless-userguide/workflows.html",
+      "arn": "arn:${Partition}:airflow-serverless:${Region}:${Account}:workflow/${WorkflowId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowId",
+          "name": "workflowId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_mwaaserverless",
+        "interface": "IWorkflowRef",
+        "property": "workflowRef",
+        "arn": "workflowArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateWorkflow",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs that are attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteWorkflow",
+        "toGetTaskInstance",
+        "toGetWorkflow",
+        "toGetWorkflowRun",
+        "toListTagsForResource",
+        "toListTaskInstances",
+        "toListWorkflowRuns",
+        "toListWorkflowVersions",
+        "toStartWorkflowRun",
+        "toStopWorkflowRun",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateWorkflow"
+      ],
+      "relatedResourceTypes": [
+        "Workflow"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateWorkflow",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

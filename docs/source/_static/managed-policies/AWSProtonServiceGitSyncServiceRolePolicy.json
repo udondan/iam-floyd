@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProtonServiceSync",
+      "Effect": "Allow",
+      "Action": [
+        "proton:GetService",
+        "proton:UpdateService",
+        "proton:UpdateServicePipeline",
+        "proton:GetServiceInstance",
+        "proton:CreateServiceInstance",
+        "proton:UpdateServiceInstance",
+        "proton:ListServiceInstances",
+        "proton:GetComponent",
+        "proton:CreateComponent",
+        "proton:ListComponents",
+        "proton:UpdateComponent",
+        "proton:GetEnvironment",
+        "proton:CreateEnvironment",
+        "proton:ListEnvironments",
+        "proton:UpdateEnvironment"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

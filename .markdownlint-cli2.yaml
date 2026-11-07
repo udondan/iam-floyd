@@ -1,0 +1,16 @@
+config:
+  # Long lines are wrapped by the reader
+  MD013: false
+  # Line breaks in tables and the collapsible examples per language in README.md
+  MD033:
+    allowed_elements: [br, details, summary]
+  # gofmt indents with tabs
+  MD010:
+    ignore_code_languages: [go]
+globs:
+  - "**/*.md"
+ignores:
+  - "**/node_modules/**"
+  - CHANGELOG.md
+  - dist/**
+  - java/target/**

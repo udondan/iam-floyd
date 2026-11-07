@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgn:GetAgentInstallationAssetsForMgn",
+        "mgn:SendClientMetricsForMgn",
+        "mgn:SendClientLogsForMgn",
+        "mgn:RegisterAgentForMgn",
+        "mgn:VerifyClientRoleForMgn"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgn:IssueClientCertificateForMgn"
+      ],
+      "Resource": "arn:aws:mgn:*:*:source-server/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "mgn:TagResource",
+      "Resource": "arn:aws:mgn:*:*:source-server/*",
+      "Condition": {
+        "StringEquals": {
+          "mgn:CreateAction": "RegisterAgentForMgn"
+        }
+      }
+    }
+  ]
+}

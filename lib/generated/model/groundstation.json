@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 1,
+  "filename": "groundstation",
+  "className": "Groundstation",
+  "name": "groundstation",
+  "servicePrefix": "groundstation",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_groundstation.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelContact",
+      "CreateConfig",
+      "CreateDataflowEndpointGroup",
+      "CreateDataflowEndpointGroupV2",
+      "CreateEphemeris",
+      "CreateMissionProfile",
+      "DeleteConfig",
+      "DeleteDataflowEndpointGroup",
+      "DeleteEphemeris",
+      "DeleteMissionProfile",
+      "RegisterAgent",
+      "ReserveContact",
+      "TagResource",
+      "UntagResource",
+      "UpdateAgentStatus",
+      "UpdateConfig",
+      "UpdateContact",
+      "UpdateEphemeris",
+      "UpdateMissionProfile"
+    ],
+    "Read": [
+      "DescribeContact",
+      "DescribeContactVersion",
+      "DescribeEphemeris",
+      "GetAgentConfiguration",
+      "GetAgentTaskResponseUrl",
+      "GetConfig",
+      "GetDataflowEndpointGroup",
+      "GetMinuteUsage",
+      "GetMissionProfile",
+      "GetSatellite",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAntennas",
+      "ListConfigs",
+      "ListContactVersions",
+      "ListContacts",
+      "ListDataflowEndpointGroups",
+      "ListEphemerides",
+      "ListGroundStationReservations",
+      "ListGroundStations",
+      "ListMissionProfiles",
+      "ListSatellites"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelContact",
+      "methodName": "toCancelContact",
+      "description": "Grants permission to cancel a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CancelContact.html"
+    },
+    {
+      "name": "CreateConfig",
+      "methodName": "toCreateConfig",
+      "description": "Grants permission to create a configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDataflowEndpointGroup",
+      "methodName": "toCreateDataflowEndpointGroup",
+      "description": "Grants permission to create a data flow endpoint group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDataflowEndpointGroupV2",
+      "methodName": "toCreateDataflowEndpointGroupV2",
+      "description": "Grants permission to create a data flow endpoint group using the V2 operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroupV2.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEphemeris",
+      "methodName": "toCreateEphemeris",
+      "description": "Grants permission to create an ephemeris item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateEphemeris.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMissionProfile",
+      "methodName": "toCreateMissionProfile",
+      "description": "Grants permission to create a mission profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteConfig",
+      "methodName": "toDeleteConfig",
+      "description": "Grants permission to delete a config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteConfig.html"
+    },
+    {
+      "name": "DeleteDataflowEndpointGroup",
+      "methodName": "toDeleteDataflowEndpointGroup",
+      "description": "Grants permission to delete a data flow endpoint group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteDataflowEndpointGroup.html"
+    },
+    {
+      "name": "DeleteEphemeris",
+      "methodName": "toDeleteEphemeris",
+      "description": "Grants permission to delete an ephemeris item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteEphemeris.html"
+    },
+    {
+      "name": "DeleteMissionProfile",
+      "methodName": "toDeleteMissionProfile",
+      "description": "Grants permission to delete a mission profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteMissionProfile.html"
+    },
+    {
+      "name": "DescribeContact",
+      "methodName": "toDescribeContact",
+      "description": "Grants permission to describe a contact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContact.html"
+    },
+    {
+      "name": "DescribeContactVersion",
+      "methodName": "toDescribeContactVersion",
+      "description": "Grants permission to describe a specific version of a contact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContactVersion.html"
+    },
+    {
+      "name": "DescribeEphemeris",
+      "methodName": "toDescribeEphemeris",
+      "description": "Grants permission to describe an ephemeris item",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeEphemeris.html"
+    },
+    {
+      "name": "GetAgentConfiguration",
+      "methodName": "toGetAgentConfiguration",
+      "description": "Grants permission to get the configuration of an agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetAgentConfiguration.html"
+    },
+    {
+      "name": "GetAgentTaskResponseUrl",
+      "methodName": "toGetAgentTaskResponseUrl",
+      "description": "Grants permission to retrieve presigned S3 logging URLs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetAgentTaskResponseUrl.html"
+    },
+    {
+      "name": "GetConfig",
+      "methodName": "toGetConfig",
+      "description": "Grants permission to return a configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetConfig.html"
+    },
+    {
+      "name": "GetDataflowEndpointGroup",
+      "methodName": "toGetDataflowEndpointGroup",
+      "description": "Grants permission to return a data flow endpoint group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetDataflowEndpointGroup.html"
+    },
+    {
+      "name": "GetMinuteUsage",
+      "methodName": "toGetMinuteUsage",
+      "description": "Grants permission to return minutes usage",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMinuteUsage.html"
+    },
+    {
+      "name": "GetMissionProfile",
+      "methodName": "toGetMissionProfile",
+      "description": "Grants permission to retrieve a mission profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMissionProfile.html"
+    },
+    {
+      "name": "GetSatellite",
+      "methodName": "toGetSatellite",
+      "description": "Grants permission to return information about a satellite",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetSatellite.html"
+    },
+    {
+      "name": "ListAntennas",
+      "methodName": "toListAntennas",
+      "description": "Grants permission to list antennas for a ground station",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListAntennas.html"
+    },
+    {
+      "name": "ListConfigs",
+      "methodName": "toListConfigs",
+      "description": "Grants permission to return a list of past configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListConfigs.html"
+    },
+    {
+      "name": "ListContactVersions",
+      "methodName": "toListContactVersions",
+      "description": "Grants permission to list versions of a contact",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContactVersions.html"
+    },
+    {
+      "name": "ListContacts",
+      "methodName": "toListContacts",
+      "description": "Grants permission to return a list of contacts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContacts.html"
+    },
+    {
+      "name": "ListDataflowEndpointGroups",
+      "methodName": "toListDataflowEndpointGroups",
+      "description": "Grants permission to list data flow endpoint groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListDataflowEndpointGroups.html"
+    },
+    {
+      "name": "ListEphemerides",
+      "methodName": "toListEphemerides",
+      "description": "Grants permission to list ephemerides",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListEphemerides.html"
+    },
+    {
+      "name": "ListGroundStationReservations",
+      "methodName": "toListGroundStationReservations",
+      "description": "Grants permission to list reservations for a ground station",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStationReservations.html"
+    },
+    {
+      "name": "ListGroundStations",
+      "methodName": "toListGroundStations",
+      "description": "Grants permission to list ground stations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStations.html"
+    },
+    {
+      "name": "ListMissionProfiles",
+      "methodName": "toListMissionProfiles",
+      "description": "Grants permission to return a list of mission profiles",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListMissionProfiles.html"
+    },
+    {
+      "name": "ListSatellites",
+      "methodName": "toListSatellites",
+      "description": "Grants permission to list satellites",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListSatellites.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterAgent",
+      "methodName": "toRegisterAgent",
+      "description": "Grants permission to register an agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_RegisterAgent.html"
+    },
+    {
+      "name": "ReserveContact",
+      "methodName": "toReserveContact",
+      "description": "Grants permission to reserve a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to assign a resource tag",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to unassign a resource tag",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAgentStatus",
+      "methodName": "toUpdateAgentStatus",
+      "description": "Grants permission to update the status of an agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateAgentStatus.html"
+    },
+    {
+      "name": "UpdateConfig",
+      "methodName": "toUpdateConfig",
+      "description": "Grants permission to update a configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateConfig.html"
+    },
+    {
+      "name": "UpdateContact",
+      "methodName": "toUpdateContact",
+      "description": "Grants permission to update a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateContact.html"
+    },
+    {
+      "name": "UpdateEphemeris",
+      "methodName": "toUpdateEphemeris",
+      "description": "Grants permission to update an ephemeris item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateEphemeris.html"
+    },
+    {
+      "name": "UpdateMissionProfile",
+      "methodName": "toUpdateMissionProfile",
+      "description": "Grants permission to update a mission profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateMissionProfile.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Agent",
+      "methodName": "onAgent",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AgentDetails.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:agent/${AgentId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentId",
+          "name": "agentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAgentId"
+      ]
+    },
+    {
+      "name": "Config",
+      "methodName": "onConfig",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ConfigListItem.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigType",
+          "name": "configType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConfigId",
+          "name": "configId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifConfigId",
+        "ifConfigType"
+      ]
+    },
+    {
+      "name": "Contact",
+      "methodName": "onContact",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ContactData.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}",
+      "placeholders": [
+        {
+          "placeholder": "ContactId",
+          "name": "contactId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifContactId"
+      ]
+    },
+    {
+      "name": "DataflowEndpointGroup",
+      "methodName": "onDataflowEndpointGroup",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "DataflowEndpointGroupId",
+          "name": "dataflowEndpointGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifDataflowEndpointGroupId"
+      ],
+      "cdkRef": {
+        "module": "aws_groundstation",
+        "interface": "IDataflowEndpointGroupRef",
+        "property": "dataflowEndpointGroupRef",
+        "arn": "dataflowEndpointGroupArn"
+      }
+    },
+    {
+      "name": "EphemerisItem",
+      "methodName": "onEphemerisItem",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_EphemerisItem.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:ephemeris/${EphemerisId}",
+      "placeholders": [
+        {
+          "placeholder": "EphemerisId",
+          "name": "ephemerisId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifEphemerisId"
+      ]
+    },
+    {
+      "name": "GroundStationResource",
+      "methodName": "onGroundStationResource",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}",
+      "placeholders": [
+        {
+          "placeholder": "GroundStationId",
+          "name": "groundStationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifGroundStationId"
+      ]
+    },
+    {
+      "name": "MissionProfile",
+      "methodName": "onMissionProfile",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_MissionProfileListItem.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "MissionProfileId",
+          "name": "missionProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifMissionProfileId"
+      ],
+      "cdkRef": {
+        "module": "aws_groundstation",
+        "interface": "IMissionProfileRef",
+        "property": "missionProfileRef",
+        "arn": "missionProfileArn"
+      }
+    },
+    {
+      "name": "Satellite",
+      "methodName": "onSatellite",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}",
+      "placeholders": [
+        {
+          "placeholder": "SatelliteId",
+          "name": "satelliteId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifSatelliteId"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateConfig",
+        "toCreateDataflowEndpointGroup",
+        "toCreateDataflowEndpointGroupV2",
+        "toCreateEphemeris",
+        "toCreateMissionProfile",
+        "toReserveContact",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelContact",
+        "toDeleteConfig",
+        "toDeleteDataflowEndpointGroup",
+        "toDeleteEphemeris",
+        "toDeleteMissionProfile",
+        "toDescribeContact",
+        "toDescribeContactVersion",
+        "toDescribeEphemeris",
+        "toGetConfig",
+        "toGetDataflowEndpointGroup",
+        "toGetMissionProfile",
+        "toListContactVersions",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConfig",
+        "toUpdateContact",
+        "toUpdateEphemeris",
+        "toUpdateMissionProfile"
+      ],
+      "relatedResourceTypes": [
+        "Config",
+        "Contact",
+        "DataflowEndpointGroup",
+        "EphemerisItem",
+        "MissionProfile"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateConfig",
+        "toCreateDataflowEndpointGroup",
+        "toCreateDataflowEndpointGroupV2",
+        "toCreateEphemeris",
+        "toCreateMissionProfile",
+        "toReserveContact",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:AgentId",
+      "methodName": "ifAgentId",
+      "description": "Filters access by the ID of an agent",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_RegisterAgent.html#groundstation-RegisterAgent-response-agentId",
+      "relatedActionMethods": [
+        "toGetAgentConfiguration",
+        "toGetAgentTaskResponseUrl",
+        "toUpdateAgentStatus"
+      ],
+      "relatedResourceTypes": [
+        "Agent"
+      ],
+      "keyLiteral": "AgentId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:ConfigId",
+      "methodName": "ifConfigId",
+      "description": "Filters access by the ID of a config",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html#groundstation-CreateConfig-response-configId",
+      "relatedActionMethods": [
+        "toDeleteConfig",
+        "toGetConfig",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConfig"
+      ],
+      "relatedResourceTypes": [
+        "Config"
+      ],
+      "keyLiteral": "ConfigId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:ConfigType",
+      "methodName": "ifConfigType",
+      "description": "Filters access by the type of a config",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html#groundstation-CreateConfig-response-configType",
+      "relatedActionMethods": [
+        "toDeleteConfig",
+        "toGetConfig",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateConfig"
+      ],
+      "relatedResourceTypes": [
+        "Config"
+      ],
+      "keyLiteral": "ConfigType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:ContactId",
+      "methodName": "ifContactId",
+      "description": "Filters access by the ID of a contact",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html#groundstation-ReserveContact-response-contactId",
+      "relatedActionMethods": [
+        "toCancelContact",
+        "toDescribeContact",
+        "toDescribeContactVersion",
+        "toListContactVersions",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateContact"
+      ],
+      "relatedResourceTypes": [
+        "Contact"
+      ],
+      "keyLiteral": "ContactId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:DataflowEndpointGroupId",
+      "methodName": "ifDataflowEndpointGroupId",
+      "description": "Filters access by the ID of a dataflow endpoint group",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html#groundstation-CreateDataflowEndpointGroup-response-dataflowEndpointGroupId",
+      "relatedActionMethods": [
+        "toDeleteDataflowEndpointGroup",
+        "toGetDataflowEndpointGroup",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DataflowEndpointGroup"
+      ],
+      "keyLiteral": "DataflowEndpointGroupId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:EphemerisId",
+      "methodName": "ifEphemerisId",
+      "description": "Filters access by the ID of an ephemeris",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateEphemeris.html#groundstation-CreateEphemeris-response-ephemerisId",
+      "relatedActionMethods": [
+        "toDeleteEphemeris",
+        "toDescribeEphemeris",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateEphemeris"
+      ],
+      "relatedResourceTypes": [
+        "EphemerisItem"
+      ],
+      "keyLiteral": "EphemerisId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:GroundStationId",
+      "methodName": "ifGroundStationId",
+      "description": "Filters access by the ID of a ground station",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html#groundstation-Type-GroundStationData-groundStationId",
+      "relatedActionMethods": [
+        "toListAntennas",
+        "toListGroundStationReservations"
+      ],
+      "relatedResourceTypes": [
+        "GroundStationResource"
+      ],
+      "keyLiteral": "GroundStationId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:MissionProfileId",
+      "methodName": "ifMissionProfileId",
+      "description": "Filters access by the ID of a mission profile",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html#groundstation-CreateMissionProfile-response-missionProfileId",
+      "relatedActionMethods": [
+        "toDeleteMissionProfile",
+        "toGetMissionProfile",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMissionProfile"
+      ],
+      "relatedResourceTypes": [
+        "MissionProfile"
+      ],
+      "keyLiteral": "MissionProfileId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "groundstation:SatelliteId",
+      "methodName": "ifSatelliteId",
+      "description": "Filters access by the ID of a satellite",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html#groundstation-Type-SatelliteListItem-satelliteId",
+      "relatedActionMethods": [
+        "toGetSatellite"
+      ],
+      "relatedResourceTypes": [
+        "Satellite"
+      ],
+      "keyLiteral": "SatelliteId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FinOpsAgentOperatorAccess",
+      "Effect": "Allow",
+      "Action": [
+        "finops-agent:CreateConversation",
+        "finops-agent:ListConversations",
+        "finops-agent:CreateTurn",
+        "finops-agent:GetTurn",
+        "finops-agent:ListTurns",
+        "finops-agent:CancelTurn",
+        "finops-agent:AcceptAgentRequest",
+        "finops-agent:RejectAgentRequest",
+        "finops-agent:GetAgentRequest",
+        "finops-agent:CreateTask",
+        "finops-agent:GetTask",
+        "finops-agent:ListTasks",
+        "finops-agent:CancelTask",
+        "finops-agent:CreateAutomation",
+        "finops-agent:GetAutomation",
+        "finops-agent:ListAutomations",
+        "finops-agent:UpdateAutomation",
+        "finops-agent:DeleteAutomation",
+        "finops-agent:CreateDocument",
+        "finops-agent:GetDocumentContent",
+        "finops-agent:GetDocumentMetadata",
+        "finops-agent:ListDocuments",
+        "finops-agent:UpdateDocument",
+        "finops-agent:DeleteDocument",
+        "finops-agent:RestoreDocument",
+        "finops-agent:GetArtifactContent",
+        "finops-agent:GetArtifactMetadata",
+        "finops-agent:DeleteArtifact",
+        "finops-agent:ListArtifacts",
+        "finops-agent:ListRecords",
+        "finops-agent:SendFeedback"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

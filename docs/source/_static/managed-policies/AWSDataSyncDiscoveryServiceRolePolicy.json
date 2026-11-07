@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:*:secretsmanager:*:*:secret:datasync!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "datasync",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream"
+      ],
+      "Resource": [
+        "arn:*:logs:*:*:log-group:/aws/datasync*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:*:logs:*:*:log-group:/aws/datasync:log-stream:*"
+      ]
+    }
+  ]
+}

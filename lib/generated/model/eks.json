@@ -1,0 +1,1734 @@
+{
+  "schemaVersion": 1,
+  "filename": "eks",
+  "className": "Eks",
+  "name": "eks",
+  "servicePrefix": "eks",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_eks.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivateCertificateAuthority",
+      "AssociateAccessPolicy",
+      "AssociateEncryptionConfig",
+      "AssociateIdentityProviderConfig",
+      "CancelUpdate",
+      "CreateAccessEntry",
+      "CreateAddon",
+      "CreateCapability",
+      "CreateCertificateAuthority",
+      "CreateCluster",
+      "CreateEksAnywhereSubscription",
+      "CreateFargateProfile",
+      "CreateNodegroup",
+      "CreatePodIdentityAssociation",
+      "DeleteAccessEntry",
+      "DeleteAddon",
+      "DeleteCapability",
+      "DeleteCertificateAuthority",
+      "DeleteCluster",
+      "DeleteEksAnywhereSubscription",
+      "DeleteFargateProfile",
+      "DeleteNodegroup",
+      "DeletePodIdentityAssociation",
+      "DeregisterCluster",
+      "DisassociateAccessPolicy",
+      "DisassociateIdentityProviderConfig",
+      "RegisterCluster",
+      "StartInsightsRefresh",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccessEntry",
+      "UpdateAddon",
+      "UpdateCapability",
+      "UpdateClusterConfig",
+      "UpdateClusterVersion",
+      "UpdateEksAnywhereSubscription",
+      "UpdateNodegroupConfig",
+      "UpdateNodegroupVersion",
+      "UpdatePodIdentityAssociation",
+      "MutateViaKubernetesApi"
+    ],
+    "Read": [
+      "DescribeAccessEntry",
+      "DescribeAddon",
+      "DescribeAddonConfiguration",
+      "DescribeAddonVersions",
+      "DescribeCapability",
+      "DescribeCertificateAuthority",
+      "DescribeCluster",
+      "DescribeClusterVersions",
+      "DescribeEksAnywhereSubscription",
+      "DescribeFargateProfile",
+      "DescribeIdentityProviderConfig",
+      "DescribeInsight",
+      "DescribeInsightsRefresh",
+      "DescribeNodegroup",
+      "DescribePodIdentityAssociation",
+      "DescribeUpdate",
+      "ListDashboardData",
+      "ListDashboardResources",
+      "ListTagsForResource",
+      "AccessKubernetesApi"
+    ],
+    "List": [
+      "ListAccessEntries",
+      "ListAccessPolicies",
+      "ListAddons",
+      "ListAssociatedAccessPolicies",
+      "ListCapabilities",
+      "ListCertificateAuthorities",
+      "ListClusters",
+      "ListEksAnywhereSubscriptions",
+      "ListFargateProfiles",
+      "ListIdentityProviderConfigs",
+      "ListInsights",
+      "ListNodegroups",
+      "ListPodIdentityAssociations",
+      "ListUpdates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivateCertificateAuthority",
+      "methodName": "toActivateCertificateAuthority",
+      "description": "Grants permission to activate a certificate authority for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html"
+    },
+    {
+      "name": "AssociateAccessPolicy",
+      "methodName": "toAssociateAccessPolicy",
+      "description": "Grants permission to associate an Amazon EKS access policy to an Amazon EKS access entry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateAccessPolicy.html"
+    },
+    {
+      "name": "AssociateEncryptionConfig",
+      "methodName": "toAssociateEncryptionConfig",
+      "description": "Grants permission to associate encryption configuration to a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateEncryptionConfig.html"
+    },
+    {
+      "name": "AssociateIdentityProviderConfig",
+      "methodName": "toAssociateIdentityProviderConfig",
+      "description": "Grants permission to associate an identity provider configuration to a cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateIdentityProviderConfig.html"
+    },
+    {
+      "name": "CancelUpdate",
+      "methodName": "toCancelUpdate",
+      "description": "Grants permission to cancel an in-progress Kubernetes version update for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CancelUpdate.html"
+    },
+    {
+      "name": "CreateAccessEntry",
+      "methodName": "toCreateAccessEntry",
+      "description": "Grants permission to create an Amazon EKS access entry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAccessEntry.html"
+    },
+    {
+      "name": "CreateAddon",
+      "methodName": "toCreateAddon",
+      "description": "Grants permission to create an Amazon EKS add-on",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html"
+    },
+    {
+      "name": "CreateCapability",
+      "methodName": "toCreateCapability",
+      "description": "Grants permission to create a capability for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCapability.html"
+    },
+    {
+      "name": "CreateCertificateAuthority",
+      "methodName": "toCreateCertificateAuthority",
+      "description": "Grants permission to create a certificate authority for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCertificateAuthority.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifAuthenticationMode",
+        "ifBlockStorageEnabled",
+        "ifBootstrapClusterCreatorAdminPermissions",
+        "ifBootstrapSelfManagedAddons",
+        "ifComputeConfigEnabled",
+        "ifControlPlaneEgressMode",
+        "ifControlPlaneScalingTier",
+        "ifDeletionProtection",
+        "ifElasticLoadBalancingEnabled",
+        "ifEncryptionConfigProviderKeyArns",
+        "ifEndpointPrivateAccess",
+        "ifEndpointPublicAccess",
+        "ifKubeApiServerConfig",
+        "ifKubeControllerManagerConfig",
+        "ifKubernetesVersion",
+        "ifKubeSchedulerConfig",
+        "ifLoggingType",
+        "ifSupportType",
+        "ifZonalShiftEnabled"
+      ]
+    },
+    {
+      "name": "CreateEksAnywhereSubscription",
+      "methodName": "toCreateEksAnywhereSubscription",
+      "description": "Grants permission to create an EKS Anywhere subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateEksAnywhereSubscription.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFargateProfile",
+      "methodName": "toCreateFargateProfile",
+      "description": "Grants permission to create an AWS Fargate profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateFargateProfile.html"
+    },
+    {
+      "name": "CreateNodegroup",
+      "methodName": "toCreateNodegroup",
+      "description": "Grants permission to create an Amazon EKS Nodegroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateNodegroup.html"
+    },
+    {
+      "name": "CreatePodIdentityAssociation",
+      "methodName": "toCreatePodIdentityAssociation",
+      "description": "Grants permission to create an EKS Pod Identity association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreatePodIdentityAssociation.html"
+    },
+    {
+      "name": "DeleteAccessEntry",
+      "methodName": "toDeleteAccessEntry",
+      "description": "Grants permission to delete an Amazon EKS access entry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteAccessEntry.html"
+    },
+    {
+      "name": "DeleteAddon",
+      "methodName": "toDeleteAddon",
+      "description": "Grants permission to delete an Amazon EKS add-on",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteAddon.html"
+    },
+    {
+      "name": "DeleteCapability",
+      "methodName": "toDeleteCapability",
+      "description": "Grants permission to delete a capability from an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCapability.html"
+    },
+    {
+      "name": "DeleteCertificateAuthority",
+      "methodName": "toDeleteCertificateAuthority",
+      "description": "Grants permission to delete a certificate authority from an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCertificateAuthority.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteEksAnywhereSubscription",
+      "methodName": "toDeleteEksAnywhereSubscription",
+      "description": "Grants permission to describe an EKS Anywhere subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteEksAnywhereSubscription.html"
+    },
+    {
+      "name": "DeleteFargateProfile",
+      "methodName": "toDeleteFargateProfile",
+      "description": "Grants permission to delete an AWS Fargate profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteFargateProfile.html"
+    },
+    {
+      "name": "DeleteNodegroup",
+      "methodName": "toDeleteNodegroup",
+      "description": "Grants permission to delete an Amazon EKS Nodegroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteNodegroup.html"
+    },
+    {
+      "name": "DeletePodIdentityAssociation",
+      "methodName": "toDeletePodIdentityAssociation",
+      "description": "Grants permission to delete an EKS Pod Identity association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeletePodIdentityAssociation.html"
+    },
+    {
+      "name": "DeregisterCluster",
+      "methodName": "toDeregisterCluster",
+      "description": "Grants permission to deregister an External cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeregisterCluster.html"
+    },
+    {
+      "name": "DescribeAccessEntry",
+      "methodName": "toDescribeAccessEntry",
+      "description": "Grants permission to describe an Amazon EKS access entry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAccessEntry.html"
+    },
+    {
+      "name": "DescribeAddon",
+      "methodName": "toDescribeAddon",
+      "description": "Grants permission to retrieve descriptive information about an Amazon EKS add-on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddon.html"
+    },
+    {
+      "name": "DescribeAddonConfiguration",
+      "methodName": "toDescribeAddonConfiguration",
+      "description": "Grants permission to list configuration options about an Amazon EKS add-on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"
+    },
+    {
+      "name": "DescribeAddonVersions",
+      "methodName": "toDescribeAddonVersions",
+      "description": "Grants permission to retrieve descriptive version information about the add-ons that Amazon EKS Add-ons supports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"
+    },
+    {
+      "name": "DescribeCapability",
+      "methodName": "toDescribeCapability",
+      "description": "Grants permission to describe a capability for an Amazon EKS cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCapability.html"
+    },
+    {
+      "name": "DescribeCertificateAuthority",
+      "methodName": "toDescribeCertificateAuthority",
+      "description": "Grants permission to retrieve descriptive information about a certificate authority for an Amazon EKS cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCertificateAuthority.html"
+    },
+    {
+      "name": "DescribeCluster",
+      "methodName": "toDescribeCluster",
+      "description": "Grants permission to retrieve descriptive information about an Amazon EKS cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html"
+    },
+    {
+      "name": "DescribeClusterVersions",
+      "methodName": "toDescribeClusterVersions",
+      "description": "Grants permission to retrieve descriptive information about Kubernetes versions that Amazon EKS clusters support",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeClusterVersions.html"
+    },
+    {
+      "name": "DescribeEksAnywhereSubscription",
+      "methodName": "toDescribeEksAnywhereSubscription",
+      "description": "Grants permission to describe an EKS Anywhere subscription",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeEksAnywhereSubscription.html"
+    },
+    {
+      "name": "DescribeFargateProfile",
+      "methodName": "toDescribeFargateProfile",
+      "description": "Grants permission to retrieve descriptive information about an AWS Fargate profile associated with a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeFargateProfile.html"
+    },
+    {
+      "name": "DescribeIdentityProviderConfig",
+      "methodName": "toDescribeIdentityProviderConfig",
+      "description": "Grants permission to retrieve descriptive information about an Idp config associated with a cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeIdentityProviderConfig.html"
+    },
+    {
+      "name": "DescribeInsight",
+      "methodName": "toDescribeInsight",
+      "description": "Grants permission to retrieve descriptive information of a detected insight for a specified cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeInsight.html"
+    },
+    {
+      "name": "DescribeInsightsRefresh",
+      "methodName": "toDescribeInsightsRefresh",
+      "description": "Grants permission to retrieve the status of the latest on-demand cluster insights refresh operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeInsightsRefresh.html"
+    },
+    {
+      "name": "DescribeNodegroup",
+      "methodName": "toDescribeNodegroup",
+      "description": "Grants permission to retrieve descriptive information about an Amazon EKS nodegroup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeNodegroup.html"
+    },
+    {
+      "name": "DescribePodIdentityAssociation",
+      "methodName": "toDescribePodIdentityAssociation",
+      "description": "Grants permission to describe an EKS Pod Identity association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribePodIdentityAssociation.html"
+    },
+    {
+      "name": "DescribeUpdate",
+      "methodName": "toDescribeUpdate",
+      "description": "Grants permission to retrieve a given update for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html"
+    },
+    {
+      "name": "DisassociateAccessPolicy",
+      "methodName": "toDisassociateAccessPolicy",
+      "description": "Grants permission to disassociate an Amazon EKS access policy from an Amazon EKS acces entry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DisassociateAccessPolicy.html"
+    },
+    {
+      "name": "DisassociateIdentityProviderConfig",
+      "methodName": "toDisassociateIdentityProviderConfig",
+      "description": "Grants permission to delete an asssociated Idp config",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DisassociateIdentityProviderConfig.html"
+    },
+    {
+      "name": "ListAccessEntries",
+      "methodName": "toListAccessEntries",
+      "description": "Grants permission to list all Amazon EKS access entries",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAccessEntries.html"
+    },
+    {
+      "name": "ListAccessPolicies",
+      "methodName": "toListAccessPolicies",
+      "description": "Grants permission to list Amazon EKS access policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAccessPolicies.html"
+    },
+    {
+      "name": "ListAddons",
+      "methodName": "toListAddons",
+      "description": "Grants permission to list the Amazon EKS add-ons in your AWS account (in the specified or default region) for a given cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"
+    },
+    {
+      "name": "ListAssociatedAccessPolicies",
+      "methodName": "toListAssociatedAccessPolicies",
+      "description": "Grants permission to list associated access policy on and Amazon EKS access entry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAssociatedAccessPolicies.html"
+    },
+    {
+      "name": "ListCapabilities",
+      "methodName": "toListCapabilities",
+      "description": "Grants permission to list capabilities for an Amazon EKS cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListCapabilities.html"
+    },
+    {
+      "name": "ListCertificateAuthorities",
+      "methodName": "toListCertificateAuthorities",
+      "description": "Grants permission to list the certificate authorities for an Amazon EKS cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListCertificateAuthorities.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to list the Amazon EKS clusters in your AWS account (in the specified or default region)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html"
+    },
+    {
+      "name": "ListDashboardData",
+      "methodName": "toListDashboardData",
+      "description": "Grants permission to list dashboard data. The Amazon EKS Dashboard aggregates information about cluster resources across multiple accounts and regions. The dashboard includes information about EC2 Instances and EKS Cluster versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListDashboardData.html"
+    },
+    {
+      "name": "ListDashboardResources",
+      "methodName": "toListDashboardResources",
+      "description": "Grants permission to list dashboard resources. The Amazon EKS Dashboard aggregates information about cluster resources across multiple accounts and regions. The dashboard includes information about EC2 Instances and EKS Cluster versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListDashboardResources.html"
+    },
+    {
+      "name": "ListEksAnywhereSubscriptions",
+      "methodName": "toListEksAnywhereSubscriptions",
+      "description": "Grants permission to list EKS Anywhere subscriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListEksAnywhereSubscriptions.html"
+    },
+    {
+      "name": "ListFargateProfiles",
+      "methodName": "toListFargateProfiles",
+      "description": "Grants permission to list the AWS Fargate profiles in your AWS account (in the specified or default region) associated with a given cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListFargateProfiles.html"
+    },
+    {
+      "name": "ListIdentityProviderConfigs",
+      "methodName": "toListIdentityProviderConfigs",
+      "description": "Grants permission to list the Idp configs in your AWS account (in the specified or default region) associated with a given cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListIdentityProviderConfigs.html"
+    },
+    {
+      "name": "ListInsights",
+      "methodName": "toListInsights",
+      "description": "Grants permission to list all detected insights for a specified cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListInsights.html"
+    },
+    {
+      "name": "ListNodegroups",
+      "methodName": "toListNodegroups",
+      "description": "Grants permission to list the Amazon EKS nodegroups in your AWS account (in the specified or default region) attached to given cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListNodegroups.html"
+    },
+    {
+      "name": "ListPodIdentityAssociations",
+      "methodName": "toListPodIdentityAssociations",
+      "description": "Grants permission to list EKS Pod Identity associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListPodIdentityAssociations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUpdates",
+      "methodName": "toListUpdates",
+      "description": "Grants permission to list the updates for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListUpdates.html"
+    },
+    {
+      "name": "RegisterCluster",
+      "methodName": "toRegisterCluster",
+      "description": "Grants permission to register an External cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterCluster.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "StartInsightsRefresh",
+      "methodName": "toStartInsightsRefresh",
+      "description": "Grants permission to initiate an on-demand refresh operation for cluster insights, getting the latest analysis outside of the standard refresh schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_StartInsightsRefresh.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccessEntry",
+      "methodName": "toUpdateAccessEntry",
+      "description": "Grants permission to update an Amazon EKS access entry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAccessEntry.html"
+    },
+    {
+      "name": "UpdateAddon",
+      "methodName": "toUpdateAddon",
+      "description": "Grants permission to update Amazon EKS add-on configurations, such as the VPC-CNI version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html"
+    },
+    {
+      "name": "UpdateCapability",
+      "methodName": "toUpdateCapability",
+      "description": "Grants permission to update a capability for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateCapability.html"
+    },
+    {
+      "name": "UpdateClusterConfig",
+      "methodName": "toUpdateClusterConfig",
+      "description": "Grants permission to update Amazon EKS cluster configurations (eg: API server endpoint access)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html"
+    },
+    {
+      "name": "UpdateClusterVersion",
+      "methodName": "toUpdateClusterVersion",
+      "description": "Grants permission to update the Kubernetes version of an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html"
+    },
+    {
+      "name": "UpdateEksAnywhereSubscription",
+      "methodName": "toUpdateEksAnywhereSubscription",
+      "description": "Grants permission to update an EKS Anywhere subscription",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateEksAnywhereSubscription.html"
+    },
+    {
+      "name": "UpdateNodegroupConfig",
+      "methodName": "toUpdateNodegroupConfig",
+      "description": "Grants permission to update Amazon EKS nodegroup configurations (eg: min/max/desired capacity or labels)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupConfig.html"
+    },
+    {
+      "name": "UpdateNodegroupVersion",
+      "methodName": "toUpdateNodegroupVersion",
+      "description": "Grants permission to update the Kubernetes version of an Amazon EKS nodegroup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html"
+    },
+    {
+      "name": "UpdatePodIdentityAssociation",
+      "methodName": "toUpdatePodIdentityAssociation",
+      "description": "Grants permission to update an EKS Pod Identity association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdatePodIdentityAssociation.html"
+    },
+    {
+      "name": "AccessKubernetesApi",
+      "methodName": "toAccessKubernetesApi",
+      "description": "Grants permission to view Kubernetes objects via AWS EKS console",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/view-workloads.html"
+    },
+    {
+      "name": "MutateViaKubernetesApi",
+      "methodName": "toMutateViaKubernetesApi",
+      "description": "Grants permission to modify Kubernetes objects via AWS console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/mutate-workloads.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "access-entry",
+      "methodName": "onAccessEntry",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:access-entry/${ClusterName}/${IamIdentityType}/${IamIdentityAccountID}/${IamIdentityName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IamIdentityType",
+          "name": "iamIdentityType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IamIdentityAccountID",
+          "name": "iamIdentityAccountID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IamIdentityName",
+          "name": "iamIdentityName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifAccessEntryType",
+        "ifClusterName",
+        "ifKubernetesGroups",
+        "ifPrincipalArn",
+        "ifUsername"
+      ]
+    },
+    {
+      "name": "access-policy",
+      "methodName": "onAccessPolicy",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/access-policies.html",
+      "arn": "arn:${Partition}:eks::aws:cluster-access-policy/${AccessPolicyName}",
+      "placeholders": [
+        {
+          "placeholder": "AccessPolicyName",
+          "name": "accessPolicyName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "addon",
+      "methodName": "onAddon",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:addon/${ClusterName}/${AddonName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AddonName",
+          "name": "addonName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "capability",
+      "methodName": "onCapability",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/capabilities.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:capability/${ClusterName}/${CapabilityType}/${CapabilityName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CapabilityType",
+          "name": "capabilityType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CapabilityName",
+          "name": "capabilityName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/clusters.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_eks",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
+    },
+    {
+      "name": "dashboard",
+      "methodName": "onDashboard",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/cluster-dashboard.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:dashboard/${DashboardName}",
+      "placeholders": [
+        {
+          "placeholder": "DashboardName",
+          "name": "dashboardName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "eks-anywhere-subscription",
+      "methodName": "onEksAnywhereSubscription",
+      "url": "https://anywhere.eks.amazonaws.com/docs/clustermgmt/support/cluster-license/",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:eks-anywhere-subscription/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "fargateprofile",
+      "methodName": "onFargateprofile",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FargateProfileName",
+          "name": "fargateProfileName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "identityproviderconfig",
+      "methodName": "onIdentityproviderconfig",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:identityproviderconfig/${ClusterName}/${IdentityProviderType}/${IdentityProviderConfigName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdentityProviderType",
+          "name": "identityProviderType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IdentityProviderConfigName",
+          "name": "identityProviderConfigName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "nodegroup",
+      "methodName": "onNodegroup",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "NodegroupName",
+          "name": "nodegroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "podidentityassociation",
+      "methodName": "onPodidentityassociation",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:podidentityassociation/${ClusterName}/${UUID}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UUID",
+          "name": "uUID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a key that is present in the request the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toAssociateIdentityProviderConfig",
+        "toCreateAccessEntry",
+        "toCreateAddon",
+        "toCreateCapability",
+        "toCreateCluster",
+        "toCreateEksAnywhereSubscription",
+        "toCreateFargateProfile",
+        "toCreateNodegroup",
+        "toCreatePodIdentityAssociation",
+        "toRegisterCluster",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toActivateCertificateAuthority",
+        "toAssociateAccessPolicy",
+        "toAssociateEncryptionConfig",
+        "toAssociateIdentityProviderConfig",
+        "toCancelUpdate",
+        "toCreateAccessEntry",
+        "toCreateAddon",
+        "toCreateCapability",
+        "toCreateCertificateAuthority",
+        "toCreateFargateProfile",
+        "toCreateNodegroup",
+        "toCreatePodIdentityAssociation",
+        "toDeleteAccessEntry",
+        "toDeleteAddon",
+        "toDeleteCapability",
+        "toDeleteCertificateAuthority",
+        "toDeleteCluster",
+        "toDeleteEksAnywhereSubscription",
+        "toDeleteFargateProfile",
+        "toDeleteNodegroup",
+        "toDeletePodIdentityAssociation",
+        "toDeregisterCluster",
+        "toDescribeAccessEntry",
+        "toDescribeAddon",
+        "toDescribeCapability",
+        "toDescribeCertificateAuthority",
+        "toDescribeCluster",
+        "toDescribeEksAnywhereSubscription",
+        "toDescribeFargateProfile",
+        "toDescribeIdentityProviderConfig",
+        "toDescribeInsight",
+        "toDescribeInsightsRefresh",
+        "toDescribeNodegroup",
+        "toDescribePodIdentityAssociation",
+        "toDescribeUpdate",
+        "toDisassociateAccessPolicy",
+        "toDisassociateIdentityProviderConfig",
+        "toListAccessEntries",
+        "toListAddons",
+        "toListAssociatedAccessPolicies",
+        "toListCapabilities",
+        "toListCertificateAuthorities",
+        "toListDashboardData",
+        "toListDashboardResources",
+        "toListFargateProfiles",
+        "toListIdentityProviderConfigs",
+        "toListInsights",
+        "toListNodegroups",
+        "toListPodIdentityAssociations",
+        "toListTagsForResource",
+        "toListUpdates",
+        "toStartInsightsRefresh",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessEntry",
+        "toUpdateAddon",
+        "toUpdateCapability",
+        "toUpdateClusterConfig",
+        "toUpdateClusterVersion",
+        "toUpdateEksAnywhereSubscription",
+        "toUpdateNodegroupConfig",
+        "toUpdateNodegroupVersion",
+        "toUpdatePodIdentityAssociation",
+        "toAccessKubernetesApi",
+        "toMutateViaKubernetesApi"
+      ],
+      "relatedResourceTypes": [
+        "access-entry",
+        "addon",
+        "capability",
+        "cluster",
+        "dashboard",
+        "eks-anywhere-subscription",
+        "fargateprofile",
+        "identityproviderconfig",
+        "nodegroup",
+        "podidentityassociation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the list of all the tag key names present in the request the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toAssociateIdentityProviderConfig",
+        "toCreateAccessEntry",
+        "toCreateAddon",
+        "toCreateCapability",
+        "toCreateCluster",
+        "toCreateEksAnywhereSubscription",
+        "toCreateFargateProfile",
+        "toCreateNodegroup",
+        "toCreatePodIdentityAssociation",
+        "toRegisterCluster",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:accessEntryType",
+      "methodName": "ifAccessEntryType",
+      "description": "Filters access by the access entry type present in the access entry requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toCreateAccessEntry",
+        "toDeleteAccessEntry",
+        "toDescribeAccessEntry",
+        "toDisassociateAccessPolicy",
+        "toListAssociatedAccessPolicies",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessEntry"
+      ],
+      "relatedResourceTypes": [
+        "access-entry"
+      ],
+      "keyLiteral": "accessEntryType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:accessScope",
+      "methodName": "ifAccessScope",
+      "description": "Filters access by the accessScope present in the associate / disassociate access policy requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toDisassociateAccessPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "accessScope",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:authenticationMode",
+      "methodName": "ifAuthenticationMode",
+      "description": "Filters access by the authenticationMode present in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "authenticationMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:blockStorageEnabled",
+      "methodName": "ifBlockStorageEnabled",
+      "description": "Filters access by the block storage enabled parameter in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "blockStorageEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:bootstrapClusterCreatorAdminPermissions",
+      "methodName": "ifBootstrapClusterCreatorAdminPermissions",
+      "description": "Filters access by the bootstrapClusterCreatorAdminPermissions present in the create cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "bootstrapClusterCreatorAdminPermissions",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:bootstrapSelfManagedAddons",
+      "methodName": "ifBootstrapSelfManagedAddons",
+      "description": "Filters access by the bootstrapSelfManagedAddons present in the create cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "bootstrapSelfManagedAddons",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:clientId",
+      "methodName": "ifClientId",
+      "description": "Filters access by the clientId present in the associateIdentityProviderConfig request the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateIdentityProviderConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "clientId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:clusterName",
+      "methodName": "ifClusterName",
+      "description": "Filters access by the clusterName present in the access entry requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toDeleteAccessEntry",
+        "toDescribeAccessEntry",
+        "toDisassociateAccessPolicy",
+        "toListAssociatedAccessPolicies",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessEntry"
+      ],
+      "relatedResourceTypes": [
+        "access-entry"
+      ],
+      "keyLiteral": "clusterName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:computeConfigEnabled",
+      "methodName": "ifComputeConfigEnabled",
+      "description": "Filters access by the compute config enabled parameter in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "computeConfigEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:controlPlaneEgressMode",
+      "methodName": "ifControlPlaneEgressMode",
+      "description": "Filters access by the control plane egress mode specified in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "controlPlaneEgressMode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:controlPlaneScalingTier",
+      "methodName": "ifControlPlaneScalingTier",
+      "description": "Filters access by the control plane scaling tier in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "controlPlaneScalingTier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:deletionProtection",
+      "methodName": "ifDeletionProtection",
+      "description": "Filters access by the deletion protection setting in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "deletionProtection",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:elasticLoadBalancingEnabled",
+      "methodName": "ifElasticLoadBalancingEnabled",
+      "description": "Filters access by the elastic load balancing enabled parameter in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "elasticLoadBalancingEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:encryptionConfigProviderKeyArns",
+      "methodName": "ifEncryptionConfigProviderKeyArns",
+      "description": "Filters access by the KMS key ARNs in the create cluster / Associate Encryption Config request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateEncryptionConfig",
+        "toCreateCluster"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "encryptionConfigProviderKeyArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "eks:endpointPrivateAccess",
+      "methodName": "ifEndpointPrivateAccess",
+      "description": "Filters access by the endpoint private access setting in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "endpointPrivateAccess",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:endpointPublicAccess",
+      "methodName": "ifEndpointPublicAccess",
+      "description": "Filters access by the endpoint public access setting in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "endpointPublicAccess",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:issuerUrl",
+      "methodName": "ifIssuerUrl",
+      "description": "Filters access by the issuerUrl present in the associateIdentityProviderConfig request the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateIdentityProviderConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "issuerUrl",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:kubeApiServerConfig",
+      "methodName": "ifKubeApiServerConfig",
+      "description": "Filters access by whether the kube-api-server configuration is present in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "kubeApiServerConfig",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:kubeControllerManagerConfig",
+      "methodName": "ifKubeControllerManagerConfig",
+      "description": "Filters access by whether the kube-controller-manager configuration is present in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "kubeControllerManagerConfig",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:kubeSchedulerConfig",
+      "methodName": "ifKubeSchedulerConfig",
+      "description": "Filters access by whether the kube-scheduler configuration is present in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "kubeSchedulerConfig",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "eks:kubernetesGroups",
+      "methodName": "ifKubernetesGroups",
+      "description": "Filters access by the kubernetesGroups present in the access entry requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toCreateAccessEntry",
+        "toDeleteAccessEntry",
+        "toDescribeAccessEntry",
+        "toDisassociateAccessPolicy",
+        "toListAssociatedAccessPolicies",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessEntry"
+      ],
+      "relatedResourceTypes": [
+        "access-entry"
+      ],
+      "keyLiteral": "kubernetesGroups",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:kubernetesVersion",
+      "methodName": "ifKubernetesVersion",
+      "description": "Filters access by the Kubernetes version in the create cluster/ update cluster version request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterVersion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "kubernetesVersion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:loggingType/${type}",
+      "methodName": "ifLoggingType",
+      "description": "Filters access by the cluster logging enabled and type parameter in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "loggingType/",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool",
+      "keyParam": "type"
+    },
+    {
+      "key": "eks:namespaces",
+      "methodName": "ifNamespaces",
+      "description": "Filters access by the namespaces present in the associate / disassociate access policy requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toDisassociateAccessPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "namespaces",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:policyArn",
+      "methodName": "ifPolicyArn",
+      "description": "Filters access by the policyArn present in the access entry requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toDisassociateAccessPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "policyArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "eks:principalArn",
+      "methodName": "ifPrincipalArn",
+      "description": "Filters access by the principalArn present in the access entry requests requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toCreateAccessEntry",
+        "toDeleteAccessEntry",
+        "toDescribeAccessEntry",
+        "toDisassociateAccessPolicy",
+        "toListAssociatedAccessPolicies",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessEntry"
+      ],
+      "relatedResourceTypes": [
+        "access-entry"
+      ],
+      "keyLiteral": "principalArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "eks:supportType",
+      "methodName": "ifSupportType",
+      "description": "Filters access by the supportType present in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "supportType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:username",
+      "methodName": "ifUsername",
+      "description": "Filters access by the Kubernetes username present in the access entry requests the user makes to the EKS service",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toAssociateAccessPolicy",
+        "toCreateAccessEntry",
+        "toDeleteAccessEntry",
+        "toDescribeAccessEntry",
+        "toDisassociateAccessPolicy",
+        "toListAssociatedAccessPolicies",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAccessEntry"
+      ],
+      "relatedResourceTypes": [
+        "access-entry"
+      ],
+      "keyLiteral": "username",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "eks:zonalShiftEnabled",
+      "methodName": "ifZonalShiftEnabled",
+      "description": "Filters access by the zonal shift enabled setting in the create / update cluster request",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toUpdateClusterConfig"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "zonalShiftEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

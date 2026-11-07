@@ -1,0 +1,10 @@
+{
+    "Action": "s3:ListBucket",
+    "Effect": "Allow",
+    "Resource": "${Token[TOKEN.24]}"
+}
+{
+    "Action": "sns:Publish",
+    "Effect": "Allow",
+    "Resource": "${Token[TOKEN.27]}"
+}

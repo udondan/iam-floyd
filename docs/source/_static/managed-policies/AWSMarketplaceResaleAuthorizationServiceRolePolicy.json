@@ -1,0 +1,96 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowResaleAuthorizationShareActionsRAMCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ram:CreateResourceShare"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ram:RequestedResourceType": "aws-marketplace:Entity"
+        },
+        "ArnLike": {
+          "ram:ResourceArn": "arn:aws:aws-marketplace:*:*:*/ResaleAuthorization/*"
+        },
+        "Null": {
+          "ram:Principal": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowResaleAuthorizationShareActionsRAMAssociate",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AssociateResourceShare"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ],
+      "Condition": {
+        "Null": {
+          "ram:Principal": "false"
+        },
+        "StringEquals": {
+          "ram:ResourceShareName": "AWSMarketplaceResaleAuthorization"
+        }
+      }
+    },
+    {
+      "Sid": "AllowResaleAuthorizationShareActionsRAMAcceptDelete",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AcceptResourceShareInvitation",
+        "ram:DeleteResourceShare"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ram:ResourceShareName": "AWSMarketplaceResaleAuthorization"
+        }
+      }
+    },
+    {
+      "Sid": "AllowResaleAuthorizationShareActionsRAMGet",
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShareInvitations",
+        "ram:GetResourceShareAssociations"
+      ],
+      "Resource": [
+        "arn:aws:ram:*:*:*"
+      ]
+    },
+    {
+      "Sid": "AllowResaleAuthorizationShareActionsMarketplace",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:PutResourcePolicy",
+        "aws-marketplace:GetResourcePolicy",
+        "aws-marketplace:DeleteResourcePolicy"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:*/ResaleAuthorization/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "ram.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowResaleAuthorizationShareActionsMarketplaceDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:*/ResaleAuthorization/*"
+    }
+  ]
+}

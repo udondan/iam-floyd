@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "vendor-insights:ListEntitledSecurityProfiles",
+        "vendor-insights:GetEntitledSecurityProfileSnapshot",
+        "vendor-insights:ListEntitledSecurityProfileSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "artifact:GetReport",
+        "artifact:GetReportMetadata",
+        "artifact:GetTermForReport",
+        "artifact:ListReports"
+      ],
+      "Resource": "arn:aws:artifact:*::report/*"
+    }
+  ]
+}

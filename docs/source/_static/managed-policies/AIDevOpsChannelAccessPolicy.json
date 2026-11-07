@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowChatActions",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateChat",
+        "aidevops:SendMessage"
+      ],
+      "Resource": "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAgentSpaceActions",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateAsset",
+        "aidevops:UpdateAsset",
+        "aidevops:DeleteAsset",
+        "aidevops:CreateAssetFile",
+        "aidevops:UpdateAssetFile",
+        "aidevops:DeleteAssetFile",
+        "aidevops:GetAsset",
+        "aidevops:GetAssetContent",
+        "aidevops:GetAssetFile",
+        "aidevops:ListAssets",
+        "aidevops:ListAssetFiles",
+        "aidevops:CreateBacklogTask",
+        "aidevops:UpdateBacklogTask",
+        "aidevops:UpdateRecommendation",
+        "aidevops:CreateTrigger",
+        "aidevops:UpdateTrigger",
+        "aidevops:DeleteTrigger",
+        "aidevops:GetBacklogTask",
+        "aidevops:ListBacklogTasks",
+        "aidevops:GetRecommendation",
+        "aidevops:ListRecommendations",
+        "aidevops:ListTriggers",
+        "aidevops:ListGoals",
+        "aidevops:ListExecutions",
+        "aidevops:ListJournalRecords",
+        "aidevops:GetAssociation",
+        "aidevops:ListAssociations"
+      ],
+      "Resource": [
+        "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}",
+        "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

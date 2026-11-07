@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SiteWiseAssetReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iotsitewise:DescribeAsset"
+      ],
+      "Resource": [
+        "arn:aws:iotsitewise:*:*:asset/*"
+      ]
+    },
+    {
+      "Sid": "SiteWiseAssetModelReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iotsitewise:DescribeAssetModel"
+      ],
+      "Resource": [
+        "arn:aws:iotsitewise:*:*:asset-model/*"
+      ]
+    },
+    {
+      "Sid": "SiteWiseAssetModelAndAssetListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iotsitewise:ListAssets",
+        "iotsitewise:ListAssetModels"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "TwinMakerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iottwinmaker:GetEntity",
+        "iottwinmaker:CreateEntity",
+        "iottwinmaker:UpdateEntity",
+        "iottwinmaker:DeleteEntity",
+        "iottwinmaker:ListEntities",
+        "iottwinmaker:GetComponentType",
+        "iottwinmaker:CreateComponentType",
+        "iottwinmaker:UpdateComponentType",
+        "iottwinmaker:DeleteComponentType",
+        "iottwinmaker:ListComponentTypes"
+      ],
+      "Resource": [
+        "arn:aws:iottwinmaker:*:*:workspace/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "iottwinmaker:linkedServices": [
+            "IOTSITEWISE"
+          ]
+        }
+      }
+    }
+  ]
+}

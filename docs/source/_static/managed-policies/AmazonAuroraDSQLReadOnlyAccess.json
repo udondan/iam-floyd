@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DsqlReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:GetClusterPolicy",
+        "dsql:GetCluster",
+        "dsql:GetVpcEndpointServiceName",
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource",
+        "dsql:GetStream",
+        "dsql:ListStreams"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RelatedServicesPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

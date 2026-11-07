@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SyncToProton",
+      "Effect": "Allow",
+      "Action": [
+        "proton:UpdateServiceTemplateVersion",
+        "proton:UpdateServiceTemplate",
+        "proton:UpdateEnvironmentTemplateVersion",
+        "proton:UpdateEnvironmentTemplate",
+        "proton:GetServiceTemplateVersion",
+        "proton:GetServiceTemplate",
+        "proton:GetEnvironmentTemplateVersion",
+        "proton:GetEnvironmentTemplate",
+        "proton:DeleteServiceTemplateVersion",
+        "proton:DeleteEnvironmentTemplateVersion",
+        "proton:CreateServiceTemplateVersion",
+        "proton:CreateServiceTemplate",
+        "proton:CreateEnvironmentTemplateVersion",
+        "proton:CreateEnvironmentTemplate",
+        "proton:ListEnvironmentTemplateVersions",
+        "proton:ListServiceTemplateVersions",
+        "proton:CreateEnvironmentTemplateMajorVersion",
+        "proton:CreateServiceTemplateMajorVersion"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AccessGitRepos",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:UseConnection",
+        "codeconnections:UseConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ]
+    }
+  ]
+}

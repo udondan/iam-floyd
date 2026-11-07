@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "HealthAPIOrganizationView0",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

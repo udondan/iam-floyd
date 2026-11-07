@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "filename": "pcs",
+  "className": "Pcs",
+  "name": "pcs",
+  "servicePrefix": "pcs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pcs.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCluster",
+      "CreateComputeNodeGroup",
+      "CreateQueue",
+      "DeleteCluster",
+      "DeleteComputeNodeGroup",
+      "DeleteQueue",
+      "RegisterComputeNodeGroupInstance",
+      "TagResource",
+      "UntagResource",
+      "UpdateCluster",
+      "UpdateComputeNodeGroup",
+      "UpdateQueue",
+      "AllowVendedLogDeliveryForResource"
+    ],
+    "Read": [
+      "GetCluster",
+      "GetComputeNodeGroup",
+      "GetQueue",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListClusters",
+      "ListComputeNodeGroups",
+      "ListQueues"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create clusters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_CreateCluster.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateComputeNodeGroup",
+      "methodName": "toCreateComputeNodeGroup",
+      "description": "Grants permission to create compute node groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_CreateComputeNodeGroup.html"
+    },
+    {
+      "name": "CreateQueue",
+      "methodName": "toCreateQueue",
+      "description": "Grants permission to create queues",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_CreateQueue.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete clusters",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteComputeNodeGroup",
+      "methodName": "toDeleteComputeNodeGroup",
+      "description": "Grants permission to delete compute node groups",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_DeleteComputeNodeGroup.html"
+    },
+    {
+      "name": "DeleteQueue",
+      "methodName": "toDeleteQueue",
+      "description": "Grants permission to delete queues",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_DeleteQueue.html"
+    },
+    {
+      "name": "GetCluster",
+      "methodName": "toGetCluster",
+      "description": "Grants permission to get cluster properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_GetCluster.html"
+    },
+    {
+      "name": "GetComputeNodeGroup",
+      "methodName": "toGetComputeNodeGroup",
+      "description": "Grants permission to get compute node group properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_GetComputeNodeGroup.html"
+    },
+    {
+      "name": "GetQueue",
+      "methodName": "toGetQueue",
+      "description": "Grants permission to get queue properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_GetQueue.html"
+    },
+    {
+      "name": "ListClusters",
+      "methodName": "toListClusters",
+      "description": "Grants permission to list clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_ListClusters.html"
+    },
+    {
+      "name": "ListComputeNodeGroups",
+      "methodName": "toListComputeNodeGroups",
+      "description": "Grants permission to list compute node groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_ListComputeNodeGroups.html"
+    },
+    {
+      "name": "ListQueues",
+      "methodName": "toListQueues",
+      "description": "Grants permission to list queues",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_ListQueues.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterComputeNodeGroupInstance",
+      "methodName": "toRegisterComputeNodeGroupInstance",
+      "description": "Grants permission to register a compute instance in a compute node group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_RegisterComputeNodeGroupInstance.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permission to update cluster properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_UpdateCluster.html"
+    },
+    {
+      "name": "UpdateComputeNodeGroup",
+      "methodName": "toUpdateComputeNodeGroup",
+      "description": "Grants permission to update compute node group properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_UpdateComputeNodeGroup.html"
+    },
+    {
+      "name": "UpdateQueue",
+      "methodName": "toUpdateQueue",
+      "description": "Grants permission to update queue properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_UpdateQueue.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for AWS PCS cluster logs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pcs/latest/userguide/monitoring_scheduler-logs.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_Cluster.html",
+      "arn": "arn:${Partition}:pcs:${Region}:${Account}:cluster/${ClusterIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterIdentifier",
+          "name": "clusterIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_pcs",
+        "interface": "IClusterRef",
+        "property": "clusterRef",
+        "arn": "clusterArn"
+      }
+    },
+    {
+      "name": "computenodegroup",
+      "methodName": "onComputenodegroup",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_ComputeNodeGroup.html",
+      "arn": "arn:${Partition}:pcs:${Region}:${Account}:cluster/${ClusterIdentifier}/computenodegroup/${ComputeNodeGroupIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterIdentifier",
+          "name": "clusterIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ComputeNodeGroupIdentifier",
+          "name": "computeNodeGroupIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "queue",
+      "methodName": "onQueue",
+      "url": "https://docs.aws.amazon.com/pcs/latest/APIReference/API_Queue.html",
+      "arn": "arn:${Partition}:pcs:${Region}:${Account}:cluster/${ClusterIdentifier}/queue/${QueueIdentifier}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterIdentifier",
+          "name": "clusterIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QueueIdentifier",
+          "name": "queueIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateComputeNodeGroup",
+        "toCreateQueue",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateComputeNodeGroup",
+        "toCreateQueue",
+        "toDeleteCluster",
+        "toDeleteComputeNodeGroup",
+        "toDeleteQueue",
+        "toGetCluster",
+        "toGetComputeNodeGroup",
+        "toGetQueue",
+        "toListComputeNodeGroups",
+        "toListQueues",
+        "toRegisterComputeNodeGroupInstance",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCluster",
+        "toUpdateComputeNodeGroup",
+        "toUpdateQueue",
+        "toAllowVendedLogDeliveryForResource"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "computenodegroup",
+        "queue"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCluster",
+        "toCreateComputeNodeGroup",
+        "toCreateQueue",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

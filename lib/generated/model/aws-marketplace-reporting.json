@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-reporting",
+  "className": "AwsMarketplaceReporting",
+  "name": "aws-marketplace-reporting",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-reporting.html",
+  "accessLevelList": {
+    "Read": [
+      "GetBuyerDashboard"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetBuyerDashboard",
+      "methodName": "toGetBuyerDashboard",
+      "description": "Grants permission to view a dashboard that shows a buyer's AWS Marketplace purchase data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-reporting_GetBuyerDashboard.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Dashboard",
+      "methodName": "onDashboard",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-reporting_GetBuyerDashboard.html#API_marketplace-reporting_GetBuyerDashboard_RequestBody",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/Dashboard/${DashboardName}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FactTable",
+          "name": "factTable",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DashboardName",
+          "name": "dashboardName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListChangeSets",
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:DescribeEntity",
+        "aws-marketplace:ListAssessments",
+        "aws-marketplace:DescribeAssessment",
+        "ec2:DescribeImages",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetResourcePolicy"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "filename": "identitystore-auth",
+  "className": "IdentitystoreAuth",
+  "name": "identitystore-auth",
+  "servicePrefix": "identitystore-auth",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_identitystore-auth.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchDeleteSession"
+    ],
+    "Read": [
+      "BatchGetSession"
+    ],
+    "List": [
+      "ListSessions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchDeleteSession",
+      "methodName": "toBatchDeleteSession",
+      "description": "Grants permission to delete a batch of specified sessions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html"
+    },
+    {
+      "name": "BatchGetSession",
+      "methodName": "toBatchGetSession",
+      "description": "Grants permission to return session attributes for a batch of specified sessions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to retrieve a list of active sessions for the specified user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-app-session.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

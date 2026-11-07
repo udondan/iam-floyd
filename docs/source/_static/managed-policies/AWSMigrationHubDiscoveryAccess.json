@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "discovery:ListConfigurations",
+        "discovery:DescribeConfigurations"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ec2:*:*:image/*",
+        "arn:aws:ec2:*:*:volume/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "aws:migrationhub:source-id"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "dms:AddTagsToResource",
+      "Resource": [
+        "arn:aws:dms:*:*:endpoint:*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "aws:migrationhub:source-id"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstanceAttribute"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

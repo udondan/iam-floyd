@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "filename": "connector",
+  "className": "Awsconnector",
+  "name": "awsconnector",
+  "servicePrefix": "awsconnector",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconnector.html",
+  "accessLevelList": {
+    "Read": [
+      "GetConnectorHealth",
+      "ValidateConnectorId"
+    ],
+    "Write": [
+      "RegisterConnector"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetConnectorHealth",
+      "methodName": "toGetConnectorHealth",
+      "description": "Retrieves all health metrics that were published from the Server Migration Connector.",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions"
+    },
+    {
+      "name": "RegisterConnector",
+      "methodName": "toRegisterConnector",
+      "description": "Registers AWS Connector with AWS Connector Service.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions"
+    },
+    {
+      "name": "ValidateConnectorId",
+      "methodName": "toValidateConnectorId",
+      "description": "Validates Server Migration Connector Id that was registered with AWS Connector Service.",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}
