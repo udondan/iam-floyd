@@ -9,10 +9,10 @@
     "cdk": "npx cdk"
   },
   "devDependencies": {
-    "@swc/core": "1.16.20",
-    "@swc/helpers": "0.5.23",
-    "@types/node": "26.6.5",
-    "aws-cdk": "2.1146.1",
+    "@swc/core": "1.16.21",
+    "@swc/helpers": "0.5.24",
+    "@types/node": "26.6.6",
+    "aws-cdk": "2.1147.0",
     "aws-cdk-lib": "2.275.0",
     "constructs": "10.8.1",
     "regenerator-runtime": "0.14.1",
