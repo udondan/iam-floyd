@@ -182,6 +182,7 @@
   "healthlake.amazonaws.com": {},
   "honeycode.amazonaws.com": {},
   "iam.amazonaws.com": {},
+  "igw-firewall.network-firewall.amazonaws.com": {},
   "imagebuilder.amazonaws.com": {},
   "importexport.amazonaws.com": {},
   "inspector.amazonaws.com": {},
@@ -193,7 +194,9 @@
   "iotmanagedintegrations.amazonaws.com": {},
   "iotroborunner.amazonaws.com": {},
   "iotsitewise.amazonaws.com": {},
-  "iotthingsgraph.amazonaws.com": {},
+  "iotthingsgraph.amazonaws.com": {
+    "deprecated": "IAM rejects this service principal."
+  },
   "iottwinmaker.amazonaws.com": {},
   "ivs.amazonaws.com": {},
   "job.sagemaker.amazonaws.com": {},
@@ -276,6 +279,7 @@
   "outposts.amazonaws.com": {},
   "panorama.amazonaws.com": {},
   "partnercentral-account-management.amazonaws.com": {},
+  "partnercentral-account.amazonaws.com": {},
   "pcs.amazonaws.com": {},
   "permission.iq.amazonaws.com": {},
   "personalize.amazonaws.com": {},

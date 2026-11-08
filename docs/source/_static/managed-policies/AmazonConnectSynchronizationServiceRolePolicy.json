@@ -92,6 +92,7 @@
       "Effect": "Allow",
       "Action": [
         "app-integrations:CreateApplication",
+        "app-integrations:CreateApplicationAssociation",
         "app-integrations:GetApplication",
         "app-integrations:UpdateApplication",
         "app-integrations:DeleteApplication",
@@ -100,6 +101,22 @@
         "app-integrations:UntagResource"
       ],
       "Resource": "arn:aws:app-integrations:*:*:application/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAppIntegrationsScopedToApplicationAssociations",
+      "Effect": "Allow",
+      "Action": [
+        "app-integrations:DeleteApplicationAssociation",
+        "app-integrations:ListTagsForResource",
+        "app-integrations:TagResource",
+        "app-integrations:UntagResource"
+      ],
+      "Resource": "arn:aws:app-integrations:*:*:application-association/*",
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"

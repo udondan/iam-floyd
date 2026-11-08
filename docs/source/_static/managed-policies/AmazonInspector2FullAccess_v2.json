@@ -45,6 +45,7 @@
         "StringEquals": {
           "organizations:ServicePrincipal": [
             "inspector2.amazonaws.com",
+            "ami.inspector2.amazonaws.com",
             "agentless.inspector2.amazonaws.com",
             "thirdparty.inspector2.amazonaws.com"
           ]

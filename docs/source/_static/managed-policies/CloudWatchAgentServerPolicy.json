@@ -6,6 +6,7 @@
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData",
+        "cloudwatch:PutProfileRecords",
         "ec2:DescribeVolumes",
         "ec2:DescribeTags",
         "logs:PutLogEvents",

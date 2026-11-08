@@ -279,7 +279,10 @@
       "Action": [
         "aws-marketplace:StartTaxComplianceProfileChangeTask"
       ],
-      "Resource": "arn:aws:aws-marketplace:*:*:tax-compliance-profile-change-task/*"
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:tax-compliance-profile-change-task/*",
+        "arn:aws:aws-marketplace:*:*:tax-compliance-profile/*"
+      ]
     },
     {
       "Sid": "TaxComplianceProfileRead",

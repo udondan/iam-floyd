@@ -11,6 +11,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "CloudWatchProfilesAPIs",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutProfileRecords"
+      ],
+      "Resource": "arn:aws:cloudwatch:*:*:dataset/*"
+    },
+    {
       "Sid": "KMSDecryptForCMKDatasets",
       "Effect": "Allow",
       "Action": [

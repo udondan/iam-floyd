@@ -53,6 +53,38 @@
           "iam:AWSServiceName": "batch.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "BatchEksAccessEntryCreate",
+      "Effect": "Allow",
+      "Action": "eks:CreateAccessEntry",
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "eks:principalArn": "arn:aws:iam::*:role/aws-service-role/batch.amazonaws.com/AWSServiceRoleForBatch"
+        }
+      }
+    },
+    {
+      "Sid": "BatchEksAccessEntryManage",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeAccessEntry",
+        "eks:DeleteAccessEntry"
+      ],
+      "Resource": "arn:aws:eks:*:*:access-entry/*/role/*/AWSServiceRoleForBatch/*"
+    },
+    {
+      "Sid": "BatchEksAccessEntryAssociatePolicy",
+      "Effect": "Allow",
+      "Action": "eks:AssociateAccessPolicy",
+      "Resource": "arn:aws:eks:*:*:access-entry/*/role/*/AWSServiceRoleForBatch/*",
+      "Condition": {
+        "StringEquals": {
+          "eks:policyArn": "arn:aws:eks::aws:cluster-access-policy/AWSBatchClusterPolicy",
+          "eks:accessScope": "cluster"
+        }
+      }
     }
   ]
 }

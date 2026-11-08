@@ -30,6 +30,7 @@
         "partnercentral:ListEngagementResourceAssociations",
         "partnercentral:ListEngagements",
         "partnercentral:ListOpportunities",
+        "partnercentral:SearchOpportunities",
         "partnercentral:ListOpportunityFromEngagementTasks",
         "partnercentral:ListProspectingFromEngagementTasks",
         "partnercentral:ListResourceSnapshotJobs",

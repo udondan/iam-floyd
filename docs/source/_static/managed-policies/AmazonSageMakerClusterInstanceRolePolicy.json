@@ -64,6 +64,21 @@
         "ssmmessages:OpenDataChannel"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CloudwatchPutProfileRecordsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutProfileRecords"
+      ],
+      "Resource": [
+        "arn:aws:cloudwatch:*:*:dataset/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

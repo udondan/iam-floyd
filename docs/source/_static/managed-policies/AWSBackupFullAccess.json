@@ -212,11 +212,11 @@
       ],
       "Resource": "*",
       "Condition": {
-        "ForAnyValue:StringEquals": {
-          "kms:EncryptionContextKeys": "aws:backup:backup-vault"
-        },
         "Bool": {
           "kms:GrantIsForAWSResource": true
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:backup:backup-vault"
         },
         "StringLike": {
           "kms:ViaService": "backup.*.amazonaws.com"
@@ -433,13 +433,13 @@
         "arn:aws:redshift-serverless:*:*:snapshot/*"
       ],
       "Condition": {
-        "Null": {
-          "aws:ResourceTag/aws:backup:source-resource": "false"
-        },
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": [
             "backup.amazonaws.com"
           ]
+        },
+        "Null": {
+          "aws:ResourceTag/aws:backup:source-resource": "false"
         }
       }
     },
@@ -491,6 +491,17 @@
         "eks:DescribeCluster"
       ],
       "Resource": "arn:aws:eks:*:*:cluster/*"
+    },
+    {
+      "Sid": "S3GetObjectPermissions",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::*/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "backup.amazonaws.com"
+        }
+      }
     },
     {
       "Sid": "IamPassRolePermissionsForGuardDuty",
