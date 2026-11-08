@@ -11,14 +11,6 @@
 
 ### Dependencies
 
-* **deps:** override re2js with 2.8.7, which fixes CVE-2026-116795 ([#2410](https://github.com/udondan/iam-floyd/issues/2410)) ([498009a](https://github.com/udondan/iam-floyd/commit/498009ae1574699a10202dc712988a0f0b2e01b0))
-* **deps:** update all non-major dependencies ([#2408](https://github.com/udondan/iam-floyd/issues/2408)) ([733d0c7](https://github.com/udondan/iam-floyd/commit/733d0c75ce417de4b1331332c03a6e84edd78aa6))
-* **deps:** update all non-major dependencies ([#2415](https://github.com/udondan/iam-floyd/issues/2415)) ([11d1557](https://github.com/udondan/iam-floyd/commit/11d15574775f87d993b50b7d82cf652a3a4f4f89))
-* **deps:** update all non-major dependencies ([#2416](https://github.com/udondan/iam-floyd/issues/2416)) ([2bb08bc](https://github.com/udondan/iam-floyd/commit/2bb08bc80eda0a761ab186ca2f95982c0bcb9d54))
-* **deps:** update dependency certifi to v2026.10.23 ([#2405](https://github.com/udondan/iam-floyd/issues/2405)) ([1f872e4](https://github.com/udondan/iam-floyd/commit/1f872e4a60d1c158a63adc1ba1ef9251d82a3edf))
-* **deps:** update dependency glob to v14 ([#2412](https://github.com/udondan/iam-floyd/issues/2412)) ([1ad1b4f](https://github.com/udondan/iam-floyd/commit/1ad1b4fa98695971e2808cceaaddd43afb5aeaa2))
-* **deps:** update dependency node to v26 ([#2409](https://github.com/udondan/iam-floyd/issues/2409)) ([a0343a0](https://github.com/udondan/iam-floyd/commit/a0343a0af0e05b5c6b2739f20fefc7e5b801bfaa))
-* **deps:** update udondan/wait-for-turn action to v1.7.0 ([#2413](https://github.com/udondan/iam-floyd/issues/2413)) ([88321bf](https://github.com/udondan/iam-floyd/commit/88321bfcf01a4997508c8371ac97e730182282f2))
 
 ---
 
@@ -106,54 +98,6 @@
 
 ### Dependencies
 
-* **deps:** update actions/download-artifact action to v8.0.2 ([#2339](https://github.com/udondan/iam-floyd/issues/2339)) ([d304d38](https://github.com/udondan/iam-floyd/commit/d304d3853a176152054211b3ad9f3feb042cb888))
-* **deps:** update actions/setup-java action to v6.1.0 ([#2376](https://github.com/udondan/iam-floyd/issues/2376)) ([6e6df25](https://github.com/udondan/iam-floyd/commit/6e6df253d5e7be60166dfa76795461c795be2cc3))
-* **deps:** update actions/setup-node action to v7.1.0 ([#2334](https://github.com/udondan/iam-floyd/issues/2334)) ([ebd063c](https://github.com/udondan/iam-floyd/commit/ebd063c9a602b73c5a39d5ebebf0cd9ac514a48a))
-* **deps:** update actions/upload-artifact action to v7.0.2 ([#2340](https://github.com/udondan/iam-floyd/issues/2340)) ([cd92da6](https://github.com/udondan/iam-floyd/commit/cd92da6ccd2475df7c81c5cc6da6c1adc1aab8c9))
-* **deps:** update all non-major dependencies ([#2398](https://github.com/udondan/iam-floyd/issues/2398)) ([77b88e0](https://github.com/udondan/iam-floyd/commit/77b88e0478857805af7243ae044135fe5e7ea3d8))
-* **deps:** update astral-sh/setup-uv action to v10.3.0 ([#2346](https://github.com/udondan/iam-floyd/issues/2346)) ([2960db5](https://github.com/udondan/iam-floyd/commit/2960db5404686429bc57de5591220e42072194fa))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1146.0 ([#2323](https://github.com/udondan/iam-floyd/issues/2323)) ([6c30ccc](https://github.com/udondan/iam-floyd/commit/6c30cccc187577701a7441ee11cf961f92efb1e4))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1147.0 ([#2333](https://github.com/udondan/iam-floyd/issues/2333)) ([af676b1](https://github.com/udondan/iam-floyd/commit/af676b17c31883934b43940544d2fd88272764aa))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1148.0 ([#2335](https://github.com/udondan/iam-floyd/issues/2335)) ([4607540](https://github.com/udondan/iam-floyd/commit/46075408f9294e004231236e9945afc7d8f91780))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1149.0 ([#2337](https://github.com/udondan/iam-floyd/issues/2337)) ([5e43cec](https://github.com/udondan/iam-floyd/commit/5e43cec618393c6e49429973b7c7c87b429623dd))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1151.0 ([#2374](https://github.com/udondan/iam-floyd/issues/2374)) ([a924e7b](https://github.com/udondan/iam-floyd/commit/a924e7beed5e10526eca31e1df20b6449234eaef))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1152.0 ([#2377](https://github.com/udondan/iam-floyd/issues/2377)) ([b73093f](https://github.com/udondan/iam-floyd/commit/b73093f9e8755c669d8fb75dd970127796b9ac6f))
-* **deps:** update dependencies and group non-major updates ([#2397](https://github.com/udondan/iam-floyd/issues/2397)) ([6aabf5e](https://github.com/udondan/iam-floyd/commit/6aabf5e0c2a51eb978a9ef2cfed32b45c4b6b16e))
-* **deps:** update dependency @swc/core to v1.16.17 ([#2348](https://github.com/udondan/iam-floyd/issues/2348)) ([9291aa9](https://github.com/udondan/iam-floyd/commit/9291aa904b5fbcb14efd397e9ad473b7f7003072))
-* **deps:** update dependency @swc/core to v1.16.18 ([#2355](https://github.com/udondan/iam-floyd/issues/2355)) ([9e919cd](https://github.com/udondan/iam-floyd/commit/9e919cd99f23afdbd1e12a935aab1182db649a1e))
-* **deps:** update dependency @types/node to v24.19.2 ([#2368](https://github.com/udondan/iam-floyd/issues/2368)) ([8993db0](https://github.com/udondan/iam-floyd/commit/8993db00d0bcf11df97171b795e4ce1663447296))
-* **deps:** update dependency aquasecurity/trivy to v0.76.0 ([#2375](https://github.com/udondan/iam-floyd/issues/2375)) ([4ef803f](https://github.com/udondan/iam-floyd/commit/4ef803fbf5616391bbe03c111bdfdee3525cb4fa))
-* **deps:** update dependency aws-cdk to v2.1145.0 ([#2347](https://github.com/udondan/iam-floyd/issues/2347)) ([e7ac560](https://github.com/udondan/iam-floyd/commit/e7ac560335a79956a4d170a686a0a581efe940e0))
-* **deps:** update dependency aws-cdk-lib to v2 ([#2369](https://github.com/udondan/iam-floyd/issues/2369)) ([eddb47f](https://github.com/udondan/iam-floyd/commit/eddb47f8a3ca29e16f4276289f2482e3682f5ad9))
-* **deps:** update dependency aws-cdk-lib to v2.273.0 ([#2336](https://github.com/udondan/iam-floyd/issues/2336)) ([065885c](https://github.com/udondan/iam-floyd/commit/065885c4a70bc9a678d5af03c911e7fd6a077b09))
-* **deps:** update dependency cdk-iam-floyd to v0.850.0 ([#2350](https://github.com/udondan/iam-floyd/issues/2350)) ([8ba766e](https://github.com/udondan/iam-floyd/commit/8ba766e02cab0c129ab41221da4e5c3d0bc19c52))
-* **deps:** update dependency charset-normalizer to v3.5.2 ([#2341](https://github.com/udondan/iam-floyd/issues/2341)) ([6d348c4](https://github.com/udondan/iam-floyd/commit/6d348c43335922f3b14146adbac12e3df93aa8c8))
-* **deps:** update dependency constructs to v10.8.1 ([#2351](https://github.com/udondan/iam-floyd/issues/2351)) ([d8a117b](https://github.com/udondan/iam-floyd/commit/d8a117b24bc26230791964a52c2a5adc7ff827de))
-* **deps:** update dependency jsii to v5.9.55 ([#2342](https://github.com/udondan/iam-floyd/issues/2342)) ([88175ea](https://github.com/udondan/iam-floyd/commit/88175ea307fc169e87f539524cf18aecff8ba675))
-* **deps:** update dependency jsii to v6 ([#2370](https://github.com/udondan/iam-floyd/issues/2370)) ([1f67ac0](https://github.com/udondan/iam-floyd/commit/1f67ac0b0f325cf517cf10270b4f50fe58bbc2e4))
-* **deps:** update dependency jsii to v6.0.18 ([#2372](https://github.com/udondan/iam-floyd/issues/2372)) ([fc6d310](https://github.com/udondan/iam-floyd/commit/fc6d3105003da5a692149056656c370b6b5cbf29))
-* **deps:** update dependency jsii-docgen to v10.12.7 ([#2343](https://github.com/udondan/iam-floyd/issues/2343)) ([e2fb3a4](https://github.com/udondan/iam-floyd/commit/e2fb3a49b3dc8b88e6298dec3d8d67a6f2f08ea0))
-* **deps:** update dependency markupsafe to v3.0.4 ([#2344](https://github.com/udondan/iam-floyd/issues/2344)) ([46f5a68](https://github.com/udondan/iam-floyd/commit/46f5a68d9c406bf645fd25e2ada940e600754556))
-* **deps:** update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.16.0 ([#2352](https://github.com/udondan/iam-floyd/issues/2352)) ([8aec693](https://github.com/udondan/iam-floyd/commit/8aec693d6a390f4b0cab07aaee97afc32743b0e9))
-* **deps:** update dependency org.apache.maven.plugins:maven-deploy-plugin to v3.2.0 ([#2353](https://github.com/udondan/iam-floyd/issues/2353)) ([ff7ff49](https://github.com/udondan/iam-floyd/commit/ff7ff49c6b555a498ce755c0432b24e045b58ecc))
-* **deps:** update dependency org.apache.maven.plugins:maven-install-plugin to v3.2.0 ([#2354](https://github.com/udondan/iam-floyd/issues/2354)) ([71bd8e2](https://github.com/udondan/iam-floyd/commit/71bd8e2e7627049df589c4c79f71c704ea6dde30))
-* **deps:** update dependency org.apache.maven.plugins:maven-jar-plugin to v3.5.1 ([#2356](https://github.com/udondan/iam-floyd/issues/2356)) ([e0574f9](https://github.com/udondan/iam-floyd/commit/e0574f9fb661386131c6ad0c396b5305d6b981b1))
-* **deps:** update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.12.0 ([#2357](https://github.com/udondan/iam-floyd/issues/2357)) ([3071460](https://github.com/udondan/iam-floyd/commit/3071460e813934887aa41fc8881190d41fd65c75))
-* **deps:** update dependency org.apache.maven.plugins:maven-resources-plugin to v3.5.0 ([#2359](https://github.com/udondan/iam-floyd/issues/2359)) ([008bc95](https://github.com/udondan/iam-floyd/commit/008bc9542c6d9f1de1c6670b5b6ff9888f07e352))
-* **deps:** update dependency org.apache.maven.plugins:maven-source-plugin to v3.4.0 ([#2361](https://github.com/udondan/iam-floyd/issues/2361)) ([9d3d0c9](https://github.com/udondan/iam-floyd/commit/9d3d0c9755b6b2643e6299f96d467fde5a32cc9b))
-* **deps:** update dependency org.codehaus.mojo:exec-maven-plugin to v3.6.4 ([#2362](https://github.com/udondan/iam-floyd/issues/2362)) ([1ee1be5](https://github.com/udondan/iam-floyd/commit/1ee1be5008668d97c5fa5e5d365af4aaa2add3ea))
-* **deps:** update dependency org.codehaus.mojo:flatten-maven-plugin to v1.8.0 ([#2363](https://github.com/udondan/iam-floyd/issues/2363)) ([0cecde3](https://github.com/udondan/iam-floyd/commit/0cecde32ffb66f9b174d67d6290664c51f9ef8cc))
-* **deps:** update dependency python to 3.15 ([#2364](https://github.com/udondan/iam-floyd/issues/2364)) ([10ac5d0](https://github.com/udondan/iam-floyd/commit/10ac5d094c224a0ad6a0ddf0563f565de5265201))
-* **deps:** update dependency ruff to v0.17.0 ([#2365](https://github.com/udondan/iam-floyd/issues/2365)) ([cf42451](https://github.com/udondan/iam-floyd/commit/cf424518d41c0b3cc1d4b8b634cac905048e5434))
-* **deps:** update dependency ruff to v0.17.1 ([#2382](https://github.com/udondan/iam-floyd/issues/2382)) ([6aefe33](https://github.com/udondan/iam-floyd/commit/6aefe33be5bf464876703542f2bfe7ea13f65b7c))
-* **deps:** update dependency sphinxcontrib-jsmath to v2 ([#2399](https://github.com/udondan/iam-floyd/issues/2399)) ([1145f0b](https://github.com/udondan/iam-floyd/commit/1145f0b82133abebfdfb05490908436d49f62860))
-* **deps:** update dependency zizmor to v1.31.0 ([#2380](https://github.com/udondan/iam-floyd/issues/2380)) ([4910fb2](https://github.com/udondan/iam-floyd/commit/4910fb24bd740686ba7e74bc68b3cf47a203f48d))
-* **deps:** update github/codeql-action action to v4.38.3 ([#2345](https://github.com/udondan/iam-floyd/issues/2345)) ([ef46237](https://github.com/udondan/iam-floyd/commit/ef46237ab1981a9535ccd799f6cbe77a33b53ead))
-* **deps:** update github/codeql-action action to v4.39.0 ([#2381](https://github.com/udondan/iam-floyd/issues/2381)) ([e3cc9f2](https://github.com/udondan/iam-floyd/commit/e3cc9f20f125e674448762a5831ddb7a13991c63))
-* **deps:** update lint tooling ([#2366](https://github.com/udondan/iam-floyd/issues/2366)) ([9383315](https://github.com/udondan/iam-floyd/commit/938331599d39ad118b6ae7d79bc57d4d9531bbb0))
-* **deps:** update lint tooling ([#2373](https://github.com/udondan/iam-floyd/issues/2373)) ([bba135d](https://github.com/udondan/iam-floyd/commit/bba135dcf100690038b4024814fcd62d47cfd330))
-* **deps:** update module udondan.github.io/iam-floyd/go/iamfloyd to v0.850.0 ([#2367](https://github.com/udondan/iam-floyd/issues/2367)) ([18567d8](https://github.com/udondan/iam-floyd/commit/18567d8abb4a91731dd91d9b010bff248bf6c920))
-* **deps:** update udondan/wait-for-turn to v1.4.0 ([#2358](https://github.com/udondan/iam-floyd/issues/2358)) ([814493c](https://github.com/udondan/iam-floyd/commit/814493c8561ef78f07eb3346ea742ef6015f8b99))
 
 ---
 
@@ -963,15 +907,6 @@
 * native Go package of iam-floyd ([#2309](https://github.com/udondan/iam-floyd/issues/2309)) ([614ecad](https://github.com/udondan/iam-floyd/commit/614ecad9af6382a548860a427b276c073b4c5df7))
 * native Java package of iam-floyd ([#2305](https://github.com/udondan/iam-floyd/issues/2305)) ([e2e13ea](https://github.com/udondan/iam-floyd/commit/e2e13ea054a0598fac883dc0149c460fac0df772))
 * policy converter for Python, Java, C# and Go ([#2310](https://github.com/udondan/iam-floyd/issues/2310)) ([be41289](https://github.com/udondan/iam-floyd/commit/be41289b83a3c7b2c819a4b469869758c84aaea1))
-
-
-### Dependencies
-
-* **deps:** update actions/setup-python action to v7 ([#2303](https://github.com/udondan/iam-floyd/issues/2303)) ([ec4d89f](https://github.com/udondan/iam-floyd/commit/ec4d89fbe94cbba8bc29d26a256ea031a8b60aa2))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1144.0 ([#2307](https://github.com/udondan/iam-floyd/issues/2307)) ([65b61b7](https://github.com/udondan/iam-floyd/commit/65b61b74cc79b3886e1eff282ec04140a4e5ad72))
-* **deps:** update aws-sdk-js-v3 monorepo to v3.1145.0 ([#2311](https://github.com/udondan/iam-floyd/issues/2311)) ([91c9793](https://github.com/udondan/iam-floyd/commit/91c97937def1da0fe60682bb4095dce12db303b9))
-* **deps:** update dependency aws-cdk-lib to v2.272.0 ([#2308](https://github.com/udondan/iam-floyd/issues/2308)) ([0ef196d](https://github.com/udondan/iam-floyd/commit/0ef196de6b34dd9a689282d8318ed8d50781c742))
-* **deps:** update swc monorepo ([#2302](https://github.com/udondan/iam-floyd/issues/2302)) ([1ab2245](https://github.com/udondan/iam-floyd/commit/1ab224585198a2b2640e68930e7f3ffc6108fbd5))
 
 ## [0.848.0](https://github.com/udondan/iam-floyd/compare/v0.847.0...v0.848.0) (2026-10-04)
 
