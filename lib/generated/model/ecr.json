@@ -14,6 +14,7 @@
       "DescribeImageScanFindings",
       "DescribeImageSigningStatus",
       "DescribeRegistry",
+      "DescribeReplicationBackfillResults",
       "DescribeRepositories",
       "DescribeRepositoryCreationTemplates",
       "GetAccountSetting",
@@ -57,6 +58,8 @@
       "SetRepositoryPolicy",
       "StartImageScan",
       "StartLifecyclePolicyPreview",
+      "StartReplicationBackfill",
+      "StopReplicationBackfill",
       "TagResource",
       "UntagResource",
       "UpdateImageStorageClass",
@@ -64,7 +67,8 @@
       "UpdateRepositoryCreationTemplate",
       "UploadLayerPart",
       "BatchImportUpstreamImage",
-      "ReplicateImage"
+      "ReplicateImage",
+      "ReplicateImageDelete"
     ],
     "Permissions management": [
       "DeleteRegistryPolicy",
@@ -76,7 +80,8 @@
       "DescribeImages",
       "DescribePullThroughCacheRules",
       "ListImages",
-      "ListPullTimeUpdateExclusions"
+      "ListPullTimeUpdateExclusions",
+      "ListReplicationBackfills"
     ],
     "Tagging": [
       "TagResource",
@@ -239,6 +244,13 @@
       "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRegistry.html"
     },
     {
+      "name": "DescribeReplicationBackfillResults",
+      "methodName": "toDescribeReplicationBackfillResults",
+      "description": "Grants permission to retrieve the results of a replication backfill for the registry",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeReplicationBackfillResults.html"
+    },
+    {
       "name": "DescribeRepositories",
       "methodName": "toDescribeRepositories",
       "description": "Grants permission to describe image repositories in a registry",
@@ -338,6 +350,13 @@
       "description": "Grants permission to list pull time update exclusions for the registry",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListPullTimeUpdateExclusions"
+    },
+    {
+      "name": "ListReplicationBackfills",
+      "methodName": "toListReplicationBackfills",
+      "description": "Grants permission to list the replication backfills for the registry",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListReplicationBackfills.html"
     },
     {
       "name": "ListTagsForResource",
@@ -441,6 +460,20 @@
       "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartLifecyclePolicyPreview.html"
     },
     {
+      "name": "StartReplicationBackfill",
+      "methodName": "toStartReplicationBackfill",
+      "description": "Grants permission to start a replication backfill to a destination region for the registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartReplicationBackfill.html"
+    },
+    {
+      "name": "StopReplicationBackfill",
+      "methodName": "toStopReplicationBackfill",
+      "description": "Grants permission to stop an in-progress replication backfill for the registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StopReplicationBackfill.html"
+    },
+    {
       "name": "TagResource",
       "methodName": "toTagResource",
       "description": "Grants permission to tag an Amazon ECR resource",
@@ -507,6 +540,13 @@
       "name": "ReplicateImage",
       "methodName": "toReplicateImage",
       "description": "Grants permission to replicate images to the destination registry",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html"
+    },
+    {
+      "name": "ReplicateImageDelete",
+      "methodName": "toReplicateImageDelete",
+      "description": "Grants permission to replicate image deletions to the destination registry",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html"
     }
@@ -612,7 +652,8 @@
         "toUploadLayerPart",
         "toBatchImportUpstreamImage",
         "toGetImageCopyStatus",
-        "toReplicateImage"
+        "toReplicateImage",
+        "toReplicateImageDelete"
       ],
       "relatedResourceTypes": [
         "repository"
@@ -704,7 +745,8 @@
         "toUploadLayerPart",
         "toBatchImportUpstreamImage",
         "toGetImageCopyStatus",
-        "toReplicateImage"
+        "toReplicateImage",
+        "toReplicateImageDelete"
       ],
       "relatedResourceTypes": [
         "repository"

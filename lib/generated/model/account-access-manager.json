@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "filename": "account-access",
+  "filename": "account-access-manager",
   "className": "AccountAccess",
   "name": "account-access",
   "servicePrefix": "account-access",
-  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access.html",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_account-access-manager.html",
   "accessLevelList": {
     "Write": [
       "CreateApplication",

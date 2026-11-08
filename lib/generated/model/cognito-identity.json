@@ -52,6 +52,7 @@
       "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html",
       "conditionMethods": [
         "ifAwsRequestTag",
+        "ifAwsResourceTag",
         "ifAwsTagKeys"
       ]
     },
@@ -324,6 +325,7 @@
       "description": "Filters access by tag key-value pairs attached to the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toCreateIdentityPool",
         "toDeleteIdentityPool",
         "toDescribeIdentityPool",
         "toGetIdentityPoolAnalytics",

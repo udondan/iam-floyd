@@ -52,6 +52,7 @@
       "UpdateIndexingRule",
       "UpdateSamplingRule",
       "UpdateTraceSegmentDestination",
+      "CallWithBearerToken",
       "Link",
       "PutSpansForIndexing"
     ],
@@ -358,6 +359,13 @@
       "description": "Grants permission to retrieve metadata for a list of traces specified by ID",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    },
+    {
+      "name": "CallWithBearerToken",
+      "methodName": "toCallWithBearerToken",
+      "description": "Grants permission to authenticate requests to AWS X-Ray using a bearer token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/security_iam_service-with-iam.html"
     },
     {
       "name": "GetDistinctTraceGraphs",

@@ -8,6 +8,7 @@
   "accessLevelList": {
     "Write": [
       "CallForwardedTool",
+      "CloseSession",
       "DoubleClick",
       "HoldKey",
       "InvokeMcp",
@@ -47,6 +48,16 @@
       "methodName": "toCheckConnectionStatus",
       "description": "Grants permission to check the connection status of a streaming session",
       "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+      "conditionMethods": [
+        "ifStackArn"
+      ]
+    },
+    {
+      "name": "CloseSession",
+      "methodName": "toCloseSession",
+      "description": "Grants permission to close a desktop session",
+      "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
       "conditionMethods": [
         "ifStackArn"
@@ -243,6 +254,7 @@
       "relatedActionMethods": [
         "toCallForwardedTool",
         "toCheckConnectionStatus",
+        "toCloseSession",
         "toDoubleClick",
         "toGetScreenshot",
         "toGetSessionInfo",

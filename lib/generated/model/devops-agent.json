@@ -44,6 +44,7 @@
       "UpdateAssetFile",
       "UpdateAssociation",
       "UpdateBacklogTask",
+      "UpdateChat",
       "UpdateGoal",
       "UpdateKnowledgeItem",
       "UpdateOperatorAppIdpConfig",
@@ -64,12 +65,15 @@
       "GetAssetFile",
       "GetAssociation",
       "GetBacklogTask",
+      "GetCatalogCapability",
+      "GetChat",
       "GetKnowledgeItem",
       "GetOperatorApp",
       "GetRecommendation",
       "GetService",
       "GetTrigger",
       "ListTagsForResource",
+      "SearchAssets",
       "SearchServiceAccessibleResource"
     ],
     "List": [
@@ -81,6 +85,9 @@
       "ListAssets",
       "ListAssociations",
       "ListBacklogTasks",
+      "ListCatalogCapabilities",
+      "ListCatalogCapabilityFiles",
+      "ListCatalogCapabilityTypes",
       "ListChats",
       "ListExecutions",
       "ListGoals",
@@ -342,6 +349,20 @@
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetBacklogTask.html"
     },
     {
+      "name": "GetCatalogCapability",
+      "methodName": "toGetCatalogCapability",
+      "description": "Grants permission to get a capability from the catalog",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
+    },
+    {
+      "name": "GetChat",
+      "methodName": "toGetChat",
+      "description": "Grants permission to get a chat",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
+    },
+    {
       "name": "GetKnowledgeItem",
       "methodName": "toGetKnowledgeItem",
       "description": "Grants permission to get a knowledge item",
@@ -438,6 +459,27 @@
       "description": "Grants permission to list backlog tasks",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListBacklogTasks.html"
+    },
+    {
+      "name": "ListCatalogCapabilities",
+      "methodName": "toListCatalogCapabilities",
+      "description": "Grants permission to list capabilities in the catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
+    },
+    {
+      "name": "ListCatalogCapabilityFiles",
+      "methodName": "toListCatalogCapabilityFiles",
+      "description": "Grants permission to list the files in a capability from the catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
+    },
+    {
+      "name": "ListCatalogCapabilityTypes",
+      "methodName": "toListCatalogCapabilityTypes",
+      "description": "Grants permission to list the capability types in the catalog",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
     },
     {
       "name": "ListChats",
@@ -552,6 +594,13 @@
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RotateAccessToken.html"
     },
     {
+      "name": "SearchAssets",
+      "methodName": "toSearchAssets",
+      "description": "Grants permission to search assets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
+    },
+    {
       "name": "SearchServiceAccessibleResource",
       "methodName": "toSearchServiceAccessibleResource",
       "description": "Grants permission to look up a registered service accessible resources",
@@ -620,6 +669,13 @@
       "description": "Grants permission to update a task",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateBacklogTask.html"
+    },
+    {
+      "name": "UpdateChat",
+      "methodName": "toUpdateChat",
+      "description": "Grants permission to update a chat",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
     },
     {
       "name": "UpdateGoal",
@@ -931,6 +987,7 @@
         "toListBacklogTasks",
         "toListExecutions",
         "toListJournalRecords",
+        "toSearchAssets",
         "toSendMessage",
         "toUpdateBacklogTask"
       ],
@@ -959,6 +1016,7 @@
         "toListBacklogTasks",
         "toListExecutions",
         "toListJournalRecords",
+        "toSearchAssets",
         "toSendMessage",
         "toUpdateBacklogTask"
       ],
@@ -1032,6 +1090,7 @@
         "toGetAssetFile",
         "toGetAssociation",
         "toGetBacklogTask",
+        "toGetChat",
         "toGetKnowledgeItem",
         "toGetOperatorApp",
         "toGetRecommendation",
@@ -1058,6 +1117,7 @@
         "toRegisterService",
         "toRevokeAccessToken",
         "toRotateAccessToken",
+        "toSearchAssets",
         "toSendMessage",
         "toTagResource",
         "toUntagResource",
@@ -1067,6 +1127,7 @@
         "toUpdateAssetFile",
         "toUpdateAssociation",
         "toUpdateBacklogTask",
+        "toUpdateChat",
         "toUpdateGoal",
         "toUpdateKnowledgeItem",
         "toUpdateOperatorAppIdpConfig",

@@ -29,7 +29,8 @@
       "UpdateApplicationLayerAutomaticResponse",
       "UpdateEmergencyContactSettings",
       "UpdateProtectionGroup",
-      "UpdateSubscription"
+      "UpdateSubscription",
+      "AllowVendedLogDeliveryForResource"
     ],
     "Read": [
       "DescribeAttack",
@@ -318,6 +319,13 @@
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateSubscription.html"
     },
     {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to allow vended log delivery for a protection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-flow-logs.html"
+    },
+    {
       "name": "DescribeAttackContributors",
       "methodName": "toDescribeAttackContributors",
       "description": "Grants permission to get detailed information about the contributors to a specific DDoS attack",
@@ -467,6 +475,7 @@
         "toTagResource",
         "toUntagResource",
         "toUpdateProtectionGroup",
+        "toAllowVendedLogDeliveryForResource",
         "toDescribeAttackContributors"
       ],
       "relatedResourceTypes": [

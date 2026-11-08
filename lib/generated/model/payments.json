@@ -8,8 +8,10 @@
   "accessLevelList": {
     "Write": [
       "AcceptFinancingApplicationTerms",
+      "CreateConnectedAccount",
       "CreateFinancingApplication",
       "CreatePaymentInstrument",
+      "DeleteConnectedAccount",
       "TagResource",
       "UntagResource",
       "UpdateFinancingApplication",
@@ -19,6 +21,7 @@
       "UpdatePaymentPreferences"
     ],
     "Read": [
+      "GetConnectedAccount",
       "GetFinancingApplication",
       "GetFinancingLine",
       "GetFinancingLineWithdrawal",
@@ -27,6 +30,7 @@
     ],
     "List": [
       "GetPaymentInstrument",
+      "ListConnectedAccounts",
       "ListFinancingApplications",
       "ListFinancingLineWithdrawals",
       "ListFinancingLines",
@@ -50,6 +54,17 @@
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
     },
     {
+      "name": "CreateConnectedAccount",
+      "methodName": "toCreateConnectedAccount",
+      "description": "Grants permission to create a connected account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
       "name": "CreateFinancingApplication",
       "methodName": "toCreateFinancingApplication",
       "description": "Grants permission to create a financing application",
@@ -66,6 +81,20 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys"
       ]
+    },
+    {
+      "name": "DeleteConnectedAccount",
+      "methodName": "toDeleteConnectedAccount",
+      "description": "Grants permission to delete a connected account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "GetConnectedAccount",
+      "methodName": "toGetConnectedAccount",
+      "description": "Grants permission to get information about a connected account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
     },
     {
       "name": "GetFinancingApplication",
@@ -99,6 +128,13 @@
       "name": "GetPaymentInstrument",
       "methodName": "toGetPaymentInstrument",
       "description": "Grants permission to get information about a payment instrument",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListConnectedAccounts",
+      "methodName": "toListConnectedAccounts",
+      "description": "Grants permission to list connected accounts",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
     },
@@ -217,6 +253,32 @@
   ],
   "resources": [
     {
+      "name": "connectedaccount",
+      "methodName": "onConnectedaccount",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+      "arn": "arn:${Partition}:payments::${Account}:connectedaccount/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "payment-instrument",
       "methodName": "onPaymentInstrument",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
@@ -250,6 +312,7 @@
       "description": "Filters access by the tags that are passed in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
+        "toCreateConnectedAccount",
         "toCreatePaymentInstrument",
         "toTagResource"
       ],
@@ -269,12 +332,15 @@
       "description": "Filters access by the tags associated with the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toDeleteConnectedAccount",
+        "toGetConnectedAccount",
         "toGetPaymentInstrument",
         "toListTagsForResource",
         "toTagResource",
         "toUntagResource"
       ],
       "relatedResourceTypes": [
+        "connectedaccount",
         "payment-instrument"
       ],
       "keyLiteral": "aws:ResourceTag/",
@@ -292,6 +358,7 @@
       "description": "Filters access by the tag keys that are passed in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
+        "toCreateConnectedAccount",
         "toCreatePaymentInstrument",
         "toTagResource",
         "toUntagResource"

@@ -114,11 +114,7 @@
       "methodName": "toCreateLocationAzureBlob",
       "description": "Grants permission to create an endpoint for a Microsoft Azure Blob Storage container",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationAzureBlob.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationAzureBlob.html"
     },
     {
       "name": "CreateLocationEfs",
@@ -180,55 +176,35 @@
       "methodName": "toCreateLocationHdfs",
       "description": "Grants permission to create an endpoint for an Amazon Hdfs",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationHdfs.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationHdfs.html"
     },
     {
       "name": "CreateLocationNfs",
       "methodName": "toCreateLocationNfs",
       "description": "Grants permission to create an endpoint for a NFS file system",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html"
     },
     {
       "name": "CreateLocationObjectStorage",
       "methodName": "toCreateLocationObjectStorage",
       "description": "Grants permission to create an endpoint for a self-managed object storage bucket",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationObjectStorage.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationObjectStorage.html"
     },
     {
       "name": "CreateLocationS3",
       "methodName": "toCreateLocationS3",
       "description": "Grants permission to create an endpoint for an Amazon S3 bucket",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html"
     },
     {
       "name": "CreateLocationSmb",
       "methodName": "toCreateLocationSmb",
       "description": "Grants permission to create an endpoint for an SMB file system",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html"
     },
     {
       "name": "CreateTask",
@@ -850,6 +826,12 @@
       "relatedActionMethods": [
         "toAddStorageSystem",
         "toCancelTaskExecution",
+        "toCreateLocationAzureBlob",
+        "toCreateLocationHdfs",
+        "toCreateLocationNfs",
+        "toCreateLocationObjectStorage",
+        "toCreateLocationS3",
+        "toCreateLocationSmb",
         "toCreateTask",
         "toDeleteAgent",
         "toDeleteLocation",

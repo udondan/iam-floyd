@@ -10,6 +10,7 @@
       "BatchGetItem",
       "ConditionCheckItem",
       "DescribeBackup",
+      "DescribeBulkOperation",
       "DescribeContinuousBackups",
       "DescribeContributorInsights",
       "DescribeEndpoints",
@@ -40,6 +41,8 @@
     ],
     "Write": [
       "BatchWriteItem",
+      "BulkPutItems",
+      "CancelBulkOperation",
       "CreateBackup",
       "CreateGlobalTable",
       "CreateTable",
@@ -58,6 +61,7 @@
       "PutResourcePolicy",
       "RestoreTableFromBackup",
       "RestoreTableToPointInTime",
+      "StartBulkOperation",
       "TagResource",
       "UntagResource",
       "UpdateContinuousBackups",
@@ -91,6 +95,7 @@
     ],
     "List": [
       "ListBackups",
+      "ListBulkOperations",
       "ListContributorInsights",
       "ListExports",
       "ListGlobalTables",
@@ -116,6 +121,20 @@
       "description": "Grants permission to put or delete multiple items in one or more tables",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html"
+    },
+    {
+      "name": "BulkPutItems",
+      "methodName": "toBulkPutItems",
+      "description": "Grants permission to write items into a table as part of a bulk put items operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StartBulkPutItems.html"
+    },
+    {
+      "name": "CancelBulkOperation",
+      "methodName": "toCancelBulkOperation",
+      "description": "Grants permission to cancel an in-progress bulk operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CancelBulkOperation.html"
     },
     {
       "name": "ConditionCheckItem",
@@ -179,6 +198,13 @@
       "description": "Grants permission to describe an existing backup of a table",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html"
+    },
+    {
+      "name": "DescribeBulkOperation",
+      "methodName": "toDescribeBulkOperation",
+      "description": "Grants permission to describe an existing bulk operation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBulkOperation.html"
     },
     {
       "name": "DescribeContinuousBackups",
@@ -335,6 +361,13 @@
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html"
     },
     {
+      "name": "ListBulkOperations",
+      "methodName": "toListBulkOperations",
+      "description": "Grants permission to list bulk operations associated with the account and endpoint",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBulkOperations.html"
+    },
+    {
       "name": "ListContributorInsights",
       "methodName": "toListContributorInsights",
       "description": "Grants permission to list the ContributorInsightsSummary for all tables and global secondary indexes associated with the current account and endpoint",
@@ -459,6 +492,13 @@
       "description": "Grants permission to perform a vector similarity search on a vector index associated with an Amazon DynamoDB table",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_SearchVectors.html"
+    },
+    {
+      "name": "StartBulkOperation",
+      "methodName": "toStartBulkOperation",
+      "description": "Grants permission to start a bulk operation that writes items from an Amazon S3 source into an existing DynamoDB table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StartBulkPutItems.html"
     },
     {
       "name": "TagResource",
@@ -683,6 +723,35 @@
         {
           "placeholder": "BackupName",
           "name": "backupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "bulk-operation",
+      "methodName": "onBulkOperation",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BulkPutItems.HowItWorks.html",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:bulk-operation/${BulkOperationId}",
+      "placeholders": [
+        {
+          "placeholder": "BulkOperationId",
+          "name": "bulkOperationId",
           "kind": "required"
         },
         {
@@ -939,6 +1008,7 @@
       "relatedActionMethods": [
         "toBatchGetItem",
         "toBatchWriteItem",
+        "toBulkPutItems",
         "toConditionCheckItem",
         "toCreateBackup",
         "toCreateGlobalTable",

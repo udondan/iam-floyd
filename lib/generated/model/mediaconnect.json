@@ -14,6 +14,7 @@
       "AddFlowSources",
       "AddFlowVpcInterfaces",
       "AssociateRouterNetworkInterface",
+      "ConnectEndpoints",
       "CreateBridge",
       "CreateFlow",
       "CreateGateway",
@@ -23,13 +24,20 @@
       "DeleteBridge",
       "DeleteFlow",
       "DeleteGateway",
+      "DeleteResourcePolicy",
       "DeleteRouterInput",
       "DeleteRouterNetworkInterface",
       "DeleteRouterOutput",
+      "DeregisterDestinationEndpoint",
       "DeregisterGatewayInstance",
+      "DeregisterSourceEndpoint",
+      "DisconnectEndpoints",
       "GrantFlowEntitlements",
       "PollGateway",
       "PurchaseOffering",
+      "PutResourcePolicy",
+      "RegisterDestinationEndpoint",
+      "RegisterSourceEndpoint",
       "RemoveBridgeOutput",
       "RemoveBridgeSource",
       "RemoveFlowMediaStream",
@@ -53,6 +61,7 @@
       "UpdateBridgeOutput",
       "UpdateBridgeSource",
       "UpdateBridgeState",
+      "UpdateDestinationEndpoint",
       "UpdateFlow",
       "UpdateFlowEntitlement",
       "UpdateFlowMediaStream",
@@ -61,7 +70,15 @@
       "UpdateGatewayInstance",
       "UpdateRouterInput",
       "UpdateRouterNetworkInterface",
-      "UpdateRouterOutput"
+      "UpdateRouterOutput",
+      "UpdateSourceEndpoint"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "GrantFlowEntitlements",
+      "PutResourcePolicy",
+      "RevokeFlowEntitlement",
+      "UpdateFlowEntitlement"
     ],
     "Read": [
       "DescribeBridge",
@@ -73,15 +90,19 @@
       "DescribeOffering",
       "DescribeReservation",
       "DiscoverGatewayPollEndpoint",
+      "GetDestinationEndpoint",
+      "GetResourcePolicy",
       "GetRouterInput",
       "GetRouterInputSourceMetadata",
       "GetRouterInputThumbnail",
       "GetRouterNetworkInterface",
       "GetRouterOutput",
+      "GetSourceEndpoint",
       "ListTagsForResource"
     ],
     "List": [
       "ListBridges",
+      "ListDestinationEndpoints",
       "ListEntitlements",
       "ListFlows",
       "ListGatewayInstances",
@@ -90,7 +111,8 @@
       "ListReservations",
       "ListRouterInputs",
       "ListRouterNetworkInterfaces",
-      "ListRouterOutputs"
+      "ListRouterOutputs",
+      "ListSourceEndpoints"
     ],
     "Tagging": [
       "TagResource",
@@ -146,6 +168,13 @@
       "description": "Grants permission to associate a router network interface",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AssociateRouterNetworkInterface.html"
+    },
+    {
+      "name": "ConnectEndpoints",
+      "methodName": "toConnectEndpoints",
+      "description": "Grants permission to connect a source endpoint to a destination endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ConnectEndpoints.html"
     },
     {
       "name": "CreateBridge",
@@ -211,6 +240,13 @@
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteGateway.html"
     },
     {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy from a resource in AWS Elemental MediaConnect",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteResourcePolicy.html"
+    },
+    {
       "name": "DeleteRouterInput",
       "methodName": "toDeleteRouterInput",
       "description": "Grants permission to delete a router input in AWS Elemental MediaConnect",
@@ -232,11 +268,25 @@
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterOutput.html"
     },
     {
+      "name": "DeregisterDestinationEndpoint",
+      "methodName": "toDeregisterDestinationEndpoint",
+      "description": "Grants permission to deregister a destination endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeregisterDestinationEndpoint.html"
+    },
+    {
       "name": "DeregisterGatewayInstance",
       "methodName": "toDeregisterGatewayInstance",
       "description": "Grants permission to deregister gateway instance",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeregisterGatewayInstance.html"
+    },
+    {
+      "name": "DeregisterSourceEndpoint",
+      "methodName": "toDeregisterSourceEndpoint",
+      "description": "Grants permission to deregister a source endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeregisterSourceEndpoint.html"
     },
     {
       "name": "DescribeBridge",
@@ -295,11 +345,32 @@
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeReservation.html"
     },
     {
+      "name": "DisconnectEndpoints",
+      "methodName": "toDisconnectEndpoints",
+      "description": "Grants permission to disconnect a source endpoint from a destination endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DisconnectEndpoints.html"
+    },
+    {
       "name": "DiscoverGatewayPollEndpoint",
       "methodName": "toDiscoverGatewayPollEndpoint",
       "description": "Grants permission to discover gateway poll endpoint",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DiscoverGatewayPollEndpoint.html"
+    },
+    {
+      "name": "GetDestinationEndpoint",
+      "methodName": "toGetDestinationEndpoint",
+      "description": "Grants permission to retrieve information about a specific destination endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetDestinationEndpoint.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve a resource policy for a resource in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetResourcePolicy.html"
     },
     {
       "name": "GetRouterInput",
@@ -337,10 +408,17 @@
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterOutput.html"
     },
     {
+      "name": "GetSourceEndpoint",
+      "methodName": "toGetSourceEndpoint",
+      "description": "Grants permission to retrieve information about a specific source endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetSourceEndpoint.html"
+    },
+    {
       "name": "GrantFlowEntitlements",
       "methodName": "toGrantFlowEntitlements",
       "description": "Grants permission to grant entitlements on any flow",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GrantFlowEntitlements.html"
     },
     {
@@ -349,6 +427,13 @@
       "description": "Grants permission to display a list of bridges that are associated with this account and an optionally specified Arn",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListBridges.html"
+    },
+    {
+      "name": "ListDestinationEndpoints",
+      "methodName": "toListDestinationEndpoints",
+      "description": "Grants permission to retrieve a list of destination endpoints in AWS Elemental MediaConnect",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListDestinationEndpoints.html"
     },
     {
       "name": "ListEntitlements",
@@ -414,6 +499,13 @@
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterOutputs.html"
     },
     {
+      "name": "ListSourceEndpoints",
+      "methodName": "toListSourceEndpoints",
+      "description": "Grants permission to retrieve a list of source endpoints in AWS Elemental MediaConnect",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListSourceEndpoints.html"
+    },
+    {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
       "description": "Grants permission to display a list of all tags associated with a resource",
@@ -433,6 +525,27 @@
       "description": "Grants permission to purchase an offering",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_PurchaseOffering.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a resource policy to a resource in AWS Elemental MediaConnect",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RegisterDestinationEndpoint",
+      "methodName": "toRegisterDestinationEndpoint",
+      "description": "Grants permission to register a new destination endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RegisterDestinationEndpoint.html"
+    },
+    {
+      "name": "RegisterSourceEndpoint",
+      "methodName": "toRegisterSourceEndpoint",
+      "description": "Grants permission to register a new source endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RegisterSourceEndpoint.html"
     },
     {
       "name": "RemoveBridgeOutput",
@@ -494,7 +607,7 @@
       "name": "RevokeFlowEntitlement",
       "methodName": "toRevokeFlowEntitlement",
       "description": "Grants permission to revoke entitlements on any flow",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RevokeFlowEntitlement.html"
     },
     {
@@ -596,6 +709,13 @@
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeState.html"
     },
     {
+      "name": "UpdateDestinationEndpoint",
+      "methodName": "toUpdateDestinationEndpoint",
+      "description": "Grants permission to update the configuration of a destination endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateDestinationEndpoint.html"
+    },
+    {
       "name": "UpdateFlow",
       "methodName": "toUpdateFlow",
       "description": "Grants permission to update flows",
@@ -606,7 +726,7 @@
       "name": "UpdateFlowEntitlement",
       "methodName": "toUpdateFlowEntitlement",
       "description": "Grants permission to update entitlements on any flow",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowEntitlement.html"
     },
     {
@@ -657,6 +777,13 @@
       "description": "Grants permission to update the configuration of a router output in AWS Elemental MediaConnect",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterOutput.html"
+    },
+    {
+      "name": "UpdateSourceEndpoint",
+      "methodName": "toUpdateSourceEndpoint",
+      "description": "Grants permission to update the configuration of a source endpoint in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateSourceEndpoint.html"
     }
   ],
   "resources": [
@@ -693,6 +820,37 @@
         }
       ],
       "conditionMethods": []
+    },
+    {
+      "name": "DestinationEndpoint",
+      "methodName": "onDestinationEndpoint",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/destination-endpoints.html",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:destinationEndpoint:${DestinationEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "DestinationEndpointId",
+          "name": "destinationEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "Entitlement",
@@ -1122,6 +1280,37 @@
       ]
     },
     {
+      "name": "SourceEndpoint",
+      "methodName": "onSourceEndpoint",
+      "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/source-endpoints.html",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:sourceEndpoint:${SourceEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "SourceEndpointId",
+          "name": "sourceEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "VpcInterface",
       "methodName": "onVpcInterface",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/vpc-interfaces.html",
@@ -1201,6 +1390,7 @@
         "toAddFlowOutputs",
         "toAddFlowSources",
         "toAddFlowVpcInterfaces",
+        "toConnectEndpoints",
         "toCreateFlow",
         "toCreateRouterInput",
         "toCreateRouterNetworkInterface",
@@ -1209,15 +1399,22 @@
         "toDeleteRouterInput",
         "toDeleteRouterNetworkInterface",
         "toDeleteRouterOutput",
+        "toDeregisterDestinationEndpoint",
+        "toDeregisterSourceEndpoint",
         "toDescribeFlow",
         "toDescribeFlowSourceMetadata",
         "toDescribeFlowSourceThumbnail",
+        "toDisconnectEndpoints",
+        "toGetDestinationEndpoint",
         "toGetRouterInput",
         "toGetRouterInputSourceMetadata",
         "toGetRouterInputThumbnail",
         "toGetRouterNetworkInterface",
         "toGetRouterOutput",
+        "toGetSourceEndpoint",
         "toGrantFlowEntitlements",
+        "toRegisterDestinationEndpoint",
+        "toRegisterSourceEndpoint",
         "toRemoveFlowMediaStream",
         "toRemoveFlowOutput",
         "toRemoveFlowSource",
@@ -1234,6 +1431,7 @@
         "toTagResource",
         "toTakeRouterInput",
         "toUntagResource",
+        "toUpdateDestinationEndpoint",
         "toUpdateFlow",
         "toUpdateFlowEntitlement",
         "toUpdateFlowMediaStream",
@@ -1241,9 +1439,11 @@
         "toUpdateFlowSource",
         "toUpdateRouterInput",
         "toUpdateRouterNetworkInterface",
-        "toUpdateRouterOutput"
+        "toUpdateRouterOutput",
+        "toUpdateSourceEndpoint"
       ],
       "relatedResourceTypes": [
+        "DestinationEndpoint",
         "Entitlement",
         "Flow",
         "MediaStream",
@@ -1252,6 +1452,7 @@
         "RouterNetworkInterface",
         "RouterOutput",
         "Source",
+        "SourceEndpoint",
         "VpcInterface"
       ],
       "keyLiteral": "aws:ResourceTag/",

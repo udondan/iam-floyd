@@ -35,6 +35,7 @@
       "SendCisSessionTelemetry",
       "StartCisSession",
       "StartCodeSecurityScan",
+      "StartOnDemandScan",
       "StopCisSession",
       "TagResource",
       "UntagResource",
@@ -68,6 +69,7 @@
       "GetEncryptionKey",
       "GetFindingsReportStatus",
       "GetMember",
+      "GetOnDemandScanStatus",
       "GetSbomExport",
       "ListTagsForResource",
       "SearchVulnerabilities"
@@ -91,6 +93,7 @@
       "ListFindingAggregations",
       "ListFindings",
       "ListMembers",
+      "ListOnDemandScans",
       "ListUsageTotals"
     ],
     "Tagging": [
@@ -216,14 +219,20 @@
       "methodName": "toCreateFindingsReport",
       "description": "Grants permission to request the generation of a findings report",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateFindingsReport.html"
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateFindingsReport.html",
+      "conditionMethods": [
+        "ifExpectedBucketOwner"
+      ]
     },
     {
       "name": "CreateSbomExport",
       "methodName": "toCreateSbomExport",
       "description": "Grants permission to request the generation of an SBOM report",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateSbomExport.html"
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateSbomExport.html",
+      "conditionMethods": [
+        "ifExpectedBucketOwner"
+      ]
     },
     {
       "name": "DeleteCisScanConfiguration",
@@ -387,6 +396,13 @@
       "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html"
     },
     {
+      "name": "GetOnDemandScanStatus",
+      "methodName": "toGetOnDemandScanStatus",
+      "description": "Grants permission to retrieve the status of an on-demand scan for a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetOnDemandScanStatus.html"
+    },
+    {
       "name": "GetSbomExport",
       "methodName": "toGetSbomExport",
       "description": "Grants permission to retrieve a requested SBOM report",
@@ -513,6 +529,13 @@
       "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html"
     },
     {
+      "name": "ListOnDemandScans",
+      "methodName": "toListOnDemandScans",
+      "description": "Grants permission to retrieve information about on-demand scans for a specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListOnDemandScans.html"
+    },
+    {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
       "description": "Grants permission to retrieve the tags for an Amazon Inspector resource",
@@ -567,6 +590,13 @@
       "description": "Grants permission to initiate a code security scan on a specified repository",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCodeSecurityScan.html"
+    },
+    {
+      "name": "StartOnDemandScan",
+      "methodName": "toStartOnDemandScan",
+      "description": "Grants permission to initiate an on-demand scan on a specified resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartOnDemandScan.html"
     },
     {
       "name": "StopCisSession",
@@ -966,6 +996,24 @@
       "keyLiteral": "aws:TagKeys",
       "valueKind": "string",
       "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "inspector2:ExpectedBucketOwner",
+      "methodName": "ifExpectedBucketOwner",
+      "description": "Filters access by the AWS account ID that must own the destination S3 bucket when requesting a findings report or SBOM export",
+      "url": "https://docs.aws.amazon.com/inspector/latest/user/security-iam.html",
+      "relatedActionMethods": [
+        "toCreateFindingsReport",
+        "toCreateSbomExport"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExpectedBucketOwner",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
       "valueTypes": [
         "string"
       ],

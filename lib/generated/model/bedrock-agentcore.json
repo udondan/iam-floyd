@@ -148,6 +148,7 @@
       "GatewayAssociateWebACL",
       "GatewayDisassociateWebACL",
       "InvokeGateway",
+      "InvokeWebAnswer",
       "InvokeWebSearch",
       "ManageAdminPolicy",
       "ManageResourceScopedPolicy",
@@ -2102,6 +2103,13 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
     },
     {
+      "name": "InvokeWebAnswer",
+      "methodName": "toInvokeWebAnswer",
+      "description": "Grants permission to invoke a web answer target",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html"
+    },
+    {
       "name": "InvokeWebSearch",
       "methodName": "toInvokeWebSearch",
       "description": "Grants permission to invoke a web search target",
@@ -3196,6 +3204,25 @@
       "conditionMethods": [
         "ifAwsResourceTag"
       ]
+    },
+    {
+      "name": "web-answer",
+      "methodName": "onWebAnswer",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/webAnswer.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:aws:tool/web-answer.v1",
+      "placeholders": [
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
     },
     {
       "name": "web-search",

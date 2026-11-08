@@ -47,7 +47,40 @@
       "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html"
     }
   ],
-  "resources": [],
+  "resources": [
+    {
+      "name": "session",
+      "methodName": "onSession",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:session/${SessionId}",
+      "placeholders": [
+        {
+          "placeholder": "SessionId",
+          "name": "sessionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifSsmResourceTagAws",
+        "ifSsmResourceTagAws"
+      ]
+    }
+  ],
   "conditions": [
     {
       "key": "ec2:SourceInstanceARN",
@@ -82,6 +115,25 @@
         "string"
       ],
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "ssm:resourceTag/aws",
+      "methodName": "ifSsmResourceTagAws",
+      "description": "Filters access by the ID of the managed node that the session connects to, as recorded in the AWS-supplied aws:ssmmessages:target-id tag",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions",
+      "relatedActionMethods": [
+        "toOpenDataChannel"
+      ],
+      "relatedResourceTypes": [
+        "session"
+      ],
+      "keyLiteral": "ssm:resourceTag/aws",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
     }
   ]
 }

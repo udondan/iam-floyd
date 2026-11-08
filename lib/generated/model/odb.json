@@ -48,6 +48,7 @@
       "UpdateAutonomousDatabaseBackup",
       "UpdateCloudExadataInfrastructure",
       "UpdateExadbVmCluster",
+      "UpdateExascaleCloudExadataInfrastructure",
       "UpdateExascaleDbStorageVault",
       "UpdateOdbNetwork",
       "UpdateOdbPeeringConnection",
@@ -187,11 +188,7 @@
       "methodName": "toCreateExascaleDbStorageVault",
       "description": "Grants permission to create an Exascale DB storage vault",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateExascaleDbStorageVault.html",
-      "conditionMethods": [
-        "ifAwsRequestTag",
-        "ifAwsTagKeys"
-      ]
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateExascaleDbStorageVault.html"
     },
     {
       "name": "CreateOdbNetwork",
@@ -658,6 +655,13 @@
       "description": "Grants permission to update properties of a specified Exadb VM cluster",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateExadbVmCluster.html"
+    },
+    {
+      "name": "UpdateExascaleCloudExadataInfrastructure",
+      "methodName": "toUpdateExascaleCloudExadataInfrastructure",
+      "description": "Grants permission to configure Exascale storage on an Exadata infrastructure resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateExascaleCloudExadataInfrastructure.html"
     },
     {
       "name": "UpdateExascaleDbStorageVault",
@@ -1135,6 +1139,7 @@
         "toCreateCloudAutonomousVmCluster",
         "toCreateCloudVmCluster",
         "toCreateExadbVmCluster",
+        "toCreateExascaleDbStorageVault",
         "toCreateOdbPeeringConnection",
         "toDeleteAutonomousDatabase",
         "toDeleteAutonomousDatabaseBackup",
@@ -1170,6 +1175,7 @@
         "toListDbNodes",
         "toListDbServers",
         "toListExadbVmClusters",
+        "toListExascaleDbStorageVaults",
         "toListOdbPeeringConnections",
         "toListTagsForResource",
         "toRebootAutonomousDatabase",
@@ -1187,6 +1193,7 @@
         "toUpdateAutonomousDatabaseBackup",
         "toUpdateCloudExadataInfrastructure",
         "toUpdateExadbVmCluster",
+        "toUpdateExascaleCloudExadataInfrastructure",
         "toUpdateExascaleDbStorageVault",
         "toUpdateOdbNetwork",
         "toUpdateOdbPeeringConnection",

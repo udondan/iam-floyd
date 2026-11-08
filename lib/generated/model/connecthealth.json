@@ -16,6 +16,7 @@
       "StartPatientInsightsJob",
       "TagResource",
       "UntagResource",
+      "BatchRefillPatientPharmacyPrescriptions",
       "CancelAppointment",
       "CreateAgent",
       "CreateIntegration",
@@ -48,6 +49,7 @@
       "ListPatientAppointments",
       "ListPatientInsuranceCoverages",
       "ListPatientMedications",
+      "ListPatientPharmacyPrescriptions",
       "ListProviders",
       "MatchPatient"
     ],
@@ -196,6 +198,13 @@
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_UntagResource.html"
     },
     {
+      "name": "BatchRefillPatientPharmacyPrescriptions",
+      "methodName": "toBatchRefillPatientPharmacyPrescriptions",
+      "description": "Grants permission to batch request patient pharmacy prescription refills",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
       "name": "CancelAppointment",
       "methodName": "toCancelAppointment",
       "description": "Grants permission to cancel an appointment",
@@ -325,6 +334,13 @@
       "name": "ListPatientMedications",
       "methodName": "toListPatientMedications",
       "description": "Grants permission to list patient medications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
+    },
+    {
+      "name": "ListPatientPharmacyPrescriptions",
+      "methodName": "toListPatientPharmacyPrescriptions",
+      "description": "Grants permission to list a patient's pharmacy prescriptions",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/patient-engagement-overview.html"
     },
@@ -660,6 +676,7 @@
         "toStartPatientInsightsJob",
         "toTagResource",
         "toUntagResource",
+        "toBatchRefillPatientPharmacyPrescriptions",
         "toCancelAppointment",
         "toCreateAgent",
         "toCreateIntegration",
@@ -679,6 +696,7 @@
         "toListPatientAppointments",
         "toListPatientInsuranceCoverages",
         "toListPatientMedications",
+        "toListPatientPharmacyPrescriptions",
         "toListProviders",
         "toMatchPatient",
         "toPublishAgent",

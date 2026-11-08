@@ -110,6 +110,9 @@
       "GetResourcesTrendsV2",
       "GetResourcesV2",
       "GetSecurityControlDefinition",
+      "GetSoftwareResourcesV2",
+      "GetSoftwareStatisticsV2",
+      "GetSoftwareV2",
       "ListTagsForResource",
       "BatchGetControlEvaluations",
       "BatchGetEnabledRegionsV2",
@@ -760,6 +763,27 @@
       "description": "Grants permission to get the definition details of a specific security control identified by ID",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSecurityControlDefinition.html"
+    },
+    {
+      "name": "GetSoftwareResourcesV2",
+      "methodName": "toGetSoftwareResourcesV2",
+      "description": "Grants permission to retrieve a list of resources that contain a software package",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSoftwareResourcesV2.html"
+    },
+    {
+      "name": "GetSoftwareStatisticsV2",
+      "methodName": "toGetSoftwareStatisticsV2",
+      "description": "Grants permission to retrieve aggregate statistics about software packages",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSoftwareStatisticsV2.html"
+    },
+    {
+      "name": "GetSoftwareV2",
+      "methodName": "toGetSoftwareV2",
+      "description": "Grants permission to retrieve a list of software packages found on resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetSoftwareV2.html"
     },
     {
       "name": "InviteMembers",
@@ -1574,6 +1598,9 @@
         "toGetResourcesStatisticsV2",
         "toGetResourcesTrendsV2",
         "toGetResourcesV2",
+        "toGetSoftwareResourcesV2",
+        "toGetSoftwareStatisticsV2",
+        "toGetSoftwareV2",
         "toInviteMembers",
         "toListEnabledProductsForImport",
         "toListExposuresByRemediationV2",

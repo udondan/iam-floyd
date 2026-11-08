@@ -3702,6 +3702,24 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
     },
     {
+      "key": "glue:ConnectionType",
+      "methodName": "ifConnectionType",
+      "description": "Filters access by the connection type specified in the request",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toUpdateConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ConnectionType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "glue:CredentialIssuingService",
       "methodName": "ifCredentialIssuingService",
       "description": "Filters access by the service from which the credentials of the request is issued",
@@ -3709,6 +3727,24 @@
       "relatedActionMethods": [],
       "relatedResourceTypes": [],
       "keyLiteral": "CredentialIssuingService",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "glue:CredentialVendingMode",
+      "methodName": "ifCredentialVendingMode",
+      "description": "Filters access by the credential vending mode connection property specified in the request",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toUpdateConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CredentialVendingMode",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [
@@ -3758,6 +3794,24 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "FederatedAuthorizationSource",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "glue:InstanceUrl",
+      "methodName": "ifInstanceUrl",
+      "description": "Filters access by the URL and INSTANCE_URL connection property specified in the request",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys",
+      "relatedActionMethods": [
+        "toCreateConnection",
+        "toUpdateConnection"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "InstanceUrl",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [

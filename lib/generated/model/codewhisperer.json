@@ -24,7 +24,8 @@
     ],
     "Read": [
       "GenerateRecommendations",
-      "GetCustomization"
+      "GetCustomization",
+      "TestOtelConnection"
     ],
     "List": [
       "ListCustomizationPermissions",
@@ -142,6 +143,13 @@
       "methodName": "toTagResource",
       "description": "Grants permission to invoke TagResource on CodeWhisperer",
       "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
+    },
+    {
+      "name": "TestOtelConnection",
+      "methodName": "toTestOtelConnection",
+      "description": "Grants permission to test the OpenTelemetry export connection of a profile",
+      "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/codewhisperer/latest/userguide/security_iam_service-with-iam.html"
     },
     {
@@ -270,6 +278,7 @@
         "toListCustomizations",
         "toListTagsForResource",
         "toTagResource",
+        "toTestOtelConnection",
         "toUntagResource",
         "toUpdateCustomization",
         "toUpdateProfile"
