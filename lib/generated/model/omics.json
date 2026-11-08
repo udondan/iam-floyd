@@ -64,6 +64,10 @@
       "UpdateWorkflowVersion",
       "UploadReadSetPart"
     ],
+    "Permissions management": [
+      "DeleteS3AccessPolicy",
+      "PutS3AccessPolicy"
+    ],
     "Read": [
       "GetAnnotationImportJob",
       "GetAnnotationStore",
@@ -371,7 +375,7 @@
       "name": "DeleteS3AccessPolicy",
       "methodName": "toDeleteS3AccessPolicy",
       "description": "Grants permission to delete an access policy on a given store",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/omics/latest/api/API_DeleteS3AccessPolicy.html"
     },
     {
@@ -770,7 +774,7 @@
       "name": "PutS3AccessPolicy",
       "methodName": "toPutS3AccessPolicy",
       "description": "Grants permission to put an access policy on a given store",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/omics/latest/api/API_PutS3AccessPolicy.html"
     },
     {

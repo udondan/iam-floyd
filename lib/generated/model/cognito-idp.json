@@ -60,6 +60,7 @@
       "DeleteUserPoolReplica",
       "ForgetDevice",
       "ForgotPassword",
+      "GetClientToken",
       "GetTokensFromRefreshToken",
       "GlobalSignOut",
       "InitiateAuth",
@@ -106,6 +107,7 @@
       "DescribeResourceServer",
       "DescribeRiskConfiguration",
       "DescribeTerms",
+      "DescribeTermsByClient",
       "DescribeUserImportJob",
       "DescribeUserPool",
       "DescribeUserPoolClient",
@@ -594,6 +596,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeTerms.html"
     },
     {
+      "name": "DescribeTermsByClient",
+      "methodName": "toDescribeTermsByClient",
+      "description": "Grants permission to describe the terms documents associated with an app client",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeTermsByClient.html"
+    },
+    {
       "name": "DescribeUserImportJob",
       "methodName": "toDescribeUserImportJob",
       "description": "Grants permission to describe any user import job",
@@ -641,6 +650,13 @@
       "description": "Grants permission to generate headers for a user import .csv file",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html"
+    },
+    {
+      "name": "GetClientToken",
+      "methodName": "toGetClientToken",
+      "description": "Grants permission to issue an access token for machine-to-machine authorization with an app client ID and client secret",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetClientToken.html"
     },
     {
       "name": "GetDevice",
@@ -1217,6 +1233,7 @@
         "toDescribeResourceServer",
         "toDescribeRiskConfiguration",
         "toDescribeTerms",
+        "toDescribeTermsByClient",
         "toDescribeUserImportJob",
         "toDescribeUserPool",
         "toDescribeUserPoolClient",

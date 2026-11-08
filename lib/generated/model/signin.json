@@ -40,23 +40,23 @@
     {
       "name": "AuthorizeOAuth2Access",
       "methodName": "toAuthorizeOAuth2Access",
-      "description": "Grants permission to authenticate through a browser and obtain an OAuth 2.0 authorization code for credential exchange",
+      "description": "Grants permission to authenticate through a browser and obtain an OAuth 2 authorization code for credential exchange",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_AuthorizeOAuth2Access.html"
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_AuthorizeOAuth2Access.html"
     },
     {
       "name": "CreateOAuth2PublicClient",
       "methodName": "toCreateOAuth2PublicClient",
-      "description": "Grants permission to dynamically register an OAuth 2.0 public client for use with AWS Sign-In",
+      "description": "Grants permission to dynamically register an OAuth 2 public client for use with AWS Sign-In",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2PublicClient.html"
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_CreateOAuth2PublicClient.html"
     },
     {
       "name": "CreateOAuth2Token",
       "methodName": "toCreateOAuth2Token",
-      "description": "Grants permission to exchange an authorization code for OAuth 2.0 access token and refresh token that can be used to access AWS services from developer tools and applications",
+      "description": "Grants permission to exchange an authorization code, refresh token, SigV4 credentials, or JWT for OAuth 2 access token that can be used to access AWS services from developer tools and applications",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2Token.html"
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_CreateOAuth2Token.html"
     },
     {
       "name": "CreateTrustedIdentityPropagationApplicationForConsole",
@@ -96,9 +96,9 @@
     {
       "name": "IntrospectOAuth2Token",
       "methodName": "toIntrospectOAuth2Token",
-      "description": "Grants permission to inspect the metadata and active state of an OAuth 2.0 access token or refresh token",
+      "description": "Grants permission to inspect the metadata and active state of an OAuth 2 access token or refresh token",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_IntrospectOAuth2Token.html"
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_IntrospectOAuth2TokenWithIAM.html"
     },
     {
       "name": "ListResourcePermissionStatements",
@@ -131,9 +131,9 @@
     {
       "name": "RevokeOAuth2Token",
       "methodName": "toRevokeOAuth2Token",
-      "description": "Grants permission to revoke an OAuth 2.0 refresh token and its associated refresh tokens",
+      "description": "Grants permission to revoke an OAuth 2 refresh token and its associated refresh tokens",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_RevokeOAuth2Token.html"
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_RevokeOAuth2TokenWithIAM.html"
     },
     {
       "name": "CreateAccount",

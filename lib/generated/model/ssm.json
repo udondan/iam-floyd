@@ -38,6 +38,7 @@
       "DeletePatchBaseline",
       "DeleteResourceDataSync",
       "DeleteResourcePolicy",
+      "DeregisterDefaultHostManagementConfiguration",
       "DeregisterManagedInstance",
       "DeregisterPatchBaselineForPatchGroup",
       "DeregisterTargetFromMaintenanceWindow",
@@ -49,6 +50,7 @@
       "PutInventory",
       "PutParameter",
       "PutResourcePolicy",
+      "RegisterDefaultHostManagementConfiguration",
       "RegisterDefaultPatchBaseline",
       "RegisterManagedInstance",
       "RegisterPatchBaselineForPatchGroup",
@@ -395,6 +397,13 @@
       "description": "Grants permission to delete a Systems Manager resource policy",
       "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeregisterDefaultHostManagementConfiguration",
+      "methodName": "toDeregisterDefaultHostManagementConfiguration",
+      "description": "Grants permission to disable Default Host Management Configuration (DHMC) for an AWS account and Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterDefaultHostManagementConfiguration.html"
     },
     {
       "name": "DeregisterManagedInstance",
@@ -1059,6 +1068,13 @@
       "description": "Grants permission to create or update a Systems Manager resource policy",
       "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RegisterDefaultHostManagementConfiguration",
+      "methodName": "toRegisterDefaultHostManagementConfiguration",
+      "description": "Grants permission to enable Default Host Management Configuration (DHMC) for an AWS account and Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterDefaultHostManagementConfiguration.html"
     },
     {
       "name": "RegisterDefaultPatchBaseline",

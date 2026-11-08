@@ -70,6 +70,7 @@
       "PutMetricAlarm",
       "PutMetricData",
       "PutMetricStream",
+      "PutProfileRecords",
       "PutRecords",
       "QueryTraces",
       "SearchPrincipals",
@@ -138,6 +139,7 @@
       "GetOmniDashboard",
       "GetOmniThread",
       "GetPreferences",
+      "GetProfileRecords",
       "GetRecords",
       "GetResourceMetricsConfiguration",
       "GetService",
@@ -149,6 +151,7 @@
       "GetTopologyMap",
       "GetView",
       "ListManagedInsightRules",
+      "DetectGroupOutliers",
       "GetOTelEnrichment",
       "GetServiceData",
       "GetTopologyDiscoveryStatus"
@@ -742,6 +745,13 @@
       ]
     },
     {
+      "name": "GetProfileRecords",
+      "methodName": "toGetProfileRecords",
+      "description": "Grants permission to query and retrieve CloudWatch application profiling data. This action is unrelated to CloudWatch access profiles (GetAccessProfile and related actions)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
       "name": "GetRecords",
       "methodName": "toGetRecords",
       "description": "Grants permission to fetch logs and traces",
@@ -1131,6 +1141,13 @@
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricStream.html"
     },
     {
+      "name": "PutProfileRecords",
+      "methodName": "toPutProfileRecords",
+      "description": "Grants permission to ingest CloudWatch application profiling data. This action is unrelated to CloudWatch access profiles (GetAccessProfile and related actions)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
       "name": "PutRecords",
       "methodName": "toPutRecords",
       "description": "Grants permission to put logs and traces",
@@ -1364,6 +1381,13 @@
       "methodName": "toDeletePipelineRule",
       "description": "Grants permission to delete a pipeline rule for CloudWatch pipelines for OTel metric processing",
       "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
+      "name": "DetectGroupOutliers",
+      "methodName": "toDetectGroupOutliers",
+      "description": "Grants permission to detect outliers within a group of metrics",
+      "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
     },
     {
@@ -2041,11 +2065,16 @@
       "name": "view",
       "methodName": "onView",
       "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/Welcome.html",
-      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:view/${ViewName}",
+      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:view/${ViewName}/${ViewId}",
       "placeholders": [
         {
           "placeholder": "ViewName",
           "name": "viewName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ViewId",
+          "name": "viewId",
           "kind": "required"
         },
         {
@@ -2066,13 +2095,7 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ],
-      "cdkRef": {
-        "module": "aws_cloudwatch",
-        "interface": "IViewRef",
-        "property": "viewRef",
-        "arn": "viewArn"
-      }
+      ]
     }
   ],
   "conditions": [
@@ -2149,6 +2172,7 @@
         "toGetMetricData",
         "toGetMetricStream",
         "toGetOmniDashboard",
+        "toGetProfileRecords",
         "toGetService",
         "toGetServiceLevelObjective",
         "toGetSpace",
@@ -2164,6 +2188,7 @@
         "toPutMetricAlarm",
         "toPutMetricData",
         "toPutMetricStream",
+        "toPutProfileRecords",
         "toSetAlarmState",
         "toStartMetricStreams",
         "toStopMetricStreams",
@@ -2310,6 +2335,7 @@
         "toGetOmniDashboard",
         "toGetOmniThread",
         "toGetPreferences",
+        "toGetProfileRecords",
         "toGetRecords",
         "toGetSpace",
         "toGetTelemetryQueryResults",

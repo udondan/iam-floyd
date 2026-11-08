@@ -23,6 +23,7 @@
       "RenewDomain",
       "ResendContactReachabilityEmail",
       "ResendOperationAuthorization",
+      "RestoreDomain",
       "RetrieveDomainAuthCode",
       "TransferDomain",
       "TransferDomainToAnotherAwsAccount",
@@ -241,6 +242,13 @@
       "description": "Grants permission to resend the operation authorization",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+    },
+    {
+      "name": "RestoreDomain",
+      "methodName": "toRestoreDomain",
+      "description": "Grants permission to restore domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RestoreDomain.html"
     },
     {
       "name": "RetrieveDomainAuthCode",

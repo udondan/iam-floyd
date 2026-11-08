@@ -11,6 +11,7 @@
       "AcceptInboundCrossClusterSearchConnection",
       "AddDataSource",
       "AddDirectQueryDataSource",
+      "AddReplicationPeer",
       "AddTags",
       "AssociatePackage",
       "AssociatePackages",
@@ -50,6 +51,7 @@
       "ESHttpPatch",
       "ESHttpPost",
       "ESHttpPut",
+      "FailoverReplication",
       "InsightFeedback",
       "PurchaseReservedElasticsearchInstanceOffering",
       "PurchaseReservedInstanceOffering",
@@ -57,6 +59,7 @@
       "RegisterCapability",
       "RejectInboundConnection",
       "RejectInboundCrossClusterSearchConnection",
+      "RemoveReplicationPeer",
       "RemoveTags",
       "RevokeVpcEndpointAccess",
       "RollbackElasticsearchServiceSoftwareUpdate",
@@ -65,6 +68,7 @@
       "StartElasticsearchServiceSoftwareUpdate",
       "StartMigration",
       "StartServiceSoftwareUpdate",
+      "SwitchoverReplication",
       "UpdateApplication",
       "UpdateDataSource",
       "UpdateDirectQueryDataSource",
@@ -83,6 +87,7 @@
       "RemoveTags"
     ],
     "Read": [
+      "CompareDomainConfiguration",
       "DescribeDataSourceAttachment",
       "DescribeDomain",
       "DescribeDomainAutoTunes",
@@ -90,6 +95,7 @@
       "DescribeDomainConfig",
       "DescribeDomainHealth",
       "DescribeDomainNodes",
+      "DescribeDomainReplication",
       "DescribeDryRunProgress",
       "DescribeElasticsearchDomain",
       "DescribeElasticsearchDomainConfig",
@@ -178,6 +184,13 @@
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AddDirectQueryDataSource.html"
     },
     {
+      "name": "AddReplicationPeer",
+      "methodName": "toAddReplicationPeer",
+      "description": "Grants permission to pair two OpenSearch Service domains for replication. Requires the permission on both domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AddReplicationPeer.html"
+    },
+    {
       "name": "AddTags",
       "methodName": "toAddTags",
       "description": "Grants permission to attach resource tags to an OpenSearch Service domain, data source, or application",
@@ -232,6 +245,13 @@
       "description": "Grants permission to cancel a service software update of a domain",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CancelServiceSoftwareUpdate.html"
+    },
+    {
+      "name": "CompareDomainConfiguration",
+      "methodName": "toCompareDomainConfiguration",
+      "description": "Grants permission to compare the configuration of two OpenSearch Service domains. Requires the permission on both domains",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CompareDomainConfiguration.html"
     },
     {
       "name": "CreateApplication",
@@ -455,6 +475,13 @@
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainNodes.html"
     },
     {
+      "name": "DescribeDomainReplication",
+      "methodName": "toDescribeDomainReplication",
+      "description": "Grants permission to retrieve the replication relationship details for an OpenSearch Service domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDomainReplication.html"
+    },
+    {
       "name": "DescribeDomains",
       "methodName": "toDescribeDomains",
       "description": "Grants permission to view a description of the domain configuration for up to five specified OpenSearch Service domains",
@@ -649,6 +676,13 @@
       "description": "Grants permission to send HTTP PUT requests to the OpenSearch APIs",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/Welcome.html"
+    },
+    {
+      "name": "FailoverReplication",
+      "methodName": "toFailoverReplication",
+      "description": "Grants permission to promote the secondary domain of a replication relationship when the primary is unavailable. Requires the permission on both domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_FailoverReplication.html"
     },
     {
       "name": "GetApplication",
@@ -931,6 +965,13 @@
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RejectInboundConnection.html"
     },
     {
+      "name": "RemoveReplicationPeer",
+      "methodName": "toRemoveReplicationPeer",
+      "description": "Grants permission to end the replication relationship between two OpenSearch Service domains. Requires the permission on both domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RemoveReplicationPeer.html"
+    },
+    {
       "name": "RemoveTags",
       "methodName": "toRemoveTags",
       "description": "Grants permission to remove resource tags from an OpenSearch Service domain, data source, or application",
@@ -985,6 +1026,13 @@
       "description": "Grants permission to start a service software update of a domain",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_StartServiceSoftwareUpdate.html"
+    },
+    {
+      "name": "SwitchoverReplication",
+      "methodName": "toSwitchoverReplication",
+      "description": "Grants permission to swap the primary and secondary roles of a replication relationship between two OpenSearch Service domains without data loss. Requires the permission on both domains",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_SwitchoverReplication.html"
     },
     {
       "name": "UpdateApplication",
@@ -1251,6 +1299,7 @@
       "relatedActionMethods": [
         "toAddDataSource",
         "toAddDirectQueryDataSource",
+        "toAddReplicationPeer",
         "toAddTags",
         "toAssociatePackage",
         "toAssociatePackages",
@@ -1258,6 +1307,7 @@
         "toCancelDomainConfigChange",
         "toCancelElasticsearchServiceSoftwareUpdate",
         "toCancelServiceSoftwareUpdate",
+        "toCompareDomainConfiguration",
         "toCreateDomain",
         "toCreateElasticsearchDomain",
         "toCreateIndex",
@@ -1277,6 +1327,7 @@
         "toDescribeDomainConfig",
         "toDescribeDomainHealth",
         "toDescribeDomainNodes",
+        "toDescribeDomainReplication",
         "toDescribeDomains",
         "toDescribeDryRunProgress",
         "toDescribeElasticsearchDomain",
@@ -1293,6 +1344,7 @@
         "toESHttpPatch",
         "toESHttpPost",
         "toESHttpPut",
+        "toFailoverReplication",
         "toGetApplication",
         "toGetCapability",
         "toGetCompatibleElasticsearchVersions",
@@ -1318,6 +1370,7 @@
         "toListTags",
         "toPutDefaultApplicationSetting",
         "toRegisterCapability",
+        "toRemoveReplicationPeer",
         "toRemoveTags",
         "toRollbackElasticsearchServiceSoftwareUpdate",
         "toRollbackServiceSoftwareUpdate",
@@ -1325,6 +1378,7 @@
         "toStartElasticsearchServiceSoftwareUpdate",
         "toStartMigration",
         "toStartServiceSoftwareUpdate",
+        "toSwitchoverReplication",
         "toUpdateApplication",
         "toUpdateDataSource",
         "toUpdateDirectQueryDataSource",
@@ -1368,6 +1422,42 @@
       "keyLiteral": "aws:TagKeys",
       "valueKind": "string",
       "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "es:SecurityGroupIds",
+      "methodName": "ifSecurityGroupIds",
+      "description": "Filters access by the security group IDs specified in the VPC options of the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toCreateElasticsearchDomain"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SecurityGroupIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "es:SubnetIds",
+      "methodName": "ifSubnetIds",
+      "description": "Filters access by the subnet IDs specified in the VPC options of the request",
+      "url": "",
+      "relatedActionMethods": [
+        "toCreateDomain",
+        "toCreateElasticsearchDomain"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SubnetIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
       "valueTypes": [
         "string"
       ],

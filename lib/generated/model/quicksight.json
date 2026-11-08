@@ -146,6 +146,7 @@
       "UpdateQPersonalizationConfiguration",
       "UpdateQuickSightQSearchConfiguration",
       "UpdateRefreshSchedule",
+      "UpdateResourcePermissions",
       "UpdateRoleCustomPermission",
       "UpdateSPICECapacityConfiguration",
       "UpdateSelfUpgrade",
@@ -167,18 +168,27 @@
       "UpdateVPCConnection",
       "AccountConfigurations",
       "AllowVendedLogDeliveryForResource",
+      "AuthorizeOAuthAccess",
       "BatchUpdatePreferences",
+      "CreateAccessControlApplication",
+      "CreateAccessControlApplicationSecret",
       "CreateAdmin",
       "CreateEmailCustomizationTemplate",
       "CreateExtension",
       "CreateExtensionAccess",
+      "CreateInboundConnector",
+      "CreateOAuthToken",
       "CreateReader",
       "CreateUser",
+      "DeleteAccessControlApplication",
+      "DeleteAccessControlApplicationSecret",
       "DeleteEmailCustomizationTemplate",
       "DeleteExtension",
       "DeleteExtensionAccess",
+      "DeleteInboundConnector",
       "RegisterCustomerManagedKey",
       "RemoveCustomerManagedKey",
+      "RevokeOAuthToken",
       "ScopeDownPolicy",
       "SetGroupMapping",
       "StartDlpJob",
@@ -186,13 +196,16 @@
       "Subscribe",
       "UnpublishFlow",
       "Unsubscribe",
+      "UpdateAccessControlApplication",
+      "UpdateAccessControlApplicationSecret",
       "UpdateChatConfiguration",
       "UpdateEmailCustomizationTemplate",
       "UpdateExtension",
       "UpdateExtensionAccess",
       "UpdateExtensionPermissions",
-      "UpdateQuickIndexCapacity",
-      "UpdateResourcePermissions"
+      "UpdateInboundConnector",
+      "UpdateInboundConnectorApplicationAssociations",
+      "UpdateQuickIndexCapacity"
     ],
     "Read": [
       "BatchDescribeUserLimits",
@@ -245,6 +258,7 @@
       "DescribeQPersonalizationConfiguration",
       "DescribeQuickSightQSearchConfiguration",
       "DescribeRefreshSchedule",
+      "DescribeResourcePermissions",
       "DescribeRoleCustomPermission",
       "DescribeSelfUpgradeConfiguration",
       "DescribeSpace",
@@ -269,12 +283,14 @@
       "PredictQAResults",
       "SearchFolders",
       "BatchGetPreferences",
+      "DescribeAccessControlApplication",
       "DescribeChatConfiguration",
       "DescribeDlpJob",
       "DescribeEmailCustomizationTemplate",
       "DescribeExtension",
       "DescribeExtensionAccess",
       "DescribeExtensionPermissions",
+      "DescribeInboundConnector",
       "DescribeQuickIndexCapacity",
       "GetAnonymousUserEmbedUrl",
       "GetAuthCode",
@@ -363,11 +379,14 @@
       "SearchKnowledgeBases",
       "SearchSpaces",
       "SearchTopics",
+      "ListAccessControlApplications",
       "ListCustomPermissionAssignments",
       "ListCustomerManagedKeys",
       "ListDlpLabels",
       "ListExtensionAccesses",
       "ListExtensions",
+      "ListInboundConnectorApplicationAssociations",
+      "ListInboundConnectors",
       "ListKMSKeysForUser",
       "ListUsersIndexCapacity",
       "SearchDirectoryGroups",
@@ -1314,6 +1333,13 @@
       "description": "Grants permission to describe a refresh schedule for a dataset",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRefreshSchedule.html"
+    },
+    {
+      "name": "DescribeResourcePermissions",
+      "methodName": "toDescribeResourcePermissions",
+      "description": "Grants permission to describe the QuickSight service role configuration for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeResourcePermissions.html"
     },
     {
       "name": "DescribeRoleCustomPermission",
@@ -2313,6 +2339,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateRefreshSchedule.html"
     },
     {
+      "name": "UpdateResourcePermissions",
+      "methodName": "toUpdateResourcePermissions",
+      "description": "Grants permission to update resource permissions and the QuickSight service role configuration for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateResourcePermissions.html"
+    },
+    {
       "name": "UpdateRoleCustomPermission",
       "methodName": "toUpdateRoleCustomPermission",
       "description": "Grants permission to update the custom permission associated with a role",
@@ -2460,6 +2493,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
     {
+      "name": "AuthorizeOAuthAccess",
+      "methodName": "toAuthorizeOAuthAccess",
+      "description": "Grants permission to authorize OAuth 2.0 access for Amazon QuickSight clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick/latest/userguide/desktop-enterprise-setup.html"
+    },
+    {
       "name": "BatchGetPreferences",
       "methodName": "toBatchGetPreferences",
       "description": "Grants permission to get user preferences",
@@ -2472,6 +2512,20 @@
       "description": "Grants permission to update user preferences",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+    },
+    {
+      "name": "CreateAccessControlApplication",
+      "methodName": "toCreateAccessControlApplication",
+      "description": "Grants permission to create an access control application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccessControlApplication.html"
+    },
+    {
+      "name": "CreateAccessControlApplicationSecret",
+      "methodName": "toCreateAccessControlApplicationSecret",
+      "description": "Grants permission to create a client secret for an access control application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccessControlApplicationSecret.html"
     },
     {
       "name": "CreateAdmin",
@@ -2502,6 +2556,20 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
     {
+      "name": "CreateInboundConnector",
+      "methodName": "toCreateInboundConnector",
+      "description": "Grants permission to create an inbound connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateInboundConnector.html"
+    },
+    {
+      "name": "CreateOAuthToken",
+      "methodName": "toCreateOAuthToken",
+      "description": "Grants permission to issue OAuth 2.0 access and refresh tokens for Amazon QuickSight clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick/latest/userguide/desktop-enterprise-setup.html"
+    },
+    {
       "name": "CreateReader",
       "methodName": "toCreateReader",
       "description": "Grants permission to provision Amazon QuickSight readers",
@@ -2514,6 +2582,20 @@
       "description": "Grants permission to provision Amazon QuickSight authors and readers",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+    },
+    {
+      "name": "DeleteAccessControlApplication",
+      "methodName": "toDeleteAccessControlApplication",
+      "description": "Grants permission to delete an access control application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccessControlApplication.html"
+    },
+    {
+      "name": "DeleteAccessControlApplicationSecret",
+      "methodName": "toDeleteAccessControlApplicationSecret",
+      "description": "Grants permission to delete a client secret from an access control application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccessControlApplicationSecret.html"
     },
     {
       "name": "DeleteEmailCustomizationTemplate",
@@ -2535,6 +2617,20 @@
       "description": "Grants permission to delete an extension access",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+    },
+    {
+      "name": "DeleteInboundConnector",
+      "methodName": "toDeleteInboundConnector",
+      "description": "Grants permission to delete an inbound connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteInboundConnector.html"
+    },
+    {
+      "name": "DescribeAccessControlApplication",
+      "methodName": "toDescribeAccessControlApplication",
+      "description": "Grants permission to describe an access control application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccessControlApplication.html"
     },
     {
       "name": "DescribeChatConfiguration",
@@ -2579,6 +2675,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
     {
+      "name": "DescribeInboundConnector",
+      "methodName": "toDescribeInboundConnector",
+      "description": "Grants permission to describe an inbound connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeInboundConnector.html"
+    },
+    {
       "name": "DescribeQuickIndexCapacity",
       "methodName": "toDescribeQuickIndexCapacity",
       "description": "Grants permission to describe index capacity",
@@ -2614,6 +2717,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
     {
+      "name": "ListAccessControlApplications",
+      "methodName": "toListAccessControlApplications",
+      "description": "Grants permission to list access control applications in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAccessControlApplications.html"
+    },
+    {
       "name": "ListCustomPermissionAssignments",
       "methodName": "toListCustomPermissionAssignments",
       "description": "Grants permission to list assignment information of the custom permission profile in an account",
@@ -2647,6 +2757,20 @@
       "description": "Grants permission to list extensions",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+    },
+    {
+      "name": "ListInboundConnectorApplicationAssociations",
+      "methodName": "toListInboundConnectorApplicationAssociations",
+      "description": "Grants permission to list the access control applications associated with an inbound connector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListInboundConnectorApplicationAssociations.html"
+    },
+    {
+      "name": "ListInboundConnectors",
+      "methodName": "toListInboundConnectors",
+      "description": "Grants permission to list inbound connectors in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListInboundConnectors.html"
     },
     {
       "name": "ListKMSKeysForUser",
@@ -2703,6 +2827,13 @@
       "description": "Grants permission to remove a customer managed key",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/key-management.html"
+    },
+    {
+      "name": "RevokeOAuthToken",
+      "methodName": "toRevokeOAuthToken",
+      "description": "Grants permission to revoke OAuth 2.0 tokens issued to Amazon QuickSight clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quick/latest/userguide/desktop-enterprise-setup.html"
     },
     {
       "name": "ScopeDownPolicy",
@@ -2772,6 +2903,20 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
     {
+      "name": "UpdateAccessControlApplication",
+      "methodName": "toUpdateAccessControlApplication",
+      "description": "Grants permission to update an access control application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccessControlApplication.html"
+    },
+    {
+      "name": "UpdateAccessControlApplicationSecret",
+      "methodName": "toUpdateAccessControlApplicationSecret",
+      "description": "Grants permission to update a client secret for an access control application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccessControlApplicationSecret.html"
+    },
+    {
       "name": "UpdateChatConfiguration",
       "methodName": "toUpdateChatConfiguration",
       "description": "Grants permission to update chat configuration",
@@ -2807,21 +2952,59 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
     {
+      "name": "UpdateInboundConnector",
+      "methodName": "toUpdateInboundConnector",
+      "description": "Grants permission to update an inbound connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateInboundConnector.html"
+    },
+    {
+      "name": "UpdateInboundConnectorApplicationAssociations",
+      "methodName": "toUpdateInboundConnectorApplicationAssociations",
+      "description": "Grants permission to associate or disassociate access control applications with an inbound connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateInboundConnectorApplicationAssociations.html"
+    },
+    {
       "name": "UpdateQuickIndexCapacity",
       "methodName": "toUpdateQuickIndexCapacity",
       "description": "Grants permission to update index capacity",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
-    },
-    {
-      "name": "UpdateResourcePermissions",
-      "methodName": "toUpdateResourcePermissions",
-      "description": "Grants permission to update resource-level permissions in QuickSight",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html"
     }
   ],
   "resources": [
+    {
+      "name": "accessControlApplication",
+      "methodName": "onAccessControlApplication",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccessControlApplication.html",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:access-control-application/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
     {
       "name": "account",
       "methodName": "onAccount",
@@ -3710,6 +3893,37 @@
       }
     },
     {
+      "name": "inboundConnector",
+      "methodName": "onInboundConnector",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_InboundConnector.html",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:inbound-connector/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "ingestion",
       "methodName": "onIngestion",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Ingestion.html",
@@ -4197,7 +4411,9 @@
         "toUpdateTopic",
         "toUpdateTopicPermissions",
         "toUpdateVPCConnection",
+        "toCreateAccessControlApplication",
         "toCreateEmailCustomizationTemplate",
+        "toCreateInboundConnector",
         "toPassDataSet",
         "toPassDataSource",
         "toPassTopic"
@@ -4386,23 +4602,37 @@
         "toUpdateUser",
         "toUpdateUserCustomPermission",
         "toUpdateVPCConnection",
+        "toCreateAccessControlApplication",
+        "toCreateAccessControlApplicationSecret",
         "toCreateAdmin",
         "toCreateEmailCustomizationTemplate",
+        "toCreateInboundConnector",
         "toCreateReader",
         "toCreateUser",
+        "toDeleteAccessControlApplication",
+        "toDeleteAccessControlApplicationSecret",
         "toDeleteEmailCustomizationTemplate",
+        "toDeleteInboundConnector",
+        "toDescribeAccessControlApplication",
         "toDescribeDlpJob",
         "toDescribeEmailCustomizationTemplate",
+        "toDescribeInboundConnector",
         "toGetAuthCode",
+        "toListInboundConnectorApplicationAssociations",
         "toPassDataSet",
         "toPassDataSource",
         "toPassTopic",
         "toSearchUsers",
         "toStartDlpJob",
         "toUnpublishFlow",
-        "toUpdateEmailCustomizationTemplate"
+        "toUpdateAccessControlApplication",
+        "toUpdateAccessControlApplicationSecret",
+        "toUpdateEmailCustomizationTemplate",
+        "toUpdateInboundConnector",
+        "toUpdateInboundConnectorApplicationAssociations"
       ],
       "relatedResourceTypes": [
+        "accessControlApplication",
         "actionconnector",
         "analysis",
         "app",
@@ -4417,6 +4647,7 @@
         "emailCustomizationTemplate",
         "flow",
         "folder",
+        "inboundConnector",
         "ingestion",
         "knowledgeBase",
         "namespace",
@@ -4499,7 +4730,9 @@
         "toUpdateTopic",
         "toUpdateTopicPermissions",
         "toUpdateVPCConnection",
+        "toCreateAccessControlApplication",
         "toCreateEmailCustomizationTemplate",
+        "toCreateInboundConnector",
         "toPassDataSet",
         "toPassDataSource",
         "toPassTopic"

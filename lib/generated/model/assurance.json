@@ -40,7 +40,6 @@
       "RevokePermissionSet",
       "StartAssessment",
       "StartAssessmentReportExport",
-      "StartResourceDiscovery",
       "TagResource",
       "UntagResource",
       "UpdateComment",
@@ -56,9 +55,7 @@
       "CreateTask",
       "DeleteAnnotation",
       "UpdateAnnotation",
-      "UpdateAssessment",
-      "UploadEvidence",
-      "VendConnectionAccessToken"
+      "UpdateAssessment"
     ],
     "Read": [
       "BatchGetComment",
@@ -80,6 +77,7 @@
       "GetInvitation",
       "GetPermissionSet",
       "GetProject",
+      "GetResourceActivitiesQueryResults",
       "GetTask",
       "ListAssessmentAnnotations",
       "ListAssessmentJournalRecords",
@@ -103,11 +101,10 @@
       "ListPermissionSetAssignments",
       "ListPermissionSets",
       "ListProjects",
-      "ListResourcesForControl",
       "ListTagsForResource",
       "ListTaskHistory",
       "ListTasks",
-      "DownloadEvidence"
+      "StartResourceActivitiesQuery"
     ],
     "Tagging": [
       "TagResource",
@@ -153,7 +150,7 @@
     {
       "name": "Chat",
       "methodName": "toChat",
-      "description": "Grants permission to start a streaming chat session with the AI Governance agent",
+      "description": "Grants permission to start a streaming chat session with the AWS Assurance agent",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_Chat.html"
     },
@@ -428,6 +425,13 @@
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetProject.html"
     },
     {
+      "name": "GetResourceActivitiesQueryResults",
+      "methodName": "toGetResourceActivitiesQueryResults",
+      "description": "Grants permission to retrieve results of an asynchronous resource-activities query for an AI agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_GetResourceActivitiesQueryResults.html"
+    },
+    {
       "name": "GetTask",
       "methodName": "toGetTask",
       "description": "Grants permission to retrieve a specific task by its identifying fields",
@@ -589,13 +593,6 @@
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListProjects.html"
     },
     {
-      "name": "ListResourcesForControl",
-      "methodName": "toListResourcesForControl",
-      "description": "Grants permission to list in-scope resources for a control",
-      "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListResourcesForControl.html"
-    },
-    {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
       "description": "Grants permission to list tags for a resource",
@@ -673,11 +670,11 @@
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_StartAssessmentReportExport.html"
     },
     {
-      "name": "StartResourceDiscovery",
-      "methodName": "toStartResourceDiscovery",
-      "description": "Grants permission to start discovery of in-scope resources",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_StartResourceDiscovery.html"
+      "name": "StartResourceActivitiesQuery",
+      "methodName": "toStartResourceActivitiesQuery",
+      "description": "Grants permission to start an asynchronous resource-activities query for an AI agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_StartResourceActivitiesQuery.html"
     },
     {
       "name": "TagResource",
@@ -778,13 +775,6 @@
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DeleteAnnotation.html"
     },
     {
-      "name": "DownloadEvidence",
-      "methodName": "toDownloadEvidence",
-      "description": "Grants permission to retrieve the content of an evidence item",
-      "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_DownloadEvidence.html"
-    },
-    {
       "name": "UpdateAnnotation",
       "methodName": "toUpdateAnnotation",
       "description": "Grants permission to update the reviewer notes on an existing annotation",
@@ -797,20 +787,6 @@
       "description": "Grants permission to update an assessment's status and result",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UpdateAssessment.html"
-    },
-    {
-      "name": "UploadEvidence",
-      "methodName": "toUploadEvidence",
-      "description": "Grants permission to upload new evidence to support a compliance assessment",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_UploadEvidence.html"
-    },
-    {
-      "name": "VendConnectionAccessToken",
-      "methodName": "toVendConnectionAccessToken",
-      "description": "Grants permission to retrieve a short-lived access token for a third-party connection in an environment",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_VendConnectionAccessToken.html"
     }
   ],
   "resources": [
@@ -912,6 +888,7 @@
         "toGetInvitation",
         "toGetPermissionSet",
         "toGetProject",
+        "toGetResourceActivitiesQueryResults",
         "toGetTask",
         "toListAssessmentAnnotations",
         "toListAssessmentJournalRecords",
@@ -932,7 +909,6 @@
         "toListPermissionSetAssignments",
         "toListPermissionSets",
         "toListProjects",
-        "toListResourcesForControl",
         "toListTagsForResource",
         "toListTaskHistory",
         "toListTasks",
@@ -943,7 +919,7 @@
         "toRevokePermissionSet",
         "toStartAssessment",
         "toStartAssessmentReportExport",
-        "toStartResourceDiscovery",
+        "toStartResourceActivitiesQuery",
         "toTagResource",
         "toUntagResource",
         "toUpdateComment",
@@ -958,10 +934,8 @@
         "toCreateAnnotation",
         "toCreateTask",
         "toDeleteAnnotation",
-        "toDownloadEvidence",
         "toUpdateAnnotation",
-        "toUpdateAssessment",
-        "toUploadEvidence"
+        "toUpdateAssessment"
       ],
       "relatedResourceTypes": [
         "environment"

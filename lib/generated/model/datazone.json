@@ -42,6 +42,7 @@
       "CreateGroupProfile",
       "CreateListingChangeSet",
       "CreateNotebook",
+      "CreateNotificationPreference",
       "CreateProject",
       "CreateProjectMembership",
       "CreateProjectProfile",
@@ -49,6 +50,7 @@
       "CreateSubscriptionGrant",
       "CreateSubscriptionRequest",
       "CreateSubscriptionTarget",
+      "CreateUIConfiguration",
       "CreateUserProfile",
       "DeleteAccountPool",
       "DeleteAgentApprovalPolicy",
@@ -77,6 +79,7 @@
       "DeleteLineageEvent",
       "DeleteListing",
       "DeleteNotebook",
+      "DeleteNotificationPreference",
       "DeleteProject",
       "DeleteProjectMembership",
       "DeleteProjectProfile",
@@ -85,6 +88,7 @@
       "DeleteSubscriptionRequest",
       "DeleteSubscriptionTarget",
       "DeleteTimeSeriesDataPoints",
+      "DeleteUIConfiguration",
       "DeregisterAgentArtifact",
       "DisassociateEnvironmentRole",
       "DisassociateGovernedTerms",
@@ -97,6 +101,7 @@
       "PutCellRunResult",
       "PutDataExportConfiguration",
       "PutEnvironmentBlueprintConfiguration",
+      "PutSystemTableExportConfiguration",
       "RegisterAgentArtifact",
       "RejectPredictions",
       "RejectSubscriptionRequest",
@@ -122,6 +127,7 @@
       "UntagResource",
       "UpdateAccountPool",
       "UpdateAssetFilter",
+      "UpdateAssetOwner",
       "UpdateCell",
       "UpdateCellRun",
       "UpdateConnection",
@@ -139,12 +145,14 @@
       "UpdateGlossaryTerm",
       "UpdateGroupProfile",
       "UpdateNotebook",
+      "UpdateNotificationPreference",
       "UpdateProject",
       "UpdateProjectProfile",
       "UpdateRule",
       "UpdateSubscriptionGrantStatus",
       "UpdateSubscriptionRequest",
       "UpdateSubscriptionTarget",
+      "UpdateUIConfiguration",
       "UpdateUserProfile",
       "BatchDeleteLinkedTypes",
       "BatchPutLinkedTypes",
@@ -193,6 +201,7 @@
       "GetDesignation",
       "GetDomain",
       "GetDomainUnit",
+      "GetEffectiveUICustomization",
       "GetEnvironment",
       "GetEnvironmentAction",
       "GetEnvironmentBlueprint",
@@ -212,6 +221,7 @@
       "GetNotebookCompute",
       "GetNotebookExport",
       "GetNotebookRun",
+      "GetNotificationPreference",
       "GetProject",
       "GetProjectProfile",
       "GetRule",
@@ -219,7 +229,9 @@
       "GetSubscriptionGrant",
       "GetSubscriptionRequestDetails",
       "GetSubscriptionTarget",
+      "GetSystemTableExportConfiguration",
       "GetTimeSeriesDataPoint",
+      "GetUIConfiguration",
       "GetUpdateEligibility",
       "GetUserProfile",
       "ListTagsForResource",
@@ -245,6 +257,7 @@
       "ListDataSourceRunActivities",
       "ListDataSourceRuns",
       "ListDataSources",
+      "ListDeployableEnvironmentBlueprints",
       "ListDesignations",
       "ListDomainUnitsForParent",
       "ListDomains",
@@ -273,6 +286,7 @@
       "ListSubscriptionTargets",
       "ListSubscriptions",
       "ListTimeSeriesDataPoints",
+      "ListUIConfigurations",
       "QueryGraph",
       "Search",
       "SearchGroupProfiles",
@@ -561,6 +575,13 @@
       "url": ""
     },
     {
+      "name": "CreateNotificationPreference",
+      "methodName": "toCreateNotificationPreference",
+      "description": "Grants permission to create a notification preference",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "CreateProject",
       "methodName": "toCreateProject",
       "description": "Grants permission to create a Project to enable your team to publish and subscribe to data",
@@ -606,6 +627,13 @@
       "name": "CreateSubscriptionTarget",
       "methodName": "toCreateSubscriptionTarget",
       "description": "Grants permission to create a subscription target for a Environment in the project",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateUIConfiguration",
+      "methodName": "toCreateUIConfiguration",
+      "description": "Grants permission to create a UI configuration",
       "accessLevel": "Write",
       "url": ""
     },
@@ -806,6 +834,13 @@
       "url": ""
     },
     {
+      "name": "DeleteNotificationPreference",
+      "methodName": "toDeleteNotificationPreference",
+      "description": "Grants permission to delete a notification preference",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "DeleteProject",
       "methodName": "toDeleteProject",
       "description": "Grants permission to delete a Project that enables your team to publish and subscribe to data",
@@ -858,6 +893,13 @@
       "name": "DeleteTimeSeriesDataPoints",
       "methodName": "toDeleteTimeSeriesDataPoints",
       "description": "Grants permission to delete existing TimeSeriesDataPoints",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "DeleteUIConfiguration",
+      "methodName": "toDeleteUIConfiguration",
+      "description": "Grants permission to delete a UI configuration",
       "accessLevel": "Write",
       "url": ""
     },
@@ -1030,6 +1072,13 @@
       "url": ""
     },
     {
+      "name": "GetEffectiveUICustomization",
+      "methodName": "toGetEffectiveUICustomization",
+      "description": "Grants permission to get the effective UI customization",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
       "name": "GetEnvironment",
       "methodName": "toGetEnvironment",
       "description": "Grants permission to get Environment details",
@@ -1170,6 +1219,13 @@
       "url": ""
     },
     {
+      "name": "GetNotificationPreference",
+      "methodName": "toGetNotificationPreference",
+      "description": "Grants permission to get a notification preference",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
       "name": "GetProject",
       "methodName": "toGetProject",
       "description": "Grants permission to get Project details",
@@ -1219,9 +1275,23 @@
       "url": ""
     },
     {
+      "name": "GetSystemTableExportConfiguration",
+      "methodName": "toGetSystemTableExportConfiguration",
+      "description": "Grants permission to get a system table export configuration",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
       "name": "GetTimeSeriesDataPoint",
       "methodName": "toGetTimeSeriesDataPoint",
       "description": "Grants permission to get an existing TimeSeriesDataPoints in Amazon DataZone using its identifier",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetUIConfiguration",
+      "methodName": "toGetUIConfiguration",
+      "description": "Grants permission to get a UI configuration",
       "accessLevel": "Read",
       "url": ""
     },
@@ -1348,6 +1418,13 @@
       "name": "ListDataSources",
       "methodName": "toListDataSources",
       "description": "Grants permission to list existing DataSources",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListDeployableEnvironmentBlueprints",
+      "methodName": "toListDeployableEnvironmentBlueprints",
+      "description": "Grants permission to list deployable environment blueprints",
       "accessLevel": "List",
       "url": ""
     },
@@ -1555,6 +1632,13 @@
       "url": ""
     },
     {
+      "name": "ListUIConfigurations",
+      "methodName": "toListUIConfigurations",
+      "description": "Grants permission to list UI configurations",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
       "name": "PostLineageEvent",
       "methodName": "toPostLineageEvent",
       "description": "Grants permission to post lineage events",
@@ -1593,6 +1677,13 @@
       "name": "PutEnvironmentBlueprintConfiguration",
       "methodName": "toPutEnvironmentBlueprintConfiguration",
       "description": "Grants permission to put environment blueprint configuration",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "PutSystemTableExportConfiguration",
+      "methodName": "toPutSystemTableExportConfiguration",
+      "description": "Grants permission to put a system table export configuration",
       "accessLevel": "Write",
       "url": ""
     },
@@ -1814,6 +1905,13 @@
       "url": ""
     },
     {
+      "name": "UpdateAssetOwner",
+      "methodName": "toUpdateAssetOwner",
+      "description": "Grants permission to update the owning project of the asset",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "UpdateCell",
       "methodName": "toUpdateCell",
       "description": "Grants permission to update cells",
@@ -1933,6 +2031,13 @@
       "url": ""
     },
     {
+      "name": "UpdateNotificationPreference",
+      "methodName": "toUpdateNotificationPreference",
+      "description": "Grants permission to update a notification preference",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
       "name": "UpdateProject",
       "methodName": "toUpdateProject",
       "description": "Grants permission to update a Project that enables your team to publish and subscribe to data",
@@ -1971,6 +2076,13 @@
       "name": "UpdateSubscriptionTarget",
       "methodName": "toUpdateSubscriptionTarget",
       "description": "Grants permission to update a subscription target",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "UpdateUIConfiguration",
+      "methodName": "toUpdateUIConfiguration",
+      "description": "Grants permission to update a UI configuration",
       "accessLevel": "Write",
       "url": ""
     },

@@ -130,7 +130,6 @@
     "aws_cloudwatch.IInsightRuleRef",
     "aws_cloudwatch.IIntegrationRef",
     "aws_cloudwatch.IMetricStreamRef",
-    "aws_cloudwatch.IViewRef",
     "aws_codeartifact.IDomainRef",
     "aws_codebuild.IProjectRef",
     "aws_codebuild.IReportGroupRef",

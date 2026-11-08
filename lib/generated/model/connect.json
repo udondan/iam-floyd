@@ -197,6 +197,7 @@
       "UpdateMetricContent",
       "UpdateMetricMetadata",
       "UpdateNotificationContent",
+      "UpdateOutboundEmailContactMessage",
       "UpdateParticipantAuthentication",
       "UpdateParticipantRoleConfig",
       "UpdatePhoneNumber",
@@ -2797,6 +2798,13 @@
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateNotificationContent.html"
     },
     {
+      "name": "UpdateOutboundEmailContactMessage",
+      "methodName": "toUpdateOutboundEmailContactMessage",
+      "description": "Grants permission to update the draft outbound email message for a contact in an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateOutboundEmailContactMessage.html"
+    },
+    {
       "name": "UpdateParticipantAuthentication",
       "methodName": "toUpdateParticipantAuthentication",
       "description": "Grants permission to update and continue authentication for a specific contact",
@@ -5113,6 +5121,7 @@
         "toUpdateMetricContent",
         "toUpdateMetricMetadata",
         "toUpdateNotificationContent",
+        "toUpdateOutboundEmailContactMessage",
         "toUpdateParticipantAuthentication",
         "toUpdateParticipantRoleConfig",
         "toUpdatePhoneNumber",
@@ -5316,7 +5325,8 @@
         "toUpdateContact",
         "toUpdateContactAttributes",
         "toUpdateContactRoutingData",
-        "toUpdateContactSchedule"
+        "toUpdateContactSchedule",
+        "toUpdateOutboundEmailContactMessage"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "Channel",
@@ -5348,7 +5358,8 @@
         "toUpdateContact",
         "toUpdateContactAttributes",
         "toUpdateContactRoutingData",
-        "toUpdateContactSchedule"
+        "toUpdateContactSchedule",
+        "toUpdateOutboundEmailContactMessage"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "ContactAssociationId",
@@ -5734,6 +5745,7 @@
         "toUpdateMetricContent",
         "toUpdateMetricMetadata",
         "toUpdateNotificationContent",
+        "toUpdateOutboundEmailContactMessage",
         "toUpdateParticipantAuthentication",
         "toUpdateParticipantRoleConfig",
         "toUpdatePhoneNumber",
@@ -5996,7 +6008,8 @@
         "toUpdateContact",
         "toUpdateContactAttributes",
         "toUpdateContactRoutingData",
-        "toUpdateContactSchedule"
+        "toUpdateContactSchedule",
+        "toUpdateOutboundEmailContactMessage"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "UserArn",

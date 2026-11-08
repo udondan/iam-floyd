@@ -33,6 +33,7 @@
       "GetResourceDashboard",
       "GetSession",
       "GetSessionStatus",
+      "GetSystemTableConfiguration",
       "GetTable",
       "GetTableMetadata",
       "GetTables",
@@ -51,12 +52,14 @@
       "CreateNotebook",
       "CreatePreparedStatement",
       "CreatePresignedNotebookUrl",
+      "CreateSystemTableConfiguration",
       "CreateWorkGroup",
       "DeleteCapacityReservation",
       "DeleteDataCatalog",
       "DeleteNamedQuery",
       "DeleteNotebook",
       "DeletePreparedStatement",
+      "DeleteSystemTableConfiguration",
       "DeleteWorkGroup",
       "ExportNotebook",
       "GetSessionEndpoint",
@@ -77,6 +80,7 @@
       "UpdateNotebook",
       "UpdateNotebookMetadata",
       "UpdatePreparedStatement",
+      "UpdateSystemTableConfiguration",
       "UpdateWorkGroup"
     ],
     "List": [
@@ -91,6 +95,7 @@
       "ListNotebookSessions",
       "ListPreparedStatements",
       "ListSessions",
+      "ListSystemTableStatuses",
       "ListWorkGroups"
     ],
     "Tagging": [
@@ -177,6 +182,13 @@
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreatePresignedNotebookUrl.html"
     },
     {
+      "name": "CreateSystemTableConfiguration",
+      "methodName": "toCreateSystemTableConfiguration",
+      "description": "Grants permission to create a system table configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateSystemTableConfiguration.html"
+    },
+    {
       "name": "CreateWorkGroup",
       "methodName": "toCreateWorkGroup",
       "description": "Grants permission to create a workgroup",
@@ -217,6 +229,13 @@
       "description": "Grants permission to delete a prepared statement specified",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeletePreparedStatement.html"
+    },
+    {
+      "name": "DeleteSystemTableConfiguration",
+      "methodName": "toDeleteSystemTableConfiguration",
+      "description": "Grants permission to delete a system table configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteSystemTableConfiguration.html"
     },
     {
       "name": "DeleteWorkGroup",
@@ -401,6 +420,13 @@
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSessionStatus.html"
     },
     {
+      "name": "GetSystemTableConfiguration",
+      "methodName": "toGetSystemTableConfiguration",
+      "description": "Grants permission to get a system table configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSystemTableConfiguration.html"
+    },
+    {
       "name": "GetTable",
       "methodName": "toGetTable",
       "description": "Grants permission to enable access to the specified table. Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1.1.0",
@@ -525,6 +551,13 @@
       "description": "Grants permission to return a list of sessions for a given workgroup",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListSessions.html"
+    },
+    {
+      "name": "ListSystemTableStatuses",
+      "methodName": "toListSystemTableStatuses",
+      "description": "Grants permission to return the statuses of system tables for the specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListSystemTableStatuses.html"
     },
     {
       "name": "ListTableMetadata",
@@ -660,6 +693,13 @@
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdatePreparedStatement.html"
     },
     {
+      "name": "UpdateSystemTableConfiguration",
+      "methodName": "toUpdateSystemTableConfiguration",
+      "description": "Grants permission to update a system table configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateSystemTableConfiguration.html"
+    },
+    {
       "name": "UpdateWorkGroup",
       "methodName": "toUpdateWorkGroup",
       "description": "Grants permission to update a workgroup",
@@ -779,6 +819,37 @@
       ]
     },
     {
+      "name": "system-table",
+      "methodName": "onSystemTable",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/system-tables-iam-policy.html",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:system-table/${TableName}",
+      "placeholders": [
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "workgroup",
       "methodName": "onWorkgroup",
       "url": "https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html",
@@ -825,6 +896,7 @@
       "relatedActionMethods": [
         "toCreateCapacityReservation",
         "toCreateDataCatalog",
+        "toCreateSystemTableConfiguration",
         "toCreateWorkGroup",
         "toStartSession",
         "toTagResource"
@@ -856,12 +928,14 @@
         "toCreateNotebook",
         "toCreatePreparedStatement",
         "toCreatePresignedNotebookUrl",
+        "toCreateSystemTableConfiguration",
         "toCreateWorkGroup",
         "toDeleteCapacityReservation",
         "toDeleteDataCatalog",
         "toDeleteNamedQuery",
         "toDeleteNotebook",
         "toDeletePreparedStatement",
+        "toDeleteSystemTableConfiguration",
         "toDeleteWorkGroup",
         "toExportNotebook",
         "toGetCalculationExecution",
@@ -882,6 +956,7 @@
         "toGetSession",
         "toGetSessionEndpoint",
         "toGetSessionStatus",
+        "toGetSystemTableConfiguration",
         "toGetTableMetadata",
         "toGetWorkGroup",
         "toImportNotebook",
@@ -910,12 +985,14 @@
         "toUpdateNotebook",
         "toUpdateNotebookMetadata",
         "toUpdatePreparedStatement",
+        "toUpdateSystemTableConfiguration",
         "toUpdateWorkGroup"
       ],
       "relatedResourceTypes": [
         "capacity-reservation",
         "datacatalog",
         "session",
+        "system-table",
         "workgroup"
       ],
       "keyLiteral": "aws:ResourceTag/",
@@ -935,6 +1012,7 @@
       "relatedActionMethods": [
         "toCreateCapacityReservation",
         "toCreateDataCatalog",
+        "toCreateSystemTableConfiguration",
         "toCreateWorkGroup",
         "toStartSession",
         "toTagResource",

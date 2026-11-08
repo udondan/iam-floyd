@@ -7,6 +7,7 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mwaa.html",
   "accessLevelList": {
     "Write": [
+      "AccessAirflowResource",
       "CreateCliToken",
       "CreateEnvironment",
       "CreateWebLoginToken",
@@ -30,6 +31,13 @@
     ]
   },
   "actions": [
+    {
+      "name": "AccessAirflowResource",
+      "methodName": "toAccessAirflowResource",
+      "description": "Grants permission to check whether a user is authorized to perform an action on an Airflow resource within an Amazon MWAA environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mwaa/latest/API/API_CheckAuthorization.html"
+    },
     {
       "name": "CreateCliToken",
       "methodName": "toCreateCliToken",
@@ -196,7 +204,9 @@
       "methodName": "ifDagAccessEntity",
       "description": "Filters access by the DAG sub-resource being accessed",
       "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
-      "relatedActionMethods": [],
+      "relatedActionMethods": [
+        "toAccessAirflowResource"
+      ],
       "relatedResourceTypes": [],
       "keyLiteral": "DagAccessEntity",
       "valueKind": "string",
@@ -211,7 +221,9 @@
       "methodName": "ifResourceAction",
       "description": "Filters access by the action being performed on the Airflow resource",
       "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
-      "relatedActionMethods": [],
+      "relatedActionMethods": [
+        "toAccessAirflowResource"
+      ],
       "relatedResourceTypes": [],
       "keyLiteral": "ResourceAction",
       "valueKind": "string",
@@ -226,7 +238,9 @@
       "methodName": "ifResourceId",
       "description": "Filters access by the identifier of the specific Airflow resource, such as a DAG ID or connection ID",
       "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
-      "relatedActionMethods": [],
+      "relatedActionMethods": [
+        "toAccessAirflowResource"
+      ],
       "relatedResourceTypes": [],
       "keyLiteral": "ResourceId",
       "valueKind": "string",
@@ -241,7 +255,9 @@
       "methodName": "ifResourceType",
       "description": "Filters access by the Airflow resource type specified in the request",
       "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
-      "relatedActionMethods": [],
+      "relatedActionMethods": [
+        "toAccessAirflowResource"
+      ],
       "relatedResourceTypes": [],
       "keyLiteral": "ResourceType",
       "valueKind": "string",
@@ -256,7 +272,9 @@
       "methodName": "ifTeamNames",
       "description": "Filters access by the team names associated with the caller's identity, enabling team-based access control for Airflow resources",
       "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html",
-      "relatedActionMethods": [],
+      "relatedActionMethods": [
+        "toAccessAirflowResource"
+      ],
       "relatedResourceTypes": [],
       "keyLiteral": "TeamNames",
       "valueKind": "string",
@@ -291,6 +309,7 @@
       "description": "Filters access by tag key-value pairs attached to the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toAccessAirflowResource",
         "toCreateCliToken",
         "toCreateEnvironment",
         "toCreateWebLoginToken",

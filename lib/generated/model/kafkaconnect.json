@@ -13,6 +13,9 @@
       "DeleteConnector",
       "DeleteCustomPlugin",
       "DeleteWorkerConfiguration",
+      "PauseConnector",
+      "RestartConnector",
+      "ResumeConnector",
       "TagResource",
       "UntagResource",
       "UpdateConnector"
@@ -138,6 +141,27 @@
       "description": "Grants permission to list all MSK Connect worker configurations in this account",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListWorkerConfigurations.html"
+    },
+    {
+      "name": "PauseConnector",
+      "methodName": "toPauseConnector",
+      "description": "Grants permission to pause an MSK Connect connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_PauseConnector.html"
+    },
+    {
+      "name": "RestartConnector",
+      "methodName": "toRestartConnector",
+      "description": "Grants permission to restart an MSK Connect connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_RestartConnector.html"
+    },
+    {
+      "name": "ResumeConnector",
+      "methodName": "toResumeConnector",
+      "description": "Grants permission to resume an MSK Connect connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/MSKC/latest/mskc/API_ResumeConnector.html"
     },
     {
       "name": "TagResource",
@@ -346,6 +370,9 @@
         "toDescribeWorkerConfiguration",
         "toListConnectorOperations",
         "toListTagsForResource",
+        "toPauseConnector",
+        "toRestartConnector",
+        "toResumeConnector",
         "toTagResource",
         "toUntagResource",
         "toUpdateConnector"

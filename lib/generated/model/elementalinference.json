@@ -10,9 +10,11 @@
       "AssociateFeed",
       "CreateDictionary",
       "CreateFeed",
+      "CreateScheduleAction",
       "DeleteDictionary",
       "DeleteFeed",
       "DeleteFeedPolicy",
+      "DeleteScheduleAction",
       "DisassociateFeed",
       "PutFeedPolicy",
       "PutMedia",
@@ -27,6 +29,7 @@
       "GetFeed",
       "GetFeedPolicy",
       "GetMetadata",
+      "ListScheduleActions",
       "ListTagsForResource"
     ],
     "List": [
@@ -69,6 +72,13 @@
       ]
     },
     {
+      "name": "CreateScheduleAction",
+      "methodName": "toCreateScheduleAction",
+      "description": "Grants permission to create a schedule action for a feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateScheduleAction.html"
+    },
+    {
       "name": "DeleteDictionary",
       "methodName": "toDeleteDictionary",
       "description": "Grants permission to delete a dictionary",
@@ -88,6 +98,13 @@
       "description": "Grants permission to delete the resource-based policy of a feed",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteFeedPolicy.html"
+    },
+    {
+      "name": "DeleteScheduleAction",
+      "methodName": "toDeleteScheduleAction",
+      "description": "Grants permission to delete a schedule action for a feed",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteScheduleAction.html"
     },
     {
       "name": "DisassociateFeed",
@@ -144,6 +161,13 @@
       "description": "Grants permission to list feeds in the account",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListFeeds.html"
+    },
+    {
+      "name": "ListScheduleActions",
+      "methodName": "toListScheduleActions",
+      "description": "Grants permission to list schedule actions for a feed",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListScheduleActions.html"
     },
     {
       "name": "ListTagsForResource",
@@ -299,15 +323,18 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toAssociateFeed",
+        "toCreateScheduleAction",
         "toDeleteDictionary",
         "toDeleteFeed",
         "toDeleteFeedPolicy",
+        "toDeleteScheduleAction",
         "toDisassociateFeed",
         "toExportDictionaryEntries",
         "toGetDictionary",
         "toGetFeed",
         "toGetFeedPolicy",
         "toGetMetadata",
+        "toListScheduleActions",
         "toPutFeedPolicy",
         "toPutMedia",
         "toTagResource",

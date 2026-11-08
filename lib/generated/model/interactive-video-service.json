@@ -13,6 +13,7 @@
       "GetChannel",
       "GetComposition",
       "GetEncoderConfiguration",
+      "GetFailoverSlateConfiguration",
       "GetIngestConfiguration",
       "GetParticipant",
       "GetPlaybackKeyPair",
@@ -32,6 +33,7 @@
       "CreateAdConfiguration",
       "CreateChannel",
       "CreateEncoderConfiguration",
+      "CreateFailoverSlateConfiguration",
       "CreateIngestConfiguration",
       "CreateParticipantToken",
       "CreatePlaybackRestrictionPolicy",
@@ -42,6 +44,7 @@
       "DeleteAdConfiguration",
       "DeleteChannel",
       "DeleteEncoderConfiguration",
+      "DeleteFailoverSlateConfiguration",
       "DeleteIngestConfiguration",
       "DeletePlaybackKeyPair",
       "DeletePlaybackRestrictionPolicy",
@@ -66,6 +69,7 @@
       "UntagResource",
       "UpdateAdConfiguration",
       "UpdateChannel",
+      "UpdateFailoverSlateConfiguration",
       "UpdateIngestConfiguration",
       "UpdatePlaybackRestrictionPolicy",
       "UpdateStage"
@@ -75,6 +79,7 @@
       "ListChannels",
       "ListCompositions",
       "ListEncoderConfigurations",
+      "ListFailoverSlateConfigurations",
       "ListIngestConfigurations",
       "ListParticipantEvents",
       "ListParticipantReplicas",
@@ -137,6 +142,13 @@
       "description": "Grants permission to create a new encoder configuration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateEncoderConfiguration.html"
+    },
+    {
+      "name": "CreateFailoverSlateConfiguration",
+      "methodName": "toCreateFailoverSlateConfiguration",
+      "description": "Grants permission to create a new failover slate configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateFailoverSlateConfiguration.html"
     },
     {
       "name": "CreateIngestConfiguration",
@@ -207,6 +219,13 @@
       "description": "Grants permission to delete an encoder configuration for the specified ARN",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteEncoderConfiguration.html"
+    },
+    {
+      "name": "DeleteFailoverSlateConfiguration",
+      "methodName": "toDeleteFailoverSlateConfiguration",
+      "description": "Grants permission to delete a failover slate configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteFailoverSlateConfiguration.html"
     },
     {
       "name": "DeleteIngestConfiguration",
@@ -298,6 +317,13 @@
       "description": "Grants permission to get the encoder configuration for the specified ARN",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetEncoderConfiguration.html"
+    },
+    {
+      "name": "GetFailoverSlateConfiguration",
+      "methodName": "toGetFailoverSlateConfiguration",
+      "description": "Grants permission to get the failover slate configuration for the specified ARN",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetFailoverSlateConfiguration.html"
     },
     {
       "name": "GetIngestConfiguration",
@@ -431,6 +457,13 @@
       "description": "Grants permission to get summary information about encoder configurations",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListEncoderConfigurations.html"
+    },
+    {
+      "name": "ListFailoverSlateConfigurations",
+      "methodName": "toListFailoverSlateConfigurations",
+      "description": "Grants permission to get summary information about failover slate configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListFailoverSlateConfigurations.html"
     },
     {
       "name": "ListIngestConfigurations",
@@ -622,6 +655,13 @@
       "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdateChannel.html"
     },
     {
+      "name": "UpdateFailoverSlateConfiguration",
+      "methodName": "toUpdateFailoverSlateConfiguration",
+      "description": "Grants permission to update a failover slate configuration for the specified ARN",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdateFailoverSlateConfiguration.html"
+    },
+    {
       "name": "UpdateIngestConfiguration",
       "methodName": "toUpdateIngestConfiguration",
       "description": "Grants permission to update ingest configuration for a specified ARN",
@@ -785,6 +825,37 @@
         "property": "encoderConfigurationRef",
         "arn": "encoderConfigurationArn"
       }
+    },
+    {
+      "name": "Failover-Slate-Configuration",
+      "methodName": "onFailoverSlateConfiguration",
+      "url": "https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_FailoverSlateConfiguration.html",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:failover-slate-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "Ingest-Configuration",
@@ -1093,6 +1164,7 @@
         "toCreateAdConfiguration",
         "toCreateChannel",
         "toCreateEncoderConfiguration",
+        "toCreateFailoverSlateConfiguration",
         "toCreateIngestConfiguration",
         "toCreateParticipantToken",
         "toCreatePlaybackRestrictionPolicy",
@@ -1129,6 +1201,7 @@
         "toCreateAdConfiguration",
         "toCreateChannel",
         "toCreateEncoderConfiguration",
+        "toCreateFailoverSlateConfiguration",
         "toCreateIngestConfiguration",
         "toCreateParticipantToken",
         "toCreatePlaybackRestrictionPolicy",
@@ -1139,6 +1212,7 @@
         "toDeleteAdConfiguration",
         "toDeleteChannel",
         "toDeleteEncoderConfiguration",
+        "toDeleteFailoverSlateConfiguration",
         "toDeleteIngestConfiguration",
         "toDeletePlaybackKeyPair",
         "toDeletePlaybackRestrictionPolicy",
@@ -1152,6 +1226,7 @@
         "toGetChannel",
         "toGetComposition",
         "toGetEncoderConfiguration",
+        "toGetFailoverSlateConfiguration",
         "toGetIngestConfiguration",
         "toGetParticipant",
         "toGetPlaybackKeyPair",
@@ -1169,6 +1244,7 @@
         "toInsertAdBreak",
         "toListChannels",
         "toListCompositions",
+        "toListFailoverSlateConfigurations",
         "toListParticipantEvents",
         "toListParticipantReplicas",
         "toListParticipants",
@@ -1190,6 +1266,7 @@
         "toTagResource",
         "toUntagResource",
         "toUpdateChannel",
+        "toUpdateFailoverSlateConfiguration",
         "toUpdateIngestConfiguration",
         "toUpdatePlaybackRestrictionPolicy",
         "toUpdateStage"
@@ -1199,6 +1276,7 @@
         "Channel",
         "Composition",
         "Encoder-Configuration",
+        "Failover-Slate-Configuration",
         "Ingest-Configuration",
         "Playback-Key-Pair",
         "Playback-Restriction-Policy",
@@ -1226,6 +1304,7 @@
         "toCreateAdConfiguration",
         "toCreateChannel",
         "toCreateEncoderConfiguration",
+        "toCreateFailoverSlateConfiguration",
         "toCreateIngestConfiguration",
         "toCreateParticipantToken",
         "toCreatePlaybackRestrictionPolicy",
