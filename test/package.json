@@ -9,7 +9,7 @@
     "cdk": "npx cdk"
   },
   "devDependencies": {
-    "@swc/core": "1.16.21",
+    "@swc/core": "1.16.22",
     "@swc/helpers": "0.5.24",
     "@types/node": "26.6.6",
     "aws-cdk": "2.1147.0",
