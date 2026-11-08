@@ -27,6 +27,7 @@
         "aidevops:GetAssetFile",
         "aidevops:GetAssociation",
         "aidevops:GetBacklogTask",
+        "aidevops:GetChat",
         "aidevops:GetKnowledgeItem",
         "aidevops:GetRecommendation",
         "aidevops:GetTrigger",
@@ -56,6 +57,7 @@
         "aidevops:UpdateAsset",
         "aidevops:UpdateAssetFile",
         "aidevops:UpdateBacklogTask",
+        "aidevops:UpdateChat",
         "aidevops:UpdateGoal",
         "aidevops:UpdateKnowledgeItem",
         "aidevops:UpdateRecommendation",
@@ -75,7 +77,11 @@
       "Sid": "AllowOperatorAccountActions",
       "Effect": "Allow",
       "Action": [
-        "aidevops:GetAccountUsage"
+        "aidevops:GetAccountUsage",
+        "aidevops:GetCatalogCapability",
+        "aidevops:ListCatalogCapabilities",
+        "aidevops:ListCatalogCapabilityFiles",
+        "aidevops:ListCatalogCapabilityTypes"
       ],
       "Resource": "*",
       "Condition": {

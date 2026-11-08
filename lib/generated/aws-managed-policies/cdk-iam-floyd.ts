@@ -84,6 +84,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsOperatorAppAccessPolicy);
     }
 
+    /** Provides permissions required by the AWS DevOps Agent to read your organization's structure and to manage the CloudFormation StackSets it creates to deploy roles to your member accounts. */
+    public AIDevOpsOrganizationsAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsOrganizationsAccessPolicy);
+    }
+
     /** Provides permissions for AWS DevOps Agent to create and manage network interfaces in your VPC so that release management agents can access private resources */
     public AIDevOpsReleaseManagementVPCPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsReleaseManagementVPCPolicy);
@@ -3679,6 +3684,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCloudWatchOmniServiceRolePolicy);
     }
 
+    /** AWS CODA creates IAM roles for delegations, and uses this policy when creating these roles to define the boundary of their permissions. */
+    public AWSCODAPermissionsBoundary(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCODAPermissionsBoundary);
+    }
+
     /** Provides full access to AWS CodeArtifact via the AWS Management Console. */
     public AWSCodeArtifactAdminAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCodeArtifactAdminAccess);
@@ -3812,6 +3822,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Denies access to certain actions, applied by AWS in the event that an IAM user's credentials have been compromised or exposed publicly. The policy aims to limit the potential damage that may be caused by fraud-related activity leading to unauthorized charges, while not impacting the existing resources. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. */
     public AWSCompromisedKeyQuarantineV3(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCompromisedKeyQuarantineV3);
+    }
+
+    /** Denies access to certain actions, applied by AWS in the event that an IAM user's credentials have been compromised or exposed publicly. The policy aims to limit the potential damage that may be caused by fraud-related activity leading to unauthorized charges. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. AWSCompromisedKeyQuarantineV4 is an AWS managed policy. */
+    public AWSCompromisedKeyQuarantineV4(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCompromisedKeyQuarantineV4);
     }
 
     /** Allows Config to call AWS services and deploy config resources across organization */
@@ -5462,6 +5477,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS Panorama to manage resources in Amazon S3, AWS IoT, AWS IoT GreenGrass, AWS Lambda, Amazon SageMaker, and Amazon CloudWatch Logs, and to pass service roles to AWS IoT, AWS IoT GreenGrass, and Amazon SageMaker. */
     public AWSPanoramaServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPanoramaServiceRolePolicy);
+    }
+
+    /** Allows AWS Partner Central to access and manage your partner account resources, including partner account details and business plans, on your behalf. */
+    public AWSPartnerCentralAccountManagementServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralAccountManagementServiceRolePolicy);
     }
 
     /** Provides necessary access for channel handshake approval management activities. */

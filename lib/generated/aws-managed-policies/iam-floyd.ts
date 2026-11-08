@@ -30,6 +30,8 @@ export class AwsManagedPolicy {
     public static AIDevOpsConstellationAccessPolicy = 'service-role/AIDevOpsConstellationAccessPolicy';
     /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
     public static AIDevOpsOperatorAppAccessPolicy = 'AIDevOpsOperatorAppAccessPolicy';
+    /** Provides permissions required by the AWS DevOps Agent to read your organization's structure and to manage the CloudFormation StackSets it creates to deploy roles to your member accounts. */
+    public static AIDevOpsOrganizationsAccessPolicy = 'AIDevOpsOrganizationsAccessPolicy';
     /** Provides permissions for AWS DevOps Agent to create and manage network interfaces in your VPC so that release management agents can access private resources */
     public static AIDevOpsReleaseManagementVPCPolicy = 'AIDevOpsReleaseManagementVPCPolicy';
     /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
@@ -1468,6 +1470,8 @@ export class AwsManagedPolicy {
     public static AWSCloudWatchAlarmsActionSSMIncidentsServiceRolePolicy = 'aws-service-role/AWSCloudWatchAlarms_ActionSSMIncidentsServiceRolePolicy';
     /** Provides CloudWatch Omni access to manage AWS Config recorder resources, telemetry configurations, and supporting IAM roles for organization enablement. */
     public static AWSCloudWatchOmniServiceRolePolicy = 'aws-service-role/AWSCloudWatchOmniServiceRolePolicy';
+    /** AWS CODA creates IAM roles for delegations, and uses this policy when creating these roles to define the boundary of their permissions. */
+    public static AWSCODAPermissionsBoundary = 'AWSCODAPermissionsBoundary';
     /** Provides full access to AWS CodeArtifact via the AWS Management Console. */
     public static AWSCodeArtifactAdminAccess = 'AWSCodeArtifactAdminAccess';
     /** Provides read only access to AWS CodeArtifact via the AWS Management Console. */
@@ -1522,6 +1526,8 @@ export class AwsManagedPolicy {
     public static AWSCompromisedKeyQuarantineV2 = 'AWSCompromisedKeyQuarantineV2';
     /** Denies access to certain actions, applied by AWS in the event that an IAM user's credentials have been compromised or exposed publicly. The policy aims to limit the potential damage that may be caused by fraud-related activity leading to unauthorized charges, while not impacting the existing resources. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. */
     public static AWSCompromisedKeyQuarantineV3 = 'AWSCompromisedKeyQuarantineV3';
+    /** Denies access to certain actions, applied by AWS in the event that an IAM user's credentials have been compromised or exposed publicly. The policy aims to limit the potential damage that may be caused by fraud-related activity leading to unauthorized charges. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. AWSCompromisedKeyQuarantineV4 is an AWS managed policy. */
+    public static AWSCompromisedKeyQuarantineV4 = 'AWSCompromisedKeyQuarantineV4';
     /** Allows Config to call AWS services and deploy config resources across organization */
     public static AWSConfigMultiAccountSetupPolicy = 'aws-service-role/AWSConfigMultiAccountSetupPolicy';
     /** Allows AWS Config to remediate noncompliant resources on your behalf. */
@@ -2182,6 +2188,8 @@ export class AwsManagedPolicy {
     public static AWSPanoramaServiceLinkedRolePolicy = 'aws-service-role/AWSPanoramaServiceLinkedRolePolicy';
     /** Allows AWS Panorama to manage resources in Amazon S3, AWS IoT, AWS IoT GreenGrass, AWS Lambda, Amazon SageMaker, and Amazon CloudWatch Logs, and to pass service roles to AWS IoT, AWS IoT GreenGrass, and Amazon SageMaker. */
     public static AWSPanoramaServiceRolePolicy = 'service-role/AWSPanoramaServiceRolePolicy';
+    /** Allows AWS Partner Central to access and manage your partner account resources, including partner account details and business plans, on your behalf. */
+    public static AWSPartnerCentralAccountManagementServiceRolePolicy = 'aws-service-role/AWSPartnerCentralAccountManagementServiceRolePolicy';
     /** Provides necessary access for channel handshake approval management activities. */
     public static AWSPartnerCentralChannelHandshakeApprovalManagement = 'AWSPartnerCentralChannelHandshakeApprovalManagement';
     /** Provides necessary access for channel management activities. */

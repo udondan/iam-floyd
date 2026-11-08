@@ -16,7 +16,10 @@
         "organizations:DescribeOrganization",
         "organizations:ListAccounts",
         "organizations:ListAWSServiceAccessForOrganization",
-        "organizations:ListDelegatedAdministrators"
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListParents",
+        "organizations:ListChildren",
+        "organizations:DescribeOrganizationalUnit"
       ],
       "Resource": [
         "*"

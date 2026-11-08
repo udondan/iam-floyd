@@ -68,6 +68,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowGetActionForPaymentsConnectedAccount",
+      "Effect": "Allow",
+      "Action": [
+        "payments:GetConnectedAccount"
+      ],
+      "Resource": "arn:aws:payments::*:connectedaccount/*"
+    },
+    {
       "Sid": "AllowListActionsForALB",
       "Effect": "Allow",
       "Action": [

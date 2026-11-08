@@ -375,6 +375,17 @@
       "Resource": "arn:aws:eks:*:*:cluster/*"
     },
     {
+      "Sid": "S3GetObjectPermissions",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::*/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "backup.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "IamPassRolePermissionsForGuardDuty",
       "Effect": "Allow",
       "Action": "iam:PassRole",

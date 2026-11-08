@@ -134,6 +134,17 @@
       }
     },
     {
+      "Sid": "AllowAppIntegrationsGetApplication",
+      "Effect": "Allow",
+      "Action": "app-integrations:GetApplication",
+      "Resource": "arn:aws:app-integrations:*:*:application/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "AllowWisdomForConnectEnabledTaggedResources",
       "Effect": "Allow",
       "Action": [
