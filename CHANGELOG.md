@@ -13,6 +13,240 @@
 
 * **deps:** override glob of test-exclude to 14.0.4 (CVE-2026-118773) ([#2439](https://github.com/udondan/iam-floyd/issues/2439)) ([ec330b1](https://github.com/udondan/iam-floyd/commit/ec330b15537b8612ae891185080c7882d43e2823))
 
+---
+
+**New AWS managed policies:**
+
+- AIDevOpsOrganizationsAccessPolicy
+- AWSCODAPermissionsBoundary
+- AWSCompromisedKeyQuarantineV4
+- AWSPartnerCentralAccountManagementServiceRolePolicy
+
+---
+
+:warning: **Deprecated service principals:**
+
+- iotthingsgraph.amazonaws.com
+
+**New service principals:**
+
+- igw-firewall.network-firewall.amazonaws.com
+- partnercentral-account.amazonaws.com
+
+---
+
+:warning: **Removed actions:**
+
+- assurance:DownloadEvidence
+- assurance:ListResourcesForControl
+- assurance:StartResourceDiscovery
+- assurance:UploadEvidence
+- assurance:VendConnectionAccessToken
+
+**New actions:**
+
+- agentaccess-mcp:CloseSession
+- aidevops:GetCatalogCapability
+- aidevops:GetChat
+- aidevops:ListCatalogCapabilities
+- aidevops:ListCatalogCapabilityFiles
+- aidevops:ListCatalogCapabilityTypes
+- aidevops:SearchAssets
+- aidevops:UpdateChat
+- airflow:AccessAirflowResource
+- assurance:GetResourceActivitiesQueryResults
+- assurance:StartResourceActivitiesQuery
+- athena:CreateSystemTableConfiguration
+- athena:DeleteSystemTableConfiguration
+- athena:GetSystemTableConfiguration
+- athena:ListSystemTableStatuses
+- athena:UpdateSystemTableConfiguration
+- bedrock-agentcore:InvokeWebAnswer
+- cloudwatch:DetectGroupOutliers
+- cloudwatch:GetProfileRecords
+- cloudwatch:PutProfileRecords
+- codewhisperer:TestOtelConnection
+- cognito-idp:DescribeTermsByClient
+- cognito-idp:GetClientToken
+- connect:UpdateOutboundEmailContactMessage
+- datazone:CreateNotificationPreference
+- datazone:CreateUIConfiguration
+- datazone:DeleteNotificationPreference
+- datazone:DeleteUIConfiguration
+- datazone:GetEffectiveUICustomization
+- datazone:GetNotificationPreference
+- datazone:GetSystemTableExportConfiguration
+- datazone:GetUIConfiguration
+- datazone:ListDeployableEnvironmentBlueprints
+- datazone:ListUIConfigurations
+- datazone:PutSystemTableExportConfiguration
+- datazone:UpdateAssetOwner
+- datazone:UpdateNotificationPreference
+- datazone:UpdateUIConfiguration
+- dynamodb:BulkPutItems
+- dynamodb:CancelBulkOperation
+- dynamodb:DescribeBulkOperation
+- dynamodb:ListBulkOperations
+- dynamodb:StartBulkOperation
+- ecr:DescribeReplicationBackfillResults
+- ecr:ListReplicationBackfills
+- ecr:ReplicateImageDelete
+- ecr:StartReplicationBackfill
+- ecr:StopReplicationBackfill
+- elemental-inference:CreateScheduleAction
+- elemental-inference:DeleteScheduleAction
+- elemental-inference:ListScheduleActions
+- es:AddReplicationPeer
+- es:CompareDomainConfiguration
+- es:DescribeDomainReplication
+- es:FailoverReplication
+- es:RemoveReplicationPeer
+- es:SwitchoverReplication
+- health-agent:BatchRefillPatientPharmacyPrescriptions
+- health-agent:ListPatientPharmacyPrescriptions
+- inspector2:GetOnDemandScanStatus
+- inspector2:ListOnDemandScans
+- inspector2:StartOnDemandScan
+- ivs:CreateFailoverSlateConfiguration
+- ivs:DeleteFailoverSlateConfiguration
+- ivs:GetFailoverSlateConfiguration
+- ivs:ListFailoverSlateConfigurations
+- ivs:UpdateFailoverSlateConfiguration
+- kafkaconnect:PauseConnector
+- kafkaconnect:RestartConnector
+- kafkaconnect:ResumeConnector
+- mediaconnect:ConnectEndpoints
+- mediaconnect:DeleteResourcePolicy
+- mediaconnect:DeregisterDestinationEndpoint
+- mediaconnect:DeregisterSourceEndpoint
+- mediaconnect:DisconnectEndpoints
+- mediaconnect:GetDestinationEndpoint
+- mediaconnect:GetResourcePolicy
+- mediaconnect:GetSourceEndpoint
+- mediaconnect:ListDestinationEndpoints
+- mediaconnect:ListSourceEndpoints
+- mediaconnect:PutResourcePolicy
+- mediaconnect:RegisterDestinationEndpoint
+- mediaconnect:RegisterSourceEndpoint
+- mediaconnect:UpdateDestinationEndpoint
+- mediaconnect:UpdateSourceEndpoint
+- odb:UpdateExascaleCloudExadataInfrastructure
+- partnercentral:AssociateBusinessPlan
+- partnercentral:CancelBusinessPlan
+- partnercentral:CancelBusinessPlanSubmissionTask
+- partnercentral:CreateBusinessPlanItem
+- partnercentral:DeleteBusinessPlanAttachment
+- partnercentral:DeleteBusinessPlanItem
+- partnercentral:DisassociateBusinessPlan
+- partnercentral:GetBusinessPlanAttachment
+- partnercentral:GetBusinessPlanAttachmentImportTask
+- partnercentral:GetBusinessPlanItem
+- partnercentral:GetBusinessPlanItemSchema
+- partnercentral:GetBusinessPlanSettings
+- partnercentral:GetBusinessPlanSubmissionTask
+- partnercentral:GetPartnerReportingData
+- partnercentral:ListBusinessPlanAssociations
+- partnercentral:ListBusinessPlanAttachmentImportTasks
+- partnercentral:ListBusinessPlanAttachments
+- partnercentral:ListBusinessPlanHistory
+- partnercentral:ListBusinessPlanItems
+- partnercentral:ListBusinessPlanSubmissionTasks
+- partnercentral:PutBusinessPlanSettings
+- partnercentral:SearchOpportunities
+- partnercentral:StartBusinessPlanAttachmentImportTask
+- partnercentral:StartBusinessPlanSubmissionTask
+- partnercentral:UpdateBusinessPlan
+- partnercentral:UpdateBusinessPlanItem
+- payments:CreateConnectedAccount
+- payments:DeleteConnectedAccount
+- payments:GetConnectedAccount
+- payments:ListConnectedAccounts
+- polly:ListTagsForResource
+- polly:TagResource
+- polly:UntagResource
+- quicksight:AuthorizeOAuthAccess
+- quicksight:CreateAccessControlApplication
+- quicksight:CreateAccessControlApplicationSecret
+- quicksight:CreateInboundConnector
+- quicksight:CreateOAuthToken
+- quicksight:DeleteAccessControlApplication
+- quicksight:DeleteAccessControlApplicationSecret
+- quicksight:DeleteInboundConnector
+- quicksight:DescribeAccessControlApplication
+- quicksight:DescribeInboundConnector
+- quicksight:DescribeResourcePermissions
+- quicksight:ListAccessControlApplications
+- quicksight:ListInboundConnectorApplicationAssociations
+- quicksight:ListInboundConnectors
+- quicksight:RevokeOAuthToken
+- quicksight:UpdateAccessControlApplication
+- quicksight:UpdateAccessControlApplicationSecret
+- quicksight:UpdateInboundConnector
+- quicksight:UpdateInboundConnectorApplicationAssociations
+- ram:DeleteCustomerManagedPermissionPolicy
+- ram:GetCustomerManagedPermissionPolicy
+- ram:PutCustomerManagedPermissionPolicy
+- ram:UpdatePermission
+- route53domains:RestoreDomain
+- s3tables:CompleteTableMigration
+- s3tables:GetTableMigration
+- s3tables:ListTableMigrations
+- s3tables:StartTableMigration
+- s3tables:SyncTableMigration
+- s3tables:UpdateTableMigration
+- securityhub:GetSoftwareResourcesV2
+- securityhub:GetSoftwareStatisticsV2
+- securityhub:GetSoftwareV2
+- shield:AllowVendedLogDeliveryForResource
+- ssm:DeregisterDefaultHostManagementConfiguration
+- ssm:RegisterDefaultHostManagementConfiguration
+- xray:CallWithBearerToken
+
+**Updated action access level:**
+
+- mediaconnect:GrantFlowEntitlements: Write -> Permissions management, Write
+- mediaconnect:RevokeFlowEntitlement: Write -> Permissions management, Write
+- mediaconnect:UpdateFlowEntitlement: Write -> Permissions management, Write
+- omics:DeleteS3AccessPolicy: Write -> Permissions management, Write
+- omics:PutS3AccessPolicy: Write -> Permissions management, Write
+
+**New resource types:**
+
+- athena:system-table
+- bedrock-agentcore:web-answer
+- dynamodb:bulk-operation
+- ivs:Failover-Slate-Configuration
+- mediaconnect:DestinationEndpoint
+- mediaconnect:SourceEndpoint
+- partnercentral:BusinessPlan
+- partnercentral:Dataset
+- payments:connectedaccount
+- quicksight:accessControlApplication
+- quicksight:inboundConnector
+- ssmmessages:session
+
+**New condition keys:**
+
+- es:SecurityGroupIds
+- es:SubnetIds
+- glue:ConnectionType
+- glue:CredentialVendingMode
+- glue:InstanceUrl
+- inspector2:ExpectedBucketOwner
+- partnercentral:AllowAwsEngagement
+- partnercentral:BusinessPlanItemStage
+- partnercentral:BusinessPlanItemType
+- polly:RequestTag/${TagKey}
+- polly:ResourceTag/${TagKey}
+- polly:TagKeys
+- ram:PermissionTemplateParameter/${ParameterName}
+- ram:RequestedPermissionArns
+- ram:RequestedPermissionResourceTypes
+- ram:RequestedPrincipals
+- ram:RequestedResourceArns
+- ram:RequestedResourceTypes
+- ssmmessages:resourceTag/aws
+
 ## [0.852.0](https://github.com/udondan/iam-floyd/compare/v0.851.0...v0.852.0) (2026-11-01)
 
 
