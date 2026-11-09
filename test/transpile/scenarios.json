@@ -108,6 +108,11 @@
     "calls": [["allMatchingActions", "/", "//", "a/b", "/Send/g"]]
   },
   {
+    "name": "matching actions flags end at other characters",
+    "service": "sqs",
+    "calls": [["allMatchingActions", "/queue/i1y"]]
+  },
+  {
     "name": "matching actions empty",
     "service": "sqs",
     "calls": [["allMatchingActions", ""]]
@@ -138,6 +143,11 @@
       ["to", "sqs:*"],
       ["compact"]
     ]
+  },
+  {
+    "name": "compact substrings of the same length",
+    "service": "iam",
+    "calls": [["allPermissionManagementActions"], ["compact"]]
   },
   {
     "name": "compact single action",
@@ -281,6 +291,27 @@
     ]
   },
   {
+    "name": "operators of all types",
+    "calls": [
+      ["if", "k:a", "v", { "operator": ["stringNotEquals"] }],
+      ["if", "k:b", "v", { "operator": ["stringNotEqualsIgnoreCase"] }],
+      ["if", "k:c", 1, { "operator": ["numericEquals"] }],
+      ["if", "k:d", 1, { "operator": ["numericNotEquals"] }],
+      ["if", "k:e", 1, { "operator": ["numericLessThan"] }],
+      ["if", "k:f", 1, { "operator": ["numericLessThanEquals"] }],
+      ["if", "k:g", 1, { "operator": ["numericGreaterThan"] }],
+      ["if", "k:h", "v", { "operator": ["dateEquals"] }],
+      ["if", "k:i", "v", { "operator": ["dateLessThanEquals"] }],
+      ["if", "k:j", "v", { "operator": ["dateGreaterThan"] }],
+      ["if", "k:k", true, { "operator": ["bool"] }],
+      ["if", "k:l", "v", { "operator": ["binaryNotEquals"] }],
+      ["if", "k:m", "10.0.0.0/8", { "operator": ["ipAddress"] }],
+      ["if", "k:n", "v", { "operator": ["arnEquals"] }],
+      ["if", "k:o", "v", { "operator": ["arnNotEquals"] }],
+      ["if", "k:p", "v", { "operator": ["arnNotLike"] }]
+    ]
+  },
+  {
     "name": "operator set twice",
     "calls": [
       [
@@ -304,6 +335,30 @@
           "operator": ["ifExists"]
         }
       ]
+    ]
+  },
+  {
+    "name": "global conditions with default values",
+    "calls": [
+      ["ifAwsAssumedRoot"],
+      ["ifAwsIsMcpServiceAction"],
+      ["ifAwsMultiFactorAuthPresent"],
+      ["ifAwsPrincipalIsAWSService"],
+      ["ifAwsViaAWSService"],
+      ["ifAwsViaAWSMCPService"],
+      ["ifAwsVpceOrgPaths", "o-a/r-b/*"]
+    ]
+  },
+  {
+    "name": "global conditions with given values",
+    "calls": [
+      ["ifAwsAssumedRoot", false],
+      ["ifAwsIsMcpServiceAction", false],
+      ["ifAwsMultiFactorAuthPresent", false],
+      ["ifAwsPrincipalIsAWSService", false],
+      ["ifAwsViaAWSService", false],
+      ["ifAwsViaAWSMCPService", false],
+      ["ifAwsVpceOrgPaths", "o-a/r-b/*", "StringEquals"]
     ]
   },
   {

@@ -293,7 +293,7 @@ var PolicyConverter = (function () {
 
   function convertPrincipals(principals, servicePrincipals, errors) {
     const calls = [];
-    if (typeof principals === 'string') {
+    if (typeof principals === 'string' || principals === null) {
       if (principals === '*') {
         calls.push(call('forPublic'));
       } else {
@@ -301,7 +301,7 @@ var PolicyConverter = (function () {
       }
       return calls;
     }
-    for (const [type, values] of Object.entries(principals || {})) {
+    for (const [type, values] of Object.entries(principals)) {
       const patterns = principalPatterns[type];
       if (!patterns) {
         errors.push(`Unsupported principal type: ${type}`);

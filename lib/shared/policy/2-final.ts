@@ -150,9 +150,6 @@ export class PolicyDocument extends PolicyBase {
       return 0;
     }
     const values = this.valueList(statement[key]);
-    if (values.length == 0) {
-      return 0;
-    }
     let size = key.length + 5;
     for (const value of values) {
       if (this.isUnresolved(value)) {

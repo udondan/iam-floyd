@@ -12,7 +12,7 @@ EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
+.PHONY: build emit generate coverage coverage-cdk cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -199,3 +199,32 @@ lint-cdk:
 	@echo -e "$(TARGET_COLOR)Running eslint on the CDK variant$(NO_COLOR)"
 	@[ -d tooter/node_modules ] || npm ci --prefix tooter --no-audit --no-fund
 	@npx eslint .
+
+# runs the TypeScript tests of the standalone variant with coverage: the examples (test-typescript),
+# the scenarios of test/transpile/ and the policy converter, and writes coverage/lcov.info
+coverage: emit
+	@echo -e "$(TARGET_COLOR)Running coverage$(NO_COLOR)"
+	@rm -rf coverage
+	@export NODE_V8_COVERAGE="$(CURDIR)/coverage/tmp" && \
+		$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test && \
+		mkdir -p coverage/scenarios && \
+		npx ts-node test/transpile/services.ts > coverage/scenarios/services.json && \
+		npx ts-node test/transpile/typescript/run.ts test/transpile/scenarios.json > /dev/null && \
+		npx ts-node test/transpile/typescript/run.ts coverage/scenarios/services.json > /dev/null && \
+		npx ts-node test/transpile/typescript/managed-policies.ts > /dev/null && \
+		mkdir -p coverage/examples && \
+		npx ts-node test/converter/cases.ts Standalone coverage/examples
+	@npx c8 report
+
+# after `make cdk`: runs the TypeScript tests of the CDK variant with coverage: the examples
+# (test-typescript-cdk), the policy documents and the policy converter, and writes
+# coverage/cdk/lcov.info with the lines of the committed files
+coverage-cdk: emit
+	@echo -e "$(TARGET_COLOR)Running coverage of the CDK variant$(NO_COLOR)"
+	@rm -rf coverage/cdk
+	@export NODE_V8_COVERAGE="$(CURDIR)/coverage/cdk/tmp" && \
+		$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk && \
+		npx ts-node test/cdk-variant/policy-document.ts && \
+		npx ts-node test/converter/cases.ts CDK
+	@npx c8 report --config .c8rc.cdk.json
+	@npx ts-node bin/coverage-cdk-lcov.ts coverage/cdk/lcov.info

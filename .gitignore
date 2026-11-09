@@ -47,3 +47,4 @@ __pycache__/
 !/go/iamfloyd/go.mod
 !/go/iamfloyd/helpers.go
 !/go/iamfloyd/internal
+/coverage

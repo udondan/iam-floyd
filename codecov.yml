@@ -1,0 +1,27 @@
+---
+codecov:
+  # The Coverage job of the Test workflow waits for the Codecov checks, so
+  # Codecov must not wait for the other checks in turn.
+  require_ci_to_pass: false
+  notify:
+    wait_for_ci: false
+    # The standalone and the CDK variant upload their coverage. Codecov only
+    # reports once both arrived, so the Coverage job doesn't read a partial
+    # result.
+    after_n_builds: 2
+
+coverage:
+  status:
+    project:
+      default:
+        # The coverage of the whole project must not drop.
+        target: auto
+    patch:
+      default:
+        # Every line a pull request changes must be tested.
+        target: 100%
+
+# The service classes are emitted from the model and not committed. They all
+# follow the same pattern, and test/transpile/services.ts calls every method.
+ignore:
+  - lib/generated

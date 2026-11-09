@@ -1,0 +1,16 @@
+{
+  "tempDirectory": "coverage/tmp",
+  "reportsDir": "coverage",
+  "reporter": ["lcov", "text-summary"],
+  "all": true,
+  "src": ["."],
+  "include": [
+    "lib/shared/**/*.ts",
+    "lib/shared/**/*.js",
+    "lib/collection/**/*.ts",
+    "lib/collection/**/*.js",
+    "docs/source/_static/js/converter.js"
+  ],
+  "exclude": ["**/*.d.ts", "**/*.CDK.ts", "**/*-CDK.ts"],
+  "excludeNodeModules": true
+}

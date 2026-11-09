@@ -52,8 +52,6 @@ export class PolicyStatementWithCDKPrincipal extends PolicyStatementWithPrincipa
                   this[mode](new iam.ServicePrincipal(service));
                 });
                 break;
-              default:
-                throw Error(`Unhandled principal type: ${prefix as string}`);
             }
           },
         );

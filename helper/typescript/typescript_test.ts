@@ -54,8 +54,13 @@ export function out(statements: PolicyStatement[]) {
 
 /**
  * Creates and deletes the statements in AWS, as a policy or as bucket policy. Exits on failure.
+ * Skipped if IAM_FLOYD_SKIP_DEPLOY is set, e.g. for the coverage on push to main, which has no AWS
+ * credentials.
  */
 export function deploy(statements: PolicyStatement[], type = 'policy') {
+  if (process.env.IAM_FLOYD_SKIP_DEPLOY) {
+    return;
+  }
   deployByType(statements, type).catch((error: unknown) => {
     console.error(error);
     process.exit(1);

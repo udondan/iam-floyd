@@ -37,6 +37,8 @@ interface Converter {
     language: string,
     variant: string,
   ): Result;
+  render(result: Result, withImports: boolean): string;
+  languages: string[];
 }
 
 type Json = Record<string, unknown>;
@@ -316,6 +318,95 @@ for (const file of fs.readdirSync(managedPoliciesDir).sort()) {
 
 for (const [name, policy] of Object.entries({ ...policies, ...managed })) {
   checkPolicy(name, policy);
+}
+
+// the policies the converter rejects, with the errors it returns
+const invalid: [unknown, string[]][] = [
+  [null, ['Policy has no statements']],
+  [{ Version: '2012-10-17' }, ['Policy has no statements']],
+  [
+    { Statement: { Effect: 'Maybe', Action: 's3:GetObject' } },
+    ['Invalid effect: Maybe'],
+  ],
+  [{ Statement: { Effect: 'Allow' } }, ['Statement has no element Action']],
+  [
+    { Statement: { Effect: 'Allow', Action: [1, 'GetObject', ':Get'] } },
+    ['Invalid action: 1', 'Invalid action: GetObject', 'Invalid action: :Get'],
+  ],
+  [
+    {
+      Statement: {
+        Effect: 'Allow',
+        Action: 's3:GetObject',
+        Condition: { StringEquals: { 'k:a': { b: 'c' }, 'k:b': ['c', {}] } },
+      },
+    },
+    [
+      'Unsupported value of condition k:a',
+      'Unsupported value of condition k:b',
+    ],
+  ],
+  [
+    { Statement: { Effect: 'Allow', Action: 's3:GetObject', Principal: 'a' } },
+    ['Unsupported principal: a'],
+  ],
+  [
+    { Statement: { Effect: 'Allow', Action: 's3:GetObject', Principal: null } },
+    ['Unsupported principal: null'],
+  ],
+  [
+    {
+      Statement: {
+        Effect: 'Allow',
+        Action: 's3:GetObject',
+        Principal: { Other: 'a', AWS: [1] },
+      },
+    },
+    ['Unsupported principal type: Other', 'Unsupported principal: 1'],
+  ],
+];
+for (const [policy, errors] of invalid) {
+  const result = converter.convert(policy, index, 'JavaScript', variant);
+  if (JSON.stringify(result.errors) !== JSON.stringify(errors)) {
+    throw new Error(
+      `${JSON.stringify(policy)}: expected the errors ${JSON.stringify(errors)}, got ${JSON.stringify(result.errors)}`,
+    );
+  }
+}
+let unknownLanguage = '';
+try {
+  converter.convert(policies.actions, index, 'COBOL', variant);
+} catch (e) {
+  unknownLanguage = (e as Error).message;
+}
+if (unknownLanguage !== 'Unknown language: COBOL') {
+  throw new Error(`Expected an error for an unknown language`);
+}
+
+// the code of the other variant, which this run can't check, converts without errors, also without
+// the helpers of the pointers in Go
+const otherVariant = cdk ? 'Standalone' : 'CDK';
+for (const policy of [
+  ...Object.values(policies),
+  { Statement: { Effect: 'Allow', Action: '*' } },
+]) {
+  for (const language of converter.languages) {
+    const result = converter.convert(policy, index, language, otherVariant);
+    if (result.errors.length) {
+      throw new Error(result.errors.join(', '));
+    }
+  }
+}
+
+// the code with and without the imports, as the UI shows it
+const rendered = converter.convert(policies.actions, index, 'Java', variant);
+if (
+  converter.render(rendered, true) !==
+    `${rendered.imports}\n\n${rendered.code}` ||
+  converter.render(rendered, false) !== rendered.code ||
+  converter.render({ ...rendered, imports: '' }, true) !== rendered.code
+) {
+  throw new Error('render() returned the wrong code');
 }
 console.log(
   `Converted ${Object.keys(policies).length + Object.keys(managed).length} policies (${variant})`,

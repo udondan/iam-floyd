@@ -8,6 +8,11 @@ on:
   pull_request:
     branches:
       - main
+  # Codecov compares pull requests against the coverage of main. On push to main only the jobs run
+  # that upload coverage, without the AWS tests.
+  push:
+    branches:
+      - main
 
 jobs:
   # Only one run at a time may deploy to the AWS test account. All other jobs of a pull request wait
@@ -80,7 +85,7 @@ jobs:
     name: Test iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
     needs: lint
     # Without !cancelled() the skipped wait of forks would skip this job as well.
-    if: ${{ !cancelled() && needs.lint.result == 'success' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -162,11 +167,11 @@ jobs:
   test-iam-floyd:
     name: Test iam-floyd npm package
     needs: lint
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write # OIDC for AWS
+      id-token: write # OIDC for AWS and Codecov
     steps:
       - name: Set up Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -181,13 +186,26 @@ jobs:
 
       - name: Configure AWS credentials
         id: aws-credentials
+        if: github.event_name == 'pull_request'
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      # Runs test-typescript with coverage. On push to main without the deployment of the policies.
       - name: Test npm package
-        run: make install test-typescript
+        run: make install coverage
+        env:
+          IAM_FLOYD_SKIP_DEPLOY: ${{ github.event_name == 'push' && '1' || '' }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/lcov.info
+          flags: typescript
 
       # A cancelled run can leave a test policy behind, the next run deletes it
       - name: Clean up test resources
@@ -195,16 +213,17 @@ jobs:
         run: make clean-test-resources
 
       - name: Dry run npm publish
+        if: github.event_name == 'pull_request'
         run: make build publish
 
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd npm package
     needs: lint
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write # OIDC for AWS
+      id-token: write # OIDC for AWS and Codecov
     steps:
       - name: Set up Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -224,19 +243,34 @@ jobs:
           cat package.json
 
       - name: Lint CDK variant
+        if: github.event_name == 'pull_request'
         run: make lint-cdk
 
+      # Runs test-typescript-cdk with coverage
+      - name: Test npm package
+        run: |
+          make package
+          make coverage-cdk
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/cdk/lcov.info
+          flags: cdk
+
       - name: Configure AWS credentials
+        if: github.event_name == 'pull_request'
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Test npm package
-        run: |
-          make package
-          make test-typescript-cdk
-          make cdk-test
+      - name: Deploy with the AWS CDK
+        if: github.event_name == 'pull_request'
+        run: make cdk-test
 
       # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
       # peer dependency, which has all reference interfaces the on*() methods accept. The exact
@@ -244,6 +278,7 @@ jobs:
       # aws-cdk-lib when it downgrades it with the lock files of the newer version (e.g.
       # @aws-cdk/cloud-assembly-schema across a major version), so they are removed first.
       - name: Test with the minimum version of aws-cdk-lib
+        if: github.event_name == 'pull_request'
         run: | # zizmor: ignore[adhoc-packages]
           rm -rf package-lock.json node_modules/.package-lock.json node_modules/aws-cdk-lib node_modules/@aws-cdk
           npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
@@ -257,7 +292,7 @@ jobs:
     name: Test cdk-iam-floyd in ${{ matrix.name }}
     needs: lint
     # Without !cancelled() the skipped wait of forks would skip this job as well.
-    if: ${{ !cancelled() && needs.lint.result == 'success' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -304,11 +339,48 @@ jobs:
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
 
+  # Codecov reports its result as the check runs codecov/project and codecov/patch. This job waits
+  # for them, so a coverage drop fails the required job. It passes with a warning if Codecov doesn't
+  # report in time.
+  coverage:
+    name: Coverage
+    needs:
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.test-iam-floyd.result == 'success' && needs.test-cdk-iam-floyd.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      checks: read
+    steps:
+      - name: Wait for Codecov
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          for _ in $(seq 30); do
+            checks=$(gh api --paginate --slurp "repos/$REPO/commits/$SHA/check-runs?per_page=100" | jq -c '
+              [.[].check_runs[] | select(.app.slug == "codecov" and (.name == "codecov/project" or .name == "codecov/patch"))]
+              | group_by(.name) | map(max_by(.id))')
+            if [[ $(jq '[.[] | select(.status == "completed")] | length' <<<"$checks") == 2 ]]; then
+              jq -r '.[] | "\(.name): \(.conclusion) (\(.output.title))"' <<<"$checks"
+              failed=$(jq -r '.[] | select(.conclusion != "success" and .conclusion != "neutral") | .name' <<<"$checks")
+              if [[ -n "$failed" ]]; then
+                echo "::error::Coverage check failed: ${failed//$'\n'/, }. Details are linked in the checks of this pull request."
+                exit 1
+              fi
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::warning::Codecov didn't report within 5 minutes, coverage is not checked."
+
   # The only test check the ruleset requires.
   required:
     # A skipped job counts as passed for required checks, so this job must not
     # be skipped when a test failed.
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     needs:
       - lint
@@ -316,9 +388,10 @@ jobs:
       - test-iam-floyd
       - test-cdk-iam-floyd
       - test-cdk-iam-floyd-jsii
+      - coverage
     steps:
       - name: Check tests
-        if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success'
+        if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
         env:
           FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
         run: |
