@@ -837,6 +837,27 @@ describe('JavaTranspiler expressions', () => {
     expect(java).toContain('r.matcher(s).find()');
   });
 
+  it('translates substring', () => {
+    expect(body('s: string', 'const x = s.substring(1, 2);')).toContain(
+      'String x = Js.substring(s, 1, 2);',
+    );
+  });
+
+  it.each([
+    [
+      'a: any',
+      'const x = a.toString(2);',
+      'Unsupported method toString of any',
+    ],
+    [
+      'a: string',
+      'const x = JSON.stringify(a, null);',
+      'Unsupported method stringify of mixed',
+    ],
+  ])('fails on unsupported calls of builtins (%s)', (params, code, message) => {
+    expect(bodyError(params, code)).toMatch(new RegExp(`^${message}`));
+  });
+
   it('adds all elements of arrays', () => {
     expect(body('a: string[], b: string[]', 'a.push(...b);')).toContain(
       'a.addAll(b);',
