@@ -104,33 +104,37 @@ public final class Examples {
     for (Path directory : directories) {
       String name = directory.getFileName().toString();
       Path file = directory.resolve(name + ".java");
-      if (name.endsWith(".cdk") || !Files.isRegularFile(file)) {
-        continue;
+      if (!name.endsWith(".cdk") && Files.isRegularFile(file)) {
+        out.println(name + "\t" + run(name, file, work));
       }
-      try {
-        Path source = work.resolve("src").resolve(name).resolve(name + ".java");
-        Path classes = work.resolve("classes").resolve(name);
-        Files.createDirectories(source.getParent());
-        Files.createDirectories(classes);
-        String text = new String(Files.readAllBytes(file), StandardCharsets.UTF_8);
-        Files.write(source, rewrite(text).getBytes(StandardCharsets.UTF_8));
-        String errors = compile(source, classes);
-        if (errors != null) {
-          out.println(name + "\tFAIL " + errors.replace('\n', ' '));
-          continue;
-        }
-        URL[] urls = {classes.toUri().toURL()};
-        try (URLClassLoader loader = new URLClassLoader(urls, Examples.class.getClassLoader())) {
-          Method example =
-              loader.loadClass(className(name)).getDeclaredMethod("example");
-          example.setAccessible(true);
-          out.println(name + "\t" + Json.stringify(resolve(example.invoke(null))));
-        }
-      } catch (InvocationTargetException e) {
-        out.println(name + "\tFAIL " + e.getCause());
-      } catch (ReflectiveOperationException | RuntimeException e) {
-        out.println(name + "\tFAIL " + e);
-      }
+    }
+  }
+
+  /** Compiles and runs the example, returns its JSON or FAIL and the error. */
+  static String run(String name, Path file, Path work) throws IOException {
+    try {
+      Path source = work.resolve("src").resolve(name).resolve(name + ".java");
+      Path classes = work.resolve("classes").resolve(name);
+      Files.createDirectories(source.getParent());
+      Files.createDirectories(classes);
+      String text = new String(Files.readAllBytes(file), StandardCharsets.UTF_8);
+      Files.write(source, rewrite(text).getBytes(StandardCharsets.UTF_8));
+      String errors = compile(source, classes);
+      return errors == null ? execute(name, classes) : "FAIL " + errors.replace('\n', ' ');
+    } catch (InvocationTargetException e) {
+      return "FAIL " + e.getCause();
+    } catch (ReflectiveOperationException | RuntimeException e) {
+      return "FAIL " + e;
+    }
+  }
+
+  static String execute(String name, Path classes)
+      throws IOException, ReflectiveOperationException {
+    URL[] urls = {classes.toUri().toURL()};
+    try (URLClassLoader loader = new URLClassLoader(urls, Examples.class.getClassLoader())) {
+      Method example = loader.loadClass(className(name)).getDeclaredMethod("example");
+      example.setAccessible(true);
+      return Json.stringify(resolve(example.invoke(null)));
     }
   }
 }

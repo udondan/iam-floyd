@@ -1,4 +1,5 @@
 import com.udondan.iamFloyd.AwsManagedPolicy;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
@@ -30,7 +31,7 @@ public final class ManagedPolicies {
   }
 
   /** Compares the managed policies. */
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws IOException, IllegalAccessException {
     String json = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
     Map<String, Object> expected = new TreeMap<>();
     for (Map.Entry<?, ?> entry : ((Map<?, ?>) JsonParser.parse(json)).entrySet()) {
