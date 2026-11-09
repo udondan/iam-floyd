@@ -1109,6 +1109,12 @@ const h = new RegExp('a', 'i');`,
 
     it.each([
       ['a.foo();', 'a: any', 'Unsupported method foo of any'],
+      ['a.toString(2);', 'a: any', 'Unsupported method toString of any'],
+      [
+        'JSON.stringify(a, null, 2);',
+        'a: string',
+        'Unsupported method stringify of mixed',
+      ],
       [
         "a.startsWith('a', 1);",
         'a: string',

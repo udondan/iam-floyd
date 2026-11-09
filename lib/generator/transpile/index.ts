@@ -161,6 +161,36 @@ export type Kind =
   | 'mixed';
 
 /**
+ * The kinds of primitive types and arrays, by the checks of the type
+ */
+const primitiveKinds: [Kind, (type: Type) => boolean][] = [
+  [
+    'string',
+    (type) =>
+      [
+        type.isString(),
+        type.isStringLiteral(),
+        type.isTemplateLiteral(),
+        type.isEnum(),
+        type.isEnumLiteral(),
+      ].some(Boolean),
+  ],
+  ['number', (type) => type.isNumber() || type.isNumberLiteral()],
+  ['boolean', (type) => type.isBoolean() || type.isBooleanLiteral()],
+  ['array', (type) => type.isArray() || type.isTuple()],
+];
+
+/**
+ * The kinds of the built-in classes, by the name of their symbol
+ */
+const builtinKinds = new Map<string, Kind>([
+  ['Map', 'map'],
+  ['Set', 'set'],
+  ['Date', 'date'],
+  ['RegExp', 'regexp'],
+]);
+
+/**
  * What a value is at runtime, which decides how operations on it are translated
  */
 export function kindOf(type: Type): Kind {
@@ -175,34 +205,14 @@ export function kindOf(type: Type): Kind {
     const kinds = new Set(type.getUnionTypes().map((part) => kindOf(part)));
     return kinds.size == 1 ? [...kinds][0] : 'mixed';
   }
-  if (
-    type.isString() ||
-    type.isStringLiteral() ||
-    type.isTemplateLiteral() ||
-    type.isEnum() ||
-    type.isEnumLiteral()
-  ) {
-    return 'string';
-  }
-  if (type.isNumber() || type.isNumberLiteral()) {
-    return 'number';
-  }
-  if (type.isBoolean() || type.isBooleanLiteral()) {
-    return 'boolean';
-  }
-  if (type.isArray() || type.isTuple()) {
-    return 'array';
-  }
+  return primitiveKinds.find(([, test]) => test(type))?.[0] ?? objectKind(type);
+}
+
+function objectKind(type: Type): Kind {
   const symbol = type.getSymbol();
-  switch (symbol?.getName()) {
-    case 'Map':
-      return 'map';
-    case 'Set':
-      return 'set';
-    case 'Date':
-      return 'date';
-    case 'RegExp':
-      return 'regexp';
+  const builtin = builtinKinds.get(symbol?.getName() ?? '');
+  if (builtin !== undefined) {
+    return builtin;
   }
   if (
     symbol
@@ -211,10 +221,7 @@ export function kindOf(type: Type): Kind {
   ) {
     return 'class';
   }
-  if (type.isObject() && !type.isInterface()) {
-    return 'record';
-  }
-  return 'mixed';
+  return type.isObject() && !type.isInterface() ? 'record' : 'mixed';
 }
 
 export function arrowFunction(node: Node): ArrowFunction {
