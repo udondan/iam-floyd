@@ -9,7 +9,8 @@
     "lib/shared/**/*.js",
     "lib/collection/**/*.ts",
     "lib/collection/**/*.js",
-    "docs/source/_static/js/converter.js"
+    "docs/source/_static/js/converter.js",
+    "docs/source/_static/js/converter/*.js"
   ],
   "exclude": ["**/*.d.ts", "**/*.CDK.ts", "**/*-CDK.ts"],
   "excludeNodeModules": true
