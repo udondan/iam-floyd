@@ -50,6 +50,12 @@ Use this tool to convert any IAM policy in JSON format to IAM Floyd code.
         <textarea id="policyConverterOutput"></textarea>
       </p>
     </fieldset>
+    <script src="_static/js/converter/common.js"></script>
+    <script src="_static/js/converter/actions.js"></script>
+    <script src="_static/js/converter/principals.js"></script>
+    <script src="_static/js/converter/statements.js"></script>
+    <script src="_static/js/converter/render.js"></script>
+    <script src="_static/js/converter/languages.js"></script>
     <script src="_static/js/converter.js"></script>
     <script src="_static/js/policy-converter.js"></script>
 

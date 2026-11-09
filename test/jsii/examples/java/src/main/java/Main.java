@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -16,44 +17,53 @@ import software.amazon.awscdk.services.iam.PolicyStatement;
  * as JSON (or FAIL).
  */
 public class Main {
+  private static final Stack STACK = new Stack(new App(), "Stack");
+  private static final ObjectMapper MAPPER = new ObjectMapper();
+
+  static String className(String name) {
+    // e.g. access-levels-list: ExampleAccessLevelsList
+    return "Example"
+        + Arrays.stream(name.split("[-.]"))
+            .map(part -> Character.toUpperCase(part.charAt(0)) + part.substring(1))
+            .collect(Collectors.joining());
+  }
+
+  static Object resolve(Object item) {
+    return item instanceof PolicyDocument document
+        ? STACK.resolve(document.toJSON())
+        : STACK.resolve(((PolicyStatement) item).toStatementJson());
+  }
+
+  /** The JSON of the result of an example: the statements, the policy or the policies. */
+  static Object json(Object result) {
+    if (result instanceof PolicyDocument) {
+      return resolve(result);
+    }
+    // statements, or the policies of a split
+    List<?> items = result instanceof List<?> list ? list : List.of(result);
+    return items.stream().map(Main::resolve).toList();
+  }
+
+  /** Runs the example, returns its JSON or FAIL and the error. */
+  static String run(String name) {
+    try {
+      Object result = Class.forName(className(name)).getDeclaredMethod("example").invoke(null);
+      return MAPPER.writeValueAsString(json(result));
+    } catch (InvocationTargetException e) {
+      return "FAIL " + e.getCause();
+    } catch (ReflectiveOperationException | JsonProcessingException | RuntimeException e) {
+      return "FAIL " + e;
+    }
+  }
+
   /** Runs all examples. */
-  public static void main(String[] args) throws Exception {
-    Stack stack = new Stack(new App(), "Stack");
-    ObjectMapper mapper = new ObjectMapper();
+  public static void main(String[] args) {
     File[] directories = new File(args[0]).listFiles(File::isDirectory);
     Arrays.sort(directories);
     for (File directory : directories) {
       String name = directory.getName();
-      if (!new File(directory, name + ".java").isFile()) {
-        continue;
-      }
-      // e.g. access-levels-list: ExampleAccessLevelsList
-      String className =
-          "Example"
-              + Arrays.stream(name.split("[-.]"))
-                  .map(part -> Character.toUpperCase(part.charAt(0)) + part.substring(1))
-                  .collect(Collectors.joining());
-      try {
-        Object result = Class.forName(className).getDeclaredMethod("example").invoke(null);
-        Object json;
-        if (result instanceof PolicyDocument document) {
-          json = stack.resolve(document.toJSON());
-        } else {
-          // statements, or the policies of a split
-          List<?> items = result instanceof List<?> list ? list : List.of(result);
-          json =
-              items.stream()
-                  .map(
-                      item ->
-                          item instanceof PolicyDocument document
-                              ? stack.resolve(document.toJSON())
-                              : stack.resolve(((PolicyStatement) item).toStatementJson()))
-                  .toList();
-        }
-        System.out.println(name + "\t" + mapper.writeValueAsString(json));
-      } catch (Exception e) {
-        Throwable cause = e instanceof InvocationTargetException ? e.getCause() : e;
-        System.out.println(name + "\tFAIL " + cause);
+      if (new File(directory, name + ".java").isFile()) {
+        System.out.println(name + "\t" + run(name));
       }
     }
   }

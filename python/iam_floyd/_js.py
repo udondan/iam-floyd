@@ -7,6 +7,7 @@ import decimal
 import json
 import math
 import re
+from collections.abc import Callable
 from typing import Any
 
 
@@ -80,7 +81,7 @@ def reg_exp(pattern: str, flags: str) -> re.Pattern[str]:
         if flag == 'i':
             options |= re.IGNORECASE
         else:
-            raise Exception(f'Unsupported regular expression flag: {flag}')
+            raise ValueError(f'Unsupported regular expression flag: {flag}')
     return re.compile(pattern, options)
 
 
@@ -93,23 +94,36 @@ def stringify(value: Any) -> str:
     """`JSON.stringify()` without indentation."""
     if value is None:
         return 'null'
-    if isinstance(value, bool):
-        return 'true' if value else 'false'
-    if isinstance(value, (int, float)):
-        if math.isnan(value) or math.isinf(value):
-            return 'null'
-        return to_string(value)
-    if isinstance(value, str):
-        return json.dumps(value, ensure_ascii=False)
-    if isinstance(value, datetime.datetime):
-        return stringify(to_iso_string(value))
-    if isinstance(value, (list, tuple)):
-        return f'[{",".join(stringify(item) for item in value)}]'
-    if isinstance(value, dict):
-        items = (
-            f'{stringify(str(key))}:{stringify(item)}'
-            for key, item in value.items()
-            if item is not None
-        )
-        return f'{{{",".join(items)}}}'
+    for types, serialize in _SERIALIZERS:
+        if isinstance(value, types):
+            return serialize(value)
     raise TypeError(f'Cannot serialize {type(value).__name__} to JSON')
+
+
+def _stringify_number(value: bool | float) -> str:
+    # booleans are numbers in Python, to_string() formats them as JavaScript
+    if math.isnan(value) or math.isinf(value):
+        return 'null'
+    return to_string(value)
+
+
+def _stringify_list(value: list[Any] | tuple[Any, ...]) -> str:
+    return f'[{",".join(stringify(item) for item in value)}]'
+
+
+def _stringify_dict(value: dict[Any, Any]) -> str:
+    items = (
+        f'{stringify(str(key))}:{stringify(item)}'
+        for key, item in value.items()
+        if item is not None
+    )
+    return f'{{{",".join(items)}}}'
+
+
+_SERIALIZERS: tuple[tuple[type | tuple[type, ...], Callable[[Any], str]], ...] = (
+    ((int, float), _stringify_number),
+    (str, lambda value: json.dumps(value, ensure_ascii=False)),
+    (datetime.datetime, lambda value: stringify(to_iso_string(value))),
+    ((list, tuple), _stringify_list),
+    (dict, _stringify_dict),
+)

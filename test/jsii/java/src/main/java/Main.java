@@ -32,6 +32,8 @@ import software.amazon.awscdk.services.iam.ServicePrincipal;
  * FAIL).
  */
 public class Main {
+  private static final String BUCKET = "bucket";
+
   static Role role(Stack stack) {
     return Role.Builder.create(stack, "Role")
         .assumedBy(new ServicePrincipal("lambda.amazonaws.com"))
@@ -39,7 +41,7 @@ public class Main {
   }
 
   static ReaderRole reader(Stack stack) {
-    return new ReaderRole(stack, "Reader", ReaderRoleProps.builder().bucketName("bucket").build());
+    return new ReaderRole(stack, "Reader", ReaderRoleProps.builder().bucketName(BUCKET).build());
   }
 
   @SuppressWarnings("unchecked")
@@ -74,7 +76,7 @@ public class Main {
           role(stack).addToPolicy(((S3) statement).ifAwsSourceIp("10.0.0.0/8"));
         });
 
-    scenario("b library uses floyd internally", stack -> reader(stack));
+    scenario("b library uses floyd internally", Main::reader);
 
     scenario(
         "c statements passed as iam.PolicyStatement[]",
@@ -83,7 +85,7 @@ public class Main {
                 stack,
                 "Reader",
                 ReaderRoleProps.builder()
-                    .bucketName("bucket")
+                    .bucketName(BUCKET)
                     .extraStatements(
                         List.<PolicyStatement>of(new Dynamodb().allow().toGetItem().onTable("t")))
                     .build()));
@@ -116,7 +118,7 @@ public class Main {
         "i policy used as document",
         stack -> {
           InlineRolePolicyDocument policy =
-              new InlineRolePolicyDocument(new S3().allow().toGetObject().onObject("bucket", "*"));
+              new InlineRolePolicyDocument(new S3().allow().toGetObject().onObject(BUCKET, "*"));
           policy.addStatements(new Sqs().allow().toSendMessage().onQueue("queue"));
           policy.validate();
           new software.amazon.awscdk.services.iam.Policy(
@@ -130,7 +132,7 @@ public class Main {
         stack -> {
           ManagedPolicyDocument policy =
               new ManagedPolicyDocument(
-                  new S3().allow().toGetObject().onObject("bucket", "*"),
+                  new S3().allow().toGetObject().onObject(BUCKET, "*"),
                   new Sqs().allow().toSendMessage().onQueue("queue"),
                   new Dynamodb().allow().toGetItem().onTable("table"));
           // two statements per policy
@@ -153,7 +155,7 @@ public class Main {
                     new S3()
                         .allow()
                         .toPutObject()
-                        .onObject("bucket", "*")
+                        .onObject(BUCKET, "*")
                         .ifAwsCurrentTime(Instant.parse("2026-01-01T00:00:00Z"))
                         .ifObjectLockRetainUntilDate(Instant.parse("2026-06-30T12:00:00Z"))));
   }

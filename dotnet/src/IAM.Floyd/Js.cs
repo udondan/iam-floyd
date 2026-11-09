@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace IAM.Floyd;
@@ -17,8 +16,12 @@ internal static class Js
     /// </summary>
     public static bool IsNumber(object value)
     {
-        return value is double || value is int || value is long || value is float
-            || value is short || value is byte || value is decimal;
+        return IsInteger(value) || value is double || value is float || value is decimal;
+    }
+
+    private static bool IsInteger(object value)
+    {
+        return value is int || value is long || value is short || value is byte;
     }
 
     /// <summary>
@@ -92,66 +95,63 @@ internal static class Js
     /// </summary>
     public static string Number(double value)
     {
+        if (value < 0)
+        {
+            return "-" + Number(-value);
+        }
         if (double.IsNaN(value))
         {
             return "NaN";
         }
         if (double.IsInfinity(value))
         {
-            return value > 0 ? "Infinity" : "-Infinity";
+            return "Infinity";
         }
-        if (value == 0)
-        {
-            return "0";
-        }
-        if (value < 0)
-        {
-            return "-" + Number(-value);
-        }
+        return value == 0 ? "0" : Format(ShortestDigits(value, out var n), n);
+    }
+
+    /// <summary>
+    /// The significant digits of a positive number, and in n the position of the decimal point
+    /// relative to the first digit.
+    /// </summary>
+    private static string ShortestDigits(double value, out int n)
+    {
         // the shortest representation that parses back to the same value, e.g. 1.5E-07
         var shortest = value.ToString("R", CultureInfo.InvariantCulture);
         var e = shortest.IndexOf('E');
         var mantissa = e < 0 ? shortest : shortest.Substring(0, e);
         var exponent = e < 0 ? 0 : int.Parse(shortest.Substring(e + 1), CultureInfo.InvariantCulture);
         var point = mantissa.IndexOf('.');
+        n = (point < 0 ? mantissa.Length : point) + exponent;
         var digits = point < 0 ? mantissa : mantissa.Remove(point, 1);
-        // n is the position of the decimal point relative to the first digit
-        var n = (point < 0 ? mantissa.Length : point) + exponent;
-        while (digits.Length > 1 && digits[0] == '0')
-        {
-            digits = digits.Substring(1);
-            n--;
-        }
+        var significant = digits.TrimStart('0');
+        n -= digits.Length - significant.Length;
         // trailing zeros are not significant
-        while (digits.Length > 1 && digits[digits.Length - 1] == '0')
-        {
-            digits = digits.Substring(0, digits.Length - 1);
-        }
+        return significant.TrimEnd('0');
+    }
+
+    /// <summary>
+    /// The digits of a number with the decimal point at n, as Number.prototype.toString.
+    /// </summary>
+    private static string Format(string digits, int n)
+    {
         var k = digits.Length;
-        var result = new StringBuilder();
         if (k <= n && n <= 21)
         {
-            result.Append(digits).Append('0', n - k);
+            return digits + new string('0', n - k);
         }
-        else if (0 < n && n <= 21)
+        if (0 < n && n <= 21)
         {
-            result.Append(digits, 0, n).Append('.').Append(digits.Substring(n));
+            return digits.Substring(0, n) + "." + digits.Substring(n);
         }
-        else if (-6 < n && n <= 0)
+        if (-6 < n && n <= 0)
         {
-            result.Append("0.").Append('0', -n).Append(digits);
+            return "0." + new string('0', -n) + digits;
         }
-        else
-        {
-            result.Append(digits[0]);
-            if (k > 1)
-            {
-                result.Append('.').Append(digits.Substring(1));
-            }
-            result.Append('e').Append(n - 1 >= 0 ? "+" : "-")
-                .Append(Math.Abs(n - 1).ToString(CultureInfo.InvariantCulture));
-        }
-        return result.ToString();
+        var fraction = k > 1 ? "." + digits.Substring(1) : "";
+        var exponent = n - 1;
+        return digits[0] + fraction + "e" + (exponent >= 0 ? "+" : "-")
+            + Math.Abs(exponent).ToString(CultureInfo.InvariantCulture);
     }
 
     /// <summary>

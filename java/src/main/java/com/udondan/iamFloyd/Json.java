@@ -2,11 +2,38 @@ package com.udondan.iamFloyd;
 
 import java.lang.reflect.InvocationTargetException;
 import java.time.Instant;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 /** Serializes statements and their parts to JSON, as JSON.stringify of JavaScript. */
 public final class Json {
+  /** The writers of the types of values, in the order they are checked. */
+  private static final Map<Class<?>, BiConsumer<StringBuilder, Object>> WRITERS =
+      new LinkedHashMap<>();
+
+  private static final Map<Character, String> ESCAPES =
+      Map.of(
+          '"', "\\\"",
+          '\\', "\\\\",
+          '\b', "\\b",
+          '\f', "\\f",
+          '\n', "\\n",
+          '\r', "\\r",
+          '\t', "\\t");
+
+  static {
+    WRITERS.put(String.class, (result, value) -> string(result, (String) value));
+    WRITERS.put(Boolean.class, StringBuilder::append);
+    WRITERS.put(Number.class, (result, value) -> number(result, (Number) value));
+    WRITERS.put(Instant.class, (result, value) -> string(result, Js.toISOString((Instant) value)));
+    WRITERS.put(Map.class, (result, value) -> object(result, (Map<?, ?>) value));
+    WRITERS.put(List.class, (result, value) -> array(result, ((List<?>) value).toArray()));
+    WRITERS.put(Object[].class, (result, value) -> array(result, (Object[]) value));
+  }
+
   private Json() {}
 
   /**
@@ -26,35 +53,38 @@ public final class Json {
   private static void write(StringBuilder result, Object value) {
     if (value == null) {
       result.append("null");
-    } else if (value instanceof String) {
-      string(result, (String) value);
-    } else if (value instanceof Boolean) {
-      result.append(value);
-    } else if (value instanceof Number) {
-      double number = ((Number) value).doubleValue();
-      result.append(Double.isNaN(number) || Double.isInfinite(number) ? "null" : Js.number(number));
-    } else if (value instanceof Instant) {
-      string(result, Js.toISOString((Instant) value));
-    } else if (value instanceof Map) {
-      result.append('{');
-      boolean first = true;
-      for (Map.Entry<?, ?> entry : ((Map<?, ?>) value).entrySet()) {
-        if (!first) {
-          result.append(',');
-        }
-        first = false;
-        string(result, String.valueOf(entry.getKey()));
-        result.append(':');
-        write(result, entry.getValue());
-      }
-      result.append('}');
-    } else if (value instanceof List) {
-      array(result, ((List<?>) value).toArray());
-    } else if (value instanceof Object[]) {
-      array(result, (Object[]) value);
     } else {
-      write(result, toJson(value));
+      writer(value).accept(result, value);
     }
+  }
+
+  private static BiConsumer<StringBuilder, Object> writer(Object value) {
+    for (Map.Entry<Class<?>, BiConsumer<StringBuilder, Object>> entry : WRITERS.entrySet()) {
+      if (entry.getKey().isInstance(value)) {
+        return entry.getValue();
+      }
+    }
+    return (result, object) -> write(result, toJson(object));
+  }
+
+  private static void number(StringBuilder result, Number value) {
+    double number = value.doubleValue();
+    result.append(Double.isNaN(number) || Double.isInfinite(number) ? "null" : Js.number(number));
+  }
+
+  private static void object(StringBuilder result, Map<?, ?> value) {
+    result.append('{');
+    boolean first = true;
+    for (Map.Entry<?, ?> entry : value.entrySet()) {
+      if (!first) {
+        result.append(',');
+      }
+      first = false;
+      string(result, String.valueOf(entry.getKey()));
+      result.append(':');
+      write(result, entry.getValue());
+    }
+    result.append('}');
   }
 
   private static void array(StringBuilder result, Object[] values) {
@@ -86,41 +116,25 @@ public final class Json {
     result.append('"');
     for (int i = 0; i < value.length(); i++) {
       char c = value.charAt(i);
-      switch (c) {
-        case '"':
-          result.append("\\\"");
-          break;
-        case '\\':
-          result.append("\\\\");
-          break;
-        case '\b':
-          result.append("\\b");
-          break;
-        case '\f':
-          result.append("\\f");
-          break;
-        case '\n':
-          result.append("\\n");
-          break;
-        case '\r':
-          result.append("\\r");
-          break;
-        case '\t':
-          result.append("\\t");
-          break;
-        default:
-          boolean loneSurrogate =
-              Character.isHighSurrogate(c)
-                  ? i + 1 >= value.length() || !Character.isLowSurrogate(value.charAt(i + 1))
-                  : Character.isLowSurrogate(c)
-                      && (i == 0 || !Character.isHighSurrogate(value.charAt(i - 1)));
-          if (c < 0x20 || loneSurrogate) {
-            result.append(String.format("\\u%04x", (int) c));
-          } else {
-            result.append(c);
-          }
+      String escape = ESCAPES.get(c);
+      if (escape != null) {
+        result.append(escape);
+      } else if (c < 0x20 || isLoneSurrogate(value, i)) {
+        result.append(String.format(Locale.ROOT, "\\u%04x", (int) c));
+      } else {
+        result.append(c);
       }
     }
     result.append('"');
+  }
+
+  /** Whether the character at the index is half of a surrogate pair without the other half. */
+  private static boolean isLoneSurrogate(String value, int index) {
+    char c = value.charAt(index);
+    if (Character.isHighSurrogate(c)) {
+      return index + 1 >= value.length() || !Character.isLowSurrogate(value.charAt(index + 1));
+    }
+    return Character.isLowSurrogate(c)
+        && (index == 0 || !Character.isHighSurrogate(value.charAt(index - 1)));
   }
 }

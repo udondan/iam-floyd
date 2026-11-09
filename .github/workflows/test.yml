@@ -78,6 +78,42 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }} # zizmor checks the actions online
 
+  # The plugins of .qlty/qlty.toml and the code smells (complexity, duplication, nesting) via Qlty.
+  # Git-aware: only smells introduced by the pull request compared to main fail the job.
+  qlty:
+    name: Qlty
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Install qlty
+        uses: qltysh/qlty-action/install@ebcd284bf32e36a030afe15f1e136c7be08b9506 # v2.5.0
+
+      - name: Lint via qlty plugins
+        run: qlty check --all
+
+      - name: Report code smells
+        if: github.event_name != 'pull_request'
+        run: qlty smells --all --no-snippets
+
+      - name: Report new code smells
+        if: github.event_name == 'pull_request'
+        run: qlty smells --upstream origin/main --no-snippets
+
+      - name: Fail on new code smells
+        if: github.event_name == 'pull_request'
+        run: |
+          count=$(qlty smells --upstream origin/main --json --quiet 2>/dev/null | jq length)
+          if [ "$count" -gt 0 ]; then
+            echo "::error::qlty found $count new code smell(s) compared to main"
+            exit 1
+          fi
+
   # The native packages of iam-floyd, built by the action package-iam-floyd like in publish.yml.
   # Each package is built with the newest version and tested with the oldest and the newest
   # supported version.
@@ -455,6 +491,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - lint
+      - qlty
       - test-iam-floyd-native
       - coverage-native
       - test-iam-floyd
@@ -463,7 +500,7 @@ jobs:
       - coverage
     steps:
       - name: Check tests
-        if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.coverage-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
+        if: needs.lint.result != 'success' || needs.qlty.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.coverage-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
         env:
           FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
         run: |

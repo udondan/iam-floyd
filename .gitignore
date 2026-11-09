@@ -16,6 +16,7 @@ test/package-lock.json
 **/*.d.ts.map
 **/*.js
 !/docs/source/_static/js/*.js
+!/docs/source/_static/js/converter/*.js
 /.jsii
 /.jsii.gz
 /dist

@@ -13,71 +13,49 @@ import (
 // *bool and *time.Time become their value, lists of strings or numbers become []interface{}, and
 // typed nil becomes nil.
 func Normalize(value interface{}) interface{} {
-	switch v := value.(type) {
-	case nil:
-		return nil
-	case *string:
-		if v == nil {
-			return nil
-		}
-		return *v
-	case *float64:
-		if v == nil {
-			return nil
-		}
-		return *v
-	case *bool:
-		if v == nil {
-			return nil
-		}
-		return *v
-	case *time.Time:
-		if v == nil {
-			return nil
-		}
-		return *v
-	case int:
+	if v, ok := value.(int); ok {
 		return float64(v)
-	case []interface{}:
-		return v
-	case []string:
-		return toList(v)
-	case []*string:
-		return toList(v)
-	case *[]*string:
-		if v == nil {
-			return nil
-		}
-		return toList(*v)
-	case []float64:
-		return toList(v)
-	case []*float64:
-		return toList(v)
-	case *[]*float64:
-		if v == nil {
-			return nil
-		}
-		return toList(*v)
-	case []time.Time:
-		return toList(v)
-	case []*time.Time:
-		return toList(v)
-	case *[]*time.Time:
-		if v == nil {
-			return nil
-		}
-		return toList(*v)
 	}
-	if reflectValue := reflect.ValueOf(value); reflectValue.Kind() == reflect.Pointer && reflectValue.IsNil() {
-		return nil
+	reflectValue := reflect.ValueOf(value)
+	if listTypes[reflect.TypeOf(value)] {
+		return toList(reflectValue)
 	}
-	return value
+	if reflectValue.Kind() != reflect.Pointer {
+		return value
+	}
+	return dereference(reflectValue)
 }
 
-func toList[T any](values []T) []interface{} {
-	list := make([]interface{}, len(values))
-	for i, value := range values {
-		list[i] = Normalize(value)
+// listTypes are the lists of the public API that become []interface{}
+var listTypes = typeSet([]string{}, []*string{}, []float64{}, []*float64{}, []time.Time{}, []*time.Time{})
+
+// pointerTypes are the types whose pointers in the public API are dereferenced
+var pointerTypes = typeSet("", 0.0, false, time.Time{}, []*string{}, []*float64{}, []*time.Time{})
+
+func typeSet(values ...interface{}) map[reflect.Type]bool {
+	types := map[reflect.Type]bool{}
+	for _, value := range values {
+		types[reflect.TypeOf(value)] = true
+	}
+	return types
+}
+
+// dereference returns the value of a pointer of the public API, nil for a nil pointer, and other
+// pointers as they are
+func dereference(pointer reflect.Value) interface{} {
+	if pointer.IsNil() {
+		return nil
+	}
+	if pointerTypes[pointer.Elem().Type()] {
+		return Normalize(pointer.Elem().Interface())
+	}
+	return pointer.Interface()
+}
+
+func toList(values reflect.Value) []interface{} {
+	list := make([]interface{}, values.Len())
+	for i := range list {
+		list[i] = Normalize(values.Index(i).Interface())
 	}
 	return list
 }
@@ -124,25 +102,33 @@ func ToString(value interface{}) string {
 
 // Number formats a number like JavaScript
 func Number(value float64) string {
-	switch {
-	case math.IsNaN(value):
-		return "NaN"
-	case math.IsInf(value, 1):
-		return "Infinity"
-	case math.IsInf(value, -1):
-		return "-Infinity"
-	case value == 0:
-		return "0"
-	case value < 0:
+	if value < 0 {
 		return "-" + Number(-value)
+	}
+	if math.IsNaN(value) {
+		return "NaN"
+	}
+	if math.IsInf(value, 1) {
+		return "Infinity"
+	}
+	return finiteNumber(value)
+}
+
+func finiteNumber(value float64) string {
+	if value == 0 {
+		return "0"
 	}
 	// the shortest digits that round-trip, e.g. 1.2345e+06
 	formatted := strconv.FormatFloat(value, 'e', -1, 64)
 	mantissa, exponent, _ := strings.Cut(formatted, "e")
-	digits := strings.Replace(mantissa, ".", "", 1)
 	e, _ := strconv.Atoi(exponent)
+	return formatDigits(strings.Replace(mantissa, ".", "", 1), e+1)
+}
+
+// formatDigits formats the significant digits of a number with the decimal point at n, relative
+// to the first digit, like String() of JavaScript
+func formatDigits(digits string, n int) string {
 	k := len(digits)
-	n := e + 1
 	switch {
 	case k <= n && n <= 21:
 		return digits + strings.Repeat("0", n-k)

@@ -9,6 +9,9 @@ import java.util.Map;
  * a Double.
  */
 final class JsonParser {
+  private static final Map<Character, Character> ESCAPES =
+      Map.of('b', '\b', 'f', '\f', 'n', '\n', 'r', '\r', 't', '\t');
+
   private final String text;
   private int pos;
 
@@ -60,33 +63,42 @@ final class JsonParser {
     }
     char c = text.charAt(pos);
     if (c == '{') {
-      pos++;
-      Map<String, Object> map = new LinkedHashMap<>();
-      if (!consume('}')) {
-        do {
-          whitespace();
-          String key = string();
-          expect(':');
-          map.put(key, value());
-        } while (consume(','));
-        expect('}');
-      }
-      return map;
+      return object();
     }
     if (c == '[') {
-      pos++;
-      List<Object> list = new ArrayList<>();
-      if (!consume(']')) {
-        do {
-          list.add(value());
-        } while (consume(','));
-        expect(']');
-      }
-      return list;
+      return array();
     }
-    if (c == '"') {
-      return string();
+    return c == '"' ? string() : literal();
+  }
+
+  private Map<String, Object> object() {
+    pos++;
+    Map<String, Object> map = new LinkedHashMap<>();
+    if (!consume('}')) {
+      do {
+        whitespace();
+        String key = string();
+        expect(':');
+        map.put(key, value());
+      } while (consume(','));
+      expect('}');
     }
+    return map;
+  }
+
+  private List<Object> array() {
+    pos++;
+    List<Object> list = new ArrayList<>();
+    if (!consume(']')) {
+      do {
+        list.add(value());
+      } while (consume(','));
+      expect(']');
+    }
+    return list;
+  }
+
+  private Object literal() {
     for (String literal : new String[] {"true", "false", "null"}) {
       if (text.startsWith(literal, pos)) {
         pos += literal.length();
@@ -102,43 +114,29 @@ final class JsonParser {
     }
     pos++;
     StringBuilder builder = new StringBuilder();
-    while (true) {
-      if (pos >= text.length()) {
-        throw error("unterminated string");
-      }
-      char c = text.charAt(pos++);
-      if (c == '"') {
-        return builder.toString();
-      }
-      if (c != '\\') {
-        builder.append(c);
-        continue;
-      }
-      char escape = text.charAt(pos++);
-      switch (escape) {
-        case 'b':
-          builder.append('\b');
-          break;
-        case 'f':
-          builder.append('\f');
-          break;
-        case 'n':
-          builder.append('\n');
-          break;
-        case 'r':
-          builder.append('\r');
-          break;
-        case 't':
-          builder.append('\t');
-          break;
-        case 'u':
-          builder.append((char) Integer.parseInt(text.substring(pos, pos + 4), 16));
-          pos += 4;
-          break;
-        default:
-          builder.append(escape);
-      }
+    for (char c = next(); c != '"'; c = next()) {
+      builder.append(c == '\\' ? escape() : c);
     }
+    return builder.toString();
+  }
+
+  /** The next character of a string. */
+  private char next() {
+    if (pos >= text.length()) {
+      throw error("unterminated string");
+    }
+    return text.charAt(pos++);
+  }
+
+  /** The character of an escape sequence, after the backslash. */
+  private char escape() {
+    char escape = text.charAt(pos++);
+    if (escape != 'u') {
+      return ESCAPES.getOrDefault(escape, escape);
+    }
+    char c = (char) Integer.parseInt(text.substring(pos, pos + 4), 16);
+    pos += 4;
+    return c;
   }
 
   private Object number() {

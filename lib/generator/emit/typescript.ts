@@ -10,7 +10,14 @@ import {
 } from 'ts-morph';
 
 import { formatCode } from '../format';
-import { ServiceModel } from '../model';
+import {
+  ActionModel,
+  CdkRef,
+  ConditionModel,
+  ResourceModel,
+  ServiceModel,
+} from '../model';
+import { placeholderDefaultDocs } from './shared';
 
 export interface EmitTypeScriptOptions {
   /**
@@ -18,6 +25,9 @@ export interface EmitTypeScriptOptions {
    */
   readonly cdk?: boolean;
 }
+
+type Method = OptionalKind<MethodDeclarationStructure>;
+type Parameter = OptionalKind<ParameterDeclarationStructure>;
 
 const modelDir = 'lib/generated/model';
 const outDir = 'lib/generated/policy-statements';
@@ -29,6 +39,282 @@ const outDir = 'lib/generated/policy-statements';
 // live interpolation referencing an undefined identifier. Escape it so it stays literal text.
 function escapeTemplateLiteral(str: string): string {
   return str.replace(/\$/g, () => '\\$');
+}
+
+/**
+ * The URL of the docs as a paragraph, unless it links to the start page only
+ */
+function docsUrl(url: string): string {
+  return url.length && url != 'https://docs.aws.amazon.com/'
+    ? `\n\n${url}`
+    : '';
+}
+
+/**
+ * A list with a title in the docs, e.g. of the possible conditions
+ */
+function docList(title: string, items: string[] | undefined): string {
+  return items
+    ? `\n\n${title}:${items.map((item) => `\n- ${item}`).join('')}`
+    : '';
+}
+
+const methodReference = (name: string) => `.${name}()`;
+
+function actionMethod(action: ActionModel): Method {
+  const desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}${docList(
+    'Possible conditions',
+    action.conditionMethods?.map(methodReference),
+  )}${docList('Dependent actions', action.dependentActions)}${docsUrl(action.url)}`;
+  return {
+    name: action.methodName,
+    scope: Scope.Public,
+    statements: `return this.to('${action.name}');`,
+    docs: [{ description: desc }],
+  };
+}
+
+const placeholderDefaults = {
+  partition: 'this.defaultPartition',
+  region: 'this.defaultRegion',
+  account: 'this.defaultAccount',
+};
+
+/**
+ * The docs of the required placeholder, which in the CDK variant can also be a construct
+ */
+function requiredParamDocs(name: string, cdkRef: CdkRef | undefined): string {
+  const cdkRefType = `interfaces.${cdkRef?.module}.${cdkRef?.interface}`;
+  if (cdkRef?.arn) {
+    return `Identifier for the ${name}, or a construct that implements \`${cdkRefType}\`, whose ARN is used. Then the partition, region and account are ignored.`;
+  }
+  if (cdkRef?.id) {
+    return `Identifier for the ${name}, or a construct that implements \`${cdkRefType}\`.`;
+  }
+  return `Identifier for the ${name}.`;
+}
+
+/**
+ * The statements that take the ARN or the identifier from a construct in place of the required
+ * placeholder
+ */
+function cdkRefStatements(name: string, cdkRef: CdkRef | undefined): string[] {
+  if (cdkRef?.arn) {
+    return [
+      `if (typeof ${name} !== 'string') {`,
+      `  return this.on(${name}.${cdkRef.property}.${cdkRef.arn});`,
+      '}',
+    ];
+  }
+  if (cdkRef?.id) {
+    return [
+      `if (typeof ${name} !== 'string') {`,
+      `  ${name} = ${name}.${cdkRef.property}.${cdkRef.id};`,
+      '}',
+    ];
+  }
+  return [];
+}
+
+/**
+ * The method of a resource type. `cdkRef` is the reference interface the CDK variant takes in
+ * place of the required placeholder.
+ */
+function resourceMethod(
+  resource: ResourceModel,
+  cdkRef: CdkRef | undefined,
+): Method {
+  const statements: string[] = [];
+  const requiredParameters: Parameter[] = [];
+  const optionalParameters: Parameter[] = [];
+  // placeholders without parameter stay literal text
+  let arn = escapeTemplateLiteral(resource.arn);
+  let paramDocs = '';
+  for (const { placeholder, name, kind } of resource.placeholders) {
+    let orDefault = '';
+    if (kind == 'required') {
+      requiredParameters.push({
+        name,
+        type: cdkRef
+          ? `string | interfaces.${cdkRef.module}.${cdkRef.interface}`
+          : 'string',
+        hasQuestionToken: false,
+      });
+      statements.push(...cdkRefStatements(name, cdkRef));
+      paramDocs += `\n@param ${name} - ${requiredParamDocs(name, cdkRef)}`;
+    } else {
+      optionalParameters.push({ name, type: 'string', hasQuestionToken: true });
+      orDefault = ` ?? ${placeholderDefaults[kind]}`;
+      paramDocs += `\n@param ${name} - ${placeholderDefaultDocs[kind]}`;
+    }
+    arn = arn.replace(`\\\${${placeholder}}`, `\${${name}${orDefault}}`);
+  }
+  statements.push(`return this.on(\`${arn}\`);`);
+
+  const conditions = resource.conditionMethods.length
+    ? resource.conditionMethods.map(methodReference)
+    : undefined;
+  const desc = `\nAdds a resource of type ${resource.name} to the statement${docsUrl(
+    resource.url,
+  )}\n${paramDocs}${docList('Possible conditions', conditions)}`;
+  return {
+    name: resource.methodName,
+    scope: Scope.Public,
+    parameters: [...requiredParameters, ...optionalParameters],
+    statements,
+    docs: [{ description: desc }],
+  };
+}
+
+/**
+ * A paragraph of the docs of a condition
+ */
+function paragraph(text: string): string {
+  return text.length ? `\n${text}\n` : '';
+}
+
+/**
+ * A list of the docs of a condition, e.g. of the actions it applies to
+ */
+function appliesTo(title: string, items: string[]): string {
+  return items.length
+    ? `\nApplies to ${title}:\n${items.map((item) => `- ${item}\n`).join('')}`
+    : '';
+}
+
+function conditionDocs(condition: ConditionModel): string {
+  return [
+    paragraph(condition.description),
+    paragraph(condition.url),
+    appliesTo('actions', condition.relatedActionMethods.map(methodReference)),
+    appliesTo('resource types', condition.relatedResourceTypes),
+  ].join('');
+}
+
+/**
+ * Dates of the value of a condition become strings
+ */
+const dateStatements = [
+  'if (typeof (value as Date).getMonth === "function") {',
+  '  value = (value as Date).toISOString();',
+  '} else if (Array.isArray(value)) {',
+  '  value = value.map((item) => {',
+  '    if (typeof (item as Date).getMonth === "function") {',
+  '      item = (item as Date).toISOString();',
+  '    }',
+  '    return item;',
+  '  });',
+  '}',
+];
+
+/**
+ * The parameters of the value of a condition, their docs and the statements of the method
+ */
+function conditionValue(
+  condition: ConditionModel,
+  propsKey: string,
+): { docs: string; parameters: Parameter[]; statements: string[] } {
+  if (condition.valueKind == 'boolean') {
+    return {
+      docs: '\n@param value `true` or `false`. **Default:** `true`',
+      parameters: [{ name: 'value', type: 'boolean', hasQuestionToken: true }],
+      statements: [
+        `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`,
+      ],
+    };
+  }
+  const types = [...condition.valueTypes!];
+  types.push(
+    types.length > 1 ? `(${types.join('|')})[]` : `${types.join(',')}[]`,
+  );
+  return {
+    docs: `\n@param value The value(s) to check\n@param operator Works with [${condition.valueKind} operators](${condition.operatorUrl}). **Default:** \`${condition.defaultOperator}\``,
+    parameters: [
+      { name: 'value', type: types.join(' | ') },
+      { name: 'operator', type: 'Operator | string', hasQuestionToken: true },
+    ],
+    statements: [
+      ...(condition.valueKind == 'date' ? dateStatements : []),
+      `return this.if(\`${propsKey}\`, value, operator ?? '${condition.defaultOperator}')`,
+    ],
+  };
+}
+
+function conditionMethod(condition: ConditionModel): Method {
+  let desc = conditionDocs(condition);
+  const parameters: Parameter[] = [];
+  let propsKey = escapeTemplateLiteral(condition.keyLiteral);
+  if (typeof condition.keyParam !== 'undefined') {
+    desc += `\n@param ${condition.keyParam} The tag key to check`;
+    parameters.push({ name: condition.keyParam, type: 'string' });
+    propsKey += `\${${condition.keyParam}}`;
+  }
+  const value = conditionValue(condition, propsKey);
+  return {
+    name: condition.methodName,
+    scope: Scope.Public,
+    parameters: [...parameters, ...value.parameters],
+    statements: value.statements.join('\n'),
+    docs: [{ description: desc + value.docs }],
+  };
+}
+
+/**
+ * The constructor, which takes the sid, or the props in the CDK variant
+ */
+function constructorStructure(description: string, cdk: boolean | undefined) {
+  return cdk
+    ? {
+        parameters: [
+          {
+            name: 'props',
+            type: 'iam.PolicyStatementProps',
+            hasQuestionToken: true,
+          },
+        ],
+        statements: 'super(props);',
+        docs: [{ description: description.split('\n@param')[0] }],
+      }
+    : {
+        parameters: [{ name: 'sid', type: 'string', hasQuestionToken: true }],
+        statements: 'super(sid);',
+        docs: [{ description }],
+      };
+}
+
+/**
+ * The access levels of the actions, with single quotes and without quotes around single word
+ * keys
+ */
+function accessLevelList(model: ServiceModel): string {
+  return JSON.stringify(model.accessLevelList, null, 2)
+    .split('"')
+    .join("'")
+    .replace(/^ {2}'([^' ]+)'/gm, '$1');
+}
+
+function addImports(
+  sourceFile: SourceFile,
+  model: ServiceModel,
+  cdk: boolean | undefined,
+) {
+  const sharedClasses = ['PolicyStatement'];
+  // boolean conditions don't take operators
+  if (model.conditions.some((condition) => condition.valueKind != 'boolean')) {
+    sharedClasses.push('Operator');
+  }
+  sourceFile.addImportDeclaration({
+    namedImports: sharedClasses,
+    moduleSpecifier: '../../shared',
+  });
+  if (cdk) {
+    sourceFile.addImportDeclaration({
+      namedImports: model.resources.some((resource) => resource.cdkRef)
+        ? ['aws_iam as iam', 'interfaces']
+        : ['aws_iam as iam'],
+      moduleSpecifier: 'aws-cdk-lib',
+    });
+  }
 }
 
 /**
@@ -66,289 +352,26 @@ export function emitTypeScript(
         initializer: `'${model.servicePrefix}'`,
       },
     ],
-    ctors: [
-      {
-        parameters: [
-          options.cdk
-            ? {
-                name: 'props',
-                type: 'iam.PolicyStatementProps',
-                hasQuestionToken: true,
-              }
-            : {
-                name: 'sid',
-                type: 'string',
-                hasQuestionToken: true,
-              },
-        ],
-        statements: options.cdk ? 'super(props);' : 'super(sid);',
-        // the CDK variant takes props instead of the sid
-        docs: [
-          {
-            description: options.cdk
-              ? description.split('\n@param')[0]
-              : description,
-          },
-        ],
-      },
-    ],
-    methods: model.actions.map((action) => {
-      let desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
-
-      if (action.conditionMethods) {
-        desc += '\n\nPossible conditions:';
-        action.conditionMethods.forEach((condition) => {
-          desc += `\n- .${condition}()`;
-        });
-      }
-      if (action.dependentActions) {
-        desc += '\n\nDependent actions:';
-        action.dependentActions.forEach((dependentAction) => {
-          desc += `\n- ${dependentAction}`;
-        });
-      }
-      if (action.url.length && action.url != 'https://docs.aws.amazon.com/') {
-        desc += `\n\n${action.url}`;
-      }
-      return {
-        name: action.methodName,
-        scope: Scope.Public,
-        statements: `return this.to('${action.name}');`,
-        docs: [{ description: desc }],
-      };
-    }),
+    ctors: [constructorStructure(description, options.cdk)],
+    methods: model.actions.map(actionMethod),
   });
 
   classDeclaration.addProperty({
     name: 'accessLevelList',
     scope: Scope.Protected,
     type: 'AccessLevelList',
-    initializer: JSON.stringify(model.accessLevelList, null, 2)
-      .split('"') // ensure we use single quotes
-      .join("'")
-      .replace(/^ {2}'([^' ]+)'/gm, '$1'), // remove quotes from single word keys
+    initializer: accessLevelList(model),
   });
 
-  const methods: OptionalKind<MethodDeclarationStructure>[] = [];
-  let hasCdkRefs = false;
-
-  for (const resource of model.resources) {
+  classDeclaration.addMethods([
     // the CDK variant takes a construct in place of the required placeholder
-    const cdkRef = options.cdk ? resource.cdkRef : undefined;
-    const cdkRefType = cdkRef
-      ? `interfaces.${cdkRef.module}.${cdkRef.interface}`
-      : undefined;
-    const statements: string[] = [];
-    const requiredParameters: OptionalKind<ParameterDeclarationStructure>[] =
-      [];
-    const optionalParameters: OptionalKind<ParameterDeclarationStructure>[] =
-      [];
-    resource.placeholders.forEach((placeholder) => {
-      if (placeholder.kind != 'required') {
-        optionalParameters.push({
-          name: placeholder.name,
-          type: 'string',
-          hasQuestionToken: true,
-        });
-      } else {
-        requiredParameters.push({
-          name: placeholder.name,
-          type: cdkRefType ? `string | ${cdkRefType}` : 'string',
-          hasQuestionToken: false,
-        });
-        if (cdkRef?.arn) {
-          statements.push(
-            `if (typeof ${placeholder.name} !== 'string') {`,
-            `  return this.on(${placeholder.name}.${cdkRef.property}.${cdkRef.arn});`,
-            '}',
-          );
-        } else if (cdkRef?.id) {
-          statements.push(
-            `if (typeof ${placeholder.name} !== 'string') {`,
-            `  ${placeholder.name} = ${placeholder.name}.${cdkRef.property}.${cdkRef.id};`,
-            '}',
-          );
-        }
-      }
-    });
+    ...model.resources.map((resource) =>
+      resourceMethod(resource, options.cdk ? resource.cdkRef : undefined),
+    ),
+    ...model.conditions.map(conditionMethod),
+  ]);
 
-    // placeholders without parameter stay literal text
-    let arn = escapeTemplateLiteral(resource.arn);
-    let paramDocs = '';
-    resource.placeholders.forEach(({ placeholder, name, kind }) => {
-      let orDefault = '';
-      if (kind == 'partition') {
-        orDefault = ` ?? this.defaultPartition`;
-        paramDocs += `\n@param ${name} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`, unless using the CDK, where the default is the current Stack's partition.`;
-      } else if (kind == 'region') {
-        orDefault = ` ?? this.defaultRegion`;
-        paramDocs += `\n@param ${name} - Region of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's region.`;
-      } else if (kind == 'account') {
-        orDefault = ` ?? this.defaultAccount`;
-        paramDocs += `\n@param ${name} - Account of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's account.`;
-      } else if (cdkRef?.arn) {
-        paramDocs += `\n@param ${name} - Identifier for the ${name}, or a construct that implements \`${cdkRefType}\`, whose ARN is used. Then the partition, region and account are ignored.`;
-      } else if (cdkRef?.id) {
-        paramDocs += `\n@param ${name} - Identifier for the ${name}, or a construct that implements \`${cdkRefType}\`.`;
-      } else {
-        paramDocs += `\n@param ${name} - Identifier for the ${name}.`;
-      }
-      arn = arn.replace(`\\\${${placeholder}}`, `\${${name}${orDefault}}`);
-    });
-
-    let desc = `\nAdds a resource of type ${resource.name} to the statement`;
-    if (resource.url.length && resource.url != 'https://docs.aws.amazon.com/') {
-      desc += `\n\n${resource.url}`;
-    }
-    desc += `\n${paramDocs}`;
-    if (resource.conditionMethods.length) {
-      desc += '\n\nPossible conditions:';
-      resource.conditionMethods.forEach((condition) => {
-        desc += `\n- .${condition}()`;
-      });
-    }
-
-    if (cdkRef) {
-      hasCdkRefs = true;
-    }
-    statements.push(`return this.on(\`${arn}\`);`);
-
-    methods.push({
-      name: resource.methodName,
-      scope: Scope.Public,
-      parameters: [...requiredParameters, ...optionalParameters],
-      statements,
-      docs: [{ description: desc }],
-    });
-  }
-
-  let hasConditions = false;
-
-  for (const condition of model.conditions) {
-    // boolean conditions don't take operators
-    if (condition.valueKind != 'boolean') {
-      hasConditions = true;
-    }
-
-    let desc = '';
-
-    if (condition.description.length) {
-      desc += `\n${condition.description}\n`;
-    }
-
-    if (condition.url.length) {
-      desc += `\n${condition.url}\n`;
-    }
-    if (condition.relatedActionMethods.length) {
-      desc += '\nApplies to actions:\n';
-      condition.relatedActionMethods.forEach((relatedAction) => {
-        desc += `- .${relatedAction}()\n`;
-      });
-    }
-
-    if (condition.relatedResourceTypes.length) {
-      desc += '\nApplies to resource types:\n';
-      condition.relatedResourceTypes.forEach((resourceType) => {
-        desc += `- ${resourceType}\n`;
-      });
-    }
-
-    const methodBody: string[] = [];
-    const parameters: OptionalKind<ParameterDeclarationStructure>[] = [];
-
-    let propsKey = escapeTemplateLiteral(condition.keyLiteral);
-
-    if (typeof condition.keyParam !== 'undefined') {
-      desc += `\n@param ${condition.keyParam} The tag key to check`;
-      parameters.push({
-        name: condition.keyParam,
-        type: 'string',
-      });
-      propsKey += `\${${condition.keyParam}}`;
-    }
-
-    if (condition.valueKind != 'boolean') {
-      const types = [...condition.valueTypes!];
-      if (types.length > 1) {
-        types.push(`(${types.join('|')})[]`);
-      } else {
-        types.push(`${types.join(',')}[]`);
-      }
-
-      desc += `\n@param value The value(s) to check`;
-      parameters.push({
-        name: 'value',
-        type: types.join(' | '),
-      });
-
-      desc += `\n@param operator Works with [${condition.valueKind} operators](${condition.operatorUrl}). **Default:** \`${condition.defaultOperator}\``;
-      parameters.push({
-        name: 'operator',
-        type: 'Operator | string',
-        hasQuestionToken: true,
-      });
-
-      if (condition.valueKind == 'date') {
-        methodBody.push(
-          'if (typeof (value as Date).getMonth === "function") {',
-          '  value = (value as Date).toISOString();',
-          '} else if (Array.isArray(value)) {',
-          '  value = value.map((item) => {',
-          '    if (typeof (item as Date).getMonth === "function") {',
-          '      item = (item as Date).toISOString();',
-          '    }',
-          '    return item;',
-          '  });',
-          '}',
-        );
-      }
-
-      methodBody.push(
-        `return this.if(\`${propsKey}\`, value, operator ?? '${condition.defaultOperator}')`,
-      );
-    } else {
-      desc += '\n@param value `true` or `false`. **Default:** `true`';
-
-      parameters.push({
-        name: 'value',
-        type: 'boolean',
-        hasQuestionToken: true,
-      });
-
-      methodBody.push(
-        `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`,
-      );
-    }
-
-    methods.push({
-      name: condition.methodName,
-      scope: Scope.Public,
-      parameters: parameters,
-      statements: methodBody.join('\n'),
-      docs: [{ description: desc }],
-    });
-  }
-
-  classDeclaration.addMethods(methods);
-
-  const sharedClasses = ['PolicyStatement'];
-  if (hasConditions) {
-    sharedClasses.push('Operator');
-  }
-  sourceFile.addImportDeclaration({
-    namedImports: sharedClasses,
-    moduleSpecifier: '../../shared',
-  });
-
-  if (options.cdk) {
-    sourceFile.addImportDeclaration({
-      namedImports: hasCdkRefs
-        ? ['aws_iam as iam', 'interfaces']
-        : ['aws_iam as iam'],
-      moduleSpecifier: 'aws-cdk-lib',
-    });
-  }
-
+  addImports(sourceFile, model, options.cdk);
   formatCode(sourceFile);
   return sourceFile;
 }
@@ -367,15 +390,7 @@ export async function emitTypeScriptFromModels(
     .map((file) => file.slice(0, -'.json'.length))
     .sort();
 
-  // Remove files of services that no longer exist. Files of existing services are overwritten,
-  // but not deleted, so incremental builds keep their compiled JavaScript.
-  fs.mkdirSync(outDir, { recursive: true });
-  for (const file of fs.readdirSync(outDir)) {
-    const name = file.replace(/(\.d)?\.(ts|js)$/, '');
-    if (name !== file && !names.includes(name)) {
-      fs.unlinkSync(`${outDir}/${file}`);
-    }
-  }
+  removeStaleFiles(names);
 
   const models = names.map(
     (name) =>
@@ -402,6 +417,20 @@ export async function emitTypeScriptFromModels(
   formatCode(index);
 
   await project.save();
+}
+
+/**
+ * Removes the files of services that no longer exist. Files of existing services are
+ * overwritten, but not deleted, so incremental builds keep their compiled JavaScript.
+ */
+function removeStaleFiles(names: string[]) {
+  fs.mkdirSync(outDir, { recursive: true });
+  for (const file of fs.readdirSync(outDir)) {
+    const name = file.replace(/(\.d)?\.(ts|js)$/, '');
+    if (name !== file && !names.includes(name)) {
+      fs.unlinkSync(`${outDir}/${file}`);
+    }
+  }
 }
 
 function newProject(): Project {

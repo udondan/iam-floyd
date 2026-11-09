@@ -1,7 +1,4 @@
-/**
- * Minimum length of a common substring, including the `^` and `$` that mark the start and end of an action name
- */
-const minLength = 3;
+import { candidatesOf, collectSubstrings } from './substrings';
 
 /**
  * Condenses a list of action names to wildcard patterns, e.g. `List*` or `*Vpn*`.
@@ -18,105 +15,90 @@ export function compactActionNames(
   selected: string[],
   excluded: string[],
 ): string[] {
-  // all substrings of the excluded actions
-  const forbidden = new Set<string>();
-  for (const name of excluded) {
-    const marked = `^${name}$`.toLowerCase();
-    for (let start = 0; start < marked.length; start++) {
-      for (let end = start + minLength; end <= marked.length; end++) {
-        forbidden.add(marked.substring(start, end));
-      }
-    }
-  }
-
-  // the substrings of the selected actions, which are not forbidden, with the indexes of the actions containing them
   const sources = new Map<string, number[]>();
   const spellings = new Map<string, string>();
-  for (let index = 0; index < selected.length; index++) {
-    const marked = `^${selected[index]}$`;
-    const lower = marked.toLowerCase();
-    for (let start = 0; start < marked.length; start++) {
-      for (let end = start + minLength; end <= marked.length; end++) {
-        const key = lower.substring(start, end);
-        if (forbidden.has(key)) {
-          continue;
-        }
-        let indexes = sources.get(key);
-        if (indexes === undefined) {
-          indexes = [];
-          spellings.set(key, marked.substring(start, end));
-        }
-        // the same substring can occur multiple times in one action
-        if (indexes.length == 0 || indexes[indexes.length - 1] != index) {
-          indexes.push(index);
-        }
-        // set after the push, for the languages in which appending returns a new list
-        sources.set(key, indexes);
-      }
-    }
-  }
-
-  // a substring is redundant, if a substring one character longer occurs in the same actions
-  const redundant = new Set<string>();
-  for (const [key, indexes] of sources) {
-    if (key.length <= minLength || indexes.length < 2) {
-      continue;
-    }
-    const shorter = [key.substring(1), key.substring(0, key.length - 1)];
-    for (const candidate of shorter) {
-      if ((sources.get(candidate) ?? []).length == indexes.length) {
-        redundant.add(candidate);
-      }
-    }
-  }
-  let candidates: string[] = [];
-  for (const [key, indexes] of sources) {
-    if (indexes.length >= 2 && !redundant.has(key)) {
-      candidates.push(key);
-    }
-  }
+  collectSubstrings(selected, excluded, sources, spellings);
 
   const covered: boolean[] = selected.map(() => false);
-  const patterns: string[] = [];
-  while (candidates.length > 0) {
-    let best = '';
-    let bestCount = 0;
-    const remaining: string[] = [];
-    for (const candidate of candidates) {
-      let count = 0;
-      for (const index of sources.get(candidate)!) {
-        if (!covered[index]) {
-          count++;
-        }
-      }
-      if (count < 2) {
-        continue; // will not be picked anymore
-      }
-      remaining.push(candidate);
-      if (
-        count > bestCount ||
-        (count == bestCount && isBetter(candidate, best))
-      ) {
-        best = candidate;
-        bestCount = count;
-      }
-    }
-    if (bestCount == 0) {
-      break;
-    }
-    for (const index of sources.get(best)!) {
-      covered[index] = true;
-    }
-    patterns.push(toPattern(spellings.get(best)!));
-    candidates = remaining;
-  }
-
+  const patterns = pickPatterns(
+    candidatesOf(sources),
+    sources,
+    spellings,
+    covered,
+  );
   for (let index = 0; index < selected.length; index++) {
     if (!covered[index]) {
       patterns.push(selected[index]);
     }
   }
   return patterns;
+}
+
+/**
+ * Picks the substrings greedily and marks the actions they cover. Returns their patterns
+ */
+function pickPatterns(
+  candidates: string[],
+  sources: Map<string, number[]>,
+  spellings: Map<string, string>,
+  covered: boolean[],
+): string[] {
+  const patterns: string[] = [];
+  let remaining = candidates;
+  while (remaining.length > 0) {
+    const counts = uncoveredCounts(remaining, sources, covered);
+    // the others will not be picked anymore
+    remaining = remaining.filter((candidate) => counts.has(candidate));
+    if (remaining.length > 0) {
+      const best = bestCandidate(counts);
+      for (const index of sources.get(best)!) {
+        covered[index] = true;
+      }
+      patterns.push(toPattern(spellings.get(best)!));
+    }
+  }
+  return patterns;
+}
+
+/**
+ * The number of the actions not yet covered per substring, of the substrings that cover at least two of them
+ */
+function uncoveredCounts(
+  candidates: string[],
+  sources: Map<string, number[]>,
+  covered: boolean[],
+): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const candidate of candidates) {
+    let count = 0;
+    for (const index of sources.get(candidate)!) {
+      if (!covered[index]) {
+        count++;
+      }
+    }
+    if (count >= 2) {
+      counts.set(candidate, count);
+    }
+  }
+  return counts;
+}
+
+/**
+ * The substring that covers the most actions not yet covered
+ */
+function bestCandidate(counts: Map<string, number>): string {
+  let best = '';
+  let bestCount = 0;
+  for (const [candidate, count] of counts) {
+    if (
+      count > bestCount ||
+      (count == bestCount && isBetter(candidate, best))
+    ) {
+      best = candidate;
+      bestCount = count;
+    }
+  }
+  return best;
 }
 
 /**

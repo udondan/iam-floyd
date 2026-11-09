@@ -1,5 +1,8 @@
 package com.udondan.iamFloyd;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -44,50 +47,48 @@ final class Js {
 
   /** A number as JavaScript formats it: the shortest digits that round-trip. */
   static String number(double value) {
+    if (value < 0) {
+      return "-" + number(-value);
+    }
     if (Double.isNaN(value)) {
       return "NaN";
     }
     if (Double.isInfinite(value)) {
-      return value > 0 ? "Infinity" : "-Infinity";
+      return "Infinity";
     }
-    if (value == 0) {
-      return "0";
+    return value == 0 ? "0" : format(shortest(value));
+  }
+
+  /**
+   * The shortest decimal that parses back to the same positive value, without trailing zeros. Of
+   * those with the fewest digits, the nearest to the value is the one with rounded digits.
+   */
+  private static BigDecimal shortest(double value) {
+    BigDecimal exact = new BigDecimal(value);
+    BigDecimal result = exact.round(new MathContext(1, RoundingMode.HALF_EVEN));
+    for (int precision = 2; result.doubleValue() != value; precision++) {
+      result = exact.round(new MathContext(precision, RoundingMode.HALF_EVEN));
     }
-    if (value < 0) {
-      return "-" + number(-value);
-    }
-    // the shortest scientific representation that parses back to the same value, which has no
-    // trailing zeros (at most 17 digits)
-    String scientific = String.format(Locale.ROOT, "%.0e", value);
-    for (int precision = 1; Double.parseDouble(scientific) != value; precision++) {
-      scientific = String.format(Locale.ROOT, "%." + precision + "e", value);
-    }
-    int e = scientific.indexOf('e');
-    String digits = scientific.substring(0, e).replace(".", "");
+    return result.stripTrailingZeros();
+  }
+
+  /** A decimal as Number.prototype.toString formats it. */
+  private static String format(BigDecimal decimal) {
+    String digits = decimal.unscaledValue().toString();
     int k = digits.length();
-    int n = Integer.parseInt(scientific.substring(e + 1)) + 1;
-    StringBuilder result = new StringBuilder();
+    // n is the position of the decimal point relative to the first digit
+    int n = k - decimal.scale();
     if (k <= n && n <= 21) {
-      result.append(digits);
-      for (int i = 0; i < n - k; i++) {
-        result.append('0');
-      }
-    } else if (0 < n && n <= 21) {
-      result.append(digits, 0, n).append('.').append(digits.substring(n));
-    } else if (-6 < n && n <= 0) {
-      result.append("0.");
-      for (int i = 0; i < -n; i++) {
-        result.append('0');
-      }
-      result.append(digits);
-    } else {
-      result.append(digits.charAt(0));
-      if (k > 1) {
-        result.append('.').append(digits.substring(1));
-      }
-      result.append('e').append(n - 1 >= 0 ? "+" : "-").append(Math.abs(n - 1));
+      return digits + "0".repeat(n - k);
     }
-    return result.toString();
+    if (0 < n && n <= 21) {
+      return digits.substring(0, n) + "." + digits.substring(n);
+    }
+    if (-6 < n && n <= 0) {
+      return "0." + "0".repeat(-n) + digits;
+    }
+    String fraction = k > 1 ? "." + digits.substring(1) : "";
+    return digits.charAt(0) + fraction + "e" + (n - 1 >= 0 ? "+" : "-") + Math.abs(n - 1);
   }
 
   /** String.prototype.substring: the indexes are clamped. */
@@ -154,13 +155,10 @@ final class Js {
   static Pattern regExp(String pattern, String flags) {
     int result = 0;
     for (char flag : flags.toCharArray()) {
-      switch (flag) {
-        case 'i':
-          result |= Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;
-          break;
-        default:
-          throw new IllegalArgumentException("Unsupported regular expression flag: " + flag);
+      if (flag != 'i') {
+        throw new IllegalArgumentException("Unsupported regular expression flag: " + flag);
       }
+      result |= Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;
     }
     return Pattern.compile(pattern, result);
   }
