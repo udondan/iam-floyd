@@ -181,6 +181,8 @@ make lint-cdk        # after `make cdk`: eslint on the CDK variant
 
 The versions of the linters are pinned, so Renovate updates them: npm packages in `package.json`, Python tools in `lint/requirements.txt` (run with `uv`), Go tools in `lint/go.mod` (`go tool`) and checkstyle in `lint/pom.xml`. Locally, linters whose runtime (uv, Go, .NET, Maven) is missing are skipped; in CI they fail. In the CDK variant, eslint uses `tsconfig.lint-cdk.json`, which resolves `cdk-iam-floyd` to `lib/`, and prettier is off because `mkcdk` writes unformatted code.
 
+qlty (`.qlty/qlty.toml`) checks the code smells (complexity of functions and files, many returns, nesting, duplicated code) with its default limits, and runs the plugins bandit, radarlint (Python, Java, Go), osv-scanner and gitleaks, which complement `bin/lint` and Trivy. Locally: `qlty smells --all` (no network) and `qlty check --all` (osv-scanner queries osv.dev). Restructure code with smells rather than raising the limits. Intended findings are excluded narrowly in `qlty.toml`, whole plugins per path with `[[exclude]]`, single rules with `[[triage]]`, each with a comment why.
+
 The actions in the workflows are pinned to commit SHAs with the version as comment.
 
 ### CDK Variant
@@ -343,4 +345,5 @@ Follow conventional commits:
 - `.github/actions/package-iam-floyd`, `.github/actions/package-cdk-iam-floyd` - The setup and build steps of the native and the jsii packages, shared by `test.yml` and `publish.yml`. They are referenced with `$/` (from the commit of the workflow, not the checked-out tag), which actionlint doesn't support yet (`.github/actionlint.yaml` ignores the error)
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
 - `test-docs.yml` - Builds Sphinx docs on `docs/**` changes
+- `test.yml`, job `qlty` - On PR and push to main: `qlty check --all`, and `qlty smells`, on PR only the smells the pull request adds (`--upstream origin/main`), which fail the job. Part of `required`
 - `trivy.yml` - On PR and push to main: Trivy scans the dependencies (npm with dev dependencies, lockfile written by `npm install --package-lock-only`), secrets and misconfigurations (`trivy.yaml`), uploads the results to code scanning and fails on HIGH/CRITICAL findings with a fix. Findings that can't be fixed yet go to `.trivyignore`, with an expiry date
