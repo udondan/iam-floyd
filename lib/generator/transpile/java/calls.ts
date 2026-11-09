@@ -6,7 +6,8 @@ import {
   SyntaxKind,
 } from 'ts-morph';
 
-import { arrowFunction, fail, resolve } from '../index';
+import { fail, resolve } from '../index';
+import { callback } from '../shared';
 import { builtinCall } from './builtins';
 import { callable, Callable, constructorOf, Signature } from './callable';
 import { containerOf, isGeneric, memberOf } from './classes';
@@ -92,23 +93,9 @@ function callArguments(
  * A callback as a Java lambda with `arity` parameters
  */
 export function lambda(ctx: Context, node: Node, arity: number): string {
-  const fn = arrowFunction(node);
-  const params = fn.getParameters().map((param) => {
-    if (!Node.isIdentifier(param.getNameNode())) {
-      fail(param, 'Destructured parameters are not supported');
-    }
-    return javaLocalName(param.getName());
-  });
-  if (params.length > arity) {
-    fail(fn, 'Too many parameters');
-  }
-  while (params.length < arity) {
-    params.push(ctx.dummy('arg'));
-  }
-  const body = fn.getBody();
-  if (Node.isBlock(body)) {
-    return fail(fn, 'Callbacks must return an expression');
-  }
+  const { params, body } = callback(node, arity, javaLocalName, () =>
+    ctx.dummy('arg'),
+  );
   return `(${params.join(', ')}) -> ${expression(ctx, body).code}`;
 }
 

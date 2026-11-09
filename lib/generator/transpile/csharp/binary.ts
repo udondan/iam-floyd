@@ -11,15 +11,10 @@ import { classReference } from './classes';
 import { condition } from './conditions';
 import { Context, Expr, Prec, wrap } from './context';
 import { exprType } from './declared';
+import { binaryOperators, binaryWith } from '../shared';
 import { equality } from './equality';
 import { expression, receiver } from './expressions';
 import { nonNullable } from './nullable';
-
-type Operator = (
-  ctx: Context,
-  node: BinaryExpression,
-  operator: string,
-) => Expr;
 
 function logical(ctx: Context, node: BinaryExpression, operator: string): Expr {
   if (kindOf(node.getType()) != 'boolean') {
@@ -181,30 +176,17 @@ function instanceOf(ctx: Context, node: BinaryExpression): Expr {
   };
 }
 
-const operators = new Map<string, Operator>([
-  ['&&', logical],
-  ['||', logical],
-  ['??', coalesce],
-  ['==', equality],
-  ['===', equality],
-  ['!=', equality],
-  ['!==', equality],
-  ['<', comparison],
-  ['>', comparison],
-  ['<=', comparison],
-  ['>=', comparison],
-  ['+', plus],
-  ['-', arithmetic],
-  ['*', arithmetic],
-  ['in', inRecord],
-  ['instanceof', instanceOf],
-]);
+const operators = binaryOperators<Context, Expr>({
+  logical,
+  coalesce,
+  equality,
+  comparison,
+  plus,
+  arithmetic,
+  in: inRecord,
+  instanceOf,
+});
 
 export function binary(ctx: Context, node: BinaryExpression): Expr {
-  const operator = node.getOperatorToken().getText();
-  const handler = operators.get(operator);
-  if (handler === undefined) {
-    return fail(node, `Unsupported operator ${operator}`);
-  }
-  return handler(ctx, node, operator);
+  return binaryWith(operators, ctx, node);
 }

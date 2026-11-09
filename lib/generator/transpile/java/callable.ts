@@ -1,8 +1,6 @@
 import {
   ClassDeclaration,
   ConstructorDeclaration,
-  FunctionDeclaration,
-  MethodDeclaration,
   Node,
   ParameterDeclaration,
   Scope,
@@ -10,48 +8,25 @@ import {
   TypeNode,
 } from 'ts-morph';
 
-import { fail, isServiceFile } from '../index';
+import { fail } from '../index';
+import {
+  Callable,
+  CallableDeclaration,
+  functionName,
+  newCallable,
+  OverloadRules,
+} from '../shared';
 import { className, Context } from './context';
 import { javaLocalName, javaMethodName } from './names';
 import { typeFromNode } from './type-node';
 import { box, erasure } from './types';
 
-export interface Param {
-  /** The Java name */
-  name: string;
-  /** The Java types the parameter accepts */
-  options: string[];
-  optional: boolean;
-  rest: boolean;
-}
-
-/**
- * A Java signature: the types of the leading parameters
- */
-export type Signature = string[];
-
-/**
- * How a TypeScript function, method or constructor is declared in Java.
- *
- * Public methods and constructors become overloads: one per combination of the types of union
- * parameters and per number of optional parameters. If a parameter has more than one type, the
- * body is in a protected method with `Object` for those parameters, which all overloads call;
- * otherwise the body is in the overload with all parameters. Everything else is declared once,
- * with all parameters, and callers pass `null` for missing optional arguments.
- */
-export interface Callable {
-  name: string;
-  params: Param[];
-  overloads: Signature[];
-  impl: Signature;
-  /** Whether the body is in one of the public overloads */
-  implIsOverload: boolean;
-  /** Whether the body can be called directly by the transpiled code */
-  implCallable: boolean;
-}
-
-export type CallableDeclaration =
-  MethodDeclaration | ConstructorDeclaration | FunctionDeclaration;
+export type {
+  Callable,
+  CallableDeclaration,
+  Param,
+  Signature,
+} from '../shared';
 
 /**
  * The nearest constructor of a class or its ancestors
@@ -112,43 +87,6 @@ function paramOptions(
   return [...new Set(options)];
 }
 
-function paramOf(
-  ctx: Context,
-  param: ParameterDeclaration,
-  isPublic: boolean,
-): Param {
-  if (param.hasInitializer()) {
-    fail(param, 'Default values are not supported, use optional parameters');
-  }
-  if (!Node.isIdentifier(param.getNameNode())) {
-    fail(param, 'Destructured parameters are not supported');
-  }
-  return {
-    name: javaLocalName(param.getName()),
-    options: paramOptions(ctx, param, isPublic),
-    optional: param.isOptional() && !param.isRestParameter(),
-    rest: param.isRestParameter(),
-  };
-}
-
-/**
- * The Java type of a parameter for one of its options
- */
-function paramType(param: Param, option: string): string {
-  if (param.rest) {
-    return `${option}...`;
-  }
-  return param.optional ? box(option) : option;
-}
-
-function functionName(declaration: FunctionDeclaration): string {
-  const name = declaration.getName();
-  if (name === undefined || declaration.getOverloads().length) {
-    return fail(declaration, 'Unsupported function');
-  }
-  return name;
-}
-
 /**
  * The Java name of a callable, and whether it is public
  */
@@ -165,100 +103,15 @@ function nameOf(declaration: CallableDeclaration): {
   return { name, isPublic: declaration.getScope() == Scope.Public };
 }
 
-/**
- * The signatures of all combinations of the types of the parameters
- */
-function signaturesOf(params: Param[]): Signature[] {
-  return params.reduce<Signature[]>(
-    (signatures, param) =>
-      signatures.flatMap((signature) =>
-        param.options.map((option) => [...signature, paramType(param, option)]),
-      ),
-    [[]],
-  );
-}
-
-/**
- * The overloads, from the number of required parameters to all
- */
-function overloadsOf(params: Param[]): Signature[] {
-  const firstOptional = params.findIndex((param) => param.optional);
-  const overloads: Signature[] = [];
-  for (
-    let arity = firstOptional < 0 ? params.length : firstOptional;
-    arity <= params.length;
-    arity++
-  ) {
-    overloads.push(...signaturesOf(params.slice(0, arity)));
-  }
-  return overloads;
-}
-
-function checkErasures(node: Node, signatures: Signature[]) {
-  const erasures = new Set<string>();
-  for (const signature of signatures) {
-    const key = signature.map(erasure).join(',');
-    if (erasures.has(key)) {
-      fail(node, `Two Java overloads have the same parameters (${key})`);
-    }
-    erasures.add(key);
-  }
-}
-
-function publicCallable(
-  declaration: CallableDeclaration,
-  name: string,
-  params: Param[],
-): Callable {
-  const overloads = overloadsOf(params);
-  const collapsed = params.some((param) => param.options.length > 1);
-  const impl = collapsed
-    ? params.map((param) =>
-        param.options.length > 1
-          ? 'Object'
-          : paramType(param, param.options[0]),
-      )
-    : overloads[overloads.length - 1];
-  checkErasures(declaration, collapsed ? [...overloads, impl] : overloads);
+function rules(ctx: Context): OverloadRules {
   return {
-    name,
-    params,
-    overloads,
-    impl,
-    implIsOverload: !collapsed,
-    implCallable: !isServiceFile(declaration.getSourceFile()),
-  };
-}
-
-function newCallable(ctx: Context, declaration: CallableDeclaration): Callable {
-  const isAsync =
-    !Node.isConstructorDeclaration(declaration) && declaration.isAsync();
-  if (declaration.getTypeParameters().length || isAsync) {
-    fail(declaration, 'Generic and async functions are not supported');
-  }
-  const { name, isPublic } = nameOf(declaration);
-  const params = declaration
-    .getParameters()
-    .map((param) => paramOf(ctx, param, isPublic));
-  if (
-    params.some((param) => param.rest) &&
-    params.some((param) => param.optional)
-  ) {
-    fail(
-      declaration,
-      'Optional and rest parameters are not supported together',
-    );
-  }
-  if (isPublic) {
-    return publicCallable(declaration, name, params);
-  }
-  return {
-    name,
-    params,
-    overloads: [],
-    impl: params.map((param) => paramType(param, param.options[0])),
-    implIsOverload: false,
-    implCallable: true,
+    language: 'Java',
+    object: 'Object',
+    optional: box,
+    key: erasure,
+    localName: javaLocalName,
+    nameOf,
+    options: (param, isPublic) => paramOptions(ctx, param, isPublic),
   };
 }
 
@@ -268,7 +121,7 @@ export function callable(
 ): Callable {
   let result = ctx.callables.get(declaration);
   if (result === undefined) {
-    result = newCallable(ctx, declaration);
+    result = newCallable(rules(ctx), declaration);
     ctx.callables.set(declaration, result);
   }
   return result;

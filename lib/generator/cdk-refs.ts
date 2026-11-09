@@ -32,6 +32,11 @@ interface Reference {
 }
 
 /**
+ * A resource type with its ID for the messages, `<service>:<name>`
+ */
+type IdentifiedResource = ResourceModel & { id: string };
+
+/**
  * Reads the reference interfaces of `aws-cdk-lib/interfaces`, e.g. `IFunctionRef`, per module,
  * e.g. `aws_lambda`
  */
@@ -180,7 +185,7 @@ function serviceModule(
  * The reference of the module with the same name as the resource type
  */
 function matchCdkRef(
-  resource: ResourceModel,
+  resource: IdentifiedResource,
   module: string,
   modules: Map<string, Map<string, Reference>>,
   placeholder: string,
@@ -212,7 +217,7 @@ function matchCdkRef(
  * The reference of a resource type, from the fix or matched by name
  */
 function resourceCdkRef(
-  resource: ResourceModel & { id: string },
+  resource: IdentifiedResource,
   fix: CdkRefFix | false | undefined,
   module: string | undefined,
   modules: Map<string, Map<string, Reference>>,

@@ -8,6 +8,8 @@ import {
   VariableDeclaration,
 } from 'ts-morph';
 
+import type { Callable } from '../shared';
+
 /**
  * Operator precedence of C#, from loosest to tightest
  */
@@ -46,39 +48,7 @@ export function primary(code: string): Expr {
   return { code, prec: Prec.primary };
 }
 
-export interface Param {
-  /** The C# name */
-  name: string;
-  /** The C# types the parameter accepts */
-  options: string[];
-  optional: boolean;
-  rest: boolean;
-}
-
-/**
- * A C# signature: the types of the leading parameters. The type of a rest parameter ends with `...`.
- */
-export type Signature = string[];
-
-/**
- * How a TypeScript function, method or constructor is declared in C#.
- *
- * Public methods and constructors become overloads: one per combination of the types of union
- * parameters and per number of optional parameters. If a parameter has more than one type, the
- * body is in a protected method with `object` for those parameters, which all overloads call;
- * otherwise the body is in the overload with all parameters. Everything else is declared once,
- * with all parameters, and callers pass `null` for missing optional arguments.
- */
-export interface Callable {
-  name: string;
-  params: Param[];
-  overloads: Signature[];
-  impl: Signature;
-  /** Whether the body is in one of the public overloads */
-  implIsOverload: boolean;
-  /** Whether the body can be called directly by the transpiled code */
-  implCallable: boolean;
-}
+export type { Callable, Param, Signature } from '../shared';
 
 /**
  * Where a module level function or constant ends up: in the class of its file, or in a holder class

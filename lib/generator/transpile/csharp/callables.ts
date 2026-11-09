@@ -1,6 +1,5 @@
 import {
   ClassDeclaration,
-  ConstructorDeclaration,
   FunctionDeclaration,
   MethodDeclaration,
   Node,
@@ -9,17 +8,23 @@ import {
   SyntaxKind,
 } from 'ts-morph';
 
-import { fail, isServiceFile } from '../index';
+import { fail } from '../index';
+import {
+  Callable,
+  CallableDeclaration,
+  functionName,
+  newCallable,
+  OverloadRules,
+} from '../shared';
 import { className } from './classes';
-import { Callable, Context, Param, Signature } from './context';
+import { Context } from './context';
 import { exprType } from './declared';
 import { typeFromType } from './inferred-types';
 import { csharpLocalName, csharpMethodName } from './names';
 import { commonType, nonNullable, nullable } from './nullable';
 import { typeFromNode } from './type-nodes';
 
-export type CallableDeclaration =
-  MethodDeclaration | ConstructorDeclaration | FunctionDeclaration;
+export type { CallableDeclaration } from '../shared';
 
 /**
  * The C# types of a parameter. Public parameters accept every member of a union type, and any
@@ -62,120 +67,31 @@ export function paramOptions(
 /**
  * The C# name of a function, method or constructor, and whether it is public
  */
-function callableName(declaration: CallableDeclaration): {
+function nameOf(declaration: CallableDeclaration): {
   name: string;
   isPublic: boolean;
 } {
-  if (Node.isConstructorDeclaration(declaration)) {
+  if (Node.isFunctionDeclaration(declaration)) {
     return {
-      name: className(declaration.getParentOrThrow() as ClassDeclaration),
-      isPublic: declaration.getScope() == Scope.Public,
+      name: csharpMethodName(functionName(declaration)),
+      isPublic: false,
     };
   }
-  if (Node.isMethodDeclaration(declaration)) {
-    return {
-      name: csharpMethodName(declaration.getName()),
-      isPublic: declaration.getScope() == Scope.Public,
-    };
-  }
-  const functionName = declaration.getName();
-  if (functionName === undefined || declaration.getOverloads().length) {
-    return fail(declaration, 'Unsupported function');
-  }
-  return { name: csharpMethodName(functionName), isPublic: false };
+  const name = Node.isConstructorDeclaration(declaration)
+    ? className(declaration.getParentOrThrow() as ClassDeclaration)
+    : csharpMethodName(declaration.getName());
+  return { name, isPublic: declaration.getScope() == Scope.Public };
 }
 
-function paramOf(
-  ctx: Context,
-  param: ParameterDeclaration,
-  isPublic: boolean,
-): Param {
-  if (param.hasInitializer()) {
-    fail(param, 'Default values are not supported, use optional parameters');
-  }
-  if (!Node.isIdentifier(param.getNameNode())) {
-    fail(param, 'Destructured parameters are not supported');
-  }
+function rules(ctx: Context): OverloadRules {
   return {
-    name: csharpLocalName(param.getName()),
-    options: paramOptions(ctx, param, isPublic),
-    optional: param.isOptional() && !param.isRestParameter(),
-    rest: param.isRestParameter(),
-  };
-}
-
-/**
- * The C# type of a parameter with one of its options
- */
-function paramType(param: Param, option: string): string {
-  if (param.rest) {
-    return `${option}...`;
-  }
-  return param.optional ? nullable(option) : option;
-}
-
-/**
- * All signatures with one of the options of each parameter
- */
-function combinations(params: Param[]): Signature[] {
-  let signatures: Signature[] = [[]];
-  for (const param of params) {
-    signatures = signatures.flatMap((signature) =>
-      param.options.map((option) => [...signature, paramType(param, option)]),
-    );
-  }
-  return signatures;
-}
-
-/**
- * The overloads: for each number of optional parameters, the combinations of their options
- */
-function overloadSignatures(params: Param[]): Signature[] {
-  const firstOptional = params.findIndex((param) => param.optional);
-  const overloads: Signature[] = [];
-  for (
-    let arity = firstOptional < 0 ? params.length : firstOptional;
-    arity <= params.length;
-    arity++
-  ) {
-    overloads.push(...combinations(params.slice(0, arity)));
-  }
-  return overloads;
-}
-
-function checkOverloads(declaration: Node, signatures: Signature[]) {
-  const keys = new Set<string>();
-  for (const signature of signatures) {
-    const key = signature.map(nonNullable).join(',');
-    if (keys.has(key)) {
-      fail(declaration, `Two C# overloads have the same parameters (${key})`);
-    }
-    keys.add(key);
-  }
-}
-
-function publicCallable(
-  declaration: CallableDeclaration,
-  name: string,
-  params: Param[],
-): Callable {
-  const overloads = overloadSignatures(params);
-  const collapsed = params.some((param) => param.options.length > 1);
-  const impl = collapsed
-    ? params.map((param) =>
-        param.options.length > 1
-          ? 'object'
-          : paramType(param, param.options[0]),
-      )
-    : overloads[overloads.length - 1];
-  checkOverloads(declaration, collapsed ? [...overloads, impl] : overloads);
-  return {
-    name,
-    params,
-    overloads,
-    impl,
-    implIsOverload: !collapsed,
-    implCallable: !isServiceFile(declaration.getSourceFile()),
+    language: 'C#',
+    object: 'object',
+    optional: nullable,
+    key: nonNullable,
+    localName: csharpLocalName,
+    nameOf,
+    options: (param, isPublic) => paramOptions(ctx, param, isPublic),
   };
 }
 
@@ -183,40 +99,11 @@ export function callable(
   ctx: Context,
   declaration: CallableDeclaration,
 ): Callable {
-  const existing = ctx.callables.get(declaration);
-  if (existing !== undefined) {
-    return existing;
+  let result = ctx.callables.get(declaration);
+  if (result === undefined) {
+    result = newCallable(rules(ctx), declaration);
+    ctx.callables.set(declaration, result);
   }
-  if (
-    declaration.getTypeParameters().length ||
-    (!Node.isConstructorDeclaration(declaration) && declaration.isAsync())
-  ) {
-    fail(declaration, 'Generic and async functions are not supported');
-  }
-  const { name, isPublic } = callableName(declaration);
-  const params = declaration
-    .getParameters()
-    .map((param) => paramOf(ctx, param, isPublic));
-  if (
-    params.some((param) => param.rest) &&
-    params.some((param) => param.optional)
-  ) {
-    fail(
-      declaration,
-      'Optional and rest parameters are not supported together',
-    );
-  }
-  const result: Callable = isPublic
-    ? publicCallable(declaration, name, params)
-    : {
-        name,
-        params,
-        overloads: [],
-        impl: params.map((param) => paramType(param, param.options[0])),
-        implIsOverload: false,
-        implCallable: true,
-      };
-  ctx.callables.set(declaration, result);
   return result;
 }
 

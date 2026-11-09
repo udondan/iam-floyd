@@ -3,16 +3,11 @@ import { BinaryExpression, Node } from 'ts-morph';
 import { fail, isPure, kindOf, resolve } from '../index';
 import { logical } from './conditions';
 import { Context } from './context';
+import { binaryOperators, binaryWith } from '../shared';
 import { equality } from './equality';
 import { Expr, infix, instanceOf, Prec, primary, wrap } from './expr';
 import { expression, receiver, stringPart } from './expressions';
 import { commonKind, isKeyed, methodCall } from './nodes';
-
-type BinaryOf = (
-  ctx: Context,
-  node: BinaryExpression,
-  operator: string,
-) => Expr;
 
 function logicalOperator(
   ctx: Context,
@@ -181,33 +176,17 @@ function isInstance(ctx: Context, node: BinaryExpression): Expr {
   return instanceOf(expression(ctx, node.getLeft()), cls);
 }
 
-const equalityOperator: BinaryOf = (ctx, node, operator) =>
-  equality(ctx, node, operator);
-
-const binaryOperators = new Map<string, BinaryOf>([
-  ['&&', logicalOperator],
-  ['||', logicalOperator],
-  ['??', nullishCoalescing],
-  ['==', equalityOperator],
-  ['===', equalityOperator],
-  ['!=', equalityOperator],
-  ['!==', equalityOperator],
-  ['<', comparison],
-  ['>', comparison],
-  ['<=', comparison],
-  ['>=', comparison],
-  ['+', plus],
-  ['-', arithmetic],
-  ['*', arithmetic],
-  ['in', hasKey],
-  ['instanceof', isInstance],
-]);
+const operators = binaryOperators<Context, Expr>({
+  logical: logicalOperator,
+  coalesce: nullishCoalescing,
+  equality,
+  comparison,
+  plus,
+  arithmetic,
+  in: hasKey,
+  instanceOf: isInstance,
+});
 
 export function binary(ctx: Context, node: BinaryExpression): Expr {
-  const operator = node.getOperatorToken().getText();
-  const handler = binaryOperators.get(operator);
-  if (handler === undefined) {
-    return fail(node, `Unsupported operator ${operator}`);
-  }
-  return handler(ctx, node, operator);
+  return binaryWith(operators, ctx, node);
 }
