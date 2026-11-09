@@ -1,6 +1,6 @@
 module github.com/udondan/iam-floyd/lint
 
-go 1.27.2
+go 1.27.3
 
 tool (
 	github.com/rhysd/actionlint/cmd/actionlint

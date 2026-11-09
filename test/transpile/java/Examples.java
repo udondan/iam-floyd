@@ -38,6 +38,9 @@ import javax.tools.ToolProvider;
  * <p>Usage: Examples &lt;examples directory&gt; &lt;working directory&gt;
  */
 public final class Examples {
+  /** The prefix of the line of an example that failed. */
+  private static final String FAIL = "FAIL ";
+
   private Examples() {}
 
   static String rewrite(String source) {
@@ -120,11 +123,11 @@ public final class Examples {
       String text = new String(Files.readAllBytes(file), StandardCharsets.UTF_8);
       Files.write(source, rewrite(text).getBytes(StandardCharsets.UTF_8));
       String errors = compile(source, classes);
-      return errors == null ? execute(name, classes) : "FAIL " + errors.replace('\n', ' ');
+      return errors == null ? execute(name, classes) : FAIL + errors.replace('\n', ' ');
     } catch (InvocationTargetException e) {
-      return "FAIL " + e.getCause();
+      return FAIL + e.getCause();
     } catch (ReflectiveOperationException | RuntimeException e) {
-      return "FAIL " + e;
+      return FAIL + e;
     }
   }
 

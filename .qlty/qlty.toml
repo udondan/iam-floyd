@@ -92,7 +92,7 @@ file_patterns = ["test/**"]
 # meant to be read.
 [[triage]]
 match.plugins = ["radarlint-java"]
-match.rules = ["java:S1118", "java:S1192", "java:S1220", "java:S1488"]
+match.rules = ["radarlint-java:java:S1118", "radarlint-java:java:S1192", "radarlint-java:java:S1220", "radarlint-java:java:S1488"]
 match.file_patterns = ["examples/**/*.java"]
 set.ignored = true
 
@@ -100,22 +100,30 @@ set.ignored = true
 # the run scripts compare.
 [[triage]]
 match.plugins = ["radarlint-java"]
-match.rules = ["java:S106", "java:S1220"]
+match.rules = ["radarlint-java:java:S106", "radarlint-java:java:S1220"]
 match.file_patterns = ["test/transpile/java/*.java", "test/jsii/**/Main.java"]
 set.ignored = true
 
 # The runner calls the package-private example() of the examples by reflection.
 [[triage]]
 match.plugins = ["radarlint-java"]
-match.rules = ["java:S3011"]
+match.rules = ["radarlint-java:java:S3011"]
 match.file_patterns = ["test/transpile/java/Examples.java"]
 set.ignored = true
 
 # The package com.udondan.iamFloyd is the published name of the package on Maven Central.
 [[triage]]
 match.plugins = ["radarlint-java"]
-match.rules = ["java:S120"]
+match.rules = ["radarlint-java:java:S120"]
 match.file_patterns = ["**/com/udondan/iamFloyd/*.java"]
+set.ignored = true
+
+# The shortest decimal of a double is found by rounding its exact binary value, which only the
+# constructor keeps (BigDecimal.valueOf starts from the digits of Double.toString).
+[[triage]]
+match.plugins = ["radarlint-java"]
+match.rules = ["radarlint-java:java:S2111"]
+match.file_patterns = ["java/src/main/java/com/udondan/iamFloyd/Js.java"]
 set.ignored = true
 
 # go 1.21 is the oldest supported version of Go, not the one the module is built with.
@@ -128,6 +136,6 @@ set.ignored = true
 # Names of IAM actions and condition keys that look like keys.
 [[triage]]
 match.plugins = ["gitleaks"]
-match.rules = ["generic-api-key"]
+match.rules = ["gitleaks:generic-api-key"]
 match.file_patterns = ["CHANGELOG.md", "docs/source/_static/managed-policies/index.json"]
 set.ignored = true
