@@ -89,6 +89,17 @@ def test(pattern: re.Pattern[str], value: str) -> bool:
     return pattern.search(value) is not None
 
 
+_SURROGATES = re.compile('[\ud800-\udbff][\udc00-\udfff]|[\ud800-\udfff]')
+
+
+def _surrogate(match: re.Match[str]) -> str:
+    """A pair of surrogates as its character, a lone surrogate escaped, like `JSON.stringify()`."""
+    text = match.group()
+    if len(text) == 2:
+        return text.encode('utf-16-le', 'surrogatepass').decode('utf-16-le')
+    return f'\\u{ord(text):04x}'
+
+
 def stringify(value: Any) -> str:
     """`JSON.stringify()` without indentation."""
     if value is None:
@@ -100,7 +111,7 @@ def stringify(value: Any) -> str:
             return 'null'
         return to_string(value)
     if isinstance(value, str):
-        return json.dumps(value, ensure_ascii=False)
+        return _SURROGATES.sub(_surrogate, json.dumps(value, ensure_ascii=False))
     if isinstance(value, datetime.datetime):
         return stringify(to_iso_string(value))
     if isinstance(value, (list, tuple)):

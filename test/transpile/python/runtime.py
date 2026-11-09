@@ -1,7 +1,7 @@
 """Tests the cases of the hand-written runtime that the scenarios cannot reach.
 
-Those are values that JSON cannot express (NaN, Infinity, datetimes without time zone) and the
-errors of the runtime.
+Those are values that JSON cannot express (NaN, Infinity, datetimes without time zone, lone
+surrogates) and the errors of the runtime.
 
 Usage: runtime.py
 """
@@ -72,6 +72,12 @@ check(
 check('stringify NaN', _js.stringify(math.nan), 'null')
 check('stringify Infinity', _js.stringify([math.inf, -math.inf]), '[null,null]')
 check('stringify tuple', _js.stringify(('a', 1)), '["a",1]')
+check('stringify character', _js.stringify('\U0001f600'), '"\U0001f600"')
+check('stringify pair', _js.stringify('\ud83d\ude00'), '"\U0001f600"')
+check('stringify high surrogate', _js.stringify('\ud800a'), '"\\ud800a"')
+check('stringify high surrogate at end', _js.stringify('a\ud800'), '"a\\ud800"')
+check('stringify low surrogate', _js.stringify('a\udc00'), '"a\\udc00"')
+check('stringify low surrogate at start', _js.stringify('\udc00a'), '"\\udc00a"')
 check(
     'stringify datetime',
     _js.stringify(datetime.datetime(2024, 1, 2, 3, 4, 5, tzinfo=datetime.timezone.utc)),
