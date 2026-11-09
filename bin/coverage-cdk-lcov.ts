@@ -20,6 +20,7 @@ if (!file) {
 const committed = new Set(
   execFileSync('git', ['ls-files'], { encoding: 'utf8' }).split('\n'),
 );
+const root = `${process.cwd()}/`;
 
 /**
  * The committed file of a file of the CDK variant, e.g. `1-base.CDK.ts` for `1-base.ts`
@@ -67,64 +68,97 @@ function lineMap(from: string[], to: string[]): Map<number, number> {
   return map;
 }
 
-const root = `${process.cwd()}/`;
-const output: string[] = [];
-for (const record of fs.readFileSync(file, 'utf8').split('end_of_record\n')) {
+/**
+ * The state of the mapping of a record
+ */
+interface Mapping {
+  map: Map<number, number>;
+  functions: Set<string>;
+  totals: Record<'lf' | 'lh' | 'brf' | 'brh' | 'fnf' | 'fnh', number>;
+  mapped: string[];
+}
+type LineMapper = (mapping: Mapping, fields: string[], line: string) => void;
+
+const hit = (count: string) => (Number(count) > 0 ? 1 : 0);
+
+const mapFunction: LineMapper = (mapping, fields) => {
+  const to = mapping.map.get(Number(fields[0]));
+  if (to !== undefined) {
+    mapping.functions.add(fields[1]);
+    mapping.mapped.push(`FN:${to},${fields[1]}`);
+  }
+};
+
+const mapFunctionHits: LineMapper = (mapping, fields, line) => {
+  if (mapping.functions.has(fields[1])) {
+    mapping.totals.fnf++;
+    mapping.totals.fnh += hit(fields[0]);
+    mapping.mapped.push(line);
+  }
+};
+
+const mapLineHits: LineMapper = (mapping, fields) => {
+  const to = mapping.map.get(Number(fields[0]));
+  if (to !== undefined) {
+    mapping.totals.lf++;
+    mapping.totals.lh += hit(fields[1]);
+    mapping.mapped.push(`DA:${to},${fields[1]}`);
+  }
+};
+
+const mapBranchHits: LineMapper = (mapping, fields) => {
+  const to = mapping.map.get(Number(fields[0]));
+  if (to !== undefined) {
+    mapping.totals.brf++;
+    mapping.totals.brh += hit(fields[3]);
+    mapping.mapped.push(`BRDA:${[to, ...fields.slice(1)].join(',')}`);
+  }
+};
+
+/**
+ * Maps a line of a record by its key, `fields` are the values after the colon
+ */
+const lineMappers: Record<string, LineMapper | undefined> = {
+  FN: mapFunction,
+  FNDA: mapFunctionHits,
+  DA: mapLineHits,
+  BRDA: mapBranchHits,
+};
+/**
+ * Maps a record to the committed file, undefined if the file is not committed
+ */
+function mapRecord(record: string): string | undefined {
   const lines = record.split('\n').filter((line) => line.length);
   const source = lines.find((line) => line.startsWith('SF:'))?.slice(3);
   if (!source) {
-    continue;
+    return undefined;
   }
   const path = source.startsWith(root) ? source.slice(root.length) : source;
   const target = committedFile(path);
   if (!target) {
-    continue;
+    return undefined;
   }
-  const map = lineMap(
-    fs.readFileSync(path, 'utf8').split('\n'),
-    execFileSync('git', ['show', `HEAD:${target}`], {
-      encoding: 'utf8',
-    }).split('\n'),
-  );
-
-  const mapped: string[] = [`SF:${target}`];
-  const functions = new Set<string>();
-  let [lf, lh, brf, brh, fnf, fnh] = [0, 0, 0, 0, 0, 0];
+  const mapping: Mapping = {
+    map: lineMap(
+      fs.readFileSync(path, 'utf8').split('\n'),
+      execFileSync('git', ['show', `HEAD:${target}`], {
+        encoding: 'utf8',
+      }).split('\n'),
+    ),
+    functions: new Set<string>(),
+    totals: { lf: 0, lh: 0, brf: 0, brh: 0, fnf: 0, fnh: 0 },
+    mapped: [`SF:${target}`],
+  };
   for (const line of lines) {
-    const [key, value] = [
-      line.slice(0, line.indexOf(':')),
-      line.slice(line.indexOf(':') + 1),
-    ];
-    const fields = value.split(',');
-    if (key === 'FN') {
-      const to = map.get(Number(fields[0]));
-      if (to !== undefined) {
-        functions.add(fields[1]);
-        mapped.push(`FN:${to},${fields[1]}`);
-      }
-    } else if (key === 'FNDA') {
-      if (functions.has(fields[1])) {
-        fnf++;
-        fnh += Number(fields[0]) > 0 ? 1 : 0;
-        mapped.push(line);
-      }
-    } else if (key === 'DA') {
-      const to = map.get(Number(fields[0]));
-      if (to !== undefined) {
-        lf++;
-        lh += Number(fields[1]) > 0 ? 1 : 0;
-        mapped.push(`DA:${to},${fields[1]}`);
-      }
-    } else if (key === 'BRDA') {
-      const to = map.get(Number(fields[0]));
-      if (to !== undefined) {
-        brf++;
-        brh += fields[3] !== '-' && Number(fields[3]) > 0 ? 1 : 0;
-        mapped.push(`BRDA:${[to, ...fields.slice(1)].join(',')}`);
-      }
-    }
+    const separator = line.indexOf(':');
+    lineMappers[line.slice(0, separator)]?.(
+      mapping,
+      line.slice(separator + 1).split(','),
+      line,
+    );
   }
-  mapped.push(
+  const { lf, lh, brf, brh, fnf, fnh } = mapping.totals;
+  mapping.mapped.push(
     `FNF:${fnf}`,
     `FNH:${fnh}`,
     `LF:${lf}`,
@@ -132,6 +166,14 @@ for (const record of fs.readFileSync(file, 'utf8').split('end_of_record\n')) {
     `BRF:${brf}`,
     `BRH:${brh}`,
   );
-  output.push(`TN:\n${mapped.join('\n')}\nend_of_record\n`);
+  return `TN:\n${mapping.mapped.join('\n')}\nend_of_record\n`;
+}
+
+const output: string[] = [];
+for (const record of fs.readFileSync(file, 'utf8').split('end_of_record\n')) {
+  const mapped = mapRecord(record);
+  if (mapped) {
+    output.push(mapped);
+  }
 }
 fs.writeFileSync(file, output.join(''));

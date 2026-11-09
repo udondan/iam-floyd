@@ -1,5 +1,6 @@
 import { Operator } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
+import { Condition } from './condition';
 import { fixes } from './fixes';
 import type { Module } from './index';
 import {
@@ -185,14 +186,13 @@ function unique<T>(list: T[]): T[] {
 }
 
 /**
- * Builds the language-neutral model from a scraped (and fixed) module.
- *
- * `module.name` must already contain the final service name (after `fixes.name` / `-v2`).
+ * The actions of a module, and the actions per access level
  */
-export function buildServiceModel(module: Module): ServiceModel {
-  const servicePrefix = module.servicePrefix!;
+function buildActions(module: Module): {
+  actions: ActionModel[];
+  accessLevelList: AccessLevelList;
+} {
   const conditions = module.conditions!;
-
   const accessLevelList: AccessLevelList = {};
   const actions: ActionModel[] = [];
 
@@ -200,11 +200,8 @@ export function buildServiceModel(module: Module): ServiceModel {
     // the docs sometimes report multiple access levels for a single action (e.g. "Tagging, Write")
     for (const accessLevel of action.accessLevel
       .split(',')
-      .map((level) => level.trim())) {
-      if (!(accessLevel in accessLevelList)) {
-        accessLevelList[accessLevel as keyof AccessLevelList] = [];
-      }
-      accessLevelList[accessLevel as keyof AccessLevelList]!.push(name);
+      .map((level) => level.trim()) as (keyof AccessLevelList)[]) {
+      (accessLevelList[accessLevel] ??= []).push(name);
     }
 
     const actionModel: ActionModel = {
@@ -217,7 +214,7 @@ export function buildServiceModel(module: Module): ServiceModel {
     if ('conditions' in action) {
       actionModel.conditionMethods = (action.conditions ?? []).map(
         (condition) =>
-          createConditionName(conditions[condition].key, servicePrefix),
+          createConditionName(conditions[condition].key, module.servicePrefix!),
       );
     }
     if ('dependentActions' in action) {
@@ -225,42 +222,154 @@ export function buildServiceModel(module: Module): ServiceModel {
     }
     actions.push(actionModel);
   }
+  return { actions, accessLevelList };
+}
 
-  const resources: ResourceModel[] = [];
-  for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
-    const placeholders: ArnPlaceholder[] = getArnPlaceholders(
-      resourceType.arn,
-    ).map((placeholder) => {
-      let kind: ArnPlaceholderKind = 'required';
-      if (placeholder == 'Partition') {
-        kind = 'partition';
-      } else if (placeholder == 'Region') {
-        kind = 'region';
-      } else if (/^Account(Id)?$/.test(placeholder)) {
-        kind = 'account';
-      }
-      return {
+/**
+ * The placeholders of an ARN with a default value, the others are required
+ */
+const placeholderKinds: Record<string, ArnPlaceholderKind | undefined> = {
+  Partition: 'partition',
+  Region: 'region',
+  Account: 'account',
+  AccountId: 'account',
+};
+
+function buildResources(module: Module): ResourceModel[] {
+  return Object.entries(module.resourceTypes!).map(([name, resourceType]) => ({
+    name: resourceType.name,
+    methodName: `on${camelCase(name)}`,
+    url: resourceType.url,
+    arn: resourceType.arn,
+    placeholders: getArnPlaceholders(resourceType.arn).map(
+      (placeholder): ArnPlaceholder => ({
         placeholder,
         name: lowerFirst(camelCase(placeholder)),
-        kind,
-      };
-    });
+        kind: placeholderKinds[placeholder] ?? 'required',
+      }),
+    ),
+    conditionMethods: resourceType.conditionKeys.map((key) =>
+      createConditionName(module.conditions![key].key, module.servicePrefix!),
+    ),
+  }));
+}
 
-    resources.push({
-      name: resourceType.name,
-      methodName: `on${camelCase(name)}`,
-      url: resourceType.url,
-      arn: resourceType.arn,
-      placeholders,
-      conditionMethods: resourceType.conditionKeys.map((key) =>
-        createConditionName(conditions[key].key, servicePrefix),
-      ),
-    });
+/**
+ * A condition key, split into the service prefix and the name (`parts`), and the name into the
+ * parts before and after the slash of a parameterized key (e.g. `ResourceTag` and `${TagKey}`)
+ */
+interface ConditionKey {
+  key: string;
+  parts: string[];
+  name: string[];
+}
+
+function splitConditionKey(key: string): ConditionKey {
+  const parts = key.split(':');
+  return { key, parts, name: parts[1].split(/\/(?=\$\{|<|\$|$)/) };
+}
+
+/**
+ * Whether the method name of a condition gets the suffix `Exists`
+ */
+function isExistsCondition(name: string[]): boolean {
+  // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
+  const emptyParameter = name.length > 1 && !name[1].length;
+  // special case for ec2:Attribute
+  const attribute = name.length == 1 && name[0] == 'Attribute';
+  return emptyParameter || attribute;
+}
+
+/**
+ * The method name of a condition from the fixes, or else from its key
+ */
+function baseConditionMethodName(
+  module: Module,
+  { key, parts, name }: ConditionKey,
+): string {
+  const customMethodName =
+    fixes[module.filename]?.conditions?.[parts[parts.length - 1]]?.methodName;
+  if (typeof customMethodName !== 'undefined') {
+    return customMethodName;
   }
+  const methodName = createConditionName(key, module.servicePrefix!);
+  return isExistsCondition(name) ? `${methodName}Exists` : methodName;
+}
+
+/**
+ * The method name of a condition. A parameterized condition that conflicts with others gets the
+ * parameter appended.
+ */
+function conditionMethodName(
+  module: Module,
+  conditionKey: ConditionKey,
+  conditionBaseNames: Map<string, string[]>,
+): string {
+  const methodName = baseConditionMethodName(module, conditionKey);
+  const { name } = conditionKey;
+  const conflictingKeys = conditionBaseNames.get(methodName) ?? [];
+  if (conflictingKeys.length <= 1 || name.length <= 1 || !name[1].length) {
+    return methodName;
+  }
+  const paramPart = name[1]
+    .replace(/^\$\{([^}]+)\}(.*)/, '$1$2')
+    .replace(/[^a-zA-Z0-9]/g, '');
+  return paramPart.length
+    ? methodName + upperFirst(camelCase(paramPart))
+    : methodName;
+}
+
+/**
+ * The literal part of the key passed to `if()`, and the name of the parameter appended to it
+ */
+function conditionKeyLiteral(
+  servicePrefix: string,
+  { parts, name }: ConditionKey,
+): Pick<ConditionModel, 'keyLiteral' | 'keyParam'> {
+  const prefix = parts[0] == servicePrefix ? '' : `${parts[0]}:`;
+  if (name.length == 1) {
+    return { keyLiteral: `${prefix}${name[0]}` };
+  }
+  // it is a parameterized condition
+  const keyLiteral = `${prefix}${name[0]}/`;
+  return name[1].length
+    ? { keyLiteral, keyParam: lowerFirst(name[1].replace(/[^a-zA-Z0-9]/g, '')) }
+    : { keyLiteral };
+}
+
+/**
+ * The value types and the operators of a condition, by its type
+ */
+function conditionValue(
+  condition: Condition,
+  type: string,
+  name: string[],
+): Pick<ConditionModel, 'valueTypes' | 'defaultOperator' | 'operatorUrl'> {
+  if (type in conditionTypeDefaults) {
+    return {
+      valueTypes: condition.typeOverride ?? [
+        ...conditionTypeDefaults[type].type,
+      ],
+      defaultOperator:
+        condition.key in multivaluedDefaults
+          ? multivaluedDefaults[condition.key]
+          : conditionTypeDefaults[type].default.toString(),
+      operatorUrl: conditionTypeDefaults[type].url,
+    };
+  }
+  if (type != 'boolean') {
+    throw new Error(`Unexpected condition type: ${type} for ${name.join('/')}`);
+  }
+  return { defaultOperator: 'Bool' };
+}
+
+function buildConditions(module: Module): ConditionModel[] {
+  const servicePrefix = module.servicePrefix!;
+  const conditions = Object.values(module.conditions!);
 
   // Build a map of base condition names to detect conflicts
   const conditionBaseNames = new Map<string, string[]>();
-  for (const condition of Object.values(conditions)) {
+  for (const condition of conditions) {
     const baseName = createConditionName(condition.key, servicePrefix);
     if (!conditionBaseNames.has(baseName)) {
       conditionBaseNames.set(baseName, []);
@@ -268,61 +377,16 @@ export function buildServiceModel(module: Module): ServiceModel {
     conditionBaseNames.get(baseName)!.push(condition.key);
   }
 
-  const conditionModels: ConditionModel[] = [];
-  for (const condition of Object.values(conditions)) {
-    const key = condition.key;
-    const parts = key.split(':');
-    const name = parts[1].split(/\/(?=\$\{|<|\$|$)/);
-
-    let methodName = createConditionName(key, servicePrefix);
-
-    // Check for custom method name in fixes
-    const keyWithoutPrefix = parts[parts.length - 1];
-    const customMethodName =
-      fixes[module.filename]?.conditions?.[keyWithoutPrefix]?.methodName;
-    if (typeof customMethodName !== 'undefined') {
-      methodName = customMethodName;
-    } else {
-      if (name.length > 1 && !name[1].length) {
-        // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
-        methodName += 'Exists';
-      } else if (name.length == 1 && name[0] == 'Attribute') {
-        // special case for ec2:Attribute
-        methodName += 'Exists';
-      }
-    }
-
-    // Handle parameterized conditions that conflict with non-parameterized ones
-    const conflictingKeys = conditionBaseNames.get(methodName) ?? [];
-    if (conflictingKeys.length > 1 && name.length > 1 && name[1].length) {
-      // This is a parameterized condition that conflicts with others
-      const paramPart = name[1]
-        .replace(/^\$\{([^}]+)\}(.*)/, '$1$2')
-        .replace(/[^a-zA-Z0-9]/g, '');
-      if (paramPart.length) {
-        methodName += upperFirst(camelCase(paramPart));
-      }
-    }
-
-    let keyLiteral = '';
-    if (parts[0] != servicePrefix) {
-      keyLiteral += `${parts[0]}:`;
-    }
-    keyLiteral += name[0];
-
-    let keyParam: string | undefined;
-    if (name.length > 1) {
-      // it is a parameterized condition
-      keyLiteral += '/';
-      if (name[1].length) {
-        keyParam = lowerFirst(name[1].replace(/[^a-zA-Z0-9]/g, ''));
-      }
-    }
-
+  return conditions.map((condition) => {
+    const conditionKey = splitConditionKey(condition.key);
     const type = condition.type.toLowerCase();
+    const { keyLiteral, keyParam } = conditionKeyLiteral(
+      servicePrefix,
+      conditionKey,
+    );
     const conditionModel: ConditionModel = {
-      key,
-      methodName,
+      key: condition.key,
+      methodName: conditionMethodName(module, conditionKey, conditionBaseNames),
       description: condition.description,
       url: condition.url,
       relatedActionMethods: unique(condition.relatedActions ?? []).map(
@@ -336,35 +400,31 @@ export function buildServiceModel(module: Module): ServiceModel {
     if (typeof keyParam !== 'undefined') {
       conditionModel.keyParam = keyParam;
     }
+    // the properties of the value after `keyParam`, as in the committed models
+    return Object.assign(
+      conditionModel,
+      conditionValue(condition, type, conditionKey.name),
+    );
+  });
+}
 
-    if (type in conditionTypeDefaults) {
-      conditionModel.valueTypes = condition.typeOverride ?? [
-        ...conditionTypeDefaults[type].type,
-      ];
-      conditionModel.defaultOperator =
-        key in multivaluedDefaults
-          ? multivaluedDefaults[key]
-          : conditionTypeDefaults[type].default.toString();
-      conditionModel.operatorUrl = conditionTypeDefaults[type].url;
-    } else if (type != 'boolean') {
-      throw new Error(
-        `Unexpected condition type: ${type} for ${name.join('/')}`,
-      );
-    }
-
-    conditionModels.push(conditionModel);
-  }
-
+/**
+ * Builds the language-neutral model from a scraped (and fixed) module.
+ *
+ * `module.name` must already contain the final service name (after `fixes.name` / `-v2`).
+ */
+export function buildServiceModel(module: Module): ServiceModel {
+  const { actions, accessLevelList } = buildActions(module);
   return {
     schemaVersion: 1,
     filename: module.filename,
     className: camelCase(module.name!),
     name: module.name!,
-    servicePrefix,
+    servicePrefix: module.servicePrefix!,
     url: module.url!,
     accessLevelList,
     actions,
-    resources,
-    conditions: conditionModels,
+    resources: buildResources(module),
+    conditions: buildConditions(module),
   };
 }

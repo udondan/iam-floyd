@@ -6,15 +6,9 @@ import * as glob from 'glob';
 
 import { ResourceTypes } from '../shared';
 import { Conditions } from './condition';
-import {
-  arnFixer,
-  conditionFixer,
-  conditionKeyFixer,
-  fixes,
-  serviceFixer,
-  ServiceFixes,
-} from './fixes';
+import { fixes, serviceFixer, ServiceFixes } from './fixes';
 import { buildServiceModel, ServiceModel } from './model';
+import { addActions, addConditions, addResourceTypes } from './scrape';
 
 export { emitTypeScriptFromModels } from './emit/typescript';
 export { indexManagedPolicies } from './managed-policies';
@@ -185,14 +179,6 @@ export function createModule(module: Module) {
   console.log('Done'.green);
 }
 
-function cleanDescription(description: string): string {
-  return description
-    .replace(/[\r\n]+/g, ' ')
-    .replace(/\s{2,}/g, ' ')
-    .replace(/<code>(.*?)<\/code>/g, '`$1`')
-    .trim();
-}
-
 function createCache() {
   fs.mkdirSync(modelDir, { recursive: true });
   mkDirCache(modelDir, '*.json');
@@ -225,201 +211,6 @@ async function getLastModified(url: string): Promise<Date> {
   const response = await fetchWithRetry(url, 'HEAD');
   const lastModified = response.headers.get('last-modified');
   return lastModified ? new Date(lastModified) : new Date();
-}
-
-function getTable($: cheerio.CheerioAPI, title: string) {
-  const table = $('.table-container table')
-    .toArray()
-    .filter((element) => {
-      return $(element).find('th').first().text() == title;
-    });
-  return $(table[0]);
-}
-
-// Some services (e.g. S3) split their actions across multiple tables: the
-// main actions table plus a separate "permission-only actions" table. Both
-// tables share the same `<th>Actions</th>` header, so all of them need to be
-// collected and merged, not just the first match.
-function getTables($: cheerio.CheerioAPI, title: string) {
-  return $('.table-container table')
-    .toArray()
-    .filter((element) => {
-      return $(element).find('th').first().text() == title;
-    })
-    .map((element) => $(element));
-}
-
-function addActions($: cheerio.CheerioAPI, module: Module) {
-  const actions: Actions = {};
-  const tablesActions = getTables($, 'Actions');
-
-  let action: string;
-  tablesActions.forEach((tableActions) => {
-    tableActions.find('tr').each((_, element) => {
-      const tds = $(element).find('td');
-      const tdLength = tds.length;
-      let first = tds.first();
-
-      if (tdLength == 5) {
-        // it's a new action
-        // column order: action, description, resource type, condition keys, access level
-
-        action = first
-          .text()
-          .replace('[permission only]', '')
-          .replace(/-/g, '')
-          .trim();
-        actions[action] = {
-          url: validateUrl(first.find('a[href]').attr('href')?.trim()),
-          description: cleanDescription(first.next().text().trim()),
-          accessLevel: first.next().next().next().next().text().trim(),
-        };
-        first = first.next().next();
-      }
-
-      if (tdLength != 5 && tdLength != 2) {
-        const content = cleanDescription(tds.text());
-        if (content.length && !content.startsWith('SCENARIO:')) {
-          console.warn(
-            `skipping row due to unexpected number of fields: ${content}`
-              .yellow,
-          );
-        }
-        return;
-      }
-
-      let resourceType = first.text().trim();
-      let required = false;
-      const conditionKeys = first.next().find('p');
-
-      const conditions: string[] = [];
-      if (conditionKeys.length) {
-        conditionKeys.each((_, conditionKey) => {
-          const condition = conditionKeyFixer(
-            module.servicePrefix!,
-            cleanDescription($(conditionKey).text()),
-          );
-
-          if (!module.conditions![condition]) {
-            console.log(
-              `[Skipping referenced condition, since it is not documented: ${condition}]`
-                .red,
-            );
-            return;
-          }
-
-          conditions.push(condition);
-          if (!('relatedActions' in module.conditions![condition])) {
-            module.conditions![condition].relatedActions = [];
-          }
-          module.conditions![condition].relatedActions?.push(action);
-        });
-      }
-
-      if (resourceType.length) {
-        if (typeof actions[action].resourceTypes == 'undefined') {
-          actions[action].resourceTypes = {};
-        }
-
-        if (resourceType.includes('*')) {
-          resourceType = resourceType.slice(0, -1);
-          required = true;
-        }
-
-        actions[action].resourceTypes![resourceType] = {
-          required: required,
-        };
-        if (conditions.length) {
-          actions[action].resourceTypes![resourceType].conditions = conditions;
-        }
-      } else if (conditions.length) {
-        actions[action].conditions = conditions;
-      }
-    });
-  });
-  module.actionList = actions;
-}
-
-function addResourceTypes($: cheerio.CheerioAPI, module: Module) {
-  const resourceTypes: ResourceTypes = {};
-  const tableResourceTypes = getTable($, 'Resource types');
-  tableResourceTypes.find('tr').each((_, element) => {
-    const tds = $(element).find('td');
-    const name = tds.first().text().trim();
-    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
-    const arn = tds.first().next().text().trim();
-    if (!name.length && !arn.length) {
-      return;
-    }
-
-    const conditionKeys = tds
-      .first()
-      .next()
-      .next()
-      .find('p')
-      .toArray()
-      .map((element) => {
-        return conditionKeyFixer(
-          module.servicePrefix!,
-          $(element).text().trim(),
-        );
-      });
-
-    conditionKeys.forEach((condition: string) => {
-      if (!('relatedResourceTypes' in module.conditions![condition])) {
-        module.conditions![condition].relatedResourceTypes = [];
-      }
-      module.conditions![condition].relatedResourceTypes?.push(name);
-    });
-
-    if (name.length) {
-      resourceTypes[name] = {
-        name: name,
-        url: url,
-        arn: arnFixer(module.servicePrefix!, name, arn),
-        conditionKeys: conditionKeys,
-      };
-    }
-  });
-  module.resourceTypes = resourceTypes;
-}
-
-function addConditions($: cheerio.CheerioAPI, module: Module) {
-  const conditions: Conditions = {};
-  const table = getTable($, 'Condition keys');
-  table.find('tr').each((_, element) => {
-    const tds = $(element).find('td');
-    const key = tds.first().text().trim();
-    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
-    const description = cleanDescription(tds.first().next().text());
-    const type = tds.first().next().next().text().trim();
-
-    if (key.length) {
-      const condition = conditionFixer(module.servicePrefix!, {
-        key: key,
-        description: description,
-        type: type,
-        url: url,
-        isGlobal: key.startsWith('aws:'),
-      });
-
-      conditions[condition.key] = condition;
-    }
-  });
-  module.conditions = conditions;
-}
-
-function validateUrl(url: string | undefined) {
-  if (typeof url == 'undefined') {
-    return '';
-  }
-
-  if (!URL.canParse(url)) {
-    console.warn(`Removed invalid URL ${url}`.red);
-    return '';
-  }
-
-  return url;
 }
 
 export async function requestWithRetry(url: string): Promise<string> {

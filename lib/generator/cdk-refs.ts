@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as glob from 'glob';
 
 import { CdkRefFix, fixes } from './fixes';
-import { CdkRef, ServiceModel } from './model';
+import { CdkRef, ResourceModel, ServiceModel } from './model';
 import { lowerFirst } from './naming';
 
 const modelDir = 'lib/generated/model';
@@ -158,6 +158,90 @@ function fromFix(
 }
 
 /**
+ * The module of `aws-cdk-lib/interfaces` with the reference interfaces of a service
+ */
+function serviceModule(
+  model: ServiceModel,
+  modules: Map<string, Map<string, Reference>>,
+): string | undefined {
+  const modulesByName = new Map(
+    [...modules.keys()].map((module) => [
+      normalize(module.replace(/^aws_/, '')),
+      module,
+    ]),
+  );
+  return (
+    fixes[slug(model)]?.cdkModule ??
+    modulesByName.get(normalize(model.servicePrefix))
+  );
+}
+
+/**
+ * The reference of the module with the same name as the resource type
+ */
+function matchCdkRef(
+  resource: ResourceModel,
+  module: string,
+  modules: Map<string, Map<string, Reference>>,
+  placeholder: string,
+  unmatched: string[],
+): CdkRef | undefined {
+  const name = normalize(resource.methodName.slice(2));
+  const reference = [...(modules.get(module)?.values() ?? [])].find(
+    (candidate) => normalize(candidate.interface.slice(1, -3)) == name,
+  );
+  if (!reference) {
+    return undefined;
+  }
+  const fields = refFields(reference, placeholder);
+  if (!fields) {
+    unmatched.push(
+      `${resource.id} (${module}.${reference.interface}: ${reference.fields.join(', ')})`,
+    );
+    return undefined;
+  }
+  return {
+    module,
+    interface: reference.interface,
+    property: reference.property,
+    ...fields,
+  };
+}
+
+/**
+ * The reference of a resource type, from the fix or matched by name
+ */
+function resourceCdkRef(
+  resource: ResourceModel & { id: string },
+  fix: CdkRefFix | false | undefined,
+  module: string | undefined,
+  modules: Map<string, Map<string, Reference>>,
+  unmatched: string[],
+): CdkRef | undefined {
+  if (fix === false) {
+    return undefined;
+  }
+  const required = resource.placeholders.filter(
+    (placeholder) => placeholder.kind == 'required',
+  );
+  if (required.length != 1) {
+    if (fix) {
+      throw new Error(
+        `${resource.id} has ${required.length} required placeholders, a CDK reference replaces only one`,
+      );
+    }
+    return undefined;
+  }
+  const placeholder = required[0].placeholder;
+  if (fix) {
+    return fromFix(fix, module, modules, placeholder, resource.id);
+  }
+  return module
+    ? matchCdkRef(resource, module, modules, placeholder, unmatched)
+    : undefined;
+}
+
+/**
  * Sets `cdkRef` of the resource types of a service: the reference interface of
  * `aws-cdk-lib/interfaces` with the same name as the resource type, in the module of the service.
  * Only resource types with a single required placeholder get one, as the reference replaces it.
@@ -167,68 +251,20 @@ export function addCdkRefs(
   modules: Map<string, Map<string, Reference>>,
   unmatched: string[] = [],
 ): void {
-  const serviceFixes = fixes[slug(model)];
-  const modulesByName = new Map(
-    [...modules.keys()].map((module) => [
-      normalize(module.replace(/^aws_/, '')),
-      module,
-    ]),
-  );
-  const module =
-    serviceFixes?.cdkModule ??
-    modulesByName.get(normalize(model.servicePrefix));
-
+  const resourceFixes = fixes[slug(model)]?.resourceTypes;
+  const module = serviceModule(model, modules);
   for (const resource of model.resources) {
     delete resource.cdkRef;
-    const id = `${model.servicePrefix}:${resource.name}`;
-    const fix = serviceFixes?.resourceTypes?.[resource.name]?.cdkRef;
-    if (fix === false) {
-      continue;
-    }
-    const required = resource.placeholders.filter(
-      (placeholder) => placeholder.kind == 'required',
-    );
-    if (required.length != 1) {
-      if (fix) {
-        throw new Error(
-          `${id} has ${required.length} required placeholders, a CDK reference replaces only one`,
-        );
-      }
-      continue;
-    }
-    if (fix) {
-      resource.cdkRef = fromFix(
-        fix,
-        module,
-        modules,
-        required[0].placeholder,
-        id,
-      );
-      continue;
-    }
-    if (!module) {
-      continue;
-    }
-    const name = normalize(resource.methodName.slice(2));
-    const reference = [...(modules.get(module)?.values() ?? [])].find(
-      (candidate) => normalize(candidate.interface.slice(1, -3)) == name,
-    );
-    if (!reference) {
-      continue;
-    }
-    const fields = refFields(reference, required[0].placeholder);
-    if (!fields) {
-      unmatched.push(
-        `${id} (${module}.${reference.interface}: ${reference.fields.join(', ')})`,
-      );
-      continue;
-    }
-    resource.cdkRef = {
+    const cdkRef = resourceCdkRef(
+      { ...resource, id: `${model.servicePrefix}:${resource.name}` },
+      resourceFixes?.[resource.name]?.cdkRef,
       module,
-      interface: reference.interface,
-      property: reference.property,
-      ...fields,
-    };
+      modules,
+      unmatched,
+    );
+    if (cdkRef) {
+      resource.cdkRef = cdkRef;
+    }
   }
 }
 
@@ -259,6 +295,61 @@ export function cdkMinVersion(
 }
 
 /**
+ * Sets `cdkRef` of the resource types of a service, returns the resource types whose reference
+ * changed
+ */
+function changedCdkRefs(
+  model: ServiceModel,
+  modules: Map<string, Map<string, Reference>>,
+  unmatched: string[],
+): string[] {
+  const before = new Map(
+    model.resources.map((resource) => [
+      resource.name,
+      JSON.stringify(resource.cdkRef),
+    ]),
+  );
+  addCdkRefs(model, modules, unmatched);
+  return model.resources
+    .filter((resource) => {
+      const previousRef = before.get(resource.name);
+      return (
+        resource.cdkRef &&
+        previousRef !== undefined &&
+        previousRef != JSON.stringify(resource.cdkRef)
+      );
+    })
+    .map((resource) => `${model.servicePrefix}:${resource.name}`);
+}
+
+/**
+ * The minimum versions, the installed ones if interfaces were added or references changed
+ */
+function minVersion(interfaces: string[], changed: boolean): CdkVersion {
+  const previous = fs.existsSync(cdkVersionFile)
+    ? (JSON.parse(fs.readFileSync(cdkVersionFile, 'utf8')) as CdkVersion)
+    : undefined;
+  const added = interfaces.filter(
+    (iface) => !previous?.interfaces.includes(iface),
+  );
+  if (previous?.constructs && !added.length && !changed) {
+    return {
+      'aws-cdk-lib': previous['aws-cdk-lib'],
+      constructs: previous.constructs,
+      interfaces,
+    };
+  }
+  const installed = JSON.parse(
+    fs.readFileSync(`${cdkLibDir}/package.json`, 'utf8'),
+  ) as { version: string; peerDependencies: { constructs: string } };
+  return {
+    'aws-cdk-lib': installed.version,
+    constructs: installed.peerDependencies.constructs.replace(/^\^/, ''),
+    interfaces,
+  };
+}
+
+/**
  * Sets `cdkRef` of the resource types in all service models from the installed aws-cdk-lib.
  *
  * When the model uses reference interfaces it did not use before, or other fields of a reference
@@ -275,48 +366,12 @@ export function updateCdkRefs(): void {
   const unmatched: string[] = [];
   const changed: string[] = [];
   for (const { file, model } of models) {
-    const before = new Map(
-      model.resources.map((resource) => [
-        resource.name,
-        JSON.stringify(resource.cdkRef),
-      ]),
-    );
-    addCdkRefs(model, modules, unmatched);
-    for (const resource of model.resources) {
-      const previousRef = before.get(resource.name);
-      if (
-        resource.cdkRef &&
-        previousRef !== undefined &&
-        previousRef != JSON.stringify(resource.cdkRef)
-      ) {
-        changed.push(`${model.servicePrefix}:${resource.name}`);
-      }
-    }
+    changed.push(...changedCdkRefs(model, modules, unmatched));
     fs.writeFileSync(file, `${JSON.stringify(model, null, 2)}\n`);
   }
 
   const interfaces = usedInterfaces(models.map(({ model }) => model));
-  const previous = fs.existsSync(cdkVersionFile)
-    ? (JSON.parse(fs.readFileSync(cdkVersionFile, 'utf8')) as CdkVersion)
-    : undefined;
-  const installed = JSON.parse(
-    fs.readFileSync(`${cdkLibDir}/package.json`, 'utf8'),
-  ) as { version: string; peerDependencies: { constructs: string } };
-  const added = interfaces.filter(
-    (iface) => !previous?.interfaces.includes(iface),
-  );
-  const version: CdkVersion =
-    added.length || changed.length || !previous?.constructs
-      ? {
-          'aws-cdk-lib': installed.version,
-          constructs: installed.peerDependencies.constructs.replace(/^\^/, ''),
-          interfaces,
-        }
-      : {
-          'aws-cdk-lib': previous['aws-cdk-lib'],
-          constructs: previous.constructs,
-          interfaces,
-        };
+  const version = minVersion(interfaces, changed.length > 0);
   fs.writeFileSync(cdkVersionFile, `${JSON.stringify(version, null, 2)}\n`);
 
   const resources = models.reduce(
