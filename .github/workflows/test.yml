@@ -207,6 +207,18 @@ jobs:
           files: coverage/lcov.info
           flags: typescript
 
+      - name: Unit tests
+        run: make test-unit
+
+      - name: Upload coverage of the unit tests to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/unit/lcov.info
+          flags: unit
+
       # A cancelled run can leave a test policy behind, the next run deletes it
       - name: Clean up test resources
         if: ${{ always() && steps.aws-credentials.outcome == 'success' }}

@@ -116,7 +116,8 @@ export function emitCSharp(
     out.line();
     xmlDoc(
       docs,
-      parameters.map((p) => xmlParam(p.name, paramDocs.get(p.name) ?? '')),
+      // every parameter is documented
+      parameters.map((p) => xmlParam(p.name, paramDocs.get(p.name)!)),
     ).forEach((line) => out.line(line));
     const modifiers = inherited.has(csharpName) ? 'public new' : 'public';
     out.block(

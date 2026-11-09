@@ -5,10 +5,10 @@ codecov:
   require_ci_to_pass: false
   notify:
     wait_for_ci: false
-    # The standalone and the CDK variant upload their coverage. Codecov only
-    # reports once both arrived, so the Coverage job doesn't read a partial
-    # result.
-    after_n_builds: 2
+    # The standalone and the CDK variant upload their coverage, and the unit
+    # tests of the generator theirs. Codecov only reports once all arrived, so
+    # the Coverage job doesn't read a partial result.
+    after_n_builds: 3
 
 coverage:
   status:

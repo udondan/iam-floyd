@@ -19,6 +19,7 @@ import {
   SourceFile,
   Statement,
   SyntaxKind,
+  TemplateExpression,
   Type,
   TypeNode,
   TypeOfExpression,
@@ -338,7 +339,7 @@ export class PythonTranspiler {
     }
     const doc = docs[docs.length - 1];
     const text: string[] = [];
-    const description = (doc.getDescription() ?? '').trim();
+    const description = doc.getDescription().trim();
     if (description.length) {
       text.push(...description.split('\n'));
     }
@@ -596,7 +597,7 @@ export class PythonTranspiler {
         if (typeNode === undefined || !Node.isArrayTypeNode(typeNode)) {
           fail(parameter, 'Rest parameters need an array type');
         }
-        return `*${name}: ${this.typeHint(typeNode.getElementTypeNode(), undefined, parameter)}`;
+        return `*${name}: ${this.typeHintFromNode(typeNode.getElementTypeNode())}`;
       }
       const hint = this.typeHint(typeNode, parameter.getType(), parameter);
       const initializer = parameter.getInitializer();
@@ -616,22 +617,16 @@ export class PythonTranspiler {
 
   private returnType(node: MethodDeclaration | FunctionDeclaration): string {
     const typeNode = node.getReturnTypeNode();
-    if (typeNode !== undefined) {
-      return this.typeHint(typeNode, undefined, node);
-    }
-    return this.typeHintFromType(node.getReturnType(), node);
+    return this.typeHint(typeNode, node.getReturnType(), node);
   }
 
   private typeHint(
     typeNode: TypeNode | undefined,
-    type: Type | undefined,
+    type: Type,
     node: Node,
   ): string {
     if (typeNode !== undefined) {
       return this.typeHintFromNode(typeNode);
-    }
-    if (type === undefined) {
-      fail(node, 'Missing type');
     }
     return this.typeHintFromType(type, node);
   }
@@ -1193,10 +1188,7 @@ export class PythonTranspiler {
     return fail(node, 'Unsupported expression');
   }
 
-  private template(node: Node): Expr {
-    if (!Node.isTemplateExpression(node)) {
-      return fail(node, 'Unsupported template');
-    }
+  private template(node: TemplateExpression): Expr {
     const parts: string[] = [];
     const head = node.getHead().getLiteralText();
     if (head.length) {

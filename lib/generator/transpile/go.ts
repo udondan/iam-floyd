@@ -668,7 +668,7 @@ export class GoTranspiler {
       return;
     }
     const doc = docs[docs.length - 1];
-    const lines = (doc.getDescription() ?? '').trim().split('\n');
+    const lines = doc.getDescription().trim().split('\n');
     for (const tag of doc.getTags()) {
       const comment = (tag.getCommentText() ?? '').trim();
       if (Node.isJSDocParameterTag(tag)) {
@@ -1028,9 +1028,6 @@ export class GoTranspiler {
       }
       const baseName = this.className(base);
       const field = `&this.${baseName}`;
-      if (base.getDerivedClasses().length == 0) {
-        fail(base, 'Unsupported base class');
-      }
       const init = this.qualify(declaration, base, this.initName(base));
       const baseGeneric = this.isGeneric(base);
       this.emit(
@@ -1408,6 +1405,8 @@ export class GoTranspiler {
     let type: string;
     if (Node.isParameterDeclaration(declaration)) {
       const parent = declaration.getParentOrThrow();
+      // the parameters of callbacks are declared before their body is transpiled
+      /* v8 ignore else */
       if (
         Node.isMethodDeclaration(parent) ||
         Node.isConstructorDeclaration(parent) ||
@@ -2420,9 +2419,6 @@ export class GoTranspiler {
       if (literal.length) {
         parts.push(goString(literal));
       }
-    }
-    if (parts.length == 0) {
-      return primary('""', 'string');
     }
     return {
       code: parts.join(' + '),
