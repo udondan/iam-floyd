@@ -112,6 +112,7 @@ describe('helpers', () => {
 
   it('trims the lines of doc comments', () => {
     expect(goDoc(['', 'a', '', ''])).toEqual(['// a']);
+    expect(goDoc(['', '  '])).toEqual([]);
   });
 });
 
@@ -1132,6 +1133,19 @@ describe('expressions', () => {
     );
   });
 
+  it('translates conditional expressions with comparisons', () => {
+    const out = transpile(`function f(a: string, b: string): string {
+  const c = a !== b ? a : b;
+  return typeof a !== 'string' ? a : b;
+}`);
+    expect(out).toContain(
+      'func() string { if a != b { return a }; return b }()',
+    );
+    expect(out).toContain(
+      'func() string { if js.TypeOf(js.Normalize(a)) != "string" { return a }; return b }()',
+    );
+  });
+
   it('fails on ?? for values', () => {
     fails(
       `function f(s: string): string {
@@ -1139,6 +1153,29 @@ describe('expressions', () => {
 }`,
       '?? is not supported for string',
     );
+    fails(
+      `function f(xs: string[]): string {
+  return xs[0] ?? 'a';
+}`,
+      '?? is not supported for string',
+    );
+  });
+
+  it('translates ?? for the results of calls', () => {
+    const out = transpile(`function g(): string | undefined {
+  return undefined;
+}
+class A {
+  m(): string | undefined {
+    return undefined;
+  }
+  n(): string {
+    const a = g() ?? 'a';
+    return this.m() ?? a;
+  }
+}`);
+    expect(out).toContain('a := js.Or(g(), "a")');
+    expect(out).toContain('return js.Or(this.M(), a)');
   });
 
   it('translates undefined', () => {
@@ -1233,6 +1270,15 @@ function f(): void {
   g('a', 'b');
 }`,
       'Too many arguments',
+    );
+  });
+
+  it('supports JSON.stringify only without a replacer', () => {
+    fails(
+      `function f(x: any): string {
+  return JSON.stringify(x, null, 2);
+}`,
+      'Unsupported method stringify',
     );
   });
 
