@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The JaCoCo agent and command line interface, which measure the coverage of the hand-written
+  runtime with COVERAGE=1 (make coverage-native). test/transpile/run.sh copies them with
+  dependency:copy-dependencies.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.udondan.iamFloyd</groupId>
+  <artifactId>transpile-test</artifactId>
+  <version>0.0.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <jacoco.version>0.8.16</jacoco.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jacoco</groupId>
+      <artifactId>org.jacoco.agent</artifactId>
+      <version>${jacoco.version}</version>
+      <classifier>runtime</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.jacoco</groupId>
+      <artifactId>org.jacoco.cli</artifactId>
+      <version>${jacoco.version}</version>
+      <classifier>nodeps</classifier>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.11.0</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>

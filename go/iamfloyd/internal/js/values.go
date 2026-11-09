@@ -2,7 +2,6 @@
 package js
 
 import (
-	"errors"
 	"math"
 	"reflect"
 	"strconv"
@@ -86,8 +85,6 @@ func toList[T any](values []T) []interface{} {
 // TypeOf returns the result of the typeof operator for a normalized value
 func TypeOf(value interface{}) string {
 	switch value.(type) {
-	case nil:
-		return "undefined"
 	case string:
 		return "string"
 	case float64, int:
@@ -116,31 +113,13 @@ func ToList(value interface{}) []interface{} {
 	return list
 }
 
-// ToString converts a value to a string like String() of JavaScript
+// ToString converts a boolean or a number to a string like String() of JavaScript
 func ToString(value interface{}) string {
-	switch v := Normalize(value).(type) {
-	case nil:
-		return "undefined"
-	case string:
-		return v
-	case bool:
+	value = Normalize(value)
+	if v, ok := value.(bool); ok {
 		return strconv.FormatBool(v)
-	case float64:
-		return Number(v)
-	case time.Time:
-		return ToISOString(v)
-	case []interface{}:
-		items := make([]string, len(v))
-		for i, item := range v {
-			if item != nil {
-				items[i] = ToString(item)
-			}
-		}
-		return strings.Join(items, ",")
-	case interface{ ToString() string }:
-		return v.ToString()
 	}
-	return "[object Object]"
+	return Number(value.(float64))
 }
 
 // Number formats a number like JavaScript
@@ -218,11 +197,6 @@ func Dates(value interface{}) interface{} {
 // ToISOString formats a date like toISOString() of JavaScript
 func ToISOString(value time.Time) string {
 	return value.UTC().Format("2006-01-02T15:04:05.000Z")
-}
-
-// Throw panics with an error, like the throw statement of JavaScript
-func Throw(message string) {
-	panic(errors.New(message))
 }
 
 // Ptr returns a pointer to a value

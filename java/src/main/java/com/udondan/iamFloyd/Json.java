@@ -1,7 +1,6 @@
 package com.udondan.iamFloyd;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
@@ -30,9 +29,6 @@ public final class Json {
     } else if (value instanceof String) {
       string(result, (String) value);
     } else if (value instanceof Boolean) {
-      result.append(value);
-    } else if (value instanceof Integer || value instanceof Long || value instanceof Short
-        || value instanceof Byte) {
       result.append(value);
     } else if (value instanceof Number) {
       double number = ((Number) value).doubleValue();
@@ -73,23 +69,16 @@ public final class Json {
   }
 
   private static Object toJson(Object value) {
-    Method method;
     try {
-      method = value.getClass().getMethod("toJSON");
-    } catch (NoSuchMethodException e) {
+      return value.getClass().getMethod("toJSON").invoke(value);
+    } catch (InvocationTargetException e) {
+      if (e.getCause() instanceof RuntimeException) {
+        throw (RuntimeException) e.getCause();
+      }
+      throw new IllegalStateException(e.getCause());
+    } catch (ReflectiveOperationException e) {
       throw new IllegalArgumentException(
           "Cannot serialize " + value.getClass().getName() + " to JSON", e);
-    }
-    try {
-      return method.invoke(value);
-    } catch (IllegalAccessException e) {
-      throw new IllegalStateException(e);
-    } catch (InvocationTargetException e) {
-      Throwable cause = e.getCause();
-      if (cause instanceof RuntimeException) {
-        throw (RuntimeException) cause;
-      }
-      throw new IllegalStateException(cause);
     }
   }
 

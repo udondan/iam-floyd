@@ -22,9 +22,6 @@ final class Js {
 
   /** The result of the typeof operator of JavaScript. */
   static String typeof(Object value) {
-    if (value == null) {
-      return "undefined";
-    }
     if (value instanceof Boolean) {
       return "boolean";
     }
@@ -37,34 +34,10 @@ final class Js {
     return "object";
   }
 
-  /** A value as JavaScript converts it to a string. */
+  /** A boolean or a number as JavaScript converts it to a string. */
   static String toString(Object value) {
-    if (value == null) {
-      return "undefined";
-    }
-    if (value instanceof String) {
-      return (String) value;
-    }
-    if (value instanceof Integer || value instanceof Long || value instanceof Short
-        || value instanceof Byte) {
-      return value.toString();
-    }
     if (value instanceof Number) {
       return number(((Number) value).doubleValue());
-    }
-    if (value instanceof List) {
-      StringBuilder result = new StringBuilder();
-      boolean first = true;
-      for (Object item : (List<?>) value) {
-        if (!first) {
-          result.append(',');
-        }
-        first = false;
-        if (item != null) {
-          result.append(toString(item));
-        }
-      }
-      return result.toString();
     }
     return value.toString();
   }
@@ -83,24 +56,14 @@ final class Js {
     if (value < 0) {
       return "-" + number(-value);
     }
-    // the shortest scientific representation that parses back to the same value
-    String scientific = null;
-    for (int precision = 0; precision < 17; precision++) {
-      String candidate = String.format(Locale.ROOT, "%." + precision + "e", value);
-      if (Double.parseDouble(candidate) == value) {
-        scientific = candidate;
-        break;
-      }
-    }
-    if (scientific == null) {
-      scientific = String.format(Locale.ROOT, "%.16e", value);
+    // the shortest scientific representation that parses back to the same value, which has no
+    // trailing zeros (at most 17 digits)
+    String scientific = String.format(Locale.ROOT, "%.0e", value);
+    for (int precision = 1; Double.parseDouble(scientific) != value; precision++) {
+      scientific = String.format(Locale.ROOT, "%." + precision + "e", value);
     }
     int e = scientific.indexOf('e');
     String digits = scientific.substring(0, e).replace(".", "");
-    // trailing zeros are not significant
-    while (digits.length() > 1 && digits.endsWith("0")) {
-      digits = digits.substring(0, digits.length() - 1);
-    }
     int k = digits.length();
     int n = Integer.parseInt(scientific.substring(e + 1)) + 1;
     StringBuilder result = new StringBuilder();
@@ -127,16 +90,16 @@ final class Js {
     return result.toString();
   }
 
-  /** String.prototype.substring: the indexes are clamped, and swapped if start is after end. */
+  /** String.prototype.substring: the indexes are clamped. */
   static String substring(String value, int start) {
     return substring(value, start, value.length());
   }
 
-  /** String.prototype.substring: the indexes are clamped, and swapped if start is after end. */
+  /** String.prototype.substring: the indexes are clamped. */
   static String substring(String value, int start, int end) {
     start = Math.max(0, Math.min(start, value.length()));
     end = Math.max(0, Math.min(end, value.length()));
-    return start <= end ? value.substring(start, end) : value.substring(end, start);
+    return value.substring(start, end);
   }
 
   /** Array.prototype.filter. */
@@ -187,19 +150,13 @@ final class Js {
         time.getNano() / 1000000);
   }
 
-  /** A Pattern like new RegExp(pattern, flags), with the flags i, m and s. */
+  /** A Pattern like new RegExp(pattern, flags), with the flag i. */
   static Pattern regExp(String pattern, String flags) {
     int result = 0;
     for (char flag : flags.toCharArray()) {
       switch (flag) {
         case 'i':
           result |= Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;
-          break;
-        case 'm':
-          result |= Pattern.MULTILINE;
-          break;
-        case 's':
-          result |= Pattern.DOTALL;
           break;
         default:
           throw new IllegalArgumentException("Unsupported regular expression flag: " + flag);

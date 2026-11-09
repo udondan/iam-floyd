@@ -12,32 +12,20 @@ from typing import Any
 
 def typeof(value: Any) -> str:
     """The result of the JavaScript `typeof` operator."""
-    if value is None:
-        return 'undefined'
     if isinstance(value, bool):
         return 'boolean'
     if isinstance(value, (int, float)):
         return 'number'
     if isinstance(value, str):
         return 'string'
-    if callable(value):
-        return 'function'
     return 'object'
 
 
-def to_string(value: Any) -> str:
-    """The result of JavaScript's `String(value)`."""
-    if value is None:
-        return 'undefined'
+def to_string(value: bool | float) -> str:
+    """The result of JavaScript's `String(value)` for a boolean or a number."""
     if isinstance(value, bool):
         return 'true' if value else 'false'
-    if isinstance(value, int):
-        return str(value)
-    if isinstance(value, float):
-        return _number_to_string(value)
-    if isinstance(value, (list, tuple)):
-        return ','.join('' if item is None else to_string(item) for item in value)
-    return str(value)
+    return _number_to_string(float(value))
 
 
 def _number_to_string(value: float) -> str:
@@ -76,12 +64,12 @@ def index_of(values: list[Any] | tuple[Any, ...], value: Any) -> int:
     return -1
 
 
-def sort(values: list[Any]) -> list[Any]:
+def sort(values: list[str]) -> list[str]:
     """`Array.sort()` without compare function.
 
-    Sorts in place by the UTF-16 code units of the string values.
+    Sorts the strings in place by their UTF-16 code units.
     """
-    values.sort(key=lambda item: to_string(item).encode('utf-16-be'))
+    values.sort(key=lambda item: item.encode('utf-16-be'))
     return values
 
 
@@ -91,10 +79,6 @@ def reg_exp(pattern: str, flags: str) -> re.Pattern[str]:
     for flag in flags:
         if flag == 'i':
             options |= re.IGNORECASE
-        elif flag == 'm':
-            options |= re.MULTILINE
-        elif flag == 's':
-            options |= re.DOTALL
         else:
             raise Exception(f'Unsupported regular expression flag: {flag}')
     return re.compile(pattern, options)
@@ -120,7 +104,7 @@ def stringify(value: Any) -> str:
     if isinstance(value, datetime.datetime):
         return stringify(to_iso_string(value))
     if isinstance(value, (list, tuple)):
-        return f'[{",".join("null" if item is None else stringify(item) for item in value)}]'
+        return f'[{",".join(stringify(item) for item in value)}]'
     if isinstance(value, dict):
         items = (
             f'{stringify(str(key))}:{stringify(item)}'
@@ -128,7 +112,4 @@ def stringify(value: Any) -> str:
             if item is not None
         )
         return f'{{{",".join(items)}}}'
-    to_json = getattr(value, 'to_json', None)
-    if callable(to_json):
-        return stringify(to_json())
-    return stringify(to_string(value))
+    raise TypeError(f'Cannot serialize {type(value).__name__} to JSON')

@@ -12,7 +12,7 @@ EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate coverage coverage-cdk test-unit cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
+.PHONY: build emit generate coverage coverage-cdk coverage-native test-unit cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -233,3 +233,9 @@ coverage-cdk: emit
 		npx ts-node test/converter/cases.ts CDK
 	@npx c8 report --config .c8rc.cdk.json
 	@npx ts-node bin/coverage-cdk-lcov.ts coverage/cdk/lcov.info
+
+# runs test-transpile against the generated sources with the coverage of the hand-written runtime of
+# each language, into coverage/native/
+coverage-native: emit
+	@echo -e "$(TARGET_COLOR)Running coverage of the native packages$(NO_COLOR)"
+	@COVERAGE=1 test/transpile/run.sh $(TRANSPILE_LANGUAGES)

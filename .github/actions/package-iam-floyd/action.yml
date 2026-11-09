@@ -2,7 +2,8 @@
 name: Package iam-floyd
 description: >-
   Transpiles the core of iam-floyd and builds its native package for one language into
-  dist/iam-floyd/<language>. Needs the checked out code.
+  dist/iam-floyd/<language>, or only sets up the language and installs the npm packages. Needs the
+  checked out code.
 
 inputs:
   language:
@@ -13,6 +14,10 @@ inputs:
       Version of Python, .NET or Go to set up next to the one that builds, for the tests of the
       package. Java builds with the newest LTS, the tests set up their version themselves.
     required: true
+  package:
+    description: Whether to build the package, otherwise only the setup
+    required: false
+    default: "true"
 
 runs:
   using: composite
@@ -55,8 +60,14 @@ runs:
         go-version: ${{ inputs.version }}
         cache: false
 
+    - name: Install
+      if: inputs.package != 'true'
+      shell: bash
+      run: make install
+
     # hatchling needs a newer Python than the package
     - name: Build
+      if: inputs.package == 'true'
       shell: bash
       run: make install package-native LANGUAGES="$LANGUAGE"
       env:

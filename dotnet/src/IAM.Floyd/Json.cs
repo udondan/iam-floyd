@@ -38,12 +38,9 @@ public static class Json
             case bool flag:
                 result.Append(flag ? "true" : "false");
                 break;
-            case double or float or decimal:
+            case not null when Js.IsNumber(value):
                 var number = Convert.ToDouble(value, CultureInfo.InvariantCulture);
                 result.Append(double.IsNaN(number) || double.IsInfinity(number) ? "null" : Js.Number(number));
-                break;
-            case IFormattable formattable when Js.IsNumber(value):
-                result.Append(formattable.ToString(null, CultureInfo.InvariantCulture));
                 break;
             case DateTime date:
                 WriteString(result, Js.ToISOString(date));
@@ -86,20 +83,9 @@ public static class Json
 
     private static object ToJson(object value)
     {
-        var method = value.GetType().GetMethod("ToJSON", Type.EmptyTypes);
-        if (method == null)
-        {
-            throw new ArgumentException("Cannot serialize " + value.GetType().FullName + " to JSON");
-        }
-        try
-        {
-            return method.Invoke(value, null);
-        }
-        catch (TargetInvocationException e) when (e.InnerException != null)
-        {
-            System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            throw;
-        }
+        var method = value.GetType().GetMethod("ToJSON", Type.EmptyTypes)
+            ?? throw new ArgumentException("Cannot serialize " + value.GetType().FullName + " to JSON");
+        return method.Invoke(value, BindingFlags.DoNotWrapExceptions, null, null, null);
     }
 
     private static void WriteString(StringBuilder result, string value)

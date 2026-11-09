@@ -4,6 +4,7 @@
 //   Test scenarios <scenarios.json>             runs the scenarios of test/transpile/
 //   Test examples <examples directory>          runs the examples of the docs
 //   Test managed-policies <managed-policies.json>  compares the AWS managed policies
+//   Test runtime                                tests the cases of the runtime the scenarios cannot reach
 
 using System;
 using System.Collections;
@@ -27,6 +28,9 @@ switch (args[0])
         break;
     case "managed-policies":
         Environment.Exit(ManagedPolicies.Run(args[1]));
+        break;
+    case "runtime":
+        Environment.Exit(Runtime.Run());
         break;
     default:
         throw new ArgumentException($"Unknown command {args[0]}");

@@ -60,10 +60,6 @@ internal static class Js
     /// </summary>
     public static string Typeof(object value)
     {
-        if (value == null)
-        {
-            return "undefined";
-        }
         if (value is bool)
         {
             return "boolean";
@@ -80,44 +76,15 @@ internal static class Js
     }
 
     /// <summary>
-    /// A value as JavaScript converts it to a string.
+    /// A boolean or a number as JavaScript converts it to a string.
     /// </summary>
     public static string ToString(object value)
     {
-        switch (value)
+        if (value is bool flag)
         {
-            case null:
-                return "undefined";
-            case string text:
-                return text;
-            case bool flag:
-                return flag ? "true" : "false";
-            case double number:
-                return Number(number);
-            case float number:
-                return Number(number);
-            case decimal number:
-                return Number((double)number);
-            case IFormattable formattable when IsNumber(value):
-                return formattable.ToString(null, CultureInfo.InvariantCulture);
-            case IEnumerable items when !(value is IDictionary):
-                var result = new StringBuilder();
-                var first = true;
-                foreach (var item in items)
-                {
-                    if (!first)
-                    {
-                        result.Append(',');
-                    }
-                    first = false;
-                    if (item != null)
-                    {
-                        result.Append(ToString(item));
-                    }
-                }
-                return result.ToString();
+            return flag ? "true" : "false";
         }
-        return value.ToString();
+        return Number(Convert.ToDouble(value, CultureInfo.InvariantCulture));
     }
 
     /// <summary>
@@ -188,7 +155,7 @@ internal static class Js
     }
 
     /// <summary>
-    /// String.prototype.substring: the indexes are clamped, and swapped if start is after end.
+    /// String.prototype.substring: the indexes are clamped.
     /// </summary>
     public static string Substring(string value, int start)
     {
@@ -196,15 +163,13 @@ internal static class Js
     }
 
     /// <summary>
-    /// String.prototype.substring: the indexes are clamped, and swapped if start is after end.
+    /// String.prototype.substring: the indexes are clamped.
     /// </summary>
     public static string Substring(string value, int start, int end)
     {
         start = Math.Max(0, Math.Min(start, value.Length));
         end = Math.Max(0, Math.Min(end, value.Length));
-        return start <= end
-            ? value.Substring(start, end - start)
-            : value.Substring(end, start - end);
+        return value.Substring(start, end - start);
     }
 
     /// <summary>
@@ -258,7 +223,7 @@ internal static class Js
     }
 
     /// <summary>
-    /// A regular expression like new RegExp(pattern, flags), with the flags i, m and s.
+    /// A regular expression like new RegExp(pattern, flags), with the flag i.
     /// </summary>
     public static Regex RegExp(string pattern, string flags)
     {
@@ -269,12 +234,6 @@ internal static class Js
             {
                 case 'i':
                     options |= RegexOptions.IgnoreCase | RegexOptions.CultureInvariant;
-                    break;
-                case 'm':
-                    options |= RegexOptions.Multiline;
-                    break;
-                case 's':
-                    options |= RegexOptions.Singleline;
                     break;
                 default:
                     throw new ArgumentException("Unsupported regular expression flag: " + flag);
