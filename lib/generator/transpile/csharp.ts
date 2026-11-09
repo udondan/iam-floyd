@@ -29,7 +29,15 @@ import {
   VariableStatement,
 } from 'ts-morph';
 
-import { arrowFunction, fail, isServiceFile, kindOf, resolve } from './index';
+import {
+  arrowFunction,
+  fail,
+  isServiceFile,
+  kindOf,
+  ownConstructor,
+  resolve,
+  tagComment,
+} from './index';
 import { snakeCase } from './python';
 
 /**
@@ -754,7 +762,7 @@ export class CSharpTranspiler {
     const description = doc.getDescription().trim();
     const tags: string[] = [];
     for (const tag of doc.getTags()) {
-      const comment = xmlDocText((tag.getCommentText() ?? '').trim());
+      const comment = xmlDocText(tagComment(tag));
       if (Node.isJSDocParameterTag(tag)) {
         const name = csharpLocalName(tag.getName());
         if (params === undefined || params.includes(name)) {
@@ -763,7 +771,7 @@ export class CSharpTranspiler {
       } else if (tag.getTagName() == 'returns') {
         tags.push(`<returns>${comment}</returns>`);
       } else if (tag.getTagName() == 'see') {
-        const url = (tag.getCommentText() ?? '').trim().replace(/"/g, '%22');
+        const url = tagComment(tag).replace(/"/g, '%22');
         tags.push(`<seealso href="${url}">${escapeXml(url)}</seealso>`);
       } else if (tag.getTagName() == 'deprecated') {
         tags.push(`<remarks>Deprecated: ${comment}</remarks>`);
@@ -875,12 +883,9 @@ export class CSharpTranspiler {
         separate();
         this.property(property);
       }
-      const constructors = declaration.getConstructors();
-      if (constructors.length > 1) {
-        fail(constructors[1], 'Constructor overloads are not supported');
-      }
-      if (constructors.length) {
-        this.callableDeclaration(constructors[0], separate);
+      const constructor = ownConstructor(declaration);
+      if (constructor) {
+        this.callableDeclaration(constructor, separate);
       } else if (base) {
         this.inheritedConstructors(base, separate);
       }

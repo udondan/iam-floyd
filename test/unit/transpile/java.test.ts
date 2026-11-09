@@ -217,6 +217,12 @@ export function f(a: All): All { return a; }`,
     );
   });
 
+  it('fails on parameter properties', () => {
+    expect(
+      error('export class A {\n  constructor(public a: string) {}\n}'),
+    ).toBe('Parameter properties are not supported: public a: string');
+  });
+
   it('fails on two members with the same Java name', () => {
     expect(
       error('export class A {\n  if(): void {}\n  doIf(): void {}\n}'),
@@ -310,15 +316,16 @@ describe('JavaTranspiler enums and docs', () => {
   it('writes see and returns tags', () => {
     const java = transpile(`export class A {
   /**
-   * @see example.com/?a="b"
+   * @see https://example.com/?a="b"
    * @returns
    */
   m(): number {
     return 1;
   }
 }`);
-    // the comment text of ts-morph starts after the host
-    expect(java).toContain(' * @see <a href="/?a=%22b%22">/?a=%22b%22</a>');
+    expect(java).toContain(
+      ' * @see <a href="https://example.com/?a=%22b%22">https://example.com/?a=%22b%22</a>',
+    );
     expect(java).toContain(' * @return\n');
   });
 

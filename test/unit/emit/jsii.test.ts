@@ -383,8 +383,9 @@ class Base {
 
 /** The statement. */
 export class PolicyStatement extends Base {
-  constructor(public sid?: string) {
+  constructor(sid?: string) {
     super();
+    this.label = sid;
   }
   public shared(): number {
     return 2;
@@ -613,7 +614,7 @@ describe('emitJsii with a standalone fixture', () => {
       docs: {
         summary: 'Does things.',
         deprecated: '',
-        see: 'other docs',
+        see: 'the other docs',
         example: "method('x')",
         default: 'nothing',
         returns: 'maybe a string',
@@ -649,7 +650,6 @@ describe('emitJsii with a standalone fixture', () => {
     expect(method(statement, 'provider').returns).toEqual({
       type: { fqn: 'iam-floyd.Statement.Svc' },
     });
-    // parameter properties like `sid` are not collected
     expect(statement.properties?.map((p) => p.name)).toEqual(['label']);
 
     const all = assembly.types['iam-floyd.Statement.All'];
@@ -768,6 +768,16 @@ describe('emitJsii with a standalone fixture', () => {
     });
     expect(() => emit([], 'standalone')).toThrow(
       /^Not an external type: .*\/lib\/shared\/local\.ts$/,
+    );
+  });
+
+  it('fails on parameter properties', () => {
+    fixture({
+      'lib/index.ts': `export { PolicyStatement } from './shared/policy-statement/10-final';\n`,
+      'lib/shared/policy-statement/10-final.ts': `export class PolicyStatement {\n  constructor(public sid?: string) {}\n}\n`,
+    });
+    expect(() => emit([], 'standalone')).toThrow(
+      'Parameter properties are not supported: PolicyStatement',
     );
   });
 });

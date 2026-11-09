@@ -127,7 +127,7 @@ import java.util.Map;
    * Adds a resource of type gadget to the statement
    */
   public Thing onGadget() {
-    return on("arn:aws:thing:::gadget/*");
+    return on("arn:aws:thing:::gadget/\${Unknown}");
   }`);
   });
 

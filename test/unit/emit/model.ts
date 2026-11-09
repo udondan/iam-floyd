@@ -76,12 +76,12 @@ export const resources: Record<string, ResourceModel> = {
       id: 'widgetId',
     },
   },
-  // without placeholders
+  // only a placeholder without parameter
   gadget: {
     name: 'gadget',
     methodName: 'onGadget',
     url: '',
-    arn: 'arn:aws:thing:::gadget/*',
+    arn: 'arn:aws:thing:::gadget/${Unknown}',
     placeholders: [],
     conditionMethods: [],
   },

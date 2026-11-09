@@ -211,12 +211,12 @@ describe('docs', () => {
  *
  * @param x
  * @param y the y
- * @see other
+ * @see https://example.com/a
  * @deprecated
  */
 export function f(x: string, y: string): void {}`);
     expect(out).toContain('// y: the y');
-    expect(out).toContain('// See ');
+    expect(out).toContain('// See https://example.com/a');
     expect(out).toContain('// Deprecated:');
     expect(out).not.toContain('// x:');
   });
@@ -300,6 +300,13 @@ describe('classes', () => {
   constructor(x: string) {}
 }`,
       'Constructor overloads are not supported',
+    );
+  });
+
+  it('fails on parameter properties', () => {
+    fails(
+      'class A {\n  constructor(private x: string) {}\n}',
+      'Parameter properties are not supported',
     );
   });
 

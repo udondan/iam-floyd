@@ -95,10 +95,10 @@ describe('emitPython', () => {
         """
         return self.on(f'{widget_name}:widget/\${{Unknown}}')
 `);
-    // without placeholders a plain string
+    // with nothing to substitute a plain string, whose braces are not doubled
     expect(code).toContain(`    def on_gadget(self) -> Self:
         """Adds a resource of type gadget to the statement"""
-        return self.on('arn:aws:thing:::gadget/*')
+        return self.on('arn:aws:thing:::gadget/\${Unknown}')
 `);
   });
 

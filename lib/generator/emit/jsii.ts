@@ -20,6 +20,7 @@ import { gunzipSync, gzipSync } from 'zlib';
 import { cdkMinVersion } from '../cdk-refs';
 import { ServiceModel } from '../model';
 import { PackageJson } from '../package-json';
+import { tagComment } from '../transpile';
 
 /**
  * Subset of the jsii assembly spec (`@jsii/spec`, schema `jsii/0.10.0`) we emit
@@ -656,6 +657,14 @@ class SharedExtractor {
       if (!constructorSource && current.getConstructors().length) {
         constructorSource = current;
       }
+      // the transpilers don't support them either
+      for (const constructor of current.getConstructors()) {
+        if (constructor.getParameters().some((p) => p.isParameterProperty())) {
+          throw new Error(
+            `Parameter properties are not supported: ${current.getName()}`,
+          );
+        }
+      }
       for (const method of current.getMethods()) {
         if (!this.isPublic(method)) continue;
         if (!methods.has(method.getName()))
@@ -947,7 +956,7 @@ class SharedExtractor {
     const jsDoc = jsDocs[jsDocs.length - 1];
     const docs = splitDocs(jsDoc.getDescription());
     for (const tag of jsDoc.getTags()) {
-      const text = (tag.getCommentText() ?? '').trim();
+      const text = tagComment(tag);
       switch (tag.getTagName()) {
         case 'returns':
         case 'return':

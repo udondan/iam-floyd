@@ -124,12 +124,16 @@ export class Thing extends PolicyStatement {
    * @param widgetName - Identifier for the widgetName.
    */
   public onWidget(widgetName: string) {`);
+    // a placeholder without parameter is literal text in the template literal
+    expect(code).toContain(
+      'return this.on(`${ widgetName }:widget/\\${Unknown}`);',
+    );
     expect(code).toContain(`  /**
    * Adds a resource of type gadget to the statement
    *
    */
   public onGadget() {
-    return this.on(\`arn:aws:thing:::gadget/*\`);
+    return this.on(\`arn:aws:thing:::gadget/\\\${Unknown}\`);
   }`);
   });
 

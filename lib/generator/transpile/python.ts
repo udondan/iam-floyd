@@ -32,7 +32,9 @@ import {
   isPure,
   isServiceFile,
   kindOf,
+  ownConstructor,
   resolve,
+  tagComment,
 } from './index';
 
 /**
@@ -345,7 +347,7 @@ export class PythonTranspiler {
     }
     const tags: string[] = [];
     for (const tag of doc.getTags()) {
-      const comment = (tag.getCommentText() ?? '').trim();
+      const comment = tagComment(tag);
       if (Node.isJSDocParameterTag(tag)) {
         tags.push(`:param ${pythonName(tag.getName())}: ${comment}`);
       } else if (tag.getTagName() == 'returns') {
@@ -482,11 +484,7 @@ export class PythonTranspiler {
     declaration: ClassDeclaration,
     fields: PropertyDeclaration[],
   ) {
-    const constructors = declaration.getConstructors();
-    if (constructors.length > 1) {
-      fail(constructors[1], 'Constructor overloads are not supported');
-    }
-    const ctor: ConstructorDeclaration | undefined = constructors[0];
+    const ctor = ownConstructor(declaration);
     const base = declaration.getBaseClass();
 
     // without own constructor, the constructor of the base class is inherited

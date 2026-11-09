@@ -112,7 +112,7 @@ func (this *Thing) OnWidget(widgetName *string) *Thing {
 }`);
     expect(code).toContain(`// Adds a resource of type gadget to the statement
 func (this *Thing) OnGadget() *Thing {
-\treturn this.On(js.Ptr("arn:aws:thing:::gadget/*"))
+\treturn this.On(js.Ptr("arn:aws:thing:::gadget/\${Unknown}"))
 }`);
   });
 

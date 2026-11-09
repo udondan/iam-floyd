@@ -54,8 +54,11 @@ function arnString(arn: string, expressions: Map<string, string>): string {
     code += `${literal(arn.slice(last, match.index))}{${expression}}`;
     last = match.index + match[0].length;
   }
-  code += literal(arn.slice(last));
-  return code == literal(arn) ? `'${code}'` : `f'${code}'`;
+  if (last == 0) {
+    // nothing to substitute: a plain string, whose braces are not doubled
+    return pyString(arn);
+  }
+  return `f'${code}${literal(arn.slice(last))}'`;
 }
 
 class Writer {

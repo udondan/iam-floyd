@@ -218,6 +218,7 @@ export {};`),
  * @param fooBar the value
  * @returns nothing
  * @deprecated
+ * @see https://example.com/a
  * @example other
  */
 export function f(fooBar: string): void {}
@@ -229,6 +230,7 @@ export function g(): void {}`),
     :param foo_bar: the value
     :returns: nothing
     @deprecated
+    @see https://example.com/a
     @example other
     """
 
@@ -297,6 +299,10 @@ describe('classes', () => {
     fails(
       'export class A { constructor() {}\nconstructor() {} }',
       'Constructor overloads are not supported',
+    );
+    fails(
+      'export class A { constructor(public x: string) {} }',
+      'Parameter properties are not supported',
     );
     fails(
       "export class A { private x: string;\nconstructor() { this.x = 'a'; } }",

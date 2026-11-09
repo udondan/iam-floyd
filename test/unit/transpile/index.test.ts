@@ -15,6 +15,7 @@ import {
   managedPoliciesSourceFiles,
   resolve,
   servicePrincipalsSourceFiles,
+  tagComment,
   TranspileError,
 } from '../../../lib/generator/transpile/index';
 import { reusedSourceFiles } from '../helpers';
@@ -127,6 +128,25 @@ export const x = [A, S3];`,
 });
 
 describe('helpers', () => {
+  it('reads the text of the tags, with the first word of see', () => {
+    const [file] = reusedSourceFiles({
+      'lib/shared/index.ts': `/**
+ * @param x  the x
+ *   and more
+ * @see https://example.com/a
+ *   and more
+ * @deprecated
+ */
+export function f(x: string): void {}`,
+    });
+    const tags = file.getFunctionOrThrow('f').getJsDocs()[0].getTags();
+    expect(tags.map((tag) => tagComment(tag))).toEqual([
+      'the x\nand more',
+      'https://example.com/a\nand more',
+      '',
+    ]);
+  });
+
   it('fails with the location and the first line of the node', () => {
     const { a } = initializers('\nconst a = [\n  1,\n];');
     expect(() => fail(a, 'Broken')).toThrow(

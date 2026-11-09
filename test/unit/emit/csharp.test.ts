@@ -122,7 +122,7 @@ public class Thing : PolicyStatement<Thing>
     /// </summary>
     public Thing OnGadget()
     {
-        return On("arn:aws:thing:::gadget/*");
+        return On("arn:aws:thing:::gadget/\${Unknown}");
     }`);
   });
 

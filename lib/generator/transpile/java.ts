@@ -36,7 +36,9 @@ import {
   isPure,
   isServiceFile,
   kindOf,
+  ownConstructor,
   resolve,
+  tagComment,
 } from './index';
 import { snakeCase } from './python';
 
@@ -643,7 +645,7 @@ export class JavaTranspiler {
     const description = doc.getDescription().trim();
     const tags: string[] = [];
     for (const tag of doc.getTags()) {
-      const comment = javadocText((tag.getCommentText() ?? '').trim());
+      const comment = javadocText(tagComment(tag));
       if (Node.isJSDocParameterTag(tag)) {
         const name = javaLocalName(tag.getName());
         if (params === undefined || params.includes(name)) {
@@ -652,8 +654,8 @@ export class JavaTranspiler {
       } else if (tag.getTagName() == 'returns') {
         tags.push(`@return ${comment}`.trim());
       } else if (tag.getTagName() == 'see') {
-        const url = (tag.getCommentText() ?? '').trim().replace(/"/g, '%22');
-        tags.push(`@see <a href="${url}">${javadocText(url)}</a>`);
+        const url = tagComment(tag).replace(/"/g, '%22');
+        tags.push(`@see <a href="${url}">${escapeJavadoc(url)}</a>`);
       } else if (tag.getTagName() == 'deprecated') {
         tags.push(`@deprecated ${comment}`.trim());
       } else {
@@ -726,12 +728,9 @@ export class JavaTranspiler {
         this.emit('');
         this.property(property);
       }
-      const constructors = declaration.getConstructors();
-      if (constructors.length > 1) {
-        fail(constructors[1], 'Constructor overloads are not supported');
-      }
-      if (constructors.length) {
-        this.callableDeclaration(constructors[0]);
+      const constructor = ownConstructor(declaration);
+      if (constructor) {
+        this.callableDeclaration(constructor);
       } else if (base) {
         this.inheritedConstructors(base);
       }

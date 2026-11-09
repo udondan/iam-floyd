@@ -242,12 +242,19 @@ const b = 1;`);
    * @deprecated use g
    */
   public f(): void {}
+  /**
+   * @see https://example.com/a
+   */
+  public g(): void {}
 }`);
       expect(result).toContain('/// <returns></returns>');
       expect(result).toContain(
         '/// <seealso href="%22x%22 <y>">%22x%22 &lt;y&gt;</seealso>',
       );
       expect(result).toContain('/// <remarks>Deprecated: use g</remarks>');
+      expect(result).toContain(
+        '/// <seealso href="https://example.com/a">https://example.com/a</seealso>',
+      );
     });
 
     it('fails on unsupported tags', () => {
@@ -361,6 +368,13 @@ export class B extends A {
   constructor(a: string) {}
 }`,
         'Constructor overloads are not supported',
+      );
+    });
+
+    it('fails on parameter properties', () => {
+      fails(
+        'export class A {\n  constructor(readonly a: string) {}\n}',
+        'Parameter properties are not supported',
       );
     });
 
