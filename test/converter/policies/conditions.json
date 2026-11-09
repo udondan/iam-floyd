@@ -20,6 +20,9 @@
         "ForAnyValue:StringLike": {
           "aws:TagKeys": ["team-*"]
         },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": []
+        },
         "NumericLessThanEquals": {
           "ec2:VolumeSize": 100
         },

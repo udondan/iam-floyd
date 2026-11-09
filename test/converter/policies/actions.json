@@ -35,6 +35,11 @@
       "Effect": "Deny",
       "NotAction": ["iam:*", "organizations:*", "unknown-service:*"],
       "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "NotAction": ["*", "s3:GetObject"],
+      "Resource": "*"
     }
   ]
 }

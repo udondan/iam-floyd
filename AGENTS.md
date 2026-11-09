@@ -124,6 +124,17 @@ make test-jsii           # test the packages of `make package-jsii` against Type
 make test-transpile      # transpile, compare the scenarios of test/transpile/ with TypeScript and run the examples; PYTHON_WHEEL=<wheel>, JAVA_JAR=<jar>, DOTNET_PACKAGES=<dir of the nupkg> and GO_MODULE=<zip> test the built packages
 ```
 
+### Coverage
+
+```bash
+make coverage            # test-typescript, the scenarios of test/transpile/ and the policy converter with coverage (c8, .c8rc.json) into coverage/lcov.info
+make coverage-cdk        # after `make cdk`: test-typescript-cdk, test/cdk-variant/ and the policy converter with coverage (.c8rc.cdk.json) into coverage/cdk/lcov.info
+```
+
+Counted are `lib/shared`, `lib/collection` and `docs/source/_static/js/converter.js`, not `lib/generated` (the service classes all follow one pattern, and `test/transpile/services.ts` calls every method of every service). The `*.CDK.ts` and `*-CDK.ts` files are counted in the CDK variant only: `bin/coverage-cdk-lcov.ts` writes the coverage of a swapped file to its `*.CDK.ts` and maps the lines of all files to those of the committed files (in HEAD). `IAM_FLOYD_SKIP_DEPLOY=1` skips the deployment of the policies of the examples, which needs AWS credentials.
+
+In CI, `test-iam-floyd` and `test-cdk-iam-floyd` upload the reports to Codecov (OIDC, flags `typescript` and `cdk`), also on push to main, without the AWS tests, so that pull requests are compared to main. `codecov.yml` waits for both uploads and requires 100% of the changed lines; the job `coverage` waits for the checks of Codecov and is part of `required`. Close gaps preferably with scenarios in `test/transpile/scenarios.json`, which test all languages, and remove dead code rather than ignoring it.
+
 **Run a single example test manually:**
 
 ```bash
@@ -325,7 +336,7 @@ Follow conventional commits:
 - `index-managed-policies.yml` - Weekly on Sunday: updates managed policies and service principals, opens a `feat:` PR with `automerge` label
 - `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `publish.yml` with the tag
 - `automerge-schedule.yml` - Weekly on Monday: merges the release PR
-- `test.yml` - On PR: `make install lint` (job `lint`), `make install test-typescript` + `make lint-cdk` + CDK deploy test + `make build test-typescript-cdk` with the minimum aws-cdk-lib of `lib/generated/cdk-refs.json` + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java, .NET and Go packages. The tests start only after `lint` passed. The job `required` is the check the ruleset requires
+- `test.yml` - On PR: `make install lint` (job `lint`), `make install coverage` + `make lint-cdk` + `make coverage-cdk` + CDK deploy test + `make build test-typescript-cdk` with the minimum aws-cdk-lib of `lib/generated/cdk-refs.json` + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java, .NET and Go packages. The tests start only after `lint` passed. The coverage goes to Codecov, the job `coverage` waits for its checks. The job `required` is the check the ruleset requires. On push to main: `lint`, `coverage` and `coverage-cdk` without AWS, for the coverage of main
 - `publish.yml` - Started by `release-please.yml` with a tag: builds the packages from the tag without testing them again, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release. Trusted publishing on npm, PyPI and NuGet is configured for this file
 - `.github/actions/package-iam-floyd`, `.github/actions/package-cdk-iam-floyd` - The setup and build steps of the native and the jsii packages, shared by `test.yml` and `publish.yml`. They are referenced with `$/` (from the commit of the workflow, not the checked-out tag), which actionlint doesn't support yet (`.github/actionlint.yaml` ignores the error)
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass
