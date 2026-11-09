@@ -133,9 +133,15 @@ match.plugins = ["osv-scanner"]
 match.file_patterns = ["go/iamfloyd/go.mod", "examples/go.mod", "test/jsii/go.mod", "test/transpile/go/go.mod"]
 set.ignored = true
 
+# The AWS managed policies are public documents of AWS, copied by the indexer. Scanning their
+# 1600 files takes gitleaks longer than the whole rest of the check.
+[[exclude]]
+plugins = ["gitleaks"]
+file_patterns = ["docs/source/_static/managed-policies/**"]
+
 # Names of IAM actions and condition keys that look like keys.
 [[triage]]
 match.plugins = ["gitleaks"]
 match.rules = ["gitleaks:generic-api-key"]
-match.file_patterns = ["CHANGELOG.md", "docs/source/_static/managed-policies/index.json"]
+match.file_patterns = ["CHANGELOG.md"]
 set.ignored = true
