@@ -10,8 +10,8 @@ with open(f'{dir_path}/example.rst.tmpl') as f:
     lines = f.readlines()
 
 
-def make_example(dir):
-    path = f'../../examples/{dir}/{dir}'
+def make_example(name):
+    path = f'../../examples/{name}/{name}'
     rst = ViewList()
     for line_no, line in enumerate(lines, start=1):
         rst.append(line.format(path).rstrip(), 'example.rst', line_no)
@@ -22,8 +22,8 @@ class ExampleDirective(SphinxDirective):
     has_content = True
 
     def run(self):
-        dir = self.content[0]
-        rst = make_example(dir)
+        name = self.content[0]
+        rst = make_example(name)
         node = nodes.section()
         node.document = self.state.document
         nested_parse_with_titles(self.state, rst, node)

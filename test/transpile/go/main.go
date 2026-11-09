@@ -320,45 +320,62 @@ func decode(raw json.RawMessage) any {
 	case bool:
 		return iamfloyd.Bool(v)
 	case []any:
-		var items []json.RawMessage
-		if err := json.Unmarshal(raw, &items); err != nil {
+		return decodeList(raw)
+	case map[string]any:
+		return decodeObject(v, raw)
+	}
+	panic("Unknown argument " + string(raw))
+}
+
+// decodeList decodes a list: a non-empty list of strings or numbers becomes a pointer to a list
+// of pointers, like the parameters of the public API
+func decodeList(raw json.RawMessage) any {
+	var items []json.RawMessage
+	if err := json.Unmarshal(raw, &items); err != nil {
+		panic(err)
+	}
+	decoded := []any{}
+	for _, item := range items {
+		decoded = append(decoded, decode(item))
+	}
+	if strs, ok := pointers[string](decoded); ok {
+		return &strs
+	}
+	if numbers, ok := pointers[float64](decoded); ok {
+		return &numbers
+	}
+	return decoded
+}
+
+// pointers returns the values as list of pointers to T, if all of them are such pointers and
+// there is at least one
+func pointers[T any](values []any) ([]*T, bool) {
+	result := []*T{}
+	for _, value := range values {
+		pointer, ok := value.(*T)
+		if !ok {
+			return nil, false
+		}
+		result = append(result, pointer)
+	}
+	return result, len(result) > 0
+}
+
+// decodeObject decodes {"operator": [methods]} and {"date": "ISO 8601"}
+func decodeObject(v map[string]any, raw json.RawMessage) any {
+	if methods, ok := v["operator"].([]any); ok {
+		operator := iamfloyd.NewOperator()
+		for _, method := range methods {
+			operator = invoke(operator, method.(string), nil).(*iamfloyd.Operator)
+		}
+		return operator
+	}
+	if date, ok := v["date"].(string); ok {
+		parsed, err := time.Parse(time.RFC3339Nano, date)
+		if err != nil {
 			panic(err)
 		}
-		decoded := []any{}
-		strs := []*string{}
-		numbers := []*float64{}
-		for _, item := range items {
-			d := decode(item)
-			decoded = append(decoded, d)
-			if s, ok := d.(*string); ok {
-				strs = append(strs, s)
-			}
-			if n, ok := d.(*float64); ok {
-				numbers = append(numbers, n)
-			}
-		}
-		if len(items) > 0 && len(strs) == len(items) {
-			return &strs
-		}
-		if len(items) > 0 && len(numbers) == len(items) {
-			return &numbers
-		}
-		return decoded
-	case map[string]any:
-		if methods, ok := v["operator"].([]any); ok {
-			operator := iamfloyd.NewOperator()
-			for _, method := range methods {
-				operator = invoke(operator, method.(string), nil).(*iamfloyd.Operator)
-			}
-			return operator
-		}
-		if date, ok := v["date"].(string); ok {
-			parsed, err := time.Parse(time.RFC3339Nano, date)
-			if err != nil {
-				panic(err)
-			}
-			return &parsed
-		}
+		return &parsed
 	}
 	panic("Unknown argument " + string(raw))
 }

@@ -65,7 +65,7 @@ check('reg_exp i', _js.test(_js.reg_exp('^a$', 'i'), 'A'), True)
 check('reg_exp', _js.test(_js.reg_exp('^a$', ''), 'A'), False)
 check(
     'reg_exp unsupported flag',
-    check_raises('reg_exp g', Exception, lambda: _js.reg_exp('a', 'g')),
+    check_raises('reg_exp g', ValueError, lambda: _js.reg_exp('a', 'g')),
     'Unsupported regular expression flag: g',
 )
 

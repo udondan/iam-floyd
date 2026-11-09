@@ -1,6 +1,7 @@
 package com.udondan.iamFloyd;
 
 import com.udondan.iamFloyd.statement.S3;
+import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,8 +32,8 @@ public final class RuntimeTest {
   /** An object whose toJSON throws a checked exception. */
   public static final class Checked {
     /** Throws. */
-    public Object toJSON() throws Exception {
-      throw new Exception("checked");
+    public Object toJSON() throws IOException {
+      throw new IOException("checked");
     }
   }
 
@@ -99,7 +100,7 @@ public final class RuntimeTest {
     check(
         "stringify checked",
         error("stringify checked", () -> Json.stringify(new Checked())),
-        "IllegalStateException: java.lang.Exception: checked");
+        "IllegalStateException: java.io.IOException: checked");
 
     if (!FAILURES.isEmpty()) {
       FAILURES.forEach(System.out::println);
