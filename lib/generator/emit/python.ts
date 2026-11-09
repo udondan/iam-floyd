@@ -7,11 +7,21 @@ import {
   pythonName,
   pythonServiceModule,
 } from '../transpile/python';
+import {
+  actionDocs,
+  addParagraph,
+  arnParts,
+  assertUniqueMethod,
+  conditionDocs,
+  generatedHeader,
+  modelDir,
+  placeholderDefaultDocs,
+  readModels,
+  resourceDocs,
+  Writer,
+} from './shared';
 
-const modelDir = 'lib/generated/model';
 const outDir = 'python/iam_floyd/statement';
-const header = (source: string) =>
-  `# Generated from ${source} by bin/transpile.ts. Do not edit.`;
 
 /**
  * Python name of a method reference in the docs, e.g. `.ifAwsRequestTag()`
@@ -21,89 +31,70 @@ function docReference(methodName: string): string {
 }
 
 /**
- * Python type of a single condition value
+ * Python types of the single condition values
  */
+const valueTypes: Record<string, string | undefined> = {
+  string: 'str',
+  number: 'float',
+  boolean: 'bool',
+  Date: '_datetime.datetime',
+};
+
 function valueType(type: string): string {
-  switch (type) {
-    case 'string':
-      return 'str';
-    case 'number':
-      return 'float';
-    case 'boolean':
-      return 'bool';
-    case 'Date':
-      return '_datetime.datetime';
-    default:
-      throw new Error(`Unexpected condition value type: ${type}`);
+  const pyType = valueTypes[type];
+  if (!pyType) {
+    throw new Error(`Unexpected condition value type: ${type}`);
   }
+  return pyType;
 }
 
 /**
- * The content of an f-string for an ARN, where the placeholders are the given expressions
+ * A literal part of an f-string, with doubled braces
+ */
+function fStringLiteral(text: string): string {
+  return pyString(text).slice(1, -1).replace(/\{/g, '{{').replace(/\}/g, '}}');
+}
+
+/**
+ * The string of an ARN, where the placeholders are the given expressions
  */
 function arnString(arn: string, expressions: Map<string, string>): string {
-  const literal = (text: string) =>
-    pyString(text).slice(1, -1).replace(/\{/g, '{{').replace(/\}/g, '}}');
-  let code = '';
-  let last = 0;
-  for (const match of arn.matchAll(/\$\{([^}]+)\}/g)) {
-    const expression = expressions.get(match[1]);
-    if (expression === undefined) {
-      continue;
-    }
-    code += `${literal(arn.slice(last, match.index))}{${expression}}`;
-    last = match.index + match[0].length;
-  }
-  if (last == 0) {
+  const parts = arnParts(arn, expressions);
+  if (parts.length == 1) {
     // nothing to substitute: a plain string, whose braces are not doubled
     return pyString(arn);
   }
-  return `f'${code}${literal(arn.slice(last))}'`;
+  const code = parts
+    .map(({ literal, expression }) =>
+      expression === undefined
+        ? fStringLiteral(literal)
+        : `${fStringLiteral(literal)}{${expression}}`,
+    )
+    .join('');
+  return `f'${code}'`;
 }
 
-class Writer {
-  private readonly lines: string[] = [];
-  private indentation = '';
-
-  public line(text = '') {
-    this.lines.push(text.length ? this.indentation + text : '');
-  }
-
-  public indented(fn: () => void) {
-    const previous = this.indentation;
-    this.indentation += '    ';
-    fn();
-    this.indentation = previous;
-  }
-
-  public toString(): string {
-    return `${this.lines.join('\n')}\n`;
-  }
-}
+type MethodWriter = (
+  name: string,
+  parameters: string[],
+  docs: string[],
+  body: string,
+) => void;
 
 /**
- * Renders the Python module of a service
+ * Writes a method, which must be unique in the class
  */
-export function emitPython(model: ServiceModel): string {
-  const out = new Writer();
+function methodWriter(out: Writer, className: string): MethodWriter {
   const names = new Set<string>();
-  const method = (
-    name: string,
-    parameters: string[],
-    docs: string[],
-    body: string,
-  ) => {
+  return (name, parameters, docs, body) => {
     const pyName = pythonName(name);
-    if (names.has(pyName)) {
-      throw new Error(`Duplicate method ${pyName} in ${model.className}`);
-    }
-    names.add(pyName);
-    const parameterNames = parameters.map((p) => p.split(':')[0]);
-    if (new Set(parameterNames).size != parameterNames.length) {
-      throw new Error(
-        `Duplicate parameters of ${pyName} in ${model.className}`,
-      );
-    }
+    assertUniqueMethod(
+      names,
+      pyName,
+      parameters.map((p) => p.split(':')[0]),
+      pyName,
+      className,
+    );
     out.line();
     out.line(`def ${pyName}(${['self', ...parameters].join(', ')}) -> Self:`);
     out.indented(() => {
@@ -111,15 +102,15 @@ export function emitPython(model: ServiceModel): string {
       out.line(`return ${body}`);
     });
   };
+}
 
+function writeImports(out: Writer, model: ServiceModel) {
   const hasDates = model.conditions.some((condition) =>
     (condition.valueTypes ?? []).includes('Date'),
   );
   const hasOperators = model.conditions.some(
     (condition) => condition.valueKind != 'boolean',
   );
-
-  out.line(header(`${modelDir}/${model.filename}.json`));
   out.line('from __future__ import annotations');
   out.line();
   out.line('from typing import TYPE_CHECKING');
@@ -140,6 +131,32 @@ export function emitPython(model: ServiceModel): string {
       out.line('from .._shared import Operator');
     }
   });
+}
+
+function writeConstructor(out: Writer, model: ServiceModel) {
+  docstring([
+    `Statement provider for service [${model.name}](${model.url}).`,
+    '',
+    ':param sid: [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement',
+  ]).forEach((line) => out.line(line));
+  out.line();
+  out.line('def __init__(self, sid: str | None = None) -> None:');
+  out.indented(() => {
+    out.line('super().__init__(sid)');
+    out.line(`self.service_prefix = ${pyString(model.servicePrefix)}`);
+    out.line('self._access_level_list = _ACCESS_LEVEL_LIST');
+  });
+}
+
+/**
+ * Renders the Python module of a service
+ */
+export function emitPython(model: ServiceModel): string {
+  const out = new Writer('    ');
+  const method = methodWriter(out, model.className);
+
+  out.line(generatedHeader('#', `${modelDir}/${model.filename}.json`));
+  writeImports(out, model);
   out.line();
   out.line(
     `_ACCESS_LEVEL_LIST: dict[str, list[str]] = ${JSON.stringify(model.accessLevelList, null, 4)}`,
@@ -148,45 +165,18 @@ export function emitPython(model: ServiceModel): string {
   out.line();
   out.line(`class ${model.className}(PolicyStatement):`);
   out.indented(() => {
-    docstring([
-      `Statement provider for service [${model.name}](${model.url}).`,
-      '',
-      ':param sid: [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement',
-    ]).forEach((line) => out.line(line));
-    out.line();
-    out.line('def __init__(self, sid: str | None = None) -> None:');
-    out.indented(() => {
-      out.line('super().__init__(sid)');
-      out.line(`self.service_prefix = ${pyString(model.servicePrefix)}`);
-      out.line('self._access_level_list = _ACCESS_LEVEL_LIST');
-    });
-
+    writeConstructor(out, model);
     for (const action of model.actions) {
-      const docs = [
-        action.description,
-        '',
-        `Access Level: ${action.accessLevel}`,
-      ];
-      if (action.conditionMethods) {
-        docs.push('', 'Possible conditions:', '');
-        docs.push(
-          ...action.conditionMethods.map((name) => `- ${docReference(name)}`),
-        );
-      }
-      if (action.dependentActions) {
-        docs.push('', 'Dependent actions:', '');
-        docs.push(...action.dependentActions.map((name) => `- ${name}`));
-      }
-      if (action.url.length && action.url != 'https://docs.aws.amazon.com/') {
-        docs.push('', action.url);
-      }
-      method(action.methodName, [], docs, `self.to(${pyString(action.name)})`);
+      method(
+        action.methodName,
+        [],
+        actionDocs(action, docReference),
+        `self.to(${pyString(action.name)})`,
+      );
     }
-
     for (const resource of model.resources) {
       resourceMethod(resource, method);
     }
-
     for (const condition of model.conditions) {
       conditionMethod(condition, method);
     }
@@ -194,19 +184,13 @@ export function emitPython(model: ServiceModel): string {
   return out.toString();
 }
 
-type MethodWriter = (
-  name: string,
-  parameters: string[],
-  docs: string[],
-  body: string,
-) => void;
+const placeholderDefaults = {
+  partition: 'self._default_partition',
+  region: 'self._default_region',
+  account: 'self._default_account',
+};
 
 function resourceMethod(resource: ResourceModel, method: MethodWriter) {
-  const defaults = {
-    partition: 'self._default_partition',
-    region: 'self._default_region',
-    account: 'self._default_account',
-  };
   const required: string[] = [];
   const optional: string[] = [];
   const params: string[] = [];
@@ -217,34 +201,19 @@ function resourceMethod(resource: ResourceModel, method: MethodWriter) {
       required.push(`${pyName}: str`);
       expressions.set(placeholder, pyName);
       params.push(`:param ${pyName}: Identifier for the ${name}.`);
-      continue;
+    } else {
+      optional.push(`${pyName}: str | None = None`);
+      expressions.set(
+        placeholder,
+        `${pyName} if ${pyName} is not None else ${placeholderDefaults[kind]}`,
+      );
+      params.push(`:param ${pyName}: ${placeholderDefaultDocs[kind]}`);
     }
-    optional.push(`${pyName}: str | None = None`);
-    expressions.set(
-      placeholder,
-      `${pyName} if ${pyName} is not None else ${defaults[kind]}`,
-    );
-    params.push(
-      {
-        partition: `:param ${pyName}: Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`, unless using the CDK, where the default is the current Stack's partition.`,
-        region: `:param ${pyName}: Region of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's region.`,
-        account: `:param ${pyName}: Account of the resource; defaults to \`*\`, unless using the CDK, where the default is the current Stack's account.`,
-      }[kind],
-    );
   }
 
-  const docs = [`Adds a resource of type ${resource.name} to the statement`];
-  if (resource.url.length && resource.url != 'https://docs.aws.amazon.com/') {
-    docs.push('', resource.url);
-  }
-  if (resource.conditionMethods.length) {
-    docs.push('', 'Possible conditions:', '');
-    docs.push(
-      ...resource.conditionMethods.map((name) => `- ${docReference(name)}`),
-    );
-  }
+  const docs = resourceDocs(resource, docReference);
   if (params.length) {
-    docs.push('', ...params);
+    addParagraph(docs, ...params);
   }
   method(
     resource.methodName,
@@ -254,37 +223,39 @@ function resourceMethod(resource: ResourceModel, method: MethodWriter) {
   );
 }
 
-function conditionMethod(condition: ConditionModel, method: MethodWriter) {
-  const docs: string[] = [];
-  const add = (...lines: string[]) => {
-    if (docs.length) {
-      docs.push('');
-    }
-    docs.push(...lines);
+/**
+ * The parameter of the value of a condition, its docs and the body of the method
+ */
+function conditionValue(
+  condition: ConditionModel,
+  key: string,
+): { parameters: string[]; params: string[]; body: string } {
+  if (condition.valueKind == 'boolean') {
+    return {
+      parameters: ['value: bool | None = None'],
+      params: [':param value: `true` or `false`. **Default:** `true`'],
+      body: `self.if_(${key}, value if value is not None else True, 'Bool')`,
+    };
+  }
+  const single = condition.valueTypes!.map(valueType).join(' | ');
+  const value = condition.valueTypes!.includes('Date')
+    ? '[_date_to_string(item) for item in value] if isinstance(value, list) else _date_to_string(value)'
+    : 'value';
+  return {
+    parameters: [
+      `value: ${single} | list[${single}]`,
+      'operator: Operator | str | None = None',
+    ],
+    params: [
+      ':param value: The value(s) to check',
+      `:param operator: Works with [${condition.valueKind} operators](${condition.operatorUrl}). **Default:** \`${condition.defaultOperator}\``,
+    ],
+    body: `self.if_(${key}, ${value}, operator if operator is not None else ${pyString(condition.defaultOperator)})`,
   };
-  if (condition.description.length) {
-    add(condition.description);
-  }
-  if (condition.url.length) {
-    add(condition.url);
-  }
-  if (condition.relatedActionMethods.length) {
-    add(
-      'Applies to actions:',
-      '',
-      ...condition.relatedActionMethods.map(
-        (name) => `- ${docReference(name)}`,
-      ),
-    );
-  }
-  if (condition.relatedResourceTypes.length) {
-    add(
-      'Applies to resource types:',
-      '',
-      ...condition.relatedResourceTypes.map((name) => `- ${name}`),
-    );
-  }
+}
 
+function conditionMethod(condition: ConditionModel, method: MethodWriter) {
+  const docs = conditionDocs(condition, docReference);
   const parameters: string[] = [];
   const params: string[] = [];
   let key = pyString(condition.keyLiteral);
@@ -294,61 +265,65 @@ function conditionMethod(condition: ConditionModel, method: MethodWriter) {
     params.push(`:param ${keyParam}: The tag key to check`);
     key += ` + ${keyParam}`;
   }
-
-  let body: string;
-  if (condition.valueKind == 'boolean') {
-    parameters.push('value: bool | None = None');
-    params.push(':param value: `true` or `false`. **Default:** `true`');
-    body = `self.if_(${key}, value if value is not None else True, 'Bool')`;
-  } else {
-    const types = condition.valueTypes!.map((type) => valueType(type));
-    const single = types.join(' | ');
-    parameters.push(`value: ${single} | list[${single}]`);
-    params.push(':param value: The value(s) to check');
-    parameters.push('operator: Operator | str | None = None');
-    params.push(
-      `:param operator: Works with [${condition.valueKind} operators](${condition.operatorUrl}). **Default:** \`${condition.defaultOperator}\``,
-    );
-    let value = 'value';
-    if (condition.valueTypes!.includes('Date')) {
-      value =
-        '[_date_to_string(item) for item in value] if isinstance(value, list) else _date_to_string(value)';
-    }
-    body = `self.if_(${key}, ${value}, operator if operator is not None else ${pyString(condition.defaultOperator)})`;
-  }
-  add(...params);
-  method(condition.methodName, parameters, docs, body);
+  const value = conditionValue(condition, key);
+  addParagraph(docs, ...params, ...value.params);
+  method(
+    condition.methodName,
+    [...parameters, ...value.parameters],
+    docs,
+    value.body,
+  );
 }
 
 /**
- * Renders the modules of all services from `lib/generated/model/` plus the package
- * `iam_floyd.statement`, which imports them lazily
+ * The imports of the service classes for type checkers, sorted like isort does
  */
-export function emitPythonFromModels(): void {
-  const models = fs
-    .readdirSync(modelDir)
-    .filter((file) => file.endsWith('.json'))
-    .sort()
-    .map(
-      (file) =>
-        JSON.parse(
-          fs.readFileSync(`${modelDir}/${file}`, 'utf8'),
-        ) as ServiceModel,
-    );
-
-  fs.rmSync(outDir, { recursive: true, force: true });
-  fs.mkdirSync(outDir, { recursive: true });
-  const modules = new Map<string, string>();
-  for (const model of models) {
-    const module = pythonServiceModule(model.filename);
-    modules.set(model.className, module);
-    fs.writeFileSync(`${outDir}/${module}.py`, emitPython(model));
+function writeTypeImports(out: Writer, modules: Map<string, string>) {
+  for (const [className, module] of [...modules].sort(([, a], [, b]) =>
+    a < b ? -1 : 1,
+  )) {
+    const line = `from .${module} import ${className}`;
+    if (line.length + 4 <= 100) {
+      out.line(line);
+    } else {
+      out.line(`from .${module} import (`);
+      out.line(`    ${className},`);
+      out.line(')');
+    }
   }
+}
 
-  const out = new Writer();
+function writeModuleFunctions(out: Writer) {
+  out.line('def __getattr__(name: str) -> Any:');
+  out.indented(() => {
+    out.line('module = _MODULES.get(name)');
+    out.line('if module is None:');
+    out.line(
+      "    raise AttributeError(f'module {__name__!r} has no attribute {name!r}')",
+    );
+    out.line(
+      'value = getattr(importlib.import_module(f".{module}", __name__), name)',
+    );
+    out.line('globals()[name] = value');
+    out.line('return value');
+  });
+  out.line();
+  out.line();
+  out.line('def __dir__() -> list[str]:');
+  out.indented(() => {
+    out.line('return __all__');
+  });
+}
+
+/**
+ * The package `iam_floyd.statement`, which imports the modules of the services lazily.
+ * `modules` are the modules by class name.
+ */
+function emitPythonPackage(modules: Map<string, string>): string {
+  const out = new Writer('    ');
   out.line('"""Statement providers of all services."""');
   out.line();
-  out.line(header(modelDir));
+  out.line(generatedHeader('#', modelDir));
   out.line('from __future__ import annotations');
   out.line();
   out.line('import importlib');
@@ -357,21 +332,7 @@ export function emitPythonFromModels(): void {
   out.line('from .._shared import All');
   out.line();
   out.line('if TYPE_CHECKING:');
-  out.indented(() => {
-    // sorted like isort does
-    for (const [className, module] of [...modules].sort(([, a], [, b]) =>
-      a < b ? -1 : 1,
-    )) {
-      const line = `from .${module} import ${className}`;
-      if (line.length + 4 <= 100) {
-        out.line(line);
-      } else {
-        out.line(`from .${module} import (`);
-        out.line(`    ${className},`);
-        out.line(')');
-      }
-    }
-  });
+  out.indented(() => writeTypeImports(out, modules));
   out.line();
   out.line(
     '# The modules are imported on first access, importing all takes long',
@@ -394,24 +355,23 @@ export function emitPythonFromModels(): void {
   out.line(']');
   out.line();
   out.line();
-  out.line('def __getattr__(name: str) -> Any:');
-  out.indented(() => {
-    out.line('module = _MODULES.get(name)');
-    out.line('if module is None:');
-    out.line(
-      "    raise AttributeError(f'module {__name__!r} has no attribute {name!r}')",
-    );
-    out.line(
-      'value = getattr(importlib.import_module(f".{module}", __name__), name)',
-    );
-    out.line('globals()[name] = value');
-    out.line('return value');
-  });
-  out.line();
-  out.line();
-  out.line('def __dir__() -> list[str]:');
-  out.indented(() => {
-    out.line('return __all__');
-  });
-  fs.writeFileSync(`${outDir}/__init__.py`, out.toString());
+  writeModuleFunctions(out);
+  return out.toString();
+}
+
+/**
+ * Renders the modules of all services from `lib/generated/model/` plus the package
+ * `iam_floyd.statement`, which imports them lazily
+ */
+export function emitPythonFromModels(): void {
+  const models = readModels();
+  fs.rmSync(outDir, { recursive: true, force: true });
+  fs.mkdirSync(outDir, { recursive: true });
+  const modules = new Map<string, string>();
+  for (const model of models) {
+    const module = pythonServiceModule(model.filename);
+    modules.set(model.className, module);
+    fs.writeFileSync(`${outDir}/${module}.py`, emitPython(model));
+  }
+  fs.writeFileSync(`${outDir}/__init__.py`, emitPythonPackage(modules));
 }
