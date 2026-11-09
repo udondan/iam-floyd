@@ -9,7 +9,11 @@ import { aws_iam as iam, aws_s3 as s3, Stack } from 'aws-cdk-lib';
 
 import { PolicyDocument, Statement } from '../../lib';
 
-function assertEqual(actual: unknown, expected: unknown, message: string) {
+function assertEqual(
+  actual: number | string,
+  expected: number | string,
+  message: string,
+) {
   if (actual !== expected) {
     throw new Error(`${message}: expected ${expected}, got ${actual}`);
   }
@@ -57,7 +61,7 @@ assertEqual(
   'The statement after freezing it twice',
 );
 assertEqual(
-  frozen.toStatementJson().Action,
+  (frozen.toStatementJson() as { Action: string }).Action,
   's3:GetObject',
   'The actions of the frozen statement',
 );
