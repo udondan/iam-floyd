@@ -172,7 +172,8 @@ export function emitTypeScript(
       }
     });
 
-    let arn = resource.arn;
+    // placeholders without parameter stay literal text
+    let arn = escapeTemplateLiteral(resource.arn);
     let paramDocs = '';
     resource.placeholders.forEach(({ placeholder, name, kind }) => {
       let orDefault = '';
@@ -192,7 +193,7 @@ export function emitTypeScript(
       } else {
         paramDocs += `\n@param ${name} - Identifier for the ${name}.`;
       }
-      arn = arn.replace(`\${${placeholder}}`, `\${${name}${orDefault}}`);
+      arn = arn.replace(`\\\${${placeholder}}`, `\${${name}${orDefault}}`);
     });
 
     let desc = `\nAdds a resource of type ${resource.name} to the statement`;

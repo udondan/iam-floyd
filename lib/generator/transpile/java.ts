@@ -1,6 +1,7 @@
 import {
   ArrowFunction,
   BinaryExpression,
+  BindingElement,
   CallExpression,
   ClassDeclaration,
   ConstructorDeclaration,
@@ -24,6 +25,7 @@ import {
   Type,
   TypeNode,
   TypeOfExpression,
+  VariableDeclaration,
   VariableDeclarationKind,
   VariableStatement,
 } from 'ts-morph';
@@ -34,7 +36,9 @@ import {
   isPure,
   isServiceFile,
   kindOf,
+  ownConstructor,
   resolve,
+  tagComment,
 } from './index';
 import { snakeCase } from './python';
 
@@ -322,6 +326,16 @@ export function withoutTypeArguments(type: string): string {
 function erasure(type: string): string {
   return withoutTypeArguments(type).replace('...', '[]');
 }
+
+/**
+ * A declaration with a Java type: a parameter, variable or property, or a variable of a loop over
+ * entries
+ */
+type Declaration =
+  | ParameterDeclaration
+  | VariableDeclaration
+  | PropertyDeclaration
+  | BindingElement;
 
 interface Param {
   /** The Java name */
@@ -628,10 +642,10 @@ export class JavaTranspiler {
       return;
     }
     const doc = docs[docs.length - 1];
-    const description = (doc.getDescription() ?? '').trim();
+    const description = doc.getDescription().trim();
     const tags: string[] = [];
     for (const tag of doc.getTags()) {
-      const comment = javadocText((tag.getCommentText() ?? '').trim());
+      const comment = javadocText(tagComment(tag));
       if (Node.isJSDocParameterTag(tag)) {
         const name = javaLocalName(tag.getName());
         if (params === undefined || params.includes(name)) {
@@ -640,8 +654,8 @@ export class JavaTranspiler {
       } else if (tag.getTagName() == 'returns') {
         tags.push(`@return ${comment}`.trim());
       } else if (tag.getTagName() == 'see') {
-        const url = (tag.getCommentText() ?? '').trim().replace(/"/g, '%22');
-        tags.push(`@see <a href="${url}">${javadocText(url)}</a>`);
+        const url = tagComment(tag).replace(/"/g, '%22');
+        tags.push(`@see <a href="${url}">${escapeJavadoc(url)}</a>`);
       } else if (tag.getTagName() == 'deprecated') {
         tags.push(`@deprecated ${comment}`.trim());
       } else {
@@ -714,12 +728,9 @@ export class JavaTranspiler {
         this.emit('');
         this.property(property);
       }
-      const constructors = declaration.getConstructors();
-      if (constructors.length > 1) {
-        fail(constructors[1], 'Constructor overloads are not supported');
-      }
-      if (constructors.length) {
-        this.callableDeclaration(constructors[0]);
+      const constructor = ownConstructor(declaration);
+      if (constructor) {
+        this.callableDeclaration(constructor);
       } else if (base) {
         this.inheritedConstructors(base);
       }
@@ -1097,7 +1108,7 @@ export class JavaTranspiler {
           : 'private static';
       returnType = ` ${this.returnType(declaration)}`;
     } else {
-      modifiers = declaration.getScope() ?? 'public';
+      modifiers = declaration.getScope();
       if (Node.isMethodDeclaration(declaration)) {
         returnType = ` ${this.returnType(declaration)}`;
       }
@@ -1154,11 +1165,12 @@ export class JavaTranspiler {
       `${implModifiers}${returnType} ${name}(${paramList(callable.impl)}) {`,
     );
     this.indented(() => {
-      const body = declaration.getBody();
-      if (!body || !Node.isBlock(body)) {
-        return fail(declaration, 'Functions must have a body');
-      }
-      const statements = body.getStatements();
+      // functions without body are overloads, which callable() rejects, and the methods and
+      // constructors of a class are those with a body
+      const statements = declaration
+        .getBodyOrThrow()
+        .asKindOrThrow(SyntaxKind.Block)
+        .getStatements();
       if (isConstructor) {
         const first = statements[0];
         const base = this.classDecl?.getBaseClass();
@@ -1308,7 +1320,8 @@ export class JavaTranspiler {
       const optional = nonNull.length < parts.length;
       const nonNullType = type.getNonNullableType();
       if (nonNullType.isBoolean()) {
-        return boxed || optional ? 'Boolean' : 'boolean';
+        // optional, as the type itself is not boolean
+        return 'Boolean';
       }
       const types = new Set(
         nonNull.map((part) => this.typeFromType(part, boxed || optional, node)),
@@ -1364,7 +1377,7 @@ export class JavaTranspiler {
   /**
    * The Java type of a declaration: a parameter, variable or property
    */
-  private declaredType(declaration: Node): string {
+  private declaredType(declaration: Declaration): string {
     const existing = this.declared.get(declaration);
     if (existing !== undefined) {
       return existing;
@@ -1382,16 +1395,14 @@ export class JavaTranspiler {
               ? 'Integer'
               : this.typeFromType(declaration.getType(), true, declaration);
         }
-      } else if (
-        Node.isMethodDeclaration(parent) ||
-        Node.isConstructorDeclaration(parent) ||
-        Node.isFunctionDeclaration(parent)
-      ) {
-        const callable = this.callable(parent);
-        const index = parent.getParameters().indexOf(declaration);
-        type = callable.impl[index].replace('...', '[]');
       } else {
-        return fail(declaration, 'Unsupported parameter');
+        // the transpiled code refers only to the parameters of the functions, methods and
+        // constructors it transpiles, and of arrow functions
+        const callableParent = parent as
+          MethodDeclaration | ConstructorDeclaration | FunctionDeclaration;
+        const callable = this.callable(callableParent);
+        const index = callableParent.getParameters().indexOf(declaration);
+        type = callable.impl[index].replace('...', '[]');
       }
     } else if (
       Node.isVariableDeclaration(declaration) ||
@@ -1406,10 +1417,8 @@ export class JavaTranspiler {
       } else {
         return fail(declaration, 'Variables need a type or an initializer');
       }
-    } else if (Node.isBindingElement(declaration)) {
-      type = this.typeFromType(declaration.getType(), true, declaration);
     } else {
-      return fail(declaration, 'Unsupported declaration');
+      type = this.typeFromType(declaration.getType(), true, declaration);
     }
     this.declared.set(declaration, type);
     return type;
@@ -1418,7 +1427,7 @@ export class JavaTranspiler {
   /**
    * The declaration of a variable, parameter or property that an expression refers to
    */
-  private declarationOf(node: Node): Node | undefined {
+  private declarationOf(node: Node): Declaration | undefined {
     if (
       Node.isIdentifier(node) ||
       (Node.isPropertyAccessExpression(node) &&
@@ -1617,15 +1626,13 @@ export class JavaTranspiler {
         );
       }
       const elements = nameNode.getElements();
+      const [key, value] = elements;
       if (
         elements.length != 2 ||
-        !elements.every((element) => Node.isBindingElement(element))
+        !Node.isBindingElement(key) ||
+        !Node.isBindingElement(value)
       ) {
         return fail(node, 'Entries must be destructured into key and value');
-      }
-      const [key, value] = elements.map((element) => element as Node);
-      if (!Node.isBindingElement(key) || !Node.isBindingElement(value)) {
-        return fail(node, 'Unsupported loop variable');
       }
       const source = wrap(this.expression(iterable), Prec.primary);
       const valueName = javaLocalName(value.getName());
@@ -2058,9 +2065,7 @@ export class JavaTranspiler {
         parts.push(javaString(literal));
       }
     }
-    if (parts.length == 0) {
-      return { code: '""', prec: Prec.primary };
-    }
+    // never empty: a template has at least one span
     return {
       code: parts.join(' + '),
       prec: parts.length == 1 ? Prec.primary : Prec.additive,

@@ -4,6 +4,7 @@ import * as path from 'path';
 import {
   ClassDeclaration,
   EnumDeclaration,
+  EnumMember,
   JSDoc,
   MethodDeclaration,
   Node,
@@ -19,6 +20,7 @@ import { gunzipSync, gzipSync } from 'zlib';
 import { cdkMinVersion } from '../cdk-refs';
 import { ServiceModel } from '../model';
 import { PackageJson } from '../package-json';
+import { tagComment } from '../transpile';
 
 /**
  * Subset of the jsii assembly spec (`@jsii/spec`, schema `jsii/0.10.0`) we emit
@@ -84,7 +86,7 @@ interface ClassType {
   docs?: Docs;
   base?: string;
   initializer?: Initializer;
-  methods?: Method[];
+  methods: Method[];
   properties?: Property[];
 }
 
@@ -151,7 +153,8 @@ function splitDocs(text: string | undefined): Docs {
   const firstParagraph = trimmed.split(/\n\s*\n/)[0];
   if (match && match[1].length <= firstParagraph.length) {
     docs.summary = match[1].replace(/\s+/g, ' ');
-    if (match[3].trim().length) docs.remarks = match[3].trim();
+    // never empty: the text is trimmed, so something follows the whitespace
+    docs.remarks = match[3];
   } else {
     docs.summary = firstParagraph.replace(/\s+/g, ' ');
     const rest = trimmed.slice(firstParagraph.length).trim();
@@ -427,11 +430,10 @@ function redeclare(
  * The base class without its fluent methods, which are declared on each service class instead
  */
 function withoutFluentMethods(
-  type: JsiiType,
+  type: ClassType,
   base: string | undefined,
-): JsiiType {
-  if (type.kind != 'class') return type;
-  return { ...type, methods: type.methods?.filter((m) => !isFluent(m, base)) };
+): ClassType {
+  return { ...type, methods: type.methods.filter((m) => !isFluent(m, base)) };
 }
 
 function sortMembers<T extends { name: string }>(members: T[]): T[] {
@@ -654,6 +656,14 @@ class SharedExtractor {
     while (current) {
       if (!constructorSource && current.getConstructors().length) {
         constructorSource = current;
+      }
+      // the transpilers don't support them either
+      for (const constructor of current.getConstructors()) {
+        if (constructor.getParameters().some((p) => p.isParameterProperty())) {
+          throw new Error(
+            `Parameter properties are not supported: ${current.getName()}`,
+          );
+        }
       }
       for (const method of current.getMethods()) {
         if (!this.isPublic(method)) continue;
@@ -880,10 +890,10 @@ class SharedExtractor {
   private withoutImportCycle(fqn: string, context: Node): string {
     const submodule = `${this.assembly}.${statementNamespace}.`;
     if (!fqn.startsWith(submodule)) return fqn;
-    const owner = Node.isClassDeclaration(context)
-      ? context
-      : context.getFirstAncestor(Node.isClassDeclaration);
-    const ownerFqn = owner ? this.exported.get(owner) : undefined;
+    // the context is a member or parameter of a class
+    const ownerFqn = this.exported.get(
+      context.getFirstAncestorOrThrow(Node.isClassDeclaration),
+    );
     if (!ownerFqn || ownerFqn.startsWith(submodule)) return fqn;
     return `${this.assembly}.PolicyStatement`;
   }
@@ -933,8 +943,9 @@ class SharedExtractor {
     return `${pkg}.${name}`;
   }
 
-  private jsDocText(node: Node): string | undefined {
-    if (!Node.isJSDocable(node)) return undefined;
+  private jsDocText(
+    node: ClassDeclaration | EnumDeclaration | EnumMember,
+  ): string | undefined {
     const jsDocs = node.getJsDocs();
     if (!jsDocs.length) return undefined;
     return jsDocs[jsDocs.length - 1].getDescription();
@@ -945,7 +956,7 @@ class SharedExtractor {
     const jsDoc = jsDocs[jsDocs.length - 1];
     const docs = splitDocs(jsDoc.getDescription());
     for (const tag of jsDoc.getTags()) {
-      const text = (tag.getCommentText() ?? '').trim();
+      const text = tagComment(tag);
       switch (tag.getTagName()) {
         case 'returns':
         case 'return':
@@ -1065,12 +1076,12 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
   for (const type of extractor.collectTypes()) types[type.fqn] = type;
 
   const shared = extractor.policyStatementMembers();
-  const baseType = shared.base ? types[shared.base] : undefined;
+  // the base is an exported class or external, then it is not in `types`
+  const baseType = shared.base
+    ? (types[shared.base] as ClassType | undefined)
+    : undefined;
   const baseMethods = new Map(
-    (baseType?.kind == 'class' ? (baseType.methods ?? []) : []).map((m) => [
-      m.name,
-      m,
-    ]),
+    (baseType?.methods ?? []).map((m) => [m.name, m]),
   );
   // Hand-written subclasses of the base class, like `Statement.All`, need its fluent methods
   // declared like the services do
@@ -1078,11 +1089,11 @@ export function emitJsii(models: ServiceModel[], options: JsiiOptions) {
     if (type.kind != 'class' || !shared.base || type.base != shared.base) {
       continue;
     }
-    const declared = new Set((type.methods ?? []).map((m) => m.name));
+    const declared = new Set(type.methods.map((m) => m.name));
     const fluent = [...baseMethods.values()]
       .filter((m) => !declared.has(m.name) && isFluent(m, shared.base))
       .map((m) => redeclare(m, shared.base, { fqn: type.fqn }));
-    type.methods = sortMembers([...(type.methods ?? []), ...fluent]);
+    type.methods = sortMembers([...type.methods, ...fluent]);
   }
   for (const model of models) {
     const type = serviceType(name, model, variant, shared, baseMethods);

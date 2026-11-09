@@ -19,6 +19,7 @@ import {
   SourceFile,
   Statement,
   SyntaxKind,
+  TemplateExpression,
   Type,
   TypeNode,
   TypeOfExpression,
@@ -31,7 +32,9 @@ import {
   isPure,
   isServiceFile,
   kindOf,
+  ownConstructor,
   resolve,
+  tagComment,
 } from './index';
 
 /**
@@ -338,13 +341,13 @@ export class PythonTranspiler {
     }
     const doc = docs[docs.length - 1];
     const text: string[] = [];
-    const description = (doc.getDescription() ?? '').trim();
+    const description = doc.getDescription().trim();
     if (description.length) {
       text.push(...description.split('\n'));
     }
     const tags: string[] = [];
     for (const tag of doc.getTags()) {
-      const comment = (tag.getCommentText() ?? '').trim();
+      const comment = tagComment(tag);
       if (Node.isJSDocParameterTag(tag)) {
         tags.push(`:param ${pythonName(tag.getName())}: ${comment}`);
       } else if (tag.getTagName() == 'returns') {
@@ -481,11 +484,7 @@ export class PythonTranspiler {
     declaration: ClassDeclaration,
     fields: PropertyDeclaration[],
   ) {
-    const constructors = declaration.getConstructors();
-    if (constructors.length > 1) {
-      fail(constructors[1], 'Constructor overloads are not supported');
-    }
-    const ctor: ConstructorDeclaration | undefined = constructors[0];
+    const ctor = ownConstructor(declaration);
     const base = declaration.getBaseClass();
 
     // without own constructor, the constructor of the base class is inherited
@@ -596,7 +595,7 @@ export class PythonTranspiler {
         if (typeNode === undefined || !Node.isArrayTypeNode(typeNode)) {
           fail(parameter, 'Rest parameters need an array type');
         }
-        return `*${name}: ${this.typeHint(typeNode.getElementTypeNode(), undefined, parameter)}`;
+        return `*${name}: ${this.typeHintFromNode(typeNode.getElementTypeNode())}`;
       }
       const hint = this.typeHint(typeNode, parameter.getType(), parameter);
       const initializer = parameter.getInitializer();
@@ -616,22 +615,16 @@ export class PythonTranspiler {
 
   private returnType(node: MethodDeclaration | FunctionDeclaration): string {
     const typeNode = node.getReturnTypeNode();
-    if (typeNode !== undefined) {
-      return this.typeHint(typeNode, undefined, node);
-    }
-    return this.typeHintFromType(node.getReturnType(), node);
+    return this.typeHint(typeNode, node.getReturnType(), node);
   }
 
   private typeHint(
     typeNode: TypeNode | undefined,
-    type: Type | undefined,
+    type: Type,
     node: Node,
   ): string {
     if (typeNode !== undefined) {
       return this.typeHintFromNode(typeNode);
-    }
-    if (type === undefined) {
-      fail(node, 'Missing type');
     }
     return this.typeHintFromType(type, node);
   }
@@ -1193,10 +1186,7 @@ export class PythonTranspiler {
     return fail(node, 'Unsupported expression');
   }
 
-  private template(node: Node): Expr {
-    if (!Node.isTemplateExpression(node)) {
-      return fail(node, 'Unsupported template');
-    }
+  private template(node: TemplateExpression): Expr {
     const parts: string[] = [];
     const head = node.getHead().getLiteralText();
     if (head.length) {

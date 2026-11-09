@@ -102,7 +102,8 @@ export function readme(
       throw new Error(`README.md: no example in ${name}`);
   }
 
-  let example = examples[language] ?? '';
+  // set, all languages have an example
+  let example = examples[language]!;
   if (pkg === 'cdk-iam-floyd') {
     for (const [pattern, replacement] of cdkNames[language])
       example = example.replace(pattern, replacement);

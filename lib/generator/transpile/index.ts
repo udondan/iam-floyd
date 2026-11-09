@@ -1,6 +1,9 @@
 import * as path from 'path';
 import {
   ArrowFunction,
+  ClassDeclaration,
+  ConstructorDeclaration,
+  JSDocTag,
   Node,
   Project,
   SourceFile,
@@ -20,6 +23,42 @@ export function fail(node: Node, message: string): never {
   throw new TranspileError(
     `${file}:${node.getStartLineNumber()}: ${message}: ${text}`,
   );
+}
+
+/**
+ * The text of a JSDoc tag. TypeScript parses the first word of `@see` as a name reference, which
+ * `getCommentText()` leaves out (`@see https://example.com` would be `://example.com`)
+ */
+export function tagComment(tag: JSDocTag): string {
+  if (!Node.isJSDocSeeTag(tag)) {
+    return (tag.getCommentText() ?? '').trim();
+  }
+  return tag
+    .getText()
+    .replace(/^@see/, '')
+    .split('\n')
+    .map((line) => line.replace(/^\s*\*?\s*/, ''))
+    .join('\n')
+    .trim();
+}
+
+/**
+ * The constructor of the class itself, if it has one. Overloads and parameter properties are not supported
+ */
+export function ownConstructor(
+  declaration: ClassDeclaration,
+): ConstructorDeclaration | undefined {
+  const constructors = declaration.getConstructors();
+  if (constructors.length > 1) {
+    fail(constructors[1], 'Constructor overloads are not supported');
+  }
+  const property = constructors[0]
+    ?.getParameters()
+    .find((parameter) => parameter.isParameterProperty());
+  if (property) {
+    fail(property, 'Parameter properties are not supported');
+  }
+  return constructors[0];
 }
 
 /**

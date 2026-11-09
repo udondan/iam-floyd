@@ -29,7 +29,15 @@ import {
   VariableStatement,
 } from 'ts-morph';
 
-import { arrowFunction, fail, isServiceFile, kindOf, resolve } from './index';
+import {
+  arrowFunction,
+  fail,
+  isServiceFile,
+  kindOf,
+  ownConstructor,
+  resolve,
+  tagComment,
+} from './index';
 import { snakeCase } from './python';
 
 /**
@@ -668,9 +676,9 @@ export class GoTranspiler {
       return;
     }
     const doc = docs[docs.length - 1];
-    const lines = (doc.getDescription() ?? '').trim().split('\n');
+    const lines = doc.getDescription().trim().split('\n');
     for (const tag of doc.getTags()) {
-      const comment = (tag.getCommentText() ?? '').trim();
+      const comment = tagComment(tag);
       if (Node.isJSDocParameterTag(tag)) {
         if (comment.length) {
           lines.push(
@@ -804,10 +812,7 @@ export class GoTranspiler {
     }
 
     // the constructor
-    const constructors = declaration.getConstructors();
-    if (constructors.length > 1) {
-      fail(constructors[1], 'Constructor overloads are not supported');
-    }
+    ownConstructor(declaration);
     const constructor = this.constructorOf(declaration);
     const callable = constructor ? this.callable(constructor) : undefined;
     const params = callable ? this.paramList(callable) : '';
@@ -1028,9 +1033,6 @@ export class GoTranspiler {
       }
       const baseName = this.className(base);
       const field = `&this.${baseName}`;
-      if (base.getDerivedClasses().length == 0) {
-        fail(base, 'Unsupported base class');
-      }
       const init = this.qualify(declaration, base, this.initName(base));
       const baseGeneric = this.isGeneric(base);
       this.emit(
@@ -1408,6 +1410,8 @@ export class GoTranspiler {
     let type: string;
     if (Node.isParameterDeclaration(declaration)) {
       const parent = declaration.getParentOrThrow();
+      // the parameters of callbacks are declared before their body is transpiled
+      /* v8 ignore else */
       if (
         Node.isMethodDeclaration(parent) ||
         Node.isConstructorDeclaration(parent) ||
@@ -2420,9 +2424,6 @@ export class GoTranspiler {
       if (literal.length) {
         parts.push(goString(literal));
       }
-    }
-    if (parts.length == 0) {
-      return primary('""', 'string');
     }
     return {
       code: parts.join(' + '),

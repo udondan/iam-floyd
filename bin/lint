@@ -88,6 +88,9 @@ if [[ ! -d tooter/node_modules ]]; then
   npm ci --prefix tooter --no-audit --no-fund > /dev/null
 fi
 
+# eslint checks all files with types in one program, which needs more than the default heap of Node.js
+export NODE_OPTIONS="${NODE_OPTIONS:-} --max-old-space-size=8192"
+
 if ${FIX}; then
   run eslint npx eslint --fix .
   run prettier npx prettier --log-level warn --write .

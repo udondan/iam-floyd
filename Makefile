@@ -12,7 +12,7 @@ EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 COMMA := ,
 
-.PHONY: build emit generate coverage coverage-cdk cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
+.PHONY: build emit generate coverage coverage-cdk test-unit cdk-refs package package-native package-jsii test-jsii test-transpile changelog cdk docs stats lint lint-fix lint-cdk
 
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -199,6 +199,11 @@ lint-cdk:
 	@echo -e "$(TARGET_COLOR)Running eslint on the CDK variant$(NO_COLOR)"
 	@[ -d tooter/node_modules ] || npm ci --prefix tooter --no-audit --no-fund
 	@npx eslint .
+
+# runs the unit tests of lib/generator and bin (test/unit/) with coverage into coverage/unit/lcov.info
+test-unit: emit
+	@echo -e "$(TARGET_COLOR)Running unit tests$(NO_COLOR)"
+	@npx vitest run --coverage
 
 # runs the TypeScript tests of the standalone variant with coverage: the examples (test-typescript),
 # the scenarios of test/transpile/ and the policy converter, and writes coverage/lcov.info

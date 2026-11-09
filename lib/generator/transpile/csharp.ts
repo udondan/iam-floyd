@@ -1,6 +1,6 @@
 import {
-  ArrowFunction,
   BinaryExpression,
+  BindingElement,
   CallExpression,
   ClassDeclaration,
   ConstructorDeclaration,
@@ -24,11 +24,20 @@ import {
   Type,
   TypeNode,
   TypeOfExpression,
+  VariableDeclaration,
   VariableDeclarationKind,
   VariableStatement,
 } from 'ts-morph';
 
-import { arrowFunction, fail, isServiceFile, kindOf, resolve } from './index';
+import {
+  arrowFunction,
+  fail,
+  isServiceFile,
+  kindOf,
+  ownConstructor,
+  resolve,
+  tagComment,
+} from './index';
 import { snakeCase } from './python';
 
 /**
@@ -46,6 +55,15 @@ const enum Prec {
   unary = 13,
   primary = 15,
 }
+
+/**
+ * A declaration of a variable, parameter or property
+ */
+type Declaration =
+  | ParameterDeclaration
+  | VariableDeclaration
+  | PropertyDeclaration
+  | BindingElement;
 
 interface Expr {
   code: string;
@@ -741,10 +759,10 @@ export class CSharpTranspiler {
       return;
     }
     const doc = docs[docs.length - 1];
-    const description = (doc.getDescription() ?? '').trim();
+    const description = doc.getDescription().trim();
     const tags: string[] = [];
     for (const tag of doc.getTags()) {
-      const comment = xmlDocText((tag.getCommentText() ?? '').trim());
+      const comment = xmlDocText(tagComment(tag));
       if (Node.isJSDocParameterTag(tag)) {
         const name = csharpLocalName(tag.getName());
         if (params === undefined || params.includes(name)) {
@@ -753,7 +771,7 @@ export class CSharpTranspiler {
       } else if (tag.getTagName() == 'returns') {
         tags.push(`<returns>${comment}</returns>`);
       } else if (tag.getTagName() == 'see') {
-        const url = (tag.getCommentText() ?? '').trim().replace(/"/g, '%22');
+        const url = tagComment(tag).replace(/"/g, '%22');
         tags.push(`<seealso href="${url}">${escapeXml(url)}</seealso>`);
       } else if (tag.getTagName() == 'deprecated') {
         tags.push(`<remarks>Deprecated: ${comment}</remarks>`);
@@ -865,12 +883,9 @@ export class CSharpTranspiler {
         separate();
         this.property(property);
       }
-      const constructors = declaration.getConstructors();
-      if (constructors.length > 1) {
-        fail(constructors[1], 'Constructor overloads are not supported');
-      }
-      if (constructors.length) {
-        this.callableDeclaration(constructors[0], separate);
+      const constructor = ownConstructor(declaration);
+      if (constructor) {
+        this.callableDeclaration(constructor, separate);
       } else if (base) {
         this.inheritedConstructors(base, separate);
       }
@@ -1283,7 +1298,7 @@ export class CSharpTranspiler {
           : 'private static';
       returnType = ` ${this.returnType(declaration)}`;
     } else {
-      modifiers = declaration.getScope() ?? 'public';
+      modifiers = declaration.getScope();
       if (Node.isMethodDeclaration(declaration)) {
         returnType = ` ${this.returnType(declaration)}`;
         if (callable.name == 'ToString') {
@@ -1498,7 +1513,8 @@ export class CSharpTranspiler {
       const isOptional = nonNull.length < parts.length;
       const nonNullType = type.getNonNullableType();
       if (nonNullType.isBoolean()) {
-        return optional || isOptional ? 'bool?' : 'bool';
+        // boolean itself is handled above, so the union has undefined or null
+        return 'bool?';
       }
       const types = new Set(
         nonNull.map((part) =>
@@ -1555,7 +1571,7 @@ export class CSharpTranspiler {
   /**
    * The C# type of a declaration: a parameter, variable or property
    */
-  private declaredType(declaration: Node): string {
+  private declaredType(declaration: Declaration): string {
     const existing = this.declared.get(declaration);
     if (existing !== undefined) {
       return existing;
@@ -1565,20 +1581,19 @@ export class CSharpTranspiler {
       const parent = declaration.getParentOrThrow();
       if (Node.isArrowFunction(parent)) {
         const index = parent.getParameters().indexOf(declaration);
+        // the second parameter of the callbacks of filter and map is the index; forEach callbacks
+        // have one parameter
         type =
-          index == 1 && !this.isForEachCallback(parent)
+          index == 1
             ? 'int'
             : this.typeFromType(declaration.getType(), false, declaration);
-      } else if (
-        Node.isMethodDeclaration(parent) ||
-        Node.isConstructorDeclaration(parent) ||
-        Node.isFunctionDeclaration(parent)
-      ) {
-        const callable = this.callable(parent);
-        const index = parent.getParameters().indexOf(declaration);
-        type = callable.impl[index].replace('...', '[]');
       } else {
-        return fail(declaration, 'Unsupported parameter');
+        // the parameters of functions, methods and constructors, as the transpiled code has no
+        // other functions
+        const callable = parent as
+          MethodDeclaration | ConstructorDeclaration | FunctionDeclaration;
+        const index = callable.getParameters().indexOf(declaration);
+        type = this.callable(callable).impl[index].replace('...', '[]');
       }
     } else if (
       Node.isVariableDeclaration(declaration) ||
@@ -1593,10 +1608,9 @@ export class CSharpTranspiler {
       } else {
         return fail(declaration, 'Variables need a type or an initializer');
       }
-    } else if (Node.isBindingElement(declaration)) {
-      type = this.typeFromType(declaration.getType(), false, declaration);
     } else {
-      return fail(declaration, 'Unsupported declaration');
+      // a binding element of the entries of a map
+      type = this.typeFromType(declaration.getType(), false, declaration);
     }
     this.declared.set(declaration, type);
     return type;
@@ -1605,7 +1619,7 @@ export class CSharpTranspiler {
   /**
    * The declaration of a variable, parameter or property that an expression refers to
    */
-  private declarationOf(node: Node): Node | undefined {
+  private declarationOf(node: Node): Declaration | undefined {
     if (
       Node.isIdentifier(node) ||
       (Node.isPropertyAccessExpression(node) &&
@@ -1681,17 +1695,6 @@ export class CSharpTranspiler {
       return whenTrue == whenFalse ? whenTrue : 'object';
     }
     return this.typeFromType(node.getType(), false, node);
-  }
-
-  private isForEachCallback(node: ArrowFunction): boolean {
-    const parent = node.getParent();
-    return (
-      Node.isCallExpression(parent) &&
-      Node.isPropertyAccessExpression(parent.getExpression()) &&
-      (parent.getExpression() as PropertyAccessExpression).getName() ==
-        'forEach' &&
-      Node.isExpressionStatement(parent.getParent())
-    );
   }
 
   private dummy(prefix: string): string {
@@ -1819,15 +1822,13 @@ export class CSharpTranspiler {
         );
       }
       const elements = nameNode.getElements();
+      const [key, value] = elements;
       if (
         elements.length != 2 ||
-        !elements.every((element) => Node.isBindingElement(element))
+        !Node.isBindingElement(key) ||
+        !Node.isBindingElement(value)
       ) {
         return fail(node, 'Entries must be destructured into key and value');
-      }
-      const [key, value] = elements.map((element) => element as Node);
-      if (!Node.isBindingElement(key) || !Node.isBindingElement(value)) {
-        return fail(node, 'Unsupported loop variable');
       }
       const source = wrap(this.expression(iterable), Prec.primary);
       const valueName = csharpLocalName(value.getName());
@@ -2308,10 +2309,8 @@ export class CSharpTranspiler {
         parts.push(csharpString(literal));
       }
     }
-    if (parts.length == 0) {
-      return { code: '""', prec: Prec.primary };
-    }
-    // all parts are strings, so + concatenates
+    // a template has at least one span, so there is at least one part. All parts are strings, so +
+    // concatenates
     return {
       code: parts.join(' + '),
       prec: parts.length == 1 ? Prec.primary : Prec.additive,
