@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.853.0](https://github.com/udondan/iam-floyd/compare/v0.852.0...v0.853.0) (2026-11-09)
+
+
+### Features
+
+* add latest IAM updates from AWS ([#2430](https://github.com/udondan/iam-floyd/issues/2430)) ([ea279de](https://github.com/udondan/iam-floyd/commit/ea279de08e8920c8553e23a86c6725809743543b))
+* update AWS managed policies and service principals ([#2428](https://github.com/udondan/iam-floyd/issues/2428)) ([f8010e9](https://github.com/udondan/iam-floyd/commit/f8010e946fc1f9b8ee505c9304dbaf5cce767dec))
+
+
+### Bug Fixes
+
+* **deps:** override glob of test-exclude to 14.0.4 (CVE-2026-118773) ([#2439](https://github.com/udondan/iam-floyd/issues/2439)) ([ec330b1](https://github.com/udondan/iam-floyd/commit/ec330b15537b8612ae891185080c7882d43e2823))
+
 ## [0.852.0](https://github.com/udondan/iam-floyd/compare/v0.851.0...v0.852.0) (2026-11-01)
 
 
