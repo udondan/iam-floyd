@@ -44,6 +44,16 @@
     ]
   },
   {
+    "name": "actions are sorted by UTF-16 code units",
+    "calls": [
+      ["to", "s3:Ａ"],
+      ["to", "s3:😀"],
+      ["to", "s3:éa"],
+      ["to", "s3:é"],
+      ["to", "s3:a"]
+    ]
+  },
+  {
     "name": "all actions of service",
     "service": "sqs",
     "calls": [["allActions"]]
@@ -209,6 +219,51 @@
       ["if", "k:list", ["a", "b"]],
       ["if", "k:bools", [true, false]],
       ["if", "k:empty", ""]
+    ]
+  },
+  {
+    "name": "condition number formatting",
+    "calls": [
+      ["if", "k:zero", 0, "NumericEquals"],
+      ["if", "k:large", 123456789012345680000, "NumericEquals"],
+      ["if", "k:exponent", 1e21, "NumericEquals"],
+      ["if", "k:fraction", 1.25e21, "NumericEquals"],
+      ["if", "k:micro", 0.000001, "NumericEquals"],
+      ["if", "k:tiny", -1.5e-10, "NumericEquals"],
+      ["if", "k:decimal", 12.34, "NumericEquals"],
+      [
+        "if",
+        "k:list",
+        [0, 3600, 0.5, 1.5, -2, 1e21, 1.25e21, 0.000001, 1e-7, -1.5e-10],
+        "NumericEquals"
+      ]
+    ]
+  },
+  {
+    "name": "condition string escaping",
+    "calls": [
+      [
+        "if",
+        "k:escape",
+        "quote \" backslash \\ slash / \b \f \n \r \t \u0001 \u001f \u007f é ü ♥ 😀"
+      ],
+      ["if", "k:\"key\"", ["\t", "\\"]]
+    ]
+  },
+  {
+    "name": "condition null in list",
+    "calls": [["if", "k:list", ["a", null]]]
+  },
+  {
+    "name": "condition date with default operator",
+    "calls": [
+      [
+        "if",
+        "k:date",
+        {
+          "date": "2024-02-29T13:14:15.678Z"
+        }
+      ]
     ]
   },
   {

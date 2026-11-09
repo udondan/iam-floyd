@@ -1,6 +1,7 @@
 package js
 
 import (
+	"errors"
 	"regexp"
 	"sort"
 	"strings"
@@ -25,7 +26,7 @@ func Length(value string) int {
 }
 
 // Substring returns the part of a string between two indexes in UTF-16 code units, like
-// substring() of JavaScript: the indexes are clamped and swapped if needed.
+// substring() of JavaScript: the indexes are clamped.
 func Substring(value string, start int, end ...int) string {
 	ascii := isASCII(value)
 	var units []uint16
@@ -40,9 +41,6 @@ func Substring(value string, start int, end ...int) string {
 	}
 	start = min(max(start, 0), length)
 	stop = min(max(stop, 0), length)
-	if start > stop {
-		start, stop = stop, start
-	}
 	if ascii {
 		return value[start:stop]
 	}
@@ -128,23 +126,18 @@ func MapItems[T any, R any](values []T, function func(value T, index int) R) []R
 	return result
 }
 
-// RegExp compiles a regular expression of JavaScript with the flags i, m and s
+// RegExp compiles a regular expression of JavaScript with the flag i
 func RegExp(pattern string, flags string) *regexp.Regexp {
 	prefix := ""
 	for _, flag := range flags {
-		switch flag {
-		case 'i', 'm', 's':
-			prefix += string(flag)
-		default:
-			Throw("Unsupported regular expression flag: " + string(flag))
+		if flag != 'i' {
+			panic(errors.New("Unsupported regular expression flag: " + string(flag)))
 		}
+		prefix = "(?i)"
 	}
-	if prefix != "" {
-		pattern = "(?" + prefix + ")" + pattern
-	}
-	expression, err := regexp.Compile(pattern)
+	expression, err := regexp.Compile(prefix + pattern)
 	if err != nil {
-		Throw("Invalid regular expression: " + err.Error())
+		panic(errors.New("Invalid regular expression: " + err.Error()))
 	}
 	return expression
 }

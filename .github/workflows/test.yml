@@ -164,6 +164,65 @@ jobs:
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
 
+  # The coverage of the hand-written runtime of the native packages, measured against the
+  # transpiled sources with the newest version of each language. Runs on push to main as well, so
+  # Codecov has a base for every flag.
+  coverage-native:
+    name: Coverage of iam-floyd in ${{ matrix.name }}
+    needs: lint
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for Codecov
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+            # renovate: datasource=python-version depName=python
+            version: "3.15"
+            report: python.xml
+          - language: java
+            name: Java
+            version: "25"
+            report: java.xml
+          - language: dotnet
+            name: .NET
+            version: "10"
+            report: dotnet.xml
+          - language: go
+            name: Go
+            version: stable
+            report: go.out
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up
+        uses: $/.github/actions/package-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+          version: ${{ matrix.version }}
+          package: "false"
+
+      - name: Test with coverage
+        run: make coverage-native LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/native/${{ matrix.report }}
+          flags: ${{ matrix.language }}
+
   test-iam-floyd:
     name: Test iam-floyd npm package
     needs: lint
@@ -397,13 +456,14 @@ jobs:
     needs:
       - lint
       - test-iam-floyd-native
+      - coverage-native
       - test-iam-floyd
       - test-cdk-iam-floyd
       - test-cdk-iam-floyd-jsii
       - coverage
     steps:
       - name: Check tests
-        if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
+        if: needs.lint.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.coverage-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
         env:
           FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
         run: |

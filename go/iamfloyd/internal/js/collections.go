@@ -23,15 +23,6 @@ func NewRecord[V any]() *Record[V] {
 	return &Record[V]{values: map[string]V{}}
 }
 
-// RecordOf returns a record with the given entries
-func RecordOf[V any](entries ...Entry[string, V]) *Record[V] {
-	record := NewRecord[V]()
-	for _, entry := range entries {
-		record.Set(entry.Key, entry.Value)
-	}
-	return record
-}
-
 // Get returns the value of a key, or the zero value if the key is missing
 func (r *Record[V]) Get(key string) V {
 	return r.values[key]

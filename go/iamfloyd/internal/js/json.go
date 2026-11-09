@@ -18,12 +18,8 @@ type jsonValue interface {
 	writeJSON(writer *jsonWriter)
 }
 
-type toJSON interface {
-	ToJSON() interface{}
-}
-
 // Stringify returns the JSON of a value like JSON.stringify: records keep the order of their keys,
-// numbers are formatted like in JavaScript, and objects are written by their ToJSON method.
+// and numbers are formatted like in JavaScript.
 func Stringify(value interface{}) string {
 	writer := &jsonWriter{}
 	writer.write(value)
@@ -58,8 +54,6 @@ func (w *jsonWriter) write(value interface{}) {
 			w.write(item)
 		}
 		w.out.WriteByte(']')
-	case toJSON:
-		w.write(v.ToJSON())
 	default:
 		panic(fmt.Errorf("cannot serialize %s to JSON", reflect.TypeOf(value)))
 	}

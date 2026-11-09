@@ -4,7 +4,8 @@
 # language, and compares the results. The scenarios are those of scenarios.json, which test the
 # core, plus those of services.ts, which call every method of every service. Then runs the examples
 # of the docs in each language and compares them to the .result files, together with the policies
-# of the policy converter (test/converter/cases.ts), and compares the AWS managed policies.
+# of the policy converter (test/converter/cases.ts), compares the AWS managed policies, and tests
+# the cases of the hand-written runtime that the scenarios cannot reach.
 #
 # Usage: test/transpile/run.sh [languages, default: python java dotnet go]
 #
@@ -13,6 +14,9 @@
 # DOTNET_PACKAGES=<directory of the nupkg of make package-native>, GO_MODULE=<zip of the module of
 # make package-native>. DOTNET_FRAMEWORK sets the target framework of the .NET test, default: that
 # of the installed SDK
+#
+# COVERAGE=1 measures the coverage of the hand-written runtime of the generated sources into
+# coverage/native/: python.xml (coverage.py), java.xml (JaCoCo), dotnet.xml (coverlet) and go.out
 
 set -euo pipefail
 
@@ -22,6 +26,17 @@ if [[ $# -gt 0 ]]; then
   LANGUAGES=("$@")
 else
   LANGUAGES=(python java dotnet go)
+fi
+
+COVERAGE="${COVERAGE:-}"
+COVERAGE_DIR=coverage/native
+if [[ -n "${COVERAGE}" ]]; then
+  if [[ -n "${PYTHON_WHEEL:-}${JAVA_JAR:-}${DOTNET_PACKAGES:-}${GO_MODULE:-}" ]]; then
+    echo "COVERAGE measures the generated sources, not the built packages" >&2
+    exit 1
+  fi
+  rm -rf "${COVERAGE_DIR}"
+  mkdir -p "${COVERAGE_DIR}"
 fi
 
 rm -rf "${OUT}"
@@ -39,18 +54,30 @@ for scenarios in "${SCENARIOS[@]}"; do
 done
 npx ts-node "${TEST}/typescript/managed-policies.ts" > "${OUT}/managed-policies.json"
 
-PYTHON=python3
+PYTHON=(python3)
 if [[ -n "${PYTHON_WHEEL:-}" ]]; then
   uv venv --quiet --python "$(command -v python3)" "${OUT}/venv"
   uv pip install --quiet --python "${OUT}/venv/bin/python" "${PYTHON_WHEEL}"
-  PYTHON="${OUT}/venv/bin/python"
+  PYTHON=("${OUT}/venv/bin/python")
   export IAM_FLOYD_INSTALLED=1
-  echo "Testing ${PYTHON_WHEEL} with $("${PYTHON}" --version)"
+  echo "Testing ${PYTHON_WHEEL} with $("${PYTHON[@]}" --version)"
+elif [[ -n "${COVERAGE}" && " ${LANGUAGES[*]} " == *" python "* ]]; then
+  uv venv --quiet --python "$(command -v python3)" "${OUT}/venv"
+  uv pip install --quiet --python "${OUT}/venv/bin/python" -r "${TEST}/python/requirements.txt"
+  export COVERAGE_FILE="${OUT}/python.coverage"
+  PYTHON=("${OUT}/venv/bin/python" -m coverage run --append --branch
+    "--include=python/iam_floyd/__init__.py,python/iam_floyd/_js.py")
 fi
 
 # the Java runners in test/transpile/java/
+JAVA=(java)
 JAVA_CP=
 if [[ " ${LANGUAGES[*]} " == *" java "* ]]; then
+  if [[ -n "${COVERAGE}" ]]; then
+    mvn --quiet --file "${TEST}/java/pom.xml" dependency:copy-dependencies -DexcludeTransitive=true \
+      -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -DoutputDirectory="$(pwd)/${OUT}/jacoco"
+    JAVA+=("-javaagent:${OUT}/jacoco/org.jacoco.agent.jar=destfile=${OUT}/jacoco.exec,includes=com.udondan.iamFloyd.Js*")
+  fi
   if [[ -n "${JAVA_JAR:-}" ]]; then
     JAVA_CP="${JAVA_JAR}"
   else
@@ -86,6 +113,11 @@ if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
     DOTNET_BUILD+=(-p:RestorePackagesPath="$(pwd)/${OUT}/dotnet/packages")
     DOTNET_BUILD+=(-p:FloydPackages="$(cd "${DOTNET_PACKAGES}" && pwd)")
     DOTNET_BUILD+=(-p:FloydVersion="$(node -p "require('./package.json').version")")
+  fi
+  if [[ -n "${COVERAGE}" ]]; then
+    # coverlet does not find the sources of a deterministic build
+    DOTNET_BUILD+=(-p:ContinuousIntegrationBuild=false)
+    dotnet tool restore > /dev/null
   fi
   dotnet build "${TEST}/dotnet/Test.csproj" --nologo -v quiet -c Release \
     --artifacts-path "${OUT}/dotnet/artifacts" "${DOTNET_BUILD[@]}"
@@ -135,23 +167,45 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
     # Go 1.21 takes the @ of the directory in the zip for a version
     mv "${OUT}"/go-module/udondan.github.io/iam-floyd/go/iamfloyd@* "${OUT}/go-module/iamfloyd"
     GO_MODULE_DIR="$(cd "${OUT}/go-module/iamfloyd" && pwd)"
-    go -C "${GO_DIR}" mod edit -replace "udondan.github.io/iam-floyd/go/iamfloyd=${GO_MODULE_DIR}"
   else
-    go -C "${GO_DIR}" mod edit -replace "udondan.github.io/iam-floyd/go/iamfloyd=$(pwd)/go/iamfloyd"
+    GO_MODULE_DIR="$(pwd)/go/iamfloyd"
   fi
+  GO_PACKAGE=udondan.github.io/iam-floyd/go/iamfloyd
+  go -C "${GO_DIR}" mod edit -replace "${GO_PACKAGE}=${GO_MODULE_DIR}"
   go -C "${GO_DIR}" vet ./...
-  go -C "${GO_DIR}" build -o test .
+  GO_BUILD=(build)
+  # the test of the runtime, in the package of the runtime, as it is internal
+  GO_RUNTIME=(go -C "${GO_MODULE_DIR}" test)
+  if [[ -n "${COVERAGE}" ]]; then
+    # the package main must be covered as well, otherwise the test writes no coverage
+    GO_BUILD+=(-cover -coverpkg="floydtest,${GO_PACKAGE},${GO_PACKAGE}/internal/js")
+    GOCOVERDIR="$(pwd)/${OUT}/go-coverage"
+    export GOCOVERDIR
+    mkdir -p "${GOCOVERDIR}"
+    GO_RUNTIME+=(-cover ./internal/js/ -args -test.gocoverdir="${GOCOVERDIR}")
+  else
+    GO_RUNTIME+=(./internal/js/)
+  fi
+  go -C "${GO_DIR}" "${GO_BUILD[@]}" -o test .
   GO_TEST=("${GO_DIR}/test")
   echo "Testing Go with $(go version)"
 fi
+
+# coverlet hides the output of the test, so the coverage of .NET takes a run of its own
+dotnet_coverage() {
+  local test="${OUT}/dotnet/artifacts/bin/Test/release/Test.dll"
+  dotnet tool run coverlet "${test}" --target dotnet --targetargs "${test} $*" \
+    --include "[IAM.Floyd]IAM.Floyd.Js*" --merge-with "${OUT}/dotnet-coverage/coverage.json" \
+    --format json --format cobertura --output "${OUT}/dotnet-coverage/" > /dev/null
+}
 
 FAILED=()
 for language in "${LANGUAGES[@]}"; do
   echo "Testing ${language}"
   for scenarios in "${SCENARIOS[@]}"; do
     case "${language}" in
-      python) "${PYTHON}" "${TEST}/python/run.py" "${scenarios}" >> "${OUT}/python.txt" ;;
-      java) java -cp "${JAVA_CP}" Run "${scenarios}" >> "${OUT}/java.txt" ;;
+      python) "${PYTHON[@]}" "${TEST}/python/run.py" "${scenarios}" >> "${OUT}/python.txt" ;;
+      java) "${JAVA[@]}" -cp "${JAVA_CP}" Run "${scenarios}" >> "${OUT}/java.txt" ;;
       dotnet) "${DOTNET_TEST[@]}" scenarios "${scenarios}" >> "${OUT}/dotnet.txt" ;;
       go) "${GO_TEST[@]}" scenarios "${scenarios}" >> "${OUT}/go.txt" ;;
       *)
@@ -169,8 +223,8 @@ for language in "${LANGUAGES[@]}"; do
   fi
 
   case "${language}" in
-    python) "${PYTHON}" "${TEST}/python/examples.py" "${EXAMPLES_DIR}" > "${OUT}/examples-python.txt" ;;
-    java) java -cp "${JAVA_CP}" Examples "${EXAMPLES_DIR}" "${OUT}/java/examples" > "${OUT}/examples-java.txt" ;;
+    python) "${PYTHON[@]}" "${TEST}/python/examples.py" "${EXAMPLES_DIR}" > "${OUT}/examples-python.txt" ;;
+    java) "${JAVA[@]}" -cp "${JAVA_CP}" Examples "${EXAMPLES_DIR}" "${OUT}/java/examples" > "${OUT}/examples-java.txt" ;;
     dotnet) "${DOTNET_TEST[@]}" examples "${OUT}/dotnet/examples" > "${OUT}/examples-dotnet.txt" ;;
     go) "${GO_TEST[@]}" examples > "${OUT}/examples-go.txt" ;;
   esac
@@ -182,13 +236,52 @@ for language in "${LANGUAGES[@]}"; do
   fi
 
   case "${language}" in
-    python) managed_policies=("${PYTHON}" "${TEST}/python/managed_policies.py") ;;
-    java) managed_policies=(java -cp "${JAVA_CP}" ManagedPolicies) ;;
+    python) managed_policies=("${PYTHON[@]}" "${TEST}/python/managed_policies.py") ;;
+    java) managed_policies=("${JAVA[@]}" -cp "${JAVA_CP}" ManagedPolicies) ;;
     dotnet) managed_policies=("${DOTNET_TEST[@]}" managed-policies) ;;
     go) managed_policies=("${GO_TEST[@]}" managed-policies) ;;
   esac
   if ! "${managed_policies[@]}" "${OUT}/managed-policies.json"; then
     FAILED+=("${language} managed policies")
+  fi
+
+  case "${language}" in
+    python) runtime=("${PYTHON[@]}" "${TEST}/python/runtime.py") ;;
+    java) runtime=("${JAVA[@]}" -cp "${JAVA_CP}" com.udondan.iamFloyd.RuntimeTest) ;;
+    dotnet) runtime=("${DOTNET_TEST[@]}" runtime) ;;
+    go) runtime=("${GO_RUNTIME[@]}") ;;
+  esac
+  if ! "${runtime[@]}"; then
+    FAILED+=("${language} runtime")
+  fi
+
+  if [[ -n "${COVERAGE}" ]]; then
+    case "${language}" in
+      python)
+        "${OUT}/venv/bin/python" -m coverage xml --quiet -o "${COVERAGE_DIR}/python.xml"
+        ;;
+      java)
+        java -jar "${OUT}/jacoco/org.jacoco.cli.jar" report "${OUT}/jacoco.exec" --quiet \
+          --classfiles "${OUT}/java/core/com/udondan/iamFloyd/Js.class" \
+          --classfiles "${OUT}/java/core/com/udondan/iamFloyd/Json.class" \
+          --sourcefiles java/src/main/java --xml "${COVERAGE_DIR}/java.xml"
+        ;;
+      dotnet)
+        mkdir -p "${OUT}/dotnet-coverage"
+        for scenarios in "${SCENARIOS[@]}"; do
+          dotnet_coverage scenarios "${scenarios}"
+        done
+        dotnet_coverage examples "${OUT}/dotnet/examples"
+        dotnet_coverage runtime
+        cp "${OUT}/dotnet-coverage/coverage.cobertura.xml" "${COVERAGE_DIR}/dotnet.xml"
+        ;;
+      go)
+        # only the hand-written files, not the generated ones and not the test
+        go tool covdata textfmt -i="${GOCOVERDIR}" -o "${OUT}/go-coverage.out"
+        grep -E "^mode:|^${GO_PACKAGE}/(helpers\.go|internal/js/)" "${OUT}/go-coverage.out" > "${COVERAGE_DIR}/go.out"
+        ;;
+    esac
+    echo "Wrote the coverage of ${language} to ${COVERAGE_DIR}"
   fi
 done
 

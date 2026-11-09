@@ -3,8 +3,8 @@
 [![Release](https://img.shields.io/github/v/release/udondan/iam-floyd?label=release)](https://github.com/udondan/iam-floyd/releases)
 [![Documentation](https://img.shields.io/readthedocs/iam-floyd?label=docs)](https://iam-floyd.readthedocs.io/en/latest/)
 [![Construct Hub](https://img.shields.io/badge/Construct%20Hub-cdk--iam--floyd-blue)](https://constructs.dev/packages/cdk-iam-floyd)
-[![License](https://img.shields.io/github/license/udondan/iam-floyd)](https://github.com/udondan/iam-floyd/blob/main/LICENSE)
 [![codecov](https://codecov.io/gh/udondan/iam-floyd/graph/badge.svg)](https://codecov.io/gh/udondan/iam-floyd)
+[![License](https://img.shields.io/github/license/udondan/iam-floyd)](https://github.com/udondan/iam-floyd/blob/main/LICENSE)
 
 **AWS [IAM policy statement][statement] generator with a fluent interface, for TypeScript, JavaScript, Python, Java, C# and Go.**
 

@@ -21,7 +21,7 @@ if 'IAM_FLOYD_INSTALLED' not in os.environ:
     sys.path.insert(0, str(ROOT / 'python'))
 
 import iam_floyd  # noqa: E402
-from iam_floyd import Operator, PolicyDocument, PolicyStatement, Statement  # noqa: E402
+from iam_floyd import Operator, PolicyDocument, PolicyStatement, Statement, _js  # noqa: E402
 
 KEYWORDS = {'if', 'in', 'for'}
 
@@ -76,7 +76,8 @@ def build(scenario):
 
 
 def to_json(value):
-    return json.dumps(value, separators=(',', ':'), ensure_ascii=False)
+    # like JSON.stringify, which formats numbers other than json.dumps
+    return _js.stringify(value)
 
 
 def attempt(fn):
