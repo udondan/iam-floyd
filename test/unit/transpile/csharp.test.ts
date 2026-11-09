@@ -14,7 +14,7 @@ import {
   managedPoliciesSourceFiles,
   servicePrincipalsSourceFiles,
 } from '../../../lib/generator/transpile/index';
-import { sourceFile, sourceFiles } from '../helpers';
+import { snippetSourceFile, sourceFiles } from '../helpers';
 
 const namespace = 'IAM.Floyd';
 
@@ -55,7 +55,7 @@ function transpileFiles(files: SourceFile[]): string {
  * Transpiles `lib/shared/index.ts` with the code, and returns all files joined
  */
 function transpile(code: string): string {
-  return transpileFiles(sourceFile(code));
+  return transpileFiles(snippetSourceFile(code));
 }
 
 /**

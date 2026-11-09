@@ -15,7 +15,7 @@ import {
   javadoc,
   javaString,
 } from '../../../lib/generator/transpile/java';
-import { sourceFile, sourceFiles } from '../helpers';
+import { snippetSourceFile, sourceFiles } from '../helpers';
 
 const pkg = 'com.example';
 
@@ -40,7 +40,7 @@ function transpileFiles(files: SourceFile[]): Map<string, string> {
 
 /** Transpiles the code as `lib/shared/index.ts` and returns all files joined */
 function transpile(code: string): string {
-  return [...transpileFiles(sourceFile(code)).values()].join('\n');
+  return [...transpileFiles(snippetSourceFile(code)).values()].join('\n');
 }
 
 /** Transpiles the body of a function `f` with the given parameters and return type */

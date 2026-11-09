@@ -46,3 +46,21 @@ export function reusedSourceFiles(files: Record<string, string>): SourceFile[] {
   project.resolveSourceFileDependencies();
   return created;
 }
+
+/**
+ * The files of a snippet: in the reused project, or in a new one if they have subclasses
+ */
+export function snippetSourceFiles(
+  files: Record<string, string>,
+): SourceFile[] {
+  return /\bextends\b/.test(Object.values(files).join('\n'))
+    ? sourceFiles(files)
+    : reusedSourceFiles(files);
+}
+
+/**
+ * Like `sourceFile`, as `snippetSourceFiles`
+ */
+export function snippetSourceFile(code: string): SourceFile[] {
+  return snippetSourceFiles({ 'lib/shared/index.ts': code });
+}
