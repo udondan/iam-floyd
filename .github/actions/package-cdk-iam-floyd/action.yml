@@ -51,3 +51,17 @@ runs:
         make package-jsii LANGUAGES="$LANGUAGE"
       env:
         LANGUAGE: ${{ inputs.language }}
+
+    - name: Read the version
+      if: inputs.language == 'go'
+      id: version
+      shell: bash
+      run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+    - name: Pack the Go module
+      if: inputs.language == 'go'
+      uses: udondan/goproxy-gh-pages/pack@v1
+      with:
+        module-dir: dist/go/cdkiamfloyd
+        version: ${{ steps.version.outputs.version }}
+        output: dist/go-module/cdk-iam-floyd-go-module-{version}.zip

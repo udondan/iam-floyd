@@ -55,7 +55,7 @@ In the CDK variant, the `on*()` method of a resource type with a single required
 
 `test/jsii/` builds `floyd-consumer`, a jsii library that depends on `cdk-iam-floyd`, and runs the same scenarios in TypeScript (the baseline, without jsii), Python, Java, .NET and Go against `test/jsii/expected.json`. It also runs the examples of the docs in each language (`examples/<name>/<name>.{py,java,cs,go}`, through the runners in `test/jsii/examples/`) and compares them to the `.result` files. Every example needs a file in every language.
 
-Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make package-jsii publish LANGUAGES=typescript`), Python goes to PyPI and .NET to NuGet (both trusted publishing), Java to Maven Central (`bin/publish-maven`, signed bundle via the Central Portal API). Go has no registry: the module zip is written by `bin/goproxy-gh-pages pack` (the command line of [goproxy-gh-pages](https://github.com/udondan/goproxy-gh-pages) at its tag `v1`) and attached to the GitHub release. The action `udondan/goproxy-gh-pages/build` builds a static Go module proxy of both modules (`cdkiamfloyd` and the native `iamfloyd`) for the newest 30 releases, served by GitHub Pages under `udondan.github.io/iam-floyd/go` (job `publish-go-proxy`), and `udondan/goproxy-gh-pages/seed` has proxy.golang.org fetch the new versions (job `seed-go-proxy`).
+Publishing: the npm package of `cdk-iam-floyd` includes the `.jsii` (`make package-jsii publish LANGUAGES=typescript`), Python goes to PyPI and .NET to NuGet (both trusted publishing), Java to Maven Central (`bin/publish-maven`, signed bundle via the Central Portal API). Go has no registry: the module zip is written in CI by the action `udondan/goproxy-gh-pages/pack` (in the composite actions `package-iam-floyd` and `package-cdk-iam-floyd`, after `make`) and attached to the GitHub release; a local `make` writes no zips. The action `udondan/goproxy-gh-pages/build` builds a static Go module proxy of both modules (`cdkiamfloyd` and the native `iamfloyd`) for the newest 30 releases, served by GitHub Pages under `udondan.github.io/iam-floyd/go` (job `publish-go-proxy`), and `udondan/goproxy-gh-pages/seed` has proxy.golang.org fetch the new versions (job `seed-go-proxy`).
 
 ### Native Packages (transpiled core)
 
@@ -75,7 +75,7 @@ The Java package is built with Maven from `java/pom.xml` (`-Drevision=<version o
 
 The .NET package is built with `dotnet pack` from `dotnet/src/IAM.Floyd/IAM.Floyd.csproj` (`-p:Version=<version of package.json>`), for .NET 8, into `dist/iam-floyd/dotnet`. CI builds it with the newest .NET SDK and tests the package with .NET 8 and the newest .NET (`DOTNET_PACKAGES`, `DOTNET_FRAMEWORK`); for a release, it goes to NuGet as `IAM.Floyd` (trusted publishing, job `publish-iam-floyd-dotnet`).
 
-The Go module is zipped by `bin/goproxy-gh-pages pack` into `dist/iam-floyd/go`, with the LICENSE. It supports Go 1.21 and newer, and has no dependencies. CI tests the zip with Go 1.21 and the newest Go (`GO_MODULE`); for a release, the zip is attached to the GitHub release (job `publish-iam-floyd-go`) and served by the Go module proxy.
+The Go module is `go/iamfloyd`, with the LICENSE; CI zips it with `udondan/goproxy-gh-pages/pack` into `dist/iam-floyd/go`. It supports Go 1.21 and newer, and has no dependencies. CI tests the zip with Go 1.21 and the newest Go (`GO_MODULE`); for a release, the zip is attached to the GitHub release (job `publish-iam-floyd-go`) and served by the Go module proxy.
 
 ### Policy Converter
 
