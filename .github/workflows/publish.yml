@@ -453,7 +453,7 @@ jobs:
 
       - name: Build Go module proxy
         id: build
-        uses: udondan/goproxy-gh-pages/build@v1
+        uses: udondan/goproxy-gh-pages/build@1bc5f4391f581dea5e41a9b64238111425605a74 # v1
         with:
           base-url: https://udondan.github.io/iam-floyd
           home-url: https://iam-floyd.readthedocs.io/
@@ -522,7 +522,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Seed proxy.golang.org
-        uses: udondan/goproxy-gh-pages/seed@v1
+        uses: udondan/goproxy-gh-pages/seed@1bc5f4391f581dea5e41a9b64238111425605a74 # v1
         with:
           versions: ${{ needs.publish-go-proxy.outputs.new-versions }}
           site-url: ${{ needs.publish-go-proxy.outputs.proxy-url }}
