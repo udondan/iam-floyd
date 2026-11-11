@@ -99,8 +99,8 @@ def go(source):
     )
     source = re.sub(r'(?<![\w.])iamfloyd\.(String|Strings|Number|Bool)\(', r'jsii.\1(', source)
     # in jsii, the collection is in the main package, and returns a pointer to the slice
-    source = re.sub(
-        r'range collection\.NewCollection\(\)', 'range *cdkiamfloyd.NewCollection()', source
+    source = source.replace(
+        'range collection.NewCollection()', 'range *cdkiamfloyd.NewCollection()'
     )
     source = re.sub(
         r'(?<![\w.])collection\.NewCollection\(\)', 'cdkiamfloyd.NewCollection()', source
