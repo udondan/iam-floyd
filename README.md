@@ -2,6 +2,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/header-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/header-light.webp">
   <img alt="IAM Floyd: Build AWS IAM policies fluently." src="https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/header-light.webp">
 </picture>
 
