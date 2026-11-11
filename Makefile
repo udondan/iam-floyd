@@ -59,8 +59,8 @@ package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@$(call npm-readme,npm pack)
 
-# The native packages of iam-floyd in dist/iam-floyd/: Python, Java (a Maven repository), .NET and
-# the module zip of Go.
+# The native packages of iam-floyd in dist/iam-floyd/: Python, Java (a Maven repository) and .NET.
+# The Go module is go/iamfloyd, with the LICENSE; its zip is written in CI by goproxy-gh-pages/pack.
 # Set LANGUAGES to build only some of them, e.g. `make package-native LANGUAGES=python`
 package-native: emit
 	@echo -e "$(TARGET_COLOR)Running package-native$(NO_COLOR)"
@@ -74,7 +74,6 @@ package-native: emit
 		--artifacts-path dist/iam-floyd/dotnet-build -p:PackageOutputPath=$(CURDIR)/dist/iam-floyd/dotnet)
 	$(if $(filter dotnet,$(LANGUAGES)),@rm -rf dist/iam-floyd/dotnet-build)
 	$(if $(filter go,$(LANGUAGES)),@cp LICENSE go/iamfloyd/LICENSE)
-	$(if $(filter go,$(LANGUAGES)),@bin/go-proxy zip go/iamfloyd v$(VERSION) dist/iam-floyd/go/iam-floyd-go-module-v$(VERSION).zip)
 
 # Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`.
 # Set LANGUAGES to build only some of them, e.g. `make package-jsii LANGUAGES=python`
@@ -92,7 +91,6 @@ package-jsii: build
 		npx jsii-pacmak --targets "$$target" --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts" || exit 1; \
 	done
 	$(if $(JSII_TARGETS),@npx ts-node bin/readme.ts --jsii typescript)
-	$(if $(filter go,$(JSII_TARGETS)),@bin/go-proxy zip dist/go/cdkiamfloyd v$(VERSION) dist/go-module/cdk-iam-floyd-go-module-v$(VERSION).zip)
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"

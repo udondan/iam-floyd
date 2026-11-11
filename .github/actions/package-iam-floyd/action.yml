@@ -74,3 +74,17 @@ runs:
         LANGUAGE: ${{ inputs.language }}
         # renovate: datasource=python-version depName=python
         UV_PYTHON: "3.15"
+
+    - name: Read the version
+      if: inputs.package == 'true' && inputs.language == 'go'
+      id: version
+      shell: bash
+      run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+    - name: Pack the Go module
+      if: inputs.package == 'true' && inputs.language == 'go'
+      uses: udondan/goproxy-gh-pages/pack@v1
+      with:
+        module-dir: go/iamfloyd
+        version: ${{ steps.version.outputs.version }}
+        output: dist/iam-floyd/go/iam-floyd-go-module-{version}.zip

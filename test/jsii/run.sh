@@ -128,10 +128,39 @@ EOF
   dotnet run --verbosity quiet
 }
 
+# cdk-iam-floyd for Go: the module zip that is published, written in CI by goproxy-gh-pages/pack,
+# through a local proxy with the files of the GOPROXY protocol. Not built by goproxy-gh-pages: it
+# compares the zips with the live site, where the version of package.json is already published with
+# other content. Without a zip (a local `make package-jsii`), the module directory of jsii-pacmak is
+# used through a replace directive.
+GO_MODULE="udondan.github.io/iam-floyd/go/cdkiamfloyd"
+GO_ZIPS=("${ROOT}/dist/go-module/"*.zip)
+[[ -f "${GO_ZIPS[0]}" ]] || GO_ZIPS=()
+
+go_require_floyd() {
+  go mod edit -require "${GO_MODULE}@v${VERSION}"
+  if [[ ${#GO_ZIPS[@]} -eq 0 ]]; then
+    go mod edit -replace "${GO_MODULE}=${ROOT}/dist/go/cdkiamfloyd"
+  fi
+}
+
 run_go() {
   cp -R "${TEST}/go" "${OUT}/go"
-  # cdk-iam-floyd comes from the module zip that is published, through a local copy of the proxy
-  "${ROOT}/bin/go-proxy" site "${OUT}/go-proxy" "${ROOT}/dist/go-module/"*.zip >&2
+  local zip first module version dir
+  # the form for an empty array with `set -u` in the bash 3.2 of macOS
+  for zip in ${GO_ZIPS[@]+"${GO_ZIPS[@]}"}; do
+    # the files in the zip are in <module>@<version>/
+    first="$(zipinfo -1 "${zip}" | sed -n 1p)"
+    module="${first%%@*}"
+    version="${first#*@}"
+    version="${version%%/*}"
+    dir="${OUT}/go-proxy/go/${module}/@v"
+    mkdir -p "${dir}"
+    cp "${zip}" "${dir}/${version}.zip"
+    unzip -p "${zip}" "${module}@${version}/go.mod" > "${dir}/${version}.mod"
+    printf '{"Version":"%s","Time":"%s"}\n' "${version}" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "${dir}/${version}.info"
+    echo "${version}" >> "${dir}/list"
+  done
   export GOPROXY="file://${OUT}/go-proxy/go,https://proxy.golang.org" GONOSUMDB=udondan.github.io
   # the module cache and the module index (goindex) would keep the module of an earlier run with the same version
   export GODEBUG=goindex=0
@@ -145,7 +174,7 @@ run_go() {
   cd "${OUT}/go"
   go mod init scenarios
   go mod edit -replace "example.com/floyd-consumer-go/floydconsumer=${CONSUMER}/go/floydconsumer"
-  go mod edit -require "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
+  go_require_floyd
   go mod edit -require example.com/floyd-consumer-go/floydconsumer@v1.0.0
   go mod tidy
   go run .
@@ -183,7 +212,7 @@ examples_go() {
   export GOPROXY="file://${OUT}/go-proxy/go,https://proxy.golang.org" GONOSUMDB=udondan.github.io GODEBUG=goindex=0
   cd "${OUT}/examples-go"
   go mod init examples
-  go mod edit -require "udondan.github.io/iam-floyd/go/cdkiamfloyd@v${VERSION}"
+  go_require_floyd
   go mod tidy
   go run .
 }
