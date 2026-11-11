@@ -60,7 +60,7 @@ runs:
 
     - name: Pack the Go module
       if: inputs.language == 'go'
-      uses: udondan/goproxy-gh-pages/pack@v1
+      uses: udondan/goproxy-gh-pages/pack@1bc5f4391f581dea5e41a9b64238111425605a74 # v1
       with:
         module-dir: dist/go/cdkiamfloyd
         version: ${{ steps.version.outputs.version }}
