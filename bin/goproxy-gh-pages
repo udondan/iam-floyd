@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Runs the command line of goproxy-gh-pages (https://github.com/udondan/goproxy-gh-pages) at its
+# major tag v1, the version the publish workflow uses. It needs Python 3.10 or newer, nothing is
+# installed. Usage: bin/goproxy-gh-pages <command> [args], e.g.
+#   bin/goproxy-gh-pages pack <module dir> <version> --output <zip>
+set -euo pipefail
+
+dir="$(mktemp -d)"
+trap 'rm -rf "${dir}"' EXIT
+curl --fail --silent --show-error --location --retry 3 \
+  https://codeload.github.com/udondan/goproxy-gh-pages/tar.gz/refs/tags/v1 \
+  | tar -xz -C "${dir}" --strip-components 1
+"${dir}/run.sh" "$@"

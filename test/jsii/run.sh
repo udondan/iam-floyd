@@ -130,8 +130,23 @@ EOF
 
 run_go() {
   cp -R "${TEST}/go" "${OUT}/go"
-  # cdk-iam-floyd comes from the module zip that is published, through a local copy of the proxy
-  "${ROOT}/bin/go-proxy" site "${OUT}/go-proxy" "${ROOT}/dist/go-module/"*.zip >&2
+  # cdk-iam-floyd comes from the module zip that is published, through a local proxy with the files
+  # of the GOPROXY protocol. Not built by goproxy-gh-pages: it compares the zips with the live site,
+  # where the version of package.json is already published with other content.
+  local zip first module version dir
+  for zip in "${ROOT}/dist/go-module/"*.zip; do
+    # the files in the zip are in <module>@<version>/
+    first="$(zipinfo -1 "${zip}" | sed -n 1p)"
+    module="${first%%@*}"
+    version="${first#*@}"
+    version="${version%%/*}"
+    dir="${OUT}/go-proxy/go/${module}/@v"
+    mkdir -p "${dir}"
+    cp "${zip}" "${dir}/${version}.zip"
+    unzip -p "${zip}" "${module}@${version}/go.mod" > "${dir}/${version}.mod"
+    printf '{"Version":"%s","Time":"%s"}\n' "${version}" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "${dir}/${version}.info"
+    echo "${version}" >> "${dir}/list"
+  done
   export GOPROXY="file://${OUT}/go-proxy/go,https://proxy.golang.org" GONOSUMDB=udondan.github.io
   # the module cache and the module index (goindex) would keep the module of an earlier run with the same version
   export GODEBUG=goindex=0

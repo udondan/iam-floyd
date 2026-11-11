@@ -74,7 +74,7 @@ package-native: emit
 		--artifacts-path dist/iam-floyd/dotnet-build -p:PackageOutputPath=$(CURDIR)/dist/iam-floyd/dotnet)
 	$(if $(filter dotnet,$(LANGUAGES)),@rm -rf dist/iam-floyd/dotnet-build)
 	$(if $(filter go,$(LANGUAGES)),@cp LICENSE go/iamfloyd/LICENSE)
-	$(if $(filter go,$(LANGUAGES)),@bin/go-proxy zip go/iamfloyd v$(VERSION) dist/iam-floyd/go/iam-floyd-go-module-v$(VERSION).zip)
+	$(if $(filter go,$(LANGUAGES)),@bin/goproxy-gh-pages pack go/iamfloyd v$(VERSION) --output dist/iam-floyd/go/iam-floyd-go-module-v$(VERSION).zip)
 
 # Python, Java, .NET and Go packages of cdk-iam-floyd in dist/, run after `make cdk`.
 # Set LANGUAGES to build only some of them, e.g. `make package-jsii LANGUAGES=python`
@@ -92,7 +92,7 @@ package-jsii: build
 		npx jsii-pacmak --targets "$$target" --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts" || exit 1; \
 	done
 	$(if $(JSII_TARGETS),@npx ts-node bin/readme.ts --jsii typescript)
-	$(if $(filter go,$(JSII_TARGETS)),@bin/go-proxy zip dist/go/cdkiamfloyd v$(VERSION) dist/go-module/cdk-iam-floyd-go-module-v$(VERSION).zip)
+	$(if $(filter go,$(JSII_TARGETS)),@bin/goproxy-gh-pages pack dist/go/cdkiamfloyd v$(VERSION) --output dist/go-module/cdk-iam-floyd-go-module-v$(VERSION).zip)
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
