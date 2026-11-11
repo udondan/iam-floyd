@@ -2,6 +2,7 @@ docs/build
 skills/*-workspace
 eslint.log
 examples/*/*.*.result
+examples/*/cdk/*.result
 lib/generated/index.ts
 lib/generated/model/.cache
 lib/generated/policy-statements

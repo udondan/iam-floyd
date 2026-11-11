@@ -1,4 +1,4 @@
-from cdk_iam_floyd import Collection, ManagedPolicyDocument
+from iam_floyd import Collection, ManagedPolicyDocument
 
 
 def example():

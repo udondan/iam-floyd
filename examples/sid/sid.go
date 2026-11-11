@@ -1,15 +1,14 @@
 package main
 
 import (
-	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
 	examples["sid"] = func() any {
 		// doc-start
-		s := statement.NewEc2(&awsiam.PolicyStatementProps{Sid: jsii.String("MYSID")}).
+		s := statement.NewEc2(iamfloyd.String("MYSID")).
 			Allow().
 			ToStartInstances().
 			ToStopInstances()

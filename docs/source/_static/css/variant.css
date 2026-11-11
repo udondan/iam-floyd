@@ -1,0 +1,74 @@
+/* The content of the variants, see js/variant.js */
+
+html[data-floyd-variant='iam-floyd'] .floyd-variant-cdk-iam-floyd,
+html[data-floyd-variant='cdk-iam-floyd'] .floyd-variant-iam-floyd {
+  display: none;
+}
+
+/* Without JavaScript, both variants are shown, each with its name */
+html:not([data-floyd-variant]) .floyd-variant::before {
+  display: block;
+  padding: 2px 12px;
+  font-size: 90%;
+  font-weight: bold;
+  color: #404040;
+  background: #e7f2fa;
+}
+
+html:not([data-floyd-variant]) .floyd-variant-iam-floyd::before {
+  content: 'iam-floyd';
+}
+
+html:not([data-floyd-variant]) .floyd-variant-cdk-iam-floyd::before {
+  content: 'cdk-iam-floyd';
+}
+
+.sphinx-tabs-panel > .floyd-variant > div[class*='highlight-'] {
+  margin: 0 !important;
+}
+
+.floyd-variant > p {
+  margin: 12px;
+}
+
+.floyd-variant-switch {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 24px;
+  padding: 4px;
+  background: #f3f6f6;
+  border: 1px solid #e1e4e5;
+  border-radius: 6px;
+}
+
+.floyd-variant-switch button {
+  flex: 1 1 auto;
+  padding: 6px 14px;
+  font: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 90%;
+  color: #404040;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+}
+
+.floyd-variant-switch button:hover {
+  background: #e1e4e5;
+}
+
+.floyd-variant-switch button:focus-visible {
+  outline: 2px solid #2980b9;
+  outline-offset: 1px;
+}
+
+.floyd-variant-switch button[aria-pressed='true'] {
+  color: #fff;
+  background: #2980b9;
+}

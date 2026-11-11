@@ -1,4 +1,4 @@
-import com.udondan.iamFloyd.cdk.statement.Sts;
+import com.udondan.iamFloyd.statement.Sts;
 import java.util.List;
 
 class ExamplePrincipal {

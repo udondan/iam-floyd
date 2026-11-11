@@ -1,5 +1,5 @@
-import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
-import com.udondan.iamFloyd.cdk.statement.Ec2;
+import com.udondan.iamFloyd.ManagedPolicyDocument;
+import com.udondan.iamFloyd.statement.Ec2;
 
 class ExampleFullEc2StopByOwner {
   static Object example() {

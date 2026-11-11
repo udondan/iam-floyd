@@ -13,92 +13,116 @@ Install ``iam-floyd``, or ``cdk-iam-floyd`` for the AWS CDK, as described in :do
 
    .. group-tab:: TypeScript
 
-      .. code-block:: ts
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import { Statement } from 'iam-floyd';
+         .. code-block:: ts
 
-         // cdk-iam-floyd
-         import { Statement } from 'cdk-iam-floyd';
+            import { Statement } from 'iam-floyd';
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: ts
+
+            import { Statement } from 'cdk-iam-floyd';
 
       Or in JavaScript:
 
-      .. code-block:: js
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         const { Statement } = require('iam-floyd');
+         .. code-block:: js
 
-         // cdk-iam-floyd
-         const { Statement } = require('cdk-iam-floyd');
+            const { Statement } = require('iam-floyd');
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: js
+
+            const { Statement } = require('cdk-iam-floyd');
 
    .. group-tab:: Python
 
-      .. code-block:: python
+      .. variant:: iam-floyd
 
-         # iam-floyd
-         from iam_floyd import Statement
+         .. code-block:: python
 
-         # cdk-iam-floyd
-         from cdk_iam_floyd import Statement
+            from iam_floyd import Statement
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: python
+
+            from cdk_iam_floyd import Statement
 
    .. group-tab:: Java
 
-      .. code-block:: java
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         // the statement providers, e.g. Ec2
-         import com.udondan.iamFloyd.statement.Ec2;
-         // Operator, Collection and Json
-         import com.udondan.iamFloyd.*;
+         .. code-block:: java
 
-         // cdk-iam-floyd
-         // the statement providers, e.g. Ec2
-         import com.udondan.iamFloyd.cdk.statement.Ec2;
-         // Operator and Collection
-         import com.udondan.iamFloyd.cdk.*;
+            // the statement providers, e.g. Ec2
+            import com.udondan.iamFloyd.statement.Ec2;
+            // Operator, Collection and Json
+            import com.udondan.iamFloyd.*;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: java
+
+            // the statement providers, e.g. Ec2
+            import com.udondan.iamFloyd.cdk.statement.Ec2;
+            // Operator and Collection
+            import com.udondan.iamFloyd.cdk.*;
 
    .. group-tab:: C#
 
-      .. code-block:: csharp
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         // the statement providers, e.g. Statement.Ec2
-         using Statement = IAM.Floyd.Statement;
-         // Operator, Collection and Json
-         using IAM.Floyd;
+         .. code-block:: csharp
 
-         // cdk-iam-floyd
-         // the statement providers, e.g. Statement.Ec2
-         using Statement = CDK.IAM.Floyd.Statement;
-         // Operator and Collection
-         using CDK.IAM.Floyd;
+            // the statement providers, e.g. Statement.Ec2
+            using Statement = IAM.Floyd.Statement;
+            // Operator, Collection and Json
+            using IAM.Floyd;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: csharp
+
+            // the statement providers, e.g. Statement.Ec2
+            using Statement = CDK.IAM.Floyd.Statement;
+            // Operator and Collection
+            using CDK.IAM.Floyd;
 
    .. group-tab:: Go
 
-      .. code-block:: go
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import (
-             // the statement providers, e.g. statement.NewEc2
-             "udondan.github.io/iam-floyd/go/iamfloyd/statement"
+         .. code-block:: go
 
-             // Operator, AwsManagedPolicy, AwsServicePrincipal and String, Strings, Number, Bool
-             "udondan.github.io/iam-floyd/go/iamfloyd"
+            import (
+                // the statement providers, e.g. statement.NewEc2
+                "udondan.github.io/iam-floyd/go/iamfloyd/statement"
 
-             // Collection
-             "udondan.github.io/iam-floyd/go/iamfloyd/collection"
-         )
+                // Operator, AwsManagedPolicy, AwsServicePrincipal and String, Strings, Number, Bool
+                "udondan.github.io/iam-floyd/go/iamfloyd"
 
-         // cdk-iam-floyd
-         import (
-             // the statement providers, e.g. statement.NewEc2
-             "udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+                // Collection
+                "udondan.github.io/iam-floyd/go/iamfloyd/collection"
+            )
 
-             // Operator and Collection
-             "udondan.github.io/iam-floyd/go/cdkiamfloyd"
-         )
+      .. variant:: cdk-iam-floyd
 
-The code of the examples is the same for both variants, apart from the imports. The examples in TypeScript are written for ``iam-floyd``, those in the other languages for ``cdk-iam-floyd``, so they show the AWS CDK where the variants differ, for example the props of `iam.PolicyStatement`_ to set the SID. In Go, ``iam-floyd`` has its own helpers for pointers: ``iamfloyd.String()`` instead of ``jsii.String()``. All differences are listed in `Differences Between the Variants`_.
+         .. code-block:: go
+
+            import (
+                // the statement providers, e.g. statement.NewEc2
+                "udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+
+                // Operator and Collection
+                "udondan.github.io/iam-floyd/go/cdkiamfloyd"
+            )
+
+The switch at the top of the page selects your package, ``iam-floyd`` or ``cdk-iam-floyd``. The examples show the code of the selected package where the variants differ, for example the SID, the constants of ``iam-floyd`` and the helpers for pointers in Go. All differences are listed in `Differences Between the Variants`_.
 
 The results show the policies of ``iam-floyd``. With ``cdk-iam-floyd``, the ARN defaults are references to the partition, region and account of the stack.
 

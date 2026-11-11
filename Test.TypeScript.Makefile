@@ -20,3 +20,9 @@ test-cdk:
 		node "$$f" > "$${f%.js}.ts.result" || exit ;\
 		diff -I ".*\${Token\[.*\]}.*" "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
+	@# the examples with code of their own for cdk-iam-floyd, examples/<name>/cdk/<name>.ts
+	@for f in examples/*/cdk/*.js; do \
+		echo "Testing $$(basename $$f) (cdk-iam-floyd)" ;\
+		node "$$f" > "$${f%.js}.ts.result" || exit ;\
+		diff -I ".*\${Token\[.*\]}.*" "$${f%.js}.ts.result" "$$(dirname $$(dirname $$f))/$$(basename $${f%.js}).result" || exit ;\
+	done

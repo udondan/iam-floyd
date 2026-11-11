@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -10,7 +10,7 @@ func init() {
 		// doc-start
 		s := statement.NewEc2(nil).
 			Deny().
-			AllMatchingActions(jsii.String("/vpn/i"))
+			AllMatchingActions(iamfloyd.String("/vpn/i"))
 		// doc-end
 		return s
 	}

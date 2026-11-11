@@ -1,9 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,10 +11,10 @@ func init() {
 		s := statement.NewDynamodb(nil).
 			Deny().
 			ToPutItem().
-			OnTable(jsii.String("Thread"), nil, nil, nil).
+			OnTable(iamfloyd.String("Thread"), nil, nil, nil).
 			IfAttributes(
-				&[]*string{jsii.String("ID"), jsii.String("PostDateTime")},
-				cdkiamfloyd.NewOperator().StringEquals().ForAnyValue(),
+				&[]*string{iamfloyd.String("ID"), iamfloyd.String("PostDateTime")},
+				iamfloyd.NewOperator().StringEquals().ForAnyValue(),
 			)
 		// doc-end
 		return s
