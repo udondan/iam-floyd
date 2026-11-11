@@ -1,5 +1,10 @@
 # IAM Floyd
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/header-dark.webp">
+  <img alt="IAM Floyd: Build AWS IAM policies fluently." src="https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/header-light.webp">
+</picture>
+
 [![Release](https://img.shields.io/github/v/release/udondan/iam-floyd?label=release)](https://github.com/udondan/iam-floyd/releases)
 [![Documentation](https://img.shields.io/readthedocs/iam-floyd?label=docs)](https://iam-floyd.readthedocs.io/en/latest/)
 [![Construct Hub](https://img.shields.io/badge/Construct%20Hub-cdk--iam--floyd-blue)](https://constructs.dev/packages/cdk-iam-floyd)
