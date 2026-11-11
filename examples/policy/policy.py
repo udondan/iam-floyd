@@ -1,4 +1,4 @@
-from cdk_iam_floyd import InlineRolePolicyDocument, Statement
+from iam_floyd import InlineRolePolicyDocument, Statement
 
 
 def example():

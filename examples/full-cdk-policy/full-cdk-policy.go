@@ -1,15 +1,14 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
 	examples["full-cdk-policy"] = func() any {
 		// doc-start
-		policy := cdkiamfloyd.NewManagedPolicyDocument(
+		policy := iamfloyd.NewManagedPolicyDocument(
 			// allow all CFN actions
 			statement.NewCloudformation(nil).
 				Allow().
@@ -18,12 +17,12 @@ func init() {
 			statement.NewAll(nil).
 				Allow().
 				AllActions().
-				IfAwsCalledVia(jsii.String("cloudformation.amazonaws.com"), nil),
+				IfAwsCalledVia(iamfloyd.String("cloudformation.amazonaws.com"), nil),
 			// allow access to the CDK staging bucket
 			statement.NewS3(nil).
 				Allow().
 				AllActions().
-				On(jsii.String("arn:aws:s3:::cdktoolkit-stagingbucket-*")),
+				On(iamfloyd.String("arn:aws:s3:::cdktoolkit-stagingbucket-*")),
 			// even when triggered via CFN, do not allow modifications of the account
 			statement.NewAccount(nil).
 				Deny().

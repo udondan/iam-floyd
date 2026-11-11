@@ -1,5 +1,5 @@
-import com.udondan.iamFloyd.cdk.Operator;
-import com.udondan.iamFloyd.cdk.statement.Dynamodb;
+import com.udondan.iamFloyd.Operator;
+import com.udondan.iamFloyd.statement.Dynamodb;
 import java.util.List;
 
 class ExampleConditionsOperatorAllValues {

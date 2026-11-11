@@ -1,4 +1,4 @@
-import com.udondan.iamFloyd.cdk.statement.Lambda;
+import com.udondan.iamFloyd.statement.Lambda;
 
 class ExampleArnDefaultsCombined {
   static Object example() {

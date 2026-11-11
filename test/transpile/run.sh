@@ -42,9 +42,9 @@ fi
 rm -rf "${OUT}"
 mkdir -p "${OUT}"
 npx ts-node bin/transpile.ts
-# the examples of the docs and those of the policy converter
+# the examples of the docs, without the code of cdk-iam-floyd, and those of the policy converter
 EXAMPLES_DIR="${OUT}/examples"
-rsync -a --exclude "*.ts" --exclude "*.js" examples/ "${EXAMPLES_DIR}"
+rsync -a --exclude "*.ts" --exclude "*.js" --exclude "/*/cdk/" examples/ "${EXAMPLES_DIR}"
 npx ts-node test/converter/cases.ts Standalone "${EXAMPLES_DIR}"
 npx ts-node "${TEST}/services.ts" > "${OUT}/services.json"
 SCENARIOS=("${TEST}/scenarios.json" "${OUT}/services.json")
@@ -91,7 +91,7 @@ if [[ " ${LANGUAGES[*]} " == *" java "* ]]; then
   echo "Testing Java with $(java -version 2>&1 | head -1)"
 fi
 
-# the .NET test in test/transpile/dotnet/, with the examples rewritten for the native package
+# the .NET test in test/transpile/dotnet/, with the examples of iam-floyd
 if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
   mkdir -p "${OUT}/dotnet/examples"
   for example in "${EXAMPLES_DIR}"/*/*.cs; do
@@ -100,11 +100,7 @@ if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
       continue
     fi
     mkdir -p "${OUT}/dotnet/examples/${name}"
-    sed -e '/^using Amazon\.CDK\.AWS\.IAM;$/d' \
-      -e 's/CDK\.IAM\.Floyd/IAM.Floyd/' \
-      -e 's/new PolicyStatement\[\]/new object[]/' \
-      -e 's/new PolicyStatementProps { Sid = \([^}]*\) }/\1/' \
-      "${example}" > "${OUT}/dotnet/examples/${name}/${name}.cs"
+    cp "${example}" "${OUT}/dotnet/examples/${name}/${name}.cs"
   done
   DOTNET_FRAMEWORK="${DOTNET_FRAMEWORK:-net$(dotnet --version | cut -d. -f1).0}"
   DOTNET_BUILD=(-p:TestFramework="${DOTNET_FRAMEWORK}" -p:Examples="$(pwd)/${OUT}/dotnet/examples")
@@ -125,8 +121,8 @@ if [[ " ${LANGUAGES[*]} " == *" dotnet "* ]]; then
   echo "Testing .NET with ${DOTNET_FRAMEWORK}"
 fi
 
-# the Go test in test/transpile/go/, with the examples rewritten for the native package and the
-# registry of the classes and constants
+# the Go test in test/transpile/go/, with the examples of iam-floyd and the registry of the classes
+# and constants
 if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
   GO_DIR="${OUT}/go"
   cp -R "${TEST}/go" "${GO_DIR}"
@@ -134,32 +130,8 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
   npx ts-node "${TEST}/go/registry.ts" "${OUT}/managed-policies.json" "${GO_DIR}/registry.go"
   for example in "${EXAMPLES_DIR}"/*/*.go; do
     name="$(basename "$(dirname "${example}")")"
-    if [[ "${name}" == *.cdk ]]; then
-      continue
-    fi
-    rewrite=(-e 's#"github.com/aws/jsii-runtime-go"#jsii "udondan.github.io/iam-floyd/go/iamfloyd"#'
-      -e 's#"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"#"floydtest/awsiam"#'
-      -e 's#&awsiam\.PolicyStatementProps{Sid: \([^}]*\)}#\1#')
-    if grep -q NewCollection "${example}"; then
-      # the collection is in its own package, and returns a slice
-      imports='"udondan.github.io/iam-floyd/go/iamfloyd/collection"'
-      if grep -q "PolicyDocument(" "${example}"; then
-        imports="\"udondan.github.io/iam-floyd/go/cdkiamfloyd\"; ${imports}"
-      fi
-      rewrite+=(-e "s#\"udondan.github.io/iam-floyd/go/cdkiamfloyd\"#${imports}#"
-        -e 's#\*\{0,1\}cdkiamfloyd\.NewCollection()#collection.NewCollection()#'
-        -e 's#return \*statements#return statements#')
-    fi
-    # the constants are functions in jsii, and strings in the native package
-    rewrite+=(-e 's#cdkiamfloyd\.AwsServicePrincipal_\([A-Z0-9_]*\)()#iamfloyd.String(iamfloyd.AwsServicePrincipal_\1)#g')
-    rewrite+=(-e 's#go/cdkiamfloyd#go/iamfloyd#' -e 's#cdkiamfloyd\.#iamfloyd.#g')
-    sed "${rewrite[@]}" "${example}" > "${OUT}/example.go"
-    # without the props of the statement, some examples no longer use awsiam
-    if grep -q 'awsiam\.' "${OUT}/example.go"; then
-      mv "${OUT}/example.go" "${GO_DIR}/example-${name}.go"
-    else
-      grep -v '"floydtest/awsiam"' "${OUT}/example.go" > "${GO_DIR}/example-${name}.go"
-      rm "${OUT}/example.go"
+    if [[ "${name}" != *.cdk ]]; then
+      cp "${example}" "${GO_DIR}/example-${name}.go"
     fi
   done
   if [[ -n "${GO_MODULE:-}" ]]; then

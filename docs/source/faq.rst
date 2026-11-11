@@ -75,7 +75,7 @@ It has been observed that IAM actions have been `deleted <https://github.com/udo
 How can I set a statement SID?
 ------------------------------
 
-With ``iam-floyd``, the constructor takes the SID. With ``cdk-iam-floyd``, it takes the props of `iam.PolicyStatement`_. The examples in TypeScript use ``iam-floyd``, the others ``cdk-iam-floyd``:
+With ``iam-floyd``, the constructor takes the SID. With ``cdk-iam-floyd``, it takes the props of `iam.PolicyStatement`_:
 
 .. example:: sid
 

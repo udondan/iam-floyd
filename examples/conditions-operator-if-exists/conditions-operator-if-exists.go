@@ -1,9 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -13,9 +12,9 @@ func init() {
 			Allow().
 			ToStartInstances().
 			IfAwsRequestTag(
-				jsii.String("Environment"),
-				&[]*string{jsii.String("Production"), jsii.String("Staging"), jsii.String("Dev")},
-				cdkiamfloyd.NewOperator().StringEquals().IfExists(),
+				iamfloyd.String("Environment"),
+				&[]*string{iamfloyd.String("Production"), iamfloyd.String("Staging"), iamfloyd.String("Dev")},
+				iamfloyd.NewOperator().StringEquals().IfExists(),
 			)
 		// doc-end
 		return s

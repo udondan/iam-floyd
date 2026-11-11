@@ -1,4 +1,4 @@
-using Statement = CDK.IAM.Floyd.Statement;
+using Statement = IAM.Floyd.Statement;
 
 static class ExampleNotPrincipal
 {

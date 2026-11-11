@@ -1,4 +1,4 @@
-from cdk_iam_floyd import Operator, Statement
+from iam_floyd import Operator, Statement
 
 
 def example():

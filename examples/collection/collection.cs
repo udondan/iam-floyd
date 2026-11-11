@@ -1,4 +1,4 @@
-using CDK.IAM.Floyd;
+using IAM.Floyd;
 
 static class ExampleCollection
 {

@@ -1,5 +1,5 @@
-using CDK.IAM.Floyd;
-using Statement = CDK.IAM.Floyd.Statement;
+using IAM.Floyd;
+using Statement = IAM.Floyd.Statement;
 
 static class ExampleConditionsOperatorIfExists
 {

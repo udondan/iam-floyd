@@ -10,53 +10,73 @@ Operators
 
    .. group-tab:: TypeScript
 
-      .. code-block:: ts
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import { Operator, Statement } from 'iam-floyd';
+         .. code-block:: ts
 
-         // cdk-iam-floyd
-         import { Operator, Statement } from 'cdk-iam-floyd';
+            import { Operator, Statement } from 'iam-floyd';
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: ts
+
+            import { Operator, Statement } from 'cdk-iam-floyd';
 
    .. group-tab:: Python
 
-      .. code-block:: python
+      .. variant:: iam-floyd
 
-         # iam-floyd
-         from iam_floyd import Operator, Statement
+         .. code-block:: python
 
-         # cdk-iam-floyd
-         from cdk_iam_floyd import Operator, Statement
+            from iam_floyd import Operator, Statement
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: python
+
+            from cdk_iam_floyd import Operator, Statement
 
    .. group-tab:: Java
 
-      .. code-block:: java
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import com.udondan.iamFloyd.Operator;
+         .. code-block:: java
 
-         // cdk-iam-floyd
-         import com.udondan.iamFloyd.cdk.Operator;
+            import com.udondan.iamFloyd.Operator;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: java
+
+            import com.udondan.iamFloyd.cdk.Operator;
 
    .. group-tab:: C#
 
-      .. code-block:: csharp
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         using IAM.Floyd;
+         .. code-block:: csharp
 
-         // cdk-iam-floyd
-         using CDK.IAM.Floyd;
+            using IAM.Floyd;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: csharp
+
+            using CDK.IAM.Floyd;
 
    .. group-tab:: Go
 
-      .. code-block:: go
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import "udondan.github.io/iam-floyd/go/iamfloyd"
+         .. code-block:: go
 
-         // cdk-iam-floyd
-         import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
+            import "udondan.github.io/iam-floyd/go/iamfloyd"
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: go
+
+            import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 Operators can be simple strings such as ``StringEquals`` or get complex with modifiers such as ``ForAnyValue`` or ``IfExists``. For simple operators, the ``Operator`` class has constants like ``Operator.STRING_LIKE``: static properties in TypeScript, and constants in ``iam-floyd`` for Python, Java, C# and Go (``iamfloyd.Operator_STRING_LIKE`` in Go). In ``cdk-iam-floyd`` for Python, Java, C# and Go, you call the method of the same name on a new ``Operator`` instead:
 

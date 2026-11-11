@@ -16,53 +16,73 @@ First import ``AwsManagedPolicy``:
 
    .. group-tab:: TypeScript
 
-      .. code-block:: ts
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import { AwsManagedPolicy } from 'iam-floyd';
+         .. code-block:: ts
 
-         // cdk-iam-floyd
-         import { AwsManagedPolicy } from 'cdk-iam-floyd';
+            import { AwsManagedPolicy } from 'iam-floyd';
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: ts
+
+            import { AwsManagedPolicy } from 'cdk-iam-floyd';
 
    .. group-tab:: Python
 
-      .. code-block:: python
+      .. variant:: iam-floyd
 
-         # iam-floyd
-         from iam_floyd import AwsManagedPolicy
+         .. code-block:: python
 
-         # cdk-iam-floyd
-         from cdk_iam_floyd import AwsManagedPolicy
+            from iam_floyd import AwsManagedPolicy
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: python
+
+            from cdk_iam_floyd import AwsManagedPolicy
 
    .. group-tab:: Java
 
-      .. code-block:: java
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import com.udondan.iamFloyd.AwsManagedPolicy;
+         .. code-block:: java
 
-         // cdk-iam-floyd
-         import com.udondan.iamFloyd.cdk.AwsManagedPolicy;
+            import com.udondan.iamFloyd.AwsManagedPolicy;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: java
+
+            import com.udondan.iamFloyd.cdk.AwsManagedPolicy;
 
    .. group-tab:: C#
 
-      .. code-block:: csharp
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         using IAM.Floyd;
+         .. code-block:: csharp
 
-         // cdk-iam-floyd
-         using CDK.IAM.Floyd;
+            using IAM.Floyd;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: csharp
+
+            using CDK.IAM.Floyd;
 
    .. group-tab:: Go
 
-      .. code-block:: go
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import "udondan.github.io/iam-floyd/go/iamfloyd"
+         .. code-block:: go
 
-         // cdk-iam-floyd
-         import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
+            import "udondan.github.io/iam-floyd/go/iamfloyd"
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: go
+
+            import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 Usage in AWS CDK:
 
