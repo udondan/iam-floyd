@@ -32,7 +32,7 @@ jobs:
     # the rebase of branches that are behind main: see
     # https://github.com/udondan/boarding-gate#reusable-workflow
     # The rebase needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
-    uses: udondan/boarding-gate/.github/workflows/boarding-gate.yml@v1 # zizmor: ignore[unpinned-uses] used by its major tag, so every release reaches this repo without update PRs
+    uses: udondan/boarding-gate/.github/workflows/boarding-gate.yml@v1
     secrets:
       update-token: ${{ secrets.OVERRIDE_TOKEN }}
 

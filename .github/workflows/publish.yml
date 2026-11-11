@@ -453,7 +453,7 @@ jobs:
 
       - name: Build Go module proxy
         id: build
-        uses: udondan/goproxy-gh-pages/build@v1 # zizmor: ignore[unpinned-uses] used by its major tag, so every release reaches this repo without update PRs
+        uses: udondan/goproxy-gh-pages/build@v1
         with:
           base-url: https://udondan.github.io/iam-floyd
           home-url: https://iam-floyd.readthedocs.io/
@@ -522,7 +522,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Seed proxy.golang.org
-        uses: udondan/goproxy-gh-pages/seed@v1 # zizmor: ignore[unpinned-uses] used by its major tag, so every release reaches this repo without update PRs
+        uses: udondan/goproxy-gh-pages/seed@v1
         with:
           versions: ${{ needs.publish-go-proxy.outputs.new-versions }}
           site-url: ${{ needs.publish-go-proxy.outputs.proxy-url }}
