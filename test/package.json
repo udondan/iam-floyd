@@ -13,7 +13,7 @@
     "@swc/helpers": "0.5.24",
     "@types/node": "26.6.6",
     "aws-cdk": "2.1148.0",
-    "aws-cdk-lib": "2.275.0",
+    "aws-cdk-lib": "2.276.0",
     "constructs": "10.8.1",
     "regenerator-runtime": "0.14.1",
     "ts-node": "10.9.2",
