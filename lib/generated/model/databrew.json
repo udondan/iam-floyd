@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "filename": "databrew",
+  "className": "Databrew",
+  "name": "databrew",
+  "servicePrefix": "databrew",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_databrew.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchDeleteRecipeVersion",
+      "CreateDataset",
+      "CreateProfileJob",
+      "CreateProject",
+      "CreateRecipe",
+      "CreateRecipeJob",
+      "CreateRuleset",
+      "CreateSchedule",
+      "DeleteDataset",
+      "DeleteJob",
+      "DeleteProject",
+      "DeleteRecipeVersion",
+      "DeleteRuleset",
+      "DeleteSchedule",
+      "PublishRecipe",
+      "SendProjectSessionAction",
+      "StartJobRun",
+      "StartProjectSession",
+      "StopJobRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateDataset",
+      "UpdateProfileJob",
+      "UpdateProject",
+      "UpdateRecipe",
+      "UpdateRecipeJob",
+      "UpdateRuleset",
+      "UpdateSchedule"
+    ],
+    "Read": [
+      "DescribeDataset",
+      "DescribeJob",
+      "DescribeJobRun",
+      "DescribeProject",
+      "DescribeRecipe",
+      "DescribeRuleset",
+      "DescribeSchedule",
+      "ListDatasets",
+      "ListJobRuns",
+      "ListJobs",
+      "ListProjects",
+      "ListRecipeVersions",
+      "ListRecipes",
+      "ListRulesets",
+      "ListSchedules",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchDeleteRecipeVersion",
+      "methodName": "toBatchDeleteRecipeVersion",
+      "description": "Grants permission to delete one or more recipe versions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_BatchDeleteRecipeVersion.html"
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateDataset.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateProfileJob",
+      "methodName": "toCreateProfileJob",
+      "description": "Grants permission to create a profile job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateProfileJob.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateProject.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRecipe",
+      "methodName": "toCreateRecipe",
+      "description": "Grants permission to create a recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRecipe.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRecipeJob",
+      "methodName": "toCreateRecipeJob",
+      "description": "Grants permission to create a recipe job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRecipeJob.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRuleset",
+      "methodName": "toCreateRuleset",
+      "description": "Grants permission to create a ruleset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRuleset.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSchedule",
+      "methodName": "toCreateSchedule",
+      "description": "Grants permission to create a schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_CreateSchedule.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteDataset.html"
+    },
+    {
+      "name": "DeleteJob",
+      "methodName": "toDeleteJob",
+      "description": "Grants permission to delete a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteJob.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteProject.html"
+    },
+    {
+      "name": "DeleteRecipeVersion",
+      "methodName": "toDeleteRecipeVersion",
+      "description": "Grants permission to delete a recipe version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteRecipeVersion.html"
+    },
+    {
+      "name": "DeleteRuleset",
+      "methodName": "toDeleteRuleset",
+      "description": "Grants permission to delete a ruleset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteRuleset.html"
+    },
+    {
+      "name": "DeleteSchedule",
+      "methodName": "toDeleteSchedule",
+      "description": "Grants permission to delete a schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteSchedule.html"
+    },
+    {
+      "name": "DescribeDataset",
+      "methodName": "toDescribeDataset",
+      "description": "Grants permission to view details about a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeDataset.html"
+    },
+    {
+      "name": "DescribeJob",
+      "methodName": "toDescribeJob",
+      "description": "Grants permission to view details about a job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeJob.html"
+    },
+    {
+      "name": "DescribeJobRun",
+      "methodName": "toDescribeJobRun",
+      "description": "Grants permission to view details about job run for a given job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeJobRun.html"
+    },
+    {
+      "name": "DescribeProject",
+      "methodName": "toDescribeProject",
+      "description": "Grants permission to view details about a project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeProject.html"
+    },
+    {
+      "name": "DescribeRecipe",
+      "methodName": "toDescribeRecipe",
+      "description": "Grants permission to view details about a recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeRecipe.html"
+    },
+    {
+      "name": "DescribeRuleset",
+      "methodName": "toDescribeRuleset",
+      "description": "Grants permission to view details about a ruleset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeRuleset.html"
+    },
+    {
+      "name": "DescribeSchedule",
+      "methodName": "toDescribeSchedule",
+      "description": "Grants permission to view details about a schedule",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeSchedule.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list datasets in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListDatasets.html"
+    },
+    {
+      "name": "ListJobRuns",
+      "methodName": "toListJobRuns",
+      "description": "Grants permission to list job runs for a given job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListJobRuns.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list jobs in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListJobs.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list projects in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListProjects.html"
+    },
+    {
+      "name": "ListRecipeVersions",
+      "methodName": "toListRecipeVersions",
+      "description": "Grants permission to list versions in your recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListRecipeVersions.html"
+    },
+    {
+      "name": "ListRecipes",
+      "methodName": "toListRecipes",
+      "description": "Grants permission to list recipes in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListRecipes.html"
+    },
+    {
+      "name": "ListRulesets",
+      "methodName": "toListRulesets",
+      "description": "Grants permission to list rulesets in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListRulesets.html"
+    },
+    {
+      "name": "ListSchedules",
+      "methodName": "toListSchedules",
+      "description": "Grants permission to list schedules in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListSchedules.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to retrieve tags associated with a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PublishRecipe",
+      "methodName": "toPublishRecipe",
+      "description": "Grants permission to publish a major verison of a recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_PublishRecipe.html"
+    },
+    {
+      "name": "SendProjectSessionAction",
+      "methodName": "toSendProjectSessionAction",
+      "description": "Grants permission to submit an action to the interactive session for a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_SendProjectSessionAction.html"
+    },
+    {
+      "name": "StartJobRun",
+      "methodName": "toStartJobRun",
+      "description": "Grants permission to start running a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_StartJobRun.html"
+    },
+    {
+      "name": "StartProjectSession",
+      "methodName": "toStartProjectSession",
+      "description": "Grants permission to start an interactive session for a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_StartProjectSession.html"
+    },
+    {
+      "name": "StopJobRun",
+      "methodName": "toStopJobRun",
+      "description": "Grants permission to stop a job run for a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_StopJobRun.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDataset",
+      "methodName": "toUpdateDataset",
+      "description": "Grants permission to modify a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateDataset.html"
+    },
+    {
+      "name": "UpdateProfileJob",
+      "methodName": "toUpdateProfileJob",
+      "description": "Grants permission to modify a profile job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateProfileJob.html"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to modify a project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateProject.html"
+    },
+    {
+      "name": "UpdateRecipe",
+      "methodName": "toUpdateRecipe",
+      "description": "Grants permission to modify a recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateRecipe.html"
+    },
+    {
+      "name": "UpdateRecipeJob",
+      "methodName": "toUpdateRecipeJob",
+      "description": "Grants permission to modify a recipe job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateRecipeJob.html"
+    },
+    {
+      "name": "UpdateRuleset",
+      "methodName": "toUpdateRuleset",
+      "description": "Grants permission to modify a ruleset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateRuleset.html"
+    },
+    {
+      "name": "UpdateSchedule",
+      "methodName": "toUpdateSchedule",
+      "description": "Grants permission to modify a schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateSchedule.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/datasets.html",
+      "arn": "arn:${Partition}:databrew:${Region}:${Account}:dataset/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/jobs.html",
+      "arn": "arn:${Partition}:databrew:${Region}:${Account}:job/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/projects.html",
+      "arn": "arn:${Partition}:databrew:${Region}:${Account}:project/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Recipe",
+      "methodName": "onRecipe",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/recipes.html",
+      "arn": "arn:${Partition}:databrew:${Region}:${Account}:recipe/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Ruleset",
+      "methodName": "onRuleset",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/rulesets.html",
+      "arn": "arn:${Partition}:databrew:${Region}:${Account}:ruleset/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Schedule",
+      "methodName": "onSchedule",
+      "url": "https://docs.aws.amazon.com/databrew/latest/dg/jobs.html#jobs.scheduling",
+      "arn": "arn:${Partition}:databrew:${Region}:${Account}:schedule/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toCreateProfileJob",
+        "toCreateProject",
+        "toCreateRecipe",
+        "toCreateRecipeJob",
+        "toCreateRuleset",
+        "toCreateSchedule",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchDeleteRecipeVersion",
+        "toCreateDataset",
+        "toCreateProfileJob",
+        "toCreateProject",
+        "toCreateRecipe",
+        "toCreateRecipeJob",
+        "toCreateRuleset",
+        "toCreateSchedule",
+        "toDeleteDataset",
+        "toDeleteJob",
+        "toDeleteProject",
+        "toDeleteRecipeVersion",
+        "toDeleteRuleset",
+        "toDeleteSchedule",
+        "toDescribeDataset",
+        "toDescribeJob",
+        "toDescribeJobRun",
+        "toDescribeProject",
+        "toDescribeRecipe",
+        "toDescribeRuleset",
+        "toDescribeSchedule",
+        "toListJobRuns",
+        "toListRecipeVersions",
+        "toListTagsForResource",
+        "toPublishRecipe",
+        "toSendProjectSessionAction",
+        "toStartJobRun",
+        "toStartProjectSession",
+        "toStopJobRun",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDataset",
+        "toUpdateProfileJob",
+        "toUpdateProject",
+        "toUpdateRecipe",
+        "toUpdateRecipeJob",
+        "toUpdateRuleset",
+        "toUpdateSchedule"
+      ],
+      "relatedResourceTypes": [
+        "Dataset",
+        "Job",
+        "Project",
+        "Recipe",
+        "Ruleset",
+        "Schedule"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toCreateProfileJob",
+        "toCreateProject",
+        "toCreateRecipe",
+        "toCreateRecipeJob",
+        "toCreateRuleset",
+        "toCreateSchedule",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

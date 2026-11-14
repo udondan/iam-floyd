@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateResourceSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*::catalog/AWS/engagement/*",
+        "arn:aws:partnercentral:*::catalog/Sandbox/engagement/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetOpportunity"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*:*:catalog/AWS/opportunity/*",
+        "arn:aws:partnercentral:*:*:catalog/Sandbox/opportunity/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LookoutVisionReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "lookoutvision:DescribeDataset",
+        "lookoutvision:DescribeModel",
+        "lookoutvision:DescribeProject",
+        "lookoutvision:DescribeTrialDetection",
+        "lookoutvision:DescribeModelPackagingJob",
+        "lookoutvision:ListDatasetEntries",
+        "lookoutvision:ListModels",
+        "lookoutvision:ListProjects",
+        "lookoutvision:ListTagsForResource",
+        "lookoutvision:ListTrialDetections",
+        "lookoutvision:ListModelPackagingJobs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleS3BucketSearchAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleS3ObjectReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+      ],
+      "Resource": "arn:aws:s3:::lookoutvision-*/*"
+    },
+    {
+      "Sid": "LookoutVisionConsoleDashboardAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

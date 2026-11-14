@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "action-recommendations",
+  "className": "ActionRecommendations",
+  "name": "action-recommendations",
+  "servicePrefix": "action-recommendations",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_action-recommendations.html",
+  "accessLevelList": {
+    "List": [
+      "ListRecommendedActions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ListRecommendedActions",
+      "methodName": "toListRecommendedActions",
+      "description": "Grants permission to list recommended actions in the AWS Management Console",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/recommended-actions.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

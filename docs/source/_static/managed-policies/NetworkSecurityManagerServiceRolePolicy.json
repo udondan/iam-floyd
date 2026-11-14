@@ -1,0 +1,865 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LogsGeneral",
+      "Effect": "Allow",
+      "Action": [
+        "logs:ListLogDeliveries",
+        "logs:CreateLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:UpdateLogDelivery",
+        "logs:DeleteLogDelivery"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3LogBucketGeneral",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::aws-waf-logs-*"
+    },
+    {
+      "Sid": "CloudfrontVpcOriginAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:GetVpcOrigin"
+      ],
+      "Resource": "arn:aws:cloudfront::*:vpcorigin/*"
+    },
+    {
+      "Sid": "ConfigUnscoped",
+      "Effect": "Allow",
+      "Action": [
+        "config:SelectResourceConfig"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeOrganizationUnScoped",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListChildren",
+        "organizations:ListRoots",
+        "organizations:ListParents",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeAccountScoped",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeAccount",
+      "Resource": "arn:aws:organizations::*:account/o-*/*"
+    },
+    {
+      "Sid": "DescribeOrganizationUnitScoped",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeOrganizationalUnit",
+      "Resource": "arn:aws:organizations::*:ou/o-*/ou-*"
+    },
+    {
+      "Sid": "ListDelegatedAdministratorsScoped",
+      "Effect": "Allow",
+      "Action": "organizations:ListDelegatedAdministrators",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "network-security-manager.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "LoadBalancerNonMutationApiAccess",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeWebACLAssociation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LoadBalancerGetWebACLScoped",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:GetLoadBalancerWebACL",
+      "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
+    },
+    {
+      "Sid": "CloudFrontDistributionNonMutationApiAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:GetDistribution",
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:cloudfront::*:distribution/*"
+    },
+    {
+      "Sid": "ApiGatewayStageNonMutationApiAccess",
+      "Effect": "Allow",
+      "Action": "apigateway:GET",
+      "Resource": [
+        "arn:aws:apigateway:*::/restapis",
+        "arn:aws:apigateway:*::/restapis/*/stages",
+        "arn:aws:apigateway:*::/restapis/*/stages/*",
+        "arn:aws:apigateway:*::/tags/*"
+      ]
+    },
+    {
+      "Sid": "Wafv2General",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:TagResource",
+        "wafv2:ListResourcesForWebACL",
+        "wafv2:AssociateWebACL",
+        "wafv2:ListTagsForResource",
+        "wafv2:UntagResource",
+        "wafv2:GetWebACL",
+        "wafv2:DisassociateFirewallManager",
+        "wafv2:DeleteWebACL",
+        "wafv2:DisassociateWebACL",
+        "wafv2:ValidateNetworkSecurityManagerWebACLConfiguration",
+        "wafv2:ValidateNetworkSecurityManagerRuleConfiguration"
+      ],
+      "Resource": "arn:aws:wafv2:*:*:*/webacl/*"
+    },
+    {
+      "Sid": "Wafv2WebAclAndRuleGroupMutation",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:UpdateWebACL",
+        "wafv2:CreateWebACL",
+        "wafv2:DeleteFirewallManagerRuleGroups",
+        "wafv2:PutFirewallManagerRuleGroups"
+      ],
+      "Resource": [
+        "arn:aws:wafv2:*:*:*/webacl/*",
+        "arn:aws:wafv2:*:*:global/rulegroup/*",
+        "arn:aws:wafv2:*:*:regional/rulegroup/*",
+        "arn:aws:wafv2:*:*:global/managedruleset/*",
+        "arn:aws:wafv2:*:*:regional/managedruleset/*",
+        "arn:aws:wafv2:*:*:global/ipset/*",
+        "arn:aws:wafv2:*:*:regional/ipset/*",
+        "arn:aws:wafv2:*:*:global/regexpatternset/*",
+        "arn:aws:wafv2:*:*:regional/regexpatternset/*"
+      ]
+    },
+    {
+      "Sid": "Wafv2Logging",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:PutLoggingConfiguration",
+        "wafv2:GetLoggingConfiguration",
+        "wafv2:DeleteLoggingConfiguration"
+      ],
+      "Resource": "arn:aws:wafv2:*:*:*/webacl/*"
+    },
+    {
+      "Sid": "Wafv2ListLogging",
+      "Effect": "Allow",
+      "Action": "wafv2:ListLoggingConfigurations",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Wafv2ListWebACLs",
+      "Effect": "Allow",
+      "Action": "wafv2:ListWebACLs",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Wafv2PermissionPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:PutPermissionPolicy",
+        "wafv2:GetPermissionPolicy",
+        "wafv2:DeletePermissionPolicy"
+      ],
+      "Resource": [
+        "arn:aws:wafv2:*:*:global/rulegroup/*",
+        "arn:aws:wafv2:*:*:regional/rulegroup/*"
+      ]
+    },
+    {
+      "Sid": "Wafv2WebaclDescribe",
+      "Effect": "Allow",
+      "Action": "wafv2:GetWebACLForResource",
+      "Resource": "arn:aws:wafv2:*:*:*/webacl/*"
+    },
+    {
+      "Sid": "CloudFrontListDistributions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:ListDistributionsByWebACLId",
+        "cloudfront:ListDistributions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFrontDistributionMutation",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:AssociateDistributionWebACL",
+        "cloudfront:DisassociateDistributionWebACL"
+      ],
+      "Resource": "arn:aws:cloudfront::*:distribution/*"
+    },
+    {
+      "Sid": "ElbWebAclRemediationScoped",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:CreateWebACLAssociation",
+        "elasticloadbalancing:DeleteWebACLAssociation"
+      ],
+      "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
+    },
+    {
+      "Sid": "ElbSetWebAcl",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:SetWebACL",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApiGatewayWebAclRemediation",
+      "Effect": "Allow",
+      "Action": "apigateway:SetWebACL",
+      "Resource": "arn:aws:apigateway:*::/restapis/*/stages/*"
+    },
+    {
+      "Sid": "CognitoWebAclIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "cognito-idp:GetWebACLForResource",
+        "cognito-idp:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AppRunnerWebAclIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "apprunner:DescribeWebAclForService",
+        "apprunner:ListAssociatedServicesForWebAcl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VerifiedAccessWebAclIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:GetVerifiedAccessInstanceWebAcl",
+        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AppSyncWebAclIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetWebACLForResource",
+        "appsync:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmplifyWebAclIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:GetWebACLForResource",
+        "amplify:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ShieldGeneral",
+      "Effect": "Allow",
+      "Action": [
+        "shield:CreateProtection",
+        "shield:DeleteProtection",
+        "shield:DescribeProtection",
+        "shield:ListProtections",
+        "shield:CreateSubscription",
+        "shield:DescribeSubscription",
+        "shield:GetSubscriptionState",
+        "ec2:DescribeAddresses",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ShieldSlrCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/shield.amazonaws.com/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "shield.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowConfigRecorderList",
+      "Effect": "Allow",
+      "Action": "config:ListConfigurationRecorders",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowPutServiceLinkedConfigRecorder",
+      "Effect": "Allow",
+      "Action": "config:PutServiceLinkedConfigurationRecorder",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigRecorderScopedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:AssociateResourceTypes",
+        "config:DisassociateResourceTypes"
+      ],
+      "Resource": "arn:aws:config:*:*:configuration-recorder/*"
+    },
+    {
+      "Sid": "AllowCreateConfigServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowListActionsForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowGetActionForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayGetWebACLForResource"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:gateway/*"
+    },
+    {
+      "Sid": "WafV2LoggingSlrCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/wafv2.amazonaws.com/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "wafv2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SlrCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "network-firewall.amazonaws.com",
+            "igw-firewall.network-firewall.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "IamDescribe",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:*:iam::*:role/aws-service-role/ram.amazonaws.com/*"
+    },
+    {
+      "Sid": "NetworkFirewallCreateScoped",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:CreateFirewall"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallCreateScopedFirewallPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:CreateFirewall"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallTagManagement",
+      "Effect": "Allow",
+      "Action": "network-firewall:TagResource",
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*",
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": [
+            "true"
+          ],
+          "aws:ResourceTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallUnTag",
+      "Effect": "Allow",
+      "Action": "network-firewall:UntagResource",
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*",
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallRead",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:DescribeFirewall",
+        "network-firewall:DescribeFirewallPolicy",
+        "network-firewall:DescribeFirewallPolicyV2",
+        "network-firewall:DescribeRuleGroup",
+        "network-firewall:ListFirewallPolicies",
+        "network-firewall:ListFirewallPoliciesV2",
+        "network-firewall:ListFirewalls",
+        "network-firewall:ListRuleGroups",
+        "network-firewall:DescribeResourcePolicy",
+        "network-firewall:DescribeLoggingConfiguration",
+        "network-firewall:DescribeTLSInspectionConfiguration",
+        "network-firewall:ListTLSInspectionConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "NetworkFirewallUpdateScoped",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:AssociateSubnets",
+        "network-firewall:AssociateAvailabilityZones",
+        "network-firewall:DisassociateSubnets",
+        "network-firewall:DisassociateAvailabilityZones",
+        "network-firewall:UpdateFirewallDeleteProtection",
+        "network-firewall:UpdateFirewallPolicyChangeProtection",
+        "network-firewall:UpdateSubnetChangeProtection",
+        "network-firewall:UpdateLoggingConfiguration"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallCreateFirewallPolicyResource",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:CreateFirewallPolicy",
+        "network-firewall:CreateFirewallPolicyV2"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallPolicyDependentResource",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:CreateFirewallPolicy",
+        "network-firewall:CreateFirewallPolicyV2",
+        "network-firewall:UpdateFirewallPolicy",
+        "network-firewall:UpdateFirewallPolicyV2"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:stateful-rulegroup/*",
+        "arn:*:network-firewall:*:*:stateless-rulegroup/*",
+        "arn:*:network-firewall:*:*:tls-configuration/*",
+        "arn:*:network-firewall:*:*:firewall-rulegroup/*",
+        "arn:*:network-firewall:*:*:ips-rulegroup/*"
+      ]
+    },
+    {
+      "Sid": "NetworkFirewallPolicyUpdateScoped",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:UpdateFirewallPolicy",
+        "network-firewall:UpdateFirewallPolicyV2"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallAssociateFirewallPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:AssociateFirewallPolicy"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*",
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallResourcePolicyRulegroups",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:PutResourcePolicy",
+        "network-firewall:DeleteResourcePolicy"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:stateful-rulegroup/*",
+        "arn:*:network-firewall:*:*:stateless-rulegroup/*",
+        "arn:*:network-firewall:*:*:firewall-rulegroup/*",
+        "arn:*:network-firewall:*:*:ips-rulegroup/*"
+      ]
+    },
+    {
+      "Sid": "NetworkFirewallResourcePolicyScoped",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:PutResourcePolicy",
+        "network-firewall:DeleteResourcePolicy"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*",
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NetworkFirewallCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:DeleteFirewallPolicy",
+        "network-firewall:DeleteFirewallPolicyV2",
+        "network-firewall:DeleteFirewall"
+      ],
+      "Resource": [
+        "arn:*:network-firewall:*:*:firewall-policy/*",
+        "arn:*:network-firewall:*:*:firewall-policy-v2/*",
+        "arn:*:network-firewall:*:*:firewall/*",
+        "arn:*:network-firewall:*:*:igw-firewall/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "RamTagManagement",
+      "Effect": "Allow",
+      "Action": [
+        "ram:TagResource"
+      ],
+      "Resource": [
+        "arn:*:ram:*:*:resource-share/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": [
+            "true"
+          ],
+          "aws:ResourceTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RamMutation",
+      "Effect": "Allow",
+      "Action": [
+        "ram:AssociateResourceShare",
+        "ram:UpdateResourceShare",
+        "ram:DeleteResourceShare"
+      ],
+      "Resource": "arn:*:ram:*:*:resource-share/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "RamCreation",
+      "Effect": "Allow",
+      "Action": "ram:CreateResourceShare",
+      "Resource": "arn:*:ram:*:*:resource-share/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "RamDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShareAssociations",
+        "ram:GetResourceShares"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ec2DescribeUnscoped",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ec2RouteTableScoped",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssociateRouteTable",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:DisassociateRouteTable"
+      ],
+      "Resource": [
+        "arn:*:ec2:*:*:route-table/*",
+        "arn:*:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "Ec2RouteTableCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateRouteTable"
+      ],
+      "Resource": [
+        "arn:*:ec2:*:*:route-table/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RouteTableCleanup",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteRouteTable",
+      "Resource": "arn:*:ec2:*:*:route-table/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "Ec2TagManagement",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": [
+        "arn:*:ec2:*:*:route-table/*",
+        "arn:*:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": "true",
+          "ec2:CreateAction": [
+            "CreateRouteTable",
+            "CreateSubnet"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Ec2SubnetCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSubnet"
+      ],
+      "Resource": [
+        "arn:*:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "NSMManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/NSMManaged": [
+            "true"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Ec2SubnetCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteSubnet"
+      ],
+      "Resource": [
+        "arn:*:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/NSMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DependencyQuotaRead",
+      "Effect": "Allow",
+      "Action": "servicequotas:GetServiceQuota",
+      "Resource": [
+        "arn:*:servicequotas:*:*:wafv2/*",
+        "arn:*:servicequotas:*:*:shield/*"
+      ]
+    },
+    {
+      "Sid": "Wafv2CheckCapacity",
+      "Effect": "Allow",
+      "Action": "wafv2:CheckCapacity",
+      "Resource": "*"
+    }
+  ]
+}

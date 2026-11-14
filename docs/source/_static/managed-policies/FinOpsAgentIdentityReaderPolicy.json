@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FinOpsAgentIdentityStoreReads",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeUser",
+        "identitystore:DescribeGroup",
+        "identitystore:IsMemberInGroups"
+      ],
+      "Resource": [
+        "arn:aws:identitystore::*:identitystore/*",
+        "arn:aws:identitystore:::user/*",
+        "arn:aws:identitystore:::group/*"
+      ]
+    }
+  ]
+}

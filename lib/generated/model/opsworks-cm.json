@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "filename": "opsworks-cm",
+  "className": "OpsworksCm",
+  "name": "opsworks-cm",
+  "servicePrefix": "opsworks-cm",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opsworks-cm.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateNode",
+      "CreateBackup",
+      "CreateServer",
+      "DeleteBackup",
+      "DeleteServer",
+      "DisassociateNode",
+      "RestoreServer",
+      "StartMaintenance",
+      "TagResource",
+      "UntagResource",
+      "UpdateServer",
+      "UpdateServerEngineAttributes"
+    ],
+    "List": [
+      "DescribeAccountAttributes",
+      "DescribeBackups",
+      "DescribeEvents",
+      "DescribeNodeAssociationStatus",
+      "DescribeServers"
+    ],
+    "Read": [
+      "ExportServerEngineAttribute",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateNode",
+      "methodName": "toAssociateNode",
+      "description": "Grants permission to associate a node to a configuration management server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html"
+    },
+    {
+      "name": "CreateBackup",
+      "methodName": "toCreateBackup",
+      "description": "Grants permission to create a backup for the specified server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html"
+    },
+    {
+      "name": "CreateServer",
+      "methodName": "toCreateServer",
+      "description": "Grants permission to create a new server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html"
+    },
+    {
+      "name": "DeleteBackup",
+      "methodName": "toDeleteBackup",
+      "description": "Grants permission to delete the specified backup and possibly its S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html"
+    },
+    {
+      "name": "DeleteServer",
+      "methodName": "toDeleteServer",
+      "description": "Grants permission to delete the specified server with its corresponding CloudFormation stack and possibly the S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html"
+    },
+    {
+      "name": "DescribeAccountAttributes",
+      "methodName": "toDescribeAccountAttributes",
+      "description": "Grants permission to describe the service limits for the user's account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html"
+    },
+    {
+      "name": "DescribeBackups",
+      "methodName": "toDescribeBackups",
+      "description": "Grants permission to describe a single backup, all backups of a specified server or all backups of the user's account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to describe all events of the specified server",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeNodeAssociationStatus",
+      "methodName": "toDescribeNodeAssociationStatus",
+      "description": "Grants permission to describe the association status for the specified node token and the specified server",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html"
+    },
+    {
+      "name": "DescribeServers",
+      "methodName": "toDescribeServers",
+      "description": "Grants permission to describe the specified server or all servers of the user's account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html"
+    },
+    {
+      "name": "DisassociateNode",
+      "methodName": "toDisassociateNode",
+      "description": "Grants permission to disassociate a specified node from a server",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html"
+    },
+    {
+      "name": "ExportServerEngineAttribute",
+      "methodName": "toExportServerEngineAttribute",
+      "description": "Grants permission to export an engine attribute from a server",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ExportServerEngineAttribute.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags that are applied to the specified server or backup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RestoreServer",
+      "methodName": "toRestoreServer",
+      "description": "Grants permission to apply a backup to specified server. Possibly swaps out the ec2-instance if specified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html"
+    },
+    {
+      "name": "StartMaintenance",
+      "methodName": "toStartMaintenance",
+      "description": "Grants permission to start the server maintenance immediately",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to apply tags to the specified server or backup",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified server or backup",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateServer",
+      "methodName": "toUpdateServer",
+      "description": "Grants permission to update general server settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html"
+    },
+    {
+      "name": "UpdateServerEngineAttributes",
+      "methodName": "toUpdateServerEngineAttributes",
+      "description": "Grants permission to update server settings specific to the configuration management type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "backup",
+      "methodName": "onBackup",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/userguide/security_iam_service-with-iam-opscm.html",
+      "arn": "arn:${Partition}:opsworks-cm::${Account}:backup/${ServerName}-{Date-and-Time-Stamp-of-Backup}",
+      "placeholders": [
+        {
+          "placeholder": "ServerName",
+          "name": "serverName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "server",
+      "methodName": "onServer",
+      "url": "https://docs.aws.amazon.com/opsworks/latest/userguide/security_iam_service-with-iam-opscm.html",
+      "arn": "arn:${Partition}:opsworks-cm::${Account}:server/${ServerName}/${UniqueId}",
+      "placeholders": [
+        {
+          "placeholder": "ServerName",
+          "name": "serverName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UniqueId",
+          "name": "uniqueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

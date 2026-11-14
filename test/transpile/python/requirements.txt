@@ -1,0 +1,2 @@
+# Measures the coverage of the hand-written runtime with COVERAGE=1 (make coverage-native)
+coverage==7.17.2

@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "filename": "datapipeline",
+  "className": "Datapipeline",
+  "name": "datapipeline",
+  "servicePrefix": "datapipeline",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html",
+  "accessLevelList": {
+    "Write": [
+      "ActivatePipeline",
+      "AddTags",
+      "CreatePipeline",
+      "DeactivatePipeline",
+      "DeletePipeline",
+      "PollForTask",
+      "PutPipelineDefinition",
+      "RemoveTags",
+      "ReportTaskProgress",
+      "ReportTaskRunnerHeartbeat",
+      "SetStatus",
+      "SetTaskStatus",
+      "PutAccountLimits"
+    ],
+    "Tagging": [
+      "AddTags",
+      "RemoveTags"
+    ],
+    "Read": [
+      "DescribeObjects",
+      "DescribePipelines",
+      "EvaluateExpression",
+      "GetPipelineDefinition",
+      "QueryObjects",
+      "ValidatePipelineDefinition"
+    ],
+    "List": [
+      "ListPipelines",
+      "GetAccountLimits"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ActivatePipeline",
+      "methodName": "toActivatePipeline",
+      "description": "Grants permission to validate the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html"
+    },
+    {
+      "name": "AddTags",
+      "methodName": "toAddTags",
+      "description": "Grants permission to add or modify tags for the specified pipeline",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html"
+    },
+    {
+      "name": "CreatePipeline",
+      "methodName": "toCreatePipeline",
+      "description": "Grants permission to create a new, empty pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifTag"
+      ]
+    },
+    {
+      "name": "DeactivatePipeline",
+      "methodName": "toDeactivatePipeline",
+      "description": "Grants permission to Deactivate the specified running pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html"
+    },
+    {
+      "name": "DeletePipeline",
+      "methodName": "toDeletePipeline",
+      "description": "Grants permission to delete a pipeline, its pipeline definition, and its run history",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html"
+    },
+    {
+      "name": "DescribeObjects",
+      "methodName": "toDescribeObjects",
+      "description": "Grants permission to get the object definitions for a set of objects associated with the pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html"
+    },
+    {
+      "name": "DescribePipelines",
+      "methodName": "toDescribePipelines",
+      "description": "Grants permission to retrieves metadata about one or more pipelines",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html"
+    },
+    {
+      "name": "EvaluateExpression",
+      "methodName": "toEvaluateExpression",
+      "description": "Grants permission to task runners to call EvaluateExpression, to evaluate a string in the context of the specified object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html"
+    },
+    {
+      "name": "GetPipelineDefinition",
+      "methodName": "toGetPipelineDefinition",
+      "description": "Grants permission to gets the definition of the specified pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html"
+    },
+    {
+      "name": "ListPipelines",
+      "methodName": "toListPipelines",
+      "description": "Grants permission to list the pipeline identifiers for all active pipelines that you have permission to access",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html"
+    },
+    {
+      "name": "PollForTask",
+      "methodName": "toPollForTask",
+      "description": "Grants permission to task runners to call PollForTask, to receive a task to perform from AWS Data Pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html",
+      "conditionMethods": [
+        "ifWorkerGroup"
+      ]
+    },
+    {
+      "name": "PutPipelineDefinition",
+      "methodName": "toPutPipelineDefinition",
+      "description": "Grants permission to add tasks, schedules, and preconditions to the specified pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html"
+    },
+    {
+      "name": "QueryObjects",
+      "methodName": "toQueryObjects",
+      "description": "Grants permission to query the specified pipeline for the names of objects that match the specified set of conditions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html"
+    },
+    {
+      "name": "RemoveTags",
+      "methodName": "toRemoveTags",
+      "description": "Grants permission to remove existing tags from the specified pipeline",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html"
+    },
+    {
+      "name": "ReportTaskProgress",
+      "methodName": "toReportTaskProgress",
+      "description": "Grants permission to task runners to call ReportTaskProgress, when they are assigned a task to acknowledge that it has the task",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html"
+    },
+    {
+      "name": "ReportTaskRunnerHeartbeat",
+      "methodName": "toReportTaskRunnerHeartbeat",
+      "description": "Grants permission to task runners to call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html"
+    },
+    {
+      "name": "SetStatus",
+      "methodName": "toSetStatus",
+      "description": "Grants permission to requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html"
+    },
+    {
+      "name": "SetTaskStatus",
+      "methodName": "toSetTaskStatus",
+      "description": "Grants permission to task runners to call SetTaskStatus to notify AWS Data Pipeline that a task is completed and provide information about the final status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html"
+    },
+    {
+      "name": "ValidatePipelineDefinition",
+      "methodName": "toValidatePipelineDefinition",
+      "description": "Grants permission to validate the specified pipeline definition to ensure that it is well formed and can be run without error",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html"
+    },
+    {
+      "name": "GetAccountLimits",
+      "methodName": "toGetAccountLimits",
+      "description": "Grants permission to call GetAccountLimits",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html"
+    },
+    {
+      "name": "PutAccountLimits",
+      "methodName": "toPutAccountLimits",
+      "description": "Grants permission to call PutAccountLimits",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "pipeline",
+      "methodName": "onPipeline",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatapipeline.html",
+      "arn": "arn:${Partition}:datapipeline:${Region}:${Account}:pipeline/${PipelineId}",
+      "placeholders": [
+        {
+          "placeholder": "PipelineId",
+          "name": "pipelineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_datapipeline",
+        "interface": "IPipelineRef",
+        "property": "pipelineRef",
+        "id": "pipelineId"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreatePipeline",
+        "toRemoveTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toActivatePipeline",
+        "toAddTags",
+        "toDeactivatePipeline",
+        "toDeletePipeline",
+        "toDescribeObjects",
+        "toDescribePipelines",
+        "toEvaluateExpression",
+        "toGetPipelineDefinition",
+        "toPutPipelineDefinition",
+        "toQueryObjects",
+        "toRemoveTags",
+        "toReportTaskProgress",
+        "toSetStatus",
+        "toSetTaskStatus",
+        "toValidatePipelineDefinition"
+      ],
+      "relatedResourceTypes": [
+        "pipeline"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreatePipeline",
+        "toRemoveTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "datapipeline:PipelineCreator",
+      "methodName": "ifPipelineCreator",
+      "description": "Filters access by the IAM user that created the pipeline",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-example-tag-policies.html#ex3",
+      "relatedActionMethods": [
+        "toActivatePipeline",
+        "toAddTags",
+        "toDeactivatePipeline",
+        "toDeletePipeline",
+        "toDescribeObjects",
+        "toDescribePipelines",
+        "toEvaluateExpression",
+        "toGetPipelineDefinition",
+        "toPutPipelineDefinition",
+        "toQueryObjects",
+        "toRemoveTags",
+        "toSetStatus",
+        "toValidatePipelineDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PipelineCreator",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "datapipeline:Tag/${TagKey}",
+      "methodName": "ifTag",
+      "description": "Filters access by customer-specified key/value pair that can be attached to a resource",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-tags",
+      "relatedActionMethods": [
+        "toActivatePipeline",
+        "toAddTags",
+        "toCreatePipeline",
+        "toDeactivatePipeline",
+        "toDeletePipeline",
+        "toDescribeObjects",
+        "toDescribePipelines",
+        "toEvaluateExpression",
+        "toGetPipelineDefinition",
+        "toPutPipelineDefinition",
+        "toQueryObjects",
+        "toRemoveTags",
+        "toSetStatus",
+        "toValidatePipelineDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Tag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "datapipeline:workerGroup",
+      "methodName": "ifWorkerGroup",
+      "description": "Filters access by the name of a worker group for which a Task Runner retrieves work",
+      "url": "https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-workergroup",
+      "relatedActionMethods": [
+        "toActivatePipeline",
+        "toDeactivatePipeline",
+        "toGetPipelineDefinition",
+        "toPollForTask",
+        "toPutPipelineDefinition",
+        "toValidatePipelineDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "workerGroup",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

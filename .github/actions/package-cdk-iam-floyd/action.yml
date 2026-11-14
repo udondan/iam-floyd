@@ -1,0 +1,67 @@
+---
+name: Package cdk-iam-floyd
+description: >-
+  Builds the CDK variant and its package for one language with jsii-pacmak into dist/. Needs the
+  checked out code with the tags.
+
+inputs:
+  language:
+    description: typescript, python, java, dotnet or go
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version: 26.x
+
+    - name: Set up Python
+      if: inputs.language == 'python'
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      with:
+        python-version: 3.15
+
+    - name: Set up Java
+      if: inputs.language == 'java'
+      uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+      with:
+        distribution: temurin
+        java-version: 21
+
+    - name: Set up .NET
+      if: inputs.language == 'dotnet'
+      uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+      with:
+        dotnet-version: 11.x
+
+    - name: Set up Go
+      if: inputs.language == 'go'
+      uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+      with:
+        go-version: stable
+        cache: false
+
+    - name: Build packages
+      shell: bash
+      run: |
+        make install
+        make cdk
+        make package-jsii LANGUAGES="$LANGUAGE"
+      env:
+        LANGUAGE: ${{ inputs.language }}
+
+    - name: Read the version
+      if: inputs.language == 'go'
+      id: version
+      shell: bash
+      run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+    - name: Pack the Go module
+      if: inputs.language == 'go'
+      uses: udondan/goproxy-gh-pages/pack@1bc5f4391f581dea5e41a9b64238111425605a74 # v1
+      with:
+        module-dir: dist/go/cdkiamfloyd
+        version: ${{ steps.version.outputs.version }}
+        output: dist/go-module/cdk-iam-floyd-go-module-{version}.zip

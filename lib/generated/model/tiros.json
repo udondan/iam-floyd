@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "filename": "tiros",
+  "className": "Tiros",
+  "name": "tiros",
+  "servicePrefix": "tiros",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_tiros.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateQuery",
+      "ExtendQuery"
+    ],
+    "Read": [
+      "GetQueryAnswer",
+      "GetQueryExplanation",
+      "GetQueryExtensionAccounts"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateQuery",
+      "methodName": "toCreateQuery",
+      "description": "Grants permission to create a VPC reachability query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "ExtendQuery",
+      "methodName": "toExtendQuery",
+      "description": "Grants permission to extend a VPC reachability query to include the calling principals account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "GetQueryAnswer",
+      "methodName": "toGetQueryAnswer",
+      "description": "Grants permission to get VPC reachability query answers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "GetQueryExplanation",
+      "methodName": "toGetQueryExplanation",
+      "description": "Grants permission to get VPC reachability query explanations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "GetQueryExtensionAccounts",
+      "methodName": "toGetQueryExtensionAccounts",
+      "description": "Grants permission to list accounts that might be useful in a new query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "detective:AcceptInvitation",
+        "detective:BatchGetMembershipDatasources",
+        "detective:DisassociateMembership",
+        "detective:GetFreeTrialEligibility",
+        "detective:GetPricingInformation",
+        "detective:GetUsageInformation",
+        "detective:ListInvitations",
+        "detective:RejectInvitation"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

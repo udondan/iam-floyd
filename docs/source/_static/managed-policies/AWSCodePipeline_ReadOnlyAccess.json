@@ -1,0 +1,45 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "codepipeline:GetPipeline",
+        "codepipeline:GetPipelineState",
+        "codepipeline:GetPipelineExecution",
+        "codepipeline:ListPipelineExecutions",
+        "codepipeline:ListActionExecutions",
+        "codepipeline:ListActionTypes",
+        "codepipeline:ListPipelines",
+        "codepipeline:ListTagsForResource",
+        "s3:ListAllMyBuckets",
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListEventTypes",
+        "codestar-notifications:ListTargets"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:GetBucketPolicy"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3::*:codepipeline-*"
+    },
+    {
+      "Sid": "CodeStarNotificationsReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:DescribeNotificationRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codepipeline:*"
+        }
+      }
+    }
+  ],
+  "Version": "2012-10-17"
+}

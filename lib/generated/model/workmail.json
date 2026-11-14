@@ -1,0 +1,1261 @@
+{
+  "schemaVersion": 1,
+  "filename": "workmail",
+  "className": "Workmail",
+  "name": "workmail",
+  "servicePrefix": "workmail",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workmail.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateDelegateToResource",
+      "AssociateMemberToGroup",
+      "AssumeImpersonationRole",
+      "CancelMailboxExportJob",
+      "CreateAlias",
+      "CreateAvailabilityConfiguration",
+      "CreateGroup",
+      "CreateIdentityCenterApplication",
+      "CreateImpersonationRole",
+      "CreateMobileDeviceAccessRule",
+      "CreateOrganization",
+      "CreateResource",
+      "CreateUser",
+      "DeleteAccessControlRule",
+      "DeleteAlias",
+      "DeleteAvailabilityConfiguration",
+      "DeleteEmailMonitoringConfiguration",
+      "DeleteGroup",
+      "DeleteIdentityCenterApplication",
+      "DeleteIdentityProviderConfiguration",
+      "DeleteImpersonationRole",
+      "DeleteMailboxPermissions",
+      "DeleteMobileDeviceAccessOverride",
+      "DeleteMobileDeviceAccessRule",
+      "DeleteOrganization",
+      "DeletePersonalAccessToken",
+      "DeleteResource",
+      "DeleteRetentionPolicy",
+      "DeleteUser",
+      "DeregisterFromWorkMail",
+      "DeregisterMailDomain",
+      "DisassociateDelegateFromResource",
+      "DisassociateMemberFromGroup",
+      "PutAccessControlRule",
+      "PutEmailMonitoringConfiguration",
+      "PutIdentityProviderConfiguration",
+      "PutInboundDmarcSettings",
+      "PutMailboxPermissions",
+      "PutMobileDeviceAccessOverride",
+      "PutRetentionPolicy",
+      "RegisterMailDomain",
+      "RegisterToWorkMail",
+      "ResetPassword",
+      "StartMailboxExportJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateAvailabilityConfiguration",
+      "UpdateDefaultMailDomain",
+      "UpdateGroup",
+      "UpdateImpersonationRole",
+      "UpdateMailboxQuota",
+      "UpdateMobileDeviceAccessRule",
+      "UpdatePrimaryEmailAddress",
+      "UpdateResource",
+      "UpdateUser",
+      "AllowVendedLogDeliveryForResource",
+      "CreateInboundMailFlowRule",
+      "CreateMailDomain",
+      "CreateOutboundMailFlowRule",
+      "CreateSmtpGateway",
+      "DeleteInboundMailFlowRule",
+      "DeleteMailDomain",
+      "DeleteMobileDevice",
+      "DeleteOutboundMailFlowRule",
+      "DeleteSmtpGateway",
+      "DeliverToMailbox",
+      "EnableMailDomain",
+      "SetDefaultMailDomain",
+      "SetJournalingRules",
+      "SetMobilePolicyDetails",
+      "TestInboundMailFlowRules",
+      "TestOutboundMailFlowRules",
+      "UpdateInboundMailFlowRule",
+      "UpdateOutboundMailFlowRule",
+      "UpdateSmtpGateway",
+      "WipeMobileDevice"
+    ],
+    "Read": [
+      "DescribeEmailMonitoringConfiguration",
+      "DescribeEntity",
+      "DescribeIdentityProviderConfiguration",
+      "DescribeInboundDmarcSettings",
+      "DescribeMailboxExportJob",
+      "GetAccessControlEffect",
+      "GetDefaultRetentionPolicy",
+      "GetImpersonationRole",
+      "GetImpersonationRoleEffect",
+      "GetMailDomain",
+      "GetMailboxDetails",
+      "GetMobileDeviceAccessEffect",
+      "GetMobileDeviceAccessOverride",
+      "GetPersonalAccessTokenMetadata",
+      "ListAccessControlRules",
+      "ListAvailabilityConfigurations",
+      "ListMobileDeviceAccessOverrides",
+      "ListMobileDeviceAccessRules",
+      "TestAvailabilityConfiguration",
+      "DescribeInboundMailFlowRule",
+      "DescribeOutboundMailFlowRule",
+      "DescribeSmtpGateway",
+      "GetJournalingRules",
+      "GetMailDomainDetails",
+      "GetMobileDeviceDetails",
+      "GetMobileDevicesForUser",
+      "GetMobilePolicyDetails",
+      "SearchMembers"
+    ],
+    "List": [
+      "DescribeGroup",
+      "DescribeOrganization",
+      "DescribeResource",
+      "DescribeUser",
+      "ListAliases",
+      "ListGroupMembers",
+      "ListGroups",
+      "ListGroupsForEntity",
+      "ListImpersonationRoles",
+      "ListMailDomains",
+      "ListMailboxExportJobs",
+      "ListMailboxPermissions",
+      "ListOrganizations",
+      "ListPersonalAccessTokens",
+      "ListResourceDelegates",
+      "ListResources",
+      "ListTagsForResource",
+      "ListUsers",
+      "DescribeMailDomains",
+      "ListInboundMailFlowRules",
+      "ListOutboundMailFlowRules",
+      "ListSmtpGateways"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateDelegateToResource",
+      "methodName": "toAssociateDelegateToResource",
+      "description": "Grants permission to add a member (user or group) to the resource's set of delegates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssociateDelegateToResource.html"
+    },
+    {
+      "name": "AssociateMemberToGroup",
+      "methodName": "toAssociateMemberToGroup",
+      "description": "Grants permission to add a member (user or group) to the group's set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssociateMemberToGroup.html"
+    },
+    {
+      "name": "AssumeImpersonationRole",
+      "methodName": "toAssumeImpersonationRole",
+      "description": "Grants permission to assume an impersonation role for the given Amazon WorkMail organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssumeImpersonationRole.html"
+    },
+    {
+      "name": "CancelMailboxExportJob",
+      "methodName": "toCancelMailboxExportJob",
+      "description": "Grants permission to cancel a currently running mailbox export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CancelMailboxExportJob.html"
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Grants permission to add an alias to the set of a given member (user or group) of WorkMail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateAlias.html"
+    },
+    {
+      "name": "CreateAvailabilityConfiguration",
+      "methodName": "toCreateAvailabilityConfiguration",
+      "description": "Grants permission to create an AvailabilityConfiguration for the given Amazon WorkMail organization and domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateAvailabilityConfiguration.html"
+    },
+    {
+      "name": "CreateGroup",
+      "methodName": "toCreateGroup",
+      "description": "Grants permission to create a group that can be used in WorkMail by calling the RegisterToWorkMail operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateGroup.html"
+    },
+    {
+      "name": "CreateIdentityCenterApplication",
+      "methodName": "toCreateIdentityCenterApplication",
+      "description": "Grants permission to create an Identity Center application for WorkMail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateIdentityCenterApplication.html"
+    },
+    {
+      "name": "CreateImpersonationRole",
+      "methodName": "toCreateImpersonationRole",
+      "description": "Grants permission to create an impersonation role for the given Amazon WorkMail organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateImpersonationRole.html"
+    },
+    {
+      "name": "CreateMobileDeviceAccessRule",
+      "methodName": "toCreateMobileDeviceAccessRule",
+      "description": "Grants permission to create a new mobile device access rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateMobileDeviceAccessRule.html"
+    },
+    {
+      "name": "CreateOrganization",
+      "methodName": "toCreateOrganization",
+      "description": "Grants permission to create a new Amazon WorkMail organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateOrganization.html"
+    },
+    {
+      "name": "CreateResource",
+      "methodName": "toCreateResource",
+      "description": "Grants permission to create a new WorkMail resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateResource.html"
+    },
+    {
+      "name": "CreateUser",
+      "methodName": "toCreateUser",
+      "description": "Grants permission to create a user, which can be enabled afterwards by calling the RegisterToWorkMail operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateUser.html"
+    },
+    {
+      "name": "DeleteAccessControlRule",
+      "methodName": "toDeleteAccessControlRule",
+      "description": "Grants permission to delete an access control rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAccessControlRule.html"
+    },
+    {
+      "name": "DeleteAlias",
+      "methodName": "toDeleteAlias",
+      "description": "Grants permission to remove one or more specified aliases from a set of aliases for a given user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAlias.html"
+    },
+    {
+      "name": "DeleteAvailabilityConfiguration",
+      "methodName": "toDeleteAvailabilityConfiguration",
+      "description": "Grants permission to delete the AvailabilityConfiguration for the given Amazon WorkMail organization and domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAvailabilityConfiguration.html"
+    },
+    {
+      "name": "DeleteEmailMonitoringConfiguration",
+      "methodName": "toDeleteEmailMonitoringConfiguration",
+      "description": "Grants permission to delete the email monitoring configuration for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteEmailMonitoringConfiguration.html"
+    },
+    {
+      "name": "DeleteGroup",
+      "methodName": "toDeleteGroup",
+      "description": "Grants permission to delete a group from WorkMail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteGroup.html"
+    },
+    {
+      "name": "DeleteIdentityCenterApplication",
+      "methodName": "toDeleteIdentityCenterApplication",
+      "description": "Grants permission to delete an Identity Center application for WorkMail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteIdentityCenterApplication.html"
+    },
+    {
+      "name": "DeleteIdentityProviderConfiguration",
+      "methodName": "toDeleteIdentityProviderConfiguration",
+      "description": "Grants permission to delete the identity provider configuration for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteIdentityProviderConfiguration.html"
+    },
+    {
+      "name": "DeleteImpersonationRole",
+      "methodName": "toDeleteImpersonationRole",
+      "description": "Grants permission to delete an impersonation role for the given Amazon WorkMail organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteImpersonationRole.html"
+    },
+    {
+      "name": "DeleteMailboxPermissions",
+      "methodName": "toDeleteMailboxPermissions",
+      "description": "Grants permission to delete permissions granted to a member (user or group)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMailboxPermissions.html"
+    },
+    {
+      "name": "DeleteMobileDeviceAccessOverride",
+      "methodName": "toDeleteMobileDeviceAccessOverride",
+      "description": "Grants permission to delete a mobile device access override",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMobileDeviceAccessOverride.html"
+    },
+    {
+      "name": "DeleteMobileDeviceAccessRule",
+      "methodName": "toDeleteMobileDeviceAccessRule",
+      "description": "Grants permission to delete a mobile device access rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMobileDeviceAccessRule.html"
+    },
+    {
+      "name": "DeleteOrganization",
+      "methodName": "toDeleteOrganization",
+      "description": "Grants permission to delete an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteOrganization.html"
+    },
+    {
+      "name": "DeletePersonalAccessToken",
+      "methodName": "toDeletePersonalAccessToken",
+      "description": "Grants permission to delete a personal access token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeletePersonalAccessToken.html"
+    },
+    {
+      "name": "DeleteResource",
+      "methodName": "toDeleteResource",
+      "description": "Grants permission to delete the specified resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteResource.html"
+    },
+    {
+      "name": "DeleteRetentionPolicy",
+      "methodName": "toDeleteRetentionPolicy",
+      "description": "Grants permission to delete the retention policy based on the supplied organization and policy identifiers",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteRetentionPolicy.html"
+    },
+    {
+      "name": "DeleteUser",
+      "methodName": "toDeleteUser",
+      "description": "Grants permission to delete a user from WorkMail and all subsequent systems",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteUser.html"
+    },
+    {
+      "name": "DeregisterFromWorkMail",
+      "methodName": "toDeregisterFromWorkMail",
+      "description": "Grants permission to mark a user, group, or resource as no longer used in WorkMail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeregisterFromWorkMail.html"
+    },
+    {
+      "name": "DeregisterMailDomain",
+      "methodName": "toDeregisterMailDomain",
+      "description": "Grants permission to deregister a mail domain from an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeregisterMailDomain.html"
+    },
+    {
+      "name": "DescribeEmailMonitoringConfiguration",
+      "methodName": "toDescribeEmailMonitoringConfiguration",
+      "description": "Grants permission to retrieve the email monitoring configuration for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeEmailMonitoringConfiguration.html"
+    },
+    {
+      "name": "DescribeEntity",
+      "methodName": "toDescribeEntity",
+      "description": "Grants permission to read details of an entity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeEntity.html"
+    },
+    {
+      "name": "DescribeGroup",
+      "methodName": "toDescribeGroup",
+      "description": "Grants permission to read the details for a group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeGroup.html"
+    },
+    {
+      "name": "DescribeIdentityProviderConfiguration",
+      "methodName": "toDescribeIdentityProviderConfiguration",
+      "description": "Grants permission to read the identity provider configuration for the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeIdentityProviderConfiguration.html"
+    },
+    {
+      "name": "DescribeInboundDmarcSettings",
+      "methodName": "toDescribeInboundDmarcSettings",
+      "description": "Grants permission to read the settings in a DMARC policy for a specified organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeInboundDmarcSettings.html"
+    },
+    {
+      "name": "DescribeMailboxExportJob",
+      "methodName": "toDescribeMailboxExportJob",
+      "description": "Grants permission to retrieve details of a mailbox export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeMailboxExportJob.html"
+    },
+    {
+      "name": "DescribeOrganization",
+      "methodName": "toDescribeOrganization",
+      "description": "Grants permission to read details of an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeOrganization.html"
+    },
+    {
+      "name": "DescribeResource",
+      "methodName": "toDescribeResource",
+      "description": "Grants permission to read the details for a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeResource.html"
+    },
+    {
+      "name": "DescribeUser",
+      "methodName": "toDescribeUser",
+      "description": "Grants permission to read details for a user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeUser.html"
+    },
+    {
+      "name": "DisassociateDelegateFromResource",
+      "methodName": "toDisassociateDelegateFromResource",
+      "description": "Grants permission to remove a member from the resource's set of delegates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DisassociateDelegateFromResource.html"
+    },
+    {
+      "name": "DisassociateMemberFromGroup",
+      "methodName": "toDisassociateMemberFromGroup",
+      "description": "Grants permission to remove a member from a group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_DisassociateMemberFromGroup.html"
+    },
+    {
+      "name": "GetAccessControlEffect",
+      "methodName": "toGetAccessControlEffect",
+      "description": "Grants permission to get the effects of access control rules as they apply to a specified IPv4 address, access protocol action, or user ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetAccessControlEffect.html"
+    },
+    {
+      "name": "GetDefaultRetentionPolicy",
+      "methodName": "toGetDefaultRetentionPolicy",
+      "description": "Grants permission to retrieve the retention policy associated at an organizational level",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetDefaultRetentionPolicy.html"
+    },
+    {
+      "name": "GetImpersonationRole",
+      "methodName": "toGetImpersonationRole",
+      "description": "Grants permission to retrieve an impersonation role for the given Amazon WorkMail organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetImpersonationRole.html"
+    },
+    {
+      "name": "GetImpersonationRoleEffect",
+      "methodName": "toGetImpersonationRoleEffect",
+      "description": "Grants permission to get the effect of the rules associated to an impersonation role for a specific user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetImpersonationRoleEffect.html"
+    },
+    {
+      "name": "GetMailDomain",
+      "methodName": "toGetMailDomain",
+      "description": "Grants permission to retrieve details of a given mail domain in an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMailDomain.html"
+    },
+    {
+      "name": "GetMailboxDetails",
+      "methodName": "toGetMailboxDetails",
+      "description": "Grants permission to read the details of the user's mailbox",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMailboxDetails.html"
+    },
+    {
+      "name": "GetMobileDeviceAccessEffect",
+      "methodName": "toGetMobileDeviceAccessEffect",
+      "description": "Grants permission to simulate the effect of the mobile device access rules for the given attributes of a sample access event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMobileDeviceAccessEffect.html"
+    },
+    {
+      "name": "GetMobileDeviceAccessOverride",
+      "methodName": "toGetMobileDeviceAccessOverride",
+      "description": "Grants permission to retrieve a mobile device access override",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMobileDeviceAccessOverride.html"
+    },
+    {
+      "name": "GetPersonalAccessTokenMetadata",
+      "methodName": "toGetPersonalAccessTokenMetadata",
+      "description": "Grants permission to read metadata for a personal access token",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetPersonalAccessTokenMetadata.html"
+    },
+    {
+      "name": "ListAccessControlRules",
+      "methodName": "toListAccessControlRules",
+      "description": "Grants permission to list the access control rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAccessControlRules.html"
+    },
+    {
+      "name": "ListAliases",
+      "methodName": "toListAliases",
+      "description": "Grants permission to list the aliases associated with a given entity",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAliases.html"
+    },
+    {
+      "name": "ListAvailabilityConfigurations",
+      "methodName": "toListAvailabilityConfigurations",
+      "description": "Grants permission to list all the AvailabilityConfiguration's for the given Amazon WorkMail organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAvailabilityConfigurations.html"
+    },
+    {
+      "name": "ListGroupMembers",
+      "methodName": "toListGroupMembers",
+      "description": "Grants permission to read an overview of the members of a group. Users and groups can be members of a group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroupMembers.html"
+    },
+    {
+      "name": "ListGroups",
+      "methodName": "toListGroups",
+      "description": "Grants permission to list summaries of the organization's groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroups.html"
+    },
+    {
+      "name": "ListGroupsForEntity",
+      "methodName": "toListGroupsForEntity",
+      "description": "Grants permission to list the groups to which an entity belongs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroupsForEntity.html"
+    },
+    {
+      "name": "ListImpersonationRoles",
+      "methodName": "toListImpersonationRoles",
+      "description": "Grants permission to list the impersonation roles for the given Amazon WorkMail organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListImpersonationRoles.html"
+    },
+    {
+      "name": "ListMailDomains",
+      "methodName": "toListMailDomains",
+      "description": "Grants permission to list the mail domains for a given organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailDomains.html"
+    },
+    {
+      "name": "ListMailboxExportJobs",
+      "methodName": "toListMailboxExportJobs",
+      "description": "Grants permission to list mailbox export jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailboxExportJobs.html"
+    },
+    {
+      "name": "ListMailboxPermissions",
+      "methodName": "toListMailboxPermissions",
+      "description": "Grants permission to list the mailbox permissions associated with a user, group, or resource mailbox",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailboxPermissions.html"
+    },
+    {
+      "name": "ListMobileDeviceAccessOverrides",
+      "methodName": "toListMobileDeviceAccessOverrides",
+      "description": "Grants permission to list the mobile device access overrides",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMobileDeviceAccessOverrides.html"
+    },
+    {
+      "name": "ListMobileDeviceAccessRules",
+      "methodName": "toListMobileDeviceAccessRules",
+      "description": "Grants permission to list the mobile device access rules",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMobileDeviceAccessRules.html"
+    },
+    {
+      "name": "ListOrganizations",
+      "methodName": "toListOrganizations",
+      "description": "Grants permission to list the non-deleted organizations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html"
+    },
+    {
+      "name": "ListPersonalAccessTokens",
+      "methodName": "toListPersonalAccessTokens",
+      "description": "Grants permission to list metadata for personal access tokens",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListPersonalAccessTokens.html"
+    },
+    {
+      "name": "ListResourceDelegates",
+      "methodName": "toListResourceDelegates",
+      "description": "Grants permission to list the delegates associated with a resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListResourceDelegates.html"
+    },
+    {
+      "name": "ListResources",
+      "methodName": "toListResources",
+      "description": "Grants permission to list the organization's resources",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListResources.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags applied to an Amazon WorkMail organization resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUsers",
+      "methodName": "toListUsers",
+      "description": "Grants permission to list the organization's users",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListUsers.html"
+    },
+    {
+      "name": "PutAccessControlRule",
+      "methodName": "toPutAccessControlRule",
+      "description": "Grants permission to add a new access control rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutAccessControlRule.html"
+    },
+    {
+      "name": "PutEmailMonitoringConfiguration",
+      "methodName": "toPutEmailMonitoringConfiguration",
+      "description": "Grants permission to add or update the email monitoring configuration for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutEmailMonitoringConfiguration.html"
+    },
+    {
+      "name": "PutIdentityProviderConfiguration",
+      "methodName": "toPutIdentityProviderConfiguration",
+      "description": "Grants permission to add or update the identity provider configuration for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutIdentityProviderConfiguration.html"
+    },
+    {
+      "name": "PutInboundDmarcSettings",
+      "methodName": "toPutInboundDmarcSettings",
+      "description": "Grants permission to enable or disable a DMARC policy for a given organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutInboundDmarcSettings.html"
+    },
+    {
+      "name": "PutMailboxPermissions",
+      "methodName": "toPutMailboxPermissions",
+      "description": "Grants permission to set permissions for a user, group, or resource, replacing any existing permissions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutMailboxPermissions.html"
+    },
+    {
+      "name": "PutMobileDeviceAccessOverride",
+      "methodName": "toPutMobileDeviceAccessOverride",
+      "description": "Grants permission to add or update a mobile device access override",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutMobileDeviceAccessOverride.html"
+    },
+    {
+      "name": "PutRetentionPolicy",
+      "methodName": "toPutRetentionPolicy",
+      "description": "Grants permission to add or update the retention policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutRetentionPolicy.html"
+    },
+    {
+      "name": "RegisterMailDomain",
+      "methodName": "toRegisterMailDomain",
+      "description": "Grants permission to register a new mail domain in an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_RegisterMailDomain.html"
+    },
+    {
+      "name": "RegisterToWorkMail",
+      "methodName": "toRegisterToWorkMail",
+      "description": "Grants permission to register an existing and disabled user, group, or resource for use by associating a mailbox and calendaring capabilities",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_RegisterToWorkMail.html"
+    },
+    {
+      "name": "ResetPassword",
+      "methodName": "toResetPassword",
+      "description": "Grants permission to allow the administrator to reset the password for a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_ResetPassword.html"
+    },
+    {
+      "name": "StartMailboxExportJob",
+      "methodName": "toStartMailboxExportJob",
+      "description": "Grants permission to start a new mailbox export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_StartMailboxExportJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag the specified Amazon WorkMail organization resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TestAvailabilityConfiguration",
+      "methodName": "toTestAvailabilityConfiguration",
+      "description": "Grants permission to performs a test on an availability provider to ensure that access is allowed",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_TestAvailabilityConfiguration.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag the specified Amazon WorkMail organization resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAvailabilityConfiguration",
+      "methodName": "toUpdateAvailabilityConfiguration",
+      "description": "Grants permission to update an existing AvailabilityConfiguration for the given Amazon WorkMail organization and domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateAvailabilityConfiguration.html"
+    },
+    {
+      "name": "UpdateDefaultMailDomain",
+      "methodName": "toUpdateDefaultMailDomain",
+      "description": "Grants permission to update which domain is the default domain for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateDefaultMailDomain.html"
+    },
+    {
+      "name": "UpdateGroup",
+      "methodName": "toUpdateGroup",
+      "description": "Grants permission to update details of a group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateGroup.html"
+    },
+    {
+      "name": "UpdateImpersonationRole",
+      "methodName": "toUpdateImpersonationRole",
+      "description": "Grants permission to update an existing impersonation role for the given Amazon WorkMail organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateImpersonationRole.html"
+    },
+    {
+      "name": "UpdateMailboxQuota",
+      "methodName": "toUpdateMailboxQuota",
+      "description": "Grants permission to update the maximum size (in MB) of the user's mailbox",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateMailboxQuota.html"
+    },
+    {
+      "name": "UpdateMobileDeviceAccessRule",
+      "methodName": "toUpdateMobileDeviceAccessRule",
+      "description": "Grants permission to update a mobile device access rule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateMobileDeviceAccessRule.html"
+    },
+    {
+      "name": "UpdatePrimaryEmailAddress",
+      "methodName": "toUpdatePrimaryEmailAddress",
+      "description": "Grants permission to update the primary email for a user, group, or resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdatePrimaryEmailAddress.html"
+    },
+    {
+      "name": "UpdateResource",
+      "methodName": "toUpdateResource",
+      "description": "Grants permission to update details for the resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateResource.html"
+    },
+    {
+      "name": "UpdateUser",
+      "methodName": "toUpdateUser",
+      "description": "Grants permission to update details of a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateUser.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for WorkMail audit logs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/audit-logging.html"
+    },
+    {
+      "name": "CreateInboundMailFlowRule",
+      "methodName": "toCreateInboundMailFlowRule",
+      "description": "Grants permission to create an inbound email flow rule which will apply to all email sent to an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html"
+    },
+    {
+      "name": "CreateMailDomain",
+      "methodName": "toCreateMailDomain",
+      "description": "Grants permission to create a mail domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html"
+    },
+    {
+      "name": "CreateOutboundMailFlowRule",
+      "methodName": "toCreateOutboundMailFlowRule",
+      "description": "Grants permission to create an outbound email flow rule which will apply to all email sent from an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html"
+    },
+    {
+      "name": "CreateSmtpGateway",
+      "methodName": "toCreateSmtpGateway",
+      "description": "Grants permission to register an SMTP gateway to a WorkMail organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html"
+    },
+    {
+      "name": "DeleteInboundMailFlowRule",
+      "methodName": "toDeleteInboundMailFlowRule",
+      "description": "Grants permission to remove an inbound email flow rule to no longer apply to emails sent to an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html"
+    },
+    {
+      "name": "DeleteMailDomain",
+      "methodName": "toDeleteMailDomain",
+      "description": "Grants permission to remove an unused mail domain from an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/remove_domain.html"
+    },
+    {
+      "name": "DeleteMobileDevice",
+      "methodName": "toDeleteMobileDevice",
+      "description": "Grants permission to remove a mobile device from a user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remove_mobile_device"
+    },
+    {
+      "name": "DeleteOutboundMailFlowRule",
+      "methodName": "toDeleteOutboundMailFlowRule",
+      "description": "Grants permission to remove an outbound email flow rule so that it no longer applies to emails sent from an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html"
+    },
+    {
+      "name": "DeleteSmtpGateway",
+      "methodName": "toDeleteSmtpGateway",
+      "description": "Grants permission to remove an SMTP gateway from an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html"
+    },
+    {
+      "name": "DeliverToMailbox",
+      "methodName": "toDeliverToMailbox",
+      "description": "Grants permission to deliver emails to a WorkMail organization via the SES MailManager DeliverToMailbox action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeliverToMailboxAction.html"
+    },
+    {
+      "name": "DescribeInboundMailFlowRule",
+      "methodName": "toDescribeInboundMailFlowRule",
+      "description": "Grants permission to read the details of an inbound mail flow rule configured for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions"
+    },
+    {
+      "name": "DescribeMailDomains",
+      "methodName": "toDescribeMailDomains",
+      "description": "Grants permission to show the details of all mail domains associated with the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html"
+    },
+    {
+      "name": "DescribeOutboundMailFlowRule",
+      "methodName": "toDescribeOutboundMailFlowRule",
+      "description": "Grants permission to read the details of an outbound mail flow rule configured for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound"
+    },
+    {
+      "name": "DescribeSmtpGateway",
+      "methodName": "toDescribeSmtpGateway",
+      "description": "Grants permission to read the details of an SMTP gateway registered to an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html"
+    },
+    {
+      "name": "EnableMailDomain",
+      "methodName": "toEnableMailDomain",
+      "description": "Grants permission to enable a mail domain in the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html"
+    },
+    {
+      "name": "GetJournalingRules",
+      "methodName": "toGetJournalingRules",
+      "description": "Grants permission to read the configured journaling and fallback email addresses for email journaling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html"
+    },
+    {
+      "name": "GetMailDomainDetails",
+      "methodName": "toGetMailDomainDetails",
+      "description": "Grants permission to get the details of the mail domain",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html"
+    },
+    {
+      "name": "GetMobileDeviceDetails",
+      "methodName": "toGetMobileDeviceDetails",
+      "description": "Grants permission to get the details of the mobile device",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html"
+    },
+    {
+      "name": "GetMobileDevicesForUser",
+      "methodName": "toGetMobileDevicesForUser",
+      "description": "Grants permission to get a list of the mobile devices associated with the user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html"
+    },
+    {
+      "name": "GetMobilePolicyDetails",
+      "methodName": "toGetMobilePolicyDetails",
+      "description": "Grants permission to get the details of the mobile device policy associated with the organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html"
+    },
+    {
+      "name": "ListInboundMailFlowRules",
+      "methodName": "toListInboundMailFlowRules",
+      "description": "Grants permission to list inbound mail flow rules configured for an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions"
+    },
+    {
+      "name": "ListOutboundMailFlowRules",
+      "methodName": "toListOutboundMailFlowRules",
+      "description": "Grants permission to list outbound mail flow rules configured for an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound"
+    },
+    {
+      "name": "ListSmtpGateways",
+      "methodName": "toListSmtpGateways",
+      "description": "Grants permission to list SMTP gateways registered to the organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html"
+    },
+    {
+      "name": "SearchMembers",
+      "methodName": "toSearchMembers",
+      "description": "Grants permission to perform a prefix search to find a specific user in a mail group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html"
+    },
+    {
+      "name": "SetDefaultMailDomain",
+      "methodName": "toSetDefaultMailDomain",
+      "description": "Grants permission to set the default mail domain for the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html"
+    },
+    {
+      "name": "SetJournalingRules",
+      "methodName": "toSetJournalingRules",
+      "description": "Grants permission to set journaling and fallback email addresses for email journaling",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html"
+    },
+    {
+      "name": "SetMobilePolicyDetails",
+      "methodName": "toSetMobilePolicyDetails",
+      "description": "Grants permission to set the details of a mobile policy associated with the organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html"
+    },
+    {
+      "name": "TestInboundMailFlowRules",
+      "methodName": "toTestInboundMailFlowRules",
+      "description": "Grants permission to test what inbound rules will apply to an email with a given sender and recipient",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html"
+    },
+    {
+      "name": "TestOutboundMailFlowRules",
+      "methodName": "toTestOutboundMailFlowRules",
+      "description": "Grants permission to test what outbound rules will apply to an email with a given sender and recipient",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html"
+    },
+    {
+      "name": "UpdateInboundMailFlowRule",
+      "methodName": "toUpdateInboundMailFlowRule",
+      "description": "Grants permission to update the details of an inbound email flow rule which will apply to all email sent to an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html"
+    },
+    {
+      "name": "UpdateOutboundMailFlowRule",
+      "methodName": "toUpdateOutboundMailFlowRule",
+      "description": "Grants permission to update the details of an outbound email flow rule which will apply to all email sent from an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html"
+    },
+    {
+      "name": "UpdateSmtpGateway",
+      "methodName": "toUpdateSmtpGateway",
+      "description": "Grants permission to update the details of an existing SMTP gateway registered to an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html"
+    },
+    {
+      "name": "WipeMobileDevice",
+      "methodName": "toWipeMobileDevice",
+      "description": "Grants permission to remotely wipe the mobile device associated with a user's account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remote_wipe_device"
+    }
+  ],
+  "resources": [
+    {
+      "name": "organization",
+      "methodName": "onOrganization",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html",
+      "arn": "arn:${Partition}:workmail:${Region}:${Account}:organization/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateDelegateToResource",
+        "toAssociateMemberToGroup",
+        "toAssumeImpersonationRole",
+        "toCancelMailboxExportJob",
+        "toCreateAlias",
+        "toCreateAvailabilityConfiguration",
+        "toCreateGroup",
+        "toCreateImpersonationRole",
+        "toCreateMobileDeviceAccessRule",
+        "toCreateResource",
+        "toCreateUser",
+        "toDeleteAccessControlRule",
+        "toDeleteAlias",
+        "toDeleteAvailabilityConfiguration",
+        "toDeleteEmailMonitoringConfiguration",
+        "toDeleteGroup",
+        "toDeleteIdentityProviderConfiguration",
+        "toDeleteImpersonationRole",
+        "toDeleteMailboxPermissions",
+        "toDeleteMobileDeviceAccessOverride",
+        "toDeleteMobileDeviceAccessRule",
+        "toDeleteOrganization",
+        "toDeletePersonalAccessToken",
+        "toDeleteResource",
+        "toDeleteRetentionPolicy",
+        "toDeleteUser",
+        "toDeregisterFromWorkMail",
+        "toDeregisterMailDomain",
+        "toDescribeEmailMonitoringConfiguration",
+        "toDescribeEntity",
+        "toDescribeGroup",
+        "toDescribeIdentityProviderConfiguration",
+        "toDescribeInboundDmarcSettings",
+        "toDescribeMailboxExportJob",
+        "toDescribeOrganization",
+        "toDescribeResource",
+        "toDescribeUser",
+        "toDisassociateDelegateFromResource",
+        "toDisassociateMemberFromGroup",
+        "toGetAccessControlEffect",
+        "toGetDefaultRetentionPolicy",
+        "toGetImpersonationRole",
+        "toGetImpersonationRoleEffect",
+        "toGetMailDomain",
+        "toGetMailboxDetails",
+        "toGetMobileDeviceAccessEffect",
+        "toGetMobileDeviceAccessOverride",
+        "toGetPersonalAccessTokenMetadata",
+        "toListAccessControlRules",
+        "toListAliases",
+        "toListAvailabilityConfigurations",
+        "toListGroupMembers",
+        "toListGroups",
+        "toListGroupsForEntity",
+        "toListImpersonationRoles",
+        "toListMailDomains",
+        "toListMailboxExportJobs",
+        "toListMailboxPermissions",
+        "toListMobileDeviceAccessOverrides",
+        "toListMobileDeviceAccessRules",
+        "toListPersonalAccessTokens",
+        "toListResourceDelegates",
+        "toListResources",
+        "toListTagsForResource",
+        "toListUsers",
+        "toPutAccessControlRule",
+        "toPutEmailMonitoringConfiguration",
+        "toPutIdentityProviderConfiguration",
+        "toPutInboundDmarcSettings",
+        "toPutMailboxPermissions",
+        "toPutMobileDeviceAccessOverride",
+        "toPutRetentionPolicy",
+        "toRegisterMailDomain",
+        "toRegisterToWorkMail",
+        "toResetPassword",
+        "toStartMailboxExportJob",
+        "toTagResource",
+        "toTestAvailabilityConfiguration",
+        "toUntagResource",
+        "toUpdateAvailabilityConfiguration",
+        "toUpdateDefaultMailDomain",
+        "toUpdateGroup",
+        "toUpdateImpersonationRole",
+        "toUpdateMailboxQuota",
+        "toUpdateMobileDeviceAccessRule",
+        "toUpdatePrimaryEmailAddress",
+        "toUpdateResource",
+        "toUpdateUser",
+        "toAllowVendedLogDeliveryForResource",
+        "toCreateInboundMailFlowRule",
+        "toCreateMailDomain",
+        "toCreateOutboundMailFlowRule",
+        "toCreateSmtpGateway",
+        "toDeleteInboundMailFlowRule",
+        "toDeleteMailDomain",
+        "toDeleteMobileDevice",
+        "toDeleteOutboundMailFlowRule",
+        "toDeleteSmtpGateway",
+        "toDeliverToMailbox",
+        "toDescribeInboundMailFlowRule",
+        "toDescribeMailDomains",
+        "toDescribeOutboundMailFlowRule",
+        "toDescribeSmtpGateway",
+        "toEnableMailDomain",
+        "toGetJournalingRules",
+        "toGetMailDomainDetails",
+        "toGetMobileDeviceDetails",
+        "toGetMobileDevicesForUser",
+        "toGetMobilePolicyDetails",
+        "toListInboundMailFlowRules",
+        "toListOutboundMailFlowRules",
+        "toListSmtpGateways",
+        "toSearchMembers",
+        "toSetDefaultMailDomain",
+        "toSetJournalingRules",
+        "toSetMobilePolicyDetails",
+        "toTestInboundMailFlowRules",
+        "toTestOutboundMailFlowRules",
+        "toUpdateInboundMailFlowRule",
+        "toUpdateOutboundMailFlowRule",
+        "toUpdateSmtpGateway",
+        "toWipeMobileDevice"
+      ],
+      "relatedResourceTypes": [
+        "organization"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "workmail:ImpersonationRoleId",
+      "methodName": "ifImpersonationRoleId",
+      "description": "Filters access by the ImpersonationRoleId that is passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html#amazonworkmail-policy-keys",
+      "relatedActionMethods": [
+        "toAssumeImpersonationRole"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ImpersonationRoleId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

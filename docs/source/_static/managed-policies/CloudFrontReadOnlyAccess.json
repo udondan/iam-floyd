@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "cfReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DescribeCertificate",
+        "acm:ListCertificates",
+        "cloudfront:Describe*",
+        "cloudfront:Get*",
+        "cloudfront:List*",
+        "cloudfront-keyvaluestore:Describe*",
+        "cloudfront-keyvaluestore:Get*",
+        "cloudfront-keyvaluestore:List*",
+        "iam:ListServerCertificates",
+        "route53:List*",
+        "waf:ListWebACLs",
+        "waf:GetWebACL",
+        "wafv2:ListWebACLs",
+        "wafv2:GetWebACL",
+        "ec2:DescribeIpamPools",
+        "ec2:GetIpamPoolCidrs",
+        "pricingplanmanager:ListSubscriptions",
+        "pricingplanmanager:GetSubscription"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

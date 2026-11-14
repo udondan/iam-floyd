@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "filename": "route53profiles",
+  "className": "Route53profiles",
+  "name": "route53profiles",
+  "servicePrefix": "route53profiles",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_route53profiles.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateProfile",
+      "AssociateResourceToProfile",
+      "CreateProfile",
+      "DeleteProfile",
+      "DisassociateProfile",
+      "DisassociateResourceFromProfile",
+      "TagResource",
+      "UntagResource",
+      "UpdateProfileResourceAssociation",
+      "PutProfilePolicy"
+    ],
+    "Read": [
+      "GetProfile",
+      "GetProfileAssociation",
+      "GetProfileResourceAssociation",
+      "GetProfilePolicy"
+    ],
+    "List": [
+      "ListProfileAssociations",
+      "ListProfileResourceAssociations",
+      "ListProfiles",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateProfile",
+      "methodName": "toAssociateProfile",
+      "description": "Grants permission to associates a Profile to the customer VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifResourceIds"
+      ]
+    },
+    {
+      "name": "AssociateResourceToProfile",
+      "methodName": "toAssociateResourceToProfile",
+      "description": "Grants permission to associates a resource, such as DNS Firewall rule group, private hosted zone, resolver rule, etc. to a specified Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateResourceToProfile.html",
+      "conditionMethods": [
+        "ifFirewallRuleGroupPriority",
+        "ifHostedZoneDomains",
+        "ifResolverRuleDomains",
+        "ifResourceArns",
+        "ifResourceTypes"
+      ]
+    },
+    {
+      "name": "CreateProfile",
+      "methodName": "toCreateProfile",
+      "description": "Grants permission to create a new Profile resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_CreateProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteProfile",
+      "methodName": "toDeleteProfile",
+      "description": "Grants permission to delete a Profile specified by the ProfileId",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DeleteProfile.html"
+    },
+    {
+      "name": "DisassociateProfile",
+      "methodName": "toDisassociateProfile",
+      "description": "Grants permission to delete an association between a customer VPC and the specified Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateProfile.html",
+      "conditionMethods": [
+        "ifResourceIds"
+      ]
+    },
+    {
+      "name": "DisassociateResourceFromProfile",
+      "methodName": "toDisassociateResourceFromProfile",
+      "description": "Grants permission to delete the asoociation between the resource. such as DNS Firewall rule group, private hosted zone, resolver rule, etc. and the specified Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateResourceFromProfile.html",
+      "conditionMethods": [
+        "ifFirewallRuleGroupPriority",
+        "ifHostedZoneDomains",
+        "ifResolverRuleDomains",
+        "ifResourceArns",
+        "ifResourceTypes"
+      ]
+    },
+    {
+      "name": "GetProfile",
+      "methodName": "toGetProfile",
+      "description": "Grants permission to get a Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfile.html"
+    },
+    {
+      "name": "GetProfileAssociation",
+      "methodName": "toGetProfileAssociation",
+      "description": "Grants permission to get a Profile to a VPC association specified by the Profile association ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfileAssociation.html"
+    },
+    {
+      "name": "GetProfileResourceAssociation",
+      "methodName": "toGetProfileResourceAssociation",
+      "description": "Grants permission to get a Profile resource association based on the ProfileResourceAssociationId",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_GetProfileResourceAssociation.html"
+    },
+    {
+      "name": "ListProfileAssociations",
+      "methodName": "toListProfileAssociations",
+      "description": "Grants permission to list all VPCs the specified Profile is associated to",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileAssociations.html"
+    },
+    {
+      "name": "ListProfileResourceAssociations",
+      "methodName": "toListProfileResourceAssociations",
+      "description": "Grants permission to list all the associations between the resources, such as DNS Firewall rule groups, private hosted zones, resolver rules, etc. for the given Profile ID",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileResourceAssociations.html"
+    },
+    {
+      "name": "ListProfiles",
+      "methodName": "toListProfiles",
+      "description": "Grants permission to list all the Profiles created by, and shared to the customer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfiles.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list all tags associated with the resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListTagsForResource.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add a tag to the given resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to delete a tag from the given resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UntagResource.html"
+    },
+    {
+      "name": "UpdateProfileResourceAssociation",
+      "methodName": "toUpdateProfileResourceAssociation",
+      "description": "Grants permission to update the Profile resource association name or the resource properties or both, if both name and resource properties are null, the api returns the existing Profile resource association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileResourceAssociation.html",
+      "conditionMethods": [
+        "ifFirewallRuleGroupPriority",
+        "ifHostedZoneDomains",
+        "ifResolverRuleDomains",
+        "ifResourceTypes"
+      ]
+    },
+    {
+      "name": "GetProfilePolicy",
+      "methodName": "toGetProfilePolicy",
+      "description": "Grants permission to read the RAM access control policy for a Profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html"
+    },
+    {
+      "name": "PutProfilePolicy",
+      "methodName": "toPutProfilePolicy",
+      "description": "Grants permission to define the RAM access control policy for a Profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/sharing-profiles.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "profile",
+      "methodName": "onProfile",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/#access-control-resources",
+      "arn": "arn:${Partition}:route53profiles:${Region}:${Account}:profile/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53profiles",
+        "interface": "IProfileRef",
+        "property": "profileRef",
+        "arn": "profileArn"
+      }
+    },
+    {
+      "name": "profile-association",
+      "methodName": "onProfileAssociation",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/#access-control-resources",
+      "arn": "arn:${Partition}:route53profiles:${Region}:${Account}:profile-association/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_route53profiles",
+        "interface": "IProfileAssociationRef",
+        "property": "profileAssociationRef",
+        "id": "profileAssociationId"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAssociateProfile",
+        "toCreateProfile",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toTagResource",
+        "toUntagResource",
+        "toGetProfilePolicy",
+        "toPutProfilePolicy"
+      ],
+      "relatedResourceTypes": [
+        "profile",
+        "profile-association"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAssociateProfile",
+        "toCreateProfile",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "route53profiles:FirewallRuleGroupPriority",
+      "methodName": "ifFirewallRuleGroupPriority",
+      "description": "Filters access by priority range of a Firewall Rule Group",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html",
+      "relatedActionMethods": [
+        "toAssociateResourceToProfile",
+        "toDisassociateResourceFromProfile",
+        "toUpdateProfileResourceAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FirewallRuleGroupPriority",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "route53profiles:HostedZoneDomains",
+      "methodName": "ifHostedZoneDomains",
+      "description": "Filters access by Hosted Zone domains",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html",
+      "relatedActionMethods": [
+        "toAssociateResourceToProfile",
+        "toDisassociateResourceFromProfile",
+        "toUpdateProfileResourceAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "HostedZoneDomains",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "route53profiles:ResolverRuleDomains",
+      "methodName": "ifResolverRuleDomains",
+      "description": "Filters access by Resolver Rule domains",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html",
+      "relatedActionMethods": [
+        "toAssociateResourceToProfile",
+        "toDisassociateResourceFromProfile",
+        "toUpdateProfileResourceAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResolverRuleDomains",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "route53profiles:ResourceArns",
+      "methodName": "ifResourceArns",
+      "description": "Filters access by specific resource ARNs",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html",
+      "relatedActionMethods": [
+        "toAssociateResourceToProfile",
+        "toDisassociateResourceFromProfile"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "route53profiles:ResourceIds",
+      "methodName": "ifResourceIds",
+      "description": "Filters access by given VPCs",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html",
+      "relatedActionMethods": [
+        "toAssociateProfile",
+        "toDisassociateProfile"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "route53profiles:ResourceTypes",
+      "methodName": "ifResourceTypes",
+      "description": "Filters access by specific resource type. Possible options include 'HostedZone', 'FirewallRuleGroup', 'ResolverQueryLoggingConfig', 'ResolverRule', and 'VpcEndpoint'",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html",
+      "relatedActionMethods": [
+        "toAssociateResourceToProfile",
+        "toDisassociateResourceFromProfile",
+        "toUpdateProfileResourceAssociation"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

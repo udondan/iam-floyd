@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "backup:DescribeFramework",
+        "backup:ListBackupJobs",
+        "backup:ListRestoreJobs",
+        "backup:ListCopyJobs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:BatchGetResourceConfig",
+        "config:SelectResourceConfig",
+        "config:DescribeConfigurationAggregators",
+        "config:SelectAggregateResourceConfig",
+        "config:DescribeConfigRuleEvaluationStatus",
+        "config:DescribeConfigRules",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:GetComplianceDetailsByConfigRule",
+        "config:PutConfigRule",
+        "config:DeleteConfigRule"
+      ],
+      "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/backup.amazonaws.com*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "config:DeleteConfigurationAggregator",
+        "config:PutConfigurationAggregator"
+      ],
+      "Resource": "arn:aws:config:*:*:config-aggregator/aws-service-config-aggregator/backup.amazonaws.com*"
+    }
+  ]
+}

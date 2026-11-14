@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:PutTargets",
+        "events:PutRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "event-processor.health.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

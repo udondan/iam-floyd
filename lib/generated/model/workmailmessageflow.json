@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "filename": "workmailmessageflow",
+  "className": "Workmailmessageflow",
+  "name": "workmailmessageflow",
+  "servicePrefix": "workmailmessageflow",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workmailmessageflow.html",
+  "accessLevelList": {
+    "Read": [
+      "GetRawMessageContent"
+    ],
+    "Write": [
+      "PutRawMessageContent"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetRawMessageContent",
+      "methodName": "toGetRawMessageContent",
+      "description": "Grants permission to read the content of email messages with the specified message ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html"
+    },
+    {
+      "name": "PutRawMessageContent",
+      "methodName": "toPutRawMessageContent",
+      "description": "Grants permission to update the content of email messages with the specified message ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_PutRawMessageContent.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "RawMessage",
+      "methodName": "onRawMessage",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/lambda-content.html",
+      "arn": "arn:${Partition}:workmailmessageflow:${Region}:${Account}:message/${OrganizationId}/${Context}/${MessageId}",
+      "placeholders": [
+        {
+          "placeholder": "OrganizationId",
+          "name": "organizationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Context",
+          "name": "context",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MessageId",
+          "name": "messageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "filename": "appstudio",
+  "className": "Appstudio",
+  "name": "appstudio",
+  "servicePrefix": "appstudio",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstudio.html",
+  "accessLevelList": {
+    "Read": [
+      "GetAccountStatus",
+      "GetEnablementJobStatus"
+    ],
+    "Write": [
+      "StartEnablementJob",
+      "StartRollbackEnablementJob",
+      "StartTeamDeployment"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetAccountStatus",
+      "methodName": "toGetAccountStatus",
+      "description": "Grants permission to describe the account's current status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/"
+    },
+    {
+      "name": "GetEnablementJobStatus",
+      "methodName": "toGetEnablementJobStatus",
+      "description": "Grants permission to fetch status of a enablement job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/"
+    },
+    {
+      "name": "StartEnablementJob",
+      "methodName": "toStartEnablementJob",
+      "description": "Grants permission to submit a enablement job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/"
+    },
+    {
+      "name": "StartRollbackEnablementJob",
+      "methodName": "toStartRollbackEnablementJob",
+      "description": "Grants permission to rollback an enablement job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/"
+    },
+    {
+      "name": "StartTeamDeployment",
+      "methodName": "toStartTeamDeployment",
+      "description": "Grants permission to start a team deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/concepts.html#concepts-application",
+      "arn": "arn:${Partition}:appstudio:${Region}:${Account}:application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/concepts.html#concepts-connector",
+      "arn": "arn:${Partition}:appstudio:${Region}:${Account}:connector/${ConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionId",
+          "name": "connectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "instance",
+      "methodName": "onInstance",
+      "url": "https://docs.aws.amazon.com/appstudio/latest/userguide/concepts.html#concepts-instance",
+      "arn": "arn:${Partition}:appstudio:${Region}:${Account}:instance/${InstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

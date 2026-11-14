@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "filename": "sso-oidc",
+  "className": "SsoOauth",
+  "name": "sso-oauth",
+  "servicePrefix": "sso-oauth",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sso-oidc.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateTokenWithIAM",
+      "IntrospectTokenWithIAM",
+      "RevokeTokenWithIAM"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateTokenWithIAM",
+      "methodName": "toCreateTokenWithIAM",
+      "description": "Grants permission to create and return OAuth 2.0 access tokens and refresh tokens for authorized client applications. These tokens might contain defined scopes that specify permissions such as `read:profile` or `write:data`",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html"
+    },
+    {
+      "name": "IntrospectTokenWithIAM",
+      "methodName": "toIntrospectTokenWithIAM",
+      "description": "Grants permission to validate and retrieve information about active OAuth 2.0 access tokens and refresh tokens, including their associated scopes and permissions. This permission is used only by AWS managed applications and is not documented in the IAM Identity Center OIDC API Reference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-resource-based-policies.html"
+    },
+    {
+      "name": "RevokeTokenWithIAM",
+      "methodName": "toRevokeTokenWithIAM",
+      "description": "Grants permission to revoke OAuth 2.0 access tokens and refresh tokens, invalidating them before their normal expiration. This permission is used only by AWS managed applications and is not documented in the IAM Identity Center OIDC API Reference",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-resource-based-policies.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/get-started-enable-identity-center.html",
+      "arn": "arn:${Partition}:sso::${AccountId}:application/${InstanceId}/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AccountId",
+          "name": "accountId",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

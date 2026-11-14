@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "filename": "vpce",
+  "className": "Vpce",
+  "name": "vpce",
+  "servicePrefix": "vpce",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_vpce.html",
+  "accessLevelList": {
+    "Write": [
+      "AllowMultiRegion"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AllowMultiRegion",
+      "methodName": "toAllowMultiRegion",
+      "description": "Grants permission to manage multi-region VPC endpoints and VPC endpoint service configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/security_iam_service-with-iam.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "vpc-endpoint",
+      "methodName": "onVpcEndpoint",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpcEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "VpcEndpointId",
+          "name": "vpcEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "vpc-endpoint-service",
+      "methodName": "onVpcEndpointService",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${VpcEndpointServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "VpcEndpointServiceId",
+          "name": "vpcEndpointServiceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

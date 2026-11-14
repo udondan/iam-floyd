@@ -1,0 +1,886 @@
+{
+  "schemaVersion": 1,
+  "filename": "iq",
+  "className": "Iq",
+  "name": "iq",
+  "servicePrefix": "iq",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iq.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptCall",
+      "ApprovePaymentRequest",
+      "ApproveProposal",
+      "ArchiveConversation",
+      "CompleteProposal",
+      "CreateConversation",
+      "CreateExpert",
+      "CreateListing",
+      "CreateMilestoneProposal",
+      "CreatePaymentRequest",
+      "CreateProject",
+      "CreateRequest",
+      "CreateScheduledProposal",
+      "CreateSeller",
+      "CreateUpfrontProposal",
+      "DeclineCall",
+      "DeleteAttachment",
+      "DisableIndividualPublicProfile",
+      "EnableIndividualPublicProfile",
+      "EndCall",
+      "HideRequest",
+      "InitiateCall",
+      "LinkAwsCertification",
+      "MarkChatMessageRead",
+      "RejectPaymentRequest",
+      "RejectProposal",
+      "SendCompanyChatMessage",
+      "SendIndividualChatMessage",
+      "UnarchiveConversation",
+      "UnlinkAwsCertification",
+      "UpdateCompanyProfile",
+      "UpdateConversationMembers",
+      "UpdateExpert",
+      "UpdateListing",
+      "UpdateRequest",
+      "UploadAttachment",
+      "WithdrawPaymentRequest",
+      "WithdrawProposal",
+      "WriteReview"
+    ],
+    "Read": [
+      "DownloadAttachment",
+      "GetBuyer",
+      "GetCall",
+      "GetChatInfo",
+      "GetChatMessages",
+      "GetChatToken",
+      "GetCompanyChatMessages",
+      "GetCompanyProfile",
+      "GetConversation",
+      "GetExpert",
+      "GetListing",
+      "GetMarketplaceSeller",
+      "GetPaymentRequest",
+      "GetProposal",
+      "GetRequest",
+      "GetReview",
+      "ListConversations",
+      "ListExpertAccessLogs",
+      "ListListings",
+      "ListPaymentRequests",
+      "ListProposals",
+      "ListRequests",
+      "ListReviews"
+    ],
+    "List": [
+      "ListAttachments"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptCall",
+      "methodName": "toAcceptCall",
+      "description": "Grants permission to accept an incoming voice/video call",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ApprovePaymentRequest",
+      "methodName": "toApprovePaymentRequest",
+      "description": "Grants permission to approve a payment request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ApproveProposal",
+      "methodName": "toApproveProposal",
+      "description": "Grants permission to approve a proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ArchiveConversation",
+      "methodName": "toArchiveConversation",
+      "description": "Grants permission to archive a conversation",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CompleteProposal",
+      "methodName": "toCompleteProposal",
+      "description": "Grants permission to complete a proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateConversation",
+      "methodName": "toCreateConversation",
+      "description": "Grants permission to respond to a request or send a direct message to initiate a conversation",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateExpert",
+      "methodName": "toCreateExpert",
+      "description": "Grants permission to create an expert profile",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateListing",
+      "methodName": "toCreateListing",
+      "description": "Grants permission to create a listing",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateMilestoneProposal",
+      "methodName": "toCreateMilestoneProposal",
+      "description": "Grants permission to create a milestone proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreatePaymentRequest",
+      "methodName": "toCreatePaymentRequest",
+      "description": "Grants permission to create a payment request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to submit new requests",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateRequest",
+      "methodName": "toCreateRequest",
+      "description": "Grants permission to submit new requests",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateScheduledProposal",
+      "methodName": "toCreateScheduledProposal",
+      "description": "Grants permission to create a scheduled proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateSeller",
+      "methodName": "toCreateSeller",
+      "description": "Grants permission to create a seller profile",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "CreateUpfrontProposal",
+      "methodName": "toCreateUpfrontProposal",
+      "description": "Grants permission to create an upfront proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "DeclineCall",
+      "methodName": "toDeclineCall",
+      "description": "Grants permission to decline an incoming voice/video call",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "DeleteAttachment",
+      "methodName": "toDeleteAttachment",
+      "description": "Grants permission to delete an existing attachment",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "DisableIndividualPublicProfile",
+      "methodName": "toDisableIndividualPublicProfile",
+      "description": "Grants permission to disable individual public profile page",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "DownloadAttachment",
+      "methodName": "toDownloadAttachment",
+      "description": "Grants permission to download existing attachment",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "EnableIndividualPublicProfile",
+      "methodName": "toEnableIndividualPublicProfile",
+      "description": "Grants permission to enable individual public profile page",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "EndCall",
+      "methodName": "toEndCall",
+      "description": "Grants permission to end a voice/video call",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetBuyer",
+      "methodName": "toGetBuyer",
+      "description": "Grants permission to read buyer information",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetCall",
+      "methodName": "toGetCall",
+      "description": "Grants permission to read details of a voice/video call",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetChatInfo",
+      "methodName": "toGetChatInfo",
+      "description": "Grants permission to read the chat environment details about a conversation",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetChatMessages",
+      "methodName": "toGetChatMessages",
+      "description": "Grants permission to read chat messages in a conversation",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetChatToken",
+      "methodName": "toGetChatToken",
+      "description": "Grants permission to request a websocket token for the conversation notifications",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetCompanyChatMessages",
+      "methodName": "toGetCompanyChatMessages",
+      "description": "Grants permission to read chat messages in a company conversation",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetCompanyProfile",
+      "methodName": "toGetCompanyProfile",
+      "description": "Grants permission to read a company profile",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetConversation",
+      "methodName": "toGetConversation",
+      "description": "Grants permission to read details of a conversation",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetExpert",
+      "methodName": "toGetExpert",
+      "description": "Grants permission to read expert information",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetListing",
+      "methodName": "toGetListing",
+      "description": "Grants permission to read a listing",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetMarketplaceSeller",
+      "methodName": "toGetMarketplaceSeller",
+      "description": "Grants permission to read a seller profile information",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetPaymentRequest",
+      "methodName": "toGetPaymentRequest",
+      "description": "Grants permission to read a payment request",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetProposal",
+      "methodName": "toGetProposal",
+      "description": "Grants permission to read a proposal",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetRequest",
+      "methodName": "toGetRequest",
+      "description": "Grants permission to get a created request",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "GetReview",
+      "methodName": "toGetReview",
+      "description": "Grants permission to read a review for an expert",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "HideRequest",
+      "methodName": "toHideRequest",
+      "description": "Grants permission to hide a request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "InitiateCall",
+      "methodName": "toInitiateCall",
+      "description": "Grants permission to start a voice/video call",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "LinkAwsCertification",
+      "methodName": "toLinkAwsCertification",
+      "description": "Grants permission to link an AWS certification to individual profile",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListAttachments",
+      "methodName": "toListAttachments",
+      "description": "Grants permission to list existing attachments",
+      "accessLevel": "List",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListConversations",
+      "methodName": "toListConversations",
+      "description": "Grants permission to list existing conversations",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListExpertAccessLogs",
+      "methodName": "toListExpertAccessLogs",
+      "description": "Grants permission to list access logs of expert activity",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListListings",
+      "methodName": "toListListings",
+      "description": "Grants permission to list listings",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListPaymentRequests",
+      "methodName": "toListPaymentRequests",
+      "description": "Grants permission to list payment requests",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListProposals",
+      "methodName": "toListProposals",
+      "description": "Grants permission to list proposals",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListRequests",
+      "methodName": "toListRequests",
+      "description": "Grants permission to list requests that are created",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "ListReviews",
+      "methodName": "toListReviews",
+      "description": "Grants permission to list reviews for an expert",
+      "accessLevel": "Read",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "MarkChatMessageRead",
+      "methodName": "toMarkChatMessageRead",
+      "description": "Grants permission to mark a message as read in a conversation",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "RejectPaymentRequest",
+      "methodName": "toRejectPaymentRequest",
+      "description": "Grants permission to reject a payment request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "RejectProposal",
+      "methodName": "toRejectProposal",
+      "description": "Grants permission to reject a proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "SendCompanyChatMessage",
+      "methodName": "toSendCompanyChatMessage",
+      "description": "Grants permission to send a message in a conversation as a company",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "SendIndividualChatMessage",
+      "methodName": "toSendIndividualChatMessage",
+      "description": "Grants permission to send a message in a conversation as an individual",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UnarchiveConversation",
+      "methodName": "toUnarchiveConversation",
+      "description": "Grants permission to unarchive a conversation",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UnlinkAwsCertification",
+      "methodName": "toUnlinkAwsCertification",
+      "description": "Grants permission to unlink an AWS certification from individual profile",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UpdateCompanyProfile",
+      "methodName": "toUpdateCompanyProfile",
+      "description": "Grants permission to update a company profile",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UpdateConversationMembers",
+      "methodName": "toUpdateConversationMembers",
+      "description": "Grants permission to add more participants into a conversation",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UpdateExpert",
+      "methodName": "toUpdateExpert",
+      "description": "Grants permission to update an expert information",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UpdateListing",
+      "methodName": "toUpdateListing",
+      "description": "Grants permission to update a listing",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UpdateRequest",
+      "methodName": "toUpdateRequest",
+      "description": "Grants permission to update a request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "UploadAttachment",
+      "methodName": "toUploadAttachment",
+      "description": "Grants permission to upload an attachment",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "WithdrawPaymentRequest",
+      "methodName": "toWithdrawPaymentRequest",
+      "description": "Grants permission to withdraw a payment request",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "WithdrawProposal",
+      "methodName": "toWithdrawProposal",
+      "description": "Grants permission to withdraw a proposal",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    },
+    {
+      "name": "WriteReview",
+      "methodName": "toWriteReview",
+      "description": "Grants permission to write a review for an expert",
+      "accessLevel": "Write",
+      "url": "https://aws.amazon.com/iq/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "attachment",
+      "methodName": "onAttachment",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::attachment/${AttachmentId}",
+      "placeholders": [
+        {
+          "placeholder": "AttachmentId",
+          "name": "attachmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "buyer",
+      "methodName": "onBuyer",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::buyer/${BuyerId}",
+      "placeholders": [
+        {
+          "placeholder": "BuyerId",
+          "name": "buyerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "call",
+      "methodName": "onCall",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::call/${CallId}",
+      "placeholders": [
+        {
+          "placeholder": "CallId",
+          "name": "callId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "company",
+      "methodName": "onCompany",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::company/${CompanyId}",
+      "placeholders": [
+        {
+          "placeholder": "CompanyId",
+          "name": "companyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "conversation",
+      "methodName": "onConversation",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::conversation/${ConversationId}",
+      "placeholders": [
+        {
+          "placeholder": "ConversationId",
+          "name": "conversationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "expert",
+      "methodName": "onExpert",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::expert/${ExpertId}",
+      "placeholders": [
+        {
+          "placeholder": "ExpertId",
+          "name": "expertId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "listing",
+      "methodName": "onListing",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::listing/${ListingId}",
+      "placeholders": [
+        {
+          "placeholder": "ListingId",
+          "name": "listingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "paymentRequest",
+      "methodName": "onPaymentRequest",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::paymentRequest/${ConversationId}/${ProposalId}/${PaymentRequestId}",
+      "placeholders": [
+        {
+          "placeholder": "ConversationId",
+          "name": "conversationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProposalId",
+          "name": "proposalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PaymentRequestId",
+          "name": "paymentRequestId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "paymentSchedule",
+      "methodName": "onPaymentSchedule",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::paymentSchedule/${ConversationId}/${ProposalId}/${VersionId}",
+      "placeholders": [
+        {
+          "placeholder": "ConversationId",
+          "name": "conversationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProposalId",
+          "name": "proposalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VersionId",
+          "name": "versionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "permission",
+      "methodName": "onPermission",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq-permission:${Region}::permission/${PermissionRequestId}",
+      "placeholders": [
+        {
+          "placeholder": "PermissionRequestId",
+          "name": "permissionRequestId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "proposal",
+      "methodName": "onProposal",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::proposal/${ConversationId}/${ProposalId}",
+      "placeholders": [
+        {
+          "placeholder": "ConversationId",
+          "name": "conversationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProposalId",
+          "name": "proposalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "request",
+      "methodName": "onRequest",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::request/${RequestId}",
+      "placeholders": [
+        {
+          "placeholder": "RequestId",
+          "name": "requestId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "seller",
+      "methodName": "onSeller",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::seller/${SellerAwsAccountId}",
+      "placeholders": [
+        {
+          "placeholder": "SellerAwsAccountId",
+          "name": "sellerAwsAccountId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "token",
+      "methodName": "onToken",
+      "url": "https://aws.amazon.com/iq/",
+      "arn": "arn:${Partition}:iq:${Region}::token/${TokenId}",
+      "placeholders": [
+        {
+          "placeholder": "TokenId",
+          "name": "tokenId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

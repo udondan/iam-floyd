@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ssm:GetDocument",
+        "ssm:DescribeDocument",
+        "ssm:StartAutomationExecution"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ssm.amazonaws.com"
+        }
+      },
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}

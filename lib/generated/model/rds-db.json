@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "filename": "rds-db",
+  "className": "RdsDb",
+  "name": "rds-db",
+  "servicePrefix": "rds-db",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_rds-db.html",
+  "accessLevelList": {
+    "Permissions management": [
+      "connect"
+    ],
+    "Write": [
+      "connect"
+    ]
+  },
+  "actions": [
+    {
+      "name": "connect",
+      "methodName": "toConnect",
+      "description": "Grants permission to connect to an RDS database from an IAM role or user",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "db-user",
+      "methodName": "onDbUser",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.DBAccounts.html",
+      "arn": "arn:${Partition}:rds-db:${Region}:${Account}:dbuser:${DbiResourceId}/${DbUserName}",
+      "placeholders": [
+        {
+          "placeholder": "DbiResourceId",
+          "name": "dbiResourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DbUserName",
+          "name": "dbUserName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the parent RDS DB instance or Aurora DB cluster of the db-user",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html",
+      "relatedActionMethods": [
+        "toConnect"
+      ],
+      "relatedResourceTypes": [
+        "db-user"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

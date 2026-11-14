@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGetWebIdentityTokenForAzure",
+      "Effect": "Allow",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "sts:IdentityTokenAudience": "false"
+        },
+        "ForAllValues:StringLike": {
+          "sts:IdentityTokenAudience": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowGetWebIdentityTokenForGcp",
+      "Effect": "Allow",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "sts:IdentityTokenAudience": "false"
+        },
+        "ForAllValues:StringLike": {
+          "sts:IdentityTokenAudience": [
+            "//iam.googleapis.com/projects/*/locations/*/workloadIdentityPools/*/providers/*"
+          ]
+        }
+      }
+    }
+  ]
+}

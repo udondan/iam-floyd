@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "transfer:DescribeUser",
+        "transfer:DescribeServer",
+        "transfer:ListUsers",
+        "transfer:ListServers",
+        "transfer:TestIdentityProvider",
+        "transfer:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

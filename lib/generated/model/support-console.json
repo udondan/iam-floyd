@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "filename": "support-console",
+  "className": "SupportConsole",
+  "name": "support-console",
+  "servicePrefix": "support-console",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_support-console.html",
+  "accessLevelList": {
+    "Read": [
+      "CheckSubscription",
+      "DescribeDynamicHelp",
+      "GetAccountGovCloudEnabled",
+      "GetAccountState",
+      "GetBanner",
+      "GetCaseDraft",
+      "GetIssueClassificationPredictions",
+      "GetIssueTextSummary",
+      "GetQuestionnaire"
+    ],
+    "Write": [
+      "CreateCaseDraft",
+      "CreateContact",
+      "DeleteCaseDraft",
+      "SaveFeedback"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CheckSubscription",
+      "methodName": "toCheckSubscription",
+      "description": "Grants permission to check whether the account has access to given product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "CreateCaseDraft",
+      "methodName": "toCreateCaseDraft",
+      "description": "Grants permission to create or update case draft for the given case type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "CreateContact",
+      "methodName": "toCreateContact",
+      "description": "Grants permission to create an authenticated contact for the given contact type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "DeleteCaseDraft",
+      "methodName": "toDeleteCaseDraft",
+      "description": "Grants permission to delete a case draft for the given case type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "DescribeDynamicHelp",
+      "methodName": "toDescribeDynamicHelp",
+      "description": "Grants permission to get dynamic help resources for given service and category",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetAccountGovCloudEnabled",
+      "methodName": "toGetAccountGovCloudEnabled",
+      "description": "Grants permission to determines whether the calling account is GovCloud enabled",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetAccountState",
+      "methodName": "toGetAccountState",
+      "description": "Grants permission to get the state of the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetBanner",
+      "methodName": "toGetBanner",
+      "description": "Grants permission to get the support banner information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetCaseDraft",
+      "methodName": "toGetCaseDraft",
+      "description": "Grants permission to get a case draft for given case type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetIssueClassificationPredictions",
+      "methodName": "toGetIssueClassificationPredictions",
+      "description": "Grants permission to get classification predictions of an issue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetIssueTextSummary",
+      "methodName": "toGetIssueTextSummary",
+      "description": "Grants permission to get a generated text summary of an issue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "GetQuestionnaire",
+      "methodName": "toGetQuestionnaire",
+      "description": "Grants permission to get a feedback questionnaire",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    },
+    {
+      "name": "SaveFeedback",
+      "methodName": "toSaveFeedback",
+      "description": "Grants permission to save questionnaire feedback",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-console-access-control.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,117 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSessionActions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateSession"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/owner": "${aws:userid}"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "owner"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowGlueTaggingAction",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource"
+      ],
+      "Resource": "arn:aws:glue:*:*:session/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/owner": "${aws:userid}",
+          "aws:RequestTag/owner": "${aws:userid}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCompletionActions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:StartCompletion",
+        "glue:GetCompletion"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:completion/*"
+      ]
+    },
+    {
+      "Sid": "AllowGlueActions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:RunStatement",
+        "glue:GetStatement",
+        "glue:ListStatements",
+        "glue:CancelStatement",
+        "glue:StopSession",
+        "glue:DeleteSession",
+        "glue:GetSession"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/owner": "${aws:userid}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowListSessions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:ListSessions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "DenyTagActions",
+      "Effect": "Deny",
+      "Action": [
+        "glue:UntagResource",
+        "tag:TagResources",
+        "tag:UntagResources"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": [
+            "owner"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowPassRoleActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AwsGlueSessionServiceRoleUserRestricted*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": [
+            "glue.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

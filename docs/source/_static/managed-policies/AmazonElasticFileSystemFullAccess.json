@@ -1,0 +1,85 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ElasticFileSystemFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarmsForMetric",
+        "cloudwatch:GetMetricData",
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DescribeVpcs",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "elasticfilesystem:CreateFileSystem",
+        "elasticfilesystem:CreateMountTarget",
+        "elasticfilesystem:CreateTags",
+        "elasticfilesystem:CreateAccessPoint",
+        "elasticfilesystem:CreateReplicationConfiguration",
+        "elasticfilesystem:DeleteFileSystem",
+        "elasticfilesystem:DeleteMountTarget",
+        "elasticfilesystem:DeleteTags",
+        "elasticfilesystem:DeleteAccessPoint",
+        "elasticfilesystem:DeleteFileSystemPolicy",
+        "elasticfilesystem:DeleteReplicationConfiguration",
+        "elasticfilesystem:DescribeAccountPreferences",
+        "elasticfilesystem:DescribeBackupPolicy",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeFileSystemPolicy",
+        "elasticfilesystem:DescribeLifecycleConfiguration",
+        "elasticfilesystem:DescribeMountTargets",
+        "elasticfilesystem:DescribeMountTargetSecurityGroups",
+        "elasticfilesystem:DescribeTags",
+        "elasticfilesystem:DescribeAccessPoints",
+        "elasticfilesystem:DescribeReplicationConfigurations",
+        "elasticfilesystem:ModifyMountTargetSecurityGroups",
+        "elasticfilesystem:PutAccountPreferences",
+        "elasticfilesystem:PutBackupPolicy",
+        "elasticfilesystem:PutLifecycleConfiguration",
+        "elasticfilesystem:PutFileSystemPolicy",
+        "elasticfilesystem:UpdateFileSystem",
+        "elasticfilesystem:UpdateFileSystemProtection",
+        "elasticfilesystem:TagResource",
+        "elasticfilesystem:UntagResource",
+        "elasticfilesystem:ListTagsForResource",
+        "elasticfilesystem:Backup",
+        "elasticfilesystem:Restore",
+        "elasticfilesystem:ReplicationRead",
+        "elasticfilesystem:ReplicationWrite",
+        "kms:DescribeKey",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateServiceLinkedRoleForEFS",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "elasticfilesystem.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "IAMPassRoleAccessForEFS",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "elasticfilesystem.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

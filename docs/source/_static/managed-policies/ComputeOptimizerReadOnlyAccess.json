@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "computeOptimizerReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "compute-optimizer:DescribeRecommendationExportJobs",
+        "compute-optimizer:GetEnrollmentStatus",
+        "compute-optimizer:GetEnrollmentStatusesForOrganization",
+        "compute-optimizer:GetRecommendationSummaries",
+        "compute-optimizer:GetEC2InstanceRecommendations",
+        "compute-optimizer:GetEC2RecommendationProjectedMetrics",
+        "compute-optimizer:GetAutoScalingGroupRecommendations",
+        "compute-optimizer:GetEBSVolumeRecommendations",
+        "compute-optimizer:GetLambdaFunctionRecommendations",
+        "compute-optimizer:GetRecommendationPreferences",
+        "compute-optimizer:GetEffectiveRecommendationPreferences",
+        "compute-optimizer:GetECSServiceRecommendations",
+        "compute-optimizer:GetECSServiceRecommendationProjectedMetrics",
+        "compute-optimizer:GetRDSDatabaseRecommendations",
+        "compute-optimizer:GetRDSDatabaseRecommendationProjectedMetrics",
+        "compute-optimizer:GetLicenseRecommendations",
+        "compute-optimizer:GetIdleRecommendations",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ecs:ListServices",
+        "ecs:ListClusters",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeAutoScalingInstances",
+        "lambda:ListFunctions",
+        "lambda:ListProvisionedConcurrencyConfigs",
+        "cloudwatch:GetMetricData",
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

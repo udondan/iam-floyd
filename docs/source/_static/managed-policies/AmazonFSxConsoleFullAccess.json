@@ -1,0 +1,148 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListResourcesAssociatedWithFSxFileSystem",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricData",
+        "ds:DescribeDirectories",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "ec2:GetSecurityGroupsForVpc",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "firehose:ListDeliveryStreams",
+        "kms:ListAliases",
+        "logs:DescribeLogGroups",
+        "s3:ListBucket",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "FullAccessToFSx",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:AssociateFileGateway",
+        "fsx:AssociateFileSystemAliases",
+        "fsx:CancelDataRepositoryTask",
+        "fsx:CopyBackup",
+        "fsx:CopySnapshotAndUpdateVolume",
+        "fsx:CreateAndAttachS3AccessPoint",
+        "fsx:CreateBackup",
+        "fsx:CreateDataRepositoryAssociation",
+        "fsx:CreateDataRepositoryTask",
+        "fsx:CreateFileCache",
+        "fsx:CreateFileSystem",
+        "fsx:CreateFileSystemFromBackup",
+        "fsx:CreateSnapshot",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:CreateVolume",
+        "fsx:CreateVolumeFromBackup",
+        "fsx:DeleteBackup",
+        "fsx:DeleteDataRepositoryAssociation",
+        "fsx:DeleteFileCache",
+        "fsx:DeleteFileSystem",
+        "fsx:DeleteSnapshot",
+        "fsx:DeleteStorageVirtualMachine",
+        "fsx:DeleteVolume",
+        "fsx:DescribeAssociatedFileGateways",
+        "fsx:DescribeBackups",
+        "fsx:DescribeDataRepositoryAssociations",
+        "fsx:DescribeDataRepositoryTasks",
+        "fsx:DescribeFileCaches",
+        "fsx:DescribeFileSystemAliases",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeS3AccessPointAttachments",
+        "fsx:DescribeSharedVpcConfiguration",
+        "fsx:DescribeSnapshots",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeVolumes",
+        "fsx:DetachAndDeleteS3AccessPoint",
+        "fsx:DisassociateFileGateway",
+        "fsx:DisassociateFileSystemAliases",
+        "fsx:ListTagsForResource",
+        "fsx:ManageBackupPrincipalAssociations",
+        "fsx:ReleaseFileSystemNfsV3Locks",
+        "fsx:RestoreVolumeFromSnapshot",
+        "fsx:TagResource",
+        "fsx:UntagResource",
+        "fsx:UpdateDataRepositoryAssociation",
+        "fsx:UpdateFileCache",
+        "fsx:UpdateFileSystem",
+        "fsx:UpdateSharedVpcConfiguration",
+        "fsx:UpdateSnapshot",
+        "fsx:UpdateStorageVirtualMachine",
+        "fsx:UpdateVolume"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateFSxSLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "fsx.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CreateSLRForLustreS3Integration",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "s3.data-source.lustre.fsx.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CreateTags",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:route-table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "fsx.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManageCrossAccountDataReplication",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:PutResourcePolicy",
+        "fsx:GetResourcePolicy",
+        "fsx:DeleteResourcePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "ram.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

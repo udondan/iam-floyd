@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "inspector:*",
+        "ec2:DescribeInstances",
+        "ec2:DescribeTags",
+        "sns:ListTopics",
+        "events:DescribeRule",
+        "events:ListRuleNamesByTarget"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "inspector.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/inspector.amazonaws.com/AWSServiceRoleForAmazonInspector",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "inspector.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

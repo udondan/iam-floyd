@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-image-building-service",
+  "className": "AwsMarketplaceImageBuildingService",
+  "name": "aws-marketplace-image-building-service",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-image-build.html",
+  "accessLevelList": {
+    "Read": [
+      "DescribeBuilds",
+      "ListBuilds"
+    ],
+    "Write": [
+      "StartBuild"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DescribeBuilds",
+      "methodName": "toDescribeBuilds",
+      "description": "Describes Image Builds identified by a build Id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html"
+    },
+    {
+      "name": "ListBuilds",
+      "methodName": "toListBuilds",
+      "description": "Lists Image Builds.",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html"
+    },
+    {
+      "name": "StartBuild",
+      "methodName": "toStartBuild",
+      "description": "Starts an Image Build",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

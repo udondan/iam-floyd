@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "fms:GetAdminAccount",
+        "waf:Get*",
+        "waf:List*",
+        "waf-regional:Get*",
+        "waf-regional:List*",
+        "organizations:DescribeOrganization"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+---
+name: Test
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches:
+      - main
+  # Codecov compares pull requests against the coverage of main. On push to main only the jobs run
+  # that upload coverage, without the AWS tests.
+  push:
+    branches:
+      - main
+
+jobs:
+  # Only one run at a time may deploy to the AWS test account. All other jobs of a pull request wait
+  # for the turn as well: the waiting runs of all open pull requests would otherwise take the
+  # runners of the account at once, and most of them are tested again after a rebase anyway.
+  # Pull requests from forks get no secrets and no AWS credentials. They skip the wait, the AWS
+  # tests and the signing of the Maven bundles, and run the other jobs. The required job fails for
+  # them, as the AWS tests didn't run.
+  boarding-gate:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      actions: read
+      contents: write # lock refs under refs/boarding-gate/
+      pull-requests: read # labels for label-weights
+      statuses: write # queue position as commit status
+    # Queue order, the concurrency group that cancels outdated waiting runs and
+    # the rebase of branches that are behind main: see
+    # https://github.com/udondan/boarding-gate#reusable-workflow
+    # The rebase needs OVERRIDE_TOKEN: pushes with github.token don't start new runs.
+    uses: udondan/boarding-gate/.github/workflows/boarding-gate.yml@v1
+    secrets:
+      update-token: ${{ secrets.OVERRIDE_TOKEN }}
+
+  lint:
+    name: Lint
+    needs: boarding-gate
+    # The wait is skipped for forks.
+    if: ${{ !cancelled() && (needs.boarding-gate.result == 'success' || needs.boarding-gate.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26.x
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: lint/go.mod
+          cache-dependency-path: lint/go.sum
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 11.x
+
+      - name: Set up Java
+        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Lint
+        run: make install lint
+        env:
+          GH_TOKEN: ${{ github.token }} # zizmor checks the actions online
+
+  # The plugins of .qlty/qlty.toml and the code smells (complexity, duplication, nesting) via Qlty.
+  # Git-aware: only smells introduced by the pull request compared to main fail the job.
+  qlty:
+    name: Qlty
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Install qlty
+        uses: qltysh/qlty-action/install@ebcd284bf32e36a030afe15f1e136c7be08b9506 # v2.5.0
+
+      - name: Lint via qlty plugins
+        run: qlty check --all
+
+      - name: Report code smells
+        if: github.event_name != 'pull_request'
+        run: qlty smells --all --no-snippets
+
+      - name: Report new code smells
+        if: github.event_name == 'pull_request'
+        run: qlty smells --upstream origin/main --no-snippets
+
+      - name: Fail on new code smells
+        if: github.event_name == 'pull_request'
+        run: |
+          count=$(qlty smells --upstream origin/main --json --quiet 2>/dev/null | jq length)
+          if [ "$count" -gt 0 ]; then
+            echo "::error::qlty found $count new code smell(s) compared to main"
+            exit 1
+          fi
+
+  # The native packages of iam-floyd, built by the action package-iam-floyd like in publish.yml.
+  # Each package is built with the newest version and tested with the oldest and the newest
+  # supported version.
+  test-iam-floyd-native:
+    name: Test iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
+    needs: lint
+    # Without !cancelled() the skipped wait of forks would skip this job as well.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+            version: "3.10"
+            newest: false
+          - language: python
+            name: Python
+            # renovate: datasource=python-version depName=python
+            version: "3.15"
+            newest: true
+          - language: java
+            name: Java
+            version: "11"
+            newest: false
+          - language: java
+            name: Java
+            version: "25"
+            newest: true
+          - language: dotnet
+            name: .NET
+            version: "8"
+            newest: false
+          - language: dotnet
+            name: .NET
+            version: "10"
+            newest: true
+          - language: go
+            name: Go
+            version: "1.21"
+            newest: false
+          - language: go
+            name: Go
+            version: stable
+            newest: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Build
+        uses: $/.github/actions/package-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+          version: ${{ matrix.version }}
+
+      - name: Set up Java to test
+        if: matrix.language == 'java'
+        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.version }}
+
+      - name: Test
+        run: |
+          export PYTHON_WHEEL JAVA_JAR DOTNET_PACKAGES DOTNET_FRAMEWORK GO_MODULE
+          PYTHON_WHEEL="$(find dist/iam-floyd -name '*.whl')"
+          JAVA_JAR="$(find dist/iam-floyd -name 'iam-floyd-*[0-9].jar')"
+          DOTNET_PACKAGES=dist/iam-floyd/dotnet
+          DOTNET_FRAMEWORK="net${VERSION}.0"
+          GO_MODULE="$(find dist/iam-floyd -name '*.zip')"
+          make test-transpile LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+          VERSION: ${{ matrix.version }}
+
+      # Signs, but does not upload without the Maven Central credentials. Forks have no signing key.
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java' && matrix.newest && github.event.pull_request.head.repo.full_name == github.repository
+        run: bin/publish-maven dist/iam-floyd/java
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+
+  # The coverage of the hand-written runtime of the native packages, measured against the
+  # transpiled sources with the newest version of each language. Runs on push to main as well, so
+  # Codecov has a base for every flag.
+  coverage-native:
+    name: Coverage of iam-floyd in ${{ matrix.name }}
+    needs: lint
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for Codecov
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            name: Python
+            # renovate: datasource=python-version depName=python
+            version: "3.15"
+            report: python.xml
+          - language: java
+            name: Java
+            version: "25"
+            report: java.xml
+          - language: dotnet
+            name: .NET
+            version: "10"
+            report: dotnet.xml
+          - language: go
+            name: Go
+            version: stable
+            report: go.out
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up
+        uses: $/.github/actions/package-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+          version: ${{ matrix.version }}
+          package: "false"
+
+      - name: Test with coverage
+        run: make coverage-native LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/native/${{ matrix.report }}
+          flags: ${{ matrix.language }}
+
+  test-iam-floyd:
+    name: Test iam-floyd npm package
+    needs: lint
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for AWS and Codecov
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Configure AWS credentials
+        id: aws-credentials
+        if: github.event_name == 'pull_request'
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Runs test-typescript with coverage. On push to main without the deployment of the policies.
+      - name: Test npm package
+        run: make install coverage
+        env:
+          IAM_FLOYD_SKIP_DEPLOY: ${{ github.event_name == 'push' && '1' || '' }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/lcov.info
+          flags: typescript
+
+      - name: Unit tests
+        run: make test-unit
+
+      - name: Upload coverage of the unit tests to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/unit/lcov.info
+          flags: unit
+
+      # A cancelled run can leave a test policy behind, the next run deletes it
+      - name: Clean up test resources
+        if: ${{ always() && steps.aws-credentials.outcome == 'success' }}
+        run: make clean-test-resources
+
+      - name: Dry run npm publish
+        if: github.event_name == 'pull_request'
+        run: make build publish
+
+  test-cdk-iam-floyd:
+    name: Test cdk-iam-floyd npm package
+    needs: lint
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for AWS and Codecov
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26.x
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build CDK variant
+        run: |
+          make install
+          make cdk
+          cat package.json
+
+      - name: Lint CDK variant
+        if: github.event_name == 'pull_request'
+        run: make lint-cdk
+
+      # Runs test-typescript-cdk with coverage
+      - name: Test npm package
+        run: |
+          make package
+          make coverage-cdk
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          fail_ci_if_error: false
+          disable_search: true
+          files: coverage/cdk/lcov.info
+          flags: cdk
+
+      - name: Configure AWS credentials
+        if: github.event_name == 'pull_request'
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy with the AWS CDK
+        if: github.event_name == 'pull_request'
+        run: make cdk-test
+
+      # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
+      # peer dependency, which has all reference interfaces the on*() methods accept. The exact
+      # version is the one of lib/generated/cdk-refs.json. npm leaves out dependencies of
+      # aws-cdk-lib when it downgrades it with the lock files of the newer version (e.g.
+      # @aws-cdk/cloud-assembly-schema across a major version), so they are removed first.
+      - name: Test with the minimum version of aws-cdk-lib
+        if: github.event_name == 'pull_request'
+        run: | # zizmor: ignore[adhoc-packages]
+          rm -rf package-lock.json node_modules/.package-lock.json node_modules/aws-cdk-lib node_modules/@aws-cdk
+          npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
+          node -p "require('aws-cdk-lib/package.json').version"
+          make build test-typescript-cdk
+
+  # Python, Java, .NET and Go packages of cdk-iam-floyd, built with jsii-pacmak by the action
+  # package-cdk-iam-floyd like in publish.yml. One job per language for speed; TypeScript is the
+  # baseline the others are compared to.
+  test-cdk-iam-floyd-jsii:
+    name: Test cdk-iam-floyd in ${{ matrix.name }}
+    needs: lint
+    # Without !cancelled() the skipped wait of forks would skip this job as well.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: typescript
+            name: TypeScript
+          - language: python
+            name: Python
+          - language: java
+            name: Java
+          - language: dotnet
+            name: .NET
+          - language: go
+            name: Go
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build packages
+        uses: $/.github/actions/package-cdk-iam-floyd
+        with:
+          language: ${{ matrix.language }}
+
+      - name: Test packages
+        run: make test-jsii LANGUAGES="$LANGUAGE"
+        env:
+          LANGUAGE: ${{ matrix.language }}
+
+      # The npm package is published by publish-cdk-iam-floyd-npm in publish.yml, with the jsii
+      # assembly
+      - name: Dry run npm publish
+        if: matrix.language == 'typescript'
+        run: make publish
+
+      # Signs, but does not upload without the Maven Central credentials. Forks have no signing key.
+      - name: Build Maven Central bundle
+        if: matrix.language == 'java' && github.event.pull_request.head.repo.full_name == github.repository
+        run: bin/publish-maven
+        env:
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
+
+  # Codecov reports its result as the check runs codecov/project and codecov/patch. This job waits
+  # for them, so a coverage drop fails the required job. It passes with a warning if Codecov doesn't
+  # report in time.
+  coverage:
+    name: Coverage
+    needs:
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.test-iam-floyd.result == 'success' && needs.test-cdk-iam-floyd.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      checks: read
+    steps:
+      - name: Wait for Codecov
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          for _ in $(seq 30); do
+            checks=$(gh api --paginate --slurp "repos/$REPO/commits/$SHA/check-runs?per_page=100" | jq -c '
+              [.[].check_runs[] | select(.app.slug == "codecov" and (.name == "codecov/project" or .name == "codecov/patch"))]
+              | group_by(.name) | map(max_by(.id))')
+            if [[ $(jq '[.[] | select(.status == "completed")] | length' <<<"$checks") == 2 ]]; then
+              jq -r '.[] | "\(.name): \(.conclusion) (\(.output.title))"' <<<"$checks"
+              failed=$(jq -r '.[] | select(.conclusion != "success" and .conclusion != "neutral") | .name' <<<"$checks")
+              if [[ -n "$failed" ]]; then
+                echo "::error::Coverage check failed: ${failed//$'\n'/, }. Details are linked in the checks of this pull request."
+                exit 1
+              fi
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::warning::Codecov didn't report within 5 minutes, coverage is not checked."
+
+  # The only test check the ruleset requires.
+  required:
+    # A skipped job counts as passed for required checks, so this job must not
+    # be skipped when a test failed.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - qlty
+      - test-iam-floyd-native
+      - coverage-native
+      - test-iam-floyd
+      - test-cdk-iam-floyd
+      - test-cdk-iam-floyd-jsii
+      - coverage
+    steps:
+      - name: Check tests
+        if: needs.lint.result != 'success' || needs.qlty.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.coverage-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
+        env:
+          FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        run: |
+          if [ "$FORK" = true ]; then
+            echo "::error::Pull requests from forks don't run the AWS tests. A maintainer has to test this change from a branch of the repository."
+          fi
+          exit 1
+
+      - name: Report success
+        run: echo 'Success'

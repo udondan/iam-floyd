@@ -1,0 +1,1131 @@
+{
+  "schemaVersion": 1,
+  "filename": "batch",
+  "className": "Batch",
+  "name": "batch",
+  "servicePrefix": "batch",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_batch.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelJob",
+      "CreateComputeEnvironment",
+      "CreateConsumableResource",
+      "CreateJobQueue",
+      "CreateQuotaShare",
+      "CreateSchedulingPolicy",
+      "CreateServiceEnvironment",
+      "DeleteComputeEnvironment",
+      "DeleteConsumableResource",
+      "DeleteJobQueue",
+      "DeleteQuotaShare",
+      "DeleteSchedulingPolicy",
+      "DeleteServiceEnvironment",
+      "DeregisterJobDefinition",
+      "RegisterJobDefinition",
+      "SubmitJob",
+      "SubmitServiceJob",
+      "TagResource",
+      "TerminateJob",
+      "TerminateServiceJob",
+      "UntagResource",
+      "UpdateComputeEnvironment",
+      "UpdateConsumableResource",
+      "UpdateJobQueue",
+      "UpdateQuotaShare",
+      "UpdateSchedulingPolicy",
+      "UpdateServiceEnvironment",
+      "UpdateServiceJob",
+      "SetCapacityTags"
+    ],
+    "Read": [
+      "DescribeComputeEnvironments",
+      "DescribeConsumableResource",
+      "DescribeJobDefinitions",
+      "DescribeJobQueues",
+      "DescribeJobs",
+      "DescribeQuotaShare",
+      "DescribeSchedulingPolicies",
+      "DescribeServiceEnvironments",
+      "DescribeServiceJob",
+      "GetJobQueueSnapshot",
+      "ListSchedulingPolicies",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConsumableResources",
+      "ListJobs",
+      "ListJobsByConsumableResource",
+      "ListQuotaShares",
+      "ListServiceJobs"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource",
+      "SetCapacityTags"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelJob",
+      "methodName": "toCancelJob",
+      "description": "Grants permission to cancel a job in an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html"
+    },
+    {
+      "name": "CreateComputeEnvironment",
+      "methodName": "toCreateComputeEnvironment",
+      "description": "Grants permission to create an AWS Batch compute environment in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+    },
+    {
+      "name": "CreateConsumableResource",
+      "methodName": "toCreateConsumableResource",
+      "description": "Grants permission to create an AWS Batch consumable resource in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateConsumableResource.html"
+    },
+    {
+      "name": "CreateJobQueue",
+      "methodName": "toCreateJobQueue",
+      "description": "Grants permission to create an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html"
+    },
+    {
+      "name": "CreateQuotaShare",
+      "methodName": "toCreateQuotaShare",
+      "description": "Grants permission to create an AWS Batch quota share in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateQuotaShare.html"
+    },
+    {
+      "name": "CreateSchedulingPolicy",
+      "methodName": "toCreateSchedulingPolicy",
+      "description": "Grants permission to create an AWS Batch scheduling policy in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateSchedulingPolicy.html"
+    },
+    {
+      "name": "CreateServiceEnvironment",
+      "methodName": "toCreateServiceEnvironment",
+      "description": "Grants permission to create an AWS Batch service environment in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateServiceEnvironment.html"
+    },
+    {
+      "name": "DeleteComputeEnvironment",
+      "methodName": "toDeleteComputeEnvironment",
+      "description": "Grants permission to delete an AWS Batch compute environment in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html"
+    },
+    {
+      "name": "DeleteConsumableResource",
+      "methodName": "toDeleteConsumableResource",
+      "description": "Grants permission to delete an AWS Batch consumable resource in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteConsumableResource.html"
+    },
+    {
+      "name": "DeleteJobQueue",
+      "methodName": "toDeleteJobQueue",
+      "description": "Grants permission to delete an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html"
+    },
+    {
+      "name": "DeleteQuotaShare",
+      "methodName": "toDeleteQuotaShare",
+      "description": "Grants permission to delete an AWS Batch quota share in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteQuotaShare.html"
+    },
+    {
+      "name": "DeleteSchedulingPolicy",
+      "methodName": "toDeleteSchedulingPolicy",
+      "description": "Grants permission to delete an AWS Batch scheduling policy in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteSchedulingPolicy.html"
+    },
+    {
+      "name": "DeleteServiceEnvironment",
+      "methodName": "toDeleteServiceEnvironment",
+      "description": "Grants permission to delete an AWS Batch service environment in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteServiceEnvironment.html"
+    },
+    {
+      "name": "DeregisterJobDefinition",
+      "methodName": "toDeregisterJobDefinition",
+      "description": "Grants permission to deregister an AWS Batch job definition in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html"
+    },
+    {
+      "name": "DescribeComputeEnvironments",
+      "methodName": "toDescribeComputeEnvironments",
+      "description": "Grants permission to describe one or more AWS Batch compute environments in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html"
+    },
+    {
+      "name": "DescribeConsumableResource",
+      "methodName": "toDescribeConsumableResource",
+      "description": "Grants permission to describe one or more AWS Batch consumable resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeConsumableResource.html"
+    },
+    {
+      "name": "DescribeJobDefinitions",
+      "methodName": "toDescribeJobDefinitions",
+      "description": "Grants permission to describe one or more AWS Batch job definitions in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html"
+    },
+    {
+      "name": "DescribeJobQueues",
+      "methodName": "toDescribeJobQueues",
+      "description": "Grants permission to describe one or more AWS Batch job queues in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html"
+    },
+    {
+      "name": "DescribeJobs",
+      "methodName": "toDescribeJobs",
+      "description": "Grants permission to describe a list of AWS Batch jobs in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html"
+    },
+    {
+      "name": "DescribeQuotaShare",
+      "methodName": "toDescribeQuotaShare",
+      "description": "Grants permission to describe an AWS Batch quota share in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeQuotaShare.html"
+    },
+    {
+      "name": "DescribeSchedulingPolicies",
+      "methodName": "toDescribeSchedulingPolicies",
+      "description": "Grants permission to describe one or more AWS Batch scheduling policies in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeSchedulingPolicies.html"
+    },
+    {
+      "name": "DescribeServiceEnvironments",
+      "methodName": "toDescribeServiceEnvironments",
+      "description": "Grants permission to describe one or more AWS Batch service environments in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeServiceEnvironments.html"
+    },
+    {
+      "name": "DescribeServiceJob",
+      "methodName": "toDescribeServiceJob",
+      "description": "Grants permission to describe a AWS Batch service job in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeServiceJob.html"
+    },
+    {
+      "name": "GetJobQueueSnapshot",
+      "methodName": "toGetJobQueueSnapshot",
+      "description": "Grants permission to get a snapshot of an AWS Batch job queue in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_GetJobQueueSnapshot.html"
+    },
+    {
+      "name": "ListConsumableResources",
+      "methodName": "toListConsumableResources",
+      "description": "Grants permission to list AWS Batch consumable resources in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListConsumableResources.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list jobs for a specified AWS Batch job queue in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html"
+    },
+    {
+      "name": "ListJobsByConsumableResource",
+      "methodName": "toListJobsByConsumableResource",
+      "description": "Grants permission to list AWS Batch jobs that require a specific consumable resource in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobsByConsumableResource.html"
+    },
+    {
+      "name": "ListQuotaShares",
+      "methodName": "toListQuotaShares",
+      "description": "Grants permission to list AWS Batch quota shares in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListQuotaShares.html"
+    },
+    {
+      "name": "ListSchedulingPolicies",
+      "methodName": "toListSchedulingPolicies",
+      "description": "Grants permission to list AWS Batch scheduling policies in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListSchedulingPolicies.html"
+    },
+    {
+      "name": "ListServiceJobs",
+      "methodName": "toListServiceJobs",
+      "description": "Grants permission to list service jobs for a specified AWS Batch job queue in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListServiceJobs.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an AWS Batch resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterJobDefinition",
+      "methodName": "toRegisterJobDefinition",
+      "description": "Grants permission to register an AWS Batch job definition in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html"
+    },
+    {
+      "name": "SubmitJob",
+      "methodName": "toSubmitJob",
+      "description": "Grants permission to submit an AWS Batch job from a job definition in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html"
+    },
+    {
+      "name": "SubmitServiceJob",
+      "methodName": "toSubmitServiceJob",
+      "description": "Grants permission to submit an AWS Batch service job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an AWS Batch resource in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TerminateJob",
+      "methodName": "toTerminateJob",
+      "description": "Grants permission to terminate a job in an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html"
+    },
+    {
+      "name": "TerminateServiceJob",
+      "methodName": "toTerminateServiceJob",
+      "description": "Grants permission to terminate a service job in an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateServiceJob.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an AWS Batch resource in your account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateComputeEnvironment",
+      "methodName": "toUpdateComputeEnvironment",
+      "description": "Grants permission to update an AWS Batch compute environment in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html"
+    },
+    {
+      "name": "UpdateConsumableResource",
+      "methodName": "toUpdateConsumableResource",
+      "description": "Grants permission to update an AWS Batch consumable resource in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateConsumableResource.html"
+    },
+    {
+      "name": "UpdateJobQueue",
+      "methodName": "toUpdateJobQueue",
+      "description": "Grants permission to update an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html"
+    },
+    {
+      "name": "UpdateQuotaShare",
+      "methodName": "toUpdateQuotaShare",
+      "description": "Grants permission to update an AWS Batch quota share in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateQuotaShare.html"
+    },
+    {
+      "name": "UpdateSchedulingPolicy",
+      "methodName": "toUpdateSchedulingPolicy",
+      "description": "Grants permission to update an AWS Batch scheduling policy in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateSchedulingPolicy.html"
+    },
+    {
+      "name": "UpdateServiceEnvironment",
+      "methodName": "toUpdateServiceEnvironment",
+      "description": "Grants permission to update an AWS Batch service environment in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceEnvironment.html"
+    },
+    {
+      "name": "UpdateServiceJob",
+      "methodName": "toUpdateServiceJob",
+      "description": "Grants permission to update a service job in an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceJob.html"
+    },
+    {
+      "name": "SetCapacityTags",
+      "methodName": "toSetCapacityTags",
+      "description": "Grants permission to set capacity tags on an AWS Batch compute environment in your account",
+      "accessLevel": "Tagging, Write",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "compute-environment",
+      "methodName": "onComputeEnvironment",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}",
+      "placeholders": [
+        {
+          "placeholder": "ComputeEnvironmentName",
+          "name": "computeEnvironmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IComputeEnvironmentRef",
+        "property": "computeEnvironmentRef",
+        "arn": "computeEnvironmentArn"
+      }
+    },
+    {
+      "name": "consumable-resource",
+      "methodName": "onConsumableResource",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/resource-aware-scheduling.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:consumable-resource/${ConsumableResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ConsumableResourceName",
+          "name": "consumableResourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IConsumableResourceRef",
+        "property": "consumableResourceRef",
+        "arn": "consumableResourceArn"
+      }
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/jobs.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "job-definition",
+      "methodName": "onJobDefinition",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}",
+      "placeholders": [
+        {
+          "placeholder": "JobDefinitionName",
+          "name": "jobDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IJobDefinitionRef",
+        "property": "jobDefinitionRef",
+        "arn": "jobDefinitionArn"
+      }
+    },
+    {
+      "name": "job-definition-revision",
+      "methodName": "onJobDefinitionRevision",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}",
+      "placeholders": [
+        {
+          "placeholder": "JobDefinitionName",
+          "name": "jobDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Revision",
+          "name": "revision",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "job-queue",
+      "methodName": "onJobQueue",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}",
+      "placeholders": [
+        {
+          "placeholder": "JobQueueName",
+          "name": "jobQueueName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IJobQueueRef",
+        "property": "jobQueueRef",
+        "arn": "jobQueueArn"
+      }
+    },
+    {
+      "name": "quota-share",
+      "methodName": "onQuotaShare",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/quota-shares.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}/quota-share/${QuotaShareName}",
+      "placeholders": [
+        {
+          "placeholder": "JobQueueName",
+          "name": "jobQueueName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "QuotaShareName",
+          "name": "quotaShareName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "scheduling-policy",
+      "methodName": "onSchedulingPolicy",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/scheduling-policies.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:scheduling-policy/${SchedulingPolicyName}",
+      "placeholders": [
+        {
+          "placeholder": "SchedulingPolicyName",
+          "name": "schedulingPolicyName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "ISchedulingPolicyRef",
+        "property": "schedulingPolicyRef",
+        "arn": "schedulingPolicyArn"
+      }
+    },
+    {
+      "name": "service-environment",
+      "methodName": "onServiceEnvironment",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/service-environments.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:service-environment/${ServiceEnvironmentName}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceEnvironmentName",
+          "name": "serviceEnvironmentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_batch",
+        "interface": "IServiceEnvironmentRef",
+        "property": "serviceEnvironmentRef",
+        "arn": "serviceEnvironmentArn"
+      }
+    },
+    {
+      "name": "service-job",
+      "methodName": "onServiceJob",
+      "url": "https://docs.aws.amazon.com/batch/latest/userguide/service-jobs.html",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:service-job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateComputeEnvironment",
+        "toCreateConsumableResource",
+        "toCreateJobQueue",
+        "toCreateQuotaShare",
+        "toCreateSchedulingPolicy",
+        "toCreateServiceEnvironment",
+        "toRegisterJobDefinition",
+        "toSubmitJob",
+        "toSubmitServiceJob",
+        "toTagResource",
+        "toSetCapacityTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelJob",
+        "toCreateComputeEnvironment",
+        "toCreateConsumableResource",
+        "toCreateJobQueue",
+        "toCreateQuotaShare",
+        "toCreateSchedulingPolicy",
+        "toCreateServiceEnvironment",
+        "toDeleteComputeEnvironment",
+        "toDeleteConsumableResource",
+        "toDeleteJobQueue",
+        "toDeleteQuotaShare",
+        "toDeleteSchedulingPolicy",
+        "toDeleteServiceEnvironment",
+        "toDeregisterJobDefinition",
+        "toDescribeConsumableResource",
+        "toDescribeQuotaShare",
+        "toGetJobQueueSnapshot",
+        "toListJobsByConsumableResource",
+        "toListQuotaShares",
+        "toListTagsForResource",
+        "toRegisterJobDefinition",
+        "toSubmitJob",
+        "toSubmitServiceJob",
+        "toTagResource",
+        "toTerminateJob",
+        "toTerminateServiceJob",
+        "toUntagResource",
+        "toUpdateComputeEnvironment",
+        "toUpdateConsumableResource",
+        "toUpdateJobQueue",
+        "toUpdateQuotaShare",
+        "toUpdateSchedulingPolicy",
+        "toUpdateServiceEnvironment",
+        "toUpdateServiceJob",
+        "toSetCapacityTags"
+      ],
+      "relatedResourceTypes": [
+        "compute-environment",
+        "consumable-resource",
+        "job",
+        "job-definition-revision",
+        "job-queue",
+        "quota-share",
+        "scheduling-policy",
+        "service-environment",
+        "service-job"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateComputeEnvironment",
+        "toCreateConsumableResource",
+        "toCreateJobQueue",
+        "toCreateQuotaShare",
+        "toCreateSchedulingPolicy",
+        "toCreateServiceEnvironment",
+        "toRegisterJobDefinition",
+        "toSubmitJob",
+        "toSubmitServiceJob",
+        "toTagResource",
+        "toUntagResource",
+        "toSetCapacityTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:AWSLogsCreateGroup",
+      "methodName": "ifAWSLogsCreateGroup",
+      "description": "Filters access by the specified logging driver to determine whether awslogs group will be created for the logs",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AWSLogsCreateGroup",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "batch:AWSLogsGroup",
+      "methodName": "ifAWSLogsGroup",
+      "description": "Filters access by the awslogs group where the logs are located",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AWSLogsGroup",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:AWSLogsRegion",
+      "methodName": "ifAWSLogsRegion",
+      "description": "Filters access by the region where the logs are sent to",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AWSLogsRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:AWSLogsStreamPrefix",
+      "methodName": "ifAWSLogsStreamPrefix",
+      "description": "Filters access by the awslogs log stream prefix",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AWSLogsStreamPrefix",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:EKSImage",
+      "methodName": "ifEKSImage",
+      "description": "Filters access by the image used to start a container for an Amazon EKS job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition",
+        "toSubmitJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EKSImage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:EKSNamespace",
+      "methodName": "ifEKSNamespace",
+      "description": "Filters access by the namespace of a cluster used to run the pod for an Amazon EKS job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition",
+        "toSubmitJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EKSNamespace",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:EKSPrivileged",
+      "methodName": "ifEKSPrivileged",
+      "description": "Filters access by the specified privileged parameter value that determines whether the container is given elevated privileges on the host container instance (similar to the root user) for an Amazon EKS job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EKSPrivileged",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "batch:EKSRunAsGroup",
+      "methodName": "ifEKSRunAsGroup",
+      "description": "Filters access by the specified group numeric ID (gid) used to start a container in an Amazon EKS job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EKSRunAsGroup",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "batch:EKSRunAsUser",
+      "methodName": "ifEKSRunAsUser",
+      "description": "Filters access by the specified user numeric ID (uid) used to start a a container in an Amazon EKS job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EKSRunAsUser",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "batch:EKSServiceAccountName",
+      "methodName": "ifEKSServiceAccountName",
+      "description": "Filters access by the name of the service account used to run the pod for an Amazon EKS job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EKSServiceAccountName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:Image",
+      "methodName": "ifImage",
+      "description": "Filters access by the image used to start a container",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Image",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:LogDriver",
+      "methodName": "ifLogDriver",
+      "description": "Filters access by the log driver used for the container",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LogDriver",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:Privileged",
+      "methodName": "ifPrivileged",
+      "description": "Filters access by the specified privileged parameter value that determines whether the container is given elevated privileges on the host container instance (similar to the root user)",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Privileged",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "batch:SchedulingPriority",
+      "methodName": "ifSchedulingPriority",
+      "description": "Filters access by the scheduling priority for jobs in the job queue",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toSubmitServiceJob",
+        "toUpdateServiceJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SchedulingPriority",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "batch:ShareIdentifier",
+      "methodName": "ifShareIdentifier",
+      "description": "Filters access by the shareIdentifier used inside submit job",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toSubmitJob",
+        "toSubmitServiceJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ShareIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "batch:User",
+      "methodName": "ifUser",
+      "description": "Filters access by user name or numeric uid used inside the container",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys",
+      "relatedActionMethods": [
+        "toRegisterJobDefinition"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "User",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

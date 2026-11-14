@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OrgSourceStackSets",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStackSet",
+        "cloudformation:DescribeStackSet",
+        "cloudformation:UpdateStackSet",
+        "cloudformation:DeleteStackSet",
+        "cloudformation:CreateStackInstances",
+        "cloudformation:DeleteStackInstances",
+        "cloudformation:ListStackInstances",
+        "cloudformation:DescribeStackSetOperation",
+        "cloudformation:ListStackSetOperations",
+        "cloudformation:ListStackSetOperationResults"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stackset/AIDevOpsOrgSource-*",
+        "arn:aws:cloudformation:*:*:stackset-target/AIDevOpsOrgSource-*/*",
+        "arn:aws:cloudformation:*:*:type/resource/AWS-IAM-Role",
+        "arn:aws:cloudformation:*:*:type/resource/AWS-CloudFormation-WaitConditionHandle"
+      ]
+    },
+    {
+      "Sid": "OrgReads",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListParents",
+        "organizations:ListChildren",
+        "organizations:ListRoots",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedServicesForAccount",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

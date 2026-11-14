@@ -1,0 +1,10 @@
+{
+    "Action": "sts:AssumeRole",
+    "Effect": "Allow",
+    "Principal": {
+        "Service": [
+            "${Token[sns.amazonaws.com.9]}",
+            "${Token[lambda.amazonaws.com.10]}"
+        ]
+    }
+}

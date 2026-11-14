@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgn:SendAgentMetricsForMgn",
+        "mgn:SendAgentLogsForMgn",
+        "mgn:SendClientMetricsForMgn",
+        "mgn:SendClientLogsForMgn"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgn:RegisterAgentForMgn",
+        "mgn:UpdateAgentSourcePropertiesForMgn",
+        "mgn:UpdateAgentReplicationInfoForMgn",
+        "mgn:UpdateAgentConversionInfoForMgn",
+        "mgn:GetAgentInstallationAssetsForMgn",
+        "mgn:GetAgentCommandForMgn",
+        "mgn:GetAgentConfirmedResumeInfoForMgn",
+        "mgn:GetAgentRuntimeConfigurationForMgn",
+        "mgn:UpdateAgentBacklogForMgn",
+        "mgn:GetAgentReplicationInfoForMgn"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "mgn:TagResource",
+      "Resource": "arn:aws:mgn:*:*:source-server/*"
+    }
+  ]
+}

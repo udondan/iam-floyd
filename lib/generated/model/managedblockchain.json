@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "filename": "managedblockchain",
+  "className": "Managedblockchain",
+  "name": "managedblockchain",
+  "servicePrefix": "managedblockchain",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_managedblockchain.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAccessor",
+      "CreateMember",
+      "CreateNetwork",
+      "CreateNode",
+      "CreateProposal",
+      "DeleteAccessor",
+      "DeleteMember",
+      "DeleteNode",
+      "RejectInvitation",
+      "TagResource",
+      "UntagResource",
+      "UpdateMember",
+      "UpdateNode",
+      "VoteOnProposal",
+      "GET",
+      "Invoke",
+      "POST"
+    ],
+    "Read": [
+      "GetAccessor",
+      "GetMember",
+      "GetNetwork",
+      "GetNode",
+      "GetProposal",
+      "InvokeRpcBitcoinMainnet",
+      "InvokeRpcBitcoinTestnet",
+      "InvokeRpcPolygonMainnet",
+      "InvokeRpcPolygonMumbaiTestnet",
+      "ListProposalVotes",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAccessors",
+      "ListInvitations",
+      "ListMembers",
+      "ListNetworks",
+      "ListNodes",
+      "ListProposals"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "GET",
+      "Invoke",
+      "POST"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAccessor",
+      "methodName": "toCreateAccessor",
+      "description": "Grants permission to create an Amazon Managed Blockchain accessor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateAccessor.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMember",
+      "methodName": "toCreateMember",
+      "description": "Grants permission to create a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html"
+    },
+    {
+      "name": "CreateNetwork",
+      "methodName": "toCreateNetwork",
+      "description": "Grants permission to create an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNetwork.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateNode",
+      "methodName": "toCreateNode",
+      "description": "Grants permission to create a node within a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNode.html"
+    },
+    {
+      "name": "CreateProposal",
+      "methodName": "toCreateProposal",
+      "description": "Grants permission to create a proposal that other blockchain network members can vote on to add or remove a member in an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateProposal.html"
+    },
+    {
+      "name": "DeleteAccessor",
+      "methodName": "toDeleteAccessor",
+      "description": "Grants permission to delete an Amazon Managed Blockchain accessor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteAccessor.html"
+    },
+    {
+      "name": "DeleteMember",
+      "methodName": "toDeleteMember",
+      "description": "Grants permission to delete a member and all associated resources from an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteMember.html"
+    },
+    {
+      "name": "DeleteNode",
+      "methodName": "toDeleteNode",
+      "description": "Grants permission to delete a node from a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteNode.html"
+    },
+    {
+      "name": "GetAccessor",
+      "methodName": "toGetAccessor",
+      "description": "Grants permission to return detailed information about an Amazon Managed Blockchain accessor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetAccessor.html"
+    },
+    {
+      "name": "GetMember",
+      "methodName": "toGetMember",
+      "description": "Grants permission to return detailed information about a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetMember.html"
+    },
+    {
+      "name": "GetNetwork",
+      "methodName": "toGetNetwork",
+      "description": "Grants permission to return detailed information about an Amazon Managed Blockchain network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNetwork.html"
+    },
+    {
+      "name": "GetNode",
+      "methodName": "toGetNode",
+      "description": "Grants permission to return detailed information about a node within a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNode.html"
+    },
+    {
+      "name": "GetProposal",
+      "methodName": "toGetProposal",
+      "description": "Grants permission to return detailed information about a proposal of an Amazon Managed Blockchain network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetProposal.html"
+    },
+    {
+      "name": "InvokeRpcBitcoinMainnet",
+      "methodName": "toInvokeRpcBitcoinMainnet",
+      "description": "Grants permission to invoke the Bitcoin Mainnet RPCs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ambbtc-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-bitcoin-networks"
+    },
+    {
+      "name": "InvokeRpcBitcoinTestnet",
+      "methodName": "toInvokeRpcBitcoinTestnet",
+      "description": "Grants permission to invoke the Bitcoin Testnet RPCs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ambbtc-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-bitcoin-networks"
+    },
+    {
+      "name": "InvokeRpcPolygonMainnet",
+      "methodName": "toInvokeRpcPolygonMainnet",
+      "description": "Grants permission to invoke the Polygon Mainnet RPCs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ambp-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-polygon-networks"
+    },
+    {
+      "name": "InvokeRpcPolygonMumbaiTestnet",
+      "methodName": "toInvokeRpcPolygonMumbaiTestnet",
+      "description": "Grants permission to invoke the Polygon Mumbai Testnet RPCs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ambp-dg/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-access-polygon-networks"
+    },
+    {
+      "name": "ListAccessors",
+      "methodName": "toListAccessors",
+      "description": "Grants permission to list the Amazon Managed Blockchain accessors owned by the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListAccessors.html"
+    },
+    {
+      "name": "ListInvitations",
+      "methodName": "toListInvitations",
+      "description": "Grants permission to list the invitations extended to the active AWS account from any Managed Blockchain network",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListInvitations.html"
+    },
+    {
+      "name": "ListMembers",
+      "methodName": "toListMembers",
+      "description": "Grants permission to list the members of an Amazon Managed Blockchain network and the properties of their memberships",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListMembers.html"
+    },
+    {
+      "name": "ListNetworks",
+      "methodName": "toListNetworks",
+      "description": "Grants permission to list the Amazon Managed Blockchain networks in which the current AWS account participates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNetworks.html"
+    },
+    {
+      "name": "ListNodes",
+      "methodName": "toListNodes",
+      "description": "Grants permission to list the nodes within a member of an Amazon Managed Blockchain network",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNodes.html"
+    },
+    {
+      "name": "ListProposalVotes",
+      "methodName": "toListProposalVotes",
+      "description": "Grants permission to list all votes for a proposal, including the value of the vote and the unique identifier of the member that cast the vote for the given Amazon Managed Blockchain network",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposalVotes.html"
+    },
+    {
+      "name": "ListProposals",
+      "methodName": "toListProposals",
+      "description": "Grants permission to list proposals for the given Amazon Managed Blockchain network",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposals.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view tags associated with an Amazon Managed Blockchain resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RejectInvitation",
+      "methodName": "toRejectInvitation",
+      "description": "Grants permission to reject the invitation to join the blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_RejectInvitation.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to an Amazon Managed Blockchain resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an Amazon Managed Blockchain resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateMember",
+      "methodName": "toUpdateMember",
+      "description": "Grants permission to update a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html"
+    },
+    {
+      "name": "UpdateNode",
+      "methodName": "toUpdateNode",
+      "description": "Grants permission to update a node from a member of an Amazon Managed Blockchain network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html"
+    },
+    {
+      "name": "VoteOnProposal",
+      "methodName": "toVoteOnProposal",
+      "description": "Grants permission to cast a vote for a proposal on behalf of the blockchain network member specified",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_VoteOnProposal.html"
+    },
+    {
+      "name": "GET",
+      "methodName": "toGET",
+      "description": "Grants permission to send HTTP GET requests to an Ethereum node",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html"
+    },
+    {
+      "name": "Invoke",
+      "methodName": "toInvoke",
+      "description": "Grants permission to create WebSocket connections to an Ethereum node",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html"
+    },
+    {
+      "name": "POST",
+      "methodName": "toPOST",
+      "description": "Grants permission to send HTTP POST requests to an Ethereum node",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "accessor",
+      "methodName": "onAccessor",
+      "url": "",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:accessors/${AccessorId}",
+      "placeholders": [
+        {
+          "placeholder": "AccessorId",
+          "name": "accessorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_managedblockchain",
+        "interface": "IAccessorRef",
+        "property": "accessorRef",
+        "arn": "accessorArn"
+      }
+    },
+    {
+      "name": "invitation",
+      "methodName": "onInvitation",
+      "url": "",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}",
+      "placeholders": [
+        {
+          "placeholder": "InvitationId",
+          "name": "invitationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "member",
+      "methodName": "onMember",
+      "url": "",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}",
+      "placeholders": [
+        {
+          "placeholder": "MemberId",
+          "name": "memberId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_managedblockchain",
+        "interface": "IMemberRef",
+        "property": "memberRef",
+        "id": "memberId"
+      }
+    },
+    {
+      "name": "network",
+      "methodName": "onNetwork",
+      "url": "",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}",
+      "placeholders": [
+        {
+          "placeholder": "NetworkId",
+          "name": "networkId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "node",
+      "methodName": "onNode",
+      "url": "",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}",
+      "placeholders": [
+        {
+          "placeholder": "NodeId",
+          "name": "nodeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_managedblockchain",
+        "interface": "INodeRef",
+        "property": "nodeRef",
+        "arn": "nodeArn"
+      }
+    },
+    {
+      "name": "proposal",
+      "methodName": "onProposal",
+      "url": "",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}",
+      "placeholders": [
+        {
+          "placeholder": "ProposalId",
+          "name": "proposalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters actions based on the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateAccessor",
+        "toCreateMember",
+        "toCreateNetwork",
+        "toCreateNode",
+        "toCreateProposal",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on the tags associated with an Amazon Managed Blockchain resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateMember",
+        "toCreateNode",
+        "toCreateProposal",
+        "toDeleteAccessor",
+        "toDeleteMember",
+        "toDeleteNode",
+        "toGetAccessor",
+        "toGetMember",
+        "toGetNetwork",
+        "toGetNode",
+        "toGetProposal",
+        "toListMembers",
+        "toListNodes",
+        "toListProposalVotes",
+        "toListProposals",
+        "toListTagsForResource",
+        "toRejectInvitation",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMember",
+        "toUpdateNode",
+        "toVoteOnProposal"
+      ],
+      "relatedResourceTypes": [
+        "accessor",
+        "invitation",
+        "member",
+        "network",
+        "node",
+        "proposal"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters actions based on the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateAccessor",
+        "toCreateMember",
+        "toCreateNetwork",
+        "toCreateNode",
+        "toCreateProposal",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

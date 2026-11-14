@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "filename": "codecatalyst",
+  "className": "Codecatalyst",
+  "name": "codecatalyst",
+  "servicePrefix": "codecatalyst",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_codecatalyst.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptConnection",
+      "AssociateIamRoleToConnection",
+      "AssociateIdentityCenterApplicationToSpace",
+      "AssociateIdentityToIdentityCenterApplication",
+      "BatchAssociateIdentitiesToIdentityCenterApplication",
+      "BatchDisassociateIdentitiesFromIdentityCenterApplication",
+      "CreateIdentityCenterApplication",
+      "CreateSpace",
+      "CreateSpaceAdminRoleAssignment",
+      "DeleteConnection",
+      "DeleteIdentityCenterApplication",
+      "DisassociateIamRoleFromConnection",
+      "DisassociateIdentityCenterApplicationFromSpace",
+      "DisassociateIdentityFromIdentityCenterApplication",
+      "PutBillingAuthorization",
+      "RejectConnection",
+      "SynchronizeIdentityCenterApplication",
+      "TagResource",
+      "UntagResource",
+      "UpdateIdentityCenterApplication"
+    ],
+    "Read": [
+      "GetBillingAuthorization",
+      "GetConnection",
+      "GetIdentityCenterApplication",
+      "GetPendingConnection",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConnections",
+      "ListIamRolesForConnection",
+      "ListIdentityCenterApplications",
+      "ListIdentityCenterApplicationsForSpace",
+      "ListSpacesForIdentityCenterApplication"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptConnection",
+      "methodName": "toAcceptConnection",
+      "description": "Grants permission to accept a request to connect this account to an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "AssociateIamRoleToConnection",
+      "methodName": "toAssociateIamRoleToConnection",
+      "description": "Grants permission to associate an IAM role to a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "AssociateIdentityCenterApplicationToSpace",
+      "methodName": "toAssociateIdentityCenterApplicationToSpace",
+      "description": "Grants permission to associate an IAM Identity Center application with an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "AssociateIdentityToIdentityCenterApplication",
+      "methodName": "toAssociateIdentityToIdentityCenterApplication",
+      "description": "Grants permission to associate an identity with an IAM Identity Center application for an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "BatchAssociateIdentitiesToIdentityCenterApplication",
+      "methodName": "toBatchAssociateIdentitiesToIdentityCenterApplication",
+      "description": "Grants permission to associate multiple identities with an IAM Identity Center application for an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "BatchDisassociateIdentitiesFromIdentityCenterApplication",
+      "methodName": "toBatchDisassociateIdentitiesFromIdentityCenterApplication",
+      "description": "Grants permission to disassociate multiple identities from an IAM Identity Center application for an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "CreateIdentityCenterApplication",
+      "methodName": "toCreateIdentityCenterApplication",
+      "description": "Grants permission to create an IAM Identity Center application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSpace",
+      "methodName": "toCreateSpace",
+      "description": "Grants permission to create an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSpaceAdminRoleAssignment",
+      "methodName": "toCreateSpaceAdminRoleAssignment",
+      "description": "Grants permission to create an administrator role assignment for a given Amazon CodeCatalyst space and IAM Identity Center application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "DeleteConnection",
+      "methodName": "toDeleteConnection",
+      "description": "Grants permission to delete a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "DeleteIdentityCenterApplication",
+      "methodName": "toDeleteIdentityCenterApplication",
+      "description": "Grants permission to delete an IAM Identity Center application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "DisassociateIamRoleFromConnection",
+      "methodName": "toDisassociateIamRoleFromConnection",
+      "description": "Grants permission to disassociate an IAM role from a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "DisassociateIdentityCenterApplicationFromSpace",
+      "methodName": "toDisassociateIdentityCenterApplicationFromSpace",
+      "description": "Grants permission to disassociate an IAM Identity Center application from an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "DisassociateIdentityFromIdentityCenterApplication",
+      "methodName": "toDisassociateIdentityFromIdentityCenterApplication",
+      "description": "Grants permission to disassociate an identity from an IAM Identity Center application for an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "GetBillingAuthorization",
+      "methodName": "toGetBillingAuthorization",
+      "description": "Grants permission to describe the billing authorization for a connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "GetConnection",
+      "methodName": "toGetConnection",
+      "description": "Grants permission to get a connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "GetIdentityCenterApplication",
+      "methodName": "toGetIdentityCenterApplication",
+      "description": "Grants permission to get information about an IAM Identity Center application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "GetPendingConnection",
+      "methodName": "toGetPendingConnection",
+      "description": "Grants permission to get a pending request to connect this account to an Amazon CodeCatalyst space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "ListConnections",
+      "methodName": "toListConnections",
+      "description": "Grants permission to list connections that are not pending",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "ListIamRolesForConnection",
+      "methodName": "toListIamRolesForConnection",
+      "description": "Grants permission to list IAM roles associated with a connection",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "ListIdentityCenterApplications",
+      "methodName": "toListIdentityCenterApplications",
+      "description": "Grants permission to view a list of all IAM Identity Center applications in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "ListIdentityCenterApplicationsForSpace",
+      "methodName": "toListIdentityCenterApplicationsForSpace",
+      "description": "Grants permission to view a list of IAM Identity Center applications by Amazon CodeCatalyst space",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "ListSpacesForIdentityCenterApplication",
+      "methodName": "toListSpacesForIdentityCenterApplication",
+      "description": "Grants permission to view a list of Amazon CodeCatalyst spaces by IAM Identity Center application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an Amazon CodeCatalyst resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "PutBillingAuthorization",
+      "methodName": "toPutBillingAuthorization",
+      "description": "Grants permission to create or update the billing authorization for a connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "RejectConnection",
+      "methodName": "toRejectConnection",
+      "description": "Grants permission to reject a request to connect this account to an Amazon CodeCatalyst space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "SynchronizeIdentityCenterApplication",
+      "methodName": "toSynchronizeIdentityCenterApplication",
+      "description": "Grants permission to synchronize an IAM Identity Center application with the backing identity store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Amazon CodeCatalyst resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Amazon CodeCatalyst resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-connections"
+    },
+    {
+      "name": "UpdateIdentityCenterApplication",
+      "methodName": "toUpdateIdentityCenterApplication",
+      "description": "Grants permission to update an IAM Identity Center application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications"
+    }
+  ],
+  "resources": [
+    {
+      "name": "connections",
+      "methodName": "onConnections",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/#",
+      "arn": "arn:${Partition}:codecatalyst:${Region}:${Account}:/connections/${ConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectionId",
+          "name": "connectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "identity-center-applications",
+      "methodName": "onIdentityCenterApplications",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/#",
+      "arn": "arn:${Partition}:codecatalyst:${Region}:${Account}:/identity-center-applications/${IdentityCenterApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "IdentityCenterApplicationId",
+          "name": "identityCenterApplicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/#",
+      "arn": "arn:${Partition}:codecatalyst:::space/${SpaceId}/project/${ProjectId}",
+      "placeholders": [
+        {
+          "placeholder": "SpaceId",
+          "name": "spaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProjectId",
+          "name": "projectId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "space",
+      "methodName": "onSpace",
+      "url": "https://docs.aws.amazon.com/codecatalyst/latest/userguide/#",
+      "arn": "arn:${Partition}:codecatalyst:::space/${SpaceId}",
+      "placeholders": [
+        {
+          "placeholder": "SpaceId",
+          "name": "spaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAcceptConnection",
+        "toCreateIdentityCenterApplication",
+        "toCreateSpace",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateIamRoleToConnection",
+        "toAssociateIdentityCenterApplicationToSpace",
+        "toAssociateIdentityToIdentityCenterApplication",
+        "toBatchAssociateIdentitiesToIdentityCenterApplication",
+        "toBatchDisassociateIdentitiesFromIdentityCenterApplication",
+        "toCreateSpaceAdminRoleAssignment",
+        "toDeleteConnection",
+        "toDeleteIdentityCenterApplication",
+        "toDisassociateIamRoleFromConnection",
+        "toDisassociateIdentityCenterApplicationFromSpace",
+        "toDisassociateIdentityFromIdentityCenterApplication",
+        "toGetBillingAuthorization",
+        "toGetConnection",
+        "toGetIdentityCenterApplication",
+        "toListIamRolesForConnection",
+        "toListSpacesForIdentityCenterApplication",
+        "toListTagsForResource",
+        "toPutBillingAuthorization",
+        "toSynchronizeIdentityCenterApplication",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateIdentityCenterApplication"
+      ],
+      "relatedResourceTypes": [
+        "connections",
+        "identity-center-applications"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAcceptConnection",
+        "toCreateIdentityCenterApplication",
+        "toCreateSpace",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

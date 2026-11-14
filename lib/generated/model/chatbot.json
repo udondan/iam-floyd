@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "filename": "chatbot",
+  "className": "Chatbot",
+  "name": "chatbot",
+  "servicePrefix": "chatbot",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_chatbot.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateToConfiguration",
+      "CreateChimeWebhookConfiguration",
+      "CreateCustomAction",
+      "CreateMicrosoftTeamsChannelConfiguration",
+      "CreateSlackChannelConfiguration",
+      "DeleteChimeWebhookConfiguration",
+      "DeleteCustomAction",
+      "DeleteMicrosoftTeamsChannelConfiguration",
+      "DeleteMicrosoftTeamsConfiguredTeam",
+      "DeleteMicrosoftTeamsUserIdentity",
+      "DeleteSlackChannelConfiguration",
+      "DeleteSlackUserIdentity",
+      "DeleteSlackWorkspaceAuthorization",
+      "DisassociateFromConfiguration",
+      "RedeemMicrosoftTeamsOauthCode",
+      "RedeemSlackOauthCode",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccountPreferences",
+      "UpdateChimeWebhookConfiguration",
+      "UpdateCustomAction",
+      "UpdateMicrosoftTeamsChannelConfiguration",
+      "UpdateSlackChannelConfiguration"
+    ],
+    "Read": [
+      "DescribeChimeWebhookConfigurations",
+      "DescribeSlackChannelConfigurations",
+      "DescribeSlackChannels",
+      "DescribeSlackUserIdentities",
+      "DescribeSlackWorkspaces",
+      "GetAccountPreferences",
+      "GetCustomAction",
+      "GetMicrosoftTeamsChannelConfiguration",
+      "GetMicrosoftTeamsOauthParameters",
+      "GetSlackOauthParameters",
+      "ListAssociations",
+      "ListMicrosoftTeamsChannelConfigurations",
+      "ListMicrosoftTeamsConfiguredTeams",
+      "ListMicrosoftTeamsUserIdentities",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCustomActions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateToConfiguration",
+      "methodName": "toAssociateToConfiguration",
+      "description": "Grants permission to associate a resource with a configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_AssociateToConfiguration.html"
+    },
+    {
+      "name": "CreateChimeWebhookConfiguration",
+      "methodName": "toCreateChimeWebhookConfiguration",
+      "description": "Grants permission to create an AWS Chatbot Chime Webhook Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateChimeWebhookConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCustomAction",
+      "methodName": "toCreateCustomAction",
+      "description": "Grants permission to create a custom action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateCustomAction.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateMicrosoftTeamsChannelConfiguration",
+      "methodName": "toCreateMicrosoftTeamsChannelConfiguration",
+      "description": "Grants permission to create an AWS Chatbot Microsoft Teams Channel Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateMicrosoftTeamsChannelConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateSlackChannelConfiguration",
+      "methodName": "toCreateSlackChannelConfiguration",
+      "description": "Grants permission to create an AWS Chatbot Slack Channel Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateSlackChannelConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteChimeWebhookConfiguration",
+      "methodName": "toDeleteChimeWebhookConfiguration",
+      "description": "Grants permission to delete an AWS Chatbot Chime Webhook Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteChimeWebhookConfiguration.html"
+    },
+    {
+      "name": "DeleteCustomAction",
+      "methodName": "toDeleteCustomAction",
+      "description": "Grants permission to delete a custom action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteCustomAction.html"
+    },
+    {
+      "name": "DeleteMicrosoftTeamsChannelConfiguration",
+      "methodName": "toDeleteMicrosoftTeamsChannelConfiguration",
+      "description": "Grants permission to delete an AWS Chatbot Microsoft Teams Channel Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsChannelConfiguration.html"
+    },
+    {
+      "name": "DeleteMicrosoftTeamsConfiguredTeam",
+      "methodName": "toDeleteMicrosoftTeamsConfiguredTeam",
+      "description": "Grants permission to delete the Microsoft Teams configured with AWS Chatbot in an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsConfiguredTeam.html"
+    },
+    {
+      "name": "DeleteMicrosoftTeamsUserIdentity",
+      "methodName": "toDeleteMicrosoftTeamsUserIdentity",
+      "description": "Grants permission to delete an AWS Chatbot Microsoft Teams User Identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsUserIdentity.html"
+    },
+    {
+      "name": "DeleteSlackChannelConfiguration",
+      "methodName": "toDeleteSlackChannelConfiguration",
+      "description": "Grants permission to delete an AWS Chatbot Slack Channel Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackChannelConfiguration.html"
+    },
+    {
+      "name": "DeleteSlackUserIdentity",
+      "methodName": "toDeleteSlackUserIdentity",
+      "description": "Grants permission to delete an AWS Chatbot Slack User Identity",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackUserIdentity.html"
+    },
+    {
+      "name": "DeleteSlackWorkspaceAuthorization",
+      "methodName": "toDeleteSlackWorkspaceAuthorization",
+      "description": "Grants permission to delete the Slack workspace authorization with AWS Chatbot, associated with an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackWorkspaceAuthorization.html"
+    },
+    {
+      "name": "DescribeChimeWebhookConfigurations",
+      "methodName": "toDescribeChimeWebhookConfigurations",
+      "description": "Grants permission to list all AWS Chatbot Chime Webhook Configurations in an AWS Account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeChimeWebhookConfigurations.html"
+    },
+    {
+      "name": "DescribeSlackChannelConfigurations",
+      "methodName": "toDescribeSlackChannelConfigurations",
+      "description": "Grants permission to list all AWS Chatbot Slack Channel Configurations in an AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeSlackChannelConfigurations.html"
+    },
+    {
+      "name": "DescribeSlackChannels",
+      "methodName": "toDescribeSlackChannels",
+      "description": "Grants permission to list all public Slack channels in the Slack workspace connected to the AWS Account onboarded with AWS Chatbot service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html"
+    },
+    {
+      "name": "DescribeSlackUserIdentities",
+      "methodName": "toDescribeSlackUserIdentities",
+      "description": "Grants permission to describe AWS Chatbot Slack User Identities",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeSlackUserIdentities.html"
+    },
+    {
+      "name": "DescribeSlackWorkspaces",
+      "methodName": "toDescribeSlackWorkspaces",
+      "description": "Grants permission to list all authorized Slack workspaces connected to the AWS Account onboarded with AWS Chatbot service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeSlackWorkspaces.html"
+    },
+    {
+      "name": "DisassociateFromConfiguration",
+      "methodName": "toDisassociateFromConfiguration",
+      "description": "Grants permission to disassociate a resource from a configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DisassociateFromConfiguration.html"
+    },
+    {
+      "name": "GetAccountPreferences",
+      "methodName": "toGetAccountPreferences",
+      "description": "Grants permission to retrieve AWS Chatbot account preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetAccountPreferences.html"
+    },
+    {
+      "name": "GetCustomAction",
+      "methodName": "toGetCustomAction",
+      "description": "Grants permission to get a custom action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetCustomAction.html"
+    },
+    {
+      "name": "GetMicrosoftTeamsChannelConfiguration",
+      "methodName": "toGetMicrosoftTeamsChannelConfiguration",
+      "description": "Grants permission to get a single AWS Chatbot Microsoft Teams Channel Configurations in an AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetMicrosoftTeamsChannelConfiguration.html",
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "GetMicrosoftTeamsOauthParameters",
+      "methodName": "toGetMicrosoftTeamsOauthParameters",
+      "description": "Grants permission to generate OAuth parameters to request Microsoft Teams OAuth code to be used by the AWS Chatbot service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html"
+    },
+    {
+      "name": "GetSlackOauthParameters",
+      "methodName": "toGetSlackOauthParameters",
+      "description": "Grants permission to generate OAuth parameters to request Slack OAuth code to be used by the AWS Chatbot service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html"
+    },
+    {
+      "name": "ListAssociations",
+      "methodName": "toListAssociations",
+      "description": "Grants permission to list resources associated with a configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListAssociations.html"
+    },
+    {
+      "name": "ListCustomActions",
+      "methodName": "toListCustomActions",
+      "description": "Grants permission to list custom actions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListCustomActions.html"
+    },
+    {
+      "name": "ListMicrosoftTeamsChannelConfigurations",
+      "methodName": "toListMicrosoftTeamsChannelConfigurations",
+      "description": "Grants permission to list all AWS Chatbot Microsoft Teams Channel Configurations in an AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListMicrosoftTeamsChannelConfigurations.html"
+    },
+    {
+      "name": "ListMicrosoftTeamsConfiguredTeams",
+      "methodName": "toListMicrosoftTeamsConfiguredTeams",
+      "description": "Grants permission to list all Microsoft Teams connected to the AWS Account onboarded with AWS Chatbot service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListMicrosoftTeamsConfiguredTeams.html"
+    },
+    {
+      "name": "ListMicrosoftTeamsUserIdentities",
+      "methodName": "toListMicrosoftTeamsUserIdentities",
+      "description": "Grants permission to describe AWS Chatbot Microsoft Teams User Identities",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListMicrosoftTeamsUserIdentities.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to List all tags associated with the AWS Chatbot Channel Configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RedeemMicrosoftTeamsOauthCode",
+      "methodName": "toRedeemMicrosoftTeamsOauthCode",
+      "description": "Grants permission to redeem previously generated parameters with Microsoft APIs, to acquire OAuth tokens to be used by the AWS Chatbot service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html"
+    },
+    {
+      "name": "RedeemSlackOauthCode",
+      "methodName": "toRedeemSlackOauthCode",
+      "description": "Grants permission to redeem previously generated parameters with Slack API, to acquire OAuth tokens to be used by the AWS Chatbot service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to create tags on AWS Chatbot Channel Configuration",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags on AWS Chatbot Channel Configuration",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountPreferences",
+      "methodName": "toUpdateAccountPreferences",
+      "description": "Grants permission to update AWS Chatbot account preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateAccountPreferences.html"
+    },
+    {
+      "name": "UpdateChimeWebhookConfiguration",
+      "methodName": "toUpdateChimeWebhookConfiguration",
+      "description": "Grants permission to update an AWS Chatbot Chime Webhook Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateChimeWebhookConfiguration.html"
+    },
+    {
+      "name": "UpdateCustomAction",
+      "methodName": "toUpdateCustomAction",
+      "description": "Grants permission to update a custom action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateCustomAction.html"
+    },
+    {
+      "name": "UpdateMicrosoftTeamsChannelConfiguration",
+      "methodName": "toUpdateMicrosoftTeamsChannelConfiguration",
+      "description": "Grants permission to update an AWS Chatbot Microsoft Teams Channel Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateMicrosoftTeamsChannelConfiguration.html"
+    },
+    {
+      "name": "UpdateSlackChannelConfiguration",
+      "methodName": "toUpdateSlackChannelConfiguration",
+      "description": "Grants permission to update an AWS Chatbot Slack Channel Configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateSlackChannelConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ChatbotConfiguration",
+      "methodName": "onChatbotConfiguration",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html",
+      "arn": "arn:${Partition}:chatbot::${Account}:chat-configuration/${ConfigurationType}/${ChatbotConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "ConfigurationType",
+          "name": "configurationType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChatbotConfigurationName",
+          "name": "chatbotConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "custom-action",
+      "methodName": "onCustomAction",
+      "url": "https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html",
+      "arn": "arn:${Partition}:chatbot::${Account}:custom-action/${ActionName}",
+      "placeholders": [
+        {
+          "placeholder": "ActionName",
+          "name": "actionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_chatbot",
+        "interface": "ICustomActionRef",
+        "property": "customActionRef",
+        "arn": "customActionArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateChimeWebhookConfiguration",
+        "toCreateCustomAction",
+        "toCreateMicrosoftTeamsChannelConfiguration",
+        "toCreateSlackChannelConfiguration",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateToConfiguration",
+        "toDeleteChimeWebhookConfiguration",
+        "toDeleteCustomAction",
+        "toDeleteMicrosoftTeamsChannelConfiguration",
+        "toDeleteSlackChannelConfiguration",
+        "toDisassociateFromConfiguration",
+        "toGetCustomAction",
+        "toGetMicrosoftTeamsChannelConfiguration",
+        "toListAssociations",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChimeWebhookConfiguration",
+        "toUpdateCustomAction",
+        "toUpdateMicrosoftTeamsChannelConfiguration",
+        "toUpdateSlackChannelConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "ChatbotConfiguration",
+        "custom-action"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateChimeWebhookConfiguration",
+        "toCreateCustomAction",
+        "toCreateMicrosoftTeamsChannelConfiguration",
+        "toCreateSlackChannelConfiguration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "filename": "repostspace",
+  "className": "Repostspace",
+  "name": "repostspace",
+  "servicePrefix": "repostspace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_repostspace.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchAddChannelRoleToAccessors",
+      "BatchAddRole",
+      "BatchRemoveChannelRoleFromAccessors",
+      "BatchRemoveRole",
+      "CreateChannel",
+      "CreateSpace",
+      "DeleteSpace",
+      "DeregisterAdmin",
+      "RegisterAdmin",
+      "SendInvites",
+      "TagResource",
+      "UntagResource",
+      "UpdateChannel",
+      "UpdateSpace"
+    ],
+    "Read": [
+      "GetChannel",
+      "GetSpace",
+      "ListChannels",
+      "ListSpaces",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchAddChannelRoleToAccessors",
+      "methodName": "toBatchAddChannelRoleToAccessors",
+      "description": "Grants permission to add a role to users and groups in a private re:Post channel in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_BatchAddChannelRoleToAccessors.html"
+    },
+    {
+      "name": "BatchAddRole",
+      "methodName": "toBatchAddRole",
+      "description": "Grants permission to add a role to users and groups in a private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_BatchAddRole.html"
+    },
+    {
+      "name": "BatchRemoveChannelRoleFromAccessors",
+      "methodName": "toBatchRemoveChannelRoleFromAccessors",
+      "description": "Grants permission to remove a role from users and groups in a private re:Post channel in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_BatchRemoveChannelRoleFromAccessors.html"
+    },
+    {
+      "name": "BatchRemoveRole",
+      "methodName": "toBatchRemoveRole",
+      "description": "Grants permission to remove a role from users and groups in a private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_BatchRemoveRole.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a new channel in private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_CreateChannel.html"
+    },
+    {
+      "name": "CreateSpace",
+      "methodName": "toCreateSpace",
+      "description": "Grants permission to create a new private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_CreateSpace.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteSpace",
+      "methodName": "toDeleteSpace",
+      "description": "Grants permission to delete a private re:Post from your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_DeleteSpace.html"
+    },
+    {
+      "name": "DeregisterAdmin",
+      "methodName": "toDeregisterAdmin",
+      "description": "Grants permission to remove an administrator to a private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_DeregisterAdmin.html"
+    },
+    {
+      "name": "GetChannel",
+      "methodName": "toGetChannel",
+      "description": "Grants permission to get the description for a channel in private re:Post in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_GetChannel.html"
+    },
+    {
+      "name": "GetSpace",
+      "methodName": "toGetSpace",
+      "description": "Grants permission to get the description for a private re:Post in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_GetSpace.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to list all channels in a private re:Post in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_ListChannels.html"
+    },
+    {
+      "name": "ListSpaces",
+      "methodName": "toListSpaces",
+      "description": "Grants permission to list all private re:Posts in your account",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags associated with a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "RegisterAdmin",
+      "methodName": "toRegisterAdmin",
+      "description": "Grants permission to add an administrator to a private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_RegisterAdmin.html"
+    },
+    {
+      "name": "SendInvites",
+      "methodName": "toSendInvites",
+      "description": "Grants permission to send invites to users of a private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_SendInvites.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update a channel in private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_UpdateChannel.html"
+    },
+    {
+      "name": "UpdateSpace",
+      "methodName": "toUpdateSpace",
+      "description": "Grants permission to update a private re:Post in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_UpdateSpace.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "space",
+      "methodName": "onSpace",
+      "url": "https://docs.aws.amazon.com/repostprivate/latest/userguide/",
+      "arn": "arn:${Partition}:repostspace:${Region}:${Account}:space/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSpace",
+        "toListTagsForResource",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchAddChannelRoleToAccessors",
+        "toBatchAddRole",
+        "toBatchRemoveChannelRoleFromAccessors",
+        "toBatchRemoveRole",
+        "toCreateChannel",
+        "toDeleteSpace",
+        "toDeregisterAdmin",
+        "toGetChannel",
+        "toGetSpace",
+        "toListChannels",
+        "toListTagsForResource",
+        "toRegisterAdmin",
+        "toSendInvites",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChannel",
+        "toUpdateSpace"
+      ],
+      "relatedResourceTypes": [
+        "space"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSpace",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

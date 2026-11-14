@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "filename": "ec2-instance-connect",
+  "className": "Ec2InstanceConnect",
+  "name": "ec2-instance-connect",
+  "servicePrefix": "ec2-instance-connect",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ec2-instance-connect.html",
+  "accessLevelList": {
+    "Write": [
+      "OpenTunnel",
+      "SendSSHPublicKey",
+      "SendSerialConsoleSSHPublicKey"
+    ]
+  },
+  "actions": [
+    {
+      "name": "OpenTunnel",
+      "methodName": "toOpenTunnel",
+      "description": "Grants permission to establish SSH connection to an EC2 instance using EC2 Instance Connect Endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel"
+    },
+    {
+      "name": "SendSSHPublicKey",
+      "methodName": "toSendSSHPublicKey",
+      "description": "Grants permission to push an SSH public key to the specified EC2 instance to be used for standard SSH",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html"
+    },
+    {
+      "name": "SendSerialConsoleSSHPublicKey",
+      "methodName": "toSendSerialConsoleSSHPublicKey",
+      "description": "Grants permission to push an SSH public key to the specified EC2 instance to be used for serial console SSH",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSerialConsoleSSHPublicKey.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "instance",
+      "methodName": "onInstance",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceId",
+          "name": "instanceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifEc2ResourceTag"
+      ]
+    },
+    {
+      "name": "instance-connect-endpoint",
+      "methodName": "onInstanceConnectEndpoint",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-CreateInstanceConnectEndpoint",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:instance-connect-endpoint/${InstanceConnectEndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "InstanceConnectEndpointId",
+          "name": "instanceConnectEndpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifEc2ResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toOpenTunnel",
+        "toSendSSHPublicKey",
+        "toSendSerialConsoleSSHPublicKey"
+      ],
+      "relatedResourceTypes": [
+        "instance",
+        "instance-connect-endpoint"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ec2-instance-connect:maxTunnelDuration",
+      "methodName": "ifMaxTunnelDuration",
+      "description": "Filters access by maximum session duration associated with the instance",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "maxTunnelDuration",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "ec2-instance-connect:privateIpAddress",
+      "methodName": "ifPrivateIpAddress",
+      "description": "Filters access by private IP Address associated with the instance",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel",
+      "relatedActionMethods": [
+        "toOpenTunnel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "privateIpAddress",
+      "valueKind": "ipaddress",
+      "defaultOperator": "IpAddress",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress"
+    },
+    {
+      "key": "ec2-instance-connect:remotePort",
+      "methodName": "ifRemotePort",
+      "description": "Filters access by port number associated with the instance",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel",
+      "relatedActionMethods": [
+        "toOpenTunnel"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "remotePort",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "ec2:ResourceTag/${TagKey}",
+      "methodName": "ifEc2ResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toOpenTunnel",
+        "toSendSSHPublicKey",
+        "toSendSerialConsoleSSHPublicKey"
+      ],
+      "relatedResourceTypes": [
+        "instance",
+        "instance-connect-endpoint"
+      ],
+      "keyLiteral": "ec2:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ec2:osuser",
+      "methodName": "ifEc2Osuser",
+      "description": "Filters access by specifying the default user name for the AMI that you used to launch your instance",
+      "url": "https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html",
+      "relatedActionMethods": [
+        "toSendSSHPublicKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ec2:osuser",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

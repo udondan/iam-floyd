@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-seller-reporting",
+  "className": "AwsMarketplaceSellerReporting",
+  "name": "aws-marketplace-seller-reporting",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-seller-reporting.html",
+  "accessLevelList": {
+    "Read": [
+      "GetSellerDashboard"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetSellerDashboard",
+      "methodName": "toGetSellerDashboard",
+      "description": "Grants permission to view a seller dashboard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/dashboards.html#reports-accessing"
+    }
+  ],
+  "resources": [
+    {
+      "name": "SellerDashboard",
+      "methodName": "onSellerDashboard",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/dashboards.html#reports-accessing",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/Dashboard/${DashboardName}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FactTable",
+          "name": "factTable",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DashboardName",
+          "name": "dashboardName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

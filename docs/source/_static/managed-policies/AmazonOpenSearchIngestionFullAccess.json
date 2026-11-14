@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "osis:CreatePipeline",
+        "osis:UpdatePipeline",
+        "osis:DeletePipeline",
+        "osis:StartPipeline",
+        "osis:StopPipeline",
+        "osis:ListPipelines",
+        "osis:GetPipeline",
+        "osis:GetPipelineChangeProgress",
+        "osis:ValidatePipeline",
+        "osis:GetPipelineBlueprint",
+        "osis:ListPipelineBlueprints",
+        "osis:TagResource",
+        "osis:UntagResource",
+        "osis:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/osis.amazonaws.com/AWSServiceRoleForAmazonOpenSearchIngestionService",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "osis.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

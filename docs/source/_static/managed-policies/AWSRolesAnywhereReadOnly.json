@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Profiles",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListProfiles",
+        "rolesanywhere:GetProfile"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:profile/*"
+      ]
+    },
+    {
+      "Sid": "CRLs",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListCrls",
+        "rolesanywhere:GetCrl"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:crl/*"
+      ]
+    },
+    {
+      "Sid": "Subjects",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListSubjects",
+        "rolesanywhere:GetSubject"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:subject/*"
+      ]
+    },
+    {
+      "Sid": "TrustAnchors",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListTrustAnchors",
+        "rolesanywhere:GetTrustAnchor"
+      ],
+      "Resource": [
+        "arn:aws:rolesanywhere:*:*:trust-anchor/*"
+      ]
+    },
+    {
+      "Sid": "Tags",
+      "Effect": "Allow",
+      "Action": [
+        "rolesanywhere:ListTagsForResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

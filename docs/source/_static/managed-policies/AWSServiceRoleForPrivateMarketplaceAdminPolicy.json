@@ -1,0 +1,67 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PrivateMarketplaceCatalogDescribePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Experience/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Audience/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ProcurementPolicy/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/BrandingSettings/*"
+      ]
+    },
+    {
+      "Sid": "PrivateMarketplaceCatalogDescribeChangeSetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeChangeSet"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PrivateMarketplaceCatalogListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:ListChangeSets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PrivateMarketplaceStartChangeSetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartChangeSet"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "catalog:ChangeType": [
+            "AssociateAudience",
+            "DisassociateAudience"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Experience/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ChangeSet/*"
+      ]
+    },
+    {
+      "Sid": "PrivateMarketplaceOrganizationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListChildren"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

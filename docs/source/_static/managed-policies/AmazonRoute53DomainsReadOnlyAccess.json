@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "route53domains:Get*",
+        "route53domains:List*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

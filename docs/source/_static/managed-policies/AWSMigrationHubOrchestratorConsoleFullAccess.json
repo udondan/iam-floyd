@@ -1,0 +1,127 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MHO",
+      "Effect": "Allow",
+      "Action": [
+        "migrationhub-orchestrator:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListAllMyBuckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Sid": "S3MHO",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetBucketAcl",
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListBucketVersions",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::migrationhub-orchestrator-*",
+        "arn:aws:s3:::migrationhub-orchestrator-*/*"
+      ]
+    },
+    {
+      "Sid": "ListSecrets",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Configuration",
+      "Effect": "Allow",
+      "Action": [
+        "discovery:DescribeConfigurations",
+        "discovery:ListConfigurations",
+        "discovery:GetDiscoverySummary"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GetHomeRegion",
+      "Effect": "Allow",
+      "Action": [
+        "mgh:GetHomeRegion"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EC2Describe",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMListProfileRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListInstanceProfiles",
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ECS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Account",
+      "Effect": "Allow",
+      "Action": [
+        "account:ListRegions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateServiceRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "migrationhub-orchestrator.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "GetRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/migrationhub-orchestrator.amazonaws.com/AWSServiceRoleForMigrationHubOrchestrator*"
+    }
+  ]
+}

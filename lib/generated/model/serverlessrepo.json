@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "filename": "serverlessrepo",
+  "className": "Serverlessrepo",
+  "name": "serverlessrepo",
+  "servicePrefix": "serverlessrepo",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_serverlessrepo.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApplication",
+      "CreateApplicationVersion",
+      "CreateCloudFormationChangeSet",
+      "CreateCloudFormationTemplate",
+      "DeleteApplication",
+      "PutApplicationPolicy",
+      "UnshareApplication",
+      "UpdateApplication"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetApplicationPolicy",
+      "GetCloudFormationTemplate",
+      "SearchApplications"
+    ],
+    "List": [
+      "ListApplicationDependencies",
+      "ListApplicationVersions",
+      "ListApplications"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application, optionally including an AWS SAM file to create the first application version in the same call",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications.html"
+    },
+    {
+      "name": "CreateApplicationVersion",
+      "methodName": "toCreateApplicationVersion",
+      "description": "Grants permission to create an application version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-versions-semanticversion.html"
+    },
+    {
+      "name": "CreateCloudFormationChangeSet",
+      "methodName": "toCreateCloudFormationChangeSet",
+      "description": "Grants permission to create an AWS CloudFormation ChangeSet for the given application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-changesets.html"
+    },
+    {
+      "name": "CreateCloudFormationTemplate",
+      "methodName": "toCreateCloudFormationTemplate",
+      "description": "Grants permission to create an AWS CloudFormation template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-templates.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete the specified application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to get the specified application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html"
+    },
+    {
+      "name": "GetApplicationPolicy",
+      "methodName": "toGetApplicationPolicy",
+      "description": "Grants permission to get the policy for the specified application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-policy.html"
+    },
+    {
+      "name": "GetCloudFormationTemplate",
+      "methodName": "toGetCloudFormationTemplate",
+      "description": "Grants permission to get the specified AWS CloudFormation template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-templates-templateid.html"
+    },
+    {
+      "name": "ListApplicationDependencies",
+      "methodName": "toListApplicationDependencies",
+      "description": "Grants permission to retrieve the list of applications nested in the containing application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-dependencies.html"
+    },
+    {
+      "name": "ListApplicationVersions",
+      "methodName": "toListApplicationVersions",
+      "description": "Grants permission to list versions for the specified application owned by the requester",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-versions.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list applications owned by the requester",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications.html"
+    },
+    {
+      "name": "PutApplicationPolicy",
+      "methodName": "toPutApplicationPolicy",
+      "description": "Grants permission to put the policy for the specified application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-policy.html"
+    },
+    {
+      "name": "SearchApplications",
+      "methodName": "toSearchApplications",
+      "description": "Grants permission to get all applications authorized for this user",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html",
+      "conditionMethods": [
+        "ifApplicationType"
+      ]
+    },
+    {
+      "name": "UnshareApplication",
+      "methodName": "toUnshareApplication",
+      "description": "Grants permission to unshare the specified application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update meta-data of the application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "applications",
+      "methodName": "onApplications",
+      "url": "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications.html",
+      "arn": "arn:${Partition}:serverlessrepo:${Region}:${Account}:applications/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "serverlessrepo:applicationType",
+      "methodName": "ifApplicationType",
+      "description": "Filters access by application type",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/applications.html",
+      "relatedActionMethods": [
+        "toCreateCloudFormationChangeSet",
+        "toCreateCloudFormationTemplate",
+        "toGetApplication",
+        "toListApplicationDependencies",
+        "toListApplicationVersions",
+        "toSearchApplications"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "applicationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

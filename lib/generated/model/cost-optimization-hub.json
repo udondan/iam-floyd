@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "filename": "cost-optimization-hub",
+  "className": "CostOptimizationHub",
+  "name": "cost-optimization-hub",
+  "servicePrefix": "cost-optimization-hub",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cost-optimization-hub.html",
+  "accessLevelList": {
+    "Read": [
+      "GetPreferences",
+      "GetRecommendation"
+    ],
+    "List": [
+      "ListEfficiencyMetrics",
+      "ListEnrollmentStatuses",
+      "ListRecommendationSummaries",
+      "ListRecommendations"
+    ],
+    "Write": [
+      "UpdateEnrollmentStatus",
+      "UpdatePreferences"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetPreferences",
+      "methodName": "toGetPreferences",
+      "description": "Grants permission to get preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_GetPreferences.html"
+    },
+    {
+      "name": "GetRecommendation",
+      "methodName": "toGetRecommendation",
+      "description": "Grants permission to get resource configuration and estimated cost impact for a recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_GetRecommendation.html"
+    },
+    {
+      "name": "ListEfficiencyMetrics",
+      "methodName": "toListEfficiencyMetrics",
+      "description": "Grants permission to list efficiency metric scores by group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListEfficiencyMetrics.html"
+    },
+    {
+      "name": "ListEnrollmentStatuses",
+      "methodName": "toListEnrollmentStatuses",
+      "description": "Grants permission to list enrollment statuses for the specified account or all members under a management account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListEnrollmentStatuses.html"
+    },
+    {
+      "name": "ListRecommendationSummaries",
+      "methodName": "toListRecommendationSummaries",
+      "description": "Grants permission to list recommendation summaries by group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListRecommendationSummaries.html"
+    },
+    {
+      "name": "ListRecommendations",
+      "methodName": "toListRecommendations",
+      "description": "Grants permission to list summary view of recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListRecommendations.html"
+    },
+    {
+      "name": "UpdateEnrollmentStatus",
+      "methodName": "toUpdateEnrollmentStatus",
+      "description": "Grants permission to update the enrollment status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_UpdateEnrollmentStatus.html"
+    },
+    {
+      "name": "UpdatePreferences",
+      "methodName": "toUpdatePreferences",
+      "description": "Grants permission to update preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_UpdatePreferences.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

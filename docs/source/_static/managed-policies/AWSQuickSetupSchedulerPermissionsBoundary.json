@@ -1,0 +1,132 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ConfigurationAutomationRoleGetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/AWS-QuickSetup-Scheduler-*"
+      ]
+    },
+    {
+      "Sid": "ConfigurationAutomationRolePassPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/AWS-QuickSetup-Scheduler-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "ssm.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SystemsManagerCalendarReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetCalendarState"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWSQuickSetup-ChangeCalendar-*"
+      ]
+    },
+    {
+      "Sid": "EC2ReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeRegions",
+        "ec2:DescribeTags",
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EC2StartStopPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AutomationStartPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAutomationExecution"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetup-StartStateManagerAssociations-*"
+      ]
+    },
+    {
+      "Sid": "AssociationsStartOncePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAssociationsOnce"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:association/*"
+      ]
+    },
+    {
+      "Sid": "CreateSystemsManagerSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/ssm.amazonaws.com/AWSServiceRoleForAmazonSSM"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "ReadOnlyPermissionsForEnablingExplorer",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "config:DescribeConfigurationRecorders",
+        "compute-optimizer:GetEnrollmentStatus",
+        "support:DescribeTrustedAdvisorChecks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMExplorerServiceSettingsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:UpdateServiceSetting",
+        "ssm:GetServiceSetting"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/ssm-patchmanager",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/EC2",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ExplorerOnboarded",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/Association",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ComputeOptimizer",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/ConfigCompliance",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/OpsData-TrustedAdvisor",
+        "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/SupportCenterCase"
+      ]
+    }
+  ]
+}

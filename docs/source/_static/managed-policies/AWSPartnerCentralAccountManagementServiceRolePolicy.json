@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PartnerBusinessPlanWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateBusinessPlan",
+        "partnercentral:UpdateBusinessPlan",
+        "partnercentral:CancelBusinessPlan",
+        "partnercentral:CreateBusinessPlanItem",
+        "partnercentral:UpdateBusinessPlanItem",
+        "partnercentral:DeleteBusinessPlanItem",
+        "partnercentral:StartBusinessPlanSubmissionTask",
+        "partnercentral:CancelBusinessPlanSubmissionTask",
+        "partnercentral:StartBusinessPlanAttachmentImportTask",
+        "partnercentral:DeleteBusinessPlanAttachment"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:AllowAwsEngagement": "ENABLED",
+          "partnercentral:Catalog": "AWS"
+        }
+      }
+    }
+  ]
+}

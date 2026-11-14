@@ -1,0 +1,91 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateMemoryDBTagsOnNetworkInterfaces",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "AmazonMemoryDBManaged"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CreateNetworkInterfaces",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "DeleteMemoryDBTaggedNetworkInterfaces",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/AmazonMemoryDBManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DeleteNetworkInterfaces",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "arn:aws:ec2:*:*:security-group/*"
+    },
+    {
+      "Sid": "DescribeEC2Resources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PutCloudWatchMetricData",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/MemoryDB"
+        }
+      }
+    },
+    {
+      "Sid": "ReplicateMemoryDBMultiRegionClusterData",
+      "Effect": "Allow",
+      "Action": [
+        "memorydb:ReplicateMultiRegionClusterData"
+      ],
+      "Resource": "arn:aws:memorydb:*:*:cluster/*"
+    }
+  ]
+}

@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "filename": "continuum",
+  "className": "Continuum",
+  "name": "continuum",
+  "servicePrefix": "continuum",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_continuum.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateCollector",
+      "CreateCodeFinding",
+      "CreateCodeScan",
+      "CreateCollector",
+      "CreateEnvironment",
+      "CreateIntegration",
+      "DeleteCollector",
+      "DeleteEnvironment",
+      "DeleteIntegration",
+      "DisassociateCollector",
+      "PutResourcePolicy",
+      "StartIntegrationAuthorization",
+      "UpdateCollector",
+      "UpdateEnvironment",
+      "UpdateIntegration"
+    ],
+    "Read": [
+      "GetCodeFinding",
+      "GetCodeIssue",
+      "GetCodeIssueArtifact",
+      "GetCodeScan",
+      "GetCollector",
+      "GetCollectorDataAccessAuthorization",
+      "GetEnvironment",
+      "GetIntegration",
+      "GetResourcePolicy"
+    ],
+    "List": [
+      "ListAssociatedCollectors",
+      "ListAssociatedEnvironments",
+      "ListCodeFindings",
+      "ListCodeIssueArtifacts",
+      "ListCodeIssues",
+      "ListCodeScans",
+      "ListCollectors",
+      "ListEnvironments",
+      "ListIntegrations"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateCollector",
+      "methodName": "toAssociateCollector",
+      "description": "Grants permission to associate a collector with an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_AssociateCollector.html"
+    },
+    {
+      "name": "CreateCodeFinding",
+      "methodName": "toCreateCodeFinding",
+      "description": "Grants permission to create a code finding in an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_CreateCodeFinding.html"
+    },
+    {
+      "name": "CreateCodeScan",
+      "methodName": "toCreateCodeScan",
+      "description": "Grants permission to start a code scan of an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_CreateCodeScan.html"
+    },
+    {
+      "name": "CreateCollector",
+      "methodName": "toCreateCollector",
+      "description": "Grants permission to create a collector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_CreateCollector.html"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_CreateEnvironment.html"
+    },
+    {
+      "name": "CreateIntegration",
+      "methodName": "toCreateIntegration",
+      "description": "Grants permission to create an integration with an external source provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_CreateIntegration.html"
+    },
+    {
+      "name": "DeleteCollector",
+      "methodName": "toDeleteCollector",
+      "description": "Grants permission to delete a collector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_DeleteCollector.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete an integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_DeleteIntegration.html"
+    },
+    {
+      "name": "DisassociateCollector",
+      "methodName": "toDisassociateCollector",
+      "description": "Grants permission to disassociate a collector from an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_DisassociateCollector.html"
+    },
+    {
+      "name": "GetCodeFinding",
+      "methodName": "toGetCodeFinding",
+      "description": "Grants permission to get a code finding",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetCodeFinding.html"
+    },
+    {
+      "name": "GetCodeIssue",
+      "methodName": "toGetCodeIssue",
+      "description": "Grants permission to get a code issue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetCodeIssue.html"
+    },
+    {
+      "name": "GetCodeIssueArtifact",
+      "methodName": "toGetCodeIssueArtifact",
+      "description": "Grants permission to get an artifact of a code issue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetCodeIssueArtifact.html"
+    },
+    {
+      "name": "GetCodeScan",
+      "methodName": "toGetCodeScan",
+      "description": "Grants permission to get a code scan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetCodeScan.html"
+    },
+    {
+      "name": "GetCollector",
+      "methodName": "toGetCollector",
+      "description": "Grants permission to get a collector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetCollector.html"
+    },
+    {
+      "name": "GetCollectorDataAccessAuthorization",
+      "methodName": "toGetCollectorDataAccessAuthorization",
+      "description": "Grants permission to access the data of a collector from an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetCollectorDataAccessAuthorization.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to get an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetIntegration",
+      "methodName": "toGetIntegration",
+      "description": "Grants permission to get an integration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetIntegration.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get the resource policy attached to a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "ListAssociatedCollectors",
+      "methodName": "toListAssociatedCollectors",
+      "description": "Grants permission to list the collectors associated with an environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListAssociatedCollectors.html"
+    },
+    {
+      "name": "ListAssociatedEnvironments",
+      "methodName": "toListAssociatedEnvironments",
+      "description": "Grants permission to list the environments associated with a collector",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListAssociatedEnvironments.html"
+    },
+    {
+      "name": "ListCodeFindings",
+      "methodName": "toListCodeFindings",
+      "description": "Grants permission to list the code findings in an environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListCodeFindings.html"
+    },
+    {
+      "name": "ListCodeIssueArtifacts",
+      "methodName": "toListCodeIssueArtifacts",
+      "description": "Grants permission to list the artifacts of a code issue",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListCodeIssueArtifacts.html"
+    },
+    {
+      "name": "ListCodeIssues",
+      "methodName": "toListCodeIssues",
+      "description": "Grants permission to list the code issues in an environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListCodeIssues.html"
+    },
+    {
+      "name": "ListCodeScans",
+      "methodName": "toListCodeScans",
+      "description": "Grants permission to list the code scans of an environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListCodeScans.html"
+    },
+    {
+      "name": "ListCollectors",
+      "methodName": "toListCollectors",
+      "description": "Grants permission to list collectors",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListCollectors.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListIntegrations",
+      "methodName": "toListIntegrations",
+      "description": "Grants permission to list integrations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_ListIntegrations.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a resource policy to a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "StartIntegrationAuthorization",
+      "methodName": "toStartIntegrationAuthorization",
+      "description": "Grants permission to start an OAuth authorization for a new integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_StartIntegrationAuthorization.html"
+    },
+    {
+      "name": "UpdateCollector",
+      "methodName": "toUpdateCollector",
+      "description": "Grants permission to update a collector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_UpdateCollector.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to update an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateIntegration",
+      "methodName": "toUpdateIntegration",
+      "description": "Grants permission to update the IAM role of an Amazon S3 integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/API_UpdateIntegration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "code-findings",
+      "methodName": "onCodeFindings",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/code-findings.html",
+      "arn": "arn:${Partition}:continuum:${Region}:${Account}:environments/${EnvironmentId}/code-findings/${FindingId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FindingId",
+          "name": "findingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "code-issues",
+      "methodName": "onCodeIssues",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/code-issues.html",
+      "arn": "arn:${Partition}:continuum:${Region}:${Account}:environments/${EnvironmentId}/code-issues/${IssueId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IssueId",
+          "name": "issueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "code-scans",
+      "methodName": "onCodeScans",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/code-scans.html",
+      "arn": "arn:${Partition}:continuum:${Region}:${Account}:environments/${EnvironmentId}/code-scans/${ScanRunId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ScanRunId",
+          "name": "scanRunId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "collectors",
+      "methodName": "onCollectors",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/collectors.html",
+      "arn": "arn:${Partition}:continuum:${Region}:${Account}:collectors/${CollectorId}",
+      "placeholders": [
+        {
+          "placeholder": "CollectorId",
+          "name": "collectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "environments",
+      "methodName": "onEnvironments",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/environments.html",
+      "arn": "arn:${Partition}:continuum:${Region}:${Account}:environments/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "integrations",
+      "methodName": "onIntegrations",
+      "url": "https://docs.aws.amazon.com/continuum/latest/APIReference/integrations.html",
+      "arn": "arn:${Partition}:continuum:${Region}:${Account}:integrations/${IntegrationId}",
+      "placeholders": [
+        {
+          "placeholder": "IntegrationId",
+          "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "continuum:CollectorArn",
+      "methodName": "ifCollectorArn",
+      "description": "Filters access by the ARNs of the collectors in an AssociateCollector or DisassociateCollector request",
+      "url": "https://docs.aws.amazon.com/continuum/latest/userguide/security-iam.html#condition-keys-CollectorArn",
+      "relatedActionMethods": [
+        "toAssociateCollector",
+        "toDisassociateCollector"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CollectorArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "continuum:EnvironmentArn",
+      "methodName": "ifEnvironmentArn",
+      "description": "Filters access by the ARN of the environment that requests access to the data of a collector",
+      "url": "https://docs.aws.amazon.com/continuum/latest/userguide/security-iam.html#condition-keys-EnvironmentArn",
+      "relatedActionMethods": [
+        "toGetCollectorDataAccessAuthorization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnvironmentArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "continuum:RepositoryName",
+      "methodName": "ifRepositoryName",
+      "description": "Filters access by the repositories, as lowercase owner/repo values, that a CreateEnvironment or UpdateEnvironment request selects as sources",
+      "url": "https://docs.aws.amazon.com/continuum/latest/userguide/security-iam.html#condition-keys-RepositoryName",
+      "relatedActionMethods": [
+        "toCreateEnvironment",
+        "toUpdateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RepositoryName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "continuum:S3BucketName",
+      "methodName": "ifS3BucketName",
+      "description": "Filters access by the name of the Amazon S3 bucket in a CreateIntegration request",
+      "url": "https://docs.aws.amazon.com/continuum/latest/userguide/security-iam.html#condition-keys-S3BucketName",
+      "relatedActionMethods": [
+        "toCreateIntegration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "S3BucketName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

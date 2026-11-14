@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "StartIncidentPermissions",
+      "Effect": "Allow",
+      "Action": "ssm-incidents:StartIncident",
+      "Resource": "*"
+    }
+  ]
+}

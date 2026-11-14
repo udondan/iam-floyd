@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GraphQL",
+        "appsync:CreateResolver",
+        "appsync:CreateType",
+        "appsync:DeleteResolver",
+        "appsync:DeleteType",
+        "appsync:GetResolver",
+        "appsync:GetType",
+        "appsync:GetDataSource",
+        "appsync:GetSchemaCreationStatus",
+        "appsync:GetIntrospectionSchema",
+        "appsync:GetGraphqlApi",
+        "appsync:ListTypes",
+        "appsync:ListApiKeys",
+        "appsync:ListResolvers",
+        "appsync:ListDataSources",
+        "appsync:ListGraphqlApis",
+        "appsync:StartSchemaCreation",
+        "appsync:UpdateResolver",
+        "appsync:UpdateType",
+        "appsync:TagResource",
+        "appsync:UntagResource",
+        "appsync:ListTagsForResource",
+        "appsync:CreateFunction",
+        "appsync:UpdateFunction",
+        "appsync:GetFunction",
+        "appsync:DeleteFunction",
+        "appsync:ListFunctions",
+        "appsync:ListResolversByFunction",
+        "appsync:EvaluateMappingTemplate",
+        "appsync:EvaluateCode"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

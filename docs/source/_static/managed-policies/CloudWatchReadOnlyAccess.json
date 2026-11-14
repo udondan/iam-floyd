@@ -1,0 +1,119 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchReadOnlyAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-signals:BatchGet*",
+        "application-signals:Get*",
+        "application-signals:List*",
+        "autoscaling:Describe*",
+        "cloudtrail:ListChannels",
+        "cloudwatch:BatchGet*",
+        "cloudwatch:Describe*",
+        "cloudwatch:GenerateQuery",
+        "cloudwatch:Get*",
+        "cloudwatch:List*",
+        "cloudwatch:CreateOneTimeDeepLinkCode",
+        "logs:Get*",
+        "logs:List*",
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "logs:Describe*",
+        "logs:TestMetricFilter",
+        "logs:FilterLogEvents",
+        "logs:StartLiveTail",
+        "logs:StopLiveTail",
+        "oam:ListSinks",
+        "observabilityadmin:GetCentralizationRuleForOrganization",
+        "observabilityadmin:ListCentralizationRulesForOrganization",
+        "observabilityadmin:GetTelemetryEvaluationStatus",
+        "observabilityadmin:GetTelemetryEvaluationStatusForOrganization",
+        "observabilityadmin:GetTelemetryRule",
+        "observabilityadmin:GetTelemetryRuleForOrganization",
+        "observabilityadmin:ListResourceTelemetry",
+        "observabilityadmin:ListResourceTelemetryForOrganization",
+        "observabilityadmin:ListTelemetryRules",
+        "observabilityadmin:ListTelemetryRulesForOrganization",
+        "observabilityadmin:GetTelemetryEnrichmentStatus",
+        "observabilityadmin:ListTagsForResource",
+        "observabilityadmin:GetTelemetryPipeline",
+        "observabilityadmin:ListTelemetryPipelines",
+        "observabilityadmin:TestTelemetryPipeline",
+        "observabilityadmin:ValidateTelemetryPipelineConfiguration",
+        "observabilityadmin:GetS3TableIntegration",
+        "observabilityadmin:ListS3TableIntegrations",
+        "observabilityadmin:GetDatasetIntegration",
+        "observabilityadmin:ListDatasetIntegrations",
+        "sns:Get*",
+        "sns:List*",
+        "rum:BatchGet*",
+        "rum:Get*",
+        "rum:List*",
+        "synthetics:Describe*",
+        "synthetics:Get*",
+        "synthetics:List*",
+        "xray:BatchGet*",
+        "xray:Get*",
+        "xray:List*",
+        "xray:StartTraceRetrieval",
+        "xray:CancelTraceRetrieval"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OAMReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "oam:ListAttachedLinks"
+      ],
+      "Resource": "arn:aws:oam:*:*:sink/*"
+    },
+    {
+      "Sid": "CloudWatchReadOnlyGetRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals"
+    },
+    {
+      "Sid": "CloudWatchCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:GetChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+    },
+    {
+      "Sid": "CloudWatchServiceQuotaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": [
+        "arn:aws:servicequotas:*:*:s3/*",
+        "arn:aws:servicequotas:*:*:dynamodb/*",
+        "arn:aws:servicequotas:*:*:kinesis/*",
+        "arn:aws:servicequotas:*:*:sns/*",
+        "arn:aws:servicequotas:*:*:bedrock/*",
+        "arn:aws:servicequotas:*:*:lambda/*",
+        "arn:aws:servicequotas:*:*:fargate/*",
+        "arn:aws:servicequotas:*:*:elasticloadbalancing/*",
+        "arn:aws:servicequotas:*:*:ec2/*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchResourceExplorerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:Search"
+      ],
+      "Resource": [
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignals/service-view",
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignalsOrgScopeProd/service-view"
+      ]
+    }
+  ]
+}

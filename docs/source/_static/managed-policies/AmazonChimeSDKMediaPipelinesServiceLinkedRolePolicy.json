@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPutMetricsForChimeSDKNamespace",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/ChimeSDK"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKinesisVideoStreamsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kinesisvideo:GetDataEndpoint",
+        "kinesisvideo:PutMedia",
+        "kinesisvideo:UpdateDataRetention",
+        "kinesisvideo:DescribeStream",
+        "kinesisvideo:CreateStream"
+      ],
+      "Resource": [
+        "arn:aws:kinesisvideo:*:*:stream/ChimeMediaPipelines-*"
+      ]
+    },
+    {
+      "Sid": "AllowKinesisVideoStreamsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kinesisvideo:ListStreams"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowChimeMeetingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "chime:GetMeeting",
+        "chime:CreateAttendee",
+        "chime:DeleteAttendee"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
