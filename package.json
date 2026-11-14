@@ -62,7 +62,7 @@
     "jsii-docgen": "10.12.9",
     "jsii-pacmak": "1.142.0",
     "markdownlint-cli2": "0.24.0",
-    "prettier": "3.9.10",
+    "prettier": "3.10.0",
     "regenerator-runtime": "0.14.1",
     "ts-morph": "28.0.0",
     "ts-node": "10.9.2",
