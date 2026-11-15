@@ -9,8 +9,11 @@
     "Write": [
       "AssociateLenses",
       "AssociateProfiles",
+      "CreateAgentBasicProfile",
       "CreateAgentContext",
       "CreateAgentGoal",
+      "CreateAgentOrganizationalProfile",
+      "CreateAgentOrganizationalReport",
       "CreateAgentProfile",
       "CreateLensShare",
       "CreateLensVersion",
@@ -23,7 +26,10 @@
       "CreateWorkloadShare",
       "DeleteAgentContext",
       "DeleteAgentGoal",
+      "DeleteAgentOrganizationalReport",
       "DeleteAgentProfile",
+      "DeleteAgentProfilePolicy",
+      "DeleteAgentRecommendationPolicy",
       "DeleteLens",
       "DeleteLensShare",
       "DeleteProfile",
@@ -35,12 +41,17 @@
       "DisassociateLenses",
       "DisassociateProfiles",
       "ImportLens",
+      "PutAgentPreferences",
+      "PutAgentProfilePolicy",
       "PutAgentRecommendationFeedback",
+      "PutAgentRecommendationPolicy",
+      "SendAgentOrganizationalReportDataToS3",
       "StartAgentRecommendationGeneration",
       "TagResource",
       "UntagResource",
       "UpdateAgentContext",
       "UpdateAgentGoal",
+      "UpdateAgentOrganizationalProfile",
       "UpdateAgentProfile",
       "UpdateAgentRecommendationStatus",
       "UpdateAnswer",
@@ -63,9 +74,14 @@
       "ExportLens",
       "GetAgentContext",
       "GetAgentGoal",
+      "GetAgentOrganizationalReport",
+      "GetAgentOrganizationalReportData",
+      "GetAgentPreferences",
       "GetAgentProfile",
+      "GetAgentProfilePolicy",
       "GetAgentRecommendation",
       "GetAgentRecommendationGeneration",
+      "GetAgentRecommendationPolicy",
       "GetAnswer",
       "GetConsolidatedReport",
       "GetGlobalSettings",
@@ -80,15 +96,16 @@
       "GetReviewTemplateAnswer",
       "GetReviewTemplateLensReview",
       "GetWorkload",
+      "ListTagsForResource"
+    ],
+    "List": [
       "ListAgentContexts",
       "ListAgentGoals",
+      "ListAgentOrganizationalReports",
       "ListAgentProfiles",
       "ListAgentRecommendationGenerations",
       "ListAgentRecommendationItems",
       "ListAgentRecommendations",
-      "ListTagsForResource"
-    ],
-    "List": [
       "ListAnswers",
       "ListCheckDetails",
       "ListCheckSummaries",
@@ -129,6 +146,17 @@
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateProfiles.html"
     },
     {
+      "name": "CreateAgentBasicProfile",
+      "methodName": "toCreateAgentBasicProfile",
+      "description": "Grants permission to create a basic profile for the calling account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentBasicProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
       "name": "CreateAgentContext",
       "methodName": "toCreateAgentContext",
       "description": "Grants permission to create a context associated with a profile",
@@ -141,6 +169,24 @@
       "description": "Grants permission to create a goal associated with a profile",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentGoal.html"
+    },
+    {
+      "name": "CreateAgentOrganizationalProfile",
+      "methodName": "toCreateAgentOrganizationalProfile",
+      "description": "Grants permission to create an organizational profile for use with AWS Organizations integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentOrganizationalProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateAgentOrganizationalReport",
+      "methodName": "toCreateAgentOrganizationalReport",
+      "description": "Grants permission to create an organizational report, a point-in-time snapshot of recommendations across all agent profiles in the AWS Organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateAgentOrganizationalReport.html"
     },
     {
       "name": "CreateAgentProfile",
@@ -244,11 +290,32 @@
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentGoal.html"
     },
     {
+      "name": "DeleteAgentOrganizationalReport",
+      "methodName": "toDeleteAgentOrganizationalReport",
+      "description": "Grants permission to delete an organizational report and its associated artifacts",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentOrganizationalReport.html"
+    },
+    {
       "name": "DeleteAgentProfile",
       "methodName": "toDeleteAgentProfile",
       "description": "Grants permission to delete an agent profile",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentProfile.html"
+    },
+    {
+      "name": "DeleteAgentProfilePolicy",
+      "methodName": "toDeleteAgentProfilePolicy",
+      "description": "Grants permission to remove the resource-based policy from the specified agent profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentProfilePolicy.html"
+    },
+    {
+      "name": "DeleteAgentRecommendationPolicy",
+      "methodName": "toDeleteAgentRecommendationPolicy",
+      "description": "Grants permission to remove the resource-based policy from the specified agent recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteAgentRecommendationPolicy.html"
     },
     {
       "name": "DeleteLens",
@@ -342,11 +409,39 @@
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentGoal.html"
     },
     {
+      "name": "GetAgentOrganizationalReport",
+      "methodName": "toGetAgentOrganizationalReport",
+      "description": "Grants permission to retrieve metadata and current state for a single organizational report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentOrganizationalReport.html"
+    },
+    {
+      "name": "GetAgentOrganizationalReportData",
+      "methodName": "toGetAgentOrganizationalReportData",
+      "description": "Grants permission to retrieve the data artifact for a completed organizational report as a short-lived presigned S3 URL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentOrganizationalReportData.html"
+    },
+    {
+      "name": "GetAgentPreferences",
+      "methodName": "toGetAgentPreferences",
+      "description": "Grants permission to get the caller's complete set of Well-Architected Agent preferences",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentPreferences.html"
+    },
+    {
       "name": "GetAgentProfile",
       "methodName": "toGetAgentProfile",
       "description": "Grants permission to get agent profile by profile arn",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentProfile.html"
+    },
+    {
+      "name": "GetAgentProfilePolicy",
+      "methodName": "toGetAgentProfilePolicy",
+      "description": "Grants permission to retrieve the resource-based policy attached to the specified agent profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentProfilePolicy.html"
     },
     {
       "name": "GetAgentRecommendation",
@@ -361,6 +456,13 @@
       "description": "Grants permission to get a recommendation generation",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentRecommendationGeneration.html"
+    },
+    {
+      "name": "GetAgentRecommendationPolicy",
+      "methodName": "toGetAgentRecommendationPolicy",
+      "description": "Grants permission to retrieve the resource-based policy attached to the specified agent recommendation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAgentRecommendationPolicy.html"
     },
     {
       "name": "GetAnswer",
@@ -475,42 +577,49 @@
       "name": "ListAgentContexts",
       "methodName": "toListAgentContexts",
       "description": "Grants permission to list contexts associated with a profile by filters on the fields",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentContexts.html"
     },
     {
       "name": "ListAgentGoals",
       "methodName": "toListAgentGoals",
       "description": "Grants permission to list goals associated with a profile by filters on the fields",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentGoals.html"
+    },
+    {
+      "name": "ListAgentOrganizationalReports",
+      "methodName": "toListAgentOrganizationalReports",
+      "description": "Grants permission to list organizational reports owned by the caller's account within the AWS Organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentOrganizationalReports.html"
     },
     {
       "name": "ListAgentProfiles",
       "methodName": "toListAgentProfiles",
       "description": "Grants permission to list agent profiles",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentProfiles.html"
     },
     {
       "name": "ListAgentRecommendationGenerations",
       "methodName": "toListAgentRecommendationGenerations",
       "description": "Grants permission to list recommendation generations",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentRecommendationGenerations.html"
     },
     {
       "name": "ListAgentRecommendationItems",
       "methodName": "toListAgentRecommendationItems",
       "description": "Grants permission to list recommendation items associated with a recommendation",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentRecommendationItems.html"
     },
     {
       "name": "ListAgentRecommendations",
       "methodName": "toListAgentRecommendations",
       "description": "Grants permission to list recommendations by profile ARN",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAgentRecommendations.html"
     },
     {
@@ -647,11 +756,39 @@
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListWorkloads.html"
     },
     {
+      "name": "PutAgentPreferences",
+      "methodName": "toPutAgentPreferences",
+      "description": "Grants permission to create or replace the caller's Well-Architected Agent preferences",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_PutAgentPreferences.html"
+    },
+    {
+      "name": "PutAgentProfilePolicy",
+      "methodName": "toPutAgentProfilePolicy",
+      "description": "Grants permission to attach or replace a resource-based policy on the specified agent profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_PutAgentProfilePolicy.html"
+    },
+    {
       "name": "PutAgentRecommendationFeedback",
       "methodName": "toPutAgentRecommendationFeedback",
       "description": "Grants permission to put feedback on a recommendation",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_PutAgentRecommendationFeedback.html"
+    },
+    {
+      "name": "PutAgentRecommendationPolicy",
+      "methodName": "toPutAgentRecommendationPolicy",
+      "description": "Grants permission to attach or replace a resource-based policy on the specified agent recommendation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_PutAgentRecommendationPolicy.html"
+    },
+    {
+      "name": "SendAgentOrganizationalReportDataToS3",
+      "methodName": "toSendAgentOrganizationalReportDataToS3",
+      "description": "Grants permission to write the data artifact for a completed organizational report directly into a caller-owned S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_SendAgentOrganizationalReportDataToS3.html"
     },
     {
       "name": "StartAgentRecommendationGeneration",
@@ -687,6 +824,13 @@
       "description": "Grants permission to update a goal associated with a profile",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAgentGoal.html"
+    },
+    {
+      "name": "UpdateAgentOrganizationalProfile",
+      "methodName": "toUpdateAgentOrganizationalProfile",
+      "description": "Grants permission to update an organizational profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAgentOrganizationalProfile.html"
     },
     {
       "name": "UpdateAgentProfile",
@@ -1036,6 +1180,8 @@
       "description": "Filters access by tag key-value pairs in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
+        "toCreateAgentBasicProfile",
+        "toCreateAgentOrganizationalProfile",
         "toCreateAgentProfile",
         "toCreateProfile",
         "toCreateReviewTemplate",
@@ -1072,6 +1218,8 @@
         "toDeleteAgentContext",
         "toDeleteAgentGoal",
         "toDeleteAgentProfile",
+        "toDeleteAgentProfilePolicy",
+        "toDeleteAgentRecommendationPolicy",
         "toDeleteLens",
         "toDeleteLensShare",
         "toDeleteProfile",
@@ -1086,8 +1234,10 @@
         "toGetAgentContext",
         "toGetAgentGoal",
         "toGetAgentProfile",
+        "toGetAgentProfilePolicy",
         "toGetAgentRecommendation",
         "toGetAgentRecommendationGeneration",
+        "toGetAgentRecommendationPolicy",
         "toGetAnswer",
         "toGetLens",
         "toGetLensReview",
@@ -1116,12 +1266,15 @@
         "toListTagsForResource",
         "toListTemplateShares",
         "toListWorkloadShares",
+        "toPutAgentProfilePolicy",
         "toPutAgentRecommendationFeedback",
+        "toPutAgentRecommendationPolicy",
         "toStartAgentRecommendationGeneration",
         "toTagResource",
         "toUntagResource",
         "toUpdateAgentContext",
         "toUpdateAgentGoal",
+        "toUpdateAgentOrganizationalProfile",
         "toUpdateAgentProfile",
         "toUpdateAgentRecommendationStatus",
         "toUpdateAnswer",
@@ -1160,6 +1313,8 @@
       "description": "Filters access by tag keys in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
+        "toCreateAgentBasicProfile",
+        "toCreateAgentOrganizationalProfile",
         "toCreateAgentProfile",
         "toCreateProfile",
         "toCreateReviewTemplate",

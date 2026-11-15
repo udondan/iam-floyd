@@ -1174,7 +1174,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_personalize",
+        "interface": "IRecommenderRef",
+        "property": "recommenderRef",
+        "arn": "recommenderArn"
+      }
     },
     {
       "name": "schema",

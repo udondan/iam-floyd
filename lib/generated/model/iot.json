@@ -2999,7 +2999,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_iot",
+        "interface": "IOTAUpdateRef",
+        "property": "otaUpdateRef",
+        "arn": "otaUpdateArn"
+      }
     },
     {
       "name": "package",

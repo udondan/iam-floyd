@@ -3498,7 +3498,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_bedrock",
+        "interface": "IRetrievalInstructionRef",
+        "property": "retrievalInstructionRef",
+        "arn": "retrievalInstructionArn"
+      }
     },
     {
       "name": "session",

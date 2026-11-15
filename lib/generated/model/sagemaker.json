@@ -4215,7 +4215,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_sagemaker",
+        "interface": "IComputeQuotaRef",
+        "property": "computeQuotaRef",
+        "arn": "computeQuotaArn"
+      }
     },
     {
       "name": "context",

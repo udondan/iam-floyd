@@ -46,6 +46,7 @@
       "DeleteIngestionEndpoint",
       "DeleteInsightRules",
       "DeleteIntegration",
+      "DeleteMetricDataQueryDefinition",
       "DeleteMetricStream",
       "DeleteOmniDashboard",
       "DeleteOmniThread",
@@ -69,6 +70,7 @@
       "PutManagedInsightRules",
       "PutMetricAlarm",
       "PutMetricData",
+      "PutMetricDataQueryDefinition",
       "PutMetricStream",
       "PutProfileRecords",
       "PutRecords",
@@ -133,6 +135,7 @@
       "GetIntegration",
       "GetIntelligenceConfiguration",
       "GetMetricData",
+      "GetMetricDataQueryDefinition",
       "GetMetricStatistics",
       "GetMetricStream",
       "GetMetricWidgetImage",
@@ -147,6 +150,7 @@
       "GetSpace",
       "GetSpaceCredentials",
       "GetSpaceCredentialsForOrganization",
+      "GetSpaceDataAccess",
       "GetTelemetryQueryResults",
       "GetTopologyMap",
       "GetView",
@@ -167,6 +171,7 @@
       "ListDomains",
       "ListIngestionEndpoints",
       "ListIntegrations",
+      "ListMetricDataQueryDefinitions",
       "ListMetricStreams",
       "ListMetrics",
       "ListOmniDashboards",
@@ -440,6 +445,13 @@
       "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_DeleteIntegration.html"
     },
     {
+      "name": "DeleteMetricDataQueryDefinition",
+      "methodName": "toDeleteMetricDataQueryDefinition",
+      "description": "Grants permission to delete a CloudWatch metric data query definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteMetricDataQueryDefinition.html"
+    },
+    {
       "name": "DeleteMetricStream",
       "methodName": "toDeleteMetricStream",
       "description": "Grants permission to delete the CloudWatch metric stream that you specify",
@@ -697,6 +709,13 @@
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html"
     },
     {
+      "name": "GetMetricDataQueryDefinition",
+      "methodName": "toGetMetricDataQueryDefinition",
+      "description": "Grants permission to retrieve a CloudWatch metric data query definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricDataQueryDefinition.html"
+    },
+    {
       "name": "GetMetricStatistics",
       "methodName": "toGetMetricStatistics",
       "description": "Grants permission to retrieve statistics for the specified metric",
@@ -805,6 +824,16 @@
       "description": "Grants permission to get space credentials for an organization",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_GetSpaceCredentialsForOrganization.html"
+    },
+    {
+      "name": "GetSpaceDataAccess",
+      "methodName": "toGetSpaceDataAccess",
+      "description": "Grants permission to get temporary credentials, limited to the requested actions, for working with data in a space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_GetSpaceDataAccess.html",
+      "conditionMethods": [
+        "ifHasAccessGrant"
+      ]
     },
     {
       "name": "GetTelemetryQueryResults",
@@ -939,6 +968,13 @@
         "ifAwsTagKeys",
         "ifRequestManagedResourceARNs"
       ]
+    },
+    {
+      "name": "ListMetricDataQueryDefinitions",
+      "methodName": "toListMetricDataQueryDefinitions",
+      "description": "Grants permission to list CloudWatch metric data query definitions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetricDataQueryDefinitions.html"
     },
     {
       "name": "ListMetricStreams",
@@ -1132,6 +1168,13 @@
       "description": "Grants permission to publish metric data points to Amazon CloudWatch using CloudWatch and OTLP formats",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html"
+    },
+    {
+      "name": "PutMetricDataQueryDefinition",
+      "methodName": "toPutMetricDataQueryDefinition",
+      "description": "Grants permission to create or update a CloudWatch metric data query definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricDataQueryDefinition.html"
     },
     {
       "name": "PutMetricStream",
@@ -1491,7 +1534,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IAccessGrantRef",
+        "property": "accessGrantRef",
+        "arn": "accessGrantArn"
+      }
     },
     {
       "name": "access-profile",
@@ -1522,7 +1571,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IAccessProfileRef",
+        "property": "accessProfileRef",
+        "arn": "accessProfileArn"
+      }
     },
     {
       "name": "alarm",
@@ -1721,7 +1776,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
     },
     {
       "name": "ingestion-endpoint",
@@ -1834,6 +1895,37 @@
       }
     },
     {
+      "name": "metric-query-definition",
+      "methodName": "onMetricQueryDefinition",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html",
+      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:metric-query-definition/${MetricDataQueryDefinitionId}",
+      "placeholders": [
+        {
+          "placeholder": "MetricDataQueryDefinitionId",
+          "name": "metricDataQueryDefinitionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "metric-stream",
       "methodName": "onMetricStream",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html",
@@ -1899,7 +1991,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IOmniDashboardRef",
+        "property": "omniDashboardRef",
+        "arn": "omniDashboardArn"
+      }
     },
     {
       "name": "organization-access-grant",
@@ -2059,7 +2157,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "ISpaceRef",
+        "property": "spaceRef",
+        "arn": "spaceArn"
+      }
     },
     {
       "name": "view",
@@ -2114,6 +2218,7 @@
         "toPutLogAlarm",
         "toPutManagedInsightRules",
         "toPutMetricAlarm",
+        "toPutMetricDataQueryDefinition",
         "toPutMetricStream",
         "toTagResource"
       ],
@@ -2146,6 +2251,7 @@
         "toDeleteIngestionEndpoint",
         "toDeleteInsightRules",
         "toDeleteIntegration",
+        "toDeleteMetricDataQueryDefinition",
         "toDeleteMetricStream",
         "toDeleteOmniDashboard",
         "toDeleteServiceLevelObjective",
@@ -2170,6 +2276,7 @@
         "toGetInsightRuleReport",
         "toGetIntegration",
         "toGetMetricData",
+        "toGetMetricDataQueryDefinition",
         "toGetMetricStream",
         "toGetOmniDashboard",
         "toGetProfileRecords",
@@ -2187,6 +2294,7 @@
         "toPutLogAlarm",
         "toPutMetricAlarm",
         "toPutMetricData",
+        "toPutMetricDataQueryDefinition",
         "toPutMetricStream",
         "toPutProfileRecords",
         "toSetAlarmState",
@@ -2220,6 +2328,7 @@
         "ingestion-endpoint",
         "insight-rule",
         "integration",
+        "metric-query-definition",
         "metric-stream",
         "omni-dashboard",
         "organization-access-grant",
@@ -2253,6 +2362,7 @@
         "toPutLogAlarm",
         "toPutManagedInsightRules",
         "toPutMetricAlarm",
+        "toPutMetricDataQueryDefinition",
         "toPutMetricStream",
         "toTagResource",
         "toUntagResource"
@@ -2338,6 +2448,7 @@
         "toGetProfileRecords",
         "toGetRecords",
         "toGetSpace",
+        "toGetSpaceDataAccess",
         "toGetTelemetryQueryResults",
         "toGetView",
         "toInvokeIntegration",

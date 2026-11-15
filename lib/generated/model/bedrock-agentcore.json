@@ -3768,7 +3768,8 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-aud",
       "relatedActionMethods": [
         "toCompleteResourceTokenAuth",
-        "toGetWorkloadAccessTokenForJWT"
+        "toGetWorkloadAccessTokenForJWT",
+        "toInvokeGateway"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "InboundJwtClaim/aud",
@@ -3786,7 +3787,8 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-client_id",
       "relatedActionMethods": [
         "toCompleteResourceTokenAuth",
-        "toGetWorkloadAccessTokenForJWT"
+        "toGetWorkloadAccessTokenForJWT",
+        "toInvokeGateway"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "InboundJwtClaim/client_id",
@@ -3804,7 +3806,8 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-iss",
       "relatedActionMethods": [
         "toCompleteResourceTokenAuth",
-        "toGetWorkloadAccessTokenForJWT"
+        "toGetWorkloadAccessTokenForJWT",
+        "toInvokeGateway"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "InboundJwtClaim/iss",
@@ -3822,7 +3825,8 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-scope",
       "relatedActionMethods": [
         "toCompleteResourceTokenAuth",
-        "toGetWorkloadAccessTokenForJWT"
+        "toGetWorkloadAccessTokenForJWT",
+        "toInvokeGateway"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "InboundJwtClaim/scope",
@@ -3840,7 +3844,8 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sub",
       "relatedActionMethods": [
         "toCompleteResourceTokenAuth",
-        "toGetWorkloadAccessTokenForJWT"
+        "toGetWorkloadAccessTokenForJWT",
+        "toInvokeGateway"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "InboundJwtClaim/sub",

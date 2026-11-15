@@ -10,6 +10,7 @@
       "BatchCreateFindings",
       "BatchUpdateFindings",
       "CompleteTransformationPackageUpload",
+      "ContributeKnowledgeItems",
       "ConverseStream",
       "CreateAnalysis",
       "CreateCampaign",
@@ -23,9 +24,11 @@
       "DeleteKnowledgeItem",
       "DeleteRemediation",
       "DeleteRepository",
+      "DeleteResourcePolicy",
       "DeleteSource",
       "DeleteTransformationPackage",
       "ExecuteTransformation",
+      "PutResourcePolicy",
       "SendTelemetryEvent",
       "ShareTransformationPackage",
       "TagResource",
@@ -40,6 +43,10 @@
       "UpdateRepository",
       "UpdateSource"
     ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
     "Read": [
       "GetAnalysis",
       "GetAnalysisArtifactDownloadUrl",
@@ -49,6 +56,7 @@
       "GetKnowledgeItem",
       "GetRemediation",
       "GetRepository",
+      "GetResourcePolicy",
       "GetSource",
       "GetTransformationPackageUrl",
       "ListAnalysisArtifacts",
@@ -95,6 +103,13 @@
       "name": "CompleteTransformationPackageUpload",
       "methodName": "toCompleteTransformationPackageUpload",
       "description": "Grants permission to invoke CompleteTransformationPackageUpload on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "ContributeKnowledgeItems",
+      "methodName": "toContributeKnowledgeItems",
+      "description": "Grants permission to contribute knowledge items to a Transformation Package on AWS Transform custom",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -190,6 +205,13 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the resource policy attached to a shareable resource",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "DeleteSource",
       "methodName": "toDeleteSource",
       "description": "Grants permission to invoke DeleteSource on AWS Transform custom",
@@ -263,6 +285,13 @@
       "name": "GetRepository",
       "methodName": "toGetRepository",
       "description": "Grants permission to invoke GetRepository on AWS Transform custom",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve the resource policy attached to a shareable resource",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -362,6 +391,13 @@
       "methodName": "toListTransformationPackageShares",
       "description": "Grants permission to list active shares of a Transformation Package",
       "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach or replace the resource policy on a shareable resource",
+      "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
@@ -745,6 +781,7 @@
       "relatedActionMethods": [
         "toBatchCreateFindings",
         "toCompleteTransformationPackageUpload",
+        "toContributeKnowledgeItems",
         "toCreateAnalysis",
         "toCreateCampaign",
         "toCreateRemediation",
@@ -757,6 +794,7 @@
         "toDeleteKnowledgeItem",
         "toDeleteRemediation",
         "toDeleteRepository",
+        "toDeleteResourcePolicy",
         "toDeleteSource",
         "toDeleteTransformationPackage",
         "toExecuteTransformation",
@@ -767,11 +805,13 @@
         "toGetKnowledgeItem",
         "toGetRemediation",
         "toGetRepository",
+        "toGetResourcePolicy",
         "toGetSource",
         "toGetTransformationPackageUrl",
         "toListAnalysisArtifacts",
         "toListCampaignRepositories",
         "toListTransformationPackageShares",
+        "toPutResourcePolicy",
         "toShareTransformationPackage",
         "toTagResource",
         "toUnshareTransformationPackage",

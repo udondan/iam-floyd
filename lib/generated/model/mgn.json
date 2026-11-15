@@ -16,6 +16,7 @@
       "CreateConnector",
       "CreateLaunchConfigurationTemplate",
       "CreateNetworkMigrationDefinition",
+      "CreateRemoteSourceAction",
       "CreateReplicationConfigurationTemplate",
       "CreateWave",
       "DeleteApplication",
@@ -23,6 +24,7 @@
       "DeleteJob",
       "DeleteLaunchConfigurationTemplate",
       "DeleteNetworkMigrationDefinition",
+      "DeleteRemoteSourceAction",
       "DeleteReplicationConfigurationTemplate",
       "DeleteSourceServer",
       "DeleteVcenterClient",
@@ -50,6 +52,7 @@
       "StartNetworkMigrationDeployment",
       "StartNetworkMigrationMapping",
       "StartNetworkMigrationMappingUpdate",
+      "StartRemoteSourceActionJob",
       "StartReplication",
       "StartTest",
       "StopReplication",
@@ -62,10 +65,12 @@
       "UpdateApplication",
       "UpdateConnector",
       "UpdateLaunchConfiguration",
+      "UpdateLaunchConfigurationDefaults",
       "UpdateLaunchConfigurationTemplate",
       "UpdateNetworkMigrationDefinition",
       "UpdateNetworkMigrationMapperSegment",
       "UpdateNetworkMigrationMapperSegmentConstruct",
+      "UpdateRemoteSourceAction",
       "UpdateReplicationConfiguration",
       "UpdateReplicationConfigurationTemplate",
       "UpdateSourceServer",
@@ -100,6 +105,7 @@
       "DescribeJobLogItems",
       "GetAccountSettings",
       "GetLaunchConfiguration",
+      "GetLaunchConfigurationDefaults",
       "GetNetworkMigrationDefinition",
       "GetNetworkMigrationMapperSegmentConstruct",
       "GetReplicationConfiguration",
@@ -140,10 +146,15 @@
       "ListNetworkMigrationDeployments",
       "ListNetworkMigrationExecutionArtifacts",
       "ListNetworkMigrationExecutions",
+      "ListNetworkMigrationInsights",
       "ListNetworkMigrationMapperSegmentConstructs",
       "ListNetworkMigrationMapperSegments",
       "ListNetworkMigrationMappingUpdates",
       "ListNetworkMigrationMappings",
+      "ListRemoteSourceActionInvocationResults",
+      "ListRemoteSourceActionInvocations",
+      "ListRemoteSourceActionJobs",
+      "ListRemoteSourceActions",
       "ListSourceServerActions",
       "ListTemplateActions",
       "ListWaves"
@@ -234,6 +245,17 @@
       ]
     },
     {
+      "name": "CreateRemoteSourceAction",
+      "methodName": "toCreateRemoteSourceAction",
+      "description": "Grants permission to create a remote source action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateRemoteSourceAction.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
       "name": "CreateReplicationConfigurationTemplate",
       "methodName": "toCreateReplicationConfigurationTemplate",
       "description": "Grants permission to create replication configuration template",
@@ -289,6 +311,13 @@
       "description": "Grants permission to delete a network migration definition",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteNetworkMigrationDefinition.html"
+    },
+    {
+      "name": "DeleteRemoteSourceAction",
+      "methodName": "toDeleteRemoteSourceAction",
+      "description": "Grants permission to delete a remote source action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteRemoteSourceAction.html"
     },
     {
       "name": "DeleteReplicationConfigurationTemplate",
@@ -401,6 +430,13 @@
       "description": "Grants permission to get launch configuration",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetLaunchConfiguration.html"
+    },
+    {
+      "name": "GetLaunchConfigurationDefaults",
+      "methodName": "toGetLaunchConfigurationDefaults",
+      "description": "Grants permission to get launch configuration defaults",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetLaunchConfigurationDefaults.html"
     },
     {
       "name": "GetNetworkMigrationDefinition",
@@ -557,6 +593,13 @@
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationExecutions.html"
     },
     {
+      "name": "ListNetworkMigrationInsights",
+      "methodName": "toListNetworkMigrationInsights",
+      "description": "Grants permission to list network migration insights",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationInsights.html"
+    },
+    {
       "name": "ListNetworkMigrationMapperSegmentConstructs",
       "methodName": "toListNetworkMigrationMapperSegmentConstructs",
       "description": "Grants permission to list network migration mapper segment constructs",
@@ -583,6 +626,34 @@
       "description": "Grants permission to list network migration mappings",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMappings.html"
+    },
+    {
+      "name": "ListRemoteSourceActionInvocationResults",
+      "methodName": "toListRemoteSourceActionInvocationResults",
+      "description": "Grants permission to list the remote source action invocation results of a source server",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListRemoteSourceActionInvocationResults.html"
+    },
+    {
+      "name": "ListRemoteSourceActionInvocations",
+      "methodName": "toListRemoteSourceActionInvocations",
+      "description": "Grants permission to list the invocations of a remote source action job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListRemoteSourceActionInvocations.html"
+    },
+    {
+      "name": "ListRemoteSourceActionJobs",
+      "methodName": "toListRemoteSourceActionJobs",
+      "description": "Grants permission to list remote source action jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListRemoteSourceActionJobs.html"
+    },
+    {
+      "name": "ListRemoteSourceActions",
+      "methodName": "toListRemoteSourceActions",
+      "description": "Grants permission to list remote source actions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListRemoteSourceActions.html"
     },
     {
       "name": "ListSourceServerActions",
@@ -747,6 +818,13 @@
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationMappingUpdate.html"
     },
     {
+      "name": "StartRemoteSourceActionJob",
+      "methodName": "toStartRemoteSourceActionJob",
+      "description": "Grants permission to start a remote source action job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartRemoteSourceActionJob.html"
+    },
+    {
       "name": "StartReplication",
       "methodName": "toStartReplication",
       "description": "Grants permission to start replication",
@@ -831,6 +909,13 @@
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateLaunchConfiguration.html"
     },
     {
+      "name": "UpdateLaunchConfigurationDefaults",
+      "methodName": "toUpdateLaunchConfigurationDefaults",
+      "description": "Grants permission to update launch configuration defaults",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateLaunchConfigurationDefaults.html"
+    },
+    {
       "name": "UpdateLaunchConfigurationTemplate",
       "methodName": "toUpdateLaunchConfigurationTemplate",
       "description": "Grants permission to update launch configuration",
@@ -857,6 +942,13 @@
       "description": "Grants permission to update a network migration mapper segment construct",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationMapperSegmentConstruct.html"
+    },
+    {
+      "name": "UpdateRemoteSourceAction",
+      "methodName": "toUpdateRemoteSourceAction",
+      "description": "Grants permission to update a remote source action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateRemoteSourceAction.html"
     },
     {
       "name": "UpdateReplicationConfiguration",
@@ -1366,6 +1458,68 @@
       ]
     },
     {
+      "name": "RemoteSourceActionJobResource",
+      "methodName": "onRemoteSourceActionJobResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/remote-source-actions.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:remote-source-action-job/${RemoteSourceActionJobID}",
+      "placeholders": [
+        {
+          "placeholder": "RemoteSourceActionJobID",
+          "name": "remoteSourceActionJobID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RemoteSourceActionResource",
+      "methodName": "onRemoteSourceActionResource",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/remote-source-actions.html",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:remote-source-action/${RemoteSourceActionID}",
+      "placeholders": [
+        {
+          "placeholder": "RemoteSourceActionID",
+          "name": "remoteSourceActionID",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "ReplicationConfigurationTemplateResource",
       "methodName": "onReplicationConfigurationTemplateResource",
       "url": "https://docs.aws.amazon.com/mgn/latest/ug/replication-settings-template.html",
@@ -1501,11 +1655,13 @@
         "toCreateConnector",
         "toCreateLaunchConfigurationTemplate",
         "toCreateNetworkMigrationDefinition",
+        "toCreateRemoteSourceAction",
         "toCreateReplicationConfigurationTemplate",
         "toCreateWave",
         "toStartCutover",
         "toStartExport",
         "toStartImport",
+        "toStartRemoteSourceActionJob",
         "toStartTest",
         "toTagResource",
         "toTerminateTargetInstances",
@@ -1538,6 +1694,7 @@
         "toDeleteJob",
         "toDeleteLaunchConfigurationTemplate",
         "toDeleteNetworkMigrationDefinition",
+        "toDeleteRemoteSourceAction",
         "toDeleteReplicationConfigurationTemplate",
         "toDeleteSourceServer",
         "toDeleteVcenterClient",
@@ -1548,6 +1705,7 @@
         "toDisconnectFromService",
         "toFinalizeCutover",
         "toGetLaunchConfiguration",
+        "toGetLaunchConfigurationDefaults",
         "toGetNetworkMigrationDefinition",
         "toGetNetworkMigrationMapperSegmentConstruct",
         "toGetReplicationConfiguration",
@@ -1562,10 +1720,13 @@
         "toListNetworkMigrationDeployments",
         "toListNetworkMigrationExecutionArtifacts",
         "toListNetworkMigrationExecutions",
+        "toListNetworkMigrationInsights",
         "toListNetworkMigrationMapperSegmentConstructs",
         "toListNetworkMigrationMapperSegments",
         "toListNetworkMigrationMappingUpdates",
         "toListNetworkMigrationMappings",
+        "toListRemoteSourceActionInvocationResults",
+        "toListRemoteSourceActionInvocations",
         "toListSourceServerActions",
         "toListTemplateActions",
         "toMarkAsArchived",
@@ -1583,6 +1744,7 @@
         "toStartNetworkMigrationDeployment",
         "toStartNetworkMigrationMapping",
         "toStartNetworkMigrationMappingUpdate",
+        "toStartRemoteSourceActionJob",
         "toStartReplication",
         "toStartTest",
         "toStopReplication",
@@ -1594,10 +1756,12 @@
         "toUpdateApplication",
         "toUpdateConnector",
         "toUpdateLaunchConfiguration",
+        "toUpdateLaunchConfigurationDefaults",
         "toUpdateLaunchConfigurationTemplate",
         "toUpdateNetworkMigrationDefinition",
         "toUpdateNetworkMigrationMapperSegment",
         "toUpdateNetworkMigrationMapperSegmentConstruct",
+        "toUpdateRemoteSourceAction",
         "toUpdateReplicationConfiguration",
         "toUpdateReplicationConfigurationTemplate",
         "toUpdateSourceServer",
@@ -1635,6 +1799,8 @@
         "JobResource",
         "LaunchConfigurationTemplateResource",
         "NetworkMigrationDefinitionResource",
+        "RemoteSourceActionJobResource",
+        "RemoteSourceActionResource",
         "ReplicationConfigurationTemplateResource",
         "SourceServerResource",
         "VcenterClientResource",
@@ -1659,11 +1825,13 @@
         "toCreateConnector",
         "toCreateLaunchConfigurationTemplate",
         "toCreateNetworkMigrationDefinition",
+        "toCreateRemoteSourceAction",
         "toCreateReplicationConfigurationTemplate",
         "toCreateWave",
         "toStartCutover",
         "toStartExport",
         "toStartImport",
+        "toStartRemoteSourceActionJob",
         "toStartTest",
         "toTagResource",
         "toTerminateTargetInstances",

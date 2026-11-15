@@ -850,7 +850,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconnect",
+        "interface": "IDestinationEndpointRef",
+        "property": "destinationEndpointRef",
+        "arn": "destinationEndpointArn"
+      }
     },
     {
       "name": "Entitlement",
@@ -1308,7 +1314,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_mediaconnect",
+        "interface": "ISourceEndpointRef",
+        "property": "sourceEndpointRef",
+        "arn": "sourceEndpointArn"
+      }
     },
     {
       "name": "VpcInterface",

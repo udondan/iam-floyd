@@ -9,6 +9,7 @@
     "Write": [
       "AcceptMarketplaceRegistration",
       "AssociateIamRoleToResource",
+      "AssociateVirtualMachinesToCloudVmCluster",
       "AssociateVirtualMachinesToExadbVmCluster",
       "CreateAutonomousDatabase",
       "CreateAutonomousDatabaseBackup",
@@ -30,6 +31,7 @@
       "DeleteOdbNetwork",
       "DeleteOdbPeeringConnection",
       "DisassociateIamRoleFromResource",
+      "DisassociateVirtualMachinesFromCloudVmCluster",
       "DisassociateVirtualMachinesFromExadbVmCluster",
       "FailoverAutonomousDatabase",
       "InitializeService",
@@ -46,7 +48,10 @@
       "UntagResource",
       "UpdateAutonomousDatabase",
       "UpdateAutonomousDatabaseBackup",
+      "UpdateCloudAutonomousVmCluster",
       "UpdateCloudExadataInfrastructure",
+      "UpdateCloudExadataInfrastructureStorageCapacity",
+      "UpdateCloudVmCluster",
       "UpdateExadbVmCluster",
       "UpdateExascaleCloudExadataInfrastructure",
       "UpdateExascaleDbStorageVault",
@@ -122,6 +127,13 @@
       "description": "Grants permission to associate an AWS Identity and Access Management (IAM) service role with a specified resource to enable AWS service integration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateIamRoleToResource.html"
+    },
+    {
+      "name": "AssociateVirtualMachinesToCloudVmCluster",
+      "methodName": "toAssociateVirtualMachinesToCloudVmCluster",
+      "description": "Grants permission to associate virtual machines to a specified VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateVirtualMachinesToCloudVmCluster.html"
     },
     {
       "name": "AssociateVirtualMachinesToExadbVmCluster",
@@ -277,6 +289,13 @@
       "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) service role from a specified resource to disable AWS service integration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateIamRoleFromResource.html"
+    },
+    {
+      "name": "DisassociateVirtualMachinesFromCloudVmCluster",
+      "methodName": "toDisassociateVirtualMachinesFromCloudVmCluster",
+      "description": "Grants permission to disassociate virtual machines from a specified VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateVirtualMachinesFromCloudVmCluster.html"
     },
     {
       "name": "DisassociateVirtualMachinesFromExadbVmCluster",
@@ -643,11 +662,32 @@
       "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabaseBackup.html"
     },
     {
+      "name": "UpdateCloudAutonomousVmCluster",
+      "methodName": "toUpdateCloudAutonomousVmCluster",
+      "description": "Grants permission to update properties of a specified Autonomous VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudAutonomousVmCluster.html"
+    },
+    {
       "name": "UpdateCloudExadataInfrastructure",
       "methodName": "toUpdateCloudExadataInfrastructure",
       "description": "Grants permission to update the properties of an Exadata infrastructure resource",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html"
+    },
+    {
+      "name": "UpdateCloudExadataInfrastructureStorageCapacity",
+      "methodName": "toUpdateCloudExadataInfrastructureStorageCapacity",
+      "description": "Grants permission to update the storage capacity of an Exadata infrastructure resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructureStorageCapacity.html"
+    },
+    {
+      "name": "UpdateCloudVmCluster",
+      "methodName": "toUpdateCloudVmCluster",
+      "description": "Grants permission to update properties of a specified VM cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudVmCluster.html"
     },
     {
       "name": "UpdateExadbVmCluster",
@@ -1132,6 +1172,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toAssociateIamRoleToResource",
+        "toAssociateVirtualMachinesToCloudVmCluster",
         "toAssociateVirtualMachinesToExadbVmCluster",
         "toCreateAutonomousDatabase",
         "toCreateAutonomousDatabaseBackup",
@@ -1151,6 +1192,7 @@
         "toDeleteOdbNetwork",
         "toDeleteOdbPeeringConnection",
         "toDisassociateIamRoleFromResource",
+        "toDisassociateVirtualMachinesFromCloudVmCluster",
         "toDisassociateVirtualMachinesFromExadbVmCluster",
         "toFailoverAutonomousDatabase",
         "toGetAutonomousDatabase",
@@ -1191,7 +1233,10 @@
         "toUntagResource",
         "toUpdateAutonomousDatabase",
         "toUpdateAutonomousDatabaseBackup",
+        "toUpdateCloudAutonomousVmCluster",
         "toUpdateCloudExadataInfrastructure",
+        "toUpdateCloudExadataInfrastructureStorageCapacity",
+        "toUpdateCloudVmCluster",
         "toUpdateExadbVmCluster",
         "toUpdateExascaleCloudExadataInfrastructure",
         "toUpdateExascaleDbStorageVault",

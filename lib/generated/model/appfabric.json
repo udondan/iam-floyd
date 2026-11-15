@@ -297,7 +297,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_appfabric",
+        "interface": "IAppBundleRef",
+        "property": "appBundleRef",
+        "arn": "appBundleArn"
+      }
     },
     {
       "name": "ingestion",

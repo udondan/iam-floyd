@@ -9,6 +9,7 @@
     "Read": [
       "Authenticate",
       "AuthorizeOAuth2Access",
+      "CreateBearerToken",
       "CreateOAuth2Token",
       "GetConsoleAuthorizationConfiguration",
       "GetResourcePolicy",
@@ -43,6 +44,13 @@
       "description": "Grants permission to authenticate through a browser and obtain an OAuth 2 authorization code for credential exchange",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_AuthorizeOAuth2Access.html"
+    },
+    {
+      "name": "CreateBearerToken",
+      "methodName": "toCreateBearerToken",
+      "description": "Grants permission to exchange SigV4 credentials for a bearer token that can be used to access supported AWS services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_CreateBearerToken.html"
     },
     {
       "name": "CreateOAuth2PublicClient",
@@ -290,6 +298,7 @@
       "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
       "relatedActionMethods": [
         "toAuthorizeOAuth2Access",
+        "toCreateBearerToken",
         "toCreateOAuth2Token",
         "toIntrospectOAuth2Token"
       ],
@@ -308,6 +317,7 @@
       "description": "Filters access by the OAuth grant type used in the token request",
       "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
       "relatedActionMethods": [
+        "toCreateBearerToken",
         "toCreateOAuth2Token"
       ],
       "relatedResourceTypes": [],

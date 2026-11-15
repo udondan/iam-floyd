@@ -1033,7 +1033,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_backup",
+        "interface": "IBackupAccessPointRef",
+        "property": "backupAccessPointRef",
+        "arn": "backupAccessPointArn"
+      }
     },
     {
       "name": "backupPlan",

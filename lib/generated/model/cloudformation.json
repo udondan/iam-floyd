@@ -32,7 +32,9 @@
       "RecordHandlerProgress",
       "RegisterPublisher",
       "RegisterType",
+      "RemoveAlias",
       "RollbackStack",
+      "SetAlias",
       "SetStackPolicy",
       "SetTypeConfiguration",
       "SetTypeDefaultVersion",
@@ -670,11 +672,25 @@
       "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
     },
     {
+      "name": "RemoveAlias",
+      "methodName": "toRemoveAlias",
+      "description": "Grants permission to remove an alias from the stack it is associated with",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RemoveAlias.html"
+    },
+    {
       "name": "RollbackStack",
       "methodName": "toRollbackStack",
       "description": "Grants permission to rollback the stack to the last stable state",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RollbackStack.html"
+    },
+    {
+      "name": "SetAlias",
+      "methodName": "toSetAlias",
+      "description": "Grants permission to set an alias for the specified stack",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetAlias.html"
     },
     {
       "name": "SetStackPolicy",
@@ -1119,7 +1135,9 @@
         "toListStackSetOperationResults",
         "toListStackSetOperations",
         "toRecordHandlerProgress",
+        "toRemoveAlias",
         "toRollbackStack",
+        "toSetAlias",
         "toSetStackPolicy",
         "toSignalResource",
         "toStopStackSetOperation",

@@ -15,8 +15,10 @@
       "CreateCidrCollection",
       "CreateHealthCheck",
       "CreateHostedZone",
+      "CreateIpGuardrailPolicy",
       "CreateKeySigningKey",
       "CreateQueryLoggingConfig",
+      "CreateResourceRecordSetProtections",
       "CreateReusableDelegationSet",
       "CreateTrafficPolicy",
       "CreateTrafficPolicyInstance",
@@ -26,8 +28,10 @@
       "DeleteCidrCollection",
       "DeleteHealthCheck",
       "DeleteHostedZone",
+      "DeleteIpGuardrailPolicy",
       "DeleteKeySigningKey",
       "DeleteQueryLoggingConfig",
+      "DeleteResourceRecordSetProtections",
       "DeleteReusableDelegationSet",
       "DeleteTrafficPolicy",
       "DeleteTrafficPolicyInstance",
@@ -38,6 +42,7 @@
       "UpdateHealthCheck",
       "UpdateHostedZoneComment",
       "UpdateHostedZoneFeatures",
+      "UpdateIpGuardrailPolicy",
       "UpdateTrafficPolicyComment",
       "UpdateTrafficPolicyInstance"
     ],
@@ -49,6 +54,7 @@
       "GetDNSSEC",
       "GetHealthCheck",
       "GetHostedZoneLimit",
+      "GetIpGuardrailPolicy",
       "GetQueryLoggingConfig",
       "GetReusableDelegationSetLimit",
       "GetTrafficPolicy",
@@ -78,7 +84,9 @@
       "ListHostedZones",
       "ListHostedZonesByName",
       "ListHostedZonesByVPC",
+      "ListIpGuardrailPolicies",
       "ListQueryLoggingConfigs",
+      "ListResourceRecordSetProtections",
       "ListResourceRecordSets",
       "ListTrafficPolicies",
       "ListTrafficPolicyInstancesByHostedZone",
@@ -148,6 +156,13 @@
       ]
     },
     {
+      "name": "CreateIpGuardrailPolicy",
+      "methodName": "toCreateIpGuardrailPolicy",
+      "description": "Grants permission to create an IP guardrail policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateIpGuardrailPolicy.html"
+    },
+    {
       "name": "CreateKeySigningKey",
       "methodName": "toCreateKeySigningKey",
       "description": "Grants permission to create a new key-signing key associated with a hosted zone",
@@ -160,6 +175,13 @@
       "description": "Grants permission to create a configuration for DNS query logging",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html"
+    },
+    {
+      "name": "CreateResourceRecordSetProtections",
+      "methodName": "toCreateResourceRecordSetProtections",
+      "description": "Grants permission to create protections that block changes to specified records in a hosted zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateResourceRecordSetProtections.html"
     },
     {
       "name": "CreateReusableDelegationSet",
@@ -225,6 +247,13 @@
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteHostedZone.html"
     },
     {
+      "name": "DeleteIpGuardrailPolicy",
+      "methodName": "toDeleteIpGuardrailPolicy",
+      "description": "Grants permission to delete an IP guardrail policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteIpGuardrailPolicy.html"
+    },
+    {
       "name": "DeleteKeySigningKey",
       "methodName": "toDeleteKeySigningKey",
       "description": "Grants permission to delete a key-signing key",
@@ -237,6 +266,13 @@
       "description": "Grants permission to delete a configuration for DNS query logging",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html"
+    },
+    {
+      "name": "DeleteResourceRecordSetProtections",
+      "methodName": "toDeleteResourceRecordSetProtections",
+      "description": "Grants permission to delete protections from specified records in a hosted zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteResourceRecordSetProtections.html"
     },
     {
       "name": "DeleteReusableDelegationSet",
@@ -372,6 +408,13 @@
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
     },
     {
+      "name": "GetIpGuardrailPolicy",
+      "methodName": "toGetIpGuardrailPolicy",
+      "description": "Grants permission to get information about an IP guardrail policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetIpGuardrailPolicy.html"
+    },
+    {
       "name": "GetQueryLoggingConfig",
       "methodName": "toGetQueryLoggingConfig",
       "description": "Grants permission to get information about a specified configuration for DNS query logging",
@@ -473,11 +516,25 @@
       ]
     },
     {
+      "name": "ListIpGuardrailPolicies",
+      "methodName": "toListIpGuardrailPolicies",
+      "description": "Grants permission to list the IP guardrail policies in an organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListIpGuardrailPolicies.html"
+    },
+    {
       "name": "ListQueryLoggingConfigs",
       "methodName": "toListQueryLoggingConfigs",
       "description": "Grants permission to list the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html"
+    },
+    {
+      "name": "ListResourceRecordSetProtections",
+      "methodName": "toListResourceRecordSetProtections",
+      "description": "Grants permission to list the record protections in a specified hosted zone",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResourceRecordSetProtections.html"
     },
     {
       "name": "ListResourceRecordSets",
@@ -576,6 +633,13 @@
       "description": "Grants permission to update features for a specified hosted zone",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHostedZoneFeatures.html"
+    },
+    {
+      "name": "UpdateIpGuardrailPolicy",
+      "methodName": "toUpdateIpGuardrailPolicy",
+      "description": "Grants permission to update the rules of an IP guardrail policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateIpGuardrailPolicy.html"
     },
     {
       "name": "UpdateTrafficPolicyComment",

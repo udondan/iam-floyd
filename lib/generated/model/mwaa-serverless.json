@@ -6,6 +6,13 @@
   "servicePrefix": "airflow-serverless",
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_mwaa-serverless.html",
   "accessLevelList": {
+    "Read": [
+      "CreateAirflowUiUrl",
+      "GetTaskInstance",
+      "GetWorkflow",
+      "GetWorkflowRun",
+      "ListTagsForResource"
+    ],
     "Write": [
       "CreateWorkflow",
       "DeleteWorkflow",
@@ -14,12 +21,6 @@
       "TagResource",
       "UntagResource",
       "UpdateWorkflow"
-    ],
-    "Read": [
-      "GetTaskInstance",
-      "GetWorkflow",
-      "GetWorkflowRun",
-      "ListTagsForResource"
     ],
     "List": [
       "ListTaskInstances",
@@ -33,6 +34,13 @@
     ]
   },
   "actions": [
+    {
+      "name": "CreateAirflowUiUrl",
+      "methodName": "toCreateAirflowUiUrl",
+      "description": "Grants permission to create a URL with access to the Airflow UI",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/mwaa-serverless/latest/APIReference/API_CreateAirflowUiUrl.html"
+    },
     {
       "name": "CreateWorkflow",
       "methodName": "toCreateWorkflow",

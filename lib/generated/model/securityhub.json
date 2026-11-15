@@ -72,8 +72,10 @@
       "UpdateOrganizationConfiguration",
       "UpdateSecurityControl",
       "UpdateSecurityHubConfiguration",
+      "UpdateSecurityHubV2",
       "UpdateStandardsControl",
-      "AllowVendedLogDeliveryForResource"
+      "AllowVendedLogDeliveryForResource",
+      "PutCSPMOrganizationsImportStatus"
     ],
     "Read": [
       "BatchGetAutomationRules",
@@ -117,6 +119,7 @@
       "BatchGetControlEvaluations",
       "BatchGetEnabledRegionsV2",
       "GetAdhocInsightResults",
+      "GetCSPMOrganizationsImportStatus",
       "GetControlFindingSummary",
       "GetCoverageStatisticsV2",
       "GetFreeTrialEndDate",
@@ -1038,6 +1041,13 @@
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityHubConfiguration.html"
     },
     {
+      "name": "UpdateSecurityHubV2",
+      "methodName": "toUpdateSecurityHubV2",
+      "description": "Grants permission to update a Security Hub V2 resource configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityHubV2.html"
+    },
+    {
       "name": "UpdateStandardsControl",
       "methodName": "toUpdateStandardsControl",
       "description": "Grants permission to update Security Hub standards controls",
@@ -1071,6 +1081,13 @@
       "description": "Grants permission to retrieve aggregated statistical data about the findings",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingStatisticsV2.html"
+    },
+    {
+      "name": "GetCSPMOrganizationsImportStatus",
+      "methodName": "toGetCSPMOrganizationsImportStatus",
+      "description": "Grants permission to retrieve the Security Hub CSPM Organizations Policy import status for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetCSPMOrganizationsImportStatus.html"
     },
     {
       "name": "GetControlFindingSummary",
@@ -1134,6 +1151,13 @@
       "description": "Grants permission to retrieve a list of controls for a standard, including the control IDs, statuses and finding counts",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListControlEvaluationSummaries.html"
+    },
+    {
+      "name": "PutCSPMOrganizationsImportStatus",
+      "methodName": "toPutCSPMOrganizationsImportStatus",
+      "description": "Grants permission to put the Security Hub CSPM Organizations Policy import status for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_PutCSPMOrganizationsImportStatus.html"
     },
     {
       "name": "SendFindingEvents",
@@ -1624,11 +1648,13 @@
         "toUpdateInsight",
         "toUpdateOrganizationConfiguration",
         "toUpdateSecurityHubConfiguration",
+        "toUpdateSecurityHubV2",
         "toUpdateStandardsControl",
         "toAllowVendedLogDeliveryForResource",
         "toBatchGetControlEvaluations",
         "toBatchGetEnabledRegionsV2",
         "toGetAdhocInsightResults",
+        "toGetCSPMOrganizationsImportStatus",
         "toGetControlFindingSummary",
         "toGetCoverageStatisticsV2",
         "toGetFreeTrialEndDate",
@@ -1638,6 +1664,7 @@
         "toGetUsageV2",
         "toListAccountUsageV2",
         "toListControlEvaluationSummaries",
+        "toPutCSPMOrganizationsImportStatus",
         "toSendFindingEvents",
         "toSendInsightEvents"
       ],

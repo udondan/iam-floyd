@@ -70,6 +70,7 @@
       "StartServiceSoftwareUpdate",
       "SwitchoverReplication",
       "UpdateApplication",
+      "UpdateClone",
       "UpdateDataSource",
       "UpdateDirectQueryDataSource",
       "UpdateDomainConfig",
@@ -1042,6 +1043,13 @@
       "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateApplication.html"
     },
     {
+      "name": "UpdateClone",
+      "methodName": "toUpdateClone",
+      "description": "Grants permission to manage an in-progress cloned blue/green upgrade of an OpenSearch Service domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateClone.html"
+    },
+    {
       "name": "UpdateDataSource",
       "methodName": "toUpdateDataSource",
       "description": "Grants permission to update the data source for the OpenSearch Service domain",
@@ -1380,6 +1388,7 @@
         "toStartServiceSoftwareUpdate",
         "toSwitchoverReplication",
         "toUpdateApplication",
+        "toUpdateClone",
         "toUpdateDataSource",
         "toUpdateDirectQueryDataSource",
         "toUpdateDomainConfig",

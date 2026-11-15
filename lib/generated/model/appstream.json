@@ -68,6 +68,7 @@
       "UpdateDirectoryConfig",
       "UpdateEntitlement",
       "UpdateFleet",
+      "UpdateImageBuilder",
       "UpdateImagePermissions",
       "UpdateStack",
       "UpdateThemeForStack"
@@ -722,6 +723,13 @@
       "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html"
     },
     {
+      "name": "UpdateImageBuilder",
+      "methodName": "toUpdateImageBuilder",
+      "description": "Grants permission to update a specific image builder. An image builder is a virtual machine that is used to create an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateImageBuilder.html"
+    },
+    {
       "name": "UpdateImagePermissions",
       "methodName": "toUpdateImagePermissions",
       "description": "Grants permission to add or update permissions for the specified private image",
@@ -1106,6 +1114,7 @@
         "toUpdateApplication",
         "toUpdateEntitlement",
         "toUpdateFleet",
+        "toUpdateImageBuilder",
         "toUpdateImagePermissions",
         "toUpdateStack",
         "toUpdateThemeForStack"

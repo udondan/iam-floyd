@@ -62,7 +62,8 @@
       "UpdateVariantStore",
       "UpdateWorkflow",
       "UpdateWorkflowVersion",
-      "UploadReadSetPart"
+      "UploadReadSetPart",
+      "AuthorizeRunProcessing"
     ],
     "Permissions management": [
       "DeleteS3AccessPolicy",
@@ -909,6 +910,13 @@
       "description": "Grants permission to upload read set parts",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/omics/latest/api/API_UploadReadSetPart.html"
+    },
+    {
+      "name": "AuthorizeRunProcessing",
+      "methodName": "toAuthorizeRunProcessing",
+      "description": "Grants permission to manage internal service operations required for run and task processing",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/omics/latest/dev/permissions-service.html"
     }
   ],
   "resources": [
@@ -1560,7 +1568,8 @@
         "toUpdateVariantStore",
         "toUpdateWorkflow",
         "toUpdateWorkflowVersion",
-        "toUploadReadSetPart"
+        "toUploadReadSetPart",
+        "toAuthorizeRunProcessing"
       ],
       "relatedResourceTypes": [
         "AnnotationStore",
