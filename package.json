@@ -57,7 +57,7 @@
     "eslint": "10.14.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",
-    "glob": "14.0.5",
+    "glob": "14.0.6",
     "globals": "17.14.0",
     "jsii-docgen": "10.12.9",
     "jsii-pacmak": "1.142.0",
@@ -74,7 +74,7 @@
     "katex": "0.19.1",
     "re2js": "2.10.0",
     "test-exclude": {
-      "glob": "14.0.5"
+      "glob": "14.0.6"
     }
   }
 }
