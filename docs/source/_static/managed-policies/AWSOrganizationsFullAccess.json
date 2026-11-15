@@ -20,7 +20,9 @@
         "account:EnableRegion",
         "account:DisableRegion",
         "account:PutAccountName",
-        "account:GetAccountInformation"
+        "account:GetAccountInformation",
+        "account:SendPhoneNumberVerification",
+        "account:VerifyPhoneNumber"
       ],
       "Resource": "*"
     },

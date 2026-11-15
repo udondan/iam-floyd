@@ -1,0 +1,98 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MarketplaceAgreementCreation",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:CreateAgreementRequest",
+        "aws-marketplace:AcceptAgreementRequest"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "MarketplaceAgreementRead",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:DescribeAgreement",
+        "aws-marketplace:GetAgreementTerms"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Acceptor",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "MarketplaceAgreementEntitlements",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetAgreementEntitlements"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "MarketplaceMetering",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:MeterUsage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetProduct",
+        "aws-marketplace:GetListing",
+        "aws-marketplace:GetOffer",
+        "aws-marketplace:GetOfferTerms",
+        "aws-marketplace:ListFulfillmentOptions",
+        "aws-marketplace:ListPurchaseOptions"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/product/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/listing/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/offer/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/purchaseOption/*"
+      ]
+    }
+  ]
+}

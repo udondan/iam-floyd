@@ -1,0 +1,99 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BusinessPlanResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetBusinessPlan",
+        "partnercentral:UpdateBusinessPlan",
+        "partnercentral:CancelBusinessPlan",
+        "partnercentral:ListBusinessPlanHistory",
+        "partnercentral:CreateBusinessPlanItem",
+        "partnercentral:GetBusinessPlanItem",
+        "partnercentral:UpdateBusinessPlanItem",
+        "partnercentral:DeleteBusinessPlanItem",
+        "partnercentral:AssociateBusinessPlan",
+        "partnercentral:DisassociateBusinessPlan",
+        "partnercentral:StartBusinessPlanSubmissionTask",
+        "partnercentral:CancelBusinessPlanSubmissionTask",
+        "partnercentral:GetBusinessPlanSubmissionTask",
+        "partnercentral:ListBusinessPlanSubmissionTasks",
+        "partnercentral:StartBusinessPlanAttachmentImportTask",
+        "partnercentral:GetBusinessPlanAttachmentImportTask",
+        "partnercentral:ListBusinessPlanAttachmentImportTasks",
+        "partnercentral:GetBusinessPlanAttachment",
+        "partnercentral:ListBusinessPlanAttachments",
+        "partnercentral:DeleteBusinessPlanAttachment",
+        "partnercentral:TagResource",
+        "partnercentral:UntagResource"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/business-plan/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "BusinessPlanAccountAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateBusinessPlan",
+        "partnercentral:ListBusinessPlans",
+        "partnercentral:ListBusinessPlanItems",
+        "partnercentral:ListBusinessPlanAssociations",
+        "partnercentral:GetBusinessPlanItemSchema",
+        "partnercentral:GetBusinessPlanSettings",
+        "partnercentral:PutBusinessPlanSettings"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerReportingDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartnerReportingData"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/Opportunity_V1/Dataset/OpportunityPipelineAnalysis_V1",
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/Channel_V1/Dataset/ResellRevenueAndDiscounts_V1",
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/Benefits_V1/Dataset/MapPartnerPerformanceIndex_V1",
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/AttributedRevenue_V1/Dataset/AttributedRevenue_V1",
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/PartnerCompetency_V1/Dataset/Competency_V1",
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/TrainingAndCertification_V1/Dataset/TrainingAndCertifications_V1"
+      ]
+    },
+    {
+      "Sid": "SellerReportingDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetSellerReportingData"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace::*:AWSMarketplace/ReportingData/BillingEvent_V1/Dataset/BilledRevenue_V1",
+        "arn:aws:aws-marketplace::*:AWSMarketplace/ReportingData/Solution_V1/Dataset/Solution_V1",
+        "arn:aws:aws-marketplace::*:AWSMarketplace/ReportingData/Marketing_V1/Dataset/CaseStudy_V1"
+      ]
+    },
+    {
+      "Sid": "PartnerCentralEphemeralWriteS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+    }
+  ]
+}

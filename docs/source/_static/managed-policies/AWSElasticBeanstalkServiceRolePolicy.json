@@ -179,6 +179,19 @@
       }
     },
     {
+      "Sid": "EBIamSimulateRolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "EBEKSS3Permissions",
       "Effect": "Allow",
       "Action": [

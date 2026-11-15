@@ -41,7 +41,10 @@
         "logs:CreateLogGroup",
         "logs:DescribeLogGroups"
       ],
-      "Resource": "arn:aws:logs:*:*:log-group:/aws/braket:*",
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/braket:*",
+        "arn:aws:logs:*:*:log-group:/aws/braket"
+      ],
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"

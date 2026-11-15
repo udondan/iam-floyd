@@ -195,6 +195,19 @@
       "Resource": "arn:aws:wafv2:*:*:*/webacl/*"
     },
     {
+      "Sid": "Wafv2GetConnectedAccount",
+      "Effect": "Allow",
+      "Action": [
+        "payments:GetConnectedAccount"
+      ],
+      "Resource": "arn:aws:payments:*:*:connectedaccount/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "CloudFrontListDistributions",
       "Effect": "Allow",
       "Action": [

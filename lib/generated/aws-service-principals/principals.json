@@ -389,6 +389,7 @@
   "textract.amazonaws.com": {},
   "thirdparty.config.amazonaws.com": {},
   "thirdparty.inspector2.amazonaws.com": {},
+  "threats.continuum.amazonaws.com": {},
   "timestream-influxdb.amazonaws.com": {},
   "timestream.amazonaws.com": {},
   "training-session.sagemaker.amazonaws.com": {},

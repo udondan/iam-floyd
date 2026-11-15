@@ -69,20 +69,30 @@
     },
     {
       "Effect": "Allow",
-      "Action": [
-        "iam:CreateRole",
-        "iam:AttachRolePolicy"
-      ],
+      "Action": "iam:CreateRole",
       "Resource": "arn:aws:iam::*:role/service-role/*"
     },
     {
       "Effect": "Allow",
-      "Action": [
-        "iam:CreatePolicy",
-        "iam:CreatePolicyVersion",
-        "iam:DeletePolicyVersion"
-      ],
-      "Resource": "arn:aws:iam::*:policy/service-role/*"
+      "Action": "iam:AttachRolePolicy",
+      "Resource": "arn:aws:iam::*:role/service-role/*",
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyARN": [
+            "arn:aws:iam::aws:policy/WellArchitectedAgentResourceScanning",
+            "arn:aws:iam::*:policy/service-role/WAAgentExecutionRolePolicy*",
+            "arn:aws:iam::*:policy/service-role/WAAgentExecutionPolicy*"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreatePolicy",
+      "Resource": [
+        "arn:aws:iam::*:policy/service-role/WAAgentExecutionRolePolicy*",
+        "arn:aws:iam::*:policy/service-role/WAAgentExecutionPolicy*"
+      ]
     },
     {
       "Effect": "Allow",

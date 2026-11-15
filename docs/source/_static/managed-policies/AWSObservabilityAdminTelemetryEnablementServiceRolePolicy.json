@@ -13,7 +13,9 @@
         "ec2:MonitorInstances",
         "logs:DescribeDeliverySources",
         "logs:DescribeDeliveries",
-        "logs:DescribeDeliveryDestinations"
+        "logs:DescribeDeliveryDestinations",
+        "ec2:DescribeTags",
+        "autoscaling:DescribeTags"
       ],
       "Resource": "*",
       "Condition": {
@@ -416,7 +418,7 @@
       }
     },
     {
-      "Sid": "TelemetryOperationsForRoute53LogDelivery",
+      "Sid": "TelemetryOperationsForCreateLogDelivery",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogDelivery"
@@ -441,6 +443,20 @@
           "iam:AWSServiceName": [
             "config.amazonaws.com"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "IAMOperationsForVPCFlowLogsServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:*:iam::*:role/aws-service-role/vpc-flow-logs.amazonaws.com/AWSServiceRoleForVPCFlowLogs",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "iam:AWSServiceName": "vpc-flow-logs.amazonaws.com"
         }
       }
     },

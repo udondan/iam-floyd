@@ -63,7 +63,8 @@
         "cloudwatch:PutIntelligenceConfiguration",
         "cloudwatch:TagResource",
         "cloudwatch:UntagResource",
-        "cloudwatch:ListTagsForResource"
+        "cloudwatch:ListTagsForResource",
+        "cloudwatch:GetSpaceDataAccess"
       ],
       "Resource": "*",
       "Condition": {

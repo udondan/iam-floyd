@@ -7,6 +7,29 @@
         "cognito-idp:Describe*"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "SecretsManagerSecret",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:RestoreSecret",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:UpdateSecretVersionStage",
+        "secretsmanager:RotateSecret",
+        "secretsmanager:ReplicateSecretToRegions",
+        "secretsmanager:RemoveRegionsFromReplication"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:cognito-idp!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "cognito-idp",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

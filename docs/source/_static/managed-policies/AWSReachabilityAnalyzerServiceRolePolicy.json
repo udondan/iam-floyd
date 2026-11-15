@@ -35,6 +35,7 @@
         "ec2:DescribeTransitGatewayPolicyTables",
         "ec2:GetTransitGatewayPolicyTableEntries",
         "ec2:GetTransitGatewayPolicyTableAssociations",
+        "ec2:GetTransitGatewayAttachmentNatConfiguration",
         "ec2:DescribeVpcEndpointServiceConfigurations",
         "ec2:DescribeAddresses",
         "ec2:DescribeVpcEndpoints",

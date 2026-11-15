@@ -71,6 +71,22 @@
         "ssm:GetDocument"
       ],
       "Resource": "arn:aws:ssm:*:*:document/*"
+    },
+    {
+      "Sid": "SsmViaMgnSendCommandToConnector",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": "arn:aws:ssm:*:*:managed-instance/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

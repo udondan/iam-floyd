@@ -124,6 +124,8 @@ export class AwsManagedPolicy {
     public static AmazonBioDiscoveryFullAccess = 'AmazonBioDiscoveryFullAccess';
     /** Provides full access to actions within the Amazon Bio Discovery applications */
     public static AmazonBioDiscoveryInAppFullAccess = 'AmazonBioDiscoveryInAppFullAccess';
+    /** Provides access to AWS Resources managed or used by Amazon Bio Discovery */
+    public static AmazonBioDiscoveryServiceLinkedRolePolicy = 'aws-service-role/AmazonBioDiscoveryServiceLinkedRolePolicy';
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
     public static AmazonBraketFullAccess = 'AmazonBraketFullAccess';
     /** Grants access to AWS Services and resources necessary for executing an Amazon Braket Job including S3, Cloudwatch, IAM and Braket */
@@ -1472,6 +1474,8 @@ export class AwsManagedPolicy {
     public static AWSCloudWatchOmniServiceRolePolicy = 'aws-service-role/AWSCloudWatchOmniServiceRolePolicy';
     /** AWS CODA creates IAM roles for delegations, and uses this policy when creating these roles to define the boundary of their permissions. */
     public static AWSCODAPermissionsBoundary = 'AWSCODAPermissionsBoundary';
+    /** Allows AWS CODA to monitor the deployment of delegations on your behalf. */
+    public static AWSCODAServiceRolePolicy = 'aws-service-role/AWSCODAServiceRolePolicy';
     /** Provides full access to AWS CodeArtifact via the AWS Management Console. */
     public static AWSCodeArtifactAdminAccess = 'AWSCodeArtifactAdminAccess';
     /** Provides read only access to AWS CodeArtifact via the AWS Management Console. */
@@ -2064,6 +2068,8 @@ export class AwsManagedPolicy {
     public static AWSManagementConsoleAdministratorAccess = 'job-function/AWSManagementConsoleAdministratorAccess';
     /** Grants access to essential AWS Management Console features and user experience (UX) capabilities for non-administrative users. */
     public static AWSManagementConsoleBasicUserAccess = 'AWSManagementConsoleBasicUserAccess';
+    /** Allows AWS Marketplace to process AgentCore payments for AWS Marketplace products in Amazon Bedrock AgentCore. AWS Marketplace reads product and offer details, creates and accepts purchase agreements on your behalf, and records your usage for billing. */
+    public static AWSMarketplaceAgenticCommerceServiceRolePolicy = 'aws-service-role/AWSMarketplaceAgenticCommerceServiceRolePolicy';
     /** Allows AWS Marketplace to copy your Amazon Machine Images (AMIs) in order to list them on AWS Marketplace */
     public static AWSMarketplaceAmiIngestion = 'AWSMarketplaceAmiIngestion';
     /** Allows AWS Marketplace to create and manage seller deployment parameters for the products that you subscribe to on AWS Marketplace. */
@@ -2146,6 +2152,8 @@ export class AwsManagedPolicy {
     public static AWSNATGatewayServiceRolePolicy = 'aws-service-role/AWSNATGatewayServiceRolePolicy';
     /** Grants full access to AWS Network Firewall service, including permissions to create, configure, manage, and delete firewall resources, policies, and rule groups. Additionally includes permissions to modify VPC endpoints, S3 bucket policies, CloudWatch Logs configurations, and create service-linked roles for Network Firewall and log delivery services */
     public static AWSNetworkFirewallFullAccess = 'AWSNetworkFirewallFullAccess';
+    /** Allows AWS Network Firewall to manage resources required for IGW Firewall on your behalf. Example of such resources include elastic IP addresses for network address translation. */
+    public static AWSNetworkFirewallIGWServiceRolePolicy = 'aws-service-role/AWSNetworkFirewallIGWServiceRolePolicy';
     /** Provides read-only access to AWS Network Firewall resources via the AWS Management Console, CLI, and SDKs. This policy allows users to view and monitor firewall configurations, policies, rule groups, and associated resources, without the ability to make changes. */
     public static AWSNetworkFirewallReadOnlyAccess = 'AWSNetworkFirewallReadOnlyAccess';
     /** Allow AWSNetworkFirewall to create and manage necessary resources for your Firewalls. */
@@ -2158,6 +2166,8 @@ export class AwsManagedPolicy {
     public static AWSNetworkManagerReadOnlyAccess = 'AWSNetworkManagerReadOnlyAccess';
     /** Allow NetworkManager to access resources associated with your Global Networks */
     public static AWSNetworkManagerServiceRolePolicy = 'aws-service-role/AWSNetworkManagerServiceRolePolicy';
+    /** Grants the AWS User Notifications service permissions to manage account contact associations. */
+    public static AWSNotificationsContactAssociationsServiceLinkedRolePolicy = 'aws-service-role/AWSNotificationsContactAssociationsServiceLinkedRolePolicy';
     /** Service-linked role permissions for CloudWatch Logs centralization */
     public static AWSObservabilityAdminLogsCentralizationServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminLogsCentralizationServiceRolePolicy';
     /** Provides access to manage AWS Config Configuration Recorder, manage AWS Config Configuration Aggregator, create AWS Config Service Linked Role for Configuration Recorder functionality, consume recorder configuration data, and read AWS Organizations data for organizational features. */
@@ -2190,6 +2200,8 @@ export class AwsManagedPolicy {
     public static AWSPanoramaServiceRolePolicy = 'service-role/AWSPanoramaServiceRolePolicy';
     /** Allows AWS Partner Central to access and manage your partner account resources, including partner account details and business plans, on your behalf. */
     public static AWSPartnerCentralAccountManagementServiceRolePolicy = 'aws-service-role/AWSPartnerCentralAccountManagementServiceRolePolicy';
+    /** Provides access to manage business plans and their attachments in AWS Partner Central, including read access to the Partner Central and AWS Marketplace reporting data behind business plan metrics */
+    public static AWSPartnerCentralBusinessPlanManagement = 'AWSPartnerCentralBusinessPlanManagement';
     /** Provides necessary access for channel handshake approval management activities. */
     public static AWSPartnerCentralChannelHandshakeApprovalManagement = 'AWSPartnerCentralChannelHandshakeApprovalManagement';
     /** Provides necessary access for channel management activities. */
@@ -2466,8 +2478,6 @@ export class AwsManagedPolicy {
     public static AWSServiceRoleForPrivateMarketplaceAdminPolicy = 'aws-service-role/AWSServiceRoleForPrivateMarketplaceAdminPolicy';
     /** Policy for Procurement Insights to obtain Organization Account details */
     public static AWSServiceRoleForProcurementInsightsPolicy = 'aws-service-role/AWSServiceRoleForProcurementInsightsPolicy';
-    /** Provides access to AWS services and resources necessary to migrate service instances into AWS including EC2, S3 and Cloudformation. */
-    public static AWSServiceRoleForSMS = 'aws-service-role/AWSServiceRoleForSMS';
     /** Provides access to the User Subscriptions service to your Identity Center resources to automatically update your subscriptions. */
     public static AWSServiceRoleForUserSubscriptions = 'aws-service-role/AWSServiceRoleForUserSubscriptions';
     /** Provides AWS Backup permissions to create compliance reports on your behalf */
@@ -2810,6 +2820,8 @@ export class AwsManagedPolicy {
     public static ConsoleFullAccessFromVercel = 'ConsoleFullAccessFromVercel';
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to view all resources for the services that are integrated with the Vercel Marketplace. */
     public static ConsoleViewOnlyAccessFromVercel = 'ConsoleViewOnlyAccessFromVercel';
+    /** Allows AWS Continuum Threats to collect security telemetry from the account on your behalf, by managing an AWS CloudTrail service-linked channel and an AWS Config service-linked configuration recorder, and creating the AWS Config service-linked role if it does not exist. */
+    public static ContinuumThreatsServiceRolePolicy = 'aws-service-role/ContinuumThreatsServiceRolePolicy';
     /** This managed policy provides admin access to Cost Optimization Hub. */
     public static CostOptimizationHubAdminAccess = 'CostOptimizationHubAdminAccess';
     /** This managed policy provides read-only access to Cost Optimization Hub. */
