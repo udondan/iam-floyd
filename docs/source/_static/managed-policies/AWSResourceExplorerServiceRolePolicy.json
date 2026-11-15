@@ -27,7 +27,8 @@
         "quicksight:DescribeIngestion",
         "quicksight:DescribeNamespace",
         "quicksight:ListIngestions",
-        "quicksight:ListNamespaces"
+        "quicksight:ListNamespaces",
+        "timestream-influxdb:ListDbInstancesForCluster"
       ],
       "Resource": "*"
     },

@@ -104,6 +104,25 @@
       }
     },
     {
+      "Sid": "PartnerCentralContentAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartnerCentralContentDocument",
+        "partnercentral:GetPartnerCentralContentMetadata",
+        "partnercentral:ListPartnerCentralContent",
+        "partnercentral:SearchPartnerCentralContent"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "AmazonQPartnerAssistantAccess",
       "Effect": "Allow",
       "Action": [

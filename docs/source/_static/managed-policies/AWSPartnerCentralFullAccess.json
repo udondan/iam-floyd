@@ -246,6 +246,18 @@
           "iam:AWSServiceName": "partnercentral-account.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "SellerReportingDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetSellerReportingData"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace::*:AWSMarketplace/ReportingData/BillingEvent_V1/Dataset/BilledRevenue_V1",
+        "arn:aws:aws-marketplace::*:AWSMarketplace/ReportingData/Solution_V1/Dataset/Solution_V1",
+        "arn:aws:aws-marketplace::*:AWSMarketplace/ReportingData/Marketing_V1/Dataset/CaseStudy_V1"
+      ]
     }
   ]
 }

@@ -16,6 +16,7 @@
         "datazone:CreateConnection",
         "datazone:CreateEnvironment",
         "datazone:CreateListingChangeSet",
+        "datazone:CreateNotificationPreference",
         "datazone:CreateProject",
         "datazone:CreateProjectMembership",
         "datazone:CreateSubscriptionGrant",
@@ -42,8 +43,24 @@
         "datazone:SearchGroupProfiles",
         "datazone:StartMetadataGenerationRun",
         "datazone:UpdateAssetFilter",
+        "datazone:UpdateAssetOwner",
+        "datazone:CreateDataProduct",
+        "datazone:CreateDataProductRevision",
+        "datazone:DeleteDataProduct",
+        "datazone:CreateGlossary",
+        "datazone:UpdateGlossary",
+        "datazone:DeleteGlossary",
+        "datazone:CreateGlossaryTerm",
+        "datazone:UpdateGlossaryTerm",
+        "datazone:DeleteGlossaryTerm",
+        "datazone:AssociateGovernedTerms",
+        "datazone:DisassociateGovernedTerms",
+        "datazone:CreateFormType",
+        "datazone:DeleteFormType",
+        "datazone:StartDataSourceRun",
         "datazone:UpdateConnection",
         "datazone:UpdateEnvironment",
+        "datazone:UpdateNotificationPreference",
         "datazone:UpdateProject",
         "datazone:UpdateSubscriptionRequest",
         "datazone:*Notebook*",
@@ -122,7 +139,8 @@
         "arn:aws:iam::*:role/aws-service-role/runtime-identity.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreRuntimeIdentity",
         "arn:aws:iam::*:role/aws-service-role/network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreNetwork",
         "arn:aws:iam::*:role/aws-service-role/bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreGatewayNetwork",
-        "arn:aws:iam::*:role/aws-service-role/identity-network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreIdentity"
+        "arn:aws:iam::*:role/aws-service-role/identity-network.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreIdentity",
+        "arn:aws:iam::*:role/aws-service-role/agent-registry.amazonaws.com/AWSServiceRoleForAgentRegistry"
       ]
     },
     {
@@ -367,7 +385,6 @@
         "athena:TerminateSession",
         "emr-serverless:*Session*",
         "emr-serverless:*Dashboard*",
-        "emr-containers:*ManagedEndpoint*",
         "elasticmapreduce:*Session*",
         "glue:CancelStatement",
         "glue:CreateSession",
@@ -382,7 +399,6 @@
       "Resource": [
         "arn:aws:athena:*:*:workgroup/*/session/*",
         "arn:aws:emr-serverless:*:*:/applications/*/sessions/*",
-        "arn:aws:emr-containers:*:*:/virtualclusters/*/endpoints/*",
         "arn:aws:elasticmapreduce:*:*:cluster/*/session/*",
         "arn:aws:glue:*:*:session/*"
       ],
@@ -400,7 +416,6 @@
         "athena:TagResource",
         "athena:UntagResource",
         "emr-serverless:*Resource",
-        "emr-containers:*Resource",
         "elasticmapreduce:AddTags",
         "elasticmapreduce:RemoveTags",
         "glue:TagResource",
@@ -409,12 +424,29 @@
       "Resource": [
         "arn:aws:athena:*:*:workgroup/*/session/*",
         "arn:aws:emr-serverless:*:*:/applications/*/sessions/*",
-        "arn:aws:emr-containers:*:*:/virtualclusters/*/endpoints/*",
         "arn:aws:elasticmapreduce:*:*:cluster/*/session/*",
         "arn:aws:glue:*:*:session/*"
       ],
       "Condition": {
         "StringNotEquals": {
+          "aws:ResourceTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEmrOnEksResources",
+      "Effect": "Allow",
+      "Action": [
+        "emr-containers:GetManagedEndpointSessionCredentials",
+        "emr-containers:DeleteManagedEndpoint",
+        "emr-containers:*Resource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${datazone:projectId}"
+        },
+        "StringEqualsIfExists": {
           "aws:ResourceTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}"
         }
       }
@@ -453,6 +485,7 @@
         "lakeformation:BatchRevokePermissions",
         "lakeformation:DescribeResource",
         "lakeformation:GetDataAccess",
+        "lakeformation:GetDataLakeSettings",
         "lakeformation:GrantPermissions",
         "lakeformation:ListResources",
         "lakeformation:ListPermissions",
@@ -805,7 +838,7 @@
       }
     },
     {
-      "Sid": "SageMakerKms",
+      "Sid": "KmsWithEncrypt",
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt",
@@ -821,20 +854,35 @@
           "kms:EncryptionContextKeys": "false"
         },
         "StringLike": {
-          "kms:ViaService": "sagemaker.*.amazonaws.com"
+          "kms:ViaService": [
+            "sagemaker.*.amazonaws.com",
+            "s3.*.amazonaws.com",
+            "secretsmanager.*.amazonaws.com",
+            "redshift.*.amazonaws.com",
+            "emr-serverless.*.amazonaws.com",
+            "sso.*.amazonaws.com",
+            "identitystore.*.amazonaws.com"
+          ]
         }
       }
     },
     {
-      "Sid": "SageMakerCreateGrant",
+      "Sid": "KmsManagement",
       "Effect": "Allow",
       "Action": [
-        "kms:CreateGrant"
+        "kms:CreateGrant",
+        "kms:GetPublicKey",
+        "kms:RevokeGrant"
       ],
       "Resource": "*",
       "Condition": {
         "StringLike": {
-          "kms:ViaService": "sagemaker.*.amazonaws.com"
+          "kms:ViaService": [
+            "sagemaker.*.amazonaws.com",
+            "emr-serverless.*.amazonaws.com",
+            "s3.*.amazonaws.com",
+            "redshift.*.amazonaws.com"
+          ]
         }
       }
     },
@@ -999,20 +1047,23 @@
         "emr-serverless:Get*",
         "emr-serverless:List*",
         "emr-serverless:Start*",
+        "emr-serverless:Stop*",
         "emr-serverless:Access*Endpoints",
         "emr-serverless:Terminate*",
         "emr-serverless:*Resource",
-        "emr-containers:*ManagedEndpoint*",
+        "emr-containers:CreateManagedEndpoint",
+        "emr-containers:DescribeManagedEndpoint",
+        "emr-containers:ListManagedEndpoints",
         "emr-containers:*SecurityConfiguration*",
         "emr-containers:*VirtualCluster*",
-        "emr-containers:*Resource",
         "elasticmapreduce:*PersistentAppUI*",
         "elasticmapreduce:Start*",
         "elasticmapreduce:Get*",
         "elasticmapreduce:Describe*",
         "elasticmapreduce:List*",
         "elasticmapreduce:Terminate*",
-        "elasticmapreduce:*Tag*"
+        "elasticmapreduce:*Tag*",
+        "pricing:GetProducts"
       ],
       "Resource": "*"
     },
@@ -1123,7 +1174,8 @@
         "bedrock-agentcore:GetEvaluator",
         "bedrock-agentcore:GetConfigurationBundleVersion",
         "bedrock-agentcore:ListCodeInterpreterSessions",
-        "bedrock-agentcore:ListBrowserSessions"
+        "bedrock-agentcore:ListBrowserSessions",
+        "bedrock-agentcore:ListApiKeyCredentialProviders"
       ],
       "Resource": "*"
     },
@@ -1134,11 +1186,13 @@
         "bedrock-agentcore:*CodeInterpreterSession",
         "bedrock-agentcore:InvokeCodeInterpreter",
         "bedrock-agentcore:*BrowserSession",
-        "bedrock-agentcore:ConnectBrowserAutomationStream"
+        "bedrock-agentcore:ConnectBrowserAutomationStream",
+        "bedrock-agentcore:InvokeWebSearch"
       ],
       "Resource": [
         "arn:*:bedrock-agentcore:*:aws:code-interpreter/*",
-        "arn:*:bedrock-agentcore:*:aws:browser/*"
+        "arn:*:bedrock-agentcore:*:aws:browser/*",
+        "arn:*:bedrock-agentcore:*:aws:tool/web-search.v1"
       ]
     },
     {
@@ -1203,13 +1257,57 @@
     {
       "Sid": "ACIdentityDirectory",
       "Effect": "Allow",
-      "Action": "bedrock-agentcore:DeleteWorkloadIdentity",
-      "Resource": "arn:*:bedrock-agentcore:*:*:workload-identity-directory/default",
+      "Action": [
+        "bedrock-agentcore:DeleteWorkloadIdentity",
+        "bedrock-agentcore:*TokenVault",
+        "bedrock-agentcore:*ApiKeyCredentialProvider",
+        "bedrock-agentcore:GetResourceApiKey"
+      ],
+      "Resource": [
+        "arn:*:bedrock-agentcore:*:*:workload-identity-directory/default",
+        "arn:*:bedrock-agentcore:*:*:workload-identity-directory/default/workload-identity/*",
+        "arn:*:bedrock-agentcore:*:*:token-vault/default",
+        "arn:*:bedrock-agentcore:*:*:token-vault/default/apikeycredentialprovider/*"
+      ],
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "ACApiKeySecret",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:bedrock-agentcore-identity!*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "bedrock-agentcore.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "ARConsumerPublisher",
+      "Effect": "Allow",
+      "Action": [
+        "agent-registry:List*",
+        "agent-registry:GetRegistry",
+        "agent-registry:GetRegistryRecord",
+        "agent-registry:GetDiscoverableRegistryRecord",
+        "agent-registry:SearchDiscoverableRegistryRecords",
+        "agent-registry:CreateRegistryRecord",
+        "agent-registry:UpdateRegistryRecord",
+        "agent-registry:UpdateRegistryRecordStatus",
+        "agent-registry:DeleteRegistryRecord",
+        "agent-registry:SubmitRegistryRecordForApproval",
+        "agent-registry:TagResource"
+      ],
+      "Resource": "*"
     },
     {
       "Sid": "S3AGObjectPermissions",
@@ -1246,6 +1344,20 @@
         "arn:aws:s3:*:*:access-grants/default"
       ],
       "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CrossAccountS3AGResourceSharingPolicyPermissions",
+      "Effect": "Allow",
+      "Action": "s3:PutAccessGrantsInstanceResourcePolicy",
+      "Resource": "arn:aws:s3:*:*:access-grants/default",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "ram.amazonaws.com"
+        },
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
@@ -1309,6 +1421,17 @@
       }
     },
     {
+      "Sid": "RamShareCreate",
+      "Effect": "Allow",
+      "Action": "ram:CreateResourceShare",
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIfExists": {
+          "ram:RequestedResourceType": "s3:AccessGrants"
+        }
+      }
+    },
+    {
       "Sid": "SSOInstanceReadOnlyPermissions",
       "Effect": "Allow",
       "Action": [
@@ -1330,13 +1453,14 @@
       "Effect": "Allow",
       "Action": [
         "identitystore:DescribeUser",
-        "identitystore:DescribeGroup"
+        "identitystore:DescribeGroup",
+        "sso-directory:DescribeUser",
+        "sso-directory:DescribeGroup",
+        "identitystore:GetUserId",
+        "identitystore:GetGroupId",
+        "sso:ListInstances"
       ],
-      "Resource": [
-        "arn:aws:identitystore::*:identitystore/*",
-        "arn:aws:identitystore:::user/*",
-        "arn:aws:identitystore:::group/*"
-      ],
+      "Resource": "*",
       "Condition": {
         "Bool": {
           "aws:ViaAWSService": "true"

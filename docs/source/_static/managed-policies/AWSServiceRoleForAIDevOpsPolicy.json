@@ -17,6 +17,14 @@
       }
     },
     {
+      "Sid": "CloudWatchGetVendedMetrics",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "LatticeCreateResourceGateway",
       "Effect": "Allow",
       "Action": [

@@ -39,7 +39,7 @@
       "Resource": "arn:aws:iam::*:role/SSM-JustInTimeAccessTokenRole",
       "Condition": {
         "ArnEquals": {
-          "iam:PolicyARN": "arn:aws:iam::*:policy/AWSSystemsManagerJustInTimeAccessTokenPolicy"
+          "iam:PolicyARN": "arn:aws:iam::aws:policy/AWSSystemsManagerJustInTimeAccessTokenPolicy"
         }
       }
     },

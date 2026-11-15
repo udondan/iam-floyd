@@ -19,7 +19,12 @@
         "mgn:ListExports",
         "mgn:ListImports",
         "mgn:ListImportErrors",
-        "mgn:ListExportErrors"
+        "mgn:ListExportErrors",
+        "mgn:ListRemoteSourceActions",
+        "mgn:ListRemoteSourceActionJobs",
+        "mgn:ListRemoteSourceActionInvocations",
+        "mgn:ListRemoteSourceActionInvocationResults",
+        "mgn:GetLaunchConfigurationDefaults"
       ],
       "Resource": "*"
     },

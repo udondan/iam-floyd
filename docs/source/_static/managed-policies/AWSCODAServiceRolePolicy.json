@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackSet",
+        "cloudformation:DescribeStackSetOperation",
+        "cloudformation:DescribeStackInstance",
+        "cloudformation:ListStackSetOperations",
+        "cloudformation:ListStackInstances"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/coda-*/*",
+        "arn:aws:cloudformation:*:*:stackset/coda-*:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "organizations:DescribeAccount",
+      "Resource": "arn:aws:organizations::*:account/o-*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "organizations:DescribeOrganizationalUnit",
+      "Resource": "arn:aws:organizations::*:ou/o-*/ou-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListRoots"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

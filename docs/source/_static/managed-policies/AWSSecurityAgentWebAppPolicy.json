@@ -135,7 +135,8 @@
         "securityagent:UpdateFinding",
         "securityagent:UpdatePentest",
         "securityagent:UpdateThreat",
-        "securityagent:UpdateThreatModel"
+        "securityagent:UpdateThreatModel",
+        "securityagent:ResumePentestJob"
       ],
       "Resource": "arn:aws:securityagent:*:*:agent-space*",
       "Condition": {

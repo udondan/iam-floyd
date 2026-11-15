@@ -351,6 +351,45 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "SsmViaMgnSendCommandToConnector",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": "arn:aws:ssm:*:*:managed-instance/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "S3OutpostsReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3-outposts:ListOutpostsWithS3"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchDescribeOperations",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

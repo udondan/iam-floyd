@@ -319,6 +319,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBioDiscoveryInAppFullAccess);
     }
 
+    /** Provides access to AWS Resources managed or used by Amazon Bio Discovery */
+    public AmazonBioDiscoveryServiceLinkedRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBioDiscoveryServiceLinkedRolePolicy);
+    }
+
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
     public AmazonBraketFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBraketFullAccess);
@@ -3689,6 +3694,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCODAPermissionsBoundary);
     }
 
+    /** Allows AWS CODA to monitor the deployment of delegations on your behalf. */
+    public AWSCODAServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCODAServiceRolePolicy);
+    }
+
     /** Provides full access to AWS CodeArtifact via the AWS Management Console. */
     public AWSCodeArtifactAdminAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCodeArtifactAdminAccess);
@@ -5169,6 +5179,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagementConsoleBasicUserAccess);
     }
 
+    /** Allows AWS Marketplace to process AgentCore payments for AWS Marketplace products in Amazon Bedrock AgentCore. AWS Marketplace reads product and offer details, creates and accepts purchase agreements on your behalf, and records your usage for billing. */
+    public AWSMarketplaceAgenticCommerceServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceAgenticCommerceServiceRolePolicy);
+    }
+
     /** Allows AWS Marketplace to copy your Amazon Machine Images (AMIs) in order to list them on AWS Marketplace */
     public AWSMarketplaceAmiIngestion(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceAmiIngestion);
@@ -5374,6 +5389,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallFullAccess);
     }
 
+    /** Allows AWS Network Firewall to manage resources required for IGW Firewall on your behalf. Example of such resources include elastic IP addresses for network address translation. */
+    public AWSNetworkFirewallIGWServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallIGWServiceRolePolicy);
+    }
+
     /** Provides read-only access to AWS Network Firewall resources via the AWS Management Console, CLI, and SDKs. This policy allows users to view and monitor firewall configurations, policies, rule groups, and associated resources, without the ability to make changes. */
     public AWSNetworkFirewallReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallReadOnlyAccess);
@@ -5402,6 +5422,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allow NetworkManager to access resources associated with your Global Networks */
     public AWSNetworkManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkManagerServiceRolePolicy);
+    }
+
+    /** Grants the AWS User Notifications service permissions to manage account contact associations. */
+    public AWSNotificationsContactAssociationsServiceLinkedRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNotificationsContactAssociationsServiceLinkedRolePolicy);
     }
 
     /** Service-linked role permissions for CloudWatch Logs centralization */
@@ -5482,6 +5507,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS Partner Central to access and manage your partner account resources, including partner account details and business plans, on your behalf. */
     public AWSPartnerCentralAccountManagementServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralAccountManagementServiceRolePolicy);
+    }
+
+    /** Provides access to manage business plans and their attachments in AWS Partner Central, including read access to the Partner Central and AWS Marketplace reporting data behind business plan metrics */
+    public AWSPartnerCentralBusinessPlanManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralBusinessPlanManagement);
     }
 
     /** Provides necessary access for channel handshake approval management activities. */
@@ -6172,11 +6202,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Policy for Procurement Insights to obtain Organization Account details */
     public AWSServiceRoleForProcurementInsightsPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForProcurementInsightsPolicy);
-    }
-
-    /** Provides access to AWS services and resources necessary to migrate service instances into AWS including EC2, S3 and Cloudformation. */
-    public AWSServiceRoleForSMS(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForSMS);
     }
 
     /** Provides access to the User Subscriptions service to your Identity Center resources to automatically update your subscriptions. */
@@ -7032,6 +7057,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to view all resources for the services that are integrated with the Vercel Marketplace. */
     public ConsoleViewOnlyAccessFromVercel(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ConsoleViewOnlyAccessFromVercel);
+    }
+
+    /** Allows AWS Continuum Threats to collect security telemetry from the account on your behalf, by managing an AWS CloudTrail service-linked channel and an AWS Config service-linked configuration recorder, and creating the AWS Config service-linked role if it does not exist. */
+    public ContinuumThreatsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ContinuumThreatsServiceRolePolicy);
     }
 
     /** This managed policy provides admin access to Cost Optimization Hub. */

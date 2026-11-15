@@ -2,7 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Effect": "Allow",
+      "Sid": "NetworkManagerSLR",
       "Action": [
         "directconnect:DescribeDirectConnectGateways",
         "directconnect:DescribeConnections",
@@ -30,9 +30,228 @@
         "ec2:DescribeTransitGatewayRouteTableAnnouncements",
         "ec2:DescribeTransitGatewayPolicyTables",
         "ec2:GetTransitGatewayPolicyTableAssociations",
-        "ec2:GetTransitGatewayPolicyTableEntries"
+        "ec2:GetTransitGatewayPolicyTableEntries",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "ec2:DescribeTransitGatewayVpcAttachments",
+        "ec2:DescribeNetworkAcls",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupRules",
+        "ec2:DescribeManagedPrefixLists",
+        "ec2:GetManagedPrefixListEntries",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeVpcEndpointServiceConfigurations",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeLoadBalancerAttributes",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeRules",
+        "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "network-firewall:ListFirewalls",
+        "network-firewall:DescribeFirewall",
+        "network-firewall:DescribeFirewallMetadata",
+        "network-firewall:ListFirewallPolicies",
+        "network-firewall:DescribeFirewallPolicy",
+        "network-firewall:ListRuleGroups",
+        "network-firewall:DescribeRuleGroup",
+        "directconnect:DescribeDirectConnectGatewayAssociations",
+        "ec2:DescribeVpnGateways",
+        "ec2:DescribeVpnConcentrators",
+        "networkmanager:ListCoreNetworks",
+        "networkmanager:GetCoreNetwork",
+        "networkmanager:GetCoreNetworkPolicy",
+        "networkmanager:ListAttachments",
+        "networkmanager:GetVpcAttachment",
+        "networkmanager:GetNetworkRoutes",
+        "networkmanager:ListConnectPeers",
+        "networkmanager:ListPeerings",
+        "wafv2:ListWebACLs",
+        "wafv2:ListRuleGroups",
+        "wafv2:ListIPSets",
+        "wafv2:ListRegexPatternSets",
+        "wafv2:ListLoggingConfigurations",
+        "wafv2:GetWebACL",
+        "wafv2:GetRuleGroup",
+        "wafv2:GetIPSet",
+        "wafv2:GetRegexPatternSet",
+        "cloudfront:ListDistributions",
+        "cloudfront:ListStreamingDistributions",
+        "cloudfront:ListCachePolicies",
+        "cloudfront:ListOriginRequestPolicies",
+        "cloudfront:ListResponseHeadersPolicies",
+        "cloudfront:ListOriginAccessControls",
+        "cloudfront:GetDistribution",
+        "cloudfront:GetStreamingDistribution",
+        "route53resolver:ListResolverEndpoints",
+        "route53resolver:ListResolverRules",
+        "route53resolver:ListResolverRuleAssociations",
+        "route53resolver:ListFirewallDomainLists",
+        "route53resolver:ListFirewallRuleGroups",
+        "route53resolver:ListFirewallRuleGroupAssociations",
+        "route53resolver:ListResolverQueryLogConfigs",
+        "route53resolver:GetFirewallDomainList",
+        "route53resolver:GetFirewallRuleGroup",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeInstances",
+        "ec2:DescribeNatGateways",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeEgressOnlyInternetGateways",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcPeeringConnections",
+        "organizations:ListRoots",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListPolicies",
+        "organizations:DescribeResourcePolicy"
       ],
+      "Effect": "Allow",
       "Resource": "*"
+    },
+    {
+      "Sid": "ConfigRecorderCreateDelete",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": [
+        "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderForNetworkAgentService*"
+      ]
+    },
+    {
+      "Sid": "ConfigRecorderSlrCreation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "config.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NSDSlrCreation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/network-security-director.amazonaws.com/AWSServiceRoleForNetworkSecurityDirector"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "network-security-director.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "apiGatewayGetAPI",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET"
+      ],
+      "Resource": [
+        "arn:aws:apigateway:*::/restapis",
+        "arn:aws:apigateway:*::/restapis/*",
+        "arn:aws:apigateway:*::/vpclinks",
+        "arn:aws:apigateway:*::/vpclinks/*"
+      ]
+    },
+    {
+      "Sid": "NSDOrgPolicyCreate",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:CreatePolicy",
+        "organizations:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:policy/o-*/network_security_director_policy/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/NetworkScopeId": "false"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "NetworkScopeId"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NSDOrgPolicyMutate",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:UpdatePolicy",
+        "organizations:DeletePolicy",
+        "organizations:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:policy/o-*/network_security_director_policy/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/NetworkScopeId": "false"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "NetworkScopeId"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "NSDOrgPolicyAttachPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:policy/o-*/network_security_director_policy/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/NetworkScopeId": "false"
+        }
+      }
+    },
+    {
+      "Sid": "NSDOrgPolicyAttachTarget",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy",
+        "organizations:ListPoliciesForTarget"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:root/o-*/*",
+        "arn:aws:organizations::*:ou/o-*/*",
+        "arn:aws:organizations::*:account/o-*/*"
+      ]
+    },
+    {
+      "Sid": "NSDOrgPolicyRead",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribePolicy",
+        "organizations:ListTagsForResource",
+        "organizations:ListTargetsForPolicy"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:policy/o-*/network_security_director_policy/*"
+      ]
     }
   ]
 }

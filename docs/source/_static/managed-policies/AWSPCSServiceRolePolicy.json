@@ -57,7 +57,9 @@
         "ec2:DescribeImages",
         "ec2:DescribeImageAttribute",
         "ec2:DescribeCapacityReservations",
-        "ec2:DescribeTags"
+        "ec2:DescribeTags",
+        "ec2:DescribeInstanceTopology",
+        "ec2:DescribeCapacityReservationTopology"
       ],
       "Resource": "*"
     },

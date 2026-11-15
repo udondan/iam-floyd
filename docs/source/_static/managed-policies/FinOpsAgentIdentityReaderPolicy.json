@@ -12,7 +12,8 @@
       "Resource": [
         "arn:aws:identitystore::*:identitystore/*",
         "arn:aws:identitystore:::user/*",
-        "arn:aws:identitystore:::group/*"
+        "arn:aws:identitystore:::group/*",
+        "arn:aws:identitystore:::membership/*"
       ]
     }
   ]

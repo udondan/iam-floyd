@@ -9,7 +9,8 @@
       "Condition": {
         "ForAnyValue:StringLike": {
           "sts:IdentityTokenAudience": [
-            "api://AzureADTokenExchange"
+            "api://AzureADTokenExchange",
+            "https://sts.googleapis.com"
           ]
         }
       }

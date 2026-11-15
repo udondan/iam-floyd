@@ -43,7 +43,8 @@
         "securityhub:EnableSecurityHubV2",
         "securityhub:DescribeSecurityHubV2",
         "securityhub:EnableSecurityHubFeatureV2",
-        "securityhub:DisableSecurityHubFeatureV2"
+        "securityhub:DisableSecurityHubFeatureV2",
+        "securityhub:UpdateSecurityHubV2"
       ],
       "Resource": "arn:aws:securityhub:*:*:hubv2/*",
       "Condition": {
@@ -108,7 +109,8 @@
       "Sid": "SecurityHubV2ServiceRoleLambdaAndConfigMetricPermissions",
       "Effect": "Allow",
       "Action": [
-        "cloudwatch:GetMetricData"
+        "cloudwatch:GetMetricData",
+        "cloudwatch:ListMetrics"
       ],
       "Resource": "*"
     },

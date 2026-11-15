@@ -1635,6 +1635,16 @@
       }
     },
     {
+      "Sid": "ReadAwsManagedPolicies",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:ListEntitiesForPolicy"
+      ],
+      "Resource": "arn:*:iam::aws:policy/*"
+    },
+    {
       "Sid": "ApiGatewayRead",
       "Effect": "Allow",
       "Action": [
@@ -1734,28 +1744,18 @@
         "assurance:ListComments",
         "assurance:ListConnectionItems",
         "assurance:ListControlGroups",
+        "assurance:ListControlResources",
         "assurance:ListControls",
         "assurance:ListDiscoveredResources",
         "assurance:ListEnabledFrameworks",
         "assurance:ListEvidence",
         "assurance:ListEvidenceAnnotations",
         "assurance:ListProjects",
-        "assurance:ListResourcesForControl",
         "assurance:ListTasks",
         "assurance:PutEvidence",
-        "assurance:StartResourceDiscovery",
         "assurance:UpdateAnnotation",
         "assurance:UpdateAssessment",
         "assurance:UpdateTask"
-      ],
-      "Resource": "arn:aws:assurance:*:*:environment/*"
-    },
-    {
-      "Sid": "AssuranceLegacyOperations",
-      "Effect": "Allow",
-      "Action": [
-        "assurance:DownloadEvidence",
-        "assurance:UploadEvidence"
       ],
       "Resource": "arn:aws:assurance:*:*:environment/*"
     }
