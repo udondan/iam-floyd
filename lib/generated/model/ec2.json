@@ -77,6 +77,7 @@
       "CreateCapacityReservation",
       "CreateCapacityReservationBySplitting",
       "CreateCapacityReservationCancellationQuote",
+      "CreateCapacityReservationDateChangeQuote",
       "CreateCapacityReservationFleet",
       "CreateCarrierGateway",
       "CreateClientVpnEndpoint",
@@ -185,6 +186,7 @@
       "DeleteCapacityManagerDataExport",
       "DeleteCarrierGateway",
       "DeleteClientVpnEndpoint",
+      "DeleteClientVpnEndpointAuthorizationPolicy",
       "DeleteClientVpnRoute",
       "DeleteCoipCidr",
       "DeleteCoipPool",
@@ -375,6 +377,7 @@
       "ModifyCapacityReservation",
       "ModifyCapacityReservationFleet",
       "ModifyClientVpnEndpoint",
+      "ModifyClientVpnEndpointAuthorizationPolicy",
       "ModifyDefaultCreditSpecification",
       "ModifyEbsDefaultKmsKeyId",
       "ModifyFleet",
@@ -423,6 +426,7 @@
       "ModifyTrafficMirrorFilterRule",
       "ModifyTrafficMirrorSession",
       "ModifyTransitGateway",
+      "ModifyTransitGatewayAttachmentNatConfiguration",
       "ModifyTransitGatewayMeteringPolicy",
       "ModifyTransitGatewayPolicyTableEntry",
       "ModifyTransitGatewayPrefixListReference",
@@ -601,6 +605,7 @@
       "DescribeCapacityManagerDataExports",
       "DescribeCapacityReservationBillingRequests",
       "DescribeCapacityReservationCancellationQuotes",
+      "DescribeCapacityReservationDateChangeQuotes",
       "DescribeCapacityReservationFleets",
       "DescribeCapacityReservationTopology",
       "DescribeCapacityReservations",
@@ -818,6 +823,7 @@
       "GetCapacityManagerMetricData",
       "GetCapacityManagerMetricDimensions",
       "GetCapacityReservationUsage",
+      "GetClientVpnEndpointAuthorizationPolicy",
       "GetCoipPoolUsage",
       "GetConsoleOutput",
       "GetConsoleScreenshot",
@@ -830,6 +836,7 @@
       "GetHostReservationPurchasePreview",
       "GetImageAncestry",
       "GetImageBlockPublicAccessState",
+      "GetImageFindings",
       "GetInstanceTpmEkPub",
       "GetInstanceUefiData",
       "GetIpamAddressHistory",
@@ -863,6 +870,7 @@
       "GetSnapshotBlockPublicAccessState",
       "GetSpotPlacementScores",
       "GetSubnetCidrReservations",
+      "GetTransitGatewayAttachmentNatConfiguration",
       "StartDeclarativePoliciesReport",
       "ValidateSecurityGroupQuotasForInterface",
       "GetResourcePolicy"
@@ -1382,6 +1390,13 @@
       "description": "Grants permission to generate a cancellation quote for a future-dated Capacity Reservation",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservationCancellationQuote.html"
+    },
+    {
+      "name": "CreateCapacityReservationDateChangeQuote",
+      "methodName": "toCreateCapacityReservationDateChangeQuote",
+      "description": "Grants permission to generate a quote for changing the start date of a future-dated Capacity Reservation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservationDateChangeQuote.html"
     },
     {
       "name": "CreateCapacityReservationFleet",
@@ -2150,6 +2165,13 @@
       "description": "Grants permission to delete a Client VPN endpoint",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnEndpoint.html"
+    },
+    {
+      "name": "DeleteClientVpnEndpointAuthorizationPolicy",
+      "methodName": "toDeleteClientVpnEndpointAuthorizationPolicy",
+      "description": "Grants permission to delete the authorization policy for a Client VPN endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnEndpointAuthorizationPolicy.html"
     },
     {
       "name": "DeleteClientVpnRoute",
@@ -3073,6 +3095,16 @@
       "description": "Grants permission to describe one or more Capacity Reservation cancellation quotes",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationCancellationQuotes.html",
+      "conditionMethods": [
+        "ifRegion"
+      ]
+    },
+    {
+      "name": "DescribeCapacityReservationDateChangeQuotes",
+      "methodName": "toDescribeCapacityReservationDateChangeQuotes",
+      "description": "Grants permission to describe one or more Capacity Reservation date change quotes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationDateChangeQuotes.html",
       "conditionMethods": [
         "ifRegion"
       ]
@@ -5434,6 +5466,13 @@
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityReservationUsage.html"
     },
     {
+      "name": "GetClientVpnEndpointAuthorizationPolicy",
+      "methodName": "toGetClientVpnEndpointAuthorizationPolicy",
+      "description": "Grants permission to describe the authorization policy for a Client VPN endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetClientVpnEndpointAuthorizationPolicy.html"
+    },
+    {
       "name": "GetCoipPoolUsage",
       "methodName": "toGetCoipPoolUsage",
       "description": "Grants permission to describe the allocations from the specified customer-owned address pool",
@@ -5541,6 +5580,13 @@
       "conditionMethods": [
         "ifRegion"
       ]
+    },
+    {
+      "name": "GetImageFindings",
+      "methodName": "toGetImageFindings",
+      "description": "Grants permission to describe the Amazon Inspector vulnerability findings for an Amazon Machine Image (AMI)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html"
     },
     {
       "name": "GetInstanceMetadataDefaults",
@@ -5837,6 +5883,13 @@
       ]
     },
     {
+      "name": "GetTransitGatewayAttachmentNatConfiguration",
+      "methodName": "toGetTransitGatewayAttachmentNatConfiguration",
+      "description": "Grants permission to describe the NAT configuration for a transit gateway attachment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayAttachmentNatConfiguration.html"
+    },
+    {
       "name": "GetTransitGatewayAttachmentPropagations",
       "methodName": "toGetTransitGatewayAttachmentPropagations",
       "description": "Grants permission to list the route tables to which a resource attachment propagates routes",
@@ -6089,6 +6142,13 @@
       "description": "Grants permission to modify a Client VPN endpoint",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyClientVpnEndpoint.html"
+    },
+    {
+      "name": "ModifyClientVpnEndpointAuthorizationPolicy",
+      "methodName": "toModifyClientVpnEndpointAuthorizationPolicy",
+      "description": "Grants permission to create or update the authorization policy for a Client VPN endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyClientVpnEndpointAuthorizationPolicy.html"
     },
     {
       "name": "ModifyDefaultCreditSpecification",
@@ -6444,6 +6504,13 @@
       "description": "Grants permission to modify a transit gateway",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGateway.html"
+    },
+    {
+      "name": "ModifyTransitGatewayAttachmentNatConfiguration",
+      "methodName": "toModifyTransitGatewayAttachmentNatConfiguration",
+      "description": "Grants permission to modify the NAT configuration for a transit gateway attachment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayAttachmentNatConfiguration.html"
     },
     {
       "name": "ModifyTransitGatewayMeteringPolicy",
@@ -7611,6 +7678,7 @@
         "ifEndDate",
         "ifEndDateType",
         "ifEphemeralStorage",
+        "ifFutureCapacitySpecification",
         "ifInstanceCount",
         "ifInstanceMatchCriteria",
         "ifInstancePlatform",
@@ -7714,6 +7782,43 @@
         "property": "capacityReservationFleetRef",
         "id": "capacityReservationFleetId"
       }
+    },
+    {
+      "name": "capacity-reservation-modification-quote",
+      "methodName": "onCapacityReservationModificationQuote",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation-modification-quote/${CapacityReservationModificationQuoteId}",
+      "placeholders": [
+        {
+          "placeholder": "CapacityReservationModificationQuoteId",
+          "name": "capacityReservationModificationQuoteId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys",
+        "ifAttribute",
+        "ifAttribute",
+        "ifRegion",
+        "ifResourceTag"
+      ]
     },
     {
       "name": "carrier-gateway",
@@ -8428,6 +8533,7 @@
         "ifBootModeOverride",
         "ifImageID",
         "ifImageType",
+        "ifImageWatermarkKeys",
         "ifIsLaunchTemplateResource",
         "ifLaunchTemplate",
         "ifOwner",
@@ -10534,7 +10640,13 @@
         "ifSourceAvailabilityZone",
         "ifSourceOutpostArn",
         "ifVolumeSize"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_ec2",
+        "interface": "ISnapshotRef",
+        "property": "snapshotRef",
+        "arn": "snapshotArn"
+      }
     },
     {
       "name": "spot-fleet-request",
@@ -12069,6 +12181,7 @@
         "toCreateCapacityManagerDataExport",
         "toCreateCapacityReservation",
         "toCreateCapacityReservationCancellationQuote",
+        "toCreateCapacityReservationDateChangeQuote",
         "toCreateCapacityReservationFleet",
         "toCreateCarrierGateway",
         "toCreateClientVpnEndpoint",
@@ -12173,6 +12286,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "carrier-gateway",
         "client-vpn-endpoint",
         "coip-pool",
@@ -12344,6 +12458,7 @@
         "toCreateApplicationStatusCheck",
         "toCreateCapacityReservationBySplitting",
         "toCreateCapacityReservationCancellationQuote",
+        "toCreateCapacityReservationDateChangeQuote",
         "toCreateCarrierGateway",
         "toCreateClientVpnEndpoint",
         "toCreateClientVpnRoute",
@@ -12423,6 +12538,7 @@
         "toDeleteCapacityManagerDataExport",
         "toDeleteCarrierGateway",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDeleteCoipCidr",
         "toDeleteCoipPool",
@@ -12596,6 +12712,7 @@
         "toExportVerifiedAccessInstanceClientConfiguration",
         "toGetAssociatedIpv6PoolCidrs",
         "toGetCapacityReservationUsage",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toGetCoipPoolUsage",
         "toGetConsoleOutput",
         "toGetConsoleScreenshot",
@@ -12603,6 +12720,7 @@
         "toGetFlowLogsIntegrationTemplate",
         "toGetGroupsForCapacityReservation",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toGetInstanceTpmEkPub",
         "toGetInstanceUefiData",
         "toGetIpamAddressHistory",
@@ -12635,6 +12753,7 @@
         "toGetRouteServerPropagations",
         "toGetRouteServerRoutingDatabase",
         "toGetSecurityGroupsForVpc",
+        "toGetTransitGatewayAttachmentNatConfiguration",
         "toGetTransitGatewayMeteringPolicyEntries",
         "toGetTransitGatewayMulticastDomainAssociations",
         "toGetTransitGatewayPolicyTableAssociations",
@@ -12655,6 +12774,7 @@
         "toModifyCapacityReservation",
         "toModifyCapacityReservationFleet",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toModifyFleet",
         "toModifyFpgaImageAttribute",
         "toModifyHosts",
@@ -12697,6 +12817,7 @@
         "toModifyTrafficMirrorFilterRule",
         "toModifyTrafficMirrorSession",
         "toModifyTransitGateway",
+        "toModifyTransitGatewayAttachmentNatConfiguration",
         "toModifyTransitGatewayMeteringPolicy",
         "toModifyTransitGatewayPolicyTableEntry",
         "toModifyTransitGatewayPrefixListReference",
@@ -12821,6 +12942,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "carrier-gateway",
         "client-vpn-endpoint",
         "coip-pool",
@@ -12953,6 +13075,7 @@
         "toCreateCapacityManagerDataExport",
         "toCreateCapacityReservation",
         "toCreateCapacityReservationCancellationQuote",
+        "toCreateCapacityReservationDateChangeQuote",
         "toCreateCapacityReservationFleet",
         "toCreateCarrierGateway",
         "toCreateClientVpnEndpoint",
@@ -13057,6 +13180,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "carrier-gateway",
         "client-vpn-endpoint",
         "coip-pool",
@@ -13287,6 +13411,7 @@
         "toModifyCapacityReservation",
         "toModifyCapacityReservationFleet",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toModifyFleet",
         "toModifyFpgaImageAttribute",
         "toModifyHosts",
@@ -13323,6 +13448,7 @@
         "toModifyTrafficMirrorFilterRule",
         "toModifyTrafficMirrorSession",
         "toModifyTransitGateway",
+        "toModifyTransitGatewayAttachmentNatConfiguration",
         "toModifyTransitGatewayPrefixListReference",
         "toModifyTransitGatewayVpcAttachment",
         "toModifyVerifiedAccessGroup",
@@ -13354,6 +13480,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "client-vpn-endpoint",
         "dedicated-host",
         "elastic-ip",
@@ -13416,6 +13543,7 @@
         "toModifyCapacityReservation",
         "toModifyCapacityReservationFleet",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toModifyFleet",
         "toModifyFpgaImageAttribute",
         "toModifyHosts",
@@ -13455,6 +13583,7 @@
         "toModifyTrafficMirrorFilterRule",
         "toModifyTrafficMirrorSession",
         "toModifyTransitGateway",
+        "toModifyTransitGatewayAttachmentNatConfiguration",
         "toModifyTransitGatewayMeteringPolicy",
         "toModifyTransitGatewayPrefixListReference",
         "toModifyTransitGatewayVpcAttachment",
@@ -13493,6 +13622,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "client-vpn-endpoint",
         "dedicated-host",
         "elastic-ip",
@@ -13917,7 +14047,7 @@
     {
       "key": "ec2:BootModeOverride",
       "methodName": "ifBootModeOverride",
-      "description": "Filters access by the boot mode",
+      "description": "Filters access by the boot mode override",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys",
       "relatedActionMethods": [
         "toCreateImage"
@@ -13978,6 +14108,7 @@
         "toCreateClientVpnRoute",
         "toCreateTags",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDescribeClientVpnConnections",
         "toDescribeClientVpnRoutes",
@@ -13985,8 +14116,10 @@
         "toDisassociateClientVpnTargetNetwork",
         "toExportClientVpnClientCertificateRevocationList",
         "toExportClientVpnClientConfiguration",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toImportClientVpnClientCertificateRevocationList",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toRevokeClientVpnIngress",
         "toTerminateClientVpnConnections"
       ],
@@ -14014,6 +14147,7 @@
         "toCreateClientVpnRoute",
         "toCreateTags",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDescribeClientVpnConnections",
         "toDescribeClientVpnRoutes",
@@ -14021,8 +14155,10 @@
         "toDisassociateClientVpnTargetNetwork",
         "toExportClientVpnClientCertificateRevocationList",
         "toExportClientVpnClientConfiguration",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toImportClientVpnClientCertificateRevocationList",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toRevokeClientVpnIngress",
         "toTerminateClientVpnConnections"
       ],
@@ -14050,6 +14186,7 @@
         "toCreateClientVpnRoute",
         "toCreateTags",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDescribeClientVpnConnections",
         "toDescribeClientVpnRoutes",
@@ -14057,8 +14194,10 @@
         "toDisassociateClientVpnTargetNetwork",
         "toExportClientVpnClientCertificateRevocationList",
         "toExportClientVpnClientConfiguration",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toImportClientVpnClientCertificateRevocationList",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toRevokeClientVpnIngress",
         "toTerminateClientVpnConnections"
       ],
@@ -14278,6 +14417,7 @@
         "toCreateClientVpnRoute",
         "toCreateTags",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDescribeClientVpnConnections",
         "toDescribeClientVpnRoutes",
@@ -14285,8 +14425,10 @@
         "toDisassociateClientVpnTargetNetwork",
         "toExportClientVpnClientCertificateRevocationList",
         "toExportClientVpnClientConfiguration",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toImportClientVpnClientCertificateRevocationList",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toRevokeClientVpnIngress",
         "toTerminateClientVpnConnections"
       ],
@@ -14581,6 +14723,33 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
     },
     {
+      "key": "ec2:FutureCapacitySpecification",
+      "methodName": "ifFutureCapacitySpecification",
+      "description": "Filters access by the ARN of the Future Capacity Specification",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys",
+      "relatedActionMethods": [
+        "toCancelCapacityReservation",
+        "toCreateCapacityReservationCancellationQuote",
+        "toCreateCapacityReservationDateChangeQuote",
+        "toCreateTags",
+        "toGetCapacityReservationUsage",
+        "toGetGroupsForCapacityReservation",
+        "toModifyCapacityReservation",
+        "toModifyInstanceCapacityReservationAttributes",
+        "toRunInstances"
+      ],
+      "relatedResourceTypes": [
+        "capacity-reservation"
+      ],
+      "keyLiteral": "FutureCapacitySpecification",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
       "key": "ec2:GatewayType",
       "methodName": "ifGatewayType",
       "description": "Filters access by the gateway type for a VPN endpoint on the AWS side of a VPN connection",
@@ -14673,6 +14842,7 @@
         "toEnableImageDeregistrationProtection",
         "toExportImage",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toImportImage",
         "toModifyFleet",
         "toModifyImageAttribute",
@@ -14721,6 +14891,7 @@
         "toEnableImageDeregistrationProtection",
         "toExportImage",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toImportImage",
         "toModifyFleet",
         "toModifyImageAttribute",
@@ -14735,6 +14906,42 @@
         "image"
       ],
       "keyLiteral": "ImageType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "ec2:ImageWatermarkKeys",
+      "methodName": "ifImageWatermarkKeys",
+      "description": "Filters access by the watermark keys of an image",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys",
+      "relatedActionMethods": [
+        "toAttachImageWatermark",
+        "toCreateImageUsageReport",
+        "toCreateReplaceRootVolumeTask",
+        "toCreateStoreImageTask",
+        "toCreateTags",
+        "toDeregisterImage",
+        "toDescribeImageAttribute",
+        "toDetachImageWatermark",
+        "toDisableImage",
+        "toDisableImageDeprecation",
+        "toDisableImageDeregistrationProtection",
+        "toEnableFastLaunch",
+        "toEnableImageDeprecation",
+        "toExportImage",
+        "toGetImageAncestry",
+        "toGetImageFindings",
+        "toModifyImageAttribute",
+        "toResetImageAttribute"
+      ],
+      "relatedResourceTypes": [
+        "image"
+      ],
+      "keyLiteral": "ImageWatermarkKeys",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [
@@ -16156,6 +16363,7 @@
         "toEnableImageDeregistrationProtection",
         "toExportImage",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toImportImage",
         "toImportSnapshot",
         "toLockSnapshot",
@@ -16692,6 +16900,7 @@
         "toEnableImageDeregistrationProtection",
         "toExportImage",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toImportImage",
         "toModifyFleet",
         "toModifyFpgaImageAttribute",
@@ -16838,6 +17047,7 @@
         "toCreateCapacityReservation",
         "toCreateCapacityReservationBySplitting",
         "toCreateCapacityReservationCancellationQuote",
+        "toCreateCapacityReservationDateChangeQuote",
         "toCreateCapacityReservationFleet",
         "toCreateCarrierGateway",
         "toCreateClientVpnEndpoint",
@@ -16946,6 +17156,7 @@
         "toDeleteCapacityManagerDataExport",
         "toDeleteCarrierGateway",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDeleteCoipCidr",
         "toDeleteCoipPool",
@@ -17068,6 +17279,7 @@
         "toDescribeCapacityManagerDataExports",
         "toDescribeCapacityReservationBillingRequests",
         "toDescribeCapacityReservationCancellationQuotes",
+        "toDescribeCapacityReservationDateChangeQuotes",
         "toDescribeCapacityReservationFleets",
         "toDescribeCapacityReservationTopology",
         "toDescribeCapacityReservations",
@@ -17327,6 +17539,7 @@
         "toGetCapacityManagerMetricDimensions",
         "toGetCapacityManagerMonitoredTagKeys",
         "toGetCapacityReservationUsage",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toGetCoipPoolUsage",
         "toGetConsoleOutput",
         "toGetConsoleScreenshot",
@@ -17340,6 +17553,7 @@
         "toGetHostReservationPurchasePreview",
         "toGetImageAncestry",
         "toGetImageBlockPublicAccessState",
+        "toGetImageFindings",
         "toGetInstanceMetadataDefaults",
         "toGetInstanceTpmEkPub",
         "toGetInstanceTypesFromInstanceRequirements",
@@ -17379,6 +17593,7 @@
         "toGetSnapshotBlockPublicAccessState",
         "toGetSpotPlacementScores",
         "toGetSubnetCidrReservations",
+        "toGetTransitGatewayAttachmentNatConfiguration",
         "toGetTransitGatewayAttachmentPropagations",
         "toGetTransitGatewayMeteringPolicyEntries",
         "toGetTransitGatewayMulticastDomainAssociations",
@@ -17411,6 +17626,7 @@
         "toModifyCapacityReservation",
         "toModifyCapacityReservationFleet",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toModifyDefaultCreditSpecification",
         "toModifyEbsDefaultKmsKeyId",
         "toModifyFleet",
@@ -17459,6 +17675,7 @@
         "toModifyTrafficMirrorFilterRule",
         "toModifyTrafficMirrorSession",
         "toModifyTransitGateway",
+        "toModifyTransitGatewayAttachmentNatConfiguration",
         "toModifyTransitGatewayMeteringPolicy",
         "toModifyTransitGatewayPolicyTableEntry",
         "toModifyTransitGatewayPrefixListReference",
@@ -17602,6 +17819,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "carrier-gateway",
         "client-vpn-endpoint",
         "coip-pool",
@@ -17925,6 +18143,7 @@
         "toCreateApplicationStatusCheck",
         "toCreateCapacityReservationBySplitting",
         "toCreateCapacityReservationCancellationQuote",
+        "toCreateCapacityReservationDateChangeQuote",
         "toCreateCarrierGateway",
         "toCreateClientVpnEndpoint",
         "toCreateClientVpnRoute",
@@ -18004,6 +18223,7 @@
         "toDeleteCapacityManagerDataExport",
         "toDeleteCarrierGateway",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDeleteCoipCidr",
         "toDeleteCoipPool",
@@ -18177,12 +18397,14 @@
         "toExportVerifiedAccessInstanceClientConfiguration",
         "toGetActiveVpnTunnelStatus",
         "toGetAssociatedIpv6PoolCidrs",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toGetCoipPoolUsage",
         "toGetConsoleOutput",
         "toGetConsoleScreenshot",
         "toGetDeclarativePoliciesReportSummary",
         "toGetFlowLogsIntegrationTemplate",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toGetInstanceTpmEkPub",
         "toGetInstanceUefiData",
         "toGetIpamAddressHistory",
@@ -18215,6 +18437,7 @@
         "toGetRouteServerPropagations",
         "toGetRouteServerRoutingDatabase",
         "toGetSecurityGroupsForVpc",
+        "toGetTransitGatewayAttachmentNatConfiguration",
         "toGetTransitGatewayMeteringPolicyEntries",
         "toGetTransitGatewayMulticastDomainAssociations",
         "toGetTransitGatewayPolicyTableAssociations",
@@ -18232,8 +18455,10 @@
         "toLockSnapshot",
         "toModifyAddressAttribute",
         "toModifyApplicationStatusCheck",
+        "toModifyCapacityReservation",
         "toModifyCapacityReservationFleet",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toModifyFleet",
         "toModifyFpgaImageAttribute",
         "toModifyHosts",
@@ -18276,6 +18501,7 @@
         "toModifyTrafficMirrorFilterRule",
         "toModifyTrafficMirrorSession",
         "toModifyTransitGateway",
+        "toModifyTransitGatewayAttachmentNatConfiguration",
         "toModifyTransitGatewayMeteringPolicy",
         "toModifyTransitGatewayPolicyTableEntry",
         "toModifyTransitGatewayPrefixListReference",
@@ -18399,6 +18625,7 @@
         "capacity-reservation",
         "capacity-reservation-cancellation-quote",
         "capacity-reservation-fleet",
+        "capacity-reservation-modification-quote",
         "carrier-gateway",
         "client-vpn-endpoint",
         "coip-pool",
@@ -18576,6 +18803,7 @@
         "toGetConsoleOutput",
         "toGetConsoleScreenshot",
         "toGetImageAncestry",
+        "toGetImageFindings",
         "toGetInstanceTpmEkPub",
         "toGetInstanceUefiData",
         "toGetLaunchTemplateData",
@@ -18693,6 +18921,7 @@
         "toCreateClientVpnRoute",
         "toCreateTags",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDescribeClientVpnConnections",
         "toDescribeClientVpnRoutes",
@@ -18700,8 +18929,10 @@
         "toDisassociateClientVpnTargetNetwork",
         "toExportClientVpnClientCertificateRevocationList",
         "toExportClientVpnClientConfiguration",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toImportClientVpnClientCertificateRevocationList",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toRevokeClientVpnIngress",
         "toTerminateClientVpnConnections"
       ],
@@ -18777,6 +19008,7 @@
         "toCreateClientVpnRoute",
         "toCreateTags",
         "toDeleteClientVpnEndpoint",
+        "toDeleteClientVpnEndpointAuthorizationPolicy",
         "toDeleteClientVpnRoute",
         "toDescribeClientVpnConnections",
         "toDescribeClientVpnRoutes",
@@ -18784,8 +19016,10 @@
         "toDisassociateClientVpnTargetNetwork",
         "toExportClientVpnClientCertificateRevocationList",
         "toExportClientVpnClientConfiguration",
+        "toGetClientVpnEndpointAuthorizationPolicy",
         "toImportClientVpnClientCertificateRevocationList",
         "toModifyClientVpnEndpoint",
+        "toModifyClientVpnEndpointAuthorizationPolicy",
         "toRevokeClientVpnIngress",
         "toTerminateClientVpnConnections"
       ],
@@ -19707,14 +19941,10 @@
         "toAcceptVpcEndpointConnections",
         "toCreateTags",
         "toCreateVpcEndpoint",
-        "toCreateVpcEndpointConnectionNotification",
         "toCreateVpcEndpointServiceConfiguration",
-        "toDeleteVpcEndpointConnectionNotifications",
         "toDeleteVpcEndpointServiceConfigurations",
         "toDeleteVpcEndpoints",
-        "toDescribeVpcEndpointServicePermissions",
         "toModifyVpcEndpoint",
-        "toModifyVpcEndpointConnectionNotification",
         "toModifyVpcEndpointPayerResponsibility",
         "toModifyVpcEndpointServiceConfiguration",
         "toModifyVpcEndpointServicePayerResponsibility",
@@ -19841,7 +20071,6 @@
       "relatedActionMethods": [
         "toCreateTags",
         "toCreateVpcEndpoint",
-        "toCreateVpcEndpointConnectionNotification",
         "toCreateVpcEndpointServiceConfiguration",
         "toDeleteVpcEndpoints",
         "toModifyVpcEndpoint"
@@ -19866,10 +20095,7 @@
       "relatedActionMethods": [
         "toAcceptVpcEndpointConnections",
         "toCreateTags",
-        "toDeleteVpcEndpointConnectionNotifications",
         "toDeleteVpcEndpointServiceConfigurations",
-        "toDescribeVpcEndpointServicePermissions",
-        "toModifyVpcEndpointConnectionNotification",
         "toModifyVpcEndpointPayerResponsibility",
         "toModifyVpcEndpointServiceConfiguration",
         "toModifyVpcEndpointServicePayerResponsibility",

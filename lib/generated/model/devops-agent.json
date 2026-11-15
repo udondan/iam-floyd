@@ -36,6 +36,7 @@
       "RevokeAccessToken",
       "RotateAccessToken",
       "SendMessage",
+      "StopPlan",
       "TagResource",
       "UntagResource",
       "UpdateAgentSpace",
@@ -67,11 +68,14 @@
       "GetBacklogTask",
       "GetCatalogCapability",
       "GetChat",
+      "GetKnowledgeGraph",
       "GetKnowledgeItem",
       "GetOperatorApp",
+      "GetPlan",
       "GetRecommendation",
       "GetService",
       "GetTrigger",
+      "ListAgentSpaceMetrics",
       "ListTagsForResource",
       "SearchAssets",
       "SearchServiceAccessibleResource"
@@ -79,6 +83,7 @@
     "List": [
       "ListAccessTokens",
       "ListAgentSpaces",
+      "ListAssetChanges",
       "ListAssetFiles",
       "ListAssetTypes",
       "ListAssetVersions",
@@ -363,6 +368,13 @@
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html"
     },
     {
+      "name": "GetKnowledgeGraph",
+      "methodName": "toGetKnowledgeGraph",
+      "description": "Grants permission to get the knowledge graph of an agentspace",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
+    },
+    {
       "name": "GetKnowledgeItem",
       "methodName": "toGetKnowledgeItem",
       "description": "Grants permission to get a knowledge item",
@@ -375,6 +387,13 @@
       "description": "Grants permission to get operator auth config for any enabled auth flow",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetOperatorApp.html"
+    },
+    {
+      "name": "GetPlan",
+      "methodName": "toGetPlan",
+      "description": "Grants permission to get a mitigation plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
     },
     {
       "name": "GetRecommendation",
@@ -412,11 +431,25 @@
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAccessTokens.html"
     },
     {
+      "name": "ListAgentSpaceMetrics",
+      "methodName": "toListAgentSpaceMetrics",
+      "description": "Grants permission to list the investigation metrics of an agent space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
+    },
+    {
       "name": "ListAgentSpaces",
       "methodName": "toListAgentSpaces",
       "description": "Grants permission to list agentspace",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAgentSpaces.html"
+    },
+    {
+      "name": "ListAssetChanges",
+      "methodName": "toListAssetChanges",
+      "description": "Grants permission to list asset changes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
     },
     {
       "name": "ListAssetFiles",
@@ -613,6 +646,13 @@
       "description": "Grants permission to send chat messages",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_SendMessage.html"
+    },
+    {
+      "name": "StopPlan",
+      "methodName": "toStopPlan",
+      "description": "Grants permission to stop a mitigation plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/aws-devops-agent-security-devops-agent-iam-permissions.html"
     },
     {
       "name": "TagResource",
@@ -951,6 +991,23 @@
   ],
   "conditions": [
     {
+      "key": "aidevops:ApprovalTarget",
+      "methodName": "ifApprovalTarget",
+      "description": "Filters access by the approvalTarget parameter in the request. TOOL_CALL is an approval for a single agent tool call. PLAN is an approval for a mitigation plan stage or its rollback. Defaults to TOOL_CALL",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/",
+      "relatedActionMethods": [
+        "toUpdateApprovalAction"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ApprovalTarget",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "aidevops:ServiceType",
       "methodName": "ifServiceType",
       "description": "Filters access by the type of service in the association, such as github, slack, aws or sourceAws. Set by the service from the association's configuration, not supplied by the caller",
@@ -982,6 +1039,8 @@
         "toGetAssetContent",
         "toGetAssetFile",
         "toGetBacklogTask",
+        "toGetKnowledgeGraph",
+        "toListAssetChanges",
         "toListAssetFiles",
         "toListAssets",
         "toListBacklogTasks",
@@ -1011,6 +1070,8 @@
         "toGetAssetContent",
         "toGetAssetFile",
         "toGetBacklogTask",
+        "toGetKnowledgeGraph",
+        "toListAssetChanges",
         "toListAssetFiles",
         "toListAssets",
         "toListBacklogTasks",
@@ -1091,13 +1152,17 @@
         "toGetAssociation",
         "toGetBacklogTask",
         "toGetChat",
+        "toGetKnowledgeGraph",
         "toGetKnowledgeItem",
         "toGetOperatorApp",
+        "toGetPlan",
         "toGetRecommendation",
         "toGetService",
         "toGetTrigger",
         "toInitiateChatForCase",
         "toListAccessTokens",
+        "toListAgentSpaceMetrics",
+        "toListAssetChanges",
         "toListAssetFiles",
         "toListAssetVersions",
         "toListAssets",
@@ -1119,6 +1184,7 @@
         "toRotateAccessToken",
         "toSearchAssets",
         "toSendMessage",
+        "toStopPlan",
         "toTagResource",
         "toUntagResource",
         "toUpdateAgentSpace",

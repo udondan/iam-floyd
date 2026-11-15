@@ -24,6 +24,7 @@
       "AdminRemoveUserFromGroup",
       "AdminResetUserPassword",
       "AdminRespondToAuthChallenge",
+      "AdminRevokeUserSession",
       "AdminSetUserMFAPreference",
       "AdminSetUserPassword",
       "AdminSetUserSettings",
@@ -67,11 +68,14 @@
       "ResendConfirmationCode",
       "RespondToAuthChallenge",
       "RevokeToken",
+      "RevokeUserSession",
       "SetLogDeliveryConfiguration",
       "SetRiskConfiguration",
       "SetUICustomization",
       "SetUserMFAPreference",
+      "SetUserPoolClientSessionConfiguration",
       "SetUserPoolMfaConfig",
+      "SetUserPoolSessionConfiguration",
       "SetUserSettings",
       "SignUp",
       "StartUserImportJob",
@@ -122,12 +126,15 @@
       "GetUICustomization",
       "GetUser",
       "GetUserAttributeVerificationCode",
+      "GetUserPoolClientSessionConfiguration",
       "GetUserPoolMfaConfig",
+      "GetUserPoolSessionConfiguration",
       "GetWebACLForResource"
     ],
     "List": [
       "AdminListDevices",
       "AdminListGroupsForUser",
+      "AdminListUserSessions",
       "ListDevices",
       "ListGroups",
       "ListIdentityProviders",
@@ -139,6 +146,7 @@
       "ListUserPoolClients",
       "ListUserPoolReplicas",
       "ListUserPools",
+      "ListUserSessions",
       "ListUsers",
       "ListUsersInGroup",
       "ListResourcesForWebACL"
@@ -290,6 +298,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html"
     },
     {
+      "name": "AdminListUserSessions",
+      "methodName": "toAdminListUserSessions",
+      "description": "Grants permission to list the sessions of any user",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserSessions.html"
+    },
+    {
       "name": "AdminRemoveUserFromGroup",
       "methodName": "toAdminRemoveUserFromGroup",
       "description": "Grants permission to remove any user from any group",
@@ -309,6 +324,13 @@
       "description": "Grants permission to respond to an authentication challenge during the authentication of any user",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html"
+    },
+    {
+      "name": "AdminRevokeUserSession",
+      "methodName": "toAdminRevokeUserSession",
+      "description": "Grants permission to revoke any session of any user",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRevokeUserSession.html"
     },
     {
       "name": "AdminSetUserMFAPreference",
@@ -729,11 +751,25 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserAttributeVerificationCode.html"
     },
     {
+      "name": "GetUserPoolClientSessionConfiguration",
+      "methodName": "toGetUserPoolClientSessionConfiguration",
+      "description": "Grants permission to look up the session configuration of user pool clients",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolClientSessionConfiguration.html"
+    },
+    {
       "name": "GetUserPoolMfaConfig",
       "methodName": "toGetUserPoolMfaConfig",
       "description": "Grants permission to look up the MFA configuration of user pools",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html"
+    },
+    {
+      "name": "GetUserPoolSessionConfiguration",
+      "methodName": "toGetUserPoolSessionConfiguration",
+      "description": "Grants permission to look up the session configuration of user pools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolSessionConfiguration.html"
     },
     {
       "name": "GlobalSignOut",
@@ -827,6 +863,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html"
     },
     {
+      "name": "ListUserSessions",
+      "methodName": "toListUserSessions",
+      "description": "Grants permission to allow a user to list one's own sessions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserSessions.html"
+    },
+    {
       "name": "ListUsers",
       "methodName": "toListUsers",
       "description": "Grants permission to list all user pool users",
@@ -862,6 +905,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
     },
     {
+      "name": "RevokeUserSession",
+      "methodName": "toRevokeUserSession",
+      "description": "Grants permission to allow a user to revoke one's own session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeUserSession.html"
+    },
+    {
       "name": "SetLogDeliveryConfiguration",
       "methodName": "toSetLogDeliveryConfiguration",
       "description": "Grants permission to set up or modify the detailed activity logging configuration of a user pool",
@@ -890,11 +940,25 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html"
     },
     {
+      "name": "SetUserPoolClientSessionConfiguration",
+      "methodName": "toSetUserPoolClientSessionConfiguration",
+      "description": "Grants permission to set the session configuration of user pool clients",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolClientSessionConfiguration.html"
+    },
+    {
       "name": "SetUserPoolMfaConfig",
       "methodName": "toSetUserPoolMfaConfig",
       "description": "Grants permission to set user pool MFA configuration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+    },
+    {
+      "name": "SetUserPoolSessionConfiguration",
+      "methodName": "toSetUserPoolSessionConfiguration",
+      "description": "Grants permission to set the session configuration of user pools",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolSessionConfiguration.html"
     },
     {
       "name": "SetUserSettings",
@@ -1197,9 +1261,11 @@
         "toAdminListDevices",
         "toAdminListGroupsForUser",
         "toAdminListUserAuthEvents",
+        "toAdminListUserSessions",
         "toAdminRemoveUserFromGroup",
         "toAdminResetUserPassword",
         "toAdminRespondToAuthChallenge",
+        "toAdminRevokeUserSession",
         "toAdminSetUserMFAPreference",
         "toAdminSetUserPassword",
         "toAdminSetUserSettings",
@@ -1243,7 +1309,9 @@
         "toGetLogDeliveryConfiguration",
         "toGetSigningCertificate",
         "toGetUICustomization",
+        "toGetUserPoolClientSessionConfiguration",
         "toGetUserPoolMfaConfig",
+        "toGetUserPoolSessionConfiguration",
         "toListGroups",
         "toListIdentityProviders",
         "toListResourceServers",
@@ -1258,7 +1326,9 @@
         "toSetLogDeliveryConfiguration",
         "toSetRiskConfiguration",
         "toSetUICustomization",
+        "toSetUserPoolClientSessionConfiguration",
         "toSetUserPoolMfaConfig",
+        "toSetUserPoolSessionConfiguration",
         "toStartUserImportJob",
         "toStopUserImportJob",
         "toTagResource",

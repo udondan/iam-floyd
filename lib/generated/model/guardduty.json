@@ -93,6 +93,7 @@
       "GetThreatIntelSet",
       "GetTrustedEntitySet",
       "GetUsageStatistics",
+      "ListInvestigationRecords",
       "ListTagsForResource"
     ],
     "List": [
@@ -647,6 +648,13 @@
       "description": "Grants permission to retrieve a list of GuardDuty IPSets",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListIPSets.html"
+    },
+    {
+      "name": "ListInvestigationRecords",
+      "methodName": "toListInvestigationRecords",
+      "description": "Grants permission to retrieve the records of a GuardDuty investigation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListInvestigationRecords.html"
     },
     {
       "name": "ListInvestigations",

@@ -15,6 +15,7 @@
       "DisassociateResourceFromProfile",
       "TagResource",
       "UntagResource",
+      "UpdateProfileAssociation",
       "UpdateProfileResourceAssociation",
       "PutProfilePolicy"
     ],
@@ -166,6 +167,13 @@
       "description": "Grants permission to delete a tag from the given resource",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UntagResource.html"
+    },
+    {
+      "name": "UpdateProfileAssociation",
+      "methodName": "toUpdateProfileAssociation",
+      "description": "Grants permission to update the name or priority of a Profile to VPC association specified by the Profile association ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileAssociation.html"
     },
     {
       "name": "UpdateProfileResourceAssociation",

@@ -7,7 +7,8 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-seller-reporting.html",
   "accessLevelList": {
     "Read": [
-      "GetSellerDashboard"
+      "GetSellerDashboard",
+      "GetSellerReportingData"
     ]
   },
   "actions": [
@@ -17,6 +18,13 @@
       "description": "Grants permission to view a seller dashboard",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/dashboards.html#reports-accessing"
+    },
+    {
+      "name": "GetSellerReportingData",
+      "methodName": "toGetSellerReportingData",
+      "description": "Grants permission to query a seller reporting dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/reports-and-data-feed.html"
     }
   ],
   "resources": [
@@ -39,6 +47,40 @@
         {
           "placeholder": "DashboardName",
           "name": "dashboardName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "SellerDataset",
+      "methodName": "onSellerDataset",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/reports-and-data-feed.html",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/Dataset/${DatasetName}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FactTable",
+          "name": "factTable",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasetName",
+          "name": "datasetName",
           "kind": "required"
         },
         {

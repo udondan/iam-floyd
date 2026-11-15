@@ -45,6 +45,7 @@
       "ImportSecurityRequirements",
       "InitiateProviderRegistration",
       "PutDesignReviewFeedback",
+      "ResumePentestJob",
       "StartCodeRemediation",
       "StartCodeReviewJob",
       "StartPentestJob",
@@ -809,6 +810,13 @@
       "url": "https://docs.aws.amazon.com/securityagent/API_PutDesignReviewFeedback.html"
     },
     {
+      "name": "ResumePentestJob",
+      "methodName": "toResumePentestJob",
+      "description": "Grants permission to resume a stopped or paused penetration test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityagent/API_ResumePentestJob.html"
+    },
+    {
       "name": "StartCodeRemediation",
       "methodName": "toStartCodeRemediation",
       "description": "Grants permission to start code remediation for the findings",
@@ -1126,7 +1134,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_securityagent",
+        "interface": "IPrivateConnectionRef",
+        "property": "privateConnectionRef",
+        "arn": "privateConnectionArn"
+      }
     },
     {
       "name": "SecurityRequirementPack",
@@ -1304,6 +1318,7 @@
         "toListThreatModels",
         "toListThreats",
         "toPutDesignReviewFeedback",
+        "toResumePentestJob",
         "toStartCodeRemediation",
         "toStartCodeReviewJob",
         "toStartPentestJob",

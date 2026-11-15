@@ -339,7 +339,13 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_bcmpricingcalculator",
+        "interface": "IBillEstimateRef",
+        "property": "billEstimateRef",
+        "arn": "billEstimateArn"
+      }
     },
     {
       "name": "bill-scenario",

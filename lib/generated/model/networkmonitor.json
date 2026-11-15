@@ -186,7 +186,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkmonitor",
+        "interface": "IProbeRef",
+        "property": "probeRef",
+        "arn": "probeArn"
+      }
     }
   ],
   "conditions": [

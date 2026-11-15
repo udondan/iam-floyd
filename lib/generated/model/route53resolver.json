@@ -645,7 +645,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53resolver",
+        "interface": "IFirewallConfigRef",
+        "property": "firewallConfigRef",
+        "arn": "firewallConfigArn"
+      }
     },
     {
       "name": "firewall-domain-list",

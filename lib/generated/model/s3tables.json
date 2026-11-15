@@ -21,6 +21,7 @@
       "DeleteTablePolicy",
       "DeleteTableReplication",
       "PutTableBucketEncryption",
+      "PutTableBucketLogging",
       "PutTableBucketMaintenanceConfiguration",
       "PutTableBucketMetricsConfiguration",
       "PutTableBucketPolicy",
@@ -52,6 +53,7 @@
       "GetTable",
       "GetTableBucket",
       "GetTableBucketEncryption",
+      "GetTableBucketLogging",
       "GetTableBucketMaintenanceConfiguration",
       "GetTableBucketMetricsConfiguration",
       "GetTableBucketPolicy",
@@ -201,6 +203,13 @@
       "description": "Grants permission to retrieve encryption configuration on a table bucket",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketEncryption.html"
+    },
+    {
+      "name": "GetTableBucketLogging",
+      "methodName": "toGetTableBucketLogging",
+      "description": "Grants permission to retrieve the server access logging configuration for a table bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketLogging.html"
     },
     {
       "name": "GetTableBucketMaintenanceConfiguration",
@@ -355,6 +364,13 @@
       "description": "Grants permission to put or overwrite encryption configuration on a table bucket",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketEncryption.html"
+    },
+    {
+      "name": "PutTableBucketLogging",
+      "methodName": "toPutTableBucketLogging",
+      "description": "Grants permission to set, update, or remove the server access logging configuration for a table bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketLogging.html"
     },
     {
       "name": "PutTableBucketMaintenanceConfiguration",
@@ -621,6 +637,7 @@
         "toGetTable",
         "toGetTableBucket",
         "toGetTableBucketEncryption",
+        "toGetTableBucketLogging",
         "toGetTableBucketMaintenanceConfiguration",
         "toGetTableBucketMetricsConfiguration",
         "toGetTableBucketPolicy",
@@ -642,6 +659,7 @@
         "toListTables",
         "toListTagsForResource",
         "toPutTableBucketEncryption",
+        "toPutTableBucketLogging",
         "toPutTableBucketMaintenanceConfiguration",
         "toPutTableBucketMetricsConfiguration",
         "toPutTableBucketPolicy",
@@ -778,6 +796,7 @@
         "toGetTable",
         "toGetTableBucket",
         "toGetTableBucketEncryption",
+        "toGetTableBucketLogging",
         "toGetTableBucketMaintenanceConfiguration",
         "toGetTableBucketMetricsConfiguration",
         "toGetTableBucketPolicy",
@@ -799,6 +818,7 @@
         "toListTables",
         "toListTagsForResource",
         "toPutTableBucketEncryption",
+        "toPutTableBucketLogging",
         "toPutTableBucketMaintenanceConfiguration",
         "toPutTableBucketMetricsConfiguration",
         "toPutTableBucketPolicy",

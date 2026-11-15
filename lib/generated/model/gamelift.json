@@ -71,7 +71,8 @@
       "UpdateGameSessionQueue",
       "UpdateMatchmakingConfiguration",
       "UpdateRuntimeConfiguration",
-      "UpdateScript"
+      "UpdateScript",
+      "AllowVendedLogDeliveryForResource"
     ],
     "Read": [
       "DescribeAlias",
@@ -135,6 +136,9 @@
     "Tagging": [
       "TagResource",
       "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
     ]
   },
   "actions": [
@@ -1021,6 +1025,13 @@
       "description": "Grants permission to validate the syntax of a FlexMatch matchmaking rule set",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ValidateMatchmakingRuleSet.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for a queue",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/gameliftservers/latest/apireference/"
     }
   ],
   "resources": [
@@ -1530,7 +1541,8 @@
         "toUpdateGameSessionQueue",
         "toUpdateMatchmakingConfiguration",
         "toUpdateRuntimeConfiguration",
-        "toUpdateScript"
+        "toUpdateScript",
+        "toAllowVendedLogDeliveryForResource"
       ],
       "relatedResourceTypes": [
         "alias",

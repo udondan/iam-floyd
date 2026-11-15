@@ -303,7 +303,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_osis",
+        "interface": "IPipelineEndpointRef",
+        "property": "pipelineEndpointRef",
+        "arn": "pipelineEndpointArn"
+      }
     }
   ],
   "conditions": [
