@@ -92,7 +92,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install qlty
-        uses: qltysh/qlty-action/install@ebcd284bf32e36a030afe15f1e136c7be08b9506 # v2.5.0
+        uses: qltysh/qlty-action/install@357cd88be7c73c5dc45cf7cf8f99a46ec0b62b73 # v2.6.0
 
       - name: Lint via qlty plugins
         run: qlty check --all
