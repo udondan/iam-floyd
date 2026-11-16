@@ -1,5 +1,169 @@
 # Changelog
 
+## [0.854.0](https://github.com/udondan/iam-floyd/compare/v0.853.0...v0.854.0) (2026-11-16)
+
+
+### Features
+
+* add latest IAM updates from AWS ([#2459](https://github.com/udondan/iam-floyd/issues/2459)) ([a53ff81](https://github.com/udondan/iam-floyd/commit/a53ff817a65bb3e44fdff1eaedfcb8001b7beabb))
+* update AWS managed policies and service principals ([#2457](https://github.com/udondan/iam-floyd/issues/2457)) ([0479768](https://github.com/udondan/iam-floyd/commit/04797688c6698cb43ce7d60b8f664dc9c37f45e3))
+
+---
+
+:warning: **Removed AWS managed policies:**
+
+- AWSServiceRoleForSMS
+
+**New AWS managed policies:**
+
+- AWSCODAServiceRolePolicy
+- AWSMarketplaceAgenticCommerceServiceRolePolicy
+- AWSNetworkFirewallIGWServiceRolePolicy
+- AWSNotificationsContactAssociationsServiceLinkedRolePolicy
+- AWSPartnerCentralBusinessPlanManagement
+- AmazonBioDiscoveryServiceLinkedRolePolicy
+- ContinuumThreatsServiceRolePolicy
+
+---
+
+**New service principals:**
+
+- threats.continuum.amazonaws.com
+
+---
+
+**New actions:**
+
+- agentaccess-mcp:ExecuteSequence
+- agentaccess-mcp:GetCurrentUser
+- agentaccess-mcp:SwitchUser
+- agentaccess-mcp:Wait
+- aidevops:GetKnowledgeGraph
+- aidevops:GetPlan
+- aidevops:ListAgentSpaceMetrics
+- aidevops:ListAssetChanges
+- aidevops:StopPlan
+- airflow-serverless:CreateAirflowUiUrl
+- appstream:UpdateImageBuilder
+- aws-marketplace:GetSellerReportingData
+- cloudformation:RemoveAlias
+- cloudformation:SetAlias
+- cloudwatch:DeleteMetricDataQueryDefinition
+- cloudwatch:GetMetricDataQueryDefinition
+- cloudwatch:GetSpaceDataAccess
+- cloudwatch:ListMetricDataQueryDefinitions
+- cloudwatch:PutMetricDataQueryDefinition
+- cognito-idp:AdminListUserSessions
+- cognito-idp:AdminRevokeUserSession
+- cognito-idp:GetUserPoolClientSessionConfiguration
+- cognito-idp:GetUserPoolSessionConfiguration
+- cognito-idp:ListUserSessions
+- cognito-idp:RevokeUserSession
+- cognito-idp:SetUserPoolClientSessionConfiguration
+- cognito-idp:SetUserPoolSessionConfiguration
+- ec2:CreateCapacityReservationDateChangeQuote
+- ec2:DeleteClientVpnEndpointAuthorizationPolicy
+- ec2:DescribeCapacityReservationDateChangeQuotes
+- ec2:GetClientVpnEndpointAuthorizationPolicy
+- ec2:GetImageFindings
+- ec2:GetTransitGatewayAttachmentNatConfiguration
+- ec2:ModifyClientVpnEndpointAuthorizationPolicy
+- ec2:ModifyTransitGatewayAttachmentNatConfiguration
+- es:UpdateClone
+- gamelift:AllowVendedLogDeliveryForResource
+- guardduty:ListInvestigationRecords
+- mgn:CreateRemoteSourceAction
+- mgn:DeleteRemoteSourceAction
+- mgn:GetLaunchConfigurationDefaults
+- mgn:ListNetworkMigrationInsights
+- mgn:ListRemoteSourceActionInvocationResults
+- mgn:ListRemoteSourceActionInvocations
+- mgn:ListRemoteSourceActionJobs
+- mgn:ListRemoteSourceActions
+- mgn:StartRemoteSourceActionJob
+- mgn:UpdateLaunchConfigurationDefaults
+- mgn:UpdateRemoteSourceAction
+- odb:AssociateVirtualMachinesToCloudVmCluster
+- odb:DisassociateVirtualMachinesFromCloudVmCluster
+- odb:UpdateCloudAutonomousVmCluster
+- odb:UpdateCloudExadataInfrastructureStorageCapacity
+- odb:UpdateCloudVmCluster
+- omics:AuthorizeRunProcessing
+- route53:CreateIpGuardrailPolicy
+- route53:CreateResourceRecordSetProtections
+- route53:DeleteIpGuardrailPolicy
+- route53:DeleteResourceRecordSetProtections
+- route53:GetIpGuardrailPolicy
+- route53:ListIpGuardrailPolicies
+- route53:ListResourceRecordSetProtections
+- route53:UpdateIpGuardrailPolicy
+- route53profiles:UpdateProfileAssociation
+- s3tables:GetTableBucketLogging
+- s3tables:PutTableBucketLogging
+- secretsmanager:AcceptCrossAccountReplication
+- secretsmanager:AssociateCrossAccountReplica
+- secretsmanager:DisassociateCrossAccountReplica
+- secretsmanager:ListResourcePolicies
+- securityagent:ResumePentestJob
+- securityhub:GetCSPMOrganizationsImportStatus
+- securityhub:PutCSPMOrganizationsImportStatus
+- securityhub:UpdateSecurityHubV2
+- signin:CreateBearerToken
+- transform-custom:ContributeKnowledgeItems
+- transform-custom:DeleteResourcePolicy
+- transform-custom:GetResourcePolicy
+- transform-custom:PutResourcePolicy
+- user-subscriptions:GetOverageConfig
+- user-subscriptions:ListUsagesAndLimits
+- wellarchitected:CreateAgentBasicProfile
+- wellarchitected:CreateAgentOrganizationalProfile
+- wellarchitected:CreateAgentOrganizationalReport
+- wellarchitected:DeleteAgentOrganizationalReport
+- wellarchitected:DeleteAgentProfilePolicy
+- wellarchitected:DeleteAgentRecommendationPolicy
+- wellarchitected:GetAgentOrganizationalReport
+- wellarchitected:GetAgentOrganizationalReportData
+- wellarchitected:GetAgentPreferences
+- wellarchitected:GetAgentProfilePolicy
+- wellarchitected:GetAgentRecommendationPolicy
+- wellarchitected:ListAgentOrganizationalReports
+- wellarchitected:PutAgentPreferences
+- wellarchitected:PutAgentProfilePolicy
+- wellarchitected:PutAgentRecommendationPolicy
+- wellarchitected:SendAgentOrganizationalReportDataToS3
+- wellarchitected:UpdateAgentOrganizationalProfile
+
+**Updated action access level:**
+
+- wellarchitected:ListAgentContexts: Read -> List
+- wellarchitected:ListAgentGoals: Read -> List
+- wellarchitected:ListAgentProfiles: Read -> List
+- wellarchitected:ListAgentRecommendationGenerations: Read -> List
+- wellarchitected:ListAgentRecommendationItems: Read -> List
+- wellarchitected:ListAgentRecommendations: Read -> List
+
+**New resource types:**
+
+- aws-marketplace:SellerDataset
+- cloudwatch:metric-query-definition
+- ec2:capacity-reservation-modification-quote
+- mgn:RemoteSourceActionJobResource
+- mgn:RemoteSourceActionResource
+
+**New condition keys:**
+
+- agentaccess-mcp:ImageBuilderArn
+- agentaccess-mcp:LocalUser
+- aidevops:ApprovalTarget
+- ec2:FutureCapacitySpecification
+- ec2:ImageWatermarkKeys
+- secretsmanager:CrossAccountPrimaryARN
+- secretsmanager:CrossAccountReplicaARN
+- secretsmanager:PolicyName
+- secretsmanager:ReplicaRestriction
+- secretsmanager:ReplicationRoleARN
+- sso:VpceAccessRequired
+
 ## [0.853.0](https://github.com/udondan/iam-floyd/compare/v0.852.0...v0.853.0) (2026-11-09)
 
 
