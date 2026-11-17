@@ -48,12 +48,12 @@ mkdir -p "${OUT}"
 log "Writing the examples of the policy converter"
 EXAMPLES_DIR="${OUT}/examples"
 rsync -a --exclude "*.ts" --exclude "*.js" "${ROOT}/examples/" "${EXAMPLES_DIR}"
-npx ts-node test/converter/cases.ts CDK "${EXAMPLES_DIR}"
+bunx ts-node test/converter/cases.ts CDK "${EXAMPLES_DIR}"
 
 if [[ " ${LANGUAGES[*]} " == *" typescript "* ]]; then
   log "Rendering the API docs, like Construct Hub"
   mkdir -p "${OUT}/docs"
-  npx jsii-docgen -l typescript -l python -l java -l csharp -l go -o "${OUT}/docs/API.md"
+  bunx jsii-docgen -l typescript -l python -l java -l csharp -l go -o "${OUT}/docs/API.md"
 fi
 
 log "Packing cdk-iam-floyd@${VERSION}"
@@ -67,13 +67,13 @@ CDK_MIN_VERSION=$(node -p "require('${ROOT}/lib/generated/cdk-refs.json')['aws-c
 npm pkg set "peerDependencies.aws-cdk-lib=^${CDK_MIN_VERSION}" \
   "peerDependencies.cdk-iam-floyd=^${VERSION}" \
   "devDependencies.cdk-iam-floyd=file:../cdk-iam-floyd-${VERSION}.tgz"
-npm install --no-audit --no-fund --silent
-npx jsii
+bun install --silent
+bunx jsii
 if [[ ${#TARGETS[@]} -gt 0 ]]; then
   # jsii-pacmak builds against the outputs of dependencies in `<package>/dist/<language>`
   cp -R "${ROOT}/dist" node_modules/cdk-iam-floyd/dist
   targets="${TARGETS[*]}"
-  npx jsii-pacmak --targets "${targets// /,}"
+  bunx jsii-pacmak --targets "${targets// /,}"
 fi
 CONSUMER="${OUT}/consumer/dist"
 

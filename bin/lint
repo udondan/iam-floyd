@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Runs all linters. Fixes what can be fixed with `--fix`.
 #
-# Needs Node.js, uv, Go, the .NET SDK and Maven. The versions of the linters are pinned in
+# Needs Node.js, Bun, uv, Go, the .NET SDK and Maven. The versions of the linters are pinned in
 # package.json and lint/. Locally, linters whose runtime is missing are skipped, in CI they fail.
 
 set -uo pipefail
@@ -85,20 +85,20 @@ DOTNET_FOLDERS=(examples test/jsii test/transpile/dotnet dotnet/src/IAM.Floyd/Js
 
 if [[ ! -d tooter/node_modules ]]; then
   # The types of the tooter dependencies are needed for linting
-  npm ci --prefix tooter --no-audit --no-fund > /dev/null
+  bun install --cwd tooter --frozen-lockfile > /dev/null
 fi
 
 # eslint checks all files with types in one program, which needs more than the default heap of Node.js
 export NODE_OPTIONS="${NODE_OPTIONS:-} --max-old-space-size=8192"
 
 if ${FIX}; then
-  run eslint npx eslint --fix .
-  run prettier npx prettier --log-level warn --write .
-  run markdownlint npx markdownlint-cli2 --fix
+  run eslint bunx eslint --fix .
+  run prettier bunx prettier --log-level warn --write .
+  run markdownlint bunx markdownlint-cli2 --fix
 else
-  run eslint npx eslint .
-  run prettier npx prettier --log-level warn --check .
-  run markdownlint npx markdownlint-cli2
+  run eslint bunx eslint .
+  run prettier bunx prettier --log-level warn --check .
+  run markdownlint bunx markdownlint-cli2
 fi
 run 'exact versions' exactVersions
 

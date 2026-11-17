@@ -2,16 +2,16 @@ SHELL := /bin/bash
 
 clean:
 	@echo -e "$(TARGET_COLOR)Running clean$(NO_COLOR)"
-	@rm -rf node_modules package-lock.json
+	@rm -rf node_modules
 	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 
 install: clean
 	@echo -e "$(TARGET_COLOR)Running install$(NO_COLOR)"
-	@npm i
+	@bun install --frozen-lockfile
 
 build:
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
-	@npm run build
+	@bun run build
 
 diff: build
 	@echo -e "$(TARGET_COLOR)Running diff$(NO_COLOR)"

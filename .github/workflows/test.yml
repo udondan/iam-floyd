@@ -21,7 +21,10 @@ jobs:
   # Pull requests from forks get no secrets and no AWS credentials. They skip the wait, the AWS
   # tests and the signing of the Maven bundles, and run the other jobs. The required job fails for
   # them, as the AWS tests didn't run.
+  # Every other job waits for this one, and fails in its first step if it failed. It is skipped for
+  # forks and on push to main, where the jobs run without the wait.
   boarding-gate:
+    name: Queue
     if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       actions: read
@@ -36,17 +39,18 @@ jobs:
     secrets:
       update-token: ${{ secrets.OVERRIDE_TOKEN }}
 
+  # The cheap check. The tests start only after it passed.
   lint:
     name: Lint
     needs: boarding-gate
-    # The wait is skipped for forks.
-    if: ${{ !cancelled() && (needs.boarding-gate.result == 'success' || needs.boarding-gate.result == 'skipped') }}
+    # Fail instead of skip if boarding-gate failed: a skipped job counts as passed.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: 26.x
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
 
       - name: Set up uv
         uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
@@ -55,6 +59,9 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      - name: Set up Node.js and Bun
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
 
       - name: Set up Go
         uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
@@ -82,9 +89,17 @@ jobs:
   # Git-aware: only smells introduced by the pull request compared to main fail the job.
   qlty:
     name: Qlty
+    needs: boarding-gate
+    # Fail instead of skip if boarding-gate failed, see lint.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
+
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -114,14 +129,66 @@ jobs:
             exit 1
           fi
 
+  # The tests only run on pull requests that change code or build files. Skipped outside of pull
+  # requests, so pushes to main always run them. When the code or the packages start depending on
+  # another file, add it here, or the tests silently skip.
+  changes:
+    name: Changes
+    needs: boarding-gate
+    # Fail instead of skip if boarding-gate failed, see lint.
+    if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read # paths-filter lists the files of the pull request via the API
+    outputs:
+      code: ${{ steps.filter.outputs.code }}
+    steps:
+      # boarding-gate is skipped for forks
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
+
+      - name: Filter changed files
+        uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
+        id: filter
+        with:
+          filters: |
+            code:
+              - lib/**
+              - bin/**
+              - cdk/**
+              - helper/**
+              - examples/**
+              - test/**
+              - python/**
+              - java/**
+              - dotnet/**
+              - go/**
+              - docs/source/_static/**
+              - package.json
+              - mise.toml
+              - Makefile
+              - "*.Makefile"
+              - tsconfig*.json
+              - .c8rc*.json
+              - vitest.config.mts
+              - codecov.yml
+              - .npmignore
+              - README.md
+              - LICENSE
+              - .github/workflows/test.yml
+              - .github/actions/**
+              - .config/dotnet-tools.json
+
   # The native packages of iam-floyd, built by the action package-iam-floyd like in publish.yml.
   # Each package is built with the newest version and tested with the oldest and the newest
   # supported version.
   test-iam-floyd-native:
     name: Test iam-floyd in ${{ matrix.name }} ${{ matrix.version }}
-    needs: lint
+    needs: [boarding-gate, lint, changes]
     # Without !cancelled() the skipped wait of forks would skip this job as well.
-    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' && (needs.changes.result == 'skipped' || needs.changes.outputs.code == 'true') }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -161,6 +228,11 @@ jobs:
             version: stable
             newest: true
     steps:
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
+
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -205,8 +277,8 @@ jobs:
   # Codecov has a base for every flag.
   coverage-native:
     name: Coverage of iam-floyd in ${{ matrix.name }}
-    needs: lint
-    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    needs: [boarding-gate, lint, changes]
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (needs.changes.result == 'skipped' || needs.changes.outputs.code == 'true') && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -233,6 +305,11 @@ jobs:
             version: stable
             report: go.out
     steps:
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
+
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -261,23 +338,26 @@ jobs:
 
   test-iam-floyd:
     name: Test iam-floyd npm package
-    needs: lint
-    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    needs: [boarding-gate, lint, changes]
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (needs.changes.result == 'skipped' || needs.changes.outputs.code == 'true') && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write # OIDC for AWS and Codecov
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: x
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
 
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
+
+      - name: Set up Node.js and Bun
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
 
       - name: Configure AWS credentials
         id: aws-credentials
@@ -325,23 +405,26 @@ jobs:
 
   test-cdk-iam-floyd:
     name: Test cdk-iam-floyd npm package
-    needs: lint
-    if: ${{ !cancelled() && needs.lint.result == 'success' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    needs: [boarding-gate, lint, changes]
+    if: ${{ !cancelled() && needs.lint.result == 'success' && (needs.changes.result == 'skipped' || needs.changes.outputs.code == 'true') && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write # OIDC for AWS and Codecov
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: 26.x
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
 
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
+
+      - name: Set up Node.js and Bun
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
 
       - name: Build CDK variant
         run: |
@@ -381,14 +464,13 @@ jobs:
 
       # The steps above test the newest aws-cdk-lib (devDependency), this one the minimum of the
       # peer dependency, which has all reference interfaces the on*() methods accept. The exact
-      # version is the one of lib/generated/cdk-refs.json. npm leaves out dependencies of
-      # aws-cdk-lib when it downgrades it with the lock files of the newer version (e.g.
-      # @aws-cdk/cloud-assembly-schema across a major version), so they are removed first.
+      # version is the one of lib/generated/cdk-refs.json. The dependencies of the newer
+      # aws-cdk-lib are removed first (e.g. @aws-cdk/cloud-assembly-schema across a major version).
       - name: Test with the minimum version of aws-cdk-lib
         if: github.event_name == 'pull_request'
         run: | # zizmor: ignore[adhoc-packages]
-          rm -rf package-lock.json node_modules/.package-lock.json node_modules/aws-cdk-lib node_modules/@aws-cdk
-          npm i --no-save --no-audit --no-fund "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
+          rm -rf bun.lock node_modules/aws-cdk-lib node_modules/@aws-cdk
+          bun add --no-save "aws-cdk-lib@$(jq -r '."aws-cdk-lib"' lib/generated/cdk-refs.json)"
           node -p "require('aws-cdk-lib/package.json').version"
           make build test-typescript-cdk
 
@@ -397,9 +479,9 @@ jobs:
   # baseline the others are compared to.
   test-cdk-iam-floyd-jsii:
     name: Test cdk-iam-floyd in ${{ matrix.name }}
-    needs: lint
+    needs: [boarding-gate, lint, changes]
     # Without !cancelled() the skipped wait of forks would skip this job as well.
-    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.lint.result == 'success' && (needs.changes.result == 'skipped' || needs.changes.outputs.code == 'true') }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -416,6 +498,11 @@ jobs:
           - language: go
             name: Go
     steps:
+      # boarding-gate is skipped for forks and on push to main
+      - name: Check turn
+        if: needs.boarding-gate.result == 'failure' || needs.boarding-gate.result == 'cancelled'
+        run: exit 1
+
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -452,6 +539,7 @@ jobs:
   coverage:
     name: Coverage
     needs:
+      - boarding-gate
       - test-iam-floyd
       - test-cdk-iam-floyd
     if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.test-iam-floyd.result == 'success' && needs.test-cdk-iam-floyd.result == 'success' }}
@@ -460,6 +548,10 @@ jobs:
     permissions:
       checks: read
     steps:
+      - name: Check turn
+        if: needs.boarding-gate.result != 'success'
+        run: exit 1
+
       - name: Wait for Codecov
         env:
           GH_TOKEN: ${{ github.token }}
@@ -483,7 +575,7 @@ jobs:
           done
           echo "::warning::Codecov didn't report within 5 minutes, coverage is not checked."
 
-  # The only test check the ruleset requires.
+  # The only test check the ruleset requires. The tests are skipped if no code changed.
   required:
     # A skipped job counts as passed for required checks, so this job must not
     # be skipped when a test failed.
@@ -492,6 +584,7 @@ jobs:
     needs:
       - lint
       - qlty
+      - changes
       - test-iam-floyd-native
       - coverage-native
       - test-iam-floyd
@@ -500,7 +593,7 @@ jobs:
       - coverage
     steps:
       - name: Check tests
-        if: needs.lint.result != 'success' || needs.qlty.result != 'success' || needs.test-iam-floyd-native.result != 'success' || needs.coverage-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'
+        if: needs.lint.result != 'success' || needs.qlty.result != 'success' || needs.changes.result != 'success' || (needs.changes.outputs.code == 'true' && (needs.test-iam-floyd-native.result != 'success' || needs.coverage-native.result != 'success' || needs.test-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd.result != 'success' || needs.test-cdk-iam-floyd-jsii.result != 'success' || needs.coverage.result != 'success'))
         env:
           FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
         run: |

@@ -88,6 +88,7 @@ jobs:
         with:
           language: ${{ matrix.language }}
           version: ${{ matrix.version }}
+          cache: "false" # no cache restored from another run in the publish job
 
       - name: Store packages
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -127,6 +128,7 @@ jobs:
         uses: $/.github/actions/package-cdk-iam-floyd
         with:
           language: ${{ matrix.language }}
+          cache: "false" # no cache restored from another run in the publish job
 
       - name: Store packages
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -146,18 +148,17 @@ jobs:
       contents: read
       id-token: write # OIDC for npm
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: 26.x
-          registry-url: https://registry.npmjs.org
-
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ inputs.tag }}
+
+      - name: Set up Node.js and Bun
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        with:
+          cache: false # no cache restored from another run in the publish job
 
       # npm authenticates with OIDC, there is no token
       - name: Publish to npm
@@ -279,18 +280,17 @@ jobs:
       contents: read
       id-token: write # OIDC for npm
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: 26.x
-          registry-url: https://registry.npmjs.org
-
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ inputs.tag }}
+
+      - name: Set up Node.js and Bun
+        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        with:
+          cache: false # no cache restored from another run in the publish job
 
       - name: Build CDK variant
         run: |

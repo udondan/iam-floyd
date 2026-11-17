@@ -5,7 +5,7 @@
     "tooter": "bin/app.js"
   },
   "scripts": {
-    "build": "npx tsc"
+    "build": "bunx tsc"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.164"

@@ -2,15 +2,15 @@ SHELL := /bin/bash
 VERSION := $(shell node -p "require('../package.json').version")
 
 clean:
-	@rm -rf node_modules package-lock.json
+	@rm -rf node_modules bun.lock
 	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 
 install:
-	@npm install --no-save ../cdk-iam-floyd-$(VERSION).tgz
+	@bun add --no-save ../cdk-iam-floyd-$(VERSION).tgz
 
 test-cdk: install
-	@npm run build
-	@npx cdk diff
-	@npx cdk deploy --require-approval never
-	@npx cdk destroy --force
+	@bun run build
+	@bunx cdk diff
+	@bunx cdk deploy --require-approval never
+	@bunx cdk destroy --force
 	@cat cdk.out/IAM-Floyd-Test.template.json

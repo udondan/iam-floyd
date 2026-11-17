@@ -17,42 +17,42 @@ COMMA := ,
 build: emit
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
 	@rm -rf *.tsbuildinfo
-	@npm run build
+	@bun run build
 
 emit:
 	@echo -e "$(TARGET_COLOR)Running emit$(NO_COLOR)"
-	@npm run emit
+	@bun run emit
 
 generate:
 	@echo -e "$(TARGET_COLOR)Running generate$(NO_COLOR)"
-	@npm run generate
+	@bun run generate
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
 cdk-refs:
 	@echo -e "$(TARGET_COLOR)Running cdk-refs$(NO_COLOR)"
-	@npm run cdk-refs
+	@bun run cdk-refs
 
 generate-force:
 	@echo -e "$(TARGET_COLOR)Running generate-force$(NO_COLOR)"
-	@NOCACHE=1 npm run generate
+	@NOCACHE=1 bun run generate
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
 index-managed-policies:
 	@echo -e "$(TARGET_COLOR)Running index-managed-policies$(NO_COLOR)"
-	@npm run index-managed-policies
+	@bun run index-managed-policies
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
 # Checks the service principals with IAM, needs AWS credentials. Run after index-managed-policies,
 # which updates the managed policies the principals are collected from
 index-service-principals:
 	@echo -e "$(TARGET_COLOR)Running index-service-principals$(NO_COLOR)"
-	@npm run index-service-principals
+	@bun run index-service-principals
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
 # Runs the npm command $(1) with README.md in TypeScript, which npm packs, and restores README.md
 # after it. The copy is not next to it, as npm packs every README*
 npm-readme = original=$$(mktemp) && cp README.md "$$original" && \
-	npx ts-node bin/readme.ts typescript "$$(node -p "require('./package.json').name")" README.md && \
+	bunx ts-node bin/readme.ts typescript "$$(node -p "require('./package.json').name")" README.md && \
 	{ $(1); status=$$?; cp "$$original" README.md; rm "$$original"; exit $$status; }
 
 package: build
@@ -64,7 +64,7 @@ package: build
 # Set LANGUAGES to build only some of them, e.g. `make package-native LANGUAGES=python`
 package-native: emit
 	@echo -e "$(TARGET_COLOR)Running package-native$(NO_COLOR)"
-	@npx ts-node bin/transpile.ts
+	@bunx ts-node bin/transpile.ts
 	@rm -rf dist/iam-floyd
 	$(if $(filter python,$(LANGUAGES)),@cp LICENSE python/LICENSE)
 	$(if $(filter python,$(LANGUAGES)),@uv build --quiet python --out-dir dist/iam-floyd/python)
@@ -84,18 +84,18 @@ package-native: emit
 # is set back to TypeScript for npm and Construct Hub at the end.
 package-jsii: build
 	@echo -e "$(TARGET_COLOR)Running package-jsii$(NO_COLOR)"
-	@npx ts-node bin/jsii.ts
+	@bunx ts-node bin/jsii.ts
 	@rm -rf dist
 	@for target in $(JSII_TARGETS); do \
-		npx ts-node bin/readme.ts --jsii "$$target" && \
-		npx jsii-pacmak --targets "$$target" --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts" || exit 1; \
+		bunx ts-node bin/readme.ts --jsii "$$target" && \
+		bunx jsii-pacmak --targets "$$target" --no-runtime-type-checking --pack-command "node $(CURDIR)/node_modules/ts-node/dist/bin.js $(CURDIR)/bin/jsii-pack.ts" || exit 1; \
 	done
-	$(if $(JSII_TARGETS),@npx ts-node bin/readme.ts --jsii typescript)
+	$(if $(JSII_TARGETS),@bunx ts-node bin/readme.ts --jsii typescript)
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
-	@npx ts-node bin/mkcdk.ts
-	@npm i
+	@bunx ts-node bin/mkcdk.ts
+	@bun install
 
 uncdk:
 	@echo -e "$(TARGET_COLOR)Running uncdk$(NO_COLOR)"
@@ -128,12 +128,12 @@ stats:
 
 clean:
 	@echo -e "$(TARGET_COLOR)Running clean$(NO_COLOR)"
-	@rm -rf node_modules package-lock.json test/node_modules test/package-lock.json dist .jsii .jsii.gz test/jsii/out
+	@rm -rf node_modules bun.lock test/node_modules test/bun.lock dist .jsii .jsii.gz test/jsii/out
 	@find . -not -path "./docs/*" -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 
 install: clean
 	@echo -e "$(TARGET_COLOR)Running install$(NO_COLOR)"
-	@npm i
+	@bun install
 
 docs:
 	@cd docs && $(MAKE) clean html
@@ -144,14 +144,14 @@ test-typescript: emit
 # deletes the test policies and buckets of test-typescript that cancelled or failed runs left behind
 clean-test-resources:
 	@echo -e "$(TARGET_COLOR)Running clean-test-resources$(NO_COLOR)"
-	@npx ts-node bin/clean-test-resources.ts
+	@bunx ts-node bin/clean-test-resources.ts
 
 test-typescript-cdk: emit
 	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk
 
 regenerate-code-example-results: emit
 	@echo "Compiling TypeScript to JS"
-	@npx tsc -p ./tsconfig.test-iam-floyd.json
+	@bunx tsc -p ./tsconfig.test-iam-floyd.json
 	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Caching result of $$(basename $$f)" ;\
@@ -160,7 +160,7 @@ regenerate-code-example-results: emit
 
 toot: install
 	@echo -e "$(TARGET_COLOR)Running toot$(NO_COLOR)"
-	@npx ts-node bin/toot.ts
+	@bunx ts-node bin/toot.ts
 
 publish:
 	@echo -e "$(TARGET_COLOR)Running publish$(NO_COLOR)"
@@ -195,13 +195,13 @@ lint-fix: emit
 # After `make cdk`: the CDK variant of the TypeScript code, the other files are the same
 lint-cdk:
 	@echo -e "$(TARGET_COLOR)Running eslint on the CDK variant$(NO_COLOR)"
-	@[ -d tooter/node_modules ] || npm ci --prefix tooter --no-audit --no-fund
-	@npx eslint .
+	@[ -d tooter/node_modules ] || bun install --cwd tooter --frozen-lockfile
+	@bunx eslint .
 
 # runs the unit tests of lib/generator and bin (test/unit/) with coverage into coverage/unit/lcov.info
 test-unit: emit
 	@echo -e "$(TARGET_COLOR)Running unit tests$(NO_COLOR)"
-	@npx vitest run --coverage
+	@bunx vitest run --coverage
 
 # runs the TypeScript tests of the standalone variant with coverage: the examples (test-typescript),
 # the scenarios of test/transpile/ and the policy converter, and writes coverage/lcov.info
@@ -211,13 +211,13 @@ coverage: emit
 	@export NODE_V8_COVERAGE="$(CURDIR)/coverage/tmp" && \
 		$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test && \
 		mkdir -p coverage/scenarios && \
-		npx ts-node test/transpile/services.ts > coverage/scenarios/services.json && \
-		npx ts-node test/transpile/typescript/run.ts test/transpile/scenarios.json > /dev/null && \
-		npx ts-node test/transpile/typescript/run.ts coverage/scenarios/services.json > /dev/null && \
-		npx ts-node test/transpile/typescript/managed-policies.ts > /dev/null && \
+		bunx ts-node test/transpile/services.ts > coverage/scenarios/services.json && \
+		bunx ts-node test/transpile/typescript/run.ts test/transpile/scenarios.json > /dev/null && \
+		bunx ts-node test/transpile/typescript/run.ts coverage/scenarios/services.json > /dev/null && \
+		bunx ts-node test/transpile/typescript/managed-policies.ts > /dev/null && \
 		mkdir -p coverage/examples && \
-		npx ts-node test/converter/cases.ts Standalone coverage/examples
-	@npx c8 report
+		bunx ts-node test/converter/cases.ts Standalone coverage/examples
+	@bunx c8 report
 
 # after `make cdk`: runs the TypeScript tests of the CDK variant with coverage: the examples
 # (test-typescript-cdk), the policy documents and the policy converter, and writes
@@ -227,10 +227,10 @@ coverage-cdk: emit
 	@rm -rf coverage/cdk
 	@export NODE_V8_COVERAGE="$(CURDIR)/coverage/cdk/tmp" && \
 		$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk && \
-		npx ts-node test/cdk-variant/policy-document.ts && \
-		npx ts-node test/converter/cases.ts CDK
-	@npx c8 report --config .c8rc.cdk.json
-	@npx ts-node bin/coverage-cdk-lcov.ts coverage/cdk/lcov.info
+		bunx ts-node test/cdk-variant/policy-document.ts && \
+		bunx ts-node test/converter/cases.ts CDK
+	@bunx c8 report --config .c8rc.cdk.json
+	@bunx ts-node bin/coverage-cdk-lcov.ts coverage/cdk/lcov.info
 
 # runs test-transpile against the generated sources with the coverage of the hand-written runtime of
 # each language, into coverage/native/

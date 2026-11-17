@@ -1,4 +1,4 @@
 {
-  "app": "npx ts-node cdk.ts",
+  "app": "bunx ts-node cdk.ts",
   "progress": "events"
 }
