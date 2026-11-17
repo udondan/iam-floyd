@@ -534,8 +534,8 @@ jobs:
           MAVEN_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MAVEN_GPG_PRIVATE_KEY_PASSPHRASE }}
 
   # Codecov reports its result as the check runs codecov/project and codecov/patch. This job waits
-  # for them, so a coverage drop fails the required job. It passes with a warning if Codecov doesn't
-  # report in time.
+  # for them, so a coverage drop fails the required job. If Codecov doesn't report in time, it passes
+  # with a warning and only the 100% threshold of the unit tests is checked.
   coverage:
     name: Coverage
     needs:
@@ -573,7 +573,7 @@ jobs:
             fi
             sleep 10
           done
-          echo "::warning::Codecov didn't report within 5 minutes, coverage is not checked."
+          echo "::warning::Codecov didn't report within 5 minutes, only the 100% threshold of the unit tests is checked."
 
   # The only test check the ruleset requires. The tests are skipped if no code changed.
   required:
