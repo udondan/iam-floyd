@@ -85,6 +85,8 @@ The policy converter of the docs (`docs/source/policy-converter.rst`) converts a
 
 ## Development Commands
 
+Bun is the package manager. Node.js and Bun are pinned only in `mise.toml`; the workflows install them with `jdx/mise-action`. Node.js still runs the code, ts-node, jsii-pacmak, vitest and the CDK CLI (`bunx` runs a package's bin with Node.js), and npm is only used for `npm pack` and `npm publish` (`make package`, `make publish`, `bin/jsii-pack.ts`, `test/jsii/run.sh`) and for the lockfile Trivy scans. The root and `test/` have no lock file (`bun.lock` is ignored), as all dependencies have exact versions. `tooter/` has its own `bun.lock` and is installed with `bun install --frozen-lockfile`.
+
 ### Build
 
 ```bash
@@ -93,7 +95,7 @@ make build           # emit + tsc --build --force tsconfig.main.json tsconfig.ty
 make package         # build + npm pack
 make package-native  # transpile and build the native packages of iam-floyd into dist/iam-floyd/ (Python: uv build, Java: mvn, .NET: dotnet pack, Go: module zip); LANGUAGES=python limits the languages
 make clean           # remove node_modules, *.js, *.d.ts
-make install         # clean + npm i
+make install         # clean + bun install
 ```
 
 ### Code Generation
@@ -115,7 +117,7 @@ make changelog       # print the changes of the managed policies and the model s
 The runtime is tested integration-style: TypeScript examples are compiled, run, and their output is diffed against stored `.result` files, and the scenarios of `test/transpile/` run in every language. The generator (`lib/generator/`) and the scripts in `bin/*.ts` have unit tests with vitest in `test/unit/`, mirroring the source path (`lib/generator/model.ts` → `test/unit/model.test.ts`, a directory like `lib/generator/transpile/go/` → `test/unit/transpile/go.test.ts`, `bin/toot.ts` → `test/unit/bin/toot.test.ts`). `test/unit/helpers.ts` creates ts-morph source files in memory, for snippets of TypeScript for the transpilers. The unit tests don't write into the repository and don't use the network: writes, `fetch`, the AWS SDK and `child_process` are mocked.
 
 ```bash
-make test-unit           # the unit tests (vitest, vitest.config.mts) with coverage into coverage/unit/lcov.info; npx vitest run <file> runs single files
+make test-unit           # the unit tests (vitest, vitest.config.mts) with coverage into coverage/unit/lcov.info; bunx vitest run <file> runs single files
 make test-typescript     # compile examples/ + diff against *.result files (standalone)
 make clean-test-resources # delete the test policies (path /iam-floyd-test/) and buckets of test-typescript older than an hour
 make test-typescript-cdk # after `make cdk`: same for the CDK examples (examples/**/*.cdk.ts)
@@ -141,7 +143,7 @@ In CI, `test-iam-floyd` and `test-cdk-iam-floyd` upload the reports to Codecov (
 
 ```bash
 # 1. Compile a single example
-npx tsc -p tsconfig.test-iam-floyd.json
+bunx tsc -p tsconfig.test-iam-floyd.json
 
 # 2. Run and compare output
 node examples/allow/allow.js > /tmp/out.txt
@@ -340,7 +342,7 @@ Follow conventional commits:
 - `index-managed-policies.yml` - Weekly on Sunday: updates managed policies and service principals, opens a `feat:` PR with `automerge` label
 - `release-please.yml` - On push to main: release-please maintains the release PR (version in `package.json` and `docs/source/conf.py`, `CHANGELOG.md`). After each run, `bin/changelog-add-iam-changes` adds the changes of the managed policies and the model since the last release to the new changelog entry of the PR. Merging the PR creates the tag and a draft release, and starts `publish.yml` with the tag
 - `automerge-schedule.yml` - Weekly on Monday: merges the release PR
-- `test.yml` - On PR: `make install lint` (job `lint`), `make install coverage test-unit` + `make lint-cdk` + `make coverage-cdk` + CDK deploy test + `make build test-typescript-cdk` with the minimum aws-cdk-lib of `lib/generated/cdk-refs.json` + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java, .NET and Go packages + `make coverage-native` per language. The tests start only after `lint` passed. The coverage goes to Codecov, the job `coverage` waits for its checks. The job `required` is the check the ruleset requires. On push to main: `lint`, `coverage`, `test-unit`, `coverage-cdk` and `coverage-native` without AWS, for the coverage of main
+- `test.yml` - On PR: `make install lint` (job `lint`), `make install coverage test-unit` + `make lint-cdk` + `make coverage-cdk` + CDK deploy test + `make build test-typescript-cdk` with the minimum aws-cdk-lib of `lib/generated/cdk-refs.json` + `make package-jsii test-jsii` per language + `make package-native test-transpile` against the built Python, Java, .NET and Go packages + `make coverage-native` per language. The tests start only after `lint` passed, and on PR only if the job `changes` (`dorny/paths-filter`) found a changed code or build file; when the code or the packages start depending on another file, add it to that filter, or the tests silently skip. Every job except `required` waits for `boarding-gate` (job name `Queue`) and fails in its first step if the gate failed; the gate is skipped for forks and on push to main. The coverage goes to Codecov, the job `coverage` waits for its checks. The job `required` is the check the ruleset requires. On push to main: `lint`, `coverage`, `test-unit`, `coverage-cdk` and `coverage-native` without AWS, for the coverage of main
 - `publish.yml` - Started by `release-please.yml` with a tag: builds the packages from the tag without testing them again, publishes to npm, PyPI, NuGet, Maven Central and the Go module proxy on GitHub Pages, sets the notes of the release from `CHANGELOG.md` and publishes the release. Trusted publishing on npm, PyPI and NuGet is configured for this file
 - `.github/actions/package-iam-floyd`, `.github/actions/package-cdk-iam-floyd` - The setup and build steps of the native and the jsii packages, shared by `test.yml` and `publish.yml`. They are referenced with `$/` (from the commit of the workflow, not the checked-out tag), which actionlint doesn't support yet (`.github/actionlint.yaml` ignores the error)
 - `automerge.yml` - Auto-merges PRs labeled `automerge` after tests pass

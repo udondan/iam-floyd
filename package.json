@@ -1,13 +1,13 @@
 {
   "scripts": {
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
-    "generate": "npx ts-node bin/generate.ts",
+    "generate": "bunx ts-node bin/generate.ts",
     "preemit": "find lib/generator bin -name \"*.js\" -type f -exec rm -vf {} \\;",
-    "emit": "npx ts-node bin/emit.ts",
-    "cdk-refs": "npx ts-node bin/cdk-refs.ts",
-    "index-managed-policies": "npx ts-node bin/index-managed-policies.ts",
-    "index-service-principals": "npx ts-node bin/index-service-principals.ts",
-    "build": "npx tsc --build --force --verbose tsconfig.main.json tsconfig.types.json"
+    "emit": "bunx ts-node bin/emit.ts",
+    "cdk-refs": "bunx ts-node bin/cdk-refs.ts",
+    "index-managed-policies": "bunx ts-node bin/index-managed-policies.ts",
+    "index-service-principals": "bunx ts-node bin/index-service-principals.ts",
+    "build": "bunx tsc --build --force --verbose tsconfig.main.json tsconfig.types.json"
   },
   "name": "iam-floyd",
   "description": "AWS IAM policy statement generator with fluent interface",

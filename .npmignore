@@ -2,6 +2,8 @@
 *.ts
 tsconfig.*
 *.tgz
+bun.lock
+mise.toml
 
 bin/*
 cdk/*

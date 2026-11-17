@@ -7,9 +7,11 @@ lib/generated/model/.cache
 lib/generated/policy-statements
 lib/generated/aws-service-principals/index.ts
 node_modules
+# The root and test/ have no lock file: the dependencies have exact versions
+/bun.lock
 package-lock.json
 test/cdk.out
-test/package-lock.json
+test/bun.lock
 *.tgz
 *.tsbuildinfo
 **/*.d.ts

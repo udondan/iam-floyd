@@ -18,14 +18,18 @@ inputs:
     description: Whether to build the package, otherwise only the setup
     required: false
     default: "true"
+  cache:
+    description: Whether mise caches Node.js and Bun, off in publish.yml
+    required: false
+    default: "true"
 
 runs:
   using: composite
   steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+    - name: Set up Node.js and Bun
+      uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
       with:
-        node-version: 26.x
+        cache: ${{ inputs.cache }}
 
     - name: Set up Python
       if: inputs.language == 'python'

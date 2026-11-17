@@ -2,20 +2,24 @@
 name: Package cdk-iam-floyd
 description: >-
   Builds the CDK variant and its package for one language with jsii-pacmak into dist/. Needs the
-  checked out code with the tags.
+  checked out code with the tags, for mise.toml as well.
 
 inputs:
   language:
     description: typescript, python, java, dotnet or go
     required: true
+  cache:
+    description: Whether mise caches Node.js and Bun, off in publish.yml
+    required: false
+    default: "true"
 
 runs:
   using: composite
   steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+    - name: Set up Node.js and Bun
+      uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
       with:
-        node-version: 26.x
+        cache: ${{ inputs.cache }}
 
     - name: Set up Python
       if: inputs.language == 'python'

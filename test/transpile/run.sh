@@ -41,18 +41,18 @@ fi
 
 rm -rf "${OUT}"
 mkdir -p "${OUT}"
-npx ts-node bin/transpile.ts
+bunx ts-node bin/transpile.ts
 # the examples of the docs and those of the policy converter
 EXAMPLES_DIR="${OUT}/examples"
 rsync -a --exclude "*.ts" --exclude "*.js" examples/ "${EXAMPLES_DIR}"
-npx ts-node test/converter/cases.ts Standalone "${EXAMPLES_DIR}"
-npx ts-node "${TEST}/services.ts" > "${OUT}/services.json"
+bunx ts-node test/converter/cases.ts Standalone "${EXAMPLES_DIR}"
+bunx ts-node "${TEST}/services.ts" > "${OUT}/services.json"
 SCENARIOS=("${TEST}/scenarios.json" "${OUT}/services.json")
 
 for scenarios in "${SCENARIOS[@]}"; do
-  npx ts-node "${TEST}/typescript/run.ts" "${scenarios}" >> "${OUT}/typescript.txt"
+  bunx ts-node "${TEST}/typescript/run.ts" "${scenarios}" >> "${OUT}/typescript.txt"
 done
-npx ts-node "${TEST}/typescript/managed-policies.ts" > "${OUT}/managed-policies.json"
+bunx ts-node "${TEST}/typescript/managed-policies.ts" > "${OUT}/managed-policies.json"
 
 PYTHON=(python3)
 if [[ -n "${PYTHON_WHEEL:-}" ]]; then
@@ -131,7 +131,7 @@ if [[ " ${LANGUAGES[*]} " == *" go "* ]]; then
   GO_DIR="${OUT}/go"
   cp -R "${TEST}/go" "${GO_DIR}"
   rm "${GO_DIR}/registry.ts"
-  npx ts-node "${TEST}/go/registry.ts" "${OUT}/managed-policies.json" "${GO_DIR}/registry.go"
+  bunx ts-node "${TEST}/go/registry.ts" "${OUT}/managed-policies.json" "${GO_DIR}/registry.go"
   for example in "${EXAMPLES_DIR}"/*/*.go; do
     name="$(basename "$(dirname "${example}")")"
     if [[ "${name}" == *.cdk ]]; then

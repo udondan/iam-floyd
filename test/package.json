@@ -5,8 +5,8 @@
     "test": "cdk.js"
   },
   "scripts": {
-    "build": "npx tsc",
-    "cdk": "npx cdk"
+    "build": "bunx tsc",
+    "cdk": "bunx cdk"
   },
   "devDependencies": {
     "@swc/core": "1.16.22",

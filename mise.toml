@@ -1,0 +1,5 @@
+[tools]
+# Runtime and package manager. The only place for these versions: the workflows
+# install them with jdx/mise-action.
+node = "26"
+bun = "1.4.4"
