@@ -1,5 +1,5 @@
-import com.udondan.iamFloyd.cdk.Operator;
-import com.udondan.iamFloyd.cdk.statement.Ec2;
+import com.udondan.iamFloyd.Operator;
+import com.udondan.iamFloyd.statement.Ec2;
 
 class ExampleConditionsOperatorSimple {
   static Object example() {
@@ -7,7 +7,7 @@ class ExampleConditionsOperatorSimple {
     Ec2 statement = new Ec2()
         .allow()
         .toStartInstances()
-        .ifAwsRequestTag("TagWithSpecialChars", "*John*", new Operator().stringEquals());
+        .ifAwsRequestTag("TagWithSpecialChars", "*John*", Operator.STRING_EQUALS);
     // doc-end
     return statement;
   }

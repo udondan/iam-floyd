@@ -1,14 +1,14 @@
 package main
 
 import (
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/collection"
 )
 
 func init() {
 	examples["collection"] = func() any {
 		// doc-start
-		statements := cdkiamfloyd.NewCollection().AllowEc2InstanceDeleteByOwner()
+		statements := collection.NewCollection().AllowEc2InstanceDeleteByOwner()
 		// doc-end
-		return *statements
+		return statements
 	}
 }

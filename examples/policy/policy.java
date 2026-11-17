@@ -1,6 +1,6 @@
-import com.udondan.iamFloyd.cdk.InlineRolePolicyDocument;
-import com.udondan.iamFloyd.cdk.statement.S3;
-import com.udondan.iamFloyd.cdk.statement.Sqs;
+import com.udondan.iamFloyd.InlineRolePolicyDocument;
+import com.udondan.iamFloyd.statement.S3;
+import com.udondan.iamFloyd.statement.Sqs;
 
 class ExamplePolicy {
   static Object example() {

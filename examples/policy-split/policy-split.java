@@ -1,6 +1,6 @@
-import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
-import com.udondan.iamFloyd.cdk.PolicyDocument;
-import com.udondan.iamFloyd.cdk.statement.S3;
+import com.udondan.iamFloyd.ManagedPolicyDocument;
+import com.udondan.iamFloyd.PolicyDocument;
+import com.udondan.iamFloyd.statement.S3;
 import java.util.List;
 
 class ExamplePolicySplit {

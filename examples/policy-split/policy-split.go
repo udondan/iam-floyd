@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -13,9 +11,9 @@ func init() {
 		// doc-start
 		buckets := []*string{}
 		for i := 1; i <= 50; i++ {
-			buckets = append(buckets, jsii.String(fmt.Sprintf("arn:aws:s3:::example-bucket-%d/*", i)))
+			buckets = append(buckets, iamfloyd.String(fmt.Sprintf("arn:aws:s3:::example-bucket-%d/*", i)))
 		}
-		policy := cdkiamfloyd.NewManagedPolicyDocument(
+		policy := iamfloyd.NewManagedPolicyDocument(
 			statement.NewS3(nil).
 				Allow().
 				ToGetObject().

@@ -1,5 +1,5 @@
 using System.Linq;
-using CDK.IAM.Floyd;
+using IAM.Floyd;
 
 static class ExampleCollectionPolicy
 {

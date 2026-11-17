@@ -45,9 +45,11 @@ log() {
 rm -rf "${OUT}"
 mkdir -p "${OUT}"
 
-log "Writing the examples of the policy converter"
+log "Writing the examples for cdk-iam-floyd and those of the policy converter"
 EXAMPLES_DIR="${OUT}/examples"
 rsync -a --exclude "*.ts" --exclude "*.js" "${ROOT}/examples/" "${EXAMPLES_DIR}"
+# the examples are written for iam-floyd, the docs show them derived for cdk-iam-floyd
+python3 docs/source/extensions/example/variants.py "${EXAMPLES_DIR}"
 npx ts-node test/converter/cases.ts CDK "${EXAMPLES_DIR}"
 
 if [[ " ${LANGUAGES[*]} " == *" typescript "* ]]; then

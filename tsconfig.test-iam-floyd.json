@@ -1,5 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "include": ["examples/**/*.ts"],
-  "exclude": ["examples/**/*.cdk.ts", "examples/**/cdk.ts"]
+  "exclude": [
+    "examples/**/*.cdk.ts",
+    "examples/**/cdk.ts",
+    "examples/*/cdk/*.ts"
+  ]
 }

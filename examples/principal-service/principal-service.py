@@ -1,4 +1,4 @@
-from cdk_iam_floyd import AwsServicePrincipal, Statement
+from iam_floyd import AwsServicePrincipal, Statement
 
 
 def example():

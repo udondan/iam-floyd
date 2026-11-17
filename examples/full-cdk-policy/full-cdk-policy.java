@@ -1,9 +1,9 @@
-import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
-import com.udondan.iamFloyd.cdk.statement.Account;
-import com.udondan.iamFloyd.cdk.statement.All;
-import com.udondan.iamFloyd.cdk.statement.Cloudformation;
-import com.udondan.iamFloyd.cdk.statement.Organizations;
-import com.udondan.iamFloyd.cdk.statement.S3;
+import com.udondan.iamFloyd.ManagedPolicyDocument;
+import com.udondan.iamFloyd.statement.Account;
+import com.udondan.iamFloyd.statement.All;
+import com.udondan.iamFloyd.statement.Cloudformation;
+import com.udondan.iamFloyd.statement.Organizations;
+import com.udondan.iamFloyd.statement.S3;
 
 class ExampleFullCdkPolicy {
   static Object example() {

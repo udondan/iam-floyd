@@ -1,4 +1,4 @@
-from cdk_iam_floyd import Operator, Statement
+from iam_floyd import Operator, Statement
 
 
 def example():
@@ -7,7 +7,7 @@ def example():
         Statement.Ec2()
             .allow()
             .to_start_instances()
-            .if_aws_request_tag('TagWithSpecialChars', '*John*', Operator().string_equals())
+            .if_aws_request_tag('TagWithSpecialChars', '*John*', Operator.STRING_EQUALS)
     )
     # doc-end
     return statement

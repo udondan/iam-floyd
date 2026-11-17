@@ -1,5 +1,5 @@
-using CDK.IAM.Floyd;
-using Statement = CDK.IAM.Floyd.Statement;
+using IAM.Floyd;
+using Statement = IAM.Floyd.Statement;
 
 static class ExampleConditionsOperatorSimple
 {
@@ -9,7 +9,7 @@ static class ExampleConditionsOperatorSimple
         var statement = new Statement.Ec2()
             .Allow()
             .ToStartInstances()
-            .IfAwsRequestTag("TagWithSpecialChars", "*John*", new Operator().StringEquals());
+            .IfAwsRequestTag("TagWithSpecialChars", "*John*", Operator.STRING_EQUALS);
         // doc-end
         return statement;
     }

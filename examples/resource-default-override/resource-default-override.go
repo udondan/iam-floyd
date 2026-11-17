@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,10 +12,10 @@ func init() {
 			Allow().
 			ToUpdateFunctionCode().
 			OnFunction(
-				jsii.String("my-function"),
-				jsii.String("098765432109"),
-				jsii.String("us-east-1"),
-				jsii.String("aws"),
+				iamfloyd.String("my-function"),
+				iamfloyd.String("098765432109"),
+				iamfloyd.String("us-east-1"),
+				iamfloyd.String("aws"),
 			)
 		// doc-end
 		return s

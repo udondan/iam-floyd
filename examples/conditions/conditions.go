@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,9 +12,9 @@ func init() {
 			Allow().
 			ToStartInstances().
 			IfEncrypted(nil).
-			IfInstanceType(&[]*string{jsii.String("t3.micro"), jsii.String("t3.nano")}, nil).
-			IfAssociatePublicIpAddress(jsii.Bool(false)).
-			IfAwsRequestTag(jsii.String("Owner"), jsii.String("John"), nil)
+			IfInstanceType(&[]*string{iamfloyd.String("t3.micro"), iamfloyd.String("t3.nano")}, nil).
+			IfAssociatePublicIpAddress(iamfloyd.Bool(false)).
+			IfAwsRequestTag(iamfloyd.String("Owner"), iamfloyd.String("John"), nil)
 		// doc-end
 		return s
 	}

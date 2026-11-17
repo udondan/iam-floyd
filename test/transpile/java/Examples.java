@@ -26,11 +26,7 @@ import javax.tools.ToolProvider;
 /**
  * Runs the Java examples of the docs, examples/*&#47;*.java, against the native package.
  *
- * <p>The examples are written for cdk-iam-floyd. They are compiled with com.udondan.iamFloyd in
- * place of com.udondan.iamFloyd.cdk. Two parts of them are rewritten: the statements of the
- * collection are services, which extend the generic PolicyStatement, and the sid is passed to the
- * constructor instead of PolicyStatementProps. The examples of the CDK variant, *.cdk, are
- * skipped.
+ * <p>The examples are written for iam-floyd. The examples of the CDK variant, *.cdk, are skipped.
  *
  * <p>Prints one line per example: the name, a tab and the statements, the policy or the policies
  * as JSON (or FAIL), like test/jsii/examples/java.
@@ -42,14 +38,6 @@ public final class Examples {
   private static final String FAIL = "FAIL ";
 
   private Examples() {}
-
-  static String rewrite(String source) {
-    return source
-        .replace("com.udondan.iamFloyd.cdk.", "com.udondan.iamFloyd.")
-        .replace("List<PolicyStatement>", "List<? extends PolicyStatement<?>>")
-        .replace("import software.amazon.awscdk.services.iam.PolicyStatementProps;\n", "")
-        .replaceAll("PolicyStatementProps\\.builder\\(\\)\\.sid\\(([^)]*)\\)\\.build\\(\\)", "$1");
-  }
 
   static Object resolve(Object result) {
     if (result instanceof PolicyDocument) {
@@ -116,13 +104,9 @@ public final class Examples {
   /** Compiles and runs the example, returns its JSON or FAIL and the error. */
   static String run(String name, Path file, Path work) throws IOException {
     try {
-      Path source = work.resolve("src").resolve(name).resolve(name + ".java");
       Path classes = work.resolve("classes").resolve(name);
-      Files.createDirectories(source.getParent());
       Files.createDirectories(classes);
-      String text = new String(Files.readAllBytes(file), StandardCharsets.UTF_8);
-      Files.write(source, rewrite(text).getBytes(StandardCharsets.UTF_8));
-      String errors = compile(source, classes);
+      String errors = compile(file, classes);
       return errors == null ? execute(name, classes) : FAIL + errors.replace('\n', ' ');
     } catch (InvocationTargetException e) {
       return FAIL + e.getCause();

@@ -1,7 +1,6 @@
 """Runs the Python examples of the docs, examples/*/*.py, against the native package.
 
-The examples are written for cdk-iam-floyd. They run with iam_floyd in place of cdk_iam_floyd. The
-examples of the CDK variant, *.cdk, are skipped.
+The examples are written for iam-floyd. The examples of the CDK variant, *.cdk, are skipped.
 
 Prints one line per example: the name, a tab and the statements, the policy or the policies as JSON
 (or FAIL), like test/jsii/examples/python/examples.py.
@@ -22,8 +21,6 @@ if 'IAM_FLOYD_INSTALLED' not in os.environ:
     sys.path.insert(0, str(ROOT / 'python'))
 
 import iam_floyd  # noqa: E402
-
-sys.modules['cdk_iam_floyd'] = iam_floyd
 
 
 def resolve(result):

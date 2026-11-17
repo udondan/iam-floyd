@@ -1,7 +1,7 @@
 package main
 
 import (
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {

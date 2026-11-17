@@ -1,10 +1,9 @@
-import com.udondan.iamFloyd.cdk.statement.Ec2;
-import software.amazon.awscdk.services.iam.PolicyStatementProps;
+import com.udondan.iamFloyd.statement.Ec2;
 
 class ExampleSid {
   static Object example() {
     // doc-start
-    Ec2 statement = new Ec2(PolicyStatementProps.builder().sid("MYSID").build())
+    Ec2 statement = new Ec2("MYSID")
         .allow()
         .toStartInstances()
         .toStopInstances();

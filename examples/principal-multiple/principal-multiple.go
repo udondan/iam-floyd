@@ -1,9 +1,8 @@
 package main
 
 import (
-	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,10 +11,10 @@ func init() {
 		s1 := statement.NewSts(nil).
 			Allow().
 			ToAssumeRole().
-			ForAccount(jsii.String("1234567890"), jsii.String("0987654321"))
+			ForAccount(iamfloyd.String("1234567890"), iamfloyd.String("0987654321"))
 
 		// when you already have a list:
-		accounts := []*string{jsii.String("1234567890"), jsii.String("0987654321")}
+		accounts := []*string{iamfloyd.String("1234567890"), iamfloyd.String("0987654321")}
 		s2 := statement.NewSts(nil).
 			Allow().
 			ToAssumeRole().
@@ -24,15 +23,15 @@ func init() {
 		s3 := statement.NewSts(nil).
 			Allow().
 			ToAssumeRole().
-			ForUser(jsii.String("1234567890"), jsii.String("Bob"), jsii.String("John"))
+			ForUser(iamfloyd.String("1234567890"), iamfloyd.String("Bob"), iamfloyd.String("John"))
 
 		// when you already have a list:
-		users := []*string{jsii.String("Bob"), jsii.String("John")}
+		users := []*string{iamfloyd.String("Bob"), iamfloyd.String("John")}
 		s4 := statement.NewSts(nil).
 			Allow().
 			ToAssumeRole().
-			ForUser(jsii.String("1234567890"), users...)
+			ForUser(iamfloyd.String("1234567890"), users...)
 		// doc-end
-		return []awsiam.PolicyStatement{s1, s2, s3, s4}
+		return []any{s1, s2, s3, s4}
 	}
 }

@@ -1,4 +1,4 @@
-from cdk_iam_floyd import Collection
+from iam_floyd import Collection
 
 
 def example():

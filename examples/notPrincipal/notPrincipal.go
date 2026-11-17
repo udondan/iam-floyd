@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,8 +12,8 @@ func init() {
 			Deny().
 			AllActions().
 			NotPrincipal().
-			ForUser(jsii.String("1234567890"), jsii.String("Bob")).
-			OnObject(jsii.String("example-bucket"), jsii.String("*"), nil)
+			ForUser(iamfloyd.String("1234567890"), iamfloyd.String("Bob")).
+			OnObject(iamfloyd.String("example-bucket"), iamfloyd.String("*"), nil)
 		// doc-end
 		return s
 	}

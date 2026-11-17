@@ -1,5 +1,5 @@
-import com.udondan.iamFloyd.cdk.Operator;
-import com.udondan.iamFloyd.cdk.statement.Ec2;
+import com.udondan.iamFloyd.Operator;
+import com.udondan.iamFloyd.statement.Ec2;
 import java.util.List;
 
 class ExampleConditionsOperatorIfExists {

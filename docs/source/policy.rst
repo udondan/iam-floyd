@@ -14,54 +14,74 @@ Import the classes you need along with the ``Statement``:
 
    .. group-tab:: TypeScript
 
-      .. code-block:: ts
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import { ManagedPolicyDocument, Statement } from 'iam-floyd';
+         .. code-block:: ts
 
-         // cdk-iam-floyd
-         import { ManagedPolicyDocument, Statement } from 'cdk-iam-floyd';
+            import { ManagedPolicyDocument, Statement } from 'iam-floyd';
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: ts
+
+            import { ManagedPolicyDocument, Statement } from 'cdk-iam-floyd';
 
    .. group-tab:: Python
 
-      .. code-block:: python
+      .. variant:: iam-floyd
 
-         # iam-floyd
-         from iam_floyd import ManagedPolicyDocument, Statement
+         .. code-block:: python
 
-         # cdk-iam-floyd
-         from cdk_iam_floyd import ManagedPolicyDocument, Statement
+            from iam_floyd import ManagedPolicyDocument, Statement
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: python
+
+            from cdk_iam_floyd import ManagedPolicyDocument, Statement
 
    .. group-tab:: Java
 
-      .. code-block:: java
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import com.udondan.iamFloyd.ManagedPolicyDocument;
+         .. code-block:: java
 
-         // cdk-iam-floyd
-         import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
+            import com.udondan.iamFloyd.ManagedPolicyDocument;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: java
+
+            import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
 
    .. group-tab:: C#
 
-      .. code-block:: csharp
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         using IAM.Floyd;
+         .. code-block:: csharp
 
-         // cdk-iam-floyd
-         using CDK.IAM.Floyd;
-         using PolicyDocument = CDK.IAM.Floyd.PolicyDocument;
+            using IAM.Floyd;
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: csharp
+
+            using CDK.IAM.Floyd;
+            using PolicyDocument = CDK.IAM.Floyd.PolicyDocument;
 
    .. group-tab:: Go
 
-      .. code-block:: go
+      .. variant:: iam-floyd
 
-         // iam-floyd
-         import "udondan.github.io/iam-floyd/go/iamfloyd"
+         .. code-block:: go
 
-         // cdk-iam-floyd
-         import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
+            import "udondan.github.io/iam-floyd/go/iamfloyd"
+
+      .. variant:: cdk-iam-floyd
+
+         .. code-block:: go
+
+            import "udondan.github.io/iam-floyd/go/cdkiamfloyd"
 
 The constructor takes the statements, more can be added with ``addStatements()``. ``validate()`` throws an error if the estimated size of the policy exceeds the maximum size:
 

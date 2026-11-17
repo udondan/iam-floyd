@@ -1,9 +1,8 @@
 package main
 
 import (
-	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,13 +11,13 @@ func init() {
 		s1 := statement.NewSts(nil).
 			Allow().
 			ToAssumeRole().
-			ForService(cdkiamfloyd.AwsServicePrincipal_LAMBDA())
+			ForService(iamfloyd.String(iamfloyd.AwsServicePrincipal_LAMBDA))
 
 		s2 := statement.NewSts(nil).
 			Allow().
 			ToAssumeRole().
-			ForService(cdkiamfloyd.AwsServicePrincipal_ECS_TASKS(), cdkiamfloyd.AwsServicePrincipal_EC2())
+			ForService(iamfloyd.String(iamfloyd.AwsServicePrincipal_ECS_TASKS), iamfloyd.String(iamfloyd.AwsServicePrincipal_EC2))
 		// doc-end
-		return []awsiam.PolicyStatement{s1, s2}
+		return []any{s1, s2}
 	}
 }

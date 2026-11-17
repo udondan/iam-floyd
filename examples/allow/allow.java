@@ -1,4 +1,4 @@
-import com.udondan.iamFloyd.cdk.statement.Ec2;
+import com.udondan.iamFloyd.statement.Ec2;
 
 class ExampleAllow {
   static Object example() {

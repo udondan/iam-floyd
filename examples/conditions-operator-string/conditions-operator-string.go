@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,9 +12,9 @@ func init() {
 			Allow().
 			ToStartInstances().
 			IfAwsRequestTag(
-				jsii.String("TagWithSpecialChars"),
-				jsii.String("*John*"),
-				jsii.String("StringEquals"),
+				iamfloyd.String("TagWithSpecialChars"),
+				iamfloyd.String("*John*"),
+				iamfloyd.String("StringEquals"),
 			)
 		// doc-end
 		return s

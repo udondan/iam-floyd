@@ -1,6 +1,6 @@
-import com.udondan.iamFloyd.cdk.Collection;
-import com.udondan.iamFloyd.cdk.ManagedPolicyDocument;
-import com.udondan.iamFloyd.cdk.PolicyStatement;
+import com.udondan.iamFloyd.Collection;
+import com.udondan.iamFloyd.ManagedPolicyDocument;
+import com.udondan.iamFloyd.PolicyStatement;
 
 class ExampleCollectionPolicy {
   static Object example() {

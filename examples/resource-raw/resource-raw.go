@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -12,8 +12,8 @@ func init() {
 			Allow().
 			AllActions().
 			On(
-				jsii.String("arn:aws:s3:::example-bucket"),
-				jsii.String("arn:aws:s3:::another-bucket"),
+				iamfloyd.String("arn:aws:s3:::example-bucket"),
+				iamfloyd.String("arn:aws:s3:::another-bucket"),
 			)
 		// doc-end
 		return s

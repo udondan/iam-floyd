@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aws/jsii-runtime-go"
-	"udondan.github.io/iam-floyd/go/cdkiamfloyd/statement"
+	"udondan.github.io/iam-floyd/go/iamfloyd"
+	"udondan.github.io/iam-floyd/go/iamfloyd/statement"
 )
 
 func init() {
@@ -11,7 +11,7 @@ func init() {
 		s := statement.NewEc2(nil).
 			Allow().
 			ToStartInstances().
-			If(jsii.String("ec2:missingCondition"), jsii.String("some-value"), nil)
+			If(iamfloyd.String("ec2:missingCondition"), iamfloyd.String("some-value"), nil)
 		// doc-end
 		return s
 	}

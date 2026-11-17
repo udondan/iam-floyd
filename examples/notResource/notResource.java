@@ -1,4 +1,4 @@
-import com.udondan.iamFloyd.cdk.statement.S3;
+import com.udondan.iamFloyd.statement.S3;
 
 class ExampleNotResource {
   static Object example() {
