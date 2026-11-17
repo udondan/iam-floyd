@@ -68,7 +68,7 @@ jobs:
           dotnet-version: 11.x
 
       - name: Set up Java
-        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
         with:
           distribution: temurin
           java-version: 21
@@ -92,7 +92,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install qlty
-        uses: qltysh/qlty-action/install@357cd88be7c73c5dc45cf7cf8f99a46ec0b62b73 # v2.6.0
+        uses: qltysh/qlty-action/install@0ff2178667bf8eb28ed0013a7ef54857a24d4056 # v2.7.0
 
       - name: Lint via qlty plugins
         run: qlty check --all
@@ -174,7 +174,7 @@ jobs:
 
       - name: Set up Java to test
         if: matrix.language == 'java'
-        uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
         with:
           distribution: temurin
           java-version: ${{ matrix.version }}
