@@ -77,9 +77,6 @@ name = "radarlint-java"
 name = "radarlint-go"
 
 [[plugin]]
-name = "osv-scanner"
-
-[[plugin]]
 name = "gitleaks"
 
 # The test scripts check with assert.
@@ -124,13 +121,6 @@ set.ignored = true
 match.plugins = ["radarlint-java"]
 match.rules = ["radarlint-java:java:S2111"]
 match.file_patterns = ["java/src/main/java/com/udondan/iamFloyd/Js.java"]
-set.ignored = true
-
-# go 1.21 is the oldest supported version of Go, not the one the module is built with.
-# osv-scanner reports the vulnerabilities of the standard library of Go 1.21 for it.
-[[triage]]
-match.plugins = ["osv-scanner"]
-match.file_patterns = ["go/iamfloyd/go.mod", "examples/go.mod", "test/jsii/go.mod", "test/transpile/go/go.mod"]
 set.ignored = true
 
 # The AWS managed policies are public documents of AWS, copied by the indexer. Scanning their
