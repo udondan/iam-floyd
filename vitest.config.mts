@@ -10,6 +10,7 @@ export default defineConfig({
       include: ['lib/generator/**/*.ts', 'bin/*.ts'],
       reportsDirectory: 'coverage/unit',
       reporter: ['lcov', 'text-summary'],
+      thresholds: { 100: true },
     },
   },
 });
