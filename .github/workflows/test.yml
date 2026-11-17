@@ -179,6 +179,7 @@ jobs:
               - LICENSE
               - .github/workflows/test.yml
               - .github/actions/**
+              - .config/dotnet-tools.json
 
   # The native packages of iam-floyd, built by the action package-iam-floyd like in publish.yml.
   # Each package is built with the newest version and tested with the oldest and the newest
