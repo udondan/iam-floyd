@@ -156,7 +156,7 @@ jobs:
           ref: ${{ inputs.tag }}
 
       - name: Set up Node.js and Bun
-        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
         with:
           cache: false # no cache restored from another run in the publish job
 
@@ -288,7 +288,7 @@ jobs:
           ref: ${{ inputs.tag }}
 
       - name: Set up Node.js and Bun
-        uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
         with:
           cache: false # no cache restored from another run in the publish job
 
