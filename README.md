@@ -13,6 +13,9 @@
 [![Maintainability](https://qlty.sh/gh/udondan/projects/iam-floyd/maintainability.svg)](https://qlty.sh/gh/udondan/projects/iam-floyd)
 [![License](https://img.shields.io/github/license/udondan/iam-floyd)](https://github.com/udondan/iam-floyd/blob/main/LICENSE)
 
+> [!NOTE]
+> Unofficial community project. Not affiliated with, endorsed or authorized by Amazon Web Services (AWS).
+
 **AWS [IAM policy statement][statement] generator with a fluent interface, for TypeScript, JavaScript, Python, Java, C# and Go.**
 
 IAM Floyd has a class for every AWS service, with a method for every action, resource type and condition key. Your IDE completes them and shows their documentation, so you neither look up action names and ARN formats, nor deploy policies with typos.
@@ -196,15 +199,17 @@ The [documentation][documentation] explains all features, with examples in every
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/movie-preview.png)](https://www.youtube.com/watch?v=4dHY8qPHbKA 'Auto completion demo')
 
-## Legal
+## License
+
+IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be released under different licenses.
+
+## Disclaimer
+
+This is an unofficial, independent open-source project and is not affiliated with, funded or endorsed by Amazon Web Services, Inc. or its affiliates. AWS and the names of its services are trademarks, registered trademarks or trade dress of AWS in the U.S. and/or other countries. The names are used only to describe compatibility.
 
 The service models in the [lib/generated/model](https://github.com/udondan/iam-floyd/tree/main/lib/generated/model) folder, and the code generated from them, are derived from the [AWS documentation][aws-docs]. The class- and function-names and their description therefore are property of AWS.
 
-AWS and their services are trademarks, registered trademarks or trade dress of AWS in the U.S. and/or other countries.
-
-This project is not affiliated, funded, or in any way associated with AWS.
-
-IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be released under different licenses.
+Use at your own risk. IAM Floyd generates policy statements but does not check what they allow, so review them before you deploy them.
 
 [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
 [aws-docs]: https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html
