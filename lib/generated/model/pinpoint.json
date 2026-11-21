@@ -1,0 +1,2100 @@
+{
+  "schemaVersion": 1,
+  "filename": "pinpoint",
+  "className": "Mobiletargeting",
+  "name": "mobiletargeting",
+  "servicePrefix": "mobiletargeting",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_pinpoint.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApp",
+      "CreateCampaign",
+      "CreateEmailTemplate",
+      "CreateExportJob",
+      "CreateImportJob",
+      "CreateInAppTemplate",
+      "CreateJourney",
+      "CreatePushTemplate",
+      "CreateRecommenderConfiguration",
+      "CreateSegment",
+      "CreateSmsTemplate",
+      "CreateVoiceTemplate",
+      "DeleteAdmChannel",
+      "DeleteApnsChannel",
+      "DeleteApnsSandboxChannel",
+      "DeleteApnsVoipChannel",
+      "DeleteApnsVoipSandboxChannel",
+      "DeleteApp",
+      "DeleteBaiduChannel",
+      "DeleteCampaign",
+      "DeleteEmailChannel",
+      "DeleteEmailTemplate",
+      "DeleteEndpoint",
+      "DeleteEventStream",
+      "DeleteGcmChannel",
+      "DeleteInAppTemplate",
+      "DeleteJourney",
+      "DeletePushTemplate",
+      "DeleteRecommenderConfiguration",
+      "DeleteSegment",
+      "DeleteSmsChannel",
+      "DeleteSmsTemplate",
+      "DeleteUserEndpoints",
+      "DeleteVoiceChannel",
+      "DeleteVoiceTemplate",
+      "PutEventStream",
+      "PutEvents",
+      "RemoveAttributes",
+      "SendMessages",
+      "SendOTPMessage",
+      "SendUsersMessages",
+      "TagResource",
+      "UntagResource",
+      "UpdateAdmChannel",
+      "UpdateApnsChannel",
+      "UpdateApnsSandboxChannel",
+      "UpdateApnsVoipChannel",
+      "UpdateApnsVoipSandboxChannel",
+      "UpdateApplicationSettings",
+      "UpdateBaiduChannel",
+      "UpdateCampaign",
+      "UpdateEmailChannel",
+      "UpdateEmailTemplate",
+      "UpdateEndpoint",
+      "UpdateEndpointsBatch",
+      "UpdateGcmChannel",
+      "UpdateInAppTemplate",
+      "UpdateJourney",
+      "UpdateJourneyState",
+      "UpdatePushTemplate",
+      "UpdateRecommenderConfiguration",
+      "UpdateSegment",
+      "UpdateSmsChannel",
+      "UpdateSmsTemplate",
+      "UpdateTemplateActiveVersion",
+      "UpdateVoiceChannel",
+      "UpdateVoiceTemplate",
+      "VerifyOTPMessage"
+    ],
+    "Read": [
+      "GetAdmChannel",
+      "GetApnsChannel",
+      "GetApnsSandboxChannel",
+      "GetApnsVoipChannel",
+      "GetApnsVoipSandboxChannel",
+      "GetApp",
+      "GetApplicationDateRangeKpi",
+      "GetApps",
+      "GetBaiduChannel",
+      "GetCampaign",
+      "GetCampaignDateRangeKpi",
+      "GetCampaignVersion",
+      "GetEmailChannel",
+      "GetEmailTemplate",
+      "GetEndpoint",
+      "GetEventStream",
+      "GetExportJob",
+      "GetGcmChannel",
+      "GetImportJob",
+      "GetInAppMessages",
+      "GetInAppTemplate",
+      "GetJourney",
+      "GetJourneyDateRangeKpi",
+      "GetJourneyExecutionActivityMetrics",
+      "GetJourneyExecutionMetrics",
+      "GetJourneyRunExecutionActivityMetrics",
+      "GetJourneyRunExecutionMetrics",
+      "GetPushTemplate",
+      "GetRecommenderConfiguration",
+      "GetSegment",
+      "GetSegmentVersion",
+      "GetSmsChannel",
+      "GetSmsTemplate",
+      "GetUserEndpoints",
+      "GetVoiceChannel",
+      "GetVoiceTemplate",
+      "ListTagsForResource",
+      "PhoneNumberValidate",
+      "GetReports"
+    ],
+    "List": [
+      "GetApplicationSettings",
+      "GetCampaignActivities",
+      "GetCampaignVersions",
+      "GetCampaigns",
+      "GetChannels",
+      "GetExportJobs",
+      "GetImportJobs",
+      "GetJourneyRuns",
+      "GetRecommenderConfigurations",
+      "GetSegmentExportJobs",
+      "GetSegmentImportJobs",
+      "GetSegmentVersions",
+      "GetSegments",
+      "ListJourneys",
+      "ListTemplateVersions",
+      "ListTemplates"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApp",
+      "methodName": "toCreateApp",
+      "description": "Grants permission to create an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps.html#CreateApp"
+    },
+    {
+      "name": "CreateCampaign",
+      "methodName": "toCreateCampaign",
+      "description": "Grants permission to create a campaign for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns.html#CreateCampaign"
+    },
+    {
+      "name": "CreateEmailTemplate",
+      "methodName": "toCreateEmailTemplate",
+      "description": "Grants permission to create an email template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#CreateEmailTemplate"
+    },
+    {
+      "name": "CreateExportJob",
+      "methodName": "toCreateExportJob",
+      "description": "Grants permission to create an export job that exports endpoint definitions to Amazon S3",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-export.html#CreateExportJob"
+    },
+    {
+      "name": "CreateImportJob",
+      "methodName": "toCreateImportJob",
+      "description": "Grants permission to import endpoint definitions from to create a segment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-import.html#CreateImportJob"
+    },
+    {
+      "name": "CreateInAppTemplate",
+      "methodName": "toCreateInAppTemplate",
+      "description": "Grants permission to create an in-app message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#CreateInAppTemplate"
+    },
+    {
+      "name": "CreateJourney",
+      "methodName": "toCreateJourney",
+      "description": "Grants permission to create a Journey for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html#CreateJourney"
+    },
+    {
+      "name": "CreatePushTemplate",
+      "methodName": "toCreatePushTemplate",
+      "description": "Grants permission to create a push notification template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#CreatePushTemplate"
+    },
+    {
+      "name": "CreateRecommenderConfiguration",
+      "methodName": "toCreateRecommenderConfiguration",
+      "description": "Grants permission to create an Amazon Pinpoint configuration for a recommender model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html#CreateRecommenderConfiguration"
+    },
+    {
+      "name": "CreateSegment",
+      "methodName": "toCreateSegment",
+      "description": "Grants permission to create a segment that is based on endpoint data reported to Pinpoint by your app. To allow a user to create a segment by importing endpoint data from outside of Pinpoint, allow the mobiletargeting:CreateImportJob action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments.html#CreateSegment"
+    },
+    {
+      "name": "CreateSmsTemplate",
+      "methodName": "toCreateSmsTemplate",
+      "description": "Grants permission to create an sms message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#CreateSmsTemplate"
+    },
+    {
+      "name": "CreateVoiceTemplate",
+      "methodName": "toCreateVoiceTemplate",
+      "description": "Grants permission to create a voice message template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#CreateVoiceTemplate"
+    },
+    {
+      "name": "DeleteAdmChannel",
+      "methodName": "toDeleteAdmChannel",
+      "description": "Grants permission to delete the ADM channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-adm.html#DeleteAdmChannel"
+    },
+    {
+      "name": "DeleteApnsChannel",
+      "methodName": "toDeleteApnsChannel",
+      "description": "Grants permission to delete the APNs channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns.html#DeleteApnsChannel"
+    },
+    {
+      "name": "DeleteApnsSandboxChannel",
+      "methodName": "toDeleteApnsSandboxChannel",
+      "description": "Grants permission to delete the APNs sandbox channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_sandbox.html#DeleteApnsSandboxChannel"
+    },
+    {
+      "name": "DeleteApnsVoipChannel",
+      "methodName": "toDeleteApnsVoipChannel",
+      "description": "Grants permission to delete the APNs VoIP channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_voip.html#DeleteApnsVoipChannel"
+    },
+    {
+      "name": "DeleteApnsVoipSandboxChannel",
+      "methodName": "toDeleteApnsVoipSandboxChannel",
+      "description": "Grants permission to delete the APNs VoIP sandbox channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_voip_sandbox.html#DeleteApnsVoipSandboxChannel"
+    },
+    {
+      "name": "DeleteApp",
+      "methodName": "toDeleteApp",
+      "description": "Grants permission to delete a specific campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id.html#DeleteApp"
+    },
+    {
+      "name": "DeleteBaiduChannel",
+      "methodName": "toDeleteBaiduChannel",
+      "description": "Grants permission to delete the Baidu channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-baidu.html#DeleteBaiduChannel"
+    },
+    {
+      "name": "DeleteCampaign",
+      "methodName": "toDeleteCampaign",
+      "description": "Grants permission to delete a specific campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#DeleteCampaign"
+    },
+    {
+      "name": "DeleteEmailChannel",
+      "methodName": "toDeleteEmailChannel",
+      "description": "Grants permission to delete the email channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-email.html#DeleteEmailChannel"
+    },
+    {
+      "name": "DeleteEmailTemplate",
+      "methodName": "toDeleteEmailTemplate",
+      "description": "Grants permission to delete an email template or an email template version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#DeleteEmailTemplate"
+    },
+    {
+      "name": "DeleteEndpoint",
+      "methodName": "toDeleteEndpoint",
+      "description": "Grants permission to delete an endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html#DeleteEndpoint"
+    },
+    {
+      "name": "DeleteEventStream",
+      "methodName": "toDeleteEventStream",
+      "description": "Grants permission to delete the event stream for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-eventstream.html#DeleteEventStream"
+    },
+    {
+      "name": "DeleteGcmChannel",
+      "methodName": "toDeleteGcmChannel",
+      "description": "Grants permission to delete the GCM channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-gcm.html#DeleteGcmChannel"
+    },
+    {
+      "name": "DeleteInAppTemplate",
+      "methodName": "toDeleteInAppTemplate",
+      "description": "Grants permission to delete an in-app message template or an in-app message template version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#DeleteInAppTemplate"
+    },
+    {
+      "name": "DeleteJourney",
+      "methodName": "toDeleteJourney",
+      "description": "Grants permission to delete a specific journey",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#DeleteJourney"
+    },
+    {
+      "name": "DeletePushTemplate",
+      "methodName": "toDeletePushTemplate",
+      "description": "Grants permission to delete a push notification template or a push notification template version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#DeletePushTemplate"
+    },
+    {
+      "name": "DeleteRecommenderConfiguration",
+      "methodName": "toDeleteRecommenderConfiguration",
+      "description": "Grants permission to delete an Amazon Pinpoint configuration for a recommender model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders-recommender-id.html#DeleteRecommenderConfiguration"
+    },
+    {
+      "name": "DeleteSegment",
+      "methodName": "toDeleteSegment",
+      "description": "Grants permission to delete a specific segment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id.html#DeleteSegment"
+    },
+    {
+      "name": "DeleteSmsChannel",
+      "methodName": "toDeleteSmsChannel",
+      "description": "Grants permission to delete the SMS channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-sms.html#DeleteSmsChannel"
+    },
+    {
+      "name": "DeleteSmsTemplate",
+      "methodName": "toDeleteSmsTemplate",
+      "description": "Grants permission to delete an sms message template or an sms message template version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#DeleteSmsTemplate"
+    },
+    {
+      "name": "DeleteUserEndpoints",
+      "methodName": "toDeleteUserEndpoints",
+      "description": "Grants permission to delete all of the endpoints that are associated with a user ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-users-user-id.html#DeleteUserEndpoints"
+    },
+    {
+      "name": "DeleteVoiceChannel",
+      "methodName": "toDeleteVoiceChannel",
+      "description": "Grants permission to delete the Voice channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-voice.html#DeleteVoiceChannel"
+    },
+    {
+      "name": "DeleteVoiceTemplate",
+      "methodName": "toDeleteVoiceTemplate",
+      "description": "Grants permission to delete a voice message template or a voice message template version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#DeleteVoiceTemplate"
+    },
+    {
+      "name": "GetAdmChannel",
+      "methodName": "toGetAdmChannel",
+      "description": "Grants permission to retrieve information about the Amazon Device Messaging (ADM) channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-adm.html#GetAdmChannel"
+    },
+    {
+      "name": "GetApnsChannel",
+      "methodName": "toGetApnsChannel",
+      "description": "Grants permission to retrieve information about the APNs channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns.html#GetApnsChannel"
+    },
+    {
+      "name": "GetApnsSandboxChannel",
+      "methodName": "toGetApnsSandboxChannel",
+      "description": "Grants permission to retrieve information about the APNs sandbox channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_sandbox.html#GetApnsSandboxChannel"
+    },
+    {
+      "name": "GetApnsVoipChannel",
+      "methodName": "toGetApnsVoipChannel",
+      "description": "Grants permission to retrieve information about the APNs VoIP channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_voip.html#GetApnsVoipChannel"
+    },
+    {
+      "name": "GetApnsVoipSandboxChannel",
+      "methodName": "toGetApnsVoipSandboxChannel",
+      "description": "Grants permission to retrieve information about the APNs VoIP sandbox channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_voip_sandbox.html#GetApnsVoipSandboxChannel"
+    },
+    {
+      "name": "GetApp",
+      "methodName": "toGetApp",
+      "description": "Grants permission to retrieve information about a specific app in your Amazon Pinpoint account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id.html#GetApp"
+    },
+    {
+      "name": "GetApplicationDateRangeKpi",
+      "methodName": "toGetApplicationDateRangeKpi",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard metric that applies to an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-kpis-daterange-kpi-name.html#GetApplicationDateRangeKpi"
+    },
+    {
+      "name": "GetApplicationSettings",
+      "methodName": "toGetApplicationSettings",
+      "description": "Grants permission to retrieve the default settings for an app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-settings.html#GetApplicationSettings"
+    },
+    {
+      "name": "GetApps",
+      "methodName": "toGetApps",
+      "description": "Grants permission to retrieve a list of apps in your Amazon Pinpoint account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps.html#GetApps"
+    },
+    {
+      "name": "GetBaiduChannel",
+      "methodName": "toGetBaiduChannel",
+      "description": "Grants permission to retrieve information about the Baidu channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-baidu.html#GetBaiduChannel"
+    },
+    {
+      "name": "GetCampaign",
+      "methodName": "toGetCampaign",
+      "description": "Grants permission to retrieve information about a specific campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#GetCampaign"
+    },
+    {
+      "name": "GetCampaignActivities",
+      "methodName": "toGetCampaignActivities",
+      "description": "Grants permission to retrieve information about the activities performed by a campaign",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-activities.html#GetCampaignActivities"
+    },
+    {
+      "name": "GetCampaignDateRangeKpi",
+      "methodName": "toGetCampaignDateRangeKpi",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard metric that applies to a campaign",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-kpis-daterange-kpi-name.html#GetCampaignDateRangeKpi"
+    },
+    {
+      "name": "GetCampaignVersion",
+      "methodName": "toGetCampaignVersion",
+      "description": "Grants permission to retrieve information about a specific campaign version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-versions-version.html#GetCampaignVersion"
+    },
+    {
+      "name": "GetCampaignVersions",
+      "methodName": "toGetCampaignVersions",
+      "description": "Grants permission to retrieve information about the current and prior versions of a campaign",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-versions.html#GetCampaignVersions"
+    },
+    {
+      "name": "GetCampaigns",
+      "methodName": "toGetCampaigns",
+      "description": "Grants permission to retrieve information about all campaigns for an app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns.html#GetCampaigns"
+    },
+    {
+      "name": "GetChannels",
+      "methodName": "toGetChannels",
+      "description": "Grants permission to get all channels information for your app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html#GetChannels"
+    },
+    {
+      "name": "GetEmailChannel",
+      "methodName": "toGetEmailChannel",
+      "description": "Grants permission to obtain information about the email channel in an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-email.html#GetEmailChannel"
+    },
+    {
+      "name": "GetEmailTemplate",
+      "methodName": "toGetEmailTemplate",
+      "description": "Grants permission to retrieve information about a specific or the active version of an email template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#GetEmailTemplate"
+    },
+    {
+      "name": "GetEndpoint",
+      "methodName": "toGetEndpoint",
+      "description": "Grants permission to retrieve information about a specific endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html#GetEndpoint"
+    },
+    {
+      "name": "GetEventStream",
+      "methodName": "toGetEventStream",
+      "description": "Grants permission to retrieve information about the event stream for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-eventstream.html#GetEventStream"
+    },
+    {
+      "name": "GetExportJob",
+      "methodName": "toGetExportJob",
+      "description": "Grants permission to obtain information about a specific export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-export-job-id.html#GetExportJob"
+    },
+    {
+      "name": "GetExportJobs",
+      "methodName": "toGetExportJobs",
+      "description": "Grants permission to retrieve a list of all of the export jobs for an app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-export.html#GetExportJobs"
+    },
+    {
+      "name": "GetGcmChannel",
+      "methodName": "toGetGcmChannel",
+      "description": "Grants permission to retrieve information about the GCM channel for an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-gcm.html#GetGcmChannel"
+    },
+    {
+      "name": "GetImportJob",
+      "methodName": "toGetImportJob",
+      "description": "Grants permission to retrieve information about a specific import job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-import-job-id.html#GetImportJob"
+    },
+    {
+      "name": "GetImportJobs",
+      "methodName": "toGetImportJobs",
+      "description": "Grants permission to retrieve information about all import jobs for an app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-import.html#GetImportJobs"
+    },
+    {
+      "name": "GetInAppMessages",
+      "methodName": "toGetInAppMessages",
+      "description": "Grants permission to retrive in-app messages for the given endpoint id",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id-inappmessages.html#GetInAppMessages"
+    },
+    {
+      "name": "GetInAppTemplate",
+      "methodName": "toGetInAppTemplate",
+      "description": "Grants permission to retrieve information about a specific or the active version of an in-app message template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#GetInAppTemplate"
+    },
+    {
+      "name": "GetJourney",
+      "methodName": "toGetJourney",
+      "description": "Grants permission to retrieve information about a specific journey",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#GetJourney"
+    },
+    {
+      "name": "GetJourneyDateRangeKpi",
+      "methodName": "toGetJourneyDateRangeKpi",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard engagement metric that applies to a journey",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-kpis-daterange-kpi-name.html#GetJourneyDateRangeKpi"
+    },
+    {
+      "name": "GetJourneyExecutionActivityMetrics",
+      "methodName": "toGetJourneyExecutionActivityMetrics",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey activity",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-activities-journey-activity-id-execution-metrics.html#GetJourneyExecutionActivityMetrics"
+    },
+    {
+      "name": "GetJourneyExecutionMetrics",
+      "methodName": "toGetJourneyExecutionMetrics",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-execution-metrics.html#GetJourneyExecutionMetrics"
+    },
+    {
+      "name": "GetJourneyRunExecutionActivityMetrics",
+      "methodName": "toGetJourneyRunExecutionActivityMetrics",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey activity for a single journey run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs-run-id-activities-journey-activity-id-execution-metrics.html#GetJourneyRunExecutionActivityMetrics"
+    },
+    {
+      "name": "GetJourneyRunExecutionMetrics",
+      "methodName": "toGetJourneyRunExecutionMetrics",
+      "description": "Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey for a single journey run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs-run-id-execution-metrics.html#GetJourneyRunExecutionMetrics"
+    },
+    {
+      "name": "GetJourneyRuns",
+      "methodName": "toGetJourneyRuns",
+      "description": "Grants permission to retrieve information about all journey runs for a journey",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-runs.html"
+    },
+    {
+      "name": "GetPushTemplate",
+      "methodName": "toGetPushTemplate",
+      "description": "Grants permission to retrieve information about a specific or the active version of an push notification template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#GetPushTemplate"
+    },
+    {
+      "name": "GetRecommenderConfiguration",
+      "methodName": "toGetRecommenderConfiguration",
+      "description": "Grants permission to retrieve information about an Amazon Pinpoint configuration for a recommender model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders-recommender-id.html#GetRecommenderConfiguration"
+    },
+    {
+      "name": "GetRecommenderConfigurations",
+      "methodName": "toGetRecommenderConfigurations",
+      "description": "Grants permission to retrieve information about all the recommender model configurations that are associated with an Amazon Pinpoint account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html#GetRecommenderConfigurations"
+    },
+    {
+      "name": "GetSegment",
+      "methodName": "toGetSegment",
+      "description": "Grants permission to retrieve information about a specific segment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id.html#GetSegment"
+    },
+    {
+      "name": "GetSegmentExportJobs",
+      "methodName": "toGetSegmentExportJobs",
+      "description": "Grants permission to retrieve information about jobs that export endpoint definitions from segments to Amazon S3",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id-jobs-export.html#GetSegmentExportJobs"
+    },
+    {
+      "name": "GetSegmentImportJobs",
+      "methodName": "toGetSegmentImportJobs",
+      "description": "Grants permission to retrieve information about jobs that create segments by importing endpoint definitions from",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id-jobs-import.html#GetSegmentImportJobs"
+    },
+    {
+      "name": "GetSegmentVersion",
+      "methodName": "toGetSegmentVersion",
+      "description": "Grants permission to retrieve information about a specific segment version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id-versions-version.html#GetSegmentVersion"
+    },
+    {
+      "name": "GetSegmentVersions",
+      "methodName": "toGetSegmentVersions",
+      "description": "Grants permission to retrieve information about the current and prior versions of a segment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id-versions.html#GetSegmentVersions"
+    },
+    {
+      "name": "GetSegments",
+      "methodName": "toGetSegments",
+      "description": "Grants permission to retrieve information about the segments for an app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments.html#GetSegments"
+    },
+    {
+      "name": "GetSmsChannel",
+      "methodName": "toGetSmsChannel",
+      "description": "Grants permission to obtain information about the SMS channel in an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-sms.html#GetSmsChannel"
+    },
+    {
+      "name": "GetSmsTemplate",
+      "methodName": "toGetSmsTemplate",
+      "description": "Grants permission to retrieve information about a specific or the active version of an sms message template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#GetSmsTemplate"
+    },
+    {
+      "name": "GetUserEndpoints",
+      "methodName": "toGetUserEndpoints",
+      "description": "Grants permission to retrieve information about the endpoints that are associated with a user ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-users-user-id.html#GetUserEndpoints"
+    },
+    {
+      "name": "GetVoiceChannel",
+      "methodName": "toGetVoiceChannel",
+      "description": "Grants permission to obtain information about the Voice channel in an app",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-voice.html#GetVoiceChannel"
+    },
+    {
+      "name": "GetVoiceTemplate",
+      "methodName": "toGetVoiceTemplate",
+      "description": "Grants permission to retrieve information about a specific or the active version of a voice message template",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#GetVoiceTemplate"
+    },
+    {
+      "name": "ListJourneys",
+      "methodName": "toListJourneys",
+      "description": "Grants permission to retrieve information about all journeys for an app",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html#ListJourneys"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html#ListTagsForResource"
+    },
+    {
+      "name": "ListTemplateVersions",
+      "methodName": "toListTemplateVersions",
+      "description": "Grants permission to retrieve all versions about a specific template",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-template-type-versions.html#ListTemplateVersions"
+    },
+    {
+      "name": "ListTemplates",
+      "methodName": "toListTemplates",
+      "description": "Grants permission to retrieve metadata about the queried templates",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates.html#ListTemplates"
+    },
+    {
+      "name": "PhoneNumberValidate",
+      "methodName": "toPhoneNumberValidate",
+      "description": "Grants permission to obtain metadata for a phone number, such as the number type (mobile, landline, or VoIP), location, and provider",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/phone-number-validate.html#PhoneNumberValidate"
+    },
+    {
+      "name": "PutEventStream",
+      "methodName": "toPutEventStream",
+      "description": "Grants permission to create or update an event stream for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-eventstream.html#PutEventStream"
+    },
+    {
+      "name": "PutEvents",
+      "methodName": "toPutEvents",
+      "description": "Grants permission to create or update events for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-events.html#PutEvents"
+    },
+    {
+      "name": "RemoveAttributes",
+      "methodName": "toRemoveAttributes",
+      "description": "Grants permission to remove the attributes for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-attributes-attribute-type.html#RemoveAttributes"
+    },
+    {
+      "name": "SendMessages",
+      "methodName": "toSendMessages",
+      "description": "Grants permission to send an SMS message or push notification to specific endpoints",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#SendMessages"
+    },
+    {
+      "name": "SendOTPMessage",
+      "methodName": "toSendOTPMessage",
+      "description": "Grants permission to send an OTP code to a user of your application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-otp.html#SendOTPMessage"
+    },
+    {
+      "name": "SendUsersMessages",
+      "methodName": "toSendUsersMessages",
+      "description": "Grants permission to send an SMS message or push notification to all endpoints that are associated with a specific user ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-users-messages.html#SendUsersMessages"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html#TagResource"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html#UntagResource"
+    },
+    {
+      "name": "UpdateAdmChannel",
+      "methodName": "toUpdateAdmChannel",
+      "description": "Grants permission to update the Amazon Device Messaging (ADM) channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-adm.html#UpdateAdmChannel"
+    },
+    {
+      "name": "UpdateApnsChannel",
+      "methodName": "toUpdateApnsChannel",
+      "description": "Grants permission to update the Apple Push Notification service (APNs) channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns.html#UpdateApnsChannel"
+    },
+    {
+      "name": "UpdateApnsSandboxChannel",
+      "methodName": "toUpdateApnsSandboxChannel",
+      "description": "Grants permission to update the Apple Push Notification service (APNs) sandbox channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_sandbox.html#UpdateApnsSandboxChannel"
+    },
+    {
+      "name": "UpdateApnsVoipChannel",
+      "methodName": "toUpdateApnsVoipChannel",
+      "description": "Grants permission to update the Apple Push Notification service (APNs) VoIP channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_voip.html#UpdateApnsVoipChannel"
+    },
+    {
+      "name": "UpdateApnsVoipSandboxChannel",
+      "methodName": "toUpdateApnsVoipSandboxChannel",
+      "description": "Grants permission to update the Apple Push Notification service (APNs) VoIP sandbox channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-apns_voip_sandbox.html#UpdateApnsVoipSandboxChannel"
+    },
+    {
+      "name": "UpdateApplicationSettings",
+      "methodName": "toUpdateApplicationSettings",
+      "description": "Grants permission to update the default settings for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-settings.html#UpdateApplicationSettings"
+    },
+    {
+      "name": "UpdateBaiduChannel",
+      "methodName": "toUpdateBaiduChannel",
+      "description": "Grants permission to update the Baidu channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-baidu.html#UpdateBaiduChannel"
+    },
+    {
+      "name": "UpdateCampaign",
+      "methodName": "toUpdateCampaign",
+      "description": "Grants permission to update a specific campaign",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#UpdateCampaign"
+    },
+    {
+      "name": "UpdateEmailChannel",
+      "methodName": "toUpdateEmailChannel",
+      "description": "Grants permission to update the email channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-email.html#UpdateEmailChannel"
+    },
+    {
+      "name": "UpdateEmailTemplate",
+      "methodName": "toUpdateEmailTemplate",
+      "description": "Grants permission to update a specific email template under the same version or generate a new version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#UpdateEmailTemplate"
+    },
+    {
+      "name": "UpdateEndpoint",
+      "methodName": "toUpdateEndpoint",
+      "description": "Grants permission to create an endpoint or update the information for an endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html#UpdateEndpoint"
+    },
+    {
+      "name": "UpdateEndpointsBatch",
+      "methodName": "toUpdateEndpointsBatch",
+      "description": "Grants permission to create or update endpoints as a batch operation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints.html#UpdateEndpointsBatch"
+    },
+    {
+      "name": "UpdateGcmChannel",
+      "methodName": "toUpdateGcmChannel",
+      "description": "Grants permission to update the Firebase Cloud Messaging (FCM) or Google Cloud Messaging (GCM) API key that allows to send push notifications to your Android app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-gcm.html#UpdateGcmChannel"
+    },
+    {
+      "name": "UpdateInAppTemplate",
+      "methodName": "toUpdateInAppTemplate",
+      "description": "Grants permission to update a specific in-app message template under the same version or generate a new version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#UpdateInAppTemplate"
+    },
+    {
+      "name": "UpdateJourney",
+      "methodName": "toUpdateJourney",
+      "description": "Grants permission to update a specific journey",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#UpdateJourney"
+    },
+    {
+      "name": "UpdateJourneyState",
+      "methodName": "toUpdateJourneyState",
+      "description": "Grants permission to update a specific journey state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-state.html#UpdateJourneyState"
+    },
+    {
+      "name": "UpdatePushTemplate",
+      "methodName": "toUpdatePushTemplate",
+      "description": "Grants permission to update a specific push notification template under the same version or generate a new version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#UpdatePushTemplate"
+    },
+    {
+      "name": "UpdateRecommenderConfiguration",
+      "methodName": "toUpdateRecommenderConfiguration",
+      "description": "Grants permission to update an Amazon Pinpoint configuration for a recommender model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders-recommender-id.html#UpdateRecommenderConfiguration"
+    },
+    {
+      "name": "UpdateSegment",
+      "methodName": "toUpdateSegment",
+      "description": "Grants permission to update a specific segment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id.html#UpdateSegment"
+    },
+    {
+      "name": "UpdateSmsChannel",
+      "methodName": "toUpdateSmsChannel",
+      "description": "Grants permission to update the SMS channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-sms.html#UpdateSmsChannel"
+    },
+    {
+      "name": "UpdateSmsTemplate",
+      "methodName": "toUpdateSmsTemplate",
+      "description": "Grants permission to update a specific sms message template under the same version or generate a new version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#UpdateSmsTemplate"
+    },
+    {
+      "name": "UpdateTemplateActiveVersion",
+      "methodName": "toUpdateTemplateActiveVersion",
+      "description": "Grants permission to update the active version parameter of a specific template",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-template-type-active-version.html#UpdateTemplateActiveVersion"
+    },
+    {
+      "name": "UpdateVoiceChannel",
+      "methodName": "toUpdateVoiceChannel",
+      "description": "Grants permission to update the Voice channel for an app",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels-voice.html#UpdateVoiceChannel"
+    },
+    {
+      "name": "UpdateVoiceTemplate",
+      "methodName": "toUpdateVoiceTemplate",
+      "description": "Grants permission to update a specific voice message template under the same version or generate a new version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#UpdateVoiceTemplate"
+    },
+    {
+      "name": "VerifyOTPMessage",
+      "methodName": "toVerifyOTPMessage",
+      "description": "Grants permission to check the validity of One-Time Passwords (OTPs)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html#VerifyOTPMessage"
+    },
+    {
+      "name": "GetReports",
+      "methodName": "toGetReports",
+      "description": "Grants permission to mobiletargeting:GetReports",
+      "accessLevel": "Read",
+      "url": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "app",
+      "methodName": "onApp",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_pinpoint",
+        "interface": "IAppRef",
+        "property": "appRef",
+        "arn": "appArn"
+      }
+    },
+    {
+      "name": "application-metrics",
+      "methodName": "onApplicationMetrics",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-kpis-daterange-kpi-name.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/kpis/daterange/${KpiName}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KpiName",
+          "name": "kpiName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "apps",
+      "methodName": "onApps",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "attribute",
+      "methodName": "onAttribute",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-attributes-attribute-type.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/attributes/${AttributeType}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "AttributeType",
+          "name": "attributeType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "campaign",
+      "methodName": "onCampaign",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/campaigns/${CampaignId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CampaignId",
+          "name": "campaignId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "campaign-metrics",
+      "methodName": "onCampaignMetrics",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-kpis-daterange-kpi-name.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/campaigns/${CampaignId}/kpis/daterange/${KpiName}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CampaignId",
+          "name": "campaignId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KpiName",
+          "name": "kpiName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/channels/${ChannelType}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelType",
+          "name": "channelType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "channels",
+      "methodName": "onChannels",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-channels.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/channels",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "endpoint",
+      "methodName": "onEndpoint",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/endpoints/${EndpointId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EndpointId",
+          "name": "endpointId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "event-stream",
+      "methodName": "onEventStream",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-eventstream.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/eventstream",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "events",
+      "methodName": "onEvents",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-events.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/events",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "export-job",
+      "methodName": "onExportJob",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-export-job-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/jobs/export/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "import-job",
+      "methodName": "onImportJob",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-jobs-import-job-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/jobs/import/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "journey",
+      "methodName": "onJourney",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JourneyId",
+          "name": "journeyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "journey-execution-activity-metrics",
+      "methodName": "onJourneyExecutionActivityMetrics",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-activities-journey-activity-id-execution-metrics.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}/activities/${JourneyActivityId}/execution-metrics",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JourneyId",
+          "name": "journeyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JourneyActivityId",
+          "name": "journeyActivityId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "journey-execution-metrics",
+      "methodName": "onJourneyExecutionMetrics",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-execution-metrics.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}/execution-metrics",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JourneyId",
+          "name": "journeyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "journey-metrics",
+      "methodName": "onJourneyMetrics",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-kpis-daterange-kpi-name.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}/kpis/daterange/${KpiName}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JourneyId",
+          "name": "journeyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "KpiName",
+          "name": "kpiName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "journeys",
+      "methodName": "onJourneys",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "messages",
+      "methodName": "onMessages",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/messages",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "otp",
+      "methodName": "onOtp",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/otp",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "phone-number-validate",
+      "methodName": "onPhoneNumberValidate",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/phone-number-validate.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:phone/number/validate",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "recommender",
+      "methodName": "onRecommender",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:recommenders/${RecommenderId}",
+      "placeholders": [
+        {
+          "placeholder": "RecommenderId",
+          "name": "recommenderId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "recommenders",
+      "methodName": "onRecommenders",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:recommenders/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "reports",
+      "methodName": "onReports",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/reports.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:reports",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "segment",
+      "methodName": "onSegment",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-segments-segment-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/segments/${SegmentId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SegmentId",
+          "name": "segmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "template",
+      "methodName": "onTemplate",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:templates/${TemplateName}/${TemplateType}",
+      "placeholders": [
+        {
+          "placeholder": "TemplateName",
+          "name": "templateName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TemplateType",
+          "name": "templateType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "templates",
+      "methodName": "onTemplates",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:templates",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "user",
+      "methodName": "onUser",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-users-user-id.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/users/${UserId}",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "UserId",
+          "name": "userId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "verify-otp",
+      "methodName": "onVerifyOtp",
+      "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/verify-otp",
+      "placeholders": [
+        {
+          "placeholder": "AppId",
+          "name": "appId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a key that is present in the request the user makes to the pinpoint service",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateApp",
+        "toCreateCampaign",
+        "toCreateEmailTemplate",
+        "toCreateInAppTemplate",
+        "toCreateJourney",
+        "toCreatePushTemplate",
+        "toCreateSegment",
+        "toCreateSmsTemplate",
+        "toCreateVoiceTemplate",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCampaign",
+        "toUpdateEmailTemplate",
+        "toUpdateInAppTemplate",
+        "toUpdateJourney",
+        "toUpdateJourneyState",
+        "toUpdatePushTemplate",
+        "toUpdateSegment",
+        "toUpdateSmsTemplate",
+        "toUpdateVoiceTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateApp",
+        "toCreateCampaign",
+        "toCreateEmailTemplate",
+        "toCreateExportJob",
+        "toCreateImportJob",
+        "toCreateInAppTemplate",
+        "toCreateJourney",
+        "toCreatePushTemplate",
+        "toCreateSegment",
+        "toCreateSmsTemplate",
+        "toCreateVoiceTemplate",
+        "toDeleteApp",
+        "toDeleteCampaign",
+        "toDeleteEmailTemplate",
+        "toDeleteInAppTemplate",
+        "toDeleteJourney",
+        "toDeletePushTemplate",
+        "toDeleteSegment",
+        "toDeleteSmsTemplate",
+        "toDeleteVoiceTemplate",
+        "toGetApp",
+        "toGetApplicationSettings",
+        "toGetCampaign",
+        "toGetCampaignActivities",
+        "toGetCampaignVersion",
+        "toGetCampaignVersions",
+        "toGetCampaigns",
+        "toGetEmailTemplate",
+        "toGetExportJobs",
+        "toGetImportJobs",
+        "toGetInAppMessages",
+        "toGetInAppTemplate",
+        "toGetJourney",
+        "toGetJourneyRunExecutionActivityMetrics",
+        "toGetJourneyRunExecutionMetrics",
+        "toGetJourneyRuns",
+        "toGetPushTemplate",
+        "toGetSegment",
+        "toGetSegmentExportJobs",
+        "toGetSegmentImportJobs",
+        "toGetSegmentVersion",
+        "toGetSegmentVersions",
+        "toGetSegments",
+        "toGetSmsTemplate",
+        "toGetVoiceTemplate",
+        "toListJourneys",
+        "toListTagsForResource",
+        "toListTemplateVersions",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplicationSettings",
+        "toUpdateCampaign",
+        "toUpdateEmailTemplate",
+        "toUpdateEndpointsBatch",
+        "toUpdateInAppTemplate",
+        "toUpdateJourney",
+        "toUpdateJourneyState",
+        "toUpdatePushTemplate",
+        "toUpdateSegment",
+        "toUpdateSmsTemplate",
+        "toUpdateTemplateActiveVersion",
+        "toUpdateVoiceTemplate"
+      ],
+      "relatedResourceTypes": [
+        "app",
+        "campaign",
+        "journey",
+        "segment",
+        "template"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the list of all the tag key names present in the request the user makes to the pinpoint service",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys",
+      "relatedActionMethods": [
+        "toCreateApp",
+        "toCreateCampaign",
+        "toCreateEmailTemplate",
+        "toCreateInAppTemplate",
+        "toCreateJourney",
+        "toCreatePushTemplate",
+        "toCreateSegment",
+        "toCreateSmsTemplate",
+        "toCreateVoiceTemplate",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCampaign",
+        "toUpdateEmailTemplate",
+        "toUpdateInAppTemplate",
+        "toUpdateJourney",
+        "toUpdateJourneyState",
+        "toUpdatePushTemplate",
+        "toUpdateSegment",
+        "toUpdateSmsTemplate",
+        "toUpdateVoiceTemplate"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

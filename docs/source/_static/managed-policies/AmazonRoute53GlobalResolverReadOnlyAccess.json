@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRoute53GlobalResolverReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "route53globalresolver:GetAccessSource",
+        "route53globalresolver:GetAccessToken",
+        "route53globalresolver:GetDNSView",
+        "route53globalresolver:GetFirewallDomainList",
+        "route53globalresolver:GetFirewallRule",
+        "route53globalresolver:GetGlobalResolver",
+        "route53globalresolver:GetHostedZoneAssociation",
+        "route53globalresolver:GetManagedFirewallDomainList",
+        "route53globalresolver:ListAccessSources",
+        "route53globalresolver:ListAccessTokens",
+        "route53globalresolver:ListDNSViews",
+        "route53globalresolver:ListFirewallDomainLists",
+        "route53globalresolver:ListFirewallDomains",
+        "route53globalresolver:ListFirewallRules",
+        "route53globalresolver:ListGlobalResolvers",
+        "route53globalresolver:ListHostedZoneAssociations",
+        "route53globalresolver:ListManagedFirewallDomainLists"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

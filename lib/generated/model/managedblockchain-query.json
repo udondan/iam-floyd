@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "filename": "managedblockchain-query",
+  "className": "ManagedblockchainQuery",
+  "name": "managedblockchain-query",
+  "servicePrefix": "managedblockchain-query",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_managedblockchain-query.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetTokenBalance",
+      "GetAssetContract",
+      "GetTokenBalance",
+      "GetTransaction"
+    ],
+    "List": [
+      "ListAssetContracts",
+      "ListFilteredTransactionEvents",
+      "ListTokenBalances",
+      "ListTransactionEvents",
+      "ListTransactions"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetTokenBalance",
+      "methodName": "toBatchGetTokenBalance",
+      "description": "Grants permission to batch calls for GetTokenBalance API",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetAssetContract",
+      "methodName": "toGetAssetContract",
+      "description": "Grants permission to fetch information about a contract on the blockchain",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetTokenBalance",
+      "methodName": "toGetTokenBalance",
+      "description": "Grants permission to retrieve balance of a token for an address on the blockchain",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "GetTransaction",
+      "methodName": "toGetTransaction",
+      "description": "Grants permission to retrieve a transaction on the blockchain",
+      "accessLevel": "Read",
+      "url": ""
+    },
+    {
+      "name": "ListAssetContracts",
+      "methodName": "toListAssetContracts",
+      "description": "Grants permission to fetch multiple contracts on the blockchain",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListFilteredTransactionEvents",
+      "methodName": "toListFilteredTransactionEvents",
+      "description": "Grants permission to retrieve events on the blockchain with additional filters",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListTokenBalances",
+      "methodName": "toListTokenBalances",
+      "description": "Grants permission to retrieve multiple balances on the blockchain",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListTransactionEvents",
+      "methodName": "toListTransactionEvents",
+      "description": "Grants permission to retrieve events in a transaction on the blockchain",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListTransactions",
+      "methodName": "toListTransactions",
+      "description": "Grants permission to retrieve a multiple transactions on a blockchain",
+      "accessLevel": "List",
+      "url": ""
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

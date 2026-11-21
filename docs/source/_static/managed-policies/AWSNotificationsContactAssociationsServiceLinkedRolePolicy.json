@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageContactAssociations",
+      "Effect": "Allow",
+      "Action": [
+        "notifications:AssociateManagedNotificationAccountContact",
+        "notifications:DisassociateManagedNotificationAccountContact",
+        "notifications:ListManagedNotificationChannelAssociations"
+      ],
+      "Resource": "arn:aws:notifications::*:managed-notification-configuration/category/AWS-BCM/sub-category/SLA-Budgets",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3-outposts:Get*",
+        "s3-outposts:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "datasync:ListTasks",
+        "datasync:ListLocations",
+        "datasync:DescribeTask",
+        "datasync:DescribeLocation*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "outposts:ListOutposts",
+        "outposts:GetOutpost"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

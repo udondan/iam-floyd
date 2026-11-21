@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "filename": "lookoutequipment",
+  "className": "Lookoutequipment",
+  "name": "lookoutequipment",
+  "servicePrefix": "lookoutequipment",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lookoutequipment.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDataset",
+      "CreateInferenceScheduler",
+      "CreateLabel",
+      "CreateLabelGroup",
+      "CreateModel",
+      "CreateRetrainingScheduler",
+      "DeleteDataset",
+      "DeleteInferenceScheduler",
+      "DeleteLabel",
+      "DeleteLabelGroup",
+      "DeleteModel",
+      "DeleteResourcePolicy",
+      "DeleteRetrainingScheduler",
+      "ImportDataset",
+      "ImportModelVersion",
+      "PutResourcePolicy",
+      "StartDataIngestionJob",
+      "StartInferenceScheduler",
+      "StartRetrainingScheduler",
+      "StopInferenceScheduler",
+      "StopRetrainingScheduler",
+      "TagResource",
+      "UntagResource",
+      "UpdateActiveModelVersion",
+      "UpdateInferenceScheduler",
+      "UpdateLabelGroup",
+      "UpdateModel",
+      "UpdateRetrainingScheduler"
+    ],
+    "Read": [
+      "DescribeDataIngestionJob",
+      "DescribeDataset",
+      "DescribeInferenceScheduler",
+      "DescribeLabelGroup",
+      "DescribeModel",
+      "DescribeModelVersion",
+      "DescribeResourcePolicy",
+      "DescribeRetrainingScheduler",
+      "Describelabel",
+      "ListInferenceEvents",
+      "ListInferenceExecutions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDataIngestionJobs",
+      "ListDatasets",
+      "ListInferenceSchedulers",
+      "ListLabelGroups",
+      "ListLabels",
+      "ListModelVersions",
+      "ListModels",
+      "ListRetrainingSchedulers",
+      "ListSensorStatistics"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateDataset.html"
+    },
+    {
+      "name": "CreateInferenceScheduler",
+      "methodName": "toCreateInferenceScheduler",
+      "description": "Grants permission to create an inference scheduler for a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateInferenceScheduler.html"
+    },
+    {
+      "name": "CreateLabel",
+      "methodName": "toCreateLabel",
+      "description": "Grants permission to create a label",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateLabel.html"
+    },
+    {
+      "name": "CreateLabelGroup",
+      "methodName": "toCreateLabelGroup",
+      "description": "Grants permission to create a label group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateLabelGroup.html"
+    },
+    {
+      "name": "CreateModel",
+      "methodName": "toCreateModel",
+      "description": "Grants permission to create a model that is trained on a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateModel.html"
+    },
+    {
+      "name": "CreateRetrainingScheduler",
+      "methodName": "toCreateRetrainingScheduler",
+      "description": "Grants permission to create a retraining scheduler for a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_CreateRetrainingScheduler.html"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteDataset.html"
+    },
+    {
+      "name": "DeleteInferenceScheduler",
+      "methodName": "toDeleteInferenceScheduler",
+      "description": "Grants permission to delete an inference scheduler",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteInferenceScheduler.html"
+    },
+    {
+      "name": "DeleteLabel",
+      "methodName": "toDeleteLabel",
+      "description": "Grants permission to delete a label",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteLabel.html"
+    },
+    {
+      "name": "DeleteLabelGroup",
+      "methodName": "toDeleteLabelGroup",
+      "description": "Grants permission to delete a label group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteLabelGroup.html"
+    },
+    {
+      "name": "DeleteModel",
+      "methodName": "toDeleteModel",
+      "description": "Grants permission to delete a model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteModel.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRetrainingScheduler",
+      "methodName": "toDeleteRetrainingScheduler",
+      "description": "Grants permission to delete a retraining scheduler of a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DeleteRetrainingScheduler.html"
+    },
+    {
+      "name": "DescribeDataIngestionJob",
+      "methodName": "toDescribeDataIngestionJob",
+      "description": "Grants permission to describe a data ingestion job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeDataIngestionJob.html"
+    },
+    {
+      "name": "DescribeDataset",
+      "methodName": "toDescribeDataset",
+      "description": "Grants permission to describe a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeDataset.html"
+    },
+    {
+      "name": "DescribeInferenceScheduler",
+      "methodName": "toDescribeInferenceScheduler",
+      "description": "Grants permission to describe an inference scheduler",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeInferenceScheduler.html"
+    },
+    {
+      "name": "DescribeLabelGroup",
+      "methodName": "toDescribeLabelGroup",
+      "description": "Grants permission to describe a label group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeLabelGroup.html"
+    },
+    {
+      "name": "DescribeModel",
+      "methodName": "toDescribeModel",
+      "description": "Grants permission to describe a model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeModel.html"
+    },
+    {
+      "name": "DescribeModelVersion",
+      "methodName": "toDescribeModelVersion",
+      "description": "Grants permission to describe a model version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeModelVersion.html"
+    },
+    {
+      "name": "DescribeResourcePolicy",
+      "methodName": "toDescribeResourcePolicy",
+      "description": "Grants permission to describe a resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeResourcePolicy.html"
+    },
+    {
+      "name": "DescribeRetrainingScheduler",
+      "methodName": "toDescribeRetrainingScheduler",
+      "description": "Grants permission to describe a retraining scheduler of a trained model",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeRetrainingScheduler.html"
+    },
+    {
+      "name": "Describelabel",
+      "methodName": "toDescribelabel",
+      "description": "Grants permission to describe a label",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_DescribeLabel.html"
+    },
+    {
+      "name": "ImportDataset",
+      "methodName": "toImportDataset",
+      "description": "Grants permission to import a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ImportDataset.html"
+    },
+    {
+      "name": "ImportModelVersion",
+      "methodName": "toImportModelVersion",
+      "description": "Grants permission to import a model version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ImportModelVersion.html"
+    },
+    {
+      "name": "ListDataIngestionJobs",
+      "methodName": "toListDataIngestionJobs",
+      "description": "Grants permission to list the data ingestion jobs in your account or for a particular dataset",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListDataIngestionJobs.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list the datasets in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListDatasets.html"
+    },
+    {
+      "name": "ListInferenceEvents",
+      "methodName": "toListInferenceEvents",
+      "description": "Grants permission to list the inference events for an inference scheduler",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListInferenceEvents.html"
+    },
+    {
+      "name": "ListInferenceExecutions",
+      "methodName": "toListInferenceExecutions",
+      "description": "Grants permission to list the inference executions for an inference scheduler",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListInferenceExecutions.html"
+    },
+    {
+      "name": "ListInferenceSchedulers",
+      "methodName": "toListInferenceSchedulers",
+      "description": "Grants permission to list the inference schedulers in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListInferenceSchedulers.html"
+    },
+    {
+      "name": "ListLabelGroups",
+      "methodName": "toListLabelGroups",
+      "description": "Grants permission to list the label groups in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListLabelGroups.html"
+    },
+    {
+      "name": "ListLabels",
+      "methodName": "toListLabels",
+      "description": "Grants permission to list the labels in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListLabels.html"
+    },
+    {
+      "name": "ListModelVersions",
+      "methodName": "toListModelVersions",
+      "description": "Grants permission to list the model versions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListModelVersions.html"
+    },
+    {
+      "name": "ListModels",
+      "methodName": "toListModels",
+      "description": "Grants permission to list the models in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListModels.html"
+    },
+    {
+      "name": "ListRetrainingSchedulers",
+      "methodName": "toListRetrainingSchedulers",
+      "description": "Grants permission to list the retraining schedulers in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListRetrainingSchedulers.html"
+    },
+    {
+      "name": "ListSensorStatistics",
+      "methodName": "toListSensorStatistics",
+      "description": "Grants permission to list the sensor statistics for a particular dataset or an ingestion job",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListSensorStatistics.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to put a resource policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "StartDataIngestionJob",
+      "methodName": "toStartDataIngestionJob",
+      "description": "Grants permission to start a data ingestion job for a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StartDataIngestionJob.html"
+    },
+    {
+      "name": "StartInferenceScheduler",
+      "methodName": "toStartInferenceScheduler",
+      "description": "Grants permission to start an inference scheduler",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StartInferenceScheduler.html"
+    },
+    {
+      "name": "StartRetrainingScheduler",
+      "methodName": "toStartRetrainingScheduler",
+      "description": "Grants permission to start a retraining scheduler of a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StartRetrainingScheduler.html"
+    },
+    {
+      "name": "StopInferenceScheduler",
+      "methodName": "toStopInferenceScheduler",
+      "description": "Grants permission to stop an inference scheduler",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StopInferenceScheduler.html"
+    },
+    {
+      "name": "StopRetrainingScheduler",
+      "methodName": "toStopRetrainingScheduler",
+      "description": "Grants permission to stop a retraining scheduler of a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_StopRetrainingScheduler.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateActiveModelVersion",
+      "methodName": "toUpdateActiveModelVersion",
+      "description": "Grants permission to set the active model version for a given machine learning model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateActiveModelVersion.html"
+    },
+    {
+      "name": "UpdateInferenceScheduler",
+      "methodName": "toUpdateInferenceScheduler",
+      "description": "Grants permission to update an inference scheduler",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateInferenceScheduler.html"
+    },
+    {
+      "name": "UpdateLabelGroup",
+      "methodName": "toUpdateLabelGroup",
+      "description": "Grants permission to update a label group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateLabelGroup.html"
+    },
+    {
+      "name": "UpdateModel",
+      "methodName": "toUpdateModel",
+      "description": "Grants permission to update a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateModel.html"
+    },
+    {
+      "name": "UpdateRetrainingScheduler",
+      "methodName": "toUpdateRetrainingScheduler",
+      "description": "Grants permission to update a retraining scheduler of a trained model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/API_UpdateRetrainingScheduler.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/dataset.html",
+      "arn": "arn:${Partition}:lookoutequipment:${Region}:${Account}:dataset/${DatasetName}/${DatasetId}",
+      "placeholders": [
+        {
+          "placeholder": "DatasetName",
+          "name": "datasetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasetId",
+          "name": "datasetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "inference-scheduler",
+      "methodName": "onInferenceScheduler",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/inference-scheduler.html",
+      "arn": "arn:${Partition}:lookoutequipment:${Region}:${Account}:inference-scheduler/${InferenceSchedulerName}/${InferenceSchedulerId}",
+      "placeholders": [
+        {
+          "placeholder": "InferenceSchedulerName",
+          "name": "inferenceSchedulerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "InferenceSchedulerId",
+          "name": "inferenceSchedulerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "label-group",
+      "methodName": "onLabelGroup",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/label-group.html",
+      "arn": "arn:${Partition}:lookoutequipment:${Region}:${Account}:label-group/${LabelGroupName}/${LabelGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "LabelGroupName",
+          "name": "labelGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LabelGroupId",
+          "name": "labelGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model",
+      "methodName": "onModel",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/model.html",
+      "arn": "arn:${Partition}:lookoutequipment:${Region}:${Account}:model/${ModelName}/${ModelId}",
+      "placeholders": [
+        {
+          "placeholder": "ModelName",
+          "name": "modelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ModelId",
+          "name": "modelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "model-version",
+      "methodName": "onModelVersion",
+      "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/model-version.html",
+      "arn": "arn:${Partition}:lookoutequipment:${Region}:${Account}:model/${ModelName}/${ModelId}/model-version/${ModelVersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "ModelName",
+          "name": "modelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ModelId",
+          "name": "modelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ModelVersionNumber",
+          "name": "modelVersionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toCreateInferenceScheduler",
+        "toCreateLabelGroup",
+        "toCreateModel",
+        "toImportDataset",
+        "toImportModelVersion",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toCreateInferenceScheduler",
+        "toCreateLabel",
+        "toCreateLabelGroup",
+        "toCreateModel",
+        "toCreateRetrainingScheduler",
+        "toDeleteDataset",
+        "toDeleteInferenceScheduler",
+        "toDeleteLabel",
+        "toDeleteLabelGroup",
+        "toDeleteModel",
+        "toDeleteResourcePolicy",
+        "toDeleteRetrainingScheduler",
+        "toDescribeDataset",
+        "toDescribeInferenceScheduler",
+        "toDescribeLabelGroup",
+        "toDescribeModel",
+        "toDescribeModelVersion",
+        "toDescribeResourcePolicy",
+        "toDescribeRetrainingScheduler",
+        "toDescribelabel",
+        "toImportDataset",
+        "toImportModelVersion",
+        "toListDataIngestionJobs",
+        "toListInferenceEvents",
+        "toListInferenceExecutions",
+        "toListLabelGroups",
+        "toListLabels",
+        "toListModelVersions",
+        "toListSensorStatistics",
+        "toListTagsForResource",
+        "toPutResourcePolicy",
+        "toStartDataIngestionJob",
+        "toStartInferenceScheduler",
+        "toStartRetrainingScheduler",
+        "toStopInferenceScheduler",
+        "toStopRetrainingScheduler",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateActiveModelVersion",
+        "toUpdateInferenceScheduler",
+        "toUpdateLabelGroup",
+        "toUpdateModel",
+        "toUpdateRetrainingScheduler"
+      ],
+      "relatedResourceTypes": [
+        "dataset",
+        "inference-scheduler",
+        "label-group",
+        "model",
+        "model-version"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toCreateInferenceScheduler",
+        "toCreateLabelGroup",
+        "toCreateModel",
+        "toImportDataset",
+        "toImportModelVersion",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lookoutequipment:IsImportingData",
+      "methodName": "ifIsImportingData",
+      "description": "Filters access by the import strategy of underlying data",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-isimportingdata",
+      "relatedActionMethods": [
+        "toImportModelVersion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IsImportingData",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    }
+  ]
+}

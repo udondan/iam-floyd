@@ -1,0 +1,78 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EventBridgeActions",
+      "Effect": "Allow",
+      "Action": [
+        "events:*",
+        "schemas:*",
+        "scheduler:*",
+        "pipes:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMCreateServiceLinkedRoleForApiDestinations",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/apidestinations.events.amazonaws.com/AWSServiceRoleForAmazonEventBridgeApiDestinations",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "apidestinations.events.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "IAMCreateServiceLinkedRoleForAmazonEventBridgeSchemas",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/schemas.amazonaws.com/AWSServiceRoleForSchemas",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "schemas.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SecretsManagerAccessForApiDestinations",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:events!*"
+    },
+    {
+      "Sid": "IAMPassRoleForCloudWatchEvents",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/AWS_Events_Invoke_Targets"
+    },
+    {
+      "Sid": "IAMPassRoleAccessForScheduler",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "scheduler.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "IAMPassRoleAccessForPipes",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "pipes.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

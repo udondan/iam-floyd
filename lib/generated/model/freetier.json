@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "filename": "freetier",
+  "className": "Freetier",
+  "name": "freetier",
+  "servicePrefix": "freetier",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_freetier.html",
+  "accessLevelList": {
+    "Read": [
+      "GetAccountActivity",
+      "GetAccountPlanState",
+      "GetFreeTierUsage",
+      "GetFreeTierAlertPreference"
+    ],
+    "List": [
+      "ListAccountActivities"
+    ],
+    "Write": [
+      "UpgradeAccountPlan",
+      "PutFreeTierAlertPreference"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetAccountActivity",
+      "methodName": "toGetAccountActivity",
+      "description": "Grants permission to get a specific activity record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountActivity.html"
+    },
+    {
+      "name": "GetAccountPlanState",
+      "methodName": "toGetAccountPlanState",
+      "description": "Grants permission to get all of the information related to the state of the account plan related to Free Tier",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountPlanState.html"
+    },
+    {
+      "name": "GetFreeTierUsage",
+      "methodName": "toGetFreeTierUsage",
+      "description": "Grants permission to get free tier usage limits and MTD usage status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html"
+    },
+    {
+      "name": "ListAccountActivities",
+      "methodName": "toListAccountActivities",
+      "description": "Grants permission to list available activities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_ListAccountActivities.html"
+    },
+    {
+      "name": "UpgradeAccountPlan",
+      "methodName": "toUpgradeAccountPlan",
+      "description": "Grants permission to trigger an upgrade of account plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_UpgradeAccountPlan.html"
+    },
+    {
+      "name": "GetFreeTierAlertPreference",
+      "methodName": "toGetFreeTierAlertPreference",
+      "description": "Grants permission to get free tier alert preference (email address)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html"
+    },
+    {
+      "name": "PutFreeTierAlertPreference",
+      "methodName": "toPutFreeTierAlertPreference",
+      "description": "Grants permission to set free tier alert preference (email address)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

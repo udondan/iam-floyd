@@ -1,0 +1,16 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "codepipeline:AcknowledgeJob",
+        "codepipeline:GetJobDetails",
+        "codepipeline:PollForJobs",
+        "codepipeline:PutJobFailureResult",
+        "codepipeline:PutJobSuccessResult"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}

@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "billingconductor:CreateBillingGroup",
+      "Resource": [
+        "arn:aws:billingconductor::*:billinggroup/*",
+        "arn:aws:billingconductor::*:pricingplan/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "billingconductor:GetBillingTransferPreference",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "organizations:DescribeResponsibilityTransfer",
+      "Resource": "*"
+    }
+  ]
+}

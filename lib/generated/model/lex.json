@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 1,
+  "filename": "lex",
+  "className": "Lex",
+  "name": "lex",
+  "servicePrefix": "lex",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lex.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateBotVersion",
+      "CreateIntentVersion",
+      "CreateSlotTypeVersion",
+      "DeleteBot",
+      "DeleteBotAlias",
+      "DeleteBotChannelAssociation",
+      "DeleteBotVersion",
+      "DeleteIntent",
+      "DeleteIntentVersion",
+      "DeleteSession",
+      "DeleteSlotType",
+      "DeleteSlotTypeVersion",
+      "DeleteUtterances",
+      "PostContent",
+      "PostText",
+      "PutBot",
+      "PutBotAlias",
+      "PutIntent",
+      "PutSession",
+      "PutSlotType",
+      "StartImport",
+      "StartMigration",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetBot",
+      "GetBotAlias",
+      "GetBotChannelAssociation",
+      "GetBuiltinIntent",
+      "GetBuiltinIntents",
+      "GetBuiltinSlotTypes",
+      "GetExport",
+      "GetImport",
+      "GetIntent",
+      "GetMigration",
+      "GetSession",
+      "GetSlotType",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "GetBotAliases",
+      "GetBotChannelAssociations",
+      "GetBotVersions",
+      "GetBots",
+      "GetIntentVersions",
+      "GetIntents",
+      "GetMigrations",
+      "GetSlotTypeVersions",
+      "GetSlotTypes",
+      "GetUtterancesView"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateBotVersion",
+      "methodName": "toCreateBotVersion",
+      "description": "Creates a new version based on the $LATEST version of the specified bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html"
+    },
+    {
+      "name": "CreateIntentVersion",
+      "methodName": "toCreateIntentVersion",
+      "description": "Creates a new version based on the $LATEST version of the specified intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_CreateIntentVersion.html"
+    },
+    {
+      "name": "CreateSlotTypeVersion",
+      "methodName": "toCreateSlotTypeVersion",
+      "description": "Creates a new version based on the $LATEST version of the specified slot type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_CreateSlotTypeVersion.html"
+    },
+    {
+      "name": "DeleteBot",
+      "methodName": "toDeleteBot",
+      "description": "Deletes all versions of a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBot.html"
+    },
+    {
+      "name": "DeleteBotAlias",
+      "methodName": "toDeleteBotAlias",
+      "description": "Deletes an alias for a specific bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotAlias.html"
+    },
+    {
+      "name": "DeleteBotChannelAssociation",
+      "methodName": "toDeleteBotChannelAssociation",
+      "description": "Deletes the association between a Amazon Lex bot alias and a messaging platform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotChannelAssociation.html"
+    },
+    {
+      "name": "DeleteBotVersion",
+      "methodName": "toDeleteBotVersion",
+      "description": "Deletes a specific version of a bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotVersion.html"
+    },
+    {
+      "name": "DeleteIntent",
+      "methodName": "toDeleteIntent",
+      "description": "Deletes all versions of an intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntent.html"
+    },
+    {
+      "name": "DeleteIntentVersion",
+      "methodName": "toDeleteIntentVersion",
+      "description": "Deletes a specific version of an intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntentVersion.html"
+    },
+    {
+      "name": "DeleteSession",
+      "methodName": "toDeleteSession",
+      "description": "Removes session information for a specified bot, alias, and user ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_runtime_DeleteSession.html"
+    },
+    {
+      "name": "DeleteSlotType",
+      "methodName": "toDeleteSlotType",
+      "description": "Deletes all versions of a slot type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotType.html"
+    },
+    {
+      "name": "DeleteSlotTypeVersion",
+      "methodName": "toDeleteSlotTypeVersion",
+      "description": "Deletes a specific version of a slot type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotTypeVersion.html"
+    },
+    {
+      "name": "DeleteUtterances",
+      "methodName": "toDeleteUtterances",
+      "description": "Deletes the information Amazon Lex maintains for utterances on a specific bot and userId",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_DeleteUtterances.html"
+    },
+    {
+      "name": "GetBot",
+      "methodName": "toGetBot",
+      "description": "Returns information for a specific bot. In addition to the bot name, the bot version or alias is required",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBot.html"
+    },
+    {
+      "name": "GetBotAlias",
+      "methodName": "toGetBotAlias",
+      "description": "Returns information about a Amazon Lex bot alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAlias.html"
+    },
+    {
+      "name": "GetBotAliases",
+      "methodName": "toGetBotAliases",
+      "description": "Returns a list of aliases for a given Amazon Lex bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAliases.html"
+    },
+    {
+      "name": "GetBotChannelAssociation",
+      "methodName": "toGetBotChannelAssociation",
+      "description": "Returns information about the association between a Amazon Lex bot and a messaging platform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociation.html"
+    },
+    {
+      "name": "GetBotChannelAssociations",
+      "methodName": "toGetBotChannelAssociations",
+      "description": "Returns a list of all of the channels associated with a single bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociations.html"
+    },
+    {
+      "name": "GetBotVersions",
+      "methodName": "toGetBotVersions",
+      "description": "Returns information for all versions of a specific bot",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBotVersions.html"
+    },
+    {
+      "name": "GetBots",
+      "methodName": "toGetBots",
+      "description": "Returns information for the $LATEST version of all bots, subject to filters provided by the client",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBots.html"
+    },
+    {
+      "name": "GetBuiltinIntent",
+      "methodName": "toGetBuiltinIntent",
+      "description": "Returns information about a built-in intent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntent.html"
+    },
+    {
+      "name": "GetBuiltinIntents",
+      "methodName": "toGetBuiltinIntents",
+      "description": "Gets a list of built-in intents that meet the specified criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntents.html"
+    },
+    {
+      "name": "GetBuiltinSlotTypes",
+      "methodName": "toGetBuiltinSlotTypes",
+      "description": "Gets a list of built-in slot types that meet the specified criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinSlotTypes.html"
+    },
+    {
+      "name": "GetExport",
+      "methodName": "toGetExport",
+      "description": "Exports Amazon Lex Resource in a requested format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetExport.html"
+    },
+    {
+      "name": "GetImport",
+      "methodName": "toGetImport",
+      "description": "Gets information about an import job started with StartImport",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetImport.html"
+    },
+    {
+      "name": "GetIntent",
+      "methodName": "toGetIntent",
+      "description": "Returns information for a specific intent. In addition to the intent name, you must also specify the intent version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetIntent.html"
+    },
+    {
+      "name": "GetIntentVersions",
+      "methodName": "toGetIntentVersions",
+      "description": "Returns information for all versions of a specific intent",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetIntentVersions.html"
+    },
+    {
+      "name": "GetIntents",
+      "methodName": "toGetIntents",
+      "description": "Returns information for the $LATEST version of all intents, subject to filters provided by the client",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetIntents.html"
+    },
+    {
+      "name": "GetMigration",
+      "methodName": "toGetMigration",
+      "description": "Grants permission to view an ongoing or completed migration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetMigration.html"
+    },
+    {
+      "name": "GetMigrations",
+      "methodName": "toGetMigrations",
+      "description": "Grants permission to view list of migrations from Amazon Lex v1 to Amazon Lex v2",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetMigrations.html"
+    },
+    {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Returns session information for a specified bot, alias, and user ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_runtime_GetSession.html"
+    },
+    {
+      "name": "GetSlotType",
+      "methodName": "toGetSlotType",
+      "description": "Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must also specify the slot type version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotType.html"
+    },
+    {
+      "name": "GetSlotTypeVersions",
+      "methodName": "toGetSlotTypeVersions",
+      "description": "Returns information for all versions of a specific slot type",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypeVersions.html"
+    },
+    {
+      "name": "GetSlotTypes",
+      "methodName": "toGetSlotTypes",
+      "description": "Returns information for the $LATEST version of all slot types, subject to filters provided by the client",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypes.html"
+    },
+    {
+      "name": "GetUtterancesView",
+      "methodName": "toGetUtterancesView",
+      "description": "Returns a view of aggregate utterance data for versions of a bot for a recent time period",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_GetUtterancesView.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Lists tags for a Lex resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PostContent",
+      "methodName": "toPostContent",
+      "description": "Sends user input (text or speech) to Amazon Lex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html"
+    },
+    {
+      "name": "PostText",
+      "methodName": "toPostText",
+      "description": "Sends user input (text-only) to Amazon Lex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html"
+    },
+    {
+      "name": "PutBot",
+      "methodName": "toPutBot",
+      "description": "Creates or updates the $LATEST version of a Amazon Lex conversational bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html"
+    },
+    {
+      "name": "PutBotAlias",
+      "methodName": "toPutBotAlias",
+      "description": "Creates or updates an alias for the specific bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_PutBotAlias.html"
+    },
+    {
+      "name": "PutIntent",
+      "methodName": "toPutIntent",
+      "description": "Creates or updates the $LATEST version of an intent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_PutIntent.html"
+    },
+    {
+      "name": "PutSession",
+      "methodName": "toPutSession",
+      "description": "Creates a new session or modifies an existing session with an Amazon Lex bot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PutSession.html"
+    },
+    {
+      "name": "PutSlotType",
+      "methodName": "toPutSlotType",
+      "description": "Creates or updates the $LATEST version of a slot type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_PutSlotType.html"
+    },
+    {
+      "name": "StartImport",
+      "methodName": "toStartImport",
+      "description": "Starts a job to import a resource to Amazon Lex",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_StartImport.html"
+    },
+    {
+      "name": "StartMigration",
+      "methodName": "toStartMigration",
+      "description": "Grants permission to migrate a bot from Amazon Lex v1 to Amazon Lex v2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_StartMigration.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Adds or overwrites tags to a Lex resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Removes tags from a Lex resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "bot",
+      "methodName": "onBot",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot/${BotId}, arn:${Partition2}:lex:${Region2}:${Account2}:bot:${BotName}",
+      "placeholders": [
+        {
+          "placeholder": "BotId",
+          "name": "botId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account2",
+          "name": "account2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotName",
+          "name": "botName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "bot alias",
+      "methodName": "onBotAlias",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotAliasMetadata.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot-alias/${BotId}/${BotAliasId}, arn:${Partition2}:lex:${Region2}:${Account2}:bot:${BotName}:${BotAlias}",
+      "placeholders": [
+        {
+          "placeholder": "BotId",
+          "name": "botId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotAliasId",
+          "name": "botAliasId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition2",
+          "name": "partition2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region2",
+          "name": "region2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account2",
+          "name": "account2",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotName",
+          "name": "botName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotAlias",
+          "name": "botAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "bot version",
+      "methodName": "onBotVersion",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}",
+      "placeholders": [
+        {
+          "placeholder": "BotName",
+          "name": "botName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotVersion",
+          "name": "botVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotChannelAssociation.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}",
+      "placeholders": [
+        {
+          "placeholder": "BotName",
+          "name": "botName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "BotAlias",
+          "name": "botAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ChannelName",
+          "name": "channelName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "intent version",
+      "methodName": "onIntentVersion",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_Intent.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}",
+      "placeholders": [
+        {
+          "placeholder": "IntentName",
+          "name": "intentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "IntentVersion",
+          "name": "intentVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "slottype version",
+      "methodName": "onSlottypeVersion",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_SlotTypeMetadata.html",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}",
+      "placeholders": [
+        {
+          "placeholder": "SlotName",
+          "name": "slotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SlotVersion",
+          "name": "slotVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access based on the tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toPutBot",
+        "toPutBotAlias",
+        "toStartImport",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags attached to a Lex resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateBotVersion",
+        "toDeleteBot",
+        "toDeleteBotAlias",
+        "toDeleteBotChannelAssociation",
+        "toDeleteBotVersion",
+        "toDeleteIntent",
+        "toDeleteSession",
+        "toDeleteSlotType",
+        "toDeleteUtterances",
+        "toGetBot",
+        "toGetBotAlias",
+        "toGetBotChannelAssociation",
+        "toGetBotChannelAssociations",
+        "toGetBotVersions",
+        "toGetExport",
+        "toGetSession",
+        "toGetUtterancesView",
+        "toListTagsForResource",
+        "toPostContent",
+        "toPostText",
+        "toPutBot",
+        "toPutBotAlias",
+        "toPutSession",
+        "toStartImport",
+        "toStartMigration",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "bot",
+        "bot alias",
+        "bot version",
+        "channel"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access based on the set of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toPutBot",
+        "toPutBotAlias",
+        "toStartImport",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lex:associatedIntents",
+      "methodName": "ifAssociatedIntents",
+      "description": "Enables you to control access based on the intents included in the request",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "associatedIntents",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lex:associatedSlotTypes",
+      "methodName": "ifAssociatedSlotTypes",
+      "description": "Enables you to control access based on the slot types included in the request",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "associatedSlotTypes",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "lex:channelType",
+      "methodName": "ifChannelType",
+      "description": "Enables you to control access based on the channel type included in the request",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "channelType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

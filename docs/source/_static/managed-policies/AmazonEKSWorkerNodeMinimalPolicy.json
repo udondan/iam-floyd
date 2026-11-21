@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "WorkerNodePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "eks-auth:AssumeRoleForPodIdentity"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

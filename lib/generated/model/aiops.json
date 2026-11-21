@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "filename": "aiops",
+  "className": "Aiops",
+  "name": "aiops",
+  "servicePrefix": "aiops",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_aiops.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateInvestigation",
+      "CreateInvestigationEvent",
+      "CreateInvestigationGroup",
+      "CreateInvestigationResource",
+      "CreateReport",
+      "DeleteInvestigation",
+      "DeleteInvestigationGroup",
+      "DeleteInvestigationGroupPolicy",
+      "GenerateReport",
+      "PutFact",
+      "PutInvestigationGroupPolicy",
+      "TagResource",
+      "UntagResource",
+      "UpdateInvestigation",
+      "UpdateInvestigationEvent",
+      "UpdateInvestigationGroup",
+      "UpdateReport"
+    ],
+    "List": [
+      "GetEphemeralInvestigationResults",
+      "ListFacts",
+      "ListInvestigationEvents",
+      "ListInvestigationGroups",
+      "ListInvestigations",
+      "ListReports",
+      "ListTagsForResource"
+    ],
+    "Read": [
+      "GetFact",
+      "GetFactVersions",
+      "GetInvestigation",
+      "GetInvestigationEvent",
+      "GetInvestigationGroup",
+      "GetInvestigationGroupPolicy",
+      "GetInvestigationResource",
+      "GetReport",
+      "ValidateInvestigationGroup"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateInvestigation",
+      "methodName": "toCreateInvestigation",
+      "description": "Grants permission to create a new investigation in the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInvestigation.html"
+    },
+    {
+      "name": "CreateInvestigationEvent",
+      "methodName": "toCreateInvestigationEvent",
+      "description": "Grants permission to create a new investigation event in the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInvestigationEvent.html"
+    },
+    {
+      "name": "CreateInvestigationGroup",
+      "methodName": "toCreateInvestigationGroup",
+      "description": "Grants permission to create a new investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInvestigationGroup.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateInvestigationResource",
+      "methodName": "toCreateInvestigationResource",
+      "description": "Grants permission to create an investigation resource in the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInvestigationResource.html"
+    },
+    {
+      "name": "CreateReport",
+      "methodName": "toCreateReport",
+      "description": "Grants permission to create a new report in the specified investigation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateReport.html"
+    },
+    {
+      "name": "DeleteInvestigation",
+      "methodName": "toDeleteInvestigation",
+      "description": "Grants permission to delete an investigation in the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_DeleteInvestigation.html"
+    },
+    {
+      "name": "DeleteInvestigationGroup",
+      "methodName": "toDeleteInvestigationGroup",
+      "description": "Grants permission to delete the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_DeleteInvestigationGroup.html"
+    },
+    {
+      "name": "DeleteInvestigationGroupPolicy",
+      "methodName": "toDeleteInvestigationGroupPolicy",
+      "description": "Grants permission to delete the investigation group policy attached to an investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_DeleteInvestigationGroupPolicy.html"
+    },
+    {
+      "name": "GenerateReport",
+      "methodName": "toGenerateReport",
+      "description": "Grants permission to generate a report in the specified investigation report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GenerateReport.html"
+    },
+    {
+      "name": "GetEphemeralInvestigationResults",
+      "methodName": "toGetEphemeralInvestigationResults",
+      "description": "Grants permission to run and retrieve ephemeral investigation results",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetEphemeralInvestigationResults.html"
+    },
+    {
+      "name": "GetFact",
+      "methodName": "toGetFact",
+      "description": "Grants permission to retrieve a fact in the specified investigation report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetFact.html"
+    },
+    {
+      "name": "GetFactVersions",
+      "methodName": "toGetFactVersions",
+      "description": "Grants permission to retrieve all versions of a fact token in the specified investigation report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetFactVersions.html"
+    },
+    {
+      "name": "GetInvestigation",
+      "methodName": "toGetInvestigation",
+      "description": "Grants permission to retrieve an investigation in the specified investigation group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetInvestigation.html"
+    },
+    {
+      "name": "GetInvestigationEvent",
+      "methodName": "toGetInvestigationEvent",
+      "description": "Grants permission to retrieve an investigation event in the specified investigation group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetInvestigationEvent.html"
+    },
+    {
+      "name": "GetInvestigationGroup",
+      "methodName": "toGetInvestigationGroup",
+      "description": "Grants permission to retrieve the specified investigation group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetInvestigationGroup.html"
+    },
+    {
+      "name": "GetInvestigationGroupPolicy",
+      "methodName": "toGetInvestigationGroupPolicy",
+      "description": "Grants permission to retrieve the investigation group policy attached to an investigation group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetInvestigationGroupPolicy.html"
+    },
+    {
+      "name": "GetInvestigationResource",
+      "methodName": "toGetInvestigationResource",
+      "description": "Grants permission to retrieve an investigation resource in the specified investigation group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetInvestigationResource.html"
+    },
+    {
+      "name": "GetReport",
+      "methodName": "toGetReport",
+      "description": "Grants permission to retrieve a report in the specified investigation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetReport.html"
+    },
+    {
+      "name": "ListFacts",
+      "methodName": "toListFacts",
+      "description": "Grants permission to list all facts in the specified investigation report",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListFacts.html"
+    },
+    {
+      "name": "ListInvestigationEvents",
+      "methodName": "toListInvestigationEvents",
+      "description": "Grants permission to list all investigation events in the specified investigation group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListInvestigationEvents.html"
+    },
+    {
+      "name": "ListInvestigationGroups",
+      "methodName": "toListInvestigationGroups",
+      "description": "Grants permission to list all investigation groups in the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListInvestigationGroups.html"
+    },
+    {
+      "name": "ListInvestigations",
+      "methodName": "toListInvestigations",
+      "description": "Grants permission to list all investigations that are in the specified investigation group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListInvestigations.html"
+    },
+    {
+      "name": "ListReports",
+      "methodName": "toListReports",
+      "description": "Grants permission to list all reports in the specified investigation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListReports.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutFact",
+      "methodName": "toPutFact",
+      "description": "Grants permission to create or update a new fact in the specified investigation report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_PutFact.html"
+    },
+    {
+      "name": "PutInvestigationGroupPolicy",
+      "methodName": "toPutInvestigationGroupPolicy",
+      "description": "Grants permission to create/update the investigation group policy attached to an investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_PutInvestigationGroupPolicy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update the specified tags for the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateInvestigation",
+      "methodName": "toUpdateInvestigation",
+      "description": "Grants permission to update an investigation in the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateInvestigation.html"
+    },
+    {
+      "name": "UpdateInvestigationEvent",
+      "methodName": "toUpdateInvestigationEvent",
+      "description": "Grants permission to update an investigation event in the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateInvestigationEvent.html"
+    },
+    {
+      "name": "UpdateInvestigationGroup",
+      "methodName": "toUpdateInvestigationGroup",
+      "description": "Grants permission to update the specified investigation group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateInvestigationGroup.html"
+    },
+    {
+      "name": "UpdateReport",
+      "methodName": "toUpdateReport",
+      "description": "Grants permission to update a report in the specified investigation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateReport.html"
+    },
+    {
+      "name": "ValidateInvestigationGroup",
+      "methodName": "toValidateInvestigationGroup",
+      "description": "Grants permission to validate the specified investigation group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ValidateInvestigationGroup.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "investigation-group",
+      "methodName": "onInvestigationGroup",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_InvestigationGroup.html",
+      "arn": "arn:${Partition}:aiops:${Region}:${Account}:investigation-group/${InvestigationGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "InvestigationGroupId",
+          "name": "investigationGroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_aiops",
+        "interface": "IInvestigationGroupRef",
+        "property": "investigationGroupRef",
+        "arn": "investigationGroupArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateInvestigationGroup",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateInvestigation",
+        "toCreateInvestigationEvent",
+        "toCreateInvestigationGroup",
+        "toCreateInvestigationResource",
+        "toCreateReport",
+        "toDeleteInvestigation",
+        "toDeleteInvestigationGroup",
+        "toDeleteInvestigationGroupPolicy",
+        "toGenerateReport",
+        "toGetFact",
+        "toGetFactVersions",
+        "toGetInvestigation",
+        "toGetInvestigationEvent",
+        "toGetInvestigationGroup",
+        "toGetInvestigationGroupPolicy",
+        "toGetInvestigationResource",
+        "toGetReport",
+        "toListFacts",
+        "toListInvestigationEvents",
+        "toListInvestigations",
+        "toListReports",
+        "toListTagsForResource",
+        "toPutFact",
+        "toPutInvestigationGroupPolicy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateInvestigation",
+        "toUpdateInvestigationEvent",
+        "toUpdateInvestigationGroup",
+        "toUpdateReport",
+        "toValidateInvestigationGroup"
+      ],
+      "relatedResourceTypes": [
+        "investigation-group"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateInvestigationGroup",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

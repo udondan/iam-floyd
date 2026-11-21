@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:ListBucket",
+        "s3:PutBucketPolicy",
+        "s3:PutEncryptionConfiguration",
+        "s3:PutBucketTagging",
+        "s3:PutLifecycleConfiguration",
+        "s3:PutBucketVersioning"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "cloudformation.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:s3:::do-not-delete-ssm-*"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PartnerCentralRevenueManagementAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetRevenueAttribution",
+        "partnercentral:UpdateRevenueAttribution",
+        "partnercentral:CreateRevenueAttribution",
+        "partnercentral:ListRevenueAttributions"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/revenue-attribution/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    }
+  ]
+}

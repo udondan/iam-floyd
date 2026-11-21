@@ -1,0 +1,75 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:AttachNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DetachNetworkInterface",
+        "ec2:DescribeVpcEndpoints",
+        "acm-pca:GetCertificateAuthorityCertificate",
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "Resource": "arn:*:ec2:*:*:subnet/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVpcEndpoints",
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/AWSMSKManaged": "true"
+        },
+        "StringLike": {
+          "ec2:ResourceTag/ClusterArn": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetResourcePolicy",
+        "secretsmanager:PutResourcePolicy",
+        "secretsmanager:DeleteResourcePolicy",
+        "secretsmanager:DescribeSecret"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "secretsmanager:SecretId": "arn:*:secretsmanager:*:*:secret:AmazonMSK_*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignIpv6Addresses",
+        "ec2:UnassignIpv6Addresses",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "arn:*:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/AWSMSKManaged": "true"
+        },
+        "StringLike": {
+          "ec2:ResourceTag/ClusterArn": "*"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CostOptimizationHubAdminAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cost-optimization-hub:ListEnrollmentStatuses",
+        "cost-optimization-hub:UpdateEnrollmentStatus",
+        "cost-optimization-hub:GetPreferences",
+        "cost-optimization-hub:UpdatePreferences",
+        "cost-optimization-hub:GetRecommendation",
+        "cost-optimization-hub:ListRecommendations",
+        "cost-optimization-hub:ListRecommendationSummaries",
+        "cost-optimization-hub:ListEfficiencyMetrics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowCreationOfServiceLinkedRoleForCostOptimizationHub",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/cost-optimization-hub.bcm.amazonaws.com/AWSServiceRoleForCostOptimizationHub"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "cost-optimization-hub.bcm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAWSServiceAccessForCostOptimizationHub",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "organizations:ServicePrincipal": [
+            "cost-optimization-hub.bcm.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

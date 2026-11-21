@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/ODB"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "EC2",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeTransitGatewayVpcAttachments",
+        "ec2:DescribeSubnets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "NM",
+      "Effect": "Allow",
+      "Action": [
+        "networkmanager:GetVpcAttachment",
+        "networkmanager:ListAttachments"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EB1",
+      "Effect": "Allow",
+      "Action": [
+        "events:ActivateEventSource",
+        "events:DescribeEventSource"
+      ],
+      "Resource": "arn:aws:events:*:*:event-source/aws.partner/odb*"
+    },
+    {
+      "Sid": "EB2",
+      "Effect": "Allow",
+      "Action": [
+        "events:CreateEventBus",
+        "events:DescribeEventBus"
+      ],
+      "Resource": "arn:aws:events:*:*:event-bus/aws.partner/odb*"
+    }
+  ]
+}

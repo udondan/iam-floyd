@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteServiceLinkedRole",
+        "iam:GetServiceLinkedRoleDeletionStatus"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/lightsail.amazonaws.com/AWSServiceRoleForLightsail*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopySnapshot",
+        "ec2:DescribeSnapshots",
+        "ec2:CopyImage",
+        "ec2:DescribeImages"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetAccountPublicAccessBlock"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

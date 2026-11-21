@@ -1,0 +1,133 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:Unsubscribe"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:CreatePrivateMarketplaceRequests",
+        "aws-marketplace:ListPrivateMarketplaceRequests",
+        "aws-marketplace:DescribePrivateMarketplaceRequests"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListPrivateListings"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetListing",
+        "aws-marketplace:GetProduct",
+        "aws-marketplace:GetOffer",
+        "aws-marketplace:GetOfferTerms",
+        "aws-marketplace:GetOfferSet",
+        "aws-marketplace:ListPurchaseOptions",
+        "aws-marketplace:ListFulfillmentOptions",
+        "aws-marketplace:SearchFacets",
+        "aws-marketplace:SearchListings"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/product/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/listing/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/offer/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/offerSet/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/purchaseOption/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:UpdatePurchaseOrders",
+        "aws-marketplace:ListAgreementCharges",
+        "aws-marketplace:GetAgreementPaymentRequest",
+        "aws-marketplace:ListAgreementPaymentRequests",
+        "aws-marketplace:AcceptAgreementPaymentRequest",
+        "aws-marketplace:RejectAgreementPaymentRequest"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AWSMarketplaceChangeSetReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:ListChangeSets"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/ChangeSet/*"
+    },
+    {
+      "Sid": "AWSMarketplaceTokenManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartChangeSet"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/AgentTokenContainer/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ChangeSet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "catalog:ChangeType": [
+            "CreateAgentTokenContainer",
+            "RequestExpressPrivateOffer",
+            "ExpireToken"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AWSMarketplaceEntityReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementCancellationRequestAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListAgreementCancellationRequests",
+        "aws-marketplace:GetAgreementCancellationRequest",
+        "aws-marketplace:AcceptAgreementCancellationRequest",
+        "aws-marketplace:CancelAgreement",
+        "aws-marketplace:RejectAgreementCancellationRequest"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Acceptor"
+        }
+      }
+    }
+  ]
+}

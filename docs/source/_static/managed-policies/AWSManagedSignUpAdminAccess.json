@@ -1,0 +1,71 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PaymentWidgetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "payments:CreatePaymentInstrument",
+        "payments:GetPaymentInstrument",
+        "payments:GetPaymentStatus",
+        "payments:ListPaymentPreferences",
+        "payments:ListTagsForResource",
+        "payments:MakePayment",
+        "payments:TagResource",
+        "payments:UntagResource",
+        "payments:UpdatePaymentInstrument",
+        "payments:UpdatePaymentPreferences"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BillingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "billing:GetSellerOfRecord"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AccountPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "account:GetContactInformation"
+      ],
+      "Resource": "arn:aws:account::*:account"
+    },
+    {
+      "Sid": "InvoicingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "invoicing:GetInvoicePDF"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "TaxWidgetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "tax:BatchPutTaxRegistration",
+        "tax:DeleteTaxRegistration",
+        "tax:GetTaxRegistration",
+        "tax:GetTaxRegistrationDocument",
+        "tax:ListTaxRegistrations",
+        "tax:PutTaxRegistration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CustomerVerificationWidgetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "customer-verification:CreateCustomerVerificationDetails",
+        "customer-verification:CreateUploadUrls",
+        "customer-verification:GetCustomerVerificationDetails",
+        "customer-verification:GetCustomerVerificationEligibility",
+        "customer-verification:UpdateCustomerVerificationDetails"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

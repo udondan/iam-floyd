@@ -1,0 +1,76 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSMMonitoringModelCards",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListMonitoringAlerts",
+        "sagemaker:ListMonitoringExecutions",
+        "sagemaker:UpdateMonitoringAlert",
+        "sagemaker:StartMonitoringSchedule",
+        "sagemaker:StopMonitoringSchedule",
+        "sagemaker:ListMonitoringAlertHistory",
+        "sagemaker:DescribeModelPackage",
+        "sagemaker:DescribeModelPackageGroup",
+        "sagemaker:CreateModelCard",
+        "sagemaker:DescribeModelCard",
+        "sagemaker:UpdateModelCard",
+        "sagemaker:DeleteModelCard",
+        "sagemaker:ListModelCards",
+        "sagemaker:ListModelCardVersions",
+        "sagemaker:CreateModelCardExportJob",
+        "sagemaker:DescribeModelCardExportJob",
+        "sagemaker:ListModelCardExportJobs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSMTrainingModelsSearchTags",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListTrainingJobs",
+        "sagemaker:DescribeTrainingJob",
+        "sagemaker:ListModels",
+        "sagemaker:DescribeModel",
+        "sagemaker:Search",
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags",
+        "sagemaker:ListTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowKMSActions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowS3Actions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:CreateBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*SageMaker*",
+        "arn:aws:s3:::*Sagemaker*",
+        "arn:aws:s3:::*sagemaker*"
+      ]
+    },
+    {
+      "Sid": "AllowS3ListActions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

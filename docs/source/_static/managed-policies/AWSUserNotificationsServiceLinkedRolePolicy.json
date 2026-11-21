@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:DeleteRule",
+        "events:ListTargetsByRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:rule/AWSUserNotificationsManagedRule-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/Notifications"
+        }
+      },
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowOrgsActions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren",
+        "organizations:ListParents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsAdminDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "notifications.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationNotificationConfigurationDistribution",
+      "Effect": "Allow",
+      "Action": [
+        "notifications:CreateNotificationConfiguration",
+        "notifications:DeleteNotificationConfiguration",
+        "notifications:CreateEventRule",
+        "notifications:UpdateEventRule",
+        "notifications:DeleteEventRule"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

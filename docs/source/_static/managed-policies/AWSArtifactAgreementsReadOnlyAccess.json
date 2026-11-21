@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListAgreementsActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:ListAgreements",
+        "artifact:ListCustomerAgreements"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GetCustomerAgreementActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:GetCustomerAgreement"
+      ],
+      "Resource": "arn:aws:artifact::*:customer-agreement/*"
+    },
+    {
+      "Sid": "AWSOrganizationActions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GetRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/artifact.amazonaws.com/AWSServiceRoleForArtifact"
+    }
+  ]
+}

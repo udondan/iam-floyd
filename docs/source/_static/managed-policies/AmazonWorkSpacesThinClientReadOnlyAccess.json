@@ -1,0 +1,48 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowThinClientReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "thinclient:GetDevice",
+        "thinclient:GetDeviceDetails",
+        "thinclient:GetEnvironment",
+        "thinclient:GetSoftwareSet",
+        "thinclient:ListDevices",
+        "thinclient:ListDeviceSessions",
+        "thinclient:ListEnvironments",
+        "thinclient:ListSoftwareSets",
+        "thinclient:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowWorkSpacesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces:DescribeConnectionAliases",
+        "workspaces:DescribeWorkspaceDirectories"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowWorkSpacesSecureBrowserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces-web:GetPortal",
+        "workspaces-web:GetUserSettings",
+        "workspaces-web:ListPortals"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAppStreamAccess",
+      "Effect": "Allow",
+      "Action": [
+        "appstream:DescribeStacks"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

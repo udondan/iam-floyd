@@ -1,0 +1,76 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DevOpsGuruReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "devops-guru:DescribeAccountHealth",
+        "devops-guru:DescribeAccountOverview",
+        "devops-guru:DescribeAnomaly",
+        "devops-guru:DescribeEventSourcesConfig",
+        "devops-guru:DescribeFeedback",
+        "devops-guru:DescribeInsight",
+        "devops-guru:DescribeResourceCollectionHealth",
+        "devops-guru:DescribeServiceIntegration",
+        "devops-guru:GetCostEstimation",
+        "devops-guru:GetResourceCollection",
+        "devops-guru:ListAnomaliesForInsight",
+        "devops-guru:ListEvents",
+        "devops-guru:ListInsights",
+        "devops-guru:ListAnomalousLogGroups",
+        "devops-guru:ListMonitoredResources",
+        "devops-guru:ListNotificationChannels",
+        "devops-guru:ListRecommendations",
+        "devops-guru:SearchInsights",
+        "devops-guru:StartCostEstimation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFormationListStacksAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
+    },
+    {
+      "Sid": "CloudWatchGetMetricDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RDSDescribeDBInstancesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchLogsFilterLogEventsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:FilterLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/DevOps-Guru-Analysis": "true"
+        }
+      }
+    }
+  ]
+}

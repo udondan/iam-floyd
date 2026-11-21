@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "StartSearchAndListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup-search:StartSearchJob",
+        "backup-search:ListSearchJobs",
+        "backup-search:ListSearchResultExportJobs",
+        "backup:ListIndexedRecoveryPointsForSearch"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BackupSearchRecoveryPointPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:SearchRecoveryPoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::snapshot/*",
+        "arn:aws:backup:*:*:recovery-point:*"
+      ]
+    },
+    {
+      "Sid": "SearchAndExportPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup-search:StartSearchResultExportJob",
+        "backup-search:StopSearchJob",
+        "backup-search:GetSearchJob",
+        "backup-search:GetSearchResultExportJob",
+        "backup-search:ListSearchJobResults",
+        "backup-search:ListSearchJobBackups"
+      ],
+      "Resource": [
+        "arn:aws:backup-search:*:*:search-job/*",
+        "arn:aws:backup-search:*:*:search-export-job/*"
+      ]
+    },
+    {
+      "Sid": "KMSDataKeyForSearchAndExportPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "kms:EncryptionContextKeys": [
+            "aws:backup-search:search-job"
+          ]
+        },
+        "StringLike": {
+          "kms:ViaService": [
+            "backup.*.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

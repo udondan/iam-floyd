@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "filename": "kinesis",
+  "className": "Kinesis",
+  "name": "kinesis",
+  "servicePrefix": "kinesis",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesis.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTagsToStream",
+      "CreateChannel",
+      "RemoveTagsFromStream",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Write": [
+      "AddTagsToStream",
+      "AssociateStreamsWithChannel",
+      "CreateChannel",
+      "CreateStream",
+      "DecreaseStreamRetentionPeriod",
+      "DeleteChannel",
+      "DeleteResourcePolicy",
+      "DeleteStream",
+      "DeregisterStreamConsumer",
+      "DisableEnhancedMonitoring",
+      "EnableEnhancedMonitoring",
+      "IncreaseStreamRetentionPeriod",
+      "MergeShards",
+      "PutRecord",
+      "PutRecords",
+      "PutResourcePolicy",
+      "RegisterStreamConsumer",
+      "RemoveTagsFromStream",
+      "SplitShard",
+      "StartStreamEncryption",
+      "StopStreamEncryption",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccountSettings",
+      "UpdateChannel",
+      "UpdateMaxRecordSize",
+      "UpdateShardCount",
+      "UpdateStreamMode",
+      "UpdateStreamRecordDistributionStrategy",
+      "UpdateStreamWarmThroughput",
+      "InjectApiError"
+    ],
+    "Read": [
+      "DescribeAccountSettings",
+      "DescribeChannel",
+      "DescribeLimits",
+      "DescribeStream",
+      "DescribeStreamConsumer",
+      "DescribeStreamSummary",
+      "GetRecords",
+      "GetResourcePolicy",
+      "GetShardIterator",
+      "ListTagsForResource",
+      "ListTagsForStream",
+      "SubscribeToShard"
+    ],
+    "List": [
+      "ListChannels",
+      "ListShards",
+      "ListStreamConsumers",
+      "ListStreams"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTagsToStream",
+      "methodName": "toAddTagsToStream",
+      "description": "Grants permission to add or update tags for the specified Amazon Kinesis stream. Each stream can have up to 50 tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html"
+    },
+    {
+      "name": "AssociateStreamsWithChannel",
+      "methodName": "toAssociateStreamsWithChannel",
+      "description": "Grants permission to associate a stream with a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html"
+    },
+    {
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a channel that delivers data from a selected single stream to a destination",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html"
+    },
+    {
+      "name": "CreateStream",
+      "methodName": "toCreateStream",
+      "description": "Grants permission to create a Amazon Kinesis stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html"
+    },
+    {
+      "name": "DecreaseStreamRetentionPeriod",
+      "methodName": "toDecreaseStreamRetentionPeriod",
+      "description": "Grants permission to decrease the stream's retention period, which is the length of time data records are accessible after they are added to the stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html"
+    },
+    {
+      "name": "DeleteChannel",
+      "methodName": "toDeleteChannel",
+      "description": "Grants permission to delete the specified channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteChannel.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy associated with a specified stream or consumer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteStream",
+      "methodName": "toDeleteStream",
+      "description": "Grants permission to delete a stream and all its shards and data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html"
+    },
+    {
+      "name": "DeregisterStreamConsumer",
+      "methodName": "toDeregisterStreamConsumer",
+      "description": "Grants permission to deregister a stream consumer with a Kinesis data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeregisterStreamConsumer.html"
+    },
+    {
+      "name": "DescribeAccountSettings",
+      "methodName": "toDescribeAccountSettings",
+      "description": "Grants permission to describe the account-level settings for Amazon Kinesis Data Streams",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeAccountSettings.html"
+    },
+    {
+      "name": "DescribeChannel",
+      "methodName": "toDescribeChannel",
+      "description": "Grants permission to describe the specified channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeChannel.html"
+    },
+    {
+      "name": "DescribeLimits",
+      "methodName": "toDescribeLimits",
+      "description": "Grants permission to describe the shard limits and usage for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html"
+    },
+    {
+      "name": "DescribeStream",
+      "methodName": "toDescribeStream",
+      "description": "Grants permission to describe the specified stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html"
+    },
+    {
+      "name": "DescribeStreamConsumer",
+      "methodName": "toDescribeStreamConsumer",
+      "description": "Grants permission to get the description of a registered stream consumer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamConsumer.html"
+    },
+    {
+      "name": "DescribeStreamSummary",
+      "methodName": "toDescribeStreamSummary",
+      "description": "Grants permission to provide a summarized description of the specified Kinesis data stream without the shard list",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamSummary.html"
+    },
+    {
+      "name": "DisableEnhancedMonitoring",
+      "methodName": "toDisableEnhancedMonitoring",
+      "description": "Grants permission to disables enhanced monitoring",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html"
+    },
+    {
+      "name": "EnableEnhancedMonitoring",
+      "methodName": "toEnableEnhancedMonitoring",
+      "description": "Grants permission to enable enhanced Kinesis data stream monitoring for shard-level metrics",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html"
+    },
+    {
+      "name": "GetRecords",
+      "methodName": "toGetRecords",
+      "description": "Grants permission to get data records from a shard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to get a resource policy associated with a specified stream or consumer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "GetShardIterator",
+      "methodName": "toGetShardIterator",
+      "description": "Grants permission to get a shard iterator. A shard iterator expires five minutes after it is returned to the requester",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html"
+    },
+    {
+      "name": "IncreaseStreamRetentionPeriod",
+      "methodName": "toIncreaseStreamRetentionPeriod",
+      "description": "Grants permission to increase the stream's retention period, which is the length of time data records are accessible after they are added to the stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html"
+    },
+    {
+      "name": "ListChannels",
+      "methodName": "toListChannels",
+      "description": "Grants permission to list the channels in the account, optionally filtered by stream",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListChannels.html"
+    },
+    {
+      "name": "ListShards",
+      "methodName": "toListShards",
+      "description": "Grants permission to list the shards in a stream and provides information about each shard",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListShards.html"
+    },
+    {
+      "name": "ListStreamConsumers",
+      "methodName": "toListStreamConsumers",
+      "description": "Grants permission to list the stream consumers registered to receive data from a Kinesis stream using enhanced fan-out, and provides information about each consumer",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreamConsumers.html"
+    },
+    {
+      "name": "ListStreams",
+      "methodName": "toListStreams",
+      "description": "Grants permission to list your streams",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified Amazon Kinesis resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTagsForStream",
+      "methodName": "toListTagsForStream",
+      "description": "Grants permission to list the tags for the specified Amazon Kinesis stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html"
+    },
+    {
+      "name": "MergeShards",
+      "methodName": "toMergeShards",
+      "description": "Grants permission to merge two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html"
+    },
+    {
+      "name": "PutRecord",
+      "methodName": "toPutRecord",
+      "description": "Grants permission to write a single data record from a producer into an Amazon Kinesis stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html"
+    },
+    {
+      "name": "PutRecords",
+      "methodName": "toPutRecords",
+      "description": "Grants permission to write multiple data records from a producer into an Amazon Kinesis stream in a single call (also referred to as a PutRecords request)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach a resource policy to a specified stream or consumer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "RegisterStreamConsumer",
+      "methodName": "toRegisterStreamConsumer",
+      "description": "Grants permission to register a stream consumer with a Kinesis data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RegisterStreamConsumer.html"
+    },
+    {
+      "name": "RemoveTagsFromStream",
+      "methodName": "toRemoveTagsFromStream",
+      "description": "Grants permission to remove tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html"
+    },
+    {
+      "name": "SplitShard",
+      "methodName": "toSplitShard",
+      "description": "Grants permission to split a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and transport data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html"
+    },
+    {
+      "name": "StartStreamEncryption",
+      "methodName": "toStartStreamEncryption",
+      "description": "Grants permission to enable or update server-side encryption using an AWS KMS key for a specified stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html"
+    },
+    {
+      "name": "StopStreamEncryption",
+      "methodName": "toStopStreamEncryption",
+      "description": "Grants permission to disable server-side encryption for a specified stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html"
+    },
+    {
+      "name": "SubscribeToShard",
+      "methodName": "toSubscribeToShard",
+      "description": "Grants permission to listen to a specific shard with enhanced fan-out",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SubscribeToShard.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update tags for the specified Amazon Kinesis resource. Each resource can have up to 50 tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified Kinesis data resource. Removed tags are deleted and cannot be recovered after this operation successfully completes",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to update the account-level settings for Amazon Kinesis Data Streams",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateChannel",
+      "methodName": "toUpdateChannel",
+      "description": "Grants permission to update the logging configuration and destination data freshness for the specified channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateChannel.html"
+    },
+    {
+      "name": "UpdateMaxRecordSize",
+      "methodName": "toUpdateMaxRecordSize",
+      "description": "Grants permission to update the maximum record size for a Kinesis data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateMaxRecordSize.html"
+    },
+    {
+      "name": "UpdateShardCount",
+      "methodName": "toUpdateShardCount",
+      "description": "Grants permission to update the shard count of the specified stream to the specified number of shards",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html"
+    },
+    {
+      "name": "UpdateStreamMode",
+      "methodName": "toUpdateStreamMode",
+      "description": "Grants permission to update the capacity mode of the data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamMode.html"
+    },
+    {
+      "name": "UpdateStreamRecordDistributionStrategy",
+      "methodName": "toUpdateStreamRecordDistributionStrategy",
+      "description": "Grants permission to update the record distribution strategy for a Kinesis data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamRecordDistributionStrategy.html"
+    },
+    {
+      "name": "UpdateStreamWarmThroughput",
+      "methodName": "toUpdateStreamWarmThroughput",
+      "description": "Grants permission to update the warm throughput for a Kinesis on-demand data stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamWarmThroughput.html"
+    },
+    {
+      "name": "InjectApiError",
+      "methodName": "toInjectApiError",
+      "description": "Grants permission to temporarily inject errors for target API requests",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "conditionMethods": [
+        "ifFisActionId",
+        "ifFisInjectPercentage",
+        "ifFisTargetArns"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "channel",
+      "methodName": "onChannel",
+      "url": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#data-delivery-concept",
+      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:channel/${ChannelId}",
+      "placeholders": [
+        {
+          "placeholder": "ChannelId",
+          "name": "channelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_kinesis",
+        "interface": "IChannelRef",
+        "property": "channelRef",
+        "arn": "channelArn"
+      }
+    },
+    {
+      "name": "consumer",
+      "methodName": "onConsumer",
+      "url": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#enabled-application",
+      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}",
+      "placeholders": [
+        {
+          "placeholder": "StreamType",
+          "name": "streamType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StreamName",
+          "name": "streamName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConsumerName",
+          "name": "consumerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConsumerCreationTimpstamp",
+          "name": "consumerCreationTimpstamp",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "kmsKey",
+      "methodName": "onKmsKey",
+      "url": "https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
+      "placeholders": [
+        {
+          "placeholder": "KeyId",
+          "name": "keyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#stream",
+      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
+      "placeholders": [
+        {
+          "placeholder": "StreamName",
+          "name": "streamName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_kinesis",
+        "interface": "IStreamRef",
+        "property": "streamRef",
+        "arn": "streamArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTagsToStream",
+        "toCreateChannel",
+        "toCreateStream",
+        "toRegisterStreamConsumer",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddTagsToStream",
+        "toAssociateStreamsWithChannel",
+        "toCreateChannel",
+        "toCreateStream",
+        "toDecreaseStreamRetentionPeriod",
+        "toDeleteChannel",
+        "toDeleteResourcePolicy",
+        "toDeleteStream",
+        "toDeregisterStreamConsumer",
+        "toDescribeChannel",
+        "toDescribeStream",
+        "toDescribeStreamConsumer",
+        "toDescribeStreamSummary",
+        "toGetRecords",
+        "toGetResourcePolicy",
+        "toGetShardIterator",
+        "toIncreaseStreamRetentionPeriod",
+        "toListShards",
+        "toListStreamConsumers",
+        "toListTagsForResource",
+        "toListTagsForStream",
+        "toMergeShards",
+        "toPutRecord",
+        "toPutRecords",
+        "toPutResourcePolicy",
+        "toRegisterStreamConsumer",
+        "toRemoveTagsFromStream",
+        "toSplitShard",
+        "toStartStreamEncryption",
+        "toStopStreamEncryption",
+        "toSubscribeToShard",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateChannel",
+        "toUpdateMaxRecordSize",
+        "toUpdateStreamRecordDistributionStrategy",
+        "toUpdateStreamWarmThroughput"
+      ],
+      "relatedResourceTypes": [
+        "channel",
+        "consumer",
+        "kmsKey",
+        "stream"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTagsToStream",
+        "toCreateChannel",
+        "toCreateStream",
+        "toRegisterStreamConsumer",
+        "toRemoveTagsFromStream",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kinesis:FisActionId",
+      "methodName": "ifFisActionId",
+      "description": "Filters access by the ID of an AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "relatedActionMethods": [
+        "toInjectApiError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisActionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "kinesis:FisInjectPercentage",
+      "methodName": "ifFisInjectPercentage",
+      "description": "Filters access by the percentage of calls being affected by an AWS FIS action",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "relatedActionMethods": [
+        "toInjectApiError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisInjectPercentage",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "kinesis:FisTargetArns",
+      "methodName": "ifFisTargetArns",
+      "description": "Filters access by the ARN of an AWS FIS target",
+      "url": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "relatedActionMethods": [
+        "toInjectApiError"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "FisTargetArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

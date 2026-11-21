@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetDatabase",
+        "athena:GetDataCatalog",
+        "athena:GetTableMetadata",
+        "athena:ListDatabases",
+        "athena:ListDataCatalogs",
+        "athena:ListTableMetadata",
+        "athena:ListWorkGroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:GetWorkGroup",
+        "athena:StartQueryExecution",
+        "athena:StopQueryExecution"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/GrafanaDataSource": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetTable",
+        "glue:GetTables",
+        "glue:GetPartition",
+        "glue:GetPartitions",
+        "glue:BatchGetPartition"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:ListMultipartUploadParts",
+        "s3:AbortMultipartUpload",
+        "s3:CreateBucket",
+        "s3:PutObject",
+        "s3:PutBucketPublicAccessBlock"
+      ],
+      "Resource": [
+        "arn:aws:s3:::grafana-athena-query-results-*"
+      ]
+    }
+  ]
+}

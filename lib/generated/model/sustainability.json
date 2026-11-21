@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "filename": "sustainability",
+  "className": "Sustainability",
+  "name": "sustainability",
+  "servicePrefix": "sustainability",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sustainability.html",
+  "accessLevelList": {
+    "Read": [
+      "GetCarbonFootprintSummary",
+      "GetEstimatedCarbonEmissions",
+      "GetEstimatedCarbonEmissionsDimensionValues",
+      "GetEstimatedWaterAllocation",
+      "GetEstimatedWaterAllocationDimensionValues"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetCarbonFootprintSummary",
+      "methodName": "toGetCarbonFootprintSummary",
+      "description": "Grants permission to access carbon footprint data from AWS Data Exports",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cur/latest/userguide/dataexports-create-standard.html"
+    },
+    {
+      "name": "GetEstimatedCarbonEmissions",
+      "methodName": "toGetEstimatedCarbonEmissions",
+      "description": "Grants permission to view estimated carbon emission values based on customer grouping and filtering parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sustainability/latest/APIReference/API_GetEstimatedCarbonEmissions.html"
+    },
+    {
+      "name": "GetEstimatedCarbonEmissionsDimensionValues",
+      "methodName": "toGetEstimatedCarbonEmissionsDimensionValues",
+      "description": "Grants permission to view the possible dimension values available for the estimated carbon emission values",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sustainability/latest/APIReference/API_GetEstimatedCarbonEmissionsDimensionValues.html"
+    },
+    {
+      "name": "GetEstimatedWaterAllocation",
+      "methodName": "toGetEstimatedWaterAllocation",
+      "description": "Grants permission to view estimated water allocation values based on customer grouping and filtering parameters",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sustainability/latest/APIReference/API_GetEstimatedWaterAllocation.html"
+    },
+    {
+      "name": "GetEstimatedWaterAllocationDimensionValues",
+      "methodName": "toGetEstimatedWaterAllocationDimensionValues",
+      "description": "Grants permission to view the possible dimension values available for the estimated water allocation values",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sustainability/latest/APIReference/API_GetEstimatedWaterAllocationDimensionValues.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

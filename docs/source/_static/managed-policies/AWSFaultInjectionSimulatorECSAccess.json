@@ -1,0 +1,89 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Clusters",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeClusters",
+        "ecs:ListContainerInstances"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:cluster/*"
+      ]
+    },
+    {
+      "Sid": "Tasks",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeTasks",
+        "ecs:StopTask"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:task/*/*"
+      ]
+    },
+    {
+      "Sid": "ContainerInstances",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:UpdateContainerInstancesState"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:container-instance/*/*"
+      ]
+    },
+    {
+      "Sid": "ListTasks",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListTasks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMSend",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ssm:*:*:managed-instance/*",
+        "arn:aws:ssm:*:*:document/*"
+      ]
+    },
+    {
+      "Sid": "SSMList",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:ListCommands",
+        "ssm:CancelCommand"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "TargetResolutionByTags",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeContainerInstances",
+      "Effect": "Allow",
+      "Action": "ecs:DescribeContainerInstances",
+      "Resource": "arn:aws:ecs:*:*:container-instance/*/*"
+    },
+    {
+      "Sid": "DescribeInstances",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeSubnets",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeSubnets",
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,2207 @@
+{
+  "schemaVersion": 1,
+  "filename": "lightsail",
+  "className": "Lightsail",
+  "name": "lightsail",
+  "servicePrefix": "lightsail",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_lightsail.html",
+  "accessLevelList": {
+    "Write": [
+      "AllocateStaticIp",
+      "AttachCertificateToDistribution",
+      "AttachDisk",
+      "AttachInstancesToLoadBalancer",
+      "AttachLoadBalancerTlsCertificate",
+      "AttachStaticIp",
+      "CloseInstancePublicPorts",
+      "CopySnapshot",
+      "CreateBucket",
+      "CreateBucketAccessKey",
+      "CreateCertificate",
+      "CreateCloudFormationStack",
+      "CreateContactMethod",
+      "CreateContainerService",
+      "CreateContainerServiceDeployment",
+      "CreateContainerServiceRegistryLogin",
+      "CreateDisk",
+      "CreateDiskFromSnapshot",
+      "CreateDiskSnapshot",
+      "CreateDistribution",
+      "CreateDomain",
+      "CreateDomainEntry",
+      "CreateGUISessionAccessDetails",
+      "CreateInstanceSnapshot",
+      "CreateInstances",
+      "CreateInstancesFromSnapshot",
+      "CreateKeyPair",
+      "CreateLoadBalancer",
+      "CreateLoadBalancerTlsCertificate",
+      "CreateRelationalDatabase",
+      "CreateRelationalDatabaseFromSnapshot",
+      "CreateRelationalDatabaseSnapshot",
+      "DeleteAlarm",
+      "DeleteAutoSnapshot",
+      "DeleteBucket",
+      "DeleteBucketAccessKey",
+      "DeleteCertificate",
+      "DeleteContactMethod",
+      "DeleteContainerImage",
+      "DeleteContainerService",
+      "DeleteDisk",
+      "DeleteDiskSnapshot",
+      "DeleteDistribution",
+      "DeleteDomain",
+      "DeleteDomainEntry",
+      "DeleteInstance",
+      "DeleteInstanceSnapshot",
+      "DeleteKeyPair",
+      "DeleteKnownHostKeys",
+      "DeleteLoadBalancer",
+      "DeleteLoadBalancerTlsCertificate",
+      "DeleteRelationalDatabase",
+      "DeleteRelationalDatabaseSnapshot",
+      "DetachCertificateFromDistribution",
+      "DetachDisk",
+      "DetachInstancesFromLoadBalancer",
+      "DetachStaticIp",
+      "DisableAddOn",
+      "DownloadDefaultKeyPair",
+      "EnableAddOn",
+      "ExportSnapshot",
+      "GetInstanceAccessDetails",
+      "GetRelationalDatabaseMasterUserPassword",
+      "ImportKeyPair",
+      "OpenInstancePublicPorts",
+      "PeerVpc",
+      "PutAlarm",
+      "PutInstancePublicPorts",
+      "RebootInstance",
+      "RebootRelationalDatabase",
+      "RegisterContainerImage",
+      "ReleaseStaticIp",
+      "ResetDistributionCache",
+      "SendContactMethodVerification",
+      "SetIpAddressType",
+      "SetResourceAccessForBucket",
+      "SetupInstanceHttps",
+      "StartGUISession",
+      "StartInstance",
+      "StartRelationalDatabase",
+      "StopGUISession",
+      "StopInstance",
+      "StopRelationalDatabase",
+      "TagResource",
+      "TestAlarm",
+      "UnpeerVpc",
+      "UntagResource",
+      "UpdateBucket",
+      "UpdateBucketBundle",
+      "UpdateContainerService",
+      "UpdateDistribution",
+      "UpdateDistributionBundle",
+      "UpdateDomainEntry",
+      "UpdateInstanceMetadataOptions",
+      "UpdateLoadBalancerAttribute",
+      "UpdateRelationalDatabase",
+      "UpdateRelationalDatabaseParameters"
+    ],
+    "Read": [
+      "GetActiveNames",
+      "GetAlarms",
+      "GetAutoSnapshots",
+      "GetBlueprints",
+      "GetBucketAccessKeys",
+      "GetBucketBundles",
+      "GetBucketMetricData",
+      "GetBuckets",
+      "GetBundles",
+      "GetCertificates",
+      "GetCloudFormationStackRecords",
+      "GetContactMethods",
+      "GetContainerAPIMetadata",
+      "GetContainerImages",
+      "GetContainerLog",
+      "GetContainerServiceDeployments",
+      "GetContainerServiceMetricData",
+      "GetContainerServicePowers",
+      "GetContainerServices",
+      "GetCostEstimate",
+      "GetDisk",
+      "GetDiskSnapshot",
+      "GetDiskSnapshots",
+      "GetDisks",
+      "GetDistributionBundles",
+      "GetDistributionLatestCacheReset",
+      "GetDistributionMetricData",
+      "GetDistributions",
+      "GetDomain",
+      "GetDomains",
+      "GetExportSnapshotRecords",
+      "GetInstance",
+      "GetInstanceMetricData",
+      "GetInstancePortStates",
+      "GetInstanceSnapshot",
+      "GetInstanceSnapshots",
+      "GetInstanceState",
+      "GetInstances",
+      "GetKeyPair",
+      "GetKeyPairs",
+      "GetLoadBalancer",
+      "GetLoadBalancerMetricData",
+      "GetLoadBalancerTlsCertificates",
+      "GetLoadBalancerTlsPolicies",
+      "GetLoadBalancers",
+      "GetOperation",
+      "GetOperations",
+      "GetOperationsForResource",
+      "GetRegions",
+      "GetRelationalDatabase",
+      "GetRelationalDatabaseBlueprints",
+      "GetRelationalDatabaseBundles",
+      "GetRelationalDatabaseEvents",
+      "GetRelationalDatabaseLogEvents",
+      "GetRelationalDatabaseLogStreams",
+      "GetRelationalDatabaseMetricData",
+      "GetRelationalDatabaseParameters",
+      "GetRelationalDatabaseSnapshot",
+      "GetRelationalDatabaseSnapshots",
+      "GetRelationalDatabases",
+      "GetSetupHistory",
+      "GetStaticIp",
+      "GetStaticIps",
+      "IsVpcPeered"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AllocateStaticIp",
+      "methodName": "toAllocateStaticIp",
+      "description": "Grants permission to create a static IP address that can be attached to an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html"
+    },
+    {
+      "name": "AttachCertificateToDistribution",
+      "methodName": "toAttachCertificateToDistribution",
+      "description": "Grants permission to attach an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachCertificateToDistribution.html"
+    },
+    {
+      "name": "AttachDisk",
+      "methodName": "toAttachDisk",
+      "description": "Grants permission to attach a disk to an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachDisk.html"
+    },
+    {
+      "name": "AttachInstancesToLoadBalancer",
+      "methodName": "toAttachInstancesToLoadBalancer",
+      "description": "Grants permission to attach one or more instances to a load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachInstancesToLoadBalancer.html"
+    },
+    {
+      "name": "AttachLoadBalancerTlsCertificate",
+      "methodName": "toAttachLoadBalancerTlsCertificate",
+      "description": "Grants permission to attach a TLS certificate to a load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachLoadBalancerTlsCertificate.html"
+    },
+    {
+      "name": "AttachStaticIp",
+      "methodName": "toAttachStaticIp",
+      "description": "Grants permission to attach a static IP address to an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachStaticIp.html"
+    },
+    {
+      "name": "CloseInstancePublicPorts",
+      "methodName": "toCloseInstancePublicPorts",
+      "description": "Grants permission to close a public port of an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloseInstancePublicPorts.html"
+    },
+    {
+      "name": "CopySnapshot",
+      "methodName": "toCopySnapshot",
+      "description": "Grants permission to copy a snapshot from one AWS Region to another in Amazon Lightsail",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CopySnapshot.html"
+    },
+    {
+      "name": "CreateBucket",
+      "methodName": "toCreateBucket",
+      "description": "Grants permission to create an Amazon Lightsail bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucket.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateBucketAccessKey",
+      "methodName": "toCreateBucketAccessKey",
+      "description": "Grants permission to create a new access key for the specified bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html"
+    },
+    {
+      "name": "CreateCertificate",
+      "methodName": "toCreateCertificate",
+      "description": "Grants permission to create an SSL/TLS certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCertificate.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateCloudFormationStack",
+      "methodName": "toCreateCloudFormationStack",
+      "description": "Grants permission to create a new Amazon EC2 instance from an exported Amazon Lightsail snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html"
+    },
+    {
+      "name": "CreateContactMethod",
+      "methodName": "toCreateContactMethod",
+      "description": "Grants permission to create an email or SMS text message contact method",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContactMethod.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateContainerService",
+      "methodName": "toCreateContainerService",
+      "description": "Grants permission to create an Amazon Lightsail container service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerService.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateContainerServiceDeployment",
+      "methodName": "toCreateContainerServiceDeployment",
+      "description": "Grants permission to create a deployment for your Amazon Lightsail container service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerServiceDeployment.html"
+    },
+    {
+      "name": "CreateContainerServiceRegistryLogin",
+      "methodName": "toCreateContainerServiceRegistryLogin",
+      "description": "Grants permission to create a temporary set of log in credentials that you can use to log in to the Docker process on your local machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerServiceRegistryLogin.html"
+    },
+    {
+      "name": "CreateDisk",
+      "methodName": "toCreateDisk",
+      "description": "Grants permission to create a disk",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDisk.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDiskFromSnapshot",
+      "methodName": "toCreateDiskFromSnapshot",
+      "description": "Grants permission to create a disk from snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html"
+    },
+    {
+      "name": "CreateDiskSnapshot",
+      "methodName": "toCreateDiskSnapshot",
+      "description": "Grants permission to create a disk snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html"
+    },
+    {
+      "name": "CreateDistribution",
+      "methodName": "toCreateDistribution",
+      "description": "Grants permission to create an Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDistribution.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDomain",
+      "methodName": "toCreateDomain",
+      "description": "Grants permission to create a domain resource for the specified domain name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateDomainEntry",
+      "methodName": "toCreateDomainEntry",
+      "description": "Grants permission to create one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomainEntry.html"
+    },
+    {
+      "name": "CreateGUISessionAccessDetails",
+      "methodName": "toCreateGUISessionAccessDetails",
+      "description": "Grants permission to create URLs that are used to access an instance's graphical user interface (GUI) session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateGUISessionAccessDetails.html"
+    },
+    {
+      "name": "CreateInstanceSnapshot",
+      "methodName": "toCreateInstanceSnapshot",
+      "description": "Grants permission to create an instance snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html"
+    },
+    {
+      "name": "CreateInstances",
+      "methodName": "toCreateInstances",
+      "description": "Grants permission to create one or more instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateInstancesFromSnapshot",
+      "methodName": "toCreateInstancesFromSnapshot",
+      "description": "Grants permission to create one or more instances based on an instance snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html"
+    },
+    {
+      "name": "CreateKeyPair",
+      "methodName": "toCreateKeyPair",
+      "description": "Grants permission to create a key pair used to authenticate and connect to an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLoadBalancer",
+      "methodName": "toCreateLoadBalancer",
+      "description": "Grants permission to create a load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateLoadBalancerTlsCertificate",
+      "methodName": "toCreateLoadBalancerTlsCertificate",
+      "description": "Grants permission to create a load balancer TLS certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html"
+    },
+    {
+      "name": "CreateRelationalDatabase",
+      "methodName": "toCreateRelationalDatabase",
+      "description": "Grants permission to create a new relational database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabase.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateRelationalDatabaseFromSnapshot",
+      "methodName": "toCreateRelationalDatabaseFromSnapshot",
+      "description": "Grants permission to create a new relational database from a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html"
+    },
+    {
+      "name": "CreateRelationalDatabaseSnapshot",
+      "methodName": "toCreateRelationalDatabaseSnapshot",
+      "description": "Grants permission to create a relational database snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseSnapshot.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteAlarm",
+      "methodName": "toDeleteAlarm",
+      "description": "Grants permission to delete an alarm",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteAlarm.html"
+    },
+    {
+      "name": "DeleteAutoSnapshot",
+      "methodName": "toDeleteAutoSnapshot",
+      "description": "Grants permission to delete an automatic snapshot of an instance or disk",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteAutoSnapshot.html"
+    },
+    {
+      "name": "DeleteBucket",
+      "methodName": "toDeleteBucket",
+      "description": "Grants permission to delete an Amazon Lightsail bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteBucket.html"
+    },
+    {
+      "name": "DeleteBucketAccessKey",
+      "methodName": "toDeleteBucketAccessKey",
+      "description": "Grants permission to delete an access key for the specified Amazon Lightsail bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteBucketAccessKey.html"
+    },
+    {
+      "name": "DeleteCertificate",
+      "methodName": "toDeleteCertificate",
+      "description": "Grants permission to delete an SSL/TLS certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteCertificate.html"
+    },
+    {
+      "name": "DeleteContactMethod",
+      "methodName": "toDeleteContactMethod",
+      "description": "Grants permission to delete a contact method",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteContactMethod.html"
+    },
+    {
+      "name": "DeleteContainerImage",
+      "methodName": "toDeleteContainerImage",
+      "description": "Grants permission to delete a container image that is registered to your Amazon Lightsail container service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteContainerImage.html"
+    },
+    {
+      "name": "DeleteContainerService",
+      "methodName": "toDeleteContainerService",
+      "description": "Grants permission to delete your Amazon Lightsail container service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteContainerService.html"
+    },
+    {
+      "name": "DeleteDisk",
+      "methodName": "toDeleteDisk",
+      "description": "Grants permission to delete a disk",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDisk.html"
+    },
+    {
+      "name": "DeleteDiskSnapshot",
+      "methodName": "toDeleteDiskSnapshot",
+      "description": "Grants permission to delete a disk snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDiskSnapshot.html"
+    },
+    {
+      "name": "DeleteDistribution",
+      "methodName": "toDeleteDistribution",
+      "description": "Grants permission to delete your Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDistribution.html"
+    },
+    {
+      "name": "DeleteDomain",
+      "methodName": "toDeleteDomain",
+      "description": "Grants permission to delete a domain resource and all of its DNS records",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomain.html"
+    },
+    {
+      "name": "DeleteDomainEntry",
+      "methodName": "toDeleteDomainEntry",
+      "description": "Grants permission to delete a DNS record entry for a domain resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html"
+    },
+    {
+      "name": "DeleteInstance",
+      "methodName": "toDeleteInstance",
+      "description": "Grants permission to delete an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstance.html"
+    },
+    {
+      "name": "DeleteInstanceSnapshot",
+      "methodName": "toDeleteInstanceSnapshot",
+      "description": "Grants permission to delete an instance snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstanceSnapshot.html"
+    },
+    {
+      "name": "DeleteKeyPair",
+      "methodName": "toDeleteKeyPair",
+      "description": "Grants permission to delete a key pair used to authenticate and connect to an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKeyPair.html"
+    },
+    {
+      "name": "DeleteKnownHostKeys",
+      "methodName": "toDeleteKnownHostKeys",
+      "description": "Grants permission to delete the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKnownHostKeys.html"
+    },
+    {
+      "name": "DeleteLoadBalancer",
+      "methodName": "toDeleteLoadBalancer",
+      "description": "Grants permission to delete a load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancer.html"
+    },
+    {
+      "name": "DeleteLoadBalancerTlsCertificate",
+      "methodName": "toDeleteLoadBalancerTlsCertificate",
+      "description": "Grants permission to delete a load balancer TLS certificate",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html"
+    },
+    {
+      "name": "DeleteRelationalDatabase",
+      "methodName": "toDeleteRelationalDatabase",
+      "description": "Grants permission to delete a relational database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabase.html"
+    },
+    {
+      "name": "DeleteRelationalDatabaseSnapshot",
+      "methodName": "toDeleteRelationalDatabaseSnapshot",
+      "description": "Grants permission to delete a relational database snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabaseSnapshot.html"
+    },
+    {
+      "name": "DetachCertificateFromDistribution",
+      "methodName": "toDetachCertificateFromDistribution",
+      "description": "Grants permission to detach an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachCertificateFromDistribution.html"
+    },
+    {
+      "name": "DetachDisk",
+      "methodName": "toDetachDisk",
+      "description": "Grants permission to detach a disk from an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachDisk.html"
+    },
+    {
+      "name": "DetachInstancesFromLoadBalancer",
+      "methodName": "toDetachInstancesFromLoadBalancer",
+      "description": "Grants permission to detach one or more instances from a load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html"
+    },
+    {
+      "name": "DetachStaticIp",
+      "methodName": "toDetachStaticIp",
+      "description": "Grants permission to detach a static IP from an instance to which it is attached",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachStaticIp.html"
+    },
+    {
+      "name": "DisableAddOn",
+      "methodName": "toDisableAddOn",
+      "description": "Grants permission to disable an add-on for an Amazon Lightsail resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DisableAddOn.html"
+    },
+    {
+      "name": "DownloadDefaultKeyPair",
+      "methodName": "toDownloadDefaultKeyPair",
+      "description": "Grants permission to download the default key pair used to authenticate and connect to instances in a specific AWS Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html"
+    },
+    {
+      "name": "EnableAddOn",
+      "methodName": "toEnableAddOn",
+      "description": "Grants permission to enable or modify an add-on for an Amazon Lightsail resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_EnableAddOn.html"
+    },
+    {
+      "name": "ExportSnapshot",
+      "methodName": "toExportSnapshot",
+      "description": "Grants permission to export an Amazon Lightsail snapshot to Amazon EC2",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html"
+    },
+    {
+      "name": "GetActiveNames",
+      "methodName": "toGetActiveNames",
+      "description": "Grants permission to get the names of all active (not deleted) resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetActiveNames.html"
+    },
+    {
+      "name": "GetAlarms",
+      "methodName": "toGetAlarms",
+      "description": "Grants permission to view information about the configured alarms",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetAlarms.html"
+    },
+    {
+      "name": "GetAutoSnapshots",
+      "methodName": "toGetAutoSnapshots",
+      "description": "Grants permission to view the available automatic snapshots for an instance or disk",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetAutoSnapshots.html"
+    },
+    {
+      "name": "GetBlueprints",
+      "methodName": "toGetBlueprints",
+      "description": "Grants permission to get a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html"
+    },
+    {
+      "name": "GetBucketAccessKeys",
+      "methodName": "toGetBucketAccessKeys",
+      "description": "Grants permission to get the existing access key IDs for the specified Amazon Lightsail bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html"
+    },
+    {
+      "name": "GetBucketBundles",
+      "methodName": "toGetBucketBundles",
+      "description": "Grants permission to get the bundles that can be applied to an Amazon Lightsail bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html"
+    },
+    {
+      "name": "GetBucketMetricData",
+      "methodName": "toGetBucketMetricData",
+      "description": "Grants permission to get the data points of a specific metric for an Amazon Lightsail bucket",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketMetricData.html"
+    },
+    {
+      "name": "GetBuckets",
+      "methodName": "toGetBuckets",
+      "description": "Grants permission to get information about one or more Amazon Lightsail buckets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html"
+    },
+    {
+      "name": "GetBundles",
+      "methodName": "toGetBundles",
+      "description": "Grants permission to get a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBundles.html"
+    },
+    {
+      "name": "GetCertificates",
+      "methodName": "toGetCertificates",
+      "description": "Grants permission to view information about one or more Amazon Lightsail SSL/TLS certificates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html"
+    },
+    {
+      "name": "GetCloudFormationStackRecords",
+      "methodName": "toGetCloudFormationStackRecords",
+      "description": "Grants permission to get information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCloudFormationStackRecords.html"
+    },
+    {
+      "name": "GetContactMethods",
+      "methodName": "toGetContactMethods",
+      "description": "Grants permission to view information about the configured contact methods",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContactMethods.html"
+    },
+    {
+      "name": "GetContainerAPIMetadata",
+      "methodName": "toGetContainerAPIMetadata",
+      "description": "Grants permission to view information about Amazon Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerAPIMetadata.html"
+    },
+    {
+      "name": "GetContainerImages",
+      "methodName": "toGetContainerImages",
+      "description": "Grants permission to view the container images that are registered to your Amazon Lightsail container service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerImages.html"
+    },
+    {
+      "name": "GetContainerLog",
+      "methodName": "toGetContainerLog",
+      "description": "Grants permission to view the log events of a container of your Amazon Lightsail container service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerLog.html"
+    },
+    {
+      "name": "GetContainerServiceDeployments",
+      "methodName": "toGetContainerServiceDeployments",
+      "description": "Grants permission to view the deployments for your Amazon Lightsail container service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServiceDeployments.html"
+    },
+    {
+      "name": "GetContainerServiceMetricData",
+      "methodName": "toGetContainerServiceMetricData",
+      "description": "Grants permission to view the data points of a specific metric of your Amazon Lightsail container service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServiceMetricData.html"
+    },
+    {
+      "name": "GetContainerServicePowers",
+      "methodName": "toGetContainerServicePowers",
+      "description": "Grants permission to view the list of powers that can be specified for your Amazon Lightsail container services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServicePowers.html"
+    },
+    {
+      "name": "GetContainerServices",
+      "methodName": "toGetContainerServices",
+      "description": "Grants permission to view information about one or more of your Amazon Lightsail container services",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServices.html"
+    },
+    {
+      "name": "GetCostEstimate",
+      "methodName": "toGetCostEstimate",
+      "description": "Grants permission to get the information about the cost estimate for a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCostEstimate.html"
+    },
+    {
+      "name": "GetDisk",
+      "methodName": "toGetDisk",
+      "description": "Grants permission to get information about a disk",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisk.html"
+    },
+    {
+      "name": "GetDiskSnapshot",
+      "methodName": "toGetDiskSnapshot",
+      "description": "Grants permission to get information about a disk snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshot.html"
+    },
+    {
+      "name": "GetDiskSnapshots",
+      "methodName": "toGetDiskSnapshots",
+      "description": "Grants permission to get information about all disk snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshots.html"
+    },
+    {
+      "name": "GetDisks",
+      "methodName": "toGetDisks",
+      "description": "Grants permission to get information about all disks",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisks.html"
+    },
+    {
+      "name": "GetDistributionBundles",
+      "methodName": "toGetDistributionBundles",
+      "description": "Grants permission to view the list of bundles that can be applied to you Amazon Lightsail content delivery network (CDN) distributions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributionBundles.html"
+    },
+    {
+      "name": "GetDistributionLatestCacheReset",
+      "methodName": "toGetDistributionLatestCacheReset",
+      "description": "Grants permission to view the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributionLatestCacheReset.html"
+    },
+    {
+      "name": "GetDistributionMetricData",
+      "methodName": "toGetDistributionMetricData",
+      "description": "Grants permission to view the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributionMetricData.html"
+    },
+    {
+      "name": "GetDistributions",
+      "methodName": "toGetDistributions",
+      "description": "Grants permission to view information about one or more of your Amazon Lightsail content delivery network (CDN) distributions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributions.html"
+    },
+    {
+      "name": "GetDomain",
+      "methodName": "toGetDomain",
+      "description": "Grants permission to get DNS records for a domain resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomain.html"
+    },
+    {
+      "name": "GetDomains",
+      "methodName": "toGetDomains",
+      "description": "Grants permission to get DNS records for all domain resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomains.html"
+    },
+    {
+      "name": "GetExportSnapshotRecords",
+      "methodName": "toGetExportSnapshotRecords",
+      "description": "Grants permission to get information about all records of exported Amazon Lightsail snapshots to Amazon EC2",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetExportSnapshotRecords.html"
+    },
+    {
+      "name": "GetInstance",
+      "methodName": "toGetInstance",
+      "description": "Grants permission to get information about an instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstance.html"
+    },
+    {
+      "name": "GetInstanceAccessDetails",
+      "methodName": "toGetInstanceAccessDetails",
+      "description": "Grants permission to get temporary keys you can use to authenticate and connect to an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceAccessDetails.html"
+    },
+    {
+      "name": "GetInstanceMetricData",
+      "methodName": "toGetInstanceMetricData",
+      "description": "Grants permission to get the data points for the specified metric of an instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceMetricData.html"
+    },
+    {
+      "name": "GetInstancePortStates",
+      "methodName": "toGetInstancePortStates",
+      "description": "Grants permission to get the port states of an instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstancePortStates.html"
+    },
+    {
+      "name": "GetInstanceSnapshot",
+      "methodName": "toGetInstanceSnapshot",
+      "description": "Grants permission to get information about an instance snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html"
+    },
+    {
+      "name": "GetInstanceSnapshots",
+      "methodName": "toGetInstanceSnapshots",
+      "description": "Grants permission to get information about all instance snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshots.html"
+    },
+    {
+      "name": "GetInstanceState",
+      "methodName": "toGetInstanceState",
+      "description": "Grants permission to get the state of an instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceState.html"
+    },
+    {
+      "name": "GetInstances",
+      "methodName": "toGetInstances",
+      "description": "Grants permission to get information about all instances",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html"
+    },
+    {
+      "name": "GetKeyPair",
+      "methodName": "toGetKeyPair",
+      "description": "Grants permission to get information about a key pair",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPair.html"
+    },
+    {
+      "name": "GetKeyPairs",
+      "methodName": "toGetKeyPairs",
+      "description": "Grants permission to get information about all key pairs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPairs.html"
+    },
+    {
+      "name": "GetLoadBalancer",
+      "methodName": "toGetLoadBalancer",
+      "description": "Grants permission to get information about a load balancer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancer.html"
+    },
+    {
+      "name": "GetLoadBalancerMetricData",
+      "methodName": "toGetLoadBalancerMetricData",
+      "description": "Grants permission to get the data points for the specified metric of a load balancer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerMetricData.html"
+    },
+    {
+      "name": "GetLoadBalancerTlsCertificates",
+      "methodName": "toGetLoadBalancerTlsCertificates",
+      "description": "Grants permission to get information about a load balancer's TLS certificates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsCertificates.html"
+    },
+    {
+      "name": "GetLoadBalancerTlsPolicies",
+      "methodName": "toGetLoadBalancerTlsPolicies",
+      "description": "Grants permission to get a list of TLS security policies that you can apply to Lightsail load balancers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html"
+    },
+    {
+      "name": "GetLoadBalancers",
+      "methodName": "toGetLoadBalancers",
+      "description": "Grants permission to get information about load balancers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancers.html"
+    },
+    {
+      "name": "GetOperation",
+      "methodName": "toGetOperation",
+      "description": "Grants permission to get information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperation.html"
+    },
+    {
+      "name": "GetOperations",
+      "methodName": "toGetOperations",
+      "description": "Grants permission to get information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperations.html"
+    },
+    {
+      "name": "GetOperationsForResource",
+      "methodName": "toGetOperationsForResource",
+      "description": "Grants permission to get operations for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperationsForResource.html"
+    },
+    {
+      "name": "GetRegions",
+      "methodName": "toGetRegions",
+      "description": "Grants permission to get a list of all valid AWS Regions for Amazon Lightsail",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html"
+    },
+    {
+      "name": "GetRelationalDatabase",
+      "methodName": "toGetRelationalDatabase",
+      "description": "Grants permission to get information about a relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabase.html"
+    },
+    {
+      "name": "GetRelationalDatabaseBlueprints",
+      "methodName": "toGetRelationalDatabaseBlueprints",
+      "description": "Grants permission to get a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html"
+    },
+    {
+      "name": "GetRelationalDatabaseBundles",
+      "methodName": "toGetRelationalDatabaseBundles",
+      "description": "Grants permission to get a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBundles.html"
+    },
+    {
+      "name": "GetRelationalDatabaseEvents",
+      "methodName": "toGetRelationalDatabaseEvents",
+      "description": "Grants permission to get events for a relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseEvents.html"
+    },
+    {
+      "name": "GetRelationalDatabaseLogEvents",
+      "methodName": "toGetRelationalDatabaseLogEvents",
+      "description": "Grants permission to get events for the specified log stream of a relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogEvents.html"
+    },
+    {
+      "name": "GetRelationalDatabaseLogStreams",
+      "methodName": "toGetRelationalDatabaseLogStreams",
+      "description": "Grants permission to get the log streams available for a relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogStreams.html"
+    },
+    {
+      "name": "GetRelationalDatabaseMasterUserPassword",
+      "methodName": "toGetRelationalDatabaseMasterUserPassword",
+      "description": "Grants permission to get the master user password of a relational database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMasterUserPassword.html"
+    },
+    {
+      "name": "GetRelationalDatabaseMetricData",
+      "methodName": "toGetRelationalDatabaseMetricData",
+      "description": "Grants permission to get the data points for the specified metric of a relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMetricData.html"
+    },
+    {
+      "name": "GetRelationalDatabaseParameters",
+      "methodName": "toGetRelationalDatabaseParameters",
+      "description": "Grants permission to get the parameters of a relational database",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseParameters.html"
+    },
+    {
+      "name": "GetRelationalDatabaseSnapshot",
+      "methodName": "toGetRelationalDatabaseSnapshot",
+      "description": "Grants permission to get information about a relational database snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html"
+    },
+    {
+      "name": "GetRelationalDatabaseSnapshots",
+      "methodName": "toGetRelationalDatabaseSnapshots",
+      "description": "Grants permission to get information about all relational database snapshots",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html"
+    },
+    {
+      "name": "GetRelationalDatabases",
+      "methodName": "toGetRelationalDatabases",
+      "description": "Grants permission to get information about all relational databases",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabases.html"
+    },
+    {
+      "name": "GetSetupHistory",
+      "methodName": "toGetSetupHistory",
+      "description": "Grants permission to get detailed information for setup requests that were run on the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetSetupHistory.html"
+    },
+    {
+      "name": "GetStaticIp",
+      "methodName": "toGetStaticIp",
+      "description": "Grants permission to get information about a static IP",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html"
+    },
+    {
+      "name": "GetStaticIps",
+      "methodName": "toGetStaticIps",
+      "description": "Grants permission to get information about all static IPs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIps.html"
+    },
+    {
+      "name": "ImportKeyPair",
+      "methodName": "toImportKeyPair",
+      "description": "Grants permission to import a public key from a key pair",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html"
+    },
+    {
+      "name": "IsVpcPeered",
+      "methodName": "toIsVpcPeered",
+      "description": "Grants permission to get a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_IsVpcPeered.html"
+    },
+    {
+      "name": "OpenInstancePublicPorts",
+      "methodName": "toOpenInstancePublicPorts",
+      "description": "Grants permission to add, or open a public port of an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_OpenInstancePublicPorts.html"
+    },
+    {
+      "name": "PeerVpc",
+      "methodName": "toPeerVpc",
+      "description": "Grants permission to try to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PeerVpc.html"
+    },
+    {
+      "name": "PutAlarm",
+      "methodName": "toPutAlarm",
+      "description": "Grants permission to creates or update an alarm, and associate it with the specified metric",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutAlarm.html"
+    },
+    {
+      "name": "PutInstancePublicPorts",
+      "methodName": "toPutInstancePublicPorts",
+      "description": "Grants permission to set the specified open ports for an instance, and closes all ports for every protocol not included in the request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutInstancePublicPorts.html"
+    },
+    {
+      "name": "RebootInstance",
+      "methodName": "toRebootInstance",
+      "description": "Grants permission to reboot an instance that is in a running state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootInstance.html"
+    },
+    {
+      "name": "RebootRelationalDatabase",
+      "methodName": "toRebootRelationalDatabase",
+      "description": "Grants permission to reboot a relational database that is in a running state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootRelationalDatabase.html"
+    },
+    {
+      "name": "RegisterContainerImage",
+      "methodName": "toRegisterContainerImage",
+      "description": "Grants permission to register a container image to your Amazon Lightsail container service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RegisterContainerImage.html"
+    },
+    {
+      "name": "ReleaseStaticIp",
+      "methodName": "toReleaseStaticIp",
+      "description": "Grants permission to delete a static IP",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ReleaseStaticIp.html"
+    },
+    {
+      "name": "ResetDistributionCache",
+      "methodName": "toResetDistributionCache",
+      "description": "Grants permission to delete currently cached content from your Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ResetDistributionCache.html"
+    },
+    {
+      "name": "SendContactMethodVerification",
+      "methodName": "toSendContactMethodVerification",
+      "description": "Grants permission to send a verification request to an email contact method to ensure it's owned by the requester",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SendContactMethodVerification.html"
+    },
+    {
+      "name": "SetIpAddressType",
+      "methodName": "toSetIpAddressType",
+      "description": "Grants permission to set the IP address type for a Amazon Lightsail resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetIpAddressType.html"
+    },
+    {
+      "name": "SetResourceAccessForBucket",
+      "methodName": "toSetResourceAccessForBucket",
+      "description": "Grants permission to set the Amazon Lightsail resources that can access the specified Amazon Lightsail bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html"
+    },
+    {
+      "name": "SetupInstanceHttps",
+      "methodName": "toSetupInstanceHttps",
+      "description": "Grants permission to create an SSL/TLS certificate and install it on a specified instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetupInstanceHttps.html"
+    },
+    {
+      "name": "StartGUISession",
+      "methodName": "toStartGUISession",
+      "description": "Grants permission to initiate a graphical user interface (GUI) session used to access an instance's operating system or application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartGUISession.html"
+    },
+    {
+      "name": "StartInstance",
+      "methodName": "toStartInstance",
+      "description": "Grants permission to start an instance that is in a stopped state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartInstance.html"
+    },
+    {
+      "name": "StartRelationalDatabase",
+      "methodName": "toStartRelationalDatabase",
+      "description": "Grants permission to start a relational database that is in a stopped state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartRelationalDatabase.html"
+    },
+    {
+      "name": "StopGUISession",
+      "methodName": "toStopGUISession",
+      "description": "Grants permission to terminate a graphical user interface (GUI) session used to access an instance's operating system or application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopGUISession.html"
+    },
+    {
+      "name": "StopInstance",
+      "methodName": "toStopInstance",
+      "description": "Grants permission to stop an instance that is in a running state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopInstance.html"
+    },
+    {
+      "name": "StopRelationalDatabase",
+      "methodName": "toStopRelationalDatabase",
+      "description": "Grants permission to stop a relational database that is in a running state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopRelationalDatabase.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html"
+    },
+    {
+      "name": "TestAlarm",
+      "methodName": "toTestAlarm",
+      "description": "Grants permission to test an alarm by displaying a banner on the Amazon Lightsail console or if a notification trigger is configured for the specified alarm, by sending a notification to the notification protocol",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TestAlarm.html"
+    },
+    {
+      "name": "UnpeerVpc",
+      "methodName": "toUnpeerVpc",
+      "description": "Grants permission to try to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UnpeerVpc.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateBucket",
+      "methodName": "toUpdateBucket",
+      "description": "Grants permission to update an existing Amazon Lightsail bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucket.html"
+    },
+    {
+      "name": "UpdateBucketBundle",
+      "methodName": "toUpdateBucketBundle",
+      "description": "Grants permission to update the bundle, or storage plan, of an existing Amazon Lightsail bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html"
+    },
+    {
+      "name": "UpdateContainerService",
+      "methodName": "toUpdateContainerService",
+      "description": "Grants permission to update the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain names",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateContainerService.html"
+    },
+    {
+      "name": "UpdateDistribution",
+      "methodName": "toUpdateDistribution",
+      "description": "Grants permission to update an existing Amazon Lightsail content delivery network (CDN) distribution or its configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDistribution.html"
+    },
+    {
+      "name": "UpdateDistributionBundle",
+      "methodName": "toUpdateDistributionBundle",
+      "description": "Grants permission to update the bundle of your Amazon Lightsail content delivery network (CDN) distribution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDistributionBundle.html"
+    },
+    {
+      "name": "UpdateDomainEntry",
+      "methodName": "toUpdateDomainEntry",
+      "description": "Grants permission to update a domain recordset after it is created",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDomainEntry.html"
+    },
+    {
+      "name": "UpdateInstanceMetadataOptions",
+      "methodName": "toUpdateInstanceMetadataOptions",
+      "description": "Grants permission to update metadata options for an instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateInstanceMetadataOptions.html"
+    },
+    {
+      "name": "UpdateLoadBalancerAttribute",
+      "methodName": "toUpdateLoadBalancerAttribute",
+      "description": "Grants permission to update a load balancer attribute, such as the health check path and session stickiness",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html"
+    },
+    {
+      "name": "UpdateRelationalDatabase",
+      "methodName": "toUpdateRelationalDatabase",
+      "description": "Grants permission to update a relational database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabase.html"
+    },
+    {
+      "name": "UpdateRelationalDatabaseParameters",
+      "methodName": "toUpdateRelationalDatabaseParameters",
+      "description": "Grants permission to update the parameters of a relational database",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabaseParameters.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Alarm",
+      "methodName": "onAlarm",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Alarm.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Alarm/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IAlarmRef",
+        "property": "alarmRef",
+        "arn": "alarmArn"
+      }
+    },
+    {
+      "name": "Bucket",
+      "methodName": "onBucket",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Bucket.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Bucket/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IBucketRef",
+        "property": "bucketRef",
+        "arn": "bucketArn"
+      }
+    },
+    {
+      "name": "Certificate",
+      "methodName": "onCertificate",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Certificate.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Certificate/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "ICertificateRef",
+        "property": "certificateRef",
+        "arn": "certificateArn"
+      }
+    },
+    {
+      "name": "CloudFormationStackRecord",
+      "methodName": "onCloudFormationStackRecord",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "ContactMethod",
+      "methodName": "onContactMethod",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContactMethod.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ContactMethod/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IContactMethodRef",
+        "property": "contactMethodRef",
+        "arn": "contactMethodArn"
+      }
+    },
+    {
+      "name": "ContainerService",
+      "methodName": "onContainerService",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContainerService.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ContainerService/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Disk",
+      "methodName": "onDisk",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDiskRef",
+        "property": "diskRef",
+        "arn": "diskArn"
+      }
+    },
+    {
+      "name": "DiskSnapshot",
+      "methodName": "onDiskSnapshot",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDiskSnapshotRef",
+        "property": "diskSnapshotRef",
+        "arn": "diskSnapshotArn"
+      }
+    },
+    {
+      "name": "Distribution",
+      "methodName": "onDistribution",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LightsailDistribution.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Distribution/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDistributionRef",
+        "property": "distributionRef",
+        "arn": "distributionArn"
+      }
+    },
+    {
+      "name": "Domain",
+      "methodName": "onDomain",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IDomainRef",
+        "property": "domainRef",
+        "arn": "domainArn"
+      }
+    },
+    {
+      "name": "ExportSnapshotRecord",
+      "methodName": "onExportSnapshotRecord",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "Instance",
+      "methodName": "onInstance",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IInstanceRef",
+        "property": "instanceRef",
+        "arn": "instanceArn"
+      }
+    },
+    {
+      "name": "InstanceSnapshot",
+      "methodName": "onInstanceSnapshot",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IInstanceSnapshotRef",
+        "property": "instanceSnapshotRef",
+        "arn": "instanceSnapshotArn"
+      }
+    },
+    {
+      "name": "KeyPair",
+      "methodName": "onKeyPair",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IKeyPairRef",
+        "property": "keyPairRef",
+        "arn": "keyPairArn"
+      }
+    },
+    {
+      "name": "LoadBalancer",
+      "methodName": "onLoadBalancer",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "ILoadBalancerRef",
+        "property": "loadBalancerRef",
+        "arn": "loadBalancerArn"
+      }
+    },
+    {
+      "name": "LoadBalancerTlsCertificate",
+      "methodName": "onLoadBalancerTlsCertificate",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancerTlsCertificate.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "ILoadBalancerTlsCertificateRef",
+        "property": "loadBalancerTlsCertificateRef",
+        "arn": "loadBalancerTlsCertificateArn"
+      }
+    },
+    {
+      "name": "RelationalDatabase",
+      "methodName": "onRelationalDatabase",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "RelationalDatabaseSnapshot",
+      "methodName": "onRelationalDatabaseSnapshot",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "StaticIp",
+      "methodName": "onStaticIp",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_lightsail",
+        "interface": "IStaticIpRef",
+        "property": "staticIpRef",
+        "arn": "staticIpArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateBucket",
+        "toCreateCertificate",
+        "toCreateContactMethod",
+        "toCreateContainerService",
+        "toCreateDisk",
+        "toCreateDiskFromSnapshot",
+        "toCreateDiskSnapshot",
+        "toCreateDistribution",
+        "toCreateDomain",
+        "toCreateInstanceSnapshot",
+        "toCreateInstances",
+        "toCreateInstancesFromSnapshot",
+        "toCreateKeyPair",
+        "toCreateLoadBalancer",
+        "toCreateRelationalDatabase",
+        "toCreateRelationalDatabaseFromSnapshot",
+        "toCreateRelationalDatabaseSnapshot",
+        "toPutAlarm",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAttachCertificateToDistribution",
+        "toAttachDisk",
+        "toAttachInstancesToLoadBalancer",
+        "toAttachLoadBalancerTlsCertificate",
+        "toAttachStaticIp",
+        "toCloseInstancePublicPorts",
+        "toCreateBucketAccessKey",
+        "toCreateContainerServiceDeployment",
+        "toCreateDiskFromSnapshot",
+        "toCreateDiskSnapshot",
+        "toCreateDomainEntry",
+        "toCreateGUISessionAccessDetails",
+        "toCreateInstanceSnapshot",
+        "toCreateInstancesFromSnapshot",
+        "toCreateLoadBalancerTlsCertificate",
+        "toCreateRelationalDatabaseFromSnapshot",
+        "toDeleteAlarm",
+        "toDeleteBucket",
+        "toDeleteBucketAccessKey",
+        "toDeleteCertificate",
+        "toDeleteContainerImage",
+        "toDeleteContainerService",
+        "toDeleteDisk",
+        "toDeleteDiskSnapshot",
+        "toDeleteDistribution",
+        "toDeleteDomain",
+        "toDeleteDomainEntry",
+        "toDeleteInstance",
+        "toDeleteInstanceSnapshot",
+        "toDeleteKeyPair",
+        "toDeleteKnownHostKeys",
+        "toDeleteLoadBalancer",
+        "toDeleteLoadBalancerTlsCertificate",
+        "toDeleteRelationalDatabase",
+        "toDeleteRelationalDatabaseSnapshot",
+        "toDetachCertificateFromDistribution",
+        "toDetachDisk",
+        "toDetachInstancesFromLoadBalancer",
+        "toDetachStaticIp",
+        "toExportSnapshot",
+        "toGetCostEstimate",
+        "toGetInstanceAccessDetails",
+        "toGetRelationalDatabaseMasterUserPassword",
+        "toGetSetupHistory",
+        "toOpenInstancePublicPorts",
+        "toPutAlarm",
+        "toPutInstancePublicPorts",
+        "toRebootInstance",
+        "toRebootRelationalDatabase",
+        "toRegisterContainerImage",
+        "toReleaseStaticIp",
+        "toResetDistributionCache",
+        "toSetIpAddressType",
+        "toSetResourceAccessForBucket",
+        "toSetupInstanceHttps",
+        "toStartGUISession",
+        "toStartInstance",
+        "toStartRelationalDatabase",
+        "toStopGUISession",
+        "toStopInstance",
+        "toStopRelationalDatabase",
+        "toTagResource",
+        "toTestAlarm",
+        "toUntagResource",
+        "toUpdateBucket",
+        "toUpdateBucketBundle",
+        "toUpdateContainerService",
+        "toUpdateDistribution",
+        "toUpdateDistributionBundle",
+        "toUpdateDomainEntry",
+        "toUpdateInstanceMetadataOptions",
+        "toUpdateLoadBalancerAttribute",
+        "toUpdateRelationalDatabase",
+        "toUpdateRelationalDatabaseParameters"
+      ],
+      "relatedResourceTypes": [
+        "Alarm",
+        "Bucket",
+        "Certificate",
+        "ContactMethod",
+        "ContainerService",
+        "Disk",
+        "DiskSnapshot",
+        "Distribution",
+        "Domain",
+        "Instance",
+        "InstanceSnapshot",
+        "KeyPair",
+        "LoadBalancer",
+        "RelationalDatabase",
+        "RelationalDatabaseSnapshot",
+        "StaticIp"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateBucket",
+        "toCreateCertificate",
+        "toCreateContactMethod",
+        "toCreateContainerService",
+        "toCreateDisk",
+        "toCreateDiskFromSnapshot",
+        "toCreateDiskSnapshot",
+        "toCreateDistribution",
+        "toCreateDomain",
+        "toCreateInstanceSnapshot",
+        "toCreateInstances",
+        "toCreateInstancesFromSnapshot",
+        "toCreateKeyPair",
+        "toCreateLoadBalancer",
+        "toCreateRelationalDatabase",
+        "toCreateRelationalDatabaseFromSnapshot",
+        "toCreateRelationalDatabaseSnapshot",
+        "toPutAlarm",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

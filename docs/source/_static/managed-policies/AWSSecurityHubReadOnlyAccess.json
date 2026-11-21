@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSSecurityHubReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "securityhub:Get*",
+        "securityhub:List*",
+        "securityhub:BatchGet*",
+        "securityhub:Describe*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

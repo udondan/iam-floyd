@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "filename": "application-signals-mcp",
+  "className": "ApplicationSignalsMcp",
+  "name": "application-signals-mcp",
+  "servicePrefix": "application-signals-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-signals-mcp.html",
+  "accessLevelList": {
+    "Read": [
+      "CallReadOnlyTool",
+      "InvokeMcp"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CallReadOnlyTool",
+      "methodName": "toCallReadOnlyTool",
+      "description": "Grants permission to invoke read-only Application Signals MCP tools (list_monitored_services, get_service_detail, query_service_metrics, list_service_operations, get_slo, list_slos, search_transaction_spans, query_sampled_traces, list_slis, get_enablement_guide, list_change_events, list_group_services, audit_group_health, get_group_dependencies, get_group_changes, list_grouping_attribute_definitions, audit_services, audit_slos, audit_service_operations, analyze_canary_failures)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals.html"
+    },
+    {
+      "name": "InvokeMcp",
+      "methodName": "toInvokeMcp",
+      "description": "Grants permission to connect to and interact with the Application Signals MCP server (initialize, list tools, list resources, list prompts)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "mcp-server",
+      "methodName": "onMcpServer",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals.html",
+      "arn": "arn:${Partition}:application-signals-mcp:${Region}:${Account}:mcp-server/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCallReadOnlyTool",
+        "toInvokeMcp"
+      ],
+      "relatedResourceTypes": [
+        "mcp-server"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

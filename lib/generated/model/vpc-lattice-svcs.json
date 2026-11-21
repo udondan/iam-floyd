@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "filename": "vpc-lattice-svcs",
+  "className": "VpcLatticeSvcs",
+  "name": "vpc-lattice-svcs",
+  "servicePrefix": "vpc-lattice-svcs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_vpc-lattice-svcs.html",
+  "accessLevelList": {
+    "Write": [
+      "Connect",
+      "Invoke"
+    ]
+  },
+  "actions": [
+    {
+      "name": "Connect",
+      "methodName": "toConnect",
+      "description": "Grants permission to connect to a VPC Lattice service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/sigv4-authenticated-requests.html"
+    },
+    {
+      "name": "Invoke",
+      "methodName": "toInvoke",
+      "description": "Grants permission to invoke a VPC Lattice service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/sigv4-authenticated-requests.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Service",
+      "methodName": "onService",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}/${RequestPath}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "RequestPath",
+          "name": "requestPath",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "TCP Service",
+      "methodName": "onTCPService",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}",
+      "placeholders": [
+        {
+          "placeholder": "ServiceId",
+          "name": "serviceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toConnect",
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [
+        "Service",
+        "TCP Service"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice-svcs:Port",
+      "methodName": "ifPort",
+      "description": "Filters access by the destination port the request is made to",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toConnect",
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Port",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "vpc-lattice-svcs:RequestHeader/${HeaderName}",
+      "methodName": "ifRequestHeader",
+      "description": "Filters access by a header name-value pair in the request headers",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestHeader/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "headerName",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice-svcs:RequestMethod",
+      "methodName": "ifRequestMethod",
+      "description": "Filters access by the method of the request",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestMethod",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice-svcs:RequestPath",
+      "methodName": "ifRequestPath",
+      "description": "Filters access by the path portion of the request URL",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestPath",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice-svcs:RequestQueryString/${QueryStringKey}",
+      "methodName": "ifRequestQueryString",
+      "description": "Filters access by the query string key-value pairs in the request URL",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestQueryString/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "queryStringKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice-svcs:ServiceArn",
+      "methodName": "ifServiceArn",
+      "description": "Filters access by the ARN of the service receiving the request",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toConnect",
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "vpc-lattice-svcs:ServiceNetworkArn",
+      "methodName": "ifServiceNetworkArn",
+      "description": "Filters access by the ARN of the service network receiving the request",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toConnect",
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceNetworkArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "vpc-lattice-svcs:SourceVpc",
+      "methodName": "ifSourceVpc",
+      "description": "Filters access by the VPC the request is made from",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toConnect",
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceVpc",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "vpc-lattice-svcs:SourceVpcOwnerAccount",
+      "methodName": "ifSourceVpcOwnerAccount",
+      "description": "Filters access by the owning account of the VPC the request is made from",
+      "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys",
+      "relatedActionMethods": [
+        "toConnect",
+        "toInvoke"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceVpcOwnerAccount",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

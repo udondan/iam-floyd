@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RepostSpaceSupportOperations",
+      "Effect": "Allow",
+      "Action": [
+        "support:AddAttachmentsToSet",
+        "support:AddCommunicationToCase",
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:ResolveCase"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

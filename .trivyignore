@@ -1,0 +1,4 @@
+# aws-cdk-lib bundles brace-expansion 5.0.9 (through minimatch), only a new release of aws-cdk-lib
+# can update it
+CVE-2026-102276 exp:2027-01-06
+CVE-2026-102278 exp:2027-01-06

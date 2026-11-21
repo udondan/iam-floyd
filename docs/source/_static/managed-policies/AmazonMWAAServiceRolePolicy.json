@@ -1,0 +1,92 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:airflow-*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachNetworkInterface",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeVpcs",
+        "ec2:DetachNetworkInterface"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateVpcEndpoint",
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "AmazonMWAAManaged"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVpcEndpoint",
+        "ec2:DeleteVpcEndpoints"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonMWAAManaged": false
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint",
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:vpc/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:subnet/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpoint"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "AmazonMWAAManaged"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/MWAA"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "filename": "healthlake",
+  "className": "Healthlake",
+  "name": "healthlake",
+  "servicePrefix": "healthlake",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_healthlake.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelFHIRExportJobWithDelete",
+      "ConfirmAttributionList",
+      "CreateDataTransformationProfile",
+      "CreateFHIRDatastore",
+      "CreateResource",
+      "DeleteDataTransformationProfile",
+      "DeleteFHIRDatastore",
+      "DeleteResource",
+      "GenerateDocumentWithGet",
+      "GenerateDocumentWithPost",
+      "MemberAdd",
+      "MemberMatch",
+      "MemberRemove",
+      "PatchResource",
+      "ProcessBundle",
+      "PublishDataTransformationProfile",
+      "RestoreFHIRDatastore",
+      "RetrieveAttributionStatus",
+      "StartDataTransformationJob",
+      "StartFHIRBulkDeleteJob",
+      "StartFHIRBulkMemberMatchJob",
+      "StartFHIRBulkPatchJob",
+      "StartFHIRExportJob",
+      "StartFHIRExportJobWithGet",
+      "StartFHIRExportJobWithPost",
+      "StartFHIRImportJob",
+      "SubmitPreAuthClaim",
+      "TagResource",
+      "TransformData",
+      "UntagResource",
+      "UpdateDataTransformationProfile",
+      "UpdateFHIRDatastore",
+      "UpdateProfileWithAgent",
+      "UpdateResource"
+    ],
+    "Read": [
+      "DescribeDataTransformationJob",
+      "DescribeFHIRBulkDeleteJob",
+      "DescribeFHIRBulkMemberMatchJob",
+      "DescribeFHIRBulkPatchJob",
+      "DescribeFHIRDatastore",
+      "DescribeFHIRExportJob",
+      "DescribeFHIRExportJobWithGet",
+      "DescribeFHIRImportJob",
+      "ExpandValueSetWithGet",
+      "ExpandValueSetWithPost",
+      "GetCapabilities",
+      "GetDataTransformationProfile",
+      "GetExportedFile",
+      "GetHistoryByResourceId",
+      "InquirePreAuthClaim",
+      "LookupCodeSystemWithGet",
+      "LookupCodeSystemWithPost",
+      "QuestionnairePackage",
+      "ReadResource",
+      "SearchEverything",
+      "SearchWithGet",
+      "SearchWithPost",
+      "TranslateConceptMapWithGet",
+      "TranslateConceptMapWithPost",
+      "ValidateResource",
+      "ValidateSource",
+      "VersionReadResource"
+    ],
+    "List": [
+      "ListDataTransformationJobs",
+      "ListDataTransformationProfileVersions",
+      "ListDataTransformationProfiles",
+      "ListFHIRDatastores",
+      "ListFHIRExportJobs",
+      "ListFHIRImportJobs",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelFHIRExportJobWithDelete",
+      "methodName": "toCancelFHIRExportJobWithDelete",
+      "description": "Grants permission to cancel an on going FHIR Export job with Delete",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html"
+    },
+    {
+      "name": "ConfirmAttributionList",
+      "methodName": "toConfirmAttributionList",
+      "description": "Grants permission to allow customers to indicate to a Producer that the Consumer does not have any more changes to be made to the Attribution List",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-confirm-attribution-list.html"
+    },
+    {
+      "name": "CreateDataTransformationProfile",
+      "methodName": "toCreateDataTransformationProfile",
+      "description": "Grants permission to create a data transformation profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_CreateDataTransformationProfile.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateFHIRDatastore",
+      "methodName": "toCreateFHIRDatastore",
+      "description": "Grants permission to create a datastore that can ingest and export FHIR data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_CreateFHIRDatastore.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateResource",
+      "methodName": "toCreateResource",
+      "description": "Grants permission to create resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "DeleteDataTransformationProfile",
+      "methodName": "toDeleteDataTransformationProfile",
+      "description": "Grants permission to delete a data transformation profile and all its versions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DeleteDataTransformationProfile.html"
+    },
+    {
+      "name": "DeleteFHIRDatastore",
+      "methodName": "toDeleteFHIRDatastore",
+      "description": "Grants permission to delete a datastore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DeleteFHIRDatastore.html"
+    },
+    {
+      "name": "DeleteResource",
+      "methodName": "toDeleteResource",
+      "description": "Grants permission to delete resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "DescribeDataTransformationJob",
+      "methodName": "toDescribeDataTransformationJob",
+      "description": "Grants permission to describe a data transformation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DescribeDataTransformationJob.html"
+    },
+    {
+      "name": "DescribeFHIRBulkDeleteJob",
+      "methodName": "toDescribeFHIRBulkDeleteJob",
+      "description": "Grants permission to describe a FHIR Bulk Delete Job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-delete.html"
+    },
+    {
+      "name": "DescribeFHIRBulkMemberMatchJob",
+      "methodName": "toDescribeFHIRBulkMemberMatchJob",
+      "description": "Grants permission to describe a FHIR Bulk Member Match Job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-member-match.html"
+    },
+    {
+      "name": "DescribeFHIRBulkPatchJob",
+      "methodName": "toDescribeFHIRBulkPatchJob",
+      "description": "Grants permission to describe a FHIR Bulk Patch Job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-patch.html"
+    },
+    {
+      "name": "DescribeFHIRDatastore",
+      "methodName": "toDescribeFHIRDatastore",
+      "description": "Grants permission to get the properties associated with the FHIR datastore, including the datastore ID, datastore ARN, datastore name, datastore status, created at, datastore type version, and datastore endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DescribeFHIRDatastore.html"
+    },
+    {
+      "name": "DescribeFHIRExportJob",
+      "methodName": "toDescribeFHIRExportJob",
+      "description": "Grants permission to display the properties of a FHIR export job, including the ID, ARN, name, and the status of the datastore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DescribeFHIRExportJob.html"
+    },
+    {
+      "name": "DescribeFHIRExportJobWithGet",
+      "methodName": "toDescribeFHIRExportJobWithGet",
+      "description": "Grants permission to display the properties of a FHIR export job, including the ID, ARN, name, and the status of the datastore with Get",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html"
+    },
+    {
+      "name": "DescribeFHIRImportJob",
+      "methodName": "toDescribeFHIRImportJob",
+      "description": "Grants permission to display the properties of a FHIR import job, including the ID, ARN, name, and the status of the datastore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DescribeFHIRImportJob.html"
+    },
+    {
+      "name": "ExpandValueSetWithGet",
+      "methodName": "toExpandValueSetWithGet",
+      "description": "Grants permission to search and expand ValueSet resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html"
+    },
+    {
+      "name": "ExpandValueSetWithPost",
+      "methodName": "toExpandValueSetWithPost",
+      "description": "Grants permission to search and expand ValueSet resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html"
+    },
+    {
+      "name": "GenerateDocumentWithGet",
+      "methodName": "toGenerateDocumentWithGet",
+      "description": "Grants permission to generate a clinical document resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html"
+    },
+    {
+      "name": "GenerateDocumentWithPost",
+      "methodName": "toGenerateDocumentWithPost",
+      "description": "Grants permission to generate a clinical document resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html"
+    },
+    {
+      "name": "GetCapabilities",
+      "methodName": "toGetCapabilities",
+      "description": "Grants permission to get the capabilities of a FHIR datastore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "GetDataTransformationProfile",
+      "methodName": "toGetDataTransformationProfile",
+      "description": "Grants permission to retrieve a data transformation profile and its content",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_GetDataTransformationProfile.html"
+    },
+    {
+      "name": "GetExportedFile",
+      "methodName": "toGetExportedFile",
+      "description": "Grants permission to access exported files from a FHIR Export job initiated with Get",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html"
+    },
+    {
+      "name": "GetHistoryByResourceId",
+      "methodName": "toGetHistoryByResourceId",
+      "description": "Grants permission to read resource history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "InquirePreAuthClaim",
+      "methodName": "toInquirePreAuthClaim",
+      "description": "Grants permission to inquire about the status of a prior authorization Claim",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-inquire.html"
+    },
+    {
+      "name": "ListDataTransformationJobs",
+      "methodName": "toListDataTransformationJobs",
+      "description": "Grants permission to list data transformation jobs in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListDataTransformationJobs.html"
+    },
+    {
+      "name": "ListDataTransformationProfileVersions",
+      "methodName": "toListDataTransformationProfileVersions",
+      "description": "Grants permission to list all versions of a data transformation profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListDataTransformationProfileVersions.html"
+    },
+    {
+      "name": "ListDataTransformationProfiles",
+      "methodName": "toListDataTransformationProfiles",
+      "description": "Grants permission to list data transformation profiles in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListDataTransformationProfiles.html"
+    },
+    {
+      "name": "ListFHIRDatastores",
+      "methodName": "toListFHIRDatastores",
+      "description": "Grants permission to list all FHIR datastores that are in the user's account, regardless of datastore status",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListFHIRDatastores.html"
+    },
+    {
+      "name": "ListFHIRExportJobs",
+      "methodName": "toListFHIRExportJobs",
+      "description": "Grants permission to get a list of export jobs for the specified datastore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListFHIRExportJobs.html"
+    },
+    {
+      "name": "ListFHIRImportJobs",
+      "methodName": "toListFHIRImportJobs",
+      "description": "Grants permission to get a list of import jobs for the specified datastore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListFHIRImportJobs.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to get a list of tags for the specified datastore",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "LookupCodeSystemWithGet",
+      "methodName": "toLookupCodeSystemWithGet",
+      "description": "Grants permission to retrieve Codes for a CodeSystem resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html"
+    },
+    {
+      "name": "LookupCodeSystemWithPost",
+      "methodName": "toLookupCodeSystemWithPost",
+      "description": "Grants permission to retrieve Codes for a CodeSystem resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html"
+    },
+    {
+      "name": "MemberAdd",
+      "methodName": "toMemberAdd",
+      "description": "Grants permission to attribute a member with a specific provider group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-add.html"
+    },
+    {
+      "name": "MemberMatch",
+      "methodName": "toMemberMatch",
+      "description": "Grants permission to enable cross-system patient matching",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-match.html"
+    },
+    {
+      "name": "MemberRemove",
+      "methodName": "toMemberRemove",
+      "description": "Grants permission to remove a member from a group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-remove.html"
+    },
+    {
+      "name": "PatchResource",
+      "methodName": "toPatchResource",
+      "description": "Grants permission to patch a resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/managing-fhir-resources-patch.html"
+    },
+    {
+      "name": "ProcessBundle",
+      "methodName": "toProcessBundle",
+      "description": "Grants permission to bundle multiple resource operations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "PublishDataTransformationProfile",
+      "methodName": "toPublishDataTransformationProfile",
+      "description": "Grants permission to publish a new immutable version of a data transformation profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_PublishDataTransformationProfile.html"
+    },
+    {
+      "name": "QuestionnairePackage",
+      "methodName": "toQuestionnairePackage",
+      "description": "Grants permission to retrieve Questionnaire packages with dependency Library and ValueSet resources",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-questionnaire-package.html"
+    },
+    {
+      "name": "ReadResource",
+      "methodName": "toReadResource",
+      "description": "Grants permission to read resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "RestoreFHIRDatastore",
+      "methodName": "toRestoreFHIRDatastore",
+      "description": "Grants permission to restore a backup-enabled datastore to a point in time, creating a new datastore from the backup",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_RestoreFHIRDatastore.html"
+    },
+    {
+      "name": "RetrieveAttributionStatus",
+      "methodName": "toRetrieveAttributionStatus",
+      "description": "Grants permission to retrieve member attribution status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-attribution-status.html"
+    },
+    {
+      "name": "SearchEverything",
+      "methodName": "toSearchEverything",
+      "description": "Grants permission to search all resources related to a patient",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/search-healthlake.html"
+    },
+    {
+      "name": "SearchWithGet",
+      "methodName": "toSearchWithGet",
+      "description": "Grants permission to search resources with GET method",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/search-healthlake.html"
+    },
+    {
+      "name": "SearchWithPost",
+      "methodName": "toSearchWithPost",
+      "description": "Grants permission to search resources with POST method",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/search-healthlake.html"
+    },
+    {
+      "name": "StartDataTransformationJob",
+      "methodName": "toStartDataTransformationJob",
+      "description": "Grants permission to start an asynchronous data transformation job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_StartDataTransformationJob.html"
+    },
+    {
+      "name": "StartFHIRBulkDeleteJob",
+      "methodName": "toStartFHIRBulkDeleteJob",
+      "description": "Grants permission to begin a FHIR Bulk Delete Job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-delete.html"
+    },
+    {
+      "name": "StartFHIRBulkMemberMatchJob",
+      "methodName": "toStartFHIRBulkMemberMatchJob",
+      "description": "Grants permission to begin a FHIR Bulk Member Match Job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-member-match.html"
+    },
+    {
+      "name": "StartFHIRBulkPatchJob",
+      "methodName": "toStartFHIRBulkPatchJob",
+      "description": "Grants permission to begin a FHIR Bulk Patch Job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-patch.html"
+    },
+    {
+      "name": "StartFHIRExportJob",
+      "methodName": "toStartFHIRExportJob",
+      "description": "Grants permission to begin a FHIR Export job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_StartFHIRExportJob.html"
+    },
+    {
+      "name": "StartFHIRExportJobWithGet",
+      "methodName": "toStartFHIRExportJobWithGet",
+      "description": "Grants permission to begin a FHIR Export job with Get",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html"
+    },
+    {
+      "name": "StartFHIRExportJobWithPost",
+      "methodName": "toStartFHIRExportJobWithPost",
+      "description": "Grants permission to begin a FHIR Export job with Post",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html"
+    },
+    {
+      "name": "StartFHIRImportJob",
+      "methodName": "toStartFHIRImportJob",
+      "description": "Grants permission to begin a FHIR Import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_StartFHIRImportJob.html"
+    },
+    {
+      "name": "SubmitPreAuthClaim",
+      "methodName": "toSubmitPreAuthClaim",
+      "description": "Grants permission to submit a prior authorization Claim request",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-submit.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a datastore",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TransformData",
+      "methodName": "toTransformData",
+      "description": "Grants permission to perform a synchronous data transformation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/data-transformation-getting-started-sdk.html"
+    },
+    {
+      "name": "TranslateConceptMapWithGet",
+      "methodName": "toTranslateConceptMapWithGet",
+      "description": "Grants permission to translate a code from one value set to another using a ConceptMap resource with GET method",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-translate.html"
+    },
+    {
+      "name": "TranslateConceptMapWithPost",
+      "methodName": "toTranslateConceptMapWithPost",
+      "description": "Grants permission to translate a code from one value set to another using a ConceptMap resource with POST method",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-translate.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags associated with a datastore",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDataTransformationProfile",
+      "methodName": "toUpdateDataTransformationProfile",
+      "description": "Grants permission to update the draft version of a data transformation profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UpdateDataTransformationProfile.html"
+    },
+    {
+      "name": "UpdateFHIRDatastore",
+      "methodName": "toUpdateFHIRDatastore",
+      "description": "Grants permission to update the configuration of a datastore",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UpdateFHIRDatastore.html"
+    },
+    {
+      "name": "UpdateProfileWithAgent",
+      "methodName": "toUpdateProfileWithAgent",
+      "description": "Grants permission to update a data transformation profile using the AI agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UpdateProfileWithAgent.html"
+    },
+    {
+      "name": "UpdateResource",
+      "methodName": "toUpdateResource",
+      "description": "Grants permission to update resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    },
+    {
+      "name": "ValidateResource",
+      "methodName": "toValidateResource",
+      "description": "Grants permission to validate a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-validate.html"
+    },
+    {
+      "name": "ValidateSource",
+      "methodName": "toValidateSource",
+      "description": "Grants permission to validate source data against format specifications",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/data-transformation-features.html"
+    },
+    {
+      "name": "VersionReadResource",
+      "methodName": "toVersionReadResource",
+      "description": "Grants permission to read version of a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "dataTransformationProfile",
+      "methodName": "onDataTransformationProfile",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DataTransformationProfileSummary.html",
+      "arn": "arn:${Partition}:healthlake:${Region}:${Account}:dataTransformationProfile/${ProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "ProfileId",
+          "name": "profileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_healthlake",
+        "interface": "IDataTransformationProfileRef",
+        "property": "dataTransformationProfileRef",
+        "arn": "dataTransformationProfileArn"
+      }
+    },
+    {
+      "name": "datastore",
+      "methodName": "onDatastore",
+      "url": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_DatastoreProperties.html",
+      "arn": "arn:${Partition}:healthlake:${Region}:${Account}:datastore/fhir/${DatastoreId}",
+      "placeholders": [
+        {
+          "placeholder": "DatastoreId",
+          "name": "datastoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataTransformationProfile",
+        "toCreateFHIRDatastore",
+        "toRestoreFHIRDatastore",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the presence of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelFHIRExportJobWithDelete",
+        "toConfirmAttributionList",
+        "toCreateDataTransformationProfile",
+        "toCreateFHIRDatastore",
+        "toCreateResource",
+        "toDeleteDataTransformationProfile",
+        "toDeleteFHIRDatastore",
+        "toDeleteResource",
+        "toDescribeFHIRBulkDeleteJob",
+        "toDescribeFHIRBulkMemberMatchJob",
+        "toDescribeFHIRBulkPatchJob",
+        "toDescribeFHIRDatastore",
+        "toDescribeFHIRExportJob",
+        "toDescribeFHIRExportJobWithGet",
+        "toDescribeFHIRImportJob",
+        "toExpandValueSetWithGet",
+        "toExpandValueSetWithPost",
+        "toGenerateDocumentWithGet",
+        "toGenerateDocumentWithPost",
+        "toGetCapabilities",
+        "toGetDataTransformationProfile",
+        "toGetExportedFile",
+        "toGetHistoryByResourceId",
+        "toInquirePreAuthClaim",
+        "toListDataTransformationProfileVersions",
+        "toListFHIRExportJobs",
+        "toListFHIRImportJobs",
+        "toListTagsForResource",
+        "toLookupCodeSystemWithGet",
+        "toLookupCodeSystemWithPost",
+        "toMemberAdd",
+        "toMemberMatch",
+        "toMemberRemove",
+        "toPatchResource",
+        "toProcessBundle",
+        "toPublishDataTransformationProfile",
+        "toQuestionnairePackage",
+        "toReadResource",
+        "toRestoreFHIRDatastore",
+        "toRetrieveAttributionStatus",
+        "toSearchEverything",
+        "toSearchWithGet",
+        "toSearchWithPost",
+        "toStartDataTransformationJob",
+        "toStartFHIRBulkDeleteJob",
+        "toStartFHIRBulkMemberMatchJob",
+        "toStartFHIRBulkPatchJob",
+        "toStartFHIRExportJob",
+        "toStartFHIRExportJobWithGet",
+        "toStartFHIRExportJobWithPost",
+        "toStartFHIRImportJob",
+        "toSubmitPreAuthClaim",
+        "toTagResource",
+        "toTransformData",
+        "toTranslateConceptMapWithGet",
+        "toTranslateConceptMapWithPost",
+        "toUntagResource",
+        "toUpdateDataTransformationProfile",
+        "toUpdateFHIRDatastore",
+        "toUpdateProfileWithAgent",
+        "toUpdateResource",
+        "toValidateResource",
+        "toVersionReadResource"
+      ],
+      "relatedResourceTypes": [
+        "dataTransformationProfile",
+        "datastore"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataTransformationProfile",
+        "toCreateFHIRDatastore",
+        "toRestoreFHIRDatastore",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

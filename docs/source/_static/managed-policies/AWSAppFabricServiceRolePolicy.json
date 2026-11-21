@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchEmitMetric",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/AppFabric"
+        }
+      }
+    },
+    {
+      "Sid": "S3PutObject",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::*/AWSAppFabric/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "FirehosePutRecord",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:PutRecordBatch"
+      ],
+      "Resource": "arn:aws:firehose:*:*:deliverystream/*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/AWSAppFabricManaged": "true"
+        }
+      }
+    }
+  ]
+}

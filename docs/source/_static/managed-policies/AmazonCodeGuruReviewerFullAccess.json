@@ -1,0 +1,105 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonCodeGuruReviewerFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-reviewer:*",
+        "codeguru:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonCodeGuruReviewerSLRCreation",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/codeguru-reviewer.amazonaws.com/AWSServiceRoleForAmazonCodeGuruReviewer",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "codeguru-reviewer.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonCodeGuruReviewerSLRDeletion",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteServiceLinkedRole",
+        "iam:GetServiceLinkedRoleDeletionStatus"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/codeguru-reviewer.amazonaws.com/AWSServiceRoleForAmazonCodeGuruReviewer"
+    },
+    {
+      "Sid": "CodeCommitAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:ListRepositories"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeCommitTagManagement",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:TagResource",
+        "codecommit:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "codeguru-reviewer"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectTagManagement",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:TagResource",
+        "codestar-connections:UntagResource",
+        "codestar-connections:ListTagsForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "codeguru-reviewer"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectManagedRules",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:UseConnection",
+        "codestar-connections:ListConnections",
+        "codestar-connections:PassConnection"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "codestar-connections:ProviderAction": [
+            "ListRepositories",
+            "ListOwners"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchEventsManagedRules",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets",
+        "events:DeleteRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "codeguru-reviewer.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

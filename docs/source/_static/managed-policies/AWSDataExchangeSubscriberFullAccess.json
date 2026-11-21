@@ -1,0 +1,91 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataExchangeReadOnlyActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:Get*",
+        "dataexchange:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataExchangeExportActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateJob",
+        "dataexchange:StartJob",
+        "dataexchange:CancelJob"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "dataexchange:JobType": [
+            "EXPORT_ASSETS_TO_S3",
+            "EXPORT_ASSET_TO_SIGNED_URL",
+            "EXPORT_REVISIONS_TO_S3"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DataExchangeEventActionActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateEventAction",
+        "dataexchange:UpdateEventAction",
+        "dataexchange:DeleteEventAction",
+        "dataexchange:SendApiAsset"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3GetActionConditionalResourceAndADX",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::*aws-data-exchange*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "dataexchange.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "S3ReadActions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceSubscriberActions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:Unsubscribe",
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:GetAgreementRequest",
+        "aws-marketplace:ListAgreementRequests",
+        "aws-marketplace:CancelAgreementRequest",
+        "aws-marketplace:ListPrivateListings"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMSActions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:ListKeys"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

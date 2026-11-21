@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "signin:AuthorizeOAuth2Access",
+        "signin:CreateOAuth2Token"
+      ],
+      "Resource": "arn:aws:signin:*:*:oauth2/public-client/*"
+    }
+  ]
+}

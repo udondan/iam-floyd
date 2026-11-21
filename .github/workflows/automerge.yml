@@ -1,0 +1,39 @@
+---
+name: Automerge
+
+concurrency: automerge
+
+# Doesn't check out or run code of the PR, and only runs for PRs of udondan
+on: # zizmor: ignore[dangerous-triggers]
+  pull_request_target:
+    types: [labeled, synchronize]
+
+jobs:
+  automerge_ci:
+    name: Automerge CI
+    runs-on: ubuntu-latest
+    permissions:
+      checks: read # wait for the tests, the merge uses OVERRIDE_TOKEN
+    if: |
+      github.actor == 'udondan' &&
+      contains(github.event.pull_request.labels.*.name, 'automerge')
+    steps:
+      - name: Wait for tests to succeed
+        uses: fountainhead/action-wait-for-check@5a908a24814494009c4bb27c242ea38c93c593be # v1.2.0
+        id: wait-for-ci
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: required
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          timeoutSeconds: 1200
+          intervalSeconds: 30
+
+      - name: Automerge
+        uses: pascalgn/automerge-action@7961b8b5eec56cc088c140b56d864285eabd3f67 # v0.16.4
+        if: steps.wait-for-ci.outputs.conclusion == 'success'
+        env:
+          MERGE_LABELS: automerge
+          UPDATE_LABELS: automerge
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
+          MERGE_DELETE_BRANCH: true
+          MERGE_METHOD: squash

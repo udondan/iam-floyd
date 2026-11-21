@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "detective:*",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:ArchiveFindings"
+      ],
+      "Resource": "arn:aws:guardduty:*:*:detector/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:GetFindings",
+        "guardduty:ListDetectors"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "securityHub:GetFindings"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageMarketplaceDeploymentSecrets",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:RemoveRegionsFromReplication"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:marketplace-deployment*!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListSecrets",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:ListSecrets"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "TagMarketplaceDeploymentSecrets",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:marketplace-deployment!*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/expirationDate": "false"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "expirationDate"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

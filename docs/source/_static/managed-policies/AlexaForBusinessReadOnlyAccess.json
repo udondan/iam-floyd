@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:Get*",
+        "a4b:List*",
+        "a4b:Search*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "filename": "polly",
+  "className": "Polly",
+  "name": "polly",
+  "servicePrefix": "polly",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_polly.html",
+  "accessLevelList": {
+    "Write": [
+      "DeleteLexicon",
+      "PutLexicon",
+      "StartSpeechSynthesisTask",
+      "TagResource",
+      "UntagResource"
+    ],
+    "List": [
+      "DescribeVoices",
+      "ListLexicons",
+      "ListSpeechSynthesisTasks"
+    ],
+    "Read": [
+      "GetLexicon",
+      "GetSpeechSynthesisTask",
+      "ListTagsForResource",
+      "StartSpeechSynthesisStream",
+      "SynthesizeSpeech"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "DeleteLexicon",
+      "methodName": "toDeleteLexicon",
+      "description": "Grants permission to delete the specified pronunciation lexicon stored in an AWS Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_DeleteLexicon.html"
+    },
+    {
+      "name": "DescribeVoices",
+      "methodName": "toDescribeVoices",
+      "description": "Grants permission to describe the list of voices that are available for use when requesting speech synthesis",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_DescribeVoices.html"
+    },
+    {
+      "name": "GetLexicon",
+      "methodName": "toGetLexicon",
+      "description": "Grants permission to retrieve the content of the specified pronunciation lexicon stored in an AWS Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_GetLexicon.html"
+    },
+    {
+      "name": "GetSpeechSynthesisTask",
+      "methodName": "toGetSpeechSynthesisTask",
+      "description": "Grants permission to get information about specific speech synthesis task",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_GetSpeechSynthesisTask.html"
+    },
+    {
+      "name": "ListLexicons",
+      "methodName": "toListLexicons",
+      "description": "Grants permission to list the pronunciation lexicons stored in an AWS Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_ListLexicons.html"
+    },
+    {
+      "name": "ListSpeechSynthesisTasks",
+      "methodName": "toListSpeechSynthesisTasks",
+      "description": "Grants permission to list requested speech synthesis tasks",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_ListSpeechSynthesisTasks.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags of a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutLexicon",
+      "methodName": "toPutLexicon",
+      "description": "Grants permission to store a pronunciation lexicon in an AWS Region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_PutLexicon.html"
+    },
+    {
+      "name": "StartSpeechSynthesisStream",
+      "methodName": "toStartSpeechSynthesisStream",
+      "description": "Grants permission to perform synthesis with bidirectional streaming",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_StartSpeechSynthesisStream.html"
+    },
+    {
+      "name": "StartSpeechSynthesisTask",
+      "methodName": "toStartSpeechSynthesisTask",
+      "description": "Grants permission to synthesize long inputs to the provided S3 location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_StartSpeechSynthesisTask.html"
+    },
+    {
+      "name": "SynthesizeSpeech",
+      "methodName": "toSynthesizeSpeech",
+      "description": "Grants permission to synthesize speech",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/polly/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "lexicon",
+      "methodName": "onLexicon",
+      "url": "https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html",
+      "arn": "arn:${Partition}:polly:${Region}:${Account}:lexicon/${LexiconName}",
+      "placeholders": [
+        {
+          "placeholder": "LexiconName",
+          "name": "lexiconName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_polly",
+        "interface": "ILexiconRef",
+        "property": "lexiconRef",
+        "arn": "lexiconArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toPutLexicon",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteLexicon",
+        "toGetLexicon",
+        "toListTagsForResource",
+        "toPutLexicon",
+        "toStartSpeechSynthesisStream",
+        "toStartSpeechSynthesisTask",
+        "toSynthesizeSpeech",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "lexicon"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toPutLexicon",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

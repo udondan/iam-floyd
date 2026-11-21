@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOnlyActions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "internetmonitor:GetHealthEvent",
+        "internetmonitor:GetInternetEvent",
+        "internetmonitor:GetMonitor",
+        "internetmonitor:GetQueryResults",
+        "internetmonitor:GetQueryStatus",
+        "internetmonitor:ListHealthEvents",
+        "internetmonitor:ListInternetEvents",
+        "internetmonitor:ListMonitors",
+        "internetmonitor:ListTagsForResource",
+        "internetmonitor:StartQuery",
+        "internetmonitor:StopQuery",
+        "logs:DescribeLogGroups",
+        "logs:GetQueryResults",
+        "logs:StartQuery",
+        "logs:StopQuery"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

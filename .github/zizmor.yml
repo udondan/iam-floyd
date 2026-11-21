@@ -1,0 +1,12 @@
+# First-party actions keep their version tags, everything else is pinned to a commit SHA.
+# The own actions (boarding-gate's reusable workflow, goproxy-gh-pages) are used by their major
+# tag, so every release reaches this repo without update PRs.
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "actions/*": ref-pin
+        "github/*": ref-pin
+        "udondan/boarding-gate/*": ref-pin
+        "udondan/goproxy-gh-pages/*": ref-pin
+        "*": hash-pin

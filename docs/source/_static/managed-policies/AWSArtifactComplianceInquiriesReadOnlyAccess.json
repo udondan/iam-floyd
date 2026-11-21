@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListComplianceInquiryActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:ListComplianceInquiries"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GetComplianceInquiryActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:GetComplianceInquiryMetadata",
+        "artifact:ListComplianceInquiryQueries",
+        "artifact:ExportComplianceInquiry"
+      ],
+      "Resource": "arn:aws:artifact:*:*:compliance-inquiry/*"
+    }
+  ]
+}

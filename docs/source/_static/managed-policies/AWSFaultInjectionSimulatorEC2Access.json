@@ -1,0 +1,67 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowEc2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RebootInstances",
+        "ec2:SendSpotInstanceInterruptions",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*"
+    },
+    {
+      "Sid": "AllowEc2InstancesWithEncryptedEbsVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": [
+        "arn:aws:kms:*:*:key/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "ec2.*.amazonaws.com"
+        },
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSSMSendOnEc2",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/*"
+      ]
+    },
+    {
+      "Sid": "AllowSSMStopOnEc2",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CancelCommand",
+        "ssm:ListCommands"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeInstances",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeSubnets",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeSubnets",
+      "Resource": "*"
+    }
+  ]
+}

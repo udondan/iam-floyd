@@ -1,0 +1,68 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MpaReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "mpa:Get*",
+        "mpa:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSOManagementAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeInstance",
+        "sso:ListInstances",
+        "sso:DescribeRegisteredRegions",
+        "sso:GetSharedSsoConfiguration",
+        "sso-directory:DescribeUsers",
+        "sso-directory:SearchUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityCenter",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:sso:instance-arn": "arn:*:sso:::instance/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityStore",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "arn:*:identitystore::*:identitystore/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

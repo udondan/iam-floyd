@@ -1,0 +1,100 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateVolumeAccessVolume",
+      "Effect": "Allow",
+      "Action": "ec2:CreateVolume",
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/AwsVssConfig": "*"
+        },
+        "ArnLike": {
+          "ec2:ParentSnapshot": "arn:aws:ec2:*:*:snapshot/*"
+        }
+      }
+    },
+    {
+      "Sid": "CreateVolumeAccessSnapshot",
+      "Effect": "Allow",
+      "Action": "ec2:CreateVolume",
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AwsVssConfig": "*"
+        }
+      }
+    },
+    {
+      "Sid": "CreateVolumeWithTagging",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVolume"
+        }
+      }
+    },
+    {
+      "Sid": "AttachVolumeAccessVolume",
+      "Effect": "Allow",
+      "Action": "ec2:AttachVolume",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AwsVssConfig": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AttachVolumeAccessInstance",
+      "Effect": "Allow",
+      "Action": "ec2:AttachVolume",
+      "Resource": "arn:aws:ec2:*:*:instance/*"
+    },
+    {
+      "Sid": "DescribeVolumes",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeVolumes",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeSnapshots",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeSnapshots",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeInstanceAttribute",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstanceAttribute",
+      "Resource": "arn:aws:ec2:*:*:instance/*"
+    },
+    {
+      "Sid": "SsmAutomationRead",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeInstanceInformation",
+        "ssm:ListCommandInvocations",
+        "ssm:ListCommands"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SsmRunCommand",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:GetDocument"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/AWS-ConfigureAWSPackage",
+        "arn:aws:ssm:*:*:document/AWSEC2-PrepareVssRestore",
+        "arn:aws:ssm:*:*:document/AWSEC2-RunVssRestoreForSqlDatabase"
+      ]
+    }
+  ]
+}

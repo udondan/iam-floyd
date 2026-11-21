@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "honeycode:List*",
+        "honeycode:Get*",
+        "honeycode:Describe*",
+        "honeycode:Query*"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}

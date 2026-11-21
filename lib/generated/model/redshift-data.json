@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "filename": "redshift-data",
+  "className": "RedshiftData",
+  "name": "redshift-data",
+  "servicePrefix": "redshift-data",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_redshift-data.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchExecuteStatement",
+      "CancelStatement",
+      "ExecuteStatement"
+    ],
+    "Read": [
+      "DescribeStatement",
+      "DescribeTable",
+      "GetStagingBucketLocation",
+      "GetStatementResult",
+      "ListDatabases",
+      "ListSchemas"
+    ],
+    "List": [
+      "ListSessions",
+      "ListStatements",
+      "ListTables"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchExecuteStatement",
+      "methodName": "toBatchExecuteStatement",
+      "description": "Grants permission to execute multiple queries under a single connection",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html"
+    },
+    {
+      "name": "CancelStatement",
+      "methodName": "toCancelStatement",
+      "description": "Grants permission to cancel a running query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_CancelStatement.html",
+      "conditionMethods": [
+        "ifStatementOwnerIamUserid"
+      ]
+    },
+    {
+      "name": "DescribeStatement",
+      "methodName": "toDescribeStatement",
+      "description": "Grants permission to retrieve detailed information about a statement execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeStatement.html",
+      "conditionMethods": [
+        "ifStatementOwnerIamUserid"
+      ]
+    },
+    {
+      "name": "DescribeTable",
+      "methodName": "toDescribeTable",
+      "description": "Grants permission to retrieve metadata about a particular table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html"
+    },
+    {
+      "name": "ExecuteStatement",
+      "methodName": "toExecuteStatement",
+      "description": "Grants permission to execute a query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html"
+    },
+    {
+      "name": "GetStagingBucketLocation",
+      "methodName": "toGetStagingBucketLocation",
+      "description": "Grants permission to get staging bucket location for a given managed workgroup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStagingBucketLocation.html"
+    },
+    {
+      "name": "GetStatementResult",
+      "methodName": "toGetStatementResult",
+      "description": "Grants permission to fetch the result of a query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html",
+      "conditionMethods": [
+        "ifStatementOwnerIamUserid"
+      ]
+    },
+    {
+      "name": "ListDatabases",
+      "methodName": "toListDatabases",
+      "description": "Grants permission to list databases for a given cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html"
+    },
+    {
+      "name": "ListSchemas",
+      "methodName": "toListSchemas",
+      "description": "Grants permission to list schemas for a given cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list sessions for a given principal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSessions.html",
+      "conditionMethods": [
+        "ifSessionOwnerIamUserid"
+      ]
+    },
+    {
+      "name": "ListStatements",
+      "methodName": "toListStatements",
+      "description": "Grants permission to list queries for a given principal",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListStatements.html",
+      "conditionMethods": [
+        "ifStatementOwnerIamUserid"
+      ]
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to list tables for a given cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cluster",
+      "methodName": "onCluster",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "managed-workgroup",
+      "methodName": "onManagedWorkgroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html",
+      "arn": "arn:${Partition}:redshift-serverless:${Region}:${Account}:managed-workgroup/${ManagedWorkgroupId}",
+      "placeholders": [
+        {
+          "placeholder": "ManagedWorkgroupId",
+          "name": "managedWorkgroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "workgroup",
+      "methodName": "onWorkgroup",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html",
+      "arn": "arn:${Partition}:redshift-serverless:${Region}:${Account}:workgroup/${WorkgroupId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkgroupId",
+          "name": "workgroupId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toBatchExecuteStatement",
+        "toDescribeTable",
+        "toExecuteStatement",
+        "toListDatabases",
+        "toListSchemas",
+        "toListTables"
+      ],
+      "relatedResourceTypes": [
+        "cluster",
+        "workgroup"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift-data:glue-catalog-arn",
+      "methodName": "ifGlueCatalogArn",
+      "description": "Filters access by glue catalog arn",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toBatchExecuteStatement",
+        "toExecuteStatement"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "glue-catalog-arn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "redshift-data:session-owner-iam-userid",
+      "methodName": "ifSessionOwnerIamUserid",
+      "description": "Filters access by session owner iam userid",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toBatchExecuteStatement",
+        "toExecuteStatement",
+        "toListSessions"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "session-owner-iam-userid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "redshift-data:statement-owner-iam-userid",
+      "methodName": "ifStatementOwnerIamUserid",
+      "description": "Filters access by statement owner iam userid",
+      "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions",
+      "relatedActionMethods": [
+        "toCancelStatement",
+        "toDescribeStatement",
+        "toGetStatementResult",
+        "toListStatements"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "statement-owner-iam-userid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

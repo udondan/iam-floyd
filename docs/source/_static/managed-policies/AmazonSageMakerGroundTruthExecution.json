@@ -1,0 +1,147 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CustomLabelingJobs",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:*GtRecipe*",
+        "arn:aws:lambda:*:*:function:*LabelingFunction*",
+        "arn:aws:lambda:*:*:function:*SageMaker*",
+        "arn:aws:lambda:*:*:function:*sagemaker*",
+        "arn:aws:lambda:*:*:function:*Sagemaker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:AbortMultipartUpload",
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*GroundTruth*",
+        "arn:aws:s3:::*Groundtruth*",
+        "arn:aws:s3:::*groundtruth*",
+        "arn:aws:s3:::*SageMaker*",
+        "arn:aws:s3:::*Sagemaker*",
+        "arn:aws:s3:::*sagemaker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "s3:ExistingObjectTag/SageMaker": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData",
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "StreamingQueue",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:CreateQueue",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:ReceiveMessage",
+        "sqs:SendMessage",
+        "sqs:SetQueueAttributes"
+      ],
+      "Resource": "arn:aws:sqs:*:*:*GroundTruth*"
+    },
+    {
+      "Sid": "StreamingTopicSubscribe",
+      "Effect": "Allow",
+      "Action": "sns:Subscribe",
+      "Resource": [
+        "arn:aws:sns:*:*:*GroundTruth*",
+        "arn:aws:sns:*:*:*Groundtruth*",
+        "arn:aws:sns:*:*:*groundTruth*",
+        "arn:aws:sns:*:*:*groundtruth*",
+        "arn:aws:sns:*:*:*SageMaker*",
+        "arn:aws:sns:*:*:*Sagemaker*",
+        "arn:aws:sns:*:*:*sageMaker*",
+        "arn:aws:sns:*:*:*sagemaker*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "sns:Protocol": "sqs"
+        },
+        "StringLike": {
+          "sns:Endpoint": "arn:aws:sqs:*:*:*GroundTruth*"
+        }
+      }
+    },
+    {
+      "Sid": "StreamingTopic",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Resource": [
+        "arn:aws:sns:*:*:*GroundTruth*",
+        "arn:aws:sns:*:*:*Groundtruth*",
+        "arn:aws:sns:*:*:*groundTruth*",
+        "arn:aws:sns:*:*:*groundtruth*",
+        "arn:aws:sns:*:*:*SageMaker*",
+        "arn:aws:sns:*:*:*Sagemaker*",
+        "arn:aws:sns:*:*:*sageMaker*",
+        "arn:aws:sns:*:*:*sagemaker*"
+      ]
+    },
+    {
+      "Sid": "StreamingTopicUnsubscribe",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Unsubscribe"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "WorkforceVPC",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DeleteVpcEndpoints"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "ec2:VpceServiceName": [
+            "*sagemaker-task-resources*",
+            "aws.sagemaker*labeling*"
+          ]
+        }
+      }
+    }
+  ]
+}

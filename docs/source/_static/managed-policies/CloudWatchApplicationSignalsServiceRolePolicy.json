@@ -1,0 +1,128 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "XRayPermission",
+      "Effect": "Allow",
+      "Action": [
+        "xray:GetServiceGraph"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CWLogsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StartQuery",
+        "logs:GetQueryResults"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/appsignals/*:*",
+        "arn:aws:logs:*:*:log-group:/aws/application-signals/data:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CWListMetricsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:ListMetrics"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CWGetMetricDataPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "TagsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ApplicationSignalsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "application-signals:ListServiceLevelObjectiveExclusionWindows",
+        "application-signals:GetServiceLevelObjective"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EC2AutoScalingPermission",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DescribeAutoScalingGroups"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ResourceExplorerReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:Search"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "CloudTrailServiceLinkedChannelCreationPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel"
+      ],
+      "Resource": [
+        "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+      ]
+    }
+  ]
+}

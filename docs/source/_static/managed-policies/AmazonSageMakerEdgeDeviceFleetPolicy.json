@@ -1,0 +1,73 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DeviceS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*SageMaker*",
+        "arn:aws:s3:::*Sagemaker*",
+        "arn:aws:s3:::*sagemaker*"
+      ]
+    },
+    {
+      "Sid": "SageMakerEdgeApis",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:SendHeartbeat",
+        "sagemaker:GetDeviceRegistration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateIoTRoleAlias",
+      "Effect": "Allow",
+      "Action": [
+        "iot:CreateRoleAlias",
+        "iot:DescribeRoleAlias",
+        "iot:UpdateRoleAlias",
+        "iot:ListTagsForResource",
+        "iot:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:iot:*:*:rolealias/SageMakerEdge*"
+      ]
+    },
+    {
+      "Sid": "CreateIoTRoleAliasIamPermissionsGetRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/*SageMaker*",
+        "arn:aws:iam::*:role/*Sagemaker*",
+        "arn:aws:iam::*:role/*sagemaker*"
+      ]
+    },
+    {
+      "Sid": "CreateIoTRoleAliasIamPermissionsPassRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/*SageMaker*",
+        "arn:aws:iam::*:role/*Sagemaker*",
+        "arn:aws:iam::*:role/*sagemaker*"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "iam:PassedToService": [
+            "iot.amazonaws.com",
+            "credentials.iot.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "honeycode:GetScreenData",
+        "honeycode:InvokeScreenAutomation",
+        "honeycode:BatchCreateTableRows",
+        "honeycode:BatchDeleteTableRows",
+        "honeycode:BatchUpdateTableRows",
+        "honeycode:BatchUpsertTableRows",
+        "honeycode:DescribeTableDataImportJob",
+        "honeycode:ListTableColumns",
+        "honeycode:ListTableRows",
+        "honeycode:ListTables",
+        "honeycode:QueryTableRows",
+        "honeycode:StartTableDataImportJob"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}

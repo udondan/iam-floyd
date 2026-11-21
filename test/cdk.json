@@ -1,0 +1,4 @@
+{
+  "app": "bunx ts-node cdk.ts",
+  "progress": "events"
+}

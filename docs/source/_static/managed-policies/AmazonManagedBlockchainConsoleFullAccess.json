@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "managedblockchain:*",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:CreateVpcEndpoint",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

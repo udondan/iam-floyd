@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "elasticfilesystem:Backup",
+        "elasticfilesystem:DescribeTags"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
+      "Effect": "Allow",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:elasticfilesystem:default-backup": "enabled"
+        }
+      }
+    },
+    {
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}

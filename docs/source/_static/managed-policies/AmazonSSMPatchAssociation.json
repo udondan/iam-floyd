@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ssm:DescribeEffectivePatchesForPatchBaseline",
+      "Resource": "arn:aws:ssm:*:*:patchbaseline/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:GetPatchBaseline",
+      "Resource": "arn:aws:ssm:*:*:patchbaseline/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "tag:GetResources",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ssm:DescribePatchBaselines",
+      "Resource": "*"
+    }
+  ]
+}

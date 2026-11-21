@@ -1,0 +1,83 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowEC2DescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupRules",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowVpcGetActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:GetSecurityGroupsForVpc"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc/*"
+    },
+    {
+      "Sid": "AllowCreateNetworkInterfaceWithTag",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Service": "HealthOmics"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCreateNetworkInterfaceSubnetSecurityGroup",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "AllowCreateTags",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface"
+        }
+      }
+    },
+    {
+      "Sid": "AllowDeleteNetworkInterface",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Service": "HealthOmics"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAssignUnassignPrivateIpAddresses",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:UnassignPrivateIpAddresses"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Service": "HealthOmics"
+        }
+      }
+    }
+  ]
+}

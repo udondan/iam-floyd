@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 1,
+  "filename": "ssm-contacts",
+  "className": "SsmContacts",
+  "name": "ssm-contacts",
+  "servicePrefix": "ssm-contacts",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_ssm-contacts.html",
+  "accessLevelList": {
+    "Write": [
+      "AcceptPage",
+      "ActivateContactChannel",
+      "CreateContact",
+      "CreateContactChannel",
+      "CreateRotation",
+      "CreateRotationOverride",
+      "DeactivateContactChannel",
+      "DeleteContact",
+      "DeleteContactChannel",
+      "DeleteRotation",
+      "DeleteRotationOverride",
+      "PutContactPolicy",
+      "SendActivationCode",
+      "StartEngagement",
+      "StopEngagement",
+      "TagResource",
+      "UntagResource",
+      "UpdateContact",
+      "UpdateContactChannel",
+      "UpdateRotation",
+      "AssociateContact"
+    ],
+    "Read": [
+      "DescribeEngagement",
+      "DescribePage",
+      "GetContact",
+      "GetContactChannel",
+      "GetContactPolicy",
+      "GetRotation",
+      "GetRotationOverride",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListContactChannels",
+      "ListContacts",
+      "ListEngagements",
+      "ListPageReceipts",
+      "ListPageResolutions",
+      "ListPagesByContact",
+      "ListPagesByEngagement",
+      "ListPreviewRotationShifts",
+      "ListRotationOverrides",
+      "ListRotationShifts",
+      "ListRotations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ],
+    "Permissions management": [
+      "AssociateContact"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AcceptPage",
+      "methodName": "toAcceptPage",
+      "description": "Grants permission to accept a page",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_AcceptPage.html"
+    },
+    {
+      "name": "ActivateContactChannel",
+      "methodName": "toActivateContactChannel",
+      "description": "Grants permission to activate a contact's contact channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ActivateContactChannel.html"
+    },
+    {
+      "name": "CreateContact",
+      "methodName": "toCreateContact",
+      "description": "Grants permission to create a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_CreateContact.html"
+    },
+    {
+      "name": "CreateContactChannel",
+      "methodName": "toCreateContactChannel",
+      "description": "Grants permission to create a contact channel for a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_CreateContactChannel.html"
+    },
+    {
+      "name": "CreateRotation",
+      "methodName": "toCreateRotation",
+      "description": "Grants permission to create a rotation in an on-call schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_CreateRotation.html"
+    },
+    {
+      "name": "CreateRotationOverride",
+      "methodName": "toCreateRotationOverride",
+      "description": "Grants permission to create an override for a rotation in an on-call schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_CreateRotationOverride.html"
+    },
+    {
+      "name": "DeactivateContactChannel",
+      "methodName": "toDeactivateContactChannel",
+      "description": "Grants permission to deactivate a contact's contact channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeactivateContactChannel.html"
+    },
+    {
+      "name": "DeleteContact",
+      "methodName": "toDeleteContact",
+      "description": "Grants permission to delete a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteContact.html"
+    },
+    {
+      "name": "DeleteContactChannel",
+      "methodName": "toDeleteContactChannel",
+      "description": "Grants permission to delete a contact's contact channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteContactChannel.html"
+    },
+    {
+      "name": "DeleteRotation",
+      "methodName": "toDeleteRotation",
+      "description": "Grants permission to delete a rotation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteRotation.html"
+    },
+    {
+      "name": "DeleteRotationOverride",
+      "methodName": "toDeleteRotationOverride",
+      "description": "Grants permission to delete a rotation's rotation override",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DeleteRotationOverride.html"
+    },
+    {
+      "name": "DescribeEngagement",
+      "methodName": "toDescribeEngagement",
+      "description": "Grants permission to describe an engagement",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DescribeEngagement.html"
+    },
+    {
+      "name": "DescribePage",
+      "methodName": "toDescribePage",
+      "description": "Grants permission to describe a page",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_DescribePage.html"
+    },
+    {
+      "name": "GetContact",
+      "methodName": "toGetContact",
+      "description": "Grants permission to get a contact",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetContact.html"
+    },
+    {
+      "name": "GetContactChannel",
+      "methodName": "toGetContactChannel",
+      "description": "Grants permission to get a contact's contact channel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetContactChannel.html"
+    },
+    {
+      "name": "GetContactPolicy",
+      "methodName": "toGetContactPolicy",
+      "description": "Grants permission to get a contact's resource policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetContactPolicy.html"
+    },
+    {
+      "name": "GetRotation",
+      "methodName": "toGetRotation",
+      "description": "Grants permission to retrieve information about an on-call rotation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetRotation.html"
+    },
+    {
+      "name": "GetRotationOverride",
+      "methodName": "toGetRotationOverride",
+      "description": "Grants permission to retrieve information about an override in an on-call rotation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_GetRotationOverride.html"
+    },
+    {
+      "name": "ListContactChannels",
+      "methodName": "toListContactChannels",
+      "description": "Grants permission to list all of a contact's contact channels",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListContactChannels.html"
+    },
+    {
+      "name": "ListContacts",
+      "methodName": "toListContacts",
+      "description": "Grants permission to list all contacts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListContacts.html"
+    },
+    {
+      "name": "ListEngagements",
+      "methodName": "toListEngagements",
+      "description": "Grants permission to list all engagements",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListEngagements.html"
+    },
+    {
+      "name": "ListPageReceipts",
+      "methodName": "toListPageReceipts",
+      "description": "Grants permission to list all receipts of a page",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPageReceipts.html"
+    },
+    {
+      "name": "ListPageResolutions",
+      "methodName": "toListPageResolutions",
+      "description": "Grants permission to list the resolution path of an engagement",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPageResolutions.html"
+    },
+    {
+      "name": "ListPagesByContact",
+      "methodName": "toListPagesByContact",
+      "description": "Grants permission to list all pages sent to a contact",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPagesByContact.html"
+    },
+    {
+      "name": "ListPagesByEngagement",
+      "methodName": "toListPagesByEngagement",
+      "description": "Grants permission to list all pages created in an engagement",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPagesByEngagement.html"
+    },
+    {
+      "name": "ListPreviewRotationShifts",
+      "methodName": "toListPreviewRotationShifts",
+      "description": "Grants permission to retrieve a list of shifts based on rotation configuration parameters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListPreviewRotationShifts.html"
+    },
+    {
+      "name": "ListRotationOverrides",
+      "methodName": "toListRotationOverrides",
+      "description": "Grants permission to retrieve a list of overrides currently specified for an on-call rotation",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListRotationOverrides.html"
+    },
+    {
+      "name": "ListRotationShifts",
+      "methodName": "toListRotationShifts",
+      "description": "Grants permission to retrieve a list of rotation shifts in an on-call schedule",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListRotationShifts.html"
+    },
+    {
+      "name": "ListRotations",
+      "methodName": "toListRotations",
+      "description": "Grants permission to retrieve a list of on-call rotations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListRotations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view a list of resource tags for a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListTagsForResource.html"
+    },
+    {
+      "name": "PutContactPolicy",
+      "methodName": "toPutContactPolicy",
+      "description": "Grants permission to add a resource policy to a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_PutContactPolicy.html"
+    },
+    {
+      "name": "SendActivationCode",
+      "methodName": "toSendActivationCode",
+      "description": "Grants permission to send the activation code of a contact's contact channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_SendActivationCode.html"
+    },
+    {
+      "name": "StartEngagement",
+      "methodName": "toStartEngagement",
+      "description": "Grants permission to start an engagement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_StartEngagement.html"
+    },
+    {
+      "name": "StopEngagement",
+      "methodName": "toStopEngagement",
+      "description": "Grants permission to stop an engagement",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_StopEngagement.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UntagResource.html"
+    },
+    {
+      "name": "UpdateContact",
+      "methodName": "toUpdateContact",
+      "description": "Grants permission to update a contact",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateContact.html"
+    },
+    {
+      "name": "UpdateContactChannel",
+      "methodName": "toUpdateContactChannel",
+      "description": "Grants permission to update a contact's contact channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateContactChannel.html"
+    },
+    {
+      "name": "UpdateRotation",
+      "methodName": "toUpdateRotation",
+      "description": "Grants permission to update the information specified for an on-call rotation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_UpdateRotation.html"
+    },
+    {
+      "name": "AssociateContact",
+      "methodName": "toAssociateContact",
+      "description": "Grants permission to use a contact in an escalation plan",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "contact",
+      "methodName": "onContact",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:contact/${ContactAlias}",
+      "placeholders": [
+        {
+          "placeholder": "ContactAlias",
+          "name": "contactAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ssmcontacts",
+        "interface": "IContactRef",
+        "property": "contactRef",
+        "arn": "contactArn"
+      }
+    },
+    {
+      "name": "contactchannel",
+      "methodName": "onContactchannel",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:contactchannel/${ContactAlias}/${ContactChannelId}",
+      "placeholders": [
+        {
+          "placeholder": "ContactAlias",
+          "name": "contactAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ContactChannelId",
+          "name": "contactChannelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "engagement",
+      "methodName": "onEngagement",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/escalation.html",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:engagement/${ContactAlias}/${EngagementId}",
+      "placeholders": [
+        {
+          "placeholder": "ContactAlias",
+          "name": "contactAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EngagementId",
+          "name": "engagementId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "page",
+      "methodName": "onPage",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/escalation.html",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:page/${ContactAlias}/${PageId}",
+      "placeholders": [
+        {
+          "placeholder": "ContactAlias",
+          "name": "contactAlias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PageId",
+          "name": "pageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "rotation",
+      "methodName": "onRotation",
+      "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-on-call-schedule.html",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:rotation/${RotationId}",
+      "placeholders": [
+        {
+          "placeholder": "RotationId",
+          "name": "rotationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_ssmcontacts",
+        "interface": "IRotationRef",
+        "property": "rotationRef",
+        "arn": "rotationArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateContact",
+        "toCreateRotation",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateContact",
+        "toCreateContactChannel",
+        "toCreateRotation",
+        "toCreateRotationOverride",
+        "toDeleteContact",
+        "toDeleteRotation",
+        "toDeleteRotationOverride",
+        "toGetContact",
+        "toGetContactPolicy",
+        "toGetRotation",
+        "toGetRotationOverride",
+        "toListContactChannels",
+        "toListPagesByContact",
+        "toListRotationOverrides",
+        "toListRotationShifts",
+        "toListTagsForResource",
+        "toPutContactPolicy",
+        "toStartEngagement",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateContact",
+        "toUpdateRotation",
+        "toAssociateContact"
+      ],
+      "relatedResourceTypes": [
+        "contact",
+        "rotation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateContact",
+        "toCreateRotation",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

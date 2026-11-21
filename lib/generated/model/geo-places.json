@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "filename": "geo-places",
+  "className": "GeoPlaces",
+  "name": "geo-places",
+  "servicePrefix": "geo-places",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_geo-places.html",
+  "accessLevelList": {
+    "Read": [
+      "Autocomplete",
+      "Geocode",
+      "GetPlace",
+      "ReverseGeocode",
+      "SearchNearby",
+      "SearchText",
+      "Suggest"
+    ]
+  },
+  "actions": [
+    {
+      "name": "Autocomplete",
+      "methodName": "toAutocomplete",
+      "description": "Grants permission to autocomplete text input with potential places and addresses as the user types",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_Autocomplete.html"
+    },
+    {
+      "name": "Geocode",
+      "methodName": "toGeocode",
+      "description": "Grants permission to geocode a textual address or place into geographic coordinates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_Geocode.html"
+    },
+    {
+      "name": "GetPlace",
+      "methodName": "toGetPlace",
+      "description": "Grants permission to query a place by it's unqiue place ID",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_GetPlace.html"
+    },
+    {
+      "name": "ReverseGeocode",
+      "methodName": "toReverseGeocode",
+      "description": "Grants permission to convert geographic coordinates into a human-readable address or place",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_ReverseGeocode.html"
+    },
+    {
+      "name": "SearchNearby",
+      "methodName": "toSearchNearby",
+      "description": "Grants permission to retrieve places near a position which match to a set of user defined restrictions such as category or food type offered by the place",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchNearby.html"
+    },
+    {
+      "name": "SearchText",
+      "methodName": "toSearchText",
+      "description": "Grants permission to query for places using a single free-form text input",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html"
+    },
+    {
+      "name": "Suggest",
+      "methodName": "toSuggest",
+      "description": "Grants permission to suggest potential places based on the user's input",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_Suggest.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "provider",
+      "methodName": "onProvider",
+      "url": "https://docs.aws.amazon.com/location/latest/developerguide/Welcome.html",
+      "arn": "arn:${Partition}:geo-places:${Region}::provider/default",
+      "placeholders": [
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ppmglobalactions",
+      "Effect": "Allow",
+      "Action": [
+        "pricingplanmanager:ListSubscriptions",
+        "pricingplanmanager:GetSubscription"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "filename": "medical-imaging",
+  "className": "MedicalImaging",
+  "name": "medical-imaging",
+  "servicePrefix": "medical-imaging",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_medical-imaging.html",
+  "accessLevelList": {
+    "Write": [
+      "CopyImageSet",
+      "CreateDatastore",
+      "DeleteDatastore",
+      "DeleteImageSet",
+      "StartDICOMImportJob",
+      "StoreDICOM",
+      "StoreDICOMStudy",
+      "TagResource",
+      "UntagResource",
+      "UpdateImageSetMetadata"
+    ],
+    "Read": [
+      "GetDICOMBulkdata",
+      "GetDICOMImportJob",
+      "GetDICOMInstance",
+      "GetDICOMInstanceFrames",
+      "GetDICOMInstanceMetadata",
+      "GetDICOMSeriesMetadata",
+      "GetDatastore",
+      "GetImageFrame",
+      "GetImageSet",
+      "GetImageSetMetadata",
+      "SearchDICOMInstances",
+      "SearchDICOMSeries",
+      "SearchDICOMStudies",
+      "SearchImageSets"
+    ],
+    "List": [
+      "ListDICOMImportJobs",
+      "ListDatastores",
+      "ListImageSetVersions",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CopyImageSet",
+      "methodName": "toCopyImageSet",
+      "description": "Grants permission to copy an image set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_CopyImageSet.html"
+    },
+    {
+      "name": "CreateDatastore",
+      "methodName": "toCreateDatastore",
+      "description": "Grants permission to create a data store to ingest imaging data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_CreateDatastore.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteDatastore",
+      "methodName": "toDeleteDatastore",
+      "description": "Grants permission to delete a data store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_DeleteDatastore.html"
+    },
+    {
+      "name": "DeleteImageSet",
+      "methodName": "toDeleteImageSet",
+      "description": "Grants permission to delete an image set",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_DeleteImageSet.html"
+    },
+    {
+      "name": "GetDICOMBulkdata",
+      "methodName": "toGetDICOMBulkdata",
+      "description": "Grants permission to get dicom bulkdata in binary format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMBulkdata.html"
+    },
+    {
+      "name": "GetDICOMImportJob",
+      "methodName": "toGetDICOMImportJob",
+      "description": "Grants permission to get an import job's properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetDICOMImportJob.html"
+    },
+    {
+      "name": "GetDICOMInstance",
+      "methodName": "toGetDICOMInstance",
+      "description": "Grants permission to get dicom instance in dcm format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstance.html"
+    },
+    {
+      "name": "GetDICOMInstanceFrames",
+      "methodName": "toGetDICOMInstanceFrames",
+      "description": "Grants permission to get dicom instance frames in format requested by the customer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceFrames.html"
+    },
+    {
+      "name": "GetDICOMInstanceMetadata",
+      "methodName": "toGetDICOMInstanceMetadata",
+      "description": "Grants permission to get dicom instance metadata in DICOM JSON format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceMetadata.html"
+    },
+    {
+      "name": "GetDICOMSeriesMetadata",
+      "methodName": "toGetDICOMSeriesMetadata",
+      "description": "Grants permission to retrieve metadata for all DICOM instances belonging to a given DICOM series in DICOM JSON format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMSeriesMetadata.html"
+    },
+    {
+      "name": "GetDatastore",
+      "methodName": "toGetDatastore",
+      "description": "Grants permission to get data store properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetDatastore.html"
+    },
+    {
+      "name": "GetImageFrame",
+      "methodName": "toGetImageFrame",
+      "description": "Grants permission to get image frame properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_GetImageFrame.html"
+    },
+    {
+      "name": "GetImageSet",
+      "methodName": "toGetImageSet",
+      "description": "Grants permission to get image set properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_GetImageSet.html"
+    },
+    {
+      "name": "GetImageSetMetadata",
+      "methodName": "toGetImageSetMetadata",
+      "description": "Grants permission to get image set metadata properties",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_GetImageSetMetadata.html"
+    },
+    {
+      "name": "ListDICOMImportJobs",
+      "methodName": "toListDICOMImportJobs",
+      "description": "Grants permission to list import jobs for a data store",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListDICOMImportJobs.html"
+    },
+    {
+      "name": "ListDatastores",
+      "methodName": "toListDatastores",
+      "description": "Grants permission to list data stores",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListDatastores.html"
+    },
+    {
+      "name": "ListImageSetVersions",
+      "methodName": "toListImageSetVersions",
+      "description": "Grants permission to list versions of an image set",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_ListImageSetVersions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a medical imaging resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "SearchDICOMInstances",
+      "methodName": "toSearchDICOMInstances",
+      "description": "Grants permission to search dicom instances that returns data in DICOM JSON format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMInstances.html"
+    },
+    {
+      "name": "SearchDICOMSeries",
+      "methodName": "toSearchDICOMSeries",
+      "description": "Grants permission to search dicom series that returns data in DICOM JSON format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMSeries.html"
+    },
+    {
+      "name": "SearchDICOMStudies",
+      "methodName": "toSearchDICOMStudies",
+      "description": "Grants permission to search dicom studies that returns data in DICOM JSON format",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMStudies.html"
+    },
+    {
+      "name": "SearchImageSets",
+      "methodName": "toSearchImageSets",
+      "description": "Grants permission to search image sets",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_SearchImageSets.html"
+    },
+    {
+      "name": "StartDICOMImportJob",
+      "methodName": "toStartDICOMImportJob",
+      "description": "Grants permission to start a DICOM import job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_StartDICOMImportJob.html"
+    },
+    {
+      "name": "StoreDICOM",
+      "methodName": "toStoreDICOM",
+      "description": "Grants permission to store dicom instances that returns result in DICOM JSON format",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOM.html"
+    },
+    {
+      "name": "StoreDICOMStudy",
+      "methodName": "toStoreDICOMStudy",
+      "description": "Grants permission to store a dicom study that returns result in DICOM JSON format",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOMStudy.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a medical imaging resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a medical imaging resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateImageSetMetadata",
+      "methodName": "toUpdateImageSetMetadata",
+      "description": "Grants permission to update image set metadata properties",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_UpdateImageSetMetadata.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "datastore",
+      "methodName": "onDatastore",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/devguide/API_DatastoreProperties.html",
+      "arn": "arn:${Partition}:medical-imaging:${Region}:${Account}:datastore/${DatastoreId}",
+      "placeholders": [
+        {
+          "placeholder": "DatastoreId",
+          "name": "datastoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_healthimaging",
+        "interface": "IDatastoreRef",
+        "property": "datastoreRef",
+        "arn": "datastoreArn"
+      }
+    },
+    {
+      "name": "imageset",
+      "methodName": "onImageset",
+      "url": "https://docs.aws.amazon.com/healthimaging/latest/devguide/API_ImageSetProperties.html",
+      "arn": "arn:${Partition}:medical-imaging:${Region}:${Account}:datastore/${DatastoreId}/imageset/${ImageSetId}",
+      "placeholders": [
+        {
+          "placeholder": "DatastoreId",
+          "name": "datastoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImageSetId",
+          "name": "imageSetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDatastore",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCopyImageSet",
+        "toDeleteDatastore",
+        "toDeleteImageSet",
+        "toGetDICOMBulkdata",
+        "toGetDICOMImportJob",
+        "toGetDICOMInstance",
+        "toGetDICOMInstanceFrames",
+        "toGetDICOMInstanceMetadata",
+        "toGetDICOMSeriesMetadata",
+        "toGetDatastore",
+        "toGetImageFrame",
+        "toGetImageSet",
+        "toGetImageSetMetadata",
+        "toListDICOMImportJobs",
+        "toListImageSetVersions",
+        "toListTagsForResource",
+        "toSearchDICOMInstances",
+        "toSearchDICOMSeries",
+        "toSearchDICOMStudies",
+        "toSearchImageSets",
+        "toStartDICOMImportJob",
+        "toStoreDICOM",
+        "toStoreDICOMStudy",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateImageSetMetadata"
+      ],
+      "relatedResourceTypes": [
+        "datastore",
+        "imageset"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDatastore",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "medical-imaging:SeriesInstanceUID",
+      "methodName": "ifSeriesInstanceUID",
+      "description": "Filters access by the SeriesInstanceUID parameter in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-policy-keys",
+      "relatedActionMethods": [
+        "toGetDICOMBulkdata",
+        "toGetDICOMInstance",
+        "toGetDICOMInstanceFrames",
+        "toGetDICOMInstanceMetadata",
+        "toGetDICOMSeriesMetadata",
+        "toSearchDICOMInstances"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SeriesInstanceUID",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "medical-imaging:StudyInstanceUID",
+      "methodName": "ifStudyInstanceUID",
+      "description": "Filters access by the StudyInstanceUID parameter in the request",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-policy-keys",
+      "relatedActionMethods": [
+        "toGetDICOMBulkdata",
+        "toGetDICOMInstance",
+        "toGetDICOMInstanceFrames",
+        "toGetDICOMInstanceMetadata",
+        "toGetDICOMSeriesMetadata",
+        "toSearchDICOMInstances",
+        "toSearchDICOMSeries",
+        "toStoreDICOMStudy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "StudyInstanceUID",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

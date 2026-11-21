@@ -1,0 +1,113 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:ListStreams"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeStream",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem",
+        "dynamodb:UpdateTable"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:*:*:table/DeadlineEC2ComputeNodeHealth*",
+        "arn:aws:dynamodb:*:*:table/DeadlineEC2ComputeNodeInfo*",
+        "arn:aws:dynamodb:*:*:table/DeadlineFleetHealth*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CancelSpotFleetRequests",
+        "ec2:DeleteFleets",
+        "ec2:DescribeFleetInstances",
+        "ec2:DescribeFleets",
+        "ec2:DescribeInstances",
+        "ec2:DescribeSpotFleetInstances",
+        "ec2:DescribeSpotFleetRequests"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RebootInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/DeadlineTrackedAWSResource": "*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:PutEvents"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:event-bus/default"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:DeadlineResourceTracker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/lambda/DeadlineResourceTracker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes",
+        "sqs:ReceiveMessage"
+      ],
+      "Resource": [
+        "arn:aws:sqs:*:*:DeadlineAWSComputeNodeStateMessageQueue*"
+      ]
+    }
+  ]
+}

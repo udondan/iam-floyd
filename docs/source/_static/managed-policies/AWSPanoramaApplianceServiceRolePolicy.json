@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PanoramaDeviceCreateLogStream",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/panorama_device*:log-stream:*",
+        "arn:aws:logs:*:*:log-group:/aws/panorama/devices/*"
+      ]
+    },
+    {
+      "Sid": "PanoramaDeviceCreateLogGroup",
+      "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/panorama_device*",
+        "arn:aws:logs:*:*:log-group:/aws/panorama/devices/*"
+      ]
+    },
+    {
+      "Sid": "PanoramaDevicePutMetric",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "PanoramaDeviceMetrics"
+        }
+      }
+    },
+    {
+      "Sid": "PanoramaDeviceS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:GetObjectVersion"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*-nodepackage-store-*",
+        "arn:aws:s3:::*-application-payload-store-*",
+        "arn:aws:s3:*:*:accesspoint/panorama*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "s3:DataAccessPointArn": "arn:aws:s3:*:*:accesspoint/panorama*"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "filename": "customer-verification",
+  "className": "CustomerVerification",
+  "name": "customer-verification",
+  "servicePrefix": "customer-verification",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_customer-verification.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateCustomerVerificationDetails",
+      "CreateUploadUrls",
+      "PutInheritanceConfig",
+      "UpdateCustomerVerificationDetails"
+    ],
+    "Read": [
+      "GetCustomerVerificationDetails",
+      "GetCustomerVerificationEligibility",
+      "GetInheritanceConfig"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateCustomerVerificationDetails",
+      "methodName": "toCreateCustomerVerificationDetails",
+      "description": "Grants permission to create customer verification data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "CreateUploadUrls",
+      "methodName": "toCreateUploadUrls",
+      "description": "Grants permission to create upload URLs",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetCustomerVerificationDetails",
+      "methodName": "toGetCustomerVerificationDetails",
+      "description": "Grants permission to get customer verification data",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetCustomerVerificationEligibility",
+      "methodName": "toGetCustomerVerificationEligibility",
+      "description": "Grants permission to get customer verification eligibility",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetInheritanceConfig",
+      "methodName": "toGetInheritanceConfig",
+      "description": "Grants permission to get inheritance configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "PutInheritanceConfig",
+      "methodName": "toPutInheritanceConfig",
+      "description": "Grants permission to put inheritance configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UpdateCustomerVerificationDetails",
+      "methodName": "toUpdateCustomerVerificationDetails",
+      "description": "Grants permission to update customer verification data",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

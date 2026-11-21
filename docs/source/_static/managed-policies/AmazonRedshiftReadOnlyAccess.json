@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRedshiftReadOnlyAccess",
+      "Action": [
+        "redshift:Describe*",
+        "redshift:ListRecommendations",
+        "redshift:ViewQueriesInConsole",
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeInternetGateways",
+        "sns:Get*",
+        "sns:List*",
+        "cloudwatch:Describe*",
+        "cloudwatch:List*",
+        "cloudwatch:Get*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/Name": "healthchecksource-*"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name"
+          ]
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": [
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:subnet/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface"
+        },
+        "StringLike": {
+          "aws:RequestTag/Name": "healthchecksource-*"
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:DeleteNetworkInterface",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/Name": "healthchecksource-*"
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

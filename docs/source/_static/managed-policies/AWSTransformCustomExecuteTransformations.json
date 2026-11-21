@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSTransformCustomExecuteTransformations",
+      "Effect": "Allow",
+      "Action": [
+        "transform-custom:ConverseStream",
+        "transform-custom:ExecuteTransformation",
+        "transform-custom:GetCampaign",
+        "transform-custom:UpdateCampaignRepositoryStatus",
+        "transform-custom:UpdateCampaign"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/transform-custom.amazonaws.com/AWSServiceRoleForAWSTransformCustom"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "transform-custom.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

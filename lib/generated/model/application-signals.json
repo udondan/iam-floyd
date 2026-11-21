@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "filename": "application-signals",
+  "className": "ApplicationSignals",
+  "name": "application-signals",
+  "servicePrefix": "application-signals",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-signals.html",
+  "accessLevelList": {
+    "Write": [
+      "BatchDeleteInstrumentationConfigurations",
+      "BatchUpdateExclusionWindows",
+      "CreateInstrumentationConfiguration",
+      "CreateServiceLevelObjective",
+      "DeleteGroupingConfiguration",
+      "DeleteInstrumentationConfiguration",
+      "DeleteServiceLevelObjective",
+      "PutGroupingConfiguration",
+      "ReportInstrumentationConfigurationStatus",
+      "StartDiscovery",
+      "TagResource",
+      "UntagResource",
+      "UpdateServiceLevelObjective",
+      "Link"
+    ],
+    "Read": [
+      "BatchGetServiceLevelObjectiveBudgetReport",
+      "GetInstrumentationConfiguration",
+      "GetInstrumentationConfigurationStatus",
+      "GetService",
+      "GetServiceLevelObjective",
+      "ListServiceDependencies",
+      "ListServiceDependents",
+      "ListServiceOperations",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAuditFindings",
+      "ListEntityEvents",
+      "ListGroupingAttributeDefinitions",
+      "ListInstrumentationConfigurations",
+      "ListObservedEntities",
+      "ListServiceLevelObjectiveExclusionWindows",
+      "ListServiceLevelObjectives",
+      "ListServiceStates",
+      "ListServices"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchDeleteInstrumentationConfigurations",
+      "methodName": "toBatchDeleteInstrumentationConfigurations",
+      "description": "Grants permission to batch delete instrumentation configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_BatchDeleteInstrumentationConfigurations.html"
+    },
+    {
+      "name": "BatchGetServiceLevelObjectiveBudgetReport",
+      "methodName": "toBatchGetServiceLevelObjectiveBudgetReport",
+      "description": "Grants permission to batch retrieve a service level objective budget report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_BatchGetServiceLevelObjectiveBudgetReport.html"
+    },
+    {
+      "name": "BatchUpdateExclusionWindows",
+      "methodName": "toBatchUpdateExclusionWindows",
+      "description": "Grants permission to add or remove exclusion windows from Amazon CloudWatch SLOs",
+      "accessLevel": "Write",
+      "url": ""
+    },
+    {
+      "name": "CreateInstrumentationConfiguration",
+      "methodName": "toCreateInstrumentationConfiguration",
+      "description": "Grants permission to create an instrumentation configuration for dynamic instrumentation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_CreateInstrumentationConfiguration.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateServiceLevelObjective",
+      "methodName": "toCreateServiceLevelObjective",
+      "description": "Grants permission to create a service level objective",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_CreateServiceLevelObjective.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteGroupingConfiguration",
+      "methodName": "toDeleteGroupingConfiguration",
+      "description": "Grants permission to delete a grouping configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteGroupingConfiguration.html"
+    },
+    {
+      "name": "DeleteInstrumentationConfiguration",
+      "methodName": "toDeleteInstrumentationConfiguration",
+      "description": "Grants permission to delete an instrumentation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteInstrumentationConfiguration.html"
+    },
+    {
+      "name": "DeleteServiceLevelObjective",
+      "methodName": "toDeleteServiceLevelObjective",
+      "description": "Grants permission to delete a service level objective",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteServiceLevelObjective.html"
+    },
+    {
+      "name": "GetInstrumentationConfiguration",
+      "methodName": "toGetInstrumentationConfiguration",
+      "description": "Grants permission to retrieve an instrumentation configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfiguration.html"
+    },
+    {
+      "name": "GetInstrumentationConfigurationStatus",
+      "methodName": "toGetInstrumentationConfigurationStatus",
+      "description": "Grants permission to retrieve the status history of an instrumentation configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfigurationStatus.html"
+    },
+    {
+      "name": "GetService",
+      "methodName": "toGetService",
+      "description": "Grants permission to retrieve information about a service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetService.html"
+    },
+    {
+      "name": "GetServiceLevelObjective",
+      "methodName": "toGetServiceLevelObjective",
+      "description": "Grants permission to retrieve information about service level objective",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetServiceLevelObjective.html"
+    },
+    {
+      "name": "ListAuditFindings",
+      "methodName": "toListAuditFindings",
+      "description": "Grants permission to list service auditing results",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListAuditFindings.html"
+    },
+    {
+      "name": "ListEntityEvents",
+      "methodName": "toListEntityEvents",
+      "description": "Grants permission to list events for an entity",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListEntityEvents.html"
+    },
+    {
+      "name": "ListGroupingAttributeDefinitions",
+      "methodName": "toListGroupingAttributeDefinitions",
+      "description": "Grants permission to list grouping attribute configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListGroupingAttributeDefinitions.html"
+    },
+    {
+      "name": "ListInstrumentationConfigurations",
+      "methodName": "toListInstrumentationConfigurations",
+      "description": "Grants permission to list instrumentation configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListInstrumentationConfigurations.html"
+    },
+    {
+      "name": "ListObservedEntities",
+      "methodName": "toListObservedEntities",
+      "description": "Grants permission to list entities associated with other entities",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Application_Signals_Permissions.html"
+    },
+    {
+      "name": "ListServiceDependencies",
+      "methodName": "toListServiceDependencies",
+      "description": "Grants permission to list service dependencies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceDependencies.html"
+    },
+    {
+      "name": "ListServiceDependents",
+      "methodName": "toListServiceDependents",
+      "description": "Grants permission to list service dependents",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceDependents.html"
+    },
+    {
+      "name": "ListServiceLevelObjectiveExclusionWindows",
+      "methodName": "toListServiceLevelObjectiveExclusionWindows",
+      "description": "Grants permission to list exclusion windows for an Amazon CloudWatch SLO",
+      "accessLevel": "List",
+      "url": ""
+    },
+    {
+      "name": "ListServiceLevelObjectives",
+      "methodName": "toListServiceLevelObjectives",
+      "description": "Grants permission to list service level objectives",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceLevelObjectives.html"
+    },
+    {
+      "name": "ListServiceOperations",
+      "methodName": "toListServiceOperations",
+      "description": "Grants permission to list service operations",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceOperations.html"
+    },
+    {
+      "name": "ListServiceStates",
+      "methodName": "toListServiceStates",
+      "description": "Grants permission to list service states",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceStates.html"
+    },
+    {
+      "name": "ListServices",
+      "methodName": "toListServices",
+      "description": "Grants permission to list services",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServices.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an Amazon CloudWatch Application Signals resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutGroupingConfiguration",
+      "methodName": "toPutGroupingConfiguration",
+      "description": "Grants permission to create or update a grouping configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_PutGroupingConfiguration.html"
+    },
+    {
+      "name": "ReportInstrumentationConfigurationStatus",
+      "methodName": "toReportInstrumentationConfigurationStatus",
+      "description": "Grants permission to report the status of instrumentation configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ReportInstrumentationConfigurationStatus.html"
+    },
+    {
+      "name": "StartDiscovery",
+      "methodName": "toStartDiscovery",
+      "description": "Grants permission to enable CloudWatch discovery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_StartDiscovery.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to an Amazon CloudWatch Application Signals resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an Amazon CloudWatch Application Signals resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateServiceLevelObjective",
+      "methodName": "toUpdateServiceLevelObjective",
+      "description": "Grants permission to update a service level objective",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_UpdateServiceLevelObjective.html"
+    },
+    {
+      "name": "Link",
+      "methodName": "toLink",
+      "description": "Grants permission to share Application Signals resources with a monitoring account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "instrumentationConfig",
+      "methodName": "onInstrumentationConfig",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInstrumentationConfiguration.html",
+      "arn": "arn:${Partition}:application-signals:${Region}:${Account}:instrumentationConfig/${Service}/${Environment}/${SignalType}/${LocationHash}",
+      "placeholders": [
+        {
+          "placeholder": "Service",
+          "name": "service",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Environment",
+          "name": "environment",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SignalType",
+          "name": "signalType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LocationHash",
+          "name": "locationHash",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "slo",
+      "methodName": "onSlo",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-ServiceLevelObjectives.html",
+      "arn": "arn:${Partition}:application-signals:${Region}:${Account}:slo/${SloName}",
+      "placeholders": [
+        {
+          "placeholder": "SloName",
+          "name": "sloName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateInstrumentationConfiguration",
+        "toCreateServiceLevelObjective",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchDeleteInstrumentationConfigurations",
+        "toBatchGetServiceLevelObjectiveBudgetReport",
+        "toBatchUpdateExclusionWindows",
+        "toDeleteInstrumentationConfiguration",
+        "toDeleteServiceLevelObjective",
+        "toGetInstrumentationConfiguration",
+        "toGetInstrumentationConfigurationStatus",
+        "toGetServiceLevelObjective",
+        "toListServiceLevelObjectiveExclusionWindows",
+        "toListTagsForResource",
+        "toReportInstrumentationConfigurationStatus",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateServiceLevelObjective"
+      ],
+      "relatedResourceTypes": [
+        "instrumentationConfig",
+        "slo"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateInstrumentationConfiguration",
+        "toCreateServiceLevelObjective",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

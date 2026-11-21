@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BedrockMantleAll",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BedrockWebSearch",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-websearch:InvokeSearch",
+        "bedrock-websearch:InvokeFetch"
+      ],
+      "Resource": "arn:aws:bedrock-websearch:*:*:*"
+    },
+    {
+      "Sid": "MarketplaceOperationsFromBedrockMantleFor3pModels",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "bedrock-mantle.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

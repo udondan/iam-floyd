@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "filename": "dax",
+  "className": "Dax",
+  "name": "dax",
+  "servicePrefix": "dax",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_dax.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetItem",
+      "ConditionCheckItem",
+      "DescribeParameters",
+      "GetItem",
+      "ListTags",
+      "Query",
+      "Scan"
+    ],
+    "Write": [
+      "BatchWriteItem",
+      "CreateCluster",
+      "CreateParameterGroup",
+      "CreateSubnetGroup",
+      "DecreaseReplicationFactor",
+      "DeleteCluster",
+      "DeleteItem",
+      "DeleteParameterGroup",
+      "DeleteSubnetGroup",
+      "IncreaseReplicationFactor",
+      "PutItem",
+      "RebootNode",
+      "TagResource",
+      "UntagResource",
+      "UpdateCluster",
+      "UpdateItem",
+      "UpdateParameterGroup",
+      "UpdateSubnetGroup"
+    ],
+    "List": [
+      "DescribeClusters",
+      "DescribeDefaultParameters",
+      "DescribeEvents",
+      "DescribeParameterGroups",
+      "DescribeSubnetGroups"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetItem",
+      "methodName": "toBatchGetItem",
+      "description": "Grants permission to return the attributes of one or more items from one or more tables",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html"
+    },
+    {
+      "name": "BatchWriteItem",
+      "methodName": "toBatchWriteItem",
+      "description": "Grants permission to put or delete multiple items in one or more tables",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html"
+    },
+    {
+      "name": "ConditionCheckItem",
+      "methodName": "toConditionCheckItem",
+      "description": "Grants permission to the ConditionCheckItem operation that checks the existence of a set of attributes for the item with the given primary key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html"
+    },
+    {
+      "name": "CreateCluster",
+      "methodName": "toCreateCluster",
+      "description": "Grants permission to create a DAX cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateCluster.html"
+    },
+    {
+      "name": "CreateParameterGroup",
+      "methodName": "toCreateParameterGroup",
+      "description": "Grants permission to create a parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateParameterGroup.html"
+    },
+    {
+      "name": "CreateSubnetGroup",
+      "methodName": "toCreateSubnetGroup",
+      "description": "Grants permission to create a subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateSubnetGroup.html"
+    },
+    {
+      "name": "DecreaseReplicationFactor",
+      "methodName": "toDecreaseReplicationFactor",
+      "description": "Grants permission to remove one or more nodes from a DAX cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DecreaseReplicationFactor.html"
+    },
+    {
+      "name": "DeleteCluster",
+      "methodName": "toDeleteCluster",
+      "description": "Grants permission to delete a previously provisioned DAX cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DeleteCluster.html"
+    },
+    {
+      "name": "DeleteItem",
+      "methodName": "toDeleteItem",
+      "description": "Grants permission to delete a single item in a table by primary key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html"
+    },
+    {
+      "name": "DeleteParameterGroup",
+      "methodName": "toDeleteParameterGroup",
+      "description": "Grants permission to delete the specified parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DeleteParameterGroup.html"
+    },
+    {
+      "name": "DeleteSubnetGroup",
+      "methodName": "toDeleteSubnetGroup",
+      "description": "Grants permission to delete a subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DeleteSubnetGroup.html"
+    },
+    {
+      "name": "DescribeClusters",
+      "methodName": "toDescribeClusters",
+      "description": "Grants permission to return information about all provisioned DAX clusters",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeClusters.html"
+    },
+    {
+      "name": "DescribeDefaultParameters",
+      "methodName": "toDescribeDefaultParameters",
+      "description": "Grants permission to return the default system parameter information for DAX",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeDefaultParameters.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to return events related to DAX clusters and parameter groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeEvents.html"
+    },
+    {
+      "name": "DescribeParameterGroups",
+      "methodName": "toDescribeParameterGroups",
+      "description": "Grants permission to return a list of parameter group descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeParameterGroups.html"
+    },
+    {
+      "name": "DescribeParameters",
+      "methodName": "toDescribeParameters",
+      "description": "Grants permission to return the detailed parameter list for a particular parameter group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeParameters.html"
+    },
+    {
+      "name": "DescribeSubnetGroups",
+      "methodName": "toDescribeSubnetGroups",
+      "description": "Grants permission to return a list of subnet group descriptions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeSubnetGroups.html"
+    },
+    {
+      "name": "GetItem",
+      "methodName": "toGetItem",
+      "description": "Grants permission to the GetItem operation that returns a set of attributes for the item with the given primary key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html"
+    },
+    {
+      "name": "IncreaseReplicationFactor",
+      "methodName": "toIncreaseReplicationFactor",
+      "description": "Grants permission to add one or more nodes to a DAX cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_IncreaseReplicationFactor.html"
+    },
+    {
+      "name": "ListTags",
+      "methodName": "toListTags",
+      "description": "Grants permission to return a list all of the tags for a DAX cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_ListTags.html"
+    },
+    {
+      "name": "PutItem",
+      "methodName": "toPutItem",
+      "description": "Grants permission to create a new item, or replace an old item with a new item",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html"
+    },
+    {
+      "name": "Query",
+      "methodName": "toQuery",
+      "description": "Grants permission to use the primary key of a table or a secondary index to directly access items from that table or index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html"
+    },
+    {
+      "name": "RebootNode",
+      "methodName": "toRebootNode",
+      "description": "Grants permission to reboot a single node of a DAX cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_RebootNode.html"
+    },
+    {
+      "name": "Scan",
+      "methodName": "toScan",
+      "description": "Grants permission to return one or more items and item attributes by accessing every item in a table or a secondary index",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to associate a set of tags with a DAX resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the association of tags from a DAX resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UntagResource.html"
+    },
+    {
+      "name": "UpdateCluster",
+      "methodName": "toUpdateCluster",
+      "description": "Grants permission to modify the settings for a DAX cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateCluster.html"
+    },
+    {
+      "name": "UpdateItem",
+      "methodName": "toUpdateItem",
+      "description": "Grants permission to edit an existing item's attributes, or adds a new item to the table if it does not already exist",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html"
+    },
+    {
+      "name": "UpdateParameterGroup",
+      "methodName": "toUpdateParameterGroup",
+      "description": "Grants permission to modify the parameters of a parameter group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateParameterGroup.html"
+    },
+    {
+      "name": "UpdateSubnetGroup",
+      "methodName": "toUpdateSubnetGroup",
+      "description": "Grants permission to modify an existing subnet group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateSubnetGroup.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.access-control.html",
+      "arn": "arn:${Partition}:dax:${Region}:${Account}:cache/${ClusterName}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "dax:EnclosingOperation",
+      "methodName": "ifEnclosingOperation",
+      "description": "Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.access-control.htmlspecifying-conditions.html#FGAC_DDB.ConditionKeys",
+      "relatedActionMethods": [
+        "toDeleteItem",
+        "toGetItem",
+        "toPutItem",
+        "toUpdateItem"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnclosingOperation",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

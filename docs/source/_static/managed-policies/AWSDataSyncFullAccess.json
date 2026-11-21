@@ -1,0 +1,101 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataSyncFullAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "datasync:*",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRegions",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "elasticfilesystem:DescribeAccessPoints",
+        "elasticfilesystem:DescribeFileSystems",
+        "elasticfilesystem:DescribeMountTargets",
+        "iam:GetRole",
+        "iam:ListRoles",
+        "logs:CreateLogGroup",
+        "logs:DescribeLogGroups",
+        "logs:DescribeResourcePolicies",
+        "outposts:ListOutposts",
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "s3:ListBucketVersions",
+        "s3-outposts:ListAccessPoints",
+        "s3-outposts:ListRegionalBuckets",
+        "secretsmanager:ListSecrets",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataSyncPassRolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "datasync.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DataSyncCreateSLRPermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/datasync.amazonaws.com/AWSServiceRoleForDataSync",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "datasync.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DataSyncSecretsManagerCreateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret"
+      ],
+      "Resource": [
+        "arn:*:secretsmanager:*:*:secret:aws-datasync!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DataSyncSecretsManagerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:PutSecretValue"
+      ],
+      "Resource": [
+        "arn:*:secretsmanager:*:*:secret:aws-datasync!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "aws-datasync",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

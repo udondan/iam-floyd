@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOnlyPermissionsForInstanceManagement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeFleets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadOnlyPermissionsForInstanceEventWindows",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstanceEventWindows"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadOnlyPermissionsForLaunchTemplates",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeLaunchTemplates",
+        "ec2:DescribeLaunchTemplateVersions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DeleteManagedLaunchTemplate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteLaunchTemplate",
+        "ec2:DeleteLaunchTemplateVersions"
+      ],
+      "Resource": "arn:aws:ec2:*:*:launch-template/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ManagedResourceOperator": "ecs.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "TerminateManagedInstances",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ManagedResourceOperator": "ecs.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

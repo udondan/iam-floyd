@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudMapServiceDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "servicediscovery:DiscoverInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ACMCertificateVerification",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DescribeCertificate"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

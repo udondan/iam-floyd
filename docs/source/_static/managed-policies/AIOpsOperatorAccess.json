@@ -1,0 +1,119 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AIOpsOperatorAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aiops:CreateInvestigation",
+        "aiops:CreateInvestigationEvent",
+        "aiops:CreateInvestigationResource",
+        "aiops:DeleteInvestigation",
+        "aiops:Get*",
+        "aiops:List*",
+        "aiops:UpdateInvestigation",
+        "aiops:UpdateInvestigationEvent",
+        "aiops:ValidateInvestigationGroup",
+        "aiops:PutFact",
+        "aiops:UpdateReport",
+        "aiops:GenerateReport",
+        "aiops:CreateReport",
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:UpdateConversation",
+        "q:DeleteConversation",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSOManagementAccess",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeUser",
+        "sso:DescribeInstance",
+        "sso-directory:DescribeUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSTSContextSetting",
+      "Effect": "Allow",
+      "Action": [
+        "sts:SetContext"
+      ],
+      "Resource": "arn:aws:sts::*:self"
+    },
+    {
+      "Sid": "SSMSettingServiceIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetServiceSetting"
+      ],
+      "Resource": "arn:aws:ssm:*:*:servicesetting/integrations/*"
+    },
+    {
+      "Sid": "SSMIntegrationTagAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:AddTagsToResource",
+        "ssm:CreateOpsItem"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Integration": [
+            "CloudWatch"
+          ]
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "Integration"
+        }
+      }
+    },
+    {
+      "Sid": "SSMOpsItemIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DeleteOpsItem",
+        "ssm:UpdateOpsItem"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Integration": [
+            "CloudWatch"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SSMTagOperation",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:AddTagsToResource"
+      ],
+      "Resource": "arn:aws:ssm:*:*:opsitem/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Integration": [
+            "CloudWatch"
+          ]
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "Integration"
+        }
+      }
+    },
+    {
+      "Sid": "SSMOpsSummaryIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetOpsSummary"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

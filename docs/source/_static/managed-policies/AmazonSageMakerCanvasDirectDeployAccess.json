@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SageMakerEndpointPerms",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateEndpoint",
+        "sagemaker:CreateEndpointConfig",
+        "sagemaker:DeleteEndpoint",
+        "sagemaker:DescribeEndpoint",
+        "sagemaker:DescribeEndpointConfig",
+        "sagemaker:InvokeEndpoint",
+        "sagemaker:UpdateEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:Canvas*",
+        "arn:aws:sagemaker:*:*:canvas*"
+      ]
+    },
+    {
+      "Sid": "ReadCWInvocationMetrics",
+      "Effect": "Allow",
+      "Action": "cloudwatch:GetMetricData",
+      "Resource": "*"
+    }
+  ]
+}

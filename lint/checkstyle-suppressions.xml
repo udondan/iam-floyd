@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<suppressions>
+  <!-- The examples are snippets for the docs, which the runners compile without a package -->
+  <suppress checks="PackageDeclaration|OuterTypeFilename" files="[\\/]examples[\\/]"/>
+  <suppress checks="PackageDeclaration" files="[\\/]Main\.java$"/>
+  <suppress checks="PackageDeclaration" files="[\\/]test[\\/]transpile[\\/]java[\\/][^\\/]+\.java$"/>
+  <!-- The native Java package is written by bin/transpile.ts, except the runtime. Its package
+       has the name of the jsii package, and the names of JavaScript are kept, e.g. toJSON() -->
+  <suppress checks="PackageName|AbbreviationAsWordInName|GoogleMethodName"
+            files="[\\/]iamFloyd[\\/]Js(on)?\.java$|[\\/]stubs[\\/]"/>
+  <suppress checks=".*" files="[\\/]iamFloyd[\\/](?!Js\.java$|Json\.java$)[^\\/]+\.java$"/>
+  <suppress checks=".*" files="[\\/]iamFloyd[\\/]statement[\\/]"/>
+</suppressions>
