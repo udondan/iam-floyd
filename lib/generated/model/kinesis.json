@@ -6,20 +6,16 @@
   "servicePrefix": "kinesis",
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesis.html",
   "accessLevelList": {
-    "Tagging": [
-      "AddTagsToStream",
-      "CreateChannel",
-      "RemoveTagsFromStream",
-      "TagResource",
-      "UntagResource"
-    ],
     "Write": [
+      "AcknowledgeDeadLetterQueueRecords",
+      "AcknowledgeQueueRecords",
       "AddTagsToStream",
-      "AssociateStreamsWithChannel",
       "CreateChannel",
+      "CreateQueue",
       "CreateStream",
       "DecreaseStreamRetentionPeriod",
       "DeleteChannel",
+      "DeleteQueue",
       "DeleteResourcePolicy",
       "DeleteStream",
       "DeregisterStreamConsumer",
@@ -32,6 +28,7 @@
       "PutResourcePolicy",
       "RegisterStreamConsumer",
       "RemoveTagsFromStream",
+      "RestoreDeadLetterQueueRecords",
       "SplitShard",
       "StartStreamEncryption",
       "StopStreamEncryption",
@@ -39,17 +36,29 @@
       "UntagResource",
       "UpdateAccountSettings",
       "UpdateChannel",
+      "UpdateDeadLetterQueueRecordsVisibility",
       "UpdateMaxRecordSize",
+      "UpdateQueue",
+      "UpdateQueueRecordsVisibility",
       "UpdateShardCount",
       "UpdateStreamMode",
       "UpdateStreamRecordDistributionStrategy",
       "UpdateStreamWarmThroughput",
+      "AssociateStreamsWithChannel",
+      "AssociateStreamsWithQueue",
       "InjectApiError"
+    ],
+    "Tagging": [
+      "AddTagsToStream",
+      "RemoveTagsFromStream",
+      "TagResource",
+      "UntagResource"
     ],
     "Read": [
       "DescribeAccountSettings",
       "DescribeChannel",
       "DescribeLimits",
+      "DescribeQueue",
       "DescribeStream",
       "DescribeStreamConsumer",
       "DescribeStreamSummary",
@@ -58,16 +67,33 @@
       "GetShardIterator",
       "ListTagsForResource",
       "ListTagsForStream",
+      "ReceiveDeadLetterQueueRecords",
+      "ReceiveQueueRecords",
       "SubscribeToShard"
     ],
     "List": [
       "ListChannels",
+      "ListQueues",
       "ListShards",
       "ListStreamConsumers",
       "ListStreams"
     ]
   },
   "actions": [
+    {
+      "name": "AcknowledgeDeadLetterQueueRecords",
+      "methodName": "toAcknowledgeDeadLetterQueueRecords",
+      "description": "Grants permission to acknowledge one or more dead-letter records received from the specified queue so the queue does not deliver them again",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AcknowledgeDeadLetterQueueRecords.html"
+    },
+    {
+      "name": "AcknowledgeQueueRecords",
+      "methodName": "toAcknowledgeQueueRecords",
+      "description": "Grants permission to acknowledge one or more data records received from the specified queue so the queue does not deliver them again",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AcknowledgeQueueRecords.html"
+    },
     {
       "name": "AddTagsToStream",
       "methodName": "toAddTagsToStream",
@@ -76,18 +102,18 @@
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html"
     },
     {
-      "name": "AssociateStreamsWithChannel",
-      "methodName": "toAssociateStreamsWithChannel",
-      "description": "Grants permission to associate a stream with a channel",
+      "name": "CreateChannel",
+      "methodName": "toCreateChannel",
+      "description": "Grants permission to create a channel that delivers data from a selected single stream to a destination",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html"
     },
     {
-      "name": "CreateChannel",
-      "methodName": "toCreateChannel",
-      "description": "Grants permission to create a channel that delivers data from a selected single stream to a destination",
-      "accessLevel": "Tagging, Write",
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html"
+      "name": "CreateQueue",
+      "methodName": "toCreateQueue",
+      "description": "Grants permission to create a queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateQueue.html"
     },
     {
       "name": "CreateStream",
@@ -111,9 +137,16 @@
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteChannel.html"
     },
     {
+      "name": "DeleteQueue",
+      "methodName": "toDeleteQueue",
+      "description": "Grants permission to delete the specified queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteQueue.html"
+    },
+    {
       "name": "DeleteResourcePolicy",
       "methodName": "toDeleteResourcePolicy",
-      "description": "Grants permission to delete a resource policy associated with a specified stream or consumer",
+      "description": "Grants permission to delete a resource policy associated with a specified stream, consumer, or queue",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteResourcePolicy.html"
     },
@@ -151,6 +184,13 @@
       "description": "Grants permission to describe the shard limits and usage for the account",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html"
+    },
+    {
+      "name": "DescribeQueue",
+      "methodName": "toDescribeQueue",
+      "description": "Grants permission to describe the specified queue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeQueue.html"
     },
     {
       "name": "DescribeStream",
@@ -197,7 +237,7 @@
     {
       "name": "GetResourcePolicy",
       "methodName": "toGetResourcePolicy",
-      "description": "Grants permission to get a resource policy associated with a specified stream or consumer",
+      "description": "Grants permission to get a resource policy associated with a specified stream, consumer, or queue",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetResourcePolicy.html"
     },
@@ -221,6 +261,13 @@
       "description": "Grants permission to list the channels in the account, optionally filtered by stream",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListChannels.html"
+    },
+    {
+      "name": "ListQueues",
+      "methodName": "toListQueues",
+      "description": "Grants permission to list the queues in the account, optionally filtered by stream",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListQueues.html"
     },
     {
       "name": "ListShards",
@@ -281,9 +328,23 @@
     {
       "name": "PutResourcePolicy",
       "methodName": "toPutResourcePolicy",
-      "description": "Grants permission to attach a resource policy to a specified stream or consumer",
+      "description": "Grants permission to attach a resource policy to a specified stream, consumer, or queue",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "ReceiveDeadLetterQueueRecords",
+      "methodName": "toReceiveDeadLetterQueueRecords",
+      "description": "Grants permission to receive one or more dead-letter records from the specified queue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ReceiveDeadLetterQueueRecords.html"
+    },
+    {
+      "name": "ReceiveQueueRecords",
+      "methodName": "toReceiveQueueRecords",
+      "description": "Grants permission to receive one or more data records from the specified queue",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ReceiveQueueRecords.html"
     },
     {
       "name": "RegisterStreamConsumer",
@@ -298,6 +359,13 @@
       "description": "Grants permission to remove tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html"
+    },
+    {
+      "name": "RestoreDeadLetterQueueRecords",
+      "methodName": "toRestoreDeadLetterQueueRecords",
+      "description": "Grants permission to restore one or more dead-letter records in the specified queue to the normal receive path",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RestoreDeadLetterQueueRecords.html"
     },
     {
       "name": "SplitShard",
@@ -356,11 +424,32 @@
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateChannel.html"
     },
     {
+      "name": "UpdateDeadLetterQueueRecordsVisibility",
+      "methodName": "toUpdateDeadLetterQueueRecordsVisibility",
+      "description": "Grants permission to change the visibility timeout of one or more dead-letter records received from the specified queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateDeadLetterQueueRecordsVisibility.html"
+    },
+    {
       "name": "UpdateMaxRecordSize",
       "methodName": "toUpdateMaxRecordSize",
       "description": "Grants permission to update the maximum record size for a Kinesis data stream",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateMaxRecordSize.html"
+    },
+    {
+      "name": "UpdateQueue",
+      "methodName": "toUpdateQueue",
+      "description": "Grants permission to update the attributes of the specified queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateQueue.html"
+    },
+    {
+      "name": "UpdateQueueRecordsVisibility",
+      "methodName": "toUpdateQueueRecordsVisibility",
+      "description": "Grants permission to change the visibility timeout of one or more data records received from the specified queue",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateQueueRecordsVisibility.html"
     },
     {
       "name": "UpdateShardCount",
@@ -389,6 +478,20 @@
       "description": "Grants permission to update the warm throughput for a Kinesis on-demand data stream",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamWarmThroughput.html"
+    },
+    {
+      "name": "AssociateStreamsWithChannel",
+      "methodName": "toAssociateStreamsWithChannel",
+      "description": "Grants permission to associate a stream with a channel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateChannel.html"
+    },
+    {
+      "name": "AssociateStreamsWithQueue",
+      "methodName": "toAssociateStreamsWithQueue",
+      "description": "Grants permission to associate the specified stream with a queue when the queue is created",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateQueue.html"
     },
     {
       "name": "InjectApiError",
@@ -519,6 +622,37 @@
       ]
     },
     {
+      "name": "queue",
+      "methodName": "onQueue",
+      "url": "https://docs.aws.amazon.com/streams/latest/dev/consuming-with-queues.html",
+      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:queue/${QueueId}",
+      "placeholders": [
+        {
+          "placeholder": "QueueId",
+          "name": "queueId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "stream",
       "methodName": "onStream",
       "url": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#stream",
@@ -565,6 +699,7 @@
       "relatedActionMethods": [
         "toAddTagsToStream",
         "toCreateChannel",
+        "toCreateQueue",
         "toCreateStream",
         "toRegisterStreamConsumer",
         "toTagResource"
@@ -585,16 +720,20 @@
       "description": "Filters access by tag key-value pairs attached to the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toAcknowledgeDeadLetterQueueRecords",
+        "toAcknowledgeQueueRecords",
         "toAddTagsToStream",
-        "toAssociateStreamsWithChannel",
         "toCreateChannel",
+        "toCreateQueue",
         "toCreateStream",
         "toDecreaseStreamRetentionPeriod",
         "toDeleteChannel",
+        "toDeleteQueue",
         "toDeleteResourcePolicy",
         "toDeleteStream",
         "toDeregisterStreamConsumer",
         "toDescribeChannel",
+        "toDescribeQueue",
         "toDescribeStream",
         "toDescribeStreamConsumer",
         "toDescribeStreamSummary",
@@ -610,8 +749,11 @@
         "toPutRecord",
         "toPutRecords",
         "toPutResourcePolicy",
+        "toReceiveDeadLetterQueueRecords",
+        "toReceiveQueueRecords",
         "toRegisterStreamConsumer",
         "toRemoveTagsFromStream",
+        "toRestoreDeadLetterQueueRecords",
         "toSplitShard",
         "toStartStreamEncryption",
         "toStopStreamEncryption",
@@ -619,14 +761,20 @@
         "toTagResource",
         "toUntagResource",
         "toUpdateChannel",
+        "toUpdateDeadLetterQueueRecordsVisibility",
         "toUpdateMaxRecordSize",
+        "toUpdateQueue",
+        "toUpdateQueueRecordsVisibility",
         "toUpdateStreamRecordDistributionStrategy",
-        "toUpdateStreamWarmThroughput"
+        "toUpdateStreamWarmThroughput",
+        "toAssociateStreamsWithChannel",
+        "toAssociateStreamsWithQueue"
       ],
       "relatedResourceTypes": [
         "channel",
         "consumer",
         "kmsKey",
+        "queue",
         "stream"
       ],
       "keyLiteral": "aws:ResourceTag/",
@@ -646,6 +794,7 @@
       "relatedActionMethods": [
         "toAddTagsToStream",
         "toCreateChannel",
+        "toCreateQueue",
         "toCreateStream",
         "toRegisterStreamConsumer",
         "toRemoveTagsFromStream",

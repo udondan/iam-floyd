@@ -30,12 +30,16 @@
       "CreateMicrovmImage",
       "CreateMicrovmShellAuthToken",
       "CreateNetworkConnector",
+      "CreateRuntime",
+      "CreateRuntimeAlias",
+      "CreateRuntimeVersion",
       "CreateWebFunction",
       "CreateWebFunctionEndpoint",
       "CreateWebFunctionRevision",
       "DeleteAlias",
       "DeleteCapacityProvider",
       "DeleteCodeSigningConfig",
+      "DeleteDurableExecution",
       "DeleteEventSourceMapping",
       "DeleteFunction",
       "DeleteFunctionCodeSigningConfig",
@@ -48,11 +52,15 @@
       "DeleteNetworkConnector",
       "DeleteProvisionedConcurrencyConfig",
       "DeleteResourcePolicy",
+      "DeleteRuntime",
+      "DeleteRuntimeAlias",
+      "DeleteRuntimeVersion",
       "DeleteWebFunction",
       "DeleteWebFunctionEndpoint",
       "DeleteWebFunctionRevision",
       "InvokeAsync",
       "InvokeFunction",
+      "PauseDurableExecution",
       "PublishLayerVersion",
       "PublishVersion",
       "PutFunctionCodeSigningConfig",
@@ -65,6 +73,8 @@
       "PutRuntimeManagementConfig",
       "RemoveLayerVersionPermission",
       "RemovePermission",
+      "RestoreRuntime",
+      "ResumeDurableExecution",
       "ResumeMicrovm",
       "RunMicrovm",
       "SendDurableExecutionCallbackFailure",
@@ -87,7 +97,12 @@
       "UpdateMicrovmImage",
       "UpdateMicrovmImageVersion",
       "UpdateNetworkConnector",
+      "UpdateRuntime",
+      "UpdateRuntimeAlias",
+      "UpdateRuntimeVersion",
       "UpdateWebFunctionEndpoint",
+      "AssociateRuntimeAlias",
+      "AssociateRuntimeVersion",
       "ConnectMicrovm",
       "DisableReplication",
       "EnableReplication",
@@ -123,7 +138,10 @@
       "GetPolicy",
       "GetProvisionedConcurrencyConfig",
       "GetResourcePolicy",
+      "GetRuntime",
+      "GetRuntimeAlias",
       "GetRuntimeManagementConfig",
+      "GetRuntimeVersion",
       "GetWebAccountSettings",
       "GetWebFunction",
       "GetWebFunctionEndpoint",
@@ -152,6 +170,9 @@
       "ListNetworkConnectorVersions",
       "ListNetworkConnectors",
       "ListProvisionedConcurrencyConfigs",
+      "ListRuntimeAliases",
+      "ListRuntimeVersions",
+      "ListRuntimes",
       "ListVersionsByFunction",
       "ListWebFunctionEndpoints",
       "ListWebFunctionRevisions",
@@ -268,6 +289,27 @@
       "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_CreateNetworkConnector.html"
     },
     {
+      "name": "CreateRuntime",
+      "methodName": "toCreateRuntime",
+      "description": "Grants permission to create an AWS Lambda customer-managed runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_CreateRuntime.html"
+    },
+    {
+      "name": "CreateRuntimeAlias",
+      "methodName": "toCreateRuntimeAlias",
+      "description": "Grants permission to create an AWS Lambda customer-managed runtime alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_CreateRuntimeAlias.html"
+    },
+    {
+      "name": "CreateRuntimeVersion",
+      "methodName": "toCreateRuntimeVersion",
+      "description": "Grants permission to create an AWS Lambda customer-managed runtime version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_CreateRuntimeVersion.html"
+    },
+    {
       "name": "CreateWebFunction",
       "methodName": "toCreateWebFunction",
       "description": "Grants permission to create a Lambda web function",
@@ -308,6 +350,13 @@
       "description": "Grants permission to delete an AWS Lambda code signing config",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCodeSigningConfig.html"
+    },
+    {
+      "name": "DeleteDurableExecution",
+      "methodName": "toDeleteDurableExecution",
+      "description": "Grants permission to delete an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteDurableExecution.html"
     },
     {
       "name": "DeleteEventSourceMapping",
@@ -392,6 +441,27 @@
       "description": "Grants permission to detach a policy from an AWS Lambda resource, additionally requiring lambda:RemovePermission only for a function resource",
       "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRuntime",
+      "methodName": "toDeleteRuntime",
+      "description": "Grants permission to delete an AWS Lambda customer-managed runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_DeleteRuntime.html"
+    },
+    {
+      "name": "DeleteRuntimeAlias",
+      "methodName": "toDeleteRuntimeAlias",
+      "description": "Grants permission to delete an AWS Lambda customer-managed runtime alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_DeleteRuntimeAlias.html"
+    },
+    {
+      "name": "DeleteRuntimeVersion",
+      "methodName": "toDeleteRuntimeVersion",
+      "description": "Grants permission to delete an AWS Lambda customer-managed runtime version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_DeleteRuntimeVersion.html"
     },
     {
       "name": "DeleteWebFunction",
@@ -597,11 +667,32 @@
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetResourcePolicy.html"
     },
     {
+      "name": "GetRuntime",
+      "methodName": "toGetRuntime",
+      "description": "Grants permission to view details about an AWS Lambda customer-managed runtime",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_GetRuntime.html"
+    },
+    {
+      "name": "GetRuntimeAlias",
+      "methodName": "toGetRuntimeAlias",
+      "description": "Grants permission to view details about an AWS Lambda customer-managed runtime alias",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_GetRuntimeAlias.html"
+    },
+    {
       "name": "GetRuntimeManagementConfig",
       "methodName": "toGetRuntimeManagementConfig",
       "description": "Grants permission to view the runtime management configuration of an AWS Lambda function",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetRuntimeManagementConfig.html"
+    },
+    {
+      "name": "GetRuntimeVersion",
+      "methodName": "toGetRuntimeVersion",
+      "description": "Grants permission to view details about an AWS Lambda customer-managed runtime version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_GetRuntimeVersion.html"
     },
     {
       "name": "GetWebAccountSettings",
@@ -793,9 +884,30 @@
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListProvisionedConcurrencyConfigs.html"
     },
     {
+      "name": "ListRuntimeAliases",
+      "methodName": "toListRuntimeAliases",
+      "description": "Grants permission to retrieve a list of AWS Lambda customer-managed runtime aliases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_ListRuntimeAliases.html"
+    },
+    {
+      "name": "ListRuntimeVersions",
+      "methodName": "toListRuntimeVersions",
+      "description": "Grants permission to retrieve a list of AWS Lambda customer-managed runtime versions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_ListRuntimeVersions.html"
+    },
+    {
+      "name": "ListRuntimes",
+      "methodName": "toListRuntimes",
+      "description": "Grants permission to retrieve a list of AWS Lambda customer-managed runtimes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_ListRuntimes.html"
+    },
+    {
       "name": "ListTags",
       "methodName": "toListTags",
-      "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource",
+      "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, a web function resource, or a runtime resource",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html"
     },
@@ -826,6 +938,13 @@
       "description": "Grants permission to retrieve a list of Lambda web functions",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_ListWebFunctions.html"
+    },
+    {
+      "name": "PauseDurableExecution",
+      "methodName": "toPauseDurableExecution",
+      "description": "Grants permission to pause an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PauseDurableExecution.html"
     },
     {
       "name": "PublishLayerVersion",
@@ -912,6 +1031,20 @@
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html"
     },
     {
+      "name": "RestoreRuntime",
+      "methodName": "toRestoreRuntime",
+      "description": "Grants permission to restore an AWS Lambda customer-managed runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_RestoreRuntime.html"
+    },
+    {
+      "name": "ResumeDurableExecution",
+      "methodName": "toResumeDurableExecution",
+      "description": "Grants permission to resume a paused AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ResumeDurableExecution.html"
+    },
+    {
       "name": "ResumeMicrovm",
       "methodName": "toResumeMicrovm",
       "description": "Grants permission to resume a suspended AWS Lambda MicroVM",
@@ -963,7 +1096,7 @@
     {
       "name": "TagResource",
       "methodName": "toTagResource",
-      "description": "Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource",
+      "description": "Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, a web function resource, or a runtime resource",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html"
     },
@@ -977,7 +1110,7 @@
     {
       "name": "UntagResource",
       "methodName": "toUntagResource",
-      "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, or a web function resource",
+      "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector, MicroVM image resource, a web function resource, or a runtime resource",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html"
     },
@@ -1066,11 +1199,46 @@
       "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_UpdateNetworkConnector.html"
     },
     {
+      "name": "UpdateRuntime",
+      "methodName": "toUpdateRuntime",
+      "description": "Grants permission to update an AWS Lambda customer-managed runtime",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_UpdateRuntime.html"
+    },
+    {
+      "name": "UpdateRuntimeAlias",
+      "methodName": "toUpdateRuntimeAlias",
+      "description": "Grants permission to update an AWS Lambda customer-managed runtime alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_UpdateRuntimeAlias.html"
+    },
+    {
+      "name": "UpdateRuntimeVersion",
+      "methodName": "toUpdateRuntimeVersion",
+      "description": "Grants permission to update an AWS Lambda customer-managed runtime version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/lambda-core/API_UpdateRuntimeVersion.html"
+    },
+    {
       "name": "UpdateWebFunctionEndpoint",
       "methodName": "toUpdateWebFunctionEndpoint",
       "description": "Grants permission to update an endpoint for a Lambda web function",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/lambda/latest/lambda-web/API_UpdateWebFunctionEndpoint.html"
+    },
+    {
+      "name": "AssociateRuntimeAlias",
+      "methodName": "toAssociateRuntimeAlias",
+      "description": "Grants permission to associate a customer-managed runtime alias with Lambda Event function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
+    },
+    {
+      "name": "AssociateRuntimeVersion",
+      "methodName": "toAssociateRuntimeVersion",
+      "description": "Grants permission to associate a customer-managed runtime version with Lambda Event function",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html"
     },
     {
       "name": "ConnectMicrovm",
@@ -1527,6 +1695,109 @@
       }
     },
     {
+      "name": "runtime",
+      "methodName": "onRuntime",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:runtime/${RuntimeName}",
+      "placeholders": [
+        {
+          "placeholder": "RuntimeName",
+          "name": "runtimeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "runtimeAlias",
+      "methodName": "onRuntimeAlias",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:runtime/${RuntimeName}/alias/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "RuntimeName",
+          "name": "runtimeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "runtimeVersion",
+      "methodName": "onRuntimeVersion",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:runtime/${RuntimeName}/version/${Name}",
+      "placeholders": [
+        {
+          "placeholder": "RuntimeName",
+          "name": "runtimeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Name",
+          "name": "name",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "webFunction",
       "methodName": "onWebFunction",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
@@ -1649,6 +1920,7 @@
         "toCreateFunction",
         "toCreateMicrovmImage",
         "toCreateNetworkConnector",
+        "toCreateRuntime",
         "toCreateWebFunction",
         "toTagResource"
       ],
@@ -1677,12 +1949,16 @@
         "toCreateMicrovmAuthToken",
         "toCreateMicrovmShellAuthToken",
         "toCreateNetworkConnector",
+        "toCreateRuntime",
+        "toCreateRuntimeAlias",
+        "toCreateRuntimeVersion",
         "toCreateWebFunction",
         "toCreateWebFunctionEndpoint",
         "toCreateWebFunctionRevision",
         "toDeleteAlias",
         "toDeleteCapacityProvider",
         "toDeleteCodeSigningConfig",
+        "toDeleteDurableExecution",
         "toDeleteEventSourceMapping",
         "toDeleteFunction",
         "toDeleteFunctionCodeSigningConfig",
@@ -1694,6 +1970,9 @@
         "toDeleteNetworkConnector",
         "toDeleteProvisionedConcurrencyConfig",
         "toDeleteResourcePolicy",
+        "toDeleteRuntime",
+        "toDeleteRuntimeAlias",
+        "toDeleteRuntimeVersion",
         "toDeleteWebFunction",
         "toDeleteWebFunctionEndpoint",
         "toDeleteWebFunctionRevision",
@@ -1720,7 +1999,10 @@
         "toGetPolicy",
         "toGetProvisionedConcurrencyConfig",
         "toGetResourcePolicy",
+        "toGetRuntime",
+        "toGetRuntimeAlias",
         "toGetRuntimeManagementConfig",
+        "toGetRuntimeVersion",
         "toGetWebFunction",
         "toGetWebFunctionEndpoint",
         "toGetWebFunctionRevision",
@@ -1737,10 +2019,13 @@
         "toListMicrovmImageVersions",
         "toListNetworkConnectorVersions",
         "toListProvisionedConcurrencyConfigs",
+        "toListRuntimeAliases",
+        "toListRuntimeVersions",
         "toListTags",
         "toListVersionsByFunction",
         "toListWebFunctionEndpoints",
         "toListWebFunctionRevisions",
+        "toPauseDurableExecution",
         "toPublishVersion",
         "toPutFunctionCodeSigningConfig",
         "toPutFunctionConcurrency",
@@ -1751,6 +2036,8 @@
         "toPutResourcePolicy",
         "toPutRuntimeManagementConfig",
         "toRemovePermission",
+        "toRestoreRuntime",
+        "toResumeDurableExecution",
         "toResumeMicrovm",
         "toRunMicrovm",
         "toSendDurableExecutionCallbackFailure",
@@ -1773,7 +2060,12 @@
         "toUpdateMicrovmImage",
         "toUpdateMicrovmImageVersion",
         "toUpdateNetworkConnector",
+        "toUpdateRuntime",
+        "toUpdateRuntimeAlias",
+        "toUpdateRuntimeVersion",
         "toUpdateWebFunctionEndpoint",
+        "toAssociateRuntimeAlias",
+        "toAssociateRuntimeVersion",
         "toDisableReplication",
         "toEnableReplication",
         "toInvokeFunctionUrl",
@@ -1790,6 +2082,9 @@
         "function version",
         "microvmImage",
         "networkConnector",
+        "runtime",
+        "runtimeAlias",
+        "runtimeVersion",
         "webFunction",
         "webFunctionEndpoint",
         "webFunctionRevision"
@@ -1815,6 +2110,7 @@
         "toCreateFunction",
         "toCreateMicrovmImage",
         "toCreateNetworkConnector",
+        "toCreateRuntime",
         "toCreateWebFunction",
         "toTagResource",
         "toUntagResource"

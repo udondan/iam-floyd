@@ -9,6 +9,7 @@
     "Write": [
       "BatchAssociateScramSecret",
       "BatchDisassociateScramSecret",
+      "CreateAssessment",
       "CreateChannel",
       "CreateCluster",
       "CreateClusterV2",
@@ -16,6 +17,7 @@
       "CreateReplicator",
       "CreateTopic",
       "CreateVpcConnection",
+      "DeleteAssessment",
       "DeleteChannel",
       "DeleteCluster",
       "DeleteClusterPolicy",
@@ -26,6 +28,8 @@
       "PutClusterPolicy",
       "RebootBroker",
       "RejectClientVpcConnection",
+      "StartTopicReassignment",
+      "StopTopicReassignment",
       "TagResource",
       "UntagResource",
       "UpdateBrokerCount",
@@ -44,6 +48,7 @@
       "UpdateTopic"
     ],
     "Read": [
+      "DescribeAssessment",
       "DescribeChannel",
       "DescribeCluster",
       "DescribeClusterOperation",
@@ -54,6 +59,7 @@
       "DescribeReplicator",
       "DescribeTopic",
       "DescribeTopicPartitions",
+      "DescribeTopicReassignment",
       "DescribeVpcConnection",
       "GetBootstrapBrokers",
       "GetClusterPolicy",
@@ -61,6 +67,8 @@
     ],
     "List": [
       "GetCompatibleKafkaVersions",
+      "ListAssessmentFindings",
+      "ListAssessments",
       "ListChannels",
       "ListClientVpcConnections",
       "ListClusterOperations",
@@ -73,6 +81,7 @@
       "ListNodes",
       "ListReplicators",
       "ListScramSecrets",
+      "ListTopicReassignments",
       "ListTopics",
       "ListVpcConnections"
     ],
@@ -95,6 +104,13 @@
       "description": "Grants permission to disassociate one or more Scram Secrets from an Amazon MSK cluster",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchDisassociateScramSecret"
+    },
+    {
+      "name": "CreateAssessment",
+      "methodName": "toCreateAssessment",
+      "description": "Grants permission to create an assessment of an MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-assessments.html#CreateAssessment"
     },
     {
       "name": "CreateChannel",
@@ -146,6 +162,13 @@
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connection.html#CreateVpcConnection"
     },
     {
+      "name": "DeleteAssessment",
+      "methodName": "toDeleteAssessment",
+      "description": "Grants permission to delete an assessment of an MSK cluster and its findings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-assessments-assessmentarn.html#DeleteAssessment"
+    },
+    {
       "name": "DeleteChannel",
       "methodName": "toDeleteChannel",
       "description": "Grants permission to delete an MSK Data Channel",
@@ -193,6 +216,13 @@
       "description": "Grants permission to delete a MSK VPC connection",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connection-arn.html#DeleteVpcConnection"
+    },
+    {
+      "name": "DescribeAssessment",
+      "methodName": "toDescribeAssessment",
+      "description": "Grants permission to describe an assessment of an MSK cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-assessments-assessmentarn.html#DescribeAssessment"
     },
     {
       "name": "DescribeChannel",
@@ -265,6 +295,13 @@
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname-partitions.html"
     },
     {
+      "name": "DescribeTopicReassignment",
+      "methodName": "toDescribeTopicReassignment",
+      "description": "Grants permission to describe a topic reassignment in an Amazon MSK cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topic-reassignments-topicreassignmentoperationarn.html#DescribeTopicReassignment"
+    },
+    {
       "name": "DescribeVpcConnection",
       "methodName": "toDescribeVpcConnection",
       "description": "Grants permission to describe a MSK VPC connection",
@@ -291,6 +328,20 @@
       "description": "Grants permission to get a list of the Apache Kafka versions to which you can update an MSK cluster",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions"
+    },
+    {
+      "name": "ListAssessmentFindings",
+      "methodName": "toListAssessmentFindings",
+      "description": "Grants permission to list the findings of an assessment of an MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-assessments-assessmentarn-findings.html#ListAssessmentFindings"
+    },
+    {
+      "name": "ListAssessments",
+      "methodName": "toListAssessments",
+      "description": "Grants permission to list the assessments of an MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-assessments.html#ListAssessments"
     },
     {
       "name": "ListChannels",
@@ -384,6 +435,13 @@
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource"
     },
     {
+      "name": "ListTopicReassignments",
+      "methodName": "toListTopicReassignments",
+      "description": "Grants permission to list the topic reassignments of an Amazon MSK cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topic-reassignments.html#ListTopicReassignments"
+    },
+    {
       "name": "ListTopics",
       "methodName": "toListTopics",
       "description": "Grants permission to list all Kafka topics for a specified MSK cluster",
@@ -417,6 +475,20 @@
       "description": "Grants permission to reject a MSK VPC connection",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-client-vpc-connection.html#RejectClientVpcConnection"
+    },
+    {
+      "name": "StartTopicReassignment",
+      "methodName": "toStartTopicReassignment",
+      "description": "Grants permission to start a topic reassignment that moves topic partitions between broker types in an Amazon MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topic-reassignments.html#StartTopicReassignment"
+    },
+    {
+      "name": "StopTopicReassignment",
+      "methodName": "toStopTopicReassignment",
+      "description": "Grants permission to stop a topic reassignment in an Amazon MSK cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topic-reassignments-topicreassignmentoperationarn-stop.html#StopTopicReassignment"
     },
     {
       "name": "TagResource",
@@ -532,6 +604,42 @@
     }
   ],
   "resources": [
+    {
+      "name": "assessment",
+      "methodName": "onAssessment",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:assessment/${ClusterUuid}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterUuid",
+          "name": "clusterUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
     {
       "name": "channel",
       "methodName": "onChannel",
@@ -763,6 +871,45 @@
       "conditionMethods": []
     },
     {
+      "name": "topic-reassignment",
+      "methodName": "onTopicReassignment",
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:topic-reassignment/${ClusterName}/${ClusterUuid}/${Uuid}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterName",
+          "name": "clusterName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterUuid",
+          "name": "clusterUuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Uuid",
+          "name": "uuid",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
       "name": "transactional-id",
       "methodName": "onTransactionalId",
       "url": "https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources",
@@ -850,6 +997,7 @@
       "description": "Filters access by the presence of tag key-value pairs in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
+        "toCreateAssessment",
         "toCreateChannel",
         "toCreateCluster",
         "toCreateClusterV2",
@@ -875,22 +1023,28 @@
       "relatedActionMethods": [
         "toBatchAssociateScramSecret",
         "toBatchDisassociateScramSecret",
+        "toCreateAssessment",
         "toCreateChannel",
         "toCreateCluster",
         "toCreateClusterV2",
         "toCreateReplicator",
         "toCreateVpcConnection",
+        "toDeleteAssessment",
         "toDeleteChannel",
         "toDeleteCluster",
         "toDeleteClusterPolicy",
         "toDeleteReplicator",
         "toDeleteVpcConnection",
+        "toDescribeAssessment",
         "toDescribeChannel",
         "toDescribeCluster",
         "toDescribeClusterV2",
         "toDescribeReplicator",
+        "toDescribeTopicReassignment",
         "toDescribeVpcConnection",
         "toGetClusterPolicy",
+        "toListAssessmentFindings",
+        "toListAssessments",
         "toListChannels",
         "toListClientVpcConnections",
         "toListClusterOperations",
@@ -898,10 +1052,13 @@
         "toListNodes",
         "toListScramSecrets",
         "toListTagsForResource",
+        "toListTopicReassignments",
         "toListTopics",
         "toPutClusterPolicy",
         "toRebootBroker",
         "toRejectClientVpcConnection",
+        "toStartTopicReassignment",
+        "toStopTopicReassignment",
         "toTagResource",
         "toUntagResource",
         "toUpdateBrokerCount",
@@ -918,6 +1075,7 @@
         "toUpdateStorage"
       ],
       "relatedResourceTypes": [
+        "assessment",
         "channel",
         "cluster",
         "replicator",
@@ -938,6 +1096,7 @@
       "description": "Filters access by the presence of tag keys in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
+        "toCreateAssessment",
         "toCreateChannel",
         "toCreateCluster",
         "toCreateClusterV2",

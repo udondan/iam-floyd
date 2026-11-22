@@ -13,9 +13,11 @@
       "CreateOAuth2Token",
       "GetConsoleAuthorizationConfiguration",
       "GetResourcePolicy",
+      "GetSession",
       "IntrospectOAuth2Token"
     ],
     "Write": [
+      "BatchRevokeSessions",
       "CreateOAuth2PublicClient",
       "CreateTrustedIdentityPropagationApplicationForConsole",
       "DeleteConsoleAuthorizationConfiguration",
@@ -27,6 +29,7 @@
     ],
     "List": [
       "ListResourcePermissionStatements",
+      "ListSessions",
       "ListTrustedIdentityPropagationApplicationsForConsole"
     ]
   },
@@ -44,6 +47,13 @@
       "description": "Grants permission to authenticate through a browser and obtain an OAuth 2 authorization code for credential exchange",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_dataplane-signin_AuthorizeOAuth2Access.html"
+    },
+    {
+      "name": "BatchRevokeSessions",
+      "methodName": "toBatchRevokeSessions",
+      "description": "Grants permission to revoke one or more sign-in sessions in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_BatchRevokeSessions.html"
     },
     {
       "name": "CreateBearerToken",
@@ -102,6 +112,13 @@
       "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_GetResourcePolicy.html"
     },
     {
+      "name": "GetSession",
+      "methodName": "toGetSession",
+      "description": "Grants permission to retrieve the details of a sign-in session in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_GetSession.html"
+    },
+    {
       "name": "IntrospectOAuth2Token",
       "methodName": "toIntrospectOAuth2Token",
       "description": "Grants permission to inspect the metadata and active state of an OAuth 2 access token or refresh token",
@@ -114,6 +131,13 @@
       "description": "Grants permission to list the SignIn Resource Based Policy statements in your account",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_ListResourcePermissionStatements.html"
+    },
+    {
+      "name": "ListSessions",
+      "methodName": "toListSessions",
+      "description": "Grants permission to list the sign-in sessions for an IAM user or role in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/signin/latest/APIReference/API_ListSessions.html"
     },
     {
       "name": "ListTrustedIdentityPropagationApplicationsForConsole",
@@ -382,6 +406,19 @@
         "string"
       ],
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "signin:PutSignInDurationBlock",
+      "methodName": "ifPutSignInDurationBlock",
+      "description": "Filters access by whether the token request uses an extended sign-in session",
+      "url": "https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html",
+      "relatedActionMethods": [
+        "toCreateOAuth2Token"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PutSignInDurationBlock",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
     }
   ]
 }

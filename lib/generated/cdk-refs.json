@@ -1,5 +1,5 @@
 {
-  "aws-cdk-lib": "2.276.0",
+  "aws-cdk-lib": "2.277.0",
   "constructs": "10.5.0",
   "interfaces": [
     "aws_accessanalyzer.IAnalyzerRef",
@@ -132,6 +132,7 @@
     "aws_cloudwatch.IAccessProfileRef",
     "aws_cloudwatch.IAlarmMuteRuleRef",
     "aws_cloudwatch.IAlarmRef",
+    "aws_cloudwatch.IAlertRef",
     "aws_cloudwatch.IDashboardRef",
     "aws_cloudwatch.IDomainRef",
     "aws_cloudwatch.IInsightRuleRef",
@@ -193,6 +194,7 @@
     "aws_dms.IInstanceProfileRef",
     "aws_dms.IMigrationProjectRef",
     "aws_dms.IReplicationConfigRef",
+    "aws_dms.IReplicationInstanceRef",
     "aws_dms.IReplicationTaskRef",
     "aws_docdbelastic.IClusterRef",
     "aws_docdbelastic.IClusterSnapshotRef",

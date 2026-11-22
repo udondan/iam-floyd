@@ -33,6 +33,7 @@
       "StartStreamTranscriptionWebSocket",
       "StartTranscriptionJob",
       "TagResource",
+      "TranscribeAudio",
       "UntagResource",
       "UpdateCallAnalyticsCategory",
       "UpdateLanguageModel",
@@ -455,6 +456,13 @@
       ]
     },
     {
+      "name": "TranscribeAudio",
+      "methodName": "toTranscribeAudio",
+      "description": "Grants permission to transcribe a media file and return the transcript in the response",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_TranscribeAudio.html"
+    },
+    {
       "name": "UntagResource",
       "methodName": "toUntagResource",
       "description": "Grants permission to untag a resource with given key",
@@ -866,6 +874,7 @@
         "toStartMedicalTranscriptionJob",
         "toStartTranscriptionJob",
         "toTagResource",
+        "toTranscribeAudio",
         "toUpdateCallAnalyticsCategory",
         "toUpdateLanguageModel",
         "toUpdateMedicalVocabulary",

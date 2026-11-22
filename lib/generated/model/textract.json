@@ -13,11 +13,14 @@
       "DetectDocumentText",
       "GetAdapter",
       "GetAdapterVersion",
+      "GetBlueprint",
       "GetDocumentAnalysis",
+      "GetDocumentInsights",
       "GetDocumentTextDetection",
       "GetExpenseAnalysis",
       "GetLendingAnalysis",
       "GetLendingAnalysisSummary",
+      "GetProject",
       "ListAdapterVersions",
       "ListAdapters",
       "ListTagsForResource"
@@ -25,15 +28,27 @@
     "Write": [
       "CreateAdapter",
       "CreateAdapterVersion",
+      "CreateBlueprint",
+      "CreateBlueprintVersion",
+      "CreateProject",
       "DeleteAdapter",
       "DeleteAdapterVersion",
+      "DeleteBlueprint",
+      "DeleteProject",
       "StartDocumentAnalysis",
+      "StartDocumentInsights",
       "StartDocumentTextDetection",
       "StartExpenseAnalysis",
       "StartLendingAnalysis",
       "TagResource",
       "UntagResource",
-      "UpdateAdapter"
+      "UpdateAdapter",
+      "UpdateBlueprint",
+      "UpdateProject"
+    ],
+    "List": [
+      "ListBlueprints",
+      "ListProjects"
     ],
     "Tagging": [
       "TagResource",
@@ -81,6 +96,27 @@
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_CreateAdapterVersion.html"
     },
     {
+      "name": "CreateBlueprint",
+      "methodName": "toCreateBlueprint",
+      "description": "Grants permission to create an Amazon Textract blueprint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_CreateBlueprint.html"
+    },
+    {
+      "name": "CreateBlueprintVersion",
+      "methodName": "toCreateBlueprintVersion",
+      "description": "Grants permission to create an Amazon Textract blueprint version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_CreateBlueprintVersion.html"
+    },
+    {
+      "name": "CreateProject",
+      "methodName": "toCreateProject",
+      "description": "Grants permission to create an Amazon Textract project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_CreateProject.html"
+    },
+    {
       "name": "DeleteAdapter",
       "methodName": "toDeleteAdapter",
       "description": "Grants permission to delete an Amazon Textract adapter",
@@ -93,6 +129,20 @@
       "description": "Grants permission to delete an Amazon Textract adapter version",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_DeleteAdapterVersion.html"
+    },
+    {
+      "name": "DeleteBlueprint",
+      "methodName": "toDeleteBlueprint",
+      "description": "Grants permission to delete an Amazon Textract blueprint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_DeleteBlueprint.html"
+    },
+    {
+      "name": "DeleteProject",
+      "methodName": "toDeleteProject",
+      "description": "Grants permission to delete an Amazon Textract project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_DeleteProject.html"
     },
     {
       "name": "DetectDocumentText",
@@ -116,11 +166,25 @@
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetAdapterVersion.html"
     },
     {
+      "name": "GetBlueprint",
+      "methodName": "toGetBlueprint",
+      "description": "Grants permission to get an Amazon Textract blueprint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetBlueprint.html"
+    },
+    {
       "name": "GetDocumentAnalysis",
       "methodName": "toGetDocumentAnalysis",
       "description": "Grants permission to return information about a document analysis job",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentAnalysis.html"
+    },
+    {
+      "name": "GetDocumentInsights",
+      "methodName": "toGetDocumentInsights",
+      "description": "Grants permission to return information about a document insights job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentInsights.html"
     },
     {
       "name": "GetDocumentTextDetection",
@@ -151,6 +215,13 @@
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetLendingAnalysisSummary.html"
     },
     {
+      "name": "GetProject",
+      "methodName": "toGetProject",
+      "description": "Grants permission to get an Amazon Textract project",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetProject.html"
+    },
+    {
       "name": "ListAdapterVersions",
       "methodName": "toListAdapterVersions",
       "description": "Grants permission to list Amazon Textract adapter versions",
@@ -165,6 +236,20 @@
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_ListAdapters.html"
     },
     {
+      "name": "ListBlueprints",
+      "methodName": "toListBlueprints",
+      "description": "Grants permission to list Amazon Textract blueprints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_ListBlueprints.html"
+    },
+    {
+      "name": "ListProjects",
+      "methodName": "toListProjects",
+      "description": "Grants permission to list Amazon Textract projects",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_ListProjects.html"
+    },
+    {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
       "description": "Grants permission to return a list of tags associated with a resource",
@@ -177,6 +262,13 @@
       "description": "Grants permission to start an asynchronous job to detect instances of real-world document entities within an image or pdf provided as input",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html"
+    },
+    {
+      "name": "StartDocumentInsights",
+      "methodName": "toStartDocumentInsights",
+      "description": "Grants permission to start an asynchronous job to extract insights from a document",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentInsights.html"
     },
     {
       "name": "StartDocumentTextDetection",
@@ -219,6 +311,20 @@
       "description": "Grants permission to update Amazon Textract adapter",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_UpdateAdapter.html"
+    },
+    {
+      "name": "UpdateBlueprint",
+      "methodName": "toUpdateBlueprint",
+      "description": "Grants permission to update an Amazon Textract blueprint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_UpdateBlueprint.html"
+    },
+    {
+      "name": "UpdateProject",
+      "methodName": "toUpdateProject",
+      "description": "Grants permission to update an Amazon Textract project",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_UpdateProject.html"
     }
   ],
   "resources": [
@@ -294,6 +400,99 @@
       "conditionMethods": [
         "ifAwsResourceTag"
       ]
+    },
+    {
+      "name": "blueprint",
+      "methodName": "onBlueprint",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_BlueprintSummary.html",
+      "arn": "arn:${Partition}:textract:${Region}:${Account}:blueprint/${BlueprintId}",
+      "placeholders": [
+        {
+          "placeholder": "BlueprintId",
+          "name": "blueprintId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "job",
+      "methodName": "onJob",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentInsights.html",
+      "arn": "arn:${Partition}:textract:${Region}:${Account}:job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "project",
+      "methodName": "onProject",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/API_ProjectSummary.html",
+      "arn": "arn:${Partition}:textract:${Region}:${Account}:project/${ProjectId}",
+      "placeholders": [
+        {
+          "placeholder": "ProjectId",
+          "name": "projectId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     }
   ],
   "conditions": [
@@ -305,6 +504,9 @@
       "relatedActionMethods": [
         "toCreateAdapter",
         "toCreateAdapterVersion",
+        "toCreateBlueprint",
+        "toCreateProject",
+        "toStartDocumentInsights",
         "toTagResource"
       ],
       "relatedResourceTypes": [],
@@ -324,18 +526,34 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toCreateAdapterVersion",
+        "toCreateBlueprint",
+        "toCreateBlueprintVersion",
+        "toCreateProject",
         "toDeleteAdapter",
         "toDeleteAdapterVersion",
+        "toDeleteBlueprint",
+        "toDeleteProject",
         "toGetAdapter",
         "toGetAdapterVersion",
+        "toGetBlueprint",
+        "toGetDocumentInsights",
+        "toGetProject",
+        "toListBlueprints",
+        "toListProjects",
         "toListTagsForResource",
+        "toStartDocumentInsights",
         "toTagResource",
         "toUntagResource",
-        "toUpdateAdapter"
+        "toUpdateAdapter",
+        "toUpdateBlueprint",
+        "toUpdateProject"
       ],
       "relatedResourceTypes": [
         "adapter",
-        "adapterversion"
+        "adapterversion",
+        "blueprint",
+        "job",
+        "project"
       ],
       "keyLiteral": "aws:ResourceTag/",
       "valueKind": "string",
@@ -354,6 +572,9 @@
       "relatedActionMethods": [
         "toCreateAdapter",
         "toCreateAdapterVersion",
+        "toCreateBlueprint",
+        "toCreateProject",
+        "toStartDocumentInsights",
         "toTagResource",
         "toUntagResource"
       ],

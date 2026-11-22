@@ -47,7 +47,8 @@
       "GetInteraction",
       "ListInteractionEntries",
       "ListInteractions",
-      "SearchForCases"
+      "SearchForCases",
+      "SearchInteractions"
     ]
   },
   "actions": [
@@ -293,6 +294,13 @@
       "name": "SearchForCases",
       "methodName": "toSearchForCases",
       "description": "Grants permission to return a list of AWS Support cases that matches the given inputs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html"
+    },
+    {
+      "name": "SearchInteractions",
+      "methodName": "toSearchInteractions",
+      "description": "Grants permission to search interactions using filters",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html"
     },

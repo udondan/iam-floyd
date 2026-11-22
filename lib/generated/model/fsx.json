@@ -13,21 +13,31 @@
       "CopySnapshotAndUpdateVolume",
       "CreateAndAttachS3AccessPoint",
       "CreateBackup",
+      "CreateClusterPeer",
       "CreateDataRepositoryAssociation",
       "CreateDataRepositoryTask",
       "CreateFileCache",
       "CreateFileSystem",
       "CreateFileSystemFromBackup",
+      "CreateSnapmirrorPolicy",
+      "CreateSnapmirrorRelationship",
       "CreateSnapshot",
+      "CreateSnapshotPolicy",
       "CreateStorageVirtualMachine",
+      "CreateStorageVirtualMachinePeer",
       "CreateVolume",
       "CreateVolumeFromBackup",
       "DeleteBackup",
+      "DeleteClusterPeer",
       "DeleteDataRepositoryAssociation",
       "DeleteFileCache",
       "DeleteFileSystem",
+      "DeleteSnapmirrorPolicy",
+      "DeleteSnapmirrorRelationship",
       "DeleteSnapshot",
+      "DeleteSnapshotPolicy",
       "DeleteStorageVirtualMachine",
+      "DeleteStorageVirtualMachinePeer",
       "DeleteVolume",
       "DetachAndDeleteS3AccessPoint",
       "DisassociateFileSystemAliases",
@@ -36,12 +46,17 @@
       "StartMisconfiguredStateRecovery",
       "TagResource",
       "UntagResource",
+      "UpdateClusterPeer",
       "UpdateDataRepositoryAssociation",
       "UpdateFileCache",
       "UpdateFileSystem",
       "UpdateSharedVpcConfiguration",
+      "UpdateSnapmirrorPolicy",
+      "UpdateSnapmirrorRelationship",
       "UpdateSnapshot",
+      "UpdateSnapshotPolicy",
       "UpdateStorageVirtualMachine",
+      "UpdateStorageVirtualMachinePeer",
       "UpdateVolume",
       "AssociateFileGateway",
       "BypassSnaplockEnterpriseRetention",
@@ -53,6 +68,7 @@
     ],
     "Read": [
       "DescribeBackups",
+      "DescribeClusterPeers",
       "DescribeDataRepositoryAssociations",
       "DescribeDataRepositoryTasks",
       "DescribeFileCaches",
@@ -60,7 +76,11 @@
       "DescribeFileSystems",
       "DescribeS3AccessPointAttachments",
       "DescribeSharedVpcConfiguration",
+      "DescribeSnapmirrorPolicies",
+      "DescribeSnapmirrorRelationships",
+      "DescribeSnapshotPolicies",
       "DescribeSnapshots",
+      "DescribeStorageVirtualMachinePeers",
       "DescribeStorageVirtualMachines",
       "DescribeVolumes",
       "ListTagsForResource",
@@ -122,6 +142,13 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html"
     },
     {
+      "name": "CreateClusterPeer",
+      "methodName": "toCreateClusterPeer",
+      "description": "Grants permission to create a cluster peer relationship between an Amazon FSx for Ontap file system and another Amazon FSx for Ontap file system or ONTAP cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateClusterPeer.html"
+    },
+    {
       "name": "CreateDataRepositoryAssociation",
       "methodName": "toCreateDataRepositoryAssociation",
       "description": "Grants permission to create a new data respository association for an Amazon FSx for Lustre file system",
@@ -157,6 +184,20 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html"
     },
     {
+      "name": "CreateSnapmirrorPolicy",
+      "methodName": "toCreateSnapmirrorPolicy",
+      "description": "Grants permission to create a SnapMirror policy for an Amazon FSx for Ontap file system or storage virtual machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateSnapmirrorPolicy.html"
+    },
+    {
+      "name": "CreateSnapmirrorRelationship",
+      "methodName": "toCreateSnapmirrorRelationship",
+      "description": "Grants permission to create a SnapMirror relationship that replicates data from a source volume to a destination volume",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateSnapmirrorRelationship.html"
+    },
+    {
       "name": "CreateSnapshot",
       "methodName": "toCreateSnapshot",
       "description": "Grants permission to create a new snapshot on a volume",
@@ -164,11 +205,25 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateSnapshot.html"
     },
     {
+      "name": "CreateSnapshotPolicy",
+      "methodName": "toCreateSnapshotPolicy",
+      "description": "Grants permission to create a snapshot policy for an Amazon FSx for Ontap file system or storage virtual machine",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateSnapshotPolicy.html"
+    },
+    {
       "name": "CreateStorageVirtualMachine",
       "methodName": "toCreateStorageVirtualMachine",
       "description": "Grants permission to create a new storage virtual machine in an Amazon FSx for Ontap file system",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateStorageVirtualMachine.html"
+    },
+    {
+      "name": "CreateStorageVirtualMachinePeer",
+      "methodName": "toCreateStorageVirtualMachinePeer",
+      "description": "Grants permission to create a peer relationship between a storage virtual machine and a storage virtual machine on another Amazon FSx for Ontap file system or ONTAP cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateStorageVirtualMachinePeer.html"
     },
     {
       "name": "CreateVolume",
@@ -192,6 +247,13 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteBackup.html"
     },
     {
+      "name": "DeleteClusterPeer",
+      "methodName": "toDeleteClusterPeer",
+      "description": "Grants permission to delete a cluster peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteClusterPeer.html"
+    },
+    {
       "name": "DeleteDataRepositoryAssociation",
       "methodName": "toDeleteDataRepositoryAssociation",
       "description": "Grants permission to delete a data repository association",
@@ -213,6 +275,20 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html"
     },
     {
+      "name": "DeleteSnapmirrorPolicy",
+      "methodName": "toDeleteSnapmirrorPolicy",
+      "description": "Grants permission to delete a SnapMirror policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteSnapmirrorPolicy.html"
+    },
+    {
+      "name": "DeleteSnapmirrorRelationship",
+      "methodName": "toDeleteSnapmirrorRelationship",
+      "description": "Grants permission to delete a SnapMirror relationship",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteSnapmirrorRelationship.html"
+    },
+    {
       "name": "DeleteSnapshot",
       "methodName": "toDeleteSnapshot",
       "description": "Grants permission to delete a snapshot on a volume",
@@ -220,11 +296,25 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteSnapshot.html"
     },
     {
+      "name": "DeleteSnapshotPolicy",
+      "methodName": "toDeleteSnapshotPolicy",
+      "description": "Grants permission to delete a snapshot policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteSnapshotPolicy.html"
+    },
+    {
       "name": "DeleteStorageVirtualMachine",
       "methodName": "toDeleteStorageVirtualMachine",
       "description": "Grants permission to delete a storage virtual machine, deleting its contents",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteStorageVirtualMachine.html"
+    },
+    {
+      "name": "DeleteStorageVirtualMachinePeer",
+      "methodName": "toDeleteStorageVirtualMachinePeer",
+      "description": "Grants permission to delete a storage virtual machine peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteStorageVirtualMachinePeer.html"
     },
     {
       "name": "DeleteVolume",
@@ -239,6 +329,13 @@
       "description": "Grants permission to return the descriptions of all backups owned by your AWS account in the AWS Region of the endpoint that you're calling",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html"
+    },
+    {
+      "name": "DescribeClusterPeers",
+      "methodName": "toDescribeClusterPeers",
+      "description": "Grants permission to return the descriptions of all cluster peers owned by your AWS account in the AWS Region of the endpoint that you're calling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeClusterPeers.html"
     },
     {
       "name": "DescribeDataRepositoryAssociations",
@@ -290,11 +387,39 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSharedVpcConfiguration.html"
     },
     {
+      "name": "DescribeSnapmirrorPolicies",
+      "methodName": "toDescribeSnapmirrorPolicies",
+      "description": "Grants permission to return the descriptions of all SnapMirror policies owned by your AWS account in the AWS Region of the endpoint that you're calling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapmirrorPolicies.html"
+    },
+    {
+      "name": "DescribeSnapmirrorRelationships",
+      "methodName": "toDescribeSnapmirrorRelationships",
+      "description": "Grants permission to return the descriptions of all SnapMirror relationships owned by your AWS account in the AWS Region of the endpoint that you're calling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapmirrorRelationships.html"
+    },
+    {
+      "name": "DescribeSnapshotPolicies",
+      "methodName": "toDescribeSnapshotPolicies",
+      "description": "Grants permission to return the descriptions of all snapshot policies owned by your AWS account in the AWS Region of the endpoint that you're calling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshotPolicies.html"
+    },
+    {
       "name": "DescribeSnapshots",
       "methodName": "toDescribeSnapshots",
       "description": "Grants permission to return the descriptions of all snapshots owned by your AWS account in the AWS Region of the endpoint you're calling",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html"
+    },
+    {
+      "name": "DescribeStorageVirtualMachinePeers",
+      "methodName": "toDescribeStorageVirtualMachinePeers",
+      "description": "Grants permission to return the descriptions of all storage virtual machine peers owned by your AWS account in the AWS Region of the endpoint that you're calling",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeStorageVirtualMachinePeers.html"
     },
     {
       "name": "DescribeStorageVirtualMachines",
@@ -367,6 +492,13 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html"
     },
     {
+      "name": "UpdateClusterPeer",
+      "methodName": "toUpdateClusterPeer",
+      "description": "Grants permission to update a cluster peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateClusterPeer.html"
+    },
+    {
       "name": "UpdateDataRepositoryAssociation",
       "methodName": "toUpdateDataRepositoryAssociation",
       "description": "Grants permission to update data repository association configuration",
@@ -395,6 +527,20 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSharedVpcConfiguration.html"
     },
     {
+      "name": "UpdateSnapmirrorPolicy",
+      "methodName": "toUpdateSnapmirrorPolicy",
+      "description": "Grants permission to update a SnapMirror policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSnapmirrorPolicy.html"
+    },
+    {
+      "name": "UpdateSnapmirrorRelationship",
+      "methodName": "toUpdateSnapmirrorRelationship",
+      "description": "Grants permission to update a SnapMirror relationship",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSnapmirrorRelationship.html"
+    },
+    {
       "name": "UpdateSnapshot",
       "methodName": "toUpdateSnapshot",
       "description": "Grants permission to update snapshot configuration",
@@ -402,11 +548,25 @@
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSnapshot.html"
     },
     {
+      "name": "UpdateSnapshotPolicy",
+      "methodName": "toUpdateSnapshotPolicy",
+      "description": "Grants permission to update a snapshot policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateSnapshotPolicy.html"
+    },
+    {
       "name": "UpdateStorageVirtualMachine",
       "methodName": "toUpdateStorageVirtualMachine",
       "description": "Grants permission to update storage virtual machine configuration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateStorageVirtualMachine.html"
+    },
+    {
+      "name": "UpdateStorageVirtualMachinePeer",
+      "methodName": "toUpdateStorageVirtualMachinePeer",
+      "description": "Grants permission to update a storage virtual machine peer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateStorageVirtualMachinePeer.html"
     },
     {
       "name": "UpdateVolume",
@@ -547,6 +707,42 @@
       }
     },
     {
+      "name": "cluster-peer",
+      "methodName": "onClusterPeer",
+      "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:cluster-peer/${FileSystemId}/${ClusterPeerId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemId",
+          "name": "fileSystemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ClusterPeerId",
+          "name": "clusterPeerId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "file-cache",
       "methodName": "onFileCache",
       "url": "https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/security-iam.html",
@@ -621,6 +817,83 @@
       }
     },
     {
+      "name": "snapmirror-policy",
+      "methodName": "onSnapmirrorPolicy",
+      "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:snapmirror-policy/${FileSystemIdOrStorageVirtualMachineId}/${SnapmirrorPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemIdOrStorageVirtualMachineId",
+          "name": "fileSystemIdOrStorageVirtualMachineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SnapmirrorPolicyId",
+          "name": "snapmirrorPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "snapmirror-relationship",
+      "methodName": "onSnapmirrorRelationship",
+      "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:snapmirror-relationship/${FileSystemId}/${VolumeId}/${SnapmirrorRelationshipId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemId",
+          "name": "fileSystemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "VolumeId",
+          "name": "volumeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SnapmirrorRelationshipId",
+          "name": "snapmirrorRelationshipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "snapshot",
       "methodName": "onSnapshot",
       "url": "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-control-overview.html#access-control-resources",
@@ -657,6 +930,42 @@
       ]
     },
     {
+      "name": "snapshot-policy",
+      "methodName": "onSnapshotPolicy",
+      "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:snapshot-policy/${FileSystemIdOrStorageVirtualMachineId}/${SnapshotPolicyId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemIdOrStorageVirtualMachineId",
+          "name": "fileSystemIdOrStorageVirtualMachineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SnapshotPolicyId",
+          "name": "snapshotPolicyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "storage-virtual-machine",
       "methodName": "onStorageVirtualMachine",
       "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html",
@@ -670,6 +979,47 @@
         {
           "placeholder": "StorageVirtualMachineId",
           "name": "storageVirtualMachineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "svm-peer",
+      "methodName": "onSvmPeer",
+      "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:svm-peer/${FileSystemId}/${StorageVirtualMachineId}/${StorageVirtualMachinePeerId}",
+      "placeholders": [
+        {
+          "placeholder": "FileSystemId",
+          "name": "fileSystemId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StorageVirtualMachineId",
+          "name": "storageVirtualMachineId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StorageVirtualMachinePeerId",
+          "name": "storageVirtualMachinePeerId",
           "kind": "required"
         },
         {
@@ -769,13 +1119,18 @@
       "relatedActionMethods": [
         "toCopyBackup",
         "toCreateBackup",
+        "toCreateClusterPeer",
         "toCreateDataRepositoryAssociation",
         "toCreateDataRepositoryTask",
         "toCreateFileCache",
         "toCreateFileSystem",
         "toCreateFileSystemFromBackup",
+        "toCreateSnapmirrorPolicy",
+        "toCreateSnapmirrorRelationship",
         "toCreateSnapshot",
+        "toCreateSnapshotPolicy",
         "toCreateStorageVirtualMachine",
+        "toCreateStorageVirtualMachinePeer",
         "toCreateVolume",
         "toCreateVolumeFromBackup",
         "toDeleteFileSystem",
@@ -804,21 +1159,31 @@
         "toCopySnapshotAndUpdateVolume",
         "toCreateAndAttachS3AccessPoint",
         "toCreateBackup",
+        "toCreateClusterPeer",
         "toCreateDataRepositoryAssociation",
         "toCreateDataRepositoryTask",
         "toCreateFileCache",
         "toCreateFileSystem",
         "toCreateFileSystemFromBackup",
+        "toCreateSnapmirrorPolicy",
+        "toCreateSnapmirrorRelationship",
         "toCreateSnapshot",
+        "toCreateSnapshotPolicy",
         "toCreateStorageVirtualMachine",
+        "toCreateStorageVirtualMachinePeer",
         "toCreateVolume",
         "toCreateVolumeFromBackup",
         "toDeleteBackup",
+        "toDeleteClusterPeer",
         "toDeleteDataRepositoryAssociation",
         "toDeleteFileCache",
         "toDeleteFileSystem",
+        "toDeleteSnapmirrorPolicy",
+        "toDeleteSnapmirrorRelationship",
         "toDeleteSnapshot",
+        "toDeleteSnapshotPolicy",
         "toDeleteStorageVirtualMachine",
+        "toDeleteStorageVirtualMachinePeer",
         "toDeleteVolume",
         "toDescribeFileSystemAliases",
         "toDetachAndDeleteS3AccessPoint",
@@ -829,11 +1194,16 @@
         "toStartMisconfiguredStateRecovery",
         "toTagResource",
         "toUntagResource",
+        "toUpdateClusterPeer",
         "toUpdateDataRepositoryAssociation",
         "toUpdateFileCache",
         "toUpdateFileSystem",
+        "toUpdateSnapmirrorPolicy",
+        "toUpdateSnapmirrorRelationship",
         "toUpdateSnapshot",
+        "toUpdateSnapshotPolicy",
         "toUpdateStorageVirtualMachine",
+        "toUpdateStorageVirtualMachinePeer",
         "toUpdateVolume",
         "toAssociateFileGateway",
         "toBypassSnaplockEnterpriseRetention",
@@ -847,10 +1217,15 @@
       "relatedResourceTypes": [
         "association",
         "backup",
+        "cluster-peer",
         "file-cache",
         "file-system",
+        "snapmirror-policy",
+        "snapmirror-relationship",
         "snapshot",
+        "snapshot-policy",
         "storage-virtual-machine",
+        "svm-peer",
         "task",
         "volume"
       ],
@@ -871,13 +1246,18 @@
       "relatedActionMethods": [
         "toCopyBackup",
         "toCreateBackup",
+        "toCreateClusterPeer",
         "toCreateDataRepositoryAssociation",
         "toCreateDataRepositoryTask",
         "toCreateFileCache",
         "toCreateFileSystem",
         "toCreateFileSystemFromBackup",
+        "toCreateSnapmirrorPolicy",
+        "toCreateSnapmirrorRelationship",
         "toCreateSnapshot",
+        "toCreateSnapshotPolicy",
         "toCreateStorageVirtualMachine",
+        "toCreateStorageVirtualMachinePeer",
         "toCreateVolume",
         "toCreateVolumeFromBackup",
         "toDeleteFileSystem",
@@ -959,6 +1339,23 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "ParentVolumeId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "fsx:SnapmirrorSourcePath",
+      "methodName": "ifSnapmirrorSourcePath",
+      "description": "Filters access by the source path of a SnapMirror relationship",
+      "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/migrating-fsx-ontap-snapmirror.html#snapmirror-relationship",
+      "relatedActionMethods": [
+        "toCreateSnapmirrorRelationship"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SnapmirrorSourcePath",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [

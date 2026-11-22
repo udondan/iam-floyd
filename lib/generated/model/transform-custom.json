@@ -9,12 +9,15 @@
     "Write": [
       "BatchCreateFindings",
       "BatchUpdateFindings",
+      "CancelSkillCreationJob",
       "CompleteTransformationPackageUpload",
+      "ConnectSource",
       "ContributeKnowledgeItems",
       "ConverseStream",
       "CreateAnalysis",
       "CreateCampaign",
       "CreateRemediation",
+      "CreateRemediationPlan",
       "CreateRepository",
       "CreateSource",
       "CreateTransformationPackageUrl",
@@ -23,6 +26,7 @@
       "DeleteFinding",
       "DeleteKnowledgeItem",
       "DeleteRemediation",
+      "DeleteRemediationPlan",
       "DeleteRepository",
       "DeleteResourcePolicy",
       "DeleteSource",
@@ -31,17 +35,23 @@
       "PutResourcePolicy",
       "SendTelemetryEvent",
       "ShareTransformationPackage",
+      "StartSkillCreationJob",
       "TagResource",
       "UnshareTransformationPackage",
       "UntagResource",
       "UpdateAnalysis",
       "UpdateCampaign",
       "UpdateCampaignRepositoryStatus",
+      "UpdateIssueGroup",
       "UpdateKnowledgeItemConfiguration",
       "UpdateKnowledgeItemStatus",
       "UpdateRemediation",
+      "UpdateRemediationPlan",
       "UpdateRepository",
-      "UpdateSource"
+      "UpdateSkillCreationJob",
+      "UpdateSource",
+      "ReadRepositoryContent",
+      "WriteRepositoryContent"
     ],
     "Permissions management": [
       "DeleteResourcePolicy",
@@ -53,10 +63,13 @@
       "GetCampaign",
       "GetFinding",
       "GetFindingGroups",
+      "GetIssueGroup",
       "GetKnowledgeItem",
       "GetRemediation",
+      "GetRemediationPlan",
       "GetRepository",
       "GetResourcePolicy",
+      "GetSkillCreationJob",
       "GetSource",
       "GetTransformationPackageUrl",
       "ListAnalysisArtifacts",
@@ -68,9 +81,12 @@
       "ListAnalyses",
       "ListCampaigns",
       "ListFindings",
+      "ListIssueGroups",
       "ListKnowledgeItems",
+      "ListRemediationPlans",
       "ListRemediations",
       "ListRepositories",
+      "ListSkillCreationJobs",
       "ListSources",
       "ListTransformationPackageMetadata"
     ],
@@ -100,9 +116,23 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "CancelSkillCreationJob",
+      "methodName": "toCancelSkillCreationJob",
+      "description": "Grants permission to invoke CancelSkillCreationJob on AWS Transform custom. Does not grant reporting a job's progress or result, which is UpdateSkillCreationJob",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "CompleteTransformationPackageUpload",
       "methodName": "toCompleteTransformationPackageUpload",
       "description": "Grants permission to invoke CompleteTransformationPackageUpload on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "ConnectSource",
+      "methodName": "toConnectSource",
+      "description": "Grants permission to invoke ConnectSource on AWS Transform custom",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -138,6 +168,13 @@
       "name": "CreateRemediation",
       "methodName": "toCreateRemediation",
       "description": "Grants permission to invoke CreateRemediation on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "CreateRemediationPlan",
+      "methodName": "toCreateRemediationPlan",
+      "description": "Grants permission to invoke CreateRemediationPlan on AWS Transform custom",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -194,6 +231,13 @@
       "name": "DeleteRemediation",
       "methodName": "toDeleteRemediation",
       "description": "Grants permission to invoke DeleteRemediation on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "DeleteRemediationPlan",
+      "methodName": "toDeleteRemediationPlan",
+      "description": "Grants permission to invoke DeleteRemediationPlan on AWS Transform custom",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -268,6 +312,13 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "GetIssueGroup",
+      "methodName": "toGetIssueGroup",
+      "description": "Grants permission to invoke GetIssueGroup on AWS Transform custom",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "GetKnowledgeItem",
       "methodName": "toGetKnowledgeItem",
       "description": "Grants permission to invoke GetKnowledgeItem on AWS Transform custom",
@@ -282,6 +333,13 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "GetRemediationPlan",
+      "methodName": "toGetRemediationPlan",
+      "description": "Grants permission to invoke GetRemediationPlan on AWS Transform custom",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "GetRepository",
       "methodName": "toGetRepository",
       "description": "Grants permission to invoke GetRepository on AWS Transform custom",
@@ -292,6 +350,13 @@
       "name": "GetResourcePolicy",
       "methodName": "toGetResourcePolicy",
       "description": "Grants permission to retrieve the resource policy attached to a shareable resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "GetSkillCreationJob",
+      "methodName": "toGetSkillCreationJob",
+      "description": "Grants permission to invoke GetSkillCreationJob on AWS Transform custom",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -345,9 +410,23 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "ListIssueGroups",
+      "methodName": "toListIssueGroups",
+      "description": "Grants permission to invoke ListIssueGroups on AWS Transform custom",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "ListKnowledgeItems",
       "methodName": "toListKnowledgeItems",
       "description": "Grants permission to invoke ListKnowledgeItems on AWS Transform custom",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "ListRemediationPlans",
+      "methodName": "toListRemediationPlans",
+      "description": "Grants permission to invoke ListRemediationPlans on AWS Transform custom",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -362,6 +441,13 @@
       "name": "ListRepositories",
       "methodName": "toListRepositories",
       "description": "Grants permission to invoke ListRepositories on AWS Transform custom",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "ListSkillCreationJobs",
+      "methodName": "toListSkillCreationJobs",
+      "description": "Grants permission to invoke ListSkillCreationJobs on AWS Transform custom",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
@@ -415,6 +501,13 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "StartSkillCreationJob",
+      "methodName": "toStartSkillCreationJob",
+      "description": "Grants permission to invoke StartSkillCreationJob on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "TagResource",
       "methodName": "toTagResource",
       "description": "Grants permission to invoke TagResource on AWS Transform custom",
@@ -457,6 +550,13 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "UpdateIssueGroup",
+      "methodName": "toUpdateIssueGroup",
+      "description": "Grants permission to invoke UpdateIssueGroup on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "UpdateKnowledgeItemConfiguration",
       "methodName": "toUpdateKnowledgeItemConfiguration",
       "description": "Grants permission to invoke UpdateKnowledgeItemConfiguration on AWS Transform custom",
@@ -478,6 +578,13 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "UpdateRemediationPlan",
+      "methodName": "toUpdateRemediationPlan",
+      "description": "Grants permission to invoke UpdateRemediationPlan on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "UpdateRepository",
       "methodName": "toUpdateRepository",
       "description": "Grants permission to invoke UpdateRepository on AWS Transform custom",
@@ -485,9 +592,30 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     },
     {
+      "name": "UpdateSkillCreationJob",
+      "methodName": "toUpdateSkillCreationJob",
+      "description": "Grants permission to invoke UpdateSkillCreationJob on AWS Transform custom. Granted to a skill-creation job's executor, which needs only this action and GetSkillCreationJob; it does not grant cancelling a job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
       "name": "UpdateSource",
       "methodName": "toUpdateSource",
       "description": "Grants permission to invoke UpdateSource on AWS Transform custom",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "ReadRepositoryContent",
+      "methodName": "toReadRepositoryContent",
+      "description": "Grants permission to read the contents of a repository through its source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
+    },
+    {
+      "name": "WriteRepositoryContent",
+      "methodName": "toWriteRepositoryContent",
+      "description": "Grants permission to write to a repository through its source",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html"
     }
@@ -564,6 +692,37 @@
         {
           "placeholder": "FindingId",
           "name": "findingId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "issue-group",
+      "methodName": "onIssueGroup",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html",
+      "arn": "arn:${Partition}:transform-custom:${Region}:${Account}:issue-group/${IssueGroupId}",
+      "placeholders": [
+        {
+          "placeholder": "IssueGroupId",
+          "name": "issueGroupId",
           "kind": "required"
         },
         {
@@ -685,6 +844,37 @@
       ]
     },
     {
+      "name": "remediation-plan",
+      "methodName": "onRemediationPlan",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html",
+      "arn": "arn:${Partition}:transform-custom:${Region}:${Account}:remediation-plan/${RemediationPlanId}",
+      "placeholders": [
+        {
+          "placeholder": "RemediationPlanId",
+          "name": "remediationPlanId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "repository",
       "methodName": "onRepository",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html",
@@ -693,6 +883,37 @@
         {
           "placeholder": "RepositoryId",
           "name": "repositoryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "skill-creation-job",
+      "methodName": "onSkillCreationJob",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/custom.html",
+      "arn": "arn:${Partition}:transform-custom:${Region}:${Account}:skill-creation-job/${SkillCreationJobId}",
+      "placeholders": [
+        {
+          "placeholder": "SkillCreationJobId",
+          "name": "skillCreationJobId",
           "kind": "required"
         },
         {
@@ -758,9 +979,11 @@
         "toCreateAnalysis",
         "toCreateCampaign",
         "toCreateRemediation",
+        "toCreateRemediationPlan",
         "toCreateRepository",
         "toCreateSource",
         "toCreateTransformationPackageUrl",
+        "toStartSkillCreationJob",
         "toTagResource"
       ],
       "relatedResourceTypes": [],
@@ -780,11 +1003,14 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toBatchCreateFindings",
+        "toCancelSkillCreationJob",
         "toCompleteTransformationPackageUpload",
+        "toConnectSource",
         "toContributeKnowledgeItems",
         "toCreateAnalysis",
         "toCreateCampaign",
         "toCreateRemediation",
+        "toCreateRemediationPlan",
         "toCreateRepository",
         "toCreateSource",
         "toCreateTransformationPackageUrl",
@@ -793,6 +1019,7 @@
         "toDeleteFinding",
         "toDeleteKnowledgeItem",
         "toDeleteRemediation",
+        "toDeleteRemediationPlan",
         "toDeleteRepository",
         "toDeleteResourcePolicy",
         "toDeleteSource",
@@ -802,10 +1029,13 @@
         "toGetAnalysisArtifactDownloadUrl",
         "toGetCampaign",
         "toGetFinding",
+        "toGetIssueGroup",
         "toGetKnowledgeItem",
         "toGetRemediation",
+        "toGetRemediationPlan",
         "toGetRepository",
         "toGetResourcePolicy",
+        "toGetSkillCreationJob",
         "toGetSource",
         "toGetTransformationPackageUrl",
         "toListAnalysisArtifacts",
@@ -813,26 +1043,35 @@
         "toListTransformationPackageShares",
         "toPutResourcePolicy",
         "toShareTransformationPackage",
+        "toStartSkillCreationJob",
         "toTagResource",
         "toUnshareTransformationPackage",
         "toUntagResource",
         "toUpdateAnalysis",
         "toUpdateCampaign",
         "toUpdateCampaignRepositoryStatus",
+        "toUpdateIssueGroup",
         "toUpdateKnowledgeItemConfiguration",
         "toUpdateKnowledgeItemStatus",
         "toUpdateRemediation",
+        "toUpdateRemediationPlan",
         "toUpdateRepository",
-        "toUpdateSource"
+        "toUpdateSkillCreationJob",
+        "toUpdateSource",
+        "toReadRepositoryContent",
+        "toWriteRepositoryContent"
       ],
       "relatedResourceTypes": [
         "analysis",
         "campaign",
         "finding",
+        "issue-group",
         "knowledge-item",
         "package",
         "remediation",
+        "remediation-plan",
         "repository",
+        "skill-creation-job",
         "source"
       ],
       "keyLiteral": "aws:ResourceTag/",
@@ -854,9 +1093,11 @@
         "toCreateAnalysis",
         "toCreateCampaign",
         "toCreateRemediation",
+        "toCreateRemediationPlan",
         "toCreateRepository",
         "toCreateSource",
         "toCreateTransformationPackageUrl",
+        "toStartSkillCreationJob",
         "toTagResource",
         "toUntagResource"
       ],

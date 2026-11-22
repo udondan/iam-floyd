@@ -18,7 +18,8 @@
       "PutVectors",
       "TagResource",
       "UntagResource",
-      "UpdateIndexMode"
+      "UpdateIndexMode",
+      "UpdateMetadataConfiguration"
     ],
     "Permissions management": [
       "DeleteVectorBucketPolicy",
@@ -165,7 +166,7 @@
     {
       "name": "QueryVectors",
       "methodName": "toQueryVectors",
-      "description": "Grants permission to find approximate nearest neighbors within a specified search vector index for a given query vector",
+      "description": "Grants permission to query a specified vector index using vector similarity, full-text, or hybrid search",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_QueryVectors.html"
     },
@@ -189,6 +190,13 @@
       "description": "Grants permission to update the index mode for a specified vector index",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UpdateIndexMode.html"
+    },
+    {
+      "name": "UpdateMetadataConfiguration",
+      "methodName": "toUpdateMetadataConfiguration",
+      "description": "Grants permission to update the metadata configuration for a specified vector index",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UpdateMetadataConfiguration.html"
     }
   ],
   "resources": [
@@ -314,7 +322,8 @@
         "toQueryVectors",
         "toTagResource",
         "toUntagResource",
-        "toUpdateIndexMode"
+        "toUpdateIndexMode",
+        "toUpdateMetadataConfiguration"
       ],
       "relatedResourceTypes": [
         "Index",
@@ -374,7 +383,8 @@
         "toQueryVectors",
         "toTagResource",
         "toUntagResource",
-        "toUpdateIndexMode"
+        "toUpdateIndexMode",
+        "toUpdateMetadataConfiguration"
       ],
       "relatedResourceTypes": [
         "Index",

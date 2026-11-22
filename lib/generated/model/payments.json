@@ -6,21 +6,11 @@
   "servicePrefix": "payments",
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_payments.html",
   "accessLevelList": {
-    "Write": [
-      "AcceptFinancingApplicationTerms",
-      "CreateConnectedAccount",
-      "CreateFinancingApplication",
-      "CreatePaymentInstrument",
-      "DeleteConnectedAccount",
-      "TagResource",
-      "UntagResource",
-      "UpdateFinancingApplication",
-      "DeletePaymentInstrument",
-      "MakePayment",
-      "UpdatePaymentInstrument",
-      "UpdatePaymentPreferences"
-    ],
     "Read": [
+      "BatchGetFinancialRecord",
+      "GetAccountBalance",
+      "GetFinancialRecord",
+      "GetPaymentInstrument",
       "GetConnectedAccount",
       "GetFinancingApplication",
       "GetFinancingLine",
@@ -29,16 +19,30 @@
       "GetPaymentStatus"
     ],
     "List": [
-      "GetPaymentInstrument",
+      "ListFinancialRecords",
+      "ListPaymentInstruments",
       "ListConnectedAccounts",
       "ListFinancingApplications",
       "ListFinancingLineWithdrawals",
       "ListFinancingLines",
+      "ListPaymentPreferences",
       "ListPaymentProgramOptions",
       "ListPaymentProgramStatus",
-      "ListTagsForResource",
-      "ListPaymentInstruments",
-      "ListPaymentPreferences"
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "AcceptFinancingApplicationTerms",
+      "CreateConnectedAccount",
+      "CreateFinancingApplication",
+      "CreatePaymentInstrument",
+      "DeleteConnectedAccount",
+      "DeletePaymentInstrument",
+      "MakePayment",
+      "TagResource",
+      "UntagResource",
+      "UpdateFinancingApplication",
+      "UpdatePaymentInstrument",
+      "UpdatePaymentPreferences"
     ],
     "Tagging": [
       "TagResource",
@@ -46,6 +50,48 @@
     ]
   },
   "actions": [
+    {
+      "name": "BatchGetFinancialRecord",
+      "methodName": "toBatchGetFinancialRecord",
+      "description": "Grants permission to get information about multiple financial records",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_payments_BatchGetFinancialRecord.html"
+    },
+    {
+      "name": "GetAccountBalance",
+      "methodName": "toGetAccountBalance",
+      "description": "Grants permission to get a balance of the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_payments_GetAccountBalance.html"
+    },
+    {
+      "name": "GetFinancialRecord",
+      "methodName": "toGetFinancialRecord",
+      "description": "Grants permission to get information about a financial record",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_payments_GetFinancialRecord.html"
+    },
+    {
+      "name": "GetPaymentInstrument",
+      "methodName": "toGetPaymentInstrument",
+      "description": "Grants permission to get information about a payment instrument",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_payments_GetPaymentInstrument.html"
+    },
+    {
+      "name": "ListFinancialRecords",
+      "methodName": "toListFinancialRecords",
+      "description": "Grants permission to list financial records",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_payments_ListFinancialRecords.html"
+    },
+    {
+      "name": "ListPaymentInstruments",
+      "methodName": "toListPaymentInstruments",
+      "description": "Grants permission to list payment instrument metadata",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_payments_ListPaymentInstruments.html"
+    },
     {
       "name": "AcceptFinancingApplicationTerms",
       "methodName": "toAcceptFinancingApplicationTerms",
@@ -90,6 +136,13 @@
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
     },
     {
+      "name": "DeletePaymentInstrument",
+      "methodName": "toDeletePaymentInstrument",
+      "description": "Grants permission to delete a payment instrument",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
       "name": "GetConnectedAccount",
       "methodName": "toGetConnectedAccount",
       "description": "Grants permission to get information about a connected account",
@@ -125,10 +178,10 @@
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
     },
     {
-      "name": "GetPaymentInstrument",
-      "methodName": "toGetPaymentInstrument",
-      "description": "Grants permission to get information about a payment instrument",
-      "accessLevel": "List",
+      "name": "GetPaymentStatus",
+      "methodName": "toGetPaymentStatus",
+      "description": "Grants permission to view payment information, such as payment status, payment history, payments due, financing details, financial records and account balances, including through the GetFinancialRecord, BatchGetFinancialRecord, ListFinancialRecords, and GetAccountBalance APIs",
+      "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
     },
     {
@@ -160,6 +213,13 @@
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
     },
     {
+      "name": "ListPaymentPreferences",
+      "methodName": "toListPaymentPreferences",
+      "description": "Grants permission to get payment preferences (preferred payment currency, preferred payment method, etc.)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
       "name": "ListPaymentProgramOptions",
       "methodName": "toListPaymentProgramOptions",
       "description": "Grants permission to list information about payment options",
@@ -178,6 +238,13 @@
       "methodName": "toListTagsForResource",
       "description": "Grants permission to list tags on a payment resource",
       "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "MakePayment",
+      "methodName": "toMakePayment",
+      "description": "Grants permission to make a payment, authenticate a payment, verify a payment method, and generate a funding request document for Advance Pay",
+      "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
     },
     {
@@ -200,41 +267,6 @@
       "description": "Grants permission to update a financing application",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref"
-    },
-    {
-      "name": "DeletePaymentInstrument",
-      "methodName": "toDeletePaymentInstrument",
-      "description": "Grants permission to delete a payment instrument",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
-    },
-    {
-      "name": "GetPaymentStatus",
-      "methodName": "toGetPaymentStatus",
-      "description": "Grants permission to get payment status of invoices",
-      "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
-    },
-    {
-      "name": "ListPaymentInstruments",
-      "methodName": "toListPaymentInstruments",
-      "description": "Grants permission to list payment instrument metadata",
-      "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
-    },
-    {
-      "name": "ListPaymentPreferences",
-      "methodName": "toListPaymentPreferences",
-      "description": "Grants permission to get payment preferences (preferred payment currency, preferred payment method, etc.)",
-      "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
-    },
-    {
-      "name": "MakePayment",
-      "methodName": "toMakePayment",
-      "description": "Grants permission to make a payment, authenticate a payment, verify a payment method, and generate a funding request document for Advance Pay",
-      "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
     },
     {
       "name": "UpdatePaymentInstrument",
@@ -332,9 +364,9 @@
       "description": "Filters access by the tags associated with the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toGetPaymentInstrument",
         "toDeleteConnectedAccount",
         "toGetConnectedAccount",
-        "toGetPaymentInstrument",
         "toListTagsForResource",
         "toTagResource",
         "toUntagResource"

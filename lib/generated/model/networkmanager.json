@@ -9,12 +9,14 @@
     "Write": [
       "AcceptAttachment",
       "AssociateConnectPeer",
+      "AssociateContextStore",
       "AssociateCustomerGateway",
       "AssociateLink",
       "AssociateTransitGatewayConnectPeer",
       "CreateConnectAttachment",
       "CreateConnectPeer",
       "CreateConnection",
+      "CreateContextStore",
       "CreateCoreNetwork",
       "CreateCoreNetworkPrefixListAssociation",
       "CreateDevice",
@@ -29,6 +31,7 @@
       "DeleteAttachment",
       "DeleteConnectPeer",
       "DeleteConnection",
+      "DeleteContextStore",
       "DeleteCoreNetwork",
       "DeleteCoreNetworkPolicyVersion",
       "DeleteCoreNetworkPrefixListAssociation",
@@ -40,6 +43,7 @@
       "DeleteSite",
       "DeregisterTransitGateway",
       "DisassociateConnectPeer",
+      "DisassociateContextStore",
       "DisassociateCustomerGateway",
       "DisassociateLink",
       "DisassociateTransitGatewayConnectPeer",
@@ -57,6 +61,7 @@
       "UntagResource",
       "UpdateAttachmentNatConfiguration",
       "UpdateConnection",
+      "UpdateContextStore",
       "UpdateCoreNetwork",
       "UpdateDevice",
       "UpdateDirectConnectGatewayAttachment",
@@ -85,6 +90,8 @@
       "ListAttachmentRoutingPolicyAssociations",
       "ListAttachments",
       "ListConnectPeers",
+      "ListContextStoreAssociations",
+      "ListContextStores",
       "ListCoreNetworkPolicyVersions",
       "ListCoreNetworkPrefixListAssociations",
       "ListCoreNetworkRoutingInformation",
@@ -96,6 +103,9 @@
       "GetConnectAttachment",
       "GetConnectPeer",
       "GetConnectPeerAssociations",
+      "GetContextStore",
+      "GetContextStoreAssociation",
+      "GetContextVersion",
       "GetCoreNetwork",
       "GetCoreNetworkChangeEvents",
       "GetCoreNetworkChangeSet",
@@ -112,6 +122,8 @@
       "GetTransitGatewayPeering",
       "GetTransitGatewayRouteTableAttachment",
       "GetVpcAttachment",
+      "ListContextChanges",
+      "ListContexts",
       "ListTagsForResource"
     ],
     "Tagging": [
@@ -133,6 +145,13 @@
       "description": "Grants permission to associate a Connect Peer",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateConnectPeer.html"
+    },
+    {
+      "name": "AssociateContextStore",
+      "methodName": "toAssociateContextStore",
+      "description": "Grants permission to associate a transit gateway with a context store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateContextStore.html"
     },
     {
       "name": "AssociateCustomerGateway",
@@ -175,6 +194,13 @@
       "description": "Grants permission to create a new connection",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnection.html"
+    },
+    {
+      "name": "CreateContextStore",
+      "methodName": "toCreateContextStore",
+      "description": "Grants permission to create a context store in a global network",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateContextStore.html"
     },
     {
       "name": "CreateCoreNetwork",
@@ -279,6 +305,13 @@
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnection.html"
     },
     {
+      "name": "DeleteContextStore",
+      "methodName": "toDeleteContextStore",
+      "description": "Grants permission to delete a context store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteContextStore.html"
+    },
+    {
       "name": "DeleteCoreNetwork",
       "methodName": "toDeleteCoreNetwork",
       "description": "Grants permission to delete a core network",
@@ -363,6 +396,13 @@
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateConnectPeer.html"
     },
     {
+      "name": "DisassociateContextStore",
+      "methodName": "toDisassociateContextStore",
+      "description": "Grants permission to disassociate a transit gateway from a context store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateContextStore.html"
+    },
+    {
       "name": "DisassociateCustomerGateway",
       "methodName": "toDisassociateCustomerGateway",
       "description": "Grants permission to disassociate a customer gateway from a device",
@@ -417,6 +457,27 @@
       "description": "Grants permission to describe connections",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnections.html"
+    },
+    {
+      "name": "GetContextStore",
+      "methodName": "toGetContextStore",
+      "description": "Grants permission to retrieve a context store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetContextStore.html"
+    },
+    {
+      "name": "GetContextStoreAssociation",
+      "methodName": "toGetContextStoreAssociation",
+      "description": "Grants permission to retrieve the association between a context store and a transit gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetContextStoreAssociation.html"
+    },
+    {
+      "name": "GetContextVersion",
+      "methodName": "toGetContextVersion",
+      "description": "Grants permission to retrieve the current context version of a context store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetContextVersion.html"
     },
     {
       "name": "GetCoreNetwork",
@@ -608,6 +669,34 @@
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListConnectPeers.html"
     },
     {
+      "name": "ListContextChanges",
+      "methodName": "toListContextChanges",
+      "description": "Grants permission to list the resource context changes in a context store since a context version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListContextChanges.html"
+    },
+    {
+      "name": "ListContextStoreAssociations",
+      "methodName": "toListContextStoreAssociations",
+      "description": "Grants permission to list the transit gateway associations of a context store",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListContextStoreAssociations.html"
+    },
+    {
+      "name": "ListContextStores",
+      "methodName": "toListContextStores",
+      "description": "Grants permission to list context stores",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListContextStores.html"
+    },
+    {
+      "name": "ListContexts",
+      "methodName": "toListContexts",
+      "description": "Grants permission to list the resource contexts in a context store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListContexts.html"
+    },
+    {
       "name": "ListCoreNetworkPolicyVersions",
       "methodName": "toListCoreNetworkPolicyVersions",
       "description": "Grants permission to list core network policy versions",
@@ -748,6 +837,13 @@
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateConnection.html"
     },
     {
+      "name": "UpdateContextStore",
+      "methodName": "toUpdateContextStore",
+      "description": "Grants permission to update a context store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateContextStore.html"
+    },
+    {
       "name": "UpdateCoreNetwork",
       "methodName": "toUpdateCoreNetwork",
       "description": "Grants permission to update a core network",
@@ -868,6 +964,32 @@
           "name": "globalNetworkId",
           "kind": "required"
         },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "context-store",
+      "methodName": "onContextStore",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager::${Account}:context-store/${ResourceId}",
+      "placeholders": [
         {
           "placeholder": "ResourceId",
           "name": "resourceId",
@@ -1015,6 +1137,38 @@
       ]
     },
     {
+      "name": "network-scope",
+      "methodName": "onNetworkScope",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
+      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:network-scope/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifManagedBy"
+      ]
+    },
+    {
       "name": "peering",
       "methodName": "onPeering",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html",
@@ -1082,6 +1236,7 @@
         "toCreateConnectAttachment",
         "toCreateConnectPeer",
         "toCreateConnection",
+        "toCreateContextStore",
         "toCreateCoreNetwork",
         "toCreateDevice",
         "toCreateDirectConnectGatewayAttachment",
@@ -1114,12 +1269,14 @@
       "relatedActionMethods": [
         "toAcceptAttachment",
         "toAssociateConnectPeer",
+        "toAssociateContextStore",
         "toAssociateCustomerGateway",
         "toAssociateLink",
         "toAssociateTransitGatewayConnectPeer",
         "toCreateConnectAttachment",
         "toCreateConnectPeer",
         "toCreateConnection",
+        "toCreateContextStore",
         "toCreateCoreNetwork",
         "toCreateCoreNetworkPrefixListAssociation",
         "toCreateDevice",
@@ -1133,6 +1290,7 @@
         "toDeleteAttachment",
         "toDeleteConnectPeer",
         "toDeleteConnection",
+        "toDeleteContextStore",
         "toDeleteCoreNetwork",
         "toDeleteCoreNetworkPolicyVersion",
         "toDeleteCoreNetworkPrefixListAssociation",
@@ -1145,6 +1303,7 @@
         "toDeregisterTransitGateway",
         "toDescribeGlobalNetworks",
         "toDisassociateConnectPeer",
+        "toDisassociateContextStore",
         "toDisassociateCustomerGateway",
         "toDisassociateLink",
         "toDisassociateTransitGatewayConnectPeer",
@@ -1153,6 +1312,9 @@
         "toGetConnectPeer",
         "toGetConnectPeerAssociations",
         "toGetConnections",
+        "toGetContextStore",
+        "toGetContextStoreAssociation",
+        "toGetContextVersion",
         "toGetCoreNetwork",
         "toGetCoreNetworkChangeEvents",
         "toGetCoreNetworkChangeSet",
@@ -1180,6 +1342,10 @@
         "toListAttachmentRoutingPolicyAssociations",
         "toListAttachments",
         "toListConnectPeers",
+        "toListContextChanges",
+        "toListContextStoreAssociations",
+        "toListContextStores",
+        "toListContexts",
         "toListCoreNetworkPolicyVersions",
         "toListCoreNetworkPrefixListAssociations",
         "toListCoreNetworkRoutingInformation",
@@ -1196,6 +1362,7 @@
         "toUntagResource",
         "toUpdateAttachmentNatConfiguration",
         "toUpdateConnection",
+        "toUpdateContextStore",
         "toUpdateCoreNetwork",
         "toUpdateDevice",
         "toUpdateDirectConnectGatewayAttachment",
@@ -1209,10 +1376,12 @@
         "attachment",
         "connect-peer",
         "connection",
+        "context-store",
         "core-network",
         "device",
         "global-network",
         "link",
+        "network-scope",
         "peering",
         "site"
       ],
@@ -1234,6 +1403,7 @@
         "toCreateConnectAttachment",
         "toCreateConnectPeer",
         "toCreateConnection",
+        "toCreateContextStore",
         "toCreateCoreNetwork",
         "toCreateDevice",
         "toCreateDirectConnectGatewayAttachment",
@@ -1253,6 +1423,27 @@
       "keyLiteral": "aws:TagKeys",
       "valueKind": "string",
       "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "networkmanager:ManagedBy",
+      "methodName": "ifManagedBy",
+      "description": "Filters access by the service that manages the network scope",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
+      "relatedActionMethods": [
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "network-scope"
+      ],
+      "keyLiteral": "ManagedBy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
       "valueTypes": [
         "string"
       ],
@@ -1332,11 +1523,14 @@
     {
       "key": "networkmanager:tgwArn",
       "methodName": "ifTgwArn",
-      "description": "Filters access by which transit gateways can be registered, deregistered, or peered",
+      "description": "Filters access by which transit gateways can be registered, deregistered, or peered, or associated with or disassociated from a context store",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html",
       "relatedActionMethods": [
+        "toAssociateContextStore",
         "toCreateTransitGatewayPeering",
         "toDeregisterTransitGateway",
+        "toDisassociateContextStore",
+        "toGetContextStoreAssociation",
         "toRegisterTransitGateway"
       ],
       "relatedResourceTypes": [],

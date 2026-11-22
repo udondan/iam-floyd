@@ -59,6 +59,7 @@
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html",
       "conditionMethods": [
         "ifAwsRequestTag",
+        "ifAwsResourceTag",
         "ifAwsTagKeys"
       ]
     },
@@ -70,6 +71,7 @@
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html",
       "conditionMethods": [
         "ifAwsRequestTag",
+        "ifAwsResourceTag",
         "ifAwsTagKeys"
       ]
     },
@@ -81,6 +83,7 @@
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html",
       "conditionMethods": [
         "ifAwsRequestTag",
+        "ifAwsResourceTag",
         "ifAwsTagKeys"
       ]
     },
@@ -115,7 +118,7 @@
     {
       "name": "DeregisterInstance",
       "methodName": "toDeregisterInstance",
-      "description": "Grants permission to delete the records and the health check, if any, that Amazon Route 53 created for the specified instance",
+      "description": "Grants permission to deregister an instance from a specified service",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html"
     },
@@ -206,7 +209,7 @@
     {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
-      "description": "Grants permission to lists tags for the specified resource",
+      "description": "Grants permission to list tags for the specified resource",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html"
     },
@@ -241,7 +244,7 @@
     {
       "name": "UpdateHttpNamespace",
       "methodName": "toUpdateHttpNamespace",
-      "description": "Grants permission to update the settings for a HTTP namespace",
+      "description": "Grants permission to update the settings for an HTTP namespace",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateHttpNamespace.html"
     },
@@ -306,7 +309,7 @@
     {
       "name": "namespace",
       "methodName": "onNamespace",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_Namespace.html",
       "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}",
       "placeholders": [
         {
@@ -337,7 +340,7 @@
     {
       "name": "service",
       "methodName": "onService",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html",
       "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}",
       "placeholders": [
         {
@@ -376,7 +379,7 @@
     {
       "key": "aws:RequestTag/${TagKey}",
       "methodName": "ifAwsRequestTag",
-      "description": "Filters actions based on the tags that are passed in the request",
+      "description": "Filters access by a tag's key and value in a request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
         "toCreateHttpNamespace",
@@ -398,9 +401,12 @@
     {
       "key": "aws:ResourceTag/${TagKey}",
       "methodName": "ifAwsResourceTag",
-      "description": "Filters actions based on the tags associated with the resource",
+      "description": "Filters access by the tags associated with the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
+        "toCreateHttpNamespace",
+        "toCreatePrivateDnsNamespace",
+        "toCreatePublicDnsNamespace",
         "toCreateService",
         "toDeleteNamespace",
         "toDeleteService",
@@ -442,7 +448,7 @@
     {
       "key": "aws:TagKeys",
       "methodName": "ifAwsTagKeys",
-      "description": "Filters actions based on the tag keys that are passed in the request",
+      "description": "Filters access by the tag keys in a request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
         "toCreateHttpNamespace",
@@ -465,7 +471,7 @@
       "key": "servicediscovery:NamespaceArn",
       "methodName": "ifNamespaceArn",
       "description": "Filters access by specifying the Amazon Resource Name (ARN) for the related namespace",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
       "relatedActionMethods": [
         "toCreateService"
       ],
@@ -481,8 +487,8 @@
     {
       "key": "servicediscovery:NamespaceName",
       "methodName": "ifNamespaceName",
-      "description": "Filters access by specifying the name of the related namespace",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions",
+      "description": "Filters access by the HTTP name (HttpName) of the namespace specified in the request",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
       "relatedActionMethods": [
         "toDiscoverInstances",
         "toDiscoverInstancesRevision"
@@ -500,7 +506,7 @@
       "key": "servicediscovery:ServiceArn",
       "methodName": "ifServiceArn",
       "description": "Filters access by specifying the Amazon Resource Name (ARN) for the related service",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
       "relatedActionMethods": [
         "toDeregisterInstance",
         "toGetInstance",
@@ -522,7 +528,7 @@
       "key": "servicediscovery:ServiceCreatedByAccount",
       "methodName": "ifServiceCreatedByAccount",
       "description": "Filters access by specifying the account id of the related service creator",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
       "relatedActionMethods": [
         "toDeleteService",
         "toDeleteServiceAttributes",
@@ -545,7 +551,7 @@
       "key": "servicediscovery:ServiceName",
       "methodName": "ifServiceName",
       "description": "Filters access by specifying the name of the related service",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
       "relatedActionMethods": [
         "toDiscoverInstances",
         "toDiscoverInstancesRevision"

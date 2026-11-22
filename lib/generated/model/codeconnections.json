@@ -28,6 +28,7 @@
       "GetHost",
       "GetRepositoryLink",
       "GetRepositorySyncStatus",
+      "GetResourcePolicy",
       "GetResourceSyncStatus",
       "GetSyncBlockerSummary",
       "GetSyncConfiguration",
@@ -150,6 +151,13 @@
       "description": "Grants permission to get the latest sync status for a repository",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/codeconnections/latest/APIReference/API_GetRepositorySyncStatus.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve the resource policy configured for a Connection",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-sharing"
     },
     {
       "name": "GetResourceSyncStatus",
@@ -499,6 +507,7 @@
         "toGetHost",
         "toGetRepositoryLink",
         "toGetRepositorySyncStatus",
+        "toGetResourcePolicy",
         "toListConnections",
         "toListTagsForResource",
         "toTagResource",

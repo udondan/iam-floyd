@@ -68,6 +68,7 @@
       "ListFirewallConfigs",
       "ListFirewallDomainLists",
       "ListFirewallDomains",
+      "ListFirewallRuleDomains",
       "ListFirewallRuleGroupAssociations",
       "ListFirewallRuleGroups",
       "ListFirewallRuleTypes",
@@ -379,6 +380,13 @@
       "description": "Grants permission to list all the Firewall domain under a specified Firewall domain list",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallDomains.html"
+    },
+    {
+      "name": "ListFirewallRuleDomains",
+      "methodName": "toListFirewallRuleDomains",
+      "description": "Grants permission to list the domains of a specified Firewall rule in a Firewall rule group, including the domains suggested for an AutoAllowlist Firewall rule",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleDomains.html"
     },
     {
       "name": "ListFirewallRuleGroupAssociations",
@@ -1036,6 +1044,7 @@
         "toGetResolverRulePolicy",
         "toImportFirewallDomains",
         "toListFirewallDomains",
+        "toListFirewallRuleDomains",
         "toListFirewallRules",
         "toListResolverDnssecConfigs",
         "toListResolverEndpointIpAddresses",

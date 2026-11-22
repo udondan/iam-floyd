@@ -8,27 +8,36 @@
   "accessLevelList": {
     "Write": [
       "CreateMonitor",
+      "CreatePerformanceMonitor",
       "CreateScope",
       "DeleteMonitor",
+      "DeletePerformanceMonitor",
       "DeleteScope",
       "Publish",
       "StartQueryMonitorTopContributors",
+      "StartQueryPerformanceMonitor",
       "StartQueryWorkloadInsightsTopContributors",
       "StartQueryWorkloadInsightsTopContributorsData",
       "StopQueryMonitorTopContributors",
+      "StopQueryPerformanceMonitor",
       "StopQueryWorkloadInsightsTopContributors",
       "StopQueryWorkloadInsightsTopContributorsData",
       "TagResource",
       "UntagResource",
       "UpdateMonitor",
+      "UpdatePerformanceMonitor",
       "UpdateScope"
     ],
     "Read": [
       "GetMonitor",
+      "GetMonitorScopeSuggestions",
+      "GetPerformanceMonitor",
       "GetQueryResultsMonitorTopContributors",
+      "GetQueryResultsPerformanceMonitor",
       "GetQueryResultsWorkloadInsightsTopContributors",
       "GetQueryResultsWorkloadInsightsTopContributorsData",
       "GetQueryStatusMonitorTopContributors",
+      "GetQueryStatusPerformanceMonitor",
       "GetQueryStatusWorkloadInsightsTopContributors",
       "GetQueryStatusWorkloadInsightsTopContributorsData",
       "GetScope",
@@ -36,6 +45,7 @@
     ],
     "List": [
       "ListMonitors",
+      "ListPerformanceMonitors",
       "ListScopes"
     ],
     "Tagging": [
@@ -50,6 +60,13 @@
       "description": "Grants permission to create a monitor",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_CreateMonitor.html"
+    },
+    {
+      "name": "CreatePerformanceMonitor",
+      "methodName": "toCreatePerformanceMonitor",
+      "description": "Grants permission to create a performance monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_CreatePerformanceMonitor.html"
     },
     {
       "name": "CreateScope",
@@ -70,6 +87,13 @@
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_DeleteMonitor.html"
     },
     {
+      "name": "DeletePerformanceMonitor",
+      "methodName": "toDeletePerformanceMonitor",
+      "description": "Grants permission to delete a performance monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_DeletePerformanceMonitor.html"
+    },
+    {
       "name": "DeleteScope",
       "methodName": "toDeleteScope",
       "description": "Grants permission to delete a scope",
@@ -84,11 +108,32 @@
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetMonitor.html"
     },
     {
+      "name": "GetMonitorScopeSuggestions",
+      "methodName": "toGetMonitorScopeSuggestions",
+      "description": "Grants permission to get scope suggestions for a performance monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetMonitorScopeSuggestions.html"
+    },
+    {
+      "name": "GetPerformanceMonitor",
+      "methodName": "toGetPerformanceMonitor",
+      "description": "Grants permission to get information about a performance monitor",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetPerformanceMonitor.html"
+    },
+    {
       "name": "GetQueryResultsMonitorTopContributors",
       "methodName": "toGetQueryResultsMonitorTopContributors",
       "description": "Grants permission to get the results of a query that retrieves top contributors data for a monitor",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsMonitorTopContributors.html"
+    },
+    {
+      "name": "GetQueryResultsPerformanceMonitor",
+      "methodName": "toGetQueryResultsPerformanceMonitor",
+      "description": "Grants permission to get the results of a performance monitor query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsPerformanceMonitor.html"
     },
     {
       "name": "GetQueryResultsWorkloadInsightsTopContributors",
@@ -110,6 +155,13 @@
       "description": "Grants permission to get the status of a query that retrieves top contributors data for a monitor",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryStatusMonitorTopContributors.html"
+    },
+    {
+      "name": "GetQueryStatusPerformanceMonitor",
+      "methodName": "toGetQueryStatusPerformanceMonitor",
+      "description": "Grants permission to get the status of a performance monitor query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryStatusPerformanceMonitor.html"
     },
     {
       "name": "GetQueryStatusWorkloadInsightsTopContributors",
@@ -140,6 +192,13 @@
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_ListMonitors.html"
     },
     {
+      "name": "ListPerformanceMonitors",
+      "methodName": "toListPerformanceMonitors",
+      "description": "Grants permission to list the performance monitors in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_ListPerformanceMonitors.html"
+    },
+    {
       "name": "ListScopes",
       "methodName": "toListScopes",
       "description": "Grants permission to get all scopes for an account",
@@ -168,6 +227,13 @@
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryMonitorTopContributors.html"
     },
     {
+      "name": "StartQueryPerformanceMonitor",
+      "methodName": "toStartQueryPerformanceMonitor",
+      "description": "Grants permission to start a query for a performance monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryPerformanceMonitor.html"
+    },
+    {
       "name": "StartQueryWorkloadInsightsTopContributors",
       "methodName": "toStartQueryWorkloadInsightsTopContributors",
       "description": "Grants permission to start a query for retrieving top contributors data for workload insights",
@@ -187,6 +253,13 @@
       "description": "Grants permission to stop a query for retrieving top contributors data for a monitor",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StopQueryMonitorTopContributors.html"
+    },
+    {
+      "name": "StopQueryPerformanceMonitor",
+      "methodName": "toStopQueryPerformanceMonitor",
+      "description": "Grants permission to stop a query for a performance monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StopQueryPerformanceMonitor.html"
     },
     {
       "name": "StopQueryWorkloadInsightsTopContributors",
@@ -222,6 +295,13 @@
       "description": "Grants permission to update a monitor",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_UpdateMonitor.html"
+    },
+    {
+      "name": "UpdatePerformanceMonitor",
+      "methodName": "toUpdatePerformanceMonitor",
+      "description": "Grants permission to update a performance monitor",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_UpdatePerformanceMonitor.html"
     },
     {
       "name": "UpdateScope",
@@ -270,6 +350,37 @@
       }
     },
     {
+      "name": "performancemonitor",
+      "methodName": "onPerformancemonitor",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NetworkFlowMonitor-configure-monitors.html",
+      "arn": "arn:${Partition}:networkflowmonitor:${Region}:${Account}:performancemonitor/${MonitorName}",
+      "placeholders": [
+        {
+          "placeholder": "MonitorName",
+          "name": "monitorName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "scope",
       "methodName": "onScope",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NetworkFlowMonitor-organizations.html",
@@ -315,6 +426,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
         "toCreateMonitor",
+        "toCreatePerformanceMonitor",
         "toCreateScope",
         "toTagResource"
       ],
@@ -335,30 +447,40 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toCreateMonitor",
+        "toCreatePerformanceMonitor",
         "toDeleteMonitor",
+        "toDeletePerformanceMonitor",
         "toDeleteScope",
         "toGetMonitor",
+        "toGetMonitorScopeSuggestions",
+        "toGetPerformanceMonitor",
         "toGetQueryResultsMonitorTopContributors",
+        "toGetQueryResultsPerformanceMonitor",
         "toGetQueryResultsWorkloadInsightsTopContributors",
         "toGetQueryResultsWorkloadInsightsTopContributorsData",
         "toGetQueryStatusMonitorTopContributors",
+        "toGetQueryStatusPerformanceMonitor",
         "toGetQueryStatusWorkloadInsightsTopContributors",
         "toGetQueryStatusWorkloadInsightsTopContributorsData",
         "toGetScope",
         "toListTagsForResource",
         "toStartQueryMonitorTopContributors",
+        "toStartQueryPerformanceMonitor",
         "toStartQueryWorkloadInsightsTopContributors",
         "toStartQueryWorkloadInsightsTopContributorsData",
         "toStopQueryMonitorTopContributors",
+        "toStopQueryPerformanceMonitor",
         "toStopQueryWorkloadInsightsTopContributors",
         "toStopQueryWorkloadInsightsTopContributorsData",
         "toTagResource",
         "toUntagResource",
         "toUpdateMonitor",
+        "toUpdatePerformanceMonitor",
         "toUpdateScope"
       ],
       "relatedResourceTypes": [
         "monitor",
+        "performancemonitor",
         "scope"
       ],
       "keyLiteral": "aws:ResourceTag/",
@@ -377,6 +499,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
         "toCreateMonitor",
+        "toCreatePerformanceMonitor",
         "toCreateScope",
         "toTagResource",
         "toUntagResource"

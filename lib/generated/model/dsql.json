@@ -24,6 +24,7 @@
       "UpdateCluster",
       "UpdateStream",
       "AddPeerCluster",
+      "AllowVendedLogDeliveryForResource",
       "InjectError",
       "PutMultiRegionProperties",
       "PutWitnessRegion",
@@ -45,6 +46,9 @@
     "Tagging": [
       "TagResource",
       "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
     ]
   },
   "actions": [
@@ -231,6 +235,13 @@
       "url": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html"
     },
     {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for an Aurora DSQL cluster",
+      "accessLevel": "Permissions management, Write",
+      "url": ""
+    },
+    {
       "name": "InjectError",
       "methodName": "toInjectError",
       "description": "Grants permission to inject errors in targeted clusters",
@@ -390,6 +401,7 @@
         "toUpdateCluster",
         "toUpdateStream",
         "toAddPeerCluster",
+        "toAllowVendedLogDeliveryForResource",
         "toPutMultiRegionProperties",
         "toPutWitnessRegion",
         "toRemovePeerCluster"

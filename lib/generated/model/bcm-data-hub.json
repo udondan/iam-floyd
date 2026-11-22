@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "filename": "bcm-data-hub",
+  "className": "BcmDataHub",
+  "name": "bcm-data-hub",
+  "servicePrefix": "bcm-data-hub",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bcm-data-hub.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelQueryExecution",
+      "CreateDataset",
+      "DeleteDataset",
+      "StartQueryExecution",
+      "TagResource",
+      "UntagResource",
+      "UpdateDataset"
+    ],
+    "Read": [
+      "GetDataset",
+      "GetDatasetSchema",
+      "GetQueryExecution",
+      "GetQueryExecutionResults",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDatasets",
+      "ListQueryExecutions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelQueryExecution",
+      "methodName": "toCancelQueryExecution",
+      "description": "Grants permission to cancel a query execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "GetDataset",
+      "methodName": "toGetDataset",
+      "description": "Grants permission to get a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "GetDatasetSchema",
+      "methodName": "toGetDatasetSchema",
+      "description": "Grants permission to get a dataset schema",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "GetQueryExecution",
+      "methodName": "toGetQueryExecution",
+      "description": "Grants permission to get a query execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "GetQueryExecutionResults",
+      "methodName": "toGetQueryExecutionResults",
+      "description": "Grants permission to get query execution results",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list datasets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "ListQueryExecutions",
+      "methodName": "toListQueryExecutions",
+      "description": "Grants permission to list query executions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "StartQueryExecution",
+      "methodName": "toStartQueryExecution",
+      "description": "Grants permission to start a query execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    },
+    {
+      "name": "UpdateDataset",
+      "methodName": "toUpdateDataset",
+      "description": "Grants permission to update a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security-iam.html#sec-policies"
+    }
+  ],
+  "resources": [
+    {
+      "name": "dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-concepts.html",
+      "arn": "arn:${Partition}:bcm-data-hub:${Region}:${Account}:dataset/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelQueryExecution",
+        "toCreateDataset",
+        "toDeleteDataset",
+        "toGetDataset",
+        "toGetQueryExecution",
+        "toGetQueryExecutionResults",
+        "toListTagsForResource",
+        "toStartQueryExecution",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDataset"
+      ],
+      "relatedResourceTypes": [
+        "dataset"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataset",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

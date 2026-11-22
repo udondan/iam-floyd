@@ -1227,6 +1227,21 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
     },
     {
+      "key": "cloudformation:DisableValidation",
+      "methodName": "ifDisableValidation",
+      "description": "Filters access by whether pre-deployment validation is disabled in the request. Use to control which IAM users can skip pre-deployment validation when they create or update stacks or create change sets",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions",
+      "relatedActionMethods": [
+        "toCreateChangeSet",
+        "toCreateStack",
+        "toUpdateStack"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DisableValidation",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
       "key": "cloudformation:ImportResourceTypes",
       "methodName": "ifImportResourceTypes",
       "description": "Filters access by the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they want to import a resource into a stack",

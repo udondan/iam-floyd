@@ -9,6 +9,7 @@
     "Write": [
       "ActivateEvaluationForm",
       "AdminGetEmergencyAccessToken",
+      "ApproveTimeOff",
       "AssociateAnalyticsDataSet",
       "AssociateApprovedOrigin",
       "AssociateBot",
@@ -34,6 +35,7 @@
       "BatchDisassociateAnalyticsDataSet",
       "BatchPutContact",
       "BatchUpdateDataTableValue",
+      "CancelTimeOff",
       "ClaimPhoneNumber",
       "CompleteAttachedFileUpload",
       "CreateAgentStatus",
@@ -67,6 +69,7 @@
       "CreateRule",
       "CreateSecurityProfile",
       "CreateTaskTemplate",
+      "CreateTimeOff",
       "CreateTrafficDistributionGroup",
       "CreateUseCase",
       "CreateUser",
@@ -136,7 +139,9 @@
       "ImportWorkspaceMedia",
       "MonitorContact",
       "PauseContact",
+      "PutTimeOffBalance",
       "PutUserStatus",
+      "RejectTimeOff",
       "ReleasePhoneNumber",
       "ReplicateInstance",
       "ResumeContact",
@@ -297,6 +302,7 @@
       "GetMetricDataV2",
       "GetPromptFile",
       "GetTaskTemplate",
+      "GetTimeOff",
       "ListNotifications",
       "ListRealtimeContactAnalysisSegments",
       "ListTagsForResource",
@@ -419,6 +425,13 @@
       "description": "Grants permission to federate into an Amazon Connect instance (Log in for emergency access functionality in the Amazon Connect console)",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html"
+    },
+    {
+      "name": "ApproveTimeOff",
+      "methodName": "toApproveTimeOff",
+      "description": "Grants permission to approve a time off request for a user in an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-scheduling_ApproveTimeOff.html"
     },
     {
       "name": "AssociateAnalyticsDataSet",
@@ -615,6 +628,13 @@
       "description": "Grants permission to batch update values in a data table in an Amazon Connect instance",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchUpdateDataTableValue.html"
+    },
+    {
+      "name": "CancelTimeOff",
+      "methodName": "toCancelTimeOff",
+      "description": "Grants permission to cancel a time off request for a user in an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-scheduling_CancelTimeOff.html"
     },
     {
       "name": "ClaimPhoneNumber",
@@ -850,6 +870,13 @@
       "description": "Grants permission to create a task template in an Amazon Connect instance",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTaskTemplate.html"
+    },
+    {
+      "name": "CreateTimeOff",
+      "methodName": "toCreateTimeOff",
+      "description": "Grants permission to create a time off request for a user in an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-scheduling_CreateTimeOff.html"
     },
     {
       "name": "CreateTrafficDistributionGroup",
@@ -1657,6 +1684,13 @@
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_GetTaskTemplate.html"
     },
     {
+      "name": "GetTimeOff",
+      "methodName": "toGetTimeOff",
+      "description": "Grants permission to get a time off request for a user in an Amazon Connect instance",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-scheduling_GetTimeOff.html"
+    },
+    {
       "name": "GetTrafficDistribution",
       "methodName": "toGetTrafficDistribution",
       "description": "Grants permission to read traffic distribution for a traffic distribution group",
@@ -2182,11 +2216,25 @@
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_PauseContact.html"
     },
     {
+      "name": "PutTimeOffBalance",
+      "methodName": "toPutTimeOffBalance",
+      "description": "Grants permission to set the time off balance of a user for a shift activity in an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-scheduling_PutTimeOffBalance.html"
+    },
+    {
       "name": "PutUserStatus",
       "methodName": "toPutUserStatus",
       "description": "Grants permission to switch User Status in an Amazon Connect instance",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_PutUserStatus.html"
+    },
+    {
+      "name": "RejectTimeOff",
+      "methodName": "toRejectTimeOff",
+      "description": "Grants permission to reject a time off request for a user in an Amazon Connect instance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-scheduling_RejectTimeOff.html"
     },
     {
       "name": "ReleasePhoneNumber",
@@ -4791,6 +4839,7 @@
       "relatedActionMethods": [
         "toActivateEvaluationForm",
         "toAdminGetEmergencyAccessToken",
+        "toApproveTimeOff",
         "toAssociateAnalyticsDataSet",
         "toAssociateApprovedOrigin",
         "toAssociateBot",
@@ -4819,6 +4868,7 @@
         "toBatchGetFlowAssociation",
         "toBatchPutContact",
         "toBatchUpdateDataTableValue",
+        "toCancelTimeOff",
         "toClaimPhoneNumber",
         "toCompleteAttachedFileUpload",
         "toCreateAgentStatus",
@@ -4851,6 +4901,7 @@
         "toCreateRule",
         "toCreateSecurityProfile",
         "toCreateTaskTemplate",
+        "toCreateTimeOff",
         "toCreateTrafficDistributionGroup",
         "toCreateUseCase",
         "toCreateUser",
@@ -4966,6 +5017,7 @@
         "toGetMetricDataV2",
         "toGetPromptFile",
         "toGetTaskTemplate",
+        "toGetTimeOff",
         "toGetTrafficDistribution",
         "toImportPhoneNumber",
         "toImportWorkspaceMedia",
@@ -5035,7 +5087,9 @@
         "toListWorkspaces",
         "toMonitorContact",
         "toPauseContact",
+        "toPutTimeOffBalance",
         "toPutUserStatus",
+        "toRejectTimeOff",
         "toReleasePhoneNumber",
         "toReplicateInstance",
         "toResumeContact",
@@ -5438,6 +5492,7 @@
       "url": "https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html",
       "relatedActionMethods": [
         "toActivateEvaluationForm",
+        "toApproveTimeOff",
         "toAssociateAnalyticsDataSet",
         "toAssociateApprovedOrigin",
         "toAssociateBot",
@@ -5466,6 +5521,7 @@
         "toBatchGetFlowAssociation",
         "toBatchPutContact",
         "toBatchUpdateDataTableValue",
+        "toCancelTimeOff",
         "toClaimPhoneNumber",
         "toCompleteAttachedFileUpload",
         "toCreateAgentStatus",
@@ -5497,6 +5553,7 @@
         "toCreateRoutingProfile",
         "toCreateRule",
         "toCreateSecurityProfile",
+        "toCreateTimeOff",
         "toCreateTrafficDistributionGroup",
         "toCreateUseCase",
         "toCreateUser",
@@ -5609,6 +5666,7 @@
         "toGetMetricDataV2",
         "toGetPromptFile",
         "toGetTaskTemplate",
+        "toGetTimeOff",
         "toImportWorkspaceMedia",
         "toListAnalyticsDataAssociations",
         "toListAnalyticsDataLakeDataSets",
@@ -5669,7 +5727,9 @@
         "toListWorkspaces",
         "toMonitorContact",
         "toPauseContact",
+        "toPutTimeOffBalance",
         "toPutUserStatus",
+        "toRejectTimeOff",
         "toReplicateInstance",
         "toResumeContact",
         "toSearchAgentStatuses",

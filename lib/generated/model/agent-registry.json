@@ -7,21 +7,29 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_agent-registry.html",
   "accessLevelList": {
     "Write": [
+      "AssociatePublisher",
+      "CompleteRegistryRecordTokenAuth",
+      "CreatePublisher",
       "CreateRegistry",
       "CreateRegistryRecord",
+      "DeletePublisher",
       "DeleteRegistry",
       "DeleteRegistryRecord",
+      "DisassociatePublisher",
       "SubmitRegistryRecordForApproval",
       "TagResource",
       "UntagResource",
+      "UpdatePublisherAssociationApprovalStatus",
       "UpdateRegistry",
       "UpdateRegistryRecord",
       "UpdateRegistryRecordStatus",
+      "ValidatePublisher",
       "DeleteResourcePolicy",
       "PutResourcePolicy"
     ],
     "Read": [
       "GetDiscoverableRegistryRecord",
+      "GetPublisher",
       "GetRegistry",
       "GetRegistryRecord",
       "InvokeRegistryMcp",
@@ -30,6 +38,8 @@
     ],
     "List": [
       "ListDiscoverableRegistryRecords",
+      "ListPublisherAssociations",
+      "ListPublishers",
       "ListRegistries",
       "ListRegistryRecords",
       "ListTagsForResource"
@@ -40,6 +50,27 @@
     ]
   },
   "actions": [
+    {
+      "name": "AssociatePublisher",
+      "methodName": "toAssociatePublisher",
+      "description": "Grants permission to associate a registry record with a publisher",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_AssociatePublisher.html"
+    },
+    {
+      "name": "CompleteRegistryRecordTokenAuth",
+      "methodName": "toCompleteRegistryRecordTokenAuth",
+      "description": "Grants permission to complete a user-delegated OAuth authorization that records in a registry are waiting on",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry-control/latest/APIReference/API_CompleteRegistryRecordTokenAuth.html"
+    },
+    {
+      "name": "CreatePublisher",
+      "methodName": "toCreatePublisher",
+      "description": "Grants permission to create a publisher",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_CreatePublisher.html"
+    },
     {
       "name": "CreateRegistry",
       "methodName": "toCreateRegistry",
@@ -59,6 +90,13 @@
       "url": "https://docs.aws.amazon.com/agent-registry-control/latest/APIReference/API_CreateRegistryRecord.html"
     },
     {
+      "name": "DeletePublisher",
+      "methodName": "toDeletePublisher",
+      "description": "Grants permission to delete a publisher",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_DeletePublisher.html"
+    },
+    {
       "name": "DeleteRegistry",
       "methodName": "toDeleteRegistry",
       "description": "Grants permission to delete an existing registry",
@@ -73,11 +111,25 @@
       "url": "https://docs.aws.amazon.com/agent-registry-control/latest/APIReference/API_DeleteRegistryRecord.html"
     },
     {
+      "name": "DisassociatePublisher",
+      "methodName": "toDisassociatePublisher",
+      "description": "Grants permission to remove a registry record's publisher association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_DisassociatePublisher.html"
+    },
+    {
       "name": "GetDiscoverableRegistryRecord",
       "methodName": "toGetDiscoverableRegistryRecord",
-      "description": "Grants permission to retrieve an individual approved registry record. This is a permission-only action used for fine-grained access control with BatchGetApprovedRegistryRecord",
+      "description": "Grants permission to retrieve an individual approved registry record. This is a permission-only action used for fine-grained access control with BatchGetDiscoverableRegistryRecord",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_BatchGetDiscoverableRegistryRecord.html"
+    },
+    {
+      "name": "GetPublisher",
+      "methodName": "toGetPublisher",
+      "description": "Grants permission to retrieve a publisher",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_GetPublisher.html"
     },
     {
       "name": "GetRegistry",
@@ -106,6 +158,20 @@
       "description": "Grants permission to list approved registry records in a registry",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_ListDiscoverableRegistryRecords.html"
+    },
+    {
+      "name": "ListPublisherAssociations",
+      "methodName": "toListPublisherAssociations",
+      "description": "Grants permission to list the caller's publisher associations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_ListPublisherAssociations.html"
+    },
+    {
+      "name": "ListPublishers",
+      "methodName": "toListPublishers",
+      "description": "Grants permission to list the caller's publishers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_ListPublishers.html"
     },
     {
       "name": "ListRegistries",
@@ -157,6 +223,13 @@
       "url": "https://docs.aws.amazon.com/agent-registry-control/latest/APIReference/API_UntagResource.html"
     },
     {
+      "name": "UpdatePublisherAssociationApprovalStatus",
+      "methodName": "toUpdatePublisherAssociationApprovalStatus",
+      "description": "Grants permission to approve or reject a registry record's publisher association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_UpdatePublisherAssociationApprovalStatus.html"
+    },
+    {
       "name": "UpdateRegistry",
       "methodName": "toUpdateRegistry",
       "description": "Grants permission to update an existing registry",
@@ -176,6 +249,13 @@
       "description": "Grants permission to update the status of a registry record",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/agent-registry-control/latest/APIReference/API_UpdateRegistryRecordStatus.html"
+    },
+    {
+      "name": "ValidatePublisher",
+      "methodName": "toValidatePublisher",
+      "description": "Grants permission to start domain verification for a publisher",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/API_ValidatePublisher.html"
     },
     {
       "name": "DeleteResourcePolicy",
@@ -200,6 +280,42 @@
     }
   ],
   "resources": [
+    {
+      "name": "publisher",
+      "methodName": "onPublisher",
+      "url": "https://docs.aws.amazon.com/agent-registry/latest/APIReference/publisher.html",
+      "arn": "arn:${Partition}:agent-registry::${Account}:publisher/${PublisherType}/${PublisherValue}/${PublisherId}",
+      "placeholders": [
+        {
+          "placeholder": "PublisherType",
+          "name": "publisherType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PublisherValue",
+          "name": "publisherValue",
+          "kind": "required"
+        },
+        {
+          "placeholder": "PublisherId",
+          "name": "publisherId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
     {
       "name": "registry",
       "methodName": "onRegistry",
@@ -311,6 +427,7 @@
       "description": "Filters access by creating requests based on the allowed set of values for each of the mandatory tags",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
       "relatedActionMethods": [
+        "toCreatePublisher",
         "toCreateRegistry",
         "toCreateRegistryRecord",
         "toTagResource"
@@ -331,28 +448,38 @@
       "description": "Filters access by having actions based on the tag value associated with the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
       "relatedActionMethods": [
+        "toAssociatePublisher",
+        "toCompleteRegistryRecordTokenAuth",
+        "toCreatePublisher",
         "toCreateRegistryRecord",
+        "toDeletePublisher",
         "toDeleteRegistry",
         "toDeleteRegistryRecord",
+        "toDisassociatePublisher",
         "toGetDiscoverableRegistryRecord",
+        "toGetPublisher",
         "toGetRegistry",
         "toGetRegistryRecord",
         "toInvokeRegistryMcp",
         "toListDiscoverableRegistryRecords",
+        "toListPublisherAssociations",
         "toListRegistryRecords",
         "toListTagsForResource",
         "toSearchDiscoverableRegistryRecords",
         "toSubmitRegistryRecordForApproval",
         "toTagResource",
         "toUntagResource",
+        "toUpdatePublisherAssociationApprovalStatus",
         "toUpdateRegistry",
         "toUpdateRegistryRecord",
         "toUpdateRegistryRecordStatus",
+        "toValidatePublisher",
         "toDeleteResourcePolicy",
         "toGetResourcePolicy",
         "toPutResourcePolicy"
       ],
       "relatedResourceTypes": [
+        "publisher",
         "registry",
         "registry-record"
       ],
@@ -371,6 +498,7 @@
       "description": "Filters access by creating requests based on the presence of mandatory tags in the request",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available",
       "relatedActionMethods": [
+        "toCreatePublisher",
         "toCreateRegistry",
         "toCreateRegistryRecord",
         "toTagResource",

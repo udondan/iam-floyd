@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "workload-telemetry",
+  "className": "WorkloadTelemetry",
+  "name": "workload-telemetry",
+  "servicePrefix": "workload-telemetry",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_workload-telemetry.html",
+  "accessLevelList": {
+    "Write": [
+      "PutCertificateTelemetry"
+    ]
+  },
+  "actions": [
+    {
+      "name": "PutCertificateTelemetry",
+      "methodName": "toPutCertificateTelemetry",
+      "description": "Grants permission to put certificate discovery and automation telemetry from the AWS Workload Credentials Provider agent",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate-automation.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

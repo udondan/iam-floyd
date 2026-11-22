@@ -89,6 +89,7 @@
     "List": [
       "ListAnalysisReports",
       "ListContainerAssociations",
+      "ListContextStores",
       "ListFirewallPolicies",
       "ListFirewallPoliciesV2",
       "ListFirewalls",
@@ -96,6 +97,7 @@
       "ListProxies",
       "ListProxyConfigurations",
       "ListProxyRuleGroups",
+      "ListResourcesInContextStore",
       "ListRuleGroups",
       "ListTLSInspectionConfigurations",
       "ListTagsForResource",
@@ -472,6 +474,13 @@
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListContainerAssociations.html"
     },
     {
+      "name": "ListContextStores",
+      "methodName": "toListContextStores",
+      "description": "Grants permission to retrieve the context stores associated with the transit gateway firewalls in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListContextStores.html"
+    },
+    {
       "name": "ListFirewallPolicies",
       "methodName": "toListFirewallPolicies",
       "description": "Grants permission to retrieve the metadata for firewall policies",
@@ -526,6 +535,13 @@
       "description": "Grants permission to retrieve the metadata for proxy rule groups",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyRuleGroups.html"
+    },
+    {
+      "name": "ListResourcesInContextStore",
+      "methodName": "toListResourcesInContextStore",
+      "description": "Grants permission to retrieve the resource contexts recorded in a context store",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListResourcesInContextStore.html"
     },
     {
       "name": "ListRuleGroups",

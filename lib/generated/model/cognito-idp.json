@@ -33,10 +33,12 @@
       "AdminUpdateUserAttributes",
       "AdminUserGlobalSignOut",
       "AssociateSoftwareToken",
+      "CancelPointInTimeRecovery",
       "ChangePassword",
       "ConfirmDevice",
       "ConfirmForgotPassword",
       "ConfirmSignUp",
+      "CreateCIMDPolicy",
       "CreateGroup",
       "CreateIdentityProvider",
       "CreateManagedLoginBranding",
@@ -47,6 +49,7 @@
       "CreateUserPoolClient",
       "CreateUserPoolDomain",
       "CreateUserPoolReplica",
+      "DeleteCIMDPolicy",
       "DeleteGroup",
       "DeleteIdentityProvider",
       "DeleteManagedLoginBranding",
@@ -62,9 +65,11 @@
       "ForgetDevice",
       "ForgotPassword",
       "GetClientToken",
+      "GetDerivedToken",
       "GetTokensFromRefreshToken",
       "GlobalSignOut",
       "InitiateAuth",
+      "InitiatePointInTimeRecovery",
       "ResendConfirmationCode",
       "RespondToAuthChallenge",
       "RevokeToken",
@@ -78,11 +83,14 @@
       "SetUserPoolSessionConfiguration",
       "SetUserSettings",
       "SignUp",
+      "StartPointInTimeRecovery",
       "StartUserImportJob",
       "StopUserImportJob",
       "TagResource",
       "UntagResource",
       "UpdateAuthEventFeedback",
+      "UpdateCIMDPolicy",
+      "UpdateClientMetadataURLState",
       "UpdateDeviceStatus",
       "UpdateGroup",
       "UpdateIdentityProvider",
@@ -105,9 +113,11 @@
       "AdminGetUser",
       "AdminGetUserAuthFactors",
       "AdminListUserAuthEvents",
+      "DescribeCIMDPolicy",
       "DescribeIdentityProvider",
       "DescribeManagedLoginBranding",
       "DescribeManagedLoginBrandingByClient",
+      "DescribePointInTimeRecovery",
       "DescribeResourceServer",
       "DescribeRiskConfiguration",
       "DescribeTerms",
@@ -135,9 +145,12 @@
       "AdminListDevices",
       "AdminListGroupsForUser",
       "AdminListUserSessions",
+      "ListCIMDPolicies",
+      "ListClientMetadataURLs",
       "ListDevices",
       "ListGroups",
       "ListIdentityProviders",
+      "ListPointInTimeRecoveries",
       "ListResourceServers",
       "ListTagsForResource",
       "ListTerms",
@@ -389,6 +402,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html"
     },
     {
+      "name": "CancelPointInTimeRecovery",
+      "methodName": "toCancelPointInTimeRecovery",
+      "description": "Grants permission to cancel point in time recovery job for a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CancelPointInTimeRecovery.html"
+    },
+    {
       "name": "ChangePassword",
       "methodName": "toChangePassword",
       "description": "Grants permission to change the password for a specified user in a user pool",
@@ -415,6 +435,13 @@
       "description": "Grants permission to confirm registration of a user and handles the existing alias from a previous user",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html"
+    },
+    {
+      "name": "CreateCIMDPolicy",
+      "methodName": "toCreateCIMDPolicy",
+      "description": "Grants permission to create a client ID metadata document (CIMD) policy for an app client",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateCIMDPolicy.html"
     },
     {
       "name": "CreateGroup",
@@ -490,6 +517,13 @@
       "description": "Grants permission to create a replica of a user pool",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolReplica.html"
+    },
+    {
+      "name": "DeleteCIMDPolicy",
+      "methodName": "toDeleteCIMDPolicy",
+      "description": "Grants permission to delete a client ID metadata document (CIMD) policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteCIMDPolicy.html"
     },
     {
       "name": "DeleteGroup",
@@ -576,6 +610,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolReplica.html"
     },
     {
+      "name": "DescribeCIMDPolicy",
+      "methodName": "toDescribeCIMDPolicy",
+      "description": "Grants permission to get the configuration of a client ID metadata document (CIMD) policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeCIMDPolicy.html"
+    },
+    {
       "name": "DescribeIdentityProvider",
       "methodName": "toDescribeIdentityProvider",
       "description": "Grants permission to describe any user pool identity provider",
@@ -595,6 +636,13 @@
       "description": "Grants permission to get the detailed information about the branding style of managed login associated with an appclient",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBrandingByClient.html"
+    },
+    {
+      "name": "DescribePointInTimeRecovery",
+      "methodName": "toDescribePointInTimeRecovery",
+      "description": "Grants permission to describe point in time recovery job for a user pool",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribePointInTimeRecovery.html"
     },
     {
       "name": "DescribeResourceServer",
@@ -679,6 +727,13 @@
       "description": "Grants permission to issue an access token for machine-to-machine authorization with an app client ID and client secret",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetClientToken.html"
+    },
+    {
+      "name": "GetDerivedToken",
+      "methodName": "toGetDerivedToken",
+      "description": "Grants permission to exchange a token for one that is further scoped and audience-bound",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDerivedToken.html"
     },
     {
       "name": "GetDevice",
@@ -786,6 +841,27 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
     },
     {
+      "name": "InitiatePointInTimeRecovery",
+      "methodName": "toInitiatePointInTimeRecovery",
+      "description": "Grants permission to initiate point in time recovery job for a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiatePointInTimeRecovery.html"
+    },
+    {
+      "name": "ListCIMDPolicies",
+      "methodName": "toListCIMDPolicies",
+      "description": "Grants permission to list the client ID metadata document (CIMD) policies in a user pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListCIMDPolicies.html"
+    },
+    {
+      "name": "ListClientMetadataURLs",
+      "methodName": "toListClientMetadataURLs",
+      "description": "Grants permission to list the client metadata document URLs and their cache state for a client ID metadata document (CIMD) policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListClientMetadataURLs.html"
+    },
+    {
       "name": "ListDevices",
       "methodName": "toListDevices",
       "description": "Grants permission to list the devices",
@@ -805,6 +881,13 @@
       "description": "Grants permission to list all identity providers in user pools",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html"
+    },
+    {
+      "name": "ListPointInTimeRecoveries",
+      "methodName": "toListPointInTimeRecoveries",
+      "description": "Grants permission to list point in time recovery jobs for a user pool",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListPointInTimeRecoveries.html"
     },
     {
       "name": "ListResourceServers",
@@ -975,6 +1058,13 @@
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html"
     },
     {
+      "name": "StartPointInTimeRecovery",
+      "methodName": "toStartPointInTimeRecovery",
+      "description": "Grants permission to start point in time recovery job for a user pool",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartPointInTimeRecovery.html"
+    },
+    {
       "name": "StartUserImportJob",
       "methodName": "toStartUserImportJob",
       "description": "Grants permission to start any user import job",
@@ -1008,6 +1098,20 @@
       "description": "Grants permission to update the feedback for the user authentication event",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html"
+    },
+    {
+      "name": "UpdateCIMDPolicy",
+      "methodName": "toUpdateCIMDPolicy",
+      "description": "Grants permission to update the configuration of a client ID metadata document (CIMD) policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateCIMDPolicy.html"
+    },
+    {
+      "name": "UpdateClientMetadataURLState",
+      "methodName": "toUpdateClientMetadataURLState",
+      "description": "Grants permission to refresh or invalidate the cached client metadata document for a URL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateClientMetadataURLState.html"
     },
     {
       "name": "UpdateDeviceStatus",
@@ -1273,6 +1377,8 @@
         "toAdminUpdateDeviceStatus",
         "toAdminUpdateUserAttributes",
         "toAdminUserGlobalSignOut",
+        "toCancelPointInTimeRecovery",
+        "toCreateCIMDPolicy",
         "toCreateGroup",
         "toCreateIdentityProvider",
         "toCreateManagedLoginBranding",
@@ -1283,6 +1389,7 @@
         "toCreateUserPoolClient",
         "toCreateUserPoolDomain",
         "toCreateUserPoolReplica",
+        "toDeleteCIMDPolicy",
         "toDeleteGroup",
         "toDeleteIdentityProvider",
         "toDeleteManagedLoginBranding",
@@ -1293,9 +1400,11 @@
         "toDeleteUserPoolClientSecret",
         "toDeleteUserPoolDomain",
         "toDeleteUserPoolReplica",
+        "toDescribeCIMDPolicy",
         "toDescribeIdentityProvider",
         "toDescribeManagedLoginBranding",
         "toDescribeManagedLoginBrandingByClient",
+        "toDescribePointInTimeRecovery",
         "toDescribeResourceServer",
         "toDescribeRiskConfiguration",
         "toDescribeTerms",
@@ -1312,8 +1421,12 @@
         "toGetUserPoolClientSessionConfiguration",
         "toGetUserPoolMfaConfig",
         "toGetUserPoolSessionConfiguration",
+        "toInitiatePointInTimeRecovery",
+        "toListCIMDPolicies",
+        "toListClientMetadataURLs",
         "toListGroups",
         "toListIdentityProviders",
+        "toListPointInTimeRecoveries",
         "toListResourceServers",
         "toListTagsForResource",
         "toListTerms",
@@ -1329,11 +1442,14 @@
         "toSetUserPoolClientSessionConfiguration",
         "toSetUserPoolMfaConfig",
         "toSetUserPoolSessionConfiguration",
+        "toStartPointInTimeRecovery",
         "toStartUserImportJob",
         "toStopUserImportJob",
         "toTagResource",
         "toUntagResource",
         "toUpdateAuthEventFeedback",
+        "toUpdateCIMDPolicy",
+        "toUpdateClientMetadataURLState",
         "toUpdateGroup",
         "toUpdateIdentityProvider",
         "toUpdateManagedLoginBranding",

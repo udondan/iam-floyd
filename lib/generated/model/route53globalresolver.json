@@ -13,12 +13,14 @@
       "BatchUpdateFirewallRule",
       "CreateAccessSource",
       "CreateAccessToken",
+      "CreateCoreNetworkEndpoint",
       "CreateDNSView",
       "CreateFirewallDomainList",
       "CreateFirewallRule",
       "CreateGlobalResolver",
       "DeleteAccessSource",
       "DeleteAccessToken",
+      "DeleteCoreNetworkEndpoint",
       "DeleteDNSView",
       "DeleteFirewallDomainList",
       "DeleteFirewallRule",
@@ -32,6 +34,7 @@
       "UntagResource",
       "UpdateAccessSource",
       "UpdateAccessToken",
+      "UpdateCoreNetworkEndpoint",
       "UpdateDNSView",
       "UpdateFirewallDomains",
       "UpdateFirewallRule",
@@ -42,6 +45,7 @@
     "Read": [
       "GetAccessSource",
       "GetAccessToken",
+      "GetCoreNetworkEndpoint",
       "GetDNSView",
       "GetFirewallDomainList",
       "GetFirewallRule",
@@ -53,12 +57,14 @@
     "List": [
       "ListAccessSources",
       "ListAccessTokens",
+      "ListCoreNetworkEndpoints",
       "ListDNSViews",
       "ListFirewallDomainLists",
       "ListFirewallRules",
       "ListGlobalResolvers",
       "ListHostedZoneAssociations",
-      "ListManagedFirewallDomainLists"
+      "ListManagedFirewallDomainLists",
+      "ListSharedDNSViews"
     ],
     "Tagging": [
       "TagResource",
@@ -74,329 +80,371 @@
       "methodName": "toAssociateHostedZone",
       "description": "Grants permission to associate a resource to a hosted zone",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_AssociateHostedZone"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_AssociateHostedZone.html"
     },
     {
       "name": "BatchCreateFirewallRule",
       "methodName": "toBatchCreateFirewallRule",
       "description": "Grants permission to create multiple firewall rules",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_BatchCreateFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_BatchCreateFirewallRule.html"
     },
     {
       "name": "BatchDeleteFirewallRule",
       "methodName": "toBatchDeleteFirewallRule",
       "description": "Grants permission to delete multiple firewall rules",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_BatchDeleteFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_BatchDeleteFirewallRule.html"
     },
     {
       "name": "BatchUpdateFirewallRule",
       "methodName": "toBatchUpdateFirewallRule",
       "description": "Grants permission to update multiple firewall rules",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_BatchUpdateFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_BatchUpdateFirewallRule.html"
     },
     {
       "name": "CreateAccessSource",
       "methodName": "toCreateAccessSource",
       "description": "Grants permission to create an access source",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateAccessSource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateAccessSource.html"
     },
     {
       "name": "CreateAccessToken",
       "methodName": "toCreateAccessToken",
       "description": "Grants permission to create an access token",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateAccessToken"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateAccessToken.html"
+    },
+    {
+      "name": "CreateCoreNetworkEndpoint",
+      "methodName": "toCreateCoreNetworkEndpoint",
+      "description": "Grants permission to create a core network endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateCoreNetworkEndpoint.html"
     },
     {
       "name": "CreateDNSView",
       "methodName": "toCreateDNSView",
       "description": "Grants permission to create a dns view",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateDNSView"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateDNSView.html"
     },
     {
       "name": "CreateFirewallDomainList",
       "methodName": "toCreateFirewallDomainList",
       "description": "Grants permission to create a firewall domain list",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateFirewallDomainList"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateFirewallDomainList.html"
     },
     {
       "name": "CreateFirewallRule",
       "methodName": "toCreateFirewallRule",
       "description": "Grants permission to create a firewall rule",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateFirewallRule.html"
     },
     {
       "name": "CreateGlobalResolver",
       "methodName": "toCreateGlobalResolver",
       "description": "Grants permission to create a global resolver",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateGlobalResolver"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CreateGlobalResolver.html"
     },
     {
       "name": "DeleteAccessSource",
       "methodName": "toDeleteAccessSource",
       "description": "Grants permission to delete an access source",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteAccessSource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteAccessSource.html"
     },
     {
       "name": "DeleteAccessToken",
       "methodName": "toDeleteAccessToken",
       "description": "Grants permission to delete an access token",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteAccessToken"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteAccessToken.html"
+    },
+    {
+      "name": "DeleteCoreNetworkEndpoint",
+      "methodName": "toDeleteCoreNetworkEndpoint",
+      "description": "Grants permission to delete a core network endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteCoreNetworkEndpoint.html"
     },
     {
       "name": "DeleteDNSView",
       "methodName": "toDeleteDNSView",
       "description": "Grants permission to delete a dns view",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteDNSView"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteDNSView.html"
     },
     {
       "name": "DeleteFirewallDomainList",
       "methodName": "toDeleteFirewallDomainList",
       "description": "Grants permission to delete a firewall domain list",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteFirewallDomainList"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteFirewallDomainList.html"
     },
     {
       "name": "DeleteFirewallRule",
       "methodName": "toDeleteFirewallRule",
       "description": "Grants permission to delete a firewall rule",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteFirewallRule.html"
     },
     {
       "name": "DeleteGlobalResolver",
       "methodName": "toDeleteGlobalResolver",
       "description": "Grants permission to delete a global resolver",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteGlobalResolver"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DeleteGlobalResolver.html"
     },
     {
       "name": "DisableDNSView",
       "methodName": "toDisableDNSView",
       "description": "Grants permission to disable a dns view",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DisableDNSView"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DisableDNSView.html"
     },
     {
       "name": "DisassociateHostedZone",
       "methodName": "toDisassociateHostedZone",
       "description": "Grants permission to disassociate a hosted zone from a resource",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DisassociateHostedZone"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_DisassociateHostedZone.html"
     },
     {
       "name": "EnableDNSView",
       "methodName": "toEnableDNSView",
       "description": "Grants permission to enable a dns view",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_EnableDNSView"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_EnableDNSView.html"
     },
     {
       "name": "GetAccessSource",
       "methodName": "toGetAccessSource",
       "description": "Grants permission to get an access source",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetAccessSource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetAccessSource.html"
     },
     {
       "name": "GetAccessToken",
       "methodName": "toGetAccessToken",
       "description": "Grants permission to get an access token",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetAccessToken"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetAccessToken.html"
+    },
+    {
+      "name": "GetCoreNetworkEndpoint",
+      "methodName": "toGetCoreNetworkEndpoint",
+      "description": "Grants permission to get a core network endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetCoreNetworkEndpoint.html"
     },
     {
       "name": "GetDNSView",
       "methodName": "toGetDNSView",
       "description": "Grants permission to get a dns view",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetDNSView"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetDNSView.html"
     },
     {
       "name": "GetFirewallDomainList",
       "methodName": "toGetFirewallDomainList",
       "description": "Grants permission to get a firewall domain list",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetFirewallDomainList"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetFirewallDomainList.html"
     },
     {
       "name": "GetFirewallRule",
       "methodName": "toGetFirewallRule",
       "description": "Grants permission to get a firewall rule",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetFirewallRule.html"
     },
     {
       "name": "GetGlobalResolver",
       "methodName": "toGetGlobalResolver",
       "description": "Grants permission to get a global resolver",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetGlobalResolver"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetGlobalResolver.html"
     },
     {
       "name": "GetHostedZoneAssociation",
       "methodName": "toGetHostedZoneAssociation",
       "description": "Grants permission to get a hosted zone association",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetHostedZoneAssociation"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetHostedZoneAssociation.html"
     },
     {
       "name": "GetManagedFirewallDomainList",
       "methodName": "toGetManagedFirewallDomainList",
       "description": "Grants permission to get a managed firewall domain list",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetManagedFirewallDomainList"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_GetManagedFirewallDomainList.html"
     },
     {
       "name": "ImportFirewallDomains",
       "methodName": "toImportFirewallDomains",
       "description": "Grants permission to import firewall domains from an S3 bucket",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ImportFirewallDomains"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ImportFirewallDomains.html"
     },
     {
       "name": "ListAccessSources",
       "methodName": "toListAccessSources",
       "description": "Grants permission to list access sources",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListAccessSources"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListAccessSources.html"
     },
     {
       "name": "ListAccessTokens",
       "methodName": "toListAccessTokens",
       "description": "Grants permission to list access tokens",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListAccessTokens"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListAccessTokens.html"
+    },
+    {
+      "name": "ListCoreNetworkEndpoints",
+      "methodName": "toListCoreNetworkEndpoints",
+      "description": "Grants permission to list core network endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListCoreNetworkEndpoints.html"
     },
     {
       "name": "ListDNSViews",
       "methodName": "toListDNSViews",
       "description": "Grants permission to list dns views",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListDNSViews"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListDNSViews.html"
     },
     {
       "name": "ListFirewallDomainLists",
       "methodName": "toListFirewallDomainLists",
       "description": "Grants permission to list firewall domain lists",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListFirewallDomainLists"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListFirewallDomainLists.html"
     },
     {
       "name": "ListFirewallDomains",
       "methodName": "toListFirewallDomains",
       "description": "Grants permission to list firewall domains",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListFirewallDomains"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListFirewallDomains.html"
     },
     {
       "name": "ListFirewallRules",
       "methodName": "toListFirewallRules",
       "description": "Grants permission to list firewall rules",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListFirewallRules"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListFirewallRules.html"
     },
     {
       "name": "ListGlobalResolvers",
       "methodName": "toListGlobalResolvers",
       "description": "Grants permission to list global resolvers",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListGlobalResolvers"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListGlobalResolvers.html"
     },
     {
       "name": "ListHostedZoneAssociations",
       "methodName": "toListHostedZoneAssociations",
       "description": "Grants permission to list hosted zone associations",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListHostedZoneAssociations"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListHostedZoneAssociations.html"
     },
     {
       "name": "ListManagedFirewallDomainLists",
       "methodName": "toListManagedFirewallDomainLists",
       "description": "Grants permission to list managed firewall domain lists",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListManagedFirewallDomainLists"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListManagedFirewallDomainLists.html"
+    },
+    {
+      "name": "ListSharedDNSViews",
+      "methodName": "toListSharedDNSViews",
+      "description": "Grants permission to list shared dns views",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListSharedDNSViews.html"
     },
     {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
       "description": "Grants permission to list tags for a resource",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListTagsForResource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_ListTagsForResource.html"
     },
     {
       "name": "TagResource",
       "methodName": "toTagResource",
       "description": "Grants permission to tag a resource",
       "accessLevel": "Tagging, Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_TagResource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_TagResource.html"
     },
     {
       "name": "UntagResource",
       "methodName": "toUntagResource",
       "description": "Grants permission to untag a resource",
       "accessLevel": "Tagging, Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UntagResource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UntagResource.html"
     },
     {
       "name": "UpdateAccessSource",
       "methodName": "toUpdateAccessSource",
       "description": "Grants permission to update an access source",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateAccessSource"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateAccessSource.html"
     },
     {
       "name": "UpdateAccessToken",
       "methodName": "toUpdateAccessToken",
       "description": "Grants permission to update an access token",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateAccessToken"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateAccessToken.html"
+    },
+    {
+      "name": "UpdateCoreNetworkEndpoint",
+      "methodName": "toUpdateCoreNetworkEndpoint",
+      "description": "Grants permission to update a core network endpoint",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateCoreNetworkEndpoint.html"
     },
     {
       "name": "UpdateDNSView",
       "methodName": "toUpdateDNSView",
       "description": "Grants permission to update a dns view",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateDNSView"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateDNSView.html"
     },
     {
       "name": "UpdateFirewallDomains",
       "methodName": "toUpdateFirewallDomains",
       "description": "Grants permission to update firewall domains",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateFirewallDomains"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateFirewallDomains.html"
     },
     {
       "name": "UpdateFirewallRule",
       "methodName": "toUpdateFirewallRule",
       "description": "Grants permission to update an firewall rule",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateFirewallRule"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateFirewallRule.html"
     },
     {
       "name": "UpdateGlobalResolver",
       "methodName": "toUpdateGlobalResolver",
       "description": "Grants permission to update a global resolver",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateGlobalResolver"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateGlobalResolver.html"
     },
     {
       "name": "UpdateHostedZoneAssociation",
       "methodName": "toUpdateHostedZoneAssociation",
       "description": "Grants permission to update a hosted zone association",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateHostedZoneAssociation"
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_UpdateHostedZoneAssociation.html"
     },
     {
       "name": "AllowVendedLogDeliveryForResource",
@@ -470,6 +518,32 @@
         "property": "accessTokenRef",
         "arn": "accessTokenArn"
       }
+    },
+    {
+      "name": "core-network-endpoint",
+      "methodName": "onCoreNetworkEndpoint",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53globalresolver_CoreNetworkEndpoint.html",
+      "arn": "arn:${Partition}:route53globalresolver::${Account}:core-network-endpoint/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "dns-view",
@@ -577,6 +651,7 @@
       "relatedActionMethods": [
         "toCreateAccessSource",
         "toCreateAccessToken",
+        "toCreateCoreNetworkEndpoint",
         "toCreateDNSView",
         "toCreateFirewallDomainList",
         "toCreateGlobalResolver",
@@ -600,12 +675,14 @@
       "relatedActionMethods": [
         "toCreateAccessSource",
         "toCreateAccessToken",
+        "toCreateCoreNetworkEndpoint",
         "toCreateDNSView",
         "toCreateFirewallDomainList",
         "toCreateFirewallRule",
         "toCreateGlobalResolver",
         "toDeleteAccessSource",
         "toDeleteAccessToken",
+        "toDeleteCoreNetworkEndpoint",
         "toDeleteDNSView",
         "toDeleteFirewallDomainList",
         "toDeleteGlobalResolver",
@@ -613,6 +690,7 @@
         "toEnableDNSView",
         "toGetAccessSource",
         "toGetAccessToken",
+        "toGetCoreNetworkEndpoint",
         "toGetDNSView",
         "toGetFirewallDomainList",
         "toGetGlobalResolver",
@@ -624,6 +702,7 @@
         "toUntagResource",
         "toUpdateAccessSource",
         "toUpdateAccessToken",
+        "toUpdateCoreNetworkEndpoint",
         "toUpdateDNSView",
         "toUpdateFirewallDomains",
         "toUpdateGlobalResolver",
@@ -632,6 +711,7 @@
       "relatedResourceTypes": [
         "access-source",
         "access-token",
+        "core-network-endpoint",
         "dns-view",
         "firewall-domain-list",
         "global-resolver"
@@ -653,6 +733,7 @@
       "relatedActionMethods": [
         "toCreateAccessSource",
         "toCreateAccessToken",
+        "toCreateCoreNetworkEndpoint",
         "toCreateDNSView",
         "toCreateFirewallDomainList",
         "toCreateGlobalResolver",

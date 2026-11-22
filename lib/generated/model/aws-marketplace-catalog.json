@@ -11,6 +11,7 @@
       "CreateVerificationEvidence",
       "DeleteResourcePolicy",
       "PutResourcePolicy",
+      "StartAssessment",
       "StartChangeSet",
       "StartInvoiceSubmissionTask",
       "StartTaxComplianceProfileChangeTask",
@@ -228,6 +229,13 @@
       "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_PutResourcePolicy.html"
     },
     {
+      "name": "StartAssessment",
+      "methodName": "toStartAssessment",
+      "description": "Grants permission to star a new assessment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartAssessment.html"
+    },
+    {
       "name": "StartChangeSet",
       "methodName": "toStartChangeSet",
       "description": "Grants permission to request a new change set (Note: resource-level permissions for this action and condition context keys for this action are only supported when used with Catalog API and are not supported when used with AWS Marketplace Management Portal)",
@@ -305,7 +313,9 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": []
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "ChangeSet",
@@ -601,6 +611,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
         "toCreateVerificationEvidence",
+        "toStartAssessment",
         "toStartChangeSet",
         "toStartInvoiceSubmissionTask",
         "toStartTaxComplianceProfileChangeTask",
@@ -625,6 +636,7 @@
         "toCancelChangeSet",
         "toCreateVerificationEvidence",
         "toDeleteResourcePolicy",
+        "toDescribeAssessment",
         "toDescribeChangeSet",
         "toDescribeEntity",
         "toGetInvoiceSubmissionTask",
@@ -634,6 +646,7 @@
         "toGetVerificationEvidence",
         "toListTagsForResource",
         "toPutResourcePolicy",
+        "toStartAssessment",
         "toStartChangeSet",
         "toStartInvoiceSubmissionTask",
         "toStartTaxComplianceProfileChangeTask",
@@ -643,6 +656,7 @@
         "toUpdateVerificationEvidence"
       ],
       "relatedResourceTypes": [
+        "Assessment",
         "ChangeSet",
         "Entity",
         "InvoiceSubmissionTask",
@@ -667,6 +681,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
         "toCreateVerificationEvidence",
+        "toStartAssessment",
         "toStartChangeSet",
         "toStartInvoiceSubmissionTask",
         "toStartTaxComplianceProfileChangeTask",
@@ -695,6 +710,7 @@
         "toGetResourcePolicy",
         "toListTagsForResource",
         "toPutResourcePolicy",
+        "toStartAssessment",
         "toStartChangeSet",
         "toTagResource",
         "toUntagResource"

@@ -48,10 +48,12 @@
       "ResumePentestJob",
       "StartCodeRemediation",
       "StartCodeReviewJob",
+      "StartPentestEstimationRun",
       "StartPentestJob",
       "StartThreatModelJob",
       "StartValidationRun",
       "StopCodeReviewJob",
+      "StopPentestEstimationRun",
       "StopPentestJob",
       "StopThreatModelJob",
       "TagResource",
@@ -98,6 +100,7 @@
       "GetDesignReviewArtifact",
       "GetDesignReviewFeedback",
       "GetIntegration",
+      "GetPentestEstimate",
       "GetProviderRegistrationManifest",
       "GetSecurityRequirement",
       "GetSecurityRequirementPack",
@@ -558,6 +561,13 @@
       "url": "https://docs.aws.amazon.com/securityagent/API_GetIntegration.html"
     },
     {
+      "name": "GetPentestEstimate",
+      "methodName": "toGetPentestEstimate",
+      "description": "Grants permission to retrieve the latest cost estimate for a penetration test",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/securityagent/API_GetPentestEstimate.html"
+    },
+    {
       "name": "GetProviderRegistrationManifest",
       "methodName": "toGetProviderRegistrationManifest",
       "description": "Grants permission to retrieve the provider registration manifest used for browser-based integration registration",
@@ -831,6 +841,13 @@
       "url": "https://docs.aws.amazon.com/securityagent/API_StartCodeReviewJob.html"
     },
     {
+      "name": "StartPentestEstimationRun",
+      "methodName": "toStartPentestEstimationRun",
+      "description": "Grants permission to start a cost estimation run for a penetration test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityagent/API_StartPentestEstimationRun.html"
+    },
+    {
       "name": "StartPentestJob",
       "methodName": "toStartPentestJob",
       "description": "Grants permission to initiate the execution of a penetration test",
@@ -857,6 +874,13 @@
       "description": "Grants permission to stop the execution of a running code review",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/securityagent/API_StopCodeReviewJob.html"
+    },
+    {
+      "name": "StopPentestEstimationRun",
+      "methodName": "toStopPentestEstimationRun",
+      "description": "Grants permission to stop a running cost estimation run for a penetration test",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/securityagent/API_StopPentestEstimationRun.html"
     },
     {
       "name": "StopPentestJob",
@@ -1292,6 +1316,7 @@
         "toGetDesignReviewArtifact",
         "toGetDesignReviewFeedback",
         "toGetIntegration",
+        "toGetPentestEstimate",
         "toGetSecurityRequirement",
         "toGetSecurityRequirementPack",
         "toImportSecurityRequirements",
@@ -1321,10 +1346,12 @@
         "toResumePentestJob",
         "toStartCodeRemediation",
         "toStartCodeReviewJob",
+        "toStartPentestEstimationRun",
         "toStartPentestJob",
         "toStartThreatModelJob",
         "toStartValidationRun",
         "toStopCodeReviewJob",
+        "toStopPentestEstimationRun",
         "toStopPentestJob",
         "toStopThreatModelJob",
         "toTagResource",

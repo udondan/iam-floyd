@@ -127,6 +127,10 @@
       "SwitchoverReadReplica",
       "CopyCustomDBEngineVersion",
       "CrossRegionCommunication",
+      "DisableInternetAccessGateway",
+      "DisableVpcNetworking",
+      "EnableInternetAccessGateway",
+      "EnableVpcNetworking",
       "ModifyRecommendation"
     ],
     "Tagging": [
@@ -1403,6 +1407,34 @@
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/USER_Recommendations.html"
     },
     {
+      "name": "DisableInternetAccessGateway",
+      "methodName": "toDisableInternetAccessGateway",
+      "description": "Grants permission to disable Internet Access Gateway for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html"
+    },
+    {
+      "name": "DisableVpcNetworking",
+      "methodName": "toDisableVpcNetworking",
+      "description": "Grants permission to disable VPC networking for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html"
+    },
+    {
+      "name": "EnableInternetAccessGateway",
+      "methodName": "toEnableInternetAccessGateway",
+      "description": "Grants permission to enable Internet Access Gateway for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html"
+    },
+    {
+      "name": "EnableVpcNetworking",
+      "methodName": "toEnableVpcNetworking",
+      "description": "Grants permission to enable VPC networking for a DB cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html"
+    },
+    {
       "name": "ModifyRecommendation",
       "methodName": "toModifyRecommendation",
       "description": "Grants permission to modify recommendation",
@@ -2446,7 +2478,11 @@
         "toSwitchoverGlobalCluster",
         "toSwitchoverReadReplica",
         "toCopyCustomDBEngineVersion",
-        "toCrossRegionCommunication"
+        "toCrossRegionCommunication",
+        "toDisableInternetAccessGateway",
+        "toDisableVpcNetworking",
+        "toEnableInternetAccessGateway",
+        "toEnableVpcNetworking"
       ],
       "relatedResourceTypes": [
         "auto-backup",
@@ -3154,6 +3190,22 @@
       "defaultOperator": "Bool"
     },
     {
+      "key": "rds:VpcNetworkingEnabled",
+      "methodName": "ifVpcNetworkingEnabled",
+      "description": "Filters access by the value that specifies whether the DB cluster created by the request uses VPC networking. Evaluates to true when the EnableVPCNetworking request parameter is true or isn't specified. Evaluates to false when EnableVPCNetworking is false, or when WithExpressConfiguration is true and EnableVPCNetworking isn't specified",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions",
+      "relatedActionMethods": [
+        "toCreateDBCluster",
+        "toRestoreDBClusterFromS3",
+        "toRestoreDBClusterFromSnapshot",
+        "toRestoreDBClusterToPointInTime"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcNetworkingEnabled",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
       "key": "rds:cluster-pg-tag/${TagKey}",
       "methodName": "ifClusterPgTag",
       "description": "Filters access by the tag attached to a DB cluster parameter group",
@@ -3270,7 +3322,11 @@
         "toStartExportTask",
         "toStopActivityStream",
         "toStopDBCluster",
-        "toSwitchoverGlobalCluster"
+        "toSwitchoverGlobalCluster",
+        "toDisableInternetAccessGateway",
+        "toDisableVpcNetworking",
+        "toEnableInternetAccessGateway",
+        "toEnableVpcNetworking"
       ],
       "relatedResourceTypes": [
         "cluster"
@@ -3606,6 +3662,7 @@
         "toDeleteDBSubnetGroup",
         "toDescribeDBSubnetGroups",
         "toListTagsForResource",
+        "toModifyDBCluster",
         "toModifyDBInstance",
         "toModifyDBSubnetGroup",
         "toRemoveTagsFromResource",

@@ -1,0 +1,764 @@
+{
+  "schemaVersion": 1,
+  "filename": "apiportal",
+  "className": "Apiportal",
+  "name": "apiportal",
+  "servicePrefix": "apiportal",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apiportal.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateManagedApis",
+      "CreateManagedApi",
+      "CreatePortal",
+      "CreatePortalPreview",
+      "CreateProduct",
+      "CreateProductApiPage",
+      "CreateProductPage",
+      "DeleteDiscoveryConfiguration",
+      "DeleteManagedApi",
+      "DeleteOrganizationDiscoveryConfiguration",
+      "DeletePortal",
+      "DeleteProduct",
+      "DeleteProductApiPage",
+      "DeleteProductPage",
+      "DeleteProductSharingPolicy",
+      "DisassociateManagedApis",
+      "PutDiscoveryConfiguration",
+      "PutOrganizationDiscoveryConfiguration",
+      "PutProductSharingPolicy",
+      "StartDiscovery",
+      "StopDiscovery",
+      "TagResource",
+      "UntagResource",
+      "UpdatePortal",
+      "UpdatePortalPublishStatus",
+      "UpdateProduct",
+      "UpdateProductApiPage",
+      "UpdateProductPage"
+    ],
+    "Permissions management": [
+      "DeleteProductSharingPolicy",
+      "PutProductSharingPolicy"
+    ],
+    "Read": [
+      "GetApiInventoryItem",
+      "GetDiscoveryConfiguration",
+      "GetManagedApi",
+      "GetOrganizationDiscoveryConfiguration",
+      "GetPortal",
+      "GetProduct",
+      "GetProductApiPage",
+      "GetProductPage",
+      "GetProductSharingPolicy",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApiInventoryItems",
+      "ListDiscoveryStatuses",
+      "ListManagedApiEvents",
+      "ListManagedApis",
+      "ListPortals",
+      "ListProductApiPages",
+      "ListProductPages",
+      "ListProducts"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateManagedApis",
+      "methodName": "toAssociateManagedApis",
+      "description": "Grants permission to associate managed APIs with a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_AssociateManagedApis.html"
+    },
+    {
+      "name": "CreateManagedApi",
+      "methodName": "toCreateManagedApi",
+      "description": "Grants permission to create a managed API from a discovered API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_CreateManagedApi.html"
+    },
+    {
+      "name": "CreatePortal",
+      "methodName": "toCreatePortal",
+      "description": "Grants permission to create a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_CreatePortal.html"
+    },
+    {
+      "name": "CreatePortalPreview",
+      "methodName": "toCreatePortalPreview",
+      "description": "Grants permission to create a preview of a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_CreatePortalPreview.html"
+    },
+    {
+      "name": "CreateProduct",
+      "methodName": "toCreateProduct",
+      "description": "Grants permission to create a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_CreateProduct.html"
+    },
+    {
+      "name": "CreateProductApiPage",
+      "methodName": "toCreateProductApiPage",
+      "description": "Grants permission to create an API reference page in a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_CreateProductApiPage.html"
+    },
+    {
+      "name": "CreateProductPage",
+      "methodName": "toCreateProductPage",
+      "description": "Grants permission to create a documentation page in a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_CreateProductPage.html"
+    },
+    {
+      "name": "DeleteDiscoveryConfiguration",
+      "methodName": "toDeleteDiscoveryConfiguration",
+      "description": "Grants permission to delete the API discovery configuration for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteDiscoveryConfiguration.html"
+    },
+    {
+      "name": "DeleteManagedApi",
+      "methodName": "toDeleteManagedApi",
+      "description": "Grants permission to delete a managed API",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteManagedApi.html"
+    },
+    {
+      "name": "DeleteOrganizationDiscoveryConfiguration",
+      "methodName": "toDeleteOrganizationDiscoveryConfiguration",
+      "description": "Grants permission to delete the API discovery configuration for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteOrganizationDiscoveryConfiguration.html"
+    },
+    {
+      "name": "DeletePortal",
+      "methodName": "toDeletePortal",
+      "description": "Grants permission to delete a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeletePortal.html"
+    },
+    {
+      "name": "DeleteProduct",
+      "methodName": "toDeleteProduct",
+      "description": "Grants permission to delete a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteProduct.html"
+    },
+    {
+      "name": "DeleteProductApiPage",
+      "methodName": "toDeleteProductApiPage",
+      "description": "Grants permission to delete an API reference page from a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteProductApiPage.html"
+    },
+    {
+      "name": "DeleteProductPage",
+      "methodName": "toDeleteProductPage",
+      "description": "Grants permission to delete a documentation page from a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteProductPage.html"
+    },
+    {
+      "name": "DeleteProductSharingPolicy",
+      "methodName": "toDeleteProductSharingPolicy",
+      "description": "Grants permission to delete the sharing policy of a product",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DeleteProductSharingPolicy.html"
+    },
+    {
+      "name": "DisassociateManagedApis",
+      "methodName": "toDisassociateManagedApis",
+      "description": "Grants permission to disassociate managed APIs from a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_DisassociateManagedApis.html"
+    },
+    {
+      "name": "GetApiInventoryItem",
+      "methodName": "toGetApiInventoryItem",
+      "description": "Grants permission to retrieve details of a discovered API in the API inventory",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetApiInventoryItem.html"
+    },
+    {
+      "name": "GetDiscoveryConfiguration",
+      "methodName": "toGetDiscoveryConfiguration",
+      "description": "Grants permission to retrieve the API discovery configuration for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetDiscoveryConfiguration.html"
+    },
+    {
+      "name": "GetManagedApi",
+      "methodName": "toGetManagedApi",
+      "description": "Grants permission to retrieve a managed API",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetManagedApi.html"
+    },
+    {
+      "name": "GetOrganizationDiscoveryConfiguration",
+      "methodName": "toGetOrganizationDiscoveryConfiguration",
+      "description": "Grants permission to retrieve the API discovery configuration for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetOrganizationDiscoveryConfiguration.html"
+    },
+    {
+      "name": "GetPortal",
+      "methodName": "toGetPortal",
+      "description": "Grants permission to retrieve a portal",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetPortal.html"
+    },
+    {
+      "name": "GetProduct",
+      "methodName": "toGetProduct",
+      "description": "Grants permission to retrieve a product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetProduct.html"
+    },
+    {
+      "name": "GetProductApiPage",
+      "methodName": "toGetProductApiPage",
+      "description": "Grants permission to retrieve an API reference page in a product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetProductApiPage.html"
+    },
+    {
+      "name": "GetProductPage",
+      "methodName": "toGetProductPage",
+      "description": "Grants permission to retrieve a documentation page in a product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetProductPage.html"
+    },
+    {
+      "name": "GetProductSharingPolicy",
+      "methodName": "toGetProductSharingPolicy",
+      "description": "Grants permission to retrieve the sharing policy of a product",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_GetProductSharingPolicy.html"
+    },
+    {
+      "name": "ListApiInventoryItems",
+      "methodName": "toListApiInventoryItems",
+      "description": "Grants permission to list discovered APIs in the API inventory",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListApiInventoryItems.html"
+    },
+    {
+      "name": "ListDiscoveryStatuses",
+      "methodName": "toListDiscoveryStatuses",
+      "description": "Grants permission to list API discovery statuses",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListDiscoveryStatuses.html"
+    },
+    {
+      "name": "ListManagedApiEvents",
+      "methodName": "toListManagedApiEvents",
+      "description": "Grants permission to list API security events for a managed API",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListManagedApiEvents.html"
+    },
+    {
+      "name": "ListManagedApis",
+      "methodName": "toListManagedApis",
+      "description": "Grants permission to list managed APIs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListManagedApis.html"
+    },
+    {
+      "name": "ListPortals",
+      "methodName": "toListPortals",
+      "description": "Grants permission to list portals",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListPortals.html"
+    },
+    {
+      "name": "ListProductApiPages",
+      "methodName": "toListProductApiPages",
+      "description": "Grants permission to list the API reference pages in a product",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListProductApiPages.html"
+    },
+    {
+      "name": "ListProductPages",
+      "methodName": "toListProductPages",
+      "description": "Grants permission to list the documentation pages in a product",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListProductPages.html"
+    },
+    {
+      "name": "ListProducts",
+      "methodName": "toListProducts",
+      "description": "Grants permission to list products",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListProducts.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for an API Portal resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutDiscoveryConfiguration",
+      "methodName": "toPutDiscoveryConfiguration",
+      "description": "Grants permission to create or update the API discovery configuration for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_PutDiscoveryConfiguration.html"
+    },
+    {
+      "name": "PutOrganizationDiscoveryConfiguration",
+      "methodName": "toPutOrganizationDiscoveryConfiguration",
+      "description": "Grants permission to create or update the API discovery configuration for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_PutOrganizationDiscoveryConfiguration.html"
+    },
+    {
+      "name": "PutProductSharingPolicy",
+      "methodName": "toPutProductSharingPolicy",
+      "description": "Grants permission to create or update the sharing policy of a product",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_PutProductSharingPolicy.html"
+    },
+    {
+      "name": "StartDiscovery",
+      "methodName": "toStartDiscovery",
+      "description": "Grants permission to start API discovery for a discovery configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_StartDiscovery.html"
+    },
+    {
+      "name": "StopDiscovery",
+      "methodName": "toStopDiscovery",
+      "description": "Grants permission to stop API discovery for a discovery configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_StopDiscovery.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to an API Portal resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an API Portal resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdatePortal",
+      "methodName": "toUpdatePortal",
+      "description": "Grants permission to update a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_UpdatePortal.html"
+    },
+    {
+      "name": "UpdatePortalPublishStatus",
+      "methodName": "toUpdatePortalPublishStatus",
+      "description": "Grants permission to publish or unpublish a portal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_UpdatePortalPublishStatus.html"
+    },
+    {
+      "name": "UpdateProduct",
+      "methodName": "toUpdateProduct",
+      "description": "Grants permission to update a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_UpdateProduct.html"
+    },
+    {
+      "name": "UpdateProductApiPage",
+      "methodName": "toUpdateProductApiPage",
+      "description": "Grants permission to update an API reference page in a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_UpdateProductApiPage.html"
+    },
+    {
+      "name": "UpdateProductPage",
+      "methodName": "toUpdateProductPage",
+      "description": "Grants permission to update a documentation page in a product",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/APIReference/API_UpdateProductPage.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "DiscoveryConfiguration",
+      "methodName": "onDiscoveryConfiguration",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-DiscoveryConfiguration",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:discoveryconfiguration",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ManagedApi",
+      "methodName": "onManagedApi",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-ManagedApi",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:managedapis/${ManagedApiId}",
+      "placeholders": [
+        {
+          "placeholder": "ManagedApiId",
+          "name": "managedApiId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "OrganizationDiscoveryConfiguration",
+      "methodName": "onOrganizationDiscoveryConfiguration",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-OrganizationDiscoveryConfiguration",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:orgdiscoveryconfiguration",
+      "placeholders": [
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Portal",
+      "methodName": "onPortal",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-Portal",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:portals/${PortalId}",
+      "placeholders": [
+        {
+          "placeholder": "PortalId",
+          "name": "portalId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "Product",
+      "methodName": "onProduct",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-Product",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:products/${ProductId}",
+      "placeholders": [
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProductApiPage",
+      "methodName": "onProductApiPage",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-ProductApiPage",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:products/${ProductId}/apipages/${ProductApiPageId}",
+      "placeholders": [
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductApiPageId",
+          "name": "productApiPageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProductPage",
+      "methodName": "onProductPage",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-ProductPage",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:products/${ProductId}/productpages/${ProductPageId}",
+      "placeholders": [
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductPageId",
+          "name": "productPageId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ProductSharingPolicy",
+      "methodName": "onProductSharingPolicy",
+      "url": "https://docs.aws.amazon.com/apiportal/latest/userguide/security-iam.html#security-iam-resources-ProductSharingPolicy",
+      "arn": "arn:${Partition}:apiportal:${Region}:${Account}:products/${ProductId}/sharingpolicy",
+      "placeholders": [
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateManagedApi",
+        "toCreatePortal",
+        "toCreateProduct",
+        "toCreateProductApiPage",
+        "toCreateProductPage",
+        "toPutDiscoveryConfiguration",
+        "toPutOrganizationDiscoveryConfiguration",
+        "toPutProductSharingPolicy",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateManagedApis",
+        "toCreateManagedApi",
+        "toCreatePortal",
+        "toCreatePortalPreview",
+        "toCreateProduct",
+        "toCreateProductApiPage",
+        "toCreateProductPage",
+        "toDeleteDiscoveryConfiguration",
+        "toDeleteManagedApi",
+        "toDeleteOrganizationDiscoveryConfiguration",
+        "toDeletePortal",
+        "toDeleteProduct",
+        "toDeleteProductApiPage",
+        "toDeleteProductPage",
+        "toDeleteProductSharingPolicy",
+        "toDisassociateManagedApis",
+        "toGetDiscoveryConfiguration",
+        "toGetManagedApi",
+        "toGetOrganizationDiscoveryConfiguration",
+        "toGetPortal",
+        "toGetProduct",
+        "toGetProductApiPage",
+        "toGetProductPage",
+        "toGetProductSharingPolicy",
+        "toListManagedApiEvents",
+        "toListProductApiPages",
+        "toListProductPages",
+        "toListTagsForResource",
+        "toPutDiscoveryConfiguration",
+        "toPutOrganizationDiscoveryConfiguration",
+        "toPutProductSharingPolicy",
+        "toStartDiscovery",
+        "toStopDiscovery",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePortal",
+        "toUpdatePortalPublishStatus",
+        "toUpdateProduct",
+        "toUpdateProductApiPage",
+        "toUpdateProductPage"
+      ],
+      "relatedResourceTypes": [
+        "DiscoveryConfiguration",
+        "ManagedApi",
+        "OrganizationDiscoveryConfiguration",
+        "Portal",
+        "Product",
+        "ProductApiPage",
+        "ProductPage",
+        "ProductSharingPolicy"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateManagedApi",
+        "toCreatePortal",
+        "toCreateProduct",
+        "toCreateProductApiPage",
+        "toCreateProductPage",
+        "toPutDiscoveryConfiguration",
+        "toPutOrganizationDiscoveryConfiguration",
+        "toPutProductSharingPolicy",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

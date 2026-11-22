@@ -10,7 +10,9 @@
       "AssociateAccounts",
       "CreateAutomationRule",
       "DeleteAutomationRule",
+      "DeleteOrganizationEnrollmentConfiguration",
       "DisassociateAccounts",
+      "PutOrganizationEnrollmentConfiguration",
       "RollbackAutomationEvent",
       "StartAutomationEvent",
       "TagResource",
@@ -31,6 +33,8 @@
       "ListAutomationRulePreview",
       "ListAutomationRulePreviewSummaries",
       "ListAutomationRules",
+      "ListOrganizationEnrollmentConfigurations",
+      "ListOrganizationalUnits",
       "ListRecommendedActionSummaries",
       "ListRecommendedActions",
       "ListTagsForResource"
@@ -65,6 +69,13 @@
       "description": "Grants permission to delete automation rule",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_DeleteAutomationRule.html"
+    },
+    {
+      "name": "DeleteOrganizationEnrollmentConfiguration",
+      "methodName": "toDeleteOrganizationEnrollmentConfiguration",
+      "description": "Grants permission to delete organization enrollment configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_DeleteOrganizationEnrollmentConfiguration.html"
     },
     {
       "name": "DisassociateAccounts",
@@ -144,6 +155,20 @@
       "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationRules.html"
     },
     {
+      "name": "ListOrganizationEnrollmentConfigurations",
+      "methodName": "toListOrganizationEnrollmentConfigurations",
+      "description": "Grants permission to list organization enrollment configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListOrganizationEnrollmentConfigurations.html"
+    },
+    {
+      "name": "ListOrganizationalUnits",
+      "methodName": "toListOrganizationalUnits",
+      "description": "Grants permission to list organizational units and their effective organization rule modes",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListOrganizationalUnits.html"
+    },
+    {
       "name": "ListRecommendedActionSummaries",
       "methodName": "toListRecommendedActionSummaries",
       "description": "Grants permission to list recommended action summaries",
@@ -163,6 +188,13 @@
       "description": "Grants permission to list tags for automation rule",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListTagsForResource.html"
+    },
+    {
+      "name": "PutOrganizationEnrollmentConfiguration",
+      "methodName": "toPutOrganizationEnrollmentConfiguration",
+      "description": "Grants permission to create or update an organization enrollment configurations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_PutOrganizationEnrollmentConfiguration.html"
     },
     {
       "name": "RollbackAutomationEvent",

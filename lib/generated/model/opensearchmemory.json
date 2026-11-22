@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "filename": "opensearchmemory",
+  "className": "Osm",
+  "name": "osm",
+  "servicePrefix": "osm",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_opensearchmemory.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetEvent",
+      "GetEvent",
+      "GetMemory",
+      "GetSpace",
+      "ListTagsForResource",
+      "SearchEvents",
+      "SearchMemories"
+    ],
+    "Write": [
+      "CreateEvent",
+      "CreateMemory",
+      "CreateSpace",
+      "DeleteEvent",
+      "DeleteMemory",
+      "DeleteSpace",
+      "TagResource",
+      "UntagResource",
+      "UpdateMemory",
+      "UpdateSpace"
+    ],
+    "List": [
+      "ListEvents",
+      "ListMemories",
+      "ListSpaces"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetEvent",
+      "methodName": "toBatchGetEvent",
+      "description": "Grants permission to retrieve multiple events from a session in an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_BatchGetEvent.html"
+    },
+    {
+      "name": "CreateEvent",
+      "methodName": "toCreateEvent",
+      "description": "Grants permission to submit an event to a session within an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_CreateEvent.html"
+    },
+    {
+      "name": "CreateMemory",
+      "methodName": "toCreateMemory",
+      "description": "Grants permission to submit a pre-formed memory into an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_CreateMemory.html"
+    },
+    {
+      "name": "CreateSpace",
+      "methodName": "toCreateSpace",
+      "description": "Grants permission to create an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_CreateSpace.html"
+    },
+    {
+      "name": "DeleteEvent",
+      "methodName": "toDeleteEvent",
+      "description": "Grants permission to delete an event from a session within an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_DeleteEvent.html"
+    },
+    {
+      "name": "DeleteMemory",
+      "methodName": "toDeleteMemory",
+      "description": "Grants permission to delete a single memory from an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_DeleteMemory.html"
+    },
+    {
+      "name": "DeleteSpace",
+      "methodName": "toDeleteSpace",
+      "description": "Grants permission to delete an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_DeleteSpace.html"
+    },
+    {
+      "name": "GetEvent",
+      "methodName": "toGetEvent",
+      "description": "Grants permission to retrieve a single event from an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_GetEvent.html"
+    },
+    {
+      "name": "GetMemory",
+      "methodName": "toGetMemory",
+      "description": "Grants permission to retrieve a single memory from an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_GetMemory.html"
+    },
+    {
+      "name": "GetSpace",
+      "methodName": "toGetSpace",
+      "description": "Grants permission to retrieve metadata about an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_GetSpace.html"
+    },
+    {
+      "name": "ListEvents",
+      "methodName": "toListEvents",
+      "description": "Grants permission to list event metadata for a session within an OpenSearch Memory space",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_ListEvents.html"
+    },
+    {
+      "name": "ListMemories",
+      "methodName": "toListMemories",
+      "description": "Grants permission to enumerate the memories in an OpenSearch Memory space",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_ListMemories.html"
+    },
+    {
+      "name": "ListSpaces",
+      "methodName": "toListSpaces",
+      "description": "Grants permission to list the OpenSearch Memory spaces in the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_ListSpaces.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags on an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "SearchEvents",
+      "methodName": "toSearchEvents",
+      "description": "Grants permission to run a relevance search over the raw event index of an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_SearchEvents.html"
+    },
+    {
+      "name": "SearchMemories",
+      "methodName": "toSearchMemories",
+      "description": "Grants permission to run a relevance search over the memory indexes of an OpenSearch Memory space",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_SearchMemories.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite tags on an OpenSearch Memory space",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from an OpenSearch Memory space",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateMemory",
+      "methodName": "toUpdateMemory",
+      "description": "Grants permission to update a single memory in an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_UpdateMemory.html"
+    },
+    {
+      "name": "UpdateSpace",
+      "methodName": "toUpdateSpace",
+      "description": "Grants permission to update the configuration of an OpenSearch Memory space",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/MemoryAPIReference/API_UpdateSpace.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "space",
+      "methodName": "onSpace",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-memory.html#security-iam-memory-id-based-policies-resources",
+      "arn": "arn:${Partition}:osm:${Region}:${Account}:space/${SpaceId}",
+      "placeholders": [
+        {
+          "placeholder": "SpaceId",
+          "name": "spaceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSpace",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetEvent",
+        "toCreateEvent",
+        "toCreateMemory",
+        "toCreateSpace",
+        "toDeleteEvent",
+        "toDeleteMemory",
+        "toDeleteSpace",
+        "toGetEvent",
+        "toGetMemory",
+        "toGetSpace",
+        "toListEvents",
+        "toListMemories",
+        "toListSpaces",
+        "toListTagsForResource",
+        "toSearchEvents",
+        "toSearchMemories",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateMemory",
+        "toUpdateSpace"
+      ],
+      "relatedResourceTypes": [
+        "space"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSpace",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "osm:actorId",
+      "methodName": "ifActorId",
+      "description": "Filters access by the actor IDs specified in the request",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-memory.html#security_iam_memory-conditionkeys",
+      "relatedActionMethods": [
+        "toBatchGetEvent",
+        "toCreateEvent",
+        "toCreateMemory",
+        "toDeleteEvent",
+        "toDeleteMemory",
+        "toGetEvent",
+        "toGetMemory",
+        "toListEvents",
+        "toListMemories",
+        "toSearchEvents",
+        "toSearchMemories",
+        "toUpdateMemory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "actorId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "osm:sessionId",
+      "methodName": "ifSessionId",
+      "description": "Filters access by the session IDs specified in the request",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-memory.html#security_iam_memory-conditionkeys",
+      "relatedActionMethods": [
+        "toBatchGetEvent",
+        "toCreateEvent",
+        "toDeleteEvent",
+        "toGetEvent",
+        "toListEvents",
+        "toSearchEvents"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "sessionId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "osm:strategyName",
+      "methodName": "ifStrategyName",
+      "description": "Filters access by the memory strategy names specified in the request",
+      "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-memory.html#security_iam_memory-conditionkeys",
+      "relatedActionMethods": [
+        "toCreateMemory",
+        "toDeleteMemory",
+        "toGetMemory",
+        "toListMemories",
+        "toSearchMemories",
+        "toUpdateMemory"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "strategyName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

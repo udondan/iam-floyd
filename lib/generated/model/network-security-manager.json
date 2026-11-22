@@ -42,7 +42,9 @@
       "GetTemplate",
       "ListAggregateResourceSynchronizationStatuses",
       "ListDeploymentSnapshots",
+      "ListEntityCoverages",
       "ListPolicySnapshots",
+      "ListProtectedResourceCoverages",
       "ListResourceAssociations",
       "ListResourceSynchronizationStatuses",
       "ListRuleSnapshots",
@@ -262,6 +264,13 @@
       "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListDeployments.html"
     },
     {
+      "name": "ListEntityCoverages",
+      "methodName": "toListEntityCoverages",
+      "description": "Grants permission to list the protected resources covered by a Network Security Manager policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListEntityCoverages.html"
+    },
+    {
       "name": "ListPolicies",
       "methodName": "toListPolicies",
       "description": "Grants permission to list policies",
@@ -274,6 +283,16 @@
       "description": "Grants permission to list the snapshots of a policy",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListPolicySnapshots.html"
+    },
+    {
+      "name": "ListProtectedResourceCoverages",
+      "methodName": "toListProtectedResourceCoverages",
+      "description": "Grants permission to list the Network Security Manager entities that cover a protected resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/APIReference/API_ListProtectedResourceCoverages.html",
+      "conditionMethods": [
+        "ifProtectedResourceArn"
+      ]
     },
     {
       "name": "ListResourceAssociations",
@@ -816,6 +835,7 @@
         "toGetScope",
         "toGetTemplate",
         "toListDeploymentSnapshots",
+        "toListEntityCoverages",
         "toListPolicySnapshots",
         "toListResourceAssociations",
         "toListResourceSynchronizationStatuses",
@@ -879,6 +899,23 @@
         "string"
       ],
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "network-security-manager:ProtectedResourceArn",
+      "methodName": "ifProtectedResourceArn",
+      "description": "Filters access by the ARN of the protected resource whose coverage is being listed",
+      "url": "https://docs.aws.amazon.com/network-security-manager/latest/devguide/security-iam.html",
+      "relatedActionMethods": [
+        "toListProtectedResourceCoverages"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ProtectedResourceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
     }
   ]
 }

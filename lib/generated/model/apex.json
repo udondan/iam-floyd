@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "filename": "apex",
+  "className": "Apex",
+  "name": "apex",
+  "servicePrefix": "apex",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_apex.html",
+  "accessLevelList": {
+    "Read": [
+      "GetStatistics",
+      "GetStatisticsTimeSeries",
+      "Search"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetStatistics",
+      "methodName": "toGetStatistics",
+      "description": "Grants permission to retrieve aggregate statistics over AWS WAFv2 request logs within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    },
+    {
+      "name": "GetStatisticsTimeSeries",
+      "methodName": "toGetStatisticsTimeSeries",
+      "description": "Grants permission to retrieve time-bucketed statistics over AWS WAFv2 request logs within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    },
+    {
+      "name": "Search",
+      "methodName": "toSearch",
+      "description": "Grants permission to search individual AWS WAFv2 request log records within a specified time window",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

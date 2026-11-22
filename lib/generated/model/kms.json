@@ -1495,6 +1495,24 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
     },
     {
+      "key": "kms:PolicyName",
+      "methodName": "ifPolicyName",
+      "description": "Filters access to the GetKeyPolicy and PutKeyPolicy operations based on the value of the PolicyName parameter in the request",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name",
+      "relatedActionMethods": [
+        "toGetKeyPolicy",
+        "toPutKeyPolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PolicyName",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "kms:PrimaryRegion",
       "methodName": "ifPrimaryRegion",
       "description": "Filters access to the UpdatePrimaryRegion operation based on the value of the PrimaryRegion parameter in the request",

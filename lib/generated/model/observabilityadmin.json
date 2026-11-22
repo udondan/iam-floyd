@@ -8,23 +8,29 @@
   "accessLevelList": {
     "Write": [
       "CreateCentralizationRuleForOrganization",
+      "CreateConnector",
       "CreateDatasetIntegration",
       "CreateS3TableIntegration",
       "CreateTelemetryPipeline",
       "CreateTelemetryRule",
       "CreateTelemetryRuleForOrganization",
       "DeleteCentralizationRuleForOrganization",
+      "DeleteConnector",
       "DeleteDatasetIntegration",
       "DeleteS3TableIntegration",
       "DeleteTelemetryPipeline",
       "DeleteTelemetryRule",
       "DeleteTelemetryRuleForOrganization",
+      "PutConnectorTelemetryManifest",
       "StartTelemetryEnrichment",
       "StartTelemetryEvaluation",
       "StartTelemetryEvaluationForOrganization",
+      "StartTelemetryPipelineRefresh",
+      "StartThirdPartyTelemetryEnrichment",
       "StopTelemetryEnrichment",
       "StopTelemetryEvaluation",
       "StopTelemetryEvaluationForOrganization",
+      "StopThirdPartyTelemetryEnrichment",
       "TagResource",
       "UntagResource",
       "UpdateCentralizationRuleForOrganization",
@@ -35,6 +41,9 @@
     ],
     "Read": [
       "GetCentralizationRuleForOrganization",
+      "GetConnector",
+      "GetConnectorTelemetryManifest",
+      "GetConnectorTelemetrySetup",
       "GetDatasetIntegration",
       "GetS3TableIntegration",
       "GetTelemetryEnrichmentStatus",
@@ -43,19 +52,23 @@
       "GetTelemetryPipeline",
       "GetTelemetryRule",
       "GetTelemetryRuleForOrganization",
+      "GetThirdPartyTelemetryEnrichment",
       "ListResourceTelemetry",
       "ListResourceTelemetryForOrganization",
+      "ListResourcesByConnector",
       "TestTelemetryPipeline",
       "ValidateTelemetryPipelineConfiguration"
     ],
     "List": [
       "ListCentralizationRulesForOrganization",
+      "ListConnectors",
       "ListDatasetIntegrations",
       "ListS3TableIntegrations",
       "ListTagsForResource",
       "ListTelemetryPipelines",
       "ListTelemetryRules",
-      "ListTelemetryRulesForOrganization"
+      "ListTelemetryRulesForOrganization",
+      "ListThirdPartyTelemetryEnrichments"
     ],
     "Tagging": [
       "TagResource",
@@ -69,6 +82,13 @@
       "description": "Grants permission to create a new organization centralization rule with the specified name for the organization",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateCentralizationRuleForOrganization.html"
+    },
+    {
+      "name": "CreateConnector",
+      "methodName": "toCreateConnector",
+      "description": "Grants permission to create a connector to a third-party cloud provider",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateConnector.html"
     },
     {
       "name": "CreateDatasetIntegration",
@@ -113,6 +133,13 @@
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteCentralizationRuleForOrganization.html"
     },
     {
+      "name": "DeleteConnector",
+      "methodName": "toDeleteConnector",
+      "description": "Grants permission to delete a connector and its telemetry manifest",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteConnector.html"
+    },
+    {
       "name": "DeleteDatasetIntegration",
       "methodName": "toDeleteDatasetIntegration",
       "description": "Grants permission to delete the specified dataset integration for the account",
@@ -153,6 +180,27 @@
       "description": "Grants permission to retrieve the specified organization centralization rule for the organization",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetCentralizationRuleForOrganization.html"
+    },
+    {
+      "name": "GetConnector",
+      "methodName": "toGetConnector",
+      "description": "Grants permission to retrieve the details of a connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetConnector.html"
+    },
+    {
+      "name": "GetConnectorTelemetryManifest",
+      "methodName": "toGetConnectorTelemetryManifest",
+      "description": "Grants permission to retrieve the telemetry manifest of a connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetConnectorTelemetryManifest.html"
+    },
+    {
+      "name": "GetConnectorTelemetrySetup",
+      "methodName": "toGetConnectorTelemetrySetup",
+      "description": "Grants permission to generate the setup artifacts for the telemetry manifest of a connector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetConnectorTelemetrySetup.html"
     },
     {
       "name": "GetDatasetIntegration",
@@ -211,11 +259,25 @@
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRuleForOrganization.html"
     },
     {
+      "name": "GetThirdPartyTelemetryEnrichment",
+      "methodName": "toGetThirdPartyTelemetryEnrichment",
+      "description": "Grants permission to retrieve a third-party telemetry enrichment, including its status and source configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetThirdPartyTelemetryEnrichment.html"
+    },
+    {
       "name": "ListCentralizationRulesForOrganization",
       "methodName": "toListCentralizationRulesForOrganization",
       "description": "Grants permission to list the centralization rules for the organization",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListCentralizationRulesForOrganization.html"
+    },
+    {
+      "name": "ListConnectors",
+      "methodName": "toListConnectors",
+      "description": "Grants permission to list the connectors for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListConnectors.html"
     },
     {
       "name": "ListDatasetIntegrations",
@@ -243,6 +305,13 @@
       "conditionMethods": [
         "ifTargetRegions"
       ]
+    },
+    {
+      "name": "ListResourcesByConnector",
+      "methodName": "toListResourcesByConnector",
+      "description": "Grants permission to list the resources in a third-party cloud provider that a connector can access",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourcesByConnector.html"
     },
     {
       "name": "ListS3TableIntegrations",
@@ -280,6 +349,20 @@
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryRulesForOrganization.html"
     },
     {
+      "name": "ListThirdPartyTelemetryEnrichments",
+      "methodName": "toListThirdPartyTelemetryEnrichments",
+      "description": "Grants permission to list the third-party telemetry enrichments for the account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListThirdPartyTelemetryEnrichments.html"
+    },
+    {
+      "name": "PutConnectorTelemetryManifest",
+      "methodName": "toPutConnectorTelemetryManifest",
+      "description": "Grants permission to create or replace the telemetry manifest of a connector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_PutConnectorTelemetryManifest.html"
+    },
+    {
       "name": "StartTelemetryEnrichment",
       "methodName": "toStartTelemetryEnrichment",
       "description": "Grants permission to enable the Resource tags for telemetry feature for the account",
@@ -307,6 +390,20 @@
       ]
     },
     {
+      "name": "StartTelemetryPipelineRefresh",
+      "methodName": "toStartTelemetryPipelineRefresh",
+      "description": "Grants permission to start a refresh of an external-cloud telemetry pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryPipelineRefresh.html"
+    },
+    {
+      "name": "StartThirdPartyTelemetryEnrichment",
+      "methodName": "toStartThirdPartyTelemetryEnrichment",
+      "description": "Grants permission to start a third-party telemetry enrichment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartThirdPartyTelemetryEnrichment.html"
+    },
+    {
       "name": "StopTelemetryEnrichment",
       "methodName": "toStopTelemetryEnrichment",
       "description": "Grants permission to disable the Resource tags for telemetry feature for the account",
@@ -326,6 +423,13 @@
       "description": "Grants permission to stop the Telemetry Config feature for the organization",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEvaluationForOrganization.html"
+    },
+    {
+      "name": "StopThirdPartyTelemetryEnrichment",
+      "methodName": "toStopThirdPartyTelemetryEnrichment",
+      "description": "Grants permission to stop a third-party telemetry enrichment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopThirdPartyTelemetryEnrichment.html"
     },
     {
       "name": "TagResource",
@@ -392,6 +496,42 @@
     }
   ],
   "resources": [
+    {
+      "name": "connector",
+      "methodName": "onConnector",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_Connector.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:connector/${ConnectorProvider}/${ConnectorId}",
+      "placeholders": [
+        {
+          "placeholder": "ConnectorProvider",
+          "name": "connectorProvider",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConnectorId",
+          "name": "connectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
     {
       "name": "dataset-integration",
       "methodName": "onDatasetIntegration",
@@ -541,6 +681,37 @@
       }
     },
     {
+      "name": "telemetry-enrichment",
+      "methodName": "onTelemetryEnrichment",
+      "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ThirdPartyTelemetryEnrichment.html",
+      "arn": "arn:${Partition}:observabilityadmin:${Region}:${Account}:telemetry-enrichments/${TelemetryEnrichmentId}",
+      "placeholders": [
+        {
+          "placeholder": "TelemetryEnrichmentId",
+          "name": "telemetryEnrichmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "telemetry-pipeline",
       "methodName": "onTelemetryPipeline",
       "url": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TelemetryPipeline.html",
@@ -617,11 +788,13 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
         "toCreateCentralizationRuleForOrganization",
+        "toCreateConnector",
         "toCreateDatasetIntegration",
         "toCreateS3TableIntegration",
         "toCreateTelemetryPipeline",
         "toCreateTelemetryRule",
         "toCreateTelemetryRuleForOrganization",
+        "toStartThirdPartyTelemetryEnrichment",
         "toTagResource"
       ],
       "relatedResourceTypes": [],
@@ -641,24 +814,35 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toCreateCentralizationRuleForOrganization",
+        "toCreateConnector",
         "toCreateDatasetIntegration",
         "toCreateS3TableIntegration",
         "toCreateTelemetryPipeline",
         "toCreateTelemetryRule",
         "toCreateTelemetryRuleForOrganization",
         "toDeleteCentralizationRuleForOrganization",
+        "toDeleteConnector",
         "toDeleteDatasetIntegration",
         "toDeleteS3TableIntegration",
         "toDeleteTelemetryPipeline",
         "toDeleteTelemetryRule",
         "toDeleteTelemetryRuleForOrganization",
         "toGetCentralizationRuleForOrganization",
+        "toGetConnector",
+        "toGetConnectorTelemetryManifest",
+        "toGetConnectorTelemetrySetup",
         "toGetDatasetIntegration",
         "toGetS3TableIntegration",
         "toGetTelemetryPipeline",
         "toGetTelemetryRule",
         "toGetTelemetryRuleForOrganization",
+        "toGetThirdPartyTelemetryEnrichment",
+        "toListResourcesByConnector",
         "toListTagsForResource",
+        "toPutConnectorTelemetryManifest",
+        "toStartTelemetryPipelineRefresh",
+        "toStartThirdPartyTelemetryEnrichment",
+        "toStopThirdPartyTelemetryEnrichment",
         "toTagResource",
         "toUntagResource",
         "toUpdateCentralizationRuleForOrganization",
@@ -668,10 +852,12 @@
         "toUpdateTelemetryRuleForOrganization"
       ],
       "relatedResourceTypes": [
+        "connector",
         "dataset-integration",
         "organization-centralization-rule",
         "organization-telemetry-rule",
         "s3tableintegration",
+        "telemetry-enrichment",
         "telemetry-pipeline",
         "telemetry-rule"
       ],
@@ -691,11 +877,13 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
         "toCreateCentralizationRuleForOrganization",
+        "toCreateConnector",
         "toCreateDatasetIntegration",
         "toCreateS3TableIntegration",
         "toCreateTelemetryPipeline",
         "toCreateTelemetryRule",
         "toCreateTelemetryRuleForOrganization",
+        "toStartThirdPartyTelemetryEnrichment",
         "toTagResource",
         "toUntagResource"
       ],
@@ -703,6 +891,23 @@
       "keyLiteral": "aws:TagKeys",
       "valueKind": "string",
       "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:AzureTelemetryRegion",
+      "methodName": "ifAzureTelemetryRegion",
+      "description": "Filters access by the Azure regions that are declared in the telemetry manifest passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-azuretelemetryregion",
+      "relatedActionMethods": [
+        "toPutConnectorTelemetryManifest"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "AzureTelemetryRegion",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
       "valueTypes": [
         "string"
       ],
@@ -793,6 +998,24 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "CentralizationSourceId",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "observabilityadmin:CentralizationSourceOrganizationalUnitId",
+      "methodName": "ifCentralizationSourceOrganizationalUnitId",
+      "description": "Filters access by the parent organizational units of the source accounts and organizational units that are passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationsourceorganizationalunitid",
+      "relatedActionMethods": [
+        "toCreateCentralizationRuleForOrganization",
+        "toUpdateCentralizationRuleForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CentralizationSourceOrganizationalUnitId",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [

@@ -106,6 +106,7 @@
       "UpdateCloudFrontPublicKey",
       "UpdateGroup",
       "UpdateLoginProfile",
+      "UpdateOpenIDConnectProvider",
       "UpdateOpenIDConnectProviderThumbprint",
       "UpdateRole",
       "UpdateRoleDescription",
@@ -171,6 +172,8 @@
       "GetOutboundWebIdentityFederationInfo",
       "GetPolicy",
       "GetPolicyVersion",
+      "GetRequestAuthorizationDetails",
+      "GetRequestAuthorizationPolicy",
       "GetRole",
       "GetRolePolicy",
       "GetRoleTemplateVersion",
@@ -846,6 +849,20 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html"
     },
     {
+      "name": "GetRequestAuthorizationDetails",
+      "methodName": "toGetRequestAuthorizationDetails",
+      "description": "Grants permission to retrieve authorization details for a specific access denied request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iam-toolbox/latest/APIReference/API_GetRequestAuthorizationDetails.html"
+    },
+    {
+      "name": "GetRequestAuthorizationPolicy",
+      "methodName": "toGetRequestAuthorizationPolicy",
+      "description": "Grants permission to retrieve a policy evaluated for a specific access denied request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/iam-toolbox/latest/APIReference/API_GetRequestAuthorizationPolicy.html"
+    },
+    {
       "name": "GetRole",
       "methodName": "toGetRole",
       "description": "Grants permission to retrieve information about the specified role, including the role's path, GUID, ARN, and the role's trust policy",
@@ -1489,6 +1506,13 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html"
     },
     {
+      "name": "UpdateOpenIDConnectProvider",
+      "methodName": "toUpdateOpenIDConnectProvider",
+      "description": "Grants permission to update the context provider and IAM Identity Center configuration of an existing IAM OpenID Connect (OIDC) provider resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProvider.html"
+    },
+    {
       "name": "UpdateOpenIDConnectProviderThumbprint",
       "methodName": "toUpdateOpenIDConnectProviderThumbprint",
       "description": "Grants permission to update the entire list of server certificate thumbprints that are associated with an OpenID Connect (OIDC) provider resource",
@@ -1512,7 +1536,7 @@
     {
       "name": "UpdateSAMLProvider",
       "methodName": "toUpdateSAMLProvider",
-      "description": "Grants permission to update the metadata document for an existing SAML provider resource",
+      "description": "Grants permission to update the SAML metadata document, context provider, and IAM Identity Center configuration of an existing IAM SAML provider resource",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html"
     },
@@ -2169,6 +2193,7 @@
         "toUpdateAccessKey",
         "toUpdateAssumeRolePolicy",
         "toUpdateLoginProfile",
+        "toUpdateOpenIDConnectProvider",
         "toUpdateOpenIDConnectProviderThumbprint",
         "toUpdateRole",
         "toUpdateRoleDescription",
@@ -2336,6 +2361,38 @@
         "string"
       ],
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:EnableIdentityCenterAssociation",
+      "methodName": "ifEnableIdentityCenterAssociation",
+      "description": "Filters access by whether the request associates an IAM Identity Center instance with an IAM identity provider (true) or removes the association (false)",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation",
+      "relatedActionMethods": [
+        "toCreateOpenIDConnectProvider",
+        "toCreateSAMLProvider",
+        "toUpdateOpenIDConnectProvider",
+        "toUpdateSAMLProvider"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnableIdentityCenterAssociation",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "iam:EnableIdentityPropagation",
+      "methodName": "ifEnableIdentityPropagation",
+      "description": "Filters access by whether the request adds (true) or removes (false) a context provider on an IAM identity provider",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation",
+      "relatedActionMethods": [
+        "toCreateOpenIDConnectProvider",
+        "toCreateSAMLProvider",
+        "toUpdateOpenIDConnectProvider",
+        "toUpdateSAMLProvider"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EnableIdentityPropagation",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
     },
     {
       "key": "iam:FIDO-FIPS-140-2-certification",
@@ -2506,6 +2563,85 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "RegisterSecurityKey",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:RequestIdentityCenterInstanceArn",
+      "methodName": "ifRequestIdentityCenterInstanceArn",
+      "description": "Filters access by the ARN of the IAM Identity Center instance in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn",
+      "relatedActionMethods": [
+        "toCreateOpenIDConnectProvider",
+        "toCreateSAMLProvider",
+        "toUpdateOpenIDConnectProvider",
+        "toUpdateSAMLProvider"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestIdentityCenterInstanceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:RequestIdentityProviderIssuers",
+      "methodName": "ifRequestIdentityProviderIssuers",
+      "description": "Filters access by the issuer values in the request: the issuer URL without the https:// prefix for OIDC providers, or a lowercase hex SHA-384 hash of each signing certificate's DER SubjectPublicKeyInfo for SAML providers",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers",
+      "relatedActionMethods": [
+        "toCreateOpenIDConnectProvider",
+        "toCreateSAMLProvider",
+        "toUpdateSAMLProvider"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestIdentityProviderIssuers",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "iam:ResourceIdentityCenterInstanceArn",
+      "methodName": "ifResourceIdentityCenterInstanceArn",
+      "description": "Filters access by the ARN of the IAM Identity Center instance associated with the existing IAM identity provider in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn",
+      "relatedActionMethods": [
+        "toCreateOpenIDConnectProvider",
+        "toCreateSAMLProvider",
+        "toUpdateOpenIDConnectProvider",
+        "toUpdateSAMLProvider"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceIdentityCenterInstanceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "iam:ResourceIdentityProviderIssuers",
+      "methodName": "ifResourceIdentityProviderIssuers",
+      "description": "Filters access by the issuer values of the existing IAM identity provider in the request: the issuer URL without the https:// prefix for OIDC providers, or a lowercase hex SHA-384 hash of each signing certificate's DER SubjectPublicKeyInfo for SAML providers",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers",
+      "relatedActionMethods": [
+        "toCreateOpenIDConnectProvider",
+        "toCreateSAMLProvider",
+        "toUpdateOpenIDConnectProvider",
+        "toUpdateSAMLProvider"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceIdentityProviderIssuers",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [
