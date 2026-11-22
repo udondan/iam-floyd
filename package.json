@@ -59,7 +59,7 @@
     "eslint-plugin-prettier": "5.5.7",
     "glob": "14.0.6",
     "globals": "17.14.0",
-    "jsii-docgen": "10.12.9",
+    "jsii-docgen": "10.13.0",
     "jsii-pacmak": "1.143.0",
     "markdownlint-cli2": "0.24.1",
     "prettier": "3.10.1",
