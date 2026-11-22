@@ -61,7 +61,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Node.js and Bun
-        uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
+        uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
 
       - name: Set up Go
         uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
@@ -107,7 +107,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install qlty
-        uses: qltysh/qlty-action/install@0ff2178667bf8eb28ed0013a7ef54857a24d4056 # v2.7.0
+        uses: qltysh/qlty-action/install@a46e29cfd54065ae8a2c6b1fd3446aed1b1a4257 # v2.8.0
 
       - name: Lint via qlty plugins
         run: qlty check --all
@@ -357,7 +357,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Node.js and Bun
-        uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
+        uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
 
       - name: Configure AWS credentials
         id: aws-credentials
@@ -424,7 +424,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Node.js and Bun
-        uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
+        uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
 
       - name: Build CDK variant
         run: |
