@@ -41,15 +41,15 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@aws-sdk/client-iam": "3.1170.0",
-    "@aws-sdk/client-s3": "3.1170.0",
-    "@aws-sdk/client-sqs": "3.1170.0",
+    "@aws-sdk/client-iam": "3.1172.0",
+    "@aws-sdk/client-s3": "3.1172.0",
+    "@aws-sdk/client-sqs": "3.1172.0",
     "@eslint/js": "10.0.1",
     "@jsii/spec": "1.143.0",
     "@swc/core": "1.16.22",
     "@swc/helpers": "0.5.24",
     "@types/node": "26.6.6",
-    "@vitest/coverage-v8": "5.1.0",
+    "@vitest/coverage-v8": "5.1.1",
     "aws-cdk-lib": "2.277.0",
     "c8": "12.0.0",
     "cheerio": "1.2.0",
@@ -68,7 +68,7 @@
     "ts-node": "10.9.2",
     "typescript": "5.9.3",
     "typescript-eslint": "8.73.0",
-    "vitest": "5.1.0"
+    "vitest": "5.1.1"
   },
   "overrides": {
     "katex": "0.19.1",
