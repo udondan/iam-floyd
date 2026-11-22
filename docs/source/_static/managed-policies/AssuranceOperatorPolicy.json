@@ -84,6 +84,14 @@
         "arn:aws:identitystore::*:identitystore/*",
         "arn:aws:identitystore:::user/*"
       ]
+    },
+    {
+      "Sid": "SSOUserAccess",
+      "Effect": "Allow",
+      "Action": "sso:DescribeInstance",
+      "Resource": [
+        "arn:aws:sso:::instance/*"
+      ]
     }
   ]
 }

@@ -62,6 +62,18 @@
       "Resource": [
         "*"
       ]
+    },
+    {
+      "Sid": "PrivateMarketplaceSimplifiedAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetAgreementRequest",
+        "aws-marketplace:GetAgreementRequestTerms",
+        "aws-marketplace:GetAgreementApproval",
+        "aws-marketplace:AcceptAgreementApproval",
+        "aws-marketplace:RejectAgreementApproval"
+      ],
+      "Resource": "*"
     }
   ]
 }

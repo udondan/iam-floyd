@@ -62,6 +62,7 @@
         "StringEquals": {
           "iam:PassedToService": [
             "ec2.amazonaws.com",
+            "ec2.amazonaws.com.cn",
             "ssm.amazonaws.com"
           ]
         }

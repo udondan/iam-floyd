@@ -936,6 +936,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerGeospatialExecutionRole = 'service-role/AmazonSageMakerGeospatialExecutionRole';
     /** This policy grants permissions that allow full access to Amazon SageMaker Geospatial through the AWS Management Console and SDK. */
     public static AmazonSageMakerGeospatialFullAccess = 'service-role/AmazonSageMakerGeospatialFullAccess';
+    /** This policy provides the permissions that a SageMaker global inference gateway execution role needs to reach the SageMaker HyperPod clusters in the gateway. It enables the role to describe the SageMaker HyperPod cluster, to access the cluster's Amazon EKS Kubernetes API, and to read the gateway's TLS server certificate from Amazon S3 (with AWS KMS through Amazon S3 for encrypted buckets). */
+    public static AmazonSageMakerGlobalInferenceGatewayExecutionAccess = 'AmazonSageMakerGlobalInferenceGatewayExecutionAccess';
     /** Provides access to AWS services that are required to run SageMaker GroundTruth Labeling job */
     public static AmazonSageMakerGroundTruthExecution = 'AmazonSageMakerGroundTruthExecution';
     /** This Amazon Managed Policy provides the necessary permissions for SageMaker HyperPod to access gated models in SageMaker Jumpstart. It allows creating presigned URLs for hub content in the SageMaker Public Hub. */
@@ -944,6 +946,10 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerHyperPodInferenceAccess = 'AmazonSageMakerHyperPodInferenceAccess';
     /** This policy provides the permissions required to set up and operate the SageMaker HyperPod inference gateway. It enables the gateway to manage AWS Certificate Manager (ACM) certificates for TLS termination when deploying and serving inference workloads on HyperPod clusters. */
     public static AmazonSageMakerHyperPodInferenceGatewayAccess = 'AmazonSageMakerHyperPodInferenceGatewayAccess';
+    /** This policy provides the permissions that the SageMaker HyperPod inference gateway controller needs to join a SageMaker global inference gateway. It enables the controller to create and manage an Amazon EC2 VPC endpoint service in front of the gateway's Network Load Balancer, and an interface VPC endpoint to Amazon Kinesis Data Streams with its security group. It also enables the controller to read Amazon EC2 networking and Elastic Load Balancing resources, to store the gateway's TLS server certificate in Amazon S3 (with AWS KMS through Amazon S3 for encrypted buckets), and to describe the SageMaker HyperPod cluster. */
+    public static AmazonSageMakerHyperPodInferenceGatewayGlobalRoutingAccess = 'AmazonSageMakerHyperPodInferenceGatewayGlobalRoutingAccess';
+    /** This policy provides the permissions that the SageMaker HyperPod inference gateway metrics publisher needs to send gateway metrics to a SageMaker global inference gateway. It enables the publisher to write records to the global inference gateway's Amazon Kinesis Data Streams stream, and to use AWS KMS keys through Amazon Kinesis Data Streams to encrypt those records. */
+    public static AmazonSageMakerHyperPodInferenceGatewayMetricsPublisherAccess = 'AmazonSageMakerHyperPodInferenceGatewayMetricsPublisherAccess';
     /** This policy provides administrative privileges required for setting up SageMaker HyperPod observability. It enables access to Amazon Managed Prometheus, Amazon Managed Grafana and EKS Addons. The policy also includes broad access to Grafana HTTP APIs through ServiceAccountTokens across all Amazon Managed Grafana workspaces in your account. */
     public static AmazonSageMakerHyperPodObservabilityAdminAccess = 'AmazonSageMakerHyperPodObservabilityAdminAccess';
     /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */
@@ -1184,6 +1190,12 @@ export class AwsManagedPolicy {
     public static AWSSSMRemediationAutomationExecutionRolePolicy = 'AWS-SSM-RemediationAutomation-ExecutionRolePolicy';
     /** Provides permissions for operational accounts to Remediate unmanaged nodes by providing Organisation specific permissions required by SSM automation to pull the list of member accounts within a root of an Organisation to trigger cross-account cross-region execution by allowing assuming Execution roles in target account/region. */
     public static AWSSSMRemediationAutomationOperationalAccountAdministrationRolePolicy = 'AWS-SSM-RemediationAutomation-OperationalAccountAdministrationRolePolicy';
+    /** Provides administrative access to AWS Account Access Manager, including managing applications and entitlements, and setting up the service across an organization (enabling service access and registering a delegated administrator). Includes the IAM Identity Center, Identity Store, AWS Organizations, and AWS KMS permissions required to administer the service. */
+    public static AWSAccountAccessManagerAdministrator = 'AWSAccountAccessManagerAdministrator';
+    /** Provides access to manage entitlements in AWS Account Access Manager, including creating, deleting, and viewing entitlements for existing applications, along with the read access needed to look up applications, identities, and organization details. */
+    public static AWSAccountAccessManagerEntitlementManager = 'AWSAccountAccessManagerEntitlementManager';
+    /** Provides read-only access to AWS Account Access Manager, including viewing Account Access Manager applications and entitlements and the information from IAM Identity Center, Identity Store, and AWS Organizations. */
+    public static AWSAccountAccessManagerReadOnlyAccess = 'AWSAccountAccessManagerReadOnlyAccess';
     /** Allows users to access the Account Activity page. */
     public static AWSAccountActivityAccess = 'AWSAccountActivityAccess';
     /** Provides full access to AWS Account Management. */
@@ -1198,6 +1210,8 @@ export class AwsManagedPolicy {
     public static AWSAgentlessDiscoveryService = 'AWSAgentlessDiscoveryService';
     /** Allows AWS Agent Registry to access AWS service resources on your behalf */
     public static AWSAgentRegistryServiceRolePolicy = 'aws-service-role/AWSAgentRegistryServiceRolePolicy';
+    /** Allows APIPortal to manage associated AWS Resources on behalf of the customer */
+    public static AWSAPIPortalServiceRolePolicy = 'aws-service-role/AWSAPIPortalServiceRolePolicy';
     /** Allows AWS AppConfig to call AWS services on your behalf. */
     public static AWSAppConfigServiceRolePolicy = 'aws-service-role/AWSAppConfigServiceRolePolicy';
     /** Provides full access to the AWS AppFabric service and read only access to dependent services such as S3, Kinesis, KMS. */
@@ -1388,6 +1402,8 @@ export class AwsManagedPolicy {
     public static AWSBillingReadOnlyAccess = 'AWSBillingReadOnlyAccess';
     /** Allows billing service to validate access to billing view data for derived billing views */
     public static AWSBillingServiceRolePolicy = 'aws-service-role/AWSBillingServiceRolePolicy';
+    /** Grants permissions to AWS Budgets so it can execute Budgets Actions to limit spend on your behalf using service APIs and policy restrictions. */
+    public static AWSBudgetsActionExecutionPolicy = 'aws-service-role/AWSBudgetsActionExecutionPolicy';
     /** This policy gives permissions to control AWS resources. For example, to start and stop EC2 or RDS instances by executing AWS Systems Manager (SSM) scripts. */
     public static AWSBudgetsActionsRolePolicyForResourceAdministrationWithSSM = 'AWSBudgetsActions_RolePolicyForResourceAdministrationWithSSM';
     /** Provides full access to AWS Budgets Actions including using Budgets Actions to control states of running AWS resources via AWS Management Console */
@@ -2210,6 +2226,8 @@ export class AwsManagedPolicy {
     public static AWSPartnerCentralFullAccess = 'AWSPartnerCentralFullAccess';
     /** Provides necessary access for marketing activities. */
     public static AWSPartnerCentralMarketingManagement = 'AWSPartnerCentralMarketingManagement';
+    /** Allows Partner Central Marketing to act in Partner Central on behalf of your marketing campaigns, including creating engagements in Partner Central Selling (partnercentral:CreateEngagement) in your own account from leads your campaigns capture. */
+    public static AWSPartnerCentralMarketingServiceRolePolicy = 'aws-service-role/AWSPartnerCentralMarketingServiceRolePolicy';
     /** Provides necessary access for opportunity management activities. */
     public static AWSPartnerCentralOpportunityManagement = 'AWSPartnerCentralOpportunityManagement';
     /** Provides necessary access for revenue attribution management activities. */
@@ -2692,6 +2710,10 @@ export class AwsManagedPolicy {
     public static Billing = 'job-function/Billing';
     /** Allows Budgets to verify access to Billing Views shared across account boundaries. */
     public static BudgetsServiceRolePolicy = 'aws-service-role/BudgetsServiceRolePolicy';
+    /** Allows AWS Certificate Manager to read certificate, AWS Private CA, and AWS Organizations data in your account for organization-wide certificate inventory, and to manage the AWS Config service-linked recorder it uses to collect that data, and to create AWS Config's service-linked role. */
+    public static CertificateManagerInventoryServiceRolePolicy = 'aws-service-role/CertificateManagerInventoryServiceRolePolicy';
+    /** Allows AWS Certificate Manager to manage existing ACM certificates, and AWS Private CA certificate authorities and the certificates they issue, in your account when your organization's administrator requests these actions. */
+    public static CertificateManagerOrganizationManagementServiceRolePolicy = 'aws-service-role/CertificateManagerOrganizationManagementServiceRolePolicy';
     /** Amazon Certificate Manager Service Role Policy */
     public static CertificateManagerServiceRolePolicy = 'aws-service-role/CertificateManagerServiceRolePolicy';
     /** Policy to enable AWS Client VPN to manage your Client VPN endpoint connections. */
@@ -2784,8 +2806,14 @@ export class AwsManagedPolicy {
     public static CloudWatchNetworkMonitorServiceRolePolicy = 'aws-service-role/CloudWatchNetworkMonitorServiceRolePolicy';
     /** Provides permissions required by CloudWatch Omni to discover and read AWS resource topology */
     public static CloudWatchOmniAWSIntegrationPolicy = 'CloudWatchOmniAWSIntegrationPolicy';
+    /** Grants Amazon CloudWatch permissions to gather AWS resource metadata and telemetry data in your account. */
+    public static CloudWatchOmniAWSIntegrationPolicyV2 = 'CloudWatchOmniAWSIntegrationPolicyV2';
+    /** Grants Amazon CloudWatch permissions to read your CloudWatch integrations, context graph and intelligence configuration, to create, monitor and request mitigation plans for AWS DevOps Agent investigation tasks, and to read the topology of the investigation's agent space, in your account. */
+    public static CloudWatchOmniDevOpsAgentInvestigationServiceRolePolicy = 'service-role/CloudWatchOmniDevOpsAgentInvestigationServiceRolePolicy';
     /** Provides permissions required to manage CloudWatch Omni domain access. */
     public static CloudWatchOmniDomainAccessPolicy = 'CloudWatchOmniDomainAccessPolicy';
+    /** Denies CloudWatch Omni actions that are not allowed by an access grant in the space. */
+    public static CloudWatchOmniGrantEnforcementPolicy = 'CloudWatchOmniGrantEnforcementPolicy';
     /** Managed policy for customers to attach to CloudWatch Omni so that CloudWatch Omni features can make Bedrock Model Inference calls such as in Agent Playground or Evaluations */
     public static CloudWatchOmniModelInferencePolicy = 'CloudWatchOmniModelInferencePolicy';
     /** Provides access to manage CloudWatch Omni spaces, view Applications Telemetry, and other Observability and Monitoring features through the new CloudWatch Omni Product */
@@ -2816,6 +2844,8 @@ export class AwsManagedPolicy {
     public static ComputeOptimizerServiceRolePolicy = 'aws-service-role/ComputeOptimizerServiceRolePolicy';
     /** Policy needed for AWSConfig to create conformance packs */
     public static ConfigConformsServiceRolePolicy = 'aws-service-role/ConfigConformsServiceRolePolicy';
+    /** Policy for Connect Campaigns internal service reserve role */
+    public static ConnectCampaignsInternalReserveRolePolicy = 'service-role/ConnectCampaignsInternalReserveRolePolicy';
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to manage all resources for the services that are integrated with the Vercel Marketplace. */
     public static ConsoleFullAccessFromVercel = 'ConsoleFullAccessFromVercel';
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to view all resources for the services that are integrated with the Vercel Marketplace. */
@@ -2962,6 +2992,8 @@ export class AwsManagedPolicy {
     public static KeyspacesCDCServiceRolePolicy = 'aws-service-role/KeyspacesCDCServiceRolePolicy';
     /** Permissions required by Keyspaces for cross-region data replication */
     public static KeyspacesReplicationServiceRolePolicy = 'aws-service-role/KeyspacesReplicationServiceRolePolicy';
+    /** Provides Kiro access to read your Amazon VPC configuration and to create and manage the network interfaces that connect Kiro environments to your VPC. */
+    public static KiroVpcConnectionPolicy = 'KiroVpcConnectionPolicy';
     /** Policy to grant temporary data access to Lake Formation resources */
     public static LakeFormationDataAccessServiceRolePolicy = 'aws-service-role/LakeFormationDataAccessServiceRolePolicy';
     /** Policy for AWS Lex Bot use case */
@@ -3188,6 +3220,8 @@ export class AwsManagedPolicy {
     public static TranslateReadOnly = 'TranslateReadOnly';
     /** This policy grants permissions to view resources and basic metadata across all AWS services. */
     public static ViewOnlyAccess = 'job-function/ViewOnlyAccess';
+    /** Allows Virtual Edge Network to retrieve identity information for its service-linked roles */
+    public static VirtualEdgeNetworkServiceRolePolicy = 'aws-service-role/VirtualEdgeNetworkServiceRolePolicy';
     /** Default policy for the VM Import/Export service role, for customers using the AWS Connector. The VM Import/Export service assumes a role with this policy to fulfill virtual machine migration requests from the AWS Connector virtual appliance. (Note that the AWS Connector uses the "AWSConnector" managed policy to issue requests on the customer's behalf to the VM Import/Export service.) Provides the ability to create AMIs and EBS snapshots, modify EBS snapshot attributes, make "Describe*" calls on EC2 objects, and read from S3 buckets starting with 'import-to-ec2-'. */
     public static VMImportExportRoleForAWSConnector = 'service-role/VMImportExportRoleForAWSConnector';
     /** Provides full access to Amazon VPC Lattice and access to dependency services. */

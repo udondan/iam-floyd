@@ -105,6 +105,37 @@
         "organizations:ListDelegatedAdministrators"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "PrivateMarketplaceBuyerApprovalPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListAgreementApprovals",
+        "aws-marketplace:GetAgreementApproval",
+        "aws-marketplace:GetAgreementRequest",
+        "aws-marketplace:GetAgreementRequestTerms",
+        "aws-marketplace:AcceptAgreementApproval",
+        "aws-marketplace:RejectAgreementApproval"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PrivateMarketplaceProcurementPortalPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "invoicing:ListProcurementPortalPreferences",
+        "invoicing:GetProcurementPortalPreference",
+        "invoicing:CreateProcurementPortalPreference",
+        "invoicing:PutProcurementPortalPreference",
+        "invoicing:ListProcurementPortals",
+        "invoicing:ListProcurementPortalSuppliers"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

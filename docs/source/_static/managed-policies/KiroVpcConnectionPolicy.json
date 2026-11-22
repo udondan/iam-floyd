@@ -1,0 +1,99 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadVpcConfiguration",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeDhcpOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateKiroNetworkInterface",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/ManagedByKiro": ""
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "ManagedByKiro"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "UseSubnetAndSecurityGroupForKiroNetworkInterface",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterface",
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "TagKiroNetworkInterfaceOnCreate",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface",
+          "aws:RequestTag/ManagedByKiro": ""
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "ManagedByKiro"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowAttachOfKiroNetworkInterface",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNetworkInterfacePermission",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedByKiro": "",
+          "ec2:Permission": "INSTANCE-ATTACH"
+        }
+      }
+    },
+    {
+      "Sid": "DeleteKiroNetworkInterface",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteNetworkInterface",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedByKiro": ""
+        }
+      }
+    },
+    {
+      "Sid": "ModifyKiroNetworkInterfaceAttribute",
+      "Effect": "Allow",
+      "Action": "ec2:ModifyNetworkInterfaceAttribute",
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedByKiro": ""
+        }
+      }
+    },
+    {
+      "Sid": "ModifyNetworkInterfaceAttributeOnEnvironmentInstance",
+      "Effect": "Allow",
+      "Action": "ec2:ModifyNetworkInterfaceAttribute",
+      "Resource": "arn:aws:ec2:*:*:instance/*"
+    }
+  ]
+}

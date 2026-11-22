@@ -47,6 +47,18 @@
       "Resource": "arn:aws:secretsmanager:*:*:secret:events!*"
     },
     {
+      "Sid": "SecretsManagerAccessForWebhookEvents",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:events-webhook!*"
+    },
+    {
       "Sid": "IAMPassRoleAccessForEventBridge",
       "Effect": "Allow",
       "Action": "iam:PassRole",

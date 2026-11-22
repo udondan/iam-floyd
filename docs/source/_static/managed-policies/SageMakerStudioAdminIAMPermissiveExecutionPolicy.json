@@ -901,7 +901,8 @@
       "Condition": {
         "StringLike": {
           "ram:ResourceShareName": [
-            "DataZone*"
+            "DataZone*",
+            "LakeFormation-*"
           ]
         }
       }

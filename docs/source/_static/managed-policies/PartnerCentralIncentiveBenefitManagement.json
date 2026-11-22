@@ -171,6 +171,34 @@
           "aws:IsMcpServiceAction": "true"
         }
       }
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
+      ],
+      "Resource": "*"
     }
   ]
 }

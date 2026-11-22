@@ -1197,7 +1197,8 @@
       "Condition": {
         "StringLike": {
           "ram:ResourceShareName": [
-            "DataZone*"
+            "DataZone*",
+            "LakeFormation-*"
           ]
         }
       }
@@ -1402,9 +1403,31 @@
       "Sid": "S3TablesList",
       "Effect": "Allow",
       "Action": [
-        "s3tables:ListTableBuckets"
+        "s3tables:ListTableBuckets",
+        "s3tables:GetTableBucket"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "S3TablesProjectCatalogPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:CreateNamespace",
+        "s3tables:CreateTableBucket",
+        "s3tables:DeleteNamespace",
+        "s3tables:DeleteTableBucket",
+        "s3tables:DeleteTableBucketPolicy",
+        "s3tables:GetNamespace",
+        "s3tables:GetTableBucketPolicy",
+        "s3tables:ListNamespaces",
+        "s3tables:ListTables",
+        "s3tables:ListTagsForResource",
+        "s3tables:PutTableBucketEncryption",
+        "s3tables:PutTableBucketPolicy",
+        "s3tables:TagResource",
+        "s3tables:UntagResource"
+      ],
+      "Resource": "arn:aws:s3tables:*:*:bucket/amazon-sagemaker*"
     },
     {
       "Sid": "SystemTablesRead",

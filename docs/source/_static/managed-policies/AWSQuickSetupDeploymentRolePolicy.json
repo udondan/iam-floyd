@@ -354,7 +354,12 @@
             "arn:aws:iam::aws:policy/AWSSystemsManagerEnableConfigRecordingExecutionPolicy",
             "arn:aws:iam::aws:policy/AWSQuickSetupManagedInstanceProfileExecutionPolicy",
             "arn:aws:iam::aws:policy/AWSQuickSetupStartStopInstancesExecutionPolicy",
-            "arn:aws:iam::aws:policy/AWSQuickSetupStartSSMAssociationsExecutionPolicy"
+            "arn:aws:iam::aws:policy/AWSQuickSetupStartSSMAssociationsExecutionPolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupSSMHostMgmtDispatchRolePolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupDistributorDispatchRolePolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupSchedulerDispatchRolePolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupCFGRecordingDispatchRolePolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupCFGCPacksDispatchRolePolicy"
           ]
         },
         "ForAnyValue:StringEquals": {

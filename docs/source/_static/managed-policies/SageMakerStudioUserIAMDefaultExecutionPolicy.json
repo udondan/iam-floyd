@@ -494,6 +494,19 @@
       "Resource": "*"
     },
     {
+      "Sid": "LfFilters",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetResourceLFTags",
+        "lakeformation:CreateDataCellsFilter",
+        "lakeformation:GetDataCellsFilter",
+        "lakeformation:ListDataCellsFilter",
+        "lakeformation:UpdateDataCellsFilter",
+        "lakeformation:DeleteDataCellsFilter"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "SQLWorkBench",
       "Effect": "Allow",
       "Action": [
@@ -600,7 +613,11 @@
         "s3:GetAccessGrantsInstance",
         "s3:GetAccessGrantsInstanceForPrefix",
         "s3:GetDataAccess",
-        "s3:List*"
+        "s3:List*",
+        "s3:GetBucketLocation",
+        "s3:GetAccountPublicAccessBlock",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetEncryptionConfiguration"
       ],
       "Resource": "*"
     },
@@ -1432,6 +1449,42 @@
       }
     },
     {
+      "Sid": "RamRead",
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShareInvitations",
+        "ram:ListResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RamViaLf",
+      "Effect": "Allow",
+      "Action": "ram:*ResourceShare*",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RamAccept",
+      "Effect": "Allow",
+      "Action": "ram:AcceptResourceShareInvitation",
+      "Resource": "arn:*:ram:*:*:resource-share-invitation/*",
+      "Condition": {
+        "StringLike": {
+          "ram:ResourceShareName": [
+            "LakeFormation*",
+            "DataZoneS3AG*"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "SSOInstanceReadOnlyPermissions",
       "Effect": "Allow",
       "Action": [
@@ -1466,6 +1519,15 @@
           "aws:ViaAWSService": "true"
         }
       }
+    },
+    {
+      "Sid": "S3TablesList",
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:ListTableBuckets",
+        "s3tables:GetTableBucket"
+      ],
+      "Resource": "*"
     }
   ]
 }

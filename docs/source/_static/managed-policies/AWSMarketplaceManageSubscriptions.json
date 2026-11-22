@@ -70,6 +70,57 @@
       }
     },
     {
+      "Sid": "AWSMarketplaceAgreementRequestAndApprovalAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetAgreementRequest",
+        "aws-marketplace:AcceptAgreementRequest",
+        "aws-marketplace:CancelAgreementRequest",
+        "aws-marketplace:GetAgreementRequestTerms",
+        "aws-marketplace:StartAgreementApprovals",
+        "aws-marketplace:GetAgreementRequestApprovalPlans",
+        "aws-marketplace:GetAgreementApproval"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementRequestAndApprovalListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListAgreementRequests",
+        "aws-marketplace:ListAgreementApprovals"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementContactsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetAgreementContacts"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        }
+      }
+    },
+    {
       "Sid": "AWSMarketplaceChangeSetReadAccess",
       "Effect": "Allow",
       "Action": [
@@ -128,6 +179,14 @@
           "aws-marketplace:PartyType": "Acceptor"
         }
       }
+    },
+    {
+      "Sid": "AWSMarketplaceDeploymentConfigurationReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetDeploymentConfiguration"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
     }
   ]
 }

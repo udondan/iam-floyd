@@ -72,14 +72,16 @@
         "cloudformation:ValidateTemplate",
         "codecommit:ListRepositories",
         "eks:DescribeCluster",
+        "eks:ListPodIdentityAssociations",
         "elasticmapreduce:*SecurityConfiguration",
         "glue:DescribeConnectionType",
         "glue:ListConnectionTypes",
         "glue:*GlueIdentityCenterConfiguration",
         "iam:ListPolicies",
         "logs:DescribeLogGroups",
+        "organizations:DescribeOrganization",
         "ram:GetResourceShare*",
-        "ram:ListResources",
+        "ram:ListResource*",
         "redshift-data:DescribeStatement",
         "redshift-data:GetStatementResult",
         "redshift-serverless:ListNamespaces",
@@ -233,7 +235,14 @@
       "Resource": [
         "arn:aws:iam::*:role/datazone*",
         "arn:aws:iam::*:role/AmazonBedrock*",
-        "arn:aws:iam::*:role/BedrockStudio*"
+        "arn:aws:iam::*:role/BedrockStudio*",
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerAdminIAMExecutionRole*",
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerUserIAMExecutionRole*",
+        "arn:aws:iam::*:role/AmazonSageMakerAdminIAMExecutionRole*",
+        "arn:aws:iam::*:role/AmazonSageMakerUserIAMExecutionRole*",
+        "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole",
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerQueryExecution",
+        "arn:aws:iam::*:role/datazone_s3tables_*"
       ]
     },
     {
@@ -1205,18 +1214,6 @@
       }
     },
     {
-      "Sid": "GetRole",
-      "Effect": "Allow",
-      "Action": [
-        "iam:GetRole"
-      ],
-      "Resource": [
-        "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole",
-        "arn:aws:iam::*:role/service-role/AmazonSageMakerQueryExecution",
-        "arn:aws:iam::*:role/datazone_s3tables_*"
-      ]
-    },
-    {
       "Sid": "S3tPassConn",
       "Effect": "Allow",
       "Action": [
@@ -1439,21 +1436,6 @@
       "Resource": [
         "arn:aws:ec2:*:*:security-group/*"
       ]
-    },
-    {
-      "Sid": "SGRevoke",
-      "Effect": "Allow",
-      "Action": [
-        "ec2:RevokeSecurityGroupIngress"
-      ],
-      "Resource": [
-        "arn:aws:ec2:*:*:security-group/*"
-      ],
-      "Condition": {
-        "Null": {
-          "aws:ResourceTag/AmazonDataZoneProject": "false"
-        }
-      }
     },
     {
       "Sid": "TagEc2",
@@ -2586,7 +2568,8 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteSecurityGroup",
-        "ec2:DeleteTags"
+        "ec2:DeleteTags",
+        "ec2:RevokeSecurityGroupIngress"
       ],
       "Resource": "arn:aws:ec2:*:*:security-group/*",
       "Condition": {
@@ -2932,12 +2915,16 @@
       "Action": [
         "ram:AcceptResourceShareInvitation",
         "ram:DeleteResourceShare",
+        "ram:DisassociateResourceShare",
         "ram:TagResource"
       ],
       "Resource": "*",
       "Condition": {
         "StringLike": {
-          "ram:ResourceShareName": "DataZone*"
+          "ram:ResourceShareName": [
+            "DataZone*",
+            "LakeFormation-*"
+          ]
         }
       }
     },
@@ -2958,7 +2945,10 @@
           ]
         },
         "StringLike": {
-          "ram:ResourceShareName": "DataZone*"
+          "ram:ResourceShareName": [
+            "DataZone*",
+            "LakeFormation-*"
+          ]
         }
       }
     },
@@ -2990,12 +2980,30 @@
         "emr-containers:DescribeVirtualCluster",
         "emr-containers:DescribeManagedEndpoint",
         "emr-containers:TagResource",
-        "emr-containers:UntagResource"
+        "emr-containers:UntagResource",
+        "eks:DeletePodIdentityAssociation"
       ],
       "Resource": "*",
       "Condition": {
         "Null": {
           "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EksPodIdentity",
+      "Effect": "Allow",
+      "Action": [
+        "eks:CreatePodIdentityAssociation",
+        "eks:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:eks:*:*:cluster/*",
+        "arn:aws:eks:*:*:podidentityassociation/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AmazonDataZoneProject": "false"
         }
       }
     },

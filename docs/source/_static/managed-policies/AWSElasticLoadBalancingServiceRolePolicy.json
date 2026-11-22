@@ -43,6 +43,25 @@
         "outposts:GetOutpostInstanceTypes"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "NLBSecretsManagerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:RotateSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:UpdateSecretVersionStage",
+        "secretsmanager:DeleteSecret"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:elasticloadbalancing-nlb!*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

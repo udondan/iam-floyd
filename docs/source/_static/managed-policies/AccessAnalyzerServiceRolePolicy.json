@@ -99,9 +99,47 @@
         "secretsmanager:GetResourcePolicy",
         "secretsmanager:ListSecrets",
         "sqs:GetQueueAttributes",
-        "sqs:ListQueues"
+        "sqs:ListQueues",
+        "tag:GetResources"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigRecorderScopedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "config:ConfigurationRecorderServicePrincipal": [
+            "access-analyzer.amazonaws.com"
+          ]
+        }
+      },
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigRecorderReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:SelectResourceConfig"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateConfigServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
     }
   ]
 }

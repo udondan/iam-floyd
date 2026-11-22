@@ -45,7 +45,10 @@
       "Sid": "AccessBootstrapActionScriptS3Permission",
       "Effect": "Allow",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/${aws:PrincipalTag/AmazonDataZoneScopeName}/sys/emr/bootstrap-script/*",
+      "Resource": [
+        "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/${aws:PrincipalTag/AmazonDataZoneScopeName}/sys/emr/bootstrap-script/*",
+        "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/shared/sys/emr/bootstrap-script/*"
+      ],
       "Condition": {
         "StringNotEquals": {
           "aws:PrincipalTag/DomainBucketName": "",
@@ -65,7 +68,10 @@
       "Sid": "EMRClusterLogUploadS3Permission",
       "Effect": "Allow",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/${aws:PrincipalTag/AmazonDataZoneScopeName}/sys/emr/*",
+      "Resource": [
+        "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/${aws:PrincipalTag/AmazonDataZoneScopeName}/sys/emr/*",
+        "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/shared/sys/emr/*"
+      ],
       "Condition": {
         "StringNotEquals": {
           "aws:PrincipalTag/DomainBucketName": "",

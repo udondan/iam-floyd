@@ -1,0 +1,115 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageServiceLinkedConfigurationRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": "arn:aws:config:*:*:configuration-recorder/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "config:ConfigurationRecorderServicePrincipal": "inventory.acm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CreateConfigServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "ListEnabledRegions",
+      "Effect": "Allow",
+      "Action": "account:ListRegions",
+      "Resource": "arn:aws:account::*:account",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReadACMCertificateMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "acm:GetCertificate",
+        "acm:DescribeCertificate"
+      ],
+      "Resource": "arn:aws:acm:*:*:certificate/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListAndSearchACMCertificates",
+      "Effect": "Allow",
+      "Action": [
+        "acm:ListCertificates",
+        "acm:SearchCertificates"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReadPrivateCertificateAuthorityCertificate",
+      "Effect": "Allow",
+      "Action": [
+        "acm-pca:GetCertificateAuthorityCertificate",
+        "acm-pca:DescribeCertificateAuthority"
+      ],
+      "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReadOrganizationAccount",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeAccount",
+      "Resource": "arn:aws:organizations::*:account/o-*/*"
+    },
+    {
+      "Sid": "ReadOrganizationStructure",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListChildren",
+        "organizations:ListParents"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:root/o-*/r-*",
+        "arn:aws:organizations::*:ou/o-*/ou-*",
+        "arn:aws:organizations::*:account/o-*/*"
+      ]
+    },
+    {
+      "Sid": "ReadOrganizationData",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListRoots",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

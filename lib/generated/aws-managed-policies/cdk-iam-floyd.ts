@@ -2349,6 +2349,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerGeospatialFullAccess);
     }
 
+    /** This policy provides the permissions that a SageMaker global inference gateway execution role needs to reach the SageMaker HyperPod clusters in the gateway. It enables the role to describe the SageMaker HyperPod cluster, to access the cluster's Amazon EKS Kubernetes API, and to read the gateway's TLS server certificate from Amazon S3 (with AWS KMS through Amazon S3 for encrypted buckets). */
+    public AmazonSageMakerGlobalInferenceGatewayExecutionAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerGlobalInferenceGatewayExecutionAccess);
+    }
+
     /** Provides access to AWS services that are required to run SageMaker GroundTruth Labeling job */
     public AmazonSageMakerGroundTruthExecution(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerGroundTruthExecution);
@@ -2367,6 +2372,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This policy provides the permissions required to set up and operate the SageMaker HyperPod inference gateway. It enables the gateway to manage AWS Certificate Manager (ACM) certificates for TLS termination when deploying and serving inference workloads on HyperPod clusters. */
     public AmazonSageMakerHyperPodInferenceGatewayAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodInferenceGatewayAccess);
+    }
+
+    /** This policy provides the permissions that the SageMaker HyperPod inference gateway controller needs to join a SageMaker global inference gateway. It enables the controller to create and manage an Amazon EC2 VPC endpoint service in front of the gateway's Network Load Balancer, and an interface VPC endpoint to Amazon Kinesis Data Streams with its security group. It also enables the controller to read Amazon EC2 networking and Elastic Load Balancing resources, to store the gateway's TLS server certificate in Amazon S3 (with AWS KMS through Amazon S3 for encrypted buckets), and to describe the SageMaker HyperPod cluster. */
+    public AmazonSageMakerHyperPodInferenceGatewayGlobalRoutingAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodInferenceGatewayGlobalRoutingAccess);
+    }
+
+    /** This policy provides the permissions that the SageMaker HyperPod inference gateway metrics publisher needs to send gateway metrics to a SageMaker global inference gateway. It enables the publisher to write records to the global inference gateway's Amazon Kinesis Data Streams stream, and to use AWS KMS keys through Amazon Kinesis Data Streams to encrypt those records. */
+    public AmazonSageMakerHyperPodInferenceGatewayMetricsPublisherAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodInferenceGatewayMetricsPublisherAccess);
     }
 
     /** This policy provides administrative privileges required for setting up SageMaker HyperPod observability. It enables access to Amazon Managed Prometheus, Amazon Managed Grafana and EKS Addons. The policy also includes broad access to Grafana HTTP APIs through ServiceAccountTokens across all Amazon Managed Grafana workspaces in your account. */
@@ -2969,6 +2984,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSSMRemediationAutomationOperationalAccountAdministrationRolePolicy);
     }
 
+    /** Provides administrative access to AWS Account Access Manager, including managing applications and entitlements, and setting up the service across an organization (enabling service access and registering a delegated administrator). Includes the IAM Identity Center, Identity Store, AWS Organizations, and AWS KMS permissions required to administer the service. */
+    public AWSAccountAccessManagerAdministrator(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAccountAccessManagerAdministrator);
+    }
+
+    /** Provides access to manage entitlements in AWS Account Access Manager, including creating, deleting, and viewing entitlements for existing applications, along with the read access needed to look up applications, identities, and organization details. */
+    public AWSAccountAccessManagerEntitlementManager(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAccountAccessManagerEntitlementManager);
+    }
+
+    /** Provides read-only access to AWS Account Access Manager, including viewing Account Access Manager applications and entitlements and the information from IAM Identity Center, Identity Store, and AWS Organizations. */
+    public AWSAccountAccessManagerReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAccountAccessManagerReadOnlyAccess);
+    }
+
     /** Allows users to access the Account Activity page. */
     public AWSAccountActivityAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAccountActivityAccess);
@@ -3002,6 +3032,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS Agent Registry to access AWS service resources on your behalf */
     public AWSAgentRegistryServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAgentRegistryServiceRolePolicy);
+    }
+
+    /** Allows APIPortal to manage associated AWS Resources on behalf of the customer */
+    public AWSAPIPortalServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAPIPortalServiceRolePolicy);
     }
 
     /** Allows AWS AppConfig to call AWS services on your behalf. */
@@ -3477,6 +3512,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows billing service to validate access to billing view data for derived billing views */
     public AWSBillingServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingServiceRolePolicy);
+    }
+
+    /** Grants permissions to AWS Budgets so it can execute Budgets Actions to limit spend on your behalf using service APIs and policy restrictions. */
+    public AWSBudgetsActionExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBudgetsActionExecutionPolicy);
     }
 
     /** This policy gives permissions to control AWS resources. For example, to start and stop EC2 or RDS instances by executing AWS Systems Manager (SSM) scripts. */
@@ -5534,6 +5574,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralMarketingManagement);
     }
 
+    /** Allows Partner Central Marketing to act in Partner Central on behalf of your marketing campaigns, including creating engagements in Partner Central Selling (partnercentral:CreateEngagement) in your own account from leads your campaigns capture. */
+    public AWSPartnerCentralMarketingServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralMarketingServiceRolePolicy);
+    }
+
     /** Provides necessary access for opportunity management activities. */
     public AWSPartnerCentralOpportunityManagement(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralOpportunityManagement);
@@ -6739,6 +6784,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BudgetsServiceRolePolicy);
     }
 
+    /** Allows AWS Certificate Manager to read certificate, AWS Private CA, and AWS Organizations data in your account for organization-wide certificate inventory, and to manage the AWS Config service-linked recorder it uses to collect that data, and to create AWS Config's service-linked role. */
+    public CertificateManagerInventoryServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CertificateManagerInventoryServiceRolePolicy);
+    }
+
+    /** Allows AWS Certificate Manager to manage existing ACM certificates, and AWS Private CA certificate authorities and the certificates they issue, in your account when your organization's administrator requests these actions. */
+    public CertificateManagerOrganizationManagementServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CertificateManagerOrganizationManagementServiceRolePolicy);
+    }
+
     /** Amazon Certificate Manager Service Role Policy */
     public CertificateManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CertificateManagerServiceRolePolicy);
@@ -6969,9 +7024,24 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniAWSIntegrationPolicy);
     }
 
+    /** Grants Amazon CloudWatch permissions to gather AWS resource metadata and telemetry data in your account. */
+    public CloudWatchOmniAWSIntegrationPolicyV2(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniAWSIntegrationPolicyV2);
+    }
+
+    /** Grants Amazon CloudWatch permissions to read your CloudWatch integrations, context graph and intelligence configuration, to create, monitor and request mitigation plans for AWS DevOps Agent investigation tasks, and to read the topology of the investigation's agent space, in your account. */
+    public CloudWatchOmniDevOpsAgentInvestigationServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniDevOpsAgentInvestigationServiceRolePolicy);
+    }
+
     /** Provides permissions required to manage CloudWatch Omni domain access. */
     public CloudWatchOmniDomainAccessPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniDomainAccessPolicy);
+    }
+
+    /** Denies CloudWatch Omni actions that are not allowed by an access grant in the space. */
+    public CloudWatchOmniGrantEnforcementPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchOmniGrantEnforcementPolicy);
     }
 
     /** Managed policy for customers to attach to CloudWatch Omni so that CloudWatch Omni features can make Bedrock Model Inference calls such as in Agent Playground or Evaluations */
@@ -7047,6 +7117,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Policy needed for AWSConfig to create conformance packs */
     public ConfigConformsServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ConfigConformsServiceRolePolicy);
+    }
+
+    /** Policy for Connect Campaigns internal service reserve role */
+    public ConnectCampaignsInternalReserveRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ConnectCampaignsInternalReserveRolePolicy);
     }
 
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to manage all resources for the services that are integrated with the Vercel Marketplace. */
@@ -7412,6 +7487,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Permissions required by Keyspaces for cross-region data replication */
     public KeyspacesReplicationServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.KeyspacesReplicationServiceRolePolicy);
+    }
+
+    /** Provides Kiro access to read your Amazon VPC configuration and to create and manage the network interfaces that connect Kiro environments to your VPC. */
+    public KiroVpcConnectionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.KiroVpcConnectionPolicy);
     }
 
     /** Policy to grant temporary data access to Lake Formation resources */
@@ -7977,6 +8057,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This policy grants permissions to view resources and basic metadata across all AWS services. */
     public ViewOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ViewOnlyAccess);
+    }
+
+    /** Allows Virtual Edge Network to retrieve identity information for its service-linked roles */
+    public VirtualEdgeNetworkServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.VirtualEdgeNetworkServiceRolePolicy);
     }
 
     /** Default policy for the VM Import/Export service role, for customers using the AWS Connector. The VM Import/Export service assumes a role with this policy to fulfill virtual machine migration requests from the AWS Connector virtual appliance. (Note that the AWS Connector uses the "AWSConnector" managed policy to issue requests on the customer's behalf to the VM Import/Export service.) Provides the ability to create AMIs and EBS snapshots, modify EBS snapshot attributes, make "Describe*" calls on EC2 objects, and read from S3 buckets starting with 'import-to-ec2-'. */

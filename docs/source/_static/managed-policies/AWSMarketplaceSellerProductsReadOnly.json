@@ -20,7 +20,20 @@
       "Action": [
         "aws-marketplace:ListTagsForResource"
       ],
-      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/*",
+        "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
+      ]
+    },
+    {
+      "Sid": "DeploymentConfigurationRead",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetDeploymentConfigurationJob",
+        "aws-marketplace:ListDeploymentConfigurationJobs",
+        "aws-marketplace:GetDeploymentConfiguration"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
     },
     {
       "Effect": "Allow",
@@ -28,6 +41,30 @@
         "aws-marketplace:GetResourcePolicy"
       ],
       "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
+      ],
+      "Resource": "*"
     }
   ]
 }

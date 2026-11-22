@@ -105,7 +105,10 @@
         "organizations:ListRoots",
         "organizations:DescribeOrganizationalUnit",
         "organizations:ListPolicies",
-        "organizations:DescribeResourcePolicy"
+        "organizations:DescribeResourcePolicy",
+        "networkmanager:ListAttachmentNatConfigurations",
+        "ec2:GetTransitGatewayAttachmentNatConfiguration",
+        "directconnect:ListVirtualInterfaceRoutes"
       ],
       "Effect": "Allow",
       "Resource": "*"

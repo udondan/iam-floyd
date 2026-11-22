@@ -384,6 +384,19 @@
       "Resource": "*"
     },
     {
+      "Sid": "LfFilters",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetResourceLFTags",
+        "lakeformation:CreateDataCellsFilter",
+        "lakeformation:GetDataCellsFilter",
+        "lakeformation:ListDataCellsFilter",
+        "lakeformation:UpdateDataCellsFilter",
+        "lakeformation:DeleteDataCellsFilter"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "FederatedConn",
       "Effect": "Allow",
       "Action": [
@@ -766,6 +779,42 @@
       "Effect": "Allow",
       "Action": "ram:CreateResourceShare",
       "Resource": "*"
+    },
+    {
+      "Sid": "RamRead",
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShareInvitations",
+        "ram:ListResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RamViaLf",
+      "Effect": "Allow",
+      "Action": "ram:*ResourceShare*",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RamAccept",
+      "Effect": "Allow",
+      "Action": "ram:AcceptResourceShareInvitation",
+      "Resource": "arn:*:ram:*:*:resource-share-invitation/*",
+      "Condition": {
+        "StringLike": {
+          "ram:ResourceShareName": [
+            "LakeFormation*",
+            "DataZoneS3AG*"
+          ]
+        }
+      }
     },
     {
       "Sid": "SSOInstanceReadOnlyPermissions",

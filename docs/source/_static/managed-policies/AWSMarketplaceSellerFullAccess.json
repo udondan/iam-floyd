@@ -16,6 +16,10 @@
         "aws-marketplace:DescribeEntity",
         "aws-marketplace:GetSellerDashboard",
         "aws-marketplace:GetSellerReportingData",
+        "aws-marketplace:CreateDataSubscription",
+        "aws-marketplace:GetDataSubscription",
+        "aws-marketplace:ListDataSubscriptions",
+        "aws-marketplace:DeleteDataSubscription",
         "aws-marketplace:ListAssessments",
         "aws-marketplace:DescribeAssessment",
         "ec2:DescribeImages",
@@ -35,13 +39,13 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
-          "aws-marketplace:PartyType": "Proposer"
-        },
         "ForAllValues:StringEquals": {
           "aws-marketplace:AgreementType": [
             "PurchaseAgreement"
           ]
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Proposer"
         }
       }
     },
@@ -92,7 +96,8 @@
         "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/*",
         "arn:aws:aws-marketplace:*:*:verification-type/*/verification-evidence/*",
         "arn:aws:aws-marketplace:*:*:tax-compliance-profile/*",
-        "arn:aws:aws-marketplace:*:*:tax-compliance-profile-change-task/*"
+        "arn:aws:aws-marketplace:*:*:tax-compliance-profile-change-task/*",
+        "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
       ]
     },
     {
@@ -168,14 +173,6 @@
       ]
     },
     {
-      "Sid": "Support",
-      "Effect": "Allow",
-      "Action": [
-        "support:CreateCase"
-      ],
-      "Resource": "*"
-    },
-    {
       "Sid": "ResourcePolicyManagement",
       "Effect": "Allow",
       "Action": [
@@ -210,13 +207,13 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
-          "aws-marketplace:PartyType": "Proposer"
-        },
         "ForAllValues:StringEquals": {
           "aws-marketplace:AgreementType": [
             "PurchaseAgreement"
           ]
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Proposer"
         }
       }
     },
@@ -264,13 +261,13 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
-          "aws-marketplace:PartyType": "Proposer"
-        },
         "ForAllValues:StringEquals": {
           "aws-marketplace:AgreementType": [
             "PurchaseAgreement"
           ]
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Proposer"
         }
       }
     },
@@ -333,6 +330,71 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "DeploymentConfigurationManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartDeploymentConfigurationJob",
+        "aws-marketplace:GetDeploymentConfigurationJob",
+        "aws-marketplace:ListDeploymentConfigurationJobs",
+        "aws-marketplace:GetDeploymentConfiguration"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementContactsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetAgreementContacts"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        }
+      }
+    },
+    {
+      "Sid": "MarketplaceStartAssessment",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartAssessment"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*"
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
+      ],
+      "Resource": "*"
     }
   ]
 }

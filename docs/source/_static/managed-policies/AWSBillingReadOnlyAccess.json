@@ -66,6 +66,7 @@
         "payments:GetFinancingOption",
         "payments:GetPaymentInstrument",
         "payments:GetPaymentStatus",
+        "payments:ListConnectedAccounts",
         "payments:ListFinancingApplications",
         "payments:ListFinancingLines",
         "payments:ListFinancingLineWithdrawals",
@@ -95,6 +96,14 @@
         "billing:ListContractualInvestmentSummaries"
       ],
       "Resource": "arn:aws:billing::*:contract/*"
+    },
+    {
+      "Sid": "ConnectedAccountReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "payments:GetConnectedAccount"
+      ],
+      "Resource": "arn:aws:payments::*:connectedaccount/*"
     }
   ]
 }

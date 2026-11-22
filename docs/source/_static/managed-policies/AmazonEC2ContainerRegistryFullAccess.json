@@ -12,6 +12,15 @@
     {
       "Effect": "Allow",
       "Action": [
+        "signin:CreateBearerToken"
+      ],
+      "Resource": [
+        "arn:aws:signin:*:*:service-principal/ecr.amazonaws.com"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "iam:CreateServiceLinkedRole"
       ],
       "Resource": "*",

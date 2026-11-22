@@ -140,7 +140,8 @@
           "ec2:CreateAction": [
             "CreateFleet",
             "CreateLaunchTemplate",
-            "RunInstances"
+            "RunInstances",
+            "CreateVolume"
           ]
         }
       }

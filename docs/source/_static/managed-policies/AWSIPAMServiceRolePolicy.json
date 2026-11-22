@@ -92,6 +92,17 @@
         "ec2:DeleteDhcpOptions"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "IPAMRoute53IpGuardrailPolicyActions",
+      "Effect": "Allow",
+      "Action": [
+        "route53:CreateIpGuardrailPolicy",
+        "route53:GetIpGuardrailPolicy",
+        "route53:UpdateIpGuardrailPolicy",
+        "route53:DeleteIpGuardrailPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }

@@ -28,10 +28,43 @@
         "ec2:StartInstances",
         "ec2:StopInstances",
         "ec2:TerminateInstances",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRegions",
+        "servicequotas:ListServiceQuotas",
+        "cloudwatch:GetMetricStatistics",
         "license-manager:ListReceivedLicenses",
         "payments:ListPaymentProgramStatus"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "servicequotas:GetServiceQuota",
+      "Resource": [
+        "arn:aws:servicequotas:*:*:ec2/*",
+        "arn:aws:servicequotas:*:*:vpc/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStackEvents"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/AgentModeDeployment*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RevokeSecurityGroupEgress"
+      ],
+      "Resource": "arn:aws:ec2:*:*:security-group/*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-name": "AgentModeDeployment*"
+        }
+      }
     },
     {
       "Effect": "Allow",
