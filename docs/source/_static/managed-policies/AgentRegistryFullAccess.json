@@ -8,6 +8,14 @@
       "Resource": "arn:aws:agent-registry:*:*:*"
     },
     {
+      "Sid": "AgentRegistryPublicDiscoveryAccess",
+      "Effect": "Allow",
+      "Action": [
+        "agent-discovery:SearchPublicRecords"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "AgentRegistryPassRoleAccess",
       "Effect": "Allow",
       "Action": "iam:PassRole",
@@ -33,12 +41,15 @@
       "Sid": "AllowGetResourceOauth2TokenForOauthBasedSynchronization",
       "Effect": "Allow",
       "Action": [
-        "bedrock-agentcore:GetResourceOauth2Token"
+        "bedrock-agentcore:GetResourceOauth2Token",
+        "bedrock-agentcore:GetWorkloadAccessTokenForUserId",
+        "bedrock-agentcore:CompleteResourceTokenAuth"
       ],
       "Resource": [
         "arn:aws:bedrock-agentcore:*:*:credential-provider/*",
         "arn:aws:bedrock-agentcore:*:*:workload-identity-directory/*",
-        "arn:aws:bedrock-agentcore:*:*:token-vault/*/oauth2credentialprovider/*"
+        "arn:aws:bedrock-agentcore:*:*:token-vault/*/oauth2credentialprovider/*",
+        "arn:aws:bedrock-agentcore:*:*:token-vault/default"
       ]
     },
     {

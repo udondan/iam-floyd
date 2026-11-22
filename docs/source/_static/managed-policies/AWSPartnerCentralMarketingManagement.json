@@ -199,6 +199,221 @@
           "aws:IsMcpServiceAction": "true"
         }
       }
+    },
+    {
+      "Sid": "PartnerBusinessPlanAccountAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListBusinessPlans",
+        "partnercentral:ListBusinessPlanItems",
+        "partnercentral:GetBusinessPlanItemSchema",
+        "partnercentral:ListBusinessPlanAssociations"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerBusinessPlanContributorAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListBusinessPlanAttachments",
+        "partnercentral:GetBusinessPlanAttachmentImportTask",
+        "partnercentral:ListBusinessPlanAttachmentImportTasks",
+        "partnercentral:AssociateBusinessPlan",
+        "partnercentral:DisassociateBusinessPlan",
+        "partnercentral:StartBusinessPlanAttachmentImportTask"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/business-plan/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerBusinessPlanItemAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateBusinessPlanItem",
+        "partnercentral:GetBusinessPlanItem",
+        "partnercentral:UpdateBusinessPlanItem",
+        "partnercentral:DeleteBusinessPlanItem"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/business-plan/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ],
+          "partnercentral:BusinessPlanItemType": [
+            "INITIATIVE",
+            "ACTIVITY"
+          ],
+          "partnercentral:BusinessPlanItemStage": [
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DemandCenterCampaignAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateCampaign",
+        "partnercentral:GetCampaign",
+        "partnercentral:UpdateCampaign",
+        "partnercentral:DeleteCampaign",
+        "partnercentral:BatchCreateCampaignAsset",
+        "partnercentral:GetCampaignAsset",
+        "partnercentral:ListCampaignAssets",
+        "partnercentral:UpdateCampaignAsset",
+        "partnercentral:DeleteCampaignAsset",
+        "partnercentral:StartCampaignAssetActivationTask",
+        "partnercentral:GetCampaignAssetActivationTask",
+        "partnercentral:DeactivateCampaignAsset",
+        "partnercentral:StartCampaignAssetExportTask",
+        "partnercentral:GetCampaignAssetExportTask"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/campaign/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DemandCenterTaggingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:TagResource",
+        "partnercentral:UntagResource",
+        "partnercentral:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/campaign/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DemandCenterSocialConnectionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:DeleteSocialConnection"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/social-connection/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DemandCenterCatalogAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListCampaigns",
+        "partnercentral:SearchCampaignTemplates",
+        "partnercentral:GetCampaignTemplate",
+        "partnercentral:ListSocialConnections",
+        "partnercentral:CreateSocialConnectionAuthorizationUrl"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DemandCenterEngagementAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:SearchEngagements",
+        "partnercentral:ListEngagementGroups"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DemandCenterServiceLinkedRoleCreation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/partnercentral-marketing.amazonaws.com/AWSServiceRoleForPartnerCentralMarketing",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "partnercentral-marketing.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DemandCenterServiceLinkedRoleRead",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/partnercentral-marketing.amazonaws.com/AWSServiceRoleForPartnerCentralMarketing"
     }
   ]
 }

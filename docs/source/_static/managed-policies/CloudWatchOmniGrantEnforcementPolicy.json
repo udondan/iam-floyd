@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RequireOmniAccessGrant",
+      "Effect": "Deny",
+      "Action": [
+        "cloudwatch:StartTelemetryQuerySession",
+        "cloudwatch:List*",
+        "cloudwatch:GetTelemetryQueryResults",
+        "cloudwatch:StopTelemetryQuery",
+        "cloudwatch:StopTelemetryQuerySession",
+        "cloudwatch:GetRecords",
+        "cloudwatch:GetContextGraph",
+        "cloudwatch:GetAlert",
+        "cloudwatch:GetIntelligenceConfiguration",
+        "cloudwatch:GetSpace"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "cloudwatch:HasAccessGrant": "true"
+        }
+      }
+    }
+  ]
+}

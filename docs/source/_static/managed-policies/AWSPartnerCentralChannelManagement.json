@@ -19,7 +19,11 @@
         "partnercentral:AcceptChannelHandshake",
         "partnercentral:RejectChannelHandshake",
         "partnercentral:CancelChannelHandshake",
-        "partnercentral:ListChannelHandshakes"
+        "partnercentral:ListChannelHandshakes",
+        "partnercentral:CreateChannelContract",
+        "partnercentral:CancelChannelContract",
+        "partnercentral:GetChannelContract",
+        "partnercentral:ListChannelContracts"
       ],
       "Resource": "*",
       "Condition": {
@@ -52,7 +56,8 @@
       ],
       "Resource": [
         "arn:aws:partnercentral:*:*:catalog/*/program-management-account/*",
-        "arn:aws:partnercentral:*:*:catalog/*/channel-handshake/*"
+        "arn:aws:partnercentral:*:*:catalog/*/channel-handshake/*",
+        "arn:aws:partnercentral:*:*:catalog/*/channel-contract/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -131,6 +136,34 @@
         "q:GetConversation",
         "q:ListConversations",
         "q:PassRequest"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
       ],
       "Resource": "*"
     }

@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateEngagementFromCampaignLeads",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateEngagement"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ],
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

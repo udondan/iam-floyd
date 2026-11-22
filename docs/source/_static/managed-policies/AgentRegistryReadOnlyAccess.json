@@ -6,16 +6,34 @@
       "Effect": "Allow",
       "Action": [
         "agent-registry:GetRegistry",
-        "agent-registry:ListRegistries",
         "agent-registry:GetRegistryRecord",
         "agent-registry:ListRegistryRecords",
         "agent-registry:ListDiscoverableRegistryRecords",
+        "agent-registry:SearchDiscoverableRegistryRecords",
         "agent-registry:GetDiscoverableRegistryRecord",
         "agent-registry:InvokeRegistryMcp",
-        "agent-registry:SearchDiscoverableRegistryRecords",
-        "agent-registry:ListTagsForResource"
+        "agent-registry:GetPublisher",
+        "agent-registry:ListPublisherAssociations"
       ],
       "Resource": "arn:aws:agent-registry:*:*:*"
+    },
+    {
+      "Sid": "AgentRegistryReadOnlyAccessNoResource",
+      "Effect": "Allow",
+      "Action": [
+        "agent-registry:ListRegistries",
+        "agent-registry:ListPublishers",
+        "agent-registry:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AgentRegistryPublicDiscoveryAccess",
+      "Effect": "Allow",
+      "Action": [
+        "agent-discovery:SearchPublicRecords"
+      ],
+      "Resource": "*"
     }
   ]
 }

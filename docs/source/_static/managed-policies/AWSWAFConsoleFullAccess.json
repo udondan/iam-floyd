@@ -390,6 +390,58 @@
         "bedrock-agentcore:ListGateways"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowListActionsForObservabilityAdmin",
+      "Effect": "Allow",
+      "Action": [
+        "observabilityadmin:ListTelemetryRules",
+        "observabilityadmin:GetTelemetryEvaluationStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListConnectedAccountsForPayments",
+      "Effect": "Allow",
+      "Action": [
+        "payments:ListConnectedAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowGetConnectedAccountForPayments",
+      "Effect": "Allow",
+      "Action": [
+        "payments:GetConnectedAccount"
+      ],
+      "Resource": "arn:aws:payments::*:connectedaccount/*"
+    },
+    {
+      "Sid": "AllowMarketplaceAgreementActions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:ListEntitlementDetails"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListRolesForAISecurity",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowApexQueryActions",
+      "Effect": "Allow",
+      "Action": [
+        "apex:GetStatistics",
+        "apex:GetStatisticsTimeSeries",
+        "apex:Search"
+      ],
+      "Resource": "*"
     }
   ]
 }

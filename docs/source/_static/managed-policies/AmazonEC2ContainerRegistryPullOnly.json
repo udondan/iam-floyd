@@ -10,6 +10,13 @@
         "ecr:BatchImportUpstreamImage"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "signin:CreateBearerToken"
+      ],
+      "Resource": "arn:aws:signin:*:*:service-principal/ecr.amazonaws.com"
     }
   ]
 }

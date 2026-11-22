@@ -18,7 +18,8 @@
         "aws-marketplace:DescribeChangeSet",
         "aws-marketplace:StartChangeSet",
         "aws-marketplace:CancelChangeSet",
-        "aws-marketplace:DescribeEntity"
+        "aws-marketplace:DescribeEntity",
+        "aws-marketplace:StartAssessment"
       ],
       "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*"
     },
@@ -83,7 +84,21 @@
         "aws-marketplace:UntagResource",
         "aws-marketplace:ListTagsForResource"
       ],
-      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*"
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*",
+        "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
+      ]
+    },
+    {
+      "Sid": "DeploymentConfigurationManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartDeploymentConfigurationJob",
+        "aws-marketplace:GetDeploymentConfigurationJob",
+        "aws-marketplace:ListDeploymentConfigurationJobs",
+        "aws-marketplace:GetDeploymentConfiguration"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
     },
     {
       "Sid": "ResourceSharingAccess",
@@ -161,6 +176,34 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
+      ],
+      "Resource": "*"
     }
   ]
 }

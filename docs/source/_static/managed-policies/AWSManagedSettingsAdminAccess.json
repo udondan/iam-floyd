@@ -314,19 +314,33 @@
       "Sid": "ActivateAdvancedManagedRoleAccess",
       "Effect": "Allow",
       "Action": [
-        "iam:GetRole",
         "iam:CreateRole",
         "iam:AttachRolePolicy",
         "iam:DeleteRole",
-        "iam:ListAttachedRolePolicies",
         "iam:DetachRolePolicy",
-        "iam:ListRolePolicies",
         "iam:DeleteRolePolicy"
       ],
       "Resource": [
         "arn:aws:iam::*:role/managed/*",
         "arn:aws:iam::*:role/ManagedAccountAdmin",
         "arn:aws:iam::*:role/AccountFullAccessRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "account.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "ActivateAdvancedManagedRoleReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/*"
       ],
       "Condition": {
         "StringEquals": {

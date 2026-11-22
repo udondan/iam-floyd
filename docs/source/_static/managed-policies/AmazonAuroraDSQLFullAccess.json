@@ -34,7 +34,8 @@
         "dsql:DeleteStream",
         "dsql:GetStream",
         "dsql:ListStreams",
-        "dsql:UpdateStream"
+        "dsql:UpdateStream",
+        "dsql:AllowVendedLogDeliveryForResource"
       ],
       "Resource": "*"
     },

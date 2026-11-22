@@ -206,7 +206,7 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLikeIfExists": {
+        "StringEquals": {
           "organizations:ServicePrincipal": [
             "finops-agent.amazonaws.com"
           ]
@@ -456,6 +456,21 @@
           "events:ManagedBy": "finops-agent.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "BCMDataHubQueryAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bcm-data-hub:ListDatasets",
+        "bcm-data-hub:GetDataset",
+        "bcm-data-hub:GetDatasetSchema",
+        "bcm-data-hub:StartQueryExecution",
+        "bcm-data-hub:GetQueryExecution",
+        "bcm-data-hub:GetQueryExecutionResults",
+        "bcm-data-hub:CancelQueryExecution",
+        "bcm-data-hub:ListQueryExecutions"
+      ],
+      "Resource": "*"
     },
     {
       "Sid": "EventBridgeManagedRuleManagementReadPermissions",

@@ -214,6 +214,11 @@
     },
     {
       "Effect": "Allow",
+      "Action": "iam:SimulatePrincipalPolicy",
+      "Resource": "arn:aws:iam::*:role/*"
+    },
+    {
+      "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": "arn:aws:iam::*:role/*",
       "Condition": {
@@ -225,7 +230,10 @@
             "autoscaling.amazonaws.com",
             "elasticloadbalancing.amazonaws.com",
             "ecs.amazonaws.com",
-            "cloudformation.amazonaws.com"
+            "cloudformation.amazonaws.com",
+            "eks.amazonaws.com",
+            "pods.eks.amazonaws.com",
+            "codebuild.amazonaws.com"
           ]
         }
       }

@@ -136,7 +136,143 @@
         "cost-optimization-hub:ListEnrollmentStatuses",
         "cost-optimization-hub:GetPreferences",
         "billing:GetBillingPreferences",
-        "billing:ListBillingViewSegments"
+        "billing:ListBillingViewSegments",
+        "ce:ListCostCategoryResourceAssociations",
+        "ce:ListTagsForResource",
+        "bcm-data-exports:GetExport",
+        "bcm-data-exports:ListExports",
+        "cur:DescribeReportDefinitions",
+        "billing:GetBillingData",
+        "billing:GetBillingDetails",
+        "billing:GetBillingNotifications",
+        "billing:GetContractInformation",
+        "billing:GetIAMAccessPreference",
+        "billing:GetSellerOfRecord",
+        "billingconductor:ListTagsForResource",
+        "budgets:DescribeBudgetAction",
+        "budgets:DescribeBudgetActionHistories",
+        "budgets:ListTagsForResource",
+        "invoicing:GetInvoiceCorrection",
+        "invoicing:GetInvoiceEmailDeliveryPreferences",
+        "invoicing:GetInvoicePDF",
+        "invoicing:ListInvoiceCorrections",
+        "invoicing:ListProcurementPortalSuppliers",
+        "invoicing:ListProcurementPortals",
+        "invoicing:ListTagsForResource",
+        "purchase-orders:GetPurchaseOrder",
+        "purchase-orders:ListPurchaseOrderInvoices",
+        "purchase-orders:ListPurchaseOrders",
+        "purchase-orders:ListTagsForResource",
+        "purchase-orders:ViewPurchaseOrders",
+        "freetier:GetAccountActivity",
+        "freetier:GetAccountPlanState",
+        "freetier:GetFreeTierAlertPreference",
+        "freetier:ListAccountActivities",
+        "mapcredits:ListAssociatedPrograms",
+        "mapcredits:ListQuarterCredits",
+        "mapcredits:ListQuarterSpend",
+        "account:GetRegionOptStatus",
+        "account:ListRegions",
+        "consolidatedbilling:GetAccountBillingRole",
+        "consolidatedbilling:ListLinkedAccounts",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListRoots",
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingPolicies",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeNatGateways",
+        "ec2:DescribeReservedInstances",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeVpcEndpoints",
+        "lambda:GetFunctionConfiguration",
+        "dynamodb:DescribeContinuousBackups",
+        "dynamodb:DescribeTable",
+        "dynamodb:ListTables",
+        "elasticache:DescribeCacheClusters",
+        "elasticache:DescribeReplicationGroups",
+        "elasticache:DescribeReservedCacheNodes",
+        "elasticache:DescribeSnapshots",
+        "memorydb:DescribeClusters",
+        "memorydb:DescribeSnapshots",
+        "rds:DescribeDBClusterSnapshots",
+        "rds:DescribeDBEngineVersions",
+        "rds:DescribeDBSnapshots",
+        "rds:DescribeReservedDBInstances",
+        "redshift:DescribeClusterSnapshots",
+        "redshift:DescribeClusters",
+        "redshift:DescribeReservedNodes",
+        "sagemaker:DescribeEndpoint",
+        "sagemaker:DescribeEndpointConfig",
+        "sagemaker:DescribeNotebookInstance",
+        "sagemaker:ListApps",
+        "sagemaker:ListDomains",
+        "sagemaker:ListEndpointConfigs",
+        "sagemaker:ListEndpoints",
+        "sagemaker:ListNotebookInstances",
+        "workspaces:DescribeWorkspaces",
+        "workspaces:DescribeWorkspacesConnectionStatus",
+        "ram:GetResourceShares",
+        "resource-explorer-2:GetIndex",
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:Search",
+        "tag:GetResources",
+        "logs:DescribeLogGroups",
+        "logs:DescribeSubscriptionFilters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "StorageResourceReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:GetBucketVersioning",
+        "s3:GetIntelligentTieringConfiguration",
+        "s3:GetInventoryConfiguration",
+        "s3:GetLifecycleConfiguration",
+        "s3:GetReplicationConfiguration",
+        "s3:GetStorageLensConfiguration",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AwsOrgsScopedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "finops-agent.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "BCMDataHubQueryAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bcm-data-hub:ListDatasets",
+        "bcm-data-hub:GetDataset",
+        "bcm-data-hub:GetDatasetSchema",
+        "bcm-data-hub:StartQueryExecution",
+        "bcm-data-hub:GetQueryExecution",
+        "bcm-data-hub:GetQueryExecutionResults",
+        "bcm-data-hub:CancelQueryExecution",
+        "bcm-data-hub:ListQueryExecutions"
       ],
       "Resource": "*"
     },
@@ -154,8 +290,8 @@
       "Resource": "arn:aws:events:*:*:rule/*",
       "Condition": {
         "StringEquals": {
-          "events:ManagedBy": "finops-agent.amazonaws.com",
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "events:ManagedBy": "finops-agent.amazonaws.com"
         }
       }
     },
