@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.855.0](https://github.com/udondan/iam-floyd/compare/v0.854.0...v0.855.0) (2026-11-23)
+
+
+### Features
+
+* add latest IAM updates from AWS ([#2479](https://github.com/udondan/iam-floyd/issues/2479)) ([fa29959](https://github.com/udondan/iam-floyd/commit/fa29959a71b2b7f9eae3fabda8aeb8ad68560797))
+* update AWS managed policies and service principals ([#2477](https://github.com/udondan/iam-floyd/issues/2477)) ([fc87bb5](https://github.com/udondan/iam-floyd/commit/fc87bb5f601019595ff87d47bf5ac9b00e6b411e))
+
 ## [0.854.0](https://github.com/udondan/iam-floyd/compare/v0.853.0...v0.854.0) (2026-11-16)
 
 
