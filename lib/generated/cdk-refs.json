@@ -1,5 +1,5 @@
 {
-  "aws-cdk-lib": "2.277.0",
+  "aws-cdk-lib": "2.278.0",
   "constructs": "10.5.0",
   "interfaces": [
     "aws_accessanalyzer.IAnalyzerRef",
@@ -459,6 +459,7 @@
     "aws_lambda.IFunctionRef",
     "aws_lambda.IMicrovmImageRef",
     "aws_lambda.INetworkConnectorRef",
+    "aws_lambda.IRuntimeRef",
     "aws_lambda.IWebFunctionRef",
     "aws_launchwizard.IDeploymentRef",
     "aws_licensemanager.IGrantRef",
@@ -553,7 +554,9 @@
     "aws_networkfirewall.ITLSInspectionConfigurationRef",
     "aws_networkfirewall.IVpcEndpointAssociationRef",
     "aws_networkflowmonitor.IMonitorRef",
+    "aws_networkflowmonitor.IPerformanceMonitorRef",
     "aws_networkflowmonitor.IScopeRef",
+    "aws_networkmanager.IContextStoreRef",
     "aws_networkmanager.ICoreNetworkRef",
     "aws_networkmanager.IGlobalNetworkRef",
     "aws_networkmonitor.IMonitorRef",
@@ -665,6 +668,7 @@
     "aws_rolesanywhere.ITrustAnchorRef",
     "aws_route53.ICidrCollectionRef",
     "aws_route53.IDelegationSetRef",
+    "aws_route53.IHealthCheckSourceRef",
     "aws_route53.IQueryLoggingConfigRef",
     "aws_route53.ITrafficPolicyInstanceRef",
     "aws_route53.ITrafficPolicyRef",

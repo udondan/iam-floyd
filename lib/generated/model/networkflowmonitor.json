@@ -378,7 +378,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_networkflowmonitor",
+        "interface": "IPerformanceMonitorRef",
+        "property": "performanceMonitorRef",
+        "arn": "performanceMonitorArn"
+      }
     },
     {
       "name": "scope",
