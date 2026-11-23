@@ -42,6 +42,8 @@
       "DescribeManagedRuleGroup",
       "GenerateMobileSdkReleaseUrl",
       "GetDecryptedAPIKey",
+      "GetEvent",
+      "GetEventActor",
       "GetIPSet",
       "GetLoggingConfiguration",
       "GetManagedRuleSet",
@@ -70,6 +72,9 @@
       "ListAPIKeys",
       "ListAvailableManagedRuleGroupVersions",
       "ListAvailableManagedRuleGroups",
+      "ListEventActors",
+      "ListEvents",
+      "ListEventsByWebACL",
       "ListIPSets",
       "ListLoggingConfigurations",
       "ListManagedRuleSets",
@@ -234,6 +239,20 @@
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetDecryptedAPIKey.html"
     },
     {
+      "name": "GetEvent",
+      "methodName": "toGetEvent",
+      "description": "Grants permission to retrieve the full details of a single event detected for a WebACL, including its summary, event actors, tracking timeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetEvent.html"
+    },
+    {
+      "name": "GetEventActor",
+      "methodName": "toGetEventActor",
+      "description": "Grants permission to retrieve the full details of a single event actor, including its latest observed attributes, associated events, and attribute history",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetEventActor.html"
+    },
+    {
       "name": "GetIPSet",
       "methodName": "toGetIPSet",
       "description": "Grants permission to retrieve details about an IPSet",
@@ -358,6 +377,27 @@
       "description": "Grants permission to retrieve an array of managed rule groups that are available for you to use",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroups.html"
+    },
+    {
+      "name": "ListEventActors",
+      "methodName": "toListEventActors",
+      "description": "Grants permission to retrieve a list of event actor summaries for your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListEventActors.html"
+    },
+    {
+      "name": "ListEvents",
+      "methodName": "toListEvents",
+      "description": "Grants permission to retrieve a list of event summaries for the web ACLs in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListEvents.html"
+    },
+    {
+      "name": "ListEventsByWebACL",
+      "methodName": "toListEventsByWebACL",
+      "description": "Grants permission to retrieve a list of event summaries for a specific WebACL",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListEventsByWebACL.html"
     },
     {
       "name": "ListIPSets",
@@ -1031,6 +1071,7 @@
         "toDeleteRegexPatternSet",
         "toDeleteRuleGroup",
         "toDeleteWebACL",
+        "toGetEvent",
         "toGetIPSet",
         "toGetLoggingConfiguration",
         "toGetPermissionPolicy",
@@ -1041,6 +1082,7 @@
         "toGetTopPathStatisticsByTraffic",
         "toGetWebACL",
         "toGetWebACLForResource",
+        "toListEventsByWebACL",
         "toListResourcesForWebACL",
         "toListTagsForResource",
         "toPutLoggingConfiguration",

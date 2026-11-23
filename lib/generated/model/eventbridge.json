@@ -41,6 +41,7 @@
       "RemovePermission",
       "RemoveTargets",
       "RevokeResource",
+      "RotateWebhookCredentials",
       "StartReplay",
       "TagResource",
       "UntagResource",
@@ -53,6 +54,7 @@
       "UpdateSubscriber",
       "AllowVendedLogDeliveryForResource",
       "InvokeApiDestination",
+      "PutWebhookEvents",
       "RetrieveConnectionCredentials"
     ],
     "Permissions management": [
@@ -519,6 +521,13 @@
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RevokeResource.html"
     },
     {
+      "name": "RotateWebhookCredentials",
+      "methodName": "toRotateWebhookCredentials",
+      "description": "Grants permission to rotate credentials of a webhook event source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_RotateWebhookCredentials.html"
+    },
+    {
       "name": "StartReplay",
       "methodName": "toStartReplay",
       "description": "Grants permission to start a replay of an archive",
@@ -608,6 +617,13 @@
       "description": "Grants permission to invoke an api destination",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html"
+    },
+    {
+      "name": "PutWebhookEvents",
+      "methodName": "toPutWebhookEvents",
+      "description": "Grants permission to send events from webhook event sources to Amazon EventBridge",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-custom-bus-webhook-sources.html"
     },
     {
       "name": "RetrieveConnectionCredentials",
@@ -1238,13 +1254,15 @@
         "toPutTargets",
         "toRemoveTargets",
         "toRevokeResource",
+        "toRotateWebhookCredentials",
         "toStartReplay",
         "toTagResource",
         "toUntagResource",
         "toUpdateEventBus",
         "toUpdateEventSource",
         "toUpdateSubscriber",
-        "toAllowVendedLogDeliveryForResource"
+        "toAllowVendedLogDeliveryForResource",
+        "toPutWebhookEvents"
       ],
       "relatedResourceTypes": [
         "event-bus",
@@ -1318,6 +1336,24 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
     },
     {
+      "key": "events:EventSourceType",
+      "methodName": "ifEventSourceType",
+      "description": "Filters access by the type of event source (aws.service, aws.partner, or webhook) to CreateEventSource and UpdateEventSource actions",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
+      "relatedActionMethods": [
+        "toCreateEventSource",
+        "toUpdateEventSource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "EventSourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "events:ManagedBy",
       "methodName": "ifManagedBy",
       "description": "Filters access by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule",
@@ -1342,12 +1378,13 @@
     {
       "key": "events:Metadata/${MetadataKey}",
       "methodName": "ifMetadataMetadataKey",
-      "description": "Filters access by a metadata key-value pair on the published event to PutRawEvents actions, or by the exact-match values declared for that key in a subscriber's metadata filter to CreateSubscriber and UpdateSubscriber actions",
+      "description": "Filters access by a metadata key-value pair on the published event to PutRawEvents and PutWebhookEvents actions, or by the exact-match values declared for that key in a subscriber's metadata filter to CreateSubscriber and UpdateSubscriber actions",
       "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
       "relatedActionMethods": [
         "toCreateSubscriber",
         "toPutRawEvents",
-        "toUpdateSubscriber"
+        "toUpdateSubscriber",
+        "toPutWebhookEvents"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "Metadata/",
@@ -1436,11 +1473,12 @@
     {
       "key": "events:SystemMetadata/ContentType",
       "methodName": "ifSystemMetadataContentType",
-      "description": "Filters access by the content type declared on an event for PutRawEvents and for forwarded events authorized as PutEvents",
+      "description": "Filters access by the content type declared on an event for PutRawEvents, PutWebhookEvents, and for forwarded events authorized as PutEvents",
       "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html",
       "relatedActionMethods": [
         "toPutEvents",
-        "toPutRawEvents"
+        "toPutRawEvents",
+        "toPutWebhookEvents"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "SystemMetadata/ContentType",

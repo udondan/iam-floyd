@@ -14,6 +14,7 @@
       "ChangeTagsForResource",
       "CreateCidrCollection",
       "CreateHealthCheck",
+      "CreateHealthCheckSource",
       "CreateHostedZone",
       "CreateIpGuardrailPolicy",
       "CreateKeySigningKey",
@@ -27,6 +28,7 @@
       "DeactivateKeySigningKey",
       "DeleteCidrCollection",
       "DeleteHealthCheck",
+      "DeleteHealthCheckSource",
       "DeleteHostedZone",
       "DeleteIpGuardrailPolicy",
       "DeleteKeySigningKey",
@@ -42,6 +44,7 @@
       "UpdateHealthCheck",
       "UpdateHostedZoneComment",
       "UpdateHostedZoneFeatures",
+      "UpdateHostedZoneTier",
       "UpdateIpGuardrailPolicy",
       "UpdateTrafficPolicyComment",
       "UpdateTrafficPolicyInstance"
@@ -53,6 +56,7 @@
       "GetAccountLimit",
       "GetDNSSEC",
       "GetHealthCheck",
+      "GetHealthCheckSource",
       "GetHostedZoneLimit",
       "GetIpGuardrailPolicy",
       "GetQueryLoggingConfig",
@@ -76,11 +80,15 @@
       "GetHealthCheckLastFailureReason",
       "GetHealthCheckStatus",
       "GetHostedZone",
+      "GetHostedZoneChangeBatch",
       "GetHostedZoneCount",
       "GetReusableDelegationSet",
       "ListCidrBlocks",
       "ListCidrCollections",
       "ListCidrLocations",
+      "ListHealthCheckSources",
+      "ListHealthChecksBySource",
+      "ListHostedZoneChangeBatches",
       "ListHostedZones",
       "ListHostedZonesByName",
       "ListHostedZonesByVPC",
@@ -127,7 +135,7 @@
     {
       "name": "ChangeTagsForResource",
       "methodName": "toChangeTagsForResource",
-      "description": "Grants permission to add, edit, or delete tags for a health check or a hosted zone",
+      "description": "Grants permission to add, edit, or delete tags for a health check, health check source, or hosted zone",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeTagsForResource.html"
     },
@@ -144,6 +152,13 @@
       "description": "Grants permission to create a new health check, which monitors the health and performance of your web applications, web servers, and other resources",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHealthCheck.html"
+    },
+    {
+      "name": "CreateHealthCheckSource",
+      "methodName": "toCreateHealthCheckSource",
+      "description": "Grants permission to create a health check source, which Route 53 uses to run health checks against private endpoints in a VPC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHealthCheckSource.html"
     },
     {
       "name": "CreateHostedZone",
@@ -238,6 +253,13 @@
       "description": "Grants permission to delete a health check",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteHealthCheck.html"
+    },
+    {
+      "name": "DeleteHealthCheckSource",
+      "methodName": "toDeleteHealthCheckSource",
+      "description": "Grants permission to delete a health check source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteHealthCheckSource.html"
     },
     {
       "name": "DeleteHostedZone",
@@ -380,6 +402,13 @@
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckLastFailureReason.html"
     },
     {
+      "name": "GetHealthCheckSource",
+      "methodName": "toGetHealthCheckSource",
+      "description": "Grants permission to get information about a specified health check source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckSource.html"
+    },
+    {
       "name": "GetHealthCheckStatus",
       "methodName": "toGetHealthCheckStatus",
       "description": "Grants permission to get the status of a specified health check",
@@ -392,6 +421,13 @@
       "description": "Grants permission to get information about a specified hosted zone including the four name servers that Route 53 assigned to the hosted zone",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZone.html"
+    },
+    {
+      "name": "GetHostedZoneChangeBatch",
+      "methodName": "toGetHostedZoneChangeBatch",
+      "description": "Grants permission to get the records that a specified change batch created, updated, or deleted in a hosted zone, and to list the changes to a specified record in a hosted zone's change history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneChangeBatch.html"
     },
     {
       "name": "GetHostedZoneCount",
@@ -485,11 +521,32 @@
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html"
     },
     {
+      "name": "ListHealthCheckSources",
+      "methodName": "toListHealthCheckSources",
+      "description": "Grants permission to get a list of the health check sources that are associated with the current AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHealthCheckSources.html"
+    },
+    {
       "name": "ListHealthChecks",
       "methodName": "toListHealthChecks",
       "description": "Grants permission to get a list of the health checks that are associated with the current AWS account",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHealthChecks.html"
+    },
+    {
+      "name": "ListHealthChecksBySource",
+      "methodName": "toListHealthChecksBySource",
+      "description": "Grants permission to get a list of the health checks that use a specified health check source",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHealthChecksBySource.html"
+    },
+    {
+      "name": "ListHostedZoneChangeBatches",
+      "methodName": "toListHostedZoneChangeBatches",
+      "description": "Grants permission to get a list of the change batches in a specified hosted zone's change history",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZoneChangeBatches.html"
     },
     {
       "name": "ListHostedZones",
@@ -553,14 +610,14 @@
     {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
-      "description": "Grants permission to list tags for one health check or hosted zone",
+      "description": "Grants permission to list tags for one health check, health check source, or hosted zone",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResource.html"
     },
     {
       "name": "ListTagsForResources",
       "methodName": "toListTagsForResources",
-      "description": "Grants permission to list tags for up to 10 health checks or hosted zones",
+      "description": "Grants permission to list tags for up to 10 health checks, health check sources, or hosted zones",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResources.html"
     },
@@ -633,6 +690,13 @@
       "description": "Grants permission to update features for a specified hosted zone",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHostedZoneFeatures.html"
+    },
+    {
+      "name": "UpdateHostedZoneTier",
+      "methodName": "toUpdateHostedZoneTier",
+      "description": "Grants permission to update the tier for a specified hosted zone",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHostedZoneTier.html"
     },
     {
       "name": "UpdateIpGuardrailPolicy",
@@ -744,6 +808,27 @@
         }
       ],
       "conditionMethods": []
+    },
+    {
+      "name": "healthchecksource",
+      "methodName": "onHealthchecksource",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckSource.html",
+      "arn": "arn:${Partition}:route53:::healthchecksource/${Id}",
+      "placeholders": [
+        {
+          "placeholder": "Id",
+          "name": "id",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "hostedzone",
@@ -870,6 +955,69 @@
     }
   ],
   "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toChangeTagsForResource",
+        "toCreateHealthCheckSource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters actions based on the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toChangeTagsForResource",
+        "toCreateHealthCheckSource",
+        "toDeleteHealthCheckSource",
+        "toGetHealthCheckSource",
+        "toListHealthChecksBySource",
+        "toListTagsForResource",
+        "toListTagsForResources"
+      ],
+      "relatedResourceTypes": [
+        "healthchecksource"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toChangeTagsForResource",
+        "toCreateHealthCheckSource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
     {
       "key": "route53:ChangeResourceRecordSetsActions",
       "methodName": "ifChangeResourceRecordSetsActions",

@@ -8,6 +8,7 @@
   "accessLevelList": {
     "Write": [
       "AddAssociation",
+      "AddInferenceGateway",
       "AddTags",
       "AssociateTrialComponent",
       "AttachClusterNodeNetworkInterface",
@@ -32,6 +33,7 @@
       "CreateAutoMLJob",
       "CreateAutoMLJobV2",
       "CreateCluster",
+      "CreateClusterExtension",
       "CreateClusterSchedulerConfig",
       "CreateCodeRepository",
       "CreateCompilationJob",
@@ -48,6 +50,7 @@
       "CreateExperiment",
       "CreateFeatureGroup",
       "CreateFlowDefinition",
+      "CreateGlobalInferenceGateway",
       "CreateHub",
       "CreateHubContentReference",
       "CreateHumanTaskUi",
@@ -57,6 +60,7 @@
       "CreateInferenceComponent",
       "CreateInferenceExperiment",
       "CreateInferenceRecommendationsJob",
+      "CreateInferenceRouter",
       "CreateJob",
       "CreateLabelingJob",
       "CreateLineageGroupPolicy",
@@ -104,6 +108,7 @@
       "DeleteArtifact",
       "DeleteAssociation",
       "DeleteCluster",
+      "DeleteClusterExtension",
       "DeleteClusterSchedulerConfig",
       "DeleteCodeRepository",
       "DeleteCompilationJob",
@@ -116,9 +121,11 @@
       "DeleteEdgeDeploymentStage",
       "DeleteEndpoint",
       "DeleteEndpointConfig",
+      "DeleteEndpointPolicy",
       "DeleteExperiment",
       "DeleteFeatureGroup",
       "DeleteFlowDefinition",
+      "DeleteGlobalInferenceGateway",
       "DeleteHub",
       "DeleteHubContent",
       "DeleteHubContentReference",
@@ -129,6 +136,7 @@
       "DeleteImageVersion",
       "DeleteInferenceComponent",
       "DeleteInferenceExperiment",
+      "DeleteInferenceRouter",
       "DeleteJob",
       "DeleteLineageGroupPolicy",
       "DeleteMlflowApp",
@@ -170,10 +178,12 @@
       "ExecuteTrainingOperation",
       "ExtendTrainingPlan",
       "ImportHubContent",
+      "PutEndpointPolicy",
       "PutLineageGroupPolicy",
       "PutModelPackageGroupPolicy",
       "PutRecord",
       "RegisterDevices",
+      "RemoveInferenceGateway",
       "RetryPipelineExecution",
       "Sample",
       "SampleTrainingSession",
@@ -217,6 +227,7 @@
       "UpdateAppImageConfig",
       "UpdateArtifact",
       "UpdateCluster",
+      "UpdateClusterExtension",
       "UpdateClusterSchedulerConfig",
       "UpdateClusterSoftware",
       "UpdateCodeRepository",
@@ -230,6 +241,7 @@
       "UpdateExperiment",
       "UpdateFeatureGroup",
       "UpdateFeatureMetadata",
+      "UpdateGlobalInferenceGateway",
       "UpdateHub",
       "UpdateHubContent",
       "UpdateHubContentReference",
@@ -238,6 +250,7 @@
       "UpdateInferenceComponent",
       "UpdateInferenceComponentRuntimeConfig",
       "UpdateInferenceExperiment",
+      "UpdateInferenceRouter",
       "UpdateMlflowApp",
       "UpdateMlflowTrackingServer",
       "UpdateModelCard",
@@ -286,8 +299,10 @@
       "DescribeArtifact",
       "DescribeAutoMLJob",
       "DescribeAutoMLJobV2",
+      "DescribeCapacityReservation",
       "DescribeCluster",
       "DescribeClusterEvent",
+      "DescribeClusterExtension",
       "DescribeClusterNode",
       "DescribeClusterSchedulerConfig",
       "DescribeCodeRepository",
@@ -306,6 +321,7 @@
       "DescribeFeatureGroup",
       "DescribeFeatureMetadata",
       "DescribeFlowDefinition",
+      "DescribeGlobalInferenceGateway",
       "DescribeHub",
       "DescribeHubContent",
       "DescribeHumanLoop",
@@ -316,6 +332,7 @@
       "DescribeInferenceComponent",
       "DescribeInferenceExperiment",
       "DescribeInferenceRecommendationsJob",
+      "DescribeInferenceRouter",
       "DescribeJob",
       "DescribeJobSchemaVersion",
       "DescribeLabelingJob",
@@ -341,6 +358,7 @@
       "DescribeProcessingJob",
       "DescribeProject",
       "DescribeReservedCapacity",
+      "DescribeResourceAssociations",
       "DescribeSpace",
       "DescribeStudioLifecycleConfig",
       "DescribeSubscribedWorkteam",
@@ -354,9 +372,11 @@
       "DescribeUserProfile",
       "DescribeWorkforce",
       "DescribeWorkteam",
+      "GetCapacityReservationUsage",
       "GetDeployments",
       "GetDeviceFleetReport",
       "GetDeviceRegistration",
+      "GetEndpointPolicy",
       "GetLineageGroupPolicy",
       "GetModelPackageGroupPolicy",
       "GetRecord",
@@ -368,6 +388,10 @@
       "InvokeEndpoint",
       "InvokeEndpointAsync",
       "InvokeEndpointWithResponseStream",
+      "InvokeGlobalInferenceGateway",
+      "InvokeGlobalInferenceGatewayWithResponseStream",
+      "InvokeInferenceRouter",
+      "InvokeInferenceRouterAsync",
       "RenderUiTemplate",
       "Search",
       "SearchTrainingPlanOfferings",
@@ -376,6 +400,10 @@
       "DescribeClusterInference",
       "DescribeSharedModel",
       "GetResourcePolicy"
+    ],
+    "Permissions management": [
+      "DeleteEndpointPolicy",
+      "PutEndpointPolicy"
     ],
     "List": [
       "ListAIBenchmarkJobs",
@@ -390,7 +418,10 @@
       "ListAssociations",
       "ListAutoMLJobs",
       "ListCandidatesForAutoMLJob",
+      "ListCapacityReservations",
       "ListClusterEvents",
+      "ListClusterExtensionVersions",
+      "ListClusterExtensions",
       "ListClusterNodes",
       "ListClusterSchedulerConfigs",
       "ListClusters",
@@ -409,6 +440,7 @@
       "ListExperiments",
       "ListFeatureGroups",
       "ListFlowDefinitions",
+      "ListGlobalInferenceGateways",
       "ListHubContentVersions",
       "ListHubContents",
       "ListHubs",
@@ -419,8 +451,10 @@
       "ListImages",
       "ListInferenceComponents",
       "ListInferenceExperiments",
+      "ListInferenceGateways",
       "ListInferenceRecommendationsJobSteps",
       "ListInferenceRecommendationsJobs",
+      "ListInferenceRouters",
       "ListJobSchemaVersions",
       "ListJobs",
       "ListLabelingJobs",
@@ -484,6 +518,13 @@
       "description": "Grants permission to associate a lineage entity (artifact, context, action, experiment, experiment-trial-component) to each other",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddAssociation.html"
+    },
+    {
+      "name": "AddInferenceGateway",
+      "methodName": "toAddInferenceGateway",
+      "description": "Grants permission to add a HyperPod inference gateway as a member of a global inference gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddInferenceGateway.html"
     },
     {
       "name": "AddTags",
@@ -675,6 +716,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCluster.html"
     },
     {
+      "name": "CreateClusterExtension",
+      "methodName": "toCreateClusterExtension",
+      "description": "Grants permission to install an extension on a SageMaker HyperPod cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateClusterExtension.html"
+    },
+    {
       "name": "CreateClusterSchedulerConfig",
       "methodName": "toCreateClusterSchedulerConfig",
       "description": "Grants permission to create a cluster scheduler config",
@@ -787,6 +835,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFlowDefinition.html"
     },
     {
+      "name": "CreateGlobalInferenceGateway",
+      "methodName": "toCreateGlobalInferenceGateway",
+      "description": "Grants permission to create a global inference gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateGlobalInferenceGateway.html"
+    },
+    {
       "name": "CreateHub",
       "methodName": "toCreateHub",
       "description": "Grants permission to create a hub",
@@ -855,6 +910,13 @@
       "description": "Grants permission to create an inference recommendations job",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+    },
+    {
+      "name": "CreateInferenceRouter",
+      "methodName": "toCreateInferenceRouter",
+      "description": "Grants permission to create an inference router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRouter.html"
     },
     {
       "name": "CreateJob",
@@ -1186,6 +1248,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteCluster.html"
     },
     {
+      "name": "DeleteClusterExtension",
+      "methodName": "toDeleteClusterExtension",
+      "description": "Grants permission to remove an extension from a SageMaker HyperPod cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteClusterExtension.html"
+    },
+    {
       "name": "DeleteClusterSchedulerConfig",
       "methodName": "toDeleteClusterSchedulerConfig",
       "description": "Grants permission to delete a cluster scheduler config",
@@ -1270,6 +1339,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpointConfig.html"
     },
     {
+      "name": "DeleteEndpointPolicy",
+      "methodName": "toDeleteEndpointPolicy",
+      "description": "Grants permission to delete the resource-based policy of an endpoint",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpointPolicy.html"
+    },
+    {
       "name": "DeleteExperiment",
       "methodName": "toDeleteExperiment",
       "description": "Grants permission to delete an experiment",
@@ -1289,6 +1365,13 @@
       "description": "Grants permission to delete the specified flow definition",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteFlowDefinition.html"
+    },
+    {
+      "name": "DeleteGlobalInferenceGateway",
+      "methodName": "toDeleteGlobalInferenceGateway",
+      "description": "Grants permission to delete a global inference gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteGlobalInferenceGateway.html"
     },
     {
       "name": "DeleteHub",
@@ -1359,6 +1442,13 @@
       "description": "Grants permission to delete an inference experiment",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteInferenceExperiment.html"
+    },
+    {
+      "name": "DeleteInferenceRouter",
+      "methodName": "toDeleteInferenceRouter",
+      "description": "Grants permission to delete an inference router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteInferenceRouter.html"
     },
     {
       "name": "DeleteJob",
@@ -1662,6 +1752,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
     },
     {
+      "name": "DescribeCapacityReservation",
+      "methodName": "toDescribeCapacityReservation",
+      "description": "Grants permission to return information about a specified capacity reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCapacityReservation.html"
+    },
+    {
       "name": "DescribeCluster",
       "methodName": "toDescribeCluster",
       "description": "Grants permission to return information about a SageMaker HyperPod cluster",
@@ -1674,6 +1771,13 @@
       "description": "Grants permission to return information about an Event within a SageMaker HyperPod cluster",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterEvent.html"
+    },
+    {
+      "name": "DescribeClusterExtension",
+      "methodName": "toDescribeClusterExtension",
+      "description": "Grants permission to return information about an extension installed on a SageMaker HyperPod cluster",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterExtension.html"
     },
     {
       "name": "DescribeClusterNode",
@@ -1802,6 +1906,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeFlowDefinition.html"
     },
     {
+      "name": "DescribeGlobalInferenceGateway",
+      "methodName": "toDescribeGlobalInferenceGateway",
+      "description": "Grants permission to return the description of a global inference gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeGlobalInferenceGateway.html"
+    },
+    {
       "name": "DescribeHub",
       "methodName": "toDescribeHub",
       "description": "Grants permission to describe hubs",
@@ -1870,6 +1981,13 @@
       "description": "Grants permission to get information about an inference recommendations job",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRecommendationsJob.html"
+    },
+    {
+      "name": "DescribeInferenceRouter",
+      "methodName": "toDescribeInferenceRouter",
+      "description": "Grants permission to return the description of an inference router",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html"
     },
     {
       "name": "DescribeJob",
@@ -2047,6 +2165,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeReservedCapacity.html"
     },
     {
+      "name": "DescribeResourceAssociations",
+      "methodName": "toDescribeResourceAssociations",
+      "description": "Grants permission to return the SageMaker service associations of a specified capacity reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeResourceAssociations.html"
+    },
+    {
       "name": "DescribeSpace",
       "methodName": "toDescribeSpace",
       "description": "Grants permission to describe a Space",
@@ -2187,6 +2312,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html"
     },
     {
+      "name": "GetCapacityReservationUsage",
+      "methodName": "toGetCapacityReservationUsage",
+      "description": "Grants permission to return the in-use instance counts of a specified capacity reservation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetCapacityReservationUsage.html"
+    },
+    {
       "name": "GetDeployments",
       "methodName": "toGetDeployments",
       "description": "Grants permission to get deployment plan for device",
@@ -2206,6 +2338,13 @@
       "description": "Grants permission to get device registration. After you deploy a model onto edge devices this api is used to get current device registration",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_edge_GetDeviceRegistration.html"
+    },
+    {
+      "name": "GetEndpointPolicy",
+      "methodName": "toGetEndpointPolicy",
+      "description": "Grants permission to get the resource-based policy of an endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetEndpointPolicy.html"
     },
     {
       "name": "GetLineageGroupPolicy",
@@ -2292,6 +2431,34 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointWithResponseStream.html"
     },
     {
+      "name": "InvokeGlobalInferenceGateway",
+      "methodName": "toInvokeGlobalInferenceGateway",
+      "description": "Grants permission to invoke a global inference gateway",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeGlobalInferenceGateway.html"
+    },
+    {
+      "name": "InvokeGlobalInferenceGatewayWithResponseStream",
+      "methodName": "toInvokeGlobalInferenceGatewayWithResponseStream",
+      "description": "Grants permission to invoke a global inference gateway and stream the response",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeGlobalInferenceGatewayWithResponseStream.html"
+    },
+    {
+      "name": "InvokeInferenceRouter",
+      "methodName": "toInvokeInferenceRouter",
+      "description": "Grants permission to invoke an inference router",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeInferenceRouter.html"
+    },
+    {
+      "name": "InvokeInferenceRouterAsync",
+      "methodName": "toInvokeInferenceRouterAsync",
+      "description": "Grants permission to invoke an inference router in an asynchronous manner",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeInferenceRouterAsync.html"
+    },
+    {
       "name": "ListAIBenchmarkJobs",
       "methodName": "toListAIBenchmarkJobs",
       "description": "Grants permission to list AI benchmark jobs",
@@ -2376,11 +2543,32 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCandidatesForAutoMLJob.html"
     },
     {
+      "name": "ListCapacityReservations",
+      "methodName": "toListCapacityReservations",
+      "description": "Grants permission to list capacity reservations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCapacityReservations.html"
+    },
+    {
       "name": "ListClusterEvents",
       "methodName": "toListClusterEvents",
       "description": "Grants permission to list events within a SageMaker HyperPod cluster",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListClusterEvents.html"
+    },
+    {
+      "name": "ListClusterExtensionVersions",
+      "methodName": "toListClusterExtensionVersions",
+      "description": "Grants permission to list the versions of an extension that you can install on a SageMaker HyperPod cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListClusterExtensionVersions.html"
+    },
+    {
+      "name": "ListClusterExtensions",
+      "methodName": "toListClusterExtensions",
+      "description": "Grants permission to list the extensions installed on a SageMaker HyperPod cluster",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListClusterExtensions.html"
     },
     {
       "name": "ListClusterNodes",
@@ -2509,6 +2697,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListFlowDefinitions.html"
     },
     {
+      "name": "ListGlobalInferenceGateways",
+      "methodName": "toListGlobalInferenceGateways",
+      "description": "Grants permission to list global inference gateways",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListGlobalInferenceGateways.html"
+    },
+    {
       "name": "ListHubContentVersions",
       "methodName": "toListHubContentVersions",
       "description": "Grants permission to list all versions of hub content",
@@ -2579,6 +2774,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceExperiments.html"
     },
     {
+      "name": "ListInferenceGateways",
+      "methodName": "toListInferenceGateways",
+      "description": "Grants permission to list the member HyperPod inference gateways of a global inference gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceGateways.html"
+    },
+    {
       "name": "ListInferenceRecommendationsJobSteps",
       "methodName": "toListInferenceRecommendationsJobSteps",
       "description": "Grants permission to list inference recommendations job steps",
@@ -2591,6 +2793,13 @@
       "description": "Grants permission to list inference recommendations jobs",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobs.html"
+    },
+    {
+      "name": "ListInferenceRouters",
+      "methodName": "toListInferenceRouters",
+      "description": "Grants permission to list inference routers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRouters.html"
     },
     {
       "name": "ListJobSchemaVersions",
@@ -2943,6 +3152,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkteams.html"
     },
     {
+      "name": "PutEndpointPolicy",
+      "methodName": "toPutEndpointPolicy",
+      "description": "Grants permission to attach or replace the resource-based policy of an endpoint",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutEndpointPolicy.html"
+    },
+    {
       "name": "PutLineageGroupPolicy",
       "methodName": "toPutLineageGroupPolicy",
       "description": "Grants permission to put a lineage group policy",
@@ -2976,6 +3192,13 @@
       "description": "Grants permission to register a set of devices",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RegisterDevices.html"
+    },
+    {
+      "name": "RemoveInferenceGateway",
+      "methodName": "toRemoveInferenceGateway",
+      "description": "Grants permission to remove a member HyperPod inference gateway from a global inference gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RemoveInferenceGateway.html"
     },
     {
       "name": "RenderUiTemplate",
@@ -3303,6 +3526,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateCluster.html"
     },
     {
+      "name": "UpdateClusterExtension",
+      "methodName": "toUpdateClusterExtension",
+      "description": "Grants permission to update an extension installed on a SageMaker HyperPod cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterExtension.html"
+    },
+    {
       "name": "UpdateClusterSchedulerConfig",
       "methodName": "toUpdateClusterSchedulerConfig",
       "description": "Grants permission to update a cluster scheduler config",
@@ -3394,6 +3624,13 @@
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateFeatureMetadata.html"
     },
     {
+      "name": "UpdateGlobalInferenceGateway",
+      "methodName": "toUpdateGlobalInferenceGateway",
+      "description": "Grants permission to update a global inference gateway",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateGlobalInferenceGateway.html"
+    },
+    {
       "name": "UpdateHub",
       "methodName": "toUpdateHub",
       "description": "Grants permission to update hubs",
@@ -3448,6 +3685,13 @@
       "description": "Grants permission to update an inference experiment",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateInferenceExperiment.html"
+    },
+    {
+      "name": "UpdateInferenceRouter",
+      "methodName": "toUpdateInferenceRouter",
+      "description": "Grants permission to update an inference router",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateInferenceRouter.html"
     },
     {
       "name": "UpdateMlflowApp",
@@ -4661,6 +4905,48 @@
       }
     },
     {
+      "name": "extension",
+      "methodName": "onExtension",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-cluster.html",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:extension/${ClusterIdentifier}/${ExtensionName}/${ExtensionId}",
+      "placeholders": [
+        {
+          "placeholder": "ClusterIdentifier",
+          "name": "clusterIdentifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExtensionName",
+          "name": "extensionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExtensionId",
+          "name": "extensionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
       "name": "feature-group",
       "methodName": "onFeatureGroup",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html",
@@ -4707,6 +4993,38 @@
         {
           "placeholder": "FlowDefinitionName",
           "name": "flowDefinitionName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "global-inference-gateway",
+      "methodName": "onGlobalInferenceGateway",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeGlobalInferenceGateway.html",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:global-inference-gateway/${GlobalInferenceGatewayId}",
+      "placeholders": [
+        {
+          "placeholder": "GlobalInferenceGatewayId",
+          "name": "globalInferenceGatewayId",
           "kind": "required"
         },
         {
@@ -5069,6 +5387,38 @@
         {
           "placeholder": "InferenceRecommendationsJobName",
           "name": "inferenceRecommendationsJobName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
+      "name": "inference-router",
+      "methodName": "onInferenceRouter",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_InferenceRouterSummary.html",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:inference-router/${InferenceRouterName}",
+      "placeholders": [
+        {
+          "placeholder": "InferenceRouterName",
+          "name": "inferenceRouterName",
           "kind": "required"
         },
         {
@@ -6055,6 +6405,38 @@
       "conditionMethods": []
     },
     {
+      "name": "sm-capacity-reservation",
+      "methodName": "onSmCapacityReservation",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCapacityReservation.html",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:sm-capacity-reservation/${CapacityReservationId}",
+      "placeholders": [
+        {
+          "placeholder": "CapacityReservationId",
+          "name": "capacityReservationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ]
+    },
+    {
       "name": "space",
       "methodName": "onSpace",
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html",
@@ -6390,6 +6772,7 @@
         "toCreateAutoMLJob",
         "toCreateAutoMLJobV2",
         "toCreateCluster",
+        "toCreateClusterExtension",
         "toCreateClusterSchedulerConfig",
         "toCreateCodeRepository",
         "toCreateCompilationJob",
@@ -6406,6 +6789,7 @@
         "toCreateExperiment",
         "toCreateFeatureGroup",
         "toCreateFlowDefinition",
+        "toCreateGlobalInferenceGateway",
         "toCreateHub",
         "toCreateHubContentReference",
         "toCreateHumanTaskUi",
@@ -6414,6 +6798,7 @@
         "toCreateInferenceComponent",
         "toCreateInferenceExperiment",
         "toCreateInferenceRecommendationsJob",
+        "toCreateInferenceRouter",
         "toCreateJob",
         "toCreateLabelingJob",
         "toCreateMlflowApp",
@@ -6467,6 +6852,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys",
       "relatedActionMethods": [
         "toAddAssociation",
+        "toAddInferenceGateway",
         "toAddTags",
         "toAssociateTrialComponent",
         "toAttachClusterNodeNetworkInterface",
@@ -6494,6 +6880,7 @@
         "toCreateAutoMLJob",
         "toCreateAutoMLJobV2",
         "toCreateCluster",
+        "toCreateClusterExtension",
         "toCreateClusterSchedulerConfig",
         "toCreateCodeRepository",
         "toCreateCompilationJob",
@@ -6510,6 +6897,7 @@
         "toCreateExperiment",
         "toCreateFeatureGroup",
         "toCreateFlowDefinition",
+        "toCreateGlobalInferenceGateway",
         "toCreateHub",
         "toCreateHubContentPresignedUrls",
         "toCreateHubContentReference",
@@ -6520,6 +6908,7 @@
         "toCreateInferenceComponent",
         "toCreateInferenceExperiment",
         "toCreateInferenceRecommendationsJob",
+        "toCreateInferenceRouter",
         "toCreateJob",
         "toCreateLabelingJob",
         "toCreateMlflowApp",
@@ -6566,6 +6955,7 @@
         "toDeleteArtifact",
         "toDeleteAssociation",
         "toDeleteCluster",
+        "toDeleteClusterExtension",
         "toDeleteClusterSchedulerConfig",
         "toDeleteCodeRepository",
         "toDeleteCompilationJob",
@@ -6578,9 +6968,11 @@
         "toDeleteEdgeDeploymentStage",
         "toDeleteEndpoint",
         "toDeleteEndpointConfig",
+        "toDeleteEndpointPolicy",
         "toDeleteExperiment",
         "toDeleteFeatureGroup",
         "toDeleteFlowDefinition",
+        "toDeleteGlobalInferenceGateway",
         "toDeleteHub",
         "toDeleteHubContent",
         "toDeleteHubContentReference",
@@ -6590,6 +6982,7 @@
         "toDeleteImageVersion",
         "toDeleteInferenceComponent",
         "toDeleteInferenceExperiment",
+        "toDeleteInferenceRouter",
         "toDeleteJob",
         "toDeleteMlflowApp",
         "toDeleteMlflowTrackingServer",
@@ -6632,8 +7025,10 @@
         "toDescribeArtifact",
         "toDescribeAutoMLJob",
         "toDescribeAutoMLJobV2",
+        "toDescribeCapacityReservation",
         "toDescribeCluster",
         "toDescribeClusterEvent",
+        "toDescribeClusterExtension",
         "toDescribeClusterNode",
         "toDescribeClusterSchedulerConfig",
         "toDescribeCodeRepository",
@@ -6652,6 +7047,7 @@
         "toDescribeFeatureGroup",
         "toDescribeFeatureMetadata",
         "toDescribeFlowDefinition",
+        "toDescribeGlobalInferenceGateway",
         "toDescribeHub",
         "toDescribeHubContent",
         "toDescribeHumanTaskUi",
@@ -6661,6 +7057,7 @@
         "toDescribeInferenceComponent",
         "toDescribeInferenceExperiment",
         "toDescribeInferenceRecommendationsJob",
+        "toDescribeInferenceRouter",
         "toDescribeJob",
         "toDescribeLabelingJob",
         "toDescribeMlflowApp",
@@ -6684,6 +7081,7 @@
         "toDescribeProcessingJob",
         "toDescribeProject",
         "toDescribeReservedCapacity",
+        "toDescribeResourceAssociations",
         "toDescribeSpace",
         "toDescribeStudioLifecycleConfig",
         "toDescribeSubscribedWorkteam",
@@ -6701,9 +7099,11 @@
         "toDisassociateTrialComponent",
         "toExecuteSamplingOperation",
         "toExecuteTrainingOperation",
+        "toGetCapacityReservationUsage",
         "toGetDeployments",
         "toGetDeviceFleetReport",
         "toGetDeviceRegistration",
+        "toGetEndpointPolicy",
         "toGetModelPackageGroupPolicy",
         "toGetRecord",
         "toGetSamplingOperationResult",
@@ -6713,12 +7113,18 @@
         "toInvokeEndpoint",
         "toInvokeEndpointAsync",
         "toInvokeEndpointWithResponseStream",
+        "toInvokeGlobalInferenceGateway",
+        "toInvokeGlobalInferenceGatewayWithResponseStream",
+        "toInvokeInferenceRouter",
+        "toInvokeInferenceRouterAsync",
         "toListAliases",
         "toListClusterEvents",
+        "toListClusterExtensions",
         "toListClusterNodes",
         "toListHubContentVersions",
         "toListHubContents",
         "toListImageVersions",
+        "toListInferenceGateways",
         "toListLabelingJobsForWorkteam",
         "toListModelCardExportJobs",
         "toListModelCardVersions",
@@ -6731,9 +7137,11 @@
         "toListTags",
         "toListTrainingJobsForHyperParameterTuningJob",
         "toListUltraServersByReservedCapacity",
+        "toPutEndpointPolicy",
         "toPutModelPackageGroupPolicy",
         "toPutRecord",
         "toRegisterDevices",
+        "toRemoveInferenceGateway",
         "toRetryPipelineExecution",
         "toSample",
         "toSampleTrainingSession",
@@ -6776,6 +7184,7 @@
         "toUpdateAppImageConfig",
         "toUpdateArtifact",
         "toUpdateCluster",
+        "toUpdateClusterExtension",
         "toUpdateClusterSchedulerConfig",
         "toUpdateClusterSoftware",
         "toUpdateCodeRepository",
@@ -6789,6 +7198,7 @@
         "toUpdateExperiment",
         "toUpdateFeatureGroup",
         "toUpdateFeatureMetadata",
+        "toUpdateGlobalInferenceGateway",
         "toUpdateHub",
         "toUpdateHubContent",
         "toUpdateHubContentReference",
@@ -6797,6 +7207,7 @@
         "toUpdateInferenceComponent",
         "toUpdateInferenceComponentRuntimeConfig",
         "toUpdateInferenceExperiment",
+        "toUpdateInferenceRouter",
         "toUpdateMlflowApp",
         "toUpdateMlflowTrackingServer",
         "toUpdateModelCard",
@@ -6850,8 +7261,10 @@
         "experiment",
         "experiment-trial",
         "experiment-trial-component",
+        "extension",
         "feature-group",
         "flow-definition",
+        "global-inference-gateway",
         "hub",
         "hub-content",
         "human-task-ui",
@@ -6861,6 +7274,7 @@
         "inference-component",
         "inference-experiment",
         "inference-recommendations-job",
+        "inference-router",
         "job",
         "labeling-job",
         "lineage-group",
@@ -6883,6 +7297,7 @@
         "processing-job",
         "project",
         "reserved-capacity",
+        "sm-capacity-reservation",
         "space",
         "studio-lifecycle-config",
         "training-job",
@@ -6920,6 +7335,7 @@
         "toCreateAutoMLJob",
         "toCreateAutoMLJobV2",
         "toCreateCluster",
+        "toCreateClusterExtension",
         "toCreateClusterSchedulerConfig",
         "toCreateCodeRepository",
         "toCreateCompilationJob",
@@ -6936,6 +7352,7 @@
         "toCreateExperiment",
         "toCreateFeatureGroup",
         "toCreateFlowDefinition",
+        "toCreateGlobalInferenceGateway",
         "toCreateHub",
         "toCreateHubContentReference",
         "toCreateHumanTaskUi",
@@ -6944,6 +7361,7 @@
         "toCreateInferenceComponent",
         "toCreateInferenceExperiment",
         "toCreateInferenceRecommendationsJob",
+        "toCreateInferenceRouter",
         "toCreateJob",
         "toCreateLabelingJob",
         "toCreateMlflowApp",
@@ -7834,13 +8252,38 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
     },
     {
+      "key": "sagemaker:PipelineVersionAlias",
+      "methodName": "ifPipelineVersionAlias",
+      "description": "Filters access to specific version aliases of a SageMaker pipeline",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys",
+      "relatedActionMethods": [
+        "toDescribePipeline",
+        "toDescribePipelineDefinitionForExecution",
+        "toListPipelineExecutions",
+        "toStartPipelineExecution",
+        "toStopPipelineExecution",
+        "toUpdatePipelineVersion"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PipelineVersionAlias",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "sagemaker:PipelineVersionId",
       "methodName": "ifPipelineVersionId",
       "description": "Filters access to specific version IDs of a Sagemaker pipeline",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys",
       "relatedActionMethods": [
         "toDescribePipeline",
+        "toDescribePipelineDefinitionForExecution",
+        "toListPipelineExecutions",
         "toStartPipelineExecution",
+        "toStopPipelineExecution",
         "toUpdatePipelineVersion"
       ],
       "relatedResourceTypes": [],
@@ -7892,6 +8335,7 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys",
       "relatedActionMethods": [
         "toAddAssociation",
+        "toAddInferenceGateway",
         "toAddTags",
         "toAssociateTrialComponent",
         "toAttachClusterNodeNetworkInterface",
@@ -7919,6 +8363,7 @@
         "toCreateAutoMLJob",
         "toCreateAutoMLJobV2",
         "toCreateCluster",
+        "toCreateClusterExtension",
         "toCreateClusterSchedulerConfig",
         "toCreateCodeRepository",
         "toCreateCompilationJob",
@@ -7935,6 +8380,7 @@
         "toCreateExperiment",
         "toCreateFeatureGroup",
         "toCreateFlowDefinition",
+        "toCreateGlobalInferenceGateway",
         "toCreateHub",
         "toCreateHubContentPresignedUrls",
         "toCreateHubContentReference",
@@ -7945,6 +8391,7 @@
         "toCreateInferenceComponent",
         "toCreateInferenceExperiment",
         "toCreateInferenceRecommendationsJob",
+        "toCreateInferenceRouter",
         "toCreateJob",
         "toCreateLabelingJob",
         "toCreateMlflowApp",
@@ -7991,6 +8438,7 @@
         "toDeleteArtifact",
         "toDeleteAssociation",
         "toDeleteCluster",
+        "toDeleteClusterExtension",
         "toDeleteClusterSchedulerConfig",
         "toDeleteCodeRepository",
         "toDeleteCompilationJob",
@@ -8003,9 +8451,11 @@
         "toDeleteEdgeDeploymentStage",
         "toDeleteEndpoint",
         "toDeleteEndpointConfig",
+        "toDeleteEndpointPolicy",
         "toDeleteExperiment",
         "toDeleteFeatureGroup",
         "toDeleteFlowDefinition",
+        "toDeleteGlobalInferenceGateway",
         "toDeleteHub",
         "toDeleteHubContent",
         "toDeleteHubContentReference",
@@ -8015,6 +8465,7 @@
         "toDeleteImageVersion",
         "toDeleteInferenceComponent",
         "toDeleteInferenceExperiment",
+        "toDeleteInferenceRouter",
         "toDeleteJob",
         "toDeleteMlflowApp",
         "toDeleteMlflowTrackingServer",
@@ -8057,8 +8508,10 @@
         "toDescribeArtifact",
         "toDescribeAutoMLJob",
         "toDescribeAutoMLJobV2",
+        "toDescribeCapacityReservation",
         "toDescribeCluster",
         "toDescribeClusterEvent",
+        "toDescribeClusterExtension",
         "toDescribeClusterNode",
         "toDescribeClusterSchedulerConfig",
         "toDescribeCodeRepository",
@@ -8077,6 +8530,7 @@
         "toDescribeFeatureGroup",
         "toDescribeFeatureMetadata",
         "toDescribeFlowDefinition",
+        "toDescribeGlobalInferenceGateway",
         "toDescribeHub",
         "toDescribeHubContent",
         "toDescribeHumanTaskUi",
@@ -8086,6 +8540,7 @@
         "toDescribeInferenceComponent",
         "toDescribeInferenceExperiment",
         "toDescribeInferenceRecommendationsJob",
+        "toDescribeInferenceRouter",
         "toDescribeJob",
         "toDescribeLabelingJob",
         "toDescribeMlflowApp",
@@ -8109,6 +8564,7 @@
         "toDescribeProcessingJob",
         "toDescribeProject",
         "toDescribeReservedCapacity",
+        "toDescribeResourceAssociations",
         "toDescribeSpace",
         "toDescribeStudioLifecycleConfig",
         "toDescribeSubscribedWorkteam",
@@ -8126,9 +8582,11 @@
         "toDisassociateTrialComponent",
         "toExecuteSamplingOperation",
         "toExecuteTrainingOperation",
+        "toGetCapacityReservationUsage",
         "toGetDeployments",
         "toGetDeviceFleetReport",
         "toGetDeviceRegistration",
+        "toGetEndpointPolicy",
         "toGetModelPackageGroupPolicy",
         "toGetRecord",
         "toGetSamplingOperationResult",
@@ -8138,12 +8596,18 @@
         "toInvokeEndpoint",
         "toInvokeEndpointAsync",
         "toInvokeEndpointWithResponseStream",
+        "toInvokeGlobalInferenceGateway",
+        "toInvokeGlobalInferenceGatewayWithResponseStream",
+        "toInvokeInferenceRouter",
+        "toInvokeInferenceRouterAsync",
         "toListAliases",
         "toListClusterEvents",
+        "toListClusterExtensions",
         "toListClusterNodes",
         "toListHubContentVersions",
         "toListHubContents",
         "toListImageVersions",
+        "toListInferenceGateways",
         "toListLabelingJobsForWorkteam",
         "toListModelCardExportJobs",
         "toListModelCardVersions",
@@ -8156,9 +8620,11 @@
         "toListTags",
         "toListTrainingJobsForHyperParameterTuningJob",
         "toListUltraServersByReservedCapacity",
+        "toPutEndpointPolicy",
         "toPutModelPackageGroupPolicy",
         "toPutRecord",
         "toRegisterDevices",
+        "toRemoveInferenceGateway",
         "toRetryPipelineExecution",
         "toSample",
         "toSampleTrainingSession",
@@ -8201,6 +8667,7 @@
         "toUpdateAppImageConfig",
         "toUpdateArtifact",
         "toUpdateCluster",
+        "toUpdateClusterExtension",
         "toUpdateClusterSchedulerConfig",
         "toUpdateClusterSoftware",
         "toUpdateCodeRepository",
@@ -8214,6 +8681,7 @@
         "toUpdateExperiment",
         "toUpdateFeatureGroup",
         "toUpdateFeatureMetadata",
+        "toUpdateGlobalInferenceGateway",
         "toUpdateHub",
         "toUpdateHubContent",
         "toUpdateHubContentReference",
@@ -8222,6 +8690,7 @@
         "toUpdateInferenceComponent",
         "toUpdateInferenceComponentRuntimeConfig",
         "toUpdateInferenceExperiment",
+        "toUpdateInferenceRouter",
         "toUpdateMlflowApp",
         "toUpdateMlflowTrackingServer",
         "toUpdateModelCard",
@@ -8275,8 +8744,10 @@
         "experiment",
         "experiment-trial",
         "experiment-trial-component",
+        "extension",
         "feature-group",
         "flow-definition",
+        "global-inference-gateway",
         "hub",
         "hub-content",
         "human-task-ui",
@@ -8286,6 +8757,7 @@
         "inference-component",
         "inference-experiment",
         "inference-recommendations-job",
+        "inference-router",
         "job",
         "labeling-job",
         "lineage-group",
@@ -8308,6 +8780,7 @@
         "processing-job",
         "project",
         "reserved-capacity",
+        "sm-capacity-reservation",
         "space",
         "studio-lifecycle-config",
         "training-job",
@@ -8396,6 +8869,24 @@
         "number"
       ],
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "sagemaker:SourceInferenceRouterArn",
+      "methodName": "ifSourceInferenceRouterArn",
+      "description": "Filters access by the ARN of the inference router that the request was routed through",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys",
+      "relatedActionMethods": [
+        "toInvokeEndpoint",
+        "toInvokeEndpointAsync"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SourceInferenceRouterArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
     },
     {
       "key": "sagemaker:SpaceSharingType",

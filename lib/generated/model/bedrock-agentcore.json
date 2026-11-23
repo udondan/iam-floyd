@@ -59,6 +59,7 @@
       "DeleteConsentPortal",
       "DeleteDataset",
       "DeleteDatasetExamples",
+      "DeleteDatasetGeneration",
       "DeleteEvaluator",
       "DeleteEvent",
       "DeleteGateway",
@@ -104,6 +105,7 @@
       "StartBatchEvaluation",
       "StartBrowserSession",
       "StartCodeInterpreterSession",
+      "StartDatasetGeneration",
       "StartMemoryExtractionJob",
       "StartPolicyGeneration",
       "StartRecommendation",
@@ -115,6 +117,8 @@
       "TagResource",
       "UntagResource",
       "UpdateABTest",
+      "UpdateAgentInsight",
+      "UpdateAgentInsightStore",
       "UpdateAgentRuntime",
       "UpdateAgentRuntimeEndpoint",
       "UpdateApiKeyCredentialProvider",
@@ -164,6 +168,8 @@
       "ConnectBrowserLiveViewStream",
       "GetABTest",
       "GetAgentCard",
+      "GetAgentInsight",
+      "GetAgentInsightStore",
       "GetAgentRuntime",
       "GetAgentRuntimeEndpoint",
       "GetApiKeyCredentialProvider",
@@ -178,6 +184,7 @@
       "GetConfigurationBundleVersion",
       "GetConsentPortal",
       "GetDataset",
+      "GetDatasetGeneration",
       "GetEvaluator",
       "GetEvent",
       "GetGateway",
@@ -221,6 +228,8 @@
     "List": [
       "ListABTests",
       "ListActors",
+      "ListAgentInsightStores",
+      "ListAgentInsights",
       "ListAgentRuntimeEndpoints",
       "ListAgentRuntimeVersions",
       "ListAgentRuntimeVersionsByCapacityProvider",
@@ -236,6 +245,7 @@
       "ListConfigurationBundles",
       "ListConsentPortals",
       "ListDatasetExamples",
+      "ListDatasetGenerations",
       "ListDatasetVersions",
       "ListDatasets",
       "ListEvaluators",
@@ -738,6 +748,13 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteDatasetExamples.html"
     },
     {
+      "name": "DeleteDatasetGeneration",
+      "methodName": "toDeleteDatasetGeneration",
+      "description": "Grants permission to delete a dataset generation job record",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteDatasetGeneration.html"
+    },
+    {
       "name": "DeleteEvaluator",
       "methodName": "toDeleteEvaluator",
       "description": "Grants permission to delete an evaluator",
@@ -927,6 +944,20 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetAgentCard.html"
     },
     {
+      "name": "GetAgentInsight",
+      "methodName": "toGetAgentInsight",
+      "description": "Grants permission to get details of an agent insight",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetAgentInsight.html"
+    },
+    {
+      "name": "GetAgentInsightStore",
+      "methodName": "toGetAgentInsightStore",
+      "description": "Grants permission to get details of an agent insight store",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentInsightStore.html"
+    },
+    {
       "name": "GetAgentRuntime",
       "methodName": "toGetAgentRuntime",
       "description": "Grants permission to get details of an agent runtime",
@@ -1023,6 +1054,13 @@
       "description": "Grants permission to get details of a dataset",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetDataset.html"
+    },
+    {
+      "name": "GetDatasetGeneration",
+      "methodName": "toGetDatasetGeneration",
+      "description": "Grants permission to get details of a dataset generation job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetDatasetGeneration.html"
     },
     {
       "name": "GetEvaluator",
@@ -1361,6 +1399,20 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListActors.html"
     },
     {
+      "name": "ListAgentInsightStores",
+      "methodName": "toListAgentInsightStores",
+      "description": "Grants permission to list agent insight stores",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentInsightStores.html"
+    },
+    {
+      "name": "ListAgentInsights",
+      "methodName": "toListAgentInsights",
+      "description": "Grants permission to list agent insights",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListAgentInsights.html"
+    },
+    {
       "name": "ListAgentRuntimeEndpoints",
       "methodName": "toListAgentRuntimeEndpoints",
       "description": "Grants permission to list agent runtime endpoints",
@@ -1471,6 +1523,13 @@
       "description": "Grants permission to list examples in a dataset",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListDatasetExamples.html"
+    },
+    {
+      "name": "ListDatasetGenerations",
+      "methodName": "toListDatasetGenerations",
+      "description": "Grants permission to list the dataset generation jobs of a dataset",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListDatasetGenerations.html"
     },
     {
       "name": "ListDatasetVersions",
@@ -1781,6 +1840,13 @@
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html"
     },
     {
+      "name": "StartDatasetGeneration",
+      "methodName": "toStartDatasetGeneration",
+      "description": "Grants permission to start a dataset generation job that adds examples to a dataset from agent traces",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartDatasetGeneration.html"
+    },
+    {
       "name": "StartMemoryExtractionJob",
       "methodName": "toStartMemoryExtractionJob",
       "description": "Grants permission to start memory extraction job",
@@ -1856,6 +1922,20 @@
       "description": "Grants permission to update an A/B test",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateABTest.html"
+    },
+    {
+      "name": "UpdateAgentInsight",
+      "methodName": "toUpdateAgentInsight",
+      "description": "Grants permission to update an agent insight",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateAgentInsight.html"
+    },
+    {
+      "name": "UpdateAgentInsightStore",
+      "methodName": "toUpdateAgentInsightStore",
+      "description": "Grants permission to update an agent insight store",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentInsightStore.html"
     },
     {
       "name": "UpdateAgentRuntime",
@@ -2197,6 +2277,35 @@
       "conditionMethods": [
         "ifAwsResourceTag"
       ]
+    },
+    {
+      "name": "agent-insight-store",
+      "methodName": "onAgentInsightStore",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/agentInsightStore.html",
+      "arn": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:agent-insight-store/${AgentInsightStoreId}",
+      "placeholders": [
+        {
+          "placeholder": "AgentInsightStoreId",
+          "name": "agentInsightStoreId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
     },
     {
       "name": "apikeycredentialprovider",
@@ -3401,6 +3510,7 @@
         "toDeleteConsentPortal",
         "toDeleteDataset",
         "toDeleteDatasetExamples",
+        "toDeleteDatasetGeneration",
         "toDeleteEvaluator",
         "toDeleteEvent",
         "toDeleteGateway",
@@ -3440,6 +3550,7 @@
         "toGetConfigurationBundleVersion",
         "toGetConsentPortal",
         "toGetDataset",
+        "toGetDatasetGeneration",
         "toGetEvaluator",
         "toGetEvent",
         "toGetGateway",
@@ -3488,6 +3599,7 @@
         "toListCodeInterpreterSessions",
         "toListConfigurationBundleVersions",
         "toListDatasetExamples",
+        "toListDatasetGenerations",
         "toListDatasetVersions",
         "toListEvents",
         "toListGatewayRateLimits",
@@ -3516,6 +3628,7 @@
         "toSetTokenVaultCMK",
         "toStartBrowserSession",
         "toStartCodeInterpreterSession",
+        "toStartDatasetGeneration",
         "toStartMemoryExtractionJob",
         "toStartPolicyGeneration",
         "toStopBatchEvaluation",

@@ -15,6 +15,7 @@
       "AddApplicationVpcConfiguration",
       "CreateApplication",
       "CreateApplicationSnapshot",
+      "CreateSnapshot",
       "DeleteApplication",
       "DeleteApplicationCloudWatchLoggingOption",
       "DeleteApplicationInputProcessingConfiguration",
@@ -22,13 +23,17 @@
       "DeleteApplicationReferenceDataSource",
       "DeleteApplicationSnapshot",
       "DeleteApplicationVpcConfiguration",
+      "DeleteSnapshot",
+      "ExportSnapshot",
+      "ImportSnapshot",
       "RollbackApplication",
       "StartApplication",
       "StopApplication",
       "TagResource",
       "UntagResource",
       "UpdateApplication",
-      "UpdateApplicationMaintenanceConfiguration"
+      "UpdateApplicationMaintenanceConfiguration",
+      "CreateSystemSnapshot"
     ],
     "Read": [
       "CreateApplicationPresignedUrl",
@@ -36,14 +41,19 @@
       "DescribeApplicationOperation",
       "DescribeApplicationSnapshot",
       "DescribeApplicationVersion",
+      "DescribeSnapshot",
+      "DescribeSnapshotOperation",
       "DiscoverInputSchema",
       "ListApplicationOperations",
       "ListApplicationSnapshots",
       "ListApplicationVersions",
-      "ListTagsForResource"
+      "ListTagsForResource",
+      "RestoreFromSnapshot"
     ],
     "List": [
-      "ListApplications"
+      "ListApplications",
+      "ListSnapshotOperations",
+      "ListSnapshots"
     ],
     "Tagging": [
       "TagResource",
@@ -119,6 +129,13 @@
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_CreateApplicationSnapshot.html"
     },
     {
+      "name": "CreateSnapshot",
+      "methodName": "toCreateSnapshot",
+      "description": "Grants permission to create a snapshot from a running application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_CreateSnapshot.html"
+    },
+    {
       "name": "DeleteApplication",
       "methodName": "toDeleteApplication",
       "description": "Grants permission to delete the application",
@@ -168,6 +185,13 @@
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationVpcConfiguration.html"
     },
     {
+      "name": "DeleteSnapshot",
+      "methodName": "toDeleteSnapshot",
+      "description": "Grants permission to delete a snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteSnapshot.html"
+    },
+    {
       "name": "DescribeApplication",
       "methodName": "toDescribeApplication",
       "description": "Grants permission to describe the specified application",
@@ -196,11 +220,39 @@
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeApplicationVersion.html"
     },
     {
+      "name": "DescribeSnapshot",
+      "methodName": "toDescribeSnapshot",
+      "description": "Grants permission to describe a snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeSnapshot.html"
+    },
+    {
+      "name": "DescribeSnapshotOperation",
+      "methodName": "toDescribeSnapshotOperation",
+      "description": "Grants permission to describe a snapshot operation for a snapshot like import, export, create and delete",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeSnapshotOperation.html"
+    },
+    {
       "name": "DiscoverInputSchema",
       "methodName": "toDiscoverInputSchema",
       "description": "Grants permission to discover the input schema for the application",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DiscoverInputSchema.html"
+    },
+    {
+      "name": "ExportSnapshot",
+      "methodName": "toExportSnapshot",
+      "description": "Grants permission to export an MSF snapshot to a customer-managed S3 location",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ExportSnapshot.html"
+    },
+    {
+      "name": "ImportSnapshot",
+      "methodName": "toImportSnapshot",
+      "description": "Grants permission to import a Flink savepoint from a customer-managed S3 location as an MSF snapshot",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ImportSnapshot.html"
     },
     {
       "name": "ListApplicationOperations",
@@ -231,9 +283,23 @@
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListApplications.html"
     },
     {
+      "name": "ListSnapshotOperations",
+      "methodName": "toListSnapshotOperations",
+      "description": "Grants permission to list snapshot operations for a snapshot like import, export, create and delete",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListSnapshotOperations.html"
+    },
+    {
+      "name": "ListSnapshots",
+      "methodName": "toListSnapshots",
+      "description": "Grants permission to list snapshots in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListSnapshots.html"
+    },
+    {
       "name": "ListTagsForResource",
       "methodName": "toListTagsForResource",
-      "description": "Grants permission to fetch the tags associated with the application",
+      "description": "Grants permission to fetch the tags associated with the resource like application, snapshot",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListTagsForResource.html"
     },
@@ -261,14 +327,14 @@
     {
       "name": "TagResource",
       "methodName": "toTagResource",
-      "description": "Grants permission to add tags to the application",
+      "description": "Grants permission to add tags to the resource like an application, snapshot",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_TagResource.html"
     },
     {
       "name": "UntagResource",
       "methodName": "toUntagResource",
-      "description": "Grants permission to remove the specified tags from the application",
+      "description": "Grants permission to remove the specified tags from the resource like application, snapshot",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UntagResource.html"
     },
@@ -285,6 +351,20 @@
       "description": "Grants permission to update the maintenance configuration of an application",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UpdateApplicationMaintenanceConfiguration.html"
+    },
+    {
+      "name": "CreateSystemSnapshot",
+      "methodName": "toCreateSystemSnapshot",
+      "description": "Grants permission to enable system snapshot creation for a running application from StartApplication, UpdateApplication, StopApplication, AddApplicationVPCConfiguration, DeleteApplicationVPCConfiguration, AddApplicationCloudWatchLoggingOption and DeleteApplicationCloudWatchLoggingOption",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/java/security-iam-snapshots.html#security-iam-snapshots-actions"
+    },
+    {
+      "name": "RestoreFromSnapshot",
+      "methodName": "toRestoreFromSnapshot",
+      "description": "Grants permission to restore an application from a snapshot",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/java/security-iam-snapshots.html#security-iam-snapshots-actions"
     }
   ],
   "resources": [
@@ -318,6 +398,37 @@
       "conditionMethods": [
         "ifAwsResourceTag"
       ]
+    },
+    {
+      "name": "snapshot",
+      "methodName": "onSnapshot",
+      "url": "https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-how-it-works.html",
+      "arn": "arn:${Partition}:kinesisanalytics:${Region}:${Account}:snapshot/${SnapshotName}",
+      "placeholders": [
+        {
+          "placeholder": "SnapshotName",
+          "name": "snapshotName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     }
   ],
   "conditions": [
@@ -328,6 +439,8 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
       "relatedActionMethods": [
         "toCreateApplication",
+        "toCreateSnapshot",
+        "toImportSnapshot",
         "toTagResource"
       ],
       "relatedResourceTypes": [],
@@ -343,7 +456,7 @@
     {
       "key": "aws:ResourceTag/${TagKey}",
       "methodName": "ifAwsResourceTag",
-      "description": "Filters access by tag-value assoicated with the resource",
+      "description": "Filters access by tag-value associated with the resource",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
       "relatedActionMethods": [
         "toAddApplicationCloudWatchLoggingOption",
@@ -354,6 +467,7 @@
         "toAddApplicationVpcConfiguration",
         "toCreateApplicationPresignedUrl",
         "toCreateApplicationSnapshot",
+        "toCreateSnapshot",
         "toDeleteApplication",
         "toDeleteApplicationCloudWatchLoggingOption",
         "toDeleteApplicationInputProcessingConfiguration",
@@ -361,13 +475,20 @@
         "toDeleteApplicationReferenceDataSource",
         "toDeleteApplicationSnapshot",
         "toDeleteApplicationVpcConfiguration",
+        "toDeleteSnapshot",
         "toDescribeApplication",
         "toDescribeApplicationOperation",
         "toDescribeApplicationSnapshot",
         "toDescribeApplicationVersion",
+        "toDescribeSnapshot",
+        "toDescribeSnapshotOperation",
+        "toExportSnapshot",
+        "toImportSnapshot",
         "toListApplicationOperations",
         "toListApplicationSnapshots",
         "toListApplicationVersions",
+        "toListSnapshotOperations",
+        "toListSnapshots",
         "toListTagsForResource",
         "toRollbackApplication",
         "toStartApplication",
@@ -375,10 +496,13 @@
         "toTagResource",
         "toUntagResource",
         "toUpdateApplication",
-        "toUpdateApplicationMaintenanceConfiguration"
+        "toUpdateApplicationMaintenanceConfiguration",
+        "toCreateSystemSnapshot",
+        "toRestoreFromSnapshot"
       ],
       "relatedResourceTypes": [
-        "application"
+        "application",
+        "snapshot"
       ],
       "keyLiteral": "aws:ResourceTag/",
       "valueKind": "string",
@@ -396,6 +520,8 @@
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
       "relatedActionMethods": [
         "toCreateApplication",
+        "toCreateSnapshot",
+        "toImportSnapshot",
         "toTagResource",
         "toUntagResource"
       ],

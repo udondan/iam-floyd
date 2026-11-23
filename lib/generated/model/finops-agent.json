@@ -31,7 +31,8 @@
       "UpdateAgentSpace",
       "UpdateAutomation",
       "UpdateConnection",
-      "UpdateDocument"
+      "UpdateDocument",
+      "UpdateOrganizationAccess"
     ],
     "Read": [
       "GetAgentRequest",
@@ -43,6 +44,7 @@
       "GetDocumentContent",
       "GetDocumentMetadata",
       "GetIntegration",
+      "GetOrganizationAccess",
       "GetTask",
       "GetTurn"
     ],
@@ -250,6 +252,13 @@
       "url": "https://docs.aws.amazon.com/finops-agent/"
     },
     {
+      "name": "GetOrganizationAccess",
+      "methodName": "toGetOrganizationAccess",
+      "description": "Grants permission to view the organization-wide access setting for FinOps Agent",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
       "name": "GetTask",
       "methodName": "toGetTask",
       "description": "Grants permission to view details of a task",
@@ -379,6 +388,13 @@
       "name": "UpdateDocument",
       "methodName": "toUpdateDocument",
       "description": "Grants permission to update a document's content and metadata",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/finops-agent/"
+    },
+    {
+      "name": "UpdateOrganizationAccess",
+      "methodName": "toUpdateOrganizationAccess",
+      "description": "Grants permission to enable or disable organization-wide access for FinOps Agent",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/finops-agent/"
     }

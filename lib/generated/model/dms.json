@@ -1364,7 +1364,13 @@
       "conditionMethods": [
         "ifAwsResourceTag",
         "ifRepTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_dms",
+        "interface": "IReplicationInstanceRef",
+        "property": "replicationInstanceRef",
+        "arn": "replicationInstanceArn"
+      }
     },
     {
       "name": "ReplicationSubnetGroup",

@@ -22,6 +22,7 @@
       "DeleteRequesterGateway",
       "DeleteResponderGateway",
       "DisassociateCertificate",
+      "PutLinkFlows",
       "RejectLink",
       "TagResource",
       "UntagResource",
@@ -32,6 +33,8 @@
       "UpdateResponderGateway"
     ],
     "Read": [
+      "GetAvailableModule",
+      "GetAvailableModuleVersion",
       "GetCertificateAssociation",
       "GetInboundExternalLink",
       "GetLink",
@@ -39,14 +42,18 @@
       "GetOutboundExternalLink",
       "GetRequesterGateway",
       "GetResponderGateway",
+      "GetUpdate",
       "ListTagsForResource"
     ],
     "List": [
+      "ListAvailableModuleVersions",
+      "ListAvailableModules",
       "ListCertificateAssociations",
       "ListLinkRoutingRules",
       "ListLinks",
       "ListRequesterGateways",
-      "ListResponderGateways"
+      "ListResponderGateways",
+      "ListUpdates"
     ],
     "Tagging": [
       "TagResource",
@@ -172,6 +179,20 @@
       "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DisassociateCertificate.html"
     },
     {
+      "name": "GetAvailableModule",
+      "methodName": "toGetAvailableModule",
+      "description": "Grants permission to retrieve information about a module that you can attach",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetAvailableModule.html"
+    },
+    {
+      "name": "GetAvailableModuleVersion",
+      "methodName": "toGetAvailableModuleVersion",
+      "description": "Grants permission to retrieve information about a version of a module that you can attach",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetAvailableModuleVersion.html"
+    },
+    {
       "name": "GetCertificateAssociation",
       "methodName": "toGetCertificateAssociation",
       "description": "Grants permission to retrieve details of a certificate association with a responder gateway",
@@ -221,6 +242,27 @@
       "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetResponderGateway.html"
     },
     {
+      "name": "GetUpdate",
+      "methodName": "toGetUpdate",
+      "description": "Grants permission to retrieve information about an update",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetUpdate.html"
+    },
+    {
+      "name": "ListAvailableModuleVersions",
+      "methodName": "toListAvailableModuleVersions",
+      "description": "Grants permission to list the versions of a module that you can attach",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListAvailableModuleVersions.html"
+    },
+    {
+      "name": "ListAvailableModules",
+      "methodName": "toListAvailableModules",
+      "description": "Grants permission to list the modules that you can attach",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListAvailableModules.html"
+    },
+    {
       "name": "ListCertificateAssociations",
       "methodName": "toListCertificateAssociations",
       "description": "Grants permission to list certificate associations for a responder gateway",
@@ -261,6 +303,20 @@
       "description": "Grants permission to list tags for a resource",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListUpdates",
+      "methodName": "toListUpdates",
+      "description": "Grants permission to list the updates on a gateway",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListUpdates.html"
+    },
+    {
+      "name": "PutLinkFlows",
+      "methodName": "toPutLinkFlows",
+      "description": "Grants permission to replace the flow configuration of a link",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_PutLinkFlows.html"
     },
     {
       "name": "RejectLink",
@@ -608,6 +664,7 @@
         "toListCertificateAssociations",
         "toListLinkRoutingRules",
         "toListTagsForResource",
+        "toPutLinkFlows",
         "toRejectLink",
         "toTagResource",
         "toUntagResource",
@@ -710,6 +767,7 @@
         "toGetLinkRoutingRule",
         "toListLinkRoutingRules",
         "toListTagsForResource",
+        "toPutLinkFlows",
         "toRejectLink",
         "toTagResource",
         "toUntagResource",
@@ -795,6 +853,7 @@
         "toGetRequesterGateway",
         "toListLinkRoutingRules",
         "toListTagsForResource",
+        "toPutLinkFlows",
         "toRejectLink",
         "toTagResource",
         "toUntagResource",
@@ -839,6 +898,7 @@
         "toListCertificateAssociations",
         "toListLinkRoutingRules",
         "toListTagsForResource",
+        "toPutLinkFlows",
         "toRejectLink",
         "toTagResource",
         "toUntagResource",

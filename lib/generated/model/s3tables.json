@@ -20,6 +20,7 @@
       "DeleteTableBucketReplication",
       "DeleteTablePolicy",
       "DeleteTableReplication",
+      "DisassociateTableReplication",
       "PutTableBucketEncryption",
       "PutTableBucketLogging",
       "PutTableBucketMaintenanceConfiguration",
@@ -175,6 +176,13 @@
       "description": "Grants permission to delete table replication configuration on a table",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableReplication.html"
+    },
+    {
+      "name": "DisassociateTableReplication",
+      "methodName": "toDisassociateTableReplication",
+      "description": "Grants permission to disassociate table replication on a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DisassociateTableReplication.html"
     },
     {
       "name": "GetNamespace",
@@ -633,6 +641,7 @@
         "toDeleteTableBucketReplication",
         "toDeleteTablePolicy",
         "toDeleteTableReplication",
+        "toDisassociateTableReplication",
         "toGetNamespace",
         "toGetTable",
         "toGetTableBucket",
@@ -792,6 +801,7 @@
         "toDeleteTableBucketReplication",
         "toDeleteTablePolicy",
         "toDeleteTableReplication",
+        "toDisassociateTableReplication",
         "toGetNamespace",
         "toGetTable",
         "toGetTableBucket",
@@ -865,6 +875,7 @@
         "toDeleteTable",
         "toDeleteTablePolicy",
         "toDeleteTableReplication",
+        "toDisassociateTableReplication",
         "toGetNamespace",
         "toGetTable",
         "toGetTableEncryption",
@@ -918,6 +929,7 @@
         "toDeleteTable",
         "toDeleteTablePolicy",
         "toDeleteTableReplication",
+        "toDisassociateTableReplication",
         "toGetTable",
         "toGetTableEncryption",
         "toGetTableMaintenanceConfiguration",

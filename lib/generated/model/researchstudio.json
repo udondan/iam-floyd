@@ -10,7 +10,8 @@
       "AssignPrincipal",
       "CreateApplication",
       "DeleteApplication",
-      "DeletePrincipal"
+      "DeletePrincipal",
+      "UpdateApplication"
     ],
     "Read": [
       "GetApplication"
@@ -23,44 +24,51 @@
     {
       "name": "AssignPrincipal",
       "methodName": "toAssignPrincipal",
-      "description": "Grants permission to assign princiapl",
+      "description": "Grants permission to assign a principal to a Bio Discovery application",
       "accessLevel": "Write",
-      "url": ""
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_AssignPrincipal.html"
     },
     {
       "name": "CreateApplication",
       "methodName": "toCreateApplication",
-      "description": "Grants permission to create application",
+      "description": "Grants permission to create a Bio Discovery application",
       "accessLevel": "Write",
-      "url": ""
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_CreateApplication.html"
     },
     {
       "name": "DeleteApplication",
       "methodName": "toDeleteApplication",
-      "description": "Grants permission to delete application",
+      "description": "Grants permission to delete a Bio Discovery application",
       "accessLevel": "Write",
-      "url": ""
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_DeleteApplication.html"
     },
     {
       "name": "DeletePrincipal",
       "methodName": "toDeletePrincipal",
-      "description": "Grants permission to delete principal",
+      "description": "Grants permission to remove a principal from a Bio Discovery application",
       "accessLevel": "Write",
-      "url": ""
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_DeletePrincipal.html"
     },
     {
       "name": "GetApplication",
       "methodName": "toGetApplication",
-      "description": "Grants permission to get application",
+      "description": "Grants permission to retrieve the details of a Bio Discovery application",
       "accessLevel": "Read",
-      "url": ""
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_GetApplication.html"
     },
     {
       "name": "ListApplications",
       "methodName": "toListApplications",
-      "description": "Grants permission to list applications",
+      "description": "Grants permission to list the Bio Discovery applications in an account",
       "accessLevel": "List",
-      "url": ""
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to update a Bio Discovery application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/researchstudio/latest/APIReference/API_UpdateApplication.html"
     }
   ],
   "resources": [],

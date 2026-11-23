@@ -511,7 +511,7 @@
     {
       "name": "ListDiscoveredResources",
       "methodName": "toListDiscoveredResources",
-      "description": "Grants permission to list the resources found by a discovery job (paginated)",
+      "description": "Grants permission to list the resources in scope for an environment or project (paginated)",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/assurance/latest/APIReference/API_ListDiscoveredResources.html"
     },

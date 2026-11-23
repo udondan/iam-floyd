@@ -14,7 +14,9 @@
       "DeleteConnector",
       "DeleteProfile",
       "PutAgentRuntimeConfiguration",
+      "PutPartner",
       "RejectConnector",
+      "RemovePartner",
       "TagResource",
       "UntagResource",
       "UpdateAccountSettings",
@@ -26,6 +28,9 @@
       "GetAgent",
       "GetAgentRuntimeConfiguration",
       "GetConnector",
+      "GetPartner",
+      "GetPartnerByAccountId",
+      "GetPartnerByArn",
       "GetWebAppUrl",
       "ListAgents",
       "ListTagsForResource"
@@ -111,6 +116,27 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
     },
     {
+      "name": "GetPartner",
+      "methodName": "toGetPartner",
+      "description": "Grants permission to invoke GetPartner on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetPartnerByAccountId",
+      "methodName": "toGetPartnerByAccountId",
+      "description": "Grants permission to invoke GetPartnerByAccountId on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "GetPartnerByArn",
+      "methodName": "toGetPartnerByArn",
+      "description": "Grants permission to invoke GetPartnerByArn on AWS Transform",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
       "name": "GetWebAppUrl",
       "methodName": "toGetWebAppUrl",
       "description": "Grants permission to invoke GetWebAppUrl on AWS Transform",
@@ -156,9 +182,23 @@
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
     },
     {
+      "name": "PutPartner",
+      "methodName": "toPutPartner",
+      "description": "Grants permission to invoke PutPartner on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
       "name": "RejectConnector",
       "methodName": "toRejectConnector",
       "description": "Grants permission to invoke RejectConnector on AWS Transform",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
+    },
+    {
+      "name": "RemovePartner",
+      "methodName": "toRemovePartner",
+      "description": "Grants permission to invoke RemovePartner on AWS Transform",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html"
     },

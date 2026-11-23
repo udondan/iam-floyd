@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "filename": "abuse-signal",
+  "className": "Abuse",
+  "name": "abuse",
+  "servicePrefix": "abuse",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_abuse-signal.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateAbuseReport"
+    ],
+    "Read": [
+      "GetAbuseReportStatus",
+      "ListAbuseReportStatuses"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateAbuseReport",
+      "methodName": "toCreateAbuseReport",
+      "description": "Grants permission to submit a new abuse report",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/abuse-signal/latest/APIReference/API_CreateAbuseReport.html"
+    },
+    {
+      "name": "GetAbuseReportStatus",
+      "methodName": "toGetAbuseReportStatus",
+      "description": "Grants permission to retrieve the status of an abuse report",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/abuse-signal/latest/APIReference/API_GetAbuseReportStatus.html"
+    },
+    {
+      "name": "ListAbuseReportStatuses",
+      "methodName": "toListAbuseReportStatuses",
+      "description": "Grants permission to list abuse report statuses",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/abuse-signal/latest/APIReference/API_ListAbuseReportStatuses.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

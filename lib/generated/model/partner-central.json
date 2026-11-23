@@ -16,9 +16,11 @@
       "AssociateBenefitApplicationResource",
       "AssociateBusinessPlan",
       "AssociateOpportunity",
+      "BatchCreateCampaignAsset",
       "CancelBenefitApplication",
       "CancelBusinessPlan",
       "CancelBusinessPlanSubmissionTask",
+      "CancelChannelContract",
       "CancelChannelHandshake",
       "CancelConnection",
       "CancelConnectionInvitation",
@@ -26,8 +28,12 @@
       "CreateBenefitApplication",
       "CreateBusinessPlan",
       "CreateBusinessPlanItem",
+      "CreateCampaign",
+      "CreateChannelContract",
       "CreateChannelHandshake",
       "CreateConnectionInvitation",
+      "CreateCustomerAccount",
+      "CreateDataSubscription",
       "CreateEngagement",
       "CreateEngagementContext",
       "CreateEngagementInvitation",
@@ -40,11 +46,18 @@
       "CreateResourceSnapshot",
       "CreateResourceSnapshotJob",
       "CreateRevenueAttribution",
+      "CreateSocialConnectionAuthorizationUrl",
+      "DeactivateCampaignAsset",
       "DeleteBusinessPlanAttachment",
       "DeleteBusinessPlanItem",
+      "DeleteCampaign",
+      "DeleteCampaignAsset",
+      "DeleteCustomerAccount",
+      "DeleteDataSubscription",
       "DeleteProgramManagementAccount",
       "DeleteRelationship",
       "DeleteResourceSnapshotJob",
+      "DeleteSocialConnection",
       "DisassociateAwsTrainingCertificationEmailDomain",
       "DisassociateBenefitApplicationResource",
       "DisassociateBusinessPlan",
@@ -60,8 +73,12 @@
       "SendEmailVerificationCode",
       "StartBusinessPlanAttachmentImportTask",
       "StartBusinessPlanSubmissionTask",
+      "StartCampaignAssetActivationTask",
+      "StartCampaignAssetExportTask",
+      "StartCustomerAccountBulkJob",
       "StartEngagementByAcceptingInvitationTask",
       "StartEngagementFromOpportunityTask",
+      "StartOpportunityBulkJob",
       "StartOpportunityFromEngagementTask",
       "StartProfileUpdateTask",
       "StartProspectingFromEngagementTask",
@@ -78,8 +95,12 @@
       "UpdateBenefitApplication",
       "UpdateBusinessPlan",
       "UpdateBusinessPlanItem",
+      "UpdateCampaign",
+      "UpdateCampaignAsset",
       "UpdateConnectionPreferences",
+      "UpdateCustomerAccount",
       "UpdateEngagementContext",
+      "UpdateMarketplaceRevenueShare",
       "UpdateMarketplaceRevenueShareAllocation",
       "UpdateOpportunity",
       "UpdateProgramManagementAccount",
@@ -104,14 +125,26 @@
       "GetBusinessPlanItemSchema",
       "GetBusinessPlanSettings",
       "GetBusinessPlanSubmissionTask",
+      "GetCampaign",
+      "GetCampaignAsset",
+      "GetCampaignAssetActivationTask",
+      "GetCampaignAssetExportTask",
+      "GetCampaignTemplate",
+      "GetChannelContract",
       "GetConnection",
       "GetConnectionInvitation",
       "GetConnectionPreferences",
+      "GetCustomerAccount",
+      "GetCustomerAccountBulkJob",
+      "GetCustomerAccountBulkJobReportUrl",
+      "GetCustomerAccountStatistics",
+      "GetDataSubscription",
       "GetEngagement",
       "GetEngagementInvitation",
       "GetMarketplaceRevenueShare",
       "GetMarketplaceRevenueShareAllocation",
       "GetOpportunity",
+      "GetOpportunityBulkJobReportUrl",
       "GetPartner",
       "GetPartnerCentralContentDocument",
       "GetPartnerCentralContentMetadata",
@@ -149,16 +182,25 @@
       "ListBusinessPlanItems",
       "ListBusinessPlanSubmissionTasks",
       "ListBusinessPlans",
+      "ListCampaignAssets",
+      "ListCampaigns",
+      "ListChannelContracts",
       "ListChannelHandshakes",
       "ListConnectionInvitations",
       "ListConnections",
+      "ListCustomerAccountBulkJobResults",
+      "ListCustomerAccountBulkJobs",
+      "ListDataSubscriptions",
       "ListEngagementByAcceptingInvitationTasks",
       "ListEngagementFromOpportunityTasks",
+      "ListEngagementGroups",
       "ListEngagementInvitations",
       "ListEngagements",
       "ListMarketplaceRevenueShareAllocations",
       "ListMarketplaceRevenueShares",
       "ListOpportunities",
+      "ListOpportunityBulkJobResults",
+      "ListOpportunityBulkJobs",
       "ListOpportunityFromEngagementTasks",
       "ListPartnerCentralContent",
       "ListPartners",
@@ -169,7 +211,11 @@
       "ListResourceSnapshots",
       "ListRevenueAttributionAllocations",
       "ListRevenueAttributions",
+      "ListSocialConnections",
       "ListSolutions",
+      "SearchCampaignTemplates",
+      "SearchCustomerAccounts",
+      "SearchEngagements",
       "SearchOpportunities",
       "SearchPartnerCentralContent",
       "ListCollaborationChannels",
@@ -246,6 +292,13 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateOpportunity.html"
     },
     {
+      "name": "BatchCreateCampaignAsset",
+      "methodName": "toBatchCreateCampaignAsset",
+      "description": "Grants permission to create assets in a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_BatchCreateCampaignAsset.html"
+    },
+    {
       "name": "CancelBenefitApplication",
       "methodName": "toCancelBenefitApplication",
       "description": "Grants permission to cancel benefit applications in AWS Partner Central",
@@ -265,6 +318,13 @@
       "description": "Grants permission to cancel business plan submission tasks in AWS Partner Central",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelBusinessPlanSubmissionTask.html"
+    },
+    {
+      "name": "CancelChannelContract",
+      "methodName": "toCancelChannelContract",
+      "description": "Grants permission to cancel channel contracts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CancelChannelContract.html"
     },
     {
       "name": "CancelChannelHandshake",
@@ -331,6 +391,20 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreateBusinessPlanItem.html"
     },
     {
+      "name": "CreateCampaign",
+      "methodName": "toCreateCampaign",
+      "description": "Grants permission to create a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateCampaign.html"
+    },
+    {
+      "name": "CreateChannelContract",
+      "methodName": "toCreateChannelContract",
+      "description": "Grants permission to create channel contracts in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateChannelContract.html"
+    },
+    {
       "name": "CreateChannelHandshake",
       "methodName": "toCreateChannelHandshake",
       "description": "Grants permission to create channel handshakes in AWS Partner Central",
@@ -346,6 +420,20 @@
       "conditionMethods": [
         "ifCatalog"
       ]
+    },
+    {
+      "name": "CreateCustomerAccount",
+      "methodName": "toCreateCustomerAccount",
+      "description": "Grants permission to create customer account mappings on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateCustomerAccount.html"
+    },
+    {
+      "name": "CreateDataSubscription",
+      "methodName": "toCreateDataSubscription",
+      "description": "Grants permission to create a data subscription that delivers a partner analytics dataset to the caller's own AWS account in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
     },
     {
       "name": "CreateEngagement",
@@ -454,6 +542,23 @@
       ]
     },
     {
+      "name": "CreateSocialConnectionAuthorizationUrl",
+      "methodName": "toCreateSocialConnectionAuthorizationUrl",
+      "description": "Grants permission to create an authorization URL for connecting a social media account in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateSocialConnectionAuthorizationUrl.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "DeactivateCampaignAsset",
+      "methodName": "toDeactivateCampaignAsset",
+      "description": "Grants permission to deactivate an asset of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeactivateCampaignAsset.html"
+    },
+    {
       "name": "DeleteBusinessPlanAttachment",
       "methodName": "toDeleteBusinessPlanAttachment",
       "description": "Grants permission to delete business plan attachments in AWS Partner Central",
@@ -466,6 +571,34 @@
       "description": "Grants permission to delete business plan items in AWS Partner Central",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_DeleteBusinessPlanItem.html"
+    },
+    {
+      "name": "DeleteCampaign",
+      "methodName": "toDeleteCampaign",
+      "description": "Grants permission to delete a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteCampaign.html"
+    },
+    {
+      "name": "DeleteCampaignAsset",
+      "methodName": "toDeleteCampaignAsset",
+      "description": "Grants permission to delete an asset of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteCampaignAsset.html"
+    },
+    {
+      "name": "DeleteCustomerAccount",
+      "methodName": "toDeleteCustomerAccount",
+      "description": "Grants permission to delete customer account mappings on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteCustomerAccount.html"
+    },
+    {
+      "name": "DeleteDataSubscription",
+      "methodName": "toDeleteDataSubscription",
+      "description": "Grants permission to delete a data subscription in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": ""
     },
     {
       "name": "DeleteProgramManagementAccount",
@@ -487,6 +620,13 @@
       "description": "Grants permission to deleting resource snapshot jobs on AWS Partner Central",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteResourceSnapshotJob.html"
+    },
+    {
+      "name": "DeleteSocialConnection",
+      "methodName": "toDeleteSocialConnection",
+      "description": "Grants permission to delete a connected social media account in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteSocialConnection.html"
     },
     {
       "name": "DisassociateAwsTrainingCertificationEmailDomain",
@@ -607,6 +747,51 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetBusinessPlanSubmissionTask.html"
     },
     {
+      "name": "GetCampaign",
+      "methodName": "toGetCampaign",
+      "description": "Grants permission to retrieve a marketing campaign in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCampaign.html"
+    },
+    {
+      "name": "GetCampaignAsset",
+      "methodName": "toGetCampaignAsset",
+      "description": "Grants permission to retrieve an asset of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCampaignAsset.html"
+    },
+    {
+      "name": "GetCampaignAssetActivationTask",
+      "methodName": "toGetCampaignAssetActivationTask",
+      "description": "Grants permission to retrieve the asset activation task of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCampaignAssetActivationTask.html"
+    },
+    {
+      "name": "GetCampaignAssetExportTask",
+      "methodName": "toGetCampaignAssetExportTask",
+      "description": "Grants permission to retrieve an asset export task of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCampaignAssetExportTask.html"
+    },
+    {
+      "name": "GetCampaignTemplate",
+      "methodName": "toGetCampaignTemplate",
+      "description": "Grants permission to retrieve a marketing campaign template in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCampaignTemplate.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "GetChannelContract",
+      "methodName": "toGetChannelContract",
+      "description": "Grants permission to retrieve channel contracts in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_GetChannelContract.html"
+    },
+    {
       "name": "GetConnection",
       "methodName": "toGetConnection",
       "description": "Grants permission to retrieve connection details in AWS Partner Central",
@@ -629,6 +814,44 @@
       "conditionMethods": [
         "ifCatalog"
       ]
+    },
+    {
+      "name": "GetCustomerAccount",
+      "methodName": "toGetCustomerAccount",
+      "description": "Grants permission to retrieve details of customer account mappings on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCustomerAccount.html"
+    },
+    {
+      "name": "GetCustomerAccountBulkJob",
+      "methodName": "toGetCustomerAccountBulkJob",
+      "description": "Grants permission to retrieve details of customer account bulk jobs on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCustomerAccountBulkJob.html"
+    },
+    {
+      "name": "GetCustomerAccountBulkJobReportUrl",
+      "methodName": "toGetCustomerAccountBulkJobReportUrl",
+      "description": "Grants permission to retrieve the report download URL of customer account bulk jobs on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCustomerAccountBulkJobReportUrl.html"
+    },
+    {
+      "name": "GetCustomerAccountStatistics",
+      "methodName": "toGetCustomerAccountStatistics",
+      "description": "Grants permission to retrieve aggregate statistics for customer account mappings on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetCustomerAccountStatistics.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "GetDataSubscription",
+      "methodName": "toGetDataSubscription",
+      "description": "Grants permission to retrieve details of a data subscription in AWS Partner Central",
+      "accessLevel": "Read",
+      "url": ""
     },
     {
       "name": "GetEngagement",
@@ -664,6 +887,13 @@
       "description": "Grants permission to retrieve details of Opportunities on AWS Partner Central",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetOpportunity.html"
+    },
+    {
+      "name": "GetOpportunityBulkJobReportUrl",
+      "methodName": "toGetOpportunityBulkJobReportUrl",
+      "description": "Grants permission to retrieve the report download URL of opportunity bulk jobs on AWS Partner Central",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetOpportunityBulkJobReportUrl.html"
     },
     {
       "name": "GetPartner",
@@ -885,6 +1115,34 @@
       ]
     },
     {
+      "name": "ListCampaignAssets",
+      "methodName": "toListCampaignAssets",
+      "description": "Grants permission to list the assets of a marketing campaign in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListCampaignAssets.html"
+    },
+    {
+      "name": "ListCampaigns",
+      "methodName": "toListCampaigns",
+      "description": "Grants permission to list marketing campaigns in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListCampaigns.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListChannelContracts",
+      "methodName": "toListChannelContracts",
+      "description": "Grants permission to list channel contracts in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListChannelContracts.html",
+      "conditionMethods": [
+        "ifCatalog",
+        "ifChannelContractType"
+      ]
+    },
+    {
       "name": "ListChannelHandshakes",
       "methodName": "toListChannelHandshakes",
       "description": "Grants permission to list channel handshakes in AWS Partner Central",
@@ -912,6 +1170,33 @@
       ]
     },
     {
+      "name": "ListCustomerAccountBulkJobResults",
+      "methodName": "toListCustomerAccountBulkJobResults",
+      "description": "Grants permission to list the per-row results of customer account bulk jobs on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListCustomerAccountBulkJobResults.html"
+    },
+    {
+      "name": "ListCustomerAccountBulkJobs",
+      "methodName": "toListCustomerAccountBulkJobs",
+      "description": "Grants permission to list customer account bulk jobs on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListCustomerAccountBulkJobs.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListDataSubscriptions",
+      "methodName": "toListDataSubscriptions",
+      "description": "Grants permission to list data subscriptions in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
       "name": "ListEngagementByAcceptingInvitationTasks",
       "methodName": "toListEngagementByAcceptingInvitationTasks",
       "description": "Grants permission to listing engagements by accepting invitation tasks in AWS Partner Central",
@@ -927,6 +1212,16 @@
       "description": "Grants permission to listing engagements from opportunity tasks in AWS Partner Central",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementFromOpportunityTasks.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListEngagementGroups",
+      "methodName": "toListEngagementGroups",
+      "description": "Grants permission to list engagement groups on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListEngagementGroups.html",
       "conditionMethods": [
         "ifCatalog"
       ]
@@ -988,6 +1283,23 @@
       "description": "Grants permission to list Opportunities on AWS Partner Central",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListOpportunities.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "ListOpportunityBulkJobResults",
+      "methodName": "toListOpportunityBulkJobResults",
+      "description": "Grants permission to list the per-row results of opportunity bulk jobs on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListOpportunityBulkJobResults.html"
+    },
+    {
+      "name": "ListOpportunityBulkJobs",
+      "methodName": "toListOpportunityBulkJobs",
+      "description": "Grants permission to list opportunity bulk jobs on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListOpportunityBulkJobs.html",
       "conditionMethods": [
         "ifCatalog"
       ]
@@ -1081,6 +1393,16 @@
       ]
     },
     {
+      "name": "ListSocialConnections",
+      "methodName": "toListSocialConnections",
+      "description": "Grants permission to list connected social media accounts in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListSocialConnections.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
       "name": "ListSolutions",
       "methodName": "toListSolutions",
       "description": "Grants permission to list Solutions on AWS Partner Central",
@@ -1167,11 +1489,41 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectEngagementInvitation.html"
     },
     {
+      "name": "SearchCampaignTemplates",
+      "methodName": "toSearchCampaignTemplates",
+      "description": "Grants permission to search marketing campaign templates in AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SearchCampaignTemplates.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "SearchCustomerAccounts",
+      "methodName": "toSearchCustomerAccounts",
+      "description": "Grants permission to search customer account mappings on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SearchCustomerAccounts.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
+      "name": "SearchEngagements",
+      "methodName": "toSearchEngagements",
+      "description": "Grants permission to search engagements on AWS Partner Central",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SearchEngagements.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
       "name": "SearchOpportunities",
       "methodName": "toSearchOpportunities",
       "description": "Grants permission to search Opportunities on AWS Partner Central",
       "accessLevel": "List",
-      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SearchOpportunities.html",
       "conditionMethods": [
         "ifCatalog"
       ]
@@ -1211,6 +1563,30 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartBusinessPlanSubmissionTask.html"
     },
     {
+      "name": "StartCampaignAssetActivationTask",
+      "methodName": "toStartCampaignAssetActivationTask",
+      "description": "Grants permission to activate assets of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartCampaignAssetActivationTask.html"
+    },
+    {
+      "name": "StartCampaignAssetExportTask",
+      "methodName": "toStartCampaignAssetExportTask",
+      "description": "Grants permission to export the assets of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartCampaignAssetExportTask.html"
+    },
+    {
+      "name": "StartCustomerAccountBulkJob",
+      "methodName": "toStartCustomerAccountBulkJob",
+      "description": "Grants permission to start bulk jobs that create customer account mappings on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartCustomerAccountBulkJob.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
+    },
+    {
       "name": "StartEngagementByAcceptingInvitationTask",
       "methodName": "toStartEngagementByAcceptingInvitationTask",
       "description": "Grants permission to initiate tasks that start Engagements on AWS Partner Central by accepting an Engagement Invitation",
@@ -1223,6 +1599,16 @@
       "description": "Grants permission to initiate tasks that start Engagements from Opportunities on AWS Partner Central",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartEngagementFromOpportunityTask.html"
+    },
+    {
+      "name": "StartOpportunityBulkJob",
+      "methodName": "toStartOpportunityBulkJob",
+      "description": "Grants permission to start bulk jobs that create or update Opportunities from a file on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartOpportunityBulkJob.html",
+      "conditionMethods": [
+        "ifCatalog"
+      ]
     },
     {
       "name": "StartOpportunityFromEngagementTask",
@@ -1341,6 +1727,20 @@
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_UpdateBusinessPlanItem.html"
     },
     {
+      "name": "UpdateCampaign",
+      "methodName": "toUpdateCampaign",
+      "description": "Grants permission to update a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateCampaign.html"
+    },
+    {
+      "name": "UpdateCampaignAsset",
+      "methodName": "toUpdateCampaignAsset",
+      "description": "Grants permission to update an asset of a marketing campaign in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateCampaignAsset.html"
+    },
+    {
       "name": "UpdateConnectionPreferences",
       "methodName": "toUpdateConnectionPreferences",
       "description": "Grants permission to update connection preferences in AWS Partner Central",
@@ -1351,11 +1751,25 @@
       ]
     },
     {
+      "name": "UpdateCustomerAccount",
+      "methodName": "toUpdateCustomerAccount",
+      "description": "Grants permission to update customer account mappings on AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateCustomerAccount.html"
+    },
+    {
       "name": "UpdateEngagementContext",
       "methodName": "toUpdateEngagementContext",
       "description": "Grants permission to update engagement contexts in AWS Partner Central",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateEngagementContext.html"
+    },
+    {
+      "name": "UpdateMarketplaceRevenueShare",
+      "methodName": "toUpdateMarketplaceRevenueShare",
+      "description": "Grants permission to update marketplace revenue shares in AWS Partner Central",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_UpdateMarketplaceRevenueShare.html"
     },
     {
       "name": "UpdateMarketplaceRevenueShareAllocation",
@@ -1613,6 +2027,78 @@
       ]
     },
     {
+      "name": "Campaign",
+      "methodName": "onCampaign",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_Campaign.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/campaign/${CampaignId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "CampaignId",
+          "name": "campaignId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ChannelContract",
+      "methodName": "onChannelContract",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/channel-contract/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "ChannelHandshake",
       "methodName": "onChannelHandshake",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html",
@@ -1736,6 +2222,76 @@
       "conditionMethods": []
     },
     {
+      "name": "CustomerAccount",
+      "methodName": "onCustomerAccount",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-customer-accounts.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/customer-account/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "CustomerAccountBulkJob",
+      "methodName": "onCustomerAccountBulkJob",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-customer-accounts.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/customer-account-bulk-job/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
       "name": "Dashboard",
       "methodName": "onDashboard",
       "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/partner-analytics.html",
@@ -1768,6 +2324,42 @@
         }
       ],
       "conditionMethods": []
+    },
+    {
+      "name": "DataSubscription",
+      "methodName": "onDataSubscription",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/partner-analytics.html",
+      "arn": "arn:${Partition}:partnercentral::${Account}:catalog/${Catalog}/ReportingData/${Domain}/DataSubscription/${DataSubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Domain",
+          "name": "domain",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DataSubscriptionId",
+          "name": "dataSubscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "Dataset",
@@ -1833,10 +2425,10 @@
       "conditionMethods": []
     },
     {
-      "name": "MarketplaceRevenueShare",
-      "methodName": "onMarketplaceRevenueShare",
-      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-marketplace-revenue-share.html",
-      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/marketplace-revenue-share/${MarketplaceProductId}",
+      "name": "EngagementGroup",
+      "methodName": "onEngagementGroup",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-your-leads.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-group/${Identifier}",
       "placeholders": [
         {
           "placeholder": "Catalog",
@@ -1844,8 +2436,37 @@
           "kind": "required"
         },
         {
-          "placeholder": "MarketplaceProductId",
-          "name": "marketplaceProductId",
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "MarketplaceRevenueShare",
+      "methodName": "onMarketplaceRevenueShare",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-marketplace-revenue-share.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/marketplace-revenue-share/${MarketplaceRevenueShareId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "MarketplaceRevenueShareId",
+          "name": "marketplaceRevenueShareId",
           "kind": "required"
         },
         {
@@ -1903,6 +2524,40 @@
       "conditionMethods": [
         "ifAwsResourceTag"
       ]
+    },
+    {
+      "name": "OpportunityBulkJob",
+      "methodName": "onOpportunityBulkJob",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-bulk-jobs.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/opportunity-bulk-job/${Identifier}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Identifier",
+          "name": "identifier",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
     },
     {
       "name": "OpportunityFromEngagementTask",
@@ -2166,6 +2821,40 @@
       ]
     },
     {
+      "name": "SocialConnection",
+      "methodName": "onSocialConnection",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SocialConnection.html",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/social-connection/${SocialConnectionId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "SocialConnectionId",
+          "name": "socialConnectionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
       "name": "Solution",
       "methodName": "onSolution",
       "url": "https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListSolutions.html",
@@ -2332,7 +3021,11 @@
       "relatedActionMethods": [
         "toCreateBenefitApplication",
         "toCreateBusinessPlan",
+        "toCreateCampaign",
+        "toCreateChannelContract",
         "toCreateChannelHandshake",
+        "toCreateCustomerAccount",
+        "toCreateDataSubscription",
         "toCreateMarketplaceRevenueShare",
         "toCreateOpportunity",
         "toCreatePartner",
@@ -2368,23 +3061,34 @@
         "toAssociateBenefitApplicationResource",
         "toAssociateBusinessPlan",
         "toAssociateOpportunity",
+        "toBatchCreateCampaignAsset",
         "toCancelBenefitApplication",
         "toCancelBusinessPlan",
         "toCancelBusinessPlanSubmissionTask",
+        "toCancelChannelContract",
         "toCancelChannelHandshake",
         "toCancelProfileUpdateTask",
         "toCreateBenefitApplication",
         "toCreateBusinessPlan",
         "toCreateBusinessPlanItem",
+        "toCreateCampaign",
+        "toCreateChannelContract",
         "toCreateChannelHandshake",
+        "toCreateCustomerAccount",
+        "toCreateDataSubscription",
         "toCreateMarketplaceRevenueShareAllocation",
         "toCreateOpportunity",
         "toCreatePartner",
         "toCreateProgramManagementAccount",
         "toCreateRelationship",
         "toCreateResourceSnapshotJob",
+        "toDeactivateCampaignAsset",
         "toDeleteBusinessPlanAttachment",
         "toDeleteBusinessPlanItem",
+        "toDeleteCampaign",
+        "toDeleteCampaignAsset",
+        "toDeleteCustomerAccount",
+        "toDeleteDataSubscription",
         "toDeleteProgramManagementAccount",
         "toDeleteRelationship",
         "toDeleteResourceSnapshotJob",
@@ -2402,6 +3106,13 @@
         "toGetBusinessPlanAttachmentImportTask",
         "toGetBusinessPlanItem",
         "toGetBusinessPlanSubmissionTask",
+        "toGetCampaign",
+        "toGetCampaignAsset",
+        "toGetCampaignAssetActivationTask",
+        "toGetCampaignAssetExportTask",
+        "toGetChannelContract",
+        "toGetCustomerAccount",
+        "toGetDataSubscription",
         "toGetMarketplaceRevenueShare",
         "toGetMarketplaceRevenueShareAllocation",
         "toGetOpportunity",
@@ -2423,6 +3134,7 @@
         "toListBusinessPlanHistory",
         "toListBusinessPlanItems",
         "toListBusinessPlanSubmissionTasks",
+        "toListCampaignAssets",
         "toListChannelHandshakes",
         "toListMarketplaceRevenueShareAllocations",
         "toListProgramManagementAccounts",
@@ -2435,6 +3147,8 @@
         "toRejectChannelHandshake",
         "toStartBusinessPlanAttachmentImportTask",
         "toStartBusinessPlanSubmissionTask",
+        "toStartCampaignAssetActivationTask",
+        "toStartCampaignAssetExportTask",
         "toStartEngagementByAcceptingInvitationTask",
         "toStartEngagementFromOpportunityTask",
         "toStartOpportunityFromEngagementTask",
@@ -2451,6 +3165,10 @@
         "toUpdateBenefitApplication",
         "toUpdateBusinessPlan",
         "toUpdateBusinessPlanItem",
+        "toUpdateCampaign",
+        "toUpdateCampaignAsset",
+        "toUpdateCustomerAccount",
+        "toUpdateMarketplaceRevenueShare",
         "toUpdateMarketplaceRevenueShareAllocation",
         "toUpdateOpportunity",
         "toUpdateProgramManagementAccount",
@@ -2460,7 +3178,11 @@
       "relatedResourceTypes": [
         "BenefitApplication",
         "BusinessPlan",
+        "Campaign",
+        "ChannelContract",
         "ChannelHandshake",
+        "CustomerAccount",
+        "DataSubscription",
         "MarketplaceRevenueShare",
         "Opportunity",
         "Partner",
@@ -2486,7 +3208,11 @@
       "relatedActionMethods": [
         "toCreateBenefitApplication",
         "toCreateBusinessPlan",
+        "toCreateCampaign",
+        "toCreateChannelContract",
         "toCreateChannelHandshake",
+        "toCreateCustomerAccount",
+        "toCreateDataSubscription",
         "toCreateMarketplaceRevenueShare",
         "toCreateOpportunity",
         "toCreatePartner",
@@ -2591,9 +3317,11 @@
         "toAssociateBenefitApplicationResource",
         "toAssociateBusinessPlan",
         "toAssociateOpportunity",
+        "toBatchCreateCampaignAsset",
         "toCancelBenefitApplication",
         "toCancelBusinessPlan",
         "toCancelBusinessPlanSubmissionTask",
+        "toCancelChannelContract",
         "toCancelChannelHandshake",
         "toCancelConnection",
         "toCancelConnectionInvitation",
@@ -2601,8 +3329,12 @@
         "toCreateBenefitApplication",
         "toCreateBusinessPlan",
         "toCreateBusinessPlanItem",
+        "toCreateCampaign",
+        "toCreateChannelContract",
         "toCreateChannelHandshake",
         "toCreateConnectionInvitation",
+        "toCreateCustomerAccount",
+        "toCreateDataSubscription",
         "toCreateEngagement",
         "toCreateEngagementContext",
         "toCreateEngagementInvitation",
@@ -2615,11 +3347,18 @@
         "toCreateResourceSnapshot",
         "toCreateResourceSnapshotJob",
         "toCreateRevenueAttribution",
+        "toCreateSocialConnectionAuthorizationUrl",
+        "toDeactivateCampaignAsset",
         "toDeleteBusinessPlanAttachment",
         "toDeleteBusinessPlanItem",
+        "toDeleteCampaign",
+        "toDeleteCampaignAsset",
+        "toDeleteCustomerAccount",
+        "toDeleteDataSubscription",
         "toDeleteProgramManagementAccount",
         "toDeleteRelationship",
         "toDeleteResourceSnapshotJob",
+        "toDeleteSocialConnection",
         "toDisassociateAwsTrainingCertificationEmailDomain",
         "toDisassociateBenefitApplicationResource",
         "toDisassociateBusinessPlan",
@@ -2636,14 +3375,26 @@
         "toGetBusinessPlanItemSchema",
         "toGetBusinessPlanSettings",
         "toGetBusinessPlanSubmissionTask",
+        "toGetCampaign",
+        "toGetCampaignAsset",
+        "toGetCampaignAssetActivationTask",
+        "toGetCampaignAssetExportTask",
+        "toGetCampaignTemplate",
+        "toGetChannelContract",
         "toGetConnection",
         "toGetConnectionInvitation",
         "toGetConnectionPreferences",
+        "toGetCustomerAccount",
+        "toGetCustomerAccountBulkJob",
+        "toGetCustomerAccountBulkJobReportUrl",
+        "toGetCustomerAccountStatistics",
+        "toGetDataSubscription",
         "toGetEngagement",
         "toGetEngagementInvitation",
         "toGetMarketplaceRevenueShare",
         "toGetMarketplaceRevenueShareAllocation",
         "toGetOpportunity",
+        "toGetOpportunityBulkJobReportUrl",
         "toGetPartner",
         "toGetPartnerCentralContentDocument",
         "toGetPartnerCentralContentMetadata",
@@ -2673,11 +3424,18 @@
         "toListBusinessPlanItems",
         "toListBusinessPlanSubmissionTasks",
         "toListBusinessPlans",
+        "toListCampaignAssets",
+        "toListCampaigns",
+        "toListChannelContracts",
         "toListChannelHandshakes",
         "toListConnectionInvitations",
         "toListConnections",
+        "toListCustomerAccountBulkJobResults",
+        "toListCustomerAccountBulkJobs",
+        "toListDataSubscriptions",
         "toListEngagementByAcceptingInvitationTasks",
         "toListEngagementFromOpportunityTasks",
+        "toListEngagementGroups",
         "toListEngagementInvitations",
         "toListEngagementMembers",
         "toListEngagementResourceAssociations",
@@ -2685,6 +3443,8 @@
         "toListMarketplaceRevenueShareAllocations",
         "toListMarketplaceRevenueShares",
         "toListOpportunities",
+        "toListOpportunityBulkJobResults",
+        "toListOpportunityBulkJobs",
         "toListOpportunityFromEngagementTasks",
         "toListPartnerCentralContent",
         "toListPartners",
@@ -2695,6 +3455,7 @@
         "toListResourceSnapshots",
         "toListRevenueAttributionAllocations",
         "toListRevenueAttributions",
+        "toListSocialConnections",
         "toListSolutions",
         "toListTagsForResource",
         "toPutAllianceLeadContact",
@@ -2705,13 +3466,20 @@
         "toRejectChannelHandshake",
         "toRejectConnectionInvitation",
         "toRejectEngagementInvitation",
+        "toSearchCampaignTemplates",
+        "toSearchCustomerAccounts",
+        "toSearchEngagements",
         "toSearchOpportunities",
         "toSearchPartnerCentralContent",
         "toSendEmailVerificationCode",
         "toStartBusinessPlanAttachmentImportTask",
         "toStartBusinessPlanSubmissionTask",
+        "toStartCampaignAssetActivationTask",
+        "toStartCampaignAssetExportTask",
+        "toStartCustomerAccountBulkJob",
         "toStartEngagementByAcceptingInvitationTask",
         "toStartEngagementFromOpportunityTask",
+        "toStartOpportunityBulkJob",
         "toStartOpportunityFromEngagementTask",
         "toStartProfileUpdateTask",
         "toStartProspectingFromEngagementTask",
@@ -2728,8 +3496,12 @@
         "toUpdateBenefitApplication",
         "toUpdateBusinessPlan",
         "toUpdateBusinessPlanItem",
+        "toUpdateCampaign",
+        "toUpdateCampaignAsset",
         "toUpdateConnectionPreferences",
+        "toUpdateCustomerAccount",
         "toUpdateEngagementContext",
+        "toUpdateMarketplaceRevenueShare",
         "toUpdateMarketplaceRevenueShareAllocation",
         "toUpdateOpportunity",
         "toUpdateProgramManagementAccount",
@@ -2740,6 +3512,26 @@
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "Catalog",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "partnercentral:ChannelContractType",
+      "methodName": "ifChannelContractType",
+      "description": "Filters access by channel contract types",
+      "url": "https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central",
+      "relatedActionMethods": [
+        "toCancelChannelContract",
+        "toCreateChannelContract",
+        "toGetChannelContract",
+        "toListChannelContracts"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ChannelContractType",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [

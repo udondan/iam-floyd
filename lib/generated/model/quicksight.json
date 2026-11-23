@@ -9,7 +9,9 @@
     "Write": [
       "BatchCreateTopicReviewedAnswer",
       "BatchDeleteKnowledgeBase",
+      "BatchDeletePolicyAssignmentByPolicy",
       "BatchDeleteTopicReviewedAnswer",
+      "BatchPutPolicyAssignmentByPolicy",
       "CancelIngestion",
       "CreateAccountCustomization",
       "CreateAccountSubscription",
@@ -31,6 +33,7 @@
       "CreateIAMPolicyAssignment",
       "CreateIngestion",
       "CreateKnowledgeBase",
+      "CreateKnowledgeBaseRefreshSchedule",
       "CreateLimitsProfile",
       "CreateNamespace",
       "CreateOAuthClientApplication",
@@ -69,9 +72,11 @@
       "DeleteIAMPolicyAssignment",
       "DeleteIdentityPropagationConfig",
       "DeleteKnowledgeBase",
+      "DeleteKnowledgeBaseRefreshSchedule",
       "DeleteLimitsProfile",
       "DeleteNamespace",
       "DeleteOAuthClientApplication",
+      "DeletePolicyAssignment",
       "DeleteRefreshSchedule",
       "DeleteRoleCustomPermission",
       "DeleteRoleMembership",
@@ -93,6 +98,7 @@
       "GenerateEmbedUrlForRegisteredUser",
       "GenerateEmbedUrlForRegisteredUserWithIdentity",
       "PutDataSetRefreshProperties",
+      "PutPolicyAssignment",
       "RegisterUser",
       "RestoreAnalysis",
       "StartAssetBundleExportJob",
@@ -140,6 +146,7 @@
       "UpdateKeyRegistration",
       "UpdateKnowledgeBase",
       "UpdateKnowledgeBasePermissions",
+      "UpdateKnowledgeBaseRefreshSchedule",
       "UpdateLimitsProfile",
       "UpdateOAuthClientApplication",
       "UpdatePublicSharingSettings",
@@ -252,6 +259,7 @@
       "DescribeIpRestriction",
       "DescribeKeyRegistration",
       "DescribeKnowledgeBase",
+      "DescribeKnowledgeBaseRefreshSchedule",
       "DescribeLimitsProfile",
       "DescribeNamespace",
       "DescribeOAuthClientApplication",
@@ -277,6 +285,7 @@
       "GetFlowMetadata",
       "GetFlowPermissions",
       "GetIdentityContext",
+      "GetPolicyAssignment",
       "GetSessionEmbedUrl",
       "ListFolderMembers",
       "ListTagsForResource",
@@ -295,6 +304,7 @@
       "GetAnonymousUserEmbedUrl",
       "GetAuthCode",
       "GetCustomPermissionsSummary",
+      "GetEffectiveCustomPermissions",
       "GetGroupMapping",
       "PassDataSet",
       "PassDataSource",
@@ -346,10 +356,12 @@
       "ListIAMPolicyAssignmentsForUser",
       "ListIdentityPropagationConfigs",
       "ListIngestions",
+      "ListKnowledgeBaseRefreshSchedules",
       "ListKnowledgeBases",
       "ListLimitsProfiles",
       "ListNamespaces",
       "ListOAuthClientApplications",
+      "ListPrincipalsForPolicy",
       "ListRefreshSchedules",
       "ListRoleMemberships",
       "ListSelfUpgrades",
@@ -413,6 +425,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDeleteKnowledgeBase.html"
     },
     {
+      "name": "BatchDeletePolicyAssignmentByPolicy",
+      "methodName": "toBatchDeletePolicyAssignmentByPolicy",
+      "description": "Grants permission to remove a policy assignment from multiple principals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDeletePolicyAssignmentByPolicy.html"
+    },
+    {
       "name": "BatchDeleteTopicReviewedAnswer",
       "methodName": "toBatchDeleteTopicReviewedAnswer",
       "description": "Grants permission to delete reviewed answers for a topic",
@@ -425,6 +444,13 @@
       "description": "Grants permission to describe the effective resource limits for users",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDescribeUserLimits.html"
+    },
+    {
+      "name": "BatchPutPolicyAssignmentByPolicy",
+      "methodName": "toBatchPutPolicyAssignmentByPolicy",
+      "description": "Grants permission to assign a policy to multiple principals",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchPutPolicyAssignmentByPolicy.html"
     },
     {
       "name": "CancelIngestion",
@@ -584,6 +610,13 @@
       "description": "Grants permission to create a knowledge base",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateKnowledgeBase.html"
+    },
+    {
+      "name": "CreateKnowledgeBaseRefreshSchedule",
+      "methodName": "toCreateKnowledgeBaseRefreshSchedule",
+      "description": "Grants permission to create a refresh schedule for a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateKnowledgeBaseRefreshSchedule.html"
     },
     {
       "name": "CreateLimitsProfile",
@@ -863,6 +896,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteKnowledgeBase.html"
     },
     {
+      "name": "DeleteKnowledgeBaseRefreshSchedule",
+      "methodName": "toDeleteKnowledgeBaseRefreshSchedule",
+      "description": "Grants permission to delete a refresh schedule for a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteKnowledgeBaseRefreshSchedule.html"
+    },
+    {
       "name": "DeleteLimitsProfile",
       "methodName": "toDeleteLimitsProfile",
       "description": "Grants permission to delete a limits profile",
@@ -882,6 +922,13 @@
       "description": "Grants permission to delete an OAuth client application",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteOAuthClientApplication.html"
+    },
+    {
+      "name": "DeletePolicyAssignment",
+      "methodName": "toDeletePolicyAssignment",
+      "description": "Grants permission to remove a policy assignment from a principal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeletePolicyAssignment.html"
     },
     {
       "name": "DeleteRefreshSchedule",
@@ -1293,6 +1340,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKnowledgeBasePermissions.html"
     },
     {
+      "name": "DescribeKnowledgeBaseRefreshSchedule",
+      "methodName": "toDescribeKnowledgeBaseRefreshSchedule",
+      "description": "Grants permission to describe a refresh schedule for a knowledge base",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKnowledgeBaseRefreshSchedule.html"
+    },
+    {
       "name": "DescribeLimitsProfile",
       "methodName": "toDescribeLimitsProfile",
       "description": "Grants permission to describe a limits profile",
@@ -1506,6 +1560,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html"
     },
     {
+      "name": "GetPolicyAssignment",
+      "methodName": "toGetPolicyAssignment",
+      "description": "Grants permission to describe the policy assigned to a principal for a policy type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetPolicyAssignment.html"
+    },
+    {
       "name": "GetSessionEmbedUrl",
       "methodName": "toGetSessionEmbedUrl",
       "description": "Grants permission to get a URL to embed QuickSight console experience",
@@ -1693,6 +1754,13 @@
       ]
     },
     {
+      "name": "ListKnowledgeBaseRefreshSchedules",
+      "methodName": "toListKnowledgeBaseRefreshSchedules",
+      "description": "Grants permission to list all refresh schedules on a knowledge base",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListKnowledgeBaseRefreshSchedules.html"
+    },
+    {
       "name": "ListKnowledgeBases",
       "methodName": "toListKnowledgeBases",
       "description": "Grants permission to list all knowledge bases in an account",
@@ -1723,6 +1791,13 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys"
       ]
+    },
+    {
+      "name": "ListPrincipalsForPolicy",
+      "methodName": "toListPrincipalsForPolicy",
+      "description": "Grants permission to list the principals assigned to a policy",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListPrincipalsForPolicy.html"
     },
     {
       "name": "ListRefreshSchedules",
@@ -1875,6 +1950,13 @@
       "description": "Grants permission to put dataset refresh properties for a dataset",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_PutDataSetRefreshProperties.html"
+    },
+    {
+      "name": "PutPolicyAssignment",
+      "methodName": "toPutPolicyAssignment",
+      "description": "Grants permission to assign a policy to a principal",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_PutPolicyAssignment.html"
     },
     {
       "name": "RegisterUser",
@@ -2297,6 +2379,13 @@
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKnowledgeBasePermissions.html"
     },
     {
+      "name": "UpdateKnowledgeBaseRefreshSchedule",
+      "methodName": "toUpdateKnowledgeBaseRefreshSchedule",
+      "description": "Grants permission to update a refresh schedule for a knowledge base",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKnowledgeBaseRefreshSchedule.html"
+    },
+    {
       "name": "UpdateLimitsProfile",
       "methodName": "toUpdateLimitsProfile",
       "description": "Grants permission to update a limits profile",
@@ -2706,6 +2795,13 @@
       "name": "GetCustomPermissionsSummary",
       "methodName": "toGetCustomPermissionsSummary",
       "description": "Grants permission to get information about the custom permissions in an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
+    },
+    {
+      "name": "GetEffectiveCustomPermissions",
+      "methodName": "toGetEffectiveCustomPermissions",
+      "description": "Grants permission to get the effective custom permissions for a principal",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html"
     },
@@ -4436,7 +4532,9 @@
       "relatedActionMethods": [
         "toBatchCreateTopicReviewedAnswer",
         "toBatchDeleteKnowledgeBase",
+        "toBatchDeletePolicyAssignmentByPolicy",
         "toBatchDeleteTopicReviewedAnswer",
+        "toBatchPutPolicyAssignmentByPolicy",
         "toCancelIngestion",
         "toCreateActionConnector",
         "toCreateAnalysis",
@@ -4450,6 +4548,7 @@
         "toCreateFolderMembership",
         "toCreateIngestion",
         "toCreateKnowledgeBase",
+        "toCreateKnowledgeBaseRefreshSchedule",
         "toCreateNamespace",
         "toCreateTemplate",
         "toCreateTemplateAlias",
@@ -4471,8 +4570,10 @@
         "toDeleteFolder",
         "toDeleteFolderMembership",
         "toDeleteKnowledgeBase",
+        "toDeleteKnowledgeBaseRefreshSchedule",
         "toDeleteNamespace",
         "toDeleteOAuthClientApplication",
+        "toDeletePolicyAssignment",
         "toDeleteTemplate",
         "toDeleteTemplateAlias",
         "toDeleteTheme",
@@ -4510,6 +4611,7 @@
         "toDescribeIngestion",
         "toDescribeKnowledgeBase",
         "toDescribeKnowledgeBasePermissions",
+        "toDescribeKnowledgeBaseRefreshSchedule",
         "toDescribeNamespace",
         "toDescribeOAuthClientApplication",
         "toDescribeTemplate",
@@ -4530,6 +4632,7 @@
         "toGetFlowMetadata",
         "toGetFlowPermissions",
         "toGetIdentityContext",
+        "toGetPolicyAssignment",
         "toListAnalyses",
         "toListApps",
         "toListDashboardVersions",
@@ -4538,6 +4641,8 @@
         "toListFolderMembers",
         "toListFolders",
         "toListFoldersForResource",
+        "toListKnowledgeBaseRefreshSchedules",
+        "toListPrincipalsForPolicy",
         "toListSelfUpgrades",
         "toListTagsForResource",
         "toListTemplateAliases",
@@ -4550,6 +4655,7 @@
         "toListUsers",
         "toPredictQAResults",
         "toPutDataSetRefreshProperties",
+        "toPutPolicyAssignment",
         "toRegisterUser",
         "toRestoreAnalysis",
         "toSearchActionConnectors",
@@ -4559,7 +4665,6 @@
         "toSearchDataSets",
         "toSearchDataSources",
         "toSearchFolders",
-        "toSearchKnowledgeBases",
         "toSearchTopics",
         "toStartDashboardSnapshotJob",
         "toTagResource",
@@ -4588,6 +4693,7 @@
         "toUpdateFolderPermissions",
         "toUpdateKnowledgeBase",
         "toUpdateKnowledgeBasePermissions",
+        "toUpdateKnowledgeBaseRefreshSchedule",
         "toUpdateOAuthClientApplication",
         "toUpdateSelfUpgrade",
         "toUpdateTemplate",

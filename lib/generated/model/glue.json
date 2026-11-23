@@ -26,6 +26,7 @@
       "CreateConnection",
       "CreateCrawler",
       "CreateCustomEntityType",
+      "CreateDataQualityEvaluationConfig",
       "CreateDataQualityRuleset",
       "CreateDatabase",
       "CreateDevEndpoint",
@@ -58,6 +59,7 @@
       "DeleteConnectionType",
       "DeleteCrawler",
       "DeleteCustomEntityType",
+      "DeleteDataQualityEvaluationConfig",
       "DeleteDataQualityRuleset",
       "DeleteDatabase",
       "DeleteDevEndpoint",
@@ -167,6 +169,7 @@
       "UpdateConnection",
       "UpdateCrawler",
       "UpdateCrawlerSchedule",
+      "UpdateDataQualityEvaluationConfig",
       "UpdateDataQualityRuleset",
       "UpdateDatabase",
       "UpdateDevEndpoint",
@@ -227,6 +230,7 @@
       "GetCustomEntityType",
       "GetDashboardUrl",
       "GetDataCatalogEncryptionSettings",
+      "GetDataQualityEvaluationConfig",
       "GetDataQualityModel",
       "GetDataQualityModelResult",
       "GetDataQualityResult",
@@ -336,12 +340,14 @@
       "ListCrawlers",
       "ListCrawls",
       "ListCustomEntityTypes",
+      "ListDataQualityEvaluationConfigs",
       "ListDataQualityResults",
       "ListDataQualityRuleRecommendationRuns",
       "ListDataQualityRulesetEvaluationRuns",
       "ListDataQualityRulesets",
       "ListDevEndpoints",
       "ListIntegrationResourceProperties",
+      "ListIntegrationTableProperties",
       "ListJobUpgradeAnalyses",
       "ListJobs",
       "ListMLTransforms",
@@ -572,6 +578,13 @@
         "ifAwsRequestTag",
         "ifAwsTagKeys"
       ]
+    },
+    {
+      "name": "CreateDataQualityEvaluationConfig",
+      "methodName": "toCreateDataQualityEvaluationConfig",
+      "description": "Grants permission to create a Data Quality evaluation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-CreateDataQualityEvaluationConfig"
     },
     {
       "name": "CreateDataQualityRuleset",
@@ -808,6 +821,13 @@
       "description": "Grants permission to delete a Custom Entity Type",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-DeleteCustomEntityType"
+    },
+    {
+      "name": "DeleteDataQualityEvaluationConfig",
+      "methodName": "toDeleteDataQualityEvaluationConfig",
+      "description": "Grants permission to delete a Data Quality evaluation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-DeleteDataQualityEvaluationConfig"
     },
     {
       "name": "DeleteDataQualityRuleset",
@@ -1179,6 +1199,13 @@
       "description": "Grants permission to get Data Preview Statement",
       "accessLevel": "Permissions management, Write",
       "url": "https://docs.aws.amazon.com/glue/latest/ug/notebook-getting-started.html#create-notebook-permissions-operations"
+    },
+    {
+      "name": "GetDataQualityEvaluationConfig",
+      "methodName": "toGetDataQualityEvaluationConfig",
+      "description": "Grants permission to retrieve a Data Quality evaluation configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityEvaluationConfig"
     },
     {
       "name": "GetDataQualityModel",
@@ -1776,6 +1803,13 @@
       "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-sensitive-data-api.html#aws-glue-api-sensitive-data-api-ListGetCustomEntityTypes"
     },
     {
+      "name": "ListDataQualityEvaluationConfigs",
+      "methodName": "toListDataQualityEvaluationConfigs",
+      "description": "Grants permission to retrieve a list of Data Quality evaluation configurations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityEvaluationConfigs"
+    },
+    {
       "name": "ListDataQualityResults",
       "methodName": "toListDataQualityResults",
       "description": "Grants permission to retrieve all Data Quality results",
@@ -1823,6 +1857,13 @@
       "description": "Grants permission to list zero-ETL integration resource properties",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ListIntegrationResourceProperties"
+    },
+    {
+      "name": "ListIntegrationTableProperties",
+      "methodName": "toListIntegrationTableProperties",
+      "description": "Grants permission to list zero-ETL integration table properties",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ListIntegrationTableProperties"
     },
     {
       "name": "ListJobUpgradeAnalyses",
@@ -2336,6 +2377,13 @@
       "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-UpdateCrawlerSchedule"
     },
     {
+      "name": "UpdateDataQualityEvaluationConfig",
+      "methodName": "toUpdateDataQualityEvaluationConfig",
+      "description": "Grants permission to update a Data Quality evaluation configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-UpdateDataQualityEvaluationConfig"
+    },
+    {
       "name": "UpdateDataQualityRuleset",
       "methodName": "toUpdateDataQualityRuleset",
       "description": "Grants permission to update a Data Quality ruleset",
@@ -2749,6 +2797,37 @@
         {
           "placeholder": "CustomEntityTypeId",
           "name": "customEntityTypeId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "dataQualityEvaluationConfig",
+      "methodName": "onDataQualityEvaluationConfig",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:dataQualityEvaluationConfig/${EvaluationConfigName}",
+      "placeholders": [
+        {
+          "placeholder": "EvaluationConfigName",
+          "name": "evaluationConfigName",
           "kind": "required"
         },
         {
@@ -3383,6 +3462,7 @@
         "toCreateConnection",
         "toCreateCrawler",
         "toCreateCustomEntityType",
+        "toCreateDataQualityEvaluationConfig",
         "toCreateDataQualityRuleset",
         "toCreateDatabase",
         "toCreateDevEndpoint",
@@ -3438,6 +3518,7 @@
         "toCreateCatalog",
         "toCreateColumnStatisticsTaskSettings",
         "toCreateConnection",
+        "toCreateDataQualityEvaluationConfig",
         "toCreateDatabase",
         "toCreateIntegration",
         "toCreateIntegrationResourceProperty",
@@ -3462,6 +3543,7 @@
         "toDeleteConnection",
         "toDeleteConnectionType",
         "toDeleteCrawler",
+        "toDeleteDataQualityEvaluationConfig",
         "toDeleteDataQualityRuleset",
         "toDeleteDatabase",
         "toDeleteDevEndpoint",
@@ -3499,6 +3581,7 @@
         "toGetConnections",
         "toGetCrawler",
         "toGetDashboardUrl",
+        "toGetDataQualityEvaluationConfig",
         "toGetDataQualityModel",
         "toGetDataQualityModelResult",
         "toGetDataQualityResult",
@@ -3548,6 +3631,7 @@
         "toGetWorkflowRunProperties",
         "toGetWorkflowRuns",
         "toListCrawls",
+        "toListDataQualityEvaluationConfigs",
         "toListDataQualityResults",
         "toListDataQualityRuleRecommendationRuns",
         "toListDataQualityRulesetEvaluationRuns",
@@ -3607,6 +3691,7 @@
         "toUpdateColumnStatisticsTaskSettings",
         "toUpdateConnection",
         "toUpdateCrawler",
+        "toUpdateDataQualityEvaluationConfig",
         "toUpdateDataQualityRuleset",
         "toUpdateDatabase",
         "toUpdateDevEndpoint",
@@ -3638,6 +3723,7 @@
         "connectionType",
         "crawler",
         "customEntityType",
+        "dataQualityEvaluationConfig",
         "dataQualityRuleset",
         "database",
         "devendpoint",
@@ -3675,6 +3761,7 @@
         "toCreateConnection",
         "toCreateCrawler",
         "toCreateCustomEntityType",
+        "toCreateDataQualityEvaluationConfig",
         "toCreateDataQualityRuleset",
         "toCreateDatabase",
         "toCreateDevEndpoint",

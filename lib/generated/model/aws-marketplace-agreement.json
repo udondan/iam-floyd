@@ -7,6 +7,7 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-agreement.html",
   "accessLevelList": {
     "Write": [
+      "AcceptAgreementApproval",
       "AcceptAgreementApprovalRequest",
       "AcceptAgreementCancellationRequest",
       "AcceptAgreementPaymentRequest",
@@ -17,11 +18,13 @@
       "CancelAgreementPaymentRequest",
       "CancelAgreementRequest",
       "CreateAgreementRequest",
+      "RejectAgreementApproval",
       "RejectAgreementApprovalRequest",
       "RejectAgreementCancellationRequest",
       "RejectAgreementPaymentRequest",
       "SendAgreementCancellationRequest",
       "SendAgreementPaymentRequest",
+      "StartAgreementApprovals",
       "Subscribe",
       "Unsubscribe",
       "UpdateAgreementApprovalRequest",
@@ -29,17 +32,22 @@
     ],
     "Read": [
       "DescribeAgreement",
+      "GetAgreementApproval",
       "GetAgreementApprovalRequest",
       "GetAgreementCancellationRequest",
+      "GetAgreementContacts",
       "GetAgreementEntitlements",
       "GetAgreementPaymentRequest",
       "GetAgreementRequest",
+      "GetAgreementRequestApprovalPlans",
+      "GetAgreementRequestTerms",
       "GetBillingAdjustmentRequest",
       "ListEntitlementDetails"
     ],
     "List": [
       "GetAgreementTerms",
       "ListAgreementApprovalRequests",
+      "ListAgreementApprovals",
       "ListAgreementCancellationRequests",
       "ListAgreementCharges",
       "ListAgreementInvoiceLineItems",
@@ -51,6 +59,16 @@
     ]
   },
   "actions": [
+    {
+      "name": "AcceptAgreementApproval",
+      "methodName": "toAcceptAgreementApproval",
+      "description": "Grants permission to approve an agreement approval",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
+    },
     {
       "name": "AcceptAgreementApprovalRequest",
       "methodName": "toAcceptAgreementApprovalRequest",
@@ -139,7 +157,10 @@
       "methodName": "toCancelAgreementRequest",
       "description": "Grants permission to cancel pending subscription requests for products that require subscription verification",
       "accessLevel": "Write",
-      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
     },
     {
       "name": "CreateAgreementRequest",
@@ -164,6 +185,16 @@
       ]
     },
     {
+      "name": "GetAgreementApproval",
+      "methodName": "toGetAgreementApproval",
+      "description": "Grants permission to view the details of an agreement approval",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
+    },
+    {
       "name": "GetAgreementApprovalRequest",
       "methodName": "toGetAgreementApprovalRequest",
       "description": "Grants permission to view the details of incoming subscription requests (for providers who provide products that require subscription verification)",
@@ -179,6 +210,16 @@
       "conditionMethods": [
         "ifAgreementType",
         "ifPartyType"
+      ]
+    },
+    {
+      "name": "GetAgreementContacts",
+      "methodName": "toGetAgreementContacts",
+      "description": "Grants permission to get the contacts associated with an agreement",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
       ]
     },
     {
@@ -207,7 +248,30 @@
       "methodName": "toGetAgreementRequest",
       "description": "Grants permission to view the details of subscription requests for data products that require subscription verification",
       "accessLevel": "Read",
-      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
+    },
+    {
+      "name": "GetAgreementRequestApprovalPlans",
+      "methodName": "toGetAgreementRequestApprovalPlans",
+      "description": "Grants permission to view the approval plans for an agreement request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
+    },
+    {
+      "name": "GetAgreementRequestTerms",
+      "methodName": "toGetAgreementRequestTerms",
+      "description": "Grants permission to view the terms of an agreement request",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
     },
     {
       "name": "GetAgreementTerms",
@@ -235,6 +299,13 @@
       "name": "ListAgreementApprovalRequests",
       "methodName": "toListAgreementApprovalRequests",
       "description": "Grants permission to list incoming subscription requests (for providers who provide products that require subscription verification)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
+    },
+    {
+      "name": "ListAgreementApprovals",
+      "methodName": "toListAgreementApprovals",
+      "description": "Grants permission to list agreement approvals",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
     },
@@ -307,6 +378,16 @@
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html"
     },
     {
+      "name": "RejectAgreementApproval",
+      "methodName": "toRejectAgreementApproval",
+      "description": "Grants permission to reject an agreement approval",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
+    },
+    {
       "name": "RejectAgreementApprovalRequest",
       "methodName": "toRejectAgreementApprovalRequest",
       "description": "Grants permission to decline an incoming subscription requests (for providers who provide products that require subscription verification)",
@@ -369,6 +450,16 @@
       ]
     },
     {
+      "name": "StartAgreementApprovals",
+      "methodName": "toStartAgreementApprovals",
+      "description": "Grants permission to initiate tasks that request approvals for an agreement. Callers must also have the aws-marketplace:AcceptAgreementRequest permission",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "conditionMethods": [
+        "ifAgreementType"
+      ]
+    },
+    {
       "name": "Subscribe",
       "methodName": "toSubscribe",
       "description": "Grants permission to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription",
@@ -415,6 +506,7 @@
       "description": "Filters access by the type of the agreement",
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
       "relatedActionMethods": [
+        "toAcceptAgreementApproval",
         "toAcceptAgreementCancellationRequest",
         "toAcceptAgreementPaymentRequest",
         "toAcceptAgreementRequest",
@@ -422,11 +514,17 @@
         "toCancelAgreement",
         "toCancelAgreementCancellationRequest",
         "toCancelAgreementPaymentRequest",
+        "toCancelAgreementRequest",
         "toCreateAgreementRequest",
         "toDescribeAgreement",
+        "toGetAgreementApproval",
         "toGetAgreementCancellationRequest",
+        "toGetAgreementContacts",
         "toGetAgreementEntitlements",
         "toGetAgreementPaymentRequest",
+        "toGetAgreementRequest",
+        "toGetAgreementRequestApprovalPlans",
+        "toGetAgreementRequestTerms",
         "toGetAgreementTerms",
         "toGetBillingAdjustmentRequest",
         "toListAgreementCancellationRequests",
@@ -434,11 +532,13 @@
         "toListAgreementInvoiceLineItems",
         "toListAgreementPaymentRequests",
         "toListBillingAdjustmentRequests",
+        "toRejectAgreementApproval",
         "toRejectAgreementCancellationRequest",
         "toRejectAgreementPaymentRequest",
         "toSearchAgreements",
         "toSendAgreementCancellationRequest",
         "toSendAgreementPaymentRequest",
+        "toStartAgreementApprovals",
         "toUpdatePurchaseOrders"
       ],
       "relatedResourceTypes": [],

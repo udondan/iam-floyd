@@ -15,6 +15,7 @@
     ],
     "List": [
       "ListFulfillmentOptions",
+      "ListListingAttributes",
       "ListPrivateListings",
       "ListPurchaseOptions",
       "SearchFacets",
@@ -63,6 +64,13 @@
       "description": "Grants permission to list fulfillment options for a product",
       "accessLevel": "List",
       "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_ListFulfillmentOptions.html"
+    },
+    {
+      "name": "ListListingAttributes",
+      "methodName": "toListListingAttributes",
+      "description": "Grants permission to list attributes of a listing",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_ListListingAttributes.html"
     },
     {
       "name": "ListPrivateListings",

@@ -39,6 +39,7 @@
       "DeleteTenantResourceAssociation",
       "DisassociateEmailIdentityCertificate",
       "PutAccountDedicatedIpWarmupAttributes",
+      "PutAccountDeliveryAttributes",
       "PutAccountDetails",
       "PutAccountPricingAttributes",
       "PutAccountSendingAttributes",
@@ -758,6 +759,16 @@
       "description": "Grants permission to enable or disable the automatic warm-up feature for dedicated IP addresses",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountDedicatedIpWarmupAttributes.html",
+      "conditionMethods": [
+        "ifApiVersion"
+      ]
+    },
+    {
+      "name": "PutAccountDeliveryAttributes",
+      "methodName": "toPutAccountDeliveryAttributes",
+      "description": "Grants permission to change the delivery attributes for your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountDeliveryAttributes.html",
       "conditionMethods": [
         "ifApiVersion"
       ]
@@ -1747,6 +1758,7 @@
         "toListTenantResources",
         "toListTenants",
         "toPutAccountDedicatedIpWarmupAttributes",
+        "toPutAccountDeliveryAttributes",
         "toPutAccountDetails",
         "toPutAccountPricingAttributes",
         "toPutAccountSendingAttributes",

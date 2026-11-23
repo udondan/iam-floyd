@@ -8,12 +8,16 @@
   "accessLevelList": {
     "Write": [
       "ActivateSubscription",
+      "CreateDataset",
       "CreateDomain",
       "CreateSubscription",
       "DeactivateSubscription",
+      "DeleteDataset",
       "DeleteDomain",
+      "StartMedicalCodingJob",
       "StartMedicalScribeListeningSession",
       "StartPatientInsightsJob",
+      "SubmitFeedback",
       "TagResource",
       "UntagResource",
       "BatchRefillPatientPharmacyPrescriptions",
@@ -34,8 +38,10 @@
       "UpdateSession"
     ],
     "Read": [
+      "GetDataset",
       "GetDomain",
       "GetDomainAnalytics",
+      "GetMedicalCodingJob",
       "GetMedicalScribeListeningSession",
       "GetPatientInsightsJob",
       "GetSubscription",
@@ -54,6 +60,7 @@
       "MatchPatient"
     ],
     "List": [
+      "ListDatasets",
       "ListDomains",
       "ListSessionRecords",
       "ListSubscriptions",
@@ -73,6 +80,13 @@
       "description": "Grants permission to activate a subscription to enable billing for a user",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ActivateSubscription.html"
+    },
+    {
+      "name": "CreateDataset",
+      "methodName": "toCreateDataset",
+      "description": "Grants permission to create a dataset within a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_CreateDataset.html"
     },
     {
       "name": "CreateDomain",
@@ -100,11 +114,25 @@
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeactivateSubscription.html"
     },
     {
+      "name": "DeleteDataset",
+      "methodName": "toDeleteDataset",
+      "description": "Grants permission to delete a dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeleteDataset.html"
+    },
+    {
       "name": "DeleteDomain",
       "methodName": "toDeleteDomain",
       "description": "Grants permission to delete a domain and all associated resources",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_DeleteDomain.html"
+    },
+    {
+      "name": "GetDataset",
+      "methodName": "toGetDataset",
+      "description": "Grants permission to retrieve information about a dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetDataset.html"
     },
     {
       "name": "GetDomain",
@@ -119,6 +147,13 @@
       "description": "Grants permission to retrieve aggregated analytics for a domain",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetDomainAnalytics.html"
+    },
+    {
+      "name": "GetMedicalCodingJob",
+      "methodName": "toGetMedicalCodingJob",
+      "description": "Grants permission to get details of a started medical coding job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetMedicalCodingJob.html"
     },
     {
       "name": "GetMedicalScribeListeningSession",
@@ -140,6 +175,13 @@
       "description": "Grants permission to retrieve information about a subscription",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetSubscription.html"
+    },
+    {
+      "name": "ListDatasets",
+      "methodName": "toListDatasets",
+      "description": "Grants permission to list the datasets within a domain",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListDatasets.html"
     },
     {
       "name": "ListDomains",
@@ -170,6 +212,13 @@
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListTagsForResource.html"
     },
     {
+      "name": "StartMedicalCodingJob",
+      "methodName": "toStartMedicalCodingJob",
+      "description": "Grants permission to start a medical coding job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartMedicalCodingJob.html"
+    },
+    {
       "name": "StartMedicalScribeListeningSession",
       "methodName": "toStartMedicalScribeListeningSession",
       "description": "Grants permission to start a new Medical Scribe listening session for real-time audio transcription",
@@ -182,6 +231,13 @@
       "description": "Grants permission to start a new patient insights job",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_StartPatientInsightsJob.html"
+    },
+    {
+      "name": "SubmitFeedback",
+      "methodName": "toSubmitFeedback",
+      "description": "Grants permission to submit feedback on the output of a job/session within a domain",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_SubmitFeedback.html"
     },
     {
       "name": "TagResource",
@@ -453,6 +509,42 @@
       ]
     },
     {
+      "name": "Dataset",
+      "methodName": "onDataset",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/dataset/${DatasetId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasetId",
+          "name": "datasetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
       "name": "Domain",
       "methodName": "onDomain",
       "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/setting-up.html#setting-up-create-domain",
@@ -503,6 +595,42 @@
         {
           "placeholder": "IntegrationId",
           "name": "integrationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "MedicalCodingJob",
+      "methodName": "onMedicalCodingJob",
+      "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/",
+      "arn": "arn:${Partition}:health-agent:${Region}:${Account}:domain/${DomainId}/medical-coding-job/${JobId}",
+      "placeholders": [
+        {
+          "placeholder": "DomainId",
+          "name": "domainId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "JobId",
+          "name": "jobId",
           "kind": "required"
         },
         {
@@ -661,19 +789,26 @@
       "url": "https://docs.aws.amazon.com/connecthealth/latest/userguide/security-iam-service-with-iam.htmlsecurity-iam-service-with-iam.html#security-iam-service-with-iam-tags",
       "relatedActionMethods": [
         "toActivateSubscription",
+        "toCreateDataset",
         "toCreateSubscription",
         "toDeactivateSubscription",
+        "toDeleteDataset",
         "toDeleteDomain",
+        "toGetDataset",
         "toGetDomain",
         "toGetDomainAnalytics",
+        "toGetMedicalCodingJob",
         "toGetMedicalScribeListeningSession",
         "toGetPatientInsightsJob",
         "toGetSubscription",
+        "toListDatasets",
         "toListSessionRecords",
         "toListSubscriptions",
         "toListTagsForResource",
+        "toStartMedicalCodingJob",
         "toStartMedicalScribeListeningSession",
         "toStartPatientInsightsJob",
+        "toSubmitFeedback",
         "toTagResource",
         "toUntagResource",
         "toBatchRefillPatientPharmacyPrescriptions",
@@ -710,8 +845,10 @@
       ],
       "relatedResourceTypes": [
         "Agent",
+        "Dataset",
         "Domain",
         "Integration",
+        "MedicalCodingJob",
         "PatientInsightsJob",
         "Session",
         "Subscription"

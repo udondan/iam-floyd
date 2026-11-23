@@ -34,6 +34,7 @@
       "GetBillEstimate",
       "GetBillScenario",
       "GetPreferences",
+      "GetUsageLinesEstimatedCost",
       "GetWorkloadEstimate"
     ],
     "List": [
@@ -167,6 +168,13 @@
       "description": "Grants permission to retrieve applicable rate type preferences for the account",
       "accessLevel": "Read",
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_GetPreferences.html"
+    },
+    {
+      "name": "GetUsageLinesEstimatedCost",
+      "methodName": "toGetUsageLinesEstimatedCost",
+      "description": "Grants permission to estimate cost for usage lines per the requested rate type",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_GetUsageLinesEstimatedCost.html"
     },
     {
       "name": "GetWorkloadEstimate",
@@ -339,7 +347,9 @@
           "kind": "partition"
         }
       ],
-      "conditionMethods": [],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
       "cdkRef": {
         "module": "aws_bcmpricingcalculator",
         "interface": "IBillEstimateRef",
@@ -443,18 +453,25 @@
         "toCreateBillScenarioCommitmentModification",
         "toCreateBillScenarioUsageModification",
         "toCreateWorkloadEstimateUsage",
+        "toDeleteBillEstimate",
         "toDeleteBillScenario",
         "toDeleteBillScenarioCommitmentModification",
         "toDeleteBillScenarioUsageModification",
         "toDeleteWorkloadEstimate",
         "toDeleteWorkloadEstimateUsage",
+        "toGetBillEstimate",
         "toGetBillScenario",
         "toGetWorkloadEstimate",
+        "toListBillEstimateCommitments",
+        "toListBillEstimateInputCommitmentModifications",
+        "toListBillEstimateInputUsageModifications",
+        "toListBillEstimateLineItems",
         "toListBillScenarioCommitmentModifications",
         "toListBillScenarioUsageModifications",
         "toListWorkloadEstimateUsage",
         "toTagResource",
         "toUntagResource",
+        "toUpdateBillEstimate",
         "toUpdateBillScenario",
         "toUpdateBillScenarioCommitmentModification",
         "toUpdateBillScenarioUsageModification",
@@ -462,6 +479,7 @@
         "toUpdateWorkloadEstimateUsage"
       ],
       "relatedResourceTypes": [
+        "bill-estimate",
         "bill-scenario",
         "workload-estimate"
       ],

@@ -26,6 +26,7 @@
       "CreateDomainForOrganization",
       "CreateIngestionEndpoint",
       "CreateIntegration",
+      "CreateOmniAgentAsset",
       "CreateOmniDashboard",
       "CreateOmniThread",
       "CreateOneTimeDeepLinkCode",
@@ -48,6 +49,7 @@
       "DeleteIntegration",
       "DeleteMetricDataQueryDefinition",
       "DeleteMetricStream",
+      "DeleteOmniAgentAsset",
       "DeleteOmniDashboard",
       "DeleteOmniThread",
       "DeleteResourceMetricsConfiguration",
@@ -93,6 +95,7 @@
       "UpdateDomainForOrganization",
       "UpdateIngestionEndpoint",
       "UpdateIntegration",
+      "UpdateOmniAgentAsset",
       "UpdateOmniDashboard",
       "UpdateOmniThread",
       "UpdatePreferences",
@@ -139,6 +142,8 @@
       "GetMetricStatistics",
       "GetMetricStream",
       "GetMetricWidgetImage",
+      "GetMonitoringAssessment",
+      "GetOmniAgentAsset",
       "GetOmniDashboard",
       "GetOmniThread",
       "GetPreferences",
@@ -155,6 +160,7 @@
       "GetTopologyMap",
       "GetView",
       "ListManagedInsightRules",
+      "StartMonitoringAssessment",
       "DetectGroupOutliers",
       "GetOTelEnrichment",
       "GetServiceData",
@@ -174,6 +180,9 @@
       "ListMetricDataQueryDefinitions",
       "ListMetricStreams",
       "ListMetrics",
+      "ListMonitoringAssessmentResults",
+      "ListMonitoringAssessments",
+      "ListOmniAgentAssets",
       "ListOmniDashboards",
       "ListOmniThreads",
       "ListServiceLevelObjectives",
@@ -284,6 +293,16 @@
       "description": "Grants permission to create an integration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_CreateIntegration.html",
+      "conditionMethods": [
+        "ifHasAccessGrant"
+      ]
+    },
+    {
+      "name": "CreateOmniAgentAsset",
+      "methodName": "toCreateOmniAgentAsset",
+      "description": "Grants permission to create an agent asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_CreateOmniAgentAsset.html",
       "conditionMethods": [
         "ifHasAccessGrant"
       ]
@@ -457,6 +476,13 @@
       "description": "Grants permission to delete the CloudWatch metric stream that you specify",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteMetricStream.html"
+    },
+    {
+      "name": "DeleteOmniAgentAsset",
+      "methodName": "toDeleteOmniAgentAsset",
+      "description": "Grants permission to delete an agent asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_DeleteOmniAgentAsset.html"
     },
     {
       "name": "DeleteOmniDashboard",
@@ -737,6 +763,20 @@
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html"
     },
     {
+      "name": "GetMonitoringAssessment",
+      "methodName": "toGetMonitoringAssessment",
+      "description": "Grants permission to get the status, progress, scope and retention of a monitoring assessment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
+      "name": "GetOmniAgentAsset",
+      "methodName": "toGetOmniAgentAsset",
+      "description": "Grants permission to get an agent asset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_GetOmniAgentAsset.html"
+    },
+    {
       "name": "GetOmniDashboard",
       "methodName": "toGetOmniDashboard",
       "description": "Grants permission to get an omni dashboard",
@@ -991,6 +1031,30 @@
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html"
     },
     {
+      "name": "ListMonitoringAssessmentResults",
+      "methodName": "toListMonitoringAssessmentResults",
+      "description": "Grants permission to list the recommendations produced by a monitoring assessment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
+      "name": "ListMonitoringAssessments",
+      "methodName": "toListMonitoringAssessments",
+      "description": "Grants permission to list the monitoring assessments in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
+      "name": "ListOmniAgentAssets",
+      "methodName": "toListOmniAgentAssets",
+      "description": "Grants permission to list agent assets",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_ListOmniAgentAssets.html",
+      "conditionMethods": [
+        "ifHasAccessGrant"
+      ]
+    },
+    {
       "name": "ListOmniDashboards",
       "methodName": "toListOmniDashboards",
       "description": "Grants permission to list omni dashboards",
@@ -1232,6 +1296,13 @@
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartMetricStreams.html"
     },
     {
+      "name": "StartMonitoringAssessment",
+      "methodName": "toStartMonitoringAssessment",
+      "description": "Grants permission to start a monitoring assessment that produces recommendations to improve observability",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html"
+    },
+    {
       "name": "StartOmniThreadSession",
       "methodName": "toStartOmniThreadSession",
       "description": "Grants permission to start an omni thread session",
@@ -1353,6 +1424,13 @@
       "description": "Grants permission to update an integration",
       "accessLevel": "Write",
       "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_UpdateIntegration.html"
+    },
+    {
+      "name": "UpdateOmniAgentAsset",
+      "methodName": "toUpdateOmniAgentAsset",
+      "description": "Grants permission to update an agent asset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/API_UpdateOmniAgentAsset.html"
     },
     {
       "name": "UpdateOmniDashboard",
@@ -1682,7 +1760,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_cloudwatch",
+        "interface": "IAlertRef",
+        "property": "alertRef",
+        "arn": "alertArn"
+      }
     },
     {
       "name": "dashboard",
@@ -1961,6 +2045,37 @@
         "property": "metricStreamRef",
         "arn": "metricStreamArn"
       }
+    },
+    {
+      "name": "omni-agent-asset",
+      "methodName": "onOmniAgentAsset",
+      "url": "https://docs.aws.amazon.com/cloudwatch-omni/latest/APIReference/Welcome.html",
+      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:omni-agent-asset/${AssetId}",
+      "placeholders": [
+        {
+          "placeholder": "AssetId",
+          "name": "assetId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
     },
     {
       "name": "omni-dashboard",
@@ -2253,6 +2368,7 @@
         "toDeleteIntegration",
         "toDeleteMetricDataQueryDefinition",
         "toDeleteMetricStream",
+        "toDeleteOmniAgentAsset",
         "toDeleteOmniDashboard",
         "toDeleteServiceLevelObjective",
         "toDeleteSpace",
@@ -2278,6 +2394,7 @@
         "toGetMetricData",
         "toGetMetricDataQueryDefinition",
         "toGetMetricStream",
+        "toGetOmniAgentAsset",
         "toGetOmniDashboard",
         "toGetProfileRecords",
         "toGetService",
@@ -2308,6 +2425,7 @@
         "toUpdateDomainForOrganization",
         "toUpdateIngestionEndpoint",
         "toUpdateIntegration",
+        "toUpdateOmniAgentAsset",
         "toUpdateOmniDashboard",
         "toUpdateServiceLevelObjective",
         "toUpdateSpace",
@@ -2330,6 +2448,7 @@
         "integration",
         "metric-query-definition",
         "metric-stream",
+        "omni-agent-asset",
         "omni-dashboard",
         "organization-access-grant",
         "organization-domain",
@@ -2422,6 +2541,7 @@
         "toCreateAlert",
         "toCreateDomainAccessGrantForOrganization",
         "toCreateIntegration",
+        "toCreateOmniAgentAsset",
         "toCreateOmniDashboard",
         "toCreateOmniThread",
         "toCreateView",
@@ -2430,6 +2550,7 @@
         "toDeleteAlert",
         "toDeleteDomainAccessGrantForOrganization",
         "toDeleteIntegration",
+        "toDeleteOmniAgentAsset",
         "toDeleteOmniDashboard",
         "toDeleteOmniThread",
         "toDeleteView",
@@ -2442,6 +2563,7 @@
         "toGetIntegration",
         "toGetIntelligenceConfiguration",
         "toGetMetricData",
+        "toGetOmniAgentAsset",
         "toGetOmniDashboard",
         "toGetOmniThread",
         "toGetPreferences",
@@ -2459,6 +2581,7 @@
         "toListDomainAccessGrantsForOrganization",
         "toListIntegrations",
         "toListMetrics",
+        "toListOmniAgentAssets",
         "toListOmniDashboards",
         "toListOmniThreads",
         "toListSpaceAccess",
@@ -2482,6 +2605,7 @@
         "toUpdateAccessProfile",
         "toUpdateAlert",
         "toUpdateIntegration",
+        "toUpdateOmniAgentAsset",
         "toUpdateOmniDashboard",
         "toUpdateOmniThread",
         "toUpdatePreferences",

@@ -1954,6 +1954,23 @@
       "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
     },
     {
+      "key": "elasticache:IntegrationType",
+      "methodName": "ifIntegrationType",
+      "description": "Filters access by the Integrations.IntegrationType parameter in the CreateServerlessCache request",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions",
+      "relatedActionMethods": [
+        "toCreateServerlessCache"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "IntegrationType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
       "key": "elasticache:KmsKeyId",
       "methodName": "ifKmsKeyId",
       "description": "Filters access by the Key ID of the KMS key",

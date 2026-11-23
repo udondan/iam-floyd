@@ -50,7 +50,8 @@
       "StartResourceEvaluation",
       "StopConfigurationRecorder",
       "TagResource",
-      "UntagResource"
+      "UntagResource",
+      "AllowVendedLogDeliveryForResource"
     ],
     "Read": [
       "BatchGetAggregateResourceConfig",
@@ -117,6 +118,9 @@
     "Tagging": [
       "TagResource",
       "UntagResource"
+    ],
+    "Permissions management": [
+      "AllowVendedLogDeliveryForResource"
     ]
   },
   "actions": [
@@ -838,6 +842,13 @@
       "description": "Grants permission to delete specified tags from a resource",
       "accessLevel": "Tagging, Write",
       "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "AllowVendedLogDeliveryForResource",
+      "methodName": "toAllowVendedLogDeliveryForResource",
+      "description": "Grants permission to configure vended log delivery for Config",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html"
     }
   ],
   "resources": [
@@ -1289,7 +1300,8 @@
         "toStartConfigurationRecorder",
         "toStopConfigurationRecorder",
         "toTagResource",
-        "toUntagResource"
+        "toUntagResource",
+        "toAllowVendedLogDeliveryForResource"
       ],
       "relatedResourceTypes": [
         "AggregationAuthorization",
@@ -1347,10 +1359,29 @@
         "toDescribeConfigurationRecorderStatus",
         "toDescribeConfigurationRecorders",
         "toPutServiceLinkedConfigurationRecorder",
-        "toPutThirdPartyServiceLinkedConfigurationRecorder"
+        "toPutThirdPartyServiceLinkedConfigurationRecorder",
+        "toAllowVendedLogDeliveryForResource"
       ],
       "relatedResourceTypes": [],
       "keyLiteral": "ConfigurationRecorderServicePrincipal",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "config:ConformancePackType",
+      "methodName": "ifConformancePackType",
+      "description": "Filters access by the type of the conformance pack",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteConformancePack",
+        "toPutConformancePack"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ConformancePackType",
       "valueKind": "string",
       "defaultOperator": "StringLike",
       "valueTypes": [
