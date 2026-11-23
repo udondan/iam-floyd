@@ -828,7 +828,13 @@
       ],
       "conditionMethods": [
         "ifAwsResourceTag"
-      ]
+      ],
+      "cdkRef": {
+        "module": "aws_route53",
+        "interface": "IHealthCheckSourceRef",
+        "property": "healthCheckSourceRef",
+        "arn": "healthCheckSourceArn"
+      }
     },
     {
       "name": "hostedzone",
