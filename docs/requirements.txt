@@ -18,7 +18,7 @@ idna==3.20
 imagesize==2.0.1
 Jinja2==3.1.6
 MarkupSafe==3.0.4
-packaging==26.3
+packaging==26.4
 Pygments==2.21.0
 requests==2.34.2
 roman-numerals==4.1.0
