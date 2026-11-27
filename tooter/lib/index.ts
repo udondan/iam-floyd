@@ -64,6 +64,12 @@ export class Stack extends CdkStack {
       schedule: aws_events.Schedule.rate(Duration.minutes(30)),
     });
 
+    const mastodonLogGroup = new aws_logs.LogGroup(this, 'TooterLogGroup', {
+      logGroupName: `/aws/lambda/${projectId}-tooter`,
+      retention: aws_logs.RetentionDays.ONE_WEEK,
+      removalPolicy: RemovalPolicy.DESTROY,
+    });
+
     const mastodonFn = new aws_lambda_nodejs.NodejsFunction(this, 'Tooter', {
       functionName: `${projectId}-tooter`,
       description: `${project}: Toot one item from Floyd queue`,
@@ -75,7 +81,7 @@ export class Stack extends CdkStack {
       },
       runtime: aws_lambda.Runtime.NODEJS_24_X,
       timeout: Duration.seconds(10),
-      logRetention: aws_logs.RetentionDays.ONE_WEEK,
+      logGroup: mastodonLogGroup,
     });
 
     mastodonQueue.grantConsumeMessages(mastodonFn);
