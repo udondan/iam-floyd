@@ -49,7 +49,7 @@ jobs:
       # Pull requests from forks can't write security events
       - name: Upload to code scanning
         if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
-        uses: github/codeql-action/upload-sarif@1bd86f2fdb4b86187fa4059f16f31a3202acc9ea # v4.39.4
+        uses: github/codeql-action/upload-sarif@915412ff23e8b7659517e607487dbeae018f2934 # v4.39.5
         with:
           sarif_file: trivy-results.sarif
           category: trivy
