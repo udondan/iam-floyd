@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "filename": "s3-object-lambda",
+  "className": "S3ObjectLambda",
+  "name": "s3-object-lambda",
+  "servicePrefix": "s3-object-lambda",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3-object-lambda.html",
+  "accessLevelList": {
+    "Write": [
+      "AbortMultipartUpload",
+      "DeleteObject",
+      "DeleteObjectTagging",
+      "DeleteObjectVersion",
+      "DeleteObjectVersionTagging",
+      "PutObject",
+      "PutObjectAcl",
+      "PutObjectLegalHold",
+      "PutObjectRetention",
+      "PutObjectTagging",
+      "PutObjectVersionAcl",
+      "PutObjectVersionTagging",
+      "RestoreObject",
+      "WriteGetObjectResponse"
+    ],
+    "Tagging": [
+      "DeleteObjectTagging",
+      "DeleteObjectVersionTagging",
+      "PutObjectTagging",
+      "PutObjectVersionTagging"
+    ],
+    "Read": [
+      "GetObject",
+      "GetObjectAcl",
+      "GetObjectLegalHold",
+      "GetObjectRetention",
+      "GetObjectTagging",
+      "GetObjectVersion",
+      "GetObjectVersionAcl",
+      "GetObjectVersionTagging"
+    ],
+    "List": [
+      "ListBucket",
+      "ListBucketMultipartUploads",
+      "ListBucketVersions",
+      "ListMultipartUploadParts"
+    ],
+    "Permissions management": [
+      "PutObjectAcl",
+      "PutObjectVersionAcl"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AbortMultipartUpload",
+      "methodName": "toAbortMultipartUpload",
+      "description": "Grants permission to abort a multipart upload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html"
+    },
+    {
+      "name": "DeleteObject",
+      "methodName": "toDeleteObject",
+      "description": "Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html"
+    },
+    {
+      "name": "DeleteObjectTagging",
+      "methodName": "toDeleteObjectTagging",
+      "description": "Grants permission to use the tagging subresource to remove the entire tag set from the specified object",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html"
+    },
+    {
+      "name": "DeleteObjectVersion",
+      "methodName": "toDeleteObjectVersion",
+      "description": "Grants permission to remove a specific version of an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html"
+    },
+    {
+      "name": "DeleteObjectVersionTagging",
+      "methodName": "toDeleteObjectVersionTagging",
+      "description": "Grants permission to remove the entire tag set for a specific version of the object",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html"
+    },
+    {
+      "name": "GetObject",
+      "methodName": "toGetObject",
+      "description": "Grants permission to retrieve objects from Amazon S3",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "name": "GetObjectAcl",
+      "methodName": "toGetObjectAcl",
+      "description": "Grants permission to return the access control list (ACL) of an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html"
+    },
+    {
+      "name": "GetObjectLegalHold",
+      "methodName": "toGetObjectLegalHold",
+      "description": "Grants permission to get an object's current Legal Hold status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html"
+    },
+    {
+      "name": "GetObjectRetention",
+      "methodName": "toGetObjectRetention",
+      "description": "Grants permission to retrieve the retention settings for an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html"
+    },
+    {
+      "name": "GetObjectTagging",
+      "methodName": "toGetObjectTagging",
+      "description": "Grants permission to return the tag set of an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html"
+    },
+    {
+      "name": "GetObjectVersion",
+      "methodName": "toGetObjectVersion",
+      "description": "Grants permission to retrieve a specific version of an object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "name": "GetObjectVersionAcl",
+      "methodName": "toGetObjectVersionAcl",
+      "description": "Grants permission to return the access control list (ACL) of a specific object version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html"
+    },
+    {
+      "name": "GetObjectVersionTagging",
+      "methodName": "toGetObjectVersionTagging",
+      "description": "Grants permission to return the tag set for a specific version of the object",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html"
+    },
+    {
+      "name": "ListBucket",
+      "methodName": "toListBucket",
+      "description": "Grants permission to list some or all of the objects in an Amazon S3 bucket (up to 1000)",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"
+    },
+    {
+      "name": "ListBucketMultipartUploads",
+      "methodName": "toListBucketMultipartUploads",
+      "description": "Grants permission to list in-progress multipart uploads",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html"
+    },
+    {
+      "name": "ListBucketVersions",
+      "methodName": "toListBucketVersions",
+      "description": "Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html"
+    },
+    {
+      "name": "ListMultipartUploadParts",
+      "methodName": "toListMultipartUploadParts",
+      "description": "Grants permission to list the parts that have been uploaded for a specific multipart upload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html"
+    },
+    {
+      "name": "PutObject",
+      "methodName": "toPutObject",
+      "description": "Grants permission to add an object to a bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"
+    },
+    {
+      "name": "PutObjectAcl",
+      "methodName": "toPutObjectAcl",
+      "description": "Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html"
+    },
+    {
+      "name": "PutObjectLegalHold",
+      "methodName": "toPutObjectLegalHold",
+      "description": "Grants permission to apply a Legal Hold configuration to the specified object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html"
+    },
+    {
+      "name": "PutObjectRetention",
+      "methodName": "toPutObjectRetention",
+      "description": "Grants permission to place an Object Retention configuration on an object",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html"
+    },
+    {
+      "name": "PutObjectTagging",
+      "methodName": "toPutObjectTagging",
+      "description": "Grants permission to set the supplied tag-set to an object that already exists in a bucket",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html"
+    },
+    {
+      "name": "PutObjectVersionAcl",
+      "methodName": "toPutObjectVersionAcl",
+      "description": "Grants permission to use the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html"
+    },
+    {
+      "name": "PutObjectVersionTagging",
+      "methodName": "toPutObjectVersionTagging",
+      "description": "Grants permission to set the supplied tag-set for a specific version of an object",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html"
+    },
+    {
+      "name": "RestoreObject",
+      "methodName": "toRestoreObject",
+      "description": "Grants permission to restore an archived copy of an object back into Amazon S3",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html"
+    },
+    {
+      "name": "WriteGetObjectResponse",
+      "methodName": "toWriteGetObjectResponse",
+      "description": "Grants permission to provide data for GetObject requests send to S3 Object Lambda",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_WriteGetObjectResponse.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "objectlambdaaccesspoint",
+      "methodName": "onObjectlambdaaccesspoint",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/dev/transforming-objects.html",
+      "arn": "arn:${Partition}:s3-object-lambda:${Region}:${Account}:accesspoint/${AccessPointName}",
+      "placeholders": [
+        {
+          "placeholder": "AccessPointName",
+          "name": "accessPointName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "s3-object-lambda:TlsVersion",
+      "methodName": "ifTlsVersion",
+      "description": "Filters access by the TLS version used by the client",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetObject",
+        "toGetObjectAcl",
+        "toGetObjectLegalHold",
+        "toGetObjectRetention",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionAcl",
+        "toGetObjectVersionTagging",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectLegalHold",
+        "toPutObjectRetention",
+        "toPutObjectTagging",
+        "toPutObjectVersionAcl",
+        "toPutObjectVersionTagging",
+        "toRestoreObject",
+        "toWriteGetObjectResponse"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TlsVersion",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "s3-object-lambda:authType",
+      "methodName": "ifAuthType",
+      "description": "Filters access by authentication method",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetObject",
+        "toGetObjectAcl",
+        "toGetObjectLegalHold",
+        "toGetObjectRetention",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionAcl",
+        "toGetObjectVersionTagging",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectLegalHold",
+        "toPutObjectRetention",
+        "toPutObjectTagging",
+        "toPutObjectVersionAcl",
+        "toPutObjectVersionTagging",
+        "toRestoreObject",
+        "toWriteGetObjectResponse"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "authType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "s3-object-lambda:signatureAge",
+      "methodName": "ifSignatureAge",
+      "description": "Filters access by the age in milliseconds of the request signature",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html",
+      "relatedActionMethods": [
+        "toAbortMultipartUpload",
+        "toDeleteObject",
+        "toDeleteObjectTagging",
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetObject",
+        "toGetObjectAcl",
+        "toGetObjectLegalHold",
+        "toGetObjectRetention",
+        "toGetObjectTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionAcl",
+        "toGetObjectVersionTagging",
+        "toListBucket",
+        "toListBucketMultipartUploads",
+        "toListBucketVersions",
+        "toListMultipartUploadParts",
+        "toPutObject",
+        "toPutObjectAcl",
+        "toPutObjectLegalHold",
+        "toPutObjectRetention",
+        "toPutObjectTagging",
+        "toPutObjectVersionAcl",
+        "toPutObjectVersionTagging",
+        "toRestoreObject",
+        "toWriteGetObjectResponse"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "signatureAge",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "s3-object-lambda:versionid",
+      "methodName": "ifVersionid",
+      "description": "Filters access by a specific object version",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html/#getobjectversion-limit-access-to-specific-version-3",
+      "relatedActionMethods": [
+        "toDeleteObjectVersion",
+        "toDeleteObjectVersionTagging",
+        "toGetObjectVersion",
+        "toGetObjectVersionAcl",
+        "toGetObjectVersionTagging",
+        "toPutObjectVersionAcl",
+        "toPutObjectVersionTagging"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "versionid",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

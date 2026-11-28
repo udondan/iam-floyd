@@ -1,0 +1,74 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EBSReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMSReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": "kms:DescribeKey",
+      "Resource": "arn:aws:kms:*:*:key/*"
+    },
+    {
+      "Sid": "EBSDirectReadAPIPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ebs:ListSnapshotBlocks",
+        "ebs:GetSnapshotBlock"
+      ],
+      "Resource": "arn:aws:ec2:*::snapshot/*"
+    },
+    {
+      "Sid": "S3ReadonlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "S3PermissionsForFileLevelRestore",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+      ],
+      "Resource": "arn:aws:s3:::*/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KMSDataKeyForS3AndEC2Permissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "ec2.*.amazonaws.com",
+            "s3.*.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

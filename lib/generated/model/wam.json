@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "wam",
+  "className": "Wam",
+  "name": "wam",
+  "servicePrefix": "wam",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_wam.html",
+  "accessLevelList": {
+    "Write": [
+      "AuthenticatePackager"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AuthenticatePackager",
+      "methodName": "toAuthenticatePackager",
+      "description": "Allows the Amazon WAM packaging instance to access your application package catalog.",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/wam/latest/adminguide/iam.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

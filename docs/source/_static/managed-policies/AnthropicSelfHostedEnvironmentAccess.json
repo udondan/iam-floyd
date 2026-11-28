@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AnthropicSelfHostedEnvironmentWorkspace",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:GetEnvironment",
+        "aws-external-anthropic:GetSession",
+        "aws-external-anthropic:GetSkill",
+        "aws-external-anthropic:ProcessEnvironmentWork",
+        "aws-external-anthropic:UpdateSession"
+      ],
+      "Resource": "arn:aws:aws-external-anthropic:*:*:workspace/*"
+    },
+    {
+      "Sid": "AnthropicSelfHostedEnvironmentResourceless",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:CallWithBearerToken"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

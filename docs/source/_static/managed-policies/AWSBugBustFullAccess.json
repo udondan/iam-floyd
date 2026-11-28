@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CodeGuruReviewerPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-reviewer:DescribeCodeReview",
+        "codeguru-reviewer:ListRecommendations",
+        "codeguru-reviewer:ListCodeReviews"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeGuruProfilerPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-profiler:ListProfilingGroups",
+        "codeguru-profiler:DescribeProfilingGroup"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSBugBustFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bugbust:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSBugBustSLRCreation",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/bugbust.amazonaws.com/AWSServiceRoleForBugBust",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "bugbust.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

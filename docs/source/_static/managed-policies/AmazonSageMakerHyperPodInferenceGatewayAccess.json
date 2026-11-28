@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ImportOwnedCert",
+      "Effect": "Allow",
+      "Action": [
+        "acm:ImportCertificate",
+        "acm:AddTagsToCertificate"
+      ],
+      "Resource": "arn:aws:acm:*:*:certificate/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/CreatedBy": "HyperPodInference",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "CreatedBy"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ReadOwnedCerts",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DescribeCertificate",
+        "acm:ListTagsForCertificate"
+      ],
+      "Resource": "arn:aws:acm:*:*:certificate/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "HyperPodInference",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DeleteOwnedImportedCerts",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DeleteCertificate"
+      ],
+      "Resource": "arn:aws:acm:*:*:certificate/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "HyperPodInference",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "acm:CertificateKeyPairOrigin": "CUSTOMER_PROVIDED"
+        }
+      }
+    }
+  ]
+}

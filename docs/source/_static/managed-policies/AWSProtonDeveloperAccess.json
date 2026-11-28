@@ -1,0 +1,97 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProtonPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:ListRepositories",
+        "codepipeline:GetPipeline",
+        "codepipeline:GetPipelineExecution",
+        "codepipeline:GetPipelineState",
+        "codepipeline:ListPipelineExecutions",
+        "codepipeline:ListPipelines",
+        "codestar-connections:ListConnections",
+        "codestar-connections:UseConnection",
+        "proton:CancelServiceInstanceDeployment",
+        "proton:CancelServicePipelineDeployment",
+        "proton:CreateService",
+        "proton:DeleteService",
+        "proton:GetAccountRoles",
+        "proton:GetAccountSettings",
+        "proton:GetEnvironment",
+        "proton:GetEnvironmentAccountConnection",
+        "proton:GetEnvironmentTemplate",
+        "proton:GetEnvironmentTemplateMajorVersion",
+        "proton:GetEnvironmentTemplateMinorVersion",
+        "proton:GetEnvironmentTemplateVersion",
+        "proton:GetRepository",
+        "proton:GetRepositorySyncStatus",
+        "proton:GetResourcesSummary",
+        "proton:GetService",
+        "proton:GetServiceInstance",
+        "proton:GetServiceTemplate",
+        "proton:GetServiceTemplateMajorVersion",
+        "proton:GetServiceTemplateMinorVersion",
+        "proton:GetServiceTemplateVersion",
+        "proton:GetTemplateSyncConfig",
+        "proton:GetTemplateSyncStatus",
+        "proton:ListEnvironmentAccountConnections",
+        "proton:ListEnvironmentOutputs",
+        "proton:ListEnvironmentProvisionedResources",
+        "proton:ListEnvironments",
+        "proton:ListEnvironmentTemplateMajorVersions",
+        "proton:ListEnvironmentTemplateMinorVersions",
+        "proton:ListEnvironmentTemplates",
+        "proton:ListEnvironmentTemplateVersions",
+        "proton:ListRepositories",
+        "proton:ListRepositorySyncDefinitions",
+        "proton:ListServiceInstanceOutputs",
+        "proton:ListServiceInstanceProvisionedResources",
+        "proton:ListServiceInstances",
+        "proton:ListServicePipelineOutputs",
+        "proton:ListServicePipelineProvisionedResources",
+        "proton:ListServices",
+        "proton:ListServiceTemplateMajorVersions",
+        "proton:ListServiceTemplateMinorVersions",
+        "proton:ListServiceTemplates",
+        "proton:ListServiceTemplateVersions",
+        "proton:ListTagsForResource",
+        "proton:UpdateService",
+        "proton:UpdateServiceInstance",
+        "proton:UpdateServicePipeline",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarConnectionsPermissions",
+      "Effect": "Allow",
+      "Action": "codestar-connections:PassConnection",
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "codestar-connections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectionsPermissions",
+      "Effect": "Allow",
+      "Action": "codeconnections:PassConnection",
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "codeconnections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:*:*:function:sagemaker-*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:project-name": "false",
+          "aws:ResourceTag/sagemaker:partner": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "sagemaker:InvokeEndpoint",
+      "Resource": "arn:aws:sagemaker:*:*:endpoint/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:project-name": "false",
+          "aws:ResourceTag/sagemaker:partner": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

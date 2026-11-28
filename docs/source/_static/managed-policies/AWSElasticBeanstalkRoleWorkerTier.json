@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSQS",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:TagQueue",
+        "sqs:DeleteQueue",
+        "sqs:GetQueueAttributes",
+        "sqs:CreateQueue"
+      ],
+      "Resource": "arn:aws:sqs:*:*:awseb-e-*"
+    },
+    {
+      "Sid": "AllowDDB",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:CreateTable",
+        "dynamodb:TagResource",
+        "dynamodb:DescribeTable",
+        "dynamodb:DeleteTable"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/awseb-e-*"
+    }
+  ]
+}

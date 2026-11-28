@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "mgh:CreateProgressUpdateStream",
+      "Resource": "arn:aws:mgh:*:*:progressUpdateStream/DMS"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgh:DescribeMigrationTask",
+        "mgh:AssociateDiscoveredResource",
+        "mgh:ListDiscoveredResources",
+        "mgh:ImportMigrationTask",
+        "mgh:ListCreatedArtifacts",
+        "mgh:DisassociateDiscoveredResource",
+        "mgh:AssociateCreatedArtifact",
+        "mgh:NotifyMigrationTaskState",
+        "mgh:DisassociateCreatedArtifact",
+        "mgh:PutResourceAttributes"
+      ],
+      "Resource": "arn:aws:mgh:*:*:progressUpdateStream/DMS/migrationTask/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgh:ListMigrationTasks",
+        "mgh:NotifyApplicationState",
+        "mgh:DescribeApplicationState",
+        "mgh:GetHomeRegion"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

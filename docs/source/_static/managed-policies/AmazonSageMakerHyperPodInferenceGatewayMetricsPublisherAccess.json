@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublishGatewayMetrics",
+      "Effect": "Allow",
+      "Action": "kinesis:PutRecords",
+      "Resource": "arn:aws:kinesis:*:*:stream/gig-metrics-*"
+    },
+    {
+      "Sid": "EncryptGatewayMetrics",
+      "Effect": "Allow",
+      "Action": "kms:GenerateDataKey",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "kinesis.*.amazonaws.com",
+          "kms:EncryptionContext:aws:kinesis:arn": "arn:aws:kinesis:*:*:stream/gig-metrics-*"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1047 @@
+{
+  "schemaVersion": 1,
+  "filename": "appconfig",
+  "className": "Appconfig",
+  "name": "appconfig",
+  "servicePrefix": "appconfig",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appconfig.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateApplication",
+      "CreateConfigurationProfile",
+      "CreateDeploymentStrategy",
+      "CreateEnvironment",
+      "CreateExperimentDefinition",
+      "CreateExtension",
+      "CreateExtensionAssociation",
+      "CreateHostedConfigurationVersion",
+      "DeleteApplication",
+      "DeleteConfigurationProfile",
+      "DeleteDeploymentStrategy",
+      "DeleteEnvironment",
+      "DeleteExperimentDefinition",
+      "DeleteExtension",
+      "DeleteExtensionAssociation",
+      "DeleteHostedConfigurationVersion",
+      "StartConfigurationSession",
+      "StartDeployment",
+      "StartExperimentRun",
+      "StopDeployment",
+      "StopExperimentRun",
+      "TagResource",
+      "UntagResource",
+      "UpdateAccountSettings",
+      "UpdateApplication",
+      "UpdateConfigurationProfile",
+      "UpdateDeploymentStrategy",
+      "UpdateEnvironment",
+      "UpdateExperimentDefinition",
+      "UpdateExperimentRun",
+      "UpdateExtension",
+      "UpdateExtensionAssociation",
+      "ValidateConfiguration"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetApplication",
+      "GetConfiguration",
+      "GetConfigurationProfile",
+      "GetDeployment",
+      "GetDeploymentStrategy",
+      "GetEnvironment",
+      "GetExperimentDefinition",
+      "GetExperimentRun",
+      "GetExtension",
+      "GetExtensionAssociation",
+      "GetHostedConfigurationVersion",
+      "GetLatestConfiguration",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplications",
+      "ListConfigurationProfiles",
+      "ListDeploymentStrategies",
+      "ListDeployments",
+      "ListEnvironments",
+      "ListExperimentDefinitions",
+      "ListExperimentRunEvents",
+      "ListExperimentRuns",
+      "ListExtensionAssociations",
+      "ListExtensions",
+      "ListHostedConfigurationVersions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateApplication",
+      "methodName": "toCreateApplication",
+      "description": "Grants permission to create an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateConfigurationProfile",
+      "methodName": "toCreateConfigurationProfile",
+      "description": "Grants permission to create a configuration profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html"
+    },
+    {
+      "name": "CreateDeploymentStrategy",
+      "methodName": "toCreateDeploymentStrategy",
+      "description": "Grants permission to create a deployment strategy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateDeploymentStrategy.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permission to create an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html"
+    },
+    {
+      "name": "CreateExperimentDefinition",
+      "methodName": "toCreateExperimentDefinition",
+      "description": "Grants permission to create an experiment definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateExperimentDefinition.html"
+    },
+    {
+      "name": "CreateExtension",
+      "methodName": "toCreateExtension",
+      "description": "Grants permission to create an extension",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateExtension.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateExtensionAssociation",
+      "methodName": "toCreateExtensionAssociation",
+      "description": "Grants permission to create an extension association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateExtensionAssociation.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateHostedConfigurationVersion",
+      "methodName": "toCreateHostedConfigurationVersion",
+      "description": "Grants permission to create a hosted configuration version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateHostedConfigurationVersion.html"
+    },
+    {
+      "name": "DeleteApplication",
+      "methodName": "toDeleteApplication",
+      "description": "Grants permission to delete an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteApplication.html"
+    },
+    {
+      "name": "DeleteConfigurationProfile",
+      "methodName": "toDeleteConfigurationProfile",
+      "description": "Grants permission to delete a configuration profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteConfigurationProfile.html"
+    },
+    {
+      "name": "DeleteDeploymentStrategy",
+      "methodName": "toDeleteDeploymentStrategy",
+      "description": "Grants permission to delete a deployment strategy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteDeploymentStrategy.html"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteEnvironment.html"
+    },
+    {
+      "name": "DeleteExperimentDefinition",
+      "methodName": "toDeleteExperimentDefinition",
+      "description": "Grants permission to delete an experiment definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteExperimentDefinition.html"
+    },
+    {
+      "name": "DeleteExtension",
+      "methodName": "toDeleteExtension",
+      "description": "Grants permission to delete an extension",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteExtension.html"
+    },
+    {
+      "name": "DeleteExtensionAssociation",
+      "methodName": "toDeleteExtensionAssociation",
+      "description": "Grants permission to delete an extension association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteExtensionAssociation.html"
+    },
+    {
+      "name": "DeleteHostedConfigurationVersion",
+      "methodName": "toDeleteHostedConfigurationVersion",
+      "description": "Grants permission to delete a hosted configuration version",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteHostedConfigurationVersion.html"
+    },
+    {
+      "name": "GetAccountSettings",
+      "methodName": "toGetAccountSettings",
+      "description": "Grants permission to view account-wide AppConfig settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetAccountSettings.html"
+    },
+    {
+      "name": "GetApplication",
+      "methodName": "toGetApplication",
+      "description": "Grants permission to view details about an application",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html"
+    },
+    {
+      "name": "GetConfiguration",
+      "methodName": "toGetConfiguration",
+      "description": "Grants permission to view details about a configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html"
+    },
+    {
+      "name": "GetConfigurationProfile",
+      "methodName": "toGetConfigurationProfile",
+      "description": "Grants permission to view details about a configuration profile",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html"
+    },
+    {
+      "name": "GetDeployment",
+      "methodName": "toGetDeployment",
+      "description": "Grants permission to view details about a deployment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html"
+    },
+    {
+      "name": "GetDeploymentStrategy",
+      "methodName": "toGetDeploymentStrategy",
+      "description": "Grants permission to view details about a deployment strategy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html"
+    },
+    {
+      "name": "GetEnvironment",
+      "methodName": "toGetEnvironment",
+      "description": "Grants permission to view details about an environment",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html"
+    },
+    {
+      "name": "GetExperimentDefinition",
+      "methodName": "toGetExperimentDefinition",
+      "description": "Grants permission to view details about an experiment definition",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExperimentDefinition.html"
+    },
+    {
+      "name": "GetExperimentRun",
+      "methodName": "toGetExperimentRun",
+      "description": "Grants permission to view details about an experiment run",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExperimentRun.html"
+    },
+    {
+      "name": "GetExtension",
+      "methodName": "toGetExtension",
+      "description": "Grants permission to view details about an extension",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExtension.html"
+    },
+    {
+      "name": "GetExtensionAssociation",
+      "methodName": "toGetExtensionAssociation",
+      "description": "Grants permission to view details about an extension association",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetExtensionAssociation.html"
+    },
+    {
+      "name": "GetHostedConfigurationVersion",
+      "methodName": "toGetHostedConfigurationVersion",
+      "description": "Grants permission to view details about a hosted configuration version",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetHostedConfigurationVersion.html"
+    },
+    {
+      "name": "GetLatestConfiguration",
+      "methodName": "toGetLatestConfiguration",
+      "description": "Grants permission to retrieve a deployed configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html"
+    },
+    {
+      "name": "ListApplications",
+      "methodName": "toListApplications",
+      "description": "Grants permission to list the applications in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListApplications.html"
+    },
+    {
+      "name": "ListConfigurationProfiles",
+      "methodName": "toListConfigurationProfiles",
+      "description": "Grants permission to list the configuration profiles for an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListConfigurationProfiles.html"
+    },
+    {
+      "name": "ListDeploymentStrategies",
+      "methodName": "toListDeploymentStrategies",
+      "description": "Grants permission to list the deployment strategies for your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeploymentStrategies.html"
+    },
+    {
+      "name": "ListDeployments",
+      "methodName": "toListDeployments",
+      "description": "Grants permission to list the deployments for an environment",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeployments.html"
+    },
+    {
+      "name": "ListEnvironments",
+      "methodName": "toListEnvironments",
+      "description": "Grants permission to list the environments for an application",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListEnvironments.html"
+    },
+    {
+      "name": "ListExperimentDefinitions",
+      "methodName": "toListExperimentDefinitions",
+      "description": "Grants permission to list the experiment definitions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExperimentDefinitions.html"
+    },
+    {
+      "name": "ListExperimentRunEvents",
+      "methodName": "toListExperimentRunEvents",
+      "description": "Grants permission to list the events for an experiment run",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExperimentRunEvents.html"
+    },
+    {
+      "name": "ListExperimentRuns",
+      "methodName": "toListExperimentRuns",
+      "description": "Grants permission to list the experiment runs for an experiment definition",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExperimentRuns.html"
+    },
+    {
+      "name": "ListExtensionAssociations",
+      "methodName": "toListExtensionAssociations",
+      "description": "Grants permission to list the extension associations in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExtensionAssociations.html"
+    },
+    {
+      "name": "ListExtensions",
+      "methodName": "toListExtensions",
+      "description": "Grants permission to list the extensions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListExtensions.html"
+    },
+    {
+      "name": "ListHostedConfigurationVersions",
+      "methodName": "toListHostedConfigurationVersions",
+      "description": "Grants permission to list the hosted configuration versions for a configuration profile",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListHostedConfigurationVersions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to view a list of resource tags for a specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "StartConfigurationSession",
+      "methodName": "toStartConfigurationSession",
+      "description": "Grants permission to start a configuration session",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html"
+    },
+    {
+      "name": "StartDeployment",
+      "methodName": "toStartDeployment",
+      "description": "Grants permission to initiate a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html"
+    },
+    {
+      "name": "StartExperimentRun",
+      "methodName": "toStartExperimentRun",
+      "description": "Grants permission to start an experiment run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartExperimentRun.html"
+    },
+    {
+      "name": "StopDeployment",
+      "methodName": "toStopDeployment",
+      "description": "Grants permission to stop a deployment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopDeployment.html"
+    },
+    {
+      "name": "StopExperimentRun",
+      "methodName": "toStopExperimentRun",
+      "description": "Grants permission to stop an experiment run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopExperimentRun.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an appconfig resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an appconfig resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to modify account-wide AppConfig settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateApplication",
+      "methodName": "toUpdateApplication",
+      "description": "Grants permission to modify an application",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html"
+    },
+    {
+      "name": "UpdateConfigurationProfile",
+      "methodName": "toUpdateConfigurationProfile",
+      "description": "Grants permission to modify a configuration profile",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html"
+    },
+    {
+      "name": "UpdateDeploymentStrategy",
+      "methodName": "toUpdateDeploymentStrategy",
+      "description": "Grants permission to modify a deployment strategy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html"
+    },
+    {
+      "name": "UpdateEnvironment",
+      "methodName": "toUpdateEnvironment",
+      "description": "Grants permission to modify an environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html"
+    },
+    {
+      "name": "UpdateExperimentDefinition",
+      "methodName": "toUpdateExperimentDefinition",
+      "description": "Grants permission to modify an experiment definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExperimentDefinition.html"
+    },
+    {
+      "name": "UpdateExperimentRun",
+      "methodName": "toUpdateExperimentRun",
+      "description": "Grants permission to modify an experiment run",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExperimentRun.html"
+    },
+    {
+      "name": "UpdateExtension",
+      "methodName": "toUpdateExtension",
+      "description": "Grants permission to modify an extension",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExtension.html"
+    },
+    {
+      "name": "UpdateExtensionAssociation",
+      "methodName": "toUpdateExtensionAssociation",
+      "description": "Grants permission to modify an extension association",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateExtensionAssociation.html"
+    },
+    {
+      "name": "ValidateConfiguration",
+      "methodName": "toValidateConfiguration",
+      "description": "Grants permission to validate a configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ValidateConfiguration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "application",
+      "methodName": "onApplication",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-namespace.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appconfig",
+        "interface": "IApplicationRef",
+        "property": "applicationRef",
+        "id": "applicationId"
+      }
+    },
+    {
+      "name": "configuration",
+      "methodName": "onConfiguration",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/configuration/${ConfigurationProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConfigurationProfileId",
+          "name": "configurationProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "configurationprofile",
+      "methodName": "onConfigurationprofile",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConfigurationProfileId",
+          "name": "configurationProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deployment",
+      "methodName": "onDeployment",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-deploying.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeploymentNumber",
+          "name": "deploymentNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "deploymentstrategy",
+      "methodName": "onDeploymentstrategy",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}",
+      "placeholders": [
+        {
+          "placeholder": "DeploymentStrategyId",
+          "name": "deploymentStrategyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appconfig",
+        "interface": "IDeploymentStrategyRef",
+        "property": "deploymentStrategyRef",
+        "id": "deploymentStrategyId"
+      }
+    },
+    {
+      "name": "environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-environment.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "experimentdefinition",
+      "methodName": "onExperimentdefinition",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-experiment-definition.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/experimentdefinition/${ExperimentDefinitionId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExperimentDefinitionId",
+          "name": "experimentDefinitionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "experimentrun",
+      "methodName": "onExperimentrun",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-experimentation-creating-starting.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/experimentdefinition/${ExperimentDefinitionId}/experimentrun/${ExperimentRunNumber}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExperimentDefinitionId",
+          "name": "experimentDefinitionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExperimentRunNumber",
+          "name": "experimentRunNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "extension",
+      "methodName": "onExtension",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:extension/${ExtensionId}/${ExtensionVersionNumber}",
+      "placeholders": [
+        {
+          "placeholder": "ExtensionId",
+          "name": "extensionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ExtensionVersionNumber",
+          "name": "extensionVersionNumber",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "extensionassociation",
+      "methodName": "onExtensionassociation",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:extensionassociation/${ExtensionAssociationId}",
+      "placeholders": [
+        {
+          "placeholder": "ExtensionAssociationId",
+          "name": "extensionAssociationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_appconfig",
+        "interface": "IExtensionAssociationRef",
+        "property": "extensionAssociationRef",
+        "arn": "extensionAssociationArn"
+      }
+    },
+    {
+      "name": "hostedconfigurationversion",
+      "methodName": "onHostedconfigurationversion",
+      "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}",
+      "placeholders": [
+        {
+          "placeholder": "ApplicationId",
+          "name": "applicationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ConfigurationProfileId",
+          "name": "configurationProfileId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for a specified tag",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateConfigurationProfile",
+        "toCreateDeploymentStrategy",
+        "toCreateEnvironment",
+        "toCreateExperimentDefinition",
+        "toCreateExtension",
+        "toCreateExtensionAssociation",
+        "toStartDeployment",
+        "toStartExperimentRun",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key-value pair assigned to the AWS resource",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateConfigurationProfile",
+        "toCreateEnvironment",
+        "toCreateExperimentDefinition",
+        "toCreateHostedConfigurationVersion",
+        "toDeleteApplication",
+        "toDeleteConfigurationProfile",
+        "toDeleteDeploymentStrategy",
+        "toDeleteEnvironment",
+        "toDeleteExperimentDefinition",
+        "toDeleteExtension",
+        "toDeleteExtensionAssociation",
+        "toDeleteHostedConfigurationVersion",
+        "toGetApplication",
+        "toGetConfiguration",
+        "toGetConfigurationProfile",
+        "toGetDeployment",
+        "toGetDeploymentStrategy",
+        "toGetEnvironment",
+        "toGetExperimentDefinition",
+        "toGetExperimentRun",
+        "toGetExtension",
+        "toGetExtensionAssociation",
+        "toGetHostedConfigurationVersion",
+        "toGetLatestConfiguration",
+        "toListConfigurationProfiles",
+        "toListDeployments",
+        "toListEnvironments",
+        "toListExperimentRunEvents",
+        "toListExperimentRuns",
+        "toListHostedConfigurationVersions",
+        "toListTagsForResource",
+        "toStartConfigurationSession",
+        "toStartDeployment",
+        "toStartExperimentRun",
+        "toStopDeployment",
+        "toStopExperimentRun",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateApplication",
+        "toUpdateConfigurationProfile",
+        "toUpdateDeploymentStrategy",
+        "toUpdateEnvironment",
+        "toUpdateExperimentDefinition",
+        "toUpdateExperimentRun",
+        "toUpdateExtension",
+        "toUpdateExtensionAssociation",
+        "toValidateConfiguration"
+      ],
+      "relatedResourceTypes": [
+        "application",
+        "configuration",
+        "configurationprofile",
+        "deployment",
+        "deploymentstrategy",
+        "environment",
+        "experimentdefinition",
+        "experimentrun",
+        "extension",
+        "extensionassociation"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateApplication",
+        "toCreateConfigurationProfile",
+        "toCreateDeploymentStrategy",
+        "toCreateEnvironment",
+        "toCreateExperimentDefinition",
+        "toCreateExtension",
+        "toCreateExtensionAssociation",
+        "toStartDeployment",
+        "toStartExperimentRun",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

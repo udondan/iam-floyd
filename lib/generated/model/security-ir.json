@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "filename": "security-ir",
+  "className": "SecurityIr",
+  "name": "security-ir",
+  "servicePrefix": "security-ir",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_security-ir.html",
+  "accessLevelList": {
+    "Read": [
+      "BatchGetMemberAccountDetails",
+      "GetCase",
+      "GetCaseAttachmentDownloadUrl",
+      "GetFindingMetrics",
+      "GetMembership",
+      "ListCaseEdits",
+      "ListComments",
+      "ListInvestigations",
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "CancelMembership",
+      "CloseCase",
+      "CreateCase",
+      "CreateCaseComment",
+      "CreateMembership",
+      "GetCaseAttachmentUploadUrl",
+      "SendFeedback",
+      "TagResource",
+      "UntagResource",
+      "UpdateCase",
+      "UpdateCaseComment",
+      "UpdateCaseStatus",
+      "UpdateMembership",
+      "UpdateResolverType"
+    ],
+    "List": [
+      "ListCases",
+      "ListMemberships"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "BatchGetMemberAccountDetails",
+      "methodName": "toBatchGetMemberAccountDetails",
+      "description": "Grants permission to get member account details in batch",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_BatchGetMemberAccountDetails.html"
+    },
+    {
+      "name": "CancelMembership",
+      "methodName": "toCancelMembership",
+      "description": "Grants permission to cancel a membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CancelMembership.html"
+    },
+    {
+      "name": "CloseCase",
+      "methodName": "toCloseCase",
+      "description": "Grants permission to close a case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CloseCase.html"
+    },
+    {
+      "name": "CreateCase",
+      "methodName": "toCreateCase",
+      "description": "Grants permission to create a case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateCase.html"
+    },
+    {
+      "name": "CreateCaseComment",
+      "methodName": "toCreateCaseComment",
+      "description": "Grants permission to create a case comment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateCaseComment.html"
+    },
+    {
+      "name": "CreateMembership",
+      "methodName": "toCreateMembership",
+      "description": "Grants permission to create a membership",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateMembership.html"
+    },
+    {
+      "name": "GetCase",
+      "methodName": "toGetCase",
+      "description": "Grants permission to get a case",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_GetCase.html"
+    },
+    {
+      "name": "GetCaseAttachmentDownloadUrl",
+      "methodName": "toGetCaseAttachmentDownloadUrl",
+      "description": "Grants permission to get a case attachment download URL",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_GetCaseAttachmentDownloadUrl.html"
+    },
+    {
+      "name": "GetCaseAttachmentUploadUrl",
+      "methodName": "toGetCaseAttachmentUploadUrl",
+      "description": "Grants permission to get a case attachment upload URL",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_GetCaseAttachmentUploadUrl.html"
+    },
+    {
+      "name": "GetFindingMetrics",
+      "methodName": "toGetFindingMetrics",
+      "description": "Grants permission to retrieve finding-lifecycle metrics for a membership over a date range",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_GetFindingMetrics.html"
+    },
+    {
+      "name": "GetMembership",
+      "methodName": "toGetMembership",
+      "description": "Grants permission to get a membership",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_GetMembership.html"
+    },
+    {
+      "name": "ListCaseEdits",
+      "methodName": "toListCaseEdits",
+      "description": "Grants permission to list case edits",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListCaseEdits.html"
+    },
+    {
+      "name": "ListCases",
+      "methodName": "toListCases",
+      "description": "Grants permission to list cases",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListCases.html"
+    },
+    {
+      "name": "ListComments",
+      "methodName": "toListComments",
+      "description": "Grants permission to list case comments",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListComments.html"
+    },
+    {
+      "name": "ListInvestigations",
+      "methodName": "toListInvestigations",
+      "description": "Grants permission to list investigations for a case",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListInvestigations.html"
+    },
+    {
+      "name": "ListMemberships",
+      "methodName": "toListMemberships",
+      "description": "Grants permission to list memberships",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListMemberships.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags attached to the specified resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "SendFeedback",
+      "methodName": "toSendFeedback",
+      "description": "Grants permission to send feedback for investigation results",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_SendFeedback.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateCase",
+      "methodName": "toUpdateCase",
+      "description": "Grants permission to update a case",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UpdateCase.html"
+    },
+    {
+      "name": "UpdateCaseComment",
+      "methodName": "toUpdateCaseComment",
+      "description": "Grants permission to update a case comment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UpdateCaseComment.html"
+    },
+    {
+      "name": "UpdateCaseStatus",
+      "methodName": "toUpdateCaseStatus",
+      "description": "Grants permission to update a case status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UpdateCaseStatus.html"
+    },
+    {
+      "name": "UpdateMembership",
+      "methodName": "toUpdateMembership",
+      "description": "Grants permission to update memberships",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UpdateMembership.html"
+    },
+    {
+      "name": "UpdateResolverType",
+      "methodName": "toUpdateResolverType",
+      "description": "Grants permission to update case resolver type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UpdateResolverType.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "case",
+      "methodName": "onCase",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/userguide/cases.html",
+      "arn": "arn:${Partition}:security-ir:${Region}:${Account}:case/${CaseId}",
+      "placeholders": [
+        {
+          "placeholder": "CaseId",
+          "name": "caseId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "membership",
+      "methodName": "onMembership",
+      "url": "https://docs.aws.amazon.com/security-ir/latest/userguide/select-a-membership-account.html",
+      "arn": "arn:${Partition}:security-ir:${Region}:${Account}:membership/${MembershipId}",
+      "placeholders": [
+        {
+          "placeholder": "MembershipId",
+          "name": "membershipId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateCase",
+        "toCreateMembership",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toBatchGetMemberAccountDetails",
+        "toCancelMembership",
+        "toCloseCase",
+        "toCreateCase",
+        "toCreateCaseComment",
+        "toCreateMembership",
+        "toGetCase",
+        "toGetCaseAttachmentDownloadUrl",
+        "toGetCaseAttachmentUploadUrl",
+        "toGetFindingMetrics",
+        "toGetMembership",
+        "toListCaseEdits",
+        "toListComments",
+        "toListInvestigations",
+        "toListTagsForResource",
+        "toSendFeedback",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateCase",
+        "toUpdateCaseComment",
+        "toUpdateCaseStatus",
+        "toUpdateMembership",
+        "toUpdateResolverType"
+      ],
+      "relatedResourceTypes": [
+        "case",
+        "membership"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateCase",
+        "toCreateMembership",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

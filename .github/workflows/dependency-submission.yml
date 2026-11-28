@@ -1,0 +1,35 @@
+---
+name: Dependency Submission
+
+# GitHub's dependency graph doesn't read bun.lock, so Dependabot only alerts on
+# the direct dependencies in tooter/package.json. This submits every package
+# locked in tooter/bun.lock, transitive ones included, after each change on
+# main. GitHub then checks them against new advisories by itself, so no
+# scheduled scan is needed, and the alerts never block a pull request.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - tooter/bun.lock
+      - tooter/package.json
+      - .github/workflows/dependency-submission.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-submission
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # dependency submission API
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: charpeni/bun-lock-submission@a03085a531255ea928590ac0d76d53383a026bdf # v1.0.0

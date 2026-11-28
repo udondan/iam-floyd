@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "filename": "elb",
+  "className": "Elasticloadbalancing",
+  "name": "elasticloadbalancing",
+  "servicePrefix": "elasticloadbalancing",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_elb.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTags",
+      "RemoveTags"
+    ],
+    "Write": [
+      "AddTags",
+      "ApplySecurityGroupsToLoadBalancer",
+      "AttachLoadBalancerToSubnets",
+      "ConfigureHealthCheck",
+      "CreateAppCookieStickinessPolicy",
+      "CreateLBCookieStickinessPolicy",
+      "CreateLoadBalancer",
+      "CreateLoadBalancerListeners",
+      "CreateLoadBalancerPolicy",
+      "DeleteLoadBalancer",
+      "DeleteLoadBalancerListeners",
+      "DeleteLoadBalancerPolicy",
+      "DeregisterInstancesFromLoadBalancer",
+      "DetachLoadBalancerFromSubnets",
+      "DisableAvailabilityZonesForLoadBalancer",
+      "EnableAvailabilityZonesForLoadBalancer",
+      "ModifyLoadBalancerAttributes",
+      "RegisterInstancesWithLoadBalancer",
+      "RemoveTags",
+      "SetLoadBalancerListenerSSLCertificate",
+      "SetLoadBalancerPoliciesForBackendServer",
+      "SetLoadBalancerPoliciesOfListener"
+    ],
+    "Read": [
+      "DescribeInstanceHealth",
+      "DescribeLoadBalancerAttributes",
+      "DescribeLoadBalancerPolicies",
+      "DescribeLoadBalancerPolicyTypes",
+      "DescribeTags"
+    ],
+    "List": [
+      "DescribeLoadBalancers"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTags",
+      "methodName": "toAddTags",
+      "description": "Grants permission to add the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html"
+    },
+    {
+      "name": "ApplySecurityGroupsToLoadBalancer",
+      "methodName": "toApplySecurityGroupsToLoadBalancer",
+      "description": "Grants permission to associate one or more security groups with your load balancer in a virtual private cloud (VPC)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ApplySecurityGroupsToLoadBalancer.html"
+    },
+    {
+      "name": "AttachLoadBalancerToSubnets",
+      "methodName": "toAttachLoadBalancerToSubnets",
+      "description": "Grants permission to add one or more subnets to the set of configured subnets for the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AttachLoadBalancerToSubnets.html"
+    },
+    {
+      "name": "ConfigureHealthCheck",
+      "methodName": "toConfigureHealthCheck",
+      "description": "Grants permission to specify the health check settings to use when evaluating the health state of your back-end instances",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ConfigureHealthCheck.html"
+    },
+    {
+      "name": "CreateAppCookieStickinessPolicy",
+      "methodName": "toCreateAppCookieStickinessPolicy",
+      "description": "Grants permission to generate a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateAppCookieStickinessPolicy.html"
+    },
+    {
+      "name": "CreateLBCookieStickinessPolicy",
+      "methodName": "toCreateLBCookieStickinessPolicy",
+      "description": "Grants permission to generate a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLBCookieStickinessPolicy.html"
+    },
+    {
+      "name": "CreateLoadBalancer",
+      "methodName": "toCreateLoadBalancer",
+      "description": "Grants permission to create a load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancer.html"
+    },
+    {
+      "name": "CreateLoadBalancerListeners",
+      "methodName": "toCreateLoadBalancerListeners",
+      "description": "Grants permission to create one or more listeners for the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerListeners.html"
+    },
+    {
+      "name": "CreateLoadBalancerPolicy",
+      "methodName": "toCreateLoadBalancerPolicy",
+      "description": "Grants permission to create a policy with the specified attributes for the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerPolicy.html"
+    },
+    {
+      "name": "DeleteLoadBalancer",
+      "methodName": "toDeleteLoadBalancer",
+      "description": "Grants permission to delete the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancer.html"
+    },
+    {
+      "name": "DeleteLoadBalancerListeners",
+      "methodName": "toDeleteLoadBalancerListeners",
+      "description": "Grants permission to delete the specified listeners from the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerListeners.html"
+    },
+    {
+      "name": "DeleteLoadBalancerPolicy",
+      "methodName": "toDeleteLoadBalancerPolicy",
+      "description": "Grants permission to delete the specified policy from the specified load balancer. This policy must not be enabled for any listeners",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerPolicy.html"
+    },
+    {
+      "name": "DeregisterInstancesFromLoadBalancer",
+      "methodName": "toDeregisterInstancesFromLoadBalancer",
+      "description": "Grants permission to deregister the specified instances from the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeregisterInstancesFromLoadBalancer.html"
+    },
+    {
+      "name": "DescribeInstanceHealth",
+      "methodName": "toDescribeInstanceHealth",
+      "description": "Grants permission to describe the state of the specified instances with respect to the specified load balancer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeInstanceHealth.html"
+    },
+    {
+      "name": "DescribeLoadBalancerAttributes",
+      "methodName": "toDescribeLoadBalancerAttributes",
+      "description": "Grants permission to describe the attributes for the specified load balancer",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerAttributes.html"
+    },
+    {
+      "name": "DescribeLoadBalancerPolicies",
+      "methodName": "toDescribeLoadBalancerPolicies",
+      "description": "Grants permission to describe the specified policies",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerPolicies.html"
+    },
+    {
+      "name": "DescribeLoadBalancerPolicyTypes",
+      "methodName": "toDescribeLoadBalancerPolicyTypes",
+      "description": "Grants permission to describe the specified load balancer policy types",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerPolicyTypes.html"
+    },
+    {
+      "name": "DescribeLoadBalancers",
+      "methodName": "toDescribeLoadBalancers",
+      "description": "Grants permission to describe the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Grants permission to describe the tags associated with the specified load balancers",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeTags.html"
+    },
+    {
+      "name": "DetachLoadBalancerFromSubnets",
+      "methodName": "toDetachLoadBalancerFromSubnets",
+      "description": "Grants permission to remove the specified subnets from the set of configured subnets for the load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DetachLoadBalancerFromSubnets.html"
+    },
+    {
+      "name": "DisableAvailabilityZonesForLoadBalancer",
+      "methodName": "toDisableAvailabilityZonesForLoadBalancer",
+      "description": "Grants permission to remove the specified Availability Zones from the set of Availability Zones for the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DisableAvailabilityZonesForLoadBalancer.html"
+    },
+    {
+      "name": "EnableAvailabilityZonesForLoadBalancer",
+      "methodName": "toEnableAvailabilityZonesForLoadBalancer",
+      "description": "Grants permission to add the specified Availability Zones to the set of Availability Zones for the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_EnableAvailabilityZonesForLoadBalancer.html"
+    },
+    {
+      "name": "ModifyLoadBalancerAttributes",
+      "methodName": "toModifyLoadBalancerAttributes",
+      "description": "Grants permission to modify the attributes of the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ModifyLoadBalancerAttributes.html"
+    },
+    {
+      "name": "RegisterInstancesWithLoadBalancer",
+      "methodName": "toRegisterInstancesWithLoadBalancer",
+      "description": "Grants permission to add the specified instances to the specified load balancer",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RegisterInstancesWithLoadBalancer.html"
+    },
+    {
+      "name": "RemoveTags",
+      "methodName": "toRemoveTags",
+      "description": "Grants permission to remove one or more tags from the specified load balancer",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RemoveTags.html"
+    },
+    {
+      "name": "SetLoadBalancerListenerSSLCertificate",
+      "methodName": "toSetLoadBalancerListenerSSLCertificate",
+      "description": "Grants permission to set the certificate that terminates the specified listener's SSL connections",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerListenerSSLCertificate.html"
+    },
+    {
+      "name": "SetLoadBalancerPoliciesForBackendServer",
+      "methodName": "toSetLoadBalancerPoliciesForBackendServer",
+      "description": "Grants permission to replace the set of policies associated with the specified port on which the back-end server is listening with a new set of policies",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesForBackendServer.html"
+    },
+    {
+      "name": "SetLoadBalancerPoliciesOfListener",
+      "methodName": "toSetLoadBalancerPoliciesOfListener",
+      "description": "Grants permission to replace the current set of policies for the specified load balancer port with the specified set of policies",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesOfListener.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "loadbalancer",
+      "methodName": "onLoadbalancer",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}",
+      "placeholders": [
+        {
+          "placeholder": "LoadBalancerName",
+          "name": "loadBalancerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_elasticloadbalancing",
+        "interface": "ILoadBalancerRef",
+        "property": "loadBalancerRef",
+        "id": "loadBalancerName"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateLoadBalancer",
+        "toRemoveTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toApplySecurityGroupsToLoadBalancer",
+        "toAttachLoadBalancerToSubnets",
+        "toConfigureHealthCheck",
+        "toCreateAppCookieStickinessPolicy",
+        "toCreateLBCookieStickinessPolicy",
+        "toCreateLoadBalancer",
+        "toCreateLoadBalancerListeners",
+        "toCreateLoadBalancerPolicy",
+        "toDeleteLoadBalancer",
+        "toDeleteLoadBalancerListeners",
+        "toDeleteLoadBalancerPolicy",
+        "toDeregisterInstancesFromLoadBalancer",
+        "toDetachLoadBalancerFromSubnets",
+        "toDisableAvailabilityZonesForLoadBalancer",
+        "toEnableAvailabilityZonesForLoadBalancer",
+        "toModifyLoadBalancerAttributes",
+        "toRegisterInstancesWithLoadBalancer",
+        "toRemoveTags",
+        "toSetLoadBalancerListenerSSLCertificate",
+        "toSetLoadBalancerPoliciesForBackendServer",
+        "toSetLoadBalancerPoliciesOfListener"
+      ],
+      "relatedResourceTypes": [
+        "loadbalancer"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toCreateLoadBalancer",
+        "toRemoveTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:CreateAction",
+      "methodName": "ifCreateAction",
+      "description": "Filters access by the name of a resource-creating API action",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/tagging-resources-during-creation.html",
+      "relatedActionMethods": [
+        "toAddTags"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreateAction",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:ListenerProtocol",
+      "methodName": "ifListenerProtocol",
+      "description": "Filters access by the listener protocols that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#listenerprotocol-condition",
+      "relatedActionMethods": [
+        "toCreateLoadBalancer",
+        "toCreateLoadBalancerListeners"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ListenerProtocol",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:ResourceTag/",
+      "methodName": "ifResourceTagExists",
+      "description": "Filters access by the preface string for a tag key and value pair that are attached to a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:ResourceTag/${TagKey}",
+      "methodName": "ifResourceTagTagKey",
+      "description": "Filters access by the preface string for a tag key and value pair that are attached to a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddTags",
+        "toApplySecurityGroupsToLoadBalancer",
+        "toAttachLoadBalancerToSubnets",
+        "toConfigureHealthCheck",
+        "toCreateAppCookieStickinessPolicy",
+        "toCreateLBCookieStickinessPolicy",
+        "toCreateLoadBalancer",
+        "toCreateLoadBalancerListeners",
+        "toCreateLoadBalancerPolicy",
+        "toDeleteLoadBalancer",
+        "toDeleteLoadBalancerListeners",
+        "toDeleteLoadBalancerPolicy",
+        "toDeregisterInstancesFromLoadBalancer",
+        "toDetachLoadBalancerFromSubnets",
+        "toDisableAvailabilityZonesForLoadBalancer",
+        "toEnableAvailabilityZonesForLoadBalancer",
+        "toModifyLoadBalancerAttributes",
+        "toRegisterInstancesWithLoadBalancer",
+        "toRemoveTags",
+        "toSetLoadBalancerListenerSSLCertificate",
+        "toSetLoadBalancerPoliciesForBackendServer",
+        "toSetLoadBalancerPoliciesOfListener"
+      ],
+      "relatedResourceTypes": [
+        "loadbalancer"
+      ],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:Scheme",
+      "methodName": "ifScheme",
+      "description": "Filters access by the load balancer scheme that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#scheme-condition",
+      "relatedActionMethods": [
+        "toCreateLoadBalancer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Scheme",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:SecurityGroup",
+      "methodName": "ifSecurityGroup",
+      "description": "Filters access by the security-group IDs that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#securitygroup-condition",
+      "relatedActionMethods": [
+        "toApplySecurityGroupsToLoadBalancer",
+        "toCreateLoadBalancer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SecurityGroup",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:SecurityPolicy",
+      "methodName": "ifSecurityPolicy",
+      "description": "Filters access by the SSL Security Policies that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#securitypolicy-condition",
+      "relatedActionMethods": [
+        "toCreateLoadBalancerPolicy",
+        "toSetLoadBalancerPoliciesOfListener"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SecurityPolicy",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "elasticloadbalancing:Subnet",
+      "methodName": "ifSubnet",
+      "description": "Filters access by the subnet IDs that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security_iam_service-with-iam.html#subnet-condition",
+      "relatedActionMethods": [
+        "toAttachLoadBalancerToSubnets",
+        "toCreateLoadBalancer"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Subnet",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

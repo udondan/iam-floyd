@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DescribeHyperPodCluster",
+      "Effect": "Allow",
+      "Action": "sagemaker:DescribeCluster",
+      "Resource": "arn:aws:sagemaker:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReachMemberClusterApi",
+      "Effect": "Allow",
+      "Action": [
+        "eks:AccessKubernetesApi",
+        "eks:MutateViaKubernetesApi"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ReadGIGCertificate",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::hyperpod-tls*/*gig/*/*-certificate-*.pem",
+      "Condition": {
+        "StringEquals": {
+          "s3:ExistingObjectTag/CreatedBy": "HyperPodInference",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DecryptGIGCertificate",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "s3.*.amazonaws.com",
+          "kms:EncryptionContext:aws:s3:arn": "arn:aws:s3:::hyperpod-tls*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

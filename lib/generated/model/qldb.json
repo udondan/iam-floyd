@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "filename": "qldb",
+  "className": "Qldb",
+  "name": "qldb",
+  "servicePrefix": "qldb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_qldb.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelJournalKinesisStream",
+      "CreateLedger",
+      "DeleteLedger",
+      "ExportJournalToS3",
+      "PartiQLCreateIndex",
+      "PartiQLCreateTable",
+      "PartiQLDelete",
+      "PartiQLDropIndex",
+      "PartiQLDropTable",
+      "PartiQLInsert",
+      "PartiQLRedact",
+      "PartiQLUndropTable",
+      "PartiQLUpdate",
+      "SendCommand",
+      "StreamJournalToKinesis",
+      "TagResource",
+      "UntagResource",
+      "UpdateLedger",
+      "UpdateLedgerPermissionsMode",
+      "ExecuteStatement",
+      "InsertSampleData",
+      "ShowCatalog"
+    ],
+    "Read": [
+      "DescribeJournalKinesisStream",
+      "DescribeJournalS3Export",
+      "DescribeLedger",
+      "GetBlock",
+      "GetDigest",
+      "GetRevision",
+      "ListTagsForResource",
+      "PartiQLHistoryFunction",
+      "PartiQLSelect"
+    ],
+    "List": [
+      "ListJournalKinesisStreamsForLedger",
+      "ListJournalS3Exports",
+      "ListJournalS3ExportsForLedger",
+      "ListLedgers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelJournalKinesisStream",
+      "methodName": "toCancelJournalKinesisStream",
+      "description": "Grants permission to cancel a journal kinesis stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html"
+    },
+    {
+      "name": "CreateLedger",
+      "methodName": "toCreateLedger",
+      "description": "Grants permission to create a ledger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html"
+    },
+    {
+      "name": "DeleteLedger",
+      "methodName": "toDeleteLedger",
+      "description": "Grants permission to delete a ledger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DeleteLedger.html"
+    },
+    {
+      "name": "DescribeJournalKinesisStream",
+      "methodName": "toDescribeJournalKinesisStream",
+      "description": "Grants permission to describe information about a journal kinesis stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalKinesisStream.html"
+    },
+    {
+      "name": "DescribeJournalS3Export",
+      "methodName": "toDescribeJournalS3Export",
+      "description": "Grants permission to describe information about a journal export job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalS3Export.html"
+    },
+    {
+      "name": "DescribeLedger",
+      "methodName": "toDescribeLedger",
+      "description": "Grants permission to describe a ledger",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeLedger.html"
+    },
+    {
+      "name": "ExportJournalToS3",
+      "methodName": "toExportJournalToS3",
+      "description": "Grants permission to export journal contents to an Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ExportJournalToS3.html"
+    },
+    {
+      "name": "GetBlock",
+      "methodName": "toGetBlock",
+      "description": "Grants permission to retrieve a block from a ledger for a given BlockAddress",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetBlock.html"
+    },
+    {
+      "name": "GetDigest",
+      "methodName": "toGetDigest",
+      "description": "Grants permission to retrieve a digest from a ledger for a given BlockAddress",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetDigest.html"
+    },
+    {
+      "name": "GetRevision",
+      "methodName": "toGetRevision",
+      "description": "Grants permission to retrieve a revision for a given document ID and a given BlockAddress",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetRevision.html"
+    },
+    {
+      "name": "ListJournalKinesisStreamsForLedger",
+      "methodName": "toListJournalKinesisStreamsForLedger",
+      "description": "Grants permission to list journal kinesis streams for a specified ledger",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalKinesisStreamsForLedger.html"
+    },
+    {
+      "name": "ListJournalS3Exports",
+      "methodName": "toListJournalS3Exports",
+      "description": "Grants permission to list journal export jobs for all ledgers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3Exports.html"
+    },
+    {
+      "name": "ListJournalS3ExportsForLedger",
+      "methodName": "toListJournalS3ExportsForLedger",
+      "description": "Grants permission to list journal export jobs for a specified ledger",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3ExportsForLedger.html"
+    },
+    {
+      "name": "ListLedgers",
+      "methodName": "toListLedgers",
+      "description": "Grants permission to list existing ledgers",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListLedgers.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PartiQLCreateIndex",
+      "methodName": "toPartiQLCreateIndex",
+      "description": "Grants permission to create an index on a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.create-index.html"
+    },
+    {
+      "name": "PartiQLCreateTable",
+      "methodName": "toPartiQLCreateTable",
+      "description": "Grants permission to create a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.create-table.html"
+    },
+    {
+      "name": "PartiQLDelete",
+      "methodName": "toPartiQLDelete",
+      "description": "Grants permission to delete documents from a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.delete.html"
+    },
+    {
+      "name": "PartiQLDropIndex",
+      "methodName": "toPartiQLDropIndex",
+      "description": "Grants permission to drop an index from a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.drop-index.html"
+    },
+    {
+      "name": "PartiQLDropTable",
+      "methodName": "toPartiQLDropTable",
+      "description": "Grants permission to drop a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.drop-table.html"
+    },
+    {
+      "name": "PartiQLHistoryFunction",
+      "methodName": "toPartiQLHistoryFunction",
+      "description": "Grants permission to use the history function on a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/working.history.html"
+    },
+    {
+      "name": "PartiQLInsert",
+      "methodName": "toPartiQLInsert",
+      "description": "Grants permission to insert documents into a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.insert.html"
+    },
+    {
+      "name": "PartiQLRedact",
+      "methodName": "toPartiQLRedact",
+      "description": "Grants permission to redact historic revisions",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-stored-procedures.redact_revision.html"
+    },
+    {
+      "name": "PartiQLSelect",
+      "methodName": "toPartiQLSelect",
+      "description": "Grants permission to select documents from a table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.select.html"
+    },
+    {
+      "name": "PartiQLUndropTable",
+      "methodName": "toPartiQLUndropTable",
+      "description": "Grants permission to undrop a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.undrop-table.html"
+    },
+    {
+      "name": "PartiQLUpdate",
+      "methodName": "toPartiQLUpdate",
+      "description": "Grants permission to update existing documents in a table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.update.html"
+    },
+    {
+      "name": "SendCommand",
+      "methodName": "toSendCommand",
+      "description": "Grants permission to send commands to a ledger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_QLDB-Session_SendCommand.html"
+    },
+    {
+      "name": "StreamJournalToKinesis",
+      "methodName": "toStreamJournalToKinesis",
+      "description": "Grants permission to stream journal contents to a Kinesis Data Stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_StreamJournalToKinesis.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add one or more tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove one or more tags from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateLedger",
+      "methodName": "toUpdateLedger",
+      "description": "Grants permission to update properties on a ledger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_UpdateLedger.html"
+    },
+    {
+      "name": "UpdateLedgerPermissionsMode",
+      "methodName": "toUpdateLedgerPermissionsMode",
+      "description": "Grants permission to update the permissions mode on a ledger",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_UpdateLedgerPermissionsMode.html"
+    },
+    {
+      "name": "ExecuteStatement",
+      "methodName": "toExecuteStatement",
+      "description": "Grants permission to send commands to a ledger via the console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html"
+    },
+    {
+      "name": "InsertSampleData",
+      "methodName": "toInsertSampleData",
+      "description": "Grants permission to insert sample application data via the console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html"
+    },
+    {
+      "name": "ShowCatalog",
+      "methodName": "toShowCatalog",
+      "description": "Grants permission to view a ledger's catalog via the console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "catalog",
+      "methodName": "onCatalog",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/working.catalog.html",
+      "arn": "arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}/information_schema/user_tables",
+      "placeholders": [
+        {
+          "placeholder": "LedgerName",
+          "name": "ledgerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "ledger",
+      "methodName": "onLedger",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-structure.html",
+      "arn": "arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}",
+      "placeholders": [
+        {
+          "placeholder": "LedgerName",
+          "name": "ledgerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "stream",
+      "methodName": "onStream",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/streams.html",
+      "arn": "arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}",
+      "placeholders": [
+        {
+          "placeholder": "LedgerName",
+          "name": "ledgerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "StreamId",
+          "name": "streamId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/working.manage-tables.html",
+      "arn": "arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}/table/${TableId}",
+      "placeholders": [
+        {
+          "placeholder": "LedgerName",
+          "name": "ledgerName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableId",
+          "name": "tableId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag key and value pair that is allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateLedger",
+        "toPartiQLCreateTable",
+        "toStreamJournalToKinesis",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by a tag key and value pair of a resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelJournalKinesisStream",
+        "toCreateLedger",
+        "toDeleteLedger",
+        "toDescribeJournalKinesisStream",
+        "toDescribeJournalS3Export",
+        "toDescribeLedger",
+        "toExportJournalToS3",
+        "toGetBlock",
+        "toGetDigest",
+        "toGetRevision",
+        "toListJournalKinesisStreamsForLedger",
+        "toListJournalS3ExportsForLedger",
+        "toListTagsForResource",
+        "toPartiQLCreateIndex",
+        "toPartiQLCreateTable",
+        "toPartiQLDelete",
+        "toPartiQLDropIndex",
+        "toPartiQLDropTable",
+        "toPartiQLHistoryFunction",
+        "toPartiQLInsert",
+        "toPartiQLRedact",
+        "toPartiQLSelect",
+        "toPartiQLUndropTable",
+        "toPartiQLUpdate",
+        "toSendCommand",
+        "toStreamJournalToKinesis",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateLedger",
+        "toUpdateLedgerPermissionsMode",
+        "toExecuteStatement",
+        "toInsertSampleData",
+        "toShowCatalog"
+      ],
+      "relatedResourceTypes": [
+        "catalog",
+        "ledger",
+        "stream",
+        "table"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by a list of tag keys that are allowed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateLedger",
+        "toPartiQLCreateTable",
+        "toStreamJournalToKinesis",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "qldb:Purge",
+      "methodName": "ifPurge",
+      "description": "Filters access by the value of purge that is specified in a PartiQL DROP statement",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-purge",
+      "relatedActionMethods": [
+        "toPartiQLDropIndex",
+        "toPartiQLDropTable"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Purge",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

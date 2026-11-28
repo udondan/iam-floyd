@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CleanRoomsRead",
+      "Effect": "Allow",
+      "Action": [
+        "cleanrooms:BatchGet*",
+        "cleanrooms:Get*",
+        "cleanrooms:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ConsoleDisplayTables",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetTable",
+        "glue:GetTables",
+        "glue:GetPartition",
+        "glue:GetPartitions",
+        "glue:GetSchema",
+        "glue:GetSchemaVersion",
+        "glue:BatchGetPartition"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ConsoleLogSummaryQueryLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StartQuery"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/cleanrooms*"
+    },
+    {
+      "Sid": "ConsoleLogSummaryObtainLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetQueryResults"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

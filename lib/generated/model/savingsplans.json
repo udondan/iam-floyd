@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "filename": "savingsplans",
+  "className": "Savingsplans",
+  "name": "savingsplans",
+  "servicePrefix": "savingsplans",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_savingsplans.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateSavingsPlan",
+      "DeleteQueuedSavingsPlan",
+      "ReturnSavingsPlan",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "DescribeSavingsPlanRates",
+      "DescribeSavingsPlans",
+      "DescribeSavingsPlansOfferingRates",
+      "DescribeSavingsPlansOfferings"
+    ],
+    "List": [
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateSavingsPlan",
+      "methodName": "toCreateSavingsPlan",
+      "description": "Grants permission to create a savings plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeleteQueuedSavingsPlan",
+      "methodName": "toDeleteQueuedSavingsPlan",
+      "description": "Grants permission to delete the queued savings plan associated with customers account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DeleteQueuedSavingsPlan.html"
+    },
+    {
+      "name": "DescribeSavingsPlanRates",
+      "methodName": "toDescribeSavingsPlanRates",
+      "description": "Grants permission to describe the rates associated with customers savings plan",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html"
+    },
+    {
+      "name": "DescribeSavingsPlans",
+      "methodName": "toDescribeSavingsPlans",
+      "description": "Grants permission to describe the savings plans associated with customers account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html"
+    },
+    {
+      "name": "DescribeSavingsPlansOfferingRates",
+      "methodName": "toDescribeSavingsPlansOfferingRates",
+      "description": "Grants permission to describe the rates assciated with savings plans offerings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferingRates.html"
+    },
+    {
+      "name": "DescribeSavingsPlansOfferings",
+      "methodName": "toDescribeSavingsPlansOfferings",
+      "description": "Grants permission to describe the savings plans offerings that customer is eligible to purchase",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a savings plan",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ReturnSavingsPlan",
+      "methodName": "toReturnSavingsPlan",
+      "description": "Grants permission to return a savings plan",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ReturnSavingsPlan.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a savings plan",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a savings plan",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "savingsplan",
+      "methodName": "onSavingsplan",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html",
+      "arn": "arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the allowed set of values for each of the tags",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateSavingsPlan",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag-value associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toDeleteQueuedSavingsPlan",
+        "toDescribeSavingsPlanRates",
+        "toDescribeSavingsPlans",
+        "toListTagsForResource",
+        "toReturnSavingsPlan",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "savingsplan"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of mandatory tags in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateSavingsPlan",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

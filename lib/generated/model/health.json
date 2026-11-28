@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "filename": "health",
+  "className": "Health",
+  "name": "health",
+  "servicePrefix": "health",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_health.html",
+  "accessLevelList": {
+    "Write": [
+      "ConfigureTags",
+      "ConfigureTagsForOrganization",
+      "DisableHealthServiceAccessForOrganization",
+      "DisableTags",
+      "DisableTagsForOrganization",
+      "EnableHealthServiceAccessForOrganization",
+      "EnableTags",
+      "EnableTagsForOrganization"
+    ],
+    "Read": [
+      "DescribeAffectedAccountsForOrganization",
+      "DescribeAffectedEntities",
+      "DescribeAffectedEntitiesForOrganization",
+      "DescribeEntityAggregates",
+      "DescribeEntityAggregatesForOrganization",
+      "DescribeEventAggregates",
+      "DescribeEventDetails",
+      "DescribeEventDetailsForOrganization",
+      "DescribeEventTypes",
+      "DescribeEvents",
+      "DescribeEventsForOrganization",
+      "DescribeHealthServiceStatusForOrganization",
+      "DescribeTagKeys",
+      "DescribeTagKeysForOrganization",
+      "DescribeTags",
+      "DescribeTagsForOrganization",
+      "DescribeTagsOnboardingStatus",
+      "DescribeTagsOnboardingStatusForOrganization"
+    ],
+    "Permissions management": [
+      "DisableHealthServiceAccessForOrganization",
+      "EnableHealthServiceAccessForOrganization"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ConfigureTags",
+      "methodName": "toConfigureTags",
+      "description": "Grants permission to configure the resource tag keys propagated to AWS Health events for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_ConfigureTags.html",
+      "conditionMethods": [
+        "ifTagChannel",
+        "ifTagKeys"
+      ]
+    },
+    {
+      "name": "ConfigureTagsForOrganization",
+      "methodName": "toConfigureTagsForOrganization",
+      "description": "Grants permission to configure the resource tag keys propagated to AWS Health events for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_ConfigureTagsForOrganization.html",
+      "conditionMethods": [
+        "ifTagChannel",
+        "ifTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeAffectedAccountsForOrganization",
+      "methodName": "toDescribeAffectedAccountsForOrganization",
+      "description": "Grants permission to retrieve a list of accounts that have been affected by the specified events in organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeAffectedEntities",
+      "methodName": "toDescribeAffectedEntities",
+      "description": "Grants permission to retrieve a list of entities that have been affected by the specified events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html"
+    },
+    {
+      "name": "DescribeAffectedEntitiesForOrganization",
+      "methodName": "toDescribeAffectedEntitiesForOrganization",
+      "description": "Grants permission to retrieve a list of entities that have been affected by the specified events and accounts in organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeEntityAggregates",
+      "methodName": "toDescribeEntityAggregates",
+      "description": "Grants permission to retrieve the number of entities that are affected by each of the specified events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeEntityAggregatesForOrganization",
+      "methodName": "toDescribeEntityAggregatesForOrganization",
+      "description": "Grants permission to retrieve the number of entities that are affected by each of the specified events in an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregatesForOrganization.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeEventAggregates",
+      "methodName": "toDescribeEventAggregates",
+      "description": "Grants permission to retrieve the number of events of each event type (issue, scheduled change, and account notification)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeEventDetails",
+      "methodName": "toDescribeEventDetails",
+      "description": "Grants permission to retrieve detailed information about one or more specified events",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html"
+    },
+    {
+      "name": "DescribeEventDetailsForOrganization",
+      "methodName": "toDescribeEventDetailsForOrganization",
+      "description": "Grants permission to retrieve detailed information about one or more specified events for provided accounts in organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+    },
+    {
+      "name": "DescribeEventTypes",
+      "methodName": "toDescribeEventTypes",
+      "description": "Grants permission to retrieve the event types that meet the specified filter criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html"
+    },
+    {
+      "name": "DescribeEvents",
+      "methodName": "toDescribeEvents",
+      "description": "Grants permission to retrieve information about events that meet the specified filter criteria",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeEventsForOrganization",
+      "methodName": "toDescribeEventsForOrganization",
+      "description": "Grants permission to retrieve information about events that meet the specified filter criteria in organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DescribeHealthServiceStatusForOrganization",
+      "methodName": "toDescribeHealthServiceStatusForOrganization",
+      "description": "Grants permission to retrieve the status of enabling or disabling the Organizational View feature",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html"
+    },
+    {
+      "name": "DescribeTagKeys",
+      "methodName": "toDescribeTagKeys",
+      "description": "Grants permission to retrieve the resource tag keys configured for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeTagKeys.html"
+    },
+    {
+      "name": "DescribeTagKeysForOrganization",
+      "methodName": "toDescribeTagKeysForOrganization",
+      "description": "Grants permission to retrieve the resource tag keys configured for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeTagKeysForOrganization.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Grants permission to retrieve the resource tags configured for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeTags.html"
+    },
+    {
+      "name": "DescribeTagsForOrganization",
+      "methodName": "toDescribeTagsForOrganization",
+      "description": "Grants permission to retrieve the resource tags configured for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeTagsForOrganization.html"
+    },
+    {
+      "name": "DescribeTagsOnboardingStatus",
+      "methodName": "toDescribeTagsOnboardingStatus",
+      "description": "Grants permission to retrieve the onboarding status of the resource tags feature for an account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeTagsOnboardingStatus.html"
+    },
+    {
+      "name": "DescribeTagsOnboardingStatusForOrganization",
+      "methodName": "toDescribeTagsOnboardingStatusForOrganization",
+      "description": "Grants permission to retrieve the onboarding status of the resource tags feature for an organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeTagsOnboardingStatusForOrganization.html"
+    },
+    {
+      "name": "DisableHealthServiceAccessForOrganization",
+      "methodName": "toDisableHealthServiceAccessForOrganization",
+      "description": "Grants permission to disable the Organizational View feature",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DisableHealthServiceAccessForOrganization.html"
+    },
+    {
+      "name": "DisableTags",
+      "methodName": "toDisableTags",
+      "description": "Grants permission to disable the resource tags feature for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DisableTags.html"
+    },
+    {
+      "name": "DisableTagsForOrganization",
+      "methodName": "toDisableTagsForOrganization",
+      "description": "Grants permission to disable the resource tags feature for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DisableTagsForOrganization.html"
+    },
+    {
+      "name": "EnableHealthServiceAccessForOrganization",
+      "methodName": "toEnableHealthServiceAccessForOrganization",
+      "description": "Grants permission to enable the Organizational View feature",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html"
+    },
+    {
+      "name": "EnableTags",
+      "methodName": "toEnableTags",
+      "description": "Grants permission to enable the resource tags feature for an account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_EnableTags.html"
+    },
+    {
+      "name": "EnableTagsForOrganization",
+      "methodName": "toEnableTagsForOrganization",
+      "description": "Grants permission to enable the resource tags feature for an organization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_EnableTagsForOrganization.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "event",
+      "methodName": "onEvent",
+      "url": "https://docs.aws.amazon.com/health/latest/ug/supported-operations.html",
+      "arn": "arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}",
+      "placeholders": [
+        {
+          "placeholder": "Service",
+          "name": "service",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EventTypeCode",
+          "name": "eventTypeCode",
+          "kind": "required"
+        },
+        {
+          "placeholder": "EventTypePlusId",
+          "name": "eventTypePlusId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tag key-value pairs in the request filter",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toDescribeAffectedAccountsForOrganization",
+        "toDescribeAffectedEntities",
+        "toDescribeAffectedEntitiesForOrganization",
+        "toDescribeEntityAggregates",
+        "toDescribeEntityAggregatesForOrganization",
+        "toDescribeEventAggregates",
+        "toDescribeEvents",
+        "toDescribeEventsForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in the request filter",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toDescribeAffectedAccountsForOrganization",
+        "toDescribeAffectedEntities",
+        "toDescribeAffectedEntitiesForOrganization",
+        "toDescribeEntityAggregates",
+        "toDescribeEntityAggregatesForOrganization",
+        "toDescribeEventAggregates",
+        "toDescribeEvents",
+        "toDescribeEventsForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "health:TagChannel",
+      "methodName": "ifTagChannel",
+      "description": "Filters access by the channel (API or EventBridge) for which tag keys are configured",
+      "url": "https://docs.aws.amazon.com/health/latest/ug/controlling-access.html",
+      "relatedActionMethods": [
+        "toConfigureTags",
+        "toConfigureTagsForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TagChannel",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "health:TagKeys",
+      "methodName": "ifTagKeys",
+      "description": "Filters access by the resource tag keys being configured",
+      "url": "https://docs.aws.amazon.com/health/latest/ug/controlling-access.html",
+      "relatedActionMethods": [
+        "toConfigureTags",
+        "toConfigureTagsForOrganization"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "health:eventTypeCode",
+      "methodName": "ifEventTypeCode",
+      "description": "Filters access by event type",
+      "url": "https://docs.aws.amazon.com/health/latest/ug/controlling-access.html",
+      "relatedActionMethods": [
+        "toDescribeAffectedEntities",
+        "toDescribeEventDetails"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "eventTypeCode",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "health:service",
+      "methodName": "ifService",
+      "description": "Filters access by impacted service",
+      "url": "https://docs.aws.amazon.com/health/latest/ug/controlling-access.html",
+      "relatedActionMethods": [
+        "toDescribeAffectedEntities",
+        "toDescribeEventDetails"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "service",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

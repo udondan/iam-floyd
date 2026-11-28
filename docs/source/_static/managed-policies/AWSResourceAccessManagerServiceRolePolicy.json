@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListRoots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowDeletionOfServiceLinkedRoleForResourceAccessManager",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/ram.amazonaws.com/*"
+      ]
+    }
+  ]
+}

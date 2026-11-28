@@ -1,0 +1,900 @@
+{
+  "schemaVersion": 1,
+  "filename": "payment-cryptography",
+  "className": "PaymentCryptography",
+  "name": "payment-cryptography",
+  "servicePrefix": "payment-cryptography",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_payment-cryptography.html",
+  "accessLevelList": {
+    "Write": [
+      "AddKeyReplicationRegions",
+      "AssociateMpaTeam",
+      "CreateAlias",
+      "CreateKey",
+      "DecryptData",
+      "DeleteAlias",
+      "DeleteKey",
+      "DeleteResourcePolicy",
+      "DisableDefaultKeyReplicationRegions",
+      "DisassociateMpaTeam",
+      "EnableDefaultKeyReplicationRegions",
+      "EncryptData",
+      "ExportKey",
+      "GenerateAs2805KekValidation",
+      "GenerateAuthRequestCryptogram",
+      "GenerateCardValidationData",
+      "GenerateMac",
+      "GenerateMacEmvPinChange",
+      "GeneratePinData",
+      "ImportKey",
+      "PutResourcePolicy",
+      "ReEncryptData",
+      "RemoveKeyReplicationRegions",
+      "RestoreKey",
+      "StartKeyUsage",
+      "StopKeyUsage",
+      "TagResource",
+      "TranslateKeyMaterial",
+      "TranslatePinData",
+      "UntagResource",
+      "UpdateAlias",
+      "VerifyAuthRequestCryptogram",
+      "VerifyCardValidationData",
+      "VerifyMac",
+      "VerifyPinData"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "Read": [
+      "GetAlias",
+      "GetCertificateSigningRequest",
+      "GetDefaultKeyReplicationRegions",
+      "GetKey",
+      "GetMpaTeamAssociation",
+      "GetParametersForExport",
+      "GetParametersForImport",
+      "GetPublicKeyCertificate",
+      "GetResourcePolicy",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAliases",
+      "ListKeys"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddKeyReplicationRegions",
+      "methodName": "toAddKeyReplicationRegions",
+      "description": "Grants permission to add replication regions to an existing AWS Payment Cryptography key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html"
+    },
+    {
+      "name": "AssociateMpaTeam",
+      "methodName": "toAssociateMpaTeam",
+      "description": "Grants permission to associate an MPA approval team with a payment cryptography action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html"
+    },
+    {
+      "name": "CreateAlias",
+      "methodName": "toCreateAlias",
+      "description": "Grants permission to create a user-friendly name for a Key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html"
+    },
+    {
+      "name": "CreateKey",
+      "methodName": "toCreateKey",
+      "description": "Grants permission to create a unique customer managed key in the caller's AWS account and region",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifDeriveKeyUsage",
+        "ifKeyAlgorithm",
+        "ifKeyClass",
+        "ifKeyUsage"
+      ]
+    },
+    {
+      "name": "DecryptData",
+      "methodName": "toDecryptData",
+      "description": "Grants permission to decrypt ciphertext data to plaintext using symmetric, asymmetric or DUKPT data encryption key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_DecryptData.html"
+    },
+    {
+      "name": "DeleteAlias",
+      "methodName": "toDeleteAlias",
+      "description": "Grants permission to delete the specified alias",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html"
+    },
+    {
+      "name": "DeleteKey",
+      "methodName": "toDeleteKey",
+      "description": "Grants permission to schedule the deletion of a Key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete the resource-based policy attached to a key",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DisableDefaultKeyReplicationRegions",
+      "methodName": "toDisableDefaultKeyReplicationRegions",
+      "description": "Grants permission to disable default key replication regions for account-level replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html"
+    },
+    {
+      "name": "DisassociateMpaTeam",
+      "methodName": "toDisassociateMpaTeam",
+      "description": "Grants permission to disassociate an MPA approval team from a payment cryptography action",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html"
+    },
+    {
+      "name": "EnableDefaultKeyReplicationRegions",
+      "methodName": "toEnableDefaultKeyReplicationRegions",
+      "description": "Grants permission to enable default key replication regions for account-level replication",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html"
+    },
+    {
+      "name": "EncryptData",
+      "methodName": "toEncryptData",
+      "description": "Grants permission to encrypt plaintext data to ciphertext using symmetric, asymmetric or DUKPT data encryption key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_EncryptData.html"
+    },
+    {
+      "name": "ExportKey",
+      "methodName": "toExportKey",
+      "description": "Grants permission to export a key from the service",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html"
+    },
+    {
+      "name": "GenerateAs2805KekValidation",
+      "methodName": "toGenerateAs2805KekValidation",
+      "description": "Grants permission to generate a KekValidationRequest or a KekValidationResponse for node-to-node initialization between payment processing nodes using Australian Standard 2805 (AS2805)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateAs2805KekValidation.html"
+    },
+    {
+      "name": "GenerateAuthRequestCryptogram",
+      "methodName": "toGenerateAuthRequestCryptogram",
+      "description": "Grants permission to generate an Authorization Request Cryptogram (ARQC) for an EMV chip payment card authorization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateAuthRequestCryptogram.html"
+    },
+    {
+      "name": "GenerateCardValidationData",
+      "methodName": "toGenerateCardValidationData",
+      "description": "Grants permission to generate card-related data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) or Card Security Codes (CSC) that check the validity of a magnetic stripe card",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateCardValidationData.html"
+    },
+    {
+      "name": "GenerateMac",
+      "methodName": "toGenerateMac",
+      "description": "Grants permission to generate a MAC (Message Authentication Code) cryptogram",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateMac.html"
+    },
+    {
+      "name": "GenerateMacEmvPinChange",
+      "methodName": "toGenerateMacEmvPinChange",
+      "description": "Grants permission to generate a MAC (Message Authentication Code) cryptogram",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateMacEmvPinChange.html"
+    },
+    {
+      "name": "GeneratePinData",
+      "methodName": "toGeneratePinData",
+      "description": "Grants permission to generate pin-related data such as PIN, PIN Verification Value (PVV), PIN Block and PIN Offset during new card issuance or card re-issuance",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GeneratePinData.html"
+    },
+    {
+      "name": "GetAlias",
+      "methodName": "toGetAlias",
+      "description": "Grants permission to return the keyArn associated with an aliasName",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html"
+    },
+    {
+      "name": "GetCertificateSigningRequest",
+      "methodName": "toGetCertificateSigningRequest",
+      "description": "Grants permission to return the Certificate Signing Request for a public key from a key of class PUBLIC_KEY",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetCertificateSigningRequest.html"
+    },
+    {
+      "name": "GetDefaultKeyReplicationRegions",
+      "methodName": "toGetDefaultKeyReplicationRegions",
+      "description": "Grants permission to retrieve the default key replication regions configured at the account level",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html"
+    },
+    {
+      "name": "GetKey",
+      "methodName": "toGetKey",
+      "description": "Grants permission to return the detailed information about the specified key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html"
+    },
+    {
+      "name": "GetMpaTeamAssociation",
+      "methodName": "toGetMpaTeamAssociation",
+      "description": "Grants permission to retrieve information about an MPA approval team association for a payment cryptography action",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetMpaTeamAssociation.html"
+    },
+    {
+      "name": "GetParametersForExport",
+      "methodName": "toGetParametersForExport",
+      "description": "Grants permission to get the export token and the signing key certificate to initiate a TR-34 key export",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html"
+    },
+    {
+      "name": "GetParametersForImport",
+      "methodName": "toGetParametersForImport",
+      "description": "Grants permission to get the import token and the wrapping key certificate to initiate a TR-34 key import",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html"
+    },
+    {
+      "name": "GetPublicKeyCertificate",
+      "methodName": "toGetPublicKeyCertificate",
+      "description": "Grants permission to return the public key from a key of class PUBLIC_KEY",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html"
+    },
+    {
+      "name": "GetResourcePolicy",
+      "methodName": "toGetResourcePolicy",
+      "description": "Grants permission to retrieve the resource-based policy attached to a key",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetResourcePolicy.html"
+    },
+    {
+      "name": "ImportKey",
+      "methodName": "toImportKey",
+      "description": "Grants permission to imports keys and public key certificates",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys",
+        "ifCertificateAuthorityPublicKeyIdentifier",
+        "ifImportKeyMaterial",
+        "ifPrivateKeyIdentifier",
+        "ifWrappingKeyIdentifier"
+      ]
+    },
+    {
+      "name": "ListAliases",
+      "methodName": "toListAliases",
+      "description": "Grants permission to return a list of aliases created for all keys in the caller's AWS account and Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html"
+    },
+    {
+      "name": "ListKeys",
+      "methodName": "toListKeys",
+      "description": "Grants permission to return a list of keys created in the caller's AWS account and Region",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to return a list of tags created in the caller's AWS account and Region",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to attach or replace a resource-based policy on a key",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "ReEncryptData",
+      "methodName": "toReEncryptData",
+      "description": "Grants permission to re-encrypt ciphertext using DUKPT, Symmetric and Asymmetric Data Encryption Keys",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_ReEncryptData.html"
+    },
+    {
+      "name": "RemoveKeyReplicationRegions",
+      "methodName": "toRemoveKeyReplicationRegions",
+      "description": "Grants permission to remove replication regions from an existing AWS Payment Cryptography key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html"
+    },
+    {
+      "name": "RestoreKey",
+      "methodName": "toRestoreKey",
+      "description": "Grants permission to cancel a scheduled key deletion if at any point during the waiting period a Key needs to be revived",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RestoreKey.html"
+    },
+    {
+      "name": "StartKeyUsage",
+      "methodName": "toStartKeyUsage",
+      "description": "Grants permission to enable a disabled Key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html"
+    },
+    {
+      "name": "StopKeyUsage",
+      "methodName": "toStopKeyUsage",
+      "description": "Grants permission to disable an enabled Key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrites one or more tags for the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TranslateKeyMaterial",
+      "methodName": "toTranslateKeyMaterial",
+      "description": "Grants permission to translate wrapping key type for a wrapped key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslateKeyMaterial.html"
+    },
+    {
+      "name": "TranslatePinData",
+      "methodName": "toTranslatePinData",
+      "description": "Grants permission to translate encrypted PIN block from and to ISO 9564 formats 0,1,3,4",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslatePinData.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tag or tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAlias",
+      "methodName": "toUpdateAlias",
+      "description": "Grants permission to change the key to which an alias is assigned, or unassign it from its current key",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html"
+    },
+    {
+      "name": "VerifyAuthRequestCryptogram",
+      "methodName": "toVerifyAuthRequestCryptogram",
+      "description": "Grants permission to verify Authorization Request Cryptogram (ARQC) for a EMV chip payment card authorization",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyAuthRequestCryptogram.html"
+    },
+    {
+      "name": "VerifyCardValidationData",
+      "methodName": "toVerifyCardValidationData",
+      "description": "Grants permission to verify card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) and Card Security Codes (CSC)",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyCardValidationData.html"
+    },
+    {
+      "name": "VerifyMac",
+      "methodName": "toVerifyMac",
+      "description": "Grants permission to verify MAC (Message Authentication Code) of input data against a provided MAC",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyMac.html"
+    },
+    {
+      "name": "VerifyPinData",
+      "methodName": "toVerifyPinData",
+      "description": "Grants permission to verify pin-related data such as PIN and PIN Offset using algorithms including VISA PVV and IBM3624",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyPinData.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "alias",
+      "methodName": "onAlias",
+      "url": "",
+      "arn": "arn:${Partition}:payment-cryptography:${Region}:${Account}:alias/${Alias}",
+      "placeholders": [
+        {
+          "placeholder": "Alias",
+          "name": "alias",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifResourceAliases"
+      ]
+    },
+    {
+      "name": "approval-team",
+      "methodName": "onApprovalTeam",
+      "url": "https://docs.aws.amazon.com/mpa/latest/userguide/mpa-concepts.html",
+      "arn": "arn:${Partition}:mpa:${Region}:${Account}:approval-team/${ApprovalTeamId}",
+      "placeholders": [
+        {
+          "placeholder": "ApprovalTeamId",
+          "name": "approvalTeamId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "key",
+      "methodName": "onKey",
+      "url": "",
+      "arn": "arn:${Partition}:payment-cryptography:${Region}:${Account}:key/${KeyId}",
+      "placeholders": [
+        {
+          "placeholder": "KeyId",
+          "name": "keyId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag",
+        "ifResourceAliases"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by both the key and value of the tag in the request for the specified operation",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateKey",
+        "toDeleteAlias",
+        "toGetAlias",
+        "toImportKey",
+        "toTagResource",
+        "toUpdateAlias"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags assigned to a key for the specified operation",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddKeyReplicationRegions",
+        "toAssociateMpaTeam",
+        "toCreateAlias",
+        "toDecryptData",
+        "toDeleteKey",
+        "toDeleteResourcePolicy",
+        "toDisassociateMpaTeam",
+        "toEncryptData",
+        "toExportKey",
+        "toGenerateAs2805KekValidation",
+        "toGenerateAuthRequestCryptogram",
+        "toGenerateCardValidationData",
+        "toGenerateMac",
+        "toGenerateMacEmvPinChange",
+        "toGeneratePinData",
+        "toGetAlias",
+        "toGetCertificateSigningRequest",
+        "toGetKey",
+        "toGetMpaTeamAssociation",
+        "toGetPublicKeyCertificate",
+        "toGetResourcePolicy",
+        "toListTagsForResource",
+        "toPutResourcePolicy",
+        "toReEncryptData",
+        "toRemoveKeyReplicationRegions",
+        "toRestoreKey",
+        "toStartKeyUsage",
+        "toStopKeyUsage",
+        "toTagResource",
+        "toTranslateKeyMaterial",
+        "toTranslatePinData",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toVerifyAuthRequestCryptogram",
+        "toVerifyCardValidationData",
+        "toVerifyMac",
+        "toVerifyPinData"
+      ],
+      "relatedResourceTypes": [
+        "approval-team",
+        "key"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in the request for the specified operation",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateKey",
+        "toDeleteAlias",
+        "toGetAlias",
+        "toImportKey",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateAlias"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:CertificateAuthorityPublicKeyIdentifier",
+      "methodName": "ifCertificateAuthorityPublicKeyIdentifier",
+      "description": "Filters access by the CertificateAuthorityPublicKeyIdentifier specified in the request or the ImportKey, and ExportKey operations",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportKey",
+        "toImportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CertificateAuthorityPublicKeyIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:DeriveKeyUsage",
+      "methodName": "ifDeriveKeyUsage",
+      "description": "Filters access by the DeriveKeyUsage specified in the request for the CreateKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toCreateKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DeriveKeyUsage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:ExportDukptInitialKey",
+      "methodName": "ifExportDukptInitialKey",
+      "description": "Filters access by whether the request is to export a DUKPT initial key for the ExportKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExportDukptInitialKey",
+      "valueKind": "boolean",
+      "defaultOperator": "Bool"
+    },
+    {
+      "key": "payment-cryptography:ExportKeyMaterial",
+      "methodName": "ifExportKeyMaterial",
+      "description": "Filters access by the type of key material being exported [Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram, KeyCryptogram] for the ExportKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ExportKeyMaterial",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:ImportKeyMaterial",
+      "methodName": "ifImportKeyMaterial",
+      "description": "Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram, KeyCryptogram] for the ImportKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toImportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ImportKeyMaterial",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:KeyAlgorithm",
+      "methodName": "ifKeyAlgorithm",
+      "description": "Filters access by KeyAlgorithm specified in the request for the CreateKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toCreateKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KeyAlgorithm",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:KeyClass",
+      "methodName": "ifKeyClass",
+      "description": "Filters access by KeyClass specified in the request for the CreateKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toCreateKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KeyClass",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:KeyUsage",
+      "methodName": "ifKeyUsage",
+      "description": "Filters access by KeyUsage specified in the request or associated with a key for the CreateKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toCreateKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "KeyUsage",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:PrivateKeyIdentifier",
+      "methodName": "ifPrivateKeyIdentifier",
+      "description": "Filters access by the PrivateKeyIdentifier specified in the request for the ImportKey and ExportKey operations",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportKey",
+        "toImportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "PrivateKeyIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:RequestAlias",
+      "methodName": "ifRequestAlias",
+      "description": "Filters access by aliases in the request for the specified operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toAddKeyReplicationRegions",
+        "toDecryptData",
+        "toDeleteKey",
+        "toEncryptData",
+        "toExportKey",
+        "toGenerateAs2805KekValidation",
+        "toGenerateAuthRequestCryptogram",
+        "toGenerateCardValidationData",
+        "toGenerateMac",
+        "toGenerateMacEmvPinChange",
+        "toGeneratePinData",
+        "toGetCertificateSigningRequest",
+        "toGetKey",
+        "toGetPublicKeyCertificate",
+        "toReEncryptData",
+        "toRemoveKeyReplicationRegions",
+        "toRestoreKey",
+        "toStartKeyUsage",
+        "toStopKeyUsage",
+        "toTranslateKeyMaterial",
+        "toTranslatePinData",
+        "toVerifyAuthRequestCryptogram",
+        "toVerifyCardValidationData",
+        "toVerifyMac",
+        "toVerifyPinData"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "RequestAlias",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:ResourceAliases",
+      "methodName": "ifResourceAliases",
+      "description": "Filters access by aliases associated with a key for the specified operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toAddKeyReplicationRegions",
+        "toCreateAlias",
+        "toDecryptData",
+        "toDeleteAlias",
+        "toDeleteKey",
+        "toDeleteResourcePolicy",
+        "toEncryptData",
+        "toExportKey",
+        "toGenerateAs2805KekValidation",
+        "toGenerateAuthRequestCryptogram",
+        "toGenerateCardValidationData",
+        "toGenerateMac",
+        "toGenerateMacEmvPinChange",
+        "toGeneratePinData",
+        "toGetAlias",
+        "toGetCertificateSigningRequest",
+        "toGetKey",
+        "toGetPublicKeyCertificate",
+        "toGetResourcePolicy",
+        "toListTagsForResource",
+        "toPutResourcePolicy",
+        "toReEncryptData",
+        "toRemoveKeyReplicationRegions",
+        "toRestoreKey",
+        "toStartKeyUsage",
+        "toStopKeyUsage",
+        "toTagResource",
+        "toTranslateKeyMaterial",
+        "toTranslatePinData",
+        "toUntagResource",
+        "toUpdateAlias",
+        "toVerifyAuthRequestCryptogram",
+        "toVerifyCardValidationData",
+        "toVerifyMac",
+        "toVerifyPinData"
+      ],
+      "relatedResourceTypes": [
+        "alias",
+        "key"
+      ],
+      "keyLiteral": "ResourceAliases",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:SigningKeyIdentifier",
+      "methodName": "ifSigningKeyIdentifier",
+      "description": "Filters access by the SigningKeyIdentifier specified in the request for the ExportKey operation",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SigningKeyIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "payment-cryptography:WrappingKeyIdentifier",
+      "methodName": "ifWrappingKeyIdentifier",
+      "description": "Filters access by the WrappingKeyIdentifier specified in the request for the ImportKey, and ExportKey operations",
+      "url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html",
+      "relatedActionMethods": [
+        "toExportKey",
+        "toImportKey"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "WrappingKeyIdentifier",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

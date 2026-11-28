@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOnlyAccessStatementID",
+      "Effect": "Allow",
+      "Action": [
+        "one:Get*",
+        "one:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

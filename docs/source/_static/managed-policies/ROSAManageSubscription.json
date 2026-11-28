@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:Unsubscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws-marketplace:ProductId": [
+            "34850061-abaf-402d-92df-94325c9e947f",
+            "bfdca560-2c78-4e64-8193-794c159e6d30"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

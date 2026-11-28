@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "arsenal:RegisterOnPremisesAgent"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:DescribeImages"
+      ],
+      "Resource": "arn:aws:ecr-public::446372222237:repository/6e5498e4-8c31-4f57-9991-13b4b992ff7b"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:GetAuthorizationToken"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mgh:GetHomeRegion"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sts:GetServiceBearerToken"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

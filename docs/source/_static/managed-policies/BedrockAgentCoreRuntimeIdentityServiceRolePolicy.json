@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Sid": "AllowWorkloadIdentityAccess",
+    "Effect": "Allow",
+    "Action": [
+      "bedrock-agentcore:GetWorkloadAccessToken",
+      "bedrock-agentcore:GetWorkloadAccessTokenForJWT",
+      "bedrock-agentcore:GetWorkloadAccessTokenForUserId"
+    ],
+    "Resource": "*"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "inspector2:BatchGet*",
+        "inspector2:List*",
+        "inspector2:Describe*",
+        "inspector2:Get*",
+        "inspector2:Search*",
+        "codeguru-security:BatchGetFindings",
+        "codeguru-security:GetAccountConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListPoliciesForInspectorPolicyType",
+      "Effect": "Allow",
+      "Action": "organizations:ListPolicies",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": [
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowDescribeResourcePolicyForDelegation",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeResourcePolicy",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowDescribeEffectivePolicyForInspector",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeEffectivePolicy",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": [
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowCrossServiceReadsForConnectorHealth",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:ListConfigurationRecorders",
+        "config:GetConnector",
+        "config:ListConnectors",
+        "ssm:GetCloudConnector",
+        "ssm:ListCloudConnectors"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

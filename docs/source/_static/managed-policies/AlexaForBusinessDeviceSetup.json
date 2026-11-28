@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "a4b:RegisterDevice",
+        "a4b:CompleteRegistration",
+        "a4b:SearchDevices",
+        "a4b:SearchNetworkProfiles",
+        "a4b:GetNetworkProfile",
+        "a4b:PutDeviceSetupEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "A4bDeviceSetupAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:A4BNetworkProfile*"
+    }
+  ]
+}

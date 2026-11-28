@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageQuickSightVPCConnection",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:CreateVPCConnection",
+        "quicksight:DescribeVPCConnection",
+        "quicksight:DeleteVPCConnection",
+        "quicksight:ListVPCConnections",
+        "quicksight:UpdateVPCConnection"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:vpcconnection/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeQuickSightVPCConnectionEC2Resources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeNetworkAcls",
+        "ec2:DescribeRouteTables"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ManageQuickSightEC2NetworkInterface",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "Statement": [
+    {
+      "Sid": "AWSServicesAccess",
+      "Action": [
+        "codebuild:BatchGet*",
+        "codebuild:GetResourcePolicy",
+        "codebuild:List*",
+        "codebuild:DescribeTestCases",
+        "codebuild:DescribeCodeCoverages",
+        "codecommit:GetBranch",
+        "codecommit:GetCommit",
+        "codecommit:GetRepository",
+        "cloudwatch:GetMetricStatistics",
+        "events:DescribeRule",
+        "events:ListTargetsByRule",
+        "events:ListRuleNamesByTarget",
+        "logs:GetLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeStarConnectionsUserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:ListConnections",
+        "codestar-connections:GetConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ]
+    },
+    {
+      "Sid": "CodeStarNotificationsPowerUserAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:DescribeNotificationRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codebuild:*:*:project/*"
+        }
+      }
+    },
+    {
+      "Sid": "CodeStarNotificationsListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:ListNotificationRules",
+        "codestar-notifications:ListEventTypes",
+        "codestar-notifications:ListTargets"
+      ],
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}

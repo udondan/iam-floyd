@@ -1,0 +1,292 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GuardDutyGetDescribeListPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeImages",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcPeeringConnections",
+        "ec2:DescribeTransitGatewayAttachments",
+        "organizations:ListAccounts",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetBucketTagging",
+        "s3:GetAccountPublicAccessBlock",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "s3:GetBucketAcl",
+        "s3:GetBucketPolicy",
+        "s3:GetBucketPolicyStatus",
+        "lambda:GetFunctionConfiguration",
+        "lambda:ListTags",
+        "eks:ListClusters",
+        "eks:DescribeCluster",
+        "ec2:DescribeVpcEndpointServices",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups",
+        "ecs:ListClusters",
+        "ecs:DescribeClusters",
+        "ecs:DescribeTasks",
+        "ecs:DescribeTaskDefinition"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GuardDutyCreateSLRPolicy",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "malware-protection.guardduty.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyCreateVpcEndpointPolicy",
+      "Effect": "Allow",
+      "Action": "ec2:CreateVpcEndpoint",
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "GuardDutyManaged"
+        },
+        "StringLike": {
+          "ec2:VpceServiceName": [
+            "com.amazonaws.*.guardduty-data",
+            "com.amazonaws.*.guardduty-data-fips"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyModifyDeleteVpcEndpointPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVpcEndpoint",
+        "ec2:DeleteVpcEndpoints"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/GuardDutyManaged": false
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyCreateModifyVpcEndpointNetworkPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint",
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:vpc/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:subnet/*"
+      ]
+    },
+    {
+      "Sid": "GuardDutyCreateTagsDuringVpcEndpointCreationPolicy",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpoint"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "GuardDutyManaged"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutySecurityGroupManagementPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "arn:aws:ec2:*:*:security-group/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/GuardDutyManaged": false
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyCreateSecurityGroupPolicy",
+      "Effect": "Allow",
+      "Action": "ec2:CreateSecurityGroup",
+      "Resource": "arn:aws:ec2:*:*:security-group/*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/GuardDutyManaged": "*"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyCreateSecurityGroupForVpcPolicy",
+      "Effect": "Allow",
+      "Action": "ec2:CreateSecurityGroup",
+      "Resource": "arn:aws:ec2:*:*:vpc/*"
+    },
+    {
+      "Sid": "GuardDutyCreateTagsDuringSecurityGroupCreationPolicy",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:security-group/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateSecurityGroup"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "GuardDutyManaged"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyCreateEksAddonPolicy",
+      "Effect": "Allow",
+      "Action": "eks:CreateAddon",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "GuardDutyManaged"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyEksAddonManagementPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DeleteAddon",
+        "eks:UpdateAddon",
+        "eks:DescribeAddon"
+      ],
+      "Resource": "arn:aws:eks:*:*:addon/*/aws-guardduty-agent/*"
+    },
+    {
+      "Sid": "GuardDutyEksClusterTagResourcePolicy",
+      "Effect": "Allow",
+      "Action": "eks:TagResource",
+      "Resource": "arn:aws:eks:*:*:cluster/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:TagKeys": "GuardDutyManaged"
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyEcsPutAccountSettingsDefaultPolicy",
+      "Effect": "Allow",
+      "Action": "ecs:PutAccountSettingDefault",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:account-setting": [
+            "guardDutyActivate"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SsmCreateDescribeUpdateDeleteStartAssociationPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeAssociation",
+        "ssm:DeleteAssociation",
+        "ssm:UpdateAssociation",
+        "ssm:CreateAssociation",
+        "ssm:StartAssociationsOnce"
+      ],
+      "Resource": "arn:aws:ssm:*:*:association/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/GuardDutyManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SsmAddTagsToResourcePermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:AddTagsToResource"
+      ],
+      "Resource": "arn:aws:ssm:*:*:association/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "GuardDutyManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/GuardDutyManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SsmCreateUpdateAssociationInstanceDocumentPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateAssociation",
+        "ssm:UpdateAssociation"
+      ],
+      "Resource": "arn:aws:ssm:*:*:document/AmazonGuardDuty-ConfigureRuntimeMonitoringSsmPlugin"
+    },
+    {
+      "Sid": "SsmSendCommandPermission",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/AmazonGuardDuty-ConfigureRuntimeMonitoringSsmPlugin"
+      ]
+    },
+    {
+      "Sid": "SsmGetCommandStatus",
+      "Effect": "Allow",
+      "Action": "ssm:GetCommandInvocation",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudTrailCreateServiceLinkedChannelSid",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/guardduty/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GdLatticeCreateManagedSnvaAssociation",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:CreateServiceNetworkVpcAssociation",
+      "Resource": "arn:aws:vpc-lattice:*:*:servicenetworkvpcassociation/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GdLatticeAssociateViaAwsService",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:AssociateViaAWSService",
+      "Resource": "*"
+    }
+  ]
+}

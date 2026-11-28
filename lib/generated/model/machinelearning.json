@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "filename": "machinelearning",
+  "className": "Machinelearning",
+  "name": "machinelearning",
+  "servicePrefix": "machinelearning",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_machinelearning.html",
+  "accessLevelList": {
+    "Tagging": [
+      "AddTags",
+      "DeleteTags"
+    ],
+    "Write": [
+      "AddTags",
+      "CreateBatchPrediction",
+      "CreateDataSourceFromRDS",
+      "CreateDataSourceFromRedshift",
+      "CreateDataSourceFromS3",
+      "CreateEvaluation",
+      "CreateMLModel",
+      "CreateRealtimeEndpoint",
+      "DeleteBatchPrediction",
+      "DeleteDataSource",
+      "DeleteEvaluation",
+      "DeleteMLModel",
+      "DeleteRealtimeEndpoint",
+      "DeleteTags",
+      "Predict",
+      "UpdateBatchPrediction",
+      "UpdateDataSource",
+      "UpdateEvaluation",
+      "UpdateMLModel"
+    ],
+    "List": [
+      "DescribeBatchPredictions",
+      "DescribeDataSources",
+      "DescribeEvaluations",
+      "DescribeMLModels",
+      "DescribeTags"
+    ],
+    "Read": [
+      "GetBatchPrediction",
+      "GetDataSource",
+      "GetEvaluation",
+      "GetMLModel"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddTags",
+      "methodName": "toAddTags",
+      "description": "Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_AddTags.html"
+    },
+    {
+      "name": "CreateBatchPrediction",
+      "methodName": "toCreateBatchPrediction",
+      "description": "Generates predictions for a group of observations",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateBatchPrediction.html"
+    },
+    {
+      "name": "CreateDataSourceFromRDS",
+      "methodName": "toCreateDataSourceFromRDS",
+      "description": "Creates a DataSource object from an Amazon RDS",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRDS.html"
+    },
+    {
+      "name": "CreateDataSourceFromRedshift",
+      "methodName": "toCreateDataSourceFromRedshift",
+      "description": "Creates a DataSource from a database hosted on an Amazon Redshift cluster",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRedshift.html"
+    },
+    {
+      "name": "CreateDataSourceFromS3",
+      "methodName": "toCreateDataSourceFromS3",
+      "description": "Creates a DataSource object from S3",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromS3.html"
+    },
+    {
+      "name": "CreateEvaluation",
+      "methodName": "toCreateEvaluation",
+      "description": "Creates a new Evaluation of an MLModel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateEvaluation.html"
+    },
+    {
+      "name": "CreateMLModel",
+      "methodName": "toCreateMLModel",
+      "description": "Creates a new MLModel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateMLModel.html"
+    },
+    {
+      "name": "CreateRealtimeEndpoint",
+      "methodName": "toCreateRealtimeEndpoint",
+      "description": "Creates a real-time endpoint for the MLModel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateRealtimeEndpoint.html"
+    },
+    {
+      "name": "DeleteBatchPrediction",
+      "methodName": "toDeleteBatchPrediction",
+      "description": "Assigns the DELETED status to a BatchPrediction, rendering it unusable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteBatchPrediction.html"
+    },
+    {
+      "name": "DeleteDataSource",
+      "methodName": "toDeleteDataSource",
+      "description": "Assigns the DELETED status to a DataSource, rendering it unusable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteDataSource.html"
+    },
+    {
+      "name": "DeleteEvaluation",
+      "methodName": "toDeleteEvaluation",
+      "description": "Assigns the DELETED status to an Evaluation, rendering it unusable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteEvaluation.html"
+    },
+    {
+      "name": "DeleteMLModel",
+      "methodName": "toDeleteMLModel",
+      "description": "Assigns the DELETED status to an MLModel, rendering it unusable",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteMLModel.html"
+    },
+    {
+      "name": "DeleteRealtimeEndpoint",
+      "methodName": "toDeleteRealtimeEndpoint",
+      "description": "Deletes a real time endpoint of an MLModel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteRealtimeEndpoint.html"
+    },
+    {
+      "name": "DeleteTags",
+      "methodName": "toDeleteTags",
+      "description": "Deletes the specified tags associated with an ML object. After this operation is complete, you can't recover deleted tags",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteTags.html"
+    },
+    {
+      "name": "DescribeBatchPredictions",
+      "methodName": "toDescribeBatchPredictions",
+      "description": "Returns a list of BatchPrediction operations that match the search criteria in the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeBatchPredictions.html"
+    },
+    {
+      "name": "DescribeDataSources",
+      "methodName": "toDescribeDataSources",
+      "description": "Returns a list of DataSource that match the search criteria in the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeDataSources.html"
+    },
+    {
+      "name": "DescribeEvaluations",
+      "methodName": "toDescribeEvaluations",
+      "description": "Returns a list of DescribeEvaluations that match the search criteria in the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeEvaluations.html"
+    },
+    {
+      "name": "DescribeMLModels",
+      "methodName": "toDescribeMLModels",
+      "description": "Returns a list of MLModel that match the search criteria in the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeMLModels.html"
+    },
+    {
+      "name": "DescribeTags",
+      "methodName": "toDescribeTags",
+      "description": "Describes one or more of the tags for your Amazon ML object",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeTags.html"
+    },
+    {
+      "name": "GetBatchPrediction",
+      "methodName": "toGetBatchPrediction",
+      "description": "Returns a BatchPrediction that includes detailed metadata, status, and data file information",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetBatchPrediction.html"
+    },
+    {
+      "name": "GetDataSource",
+      "methodName": "toGetDataSource",
+      "description": "Returns a DataSource that includes metadata and data file information, as well as the current status of the DataSource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetDataSource.html"
+    },
+    {
+      "name": "GetEvaluation",
+      "methodName": "toGetEvaluation",
+      "description": "Returns an Evaluation that includes metadata as well as the current status of the Evaluation",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetEvaluation.html"
+    },
+    {
+      "name": "GetMLModel",
+      "methodName": "toGetMLModel",
+      "description": "Returns an MLModel that includes detailed metadata, and data source information as well as the current status of the MLModel",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetMLModel.html"
+    },
+    {
+      "name": "Predict",
+      "methodName": "toPredict",
+      "description": "Generates a prediction for the observation using the specified ML Model",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_Predict.html"
+    },
+    {
+      "name": "UpdateBatchPrediction",
+      "methodName": "toUpdateBatchPrediction",
+      "description": "Updates the BatchPredictionName of a BatchPrediction",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateBatchPrediction.html"
+    },
+    {
+      "name": "UpdateDataSource",
+      "methodName": "toUpdateDataSource",
+      "description": "Updates the DataSourceName of a DataSource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateDataSource.html"
+    },
+    {
+      "name": "UpdateEvaluation",
+      "methodName": "toUpdateEvaluation",
+      "description": "Updates the EvaluationName of an Evaluation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateEvaluation.html"
+    },
+    {
+      "name": "UpdateMLModel",
+      "methodName": "toUpdateMLModel",
+      "description": "Updates the MLModelName and the ScoreThreshold of an MLModel",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateMLModel.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "batchprediction",
+      "methodName": "onBatchprediction",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}",
+      "placeholders": [
+        {
+          "placeholder": "BatchPredictionId",
+          "name": "batchPredictionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "datasource",
+      "methodName": "onDatasource",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}",
+      "placeholders": [
+        {
+          "placeholder": "DatasourceId",
+          "name": "datasourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "evaluation",
+      "methodName": "onEvaluation",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}",
+      "placeholders": [
+        {
+          "placeholder": "EvaluationId",
+          "name": "evaluationId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "mlmodel",
+      "methodName": "onMlmodel",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}",
+      "placeholders": [
+        {
+          "placeholder": "MlModelId",
+          "name": "mlModelId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

@@ -1,0 +1,124 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSResilienceHubFISActionStatement",
+      "Effect": "Allow",
+      "Action": "fis:CreateExperimentTemplate",
+      "Resource": "arn:aws:fis:*:*:action/*"
+    },
+    {
+      "Sid": "AWSResilienceHubFISCreateExperimentTemplateStatement",
+      "Effect": "Allow",
+      "Action": "fis:CreateExperimentTemplate",
+      "Resource": "arn:aws:fis:*:*:experiment-template/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/managedBy": "resiliencehub"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubFISStartExperimentFromTemplateStatement",
+      "Effect": "Allow",
+      "Action": "fis:StartExperiment",
+      "Resource": "arn:aws:fis:*:*:experiment-template/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/managedBy": "resiliencehub"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubFISStartExperimentStatement",
+      "Effect": "Allow",
+      "Action": "fis:StartExperiment",
+      "Resource": "arn:aws:fis:*:*:experiment/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/managedBy": "resiliencehub"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubFISExperimentStatement",
+      "Effect": "Allow",
+      "Action": [
+        "fis:GetExperiment",
+        "fis:StopExperiment",
+        "fis:ListExperimentResolvedTargets"
+      ],
+      "Resource": "arn:aws:fis:*:*:experiment/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/managedBy": "resiliencehub"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubFISExperimentTemplateStatement",
+      "Effect": "Allow",
+      "Action": [
+        "fis:CreateTargetAccountConfiguration",
+        "fis:DeleteExperimentTemplate"
+      ],
+      "Resource": "arn:aws:fis:*:*:experiment-template/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/managedBy": "resiliencehub"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubFISPassRoleStatement",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "fis.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubFISTagResourceStatement",
+      "Effect": "Allow",
+      "Action": "fis:TagResource",
+      "Resource": [
+        "arn:aws:fis:*:*:experiment-template/*",
+        "arn:aws:fis:*:*:experiment/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/managedBy": "resiliencehub"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubRegionSwitchStatement",
+      "Effect": "Allow",
+      "Action": [
+        "arc-region-switch:ListPlanExecutions",
+        "arc-region-switch:GetPlanExecution"
+      ],
+      "Resource": "arn:aws:arc-region-switch::*:plan/*:*"
+    },
+    {
+      "Sid": "AWSResilienceHubFISCreateSLRStatement",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "fis.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubCloudWatchAlarmStatement",
+      "Effect": "Allow",
+      "Action": "cloudwatch:DescribeAlarmHistory",
+      "Resource": "*"
+    }
+  ]
+}

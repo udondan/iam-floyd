@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "route53-recovery-control-config:DescribeCluster",
+        "route53-recovery-control-config:DescribeControlPanel",
+        "route53-recovery-control-config:DescribeRoutingControl",
+        "route53-recovery-control-config:DescribeRoutingControlByName",
+        "route53-recovery-control-config:DescribeSafetyRule",
+        "route53-recovery-control-config:GetResourcePolicy",
+        "route53-recovery-control-config:ListAssociatedRoute53HealthChecks",
+        "route53-recovery-control-config:ListClusters",
+        "route53-recovery-control-config:ListControlPanels",
+        "route53-recovery-control-config:ListRoutingControls",
+        "route53-recovery-control-config:ListSafetyRules",
+        "route53-recovery-control-config:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

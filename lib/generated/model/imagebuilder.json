@@ -1,0 +1,1467 @@
+{
+  "schemaVersion": 1,
+  "filename": "imagebuilder",
+  "className": "Imagebuilder",
+  "name": "imagebuilder",
+  "servicePrefix": "imagebuilder",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_imagebuilder.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelImageCreation",
+      "CancelLifecycleExecution",
+      "CreateComponent",
+      "CreateContainerRecipe",
+      "CreateDistributionConfiguration",
+      "CreateImage",
+      "CreateImagePipeline",
+      "CreateImageRecipe",
+      "CreateInfrastructureConfiguration",
+      "CreateLifecyclePolicy",
+      "CreateWorkflow",
+      "DeleteComponent",
+      "DeleteContainerRecipe",
+      "DeleteDistributionConfiguration",
+      "DeleteImage",
+      "DeleteImagePipeline",
+      "DeleteImageRecipe",
+      "DeleteInfrastructureConfiguration",
+      "DeleteLifecyclePolicy",
+      "DeleteWorkflow",
+      "DistributeImage",
+      "ImportComponent",
+      "ImportDiskImage",
+      "ImportVmImage",
+      "PutComponentPolicy",
+      "PutContainerRecipePolicy",
+      "PutImagePolicy",
+      "PutImageRecipePolicy",
+      "RetryImage",
+      "SendWorkflowStepAction",
+      "StartImagePipelineExecution",
+      "StartResourceStateUpdate",
+      "TagResource",
+      "UntagResource",
+      "UpdateDistributionConfiguration",
+      "UpdateImagePipeline",
+      "UpdateInfrastructureConfiguration",
+      "UpdateLifecyclePolicy"
+    ],
+    "Read": [
+      "GetComponent",
+      "GetComponentPolicy",
+      "GetContainerRecipe",
+      "GetContainerRecipePolicy",
+      "GetDistributionConfiguration",
+      "GetImage",
+      "GetImagePipeline",
+      "GetImagePolicy",
+      "GetImageRecipe",
+      "GetImageRecipePolicy",
+      "GetInfrastructureConfiguration",
+      "GetLifecycleExecution",
+      "GetLifecyclePolicy",
+      "GetMarketplaceResource",
+      "GetWorkflow",
+      "GetWorkflowExecution",
+      "GetWorkflowStepExecution",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListComponentBuildVersions",
+      "ListComponents",
+      "ListContainerRecipes",
+      "ListDistributionConfigurations",
+      "ListImageBuildVersions",
+      "ListImagePackages",
+      "ListImagePipelineImages",
+      "ListImagePipelines",
+      "ListImageRecipes",
+      "ListImageScanFindingAggregations",
+      "ListImageScanFindings",
+      "ListImages",
+      "ListInfrastructureConfigurations",
+      "ListLifecycleExecutionResources",
+      "ListLifecycleExecutions",
+      "ListLifecyclePolicies",
+      "ListWaitingWorkflowSteps",
+      "ListWorkflowBuildVersions",
+      "ListWorkflowExecutions",
+      "ListWorkflowStepExecutions",
+      "ListWorkflows"
+    ],
+    "Permissions management": [
+      "PutComponentPolicy",
+      "PutContainerRecipePolicy",
+      "PutImagePolicy",
+      "PutImageRecipePolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelImageCreation",
+      "methodName": "toCancelImageCreation",
+      "description": "Grants permission to cancel an image creation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CancelImageCreation.html"
+    },
+    {
+      "name": "CancelLifecycleExecution",
+      "methodName": "toCancelLifecycleExecution",
+      "description": "Grants permission to cancel a lifecycle execution",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CancelLifecycleExecution.html"
+    },
+    {
+      "name": "CreateComponent",
+      "methodName": "toCreateComponent",
+      "description": "Grants permission to create a new component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html"
+    },
+    {
+      "name": "CreateContainerRecipe",
+      "methodName": "toCreateContainerRecipe",
+      "description": "Grants permission to create a new Container Recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateContainerRecipe.html"
+    },
+    {
+      "name": "CreateDistributionConfiguration",
+      "methodName": "toCreateDistributionConfiguration",
+      "description": "Grants permission to create a new distribution configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html"
+    },
+    {
+      "name": "CreateImage",
+      "methodName": "toCreateImage",
+      "description": "Grants permission to create a new image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html"
+    },
+    {
+      "name": "CreateImagePipeline",
+      "methodName": "toCreateImagePipeline",
+      "description": "Grants permission to create a new image pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html"
+    },
+    {
+      "name": "CreateImageRecipe",
+      "methodName": "toCreateImageRecipe",
+      "description": "Grants permission to create a new Image Recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html"
+    },
+    {
+      "name": "CreateInfrastructureConfiguration",
+      "methodName": "toCreateInfrastructureConfiguration",
+      "description": "Grants permission to create a new infrastructure configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html"
+    },
+    {
+      "name": "CreateLifecyclePolicy",
+      "methodName": "toCreateLifecyclePolicy",
+      "description": "Grants permission to create a new lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateLifecyclePolicy.html"
+    },
+    {
+      "name": "CreateWorkflow",
+      "methodName": "toCreateWorkflow",
+      "description": "Grants permission to create a new workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateWorkflow.html"
+    },
+    {
+      "name": "DeleteComponent",
+      "methodName": "toDeleteComponent",
+      "description": "Grants permission to delete a component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteComponent.html"
+    },
+    {
+      "name": "DeleteContainerRecipe",
+      "methodName": "toDeleteContainerRecipe",
+      "description": "Grants permission to delete a container recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteContainerRecipe.html"
+    },
+    {
+      "name": "DeleteDistributionConfiguration",
+      "methodName": "toDeleteDistributionConfiguration",
+      "description": "Grants permission to delete a distribution configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteDistributionConfiguration.html"
+    },
+    {
+      "name": "DeleteImage",
+      "methodName": "toDeleteImage",
+      "description": "Grants permission to delete an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImage.html"
+    },
+    {
+      "name": "DeleteImagePipeline",
+      "methodName": "toDeleteImagePipeline",
+      "description": "Grants permission to delete an image pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImagePipeline.html"
+    },
+    {
+      "name": "DeleteImageRecipe",
+      "methodName": "toDeleteImageRecipe",
+      "description": "Grants permission to delete an image recipe",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImageRecipe.html"
+    },
+    {
+      "name": "DeleteInfrastructureConfiguration",
+      "methodName": "toDeleteInfrastructureConfiguration",
+      "description": "Grants permission to delete an infrastructure configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteInfrastructureConfiguration.html"
+    },
+    {
+      "name": "DeleteLifecyclePolicy",
+      "methodName": "toDeleteLifecyclePolicy",
+      "description": "Grants permission to delete a lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteLifecyclePolicy.html"
+    },
+    {
+      "name": "DeleteWorkflow",
+      "methodName": "toDeleteWorkflow",
+      "description": "Grants permission to delete a workflow",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteWorkflow.html"
+    },
+    {
+      "name": "DistributeImage",
+      "methodName": "toDistributeImage",
+      "description": "Grants permission to distribute an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DistributeImage.html"
+    },
+    {
+      "name": "GetComponent",
+      "methodName": "toGetComponent",
+      "description": "Grants permission to view details about a component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponent.html"
+    },
+    {
+      "name": "GetComponentPolicy",
+      "methodName": "toGetComponentPolicy",
+      "description": "Grants permission to view the resource policy associated with a component",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponentPolicy.html"
+    },
+    {
+      "name": "GetContainerRecipe",
+      "methodName": "toGetContainerRecipe",
+      "description": "Grants permission to view details about a container recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetContainerRecipe.html"
+    },
+    {
+      "name": "GetContainerRecipePolicy",
+      "methodName": "toGetContainerRecipePolicy",
+      "description": "Grants permission to view the resource policy associated with a container recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetContainerRecipePolicy.html"
+    },
+    {
+      "name": "GetDistributionConfiguration",
+      "methodName": "toGetDistributionConfiguration",
+      "description": "Grants permission to view details about a distribution configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetDistributionConfiguration.html"
+    },
+    {
+      "name": "GetImage",
+      "methodName": "toGetImage",
+      "description": "Grants permission to view details about an image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html"
+    },
+    {
+      "name": "GetImagePipeline",
+      "methodName": "toGetImagePipeline",
+      "description": "Grants permission to view details about an image pipeline",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePipeline.html"
+    },
+    {
+      "name": "GetImagePolicy",
+      "methodName": "toGetImagePolicy",
+      "description": "Grants permission to view the resource policy associated with an image",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePolicy.html"
+    },
+    {
+      "name": "GetImageRecipe",
+      "methodName": "toGetImageRecipe",
+      "description": "Grants permission to view details about an image recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipe.html"
+    },
+    {
+      "name": "GetImageRecipePolicy",
+      "methodName": "toGetImageRecipePolicy",
+      "description": "Grants permission to view the resource policy associated with an image recipe",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipePolicy.html"
+    },
+    {
+      "name": "GetInfrastructureConfiguration",
+      "methodName": "toGetInfrastructureConfiguration",
+      "description": "Grants permission to view details about an infrastructure configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetInfrastructureConfiguration.html"
+    },
+    {
+      "name": "GetLifecycleExecution",
+      "methodName": "toGetLifecycleExecution",
+      "description": "Grants permission to view details about a lifecycle execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetLifecycleExecution.html"
+    },
+    {
+      "name": "GetLifecyclePolicy",
+      "methodName": "toGetLifecyclePolicy",
+      "description": "Grants permission to view details about a lifecycle policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetLifecyclePolicy.html"
+    },
+    {
+      "name": "GetMarketplaceResource",
+      "methodName": "toGetMarketplaceResource",
+      "description": "Grants permission to retrieve Marketplace provided resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetMarketplaceResource.html"
+    },
+    {
+      "name": "GetWorkflow",
+      "methodName": "toGetWorkflow",
+      "description": "Grants permission to view details about a workflow",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflow.html"
+    },
+    {
+      "name": "GetWorkflowExecution",
+      "methodName": "toGetWorkflowExecution",
+      "description": "Grants permission to view details about a workflow execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflowExecution.html"
+    },
+    {
+      "name": "GetWorkflowStepExecution",
+      "methodName": "toGetWorkflowStepExecution",
+      "description": "Grants permission to view details about a workflow step execution",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetWorkflowStepExecution.html"
+    },
+    {
+      "name": "ImportComponent",
+      "methodName": "toImportComponent",
+      "description": "Grants permission to import a new component",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportComponent.html"
+    },
+    {
+      "name": "ImportDiskImage",
+      "methodName": "toImportDiskImage",
+      "description": "Grants permission to import a disk image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportDiskImage.html"
+    },
+    {
+      "name": "ImportVmImage",
+      "methodName": "toImportVmImage",
+      "description": "Grants permission to import an image",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportVmImage.html"
+    },
+    {
+      "name": "ListComponentBuildVersions",
+      "methodName": "toListComponentBuildVersions",
+      "description": "Grants permission to list the component build versions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponentBuildVersions.html"
+    },
+    {
+      "name": "ListComponents",
+      "methodName": "toListComponents",
+      "description": "Grants permission to list the component versions owned by or shared with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponents.html"
+    },
+    {
+      "name": "ListContainerRecipes",
+      "methodName": "toListContainerRecipes",
+      "description": "Grants permission to list the container recipes owned by or shared with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListContainerRecipes.html"
+    },
+    {
+      "name": "ListDistributionConfigurations",
+      "methodName": "toListDistributionConfigurations",
+      "description": "Grants permission to list the distribution configurations in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListDistributionConfigurations.html"
+    },
+    {
+      "name": "ListImageBuildVersions",
+      "methodName": "toListImageBuildVersions",
+      "description": "Grants permission to list the image build versions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageBuildVersions.html"
+    },
+    {
+      "name": "ListImagePackages",
+      "methodName": "toListImagePackages",
+      "description": "Grants permission to return a list of packages installed on the specified image",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePackages.html"
+    },
+    {
+      "name": "ListImagePipelineImages",
+      "methodName": "toListImagePipelineImages",
+      "description": "Grants permission to return a list of images created by the specified pipeline",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePipelineImages.html"
+    },
+    {
+      "name": "ListImagePipelines",
+      "methodName": "toListImagePipelines",
+      "description": "Grants permission to list the image pipelines in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePipelines.html"
+    },
+    {
+      "name": "ListImageRecipes",
+      "methodName": "toListImageRecipes",
+      "description": "Grants permission to list the image recipes owned by or shared with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageRecipes.html"
+    },
+    {
+      "name": "ListImageScanFindingAggregations",
+      "methodName": "toListImageScanFindingAggregations",
+      "description": "Grants permission to list aggregations on the image scan findings in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageScanFindingAggregations.html"
+    },
+    {
+      "name": "ListImageScanFindings",
+      "methodName": "toListImageScanFindings",
+      "description": "Grants permission to list the image scan findings for the images in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageScanFindings.html"
+    },
+    {
+      "name": "ListImages",
+      "methodName": "toListImages",
+      "description": "Grants permission to list the image versions owned by or shared with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImages.html"
+    },
+    {
+      "name": "ListInfrastructureConfigurations",
+      "methodName": "toListInfrastructureConfigurations",
+      "description": "Grants permission to list the infrastructure configurations in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListInfrastructureConfigurations.html"
+    },
+    {
+      "name": "ListLifecycleExecutionResources",
+      "methodName": "toListLifecycleExecutionResources",
+      "description": "Grants permission to list resources for the specified lifecycle execution",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecycleExecutionResources.html"
+    },
+    {
+      "name": "ListLifecycleExecutions",
+      "methodName": "toListLifecycleExecutions",
+      "description": "Grants permission to list lifecycle executions for the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecycleExecutions.html"
+    },
+    {
+      "name": "ListLifecyclePolicies",
+      "methodName": "toListLifecyclePolicies",
+      "description": "Grants permission to list the lifecycle policies in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListLifecyclePolicies.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for an Image Builder resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListWaitingWorkflowSteps",
+      "methodName": "toListWaitingWorkflowSteps",
+      "description": "Grants permission to list waiting workflow steps for the caller account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWaitingWorkflowSteps.html"
+    },
+    {
+      "name": "ListWorkflowBuildVersions",
+      "methodName": "toListWorkflowBuildVersions",
+      "description": "Grants permission to list the workflow build versions in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowBuildVersions.html"
+    },
+    {
+      "name": "ListWorkflowExecutions",
+      "methodName": "toListWorkflowExecutions",
+      "description": "Grants permission to list workflow executions for the specified image",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowExecutions.html"
+    },
+    {
+      "name": "ListWorkflowStepExecutions",
+      "methodName": "toListWorkflowStepExecutions",
+      "description": "Grants permission to list workflow step executions for the specified workflow",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflowStepExecutions.html"
+    },
+    {
+      "name": "ListWorkflows",
+      "methodName": "toListWorkflows",
+      "description": "Grants permission to list the workflow versions owned by or shared with your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListWorkflows.html"
+    },
+    {
+      "name": "PutComponentPolicy",
+      "methodName": "toPutComponentPolicy",
+      "description": "Grants permission to set the resource policy associated with a component",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutComponentPolicy.html"
+    },
+    {
+      "name": "PutContainerRecipePolicy",
+      "methodName": "toPutContainerRecipePolicy",
+      "description": "Grants permission to set the resource policy associated with a container recipe",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutContainerRecipePolicy.html"
+    },
+    {
+      "name": "PutImagePolicy",
+      "methodName": "toPutImagePolicy",
+      "description": "Grants permission to set the resource policy associated with an image",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImagePolicy.html"
+    },
+    {
+      "name": "PutImageRecipePolicy",
+      "methodName": "toPutImageRecipePolicy",
+      "description": "Grants permission to set the resource policy associated with an image recipe",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImageRecipePolicy.html"
+    },
+    {
+      "name": "RetryImage",
+      "methodName": "toRetryImage",
+      "description": "Grants permission to retry an image creation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_RetryImage.html"
+    },
+    {
+      "name": "SendWorkflowStepAction",
+      "methodName": "toSendWorkflowStepAction",
+      "description": "Grants permission to send an action to a workflow step",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_SendWorkflowStepAction.html"
+    },
+    {
+      "name": "StartImagePipelineExecution",
+      "methodName": "toStartImagePipelineExecution",
+      "description": "Grants permission to create a new image from a pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html"
+    },
+    {
+      "name": "StartResourceStateUpdate",
+      "methodName": "toStartResourceStateUpdate",
+      "description": "Grants permission to start a state update for the specified resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartResourceStateUpdate.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag an Image Builder resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag an Image Builder resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateDistributionConfiguration",
+      "methodName": "toUpdateDistributionConfiguration",
+      "description": "Grants permission to update an existing distribution configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateDistributionConfiguration.html"
+    },
+    {
+      "name": "UpdateImagePipeline",
+      "methodName": "toUpdateImagePipeline",
+      "description": "Grants permission to update an existing image pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateImagePipeline.html"
+    },
+    {
+      "name": "UpdateInfrastructureConfiguration",
+      "methodName": "toUpdateInfrastructureConfiguration",
+      "description": "Grants permission to update an existing infrastructure configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html"
+    },
+    {
+      "name": "UpdateLifecyclePolicy",
+      "methodName": "toUpdateLifecyclePolicy",
+      "description": "Grants permission to update an existing lifecycle policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateLifecyclePolicy.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "allComponentBuildVersions",
+      "methodName": "onAllComponentBuildVersions",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Component.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}/*",
+      "placeholders": [
+        {
+          "placeholder": "ComponentName",
+          "name": "componentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ComponentVersion",
+          "name": "componentVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "allImageBuildVersions",
+      "methodName": "onAllImageBuildVersions",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Image.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}/*",
+      "placeholders": [
+        {
+          "placeholder": "ImageName",
+          "name": "imageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImageVersion",
+          "name": "imageVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "allWorkflowBuildVersions",
+      "methodName": "onAllWorkflowBuildVersions",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Workflow.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:workflow/${WorkflowType}/${WorkflowName}/${WorkflowVersion}/*",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowType",
+          "name": "workflowType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkflowName",
+          "name": "workflowName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkflowVersion",
+          "name": "workflowVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "component",
+      "methodName": "onComponent",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Component.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}/${ComponentBuildVersion}",
+      "placeholders": [
+        {
+          "placeholder": "ComponentName",
+          "name": "componentName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ComponentVersion",
+          "name": "componentVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ComponentBuildVersion",
+          "name": "componentBuildVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "containerRecipe",
+      "methodName": "onContainerRecipe",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ContainerRecipe.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:container-recipe/${ContainerRecipeName}/${ContainerRecipeVersion}",
+      "placeholders": [
+        {
+          "placeholder": "ContainerRecipeName",
+          "name": "containerRecipeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ContainerRecipeVersion",
+          "name": "containerRecipeVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "distributionConfiguration",
+      "methodName": "onDistributionConfiguration",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DistributionConfiguration.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:distribution-configuration/${DistributionConfigurationName}",
+      "placeholders": [
+        {
+          "placeholder": "DistributionConfigurationName",
+          "name": "distributionConfigurationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "IDistributionConfigurationRef",
+        "property": "distributionConfigurationRef",
+        "arn": "distributionConfigurationArn"
+      }
+    },
+    {
+      "name": "image",
+      "methodName": "onImage",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Image.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}/${ImageBuildVersion}",
+      "placeholders": [
+        {
+          "placeholder": "ImageName",
+          "name": "imageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImageVersion",
+          "name": "imageVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImageBuildVersion",
+          "name": "imageBuildVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "imagePipeline",
+      "methodName": "onImagePipeline",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImagePipeline.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image-pipeline/${ImagePipelineName}",
+      "placeholders": [
+        {
+          "placeholder": "ImagePipelineName",
+          "name": "imagePipelineName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "IImagePipelineRef",
+        "property": "imagePipelineRef",
+        "arn": "imagePipelineArn"
+      }
+    },
+    {
+      "name": "imageRecipe",
+      "methodName": "onImageRecipe",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImageRecipe.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}",
+      "placeholders": [
+        {
+          "placeholder": "ImageRecipeName",
+          "name": "imageRecipeName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImageRecipeVersion",
+          "name": "imageRecipeVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "imageVersion",
+      "methodName": "onImageVersion",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImageVersion.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}",
+      "placeholders": [
+        {
+          "placeholder": "ImageName",
+          "name": "imageName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ImageVersion",
+          "name": "imageVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "infrastructureConfiguration",
+      "methodName": "onInfrastructureConfiguration",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_InfrastructureConfiguration.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:infrastructure-configuration/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "IInfrastructureConfigurationRef",
+        "property": "infrastructureConfigurationRef",
+        "arn": "infrastructureConfigurationArn"
+      }
+    },
+    {
+      "name": "lifecycleExecution",
+      "methodName": "onLifecycleExecution",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_LifecycleExecution.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:lifecycle-execution/${LifecycleExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "LifecycleExecutionId",
+          "name": "lifecycleExecutionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "lifecyclePolicy",
+      "methodName": "onLifecyclePolicy",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_LifecyclePolicy.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:lifecycle-policy/${LifecyclePolicyName}",
+      "placeholders": [
+        {
+          "placeholder": "LifecyclePolicyName",
+          "name": "lifecyclePolicyName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_imagebuilder",
+        "interface": "ILifecyclePolicyRef",
+        "property": "lifecyclePolicyRef",
+        "arn": "lifecyclePolicyArn"
+      }
+    },
+    {
+      "name": "workflow",
+      "methodName": "onWorkflow",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Workflow.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:workflow/${WorkflowType}/${WorkflowName}/${WorkflowVersion}/${WorkflowBuildVersion}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowType",
+          "name": "workflowType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkflowName",
+          "name": "workflowName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkflowVersion",
+          "name": "workflowVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "WorkflowBuildVersion",
+          "name": "workflowBuildVersion",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "workflowExecution",
+      "methodName": "onWorkflowExecution",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowExecutionMetadata.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:workflow-execution/${WorkflowExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowExecutionId",
+          "name": "workflowExecutionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "workflowStepExecution",
+      "methodName": "onWorkflowStepExecution",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_WorkflowStepMetadata.html",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:workflow-step-execution/${WorkflowStepExecutionId}",
+      "placeholders": [
+        {
+          "placeholder": "WorkflowStepExecutionId",
+          "name": "workflowStepExecutionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateComponent",
+        "toCreateContainerRecipe",
+        "toCreateDistributionConfiguration",
+        "toCreateImage",
+        "toCreateImagePipeline",
+        "toCreateImageRecipe",
+        "toCreateInfrastructureConfiguration",
+        "toCreateLifecyclePolicy",
+        "toCreateWorkflow",
+        "toDistributeImage",
+        "toImportComponent",
+        "toImportDiskImage",
+        "toImportVmImage",
+        "toStartImagePipelineExecution",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCancelImageCreation",
+        "toCreateComponent",
+        "toCreateContainerRecipe",
+        "toCreateDistributionConfiguration",
+        "toCreateImage",
+        "toCreateImagePipeline",
+        "toCreateImageRecipe",
+        "toCreateInfrastructureConfiguration",
+        "toCreateLifecyclePolicy",
+        "toCreateWorkflow",
+        "toDeleteComponent",
+        "toDeleteContainerRecipe",
+        "toDeleteDistributionConfiguration",
+        "toDeleteImage",
+        "toDeleteImagePipeline",
+        "toDeleteImageRecipe",
+        "toDeleteInfrastructureConfiguration",
+        "toDeleteLifecyclePolicy",
+        "toDeleteWorkflow",
+        "toDistributeImage",
+        "toGetComponent",
+        "toGetComponentPolicy",
+        "toGetContainerRecipe",
+        "toGetContainerRecipePolicy",
+        "toGetDistributionConfiguration",
+        "toGetImage",
+        "toGetImagePipeline",
+        "toGetImagePolicy",
+        "toGetImageRecipe",
+        "toGetImageRecipePolicy",
+        "toGetInfrastructureConfiguration",
+        "toGetLifecyclePolicy",
+        "toGetMarketplaceResource",
+        "toGetWorkflow",
+        "toImportComponent",
+        "toImportDiskImage",
+        "toImportVmImage",
+        "toListImagePackages",
+        "toListImagePipelineImages",
+        "toListImageScanFindingAggregations",
+        "toListImageScanFindings",
+        "toListLifecycleExecutions",
+        "toListTagsForResource",
+        "toListWorkflowExecutions",
+        "toPutComponentPolicy",
+        "toPutContainerRecipePolicy",
+        "toPutImagePolicy",
+        "toPutImageRecipePolicy",
+        "toRetryImage",
+        "toSendWorkflowStepAction",
+        "toStartImagePipelineExecution",
+        "toStartResourceStateUpdate",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdateDistributionConfiguration",
+        "toUpdateImagePipeline",
+        "toUpdateInfrastructureConfiguration",
+        "toUpdateLifecyclePolicy"
+      ],
+      "relatedResourceTypes": [
+        "component",
+        "containerRecipe",
+        "distributionConfiguration",
+        "image",
+        "imagePipeline",
+        "imageRecipe",
+        "imageVersion",
+        "infrastructureConfiguration",
+        "lifecyclePolicy",
+        "workflow"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateComponent",
+        "toCreateContainerRecipe",
+        "toCreateDistributionConfiguration",
+        "toCreateImage",
+        "toCreateImagePipeline",
+        "toCreateImageRecipe",
+        "toCreateInfrastructureConfiguration",
+        "toCreateLifecyclePolicy",
+        "toCreateWorkflow",
+        "toDistributeImage",
+        "toImportComponent",
+        "toImportDiskImage",
+        "toImportVmImage",
+        "toStartImagePipelineExecution",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "imagebuilder:CreatedResourceTag/${TagKey}",
+      "methodName": "ifCreatedResourceTag",
+      "description": "Filters access by the tag key-value pairs attached to the resource created by Image Builder",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetag",
+      "relatedActionMethods": [
+        "toCreateInfrastructureConfiguration",
+        "toUpdateInfrastructureConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreatedResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "imagebuilder:CreatedResourceTagKeys",
+      "methodName": "ifCreatedResourceTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetagkeys",
+      "relatedActionMethods": [
+        "toCreateInfrastructureConfiguration",
+        "toUpdateInfrastructureConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "CreatedResourceTagKeys",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "imagebuilder:Ec2MetadataHttpTokens",
+      "methodName": "ifEc2MetadataHttpTokens",
+      "description": "Filters access by the EC2 Instance Metadata HTTP Token Requirement specified in the request",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-ec2metadatatokens",
+      "relatedActionMethods": [
+        "toCreateInfrastructureConfiguration",
+        "toUpdateInfrastructureConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "Ec2MetadataHttpTokens",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "imagebuilder:LifecyclePolicyResourceType",
+      "methodName": "ifLifecyclePolicyResourceType",
+      "description": "Filters access by the Lifecycle Policy Resource Type specified in the request",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-lifecyclepolicyresourcetype",
+      "relatedActionMethods": [
+        "toCreateLifecyclePolicy",
+        "toUpdateLifecyclePolicy"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LifecyclePolicyResourceType",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "imagebuilder:StatusTopicArn",
+      "methodName": "ifStatusTopicArn",
+      "description": "Filters access by the SNS Topic Arn in the request to which terminal state notifications will be published",
+      "url": "https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-statustopicarn",
+      "relatedActionMethods": [
+        "toCreateInfrastructureConfiguration",
+        "toUpdateInfrastructureConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "StatusTopicArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    }
+  ]
+}

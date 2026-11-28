@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DevOpsAgentInvestigation",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateBacklogTask",
+        "aidevops:ListBacklogTasks",
+        "aidevops:GetBacklogTask",
+        "aidevops:UpdateBacklogTask",
+        "aidevops:ListJournalRecords",
+        "aidevops:ListExecutions",
+        "aidevops:DiscoverTopology"
+      ],
+      "Resource": "arn:aws:aidevops:*:*:agentspace/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

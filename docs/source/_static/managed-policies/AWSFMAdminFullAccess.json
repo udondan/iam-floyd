@@ -1,0 +1,75 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fms:*",
+        "waf:*",
+        "waf-regional:*",
+        "elasticloadbalancing:SetWebACL",
+        "firehose:ListDeliveryStreams",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListRoots",
+        "organizations:ListChildren",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListOrganizationalUnitsForParent",
+        "shield:GetSubscriptionState",
+        "route53resolver:ListFirewallRuleGroups",
+        "route53resolver:GetFirewallRuleGroup",
+        "wafv2:ListRuleGroups",
+        "wafv2:ListAvailableManagedRuleGroups",
+        "wafv2:CheckCapacity",
+        "wafv2:PutLoggingConfiguration",
+        "wafv2:ListAvailableManagedRuleGroupVersions",
+        "network-firewall:DescribeRuleGroup",
+        "network-firewall:DescribeRuleGroupMetadata",
+        "network-firewall:ListRuleGroups",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeRegions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aws-waf-logs-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "fms.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "fms.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

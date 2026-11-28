@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "filename": "timestream",
+  "className": "Timestream",
+  "name": "timestream",
+  "servicePrefix": "timestream",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_timestream.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelQuery",
+      "CreateBatchLoadTask",
+      "CreateDatabase",
+      "CreateScheduledQuery",
+      "CreateTable",
+      "DeleteDatabase",
+      "DeleteScheduledQuery",
+      "DeleteTable",
+      "ExecuteScheduledQuery",
+      "ResumeBatchLoadTask",
+      "StartAwsBackupJob",
+      "StartAwsRestoreJob",
+      "TagResource",
+      "Unload",
+      "UntagResource",
+      "UpdateAccountSettings",
+      "UpdateDatabase",
+      "UpdateScheduledQuery",
+      "UpdateTable",
+      "WriteRecords"
+    ],
+    "Read": [
+      "DescribeAccountSettings",
+      "DescribeBatchLoadTask",
+      "DescribeDatabase",
+      "DescribeScheduledQuery",
+      "DescribeTable",
+      "GetAwsBackupStatus",
+      "GetAwsRestoreStatus",
+      "ListTagsForResource",
+      "PrepareQuery",
+      "Select",
+      "SelectValues"
+    ],
+    "List": [
+      "DescribeEndpoints",
+      "ListBatchLoadTasks",
+      "ListDatabases",
+      "ListMeasures",
+      "ListScheduledQueries",
+      "ListTables"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelQuery",
+      "methodName": "toCancelQuery",
+      "description": "Grants permission to cancel queries in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_CancelQuery.html"
+    },
+    {
+      "name": "CreateBatchLoadTask",
+      "methodName": "toCreateBatchLoadTask",
+      "description": "Grants permission to create a batch load task in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateBatchLoadTask.html"
+    },
+    {
+      "name": "CreateDatabase",
+      "methodName": "toCreateDatabase",
+      "description": "Grants permission to create a database in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDatabase.html"
+    },
+    {
+      "name": "CreateScheduledQuery",
+      "methodName": "toCreateScheduledQuery",
+      "description": "Grants permission to create a scheduled query in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateScheduledQuery.html",
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "CreateTable",
+      "methodName": "toCreateTable",
+      "description": "Grants permission to create a table in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateTable.html"
+    },
+    {
+      "name": "DeleteDatabase",
+      "methodName": "toDeleteDatabase",
+      "description": "Grants permission to delete a database in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteDatabase.html"
+    },
+    {
+      "name": "DeleteScheduledQuery",
+      "methodName": "toDeleteScheduledQuery",
+      "description": "Grants permission to delete a scheduled query in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteScheduledQuery.html"
+    },
+    {
+      "name": "DeleteTable",
+      "methodName": "toDeleteTable",
+      "description": "Grants permission to delete a table in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteTable.html"
+    },
+    {
+      "name": "DescribeAccountSettings",
+      "methodName": "toDescribeAccountSettings",
+      "description": "Grants permission to describe your account settings",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DescribeAccountSettings.html"
+    },
+    {
+      "name": "DescribeBatchLoadTask",
+      "methodName": "toDescribeBatchLoadTask",
+      "description": "Grants permission to describe a batch load task in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeBatchLoadTask.html"
+    },
+    {
+      "name": "DescribeDatabase",
+      "methodName": "toDescribeDatabase",
+      "description": "Grants permission to describe a database in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeDatabase.html"
+    },
+    {
+      "name": "DescribeEndpoints",
+      "methodName": "toDescribeEndpoints",
+      "description": "Grants permission to describe timestream endpoints",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeEndpoints.html"
+    },
+    {
+      "name": "DescribeScheduledQuery",
+      "methodName": "toDescribeScheduledQuery",
+      "description": "Grants permission to describe a scheduled query in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeScheduledQuery.html"
+    },
+    {
+      "name": "DescribeTable",
+      "methodName": "toDescribeTable",
+      "description": "Grants permission to describe a table in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeTable.html"
+    },
+    {
+      "name": "ExecuteScheduledQuery",
+      "methodName": "toExecuteScheduledQuery",
+      "description": "Grants permission to execute a scheduled query in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ExecuteScheduledQuery.html"
+    },
+    {
+      "name": "GetAwsBackupStatus",
+      "methodName": "toGetAwsBackupStatus",
+      "description": "Grants permission to get Status of a Timestream Table Backup",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html"
+    },
+    {
+      "name": "GetAwsRestoreStatus",
+      "methodName": "toGetAwsRestoreStatus",
+      "description": "Grants permission to get Status of a Timestream Table Restore",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html"
+    },
+    {
+      "name": "ListBatchLoadTasks",
+      "methodName": "toListBatchLoadTasks",
+      "description": "Grants permission to list batch load tasks in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListBatchLoadTasks.html"
+    },
+    {
+      "name": "ListDatabases",
+      "methodName": "toListDatabases",
+      "description": "Grants permission to list databases in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDatabases.html"
+    },
+    {
+      "name": "ListMeasures",
+      "methodName": "toListMeasures",
+      "description": "Grants permission to list measures of a table in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html"
+    },
+    {
+      "name": "ListScheduledQueries",
+      "methodName": "toListScheduledQueries",
+      "description": "Grants permission to list scheduled queries in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListScheduledQueries.html"
+    },
+    {
+      "name": "ListTables",
+      "methodName": "toListTables",
+      "description": "Grants permission to list tables in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTables.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags of a resource in your account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTagsForResource.html"
+    },
+    {
+      "name": "PrepareQuery",
+      "methodName": "toPrepareQuery",
+      "description": "Grants permission to issue prepare queries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_PrepareQuery.html"
+    },
+    {
+      "name": "ResumeBatchLoadTask",
+      "methodName": "toResumeBatchLoadTask",
+      "description": "Grants permission to resume a batch load task in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ResumeBatchLoadTask.html"
+    },
+    {
+      "name": "Select",
+      "methodName": "toSelect",
+      "description": "Grants permission to issue 'select from table' queries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html"
+    },
+    {
+      "name": "SelectValues",
+      "methodName": "toSelectValues",
+      "description": "Grants permission to issue 'select 1' queries",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html"
+    },
+    {
+      "name": "StartAwsBackupJob",
+      "methodName": "toStartAwsBackupJob",
+      "description": "Grants permission to start a Backup Job for a Timestream Table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html"
+    },
+    {
+      "name": "StartAwsRestoreJob",
+      "methodName": "toStartAwsRestoreJob",
+      "description": "Grants permission to start Restore Job for a Backup of Timestream Table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_TagResource.html"
+    },
+    {
+      "name": "Unload",
+      "methodName": "toUnload",
+      "description": "Grants permission to issue Unload queries",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove a tag from a resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "methodName": "toUpdateAccountSettings",
+      "description": "Grants permission to update your account settings",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_UpdateAccountSettings.html"
+    },
+    {
+      "name": "UpdateDatabase",
+      "methodName": "toUpdateDatabase",
+      "description": "Grants permission to update a database in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateDatabase.html"
+    },
+    {
+      "name": "UpdateScheduledQuery",
+      "methodName": "toUpdateScheduledQuery",
+      "description": "Grants permission to update a scheduled query in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateScheduledQuery.html"
+    },
+    {
+      "name": "UpdateTable",
+      "methodName": "toUpdateTable",
+      "description": "Grants permission to update a table in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateTable.html"
+    },
+    {
+      "name": "WriteRecords",
+      "methodName": "toWriteRecords",
+      "description": "Grants permission to ingest data to a table in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_WriteRecords.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "database",
+      "methodName": "onDatabase",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_Database.html",
+      "arn": "arn:${Partition}:timestream:${Region}:${Account}:database/${DatabaseName}",
+      "placeholders": [
+        {
+          "placeholder": "DatabaseName",
+          "name": "databaseName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_timestream",
+        "interface": "IDatabaseRef",
+        "property": "databaseRef",
+        "arn": "databaseArn"
+      }
+    },
+    {
+      "name": "scheduled-query",
+      "methodName": "onScheduledQuery",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_ScheduledQuery.html",
+      "arn": "arn:${Partition}:timestream:${Region}:${Account}:scheduled-query/${ScheduledQueryName}",
+      "placeholders": [
+        {
+          "placeholder": "ScheduledQueryName",
+          "name": "scheduledQueryName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_timestream",
+        "interface": "IScheduledQueryRef",
+        "property": "scheduledQueryRef",
+        "arn": "scheduledQueryArn"
+      }
+    },
+    {
+      "name": "table",
+      "methodName": "onTable",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_Table.html",
+      "arn": "arn:${Partition}:timestream:${Region}:${Account}:database/${DatabaseName}/table/${TableName}",
+      "placeholders": [
+        {
+          "placeholder": "DatabaseName",
+          "name": "databaseName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "TableName",
+          "name": "tableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the presence of tag key-value pairs in the request",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateDatabase",
+        "toCreateScheduledQuery",
+        "toCreateTable",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateBatchLoadTask",
+        "toCreateDatabase",
+        "toCreateTable",
+        "toDeleteDatabase",
+        "toDeleteScheduledQuery",
+        "toDeleteTable",
+        "toDescribeDatabase",
+        "toDescribeScheduledQuery",
+        "toDescribeTable",
+        "toExecuteScheduledQuery",
+        "toListMeasures",
+        "toListTables",
+        "toListTagsForResource",
+        "toPrepareQuery",
+        "toSelect",
+        "toStartAwsBackupJob",
+        "toStartAwsRestoreJob",
+        "toTagResource",
+        "toUnload",
+        "toUntagResource",
+        "toUpdateDatabase",
+        "toUpdateScheduledQuery",
+        "toUpdateTable",
+        "toWriteRecords"
+      ],
+      "relatedResourceTypes": [
+        "database",
+        "scheduled-query",
+        "table"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the presence of tag keys in the request",
+      "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [
+        "toCreateDatabase",
+        "toCreateScheduledQuery",
+        "toCreateTable",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PermissionsForS3ListTableBuckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:ListTableBuckets"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DataAccessPermissionsForS3TablesResources",
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:CreateTableBucket",
+        "s3tables:GetTableBucket",
+        "s3tables:CreateNamespace",
+        "s3tables:GetNamespace",
+        "s3tables:ListNamespaces",
+        "s3tables:DeleteNamespace",
+        "s3tables:DeleteTableBucket",
+        "s3tables:CreateTable",
+        "s3tables:DeleteTable",
+        "s3tables:GetTable",
+        "s3tables:ListTables",
+        "s3tables:RenameTable",
+        "s3tables:UpdateTableMetadataLocation",
+        "s3tables:GetTableMetadataLocation",
+        "s3tables:GetTableData",
+        "s3tables:PutTableData",
+        "s3tables:PutTableBucketEncryption"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KMSDataAccessPermissionsForS3TablesResources",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "s3.*.amazonaws.com"
+          ],
+          "kms:EncryptionContext:aws:s3:arn": "arn:aws:s3tables:*:*:bucket/*/table/*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "KMSDescribeKeyAccessPermissionsForS3TablesResources",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "s3tables.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

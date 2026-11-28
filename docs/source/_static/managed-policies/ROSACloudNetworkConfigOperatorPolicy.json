@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DescribeNetworkResources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ModifyEIPs",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:UnassignPrivateIpAddresses",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:UnassignIpv6Addresses",
+        "ec2:AssignIpv6Addresses"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/red-hat-managed": "true"
+        }
+      }
+    }
+  ]
+}

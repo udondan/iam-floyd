@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "filename": "consolidatedbilling",
+  "className": "Consolidatedbilling",
+  "name": "consolidatedbilling",
+  "servicePrefix": "consolidatedbilling",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_consolidatedbilling.html",
+  "accessLevelList": {
+    "Read": [
+      "GetAccountBillingRole"
+    ],
+    "List": [
+      "ListLinkedAccounts"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetAccountBillingRole",
+      "methodName": "toGetAccountBillingRole",
+      "description": "Grants permission to get account role (Payer, Linked, Regular)",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    },
+    {
+      "name": "ListLinkedAccounts",
+      "methodName": "toListLinkedAccounts",
+      "description": "Grants permission to get list of member/linked accounts",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

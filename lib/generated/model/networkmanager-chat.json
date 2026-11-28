@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "filename": "networkmanager-chat",
+  "className": "NetworkmanagerChat",
+  "name": "networkmanager-chat",
+  "servicePrefix": "networkmanager-chat",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager-chat.html",
+  "accessLevelList": {
+    "Write": [
+      "CancelMessageResponse",
+      "CreateConversation",
+      "DeleteConversation",
+      "NotifyConversationIsActive",
+      "SendConversationMessage"
+    ],
+    "List": [
+      "ListConversationMessages",
+      "ListConversations"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CancelMessageResponse",
+      "methodName": "toCancelMessageResponse",
+      "description": "Grants permission to cancel a response to a message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "CreateConversation",
+      "methodName": "toCreateConversation",
+      "description": "Grants permission to create a conversation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "DeleteConversation",
+      "methodName": "toDeleteConversation",
+      "description": "Grants permission to delete a conversation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "ListConversationMessages",
+      "methodName": "toListConversationMessages",
+      "description": "Grants permission to list conversation messages",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "ListConversations",
+      "methodName": "toListConversations",
+      "description": "Grants permission to list conversations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "NotifyConversationIsActive",
+      "methodName": "toNotifyConversationIsActive",
+      "description": "Grants permission to notify whether there is activity in a conversation",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    },
+    {
+      "name": "SendConversationMessage",
+      "methodName": "toSendConversationMessage",
+      "description": "Grants permission to send a conversation message",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/vpc/latest/reachability/security_iam_required-API-permissions.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

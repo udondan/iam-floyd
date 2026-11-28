@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-reviewer:ListRecommendations",
+        "codeguru-reviewer:UntagResource",
+        "codeguru-reviewer:DescribeCodeReview"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/bugbust": "enabled"
+        }
+      }
+    }
+  ]
+}

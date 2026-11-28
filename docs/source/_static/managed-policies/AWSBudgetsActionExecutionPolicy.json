@@ -1,0 +1,81 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateTaggedScp",
+      "Effect": "Allow",
+      "Action": "organizations:CreatePolicy",
+      "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/budgets:managed": "true",
+          "organizations:PolicyType": "SERVICE_CONTROL_POLICY"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "budgets:managed"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TagOnlyOwnScps",
+      "Effect": "Allow",
+      "Action": "organizations:TagResource",
+      "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/budgets:managed": "true",
+          "aws:ResourceTag/budgets:managed": "true"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "budgets:managed"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManageOwnScps",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribePolicy",
+        "organizations:UpdatePolicy",
+        "organizations:DeletePolicy",
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy",
+        "organizations:ListTargetsForPolicy"
+      ],
+      "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/budgets:managed": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AttachTargets",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:account/*",
+        "arn:aws:organizations::*:ou/*",
+        "arn:aws:organizations::*:root/*"
+      ]
+    },
+    {
+      "Sid": "Read",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListRoots",
+        "organizations:ListAccounts",
+        "organizations:ListPolicies",
+        "organizations:ListPoliciesForTarget"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

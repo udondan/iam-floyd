@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonBedrockReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:Get*",
+        "bedrock:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceModelEndpointNonMutatingAPIs",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeEndpoint",
+        "sagemaker:DescribeEndpointConfig",
+        "sagemaker:DescribeModel",
+        "sagemaker:DescribeInferenceComponent",
+        "sagemaker:ListEndpoints",
+        "sagemaker:ListTags"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:endpoint/*",
+        "arn:aws:sagemaker:*:*:endpoint-config/*",
+        "arn:aws:sagemaker:*:*:model/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "bedrock.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DiscoveringMarketplaceModel",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeHubContent"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:aws:hub-content/SageMakerPublicHub/Model/*",
+        "arn:aws:sagemaker:*:aws:hub/SageMakerPublicHub"
+      ]
+    },
+    {
+      "Sid": "AllowMarketplaceModelsListing",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListHubContents"
+      ],
+      "Resource": "arn:aws:sagemaker:*:aws:hub/SageMakerPublicHub"
+    }
+  ]
+}

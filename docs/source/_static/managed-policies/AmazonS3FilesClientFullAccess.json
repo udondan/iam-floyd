@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3FilesPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3files:ClientMount",
+        "s3files:ClientWrite",
+        "s3files:ClientRootAccess"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

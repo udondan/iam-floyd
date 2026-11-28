@@ -1,0 +1,81 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccessCodeGuruReviewerEnabledRepositories",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:GetRepository",
+        "codecommit:GetBranch",
+        "codecommit:DescribePullRequestEvents",
+        "codecommit:GetCommentsForPullRequest",
+        "codecommit:GetDifferences",
+        "codecommit:GetPullRequest",
+        "codecommit:ListPullRequests",
+        "codecommit:PostCommentForPullRequest",
+        "codecommit:GitPull",
+        "codecommit:UntagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/codeguru-reviewer": "enabled"
+        }
+      }
+    },
+    {
+      "Sid": "AccessCodeGuruReviewerEnabledConnections",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:UseConnection"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "codestar-connections:ProviderAction": [
+            "ListBranches",
+            "GetBranch",
+            "ListRepositories",
+            "ListOwners",
+            "ListPullRequests",
+            "GetPullRequest",
+            "ListPullRequestComments",
+            "ListPullRequestCommits",
+            "ListCommitFiles",
+            "ListBranchCommits",
+            "CreatePullRequestDiffComment",
+            "GitPull"
+          ]
+        },
+        "Null": {
+          "aws:ResourceTag/codeguru-reviewer": "false"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchEventsResourceCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "codeguru-reviewer.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowGuruS3GetObject",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::codeguru-reviewer-*",
+        "arn:aws:s3:::codeguru-reviewer-*/*"
+      ]
+    }
+  ]
+}

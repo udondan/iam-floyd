@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "filename": "a2c",
+  "className": "A2c",
+  "name": "a2c",
+  "servicePrefix": "a2c",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_a2c.html",
+  "accessLevelList": {
+    "Read": [
+      "GetContainerizationJobDetails",
+      "GetDeploymentJobDetails"
+    ],
+    "Write": [
+      "StartContainerizationJob",
+      "StartDeploymentJob"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetContainerizationJobDetails",
+      "methodName": "toGetContainerizationJobDetails",
+      "description": "Grants permission to get the details of all Containerization jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "GetDeploymentJobDetails",
+      "methodName": "toGetDeploymentJobDetails",
+      "description": "Grants permission to get the details of all Deployment jobs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "StartContainerizationJob",
+      "methodName": "toStartContainerizationJob",
+      "description": "Grants permission to start a Containerization job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    },
+    {
+      "name": "StartDeploymentJob",
+      "methodName": "toStartDeploymentJob",
+      "description": "Grants permission to start a Deploymnet job",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/tk-dotnet-refactoring/latest/userguide/what-is-tk-dotnet-refactoring.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

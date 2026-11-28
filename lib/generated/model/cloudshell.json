@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "filename": "cloudshell",
+  "className": "Cloudshell",
+  "name": "cloudshell",
+  "servicePrefix": "cloudshell",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudshell.html",
+  "accessLevelList": {
+    "Read": [
+      "ApproveCommand",
+      "GetEnvironmentStatus"
+    ],
+    "Write": [
+      "CreateEnvironment",
+      "CreateSession",
+      "DeleteEnvironment",
+      "GetFileDownloadUrls",
+      "GetFileUploadUrls",
+      "PutCredentials",
+      "StartEnvironment",
+      "StopEnvironment"
+    ],
+    "List": [
+      "DescribeEnvironments"
+    ]
+  },
+  "actions": [
+    {
+      "name": "ApproveCommand",
+      "methodName": "toApproveCommand",
+      "description": "Grants permission to approve a command sent by another AWS service",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#ApproveCommand"
+    },
+    {
+      "name": "CreateEnvironment",
+      "methodName": "toCreateEnvironment",
+      "description": "Grants permissions to create a CloudShell environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#CreateEnvironment",
+      "conditionMethods": [
+        "ifSecurityGroupIds",
+        "ifSubnetIds",
+        "ifVpcIds"
+      ]
+    },
+    {
+      "name": "CreateSession",
+      "methodName": "toCreateSession",
+      "description": "Grants permissions to connect to a CloudShell environment from the AWS Management Console",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#CreateSession"
+    },
+    {
+      "name": "DeleteEnvironment",
+      "methodName": "toDeleteEnvironment",
+      "description": "Grants permission to delete a CloudShell environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#DeleteEnvironment"
+    },
+    {
+      "name": "DescribeEnvironments",
+      "methodName": "toDescribeEnvironments",
+      "description": "Grants permission to return descriptions of existing user's environments",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#DescribeEnvironments"
+    },
+    {
+      "name": "GetEnvironmentStatus",
+      "methodName": "toGetEnvironmentStatus",
+      "description": "Grants permission to read a CloudShell environment status",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#GetEnvironmentStatus"
+    },
+    {
+      "name": "GetFileDownloadUrls",
+      "methodName": "toGetFileDownloadUrls",
+      "description": "Grants permissions to download files from a CloudShell environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#GetFileDownloadUrls"
+    },
+    {
+      "name": "GetFileUploadUrls",
+      "methodName": "toGetFileUploadUrls",
+      "description": "Grants permissions to upload files to a CloudShell environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#GetFileUploadUrls"
+    },
+    {
+      "name": "PutCredentials",
+      "methodName": "toPutCredentials",
+      "description": "Grants permissions to forward console credentials to the environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#PutCredentials"
+    },
+    {
+      "name": "StartEnvironment",
+      "methodName": "toStartEnvironment",
+      "description": "Grants permission to start a stopped CloudShell environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#StartEnvironment"
+    },
+    {
+      "name": "StopEnvironment",
+      "methodName": "toStopEnvironment",
+      "description": "Grants permission to stop a running CloudShell environment",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#StopEnvironment"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Environment",
+      "methodName": "onEnvironment",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#Environment",
+      "arn": "arn:${Partition}:cloudshell:${Region}:${Account}:environment/${EnvironmentId}",
+      "placeholders": [
+        {
+          "placeholder": "EnvironmentId",
+          "name": "environmentId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "cloudshell:SecurityGroupIds",
+      "methodName": "ifSecurityGroupIds",
+      "description": "Filters access by security group ids. Available during CreateEnvironment operation",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/aws-cloudshell-vpc-permissions-1.html#vpc-condition-keys-examples-1",
+      "relatedActionMethods": [
+        "toCreateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SecurityGroupIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudshell:SubnetIds",
+      "methodName": "ifSubnetIds",
+      "description": "Filters access by subnet ids. Available during CreateEnvironment operation",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/aws-cloudshell-vpc-permissions-1.html#vpc-condition-keys-examples-1",
+      "relatedActionMethods": [
+        "toCreateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "SubnetIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "cloudshell:VpcIds",
+      "methodName": "ifVpcIds",
+      "description": "Filters access by vpc ids. Available during CreateEnvironment operation",
+      "url": "https://docs.aws.amazon.com/cloudshell/latest/userguide/aws-cloudshell-vpc-permissions-1.html#vpc-condition-keys-examples-1",
+      "relatedActionMethods": [
+        "toCreateEnvironment"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "VpcIds",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

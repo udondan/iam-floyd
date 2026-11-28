@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSGrafanaConsoleReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "grafana:Describe*",
+        "grafana:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

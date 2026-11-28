@@ -1,0 +1,123 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccountAccessManagerReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "account-access:GetApplication",
+        "account-access:GetEntitlement",
+        "account-access:ListEntitlements",
+        "account-access:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:account-access:*:*:application/*"
+    },
+    {
+      "Sid": "AccountAccessManagerListApplicationsPermissions",
+      "Effect": "Allow",
+      "Action": "account-access:ListApplications",
+      "Resource": "*"
+    },
+    {
+      "Sid": "IdentityCenterReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeApplication",
+        "sso:DescribeInstance"
+      ],
+      "Resource": [
+        "arn:aws:sso:::instance/*",
+        "arn:aws:sso::*:application/*/*"
+      ]
+    },
+    {
+      "Sid": "IdentityCenterListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeRegion",
+        "sso:ListInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IdentityStoreDescribePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeGroup",
+        "identitystore:DescribeUser"
+      ],
+      "Resource": [
+        "arn:aws:identitystore::*:identitystore/*",
+        "arn:aws:identitystore:::user/*",
+        "arn:aws:identitystore:::group/*"
+      ]
+    },
+    {
+      "Sid": "IdentityStoreListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ListGroupMemberships",
+        "identitystore:ListGroups",
+        "identitystore:ListUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IdentityStoreDirectoryConsolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:DescribeGroup",
+        "sso-directory:DescribeGroups",
+        "sso-directory:DescribeUser",
+        "sso-directory:DescribeUsers",
+        "sso-directory:ListGroupsForUser",
+        "sso-directory:ListMembersInGroup",
+        "sso-directory:SearchGroups",
+        "sso-directory:SearchUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KMSConsoleDescribeKeyPermissions",
+      "Effect": "Allow",
+      "Action": "kms:DescribeKey",
+      "Resource": "arn:aws:kms:*:*:key/*"
+    },
+    {
+      "Sid": "KMSConsoleListAliasesPermissions",
+      "Effect": "Allow",
+      "Action": "kms:ListAliases",
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsAccountReadPermissions",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeAccount",
+      "Resource": "arn:aws:organizations::*:account/o-*/*"
+    },
+    {
+      "Sid": "OrganizationsParentReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccountsForParent",
+        "organizations:ListOrganizationalUnitsForParent"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:root/o-*/r-*",
+        "arn:aws:organizations::*:ou/o-*/ou-*"
+      ]
+    },
+    {
+      "Sid": "OrganizationsReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListRoots"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BedrockMantleReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:Get*",
+        "bedrock-mantle:List*"
+      ],
+      "Resource": "arn:aws:bedrock-mantle:*:*:project/*"
+    },
+    {
+      "Sid": "BedrockMantleCallWithBearerToken",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:CallWithBearerToken"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

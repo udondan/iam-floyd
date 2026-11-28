@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSOrganizationsReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:Describe*",
+        "organizations:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSOrganizationsReadOnlyAccount",
+      "Effect": "Allow",
+      "Action": [
+        "account:GetAlternateContact",
+        "account:GetContactInformation",
+        "account:ListRegions",
+        "account:GetRegionOptStatus",
+        "account:GetPrimaryEmail"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

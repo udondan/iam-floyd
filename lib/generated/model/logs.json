@@ -1,0 +1,1646 @@
+{
+  "schemaVersion": 1,
+  "filename": "logs",
+  "className": "Logs",
+  "name": "logs",
+  "servicePrefix": "logs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_logs.html",
+  "accessLevelList": {
+    "Write": [
+      "AssociateKmsKey",
+      "AssociateSourceToS3TableIntegration",
+      "CancelExportTask",
+      "CancelImportTask",
+      "CreateDelivery",
+      "CreateExportTask",
+      "CreateImportTask",
+      "CreateLogAnomalyDetector",
+      "CreateLogGroup",
+      "CreateLogStream",
+      "CreateLookupTable",
+      "CreateScheduledQuery",
+      "DeleteAccountPolicy",
+      "DeleteDataProtectionPolicy",
+      "DeleteDelivery",
+      "DeleteDeliveryDestination",
+      "DeleteDeliveryDestinationPolicy",
+      "DeleteDeliverySource",
+      "DeleteDestination",
+      "DeleteIndexPolicy",
+      "DeleteIntegration",
+      "DeleteLogAnomalyDetector",
+      "DeleteLogGroup",
+      "DeleteLogStream",
+      "DeleteLookupTable",
+      "DeleteMetricFilter",
+      "DeleteQueryDefinition",
+      "DeleteResourcePolicy",
+      "DeleteRetentionPolicy",
+      "DeleteScheduledQuery",
+      "DeleteSubscriptionFilter",
+      "DeleteSyslogConfiguration",
+      "DeleteTransformer",
+      "DisassociateKmsKey",
+      "DisassociateSourceFromS3TableIntegration",
+      "PutAccountPolicy",
+      "PutBearerTokenAuthentication",
+      "PutDataProtectionPolicy",
+      "PutDeliveryDestination",
+      "PutDeliveryDestinationPolicy",
+      "PutDeliverySource",
+      "PutDestination",
+      "PutDestinationPolicy",
+      "PutIndexPolicy",
+      "PutIntegration",
+      "PutLogEvents",
+      "PutLogGroupDeletionProtection",
+      "PutMetricFilter",
+      "PutQueryDefinition",
+      "PutResourcePolicy",
+      "PutRetentionPolicy",
+      "PutStorageTierPolicy",
+      "PutSubscriptionFilter",
+      "PutSyslogConfiguration",
+      "PutTransformer",
+      "TagLogGroup",
+      "TagResource",
+      "UntagLogGroup",
+      "UntagResource",
+      "UpdateAnomaly",
+      "UpdateDeliveryConfiguration",
+      "UpdateLogAnomalyDetector",
+      "UpdateLookupTable",
+      "UpdateScheduledQuery",
+      "CallWithBearerToken",
+      "CreateLogDelivery",
+      "DeleteLogDelivery",
+      "DeletePipelineRule",
+      "IntegrateWithDataset",
+      "IntegrateWithS3Table",
+      "Link",
+      "ProcessWithPipeline",
+      "PutPipelineRule",
+      "UpdateLogDelivery"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "List": [
+      "DescribeAccountPolicies",
+      "DescribeConfigurationTemplates",
+      "DescribeDeliveries",
+      "DescribeDeliveryDestinations",
+      "DescribeDeliverySources",
+      "DescribeDestinations",
+      "DescribeExportTasks",
+      "DescribeFieldIndexes",
+      "DescribeImportTaskBatches",
+      "DescribeImportTasks",
+      "DescribeIndexPolicies",
+      "DescribeLogGroups",
+      "DescribeLogStreams",
+      "DescribeLookupTables",
+      "DescribeMetricFilters",
+      "DescribeQueries",
+      "DescribeQueryDefinitions",
+      "DescribeResourcePolicies",
+      "DescribeSubscriptionFilters",
+      "ListAggregateLogGroupSummaries",
+      "ListAnomalies",
+      "ListIntegrations",
+      "ListLogAnomalyDetectors",
+      "ListLogGroups",
+      "ListLogGroupsForQuery",
+      "ListScheduledQueries",
+      "ListSourcesForS3TableIntegration",
+      "ListSyslogConfigurations",
+      "ListTagsForResource",
+      "ListTagsLogGroup",
+      "ListEntitiesForLogGroup",
+      "ListLogDeliveries",
+      "ListLogGroupsForEntity"
+    ],
+    "Read": [
+      "FilterLogEvents",
+      "GetDataProtectionPolicy",
+      "GetDelivery",
+      "GetDeliveryDestination",
+      "GetDeliveryDestinationPolicy",
+      "GetDeliverySource",
+      "GetIntegration",
+      "GetLogAnomalyDetector",
+      "GetLogEvents",
+      "GetLogFields",
+      "GetLogGroupFields",
+      "GetLogRecord",
+      "GetLookupTable",
+      "GetQueryResults",
+      "GetScheduledQuery",
+      "GetScheduledQueryHistory",
+      "GetStorageTierPolicy",
+      "GetTransformer",
+      "StartLiveTail",
+      "StartQuery",
+      "StopQuery",
+      "TestMetricFilter",
+      "TestTransformer",
+      "GetLogDelivery",
+      "StopLiveTail",
+      "Unmask"
+    ],
+    "Tagging": [
+      "TagLogGroup",
+      "TagResource",
+      "UntagLogGroup",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AssociateKmsKey",
+      "methodName": "toAssociateKmsKey",
+      "description": "Grants permission to associate the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateKmsKey.html"
+    },
+    {
+      "name": "AssociateSourceToS3TableIntegration",
+      "methodName": "toAssociateSourceToS3TableIntegration",
+      "description": "Grants permission to associate a log source to an S3 Tables integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateSourceToS3TableIntegration.html"
+    },
+    {
+      "name": "CancelExportTask",
+      "methodName": "toCancelExportTask",
+      "description": "Grants permission to cancel an export task if it is in PENDING or RUNNING state",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html"
+    },
+    {
+      "name": "CancelImportTask",
+      "methodName": "toCancelImportTask",
+      "description": "Grants permission to cancel an import from CloudTrail Lake to CloudWatch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelImportTask.html"
+    },
+    {
+      "name": "CreateDelivery",
+      "methodName": "toCreateDelivery",
+      "description": "Grants permission to create a delivery connecting a delivery source to a delivery destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html"
+    },
+    {
+      "name": "CreateExportTask",
+      "methodName": "toCreateExportTask",
+      "description": "Grants permission to create an ExportTask which allows you to efficiently export data from a Log Group to your Amazon S3 bucket",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html"
+    },
+    {
+      "name": "CreateImportTask",
+      "methodName": "toCreateImportTask",
+      "description": "Grants permission to start an asynchronous process to import data from a CloudTrail Lake event data store into a managed log group in CloudWatch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateImportTask.html"
+    },
+    {
+      "name": "CreateLogAnomalyDetector",
+      "methodName": "toCreateLogAnomalyDetector",
+      "description": "Grants permission to create a log anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogAnomalyDetector.html"
+    },
+    {
+      "name": "CreateLogGroup",
+      "methodName": "toCreateLogGroup",
+      "description": "Grants permission to create a new log group with the specified name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html"
+    },
+    {
+      "name": "CreateLogStream",
+      "methodName": "toCreateLogStream",
+      "description": "Grants permission to create a new log stream with the specified name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogStream.html"
+    },
+    {
+      "name": "CreateLookupTable",
+      "methodName": "toCreateLookupTable",
+      "description": "Grants permission to create a lookup table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLookupTable.html"
+    },
+    {
+      "name": "CreateScheduledQuery",
+      "methodName": "toCreateScheduledQuery",
+      "description": "Grants permission to create a scheduled query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateScheduledQuery.html"
+    },
+    {
+      "name": "DeleteAccountPolicy",
+      "methodName": "toDeleteAccountPolicy",
+      "description": "Grants permission to delete an account policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html"
+    },
+    {
+      "name": "DeleteDataProtectionPolicy",
+      "methodName": "toDeleteDataProtectionPolicy",
+      "description": "Grants permission to delete a data protection policy attached to a log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDataProtectionPolicy.html"
+    },
+    {
+      "name": "DeleteDelivery",
+      "methodName": "toDeleteDelivery",
+      "description": "Grants permission to delete a delivery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDelivery.html"
+    },
+    {
+      "name": "DeleteDeliveryDestination",
+      "methodName": "toDeleteDeliveryDestination",
+      "description": "Grants permission to delete a delivery destination after all associated deliveries are deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliveryDestination.html"
+    },
+    {
+      "name": "DeleteDeliveryDestinationPolicy",
+      "methodName": "toDeleteDeliveryDestinationPolicy",
+      "description": "Grants permission to delete a delivery destination policy associated with a delivery destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliveryDestinationPolicy.html"
+    },
+    {
+      "name": "DeleteDeliverySource",
+      "methodName": "toDeleteDeliverySource",
+      "description": "Grants permission to delete a delivery source after all associated deliveries are deleted",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDeliverySource.html"
+    },
+    {
+      "name": "DeleteDestination",
+      "methodName": "toDeleteDestination",
+      "description": "Grants permission to delete the destination with the specified name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDestination.html"
+    },
+    {
+      "name": "DeleteIndexPolicy",
+      "methodName": "toDeleteIndexPolicy",
+      "description": "Grants permission to delete an index policy attached to a log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteIndexPolicy.html"
+    },
+    {
+      "name": "DeleteIntegration",
+      "methodName": "toDeleteIntegration",
+      "description": "Grants permission to delete the integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteIntegration.html"
+    },
+    {
+      "name": "DeleteLogAnomalyDetector",
+      "methodName": "toDeleteLogAnomalyDetector",
+      "description": "Grants permission to delete a log anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogAnomalyDetector.html"
+    },
+    {
+      "name": "DeleteLogGroup",
+      "methodName": "toDeleteLogGroup",
+      "description": "Grants permission to delete the log group with the specified name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogGroup.html"
+    },
+    {
+      "name": "DeleteLogStream",
+      "methodName": "toDeleteLogStream",
+      "description": "Grants permission to delete a log stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogStream.html"
+    },
+    {
+      "name": "DeleteLookupTable",
+      "methodName": "toDeleteLookupTable",
+      "description": "Grants permission to delete a lookup table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLookupTable.html"
+    },
+    {
+      "name": "DeleteMetricFilter",
+      "methodName": "toDeleteMetricFilter",
+      "description": "Grants permission to delete a metric filter associated with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteMetricFilter.html"
+    },
+    {
+      "name": "DeleteQueryDefinition",
+      "methodName": "toDeleteQueryDefinition",
+      "description": "Grants permission to delete a saved CloudWatch Logs Insights query definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteQueryDefinition.html"
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "methodName": "toDeleteResourcePolicy",
+      "description": "Grants permission to delete a resource policy from this account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteResourcePolicy.html"
+    },
+    {
+      "name": "DeleteRetentionPolicy",
+      "methodName": "toDeleteRetentionPolicy",
+      "description": "Grants permission to delete the retention policy of the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html"
+    },
+    {
+      "name": "DeleteScheduledQuery",
+      "methodName": "toDeleteScheduledQuery",
+      "description": "Grants permission to delete a scheduled query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteScheduledQuery.html"
+    },
+    {
+      "name": "DeleteSubscriptionFilter",
+      "methodName": "toDeleteSubscriptionFilter",
+      "description": "Grants permission to delete a subscription filter associated with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html"
+    },
+    {
+      "name": "DeleteSyslogConfiguration",
+      "methodName": "toDeleteSyslogConfiguration",
+      "description": "Grants permission to delete syslog configuration for the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSyslogConfiguration.html"
+    },
+    {
+      "name": "DeleteTransformer",
+      "methodName": "toDeleteTransformer",
+      "description": "Grants permission to delete a transformer associated with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteTransformer.html"
+    },
+    {
+      "name": "DescribeAccountPolicies",
+      "methodName": "toDescribeAccountPolicies",
+      "description": "Grants permission to retrieve account policies",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeAccountPolicies.html"
+    },
+    {
+      "name": "DescribeConfigurationTemplates",
+      "methodName": "toDescribeConfigurationTemplates",
+      "description": "Grants permission to retrieve a list of configuration templates of available log types",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html"
+    },
+    {
+      "name": "DescribeDeliveries",
+      "methodName": "toDescribeDeliveries",
+      "description": "Grants permission to retrieve a list of deliveries an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html"
+    },
+    {
+      "name": "DescribeDeliveryDestinations",
+      "methodName": "toDescribeDeliveryDestinations",
+      "description": "Grants permission to retrieve a list of delivery destinations an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html"
+    },
+    {
+      "name": "DescribeDeliverySources",
+      "methodName": "toDescribeDeliverySources",
+      "description": "Grants permission to retrieve a list of delivery sources in an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliverySources.html"
+    },
+    {
+      "name": "DescribeDestinations",
+      "methodName": "toDescribeDestinations",
+      "description": "Grants permission to return all the destinations that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDestinations.html"
+    },
+    {
+      "name": "DescribeExportTasks",
+      "methodName": "toDescribeExportTasks",
+      "description": "Grants permission to return all the export tasks that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html"
+    },
+    {
+      "name": "DescribeFieldIndexes",
+      "methodName": "toDescribeFieldIndexes",
+      "description": "Grants permission to return all the indexing attributes that are attached with the log groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeFieldIndexes.html"
+    },
+    {
+      "name": "DescribeImportTaskBatches",
+      "methodName": "toDescribeImportTaskBatches",
+      "description": "Grants permission to return detailed information about the individual batches within an import task, including status and any error",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTaskBatches.html"
+    },
+    {
+      "name": "DescribeImportTasks",
+      "methodName": "toDescribeImportTasks",
+      "description": "Grants permission to return all the import tasks associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTasks.html"
+    },
+    {
+      "name": "DescribeIndexPolicies",
+      "methodName": "toDescribeIndexPolicies",
+      "description": "Grants permission to return all the index policies that are attached with the log groups",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeIndexPolicies.html"
+    },
+    {
+      "name": "DescribeLogGroups",
+      "methodName": "toDescribeLogGroups",
+      "description": "Grants permission to return all the log groups that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html"
+    },
+    {
+      "name": "DescribeLogStreams",
+      "methodName": "toDescribeLogStreams",
+      "description": "Grants permission to return all the log streams that are associated with the specified log group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html"
+    },
+    {
+      "name": "DescribeLookupTables",
+      "methodName": "toDescribeLookupTables",
+      "description": "Grants permission to return all lookup tables",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLookupTables.html"
+    },
+    {
+      "name": "DescribeMetricFilters",
+      "methodName": "toDescribeMetricFilters",
+      "description": "Grants permission to return all the metrics filters associated with the specified log group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeMetricFilters.html"
+    },
+    {
+      "name": "DescribeQueries",
+      "methodName": "toDescribeQueries",
+      "description": "Grants permission to return a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueries.html"
+    },
+    {
+      "name": "DescribeQueryDefinitions",
+      "methodName": "toDescribeQueryDefinitions",
+      "description": "Grants permission to return a paginated list of your saved CloudWatch Logs Insights query definitions",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+    },
+    {
+      "name": "DescribeResourcePolicies",
+      "methodName": "toDescribeResourcePolicies",
+      "description": "Grants permission to return all the resource policies in this account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeResourcePolicies.html"
+    },
+    {
+      "name": "DescribeSubscriptionFilters",
+      "methodName": "toDescribeSubscriptionFilters",
+      "description": "Grants permission to return all the subscription filters associated with the specified log group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+    },
+    {
+      "name": "DisassociateKmsKey",
+      "methodName": "toDisassociateKmsKey",
+      "description": "Grants permission to disassociate the associated AWS Key Management Service (AWS KMS) customer master key (CMK) from the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateKmsKey.html"
+    },
+    {
+      "name": "DisassociateSourceFromS3TableIntegration",
+      "methodName": "toDisassociateSourceFromS3TableIntegration",
+      "description": "Grants permission to disassociate a log source from an S3 Tables integration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateSourceFromS3TableIntegration.html"
+    },
+    {
+      "name": "FilterLogEvents",
+      "methodName": "toFilterLogEvents",
+      "description": "Grants permission to retrieve log events, optionally filtered by a filter pattern from the specified log group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html"
+    },
+    {
+      "name": "GetDataProtectionPolicy",
+      "methodName": "toGetDataProtectionPolicy",
+      "description": "Grants permission to retrieve a data protection policy attached to a log group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDataProtectionPolicy.html"
+    },
+    {
+      "name": "GetDelivery",
+      "methodName": "toGetDelivery",
+      "description": "Grants permission to retrieve a single delivery",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDelivery.html"
+    },
+    {
+      "name": "GetDeliveryDestination",
+      "methodName": "toGetDeliveryDestination",
+      "description": "Grants permission to retrieve a single delivery destination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliveryDestination.html"
+    },
+    {
+      "name": "GetDeliveryDestinationPolicy",
+      "methodName": "toGetDeliveryDestinationPolicy",
+      "description": "Grants permission to retrieve a delivery destination policy attached to a delivery destination",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliveryDestinationPolicy.html"
+    },
+    {
+      "name": "GetDeliverySource",
+      "methodName": "toGetDeliverySource",
+      "description": "Grants permission to retrieve a single delivery source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetDeliverySource.html"
+    },
+    {
+      "name": "GetIntegration",
+      "methodName": "toGetIntegration",
+      "description": "Grants permission to retrieve a single integration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetIntegration.html"
+    },
+    {
+      "name": "GetLogAnomalyDetector",
+      "methodName": "toGetLogAnomalyDetector",
+      "description": "Grants permission to get a log anomaly detector",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogAnomalyDetector.html"
+    },
+    {
+      "name": "GetLogEvents",
+      "methodName": "toGetLogEvents",
+      "description": "Grants permission to retrieve log events from the specified log stream",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html"
+    },
+    {
+      "name": "GetLogFields",
+      "methodName": "toGetLogFields",
+      "description": "Grants permission to retrieve a list of log fields for a data source",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html"
+    },
+    {
+      "name": "GetLogGroupFields",
+      "methodName": "toGetLogGroupFields",
+      "description": "Grants permission to return a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html"
+    },
+    {
+      "name": "GetLogRecord",
+      "methodName": "toGetLogRecord",
+      "description": "Grants permission to retrieve all the fields and values of a single log event",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html"
+    },
+    {
+      "name": "GetLookupTable",
+      "methodName": "toGetLookupTable",
+      "description": "Grants permission to retrieve a lookup table",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLookupTable.html"
+    },
+    {
+      "name": "GetQueryResults",
+      "methodName": "toGetQueryResults",
+      "description": "Grants permission to return the results from the specified query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html"
+    },
+    {
+      "name": "GetScheduledQuery",
+      "methodName": "toGetScheduledQuery",
+      "description": "Grants permission to retrieve information about a specified scheduled query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQuery.html"
+    },
+    {
+      "name": "GetScheduledQueryHistory",
+      "methodName": "toGetScheduledQueryHistory",
+      "description": "Grants permission to return the execution history for a specified scheduled query",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQueryHistory.html"
+    },
+    {
+      "name": "GetStorageTierPolicy",
+      "methodName": "toGetStorageTierPolicy",
+      "description": "Grants permission to retrieve the storage tier policy for the account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cwl_intelligent_tier.html"
+    },
+    {
+      "name": "GetTransformer",
+      "methodName": "toGetTransformer",
+      "description": "Grants permission to return transformer associated with the specified log group",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetTransformer.html"
+    },
+    {
+      "name": "ListAggregateLogGroupSummaries",
+      "methodName": "toListAggregateLogGroupSummaries",
+      "description": "Grants permission to return an aggregate summary of all log groups in the region grouped by specified data-source characteristics",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAggregateLogGroupSummaries.html"
+    },
+    {
+      "name": "ListAnomalies",
+      "methodName": "toListAnomalies",
+      "description": "Grants permission to list all anomalies detected in the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html"
+    },
+    {
+      "name": "ListIntegrations",
+      "methodName": "toListIntegrations",
+      "description": "Grants permission to list all integrations associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListIntegrations.html"
+    },
+    {
+      "name": "ListLogAnomalyDetectors",
+      "methodName": "toListLogAnomalyDetectors",
+      "description": "Grants permission to return all the anomaly detectors that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogAnomalyDetectors.html"
+    },
+    {
+      "name": "ListLogGroups",
+      "methodName": "toListLogGroups",
+      "description": "Grants permission to return all the log groups that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroups.html"
+    },
+    {
+      "name": "ListLogGroupsForQuery",
+      "methodName": "toListLogGroupsForQuery",
+      "description": "Grants permission to return all the log groups that are associated with the specified query",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroupsForQuery.html"
+    },
+    {
+      "name": "ListScheduledQueries",
+      "methodName": "toListScheduledQueries",
+      "description": "Grants permission to return all scheduled queries that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListScheduledQueries.html"
+    },
+    {
+      "name": "ListSourcesForS3TableIntegration",
+      "methodName": "toListSourcesForS3TableIntegration",
+      "description": "Grants permission to return all log sources associated with an S3 Tables integration",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSourcesForS3TableIntegration.html"
+    },
+    {
+      "name": "ListSyslogConfigurations",
+      "methodName": "toListSyslogConfigurations",
+      "description": "Grants permission to return all syslog configurations associated with the AWS account making the request",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSyslogConfigurations.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+    },
+    {
+      "name": "ListTagsLogGroup",
+      "methodName": "toListTagsLogGroup",
+      "description": "Grants permission to list the tags for the specified log group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+    },
+    {
+      "name": "PutAccountPolicy",
+      "methodName": "toPutAccountPolicy",
+      "description": "Grants permission to attach an account policy",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html"
+    },
+    {
+      "name": "PutBearerTokenAuthentication",
+      "methodName": "toPutBearerTokenAuthentication",
+      "description": "Grants permission to enable or disable bearer token based authentication for the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutBearerTokenAuthentication.html"
+    },
+    {
+      "name": "PutDataProtectionPolicy",
+      "methodName": "toPutDataProtectionPolicy",
+      "description": "Grants permission to attach a data protection policy to detect and redact sensitive information from log events",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+    },
+    {
+      "name": "PutDeliveryDestination",
+      "methodName": "toPutDeliveryDestination",
+      "description": "Grants permission to create/update a delivery destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html"
+    },
+    {
+      "name": "PutDeliveryDestinationPolicy",
+      "methodName": "toPutDeliveryDestinationPolicy",
+      "description": "Grants permission to attach a delivery destination policy to a delivery destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html"
+    },
+    {
+      "name": "PutDeliverySource",
+      "methodName": "toPutDeliverySource",
+      "description": "Grants permission to create/update a delivery source",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html"
+    },
+    {
+      "name": "PutDestination",
+      "methodName": "toPutDestination",
+      "description": "Grants permission to create or update a Destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
+    },
+    {
+      "name": "PutDestinationPolicy",
+      "methodName": "toPutDestinationPolicy",
+      "description": "Grants permission to create or update an access policy associated with an existing Destination",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html"
+    },
+    {
+      "name": "PutIndexPolicy",
+      "methodName": "toPutIndexPolicy",
+      "description": "Grants permission to attach an index policy at log group level to optimize search and query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html"
+    },
+    {
+      "name": "PutIntegration",
+      "methodName": "toPutIntegration",
+      "description": "Grants permission to create integration between cloudwatch logs and opensearch",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIntegration.html"
+    },
+    {
+      "name": "PutLogEvents",
+      "methodName": "toPutLogEvents",
+      "description": "Grants permission to upload a batch of log events to the specified log stream",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+    },
+    {
+      "name": "PutLogGroupDeletionProtection",
+      "methodName": "toPutLogGroupDeletionProtection",
+      "description": "Grants permission to enable or disable deletion protection for the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogGroupDeletionProtection.html"
+    },
+    {
+      "name": "PutMetricFilter",
+      "methodName": "toPutMetricFilter",
+      "description": "Grants permission to create or update a metric filter and associates it with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html"
+    },
+    {
+      "name": "PutQueryDefinition",
+      "methodName": "toPutQueryDefinition",
+      "description": "Grants permission to create or update a query definition",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutQueryDefinition.html"
+    },
+    {
+      "name": "PutResourcePolicy",
+      "methodName": "toPutResourcePolicy",
+      "description": "Grants permission to create or update a resource policy allowing other AWS services to put log events to this account",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutResourcePolicy.html"
+    },
+    {
+      "name": "PutRetentionPolicy",
+      "methodName": "toPutRetentionPolicy",
+      "description": "Grants permission to set the retention of the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html"
+    },
+    {
+      "name": "PutStorageTierPolicy",
+      "methodName": "toPutStorageTierPolicy",
+      "description": "Grants permission to set the storage tier policy for the account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cwl_intelligent_tier.html"
+    },
+    {
+      "name": "PutSubscriptionFilter",
+      "methodName": "toPutSubscriptionFilter",
+      "description": "Grants permission to create or update a subscription filter and associates it with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html"
+    },
+    {
+      "name": "PutSyslogConfiguration",
+      "methodName": "toPutSyslogConfiguration",
+      "description": "Grants permission to add syslog configuration for the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSyslogConfiguration.html"
+    },
+    {
+      "name": "PutTransformer",
+      "methodName": "toPutTransformer",
+      "description": "Grants permission to create or update a transformer and associates it with the specified log group",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html"
+    },
+    {
+      "name": "StartLiveTail",
+      "methodName": "toStartLiveTail",
+      "description": "Grants permission to start a Live Tail session in CloudWatch Logs",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTail.html"
+    },
+    {
+      "name": "StartQuery",
+      "methodName": "toStartQuery",
+      "description": "Grants permission to schedule a query of a log group using CloudWatch Logs Insights",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html"
+    },
+    {
+      "name": "StopQuery",
+      "methodName": "toStopQuery",
+      "description": "Grants permission to stop a CloudWatch Logs Insights query that is in progress",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StopQuery.html"
+    },
+    {
+      "name": "TagLogGroup",
+      "methodName": "toTagLogGroup",
+      "description": "Grants permission to add or update the specified tags for the specified log group",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or update the specified tags for the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+    },
+    {
+      "name": "TestMetricFilter",
+      "methodName": "toTestMetricFilter",
+      "description": "Grants permission to test the filter pattern of a metric filter against a sample of log event messages",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestMetricFilter.html"
+    },
+    {
+      "name": "TestTransformer",
+      "methodName": "toTestTransformer",
+      "description": "Grants permission to test the transformer against a sample of log event messages",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestTransformer.html"
+    },
+    {
+      "name": "UntagLogGroup",
+      "methodName": "toUntagLogGroup",
+      "description": "Grants permission to remove the specified tags from the specified log group",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+    },
+    {
+      "name": "UpdateAnomaly",
+      "methodName": "toUpdateAnomaly",
+      "description": "Grants permission to update an anomaly reported by a log anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateAnomaly.html"
+    },
+    {
+      "name": "UpdateDeliveryConfiguration",
+      "methodName": "toUpdateDeliveryConfiguration",
+      "description": "Grants permission to update configuration related to a delivery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html"
+    },
+    {
+      "name": "UpdateLogAnomalyDetector",
+      "methodName": "toUpdateLogAnomalyDetector",
+      "description": "Grants permission to update a log anomaly detector",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html"
+    },
+    {
+      "name": "UpdateLookupTable",
+      "methodName": "toUpdateLookupTable",
+      "description": "Grants permission to update a lookup table",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLookupTable.html"
+    },
+    {
+      "name": "UpdateScheduledQuery",
+      "methodName": "toUpdateScheduledQuery",
+      "description": "Grants permission to update a scheduled query",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateScheduledQuery.html"
+    },
+    {
+      "name": "CallWithBearerToken",
+      "methodName": "toCallWithBearerToken",
+      "description": "Grants permission to authenticate requests using bearer token",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"
+    },
+    {
+      "name": "CreateLogDelivery",
+      "methodName": "toCreateLogDelivery",
+      "description": "Grants permission to create the log delivery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html"
+    },
+    {
+      "name": "DeleteLogDelivery",
+      "methodName": "toDeleteLogDelivery",
+      "description": "Grants permission to delete the log delivery information for specified log delivery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html"
+    },
+    {
+      "name": "DeletePipelineRule",
+      "methodName": "toDeletePipelineRule",
+      "description": "Grants permission to delete telemetry pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "GetLogDelivery",
+      "methodName": "toGetLogDelivery",
+      "description": "Grants permission to get the log delivery information for specified log delivery",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html"
+    },
+    {
+      "name": "IntegrateWithDataset",
+      "methodName": "toIntegrateWithDataset",
+      "description": "Grants permission to mirror log group data into CloudWatch Dataset",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "IntegrateWithS3Table",
+      "methodName": "toIntegrateWithS3Table",
+      "description": "Grants permission to deliver log events to S3 Tables",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "Link",
+      "methodName": "toLink",
+      "description": "Grants permission to share CloudWatch resources with a monitoring account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions"
+    },
+    {
+      "name": "ListEntitiesForLogGroup",
+      "methodName": "toListEntitiesForLogGroup",
+      "description": "Grants permission to retrieve all the entities that are associated with log group",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "ListLogDeliveries",
+      "methodName": "toListLogDeliveries",
+      "description": "Grants permission to list all the log deliveries for specified account and/or log source",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html"
+    },
+    {
+      "name": "ListLogGroupsForEntity",
+      "methodName": "toListLogGroupsForEntity",
+      "description": "Grants permission to retrieve all the log groups that are associated with entity",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "ProcessWithPipeline",
+      "methodName": "toProcessWithPipeline",
+      "description": "Grants permission to process and transform log events through pipeline transformers before storage",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "PutPipelineRule",
+      "methodName": "toPutPipelineRule",
+      "description": "Grants permission to create telemetry pipeline",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html"
+    },
+    {
+      "name": "StopLiveTail",
+      "methodName": "toStopLiveTail",
+      "description": "Grants permission to stop a Live Tail session that is in progress",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html"
+    },
+    {
+      "name": "Unmask",
+      "methodName": "toUnmask",
+      "description": "Grants permission to fetch unmasked log events that have been redacted with a data protection policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html"
+    },
+    {
+      "name": "UpdateLogDelivery",
+      "methodName": "toUpdateLogDelivery",
+      "description": "Grants permission to update the log delivery information for specified log delivery",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "anomaly-detector",
+      "methodName": "onAnomalyDetector",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AnomalyDetector.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:anomaly-detector:${DetectorId}",
+      "placeholders": [
+        {
+          "placeholder": "DetectorId",
+          "name": "detectorId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "delivery",
+      "methodName": "onDelivery",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:delivery:${DeliveryName}",
+      "placeholders": [
+        {
+          "placeholder": "DeliveryName",
+          "name": "deliveryName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDeliveryRef",
+        "property": "deliveryRef",
+        "arn": "deliveryArn"
+      }
+    },
+    {
+      "name": "delivery-destination",
+      "methodName": "onDeliveryDestination",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliveryDestination.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:delivery-destination:${DeliveryDestinationName}",
+      "placeholders": [
+        {
+          "placeholder": "DeliveryDestinationName",
+          "name": "deliveryDestinationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDeliveryDestinationRef",
+        "property": "deliveryDestinationRef",
+        "arn": "deliveryDestinationArn"
+      }
+    },
+    {
+      "name": "delivery-source",
+      "methodName": "onDeliverySource",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeliverySource.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:delivery-source:${DeliverySourceName}",
+      "placeholders": [
+        {
+          "placeholder": "DeliverySourceName",
+          "name": "deliverySourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDeliverySourceRef",
+        "property": "deliverySourceRef",
+        "arn": "deliverySourceArn"
+      }
+    },
+    {
+      "name": "destination",
+      "methodName": "onDestination",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Destination.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:destination:${DestinationName}",
+      "placeholders": [
+        {
+          "placeholder": "DestinationName",
+          "name": "destinationName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IDestinationRef",
+        "property": "destinationRef",
+        "arn": "destinationArn"
+      }
+    },
+    {
+      "name": "log-group",
+      "methodName": "onLogGroup",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LogGroup.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}",
+      "placeholders": [
+        {
+          "placeholder": "LogGroupName",
+          "name": "logGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "ILogGroupRef",
+        "property": "logGroupRef",
+        "arn": "logGroupArn"
+      }
+    },
+    {
+      "name": "log-stream",
+      "methodName": "onLogStream",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LogStream.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}",
+      "placeholders": [
+        {
+          "placeholder": "LogGroupName",
+          "name": "logGroupName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "LogStreamName",
+          "name": "logStreamName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "lookup-table",
+      "methodName": "onLookupTable",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LookupTable.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:lookup-table:${LookupTableName}",
+      "placeholders": [
+        {
+          "placeholder": "LookupTableName",
+          "name": "lookupTableName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "scheduled-query",
+      "methodName": "onScheduledQuery",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ScheduledQuery.html",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:scheduled-query:${ScheduledQueryId}",
+      "placeholders": [
+        {
+          "placeholder": "ScheduledQueryId",
+          "name": "scheduledQueryId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ],
+      "cdkRef": {
+        "module": "aws_logs",
+        "interface": "IScheduledQueryRef",
+        "property": "scheduledQueryRef",
+        "arn": "scheduledQueryArn"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDelivery",
+        "toCreateLogAnomalyDetector",
+        "toCreateLogGroup",
+        "toCreateLookupTable",
+        "toCreateScheduledQuery",
+        "toPutDeliveryDestination",
+        "toPutDeliverySource",
+        "toPutDestination",
+        "toTagLogGroup",
+        "toTagResource",
+        "toUpdateDeliveryConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAssociateKmsKey",
+        "toCreateDelivery",
+        "toCreateExportTask",
+        "toCreateLogAnomalyDetector",
+        "toCreateLogGroup",
+        "toCreateLogStream",
+        "toCreateLookupTable",
+        "toCreateScheduledQuery",
+        "toDeleteDataProtectionPolicy",
+        "toDeleteDelivery",
+        "toDeleteDeliveryDestination",
+        "toDeleteDeliveryDestinationPolicy",
+        "toDeleteDeliverySource",
+        "toDeleteDestination",
+        "toDeleteLogAnomalyDetector",
+        "toDeleteLogGroup",
+        "toDeleteLogStream",
+        "toDeleteLookupTable",
+        "toDeleteMetricFilter",
+        "toDeleteRetentionPolicy",
+        "toDeleteScheduledQuery",
+        "toDeleteSubscriptionFilter",
+        "toDeleteSyslogConfiguration",
+        "toDeleteTransformer",
+        "toDescribeLogStreams",
+        "toDescribeMetricFilters",
+        "toDescribeSubscriptionFilters",
+        "toDisassociateKmsKey",
+        "toFilterLogEvents",
+        "toGetDataProtectionPolicy",
+        "toGetDelivery",
+        "toGetDeliveryDestination",
+        "toGetDeliveryDestinationPolicy",
+        "toGetDeliverySource",
+        "toGetLogAnomalyDetector",
+        "toGetLogEvents",
+        "toGetLogGroupFields",
+        "toGetLogRecord",
+        "toGetLookupTable",
+        "toGetQueryResults",
+        "toGetScheduledQuery",
+        "toGetScheduledQueryHistory",
+        "toGetTransformer",
+        "toListAnomalies",
+        "toListLogAnomalyDetectors",
+        "toListTagsForResource",
+        "toListTagsLogGroup",
+        "toPutBearerTokenAuthentication",
+        "toPutDataProtectionPolicy",
+        "toPutDeliveryDestination",
+        "toPutDeliveryDestinationPolicy",
+        "toPutDeliverySource",
+        "toPutDestination",
+        "toPutDestinationPolicy",
+        "toPutLogEvents",
+        "toPutLogGroupDeletionProtection",
+        "toPutMetricFilter",
+        "toPutRetentionPolicy",
+        "toPutSubscriptionFilter",
+        "toPutSyslogConfiguration",
+        "toPutTransformer",
+        "toStartLiveTail",
+        "toStartQuery",
+        "toTagLogGroup",
+        "toTagResource",
+        "toUntagLogGroup",
+        "toUntagResource",
+        "toUpdateAnomaly",
+        "toUpdateDeliveryConfiguration",
+        "toUpdateLogAnomalyDetector",
+        "toUpdateLookupTable",
+        "toUpdateScheduledQuery",
+        "toIntegrateWithDataset",
+        "toIntegrateWithS3Table",
+        "toProcessWithPipeline",
+        "toUnmask"
+      ],
+      "relatedResourceTypes": [
+        "anomaly-detector",
+        "delivery",
+        "delivery-destination",
+        "delivery-source",
+        "destination",
+        "log-group",
+        "log-stream",
+        "lookup-table",
+        "scheduled-query"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDelivery",
+        "toCreateLogAnomalyDetector",
+        "toCreateLogGroup",
+        "toCreateLookupTable",
+        "toCreateScheduledQuery",
+        "toPutDeliveryDestination",
+        "toPutDeliverySource",
+        "toPutDestination",
+        "toTagLogGroup",
+        "toTagResource",
+        "toUntagLogGroup",
+        "toUntagResource",
+        "toUpdateDeliveryConfiguration"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "logs:DeliveryDestinationResourceArn",
+      "methodName": "ifDeliveryDestinationResourceArn",
+      "description": "Filters access by the Log Destination ARN passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html",
+      "relatedActionMethods": [
+        "toPutDeliveryDestination"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "DeliveryDestinationResourceArn",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "logs:LogGeneratingResourceArns",
+      "methodName": "ifLogGeneratingResourceArns",
+      "description": "Filters access by the Log Generating Resource ARNs passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html",
+      "relatedActionMethods": [
+        "toPutDeliverySource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "LogGeneratingResourceArns",
+      "valueKind": "arn",
+      "defaultOperator": "ArnLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+    },
+    {
+      "key": "logs:data_source_name",
+      "methodName": "ifDataSourceName",
+      "description": "Filters access by the data source name passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html",
+      "relatedActionMethods": [
+        "toIntegrateWithS3Table",
+        "toProcessWithPipeline"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "data_source_name",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "logs:data_source_type",
+      "methodName": "ifDataSourceType",
+      "description": "Filters access by the data source type passed in the request",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html",
+      "relatedActionMethods": [
+        "toIntegrateWithS3Table",
+        "toProcessWithPipeline"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "data_source_type",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

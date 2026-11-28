@@ -1,0 +1,104 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OrganizationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "organizations:ListRoots",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAccountsForParent",
+        "organizations:ListParents",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListPolicies",
+        "organizations:ListPoliciesForTarget",
+        "organizations:ListTargetsForPolicy",
+        "organizations:DescribeResourcePolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationPermissionsEnable",
+      "Effect": "Allow",
+      "Action": "organizations:EnableAWSServiceAccess",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com",
+            "inspector2.amazonaws.com",
+            "guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationPermissionsDelegatedAdmin",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator"
+      ],
+      "Resource": "arn:aws:organizations::*:account/o-*/*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com",
+            "inspector2.amazonaws.com",
+            "guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationPolicyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribePolicy",
+        "organizations:DescribeEffectivePolicy",
+        "organizations:CreatePolicy",
+        "organizations:UpdatePolicy",
+        "organizations:DeletePolicy",
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy",
+        "organizations:EnablePolicyType",
+        "organizations:DisablePolicyType"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:root/o-*/*",
+        "arn:aws:organizations::*:account/o-*/*",
+        "arn:aws:organizations::*:ou/o-*/*",
+        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*",
+        "arn:aws:organizations::*:policy/o-*/inspector_policy/*"
+      ],
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:PolicyType": [
+            "SECURITYHUB_POLICY",
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationPolicyTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:TagResource",
+        "organizations:UntagResource",
+        "organizations:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*",
+        "arn:aws:organizations::*:policy/o-*/inspector_policy/*"
+      ]
+    }
+  ]
+}

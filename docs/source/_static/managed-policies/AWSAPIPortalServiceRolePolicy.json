@@ -1,0 +1,56 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "APIPortalServiceRoleOrganizationsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:ListChildren",
+        "organizations:ListParents",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "APIPortalServiceRoleConfigPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:AssociateResourceTypes",
+        "config:DisassociateResourceTypes"
+      ],
+      "Resource": [
+        "arn:aws:config:*:*:configuration-recorder/*ConfigurationRecorderForAPIPortal*"
+      ]
+    },
+    {
+      "Sid": "APIPortalServiceRoleConfigIamPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "APIPortalServiceRoleWafPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:ListEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

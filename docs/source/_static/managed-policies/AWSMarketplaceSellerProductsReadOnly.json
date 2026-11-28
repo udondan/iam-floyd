@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListChangeSets",
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:DescribeEntity",
+        "aws-marketplace:ListAssessments",
+        "aws-marketplace:DescribeAssessment",
+        "ec2:DescribeImages",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/*",
+        "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
+      ]
+    },
+    {
+      "Sid": "DeploymentConfigurationRead",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetDeploymentConfigurationJob",
+        "aws-marketplace:ListDeploymentConfigurationJobs",
+        "aws-marketplace:GetDeploymentConfiguration"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:DeploymentConfiguration:catalogs/AWSMarketplace/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:GetResourcePolicy"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+    },
+    {
+      "Sid": "Support",
+      "Effect": "Allow",
+      "Action": [
+        "support:DescribeCases",
+        "support:DescribeCommunications",
+        "support:DescribeAttachment",
+        "support:SearchForCases",
+        "support:DescribeServices",
+        "support:DescribeCreateCaseOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupportConsole",
+      "Effect": "Allow",
+      "Action": [
+        "support-console:GetAccountState",
+        "support-console:GetAccountGovCloudEnabled",
+        "support-console:CheckSubscription",
+        "support-console:GetBanner"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

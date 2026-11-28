@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "sagemaker-unified-studio-mcp",
+  "className": "SagemakerUnifiedStudioMcp",
+  "name": "sagemaker-unified-studio-mcp",
+  "servicePrefix": "sagemaker-unified-studio-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker-unified-studio-mcp.html",
+  "accessLevelList": {
+    "Read": [
+      "AuthorizeVpce"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AuthorizeVpce",
+      "methodName": "toAuthorizeVpce",
+      "description": "Grants permission to use MCP service VPC endpoint",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "filename": "purchase-orders",
+  "className": "PurchaseOrders",
+  "name": "purchase-orders",
+  "servicePrefix": "purchase-orders",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_purchase-orders.html",
+  "accessLevelList": {
+    "Write": [
+      "AddPurchaseOrder",
+      "DeletePurchaseOrder",
+      "ModifyPurchaseOrders",
+      "TagResource",
+      "UntagResource",
+      "UpdateConsoleActionSetEnforced",
+      "UpdatePurchaseOrder",
+      "UpdatePurchaseOrderStatus"
+    ],
+    "Read": [
+      "GetConsoleActionSetEnforced",
+      "GetPurchaseOrder",
+      "ListTagsForResource",
+      "ViewPurchaseOrders"
+    ],
+    "List": [
+      "ListPurchaseOrderInvoices",
+      "ListPurchaseOrders"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddPurchaseOrder",
+      "methodName": "toAddPurchaseOrder",
+      "description": "Grants permission to add a new purchase order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "DeletePurchaseOrder",
+      "methodName": "toDeletePurchaseOrder",
+      "description": "Grants permission to delete a purchase order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetConsoleActionSetEnforced",
+      "methodName": "toGetConsoleActionSetEnforced",
+      "description": "Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "GetPurchaseOrder",
+      "methodName": "toGetPurchaseOrder",
+      "description": "Grants permission to get a purchase order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListPurchaseOrderInvoices",
+      "methodName": "toListPurchaseOrderInvoices",
+      "description": "Grants permission to list purchase order invoices",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListPurchaseOrders",
+      "methodName": "toListPurchaseOrders",
+      "description": "Grants permission to list all purchase orders for an account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a purchase order",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ModifyPurchaseOrders",
+      "methodName": "toModifyPurchaseOrders",
+      "description": "Grants permission to modify purchase orders and details",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag purchase orders with given key value pairs",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a purchase order",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UpdateConsoleActionSetEnforced",
+      "methodName": "toUpdateConsoleActionSetEnforced",
+      "description": "Grants permission to change whether existing or fine-grained IAM actions will be used to control authorization to Billing, Cost Management, and Account consoles",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UpdatePurchaseOrder",
+      "methodName": "toUpdatePurchaseOrder",
+      "description": "Grants permission to update an existing purchase order",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "UpdatePurchaseOrderStatus",
+      "methodName": "toUpdatePurchaseOrderStatus",
+      "description": "Grants permission to set purchase order status",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    },
+    {
+      "name": "ViewPurchaseOrders",
+      "methodName": "toViewPurchaseOrders",
+      "description": "Grants permission to view purchase orders and details",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "purchase-order",
+      "methodName": "onPurchaseOrder",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+      "arn": "arn:${Partition}:purchase-orders::${Account}:purchase-order/${ResourceName}",
+      "placeholders": [
+        {
+          "placeholder": "ResourceName",
+          "name": "resourceName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by a tag's key and value in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toAddPurchaseOrder",
+        "toModifyPurchaseOrders",
+        "toTagResource",
+        "toUpdatePurchaseOrder"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the set of tag key-value pairs attached to the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toAddPurchaseOrder",
+        "toDeletePurchaseOrder",
+        "toGetPurchaseOrder",
+        "toListPurchaseOrderInvoices",
+        "toListTagsForResource",
+        "toModifyPurchaseOrders",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePurchaseOrder",
+        "toUpdatePurchaseOrderStatus",
+        "toViewPurchaseOrders"
+      ],
+      "relatedResourceTypes": [
+        "purchase-order"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys in a request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toAddPurchaseOrder",
+        "toModifyPurchaseOrders",
+        "toTagResource",
+        "toUntagResource",
+        "toUpdatePurchaseOrder"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

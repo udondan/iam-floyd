@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "filename": "agent-discovery",
+  "className": "AgentDiscovery",
+  "name": "agent-discovery",
+  "servicePrefix": "agent-discovery",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_agent-discovery.html",
+  "accessLevelList": {
+    "Read": [
+      "SearchPublicRecords"
+    ]
+  },
+  "actions": [
+    {
+      "name": "SearchPublicRecords",
+      "methodName": "toSearchPublicRecords",
+      "description": "Grants permission to search public agent registry records",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/agent-discovery/latest/APIReference/API_SearchPublicRecords.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

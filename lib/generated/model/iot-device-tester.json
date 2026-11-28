@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "filename": "iot-device-tester",
+  "className": "IotDeviceTester",
+  "name": "iot-device-tester",
+  "servicePrefix": "iot-device-tester",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_iot-device-tester.html",
+  "accessLevelList": {
+    "Read": [
+      "CheckVersion",
+      "DownloadTestSuite",
+      "LatestIdt",
+      "SupportedVersion"
+    ],
+    "Write": [
+      "SendMetrics"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CheckVersion",
+      "methodName": "toCheckVersion",
+      "description": "Grants permission to IoT Device Tester to check if a given set of product, test suite and device tester version are compatible",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html"
+    },
+    {
+      "name": "DownloadTestSuite",
+      "methodName": "toDownloadTestSuite",
+      "description": "Grants permission to IoT Device Tester to download compatible test suite versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html"
+    },
+    {
+      "name": "LatestIdt",
+      "methodName": "toLatestIdt",
+      "description": "Grants permission to IoT Device Tester to get information on latest version of device tester available",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html"
+    },
+    {
+      "name": "SendMetrics",
+      "methodName": "toSendMetrics",
+      "description": "Grants permission to IoT Device Tester to send usage metrics on your behalf",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html"
+    },
+    {
+      "name": "SupportedVersion",
+      "methodName": "toSupportedVersion",
+      "description": "Grants permission to IoT Device Tester to get list of supported products and test suite versions",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html"
+    }
+  ],
+  "resources": [],
+  "conditions": []
+}

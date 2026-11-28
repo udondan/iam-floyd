@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRekognitionReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "rekognition:CompareFaces",
+        "rekognition:DetectFaces",
+        "rekognition:DetectLabels",
+        "rekognition:ListCollections",
+        "rekognition:ListFaces",
+        "rekognition:SearchFaces",
+        "rekognition:SearchFacesByImage",
+        "rekognition:DetectText",
+        "rekognition:GetCelebrityInfo",
+        "rekognition:RecognizeCelebrities",
+        "rekognition:DetectModerationLabels",
+        "rekognition:GetLabelDetection",
+        "rekognition:GetFaceDetection",
+        "rekognition:GetContentModeration",
+        "rekognition:GetPersonTracking",
+        "rekognition:GetCelebrityRecognition",
+        "rekognition:GetFaceSearch",
+        "rekognition:GetTextDetection",
+        "rekognition:GetSegmentDetection",
+        "rekognition:DescribeStreamProcessor",
+        "rekognition:ListStreamProcessors",
+        "rekognition:DescribeProjects",
+        "rekognition:DescribeProjectVersions",
+        "rekognition:DetectCustomLabels",
+        "rekognition:DetectProtectiveEquipment",
+        "rekognition:ListTagsForResource",
+        "rekognition:ListDatasetEntries",
+        "rekognition:ListDatasetLabels",
+        "rekognition:DescribeDataset",
+        "rekognition:ListProjectPolicies",
+        "rekognition:ListUsers",
+        "rekognition:SearchUsers",
+        "rekognition:SearchUsersByImage",
+        "rekognition:GetMediaAnalysisJob",
+        "rekognition:ListMediaAnalysisJobs"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

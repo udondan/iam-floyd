@@ -1,0 +1,143 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ConnectAccess",
+      "Effect": "Allow",
+      "Action": [
+        "connect:StartOutboundVoiceContact",
+        "connect:GetMetricData",
+        "connect:GetCurrentMetricData",
+        "connect:BatchPutContact",
+        "connect:StopContact",
+        "connect:GetMetricDataV2",
+        "connect:DescribeContactFlow",
+        "connect:SendOutboundEmail",
+        "connect:SendOutboundWebNotification",
+        "connect:StartTaskContact"
+      ],
+      "Resource": "arn:aws:connect:*:*:instance/*"
+    },
+    {
+      "Sid": "ConnectCampaignsMetricsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "connect:GetMetricDataV2"
+      ],
+      "Resource": "arn:aws:connect-campaigns:*:*:campaign/*"
+    },
+    {
+      "Sid": "ConnectChatAccess",
+      "Effect": "Allow",
+      "Action": [
+        "connect:SendOutboundChatMessage"
+      ],
+      "Resource": [
+        "arn:aws:connect:*:*:instance/*",
+        "arn:aws:connect:*:*:phone-number/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSocialMessagingSendMessageOperations",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:SendWhatsAppMessage"
+      ],
+      "Resource": "arn:aws:social-messaging:*:*:phone-number-id/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSocialMessagingTemplateOperations",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:GetWhatsAppMessageTemplate"
+      ],
+      "Resource": "arn:aws:social-messaging:*:*:waba/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSMSVoiceOperationsForConnect",
+      "Effect": "Allow",
+      "Action": [
+        "sms-voice:SendTextMessage"
+      ],
+      "Resource": "arn:aws:sms-voice:*:*:phone-number/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeListRuleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:ListRules"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeManagedResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/ConnectCampaignsRule*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "events:ManagedBy": "gardner.aws.internal"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeListTargetsByRuleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/ConnectCampaignsRule*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowWisdomForConnectCampaignsEnabledTaggedResources",
+      "Effect": "Allow",
+      "Action": [
+        "wisdom:GetMessageTemplate",
+        "wisdom:RenderMessageTemplate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectCampaignsEnabled": "True"
+        }
+      }
+    }
+  ]
+}

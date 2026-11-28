@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageServiceLinkedChannel",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:UpdateServiceLinkedChannel",
+        "cloudtrail:GetServiceLinkedChannel",
+        "cloudtrail:DeleteServiceLinkedChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/continuumthreats/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "PutServiceLinkedConfigurationRecorder",
+      "Effect": "Allow",
+      "Action": "config:PutServiceLinkedConfigurationRecorder",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "config:ConfigurationRecorderServicePrincipal": "threats.continuum.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "ManageServiceLinkedConfigurationRecorder",
+      "Effect": "Allow",
+      "Action": [
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:DescribeConfigurationRecorderStatus"
+      ],
+      "Resource": "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderFor*/*",
+      "Condition": {
+        "StringEquals": {
+          "config:ConfigurationRecorderServicePrincipal": "threats.continuum.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CreateConfigServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

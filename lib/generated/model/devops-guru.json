@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "filename": "devops-guru",
+  "className": "DevopsGuru",
+  "name": "devops-guru",
+  "servicePrefix": "devops-guru",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_devops-guru.html",
+  "accessLevelList": {
+    "Write": [
+      "AddNotificationChannel",
+      "DeleteInsight",
+      "PutFeedback",
+      "RemoveNotificationChannel",
+      "UpdateEventSourcesConfig",
+      "UpdateResourceCollection",
+      "UpdateServiceIntegration"
+    ],
+    "Read": [
+      "DescribeAccountHealth",
+      "DescribeAccountOverview",
+      "DescribeAnomaly",
+      "DescribeEventSourcesConfig",
+      "DescribeFeedback",
+      "DescribeInsight",
+      "DescribeOrganizationHealth",
+      "DescribeOrganizationOverview",
+      "DescribeOrganizationResourceCollectionHealth",
+      "DescribeResourceCollectionHealth",
+      "DescribeServiceIntegration",
+      "GetCostEstimation",
+      "GetResourceCollection",
+      "StartCostEstimation"
+    ],
+    "List": [
+      "ListAnomaliesForInsight",
+      "ListAnomalousLogGroups",
+      "ListEvents",
+      "ListInsights",
+      "ListMonitoredResources",
+      "ListNotificationChannels",
+      "ListOrganizationInsights",
+      "ListRecommendations",
+      "SearchInsights",
+      "SearchOrganizationInsights"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AddNotificationChannel",
+      "methodName": "toAddNotificationChannel",
+      "description": "Grants permission to add a notification channel to DevOps Guru",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_AddNotificationChannel.html"
+    },
+    {
+      "name": "DeleteInsight",
+      "methodName": "toDeleteInsight",
+      "description": "Grants permission to delete specified insight in your account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DeleteInsight.html"
+    },
+    {
+      "name": "DescribeAccountHealth",
+      "methodName": "toDescribeAccountHealth",
+      "description": "Grants permission to view the health of operations in your AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeAccountHealth.html"
+    },
+    {
+      "name": "DescribeAccountOverview",
+      "methodName": "toDescribeAccountOverview",
+      "description": "Grants permission to view the health of operations within a time range in your AWS account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeAccountOverview.html"
+    },
+    {
+      "name": "DescribeAnomaly",
+      "methodName": "toDescribeAnomaly",
+      "description": "Grants permission to list the details of a specified anomaly",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeAnomaly.html"
+    },
+    {
+      "name": "DescribeEventSourcesConfig",
+      "methodName": "toDescribeEventSourcesConfig",
+      "description": "Grants permission to retrieve details about event sources for DevOps Guru",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeEventSourcesConfig.html"
+    },
+    {
+      "name": "DescribeFeedback",
+      "methodName": "toDescribeFeedback",
+      "description": "Grants permission to view the feedback details of a specified insight",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeFeedback.html"
+    },
+    {
+      "name": "DescribeInsight",
+      "methodName": "toDescribeInsight",
+      "description": "Grants permission to list the details of a specified insight",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeInsight.html"
+    },
+    {
+      "name": "DescribeOrganizationHealth",
+      "methodName": "toDescribeOrganizationHealth",
+      "description": "Grants permission to view the health of operations in your organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationHealth.html"
+    },
+    {
+      "name": "DescribeOrganizationOverview",
+      "methodName": "toDescribeOrganizationOverview",
+      "description": "Grants permission to view the health of operations within a time range in your organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationOverview.html"
+    },
+    {
+      "name": "DescribeOrganizationResourceCollectionHealth",
+      "methodName": "toDescribeOrganizationResourceCollectionHealth",
+      "description": "Grants permission to view the health of operations for each AWS CloudFormation stack or AWS Services or accounts specified in DevOps Guru in your organization",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationResourceCollectionHealth.html"
+    },
+    {
+      "name": "DescribeResourceCollectionHealth",
+      "methodName": "toDescribeResourceCollectionHealth",
+      "description": "Grants permission to view the health of operations for each AWS CloudFormation stack specified in DevOps Guru",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeResourceCollectionHealth.html"
+    },
+    {
+      "name": "DescribeServiceIntegration",
+      "methodName": "toDescribeServiceIntegration",
+      "description": "Grants permission to view the integration status of services that can be integrated with DevOps Guru",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeServiceIntegration.html"
+    },
+    {
+      "name": "GetCostEstimation",
+      "methodName": "toGetCostEstimation",
+      "description": "Grants permission to list service resource cost estimates",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_GetCostEstimation.html"
+    },
+    {
+      "name": "GetResourceCollection",
+      "methodName": "toGetResourceCollection",
+      "description": "Grants permission to list AWS CloudFormation stacks that DevOps Guru is configured to use",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_GetResourceCollection.html"
+    },
+    {
+      "name": "ListAnomaliesForInsight",
+      "methodName": "toListAnomaliesForInsight",
+      "description": "Grants permission to list anomalies of a given insight in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListAnomaliesForInsight.html",
+      "conditionMethods": [
+        "ifServiceNames"
+      ]
+    },
+    {
+      "name": "ListAnomalousLogGroups",
+      "methodName": "toListAnomalousLogGroups",
+      "description": "Grants permission to list log anomalies of a given insight in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListAnomalousLogGroups.html"
+    },
+    {
+      "name": "ListEvents",
+      "methodName": "toListEvents",
+      "description": "Grants permission to list resource events that are evaluated by DevOps Guru",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListEvents.html"
+    },
+    {
+      "name": "ListInsights",
+      "methodName": "toListInsights",
+      "description": "Grants permission to list insights in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListInsights.html"
+    },
+    {
+      "name": "ListMonitoredResources",
+      "methodName": "toListMonitoredResources",
+      "description": "Grants permission to list resource monitored by DevOps Guru in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListMonitoredResources.html"
+    },
+    {
+      "name": "ListNotificationChannels",
+      "methodName": "toListNotificationChannels",
+      "description": "Grants permission to list notification channels configured for DevOps Guru in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListNotificationChannels.html"
+    },
+    {
+      "name": "ListOrganizationInsights",
+      "methodName": "toListOrganizationInsights",
+      "description": "Grants permission to list insights in your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListOrganizationInsights.html"
+    },
+    {
+      "name": "ListRecommendations",
+      "methodName": "toListRecommendations",
+      "description": "Grants permission to list a specified insight's recommendations",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListRecommendations.html"
+    },
+    {
+      "name": "PutFeedback",
+      "methodName": "toPutFeedback",
+      "description": "Grants permission to submit a feedback to DevOps Guru",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PutFeedback.html"
+    },
+    {
+      "name": "RemoveNotificationChannel",
+      "methodName": "toRemoveNotificationChannel",
+      "description": "Grants permission to remove a notification channel from DevOps Guru",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_RemoveNotificationChannel.html"
+    },
+    {
+      "name": "SearchInsights",
+      "methodName": "toSearchInsights",
+      "description": "Grants permission to search insights in your account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_SearchInsights.html",
+      "conditionMethods": [
+        "ifServiceNames"
+      ]
+    },
+    {
+      "name": "SearchOrganizationInsights",
+      "methodName": "toSearchOrganizationInsights",
+      "description": "Grants permission to search insights in your organization",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_SearchOrganizationInsights.html"
+    },
+    {
+      "name": "StartCostEstimation",
+      "methodName": "toStartCostEstimation",
+      "description": "Grants permission to start the creation of an estimate of the monthly cost",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_StartCostEstimation.html"
+    },
+    {
+      "name": "UpdateEventSourcesConfig",
+      "methodName": "toUpdateEventSourcesConfig",
+      "description": "Grants permission to update an event source for DevOps Guru",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_UpdateEventSourcesConfig.html"
+    },
+    {
+      "name": "UpdateResourceCollection",
+      "methodName": "toUpdateResourceCollection",
+      "description": "Grants permission to update the list of AWS CloudFormation stacks that are used to specify which AWS resources in your account are analyzed by DevOps Guru",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_UpdateResourceCollection.html"
+    },
+    {
+      "name": "UpdateServiceIntegration",
+      "methodName": "toUpdateServiceIntegration",
+      "description": "Grants permission to enable or disable a service that integrates with DevOps Guru",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_UpdateServiceIntegration.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "topic",
+      "methodName": "onTopic",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/setting-up.html#setting-up-notifications",
+      "arn": "arn:${Partition}:sns:${Region}:${Account}:${TopicName}",
+      "placeholders": [
+        {
+          "placeholder": "TopicName",
+          "name": "topicName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "devops-guru:ServiceNames",
+      "methodName": "ifServiceNames",
+      "description": "Filters access by API to restrict access to given AWS service names",
+      "url": "https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ServiceCollection.html",
+      "relatedActionMethods": [
+        "toListAnomaliesForInsight",
+        "toSearchInsights"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ServiceNames",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

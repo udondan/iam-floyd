@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "removeComments": true
+  },
+  "exclude": [
+    "node_modules",
+    "bin/*",
+    "lib/generator/*",
+    "test/*",
+    "**/*CDK*",
+    "examples/*",
+    "tooter/*",
+    "helper/*",
+    "dist"
+  ]
+}

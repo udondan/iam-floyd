@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "filename": "bedrock-websearch",
+  "className": "BedrockWebsearch",
+  "name": "bedrock-websearch",
+  "servicePrefix": "bedrock-websearch",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock-websearch.html",
+  "accessLevelList": {
+    "Read": [
+      "InvokeFetch",
+      "InvokeSearch",
+      "ExternalWebAccess"
+    ]
+  },
+  "actions": [
+    {
+      "name": "InvokeFetch",
+      "methodName": "toInvokeFetch",
+      "description": "Grants permission to invoke web fetch tools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-web-search.html#security-web-search-actions"
+    },
+    {
+      "name": "InvokeSearch",
+      "methodName": "toInvokeSearch",
+      "description": "Grants permission to invoke web search tools",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-web-search.html#security-web-search-actions"
+    },
+    {
+      "name": "ExternalWebAccess",
+      "methodName": "toExternalWebAccess",
+      "description": "Grants permission to retrieve content from external web sites outside the AWS boundary",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-web-search.html#security-web-search-actions"
+    }
+  ],
+  "resources": [
+    {
+      "name": "tool",
+      "methodName": "onTool",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-web-search.html#security-web-search-actions",
+      "arn": "arn:${Partition}:bedrock-websearch:${Region}:aws:tool/${ToolName}",
+      "placeholders": [
+        {
+          "placeholder": "ToolName",
+          "name": "toolName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": []
+}

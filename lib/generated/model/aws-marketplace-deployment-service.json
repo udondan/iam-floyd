@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-deployment-service",
+  "className": "AwsMarketplaceDeploymentService",
+  "name": "aws-marketplace-deployment-service",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-deployment.html",
+  "accessLevelList": {
+    "Read": [
+      "GetDeploymentConfiguration",
+      "GetDeploymentConfigurationJob",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDeploymentConfigurationJobs"
+    ],
+    "Write": [
+      "PutDeploymentParameter",
+      "StartDeploymentConfigurationJob",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "GetDeploymentConfiguration",
+      "methodName": "toGetDeploymentConfiguration",
+      "description": "Grants permission to get the active deployment configuration",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_GetDeploymentConfiguration.html"
+    },
+    {
+      "name": "GetDeploymentConfigurationJob",
+      "methodName": "toGetDeploymentConfigurationJob",
+      "description": "Grants permission to get a deployment configuration job",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_GetDeploymentConfigurationJob.html"
+    },
+    {
+      "name": "ListDeploymentConfigurationJobs",
+      "methodName": "toListDeploymentConfigurationJobs",
+      "description": "Grants permission to list deployment configuration jobs",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_ListDeploymentConfigurationJobs.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list tags for a deployment parameter or deployment configuration resource",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_ListTagsForResource.html"
+    },
+    {
+      "name": "PutDeploymentParameter",
+      "methodName": "toPutDeploymentParameter",
+      "description": "Grants permission to create or update a deployment parameter resource",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_PutDeploymentParameter.html"
+    },
+    {
+      "name": "StartDeploymentConfigurationJob",
+      "methodName": "toStartDeploymentConfigurationJob",
+      "description": "Grants permission to start a job that publishes a deployment configuration",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_StartDeploymentConfigurationJob.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to tag a deployment parameter or deployment configuration resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_TagResource.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to untag a deployment parameter or deployment configuration resource",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_UntagResource.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "DeploymentConfiguration",
+      "methodName": "onDeploymentConfiguration",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_GetDeploymentConfiguration.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:DeploymentConfiguration:catalogs/${CatalogName}/products/${ProductId}/delivery-options/${DeliveryOptionType}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DeliveryOptionType",
+          "name": "deliveryOptionType",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    },
+    {
+      "name": "DeploymentParameter",
+      "methodName": "onDeploymentParameter",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-deployment_DeploymentParameterInput.html",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:DeploymentParameter:catalogs/${CatalogName}/products/${ProductId}/${ResourceId}",
+      "placeholders": [
+        {
+          "placeholder": "CatalogName",
+          "name": "catalogName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ProductId",
+          "name": "productId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "ResourceId",
+          "name": "resourceId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsRequestTag",
+        "ifAwsResourceTag",
+        "ifAwsTagKeys"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toGetDeploymentConfiguration",
+        "toGetDeploymentConfigurationJob",
+        "toListDeploymentConfigurationJobs",
+        "toListTagsForResource",
+        "toPutDeploymentParameter",
+        "toStartDeploymentConfigurationJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DeploymentConfiguration",
+        "DeploymentParameter"
+      ],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toGetDeploymentConfiguration",
+        "toGetDeploymentConfigurationJob",
+        "toListDeploymentConfigurationJobs",
+        "toListTagsForResource",
+        "toPutDeploymentParameter",
+        "toStartDeploymentConfigurationJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DeploymentConfiguration",
+        "DeploymentParameter"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toGetDeploymentConfiguration",
+        "toGetDeploymentConfigurationJob",
+        "toListDeploymentConfigurationJobs",
+        "toListTagsForResource",
+        "toPutDeploymentParameter",
+        "toStartDeploymentConfigurationJob",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DeploymentConfiguration",
+        "DeploymentParameter"
+      ],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

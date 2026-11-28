@@ -1,0 +1,65 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSLRActionsForLattice",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/vpc-lattice.amazonaws.com/AWSServiceRoleForVpcLattice"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "vpc-lattice.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowResourceGatewayCreate",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:CreateResourceGateway",
+        "vpc-lattice:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:resourcegateway/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/BedrockAgentCoreGatewayManaged": "true",
+          "aws:ResourceTag/BedrockAgentCoreGatewayManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEC2PermissionsForResourceGatewayCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowResourceGatewayDelete",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:DeleteResourceGateway",
+        "vpc-lattice:GetResourceGateway"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/BedrockAgentCoreGatewayManaged": "true"
+        }
+      }
+    }
+  ]
+}

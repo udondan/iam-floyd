@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityIRFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowCreationOfServiceLinkedRoleForSecurityIncidentResponse",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/security-ir.amazonaws.com/AWSServiceRoleForSecurityIncidentResponse"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "security-ir.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCreationOfServiceLinkedRoleForSecurityIncidentResponseTriage",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/triage.security-ir.amazonaws.com/AWSServiceRoleForSecurityIncidentResponse_Triage"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "triage.security-ir.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationsPolicies",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAccountsForParent",
+        "organizations:ListChildren",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:DescribeAccount"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

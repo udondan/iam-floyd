@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LambdaCreateDeletePermission",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:DeleteFunction",
+        "lambda:DisableReplication"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:*"
+      ]
+    },
+    {
+      "Sid": "IamPassRolePermission",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringLikeIfExists": {
+          "iam:PassedToService": "lambda.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CloudFrontListDistributions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:ListDistributionsByLambdaFunction"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ECSAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:Poll",
+        "ecs:StartTask",
+        "ecs:StopTask",
+        "ecs:DiscoverPollEndpoint",
+        "ecs:StartTelemetrySession",
+        "ecs:RegisterContainerInstance",
+        "ecs:DeregisterContainerInstance",
+        "ecs:DescribeContainerInstances",
+        "ecs:Submit*",
+        "ecs:DescribeTasks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowECSTagResource",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": [
+            "RegisterContainerInstance",
+            "StartTask"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisInvokeFoundationModel",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/anthropic.claude-*",
+        "arn:aws:bedrock:*::foundation-model/amazon.nova-*"
+      ]
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisInvokeInferenceProfile",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": [
+        "arn:aws:bedrock:*:*:inference-profile/*anthropic.claude-*",
+        "arn:aws:bedrock:*:*:inference-profile/*amazon.nova-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:ListFoundationModels",
+        "elasticbeanstalk:DescribeEvents",
+        "elasticbeanstalk:DescribeEnvironmentHealth"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceOperationsFromBedrock",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:Unsubscribe"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

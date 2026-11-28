@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "workspaces:RebootWorkspaces",
+        "workspaces:RebuildWorkspaces",
+        "workspaces:ModifyWorkspaceProperties"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

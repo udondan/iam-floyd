@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "filename": "aws-marketplace-seller-reporting",
+  "className": "AwsMarketplaceSellerReporting",
+  "name": "aws-marketplace-seller-reporting",
+  "servicePrefix": "aws-marketplace",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_marketplace-seller-reporting.html",
+  "accessLevelList": {
+    "Write": [
+      "CreateDataSubscription",
+      "DeleteDataSubscription",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetDataSubscription",
+      "GetSellerDashboard",
+      "GetSellerReportingData",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListDataSubscriptions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  },
+  "actions": [
+    {
+      "name": "CreateDataSubscription",
+      "methodName": "toCreateDataSubscription",
+      "description": "Grants permission to create a data subscription that delivers a seller dataset to an S3 bucket in the caller's AWS account on a schedule",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    },
+    {
+      "name": "DeleteDataSubscription",
+      "methodName": "toDeleteDataSubscription",
+      "description": "Grants permission to delete a data subscription owned by the calling account, stopping future deliveries",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    },
+    {
+      "name": "GetDataSubscription",
+      "methodName": "toGetDataSubscription",
+      "description": "Grants permission to retrieve the details and delivery progress of a data subscription owned by the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    },
+    {
+      "name": "GetSellerDashboard",
+      "methodName": "toGetSellerDashboard",
+      "description": "Grants permission to view a seller dashboard",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/dashboards.html#reports-accessing"
+    },
+    {
+      "name": "GetSellerReportingData",
+      "methodName": "toGetSellerReportingData",
+      "description": "Grants permission to query a seller reporting dataset",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/reports-and-data-feed.html"
+    },
+    {
+      "name": "ListDataSubscriptions",
+      "methodName": "toListDataSubscriptions",
+      "description": "Grants permission to list the data subscriptions owned by the calling account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    },
+    {
+      "name": "ListTagsForResource",
+      "methodName": "toListTagsForResource",
+      "description": "Grants permission to list the tags on a data subscription owned by the calling account",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    },
+    {
+      "name": "TagResource",
+      "methodName": "toTagResource",
+      "description": "Grants permission to add or overwrite tags on a data subscription owned by the calling account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    },
+    {
+      "name": "UntagResource",
+      "methodName": "toUntagResource",
+      "description": "Grants permission to remove tags from a data subscription owned by the calling account",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "DataSubscription",
+      "methodName": "onDataSubscription",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-subscriptions.html",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/DataSubscription/${DataSubscriptionId}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FactTable",
+          "name": "factTable",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DataSubscriptionId",
+          "name": "dataSubscriptionId",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": [
+        "ifAwsResourceTag"
+      ]
+    },
+    {
+      "name": "SellerDashboard",
+      "methodName": "onSellerDashboard",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/dashboards.html#reports-accessing",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/Dashboard/${DashboardName}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FactTable",
+          "name": "factTable",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DashboardName",
+          "name": "dashboardName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    },
+    {
+      "name": "SellerDataset",
+      "methodName": "onSellerDataset",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/reports-and-data-feed.html",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/Dataset/${DatasetName}",
+      "placeholders": [
+        {
+          "placeholder": "Catalog",
+          "name": "catalog",
+          "kind": "required"
+        },
+        {
+          "placeholder": "FactTable",
+          "name": "factTable",
+          "kind": "required"
+        },
+        {
+          "placeholder": "DatasetName",
+          "name": "datasetName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "aws:RequestTag/${TagKey}",
+      "methodName": "ifAwsRequestTag",
+      "description": "Filters access by the tags that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag",
+      "relatedActionMethods": [
+        "toCreateDataSubscription",
+        "toTagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:RequestTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:ResourceTag/${TagKey}",
+      "methodName": "ifAwsResourceTag",
+      "description": "Filters access by the tags associated with the resource",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag",
+      "relatedActionMethods": [
+        "toCreateDataSubscription",
+        "toDeleteDataSubscription",
+        "toGetDataSubscription",
+        "toListTagsForResource",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [
+        "DataSubscription"
+      ],
+      "keyLiteral": "aws:ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "keyParam": "tagKey",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    },
+    {
+      "key": "aws:TagKeys",
+      "methodName": "ifAwsTagKeys",
+      "description": "Filters access by the tag keys that are passed in the request",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys",
+      "relatedActionMethods": [
+        "toCreateDataSubscription",
+        "toTagResource",
+        "toUntagResource"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "aws:TagKeys",
+      "valueKind": "string",
+      "defaultOperator": "ForAnyValue:StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

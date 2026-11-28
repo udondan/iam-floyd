@@ -1,0 +1,204 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "secretsmanager:UpdateSecret",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:atx-db-modernization-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:atx-db-modernization-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Project": "atx-db-modernization",
+          "aws:RequestTag/Owner": "database-connector",
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutBucketTagging",
+        "s3:PutBucketVersioning",
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:GetBucketLocation",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetBucketVersioning"
+      ],
+      "Resource": [
+        "arn:aws:s3:::atx-db-modernization-*",
+        "arn:aws:s3:::atx-db-modernization-*/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dms:CreateReplicationSubnetGroup",
+        "dms:CreateInstanceProfile",
+        "dms:CreateDataProvider",
+        "dms:CreateMigrationProject",
+        "dms:CreateEndpoint",
+        "dms:AddTagsToResource",
+        "rds:CreateDBSubnetGroup",
+        "rds:CreateDBCluster",
+        "rds:CreateDBInstance",
+        "rds:AddTagsToResource",
+        "dms:CreateReplicationInstance",
+        "dms:CreateReplicationTask"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:subgrp:*",
+        "arn:aws:dms:*:*:instance-profile:*",
+        "arn:aws:dms:*:*:data-provider:*",
+        "arn:aws:dms:*:*:migration-project:*",
+        "arn:aws:rds:*:*:subgrp:*",
+        "arn:aws:rds:*:*:cluster:*",
+        "arn:aws:rds:*:*:db:*",
+        "arn:aws:ec2:*:*:vpc-endpoint:*",
+        "arn:aws:dms:*:*:endpoint:*",
+        "arn:aws:dms:*:*:rep:*",
+        "arn:aws:dms:*:*:task:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/Project": "atx-db-modernization",
+          "aws:RequestTag/Owner": "database-connector",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dms:ExportMetadataModelAssessment",
+        "dms:StartMetadataModelImport",
+        "dms:StartMetadataModelConversion",
+        "dms:StartMetadataModelExportToTarget",
+        "dms:StartMetadataModelExportAsScripts",
+        "dms:StartMetadataModelAssessment",
+        "dms:StartMetadataModelCreation",
+        "dms:UpdateConversionConfiguration",
+        "dms:UpdateMigrationProject",
+        "dms:AddTagsToResource",
+        "dms:ListTagsForResource",
+        "dms:DeleteMigrationProject",
+        "dms:DeleteEndpoint",
+        "dms:UpdateInstanceProfile",
+        "dms:UpdateDataProvider",
+        "dms:DeleteInstanceProfile",
+        "dms:DeleteDataProvider",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DescribeSecret"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:migration-project:*",
+        "arn:aws:dms:*:*:instance-profile:*",
+        "arn:aws:dms:*:*:data-provider:*",
+        "arn:aws:dms:*:*:endpoint:*",
+        "arn:aws:secretsmanager:*:*:secret:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/Project": "atx-db-modernization",
+          "aws:ResourceTag/Owner": "database-connector"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dms:CreateReplicationInstance",
+        "dms:DeleteReplicationInstance",
+        "dms:ModifyReplicationInstance",
+        "dms:RebootReplicationInstance"
+      ],
+      "Resource": "arn:aws:dms:*:*:rep:*",
+      "Condition": {
+        "StringEquals": {
+          "dms:rep-tag/Project": "atx-db-modernization",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dms:DeleteReplicationTask",
+        "dms:StartReplicationTask",
+        "dms:StopReplicationTask",
+        "dms:StartReplicationTaskAssessmentRun",
+        "dms:CancelReplicationTaskAssessmentRun"
+      ],
+      "Resource": [
+        "arn:aws:dms:*:*:task:*",
+        "arn:aws:dms:*:*:assessment-run:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "dms:task-tag/Project": "atx-db-modernization",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/dms-vpc-role",
+        "arn:aws:iam::*:role/dms-cloudwatch-logs-role",
+        "arn:aws:iam::*:role/dms-secrets-manager-role",
+        "arn:aws:iam::*:role/dms-s3-access-role",
+        "arn:aws:iam::*:role/DMSPremigrationAssessmentS3Role"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "iam:PassedToService": [
+            "dms.amazonaws.com",
+            "dms.*.amazonaws.com",
+            "schema-conversion.dms.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "rds.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

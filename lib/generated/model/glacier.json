@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "filename": "glacier",
+  "className": "Glacier",
+  "name": "glacier",
+  "servicePrefix": "glacier",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_glacier.html",
+  "accessLevelList": {
+    "Write": [
+      "AbortMultipartUpload",
+      "AbortVaultLock",
+      "AddTagsToVault",
+      "CompleteMultipartUpload",
+      "CompleteVaultLock",
+      "CreateVault",
+      "DeleteArchive",
+      "DeleteVault",
+      "DeleteVaultAccessPolicy",
+      "DeleteVaultNotifications",
+      "InitiateJob",
+      "InitiateMultipartUpload",
+      "InitiateVaultLock",
+      "PurchaseProvisionedCapacity",
+      "RemoveTagsFromVault",
+      "SetDataRetrievalPolicy",
+      "SetVaultAccessPolicy",
+      "SetVaultNotifications",
+      "UploadArchive",
+      "UploadMultipartPart"
+    ],
+    "Permissions management": [
+      "AbortVaultLock",
+      "CompleteVaultLock",
+      "DeleteVaultAccessPolicy",
+      "InitiateVaultLock",
+      "SetDataRetrievalPolicy",
+      "SetVaultAccessPolicy"
+    ],
+    "Tagging": [
+      "AddTagsToVault",
+      "RemoveTagsFromVault"
+    ],
+    "Read": [
+      "DescribeJob",
+      "DescribeVault",
+      "GetDataRetrievalPolicy",
+      "GetJobOutput",
+      "GetVaultAccessPolicy",
+      "GetVaultLock",
+      "GetVaultNotifications"
+    ],
+    "List": [
+      "ListJobs",
+      "ListMultipartUploads",
+      "ListParts",
+      "ListProvisionedCapacity",
+      "ListTagsForVault",
+      "ListVaults"
+    ]
+  },
+  "actions": [
+    {
+      "name": "AbortMultipartUpload",
+      "methodName": "toAbortMultipartUpload",
+      "description": "Grants permission to abort a multipart upload identified by the upload ID",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html"
+    },
+    {
+      "name": "AbortVaultLock",
+      "methodName": "toAbortVaultLock",
+      "description": "Grants permission to abort the vault locking process if the vault lock is not in the Locked state",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AbortVaultLock.html"
+    },
+    {
+      "name": "AddTagsToVault",
+      "methodName": "toAddTagsToVault",
+      "description": "Grants permission to add the specified tags to a vault",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html"
+    },
+    {
+      "name": "CompleteMultipartUpload",
+      "methodName": "toCompleteMultipartUpload",
+      "description": "Grants permission to complete a multipart upload process",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html"
+    },
+    {
+      "name": "CompleteVaultLock",
+      "methodName": "toCompleteVaultLock",
+      "description": "Grants permission to complete the vault locking process",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-CompleteVaultLock.html"
+    },
+    {
+      "name": "CreateVault",
+      "methodName": "toCreateVault",
+      "description": "Grants permission to create a new vault with the specified name",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"
+    },
+    {
+      "name": "DeleteArchive",
+      "methodName": "toDeleteArchive",
+      "description": "Grants permission to delete an archive from a vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"
+    },
+    {
+      "name": "DeleteVault",
+      "methodName": "toDeleteVault",
+      "description": "Grants permission to delete a vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"
+    },
+    {
+      "name": "DeleteVaultAccessPolicy",
+      "methodName": "toDeleteVaultAccessPolicy",
+      "description": "Grants permission to delete the access policy associated with the specified vault",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-DeleteVaultAccessPolicy.html"
+    },
+    {
+      "name": "DeleteVaultNotifications",
+      "methodName": "toDeleteVaultNotifications",
+      "description": "Grants permission to delete the notification configuration set for a vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html"
+    },
+    {
+      "name": "DescribeJob",
+      "methodName": "toDescribeJob",
+      "description": "Grants permission to get information about a job previously initiated",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"
+    },
+    {
+      "name": "DescribeVault",
+      "methodName": "toDescribeVault",
+      "description": "Grants permission to get information about a vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"
+    },
+    {
+      "name": "GetDataRetrievalPolicy",
+      "methodName": "toGetDataRetrievalPolicy",
+      "description": "Grants permission to get the data retrieval policy",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetDataRetrievalPolicy.html"
+    },
+    {
+      "name": "GetJobOutput",
+      "methodName": "toGetJobOutput",
+      "description": "Grants permission to download the output of the job specified",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html"
+    },
+    {
+      "name": "GetVaultAccessPolicy",
+      "methodName": "toGetVaultAccessPolicy",
+      "description": "Grants permission to retrieve the access-policy subresource set on the vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultAccessPolicy.html"
+    },
+    {
+      "name": "GetVaultLock",
+      "methodName": "toGetVaultLock",
+      "description": "Grants permission to retrieve attributes from the lock-policy subresource set on the specified vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultLock.html"
+    },
+    {
+      "name": "GetVaultNotifications",
+      "methodName": "toGetVaultNotifications",
+      "description": "Grants permission to retrieve the notification-configuration subresource set on the vault",
+      "accessLevel": "Read",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html"
+    },
+    {
+      "name": "InitiateJob",
+      "methodName": "toInitiateJob",
+      "description": "Grants permission to initiate a job of the specified type",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"
+    },
+    {
+      "name": "InitiateMultipartUpload",
+      "methodName": "toInitiateMultipartUpload",
+      "description": "Grants permission to initiate a multipart upload",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html"
+    },
+    {
+      "name": "InitiateVaultLock",
+      "methodName": "toInitiateVaultLock",
+      "description": "Grants permission to initiate the vault locking process",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-InitiateVaultLock.html"
+    },
+    {
+      "name": "ListJobs",
+      "methodName": "toListJobs",
+      "description": "Grants permission to list jobs for a vault that are in-progress and jobs that have recently finished",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"
+    },
+    {
+      "name": "ListMultipartUploads",
+      "methodName": "toListMultipartUploads",
+      "description": "Grants permission to list in-progress multipart uploads for the specified vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html"
+    },
+    {
+      "name": "ListParts",
+      "methodName": "toListParts",
+      "description": "Grants permission to list the parts of an archive that have been uploaded in a specific multipart upload",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html"
+    },
+    {
+      "name": "ListProvisionedCapacity",
+      "methodName": "toListProvisionedCapacity",
+      "description": "Grants permission to list the provisioned capacity for the specified AWS account",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListProvisionedCapacity.html"
+    },
+    {
+      "name": "ListTagsForVault",
+      "methodName": "toListTagsForVault",
+      "description": "Grants permission to list all the tags attached to a vault",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListTagsForVault.html"
+    },
+    {
+      "name": "ListVaults",
+      "methodName": "toListVaults",
+      "description": "Grants permission to list all vaults",
+      "accessLevel": "List",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html"
+    },
+    {
+      "name": "PurchaseProvisionedCapacity",
+      "methodName": "toPurchaseProvisionedCapacity",
+      "description": "Grants permission to purchases a provisioned capacity unit for an AWS account",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-PurchaseProvisionedCapacity.html"
+    },
+    {
+      "name": "RemoveTagsFromVault",
+      "methodName": "toRemoveTagsFromVault",
+      "description": "Grants permission to remove one or more tags from the set of tags attached to a vault",
+      "accessLevel": "Tagging, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-RemoveTagsFromVault.html"
+    },
+    {
+      "name": "SetDataRetrievalPolicy",
+      "methodName": "toSetDataRetrievalPolicy",
+      "description": "Grants permission to set and then enacts a data retrieval policy in the region specified in the PUT request",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetDataRetrievalPolicy.html"
+    },
+    {
+      "name": "SetVaultAccessPolicy",
+      "methodName": "toSetVaultAccessPolicy",
+      "description": "Grants permission to configure an access policy for a vault; will overwrite an existing policy",
+      "accessLevel": "Permissions management, Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html"
+    },
+    {
+      "name": "SetVaultNotifications",
+      "methodName": "toSetVaultNotifications",
+      "description": "Grants permission to configure vault notifications",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"
+    },
+    {
+      "name": "UploadArchive",
+      "methodName": "toUploadArchive",
+      "description": "Grants permission to upload an archive to a vault",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"
+    },
+    {
+      "name": "UploadMultipartPart",
+      "methodName": "toUploadMultipartPart",
+      "description": "Grants permission to upload a part of an archive",
+      "accessLevel": "Write",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "vault",
+      "methodName": "onVault",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html",
+      "arn": "arn:${Partition}:glacier:${Region}:${Account}:vaults/${VaultName}",
+      "placeholders": [
+        {
+          "placeholder": "VaultName",
+          "name": "vaultName",
+          "kind": "required"
+        },
+        {
+          "placeholder": "Account",
+          "name": "account",
+          "kind": "account"
+        },
+        {
+          "placeholder": "Region",
+          "name": "region",
+          "kind": "region"
+        },
+        {
+          "placeholder": "Partition",
+          "name": "partition",
+          "kind": "partition"
+        }
+      ],
+      "conditionMethods": []
+    }
+  ],
+  "conditions": [
+    {
+      "key": "glacier:ArchiveAgeInDays",
+      "methodName": "ifArchiveAgeInDays",
+      "description": "Filters access by how long an archive has been stored in the vault, in days",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys",
+      "relatedActionMethods": [
+        "toDeleteArchive",
+        "toInitiateJob"
+      ],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ArchiveAgeInDays",
+      "valueKind": "numeric",
+      "defaultOperator": "NumericEquals",
+      "valueTypes": [
+        "number"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric"
+    },
+    {
+      "key": "glacier:ResourceTag/",
+      "methodName": "ifResourceTagExists",
+      "description": "Filters access by a customer-defined tag",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/security_iam_service-with-iam.html#security_iam_service-with-iam-tags",
+      "relatedActionMethods": [],
+      "relatedResourceTypes": [],
+      "keyLiteral": "ResourceTag/",
+      "valueKind": "string",
+      "defaultOperator": "StringLike",
+      "valueTypes": [
+        "string"
+      ],
+      "operatorUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String"
+    }
+  ]
+}

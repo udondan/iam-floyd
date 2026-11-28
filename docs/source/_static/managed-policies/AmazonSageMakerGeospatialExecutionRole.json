@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:AbortMultipartUpload",
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:ListBucketMultipartUploads"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*SageMaker*",
+        "arn:aws:s3:::*Sagemaker*",
+        "arn:aws:s3:::*sagemaker*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "sagemaker-geospatial:GetEarthObservationJob",
+      "Resource": "arn:aws:sagemaker-geospatial:*:*:earth-observation-job/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "sagemaker-geospatial:GetRasterDataCollection",
+      "Resource": "arn:aws:sagemaker-geospatial:*:*:raster-data-collection/*"
+    }
+  ]
+}

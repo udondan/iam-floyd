@@ -1,0 +1,32 @@
+---
+codecov:
+  # The Coverage job of the Test workflow waits for the Codecov checks, so
+  # Codecov must not wait for the other checks in turn.
+  require_ci_to_pass: false
+  notify:
+    wait_for_ci: false
+    # The standalone and the CDK variant upload their coverage, the unit tests
+    # of the generator theirs, and the native packages one per language.
+    # Codecov only reports once all arrived, so the Coverage job doesn't read a
+    # partial result.
+    after_n_builds: 7
+
+coverage:
+  status:
+    project:
+      default:
+        # All of the counted code must be tested.
+        target: 100%
+    patch:
+      default:
+        # Every line a pull request changes must be tested.
+        target: 100%
+
+# The service classes are emitted from the model and not committed. They all
+# follow the same pattern, and test/transpile/services.ts calls every method.
+ignore:
+  - lib/generated
+
+# The coverage of Go names the files by the import path of the module.
+fixes:
+  - "udondan.github.io/iam-floyd/go/iamfloyd/::go/iamfloyd/"

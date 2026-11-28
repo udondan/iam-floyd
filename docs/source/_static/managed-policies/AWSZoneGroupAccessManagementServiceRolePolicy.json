@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AwsOrganizationsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribeAccount",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListParents",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

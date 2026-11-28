@@ -1,0 +1,73 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "rds:DescribeAccountAttributes",
+        "rds:DescribeCertificates",
+        "rds:DescribeDBClusterParameterGroups",
+        "rds:DescribeDBClusterParameters",
+        "rds:DescribeDBClusterSnapshotAttributes",
+        "rds:DescribeDBClusterSnapshots",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBEngineVersions",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBLogFiles",
+        "rds:DescribeDBParameterGroups",
+        "rds:DescribeDBParameters",
+        "rds:DescribeDBSubnetGroups",
+        "rds:DescribeEventCategories",
+        "rds:DescribeEventSubscriptions",
+        "rds:DescribeEvents",
+        "rds:DescribeOrderableDBInstanceOptions",
+        "rds:DescribePendingMaintenanceActions",
+        "rds:DownloadDBLogFilePortion",
+        "rds:ListTagsForResource"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DescribeVpcs"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "kms:ListKeys",
+        "kms:ListRetirableGrants",
+        "kms:ListAliases",
+        "kms:ListKeyPolicies"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/rds/*:log-stream:*",
+        "arn:aws:logs:*:*:log-group:/aws/docdb/*:log-stream:*"
+      ]
+    }
+  ]
+}

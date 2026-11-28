@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchLogsReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:Describe*",
+        "logs:Get*",
+        "logs:List*",
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "logs:TestMetricFilter",
+        "logs:FilterLogEvents",
+        "logs:StartLiveTail",
+        "logs:StopLiveTail",
+        "cloudwatch:GenerateQuery",
+        "cloudwatch:GenerateQueryResultsSummary",
+        "observabilityadmin:ListS3TableIntegrations",
+        "observabilityadmin:GetS3TableIntegration",
+        "observabilityadmin:ListTelemetryPipelines"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

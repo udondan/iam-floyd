@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InstallerAccessStatementID",
+      "Effect": "Allow",
+      "Action": [
+        "one:CreateDeviceActivationQrCode",
+        "one:GetDeviceInstance",
+        "one:GetSite",
+        "one:GetSiteAddress",
+        "one:ListDeviceInstances",
+        "one:ListSites"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

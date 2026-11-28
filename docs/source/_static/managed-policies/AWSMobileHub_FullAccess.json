@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET",
+        "apigateway:POST",
+        "cloudfront:GetDistribution",
+        "devicefarm:CreateProject",
+        "devicefarm:ListJobs",
+        "devicefarm:ListRuns",
+        "devicefarm:GetProject",
+        "devicefarm:GetRun",
+        "devicefarm:ListArtifacts",
+        "devicefarm:ListProjects",
+        "devicefarm:ScheduleRun",
+        "dynamodb:DescribeTable",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "iam:ListSAMLProviders",
+        "lambda:ListFunctions",
+        "sns:ListTopics",
+        "lex:GetIntent",
+        "lex:GetIntents",
+        "lex:GetSlotType",
+        "lex:GetSlotTypes",
+        "lex:GetBot",
+        "lex:GetBots",
+        "lex:GetBotAlias",
+        "lex:GetBotAliases",
+        "mobilehub:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::*/aws-my-sample-app*.zip"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::*-mobilehub-*/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::*-mobilehub-*"
+    }
+  ]
+}

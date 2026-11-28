@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageACMCertificates",
+      "Effect": "Allow",
+      "Action": [
+        "acm:RenewCertificate",
+        "acm:RevokeCertificate",
+        "acm:DeleteCertificate",
+        "acm:UpdateCertificateOptions"
+      ],
+      "Resource": "arn:aws:acm:*:*:certificate/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ManagePrivateCertificateAuthorities",
+      "Effect": "Allow",
+      "Action": [
+        "acm-pca:UpdateCertificateAuthority",
+        "acm-pca:DeleteCertificateAuthority",
+        "acm-pca:RestoreCertificateAuthority",
+        "acm-pca:RevokeCertificate"
+      ],
+      "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

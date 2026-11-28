@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchMetricsAPIs",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:CallWithBearerToken",
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchProfilesAPIs",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutProfileRecords"
+      ],
+      "Resource": "arn:aws:cloudwatch:*:*:dataset/*"
+    },
+    {
+      "Sid": "KMSDecryptForCMKDatasets",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "cloudwatch.*.amazonaws.com",
+          "kms:EncryptionContext:aws:cloudwatch:arn": "arn:aws:cloudwatch:*:*:dataset/*"
+        }
+      }
+    }
+  ]
+}

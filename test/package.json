@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "bin": {
+    "test": "cdk.js"
+  },
+  "scripts": {
+    "build": "bunx tsc",
+    "cdk": "bunx cdk"
+  },
+  "devDependencies": {
+    "@swc/core": "1.16.22",
+    "@swc/helpers": "0.5.24",
+    "@types/node": "26.6.10",
+    "aws-cdk": "2.1149.0",
+    "aws-cdk-lib": "2.278.0",
+    "constructs": "10.8.1",
+    "regenerator-runtime": "0.14.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3"
+  }
+}

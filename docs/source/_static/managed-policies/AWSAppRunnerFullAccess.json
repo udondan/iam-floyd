@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/apprunner.amazonaws.com/AWSServiceRoleForAppRunner",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "apprunner.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "apprunner.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AppRunnerAdminAccess",
+      "Effect": "Allow",
+      "Action": "apprunner:*",
+      "Resource": "*"
+    }
+  ]
+}

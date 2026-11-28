@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:PutProvisionedConcurrencyConfig",
+        "lambda:GetProvisionedConcurrencyConfig",
+        "lambda:DeleteProvisionedConcurrencyConfig",
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
