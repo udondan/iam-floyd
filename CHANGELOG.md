@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.855.1](https://github.com/udondan/iam-floyd/compare/v0.855.0...v0.855.1) (2026-11-28)
+
+
+### Bug Fixes
+
+* **deps:** override minimatch for test-exclude to 11.0.9 ([#2484](https://github.com/udondan/iam-floyd/issues/2484)) ([ad630ad](https://github.com/udondan/iam-floyd/commit/ad630ad1e130da528a54d1f1e7b540c92a8fbedf))
+
 ## [0.855.0](https://github.com/udondan/iam-floyd/compare/v0.854.0...v0.855.0) (2026-11-23)
 
 
